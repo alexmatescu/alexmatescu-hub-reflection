@@ -1,0 +1,94 @@
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { posts } from "@/data/posts";
+import NewsletterForm from "@/components/NewsletterForm";
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" });
+
+const BlogPost = () => {
+  const { slug } = useParams();
+  const post = posts.find((p) => p.slug === slug);
+
+  if (!post) {
+    return (
+      <section className="container-editorial py-32 text-center">
+        <h1 className="font-serif text-4xl">Articolul nu există</h1>
+        <Link to="/blog" className="mt-8 inline-flex items-center gap-2 link-underline">
+          <ArrowLeft className="h-4 w-4" /> Înapoi la blog
+        </Link>
+      </section>
+    );
+  }
+
+  const related = posts.filter((p) => p.slug !== post.slug).slice(0, 2);
+
+  return (
+    <>
+      <article>
+        <header className="container-editorial pt-20 md:pt-28 pb-12">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12">
+            <ArrowLeft className="h-4 w-4" /> Toate articolele
+          </Link>
+          <div className="max-w-3xl">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.22em] text-muted-foreground mb-8">
+              <span>{post.category}</span>
+              <span>{formatDate(post.date)}</span>
+              <span>{post.readingTime} citire</span>
+            </div>
+            <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance">
+              {post.title}
+            </h1>
+            <p className="mt-6 font-serif italic text-xl md:text-2xl text-muted-foreground leading-snug text-balance">
+              {post.subtitle}
+            </p>
+          </div>
+        </header>
+
+        <div className="container-editorial">
+          <div className="rule" />
+        </div>
+
+        <div className="container-prose py-16">
+          <div className="prose-editorial">
+            {post.content.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+            <blockquote>
+              „Scrisul este forma cea mai cinstită a gândirii: te obligă să-ți vezi propria neclaritate.”
+            </blockquote>
+            <p>
+              Mulțumesc că ai citit până aici. Dacă vrei să primești următoarele articole în inbox, lasă-mi adresa mai jos.
+            </p>
+          </div>
+        </div>
+
+        <div className="container-editorial pb-16">
+          <NewsletterForm
+            title="Primește articolele noi în inbox."
+            description="Trimit rar și doar conținut original. Fără promoții, fără reciclări."
+          />
+        </div>
+      </article>
+
+      {related.length > 0 && (
+        <section className="border-t border-foreground/10 bg-surface/60">
+          <div className="container-editorial py-16">
+            <p className="eyebrow mb-8">Continuă lectura</p>
+            <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
+              {related.map((p) => (
+                <Link key={p.slug} to={`/blog/${p.slug}`} className="group bg-background p-8 hover:bg-surface transition-colors">
+                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">{p.category}</p>
+                  <h3 className="font-serif text-2xl leading-snug group-hover:text-primary transition-colors">{p.title}</h3>
+                  <p className="mt-3 text-muted-foreground">{p.excerpt}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
+  );
+};
+
+export default BlogPost;
