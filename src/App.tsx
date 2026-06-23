@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Projects from "./pages/Projects";
+import Calatoria from "./pages/Calatoria";
 import ProjectDetail from "./pages/ProjectDetail";
 import Book from "./pages/Book";
 import Contact from "./pages/Contact";
@@ -26,6 +27,7 @@ const App = () => (
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/despre" element={<About />} />
+            <Route path="/calatoria" element={<Calatoria />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/proiecte" element={<Projects />} />

@@ -4,10 +4,11 @@ import { Menu, X } from "lucide-react";
 
 const nav = [
   { to: "/", label: "Acasă" },
-  { to: "/despre", label: "Despre mine" },
-  { to: "/blog", label: "Blog" },
+  { to: "/despre", label: "Despre" },
+  { to: "/calatoria", label: "Călătoria" },
   { to: "/proiecte", label: "Proiecte" },
-  { to: "/carte", label: "Carte" },
+  { to: "/carte", label: "CRANDIT" },
+  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ];
 
