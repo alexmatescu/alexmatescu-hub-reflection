@@ -7,6 +7,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const gold = "#c9a86c";
+const ink = "#151515";
+const inkLift = "#1a1a1a";
+const parchment = "#f5f0e8";
+
 const acronym = [
   { letter: "C", law: "Costurile", tool: "Claritatea", desc: "Orice lucru care contează are un preț, iar claritatea te ajută să alegi conștient ce merită acel preț." },
   { letter: "R", law: "Răbdarea", tool: "Repetiția", desc: "Lucrurile reale durează, iar repetiția transformă așteptarea în construcție." },
@@ -131,9 +136,28 @@ const quickFacts = [
   { k: "Mesaj central", v: "Succesul nu se întâmplă peste noapte; succesul se construiește" },
 ];
 
+const GoldEyebrow = ({ children }: { children: React.ReactNode }) => (
+  <p className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#c9a86c] font-medium">
+    <span className="inline-block h-px w-8 bg-[#c9a86c]/40" />
+    {children}
+  </p>
+);
+
+const Section = ({
+  children,
+  lifted = false,
+}: {
+  children: React.ReactNode;
+  lifted?: boolean;
+}) => (
+  <section className={`${lifted ? inkLift : ink} text-[#f5f0e8]`}>
+    {children}
+  </section>
+);
+
 const Book = () => {
   return (
-    <>
+    <div className="bg-[#151515] text-[#f5f0e8]">
       {/* HERO */}
       <section className="bg-[#151515] text-[#c9a86c]">
         <div className="container-editorial pt-20 md:pt-32 pb-20 md:pb-28 flex flex-col items-center text-center">
@@ -152,26 +176,28 @@ const Book = () => {
       </section>
 
       {/* PE SCURT */}
-      <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <p className="eyebrow">Pe scurt</p>
-        </div>
-        <div className="md:col-span-8 prose-editorial">
-          <p>
-            <strong>CRANDIT — Mitul succesului peste noapte</strong> este o carte de nonficțiune practică despre realitatea din spatele succesului durabil. Cartea demontează ideea succesului rapid și arată că rezultatele reale apar prin proces, repetiție, costuri asumate, acțiune, direcție, integritate, timp și context.
-          </p>
-          <p>
-            Cartea nu este o promisiune motivațională și nu oferă o rețetă rapidă. Este o hartă de maturizare pentru oamenii care vor să construiască ceva real în carieră, antreprenoriat, viață personală sau creație.
-          </p>
-        </div>
-      </section>
-
-      {/* CE ESTE CRANDIT */}
-      <section className="bg-surface/60 border-y border-foreground/10">
+      <Section>
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="eyebrow">Ce este CRANDIT?</p>
-            <p className="mt-4 text-sm text-muted-foreground">
+            <GoldEyebrow>Pe scurt</GoldEyebrow>
+          </div>
+          <div className="md:col-span-8 md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85">
+            <p>
+              <strong className="text-[#c9a86c]">CRANDIT — Mitul succesului peste noapte</strong> este o carte de nonficțiune practică despre realitatea din spatele succesului durabil. Cartea demontează ideea succesului rapid și arată că rezultatele reale apar prin proces, repetiție, costuri asumate, acțiune, direcție, integritate, timp și context.
+            </p>
+            <p>
+              Cartea nu este o promisiune motivațională și nu oferă o rețetă rapidă. Este o hartă de maturizare pentru oamenii care vor să construiască ceva real în carieră, antreprenoriat, viață personală sau creație.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* CE ESTE CRANDIT */}
+      <Section lifted>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <GoldEyebrow>Ce este CRANDIT?</GoldEyebrow>
+            <p className="mt-4 text-sm text-[#f5f0e8]/60">
               Un sistem de reflecție și construcție personală format din șapte legi și șapte instrumente. Fiecare literă descrie o etapă importantă din procesul prin care omul construiește rezultate durabile.
             </p>
           </div>
@@ -179,24 +205,24 @@ const Book = () => {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-sm">
                 <thead>
-                  <tr className="border-b border-foreground/15">
-                    <th className="py-3 pr-4 font-serif">Literă</th>
-                    <th className="py-3 pr-4 font-serif">Lege + Instrument</th>
-                    <th className="py-3 font-serif">Explicație</th>
+                  <tr className="border-b border-[#c9a86c]/15">
+                    <th className="py-3 pr-4 font-trajan text-[#c9a86c]">Literă</th>
+                    <th className="py-3 pr-4 font-trajan text-[#c9a86c]">Lege + Instrument</th>
+                    <th className="py-3 font-trajan text-[#c9a86c]">Explicație</th>
                   </tr>
                 </thead>
                 <tbody>
                   {acronym.map((row) => (
-                    <tr key={row.letter} className="border-b border-foreground/10">
+                    <tr key={row.letter} className="border-b border-[#c9a86c]/10">
                       <td className="py-4 pr-4 align-top">
-                        <span className="font-serif text-2xl">{row.letter}</span>
+                        <span className="font-trajan text-2xl text-[#c9a86c]">{row.letter}</span>
                       </td>
                       <td className="py-4 pr-4 align-top">
-                        <span className="font-medium">{row.law}</span>
-                        <span className="text-muted-foreground"> + </span>
-                        <span className="font-medium">{row.tool}</span>
+                        <span className="font-medium text-[#f5f0e8]">{row.law}</span>
+                        <span className="text-[#c9a86c]/60"> + </span>
+                        <span className="font-medium text-[#f5f0e8]">{row.tool}</span>
                       </td>
-                      <td className="py-4 align-top text-muted-foreground">{row.desc}</td>
+                      <td className="py-4 align-top text-[#f5f0e8]/65">{row.desc}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -204,36 +230,38 @@ const Book = () => {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* DESPRE CARTE */}
-      <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <p className="eyebrow">Despre carte</p>
-        </div>
-        <div className="md:col-span-8 prose-editorial">
-          <p>
-            CRANDIT — Mitul succesului peste noapte critică felul în care cultura modernă simplifică succesul. De multe ori, oamenii văd doar rezultatul final și îl numesc talent, noroc sau moment potrivit, fără să vadă anii de muncă, costurile invizibile, eșecurile, repetițiile și transformările interioare care au făcut acel rezultat posibil.
-          </p>
-          <p>
-            Cartea arată că succesul real nu este un eveniment izolat, ci efectul unui proces. Înainte ca rezultatul să devină vizibil în exterior, omul trebuie să devină suficient de clar, răbdător, disciplinat și integru pentru a putea susține ceea ce spune că își dorește.
-          </p>
-          <p>
-            Volumul este construit ca un sistem în șapte capitole principale, fiecare având o lege și un instrument. Legea descrie o realitate inevitabilă a construcției, iar instrumentul oferă o cale practică prin care cititorul poate lucra cu acea realitate.
-          </p>
-          <blockquote>
-            „Cele mai multe povești pe care le invidiem sunt versiuni scurtate ale unor vieți pe care nu le-am vrea integral.”
-          </blockquote>
-        </div>
-      </section>
-
-      {/* IDEEA PRINCIPALĂ */}
-      <section className="bg-surface/60 border-y border-foreground/10">
+      <Section>
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="eyebrow">Ideea principală</p>
+            <GoldEyebrow>Despre carte</GoldEyebrow>
           </div>
-          <div className="md:col-span-8 prose-editorial">
+          <div className="md:col-span-8 md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85">
+            <p>
+              CRANDIT — Mitul succesului peste noapte critică felul în care cultura modernă simplifică succesul. De multe ori, oamenii văd doar rezultatul final și îl numesc talent, noroc sau moment potrivit, fără să vadă anii de muncă, costurile invizibile, eșecurile, repetițiile și transformările interioare care au făcut acel rezultat posibil.
+            </p>
+            <p>
+              Cartea arată că succesul real nu este un eveniment izolat, ci efectul unui proces. Înainte ca rezultatul să devină vizibil în exterior, omul trebuie să devină suficient de clar, răbdător, disciplinat și integru pentru a putea susține ceea ce spune că își dorește.
+            </p>
+            <p>
+              Volumul este construit ca un sistem în șapte capitole principale, fiecare având o lege și un instrument. Legea descrie o realitate inevitabilă a construcției, iar instrumentul oferă o cale practică prin care cititorul poate lucra cu acea realitate.
+            </p>
+            <blockquote className="my-10 border-l-2 border-[#c9a86c]/60 pl-6 italic font-trajan text-xl text-[#f5f0e8]/80">
+              „Cele mai multe povești pe care le invidiem sunt versiuni scurtate ale unor vieți pe care nu le-am vrea integral."
+            </blockquote>
+          </div>
+        </div>
+      </Section>
+
+      {/* IDEEA PRINCIPALĂ */}
+      <Section lifted>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <GoldEyebrow>Ideea principală</GoldEyebrow>
+          </div>
+          <div className="md:col-span-8 md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85">
             <p>
               Ideea principală a cărții este că succesul nu apare brusc, ci se construiește printr-un proces lung, repetitiv și formator. Ceea ce lumea numește succes peste noapte este, de obicei, doar momentul în care un proces nevăzut devine vizibil.
             </p>
@@ -242,45 +270,47 @@ const Book = () => {
             </p>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* PENTRU CINE */}
-      <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <p className="eyebrow">Cui se adresează?</p>
-        </div>
-        <div className="md:col-span-8">
-          <p className="prose-editorial mb-8">
-            CRANDIT se adresează oamenilor interesați de dezvoltare personală matură, carieră, antreprenoriat, disciplină, leadership personal, reconstrucție interioară și sens. Cartea este potrivită pentru:
-          </p>
-          <div className="grid sm:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
-            {[
-              "Oameni care vor să construiască ceva pe termen lung",
-              "Antreprenori, creatori, profesioniști și lideri",
-              "Oameni care muncesc mult, dar nu văd încă rezultate",
-              "Oameni care se confruntă cu lipsa de validare, comparația sau îndoiala",
-              "Cititori interesați de succes, disciplină, identitate, claritate și maturizare personală",
-            ].map((item) => (
-              <div key={item} className="bg-background p-6 text-sm text-muted-foreground">
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CE FACE DIFERIT */}
-      <section className="bg-surface/60 border-y border-foreground/10">
+      <Section>
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="eyebrow">Ce face cartea diferită?</p>
+            <GoldEyebrow>Cui se adresează?</GoldEyebrow>
           </div>
-          <div className="md:col-span-8 prose-editorial">
+          <div className="md:col-span-8">
+            <p className="md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85 mb-8">
+              CRANDIT se adresează oamenilor interesați de dezvoltare personală matură, carieră, antreprenoriat, disciplină, leadership personal, reconstrucție interioară și sens. Cartea este potrivită pentru:
+            </p>
+            <div className="grid sm:grid-cols-2 gap-px bg-[#c9a86c]/10 border border-[#c9a86c]/10">
+              {[
+                "Oameni care vor să construiască ceva pe termen lung",
+                "Antreprenori, creatori, profesioniști și lideri",
+                "Oameni care muncesc mult, dar nu văd încă rezultate",
+                "Oameni care se confruntă cu lipsa de validare, comparația sau îndoiala",
+                "Cititori interesați de succes, disciplină, identitate, claritate și maturizare personală",
+              ].map((item) => (
+                <div key={item} className="bg-[#151515] p-6 text-sm text-[#f5f0e8]/70">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* CE FACE DIFERIT */}
+      <Section lifted>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <GoldEyebrow>Ce face cartea diferită?</GoldEyebrow>
+          </div>
+          <div className="md:col-span-8 md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85">
             <p>
               CRANDIT este diferită de cărțile motivaționale clasice pentru că nu promite succes rapid și nu oferă formule simple. Cartea nu încearcă să producă entuziasm de moment, ci luciditate, structură și maturizare.
             </p>
             <p>Volumul combină:</p>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="list-disc pl-6 space-y-2 marker:text-[#c9a86c]">
               <li>eseu personal;</li>
               <li>analiză practică;</li>
               <li>sistem conceptual;</li>
@@ -289,117 +319,123 @@ const Book = () => {
             </ul>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* STRUCTURA */}
-      <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <p className="eyebrow">Structura cărții</p>
-          <p className="mt-4 text-sm text-muted-foreground">Cartea este construită în jurul a șapte capitole principale, plus un manifest, o introducere și un capitol de încheiere.</p>
-        </div>
-        <div className="md:col-span-8">
-          <ul className="divide-y divide-foreground/10 border-y border-foreground/10">
-            {chapters.map((c) => (
-              <li key={c.n} className="py-6 grid grid-cols-[3rem_1fr] gap-6 items-baseline">
-                <span className="font-serif text-2xl text-muted-foreground">{c.n}.</span>
-                <div>
-                  <p className="font-serif text-2xl text-balance">
-                    <span className="text-muted-foreground">{c.letter}.</span> {c.title}
-                  </p>
-                  <p className="mt-1 text-muted-foreground">{c.note}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 text-sm text-muted-foreground">
-            Cartea include și un manifest, o introducere a celor șapte legi și șapte instrumente, exerciții de autoevaluare și un capitol final intitulat <em>După noapte, rămâne omul</em>.
-          </p>
-        </div>
-      </section>
-
-      {/* CUPRINSUL DETALIAT */}
-      <section className="bg-surface/60 border-y border-foreground/10">
+      <Section>
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="eyebrow">Cuprinsul cărții</p>
-          </div>
-          <div className="md:col-span-8 prose-editorial">
-            <p><strong>Manifest</strong> — Cartea începe cu un manifest despre construcția reală a succesului. Manifestul afirmă că succesul nu se întâmplă, nu se primește și nu se promite, ci se construiește.</p>
-            <p><strong>Cele 7 legi și cele 7 instrumente</strong> — Această secțiune prezintă sistemul CRANDIT și explică cele șapte perechi conceptuale pe care se bazează cartea.</p>
-            {chapters.map((c) => (
-              <p key={c.n}>
-                <strong>Capitolul {c.n}: {c.letter}. {c.title}</strong> — {c.note}
-              </p>
-            ))}
-            <p><strong>Capitol de încheiere: După noapte, rămâne omul</strong> — Cartea se închide cu ideea că, dincolo de rezultat, ceea ce rămâne este omul format prin drum. După succes, întrebarea esențială nu este doar ce ai obținut, ci cine ai devenit.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* 5 ÎNTREBĂRI */}
-      <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <p className="eyebrow">Cele 5 întrebări esențiale</p>
-          <p className="mt-4 text-sm text-muted-foreground">Fiecare capitol termină cu cinci întrebări aplicabile în viața cititorului.</p>
-        </div>
-        <div className="md:col-span-8">
-          <div className="space-y-10">
-            {questions.map((q) => (
-              <div key={q.chapter}>
-                <p className="font-serif text-xl mb-4">{q.chapter}</p>
-                <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
-                  {q.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ol>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONCEPTE-CHEIE */}
-      <section className="bg-surface/60 border-y border-foreground/10">
-        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <p className="eyebrow">Concepte-cheie</p>
+            <GoldEyebrow>Structura cărții</GoldEyebrow>
+            <p className="mt-4 text-sm text-[#f5f0e8]/60">Cartea este construită în jurul a șapte capitole principale, plus un manifest, o introducere și un capitol de încheiere.</p>
           </div>
           <div className="md:col-span-8">
-            <div className="grid sm:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
-              {concepts.map((c) => (
-                <div key={c.t} className="bg-background p-6">
-                  <p className="font-serif text-lg">{c.t}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{c.d}</p>
+            <ul className="divide-y divide-[#c9a86c]/10 border-y border-[#c9a86c]/10">
+              {chapters.map((c) => (
+                <li key={c.n} className="py-6 grid grid-cols-[3rem_1fr] gap-6 items-baseline">
+                  <span className="font-trajan text-2xl text-[#c9a86c]/60">{c.n}.</span>
+                  <div>
+                    <p className="font-trajan text-2xl text-balance text-[#c9a86c]">
+                      <span className="text-[#c9a86c]/60">{c.letter}.</span> {c.title}
+                    </p>
+                    <p className="mt-1 text-[#f5f0e8]/65">{c.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-sm text-[#f5f0e8]/60">
+              Cartea include și un manifest, o introducere a celor șapte legi și șapte instrumente, exerciții de autoevaluare și un capitol final intitulat <em>După noapte, rămâne omul</em>.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* CUPRINSUL DETALIAT */}
+      <Section lifted>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <GoldEyebrow>Cuprinsul cărții</GoldEyebrow>
+          </div>
+          <div className="md:col-span-8 md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85">
+            <p><strong className="text-[#c9a86c]">Manifest</strong> — Cartea începe cu un manifest despre construcția reală a succesului. Manifestul afirmă că succesul nu se întâmplă, nu se primește și nu se promite, ci se construiește.</p>
+            <p><strong className="text-[#c9a86c]">Cele 7 legi și cele 7 instrumente</strong> — Această secțiune prezintă sistemul CRANDIT și explică cele șapte perechi conceptuale pe care se bazează cartea.</p>
+            {chapters.map((c) => (
+              <p key={c.n}>
+                <strong className="text-[#c9a86c]">Capitolul {c.n}: {c.letter}. {c.title}</strong> — {c.note}
+              </p>
+            ))}
+            <p><strong className="text-[#c9a86c]">Capitol de încheiere: După noapte, rămâne omul</strong> — Cartea se închide cu ideea că, dincolo de rezultat, ceea ce rămâne este omul format prin drum. După succes, întrebarea esențială nu este doar ce ai obținut, ci cine ai devenit.</p>
+          </div>
+        </div>
+      </Section>
+
+      {/* 5 ÎNTREBĂRI */}
+      <Section>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <GoldEyebrow>Cele 5 întrebări esențiale</GoldEyebrow>
+            <p className="mt-4 text-sm text-[#f5f0e8]/60">Fiecare capitol termină cu cinci întrebări aplicabile în viața cititorului.</p>
+          </div>
+          <div className="md:col-span-8">
+            <div className="space-y-10">
+              {questions.map((q) => (
+                <div key={q.chapter}>
+                  <p className="font-trajan text-xl text-[#c9a86c] mb-4">{q.chapter}</p>
+                  <ol className="list-decimal list-inside space-y-2 text-sm text-[#f5f0e8]/70 marker:text-[#c9a86c]">
+                    {q.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ol>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* CITATE */}
-      <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <p className="eyebrow">Citate reprezentative</p>
-        </div>
-        <div className="md:col-span-8">
-          <div className="space-y-6">
-            {quotes.map((q, i) => (
-              <blockquote key={i} className="font-serif italic text-2xl leading-snug text-balance">
-                „{q}”
-              </blockquote>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* REZUMAT */}
-      <section className="bg-primary text-primary-foreground">
+      {/* CONCEPTE-CHEIE */}
+      <Section lifted>
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.22em] text-primary-foreground/60">Rezumatul cărții</p>
+            <GoldEyebrow>Concepte-cheie</GoldEyebrow>
           </div>
-          <div className="md:col-span-8 prose-editorial text-primary-foreground/90">
+          <div className="md:col-span-8">
+            <div className="grid sm:grid-cols-2 gap-px bg-[#c9a86c]/10 border border-[#c9a86c]/10">
+              {concepts.map((c) => (
+                <div key={c.t} className="bg-[#151515] p-6">
+                  <p className="font-trajan text-lg text-[#c9a86c]">{c.t}</p>
+                  <p className="mt-2 text-sm text-[#f5f0e8]/70">{c.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* CITATE */}
+      <Section>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <GoldEyebrow>Citate reprezentative</GoldEyebrow>
+          </div>
+          <div className="md:col-span-8">
+            <div className="space-y-6">
+              {quotes.map((q, i) => (
+                <blockquote key={i} className="font-trajan italic text-2xl leading-snug text-balance text-[#c9a86c]">
+                  „{q}”
+                </blockquote>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* REZUMAT */}
+      <Section lifted>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.22em] text-[#c9a86c]/60">Rezumatul cărții</p>
+          </div>
+          <div className="md:col-span-8 md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85">
             <p>
               CRANDIT — Mitul succesului peste noapte este o carte despre procesul nevăzut din spatele succesului durabil. Cartea arată că rezultatele importante nu apar brusc, ci sunt construite în timp, prin costuri asumate, claritate, răbdare, repetiție, acțiune, direcție, identitate, integritate, context și maturizare.
             </p>
@@ -411,39 +447,41 @@ const Book = () => {
             </p>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* FAQ */}
-      <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
-          <p className="eyebrow">Întrebări și răspunsuri</p>
-        </div>
-        <div className="md:col-span-8">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((f, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left font-serif text-lg">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* DATE RAPIDE */}
-      <section className="bg-surface/60 border-y border-foreground/10">
+      <Section>
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="eyebrow">Date rapide</p>
+            <GoldEyebrow>Întrebări și răspunsuri</GoldEyebrow>
+          </div>
+          <div className="md:col-span-8">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((f, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="border-b border-[#c9a86c]/10">
+                  <AccordionTrigger className="text-left font-trajan text-lg text-[#c9a86c] hover:no-underline">{f.q}</AccordionTrigger>
+                  <AccordionContent className="text-[#f5f0e8]/70">{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </Section>
+
+      {/* DATE RAPIDE */}
+      <Section lifted>
+        <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <GoldEyebrow>Date rapide</GoldEyebrow>
           </div>
           <div className="md:col-span-8">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-sm">
                 <tbody>
                   {quickFacts.map((fact, i) => (
-                    <tr key={i} className="border-b border-foreground/10">
-                      <td className="py-4 pr-6 font-medium align-top w-1/3">{fact.k}</td>
-                      <td className="py-4 text-muted-foreground align-top">{fact.v}</td>
+                    <tr key={i} className="border-b border-[#c9a86c]/10">
+                      <td className="py-4 pr-6 font-medium align-top w-1/3 text-[#c9a86c]">{fact.k}</td>
+                      <td className="py-4 text-[#f5f0e8]/70 align-top">{fact.v}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -451,16 +489,17 @@ const Book = () => {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* WAITLIST */}
-      <section className="container-editorial pb-24 pt-20">
+      <section className="bg-[#151515] container-editorial pb-24 pt-20">
         <NewsletterForm
+          theme="crandit"
           title="Intră pe lista de așteptare."
           description="Primii cititori vor primi un fragment înainte de lansare și actualizări despre evoluția manuscrisului. Doar conținut despre carte — nimic altceva."
         />
       </section>
-    </>
+    </div>
   );
 };
 
