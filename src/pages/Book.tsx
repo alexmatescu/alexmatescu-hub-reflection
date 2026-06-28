@@ -152,15 +152,12 @@ const Book = () => {
             </p>
           </div>
           <div className="md:col-span-5">
-            <div className="aspect-[3/4] bg-primary-foreground/5 border border-primary-foreground/15 flex flex-col items-center justify-center p-10 text-center">
-              <p className="text-xs uppercase tracking-[0.22em] text-primary-foreground/50 mb-8">Manuscris</p>
-              <p className="font-serif text-6xl leading-none">CRANDIT</p>
-              <div className="my-8 h-px w-12 bg-primary-foreground/30" />
-              <p className="font-serif italic text-primary-foreground/70 text-balance">
-                Mitul succesului peste noapte
-              </p>
-              <p className="mt-auto pt-12 text-xs text-primary-foreground/40">Alexandru Matescu · 2026</p>
-            </div>
+            <img
+              src={cranditCover.url}
+              alt="Coperta cărții CRANDIT — Mitul succesului peste noapte de Alexandru Matescu"
+              className="w-full aspect-[3/4] object-cover border border-primary-foreground/15 shadow-2xl"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
