@@ -1,3 +1,4 @@
+import cranditCover from "@/assets/crandit-cover.png.asset.json";
 import NewsletterForm from "@/components/NewsletterForm";
 import {
   Accordion,
