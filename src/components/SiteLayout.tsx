@@ -1,23 +1,46 @@
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const nav = [
   { to: "/", label: "Acasă" },
   { to: "/despre", label: "Despre" },
   { to: "/calatoria", label: "Călătoria" },
-  { to: "/proiecte", label: "Proiecte" },
+  { to: "/proiecte", label: "Proiecte", hasDropdown: true },
   { to: "/carte", label: "CRANDIT" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ];
 
+const projectDropdownItems = [
+  { to: "/proiecte/geo-ai-visibility", label: "GEO/AEO vizibility" },
+  { to: "/carte", label: "CRANDIT" },
+  { to: "/proiecte/taste-the-corn", label: "TASTE THE CORN" },
+  { to: "/proiecte/ovb", label: "OVB" },
+  { to: "/proiecte/atractiile-romaniei", label: "Atracțiile României" },
+  { to: "/proiecte/afacerea-de-familie", label: "Afacerea de familie" },
+  { to: "/proiecte/afacerea-cu-haine", label: "Afacerea cu haine" },
+  { to: "/blog", label: "Blogging" },
+];
+
+const isProjectsActive = (pathname: string) =>
+  pathname.startsWith("/proiecte") ||
+  projectDropdownItems.some((item) => pathname === item.to);
+
 const SiteLayout = () => {
   const [open, setOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setOpen(false);
+    setProjectsOpen(false);
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [location.pathname]);
 
@@ -33,20 +56,64 @@ const SiteLayout = () => {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            {nav.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                end={item.to === "/"}
-                className={({ isActive }) =>
-                  `text-sm transition-colors ${
-                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {nav.map((item) =>
+              item.hasDropdown ? (
+                <DropdownMenu key={item.to}>
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      className={`flex items-center gap-1 text-sm transition-colors outline-none ${
+                        isProjectsActive(location.pathname)
+                          ? "text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      aria-label="Proiecte"
+                    >
+                      {item.label}
+                      <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    align="start"
+                    sideOffset={12}
+                    className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-sm"
+                  >
+                    {projectDropdownItems.map((sub) => {
+                      const active = location.pathname === sub.to;
+                      return (
+                        <DropdownMenuItem key={sub.to} asChild>
+                          <Link
+                            to={sub.to}
+                            className={`flex items-center justify-between px-3 py-2.5 text-sm transition-colors rounded-sm cursor-pointer ${
+                              active
+                                ? "bg-surface text-foreground"
+                                : "text-muted-foreground hover:bg-surface hover:text-foreground"
+                            }`}
+                          >
+                            {sub.label}
+                            {active && (
+                              <span className="h-1.5 w-1.5 rounded-full bg-foreground/60" aria-hidden="true" />
+                            )}
+                          </Link>
+                        </DropdownMenuItem>
+                      );
+                    })}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) =>
+                    `text-sm transition-colors ${
+                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ),
+            )}
           </nav>
 
           <button
@@ -61,18 +128,53 @@ const SiteLayout = () => {
         {open && (
           <div className="md:hidden border-t border-foreground/10 bg-background">
             <nav className="container-editorial py-6 flex flex-col gap-5">
-              {nav.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  end={item.to === "/"}
-                  className={({ isActive }) =>
-                    `font-serif text-2xl ${isActive ? "text-foreground" : "text-muted-foreground"}`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
+              {nav.map((item) =>
+                item.hasDropdown ? (
+                  <div key={item.to} className="flex flex-col">
+                    <button
+                      onClick={() => setProjectsOpen((s) => !s)}
+                      className={`flex items-center justify-between font-serif text-2xl ${
+                        isProjectsActive(location.pathname) ? "text-foreground" : "text-muted-foreground"
+                      }`}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform ${projectsOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {projectsOpen && (
+                      <ul className="mt-4 ml-4 flex flex-col gap-3 border-l border-foreground/10 pl-4">
+                        {projectDropdownItems.map((sub) => {
+                          const active = location.pathname === sub.to;
+                          return (
+                            <li key={sub.to}>
+                              <Link
+                                to={sub.to}
+                                className={`text-sm transition-colors ${
+                                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                                }`}
+                              >
+                                {sub.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
+                ) : (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    end={item.to === "/"}
+                    className={({ isActive }) =>
+                      `font-serif text-2xl ${isActive ? "text-foreground" : "text-muted-foreground"}`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ),
+              )}
             </nav>
           </div>
         )}
