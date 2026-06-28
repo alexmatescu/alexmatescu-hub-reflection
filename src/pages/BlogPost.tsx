@@ -50,17 +50,18 @@ const BlogPost = () => {
         </div>
 
         <div className="container-prose py-16">
-          <div className="prose-editorial">
-            {post.content.map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
-            <blockquote>
-              „Scrisul este forma cea mai cinstită a gândirii: te obligă să-ți vezi propria neclaritate.”
-            </blockquote>
-            <p>
-              Mulțumesc că ai citit până aici. Dacă vrei să primești următoarele articole în inbox, lasă-mi adresa mai jos.
-            </p>
-          </div>
+          {post.html ? (
+            <div
+              className="prose-editorial"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          ) : (
+            <div className="prose-editorial">
+              {post.content?.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="container-editorial pb-16">
