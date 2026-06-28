@@ -135,19 +135,19 @@ const Book = () => {
   return (
     <>
       {/* HERO */}
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-[#151515] text-[#c9a86c]">
         <div className="container-editorial pt-20 md:pt-32 pb-20 md:pb-28 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.22em] text-primary-foreground/60 mb-8">
+            <p className="text-xs uppercase tracking-[0.22em] text-[#c9a86c]/60 mb-8">
               Carte · În lucru · 2026
             </p>
-            <h1 className="font-serif text-5xl md:text-7xl leading-[1.02] tracking-tight text-balance">
+            <h1 className="font-display text-5xl md:text-7xl leading-[1.02] tracking-tight text-balance">
               CRANDIT
             </h1>
-            <p className="mt-4 font-serif italic text-2xl md:text-3xl text-primary-foreground/75">
+            <p className="mt-4 font-display italic text-2xl md:text-3xl text-[#c9a86c]/75">
               Mitul succesului peste noapte
             </p>
-            <p className="mt-8 text-lg text-primary-foreground/80 max-w-xl leading-relaxed">
+            <p className="mt-8 text-lg text-[#c9a86c]/80 max-w-xl leading-relaxed">
               O carte scrisă de Alexandru Matescu despre succesul real, construcția personală și profesională, disciplina matură și procesul lung care precede rezultatele durabile.
             </p>
           </div>
@@ -155,7 +155,7 @@ const Book = () => {
             <img
               src={cranditCover.url}
               alt="Coperta cărții CRANDIT — Mitul succesului peste noapte de Alexandru Matescu"
-              className="w-full aspect-[3/4] object-cover border border-primary-foreground/15 shadow-2xl"
+              className="w-full aspect-[3/4] object-cover border border-[#c9a86c]/15 shadow-2xl"
               loading="eager"
             />
           </div>
