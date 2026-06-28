@@ -135,4 +135,7 @@
     background-image: radial-gradient(hsl(var(--foreground) / 0.035) 1px, transparent 1px);
     background-size: 3px 3px;
   }
+  .font-trajan {
+    font-family: 'Trajan Pro', 'Trajan Pro 3', 'Cinzel', serif !important;
+  }
 }
