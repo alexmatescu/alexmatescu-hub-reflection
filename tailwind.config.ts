@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         serif: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
         display: ['Bodoni Moda', 'Fraunces', 'ui-serif', 'Georgia', 'serif'],
+        trajan: ['Trajan Pro', 'Trajan Pro 3', 'Cinzel', 'serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
