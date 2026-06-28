@@ -3,12 +3,14 @@ import { toast } from "@/hooks/use-toast";
 
 type Props = {
   variant?: "default" | "compact";
+  theme?: "default" | "crandit";
   title?: string;
   description?: string;
 };
 
 const NewsletterForm = ({
   variant = "default",
+  theme = "default",
   title = "Lista de așteptare",
   description = "Îți voi trimite doar actualizări relevante despre articole, carte și proiecte.",
 }: Props) => {
