@@ -213,7 +213,7 @@ const SiteLayout = () => {
             <p className="eyebrow mb-5">Urmărește</p>
             <ul className="space-y-3 text-sm">
               {[
-                { label: "LinkedIn", href: "#" },
+                { label: "LinkedIn", href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
                 { label: "Blog (RSS)", href: "/blog" },
                 { label: "X / Twitter", href: "#" },
                 { label: "Facebook", href: "#" },
