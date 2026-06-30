@@ -1,4 +1,18 @@
+import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
+
 export type ProjectStatus = "activ" | "în lucru" | "închis" | "concept";
+
+export type ProjectSection = {
+  eyebrow: string;
+  content?: string;
+  items?: string[];
+};
+
+export type ProjectMetadata = {
+  perioada?: string;
+  categorie?: string;
+  locatie?: string;
+};
 
 export type Project = {
   slug: string;
@@ -6,11 +20,16 @@ export type Project = {
   tagline: string;
   status: ProjectStatus;
   description: string;
-  why: string;
-  problem: string;
-  story: string;
-  lessons: string[];
-  currentStatus: string;
+  // Classic short-form fields (kept for legacy projects).
+  why?: string;
+  problem?: string;
+  story?: string;
+  lessons?: string[];
+  currentStatus?: string;
+  // Rich case-study layout (used by Taste the Corn and future projects).
+  metadata?: ProjectMetadata;
+  sections?: ProjectSection[];
+  logo?: string;
   related: string[]; // post slugs
 };
 
@@ -38,20 +57,90 @@ export const projects: Project[] = [
   {
     slug: "taste-the-corn",
     title: "Taste the Corn",
-    tagline: "Un experiment antreprenorial în lumea reală",
+    tagline: "N-ai cum să-i spui nu",
     status: "închis",
     description:
-      "Concept food testat într-un mall — o lecție directă despre operațiuni, oameni, costuri și diferența dintre o idee bună pe hârtie și o idee care funcționează în piață.",
-    why: "Voiam să înțeleg antreprenoriatul nu din cărți, ci din contact direct cu clientul, cu furnizorii și cu propriile limite.",
-    problem: "Cum construiești un produs simplu, repetabil, profitabil, într-un mediu cu chirie mare și flux variabil de clienți?",
-    story:
-      "Am învățat mai mult în câteva luni de operare decât în ani de teorie. Proiectul a fost închis intenționat după ce a livrat lecțiile pe care le căutam.",
-    lessons: [
-      "Marja se câștigă în detalii operaționale, nu în concept.",
-      "Locația rezolvă sau distruge un business mic.",
-      "A închide la timp este o decizie de business, nu un eșec.",
+      "Taste the Corn a fost un concept de retail alimentar construit în jurul unei idei simple: aducerea pe piața din Sibiu a unei gustări rapide, sănătoase, hrănitoare, puțin calorice și delicioase. A fost un business construit, lansat, operat și testat în condiții reale — și o lecție directă despre idee, execuție și maturitate antreprenorială.",
+    metadata: {
+      perioada: "Implementare Ianuarie – Mai 2025 · Funcționare Mai – Decembrie 2025",
+      categorie: "Antreprenoriat · Retail alimentar · Business local · Testare concept",
+      locatie: "Sibiu, România",
+    },
+    logo: tasteTheCornLogo.url,
+    sections: [
+      {
+        eyebrow: "Despre proiect",
+        content:
+          "Taste the Corn a fost un concept de retail alimentar construit în jurul unei idei simple: aducerea pe piața din Sibiu a unei gustări rapide, sănătoase, hrănitoare, puțin calorice și delicioase.\n\nProiectul a pornit dintr-o nevoie personală. Eu și Ștefana eram mereu în căutarea unor gustări care să susțină un stil alimentar mai atent, mai curat și mai echilibrat. Într-o piață locală saturată de produse congelate, produse de patiserie, covrigi, merdenele, simigerii, fast-food și junk food, simțeam că lipsește o variantă simplă, caldă, gustoasă și mai prietenoasă cu alegerile alimentare de zi cu zi.\n\nTaste the Corn a fost încercarea noastră de a transforma porumbul fiert, un produs familiar și iubit de mulți oameni, într-o experiență modernă de consum rapid, potrivită pentru un centru comercial.\n\nNu a fost doar o idee pe hârtie. A fost un business construit, lansat, operat și testat în condiții reale.",
+      },
+      {
+        eyebrow: "Întrebarea de la care a pornit",
+        content:
+          "Întrebarea de la care a pornit Taste the Corn a fost simplă: Putem găsi un produs pe care să-l iubim noi și pe care să-l putem mânca oricând?\n\nCăutam o gustare care să fie rapidă, dar nu grea. Gustoasă, dar nu încărcată inutil. Sățioasă, dar nu exagerat de calorică. Potrivită pentru o pauză scurtă, pentru o zi aglomerată, pentru cineva care vrea să mănânce ceva bun fără să simtă că face un compromis major în alimentație.\n\nPorumbul fiert avea toate aceste calități. Era simplu. Era cunoscut. Era accesibil. Era hrănitor. Era ușor de personalizat. Și, mai ales, era un produs pe care noi îl consumam cu plăcere.\n\nDe aici a pornit ideea: dacă noi îl căutam, poate îl căutau și alții. Dacă nouă ne lipsea o astfel de opțiune în Sibiu, poate exista un loc real pentru ea într-un centru comercial. Taste the Corn a fost răspunsul nostru la această întrebare.",
+      },
+      {
+        eyebrow: "Ce am construit",
+        content:
+          "În perioada mai – decembrie 2025, Taste the Corn a trecut de la idee la business operațional. Proiectul a inclus: dezvoltarea conceptului, definirea poziționării, crearea brandului, identitatea vizuală, înființarea firmei, alegerea locației, amenajarea punctului de vânzare, selectarea furnizorilor, definirea produselor și a toppingurilor, organizarea fluxului operațional, recrutarea și coordonarea personalului, administrarea activității zilnice, comunicarea pe social media, colaborări cu creatori locali de conținut din Sibiu, relația cu clienții, relația cu autoritățile și instituțiile implicate în funcționarea afacerii.\n\nPentru mine, Taste the Corn a fost una dintre cele mai clare întâlniri cu diferența dintre idee și execuție. Pe hârtie, multe lucruri par simple. În realitate, un business fizic este un mecanism viu, în care fiecare detaliu contează: produsul, oamenii, costurile, programul, comunicarea, traficul, energia echipei, autorizațiile, procedurile și capacitatea de a lua decizii rapide.",
+      },
+      {
+        eyebrow: "Poziționarea produsului",
+        content:
+          "Taste the Corn a fost construit ca alternativă la gustările rapide dominante în spațiile comerciale: produse de patiserie, covrigi, foietaje, produse congelate, fast-food și alte opțiuni grele sau puternic procesate.\n\nNu am vrut să construim doar un produs gustos. Am vrut să construim un produs pe care să-l putem consuma și noi cu încredere. Porumbul fiert avea pentru noi o combinație rară: era rapid, era cald, era gustos, era familiar, era hrănitor, era relativ puțin caloric, era ușor de înțeles, putea fi adaptat prin toppinguri și putea fi servit într-un format modern.\n\nAceastă poziționare a fost importantă pentru felul în care am gândit businessul. Nu încercam să concurăm direct cu fast-food-ul clasic. Încercam să oferim o alternativă mai simplă și mai curată pentru oamenii care voiau ceva rapid, dar nu neapărat greu.",
+      },
+      {
+        eyebrow: "Promovare și colaborări locale",
+        content:
+          "O parte importantă a proiectului a fost promovarea locală. Am lucrat cu creatori locali de conținut din Sibiu pentru a prezenta produsul, conceptul și experiența Taste the Corn către publicul local. Aceste colaborări ne-au ajutat să ducem brandul în fața unor comunități deja formate și să testăm modul în care produsul era perceput în afara comunicării făcute direct de noi.\n\nPentru un business local, astfel de colaborări au o valoare aparte. Nu este vorba doar despre vizibilitate. Este vorba despre încredere transferată. Atunci când un creator local vorbește despre un produs, el nu transmite doar informația că produsul există. Transmite și o formă de validare socială. Pentru un brand nou, aflat la început, acest lucru poate conta enorm.\n\nÎn același timp, am învățat că promovarea nu poate fi făcută doar prin impulsuri punctuale. Colaborările ajută, dar ele trebuie integrate într-o strategie mai clară de comunicare, cu mesaje consecvente, obiective definite și continuitate. Taste the Corn m-a învățat că marketingul local nu înseamnă doar să fii văzut. Înseamnă să fii înțeles, reținut și asociat constant cu o nevoie clară.",
+      },
+      {
+        eyebrow: "Relația cu autoritățile și instituțiile",
+        content:
+          "Taste the Corn a fost și prima mea întâlnire reală cu toate straturile administrative ale unui business fizic din zona alimentară. Funcționarea unei astfel de afaceri nu depinde doar de produs, locație și clienți. Depinde și de relația cu instituțiile care reglementează, verifică și aprobă activitatea.\n\nÎn proces au existat interacțiuni cu instituții precum Registrul Comerțului, ANAF, DSP, DSV, ITM și alte autorități și structuri implicate în funcționarea legală a businessului.\n\nAceastă parte a proiectului a fost una dintre cele mai importante lecții. Am înțeles că, într-un business real, nu este suficient să ai energie, idee, produs și dorință de muncă. Trebuie să înțelegi cadrul legal, procedurile, autorizațiile, documentele, obligațiile și așteptările fiecărei instituții cu care intri în contact.\n\nUn lucru care m-a marcat a fost presiunea implicită ca antreprenorul să cunoască aproape perfect legislația și pașii necesari, chiar și atunci când legislația este generală, interpretabilă sau aplicabilă diferit în funcție de particularitățile fiecărui business. Pe hârtie, regulile par clare. În practică, fiecare afacere are particularități. Locația contează. Produsul contează. Fluxul contează. Echipamentele contează. Angajații contează. Tipul de servire contează. Spațiul contează. Iar multe lucruri le înțelegi cu adevărat abia atunci când treci prin ele.\n\nAm simțit diferența dintre cum se fac lucrurile într-un oraș precum Sibiu și cum eram obișnuit să văd lucrurile în Gorj. În Sibiu am întâlnit un nivel mai ridicat de profesionalism, exigență și presiune administrativă. Asta nu a fost neapărat confortabil, dar a fost formator. M-a obligat să privesc businessul mai matur. Nu ca pe o simplă inițiativă personală. Ci ca pe un mecanism care trebuie să respecte reguli, oameni, proceduri și responsabilități.",
+      },
+      {
+        eyebrow: "Relația cu angajații",
+        content:
+          "Una dintre cele mai importante lecții ale proiectului a fost relația cu angajații. Înainte să ai angajați, este ușor să privești businessul doar prin ochii fondatorului: idee, costuri, vânzări, chirie, produs, promovare, profit, pierdere. Dar în momentul în care alți oameni depind de tine, lucrurile se schimbă.\n\nApar așteptări. Apar responsabilități. Apar programări. Apar nevoi personale. Apar probleme. Apar zile bune și zile grele. Apar diferențe între ce ai vrea să se întâmple și ce se întâmplă efectiv într-o zi normală de lucru.\n\nTaste the Corn m-a învățat că angajații nu sunt doar „resursă umană". Sunt oameni care vin cu propriile așteptări, propriile ritmuri, propriile dificultăți și propria nevoie de stabilitate. Pentru un antreprenor aflat la început, această responsabilitate este mai mare decât pare.\n\nNu administrezi doar un produs. Administrezi și încrederea unor oameni. Administrezi programul lor. Venitul lor. Energia lor. Modul în care înțeleg munca. Modul în care reprezintă brandul în fața clientului. Această parte a fost dificilă, dar extrem de importantă. M-a făcut să înțeleg că un business fizic nu funcționează doar prin ideea fondatorului, ci prin calitatea sistemului pe care îl construiești în jurul oamenilor care îl duc zilnic mai departe.",
+      },
+      {
+        eyebrow: "Ce s-a întâmplat",
+        content:
+          "Businessul a devenit operațional în 2025 și a fost testat în condiții reale de piață. În timpul derulării proiectului, am întâlnit mai mulți factori care au influențat rezultatul final: timing dificil, context economic și socio-politic instabil, consum în scădere, trafic și conversie sub așteptări, marketing insuficient de structurat, dificultăți legate de personal, presiune operațională, costuri fixe, complexitate administrativă, lipsa de experiență într-un business fizic de retail alimentar și dificultatea de a transforma o idee bună într-un sistem sustenabil.\n\nFiecare dintre acești factori a contribuit la concluzia că modelul, în forma testată atunci, nu era suficient de sustenabil. Proiectul a fost finalizat în decembrie 2025, după perioada de testare în piață.",
+      },
+      {
+        eyebrow: "De ce a fost finalizat",
+        content:
+          "Taste the Corn a fost finalizat după ce am înțeles că modelul de business nu avea, în forma respectivă, suficientă stabilitate pentru a continua fără un consum disproporționat de resurse.\n\nDecizia nu a fost una ușoară, dar a fost una necesară. Uneori, maturitatea antreprenorială nu înseamnă să continui cu orice preț. Înseamnă să înțelegi când un proiect și-a oferit lecțiile, când datele sunt suficient de clare și când continuarea lui ar însemna mai mult atașament decât strategie.",
+      },
+      {
+        eyebrow: "Ce am învățat",
+        items: [
+          "Am înțeles că o idee bună nu este suficientă.",
+          "Am înțeles că un produs simplu are nevoie de un sistem foarte clar în spate.",
+          "Am înțeles că traficul nu înseamnă automat vânzări.",
+          "Am înțeles că marketingul nu poate fi făcut haotic și nici lăsat doar în seama entuziasmului de început.",
+          "Am înțeles că oamenii sunt una dintre cele mai importante și mai dificile componente ale unui business fizic.",
+          "Am înțeles că relația cu angajații presupune responsabilitate reală, nu doar coordonare.",
+          "Am înțeles că fiecare instituție, autorizație și procedură face parte din realitatea businessului, chiar dacă antreprenorul aflat la început nu știe mereu ce nu știe.",
+          "Am înțeles că legislația poate fi generală, dar aplicarea ei este plină de particularități.",
+          "Am înțeles că un business alimentar presupune mult mai mult decât produsul pe care îl vinzi.",
+          "Am înțeles că un brand nu trăiește doar prin logo, culori și postări, ci prin experiența completă pe care o oferă clientului.",
+          "Am înțeles că retailul alimentar este mult mai greu decât pare din exterior.",
+          "Și, poate cel mai important, am înțeles că un proiect poate fi valoros chiar și atunci când nu continuă.",
+        ],
+      },
+      {
+        eyebrow: "Ce a rămas după Taste the Corn",
+        content:
+          "Taste the Corn a rămas una dintre cele mai importante experiențe antreprenoriale ale mele. A fost o întâlnire directă cu realitatea businessului fizic, cu presiunea costurilor fixe, cu fragilitatea planurilor, cu responsabilitatea față de angajați, cu exigențele autorităților și cu diferența dintre construcția imaginată și construcția reală.\n\nProiectul a contribuit direct la felul în care privesc astăzi munca, execuția, riscul, disciplina și succesul. Multe dintre ideile pe care le-am explorat ulterior în CRANDIT – Mitul succesului peste noapte au fost confirmate sau clarificate prin această experiență.\n\nTaste the Corn nu a fost doar un business finalizat. A fost o lecție aplicată despre ce înseamnă să construiești ceva în realitate.",
+      },
+      {
+        eyebrow: "Legătura cu celelalte proiecte",
+        content:
+          "Taste the Corn face parte din traseul mai larg prin care am încercat să înțeleg cum se construiesc rezultatele durabile. Dacă afacerea de familie m-a învățat ce înseamnă un business local construit pe nevoi reale, Taste the Corn m-a învățat ce înseamnă să duci un concept nou într-un mediu competitiv, cu presiune operațională ridicată și cu așteptări care trebuie validate rapid de piață.\n\nAceastă experiență a devenit parte din materialul real pe care se sprijină proiectele mele de scris, antreprenoriat și strategie.",
+      },
     ],
-    currentStatus: "Închis. Lecțiile au intrat în următoarele proiecte.",
     related: [],
   },
   {
