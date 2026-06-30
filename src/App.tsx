@@ -13,6 +13,7 @@ import Calatoria from "./pages/Calatoria";
 import ProjectDetail from "./pages/ProjectDetail";
 import Book from "./pages/Book";
 import Contact from "./pages/Contact";
+import AdminAbonati from "./pages/AdminAbonati";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/proiecte/:slug" element={<ProjectDetail />} />
             <Route path="/carte" element={<Book />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin/abonati" element={<AdminAbonati />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

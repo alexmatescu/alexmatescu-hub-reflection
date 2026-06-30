@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 type Props = {
   variant?: "default" | "compact";
@@ -17,17 +18,28 @@ const NewsletterForm = ({
 }: Props) => {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handle = (e: React.FormEvent) => {
+  const handle = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.includes("@")) return;
-    try {
-      const list = JSON.parse(localStorage.getItem("am_waitlist") || "[]");
-      list.push({ email, at: new Date().toISOString() });
-      localStorage.setItem("am_waitlist", JSON.stringify(list));
-    } catch {}
+    setLoading(true);
+    const source = typeof window !== "undefined" ? window.location.pathname : null;
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .insert({ email: email.trim().toLowerCase(), source });
+    setLoading(false);
+    if (error && error.code !== "23505") {
+      toast({ title: "Ceva nu a mers", description: error.message, variant: "destructive" });
+      return;
+    }
     setSent(true);
-    toast({ title: "Mulțumesc.", description: "Te-am adăugat pe listă." });
+    toast({
+      title: "Mulțumesc.",
+      description: error?.code === "23505"
+        ? "Erai deja pe listă."
+        : "Te-am adăugat pe listă.",
+    });
     setEmail("");
   };
 
