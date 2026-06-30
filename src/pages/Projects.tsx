@@ -35,6 +35,16 @@ const Projects = () => {
                   0{i + 1}
                 </div>
                 <div className="md:col-span-7">
+                  {p.slug === "taste-the-corn" && (
+                    <div className="w-20 h-20 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white mb-6">
+                      <img
+                        src={tasteTheCornLogo.url}
+                        alt="Logo Taste the Corn — N-ai cum să-i spui nu"
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <h2 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-balance group-hover:text-primary transition-colors">
                     {p.title}
                   </h2>
