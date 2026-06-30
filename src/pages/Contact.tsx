@@ -99,13 +99,13 @@ const Contact = () => {
             <p className="eyebrow mb-5">Social</p>
             <ul className="space-y-3">
               {[
-                { label: "LinkedIn", icon: Linkedin, href: "#" },
+                { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
                 { label: "X / Twitter", icon: Twitter, href: "#" },
                 { label: "Facebook", icon: Facebook, href: "#" },
                 { label: "Blog (RSS)", icon: Rss, href: "/blog" },
               ].map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} className="inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <a href={s.href} target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined} className="inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                     <s.icon className="h-4 w-4" /> {s.label}
                   </a>
                 </li>

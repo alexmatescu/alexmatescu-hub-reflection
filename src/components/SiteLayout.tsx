@@ -213,13 +213,13 @@ const SiteLayout = () => {
             <p className="eyebrow mb-5">Urmărește</p>
             <ul className="space-y-3 text-sm">
               {[
-                { label: "LinkedIn", href: "#" },
+                { label: "LinkedIn", href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
                 { label: "Blog (RSS)", href: "/blog" },
                 { label: "X / Twitter", href: "#" },
                 { label: "Facebook", href: "#" },
               ].map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={s.href} target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined} className="text-muted-foreground hover:text-foreground transition-colors">
                     {s.label}
                   </a>
                 </li>
