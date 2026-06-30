@@ -495,6 +495,7 @@ const Book = () => {
       <section className="bg-[#151515] container-editorial pb-24 pt-20">
         <NewsletterForm
           theme="crandit"
+          list="crandit"
           title="Intră pe lista de așteptare."
           description="Primii cititori vor primi un fragment înainte de lansare și actualizări despre evoluția manuscrisului. Doar conținut despre carte — nimic altceva."
         />

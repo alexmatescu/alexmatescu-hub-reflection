@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 type Props = {
   variant?: "default" | "compact";
   theme?: "default" | "crandit";
+  list?: "newsletter" | "crandit";
   title?: string;
   description?: string;
 };
@@ -13,6 +14,7 @@ type Props = {
 const NewsletterForm = ({
   variant = "default",
   theme = "default",
+  list = "newsletter",
   title = "Lista de așteptare",
   description = "Îți voi trimite doar actualizări relevante despre articole, carte și proiecte.",
 }: Props) => {
@@ -25,8 +27,9 @@ const NewsletterForm = ({
     if (!email.includes("@")) return;
     setLoading(true);
     const source = typeof window !== "undefined" ? window.location.pathname : null;
+    const table = list === "crandit" ? "crandit_waitlist" : "newsletter_subscribers";
     const { error } = await supabase
-      .from("newsletter_subscribers")
+      .from(table)
       .insert({ email: email.trim().toLowerCase(), source });
     setLoading(false);
     if (error && error.code !== "23505") {
