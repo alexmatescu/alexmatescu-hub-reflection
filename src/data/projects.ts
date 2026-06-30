@@ -277,19 +277,81 @@ export const projects: Project[] = [
   {
     slug: "afacerea-de-familie",
     title: "Afacerea de familie",
-    tagline: "Construit împreună, gestionat cu limite clare",
+    tagline: "Un business local construit pe nevoi reale și pe încredere",
     status: "activ",
     description:
-      "Un proiect antreprenorial dezvoltat în familie, despre cum se construiește un business care îmbină resurse comune, încredere și reguli clare între oameni apropiați.",
-    why: "Familia este cea mai naturală alianță, dar și cel mai sensibil teren pentru decizii de business. Vreau să înțeleg cum funcționează limitele sănătoase.",
-    problem: "Cum separi emoția de decizie într-un business în care partenerii sunt și rude?",
-    story: "În desfășurare. Lecțiile apar din gestionarea zilnică, din roluri și din felul în care comunicăm așteptările.",
-    lessons: [
-      "Rolurile clare salvează relațiile.",
-      "Transparența financiară este obligatorie.",
-      "A face business în familie înseamnă să înveți să ieși din conversații fără să le personalizezi.",
+      "Afacerea de familie este un proiect antreprenorial pornit în aprilie 2021, într-un sat din România, construit în curtea părinților mei. A crescut de la an la an și funcționează și astăzi, administrată în proporție de aproximativ 95% de părinții mei. Este proiectul meu care a atins independența operațională reală: gândit să meargă fără implicarea mea zilnică, și care confirmă acest lucru în prezent.",
+    metadata: {
+      perioada: "Aprilie 2021 – prezent · Business activ și autonom",
+      categorie: "Antreprenoriat de familie · Retail rural · Business local",
+      locatie: "Sat din România · Curtea familiei",
+    },
+    sections: [
+      {
+        eyebrow: "Despre proiect",
+        content: `Afacerea de familie este un proiect antreprenorial pornit în aprilie 2021, în curtea părinților mei, într-un sat din România. A pornit în plină pandemie de COVID-19, când m-am întors acasă și am început o reconstrucție personală — la propriu și la figurat.
+
+În perioada premergătoare am evaluat toate posibilitățile și nevoile pieței. Din rațiuni operaționale, am decis că cel mai bun lucru pe care îl puteam face era ceva pentru părinții mei: o activitate la îndemână, chiar acasă, în curtea în care trăiau zi de zi. Ușor de pus în mișcare — mai ales pentru mama, care lucra deja în domeniu, și pentru tata, care printre oameni este ca peștele în apă — și ușor de administrat de mine de la distanță mai târziu, când nu aveam să mă mai pot implica direct.
+
+Afacerea răspunde nevoilor dinamice ale pieței locale, formată din oamenii din sat, și oferă, pe lângă produsele propriu-zise, și transportul la domiciliu.`,
+      },
+      {
+        eyebrow: "Întrebarea de la care a pornit",
+        content: `Întrebarea de la care a pornit acest proiect a fost: cum pot construi un business stabil pentru părinții mei, care să folosească resursele pe care le avem deja, să răspundă unei nevoi reale din sat și să poată funcționa și fără implicarea mea zilnică?
+
+Nu căutam un concept spectaculos. Căutam ceva potrivit: ușor de început, cu costuri fixe mici, într-un domeniu pe care mama îl cunoștea, într-un loc pe care îl dețineam, cu clienți pe care îi puteam ajunge natural.`,
+      },
+      {
+        eyebrow: "Ce am construit",
+        content: `Am renovat casa bătrânească pe care o foloseam pentru depozitare și am parcurs toți pașii formali: înființarea societății, obținerea autorizațiilor, crearea stocului de produse și stabilirea relației cu furnizorii.
+
+Un avantaj decisiv a fost structura costurilor: spațiul ne aparținea, vânzarea o făceam noi, aprovizionarea o făceam în mare parte tot noi, iar pe alocuri lucram cu furnizori care livrau direct la adresă. Aceste costuri fixe minimaliste ne-au permis să acceptăm o perioadă de germinare mai lungă. Această perioadă s-a dovedit productivă: afacerea a crescut de la an la an, până în prezent.`,
+      },
+      {
+        eyebrow: "Cum funcționează afacerea",
+        items: [
+          "Pornită în aprilie 2021, în plină pandemie de COVID-19.",
+          "Sediul este în curtea familiei, într-un sat din România.",
+          "Costuri fixe minimaliste: spațiu propriu, distribuție proprie, livrare de la furnizori.",
+          "Clienții sunt în principal oamenii din sat și din zona locală.",
+          "Oferă produse de bază și transport la domiciliu.",
+          "A crescut de la an la an, de la lansare până în prezent.",
+        ],
+      },
+      {
+        eyebrow: "Rolul părinților",
+        content: `Mama și tata sunt pilonii operaționali ai afacerii. Mama lucra deja în domeniu, așa că partea tehnică și executivă a venit natural. Tata este omul care se simte bine printre oameni, așa că relația cu clienții și comunicarea zilnică îi sunt apropiate.
+
+De la început, am vrut ca afacerea să fie a lor, nu doar a mea. Am construit-o astfel încât să le ofere activitate, venit și independență, nu doar să devină un al doilea job pe care eu să-l controlez de la distanță.`,
+      },
+      {
+        eyebrow: "De ce a funcționat",
+        content: `Afacerea a funcționat pentru că a fost construită cu realism, nu cu ambiție forțată. Am plecat de la nevoile reale ale comunității locale, de la resursele pe care le aveam deja și de la capacitatea părinților mei de a o duce mai departe.
+
+Am acceptat o perioadă de germinare mai lungă pentru că structura costurilor ne-a permis acest lucru. Nu am forțat scalare rapidă. Nu am presat afacerea să arate într-un fel anume. Am lăsat-o să se așeze și să crească organic, în ritmul pieței locale.`,
+      },
+      {
+        eyebrow: "Stadiul actual",
+        content: `Proiectul este în continuare activ, însă acum este administrat în proporție de aproximativ 95% de către părinții mei. Este, dintre proiectele mele, cel care a atins independența operațională reală — construit deliberat ca să funcționeze fără implicarea mea zilnică, iar astăzi confirmă acest lucru: merge mai departe în mâinile lor, exact așa cum a fost gândit.`,
+      },
+      {
+        eyebrow: "Ce am învățat",
+        items: [
+          "Un business de familie reușit pleacă de la potrivirea reală dintre oameni, abilități și loc.",
+          "Costurile fixe mici permit răbdare și creștere organică.",
+          "Cel mai bun proiect pentru cineva drag nu este neapărat cel mai ambițios, ci cel mai sustenabil.",
+          "Construiești pentru independență atunci când proiectezi sistemul să funcționeze și fără tine.",
+          "Perioada de germinare este o investiție, nu un semn de eșec.",
+          "Încrederea și rolurile clare sunt mai importante decât planurile perfecte în businessul de familie.",
+        ],
+      },
+      {
+        eyebrow: "Legătura cu celelalte proiecte",
+        content: `Afacerea de familie face parte din același traseu de învățare care include Taste the Corn, Atracțiile României și CRANDIT. Dacă Taste the Corn a fost un test în retailul alimentar urban, afacerea de familie a fost lecția despre businessul local construit pe resurse reale, pe relații de încredere și pe răbdare.
+
+A fost un laborator practic pentru ideile despre muncă, construcție pe termen lung și succes real pe care le explorez în scris și în alte proiecte.`,
+      },
     ],
-    currentStatus: "Activ. În evoluție continuă.",
     related: [],
   },
   {
