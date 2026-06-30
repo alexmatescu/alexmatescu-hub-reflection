@@ -102,6 +102,7 @@ const Contact = () => {
                 { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
                 { label: "X / Twitter", icon: Twitter, href: "https://x.com/MatescuAlex" },
                 { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/alexmatescu" },
+                { label: "Instagram", icon: Instagram, href: "https://www.instagram.com/alexmatescu.c" },
                 { label: "Blog (RSS)", icon: Rss, href: "/blog" },
               ].map((s) => (
                 <li key={s.label}>
