@@ -15,7 +15,7 @@ const statusTone: Record<string, string> = {
 const Home = () => {
   const latest = posts.slice(0, 3);
   const crandit = projects.find((p) => p.slug === "crandit")!;
-  const others = projects.filter((p) => p.slug !== "crandit");
+  const latest = posts.slice(0, 3);
 
   return (
     <>
@@ -73,7 +73,7 @@ const Home = () => {
           </div>
           <div className="md:col-span-8">
             <p className="font-serif text-2xl md:text-3xl leading-relaxed text-balance">
-              Inginer prin formație, scriitor prin practică, antreprenor prin experiment. Scriu despre ce văd la întâlnirea dintre tehnologie, muncă și om. Construiesc proiecte care testează ce cred că am înțeles.
+              Sunt Alex Matescu: inginer prin formație, scriitor prin practică, antreprenor prin experiment. Construiesc proiecte personale precum cartea CRANDIT, Taste the Corn, Atracțiile României, afacerea de familie, OVB, afacerea cu haine și direcția GEO / AI Visibility. Scriu despre ce văd la întâlnirea dintre tehnologie, muncă și om.
             </p>
           </div>
         </div>
@@ -163,35 +163,106 @@ const Home = () => {
         <div className="mb-12 max-w-2xl">
           <p className="eyebrow mb-4">Proiecte</p>
           <h2 className="font-serif text-3xl md:text-5xl tracking-tight text-balance">
-            Ce construiesc, ce testez, ce las să se aşeze.
+            Proiecte personale: ce construiesc, ce testez, ce las să se aşeze.
           </h2>
+          <p className="mt-4 text-muted-foreground text-[15px] leading-relaxed">
+            Fiecare proiect este un răspuns la o întrebare reală. Unele sunt active, altele au fost duse până la capăt și închise cu lecții clare.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
-          {others.map((p, i) => (
-            <Link
-              key={p.slug}
-              to={`/proiecte/${p.slug}`}
-              className="group bg-background p-8 md:p-10 flex flex-col gap-6 hover:bg-surface transition-colors duration-500"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <span className="text-xs text-muted-foreground tabular-nums">0{i + 1}</span>
-                <span className={`text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 ${statusTone[p.status]}`}>
-                  {p.status}
+        <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
+          {[
+            projects.find((p) => p.slug === "geo-ai-visibility"),
+            projects.find((p) => p.slug === "taste-the-corn"),
+            projects.find((p) => p.slug === "ovb"),
+            projects.find((p) => p.slug === "atractiile-romaniei"),
+            projects.find((p) => p.slug === "afacerea-de-familie"),
+            projects.find((p) => p.slug === "afacerea-cu-haine"),
+          ]
+            .filter(Boolean)
+            .map((p, i) => (
+              <Link
+                key={p!.slug}
+                to={`/proiecte/${p!.slug}`}
+                className="group bg-background p-8 md:p-10 flex flex-col gap-5 hover:bg-surface transition-colors duration-500"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <span className="text-xs text-muted-foreground tabular-nums">0{i + 1}</span>
+                  <span className={`text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 ${statusTone[p!.status]}`}>
+                    {p!.status}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="font-serif text-3xl md:text-4xl leading-tight text-balance group-hover:text-primary transition-colors">
+                    {p!.title}
+                  </h3>
+                  <p className="mt-2 font-serif italic text-muted-foreground">{p!.tagline}</p>
+                </div>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">{p!.description}</p>
+
+                {p!.metadata && (
+                  <div className="text-xs text-muted-foreground leading-relaxed">
+                    <span className="font-medium text-foreground/70">Fapte: </span>
+                    {[
+                      p!.metadata.perioada,
+                      p!.metadata.locatie,
+                      p!.metadata.categorie,
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </div>
+                )}
+
+                <p className="text-sm text-foreground/80 leading-relaxed border-l-2 border-primary/30 pl-4">
+                  {p!.slug === "geo-ai-visibility" &&
+                    "Răspuns: cum optimizezi prezența unui brand când răspunsul nu mai este o listă de linkuri."}
+                  {p!.slug === "taste-the-corn" &&
+                    "Lecție: o idee bună are nevoie de un sistem clar în spate; marketingul și oamenii fac diferența."}
+                  {p!.slug === "ovb" &&
+                    "Lecție: încrederea se câștigă în ani, nu în pitch-uri."}
+                  {p!.slug === "atractiile-romaniei" &&
+                    "Lecție: ritmul constant bate volumul. Scalabilitatea cere un sistem, nu doar efort individual."}
+                  {p!.slug === "afacerea-de-familie" &&
+                    "Lecție: cel mai bun proiect pentru cineva drag este cel mai sustenabil, nu cel mai ambițios."}
+                  {p!.slug === "afacerea-cu-haine" &&
+                    "Lecție: stocul este un risc, nu un activ. A închide la timp este strategie."}
+                </p>
+
+                <span className="mt-auto inline-flex items-center gap-2 text-sm">
+                  Explorează proiectul <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
-              </div>
-              <div>
-                <h3 className="font-serif text-3xl md:text-4xl leading-tight text-balance group-hover:text-primary transition-colors">
-                  {p.title}
-                </h3>
-                <p className="mt-2 font-serif italic text-muted-foreground">{p.tagline}</p>
-              </div>
-              <p className="text-muted-foreground text-[15px] leading-relaxed">{p.description}</p>
-              <span className="mt-auto inline-flex items-center gap-2 text-sm">
-                Explorează proiectul <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            ))}
+
+          {/* Blogging card */}
+          <Link
+            to="/blog"
+            className="group bg-background p-8 md:p-10 flex flex-col gap-5 hover:bg-surface transition-colors duration-500"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <span className="text-xs text-muted-foreground tabular-nums">07</span>
+              <span className="text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 text-foreground/70 bg-foreground/5">
+                publicație continuă
               </span>
-            </Link>
-          ))}
+            </div>
+            <div>
+              <h3 className="font-serif text-3xl md:text-4xl leading-tight text-balance group-hover:text-primary transition-colors">
+                Blogging
+              </h3>
+              <p className="mt-2 font-serif italic text-muted-foreground">
+                Scriu despre claritate, muncă, sens și omul de lângă tehnologie
+              </p>
+            </div>
+            <p className="text-muted-foreground text-[15px] leading-relaxed">
+              Blog personal cu articole despre tehnologie, antreprenoriat, decizii, identitate și viața de zi cu zi. Conținut migrat din Blogger și publicat continuu.
+            </p>
+            <p className="text-sm text-foreground/80 leading-relaxed border-l-2 border-primary/30 pl-4">
+              Răspuns: cum poți rămâne clar și util într-un mediu inundat de zgomot.
+            </p>
+            <span className="mt-auto inline-flex items-center gap-2 text-sm">
+              Citește articolele <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </Link>
         </div>
       </section>
 
