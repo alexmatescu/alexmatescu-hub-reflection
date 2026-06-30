@@ -224,7 +224,7 @@ const Home = () => {
                   {p!.slug === "afacerea-de-familie" &&
                     "Lecție: cel mai bun proiect pentru cineva drag este cel mai sustenabil, nu cel mai ambițios."}
                   {p!.slug === "afacerea-cu-haine" &&
-                    "Lecție: stocul este un risc, nu un activ. A închide la timp este strategie."}
+                    "Lecție: supraviețuirea e prima formă de succes; riscul de partener și creditul subestimat te învață mai repede decât orice plan."}
                 </p>
 
                 <span className="mt-auto inline-flex items-center gap-2 text-sm">
