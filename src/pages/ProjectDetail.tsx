@@ -116,21 +116,29 @@ const ProjectDetail = () => {
         {hasRichContent ? (
           <div className="pb-8">
             {project.sections!.map((section, i) => (
-              <RichSection key={i} eyebrow={section.eyebrow}>
-                {section.content && (
-                  <div className="whitespace-pre-line leading-relaxed">{section.content}</div>
-                )}
-                {section.items && (
-                  <ul className="space-y-4 list-none p-0">
-                    {section.items.map((item, idx) => (
-                      <li key={idx} className="flex gap-4">
-                        <span className="font-serif text-muted-foreground tabular-nums">0{idx + 1}</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </RichSection>
+              <section
+                key={i}
+                className={`py-16 ${i > 0 ? "border-t border-foreground/10" : ""}`}
+              >
+                <div className="max-w-3xl">
+                  <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-8">{section.eyebrow}</h2>
+                </div>
+                <div className="max-w-3xl prose-editorial">
+                  {section.content && (
+                    <div className="whitespace-pre-line leading-relaxed">{section.content}</div>
+                  )}
+                  {section.items && (
+                    <ul className="space-y-4 list-none p-0">
+                      {section.items.map((item, idx) => (
+                        <li key={idx} className="flex gap-4">
+                          <span className="font-serif text-muted-foreground tabular-nums">0{idx + 1}</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </section>
             ))}
           </div>
         ) : (
