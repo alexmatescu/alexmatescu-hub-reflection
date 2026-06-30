@@ -14,6 +14,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Book from "./pages/Book";
 import Contact from "./pages/Contact";
 import AdminAbonati from "./pages/AdminAbonati";
+import AdminCrandit from "./pages/AdminCrandit";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
