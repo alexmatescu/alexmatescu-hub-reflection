@@ -215,7 +215,7 @@ const SiteLayout = () => {
               {[
                 { label: "LinkedIn", href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
                 { label: "Blog (RSS)", href: "/blog" },
-                { label: "X / Twitter", href: "#" },
+                { label: "X / Twitter", href: "https://x.com/MatescuAlex" },
                 { label: "Facebook", href: "#" },
               ].map((s) => (
                 <li key={s.label}>
