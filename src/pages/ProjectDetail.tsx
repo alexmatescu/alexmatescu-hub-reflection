@@ -20,14 +20,6 @@ const Section = ({ eyebrow, children }: { eyebrow: string; children: React.React
   </section>
 );
 
-const RichSection = ({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) => (
-  <section className="py-16 border-t border-foreground/10 first:border-t-0">
-    <div className="max-w-3xl">
-      <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-8">{eyebrow}</h2>
-    </div>
-    <div className="max-w-3xl prose-editorial">{children}</div>
-  </section>
-);
 
 const ProjectDetail = () => {
   const { slug } = useParams();
