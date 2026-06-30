@@ -214,9 +214,10 @@ const SiteLayout = () => {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "LinkedIn", href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
-                { label: "Blog (RSS)", href: "/blog" },
                 { label: "X / Twitter", href: "https://x.com/MatescuAlex" },
                 { label: "Facebook", href: "https://www.facebook.com/alexmatescu" },
+                { label: "Instagram", href: "https://www.instagram.com/alexmatescu.c" },
+                { label: "Blog (RSS)", href: "/blog" },
               ].map((s) => (
                 <li key={s.label}>
                   <a href={s.href} target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined} className="text-muted-foreground hover:text-foreground transition-colors">
