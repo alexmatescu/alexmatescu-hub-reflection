@@ -15,7 +15,6 @@ const statusTone: Record<string, string> = {
 const Home = () => {
   const latest = posts.slice(0, 3);
   const crandit = projects.find((p) => p.slug === "crandit")!;
-  const latest = posts.slice(0, 3);
 
   return (
     <>
