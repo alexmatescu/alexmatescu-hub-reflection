@@ -289,26 +289,23 @@ export const projects: Project[] = [
     sections: [
       {
         eyebrow: "Despre proiect",
-        content:
-          "Afacerea de familie este un proiect antreprenorial pornit în aprilie 2021, în curtea părinților mei, într-un sat din România. A pornit în plină pandemie de COVID-19, când m-am întors acasă și am început o reconstrucție personală — la propriu și la figurat.
+        content: `Afacerea de familie este un proiect antreprenorial pornit în aprilie 2021, în curtea părinților mei, într-un sat din România. A pornit în plină pandemie de COVID-19, când m-am întors acasă și am început o reconstrucție personală — la propriu și la figurat.
 
 În perioada premergătoare am evaluat toate posibilitățile și nevoile pieței. Din rațiuni operaționale, am decis că cel mai bun lucru pe care îl puteam face era ceva pentru părinții mei: o activitate la îndemână, chiar acasă, în curtea în care trăiau zi de zi. Ușor de pus în mișcare — mai ales pentru mama, care lucra deja în domeniu, și pentru tata, care printre oameni este ca peștele în apă — și ușor de administrat de mine de la distanță mai târziu, când nu aveam să mă mai pot implica direct.
 
-Afacerea răspunde nevoilor dinamice ale pieței locale, formată din oamenii din sat, și oferă, pe lângă produsele propriu-zise, și transportul la domiciliu.",
+Afacerea răspunde nevoilor dinamice ale pieței locale, formată din oamenii din sat, și oferă, pe lângă produsele propriu-zise, și transportul la domiciliu.`,
       },
       {
         eyebrow: "Întrebarea de la care a pornit",
-        content:
-          "Întrebarea de la care a pornit acest proiect a fost: cum pot construi un business stabil pentru părinții mei, care să folosească resursele pe care le avem deja, să răspundă unei nevoi reale din sat și să poată funcționa și fără implicarea mea zilnică?
+        content: `Întrebarea de la care a pornit acest proiect a fost: cum pot construi un business stabil pentru părinții mei, care să folosească resursele pe care le avem deja, să răspundă unei nevoi reale din sat și să poată funcționa și fără implicarea mea zilnică?
 
-Nu căutam un concept spectaculos. Căutam ceva potrivit: ușor de început, cu costuri fixe mici, într-un domeniu pe care mama îl cunoștea, într-un loc pe care îl dețineam, cu clienți pe care îi puteam ajunge natural.",
+Nu căutam un concept spectaculos. Căutam ceva potrivit: ușor de început, cu costuri fixe mici, într-un domeniu pe care mama îl cunoștea, într-un loc pe care îl dețineam, cu clienți pe care îi puteam ajunge natural.`,
       },
       {
         eyebrow: "Ce am construit",
-        content:
-          "Am renovat casa bătrânească pe care o foloseam pentru depozitare și am parcurs toți pașii formali: înființarea societății, obținerea autorizațiilor, crearea stocului de produse și stabilirea relației cu furnizorii.
+        content: `Am renovat casa bătrânească pe care o foloseam pentru depozitare și am parcurs toți pașii formali: înființarea societății, obținerea autorizațiilor, crearea stocului de produse și stabilirea relației cu furnizorii.
 
-Un avantaj decisiv a fost structura costurilor: spațiul ne aparținea, vânzarea o făceam noi, aprovizionarea o făceam în mare parte tot noi, iar pe alocuri lucram cu furnizori care livrau direct la adresă. Aceste costuri fixe minimaliste ne-au permis să acceptăm o perioadă de germinare mai lungă. Această perioadă s-a dovedit productivă: afacerea a crescut de la an la an, până în prezent.",
+Un avantaj decisiv a fost structura costurilor: spațiul ne aparținea, vânzarea o făceam noi, aprovizionarea o făceam în mare parte tot noi, iar pe alocuri lucram cu furnizori care livrau direct la adresă. Aceste costuri fixe minimaliste ne-au permis să acceptăm o perioadă de germinare mai lungă. Această perioadă s-a dovedit productivă: afacerea a crescut de la an la an, până în prezent.`,
       },
       {
         eyebrow: "Cum funcționează afacerea",
@@ -323,22 +320,19 @@ Un avantaj decisiv a fost structura costurilor: spațiul ne aparținea, vânzare
       },
       {
         eyebrow: "Rolul părinților",
-        content:
-          "Mama și tata sunt pilonii operaționali ai afacerii. Mama lucra deja în domeniu, așa că partea tehnică și executivă a venit natural. Tata este omul care se simte bine printre oameni, așa că relația cu clienții și comunicarea zilnică îi sunt apropiate.
+        content: `Mama și tata sunt pilonii operaționali ai afacerii. Mama lucra deja în domeniu, așa că partea tehnică și executivă a venit natural. Tata este omul care se simte bine printre oameni, așa că relația cu clienții și comunicarea zilnică îi sunt apropiate.
 
-De la început, am vrut ca afacerea să fie a lor, nu doar a mea. Am construit-o astfel încât să le ofere activitate, venit și independență, nu doar să devină un al doilea job pe care eu să-l controlez de la distanță.",
+De la început, am vrut ca afacerea să fie a lor, nu doar a mea. Am construit-o astfel încât să le ofere activitate, venit și independență, nu doar să devină un al doilea job pe care eu să-l controlez de la distanță.`,
       },
       {
         eyebrow: "De ce a funcționat",
-        content:
-          "Afacerea a funcționat pentru că a fost construită cu realism, nu cu ambiție forțată. Am plecat de la nevoile reale ale comunității locale, de la resursele pe care le aveam deja și de la capacitatea părinților mei de a o duce mai departe.
+        content: `Afacerea a funcționat pentru că a fost construită cu realism, nu cu ambiție forțată. Am plecat de la nevoile reale ale comunității locale, de la resursele pe care le aveam deja și de la capacitatea părinților mei de a o duce mai departe.
 
-Am acceptat o perioadă de germinare mai lungă pentru că structura costurilor ne-a permis acest lucru. Nu am forțat scalare rapidă. Nu am presat afacerea să arate într-un fel anume. Am lăsat-o să se așeze și să crească organic, în ritmul pieței locale.",
+Am acceptat o perioadă de germinare mai lungă pentru că structura costurilor ne-a permis acest lucru. Nu am forțat scalare rapidă. Nu am presat afacerea să arate într-un fel anume. Am lăsat-o să se așeze și să crească organic, în ritmul pieței locale.`,
       },
       {
         eyebrow: "Stadiul actual",
-        content:
-          "Proiectul este în continuare activ, însă acum este administrat în proporție de aproximativ 95% de către părinții mei. Este, dintre proiectele mele, cel care a atins independența operațională reală — construit deliberat ca să funcționeze fără implicarea mea zilnică, iar astăzi confirmă acest lucru: merge mai departe în mâinile lor, exact așa cum a fost gândit.",
+        content: `Proiectul este în continuare activ, însă acum este administrat în proporție de aproximativ 95% de către părinții mei. Este, dintre proiectele mele, cel care a atins independența operațională reală — construit deliberat ca să funcționeze fără implicarea mea zilnică, iar astăzi confirmă acest lucru: merge mai departe în mâinile lor, exact așa cum a fost gândit.`,
       },
       {
         eyebrow: "Ce am învățat",
@@ -353,10 +347,9 @@ Am acceptat o perioadă de germinare mai lungă pentru că structura costurilor 
       },
       {
         eyebrow: "Legătura cu celelalte proiecte",
-        content:
-          "Afacerea de familie face parte din același traseu de învățare care include Taste the Corn, Atracțiile României și CRANDIT. Dacă Taste the Corn a fost un test în retailul alimentar urban, afacerea de familie a fost lecția despre businessul local construit pe resurse reale, pe relații de încredere și pe răbdare.
+        content: `Afacerea de familie face parte din același traseu de învățare care include Taste the Corn, Atracțiile României și CRANDIT. Dacă Taste the Corn a fost un test în retailul alimentar urban, afacerea de familie a fost lecția despre businessul local construit pe resurse reale, pe relații de încredere și pe răbdare.
 
-A fost un laborator practic pentru ideile despre muncă, construcție pe termen lung și succes real pe care le explorez în scris și în alte proiecte.",
+A fost un laborator practic pentru ideile despre muncă, construcție pe termen lung și succes real pe care le explorez în scris și în alte proiecte.`,
       },
     ],
     related: [],
