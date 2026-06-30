@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
-import { Mail, Linkedin, Twitter, Facebook, Rss } from "lucide-react";
+import { Mail, Linkedin, Twitter, Facebook, Instagram, Rss } from "lucide-react";
 
 const reasons = ["Colaborare", "Coaching / mentoring", "Media / podcast", "Proiect", "Altceva"];
 
