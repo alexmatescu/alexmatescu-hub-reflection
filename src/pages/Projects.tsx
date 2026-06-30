@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
+import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
 
 const statusTone: Record<string, string> = {
   "activ": "text-emerald-800 bg-emerald-100/60",
@@ -34,6 +35,16 @@ const Projects = () => {
                   0{i + 1}
                 </div>
                 <div className="md:col-span-7">
+                  {p.slug === "taste-the-corn" && (
+                    <div className="w-20 h-20 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white mb-6">
+                      <img
+                        src={tasteTheCornLogo.url}
+                        alt="Logo Taste the Corn — N-ai cum să-i spui nu"
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <h2 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-balance group-hover:text-primary transition-colors">
                     {p.title}
                   </h2>

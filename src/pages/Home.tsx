@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
 import cranditCover from "@/assets/crandit-cover.png.asset.json";
+import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
@@ -191,6 +192,16 @@ const Home = () => {
                     {p!.status}
                   </span>
                 </div>
+                {p!.slug === "taste-the-corn" && (
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white">
+                    <img
+                      src={tasteTheCornLogo.url}
+                      alt="Logo Taste the Corn — N-ai cum să-i spui nu"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <div>
                   <h3 className="font-serif text-3xl md:text-4xl leading-tight text-balance group-hover:text-primary transition-colors">
                     {p!.title}
