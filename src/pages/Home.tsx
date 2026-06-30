@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
+import cranditCover from "@/assets/crandit-cover.png.asset.json";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
