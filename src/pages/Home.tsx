@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
+import cranditCover from "@/assets/crandit-cover.png.asset.json";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
@@ -114,44 +115,45 @@ const Home = () => {
       </section>
 
       {/* FEATURED PROJECT — CRANDIT */}
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-[#151515] text-[#f5f0e8]">
         <div className="container-editorial py-20 md:py-32 grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.22em] text-primary-foreground/60 mb-6">
+            <p className="text-xs uppercase tracking-[0.22em] text-[#c9a86c]/70 mb-6">
               Proiect principal · Carte în lucru
             </p>
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance">
+            <h2 className="font-trajan text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance text-[#c9a86c]">
               CRANDIT
-              <span className="block text-primary-foreground/70 text-2xl md:text-3xl mt-3 italic">
+              <span className="block text-[#c9a86c]/80 text-2xl md:text-3xl mt-3 italic font-serif">
                 Mitul succesului peste noapte
               </span>
             </h2>
-            <p className="mt-8 text-primary-foreground/80 text-lg leading-relaxed max-w-xl">
+            <p className="mt-8 text-[#f5f0e8]/80 text-lg leading-relaxed max-w-xl">
               O carte despre ce se află, de fapt, sub poveștile de succes pe care le admirăm. Despre disciplină, identitate, timp și iluzia ascensiunii rapide.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 to="/carte"
-                className="inline-flex items-center gap-2 h-12 px-6 bg-primary-foreground text-primary text-sm tracking-wide hover:bg-primary-foreground/90 transition-colors"
+                className="inline-flex items-center gap-2 h-12 px-6 bg-[#c9a86c] text-[#151515] text-sm tracking-wide hover:bg-[#c9a86c]/90 transition-colors"
               >
                 Despre carte <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/proiecte/crandit"
-                className="inline-flex items-center gap-2 h-12 px-6 border border-primary-foreground/30 text-sm tracking-wide hover:bg-primary-foreground hover:text-primary transition-colors"
+                className="inline-flex items-center gap-2 h-12 px-6 border border-[#c9a86c]/40 text-[#c9a86c] text-sm tracking-wide hover:bg-[#c9a86c]/10 transition-colors"
               >
                 Pagina proiectului
               </Link>
             </div>
           </div>
           <div className="md:col-span-5">
-            <div className="aspect-[3/4] bg-primary-foreground/5 border border-primary-foreground/15 flex flex-col items-center justify-center p-8 text-center">
-              <p className="text-xs uppercase tracking-[0.22em] text-primary-foreground/50 mb-6">Carte · 2026</p>
-              <p className="font-serif text-5xl leading-none">CRANDIT</p>
-              <div className="my-8 h-px w-12 bg-primary-foreground/30" />
-              <p className="font-serif italic text-primary-foreground/70">Mitul succesului peste noapte</p>
-              <p className="mt-auto pt-12 text-xs text-primary-foreground/40">Alex Matescu</p>
-            </div>
+            <Link to="/carte" className="block group">
+              <img
+                src={cranditCover.url}
+                alt="Coperta cărții CRANDIT — Mitul succesului peste noapte de Alexandru Matescu"
+                className="w-full aspect-[3/4] object-cover border border-[#c9a86c]/15 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+            </Link>
           </div>
         </div>
       </section>
