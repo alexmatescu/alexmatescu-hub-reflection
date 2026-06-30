@@ -357,19 +357,67 @@ A fost un laborator practic pentru ideile despre muncă, construcție pe termen 
   {
     slug: "afacerea-cu-haine",
     title: "Afacerea cu haine",
-    tagline: "Produs fizic, decizii reale, lecții de retail",
+    tagline: "Primul magazin, primul eșec, prima lecție reală de antreprenoriat",
     status: "închis",
     description:
-      "Un experiment antreprenorial în lumea produselor fizice — haine și accesorii. O lecție despre stocuri, sezonalitate, gustul clienților și diferența dintre a vrea un produs și a-l vinde sustenabil.",
-    why: "Voiam să înțeleg retailul din interior: aprovizionare, marjă, rotirea stocului și relația cu clientul final.",
-    problem: "Cum construiești un brand de produse fizice fără capital uriaș și fără a rămâne cu stocuri blocate?",
-    story: "Proiectul a funcționat o perioadă, a livrat lecții și a fost închis intenționat înainte să devină o capcană de cash-flow.",
-    lessons: [
-      "Stocul este un risc, nu un activ.",
-      "Sezonalitatea poate distruge un business cu marjă bună.",
-      "A închise la timp este parte din strategie.",
+      "Primul meu proiect antreprenorial: un magazin de haine pornit în primăvara lui 2017, împreună cu un coleg de la call center. Finanțat printr-un credit, închis la scurt timp după lansare. Mi-a rămas o oglindă, o plapumă și un credit de peste 20.000 de lei — și prima lecție serioasă despre risc, parteneriat și supraviețuire în antreprenoriat.",
+    metadata: {
+      perioada: "Primăvara 2017 · Primul proiect antreprenorial",
+      categorie: "Retail · Modă · Primul business · Eșec formator",
+      locatie: "România",
+    },
+    sections: [
+      {
+        eyebrow: "Despre proiect",
+        content: `În primăvara lui 2017, atras de lumea afacerilor și de promisiunea libertății financiare, am devenit investitor pentru prima dată. Alături de un coleg de la call center, am pornit ceea ce ni se părea o oportunitate excelentă: un magazin de haine. Planul era simplu — și tocmai simplitatea lui aparentă ar fi trebuit să-mi dea de gândit.
+
+Am făcut un credit ca să-l pornim. La momentul respectiv nu îl percepeam ca pe un risc, ci ca pe o investiție în viitor. Doar că viitorul avea alte planuri. Business-ul nu a funcționat, iar la scurt timp după lansare asociatul meu a decis să plece din țară. Am rămas cu o oglindă, o plapumă și un credit de peste 20.000 de lei — o sumă uriașă pentru posibilitățile mele de atunci.`,
+      },
+      {
+        eyebrow: "Întrebarea de la care a pornit",
+        content: `Pot transforma entuziasmul pentru lumea afacerilor și dorința de libertate financiară într-un business real, alături de un partener, fără experiență prealabilă?
+
+Răspunsul, descoperit pe pielea mea, a fost că entuziasmul și un partener nu sunt suficiente. Un business cere ceva ce nu aveam încă: experiență, evaluare lucidă a riscului și un cadru clar pentru ce se întâmplă atunci când lucrurile merg prost.`,
+      },
+      {
+        eyebrow: "Ce s-a întâmplat",
+        content: `Am pornit magazinul cu un credit, fără rezerve și cu un partener cu care nu definisem clar ce facem dacă proiectul nu funcționează. Vânzările n-au confirmat planul. La scurt timp după lansare, asociatul meu a plecat din țară, iar întreaga povară financiară și operațională a rămas pe mine.
+
+Am închis magazinul. Mi-au rămas câteva obiecte — o oglindă, o plapumă — și un credit de peste 20.000 de lei pe care a trebuit să-l duc singur până la capăt.`,
+      },
+      {
+        eyebrow: "De ce nu a funcționat",
+        items: [
+          "Lipsă de experiență în retail și în construcția unui business.",
+          "Risc de partener subestimat: nicio structură care să protejeze proiectul de decizia unilaterală a asociatului.",
+          "Credit perceput ca investiție sigură, nu ca expunere reală.",
+          "Plan „simplu” pe hârtie, dar fără înțelegerea complexității reale din spate.",
+          "Lipsa unei rezerve financiare și a unui plan B la momentul lansării.",
+        ],
+      },
+      {
+        eyebrow: "Ce am învățat",
+        items: [
+          "Optimismul nu elimină riscul. Entuziasmul de la început nu ține loc de evaluare lucidă a ce se poate strica.",
+          "Entuziasmul nu înlocuiește experiența. Tragerea de a începe nu îți dă instrumentele de a citi piața.",
+          "Riscul de partener e un risc real, nu o notă de subsol. Toată construcția depindea de doi oameni — iar când unul a plecat, povara a rămas pe celălalt.",
+          "„Simplu” nu înseamnă „ușor”. Un plan care pare simplu pe hârtie ascunde de obicei tot ce nu știi încă să vezi.",
+          "Supraviețuirea e prima formă de succes. Înainte să câștigi, trebuie să rămâi în joc.",
+        ],
+      },
+      {
+        eyebrow: "Ce a rămas după acest proiect",
+        content: `A fost primul meu eșec în antreprenoriat și, retrospectiv, unul dintre cele mai formatoare. N-a fost sfârșitul unei povești, ci începutul unei lecții pe care aveam s-o duc mai departe în toate proiectele care au urmat: succesul nu apare când găsești oportunitatea perfectă, ci când supraviețuiești suficient de mult propriilor greșeli încât să înveți din ele.
+
+Creditul a fost plătit până la capăt. Lecția a rămas mai valoroasă decât pierderea.`,
+      },
+      {
+        eyebrow: "Legătura cu celelalte proiecte",
+        content: `Acest prim magazin este punctul zero al traseului meu antreprenorial. Toate proiectele care au urmat — afacerea de familie, Taste the Corn, Atracțiile României — au fost construite pe lecțiile învățate aici: atenție la structura costurilor, prudență în alegerea partenerilor, importanța unei perioade de germinare și diferența dintre o idee bună și un sistem sustenabil.
+
+Multe dintre ideile despre risc, supraviețuire și succes lent care apar în CRANDIT – Mitul succesului peste noapte au rădăcina în această experiență.`,
+      },
     ],
-    currentStatus: "Închis. Lecțiile au fost integrate în alte proiecte.",
     related: [],
   },
 ];
