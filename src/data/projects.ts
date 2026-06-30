@@ -210,18 +210,68 @@ export const projects: Project[] = [
   {
     slug: "atractiile-romaniei",
     title: "Atracțiile României",
-    tagline: "Conținut despre locurile care formează identitatea românească",
-    status: "concept",
+    tagline: "O hartă turistică a României, documentată pe teren",
+    status: "închis",
     description:
-      "Un proiect de content și storytelling despre atracțiile, tradițiile și locurile care definesc România. O direcție de lucru la intersecția dintre turism, cultură și identitate.",
-    why: "Cred că România are o poveste prea fragmentată. Vreau să o adun în forme de conținut clare, utile și frumoase.",
-    problem: "Cum prezinti locurile și tradițiile românești fără clișeu și fără kitsch?",
-    story: "Concept în formare, pornit din observații personale și din experiența de a vedea ce funcționează în conținutul online.",
-    lessons: [
-      "Autenticitatea bate perfectul estetic.",
-      "Conținutul local are nevoie de structură ca să fie descoperit.",
+      "Atracțiile României a fost un proiect de documentare turistică a țării, construit între 2021 și 2023. Un site și un sistem de publicare constantă pe social media, organizate administrativ — pe județe, orașe și localități — cu obiective turistice fotografiate personal, pe teren.",
+    metadata: {
+      perioada: "2021 – 2023 · Doi ani de publicare constantă",
+      categorie: "Turism · Content · Documentare · Patrimoniu",
+      locatie: "România",
+    },
+    sections: [
+      {
+        eyebrow: "Despre proiect",
+        content:
+          "Atracțiile României a fost un proiect personal de documentare turistică a României, construit între 2021 și 2023. A pornit dintr-o observație simplă: România are un patrimoniu turistic remarcabil, dar prost documentat și greu de explorat metodic pentru cineva care vrea să-l descopere cap-coadă.\n\nMi-am propus să construiesc o hartă coerentă a țării, organizată administrativ — pe județe, apoi pe orașe și localități — iar în fiecare loc să documentez obiectivele turistice cu fotografii făcute de mine.",
+      },
+      {
+        eyebrow: "Întrebarea de la care a pornit",
+        content:
+          "Putem construi un loc unic în care un turist român sau străin să găsească, organizat pe județe și localități, toate obiectivele turistice ale României, documentate vizual și descrise clar?\n\nÎn 2021, răspunsul la această întrebare nu exista într-o formă unitară. Informația era fragmentată între bloguri de călătorie, pagini instituționale incomplete și recenzii dispersate. Atracțiile României a fost încercarea mea de a oferi acest răspuns.",
+      },
+      {
+        eyebrow: "Ce am construit",
+        content:
+          "În spatele proiectului au stat un site pe care l-am creat și administrat singur, început în 2021, și paginile de social media asociate. Am publicat constant, în fiecare luni, miercuri și vineri, câte o locație nouă. Ritmul acesta a fost coloana vertebrală a proiectului timp de doi ani.\n\nFiecare locație publicată a presupus deplasare, fotografie pe teren, selecție, editare, documentare a contextului istoric și cultural, redactarea descrierii și publicare în două canale paralele — site și social media.",
+      },
+      {
+        eyebrow: "Cum era organizat conținutul",
+        items: [
+          "Structură administrativă: județ → oraș/localitate → obiectiv turistic.",
+          "Fotografii originale, făcute personal pe teren, nu preluate din surse externe.",
+          "Descrieri scurte, factuale, fără limbaj promoțional.",
+          "Publicare ritmică: luni, miercuri, vineri — o locație nouă în fiecare zi de publicare.",
+          "Distribuție dublă: site propriu + pagini de social media.",
+        ],
+      },
+      {
+        eyebrow: "Viziunea pe termen lung",
+        content:
+          "Pe termen lung îmi doream să depășesc limita efortului individual și să colaborez cu alte entități — autorități locale, fotografi, oameni pasionați de turism — pentru o acoperire mai amplă și mai rapidă a tuturor punctelor de interes din țară. Proiectul era gândit ca o platformă deschisă, nu ca un blog personal.",
+      },
+      {
+        eyebrow: "De ce a fost finalizat",
+        content:
+          "Am finalizat proiectul după doi ani. Creșterea în online a rămas modestă, efortul de a documenta de unul singur o țară întreagă s-a dovedit copleșitor pentru o singură persoană, iar prioritățile mele s-au schimbat între timp.\n\nL-am dus până la capătul pe care mi l-am putut permite ca om care lucra solo. Nu a fost o închidere din eșec, ci o închidere din luciditate: scara proiectului depășea capacitatea unui singur om, iar trecerea la modelul colaborativ ar fi cerut un alt tip de angajament — financiar, organizațional și de timp — pe care nu mi-l puteam asuma în acel moment.",
+      },
+      {
+        eyebrow: "Ce am învățat",
+        items: [
+          "Documentarea unei țări întregi nu este o muncă de o singură persoană.",
+          "Ritmul constant de publicare este mai important decât volumul publicat într-o singură rafală.",
+          "Un proiect de content are nevoie de un model de creștere clar, nu doar de pasiune.",
+          "Diferența dintre o idee bună și o idee sustenabilă este modelul operațional din spate.",
+          "Scalabilitatea nu se rezolvă cu mai mult efort individual, ci cu un sistem care permite contribuția mai multor oameni.",
+          "A închide la timp un proiect este o formă de respect față de el și față de tine.",
+        ],
+      },
+      {
+        eyebrow: "Ce a rămas după Atracțiile României",
+        content:
+          "Atracțiile României a rămas una dintre experiențele mele formative în zona de content, documentare și publicare constantă. M-a învățat ce înseamnă să duci un proiect editorial pe termen lung, ce înseamnă disciplina de publicare și unde se află limita reală a efortului individual.\n\nMulte dintre lecțiile despre scalabilitate, despre diferența dintre idee și sistem, și despre construcția lentă a rezultatelor durabile — lecții care apar și în CRANDIT — au fost confirmate prin acest proiect.",
+      },
     ],
-    currentStatus: "Concept în dezvoltare. Primele direcții de conținut în testare.",
     related: [],
   },
   {
