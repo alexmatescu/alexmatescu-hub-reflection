@@ -70,7 +70,7 @@ const ProjectDetail = () => {
               <img
                 src={project.logo}
                 alt={`Logo ${project.title}`}
-                className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-full bg-[#bcd35f]/20"
+                className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-2xl"
               />
             </div>
           )}
