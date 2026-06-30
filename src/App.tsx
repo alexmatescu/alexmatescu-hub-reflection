@@ -13,6 +13,7 @@ import Calatoria from "./pages/Calatoria";
 import ProjectDetail from "./pages/ProjectDetail";
 import Book from "./pages/Book";
 import Contact from "./pages/Contact";
+import AdminAbonati from "./pages/AdminAbonati";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
