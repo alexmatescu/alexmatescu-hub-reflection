@@ -99,7 +99,7 @@ const Contact = () => {
             <p className="eyebrow mb-5">Social</p>
             <ul className="space-y-3">
               {[
-                { label: "LinkedIn", icon: Linkedin, href: "#" },
+                { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
                 { label: "X / Twitter", icon: Twitter, href: "#" },
                 { label: "Facebook", icon: Facebook, href: "#" },
                 { label: "Blog (RSS)", icon: Rss, href: "/blog" },
