@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 type Props = {
   variant?: "default" | "compact";
