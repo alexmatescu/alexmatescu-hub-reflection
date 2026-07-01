@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
+import ovbLogo from "@/assets/ovb-logo.png.asset.json";
 
 const statusTone: Record<string, string> = {
   "activ": "text-emerald-800 bg-emerald-100/60",
