@@ -8,6 +8,7 @@ const statusTone: Record<string, string> = {
   "activ": "text-emerald-800 bg-emerald-100/60",
   "în lucru": "text-amber-900 bg-amber-100/60",
   "închis": "text-stone-700 bg-stone-200/70",
+  "finalizat": "text-stone-700 bg-stone-200/70",
   "concept": "text-foreground/70 bg-foreground/5",
 };
 
