@@ -193,20 +193,87 @@ export const projects: Project[] = [
   {
     slug: "ovb",
     title: "OVB",
-    tagline: "Educație financiară și distribuție de soluții de protecție",
+    tagline: "Vânzări, educație financiară și dezvoltare personală",
     status: "închis",
     description:
-      "O etapă de lucru în domeniul financiar, unde am învățat cum se construiesc relații de încredere cu clienții, cum se comunică riscul și cum funcționează distribuția de soluții financiare în piața românească.",
+      "OVB a fost una dintre cele mai importante experiențe de dezvoltare personală și profesională din parcursul meu. Am intrat în zona vânzărilor în decembrie 2020 și am finalizat etapa în decembrie 2024, după aproape patru ani de creștere intensă în domeniul asigurărilor de viață, consultanței financiare și educației financiare.",
+    metadata: {
+      perioada: "Decembrie 2020 – Decembrie 2024",
+      categorie: "Vânzări • Consultanță financiară • Educație financiară • Dezvoltare personală",
+      locatie: "România",
+    },
     logo: ovbLogo.url,
-    why: "Voiam să înțeleg mecanismele financiare reale, nu doar teoria, și să lucrez direct cu oameni și decizii cu impact pe termen lung.",
-    problem: "Cum educi oamenii să ia decizii financiare informate într-un mediu cu mult zgomot și oferte agresive?",
-    story: "A fost o experiență de teren despre vânzare consultativă, planificare și relații pe termen lung. Proiectul s-a închis, dar lecțiile rămân în felul în care privesc riscul și încrederea.",
-    lessons: [
-      "Încrederea se câștigă în ani, nu în pitch-uri.",
-      "Oamenii cumpără claritate, nu produse.",
-      "A spune nu la o vânzare greșită este o strategie pe termen lung.",
+    sections: [
+      {
+        eyebrow: "Despre proiect",
+        content:
+          "OVB a fost una dintre cele mai importante experiențe de dezvoltare personală și profesională din parcursul meu.\n\nAm intrat în zona vânzărilor în decembrie 2020, într-o perioadă în care locuiam din nou acasă, la părinți, și în care descoperisem intens educația financiară, investițiile, cursurile online, productivitatea și ideea de creștere accelerată.\n\nParcursesem cursuri basic de educație financiară și investiții, citeam materiale despre bursă și aveam senzația că descoperisem un drum posibil spre libertate financiară. Totul era încă vag, dar suficient de puternic încât să-mi aprindă imaginația.\n\nSimțeam că investițiile ar putea fi șansa mea. Dar, în același timp, aveam nevoie de venituri mai mari ca să pot investi. Așa a apărut ideea de a intra în vânzări.",
+      },
+      {
+        eyebrow: "Întrebarea de la care a pornit",
+        content:
+          "Întrebarea din spatele acestei etape a fost simplă: Cum pot să-mi suplimentez veniturile și să intru într-un domeniu care mă obligă să cresc?\n\nCăutam mai mult decât bani. Căutam un mediu care să mă scoată din zona tehnică, liniară și previzibilă a jobului corporate. Căutam oameni dinamici, conversații despre creștere, educație financiară, dezvoltare personală și posibilitatea de a construi ceva în paralel cu profesia mea de inginer.\n\nDomeniul vânzărilor mă atrăgea pentru că părea locul în care teoria despre comunicare, influență, disciplină, încredere și dezvoltare personală era testată direct în realitate.",
+      },
+      {
+        eyebrow: "Cum a început",
+        content:
+          "Am început să caut oportunități în vânzări. Am aplicat la mai multe joburi și colaborări, dar unul singur urma să conteze cu adevărat.\n\nAșa l-am cunoscut pe Andrei. Era craiovean, locuia în București și ținea interviul cu mine din Timișoara, unde ajunsese pentru întâlniri cu colaboratorii. M-a cucerit încă din primele minute prin energie, naturalețe și felul în care vorbea despre oameni, creștere și oportunitate.\n\nI-am povestit despre mine, despre jobul meu tehnic, despre motivațiile din spatele dorinței de a intra în vânzări și despre faptul că voiam să înțeleg mai bine banii, oamenii și posibilitățile din afara traseului clasic de carieră.\n\nProbabil că și eu am adus ceva în acel interviu. Probabil eram omul potrivit într-un moment în care el își creștea echipa. Ulterior mi-am dat seama că a fost o combinație între cele două: disponibilitatea lui de a construi și energia mea de a începe.\n\nFără să-mi dau seama, ajunsesem într-unul dintre cele mai grele domenii de vânzări din România: asigurările de viață și consultanța financiară.",
+      },
+      {
+        eyebrow: "De ce a fost dificil",
+        content:
+          "Piața de asigurări de viață din România este dificilă. Scepticismul românilor față de acest domeniu este alimentat de mai multe lucruri: lipsă de educație financiară, neîncredere în sistem, experiențe negative, confuzie între consultanță reală și scheme piramidale, plus o moștenire culturală în care încrederea în instituții și în oameni care „vând ceva\" este adesea fragilă.\n\nDar tocmai acest context dificil a făcut experiența valoroasă. A fost locul în care a trebuit să învăț să explic, să ascult, să accept refuzuri, să gestionez scepticismul, să-mi formulez mai clar ideile, să înțeleg diferența dintre a avea dreptate și a câștiga încrederea unui om. Să vorbesc despre bani, risc, familie, viitor și responsabilitate într-un mod care să nu pară teoretic sau agresiv.",
+      },
+      {
+        eyebrow: "Intrarea în activitate",
+        content:
+          "Luna ianuarie 2021 am dedicat-o pregătirii pentru examenul de brokeraj din februarie. Examenul a fost simplu pentru mine, dar procesul a contat mai mult decât rezultatul. Era primul pas formal într-un domeniu complet diferit de inginerie.\n\nAu urmat demersurile administrative pentru colaborare, în paralel cu primele cursuri, seminarii și traininguri. Această parte m-a fascinat. Simțeam că intrasem într-un mediu în care teoria era imediat conectată la practică.\n\nSe vorbea despre vânzări, bani, carieră și obiective, dar și despre creștere personală, obiceiuri, lectură, comunicare, disciplină, prezentare și încredere. Pentru mine, a fost o gură de aer. În locul unei lumi în care oamenii discutau doar despre taskuri, deadline-uri și probleme tehnice, descopeream o comunitate în care oamenii vorbeau despre cum să crească — profesional, financiar și, de multe ori, personal.",
+      },
+      {
+        eyebrow: "Ce am descoperit acolo",
+        content:
+          "OVB a fost primul mediu în care am văzut aplicate multe dintre conceptele pe care le citeam în cărți și le întâlneam în cursuri.\n\nAm descoperit: educația financiară aplicată, vânzările consultative, networkingul, storytellingul personal, importanța prezentării, lucrul cu obiecțiile, motivația de echipă, trainingurile de vânzări, sistemele de incluziune, importanța energiei într-un grup, diferența dintre cunoaștere și aplicare.\n\nFiecare om de acolo avea propria poveste. Unii citeau. Unii urmau cursuri. Unii aveau joburi în paralel. Unii construiau alte proiecte. Unii căutau libertate financiară. Unii căutau validare. Unii căutau o ieșire dintr-o viață care nu îi mai reprezenta. Iar eu eram, într-un fel, unul dintre ei.",
+      },
+      {
+        eyebrow: "Povestea personală și felul în care înveți să te prezinți",
+        content:
+          "Unul dintre lucrurile importante pe care le-am învățat în OVB a fost felul în care îți construiești și îți spui propria poveste.\n\nAm început să înțeleg că oamenii nu reacționează doar la informații. Reacționează la sens, la context, la emoție, la încredere, la felul în care un om își poate explica drumul, motivațiile și direcția.\n\nÎn OVB am învățat să-mi formulez povestea mai clar, să vorbesc despre motivațiile mele, despre obiectivele mele și despre motivele pentru care făceam ceea ce făceam. Asta avea să devină important mult mai târziu, în scris, în brand personal, în CRANDIT și în felul în care îmi construiesc astăzi proiectele.",
+      },
+      {
+        eyebrow: "Ce a fost valoros",
+        content:
+          "Cei aproape patru ani petrecuți în acest mediu au fost una dintre cele mai intense perioade de creștere din viața mea.\n\nAm învățat să lucrez cu oamenii. Am învățat că energia contează. Am învățat că încrederea nu se cere, ci se construiește. Am învățat că vânzarea nu este doar despre produs, ci despre relația dintre oameni. Am învățat că fiecare conversație are în spate frici, speranțe, nevoi și așteptări. Am învățat cât de greu este să construiești consecvent într-un domeniu în care rezultatele depind atât de mult de încredere, recomandări, disciplină și reziliență emoțională.\n\nAm învățat și cât de important este mediul în care te afli. Pentru că, în OVB, m-am simțit mult timp într-un mediu în care oamenii veneau cu zâmbetul pe buze, vorbeau despre creștere și aveau sentimentul că fac parte din ceva mai mare decât activitatea lor zilnică. Pentru mine, asta a contat enorm.",
+      },
+      {
+        eyebrow: "Ce nu a mers așa cum îmi imaginam",
+        content:
+          "Am intrat în vânzări atras de mirajul banilor și de imaginea omului care poate construi venituri mari prin comunicare, influență și muncă. Realitatea a fost mai complexă.\n\nRezultatele financiare nu au venit în ritmul și la nivelul pe care mi le imaginam. Domeniul a fost mult mai greu decât părea din exterior. Scepticismul pieței, dificultatea produsului, nevoia permanentă de prospectare, presiunea obiectivelor și dependența de încrederea oamenilor au făcut ca drumul să fie mai dificil decât planul inițial.\n\nDar tocmai acest lucru a făcut experiența importantă. Dacă rezultatele ar fi venit ușor, probabil nu aș fi învățat atât de mult despre mine.",
+      },
+      {
+        eyebrow: "De ce am finalizat această etapă",
+        content:
+          "În decembrie 2024 am decis să închei colaborarea și să finalizez această etapă. Nu pentru că experiența nu a contat. Dimpotrivă. A contat enorm. Dar simțeam că își oferise lecțiile principale și că era timpul să fac loc pentru următoarea etapă.\n\nDupă ani în care crescusem mai mult decât în multe dintre joburile pe care le avusesem până atunci, am simțit că trebuia să duc mai departe ceea ce învățasem, dar într-o altă formă. OVB devenise o parte importantă din fundația mea. Dar fundația nu este casa. La un moment dat, trebuie să construiești mai departe.",
+      },
+      {
+        eyebrow: "Ce am învățat",
+        items: [
+          "Că vânzările sunt, în primul rând, despre încredere.",
+          "Că educația financiară este încă slab înțeleasă în România.",
+          "Că oamenii au nevoie de claritate înainte să ia decizii bune.",
+          "Că storytellingul personal contează enorm.",
+          "Că mediul în care te afli îți poate accelera dezvoltarea.",
+          "Că dezvoltarea personală devine reală doar când este testată în conversații, refuzuri și responsabilitate.",
+          "Că motivația ajută, dar nu poate înlocui sistemul.",
+          "Că rezultatele nu apar doar pentru că îți dorești mult.",
+          "Că un om poate crește enorm chiar și într-o etapă care nu îi aduce rezultatele financiare sperate.",
+        ],
+      },
+      {
+        eyebrow: "Ce a rămas după OVB",
+        content:
+          "OVB a rămas una dintre cele mai importante fundații ale dezvoltării mele ulterioare. De acolo am luat mai departe interesul pentru educație financiară, vânzări, comunicare, storytelling, leadership, dezvoltare personală și lucrul cu oamenii.\n\nMulte dintre lucrurile care astăzi apar în scrisul meu, în CRANDIT, în proiectele de brand personal și în interesul pentru coaching și mentoring au fost influențate de acea perioadă.\n\nOVB nu a fost doar o colaborare în vânzări. A fost un laborator de dezvoltare personală, încredere, comunicare și confruntare cu realitatea. A fost locul în care am învățat că, uneori, un proiect nu trebuie să fie destinația finală ca să devină o parte esențială din cine ești.",
+      },
     ],
-    currentStatus: "Închis. Experiență integrată în modul de a privi businessul și finanțele personale.",
     related: [],
   },
   {

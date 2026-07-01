@@ -229,8 +229,8 @@ const Home = () => {
                     "Răspuns: cum optimizezi prezența unui brand când răspunsul nu mai este o listă de linkuri."}
                   {p!.slug === "taste-the-corn" &&
                     "Lecție: o idee bună are nevoie de un sistem clar în spate; marketingul și oamenii fac diferența."}
-                  {p!.slug === "ovb" &&
-                    "Lecție: încrederea se câștigă în ani, nu în pitch-uri."}
+                {p!.slug === "ovb" &&
+                  "Lecție: încrederea se câștigă în ani și conversații, nu în pitch-uri; iar mediul potrivit accelerează dezvoltarea."}
                   {p!.slug === "atractiile-romaniei" &&
                     "Lecție: ritmul constant bate volumul. Scalabilitatea cere un sistem, nu doar efort individual."}
                   {p!.slug === "afacerea-de-familie" &&
