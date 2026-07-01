@@ -222,7 +222,7 @@ export const projects: Project[] = [
       {
         eyebrow: "De ce a fost dificil",
         content:
-          "Piața de asigurări de viață din România este dificilă. Scepticismul românilor față de acest domeniu este alimentat de mai multe lucruri: lipsă de educație financiară, neîncredere în sistem, experiențe negative, confuzie între consultanță reală și scheme piramidale, plus o moștenire culturală în care încrederea în instituții și în oameni care „vând ceva" este adesea fragilă.\n\nDar tocmai acest context dificil a făcut experiența valoroasă. A fost locul în care a trebuit să învăț să explic, să ascult, să accept refuzuri, să gestionez scepticismul, să-mi formulez mai clar ideile, să înțeleg diferența dintre a avea dreptate și a câștiga încrederea unui om. Să vorbesc despre bani, risc, familie, viitor și responsabilitate într-un mod care să nu pară teoretic sau agresiv.",
+          "Piața de asigurări de viață din România este dificilă. Scepticismul românilor față de acest domeniu este alimentat de mai multe lucruri: lipsă de educație financiară, neîncredere în sistem, experiențe negative, confuzie între consultanță reală și scheme piramidale, plus o moștenire culturală în care încrederea în instituții și în oameni care „vând ceva\" este adesea fragilă.\n\nDar tocmai acest context dificil a făcut experiența valoroasă. A fost locul în care a trebuit să învăț să explic, să ascult, să accept refuzuri, să gestionez scepticismul, să-mi formulez mai clar ideile, să înțeleg diferența dintre a avea dreptate și a câștiga încrederea unui om. Să vorbesc despre bani, risc, familie, viitor și responsabilitate într-un mod care să nu pară teoretic sau agresiv.",
       },
       {
         eyebrow: "Intrarea în activitate",
