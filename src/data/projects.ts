@@ -427,64 +427,223 @@ A fost un laborator practic pentru ideile despre muncă, construcție pe termen 
     slug: "afacerea-cu-haine",
     title: "Afacerea cu haine",
     tagline: "Primul magazin, primul eșec, prima lecție reală de antreprenoriat",
-    status: "închis",
+    status: "finalizat",
     description:
-      "Primul meu proiect antreprenorial: un magazin de haine pornit în primăvara lui 2017, împreună cu un coleg de la call center. Finanțat printr-un credit, închis la scurt timp după lansare. Mi-a rămas o oglindă, o plapumă și un credit de peste 20.000 de lei — și prima lecție serioasă despre risc, parteneriat și supraviețuire în antreprenoriat.",
+      "Afacerea cu haine a fost prima mea încercare reală de a intra în antreprenoriat. În primăvara anului 2017, alături de un coleg de la call-center, am pornit un magazin de haine în Craiova. Finanțat printr-un credit, businessul nu a funcționat, iar la scurt timp după lansare am rămas cu o oglindă, o plapumă și un credit de peste 20.000 de lei. A fost prima lecție dură despre risc, parteneriat și diferența dintre entuziasm și execuție.",
     metadata: {
-      perioada: "Primăvara 2017 · Primul proiect antreprenorial",
-      categorie: "Retail · Modă · Primul business · Eșec formator",
-      locatie: "România",
+      perioada: "2017 · Primă experiență de business",
+      categorie: "Antreprenoriat • Retail • Primă experiență de business • Lecție financiară",
+      locatie: "Craiova, România",
     },
     sections: [
       {
         eyebrow: "Despre proiect",
-        content: `În primăvara lui 2017, atras de lumea afacerilor și de promisiunea libertății financiare, am devenit investitor pentru prima dată. Alături de un coleg de la call center, am pornit ceea ce ni se părea o oportunitate excelentă: un magazin de haine. Planul era simplu — și tocmai simplitatea lui aparentă ar fi trebuit să-mi dea de gândit.
+        content: `Afacerea cu haine a fost prima mea încercare reală de a intra în antreprenoriat.
 
-Am făcut un credit ca să-l pornim. La momentul respectiv nu îl percepeam ca pe un risc, ci ca pe o investiție în viitor. Doar că viitorul avea alte planuri. Business-ul nu a funcționat, iar la scurt timp după lansare asociatul meu a decis să plece din țară. Am rămas cu o oglindă, o plapumă și un credit de peste 20.000 de lei — o sumă uriașă pentru posibilitățile mele de atunci.`,
+În primăvara anului 2017, atras de lumea afacerilor și de promisiunea libertății financiare, am decis să devin investitor pentru prima dată. Eram student, lucram într-un call-center, mă apropiam de finalul facultății și aveam sentimentul că viața începe să se deschidă în toate direcțiile.
+
+În acel context, alături de un coleg de la call-center care îmi devenise prieten, am pornit ceea ce ni se părea atunci o oportunitate excelentă: un magazin de haine în Craiova.
+
+Planul părea simplu.
+
+Aduceam haine care ne plăceau nouă.
+
+Le vindeam în oraș.
+
+Construiam un business.
+
+Câștigam bani.
+
+Făceam primul pas spre libertatea financiară.
+
+Privind în urmă, simplitatea planului era exact problema lui.`,
       },
       {
         eyebrow: "Întrebarea de la care a pornit",
-        content: `Pot transforma entuziasmul pentru lumea afacerilor și dorința de libertate financiară într-un business real, alături de un partener, fără experiență prealabilă?
+        content: `Întrebarea din spatele proiectului era mai puțin clară decât mi se părea atunci.
 
-Răspunsul, descoperit pe pielea mea, a fost că entuziasmul și un partener nu sunt suficiente. Un business cere ceva ce nu aveam încă: experiență, evaluare lucidă a riscului și un cadru clar pentru ce se întâmplă atunci când lucrurile merg prost.`,
+La suprafață, părea că vrem să construim un magazin de haine.
+
+În realitate, eu căutam ceva mai mult.
+
+Căutam un drum mai rapid.
+
+Căutam o confirmare că pot face business.
+
+Căutam o ieșire din traseul clasic în care termini facultatea, te angajezi și aștepți ani întregi să crești.
+
+Căutam dovada că pot construi ceva pe cont propriu înainte să fi înțeles cu adevărat ce presupune asta.
+
+Afacerea cu haine a pornit mai mult din entuziasm, încredere și dorința de a reuși decât dintr-o analiză matură de business.`,
+      },
+      {
+        eyebrow: "Ce am construit",
+        content: `Proiectul a fost gândit ca un business de retail vestimentar în Craiova.
+
+Ideea era să aducem haine care ni se păreau atractive, să le vindem local și să construim un magazin în jurul gusturilor noastre, al intuiției și al oportunității pe care credeam că o vedem în piață.
+
+Pentru a porni proiectul, am făcut un credit.
+
+La momentul respectiv nu îl percepeam ca pe un risc major.
+
+Îl percepeam ca pe o investiție în viitor.
+
+În mintea mea, creditul era biletul de intrare într-o lume mai mare: lumea antreprenoriatului, a libertății financiare și a oamenilor care nu așteaptă oportunitățile, ci le creează.
+
+Doar că businessul real nu funcționează pe imaginea pe care o ai despre el.
+
+Funcționează pe piață, cashflow, responsabilitate, parteneriate, claritate, experiență și execuție.
+
+Iar toate acestea îmi lipseau aproape complet.`,
       },
       {
         eyebrow: "Ce s-a întâmplat",
-        content: `Am pornit magazinul cu un credit, fără rezerve și cu un partener cu care nu definisem clar ce facem dacă proiectul nu funcționează. Vânzările n-au confirmat planul. La scurt timp după lansare, asociatul meu a plecat din țară, iar întreaga povară financiară și operațională a rămas pe mine.
+        content: `Businessul nu a funcționat.
 
-Am închis magazinul. Mi-au rămas câteva obiecte — o oglindă, o plapumă — și un credit de peste 20.000 de lei pe care a trebuit să-l duc singur până la capăt.`,
+La scurt timp după lansare, asociatul meu a decis să plece din țară. Pentru o perioadă, a păstrat promisiunea de a contribui la plata ratelor. Apoi, treptat, comunicarea s-a rupt.
+
+Am rămas cu o oglindă.
+
+O plapumă.
+
+Și un credit de peste 20.000 de lei.
+
+Pentru posibilitățile mele de atunci, suma era uriașă.
+
+Eram la început de drum, încă student, fără experiență reală de business și fără o stabilitate financiară care să-mi permită să absorb ușor o astfel de lovitură.
+
+A fost primul moment în care am înțeles, brutal, că optimismul nu elimină riscul.
+
+Și că entuziasmul nu înlocuiește experiența.`,
       },
       {
-        eyebrow: "De ce nu a funcționat",
-        items: [
-          "Lipsă de experiență în retail și în construcția unui business.",
-          "Risc de partener subestimat: nicio structură care să protejeze proiectul de decizia unilaterală a asociatului.",
-          "Credit perceput ca investiție sigură, nu ca expunere reală.",
-          "Plan „simplu” pe hârtie, dar fără înțelegerea complexității reale din spate.",
-          "Lipsa unei rezerve financiare și a unui plan B la momentul lansării.",
-        ],
+        eyebrow: "De ce a fost finalizat",
+        content: `Afacerea cu haine s-a încheiat pentru că nu avea fundația necesară ca să continue.
+
+Nu existau suficiente claritate, experiență, structură, validare și responsabilitate împărțită corect între parteneri.
+
+Proiectul fusese construit mai mult pe încredere, entuziasm și promisiunea unei oportunități decât pe un model de business bine înțeles.
+
+În momentul în care asociatul a plecat, iar businessul nu a produs rezultatele așteptate, realitatea a devenit clară: proiectul nu putea merge mai departe în forma respectivă.
+
+A fost finalizat, dar datoria a rămas.
+
+Iar uneori, tocmai lucrurile care rămân după închiderea unui proiect sunt cele care te obligă să înveți lecția până la capăt.`,
       },
       {
         eyebrow: "Ce am învățat",
         items: [
-          "Optimismul nu elimină riscul. Entuziasmul de la început nu ține loc de evaluare lucidă a ce se poate strica.",
-          "Entuziasmul nu înlocuiește experiența. Tragerea de a începe nu îți dă instrumentele de a citi piața.",
-          "Riscul de partener e un risc real, nu o notă de subsol. Toată construcția depindea de doi oameni — iar când unul a plecat, povara a rămas pe celălalt.",
-          "„Simplu” nu înseamnă „ușor”. Un plan care pare simplu pe hârtie ascunde de obicei tot ce nu știi încă să vezi.",
-          "Supraviețuirea e prima formă de succes. Înainte să câștigi, trebuie să rămâi în joc.",
+          "O oportunitate nu este suficientă.",
+          "Faptul că îți place un produs nu înseamnă că piața îl va cumpăra.",
+          "Gustul personal nu ține loc de cercetare de piață.",
+          "Un business nu trebuie construit doar pe entuziasm.",
+          "Asocierea în business trebuie tratată cu maturitate, claritate și responsabilități bine definite.",
+          "Încrederea personală nu este suficientă atunci când nu există acorduri clare, structură și consecințe asumate.",
+          "Un credit făcut pentru business este tot o responsabilitate personală, chiar dacă în mintea ta el aparține „proiectului”.",
+          "Optimismul poate fi periculos atunci când nu este însoțit de calcule, experiență și scenarii realiste.",
+          "Libertatea financiară nu începe cu dorința de a scăpa de muncă, ci cu înțelegerea responsabilității pe care o presupune fiecare decizie financiară.",
+          "Uneori prima lecție despre antreprenoriat nu vine sub forma unui profit, ci sub forma unei datorii.",
         ],
       },
       {
-        eyebrow: "Ce a rămas după acest proiect",
-        content: `A fost primul meu eșec în antreprenoriat și, retrospectiv, unul dintre cele mai formatoare. N-a fost sfârșitul unei povești, ci începutul unei lecții pe care aveam s-o duc mai departe în toate proiectele care au urmat: succesul nu apare când găsești oportunitatea perfectă, ci când supraviețuiești suficient de mult propriilor greșeli încât să înveți din ele.
+        eyebrow: "Lecția despre risc",
+        content: `Până atunci, riscul era pentru mine o idee abstractă.
 
-Creditul a fost plătit până la capăt. Lecția a rămas mai valoroasă decât pierderea.`,
+Un cuvânt folosit în cărți, în filme, în povești despre antreprenori și oameni curajoși.
+
+După afacerea cu haine, riscul a devenit concret.
+
+Avea sumă.
+
+Avea rată.
+
+Avea scadență.
+
+Avea presiune lunară.
+
+Avea consecințe.
+
+Pentru prima dată am înțeles că deciziile luate într-un moment de entuziasm pot produce efecte pe termen lung.
+
+Și că un business nu trebuie analizat doar prin întrebarea „ce se întâmplă dacă merge?”, ci mai ales prin întrebarea „ce se întâmplă dacă nu merge?”.
+
+Aceasta a fost una dintre cele mai importante lecții ale acelei perioade.`,
       },
       {
-        eyebrow: "Legătura cu celelalte proiecte",
-        content: `Acest prim magazin este punctul zero al traseului meu antreprenorial. Toate proiectele care au urmat — afacerea de familie, Taste the Corn, Atracțiile României — au fost construite pe lecțiile învățate aici: atenție la structura costurilor, prudență în alegerea partenerilor, importanța unei perioade de germinare și diferența dintre o idee bună și un sistem sustenabil.
+        eyebrow: "Lecția despre asociere",
+        content: `Afacerea cu haine m-a învățat și cât de importantă este alegerea partenerilor.
 
-Multe dintre ideile despre risc, supraviețuire și succes lent care apar în CRANDIT – Mitul succesului peste noapte au rădăcina în această experiență.`,
+La început, asocierea părea firească.
+
+Aveam energie comună.
+
+Aveam încredere.
+
+Aveam impresia că vrem același lucru.
+
+Doar că, într-un business, nu este suficient să îți placă de cineva sau să ai o relație bună cu el.
+
+Ai nevoie de claritate.
+
+Ai nevoie de roluri definite.
+
+Ai nevoie de responsabilități scrise.
+
+Ai nevoie de aliniere reală.
+
+Ai nevoie să știi ce se întâmplă dacă unul dintre parteneri nu mai poate, nu mai vrea sau nu mai rămâne în proiect.
+
+Eu nu știam atunci aceste lucruri.
+
+Le-am învățat după.
+
+Și le-am învățat scump.`,
+      },
+      {
+        eyebrow: "Lecția despre entuziasm",
+        content: `Entuziasmul este important.
+
+Fără el, probabil că nu începi nimic.
+
+Dar entuziasmul este bun la pornire, nu la susținere.
+
+El poate aprinde motorul, dar nu poate ține loc de combustibil, hartă, mecanică și direcție.
+
+În 2017, am confundat energia de început cu capacitatea de a construi un business.
+
+Aveam încredere.
+
+Aveam dorință.
+
+Aveam sentimentul că am găsit o oportunitate.
+
+Dar nu aveam suficientă experiență, nu aveam un sistem, nu aveam o analiză serioasă a pieței și nu aveam un plan realist pentru situația în care lucrurile nu mergeau conform așteptărilor.
+
+Asta a fost poate cea mai dureroasă diferență dintre ceea ce îmi imaginam și ceea ce am trăit.`,
+      },
+      {
+        eyebrow: "Ce a rămas după afacerea cu haine",
+        content: `După afacerea cu haine a rămas o datorie.
+
+Dar, în timp, a rămas și o lecție.
+
+Aveam să descopăr mai târziu că acel eșec nu reprezenta sfârșitul unei povești. Reprezenta începutul unei maturizări.
+
+Pentru prima dată am înțeles că succesul nu apare atunci când găsești oportunitatea perfectă, ci atunci când supraviețuiești suficient de mult propriilor greșeli pentru a învăța din ele.
+
+Afacerea cu haine a fost primul contact serios cu realitatea antreprenoriatului.
+
+Nu a fost o poveste de succes.
+
+Dar a fost o poveste necesară.
+
+A fost începutul unei relații mult mai lucide cu banii, riscul, încrederea, asocierea și ideea de business.
+
+Fără această experiență, probabil aș fi rămas mult mai mult timp prizonierul imaginii romantice despre antreprenoriat.
+
+Așa am început să înțeleg că businessul nu este despre promisiunea libertății.
+
+Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       },
     ],
     related: [],
