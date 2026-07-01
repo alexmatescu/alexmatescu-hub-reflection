@@ -1,7 +1,7 @@
 import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
 import ovbLogo from "@/assets/ovb-logo.png.asset.json";
 
-export type ProjectStatus = "activ" | "în lucru" | "închis" | "concept";
+export type ProjectStatus = "activ" | "în lucru" | "închis" | "finalizat" | "concept";
 
 export type ProjectSection = {
   eyebrow: string;
