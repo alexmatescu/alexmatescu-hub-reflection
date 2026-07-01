@@ -179,6 +179,7 @@ const Home = () => {
             projects.find((p) => p.slug === "atractiile-romaniei"),
             projects.find((p) => p.slug === "afacerea-de-familie"),
             projects.find((p) => p.slug === "afacerea-cu-haine"),
+            projects.find((p) => p.slug === "blogging"),
           ]
             .filter(Boolean)
             .map((p, i) => (
@@ -229,14 +230,16 @@ const Home = () => {
                     "Răspuns: cum optimizezi prezența unui brand când răspunsul nu mai este o listă de linkuri."}
                   {p!.slug === "taste-the-corn" &&
                     "Lecție: o idee bună are nevoie de un sistem clar în spate; marketingul și oamenii fac diferența."}
-                {p!.slug === "ovb" &&
-                  "Lecție: încrederea se câștigă în ani și conversații, nu în pitch-uri; iar mediul potrivit accelerează dezvoltarea."}
+                  {p!.slug === "ovb" &&
+                    "Lecție: încrederea se câștigă în ani și conversații, nu în pitch-uri; iar mediul potrivit accelerează dezvoltarea."}
                   {p!.slug === "atractiile-romaniei" &&
                     "Lecție: ritmul constant bate volumul. Scalabilitatea cere un sistem, nu doar efort individual."}
                   {p!.slug === "afacerea-de-familie" &&
                     "Lecție: cel mai bun proiect pentru cineva drag este cel mai sustenabil, nu cel mai ambițios."}
                   {p!.slug === "afacerea-cu-haine" &&
                     "Lecție: supraviețuirea e prima formă de succes; riscul de partener și creditul subestimat te învață mai repede decât orice plan."}
+                  {p!.slug === "blogging" &&
+                    "Lecție: scrisul nu începe cu succesul, ci cu claritatea; comunitatea apare din continuitate, nu dintr-un singur text."}
                 </p>
 
                 <span className="mt-auto inline-flex items-center gap-2 text-sm">
@@ -244,36 +247,6 @@ const Home = () => {
                 </span>
               </Link>
             ))}
-
-          {/* Blogging card */}
-          <Link
-            to="/blog"
-            className="group bg-background p-8 md:p-10 flex flex-col gap-5 hover:bg-surface transition-colors duration-500"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <span className="text-xs text-muted-foreground tabular-nums">07</span>
-              <span className="text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 text-foreground/70 bg-foreground/5">
-                publicație continuă
-              </span>
-            </div>
-            <div>
-              <h3 className="font-serif text-3xl md:text-4xl leading-tight text-balance group-hover:text-primary transition-colors">
-                Blogging
-              </h3>
-              <p className="mt-2 font-serif italic text-muted-foreground">
-                Scriu despre claritate, muncă, sens și omul de lângă tehnologie
-              </p>
-            </div>
-            <p className="text-muted-foreground text-[15px] leading-relaxed">
-              Blog personal cu articole despre tehnologie, antreprenoriat, decizii, identitate și viața de zi cu zi. Conținut migrat din Blogger și publicat continuu.
-            </p>
-            <p className="text-sm text-foreground/80 leading-relaxed border-l-2 border-primary/30 pl-4">
-              Răspuns: cum poți rămâne clar și util într-un mediu inundat de zgomot.
-            </p>
-            <span className="mt-auto inline-flex items-center gap-2 text-sm">
-              Citește articolele <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-          </Link>
         </div>
       </section>
 
