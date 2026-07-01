@@ -712,7 +712,7 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       {
         eyebrow: "Ce a rămas după anii de blogging",
         content:
-          "După ani de postări, pauze, reveniri, jurnale și încercări, scrisul a rămas una dintre constantele vieții mele. A rămas chiar și atunci când nu l-am tratat ca prioritate. A rămas chiar și atunci când îl amânam. A rămas chiar și atunci când îl țineam pentru „mai târziu".\n\nÎn 2025 am înțeles că unele lucruri nu dispar doar pentru că le amâni. Ele așteaptă. Iar la un moment dat, dacă sunt suficient de importante, cer să fie aduse în prezent.\n\nPentru mine, bloggingul este proiectul prin care scrisul a trecut de la impuls la direcție. De la viitor la prezent. De la descărcare la claritate. De la text personal la construcție publică.",
+          "După ani de postări, pauze, reveniri, jurnale și încercări, scrisul a rămas una dintre constantele vieții mele. A rămas chiar și atunci când nu l-am tratat ca prioritate. A rămas chiar și atunci când îl amânam. A rămas chiar și atunci când îl țineam pentru \"mai târziu\".\n\nÎn 2025 am înțeles că unele lucruri nu dispar doar pentru că le amâni. Ele așteaptă. Iar la un moment dat, dacă sunt suficient de importante, cer să fie aduse în prezent.\n\nPentru mine, bloggingul este proiectul prin care scrisul a trecut de la impuls la direcție. De la viitor la prezent. De la descărcare la claritate. De la text personal la construcție publică.",
       },
       {
         eyebrow: "Legătura cu celelalte proiecte",
