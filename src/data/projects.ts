@@ -196,9 +196,9 @@ export const projects: Project[] = [
     tagline: "Vânzări, educație financiară și dezvoltare personală",
     status: "închis",
     description:
-      "OVB a fost una dintre cele mai importante experiențe de dezvoltare personală și profesională din parcursul meu. Am intrat în zona vânzărilor în decembrie 2020 și am finalizat etapa în decembrie 2024, după aproape patru ani de creștere intensă în domeniul asigurărilor de viață, consultanței financiare și educației financiare.",
+      "OVB a fost una dintre cele mai importante experiențe de dezvoltare personală și profesională din parcursul meu. Am intrat în zona vânzărilor în decembrie 2022 și am finalizat etapa în decembrie 2024, după doi ani de creștere intensă în domeniul asigurărilor de viață, consultanței financiare și educației financiare.",
     metadata: {
-      perioada: "Decembrie 2020 – Decembrie 2024",
+      perioada: "Decembrie 2022 – Decembrie 2024",
       categorie: "Vânzări • Consultanță financiară • Educație financiară • Dezvoltare personală",
       locatie: "România",
     },
@@ -207,7 +207,7 @@ export const projects: Project[] = [
       {
         eyebrow: "Despre proiect",
         content:
-          "OVB a fost una dintre cele mai importante experiențe de dezvoltare personală și profesională din parcursul meu.\n\nAm intrat în zona vânzărilor în decembrie 2020, într-o perioadă în care locuiam din nou acasă, la părinți, și în care descoperisem intens educația financiară, investițiile, cursurile online, productivitatea și ideea de creștere accelerată.\n\nParcursesem cursuri basic de educație financiară și investiții, citeam materiale despre bursă și aveam senzația că descoperisem un drum posibil spre libertate financiară. Totul era încă vag, dar suficient de puternic încât să-mi aprindă imaginația.\n\nSimțeam că investițiile ar putea fi șansa mea. Dar, în același timp, aveam nevoie de venituri mai mari ca să pot investi. Așa a apărut ideea de a intra în vânzări.",
+          "OVB a fost una dintre cele mai importante experiențe de dezvoltare personală și profesională din parcursul meu.\n\nAm intrat în zona vânzărilor în decembrie 2022, într-o perioadă în care locuiam din nou acasă, la părinți, și în care descoperisem intens educația financiară, investițiile, cursurile online, productivitatea și ideea de creștere accelerată.\n\nParcursesem cursuri basic de educație financiară și investiții, citeam materiale despre bursă și aveam senzația că descoperisem un drum posibil spre libertate financiară. Totul era încă vag, dar suficient de puternic încât să-mi aprindă imaginația.\n\nSimțeam că investițiile ar putea fi șansa mea. Dar, în același timp, aveam nevoie de venituri mai mari ca să pot investi. Așa a apărut ideea de a intra în vânzări.",
       },
       {
         eyebrow: "Întrebarea de la care a pornit",
@@ -227,7 +227,7 @@ export const projects: Project[] = [
       {
         eyebrow: "Intrarea în activitate",
         content:
-          "Luna ianuarie 2021 am dedicat-o pregătirii pentru examenul de brokeraj din februarie. Examenul a fost simplu pentru mine, dar procesul a contat mai mult decât rezultatul. Era primul pas formal într-un domeniu complet diferit de inginerie.\n\nAu urmat demersurile administrative pentru colaborare, în paralel cu primele cursuri, seminarii și traininguri. Această parte m-a fascinat. Simțeam că intrasem într-un mediu în care teoria era imediat conectată la practică.\n\nSe vorbea despre vânzări, bani, carieră și obiective, dar și despre creștere personală, obiceiuri, lectură, comunicare, disciplină, prezentare și încredere. Pentru mine, a fost o gură de aer. În locul unei lumi în care oamenii discutau doar despre taskuri, deadline-uri și probleme tehnice, descopeream o comunitate în care oamenii vorbeau despre cum să crească — profesional, financiar și, de multe ori, personal.",
+          "Luna ianuarie 2023 am dedicat-o pregătirii pentru examenul de brokeraj din februarie. Examenul a fost simplu pentru mine, dar procesul a contat mai mult decât rezultatul. Era primul pas formal într-un domeniu complet diferit de inginerie.\n\nAu urmat demersurile administrative pentru colaborare, în paralel cu primele cursuri, seminarii și traininguri. Această parte m-a fascinat. Simțeam că intrasem într-un mediu în care teoria era imediat conectată la practică.\n\nSe vorbea despre vânzări, bani, carieră și obiective, dar și despre creștere personală, obiceiuri, lectură, comunicare, disciplină, prezentare și încredere. Pentru mine, a fost o gură de aer. În locul unei lumi în care oamenii discutau doar despre taskuri, deadline-uri și probleme tehnice, descopeream o comunitate în care oamenii vorbeau despre cum să crească — profesional, financiar și, de multe ori, personal.",
       },
       {
         eyebrow: "Ce am descoperit acolo",
@@ -242,7 +242,7 @@ export const projects: Project[] = [
       {
         eyebrow: "Ce a fost valoros",
         content:
-          "Cei aproape patru ani petrecuți în acest mediu au fost una dintre cele mai intense perioade de creștere din viața mea.\n\nAm învățat să lucrez cu oamenii. Am învățat că energia contează. Am învățat că încrederea nu se cere, ci se construiește. Am învățat că vânzarea nu este doar despre produs, ci despre relația dintre oameni. Am învățat că fiecare conversație are în spate frici, speranțe, nevoi și așteptări. Am învățat cât de greu este să construiești consecvent într-un domeniu în care rezultatele depind atât de mult de încredere, recomandări, disciplină și reziliență emoțională.\n\nAm învățat și cât de important este mediul în care te afli. Pentru că, în OVB, m-am simțit mult timp într-un mediu în care oamenii veneau cu zâmbetul pe buze, vorbeau despre creștere și aveau sentimentul că fac parte din ceva mai mare decât activitatea lor zilnică. Pentru mine, asta a contat enorm.",
+          "Cei doi ani petrecuți în acest mediu au fost una dintre cele mai intense perioade de creștere din viața mea.\n\nAm învățat să lucrez cu oamenii. Am învățat că energia contează. Am învățat că încrederea nu se cere, ci se construiește. Am învățat că vânzarea nu este doar despre produs, ci despre relația dintre oameni. Am învățat că fiecare conversație are în spate frici, speranțe, nevoi și așteptări. Am învățat cât de greu este să construiești consecvent într-un domeniu în care rezultatele depind atât de mult de încredere, recomandări, disciplină și reziliență emoțională.\n\nAm învățat și cât de important este mediul în care te afli. Pentru că, în OVB, m-am simțit mult timp într-un mediu în care oamenii veneau cu zâmbetul pe buze, vorbeau despre creștere și aveau sentimentul că fac parte din ceva mai mare decât activitatea lor zilnică. Pentru mine, asta a contat enorm.",
       },
       {
         eyebrow: "Ce nu a mers așa cum îmi imaginam",
