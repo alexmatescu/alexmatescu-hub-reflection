@@ -36,11 +36,11 @@ const Projects = () => {
                   0{i + 1}
                 </div>
                 <div className="md:col-span-7">
-                  {p.slug === "taste-the-corn" && (
+                  {(p.slug === "taste-the-corn" || p.slug === "ovb") && (
                     <div className="w-20 h-20 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white mb-6">
                       <img
-                        src={tasteTheCornLogo.url}
-                        alt="Logo Taste the Corn — N-ai cum să-i spui nu"
+                        src={p.slug === "ovb" ? ovbLogo.url : tasteTheCornLogo.url}
+                        alt={`Logo ${p.title}${p.slug === "taste-the-corn" ? " — N-ai cum să-i spui nu" : ""}`}
                         className="w-full h-full object-contain"
                         loading="lazy"
                       />
