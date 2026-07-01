@@ -674,7 +674,7 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       {
         eyebrow: "Cum a început",
         content:
-          "Prima postare online am scris-o în decembrie 2014. Eram încă în perioada în care scrisul trăia mai mult între școală, emoții personale și încercări de exprimare. Nu aveam un plan. Nu aveam o strategie. Nu aveam o direcție clară. Aveam doar nevoia de a scrie.\n\nÎn studenție, blogul a devenit un spațiu în care publicam texte despre dragoste, îndrăgostiți, emoții și felul în care înțelegeam relațiile la vârsta aceea. Uneori, colegii glumeau și mă numeau „Dr. Love". Privind în urmă, zâmbesc. Dar în același timp înțeleg că, dincolo de tonul romantic și de naivitatea specifică vârstei, acolo exista deja o constantă: încercarea de a transforma emoția în cuvinte.\n\nBlogul nu era încă un proiect matur. Dar era un început.",
+          "Prima postare online am scris-o în decembrie 2014. Eram încă în perioada în care scrisul trăia mai mult între școală, emoții personale și încercări de exprimare. Nu aveam un plan. Nu aveam o strategie. Nu aveam o direcție clară. Aveam doar nevoia de a scrie.\n\nÎn studenție, blogul a devenit un spațiu în care publicam texte despre dragoste, îndrăgostiți, emoții și felul în care înțelegeam relațiile la vârsta aceea. Uneori, colegii glumeau și mă numeau \"Dr. Love\". Privind în urmă, zâmbesc. Dar în același timp înțeleg că, dincolo de tonul romantic și de naivitatea specifică vârstei, acolo exista deja o constantă: încercarea de a transforma emoția în cuvinte.\n\nBlogul nu era încă un proiect matur. Dar era un început.",
       },
       {
         eyebrow: "Scrisul ca univers",
