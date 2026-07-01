@@ -26,7 +26,7 @@ const projectDropdownItems = [
   { to: "/proiecte/atractiile-romaniei", label: "Atracțiile României" },
   { to: "/proiecte/afacerea-de-familie", label: "Afacerea de familie" },
   { to: "/proiecte/afacerea-cu-haine", label: "Afacerea cu haine" },
-  { to: "/blog", label: "Blogging" },
+  { to: "/proiecte/blogging", label: "Blogging" },
 ];
 
 const isProjectsActive = (pathname: string) =>

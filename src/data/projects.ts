@@ -648,4 +648,78 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
     ],
     related: [],
   },
+  {
+    slug: "blogging",
+    title: "Blogging",
+    tagline: "De la impuls la direcție",
+    status: "activ",
+    description:
+      "Bloggingul este unul dintre cele mai vechi proiecte personale din parcursul meu. Am început să scriu online în decembrie 2014, iar în 2025 am adus scrisul din viitor în prezent, transformând blogul într-un spațiu de claritate, construcție editorială și comunitate.",
+    metadata: {
+      perioada: "Decembrie 2014 – prezent",
+      categorie: "Scris · Blog personal · Reflecție · Brand personal · Comunitate",
+      locatie: "Blogger · Facebook · LinkedIn · delamatescu.ro",
+    },
+    sections: [
+      {
+        eyebrow: "Despre proiect",
+        content:
+          "Bloggingul este unul dintre cele mai vechi proiecte personale din parcursul meu.\n\nAm scris prima postare online în decembrie 2014, într-o perioadă în care scrisul fusese pentru mine mai ales ceva legat de școală: compuneri, teme, texte, materiale și forme de exprimare evaluate în logica educației formale.\n\nAvusesem succes la scris în școală. Dar era succesul din școală. Nu succesul din lumea reală. Nu succesul dintr-un domeniu pe care poate aveam să-l înțeleg, să-l construiesc sau să-l cunosc mai târziu.\n\nÎn timp, am început să înțeleg că succesul în scris este ceva ce apare secundar. Primul lucru care apare din scris este claritatea. Apoi vine eliberarea. Scrisul te ajută să descarci din tine emoțiile pe care nu le poți exterioriza altfel. Te ajută să vezi mai limpede ce simți, ce gândești, ce trăiești și ce nu ai reușit încă să formulezi.\n\nPentru mine, blogul a fost multă vreme locul în care scrisul a rămas viu, chiar și atunci când eu îl lăsam în fundal.",
+      },
+      {
+        eyebrow: "Întrebarea de la care a pornit",
+        content:
+          "Întrebarea din spatele acestui proiect nu a fost, la început, una strategică. Nu m-am întrebat cum construiesc un brand personal. Nu m-am întrebat cum cresc o comunitate. Nu m-am întrebat cum devin autor.\n\nLa început, întrebarea era mult mai simplă: Ce fac cu lucrurile pe care le simt, le gândesc și nu reușesc să le spun altfel?\n\nBlogul a apărut ca răspuns la această nevoie. Era un spațiu în care puteam să pun în cuvinte lucruri care altfel rămâneau în mine. Emoții, idei, întrebări, observații, dorințe, confuzii, speranțe și forme de sens pe care nu știam încă unde să le duc.\n\nMai târziu, întrebarea s-a schimbat. Nu mai era doar despre descărcare. A devenit despre claritate. Apoi despre continuitate. Apoi despre comunitate. Apoi despre ce poate deveni scrisul atunci când nu îl mai ții suspendat într-un viitor îndepărtat, ci îl aduci în prezent și îl tratezi ca pe o direcție reală.",
+      },
+      {
+        eyebrow: "Cum a început",
+        content:
+          "Prima postare online am scris-o în decembrie 2014. Eram încă în perioada în care scrisul trăia mai mult între școală, emoții personale și încercări de exprimare. Nu aveam un plan. Nu aveam o strategie. Nu aveam o direcție clară. Aveam doar nevoia de a scrie.\n\nÎn studenție, blogul a devenit un spațiu în care publicam texte despre dragoste, îndrăgostiți, emoții și felul în care înțelegeam relațiile la vârsta aceea. Uneori, colegii glumeau și mă numeau \"Dr. Love\". Privind în urmă, zâmbesc. Dar în același timp înțeleg că, dincolo de tonul romantic și de naivitatea specifică vârstei, acolo exista deja o constantă: încercarea de a transforma emoția în cuvinte.\n\nBlogul nu era încă un proiect matur. Dar era un început.",
+      },
+      {
+        eyebrow: "Scrisul ca univers",
+        content:
+          "Scrisul, în sinea lui simplă, aceea de a așeza litere pe hârtie sau pe ecran, este o artă. Există atâtea feluri de scris, atâtea caractere, atâtea tipuri de texte, atâtea categorii și atâtea moduri de a spune un lucru, încât scrisul devine un univers în sine.\n\nPentru mine, acest univers a fost multă vreme ceva ce am ținut pentru viitor. Îl simțeam important. Îl simțeam prezent. Îl simțeam al meu. Dar nu îl aduceam complet în viața mea de zi cu zi.\n\nPostam pe blog ca un adolescent care visa succesul peste noapte, cu speranța vagă că poate, la un moment dat, ceva se va întâmpla. Poate cineva va citi. Poate cineva va observa. Poate se va deschide o ușă. Poate scrisul va deveni într-o zi ceva mai mult.\n\nDoar că, ani la rând, scrisul a rămas într-un viitor îndepărtat.",
+      },
+      {
+        eyebrow: "Continuitatea din spatele pauzelor",
+        content:
+          "Cel mai important lucru nu a fost faptul că am scris constant. Nu am scris constant. Au existat pauze. Uneori pauze lungi. Poate chiar ani întregi. Au existat perioade în care blogul a fost activ, perioade în care a fost abandonat, perioade în care reveneam cu energie și perioade în care dispărea din nou în fundal.\n\nDar scrisul a rămas. Chiar și atunci când nu publicam, scriam în jurnal. Chiar și atunci când nu formulam articole, îmi formulam gânduri. Chiar și atunci când părea că viața mă duce complet în alte direcții — inginerie, corporație, vânzări, business, proiecte, mutări, responsabilități — scrisul continua să existe undeva în fundal.\n\nCa un lucru neterminat. Ca o promisiune amânată. Ca un ceas care continua să penduleze chiar și atunci când eu mă prefăceam că nu-l aud.",
+      },
+      {
+        eyebrow: "Reluarea din 2025",
+        content:
+          "În septembrie 2025 am luat decizia de a aduce scrisul din acel viitor îndepărtat în prezent. Scriam deja de ani buni în jurnal, dar simțeam că exista o parte din mine rămasă suspendată undeva, așteptând să fie luată în serios.\n\nAșa că am revenit la vechiul blog. De data aceasta, nu doar ca o revenire nostalgică. Nu doar ca un impuls de moment. Ci ca o decizie.\n\nLa început, procesul era simplu: postam pe blog și distribuiam pe Facebook. Apoi am început să extind prezența și pe LinkedIn, prin articole și texte adaptate pentru un public mai larg, mai profesional și mai apropiat de zona de carieră, leadership, muncă și dezvoltare personală.\n\nAm înțeles treptat că un autor nu crește doar prin ceea ce scrie, ci și prin comunitatea care începe să se formeze în jurul ideilor sale. Un autor este atât de mare pe cât de mare este comunitatea lui. Iar comunitatea nu apare dintr-un singur text. Apare din continuitate. Din prezență. Din curajul de a publica. Din disponibilitatea de a reveni. Din consecvența de a spune lucrurile care contează, chiar și atunci când reacțiile nu vin imediat.",
+      },
+      {
+        eyebrow: "Ce am construit",
+        content:
+          "Proiectul de blogging a evoluat în timp de la exprimare personală la construcție editorială. A inclus: postări personale; texte despre emoții, relații și introspecție; articole de blog; reflecții despre muncă, succes și disciplină; distribuire pe Facebook; articole publicate pe LinkedIn; texte legate de dezvoltare personală; idei care au dus ulterior la proiecte mai mari; jurnal personal ca spațiu de claritate; reluarea conștientă a scrisului în 2025; mutarea direcției principale către delamatescu.ro.\n\nÎn timp, bloggingul a devenit mai mult decât publicare. A devenit un proces prin care îmi organizez gândirea. Un mod de a transforma experiența în idei. Un spațiu în care pot testa teme, observații, întrebări și structuri care, mai târziu, pot deveni articole, eseuri, cărți sau proiecte.",
+      },
+      {
+        eyebrow: "Legătura cu CRANDIT",
+        content:
+          "Din aproape în aproape, povestea a început să se lege. Reluarea scrisului a dus la apariția ideii unei prime cărți. Apoi la ideea unei cărți pentru un public mai larg: oameni care își doresc schimbarea, dar nu au încă instrumentele prin care să o facă posibilă. Apoi au apărut alte idei. Și încă unele.\n\nDar timpul și perioada de germinare sunt importante și în scris. Poate mai ales în scris. Nu toate ideile trebuie forțate imediat. Unele trebuie lăsate să se așeze. Altele trebuie testate în texte mai mici. Altele trebuie trăite mai mult înainte să poată fi scrise bine.\n\nCRANDIT – Mitul succesului peste noapte a apărut din acest proces. Nu dintr-un plan editorial rece. Ci din ani de scris, jurnal, observații, încercări, eșecuri, muncă, proiecte și întrebări care, la un moment dat, au început să se organizeze într-o formă mai mare.",
+      },
+      {
+        eyebrow: "Ce am învățat",
+        items: [
+          "Bloggingul m-a învățat că scrisul nu începe cu succesul. Începe cu claritatea. Apoi vine eliberarea. Apoi vine disciplina. Apoi vine comunitatea. Apoi, poate, vine și recunoașterea.",
+          "Am învățat că scrisul nu este doar despre talent, inspirație sau idei bune. Este despre revenire. Despre răbdare. Despre asumare. Despre curajul de a publica texte imperfecte. Despre capacitatea de a continua chiar și atunci când reacțiile sunt puține. Despre a accepta că uneori scrii ani întregi înainte ca direcția reală să devină clară.",
+          "Am învățat că scrisul este și oglindă, și instrument. Te arată ție însuți. Dar te și construiește.",
+        ],
+      },
+      {
+        eyebrow: "Ce a rămas după anii de blogging",
+        content:
+          "După ani de postări, pauze, reveniri, jurnale și încercări, scrisul a rămas una dintre constantele vieții mele. A rămas chiar și atunci când nu l-am tratat ca prioritate. A rămas chiar și atunci când îl amânam. A rămas chiar și atunci când îl țineam pentru \"mai târziu\".\n\nÎn 2025 am înțeles că unele lucruri nu dispar doar pentru că le amâni. Ele așteaptă. Iar la un moment dat, dacă sunt suficient de importante, cer să fie aduse în prezent.\n\nPentru mine, bloggingul este proiectul prin care scrisul a trecut de la impuls la direcție. De la viitor la prezent. De la descărcare la claritate. De la text personal la construcție publică.",
+      },
+      {
+        eyebrow: "Legătura cu celelalte proiecte",
+        content:
+          "Bloggingul stă la baza mai multor direcții pe care le construiesc astăzi. A contribuit la apariția cărții CRANDIT – Mitul succesului peste noapte. A influențat dezvoltarea brandului personal Alex Matescu. A creat spațiul în care am început să formulez idei despre muncă, succes, disciplină, antreprenoriat, tehnologie, dezvoltare personală și sens. A pregătit terenul pentru delamatescu.ro, hubul în care scrisul, proiectele, călătoria personală și direcțiile mele viitoare se întâlnesc într-o formă mai clară.\n\nBloggingul nu a fost doar un proiect online. A fost locul în care am învățat să mă ascult, să mă formulez și să aduc în prezent o parte din mine pe care ani la rând am ținut-o în viitor.",
+      },
+    ],
+    related: [],
+  },
 ];
