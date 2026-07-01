@@ -1,4 +1,5 @@
 import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
+import ovbLogo from "@/assets/ovb-logo.png.asset.json";
 
 export type ProjectStatus = "activ" | "în lucru" | "închis" | "concept";
 
@@ -196,6 +197,7 @@ export const projects: Project[] = [
     status: "închis",
     description:
       "O etapă de lucru în domeniul financiar, unde am învățat cum se construiesc relații de încredere cu clienții, cum se comunică riscul și cum funcționează distribuția de soluții financiare în piața românească.",
+    logo: ovbLogo.url,
     why: "Voiam să înțeleg mecanismele financiare reale, nu doar teoria, și să lucrez direct cu oameni și decizii cu impact pe termen lung.",
     problem: "Cum educi oamenii să ia decizii financiare informate într-un mediu cu mult zgomot și oferte agresive?",
     story: "A fost o experiență de teren despre vânzare consultativă, planificare și relații pe termen lung. Proiectul s-a închis, dar lecțiile rămân în felul în care privesc riscul și încrederea.",

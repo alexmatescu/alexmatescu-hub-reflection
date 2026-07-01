@@ -3,6 +3,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
 import cranditCover from "@/assets/crandit-cover.png.asset.json";
 import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
+import ovbLogo from "@/assets/ovb-logo.png.asset.json";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
@@ -192,11 +193,11 @@ const Home = () => {
                     {p!.status}
                   </span>
                 </div>
-                {p!.slug === "taste-the-corn" && (
+                {(p!.slug === "taste-the-corn" || p!.slug === "ovb") && (
                   <div className="w-24 h-24 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white">
                     <img
-                      src={tasteTheCornLogo.url}
-                      alt="Logo Taste the Corn — N-ai cum să-i spui nu"
+                      src={p!.slug === "ovb" ? ovbLogo.url : tasteTheCornLogo.url}
+                      alt={`Logo ${p!.title}${p!.slug === "taste-the-corn" ? " — N-ai cum să-i spui nu" : ""}`}
                       className="w-full h-full object-contain"
                       loading="lazy"
                     />
