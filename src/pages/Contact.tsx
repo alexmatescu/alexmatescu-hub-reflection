@@ -112,9 +112,10 @@ const Contact = () => {
           </label>
           <button
             type="submit"
-            className="h-12 px-8 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary/90 transition-colors"
+            disabled={submitting}
+            className="h-12 px-8 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary/90 transition-colors disabled:opacity-60"
           >
-            Trimite mesajul
+            {submitting ? "Se trimite…" : "Trimite mesajul"}
           </button>
         </form>
 
