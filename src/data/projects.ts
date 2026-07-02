@@ -9,6 +9,11 @@ export type ProjectSection = {
   items?: string[];
 };
 
+export type ProjectFAQ = {
+  question: string;
+  answer: string;
+};
+
 export type ProjectMetadata = {
   perioada?: string;
   categorie?: string;
@@ -30,6 +35,7 @@ export type Project = {
   // Rich case-study layout (used by Taste the Corn and future projects).
   metadata?: ProjectMetadata;
   sections?: ProjectSection[];
+  faq?: ProjectFAQ[];
   logo?: string;
   related: string[]; // post slugs
 };
