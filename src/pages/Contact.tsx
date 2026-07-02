@@ -89,8 +89,8 @@ const Contact = () => {
         <aside className="lg:col-span-5 space-y-10">
           <div>
             <p className="eyebrow mb-5">Direct</p>
-            <a href="mailto:hello@alexmatescu.ro" className="inline-flex items-center gap-3 font-serif text-2xl link-underline">
-              <Mail className="h-5 w-5" /> hello@alexmatescu.ro
+            <a href="mailto:alexmatescu.c@gmail.com" className="inline-flex items-center gap-3 font-serif text-2xl link-underline">
+              <Mail className="h-5 w-5" /> alexmatescu.c@gmail.com
             </a>
             <p className="mt-3 text-sm text-muted-foreground">Pentru orice subiect care merită un răspuns scris.</p>
           </div>
