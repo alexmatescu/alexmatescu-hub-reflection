@@ -3,6 +3,12 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { posts } from "@/data/posts";
 import NewsletterForm from "@/components/NewsletterForm";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const statusTone: Record<string, string> = {
   activ: "text-emerald-800 bg-emerald-100/60",
