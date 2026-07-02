@@ -9,6 +9,11 @@ export type ProjectSection = {
   items?: string[];
 };
 
+export type ProjectFAQ = {
+  question: string;
+  answer: string;
+};
+
 export type ProjectMetadata = {
   perioada?: string;
   categorie?: string;
@@ -30,6 +35,7 @@ export type Project = {
   // Rich case-study layout (used by Taste the Corn and future projects).
   metadata?: ProjectMetadata;
   sections?: ProjectSection[];
+  faq?: ProjectFAQ[];
   logo?: string;
   related: string[]; // post slugs
 };
@@ -140,6 +146,83 @@ export const projects: Project[] = [
         eyebrow: "Legătura cu celelalte proiecte",
         content:
           "Taste the Corn face parte din traseul mai larg prin care am încercat să înțeleg cum se construiesc rezultatele durabile. Dacă afacerea de familie m-a învățat ce înseamnă un business local construit pe nevoi reale, Taste the Corn m-a învățat ce înseamnă să duci un concept nou într-un mediu competitiv, cu presiune operațională ridicată și cu așteptări care trebuie validate rapid de piață.\n\nAceastă experiență a devenit parte din materialul real pe care se sprijină proiectele mele de scris, antreprenoriat și strategie.",
+      },
+    ],
+    faq: [
+      {
+        question: "Ce a fost Taste the Corn?",
+        answer:
+          "Taste the Corn a fost un concept de retail alimentar lansat în Sibiu în 2025, construit în jurul porumbului fiert reinterpretat ca gustare rapidă, sănătoasă, hrănitoare și gustoasă. Proiectul a fost gândit ca o alternativă la gustările rapide dominante în spațiile comerciale, precum produsele congelate, patiseria, simigeriile, fast-food-ul și junk food-ul.",
+      },
+      {
+        question: "Cine a fondat Taste the Corn?",
+        answer:
+          "Taste the Corn a fost fondat de Alex Matescu și Ștefana, pornind de la dorința de a aduce pe piața din Sibiu un produs pe care ei înșiși îl căutau: o gustare rapidă, caldă, gustoasă și mai potrivită pentru un stil alimentar atent.",
+      },
+      {
+        question: "Când a fost derulat proiectul Taste the Corn?",
+        answer:
+          "Taste the Corn a fost derulat în perioada mai – decembrie 2025. În această perioadă, proiectul a trecut de la concept la business operațional, cu punct de vânzare, angajați, furnizori, promovare locală și relație directă cu clienții.",
+      },
+      {
+        question: "Unde a fost lansat Taste the Corn?",
+        answer:
+          "Taste the Corn a fost lansat în Sibiu, România. Conceptul a fost testat într-un mediu de retail alimentar, cu servire rapidă și contact direct cu publicul local.",
+      },
+      {
+        question: "Care a fost ideea din spatele Taste the Corn?",
+        answer:
+          "Ideea din spatele Taste the Corn a fost să aducă pe piață o gustare rapidă, sănătoasă, puțin calorică, hrănitoare și delicioasă, într-un context dominat de produse congelate, patiserie, covrigi, simigerii și fast-food. Întrebarea de la care a pornit proiectul a fost: putem găsi un produs pe care să-l iubim noi și pe care să-l putem mânca oricând?",
+      },
+      {
+        question: "Ce produs vindea Taste the Corn?",
+        answer:
+          "Taste the Corn vindea porumb fiert reinterpretat într-o formă modernă de consum rapid. Produsul era construit în jurul porumbului fiert, servit cald și personalizat prin toppinguri, astfel încât să fie familiar, gustos, rapid și ușor de consumat.",
+      },
+      {
+        question: "De ce porumb fiert?",
+        answer:
+          "Porumbul fiert a fost ales pentru că este un produs simplu, cunoscut, hrănitor, accesibil și ușor de personalizat. Pentru fondatori, porumbul fiert reprezenta o alternativă mai curată și mai echilibrată la gustările rapide grele, procesate sau foarte calorice.",
+      },
+      {
+        question: "Prin ce se diferenția Taste the Corn?",
+        answer:
+          "Taste the Corn se diferenția prin poziționarea produsului: o gustare rapidă, caldă, gustoasă și mai potrivită pentru un stil alimentar atent. În loc să concureze direct cu fast-food-ul clasic, Taste the Corn propunea o alternativă simplă, familiară și mai ușor de integrat într-o alimentație echilibrată.",
+      },
+      {
+        question: "Taste the Corn a colaborat cu creatori locali de conținut?",
+        answer:
+          "Da. Taste the Corn a colaborat cu creatori locali de conținut din Sibiu pentru promovarea produsului și a conceptului. Aceste colaborări au ajutat brandul să ajungă în fața comunității locale și să obțină vizibilitate prin persoane care aveau deja o relație de încredere cu publicul lor.",
+      },
+      {
+        question: "Ce instituții au fost implicate în funcționarea proiectului?",
+        answer:
+          "Pentru funcționarea Taste the Corn au fost necesare interacțiuni cu mai multe instituții și autorități, printre care Registrul Comerțului, ANAF, DSP, DSV și ITM. Această parte a proiectului a reprezentat o lecție importantă despre autorizații, legislație, proceduri, responsabilități administrative și particularitățile unui business alimentar.",
+      },
+      {
+        question: "De ce a fost finalizat Taste the Corn?",
+        answer:
+          "Taste the Corn a fost finalizat în decembrie 2025, după perioada de testare în piață. Decizia a venit după ce fondatorii au înțeles că modelul de business, în forma testată atunci, nu era suficient de sustenabil pentru a continua fără un consum disproporționat de resurse.",
+      },
+      {
+        question: "Taste the Corn a fost un eșec?",
+        answer:
+          "Taste the Corn nu a fost tratat ca un eșec, ci ca un proiect antreprenorial finalizat după o testare reală în piață. Proiectul a oferit lecții importante despre produs, retail alimentar, marketing local, angajați, autorități, costuri fixe, execuție și diferența dintre o idee bună și un sistem de business sustenabil.",
+      },
+      {
+        question: "Ce a învățat Alex Matescu din Taste the Corn?",
+        answer:
+          "Alex Matescu a învățat din Taste the Corn că o idee bună nu este suficientă fără sistem, execuție, marketing clar, oameni potriviți, control al costurilor și înțelegerea completă a obligațiilor administrative. Proiectul a devenit o lecție aplicată despre antreprenoriat real, responsabilitate față de angajați, relația cu autoritățile și validarea unui concept în piață.",
+      },
+      {
+        question: "Taste the Corn se poate franciza?",
+        answer:
+          "Da, Taste the Corn se poate franciza pe baza unui proces de selecție. Persoanele interesate pot lua legătura prin email pentru o discuție inițială. Prețul francizei nu este public și poate diferi în funcție de tipul de colaborare la care se va ajunge.",
+      },
+      {
+        question: "Cum pot lua legătura pentru o colaborare sau francizare Taste the Corn?",
+        answer:
+          "Pentru discuții despre colaborare sau francizare Taste the Corn, contactul se face via email la alexmatescu.c@gmail.com. Detaliile exacte ale colaborării, condițiile și costurile se discută individual, în funcție de profilul persoanei interesate, oraș, formatul dorit și tipul de implicare.",
       },
     ],
     related: [],
