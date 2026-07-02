@@ -178,6 +178,36 @@ const ProjectDetail = () => {
         )}
       </div>
 
+      {project.faq && project.faq.length > 0 && (
+        <section className="border-y border-foreground/10 bg-surface/40">
+          <div className="container-editorial py-16">
+            <div className="grid md:grid-cols-12 gap-10">
+              <div className="md:col-span-4">
+                <p className="eyebrow">Întrebări frecvente</p>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  Răspunsuri la cele mai comune curiozități despre {project.title}.
+                </p>
+              </div>
+              <div className="md:col-span-8">
+                <Accordion type="single" collapsible className="w-full">
+                  {project.faq.map((item, idx) => (
+                    <AccordionItem key={idx} value={`item-${idx}`} className="border-foreground/10">
+                      <AccordionTrigger className="text-left font-serif text-lg hover:no-underline">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-foreground/80 leading-relaxed">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+
       {relatedPosts.length > 0 && (
         <section className="border-y border-foreground/10 bg-surface/60 mt-10">
           <div className="container-editorial py-16">
