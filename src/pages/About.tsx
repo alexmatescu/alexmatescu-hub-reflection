@@ -11,10 +11,14 @@ const values = [
 ];
 
 const mainProjects = [
-  { name: "CRANDIT", desc: "Mitul succesului peste noapte" },
-  { name: "GEO / AI Visibility", desc: "Vizibilitate în era căutării generative" },
-  { name: "Taste the Corn", desc: "Proiect antreprenorial în zona retailului alimentar" },
-  { name: "Atracțiile României", desc: "Proiect digital despre locurile din România" },
+  { name: "CRANDIT", desc: "Carte în lucru — Mitul succesului peste noapte (2026)" },
+  { name: "GEO / AI Visibility", desc: "Vizibilitate în era căutării generative — direcție în formare" },
+  { name: "Blogging", desc: "delamatescu.ro — scris constant din 2014, relansat în 2025" },
+  { name: "Afacerea de familie", desc: "Magazin mixt rural — activ din aprilie 2021" },
+  { name: "Taste the Corn", desc: "Concept de retail alimentar în Sibiu — construit, testat și închis (2025)" },
+  { name: "Atracțiile României", desc: "Proiect digital de turism cultural — 2021–2023" },
+  { name: "OVB Allfinanz România", desc: "Consultanță financiară — decembrie 2021 – decembrie 2024" },
+  { name: "Afacerea cu haine", desc: "Primul magazin, prima lecție reală de antreprenoriat — 2017" },
   { name: "Leadership Artificial", desc: "Cercetare în curs despre AI, leadership și viitorul muncii" },
 ];
 
@@ -115,22 +119,23 @@ const About = () => {
             <div>
               <p className="eyebrow mb-4">Experiență antreprenorială</p>
               <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                <li>Co-fondator și administrator al unui magazin mixt rural dezvoltat începând cu 2021</li>
-                <li>Fondator Taste the Corn</li>
-                <li>Inițiator al proiectului GEO / AI Visibility</li>
-                <li>Dezvoltator al mai multor proiecte digitale și antreprenoriale</li>
+                <li>Co-fondator și administrator al unei afaceri de familie în mediul rural — magazin mixt activ din aprilie 2021.</li>
+                <li>Fondator Taste the Corn — concept de retail alimentar în Sibiu, construit, lansat, operat și închis între ianuarie și decembrie 2025.</li>
+                <li>Fondator Atracțiile României — proiect digital de turism cultural, dezvoltat constant între 2021 și 2023.</li>
+                <li>Prima experiență antreprenorială: un magazin de haine deschis în 2017 la Craiova — încheiat rapid, dar formator.</li>
+                <li>Inițiator al direcției GEO / AI Visibility — vizibilitate pentru branduri în era căutării generative.</li>
               </ul>
             </div>
             <div>
               <p className="eyebrow mb-4">Experiență în vânzări</p>
               <p className="text-muted-foreground">
-                Consultanță financiară și asigurări prin OVB Allfinanz România între 2021 și 2024.
+                Consultant financiar în cadrul OVB Allfinanz România între decembrie 2021 și decembrie 2024 — trei ani de vânzări directe, educație financiară și lucru cu clienți, într-un mediu care mi-a dat o școală practică despre încredere, comunicare și decizie.
               </p>
             </div>
             <div>
               <p className="eyebrow mb-4">Activitate editorială</p>
               <p className="text-muted-foreground">
-                Autorul cărții CRANDIT – Mitul succesului peste noapte și al articolelor publicate pe acest website.
+                Autor al cărții <strong>CRANDIT – Mitul succesului peste noapte</strong> (în lucru, 2026) și autor al blogului <em>delamatescu.ro</em>, început în decembrie 2014 și relansat în 2025 ca spațiu central de gândire și scriere.
               </p>
             </div>
           </div>
@@ -276,11 +281,11 @@ const About = () => {
             În prezent îmi concentrez energia asupra mai multor direcții complementare:
           </p>
           <ul>
-            <li>dezvoltarea platformei și comunității CRANDIT;</li>
-            <li>construirea proiectului GEO / AI Visibility;</li>
-            <li>publicarea de articole și eseuri pe blog;</li>
-            <li>cercetarea și documentarea cărții Leadership Artificial;</li>
-            <li>explorarea modului în care inteligența artificială va influența leadershipul, munca și dezvoltarea umană în următorii ani.</li>
+            <li>finalizarea manuscrisului și construirea comunității în jurul cărții CRANDIT;</li>
+            <li>dezvoltarea direcției GEO / AI Visibility;</li>
+            <li>scrisul constant pe blogul delamatescu.ro, relansat în 2025;</li>
+            <li>coordonarea afacerii de familie în mediul rural;</li>
+            <li>cercetarea și documentarea cărții Leadership Artificial — despre AI, leadership și viitorul muncii.</li>
           </ul>
           <p>
             <Link to="/proiecte" className="link-underline">Vezi toate proiectele</Link>.
