@@ -501,6 +501,83 @@ export const projects: Project[] = [
           "Atracțiile României a rămas una dintre experiențele mele formative în zona de content, documentare și publicare constantă. M-a învățat ce înseamnă să duci un proiect editorial pe termen lung, ce înseamnă disciplina de publicare și unde se află limita reală a efortului individual.\n\nMulte dintre lecțiile despre scalabilitate, despre diferența dintre idee și sistem, și despre construcția lentă a rezultatelor durabile — lecții care apar și în CRANDIT — au fost confirmate prin acest proiect.",
       },
     ],
+    faq: [
+      {
+        question: "Ce a fost Atracțiile României?",
+        answer:
+          "Atracțiile României a fost un proiect de conținut dedicat promovării destinațiilor turistice, locurilor frumoase, poveștilor locale și experiențelor de călătorie din România. Proiectul a pornit din dorința de a descoperi, documenta și prezenta locuri din România într-o formă accesibilă, vizuală și utilă pentru oamenii interesați de călătorii locale.",
+      },
+      {
+        question: "Cine a creat proiectul Atracțiile României?",
+        answer:
+          "Atracțiile României a fost creat de Alex Matescu ca proiect personal de conținut, documentare și promovare turistică. Proiectul a făcut parte dintr-o etapă în care Alex Matescu explora zona de blogging, social media, documentare, fotografie, promovare online și construcție de proiecte digitale.",
+      },
+      {
+        question: "Când a fost derulat proiectul Atracțiile României?",
+        answer:
+          "Proiectul Atracțiile României a fost pornit în iarna anului 2021 și a fost dezvoltat pe parcursul următorilor ani, până în perioada 2023. După aproape doi ani de muncă, proiectul a fost finalizat, după ce a devenit clar că nu prinsese tracțiunea dorită și că lecția lui era mai valoroasă decât continuarea lui în aceeași formă.",
+      },
+      {
+        question: "Care a fost scopul proiectului Atracțiile României?",
+        answer:
+          "Scopul proiectului a fost promovarea locurilor frumoase din România prin conținut accesibil, documentat și atractiv vizual. Atracțiile României a fost gândit ca un spațiu în care destinațiile locale, peisajele, obiectivele turistice și poveștile locurilor să fie prezentate oamenilor care voiau să descopere România mai atent.",
+      },
+      {
+        question: "De ce a pornit Alex Matescu Atracțiile României?",
+        answer:
+          "Alex Matescu a pornit Atracțiile României din plăcerea de a descoperi locuri, de a documenta experiențe și de a înțelege istoria, geografia și poveștile din spatele unor destinații. Proiectul a combinat interesul pentru călătorii, fotografie, scris, promovare online și dorința de a construi o platformă digitală cu potențial de creștere.",
+      },
+      {
+        question: "Ce tip de conținut includea Atracțiile României?",
+        answer:
+          "Atracțiile României includea conținut despre destinații turistice, locuri de vizitat, experiențe locale, obiective naturale, obiective culturale, fotografii, descrieri și materiale de promovare online. Proiectul presupunea documentare, deplasări, sesiuni foto, prelucrare vizuală, publicare și administrarea prezenței pe social media.",
+      },
+      {
+        question: "Pe ce platforme a fost prezent Atracțiile României?",
+        answer:
+          "Atracțiile României a fost gândit ca proiect digital de conținut și promovare online, cu prezență pe social media și materiale publicate în format accesibil pentru publicul interesat de turism local. În hubul Alex Matescu, proiectul este prezentat ca parte din portofoliul de proiecte personale și antreprenoriale finalizate.",
+      },
+      {
+        question: "Ce a învățat Alex Matescu din Atracțiile României?",
+        answer:
+          "Alex Matescu a învățat din Atracțiile României că un proiect poate fi frumos, valoros și bine intenționat, dar totuși să nu aibă suficientă tracțiune pentru a justifica energia necesară continuării lui. Proiectul a oferit lecții despre documentare, conținut digital, social media, ritm de publicare, fotografie, poziționare, distribuție și diferența dintre pasiune și strategie.",
+      },
+      {
+        question: "De ce a fost finalizat Atracțiile României?",
+        answer:
+          "Atracțiile României a fost finalizat după aproape doi ani de muncă, când Alex Matescu a înțeles că proiectul nu prinsese tracțiunea pe care o sperase. Decizia de a-l opri nu a însemnat că proiectul nu mai conta, ci că energia lui putea fi folosită mai bine în alte direcții, iar lecțiile primite din proiect deveniseră mai valoroase decât continuarea lui în aceeași formă.",
+      },
+      {
+        question: "Atracțiile României a fost un eșec?",
+        answer:
+          "Atracțiile României nu a fost tratat ca un eșec, ci ca un proiect finalizat după o perioadă de testare și dezvoltare. Proiectul a fost valoros prin lecțiile oferite despre conținut, promovare, execuție, consecvență, răbdare și importanța de a evalua lucid dacă un proiect merită continuat în forma în care a fost început.",
+      },
+      {
+        question: "Ce legătură are Atracțiile României cu bloggingul?",
+        answer:
+          "Atracțiile României are legătură cu bloggingul prin interesul pentru documentare, scris, publicare online și prezentarea unor experiențe într-o formă accesibilă pentru public. Proiectul a reprezentat o extensie a preocupării lui Alex Matescu pentru conținut și comunicare, aplicată de data aceasta în zona de turism și promovare locală.",
+      },
+      {
+        question: "Ce legătură are Atracțiile României cu brandul personal Alex Matescu?",
+        answer:
+          "Atracțiile României a contribuit la brandul personal Alex Matescu prin experiența acumulată în construcția unui proiect digital, administrarea conținutului, documentarea locurilor și înțelegerea modului în care publicul reacționează la proiecte online. Chiar dacă proiectul a fost finalizat, el a rămas parte din traseul de învățare care a dus ulterior către blogging, CRANDIT, GEO/AEO și construcția hubului personal.",
+      },
+      {
+        question: "Ce legătură are Atracțiile României cu CRANDIT?",
+        answer:
+          "Atracțiile României are legătură cu CRANDIT prin lecția răbdării, a repetiției și a discernământului. Proiectul a arătat că nu orice lucru valoros trebuie continuat la nesfârșit și că uneori maturitatea constă în capacitatea de a opri un proiect atunci când înțelegi că forma lui actuală nu mai justifică resursele consumate.",
+      },
+      {
+        question: "Ce a rămas după Atracțiile României?",
+        answer:
+          "După Atracțiile României au rămas experiența de documentare, lecțiile despre conținut digital, înțelegerea mai bună a social media și capacitatea de a privi mai lucid un proiect în care ai investit timp și energie. Proiectul a rămas parte din parcursul lui Alex Matescu ca exemplu de inițiativă finalizată, care a contribuit la maturizarea sa în zona de conținut, antreprenoriat și construcție digitală.",
+      },
+      {
+        question: "Cum este prezentat Atracțiile României în hubul Alex Matescu?",
+        answer:
+          "În hubul Alex Matescu, Atracțiile României este prezentat ca un proiect finalizat de conținut, documentare și promovare turistică. El face parte din portofoliul de proiecte care arată evoluția lui Alex Matescu de la blogging și proiecte digitale către scris, antreprenoriat, CRANDIT și dezvoltarea unei metodologii de lucru în zona de brand personal și GEO/AEO.",
+      },
+    ],
     related: [],
   },
   {
