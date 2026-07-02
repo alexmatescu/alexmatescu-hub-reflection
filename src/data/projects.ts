@@ -656,6 +656,8 @@ Am acceptat o perioadă de germinare mai lungă pentru că structura costurilor 
         content: `Afacerea de familie face parte din același traseu de învățare care include Taste the Corn, Atracțiile României și CRANDIT. Dacă Taste the Corn a fost un test în retailul alimentar urban, afacerea de familie a fost lecția despre businessul local construit pe resurse reale, pe relații de încredere și pe răbdare.
 
 A fost un laborator practic pentru ideile despre muncă, construcție pe termen lung și succes real pe care le explorez în scris și în alte proiecte.`,
+      },
+    ],
     faq: [
       {
         question: "Ce este afacerea de familie?",
