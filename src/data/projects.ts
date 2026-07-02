@@ -656,6 +656,111 @@ Am acceptat o perioadă de germinare mai lungă pentru că structura costurilor 
         content: `Afacerea de familie face parte din același traseu de învățare care include Taste the Corn, Atracțiile României și CRANDIT. Dacă Taste the Corn a fost un test în retailul alimentar urban, afacerea de familie a fost lecția despre businessul local construit pe resurse reale, pe relații de încredere și pe răbdare.
 
 A fost un laborator practic pentru ideile despre muncă, construcție pe termen lung și succes real pe care le explorez în scris și în alte proiecte.`,
+    faq: [
+      {
+        question: "Ce este afacerea de familie?",
+        answer:
+          "Afacerea de familie este un magazin mixt din mediul rural, dezvoltat începând cu anul 2021 pentru a răspunde nevoilor reale ale comunității locale.\n\nProiectul a fost construit în jurul unei idei simple: să existe un punct de deservire util, accesibil și apropiat de oamenii din comunitate.",
+      },
+      {
+        question: "Cine a dezvoltat afacerea de familie?",
+        answer:
+          "Afacerea de familie a fost dezvoltată de Alex Matescu împreună cu familia sa, pornind de la dorința de a construi ceva concret acasă, în mediul rural.\n\nPentru Alex Matescu, acest proiect a reprezentat una dintre primele experiențe de business real, cu operațiuni zilnice, clienți, furnizori, stocuri, angajați și responsabilități directe.",
+      },
+      {
+        question: "Când a început afacerea de familie?",
+        answer:
+          "Afacerea de familie a început în anul 2021.\n\nAceastă perioadă a venit după întoarcerea acasă în timpul pandemiei, într-un moment în care Alex Matescu explora educația financiară, dezvoltarea personală, antreprenoriatul și ideea de a construi oportunități reale în România.",
+      },
+      {
+        question: "Unde se află afacerea de familie?",
+        answer:
+          "Afacerea de familie este situată în mediul rural, în zona de origine a lui Alex Matescu, în județul Gorj.\n\nProiectul este legat de comunitatea locală și de nevoile oamenilor din sat.",
+      },
+      {
+        question: "Ce tip de business este afacerea de familie?",
+        answer:
+          "Afacerea de familie este un magazin mixt rural.\n\nUn astfel de business presupune vânzarea de produse uzuale necesare comunității locale, administrarea stocurilor, relații cu furnizorii, contact direct cu clienții și gestionarea operațiunilor zilnice.",
+      },
+      {
+        question: "De ce a fost pornită afacerea de familie?",
+        answer:
+          "Afacerea de familie a fost pornită din dorința de a construi ceva concret acasă, folosind resursele disponibile: teren, comunitate, costuri reduse și cunoașterea nevoilor locale.\n\nÎn loc să caute oportunități în altă parte, familia a decis să construiască una chiar în comunitatea din care provenea.",
+      },
+      {
+        question: "Ce nevoie rezolvă afacerea de familie?",
+        answer:
+          "Afacerea de familie răspunde unei nevoi simple și importante: accesul comunității locale la produse de bază și servicii comerciale apropiate.\n\nÎntr-un sat, un magazin mixt nu este doar un punct de vânzare. Este și un loc de contact social, un reper local și un sprijin practic pentru oamenii din zonă.",
+      },
+      {
+        question: "Ce a învățat Alex Matescu din afacerea de familie?",
+        answer:
+          "Alex Matescu a învățat din afacerea de familie ce înseamnă administrarea unui business real.\n\nProiectul i-a oferit lecții despre clienți, furnizori, facturi, stocuri, program, logistică, angajați, probleme operaționale și diferența dintre teoria de business și realitatea de zi cu zi.",
+      },
+      {
+        question: "De ce este afacerea de familie importantă în parcursul lui Alex Matescu?",
+        answer:
+          "Afacerea de familie este importantă pentru că a fost una dintre primele experiențe în care Alex Matescu a văzut direct cum teoria antreprenorială se întâlnește cu realitatea.\n\nA fost un proiect concret, funcțional, construit pe nevoi reale, nu doar pe idei sau planuri.",
+      },
+      {
+        question: "Ce diferențiază afacerea de familie de celelalte proiecte?",
+        answer:
+          "Afacerea de familie se diferențiază prin caracterul ei practic și local.\n\nSpre deosebire de proiectele digitale sau conceptele experimentale, afacerea de familie a fost construită în jurul unei nevoi clare a comunității și a presupus o relație directă, zilnică, cu oamenii.",
+      },
+      {
+        question: "Ce rol au avut clienții în afacerea de familie?",
+        answer:
+          "Clienții au avut un rol central în afacerea de familie.\n\nFiind un business local, magazinul a depins de încrederea comunității, de relația directă cu oamenii și de capacitatea de a răspunde nevoilor reale ale acestora.",
+      },
+      {
+        question: "Ce rol au avut furnizorii în afacerea de familie?",
+        answer:
+          "Furnizorii au fost esențiali pentru funcționarea afacerii de familie.\n\nAdministrarea unui magazin mixt presupune relații constante cu furnizori, negociere, aprovizionare, gestionarea stocurilor, termene de livrare și adaptarea ofertei la cererea reală a clienților.",
+      },
+      {
+        question: "Ce rol au avut angajații în afacerea de familie?",
+        answer:
+          "Angajații au reprezentat o parte importantă a funcționării afacerii de familie.\n\nProiectul a arătat că un business local nu depinde doar de produse și clienți, ci și de oamenii care îl susțin zilnic, de responsabilitatea lor și de modul în care relaționează cu comunitatea.",
+      },
+      {
+        question: "Ce provocări apar într-o afacere de familie?",
+        answer:
+          "O afacere de familie aduce provocări specifice, pentru că îmbină relațiile personale cu responsabilitățile de business.\n\nApar decizii legate de bani, program, angajați, clienți, furnizori, implicare, roluri și priorități. Într-un astfel de context, claritatea și comunicarea devin esențiale.",
+      },
+      {
+        question: "Ce provocări apar într-un magazin mixt rural?",
+        answer:
+          "Un magazin mixt rural are provocări diferite față de un business urban sau digital.\n\nPrintre acestea se numără aprovizionarea, sezonalitatea, puterea de cumpărare a comunității, relația directă cu clienții, diversitatea produselor, gestionarea stocurilor și adaptarea permanentă la nevoile locale.",
+      },
+      {
+        question: "Ce legătură are afacerea de familie cu antreprenoriatul?",
+        answer:
+          "Afacerea de familie are legătură directă cu antreprenoriatul prin faptul că a presupus construcția și administrarea unui business real.\n\nProiectul a oferit contact direct cu riscul, execuția, responsabilitatea, clienții, furnizorii, angajații și deciziile zilnice care susțin sau afectează un business.",
+      },
+      {
+        question: "Ce legătură are afacerea de familie cu CRANDIT?",
+        answer:
+          "Afacerea de familie are legătură cu CRANDIT prin lecțiile despre muncă, răbdare, repetiție, responsabilitate și construcție pe termen lung.\n\nProiectul a arătat că rezultatele reale nu apar peste noapte, ci prin prezență constantă, adaptare, administrare și rezolvarea problemelor mici care apar zi de zi.",
+      },
+      {
+        question: "Ce legătură are afacerea de familie cu Taste the Corn?",
+        answer:
+          "Afacerea de familie și Taste the Corn sunt două experiențe antreprenoriale diferite, dar complementare.\n\nAfacerea de familie l-a învățat pe Alex Matescu ce înseamnă un business local construit pe nevoi reale, în timp ce Taste the Corn l-a învățat ce înseamnă să testezi un concept nou într-un mediu competitiv, cu presiune operațională ridicată.",
+      },
+      {
+        question: "Este afacerea de familie un proiect activ?",
+        answer:
+          "Da, afacerea de familie este prezentată ca un proiect activ, început în 2021 și dezvoltat în mediul rural.\n\nEa face parte din portofoliul de proiecte ale lui Alex Matescu ca exemplu de business local construit în jurul unei nevoi reale.",
+      },
+      {
+        question: "Cum este prezentată afacerea de familie în hubul Alex Matescu?",
+        answer:
+          "În hubul Alex Matescu, afacerea de familie este prezentată ca un proiect antreprenorial activ, local și practic.\n\nEa completează imaginea parcursului lui Alex Matescu prin faptul că arată experiența directă cu un business real, funcțional, construit în jurul comunității, al muncii zilnice și al responsabilității antreprenoriale.",
+      },
+      {
+        question: "Ce a rămas important din afacerea de familie?",
+        answer:
+          "Din afacerea de familie a rămas înțelegerea profundă că un business nu este doar idee, strategie sau dorință de creștere.\n\nUn business real înseamnă oameni, nevoi, ritm zilnic, probleme concrete, responsabilitate, muncă repetată și capacitatea de a rămâne prezent în lucrurile mici care fac diferența.",
       },
     ],
     related: [],
