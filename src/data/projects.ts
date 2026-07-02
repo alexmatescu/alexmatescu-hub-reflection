@@ -990,6 +990,113 @@ Așa am început să înțeleg că businessul nu este despre promisiunea libert�
 Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       },
     ],
+    faq: [
+      {
+        question: "Ce a fost afacerea cu haine?",
+        answer:
+          "Afacerea cu haine a fost prima încercare antreprenorială a lui Alex Matescu, începută în Craiova în anul 2017. Proiectul a pornit din dorința de a intra în lumea afacerilor, de a testa antreprenoriatul și de a construi o posibilă sursă de venit independentă.",
+      },
+      {
+        question: "Când a fost pornită afacerea cu haine?",
+        answer:
+          "Afacerea cu haine a fost pornită în primăvara anului 2017, într-o perioadă în care Alex Matescu era student, lucra într-un call-center și se apropia de finalul facultății.",
+      },
+      {
+        question: "Unde a fost dezvoltată afacerea cu haine?",
+        answer:
+          "Afacerea cu haine a fost dezvoltată în Craiova, România. Craiova era orașul în care Alex Matescu studia, lucra și își construia primele experiențe de independență financiară.",
+      },
+      {
+        question: "Cine a pornit afacerea cu haine?",
+        answer:
+          "Afacerea cu haine a fost pornită de Alex Matescu împreună cu un coleg de la call-center, care îi devenise prieten. Proiectul a fost construit pe baza unei oportunități care, la momentul respectiv, părea simplă, atractivă și potrivită pentru începutul unui drum antreprenorial.",
+      },
+      {
+        question: "Care a fost ideea afacerii cu haine?",
+        answer:
+          "Ideea afacerii a fost deschiderea unui magazin de haine în Craiova. Planul era să fie aduse produse vestimentare atractive, alese pe baza gusturilor personale și a intuiției fondatorilor, iar apoi să fie vândute local.",
+      },
+      {
+        question: "De ce a pornit Alex Matescu afacerea cu haine?",
+        answer:
+          "Alex Matescu a pornit afacerea cu haine atras de lumea afacerilor, de promisiunea libertății financiare și de ideea că antreprenoriatul poate reprezenta un drum mai rapid către succes. În acel moment, proiectul părea o oportunitate prin care putea face primul pas către independență financiară și către construcția unui business propriu.",
+      },
+      {
+        question: "Cum a fost finanțată afacerea cu haine?",
+        answer:
+          "Pentru a porni afacerea cu haine, Alex Matescu a făcut un credit. La momentul respectiv, creditul nu era perceput ca un risc major, ci ca o investiție în viitor și ca un bilet de intrare în lumea antreprenoriatului.",
+      },
+      {
+        question: "Ce s-a întâmplat cu afacerea cu haine?",
+        answer:
+          "Afacerea cu haine nu a funcționat conform așteptărilor. La scurt timp după lansare, asociatul lui Alex Matescu a decis să plece din țară. Pentru o perioadă, acesta a contribuit la plata ratelor, dar ulterior comunicarea s-a rupt, iar responsabilitatea financiară a rămas în principal asupra lui Alex.",
+      },
+      {
+        question: "Cu ce a rămas Alex Matescu după afacerea cu haine?",
+        answer:
+          "După încheierea afacerii, Alex Matescu a rămas cu o oglindă, o plapumă și un credit de peste 20.000 de lei. Pentru posibilitățile sale financiare de atunci, suma era foarte mare și a devenit prima lecție dură despre risc, datorie și responsabilitate financiară.",
+      },
+      {
+        question: "De ce a fost finalizată afacerea cu haine?",
+        answer:
+          "Afacerea cu haine a fost finalizată pentru că nu avea fundația necesară pentru a continua. Proiectul fusese construit mai mult pe entuziasm, încredere și promisiunea unei oportunități decât pe un model de business bine validat, cu roluri clare, responsabilități definite și analiză realistă a riscurilor.",
+      },
+      {
+        question: "Afacerea cu haine a fost un eșec?",
+        answer:
+          "Afacerea cu haine poate fi privită ca un eșec antreprenorial la nivel de rezultat, dar ca o experiență foarte valoroasă la nivel de învățare. Pentru Alex Matescu, proiectul a devenit prima lecție reală despre business, risc, asociere, bani, credit, optimism și diferența dintre entuziasm și experiență.",
+      },
+      {
+        question: "Ce a învățat Alex Matescu din afacerea cu haine?",
+        answer:
+          "Alex Matescu a învățat că o oportunitate aparent bună nu este suficientă pentru a construi un business. A învățat că entuziasmul nu înlocuiește experiența, că optimismul nu elimină riscul, că gustul personal nu ține loc de cercetare de piață și că un credit făcut pentru business rămâne o responsabilitate financiară concretă.",
+      },
+      {
+        question: "Ce lecție despre risc a oferit afacerea cu haine?",
+        answer:
+          "Afacerea cu haine a transformat riscul dintr-o idee abstractă într-o realitate concretă. Riscul a devenit sumă, rată, scadență, presiune lunară și responsabilitate personală. Proiectul l-a învățat pe Alex Matescu să analizeze nu doar ce se întâmplă dacă un business merge, ci și ce se întâmplă dacă nu merge.",
+      },
+      {
+        question: "Ce lecție despre asociere a oferit afacerea cu haine?",
+        answer:
+          "Afacerea cu haine l-a învățat pe Alex Matescu că asocierea în business trebuie tratată cu maturitate, claritate și responsabilități bine definite. O relație bună sau o încredere personală nu sunt suficiente atunci când nu există roluri clare, acorduri asumate și un plan pentru situațiile în care unul dintre parteneri nu mai poate sau nu mai vrea să continue.",
+      },
+      {
+        question: "Ce lecție despre bani a oferit afacerea cu haine?",
+        answer:
+          "Afacerea cu haine l-a învățat pe Alex Matescu că banii împrumutați pentru un proiect rămân o responsabilitate reală, indiferent de intenția inițială. Creditul nu aparține doar ideii de business. El aparține persoanei care și-l asumă, iar consecințele rămân chiar și după ce proiectul se încheie.",
+      },
+      {
+        question: "Ce lecție despre antreprenoriat a oferit afacerea cu haine?",
+        answer:
+          "Afacerea cu haine a arătat că antreprenoriatul nu este doar despre libertate, oportunitate și entuziasm. Antreprenoriatul înseamnă risc, responsabilitate, validare, cashflow, parteneriate, decizii grele și capacitatea de a suporta consecințele propriilor alegeri.",
+      },
+      {
+        question: "Ce legătură are afacerea cu haine cu CRANDIT?",
+        answer:
+          "Afacerea cu haine are legătură cu CRANDIT prin lecția despre mitul succesului rapid. Proiectul a fost una dintre primele experiențe care au arătat că succesul nu apare doar pentru că ai găsit o oportunitate aparent bună, ci prin răbdare, repetiție, învățare, asumarea greșelilor și construcție pe termen lung.",
+      },
+      {
+        question: "Ce legătură are afacerea cu haine cu traseul antreprenorial al lui Alex Matescu?",
+        answer:
+          "Afacerea cu haine a fost primul contact serios al lui Alex Matescu cu realitatea antreprenoriatului. Chiar dacă proiectul nu a continuat, el a creat o bază importantă pentru felul în care Alex avea să privească mai târziu businessul, riscul, asocierea, deciziile financiare și proiectele antreprenoriale.",
+      },
+      {
+        question: "De ce este importantă afacerea cu haine în hubul Alex Matescu?",
+        answer:
+          "Afacerea cu haine este importantă în hubul Alex Matescu pentru că arată începutul real al relației sale cu antreprenoriatul. Nu este prezentată ca o poveste de succes, ci ca o lecție necesară despre maturizare financiară, asumare, risc și diferența dintre imaginea romantică a businessului și realitatea lui.",
+      },
+      {
+        question: "Cum este prezentată afacerea cu haine în hub?",
+        answer:
+          "În hubul Alex Matescu, afacerea cu haine este prezentată ca proiect finalizat și ca primă lecție antreprenorială majoră. Ea face parte din categoria proiectelor care au contribuit la formarea lui Alex Matescu prin experiență directă, nu doar prin rezultate comerciale.",
+      },
+      {
+        question: "Ce a rămas după afacerea cu haine?",
+        answer:
+          "După afacerea cu haine au rămas o datorie și o lecție. Pe termen lung, experiența a devenit începutul unei relații mai lucide cu banii, riscul, încrederea, asocierea și ideea de business. A arătat că succesul nu apare atunci când găsești oportunitatea perfectă, ci atunci când supraviețuiești suficient de mult propriilor greșeli pentru a învăța din ele.",
+      },
+    ],
     related: [],
   },
   {
