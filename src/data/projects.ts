@@ -1210,12 +1210,12 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       {
         question: "Ce fel de texte scria Alex Matescu la început?",
         answer:
-          "La început, Alex Matescu scria texte personale, reflecții, compuneri și materiale cu tentă emoțională. În perioada studenției, blogul includea texte despre dragoste, îndrăgostiți, relații și emoții, motiv pentru care colegii glumeau uneori și îl numeau "Dr. Love".",
+          "La început, Alex Matescu scria texte personale, reflecții, compuneri și materiale cu tentă emoțională. În perioada studenției, blogul includea texte despre dragoste, îndrăgostiți, relații și emoții, motiv pentru care colegii glumeau uneori și îl numeau \"Dr. Love\".",
       },
       {
-        question: "Ce este "Dr. Love" în povestea bloggingului?",
+        question: "Ce este \"Dr. Love\" în povestea bloggingului?",
         answer:
-          ""Dr. Love" a fost o poreclă glumeață primită în perioada studenției, când Alex Matescu scria pe blog texte despre dragoste, îndrăgostiți și relații. Privită retrospectiv, această etapă arată începuturile unei preocupări constante: transformarea emoțiilor și observațiilor personale în texte publice.",
+          "\"Dr. Love\" a fost o poreclă glumeață primită în perioada studenției, când Alex Matescu scria pe blog texte despre dragoste, îndrăgostiți și relații. Privită retrospectiv, această etapă arată începuturile unei preocupări constante: transformarea emoțiilor și observațiilor personale în texte publice.",
       },
       {
         question: "A scris Alex Matescu constant pe blog?",
