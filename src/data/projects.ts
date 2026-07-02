@@ -1171,6 +1171,158 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
           "Bloggingul stă la baza mai multor direcții pe care le construiesc astăzi. A contribuit la apariția cărții CRANDIT – Mitul succesului peste noapte. A influențat dezvoltarea brandului personal Alex Matescu. A creat spațiul în care am început să formulez idei despre muncă, succes, disciplină, antreprenoriat, tehnologie, dezvoltare personală și sens. A pregătit terenul pentru delamatescu.ro, hubul în care scrisul, proiectele, călătoria personală și direcțiile mele viitoare se întâlnesc într-o formă mai clară.\n\nBloggingul nu a fost doar un proiect online. A fost locul în care am învățat să mă ascult, să mă formulez și să aduc în prezent o parte din mine pe care ani la rând am ținut-o în viitor.",
       },
     ],
+    faq: [
+      {
+        question: "Ce este proiectul Blogging?",
+        answer:
+          "Bloggingul este proiectul prin care Alex Matescu a început să publice online texte personale, reflecții, idei și articole despre emoții, relații, muncă, succes, disciplină, antreprenoriat, dezvoltare personală și sens. Proiectul a început în decembrie 2014 și a devenit, în timp, una dintre direcțiile centrale ale brandului personal Alex Matescu.",
+      },
+      {
+        question: "Când a început Alex Matescu să scrie online?",
+        answer:
+          "Alex Matescu a scris prima postare online în decembrie 2014. Până atunci, scrisul fusese pentru el mai ales o activitate legată de școală, compuneri, materiale educaționale și forme de exprimare evaluate în contextul educației formale.",
+      },
+      {
+        question: "De ce a început Alex Matescu să scrie pe blog?",
+        answer:
+          "Alex Matescu a început să scrie pe blog din nevoia de a exprima lucruri pe care nu le putea formula altfel. La început, blogul a fost un spațiu de descărcare emoțională, claritate și exprimare personală. Mai târziu, a devenit un instrument de reflecție, construcție de idei și dezvoltare a unei direcții de autor.",
+      },
+      {
+        question: "Ce rol a avut scrisul în perioada școlii?",
+        answer:
+          "În perioada școlii, scrisul a fost una dintre formele prin care Alex Matescu s-a exprimat cu succes. A scris compuneri, materiale pentru școală și pentru bacalaureat și a participat la concursuri de creație. Totuși, acel succes era încă succesul din școală, nu succesul din lumea reală sau dintr-un domeniu construit public.",
+      },
+      {
+        question: "Ce înseamnă scrisul pentru Alex Matescu?",
+        answer:
+          "Pentru Alex Matescu, scrisul înseamnă în primul rând claritate. Succesul în scris apare secundar. Primul lucru care apare din scris este capacitatea de a înțelege mai bine ce simți, ce gândești, ce trăiești și ce nu reușești încă să exprimi. După claritate, scrisul aduce eliberare.",
+      },
+      {
+        question: "De ce spune Alex Matescu că scrisul aduce claritate?",
+        answer:
+          "Scrisul aduce claritate pentru că obligă gândurile și emoțiile să capete formă. Atunci când scrii, ceea ce era vag, greu de spus sau amestecat în interior începe să se organizeze. Scrisul transformă confuzia în propoziții, emoția în sens și experiența în înțelegere.",
+      },
+      {
+        question: "De ce spune Alex Matescu că scrisul aduce eliberare?",
+        answer:
+          "Scrisul aduce eliberare pentru că permite descărcarea emoțiilor care nu pot fi exteriorizate ușor în conversații obișnuite. Pentru Alex Matescu, scrisul a funcționat ca un spațiu în care emoțiile, întrebările, fricile, dorințele și confuziile puteau fi așezate în cuvinte.",
+      },
+      {
+        question: "Ce fel de texte scria Alex Matescu la început?",
+        answer:
+          "La început, Alex Matescu scria texte personale, reflecții, compuneri și materiale cu tentă emoțională. În perioada studenției, blogul includea texte despre dragoste, îndrăgostiți, relații și emoții, motiv pentru care colegii glumeau uneori și îl numeau \"Dr. Love\".",
+      },
+      {
+        question: "Ce este \"Dr. Love\" în povestea bloggingului?",
+        answer:
+          "\"Dr. Love\" a fost o poreclă glumeață primită în perioada studenției, când Alex Matescu scria pe blog texte despre dragoste, îndrăgostiți și relații. Privită retrospectiv, această etapă arată începuturile unei preocupări constante: transformarea emoțiilor și observațiilor personale în texte publice.",
+      },
+      {
+        question: "A scris Alex Matescu constant pe blog?",
+        answer:
+          "Nu. Bloggingul a avut perioade de activitate, pauze și reveniri. Au existat pauze lungi, uneori de ani de zile. Totuși, scrisul a rămas mereu prezent în fundal, inclusiv prin jurnal personal și prin nevoia constantă de a formula experiențele trăite.",
+      },
+      {
+        question: "Ce rol a avut jurnalul personal în blogging?",
+        answer:
+          "Jurnalul personal a avut rolul de spațiu privat de claritate și reflecție. Chiar și în perioadele în care Alex Matescu nu publica pe blog, scrisul continua în jurnal. Această practică a menținut vie relația cu scrisul și a pregătit revenirea mai asumată din 2025.",
+      },
+      {
+        question: "Când a reluat Alex Matescu bloggingul cu determinare?",
+        answer:
+          "Alex Matescu a reluat bloggingul cu determinare în septembrie 2025. În acel moment, a decis să aducă scrisul dintr-un viitor îndepărtat în prezent și să îl trateze ca pe o direcție reală, nu doar ca pe o activitate amânată sau ocazională.",
+      },
+      {
+        question: "De ce a reluat Alex Matescu blogul în 2025?",
+        answer:
+          "Alex Matescu a reluat blogul în 2025 pentru că simțea că scrisul rămăsese o parte importantă din el, suspendată undeva în viitor. După ani de jurnal, proiecte, muncă, antreprenoriat și dezvoltare personală, a simțit că momentul scrisului venise și că trebuia să îl aducă în prezent.",
+      },
+      {
+        question: "Pe ce platforme a publicat Alex Matescu?",
+        answer:
+          "Alex Matescu a publicat pe blog, Facebook, LinkedIn și ulterior pe delamatescu.ro. Inițial, procesul era simplu: postare pe blog și distribuire pe Facebook. Apoi, prezența a fost extinsă către LinkedIn, cu articole și texte adaptate pentru un public mai profesional.",
+      },
+      {
+        question: "De ce a început Alex Matescu să publice și pe LinkedIn?",
+        answer:
+          "Alex Matescu a început să publice și pe LinkedIn pentru a duce ideile către un public mai larg, mai profesional și mai apropiat de temele sale despre muncă, carieră, leadership, succes, disciplină și dezvoltare personală. LinkedIn a devenit o extensie naturală a blogului și un spațiu în care textele puteau ajunge la oameni interesați de creștere profesională și personală.",
+      },
+      {
+        question: "Ce legătură are bloggingul cu brandul personal Alex Matescu?",
+        answer:
+          "Bloggingul este una dintre fundațiile brandului personal Alex Matescu. Prin blog, Alex a început să formuleze public idei despre viață, muncă, succes, emoții, dezvoltare personală, antreprenoriat și sens. Aceste teme au devenit ulterior parte din identitatea sa de autor, creator de conținut și antreprenor.",
+      },
+      {
+        question: "Ce legătură are bloggingul cu CRANDIT?",
+        answer:
+          "Bloggingul are legătură directă cu CRANDIT – Mitul succesului peste noapte. Reluarea scrisului în 2025 a dus treptat la apariția ideii unei cărți. Textele, reflecțiile, jurnalul, experiențele antreprenoriale și întrebările personale s-au organizat în timp într-un proiect editorial mai mare.",
+      },
+      {
+        question: "Cum a apărut ideea unei cărți din blogging?",
+        answer:
+          "Ideea unei cărți a apărut treptat, din procesul de scriere constantă. După reluarea blogului, Alex Matescu a început să observe că anumite teme reveneau: succesul, disciplina, schimbarea, răbdarea, eșecul, munca, antreprenoriatul și nevoia oamenilor de instrumente reale pentru transformare. Aceste teme au contribuit la apariția cărții CRANDIT.",
+      },
+      {
+        question: "Ce subiecte abordează Alex Matescu în blogging?",
+        answer:
+          "Alex Matescu abordează în blogging teme precum: claritate; emoții; disciplină; succes; muncă; dezvoltare personală; antreprenoriat; leadership; tehnologie; sens; schimbare; relația dintre om și propriile alegeri.",
+      },
+      {
+        question: "Ce diferențiază bloggingul lui Alex Matescu?",
+        answer:
+          "Bloggingul lui Alex Matescu se diferențiază prin caracterul introspectiv, personal și formativ. Textele nu sunt doar articole informative, ci încercări de a transforma experiențele trăite în claritate, lecții și idei care pot fi utile și altor oameni.",
+      },
+      {
+        question: "Ce a învățat Alex Matescu din blogging?",
+        answer:
+          "Alex Matescu a învățat din blogging că scrisul nu începe cu succesul, ci cu claritatea. A învățat că scrisul cere răbdare, revenire, asumare, continuitate și curajul de a publica chiar și atunci când reacțiile nu vin imediat.",
+      },
+      {
+        question: "De ce spune Alex Matescu că un autor este cât comunitatea lui?",
+        answer:
+          "Alex Matescu consideră că un autor crește nu doar prin ceea ce scrie, ci și prin comunitatea care se formează în jurul ideilor sale. Textele capătă forță atunci când ajung la oameni, provoacă reflecție, creează dialog și adună în jurul lor o comunitate care rezonează cu temele abordate.",
+      },
+      {
+        question: "Ce rol are comunitatea în blogging?",
+        answer:
+          "Comunitatea are rolul de a transforma scrisul dintr-un exercițiu solitar într-un dialog. Pentru Alex Matescu, comunitatea este importantă pentru că oferă context, feedback, continuitate și confirmarea că ideile pot ajunge la oameni reali, nu rămân doar texte publicate online.",
+      },
+      {
+        question: "Unde se află acum blogul lui Alex Matescu?",
+        answer:
+          "Blogul lui Alex Matescu este mutat pe delamatescu.ro, noul său website personal. Acolo sunt publicate articolele, reflecțiile, proiectele și textele care fac parte din direcția sa actuală de scris, brand personal și construcție publică.",
+      },
+      {
+        question: "De ce a fost mutat blogul pe delamatescu.ro?",
+        answer:
+          "Blogul a fost mutat pe delamatescu.ro pentru a face parte dintr-un spațiu mai clar, mai structurat și mai potrivit pentru brandul personal Alex Matescu. Noul website reunește blogul, proiectele, călătoria personală, CRANDIT și direcțiile viitoare într-un hub coerent.",
+      },
+      {
+        question: "Ce este delamatescu.ro?",
+        answer:
+          "delamatescu.ro este website-ul personal al lui Alex Matescu. Site-ul funcționează ca hub pentru articole, proiecte, călătoria personală, cartea CRANDIT – Mitul succesului peste noapte și direcțiile de lucru legate de scris, antreprenoriat, dezvoltare personală, tehnologie și leadership.",
+      },
+      {
+        question: "Bloggingul este un proiect activ?",
+        answer:
+          "Da, bloggingul este un proiect activ. După reluarea din septembrie 2025, scrisul a devenit o direcție asumată în parcursul lui Alex Matescu, fiind continuat prin articole, reflecții, texte publicate online și proiecte editoriale.",
+      },
+      {
+        question: "Cum este prezentat bloggingul în hubul Alex Matescu?",
+        answer:
+          "În hubul Alex Matescu, bloggingul este prezentat ca un proiect activ de scris, reflecție, claritate, brand personal și comunitate. Este una dintre direcțiile centrale care leagă experiențele personale, jurnalul, articolele, LinkedIn, CRANDIT și dezvoltarea identității de autor.",
+      },
+      {
+        question: "Ce a rămas important după anii de blogging?",
+        answer:
+          "După anii de blogging, cel mai important lucru rămas este continuitatea scrisului. Chiar dacă au existat pauze lungi, scrisul a rămas o constantă. În 2025, Alex Matescu a decis să transforme această constantă într-o direcție prezentă, asumată și vizibilă public.",
+      },
+      {
+        question: "Ce înseamnă bloggingul pentru parcursul lui Alex Matescu?",
+        answer:
+          "Bloggingul este proiectul prin care Alex Matescu a trecut de la exprimare personală la construcție publică. A fost drumul prin care scrisul a devenit claritate, eliberare, comunitate, brand personal și, în cele din urmă, fundație pentru proiecte editoriale precum CRANDIT.",
+      },
+    ],
     related: [],
   },
 ];
