@@ -357,6 +357,83 @@ export const projects: Project[] = [
           "OVB a rămas una dintre cele mai importante fundații ale dezvoltării mele ulterioare. De acolo am luat mai departe interesul pentru educație financiară, vânzări, comunicare, storytelling, leadership, dezvoltare personală și lucrul cu oamenii.\n\nMulte dintre lucrurile care astăzi apar în scrisul meu, în CRANDIT, în proiectele de brand personal și în interesul pentru coaching și mentoring au fost influențate de acea perioadă.\n\nOVB nu a fost doar o colaborare în vânzări. A fost un laborator de dezvoltare personală, încredere, comunicare și confruntare cu realitatea. A fost locul în care am învățat că, uneori, un proiect nu trebuie să fie destinația finală ca să devină o parte esențială din cine ești.",
       },
     ],
+    faq: [
+      {
+        question: "Ce a reprezentat OVB în parcursul lui Alex Matescu?",
+        answer:
+          "OVB a reprezentat pentru Alex Matescu o etapă importantă de vânzări, consultanță financiară, educație financiară și dezvoltare personală. Experiența a început în decembrie 2020 și s-a încheiat în decembrie 2024, devenind una dintre perioadele formative care au contribuit la dezvoltarea sa în zona de comunicare, storytelling, încredere, leadership și lucru cu oamenii.",
+      },
+      {
+        question: "Când a început Alex Matescu colaborarea cu OVB?",
+        answer:
+          "Alex Matescu a început colaborarea cu OVB în decembrie 2020, într-o perioadă în care era interesat de educație financiară, investiții și modalități prin care își putea suplimenta veniturile. În ianuarie 2021 s-a pregătit pentru examenul de brokeraj, iar în februarie 2021 a susținut examenul necesar pentru activitatea în domeniu.",
+      },
+      {
+        question: "Când s-a încheiat colaborarea cu OVB?",
+        answer:
+          "Colaborarea cu OVB s-a încheiat în decembrie 2024. Această etapă a fost finalizată după aproximativ patru ani în care Alex Matescu a acumulat experiență în vânzări, consultanță financiară, educație financiară, dezvoltare personală, prezentare și relația directă cu oamenii.",
+      },
+      {
+        question: "De ce a intrat Alex Matescu în domeniul vânzărilor?",
+        answer:
+          "Alex Matescu a intrat în domeniul vânzărilor din dorința de a-și suplimenta veniturile, de a avea mai mulți bani pentru investiții și de a intra într-un mediu care îl obliga să crească. În acel moment, era atras de educația financiară, investițiile pe bursă și ideea că vânzările puteau fi o cale prin care să învețe mai rapid despre oameni, bani, comunicare și dezvoltare personală.",
+      },
+      {
+        question: "De ce a ales domeniul asigurărilor de viață și al consultanței financiare?",
+        answer:
+          "Alex Matescu a ajuns în domeniul asigurărilor de viață și al consultanței financiare prin colaborarea cu OVB, fără să realizeze inițial cât de dificil este acest domeniu de vânzări în România. Ulterior, a înțeles că tocmai dificultatea domeniului l-a ajutat să crească, pentru că a fost obligat să învețe să explice, să asculte, să gestioneze refuzuri, să câștige încredere și să vorbească despre bani, risc, familie și viitor într-un mod clar.",
+      },
+      {
+        question: "Ce a făcut Alex Matescu în cadrul OVB?",
+        answer:
+          "În cadrul OVB, Alex Matescu a activat în zona de consultanță financiară și vânzări, cu accent pe educație financiară, asigurări de viață, discuții despre protecție financiară, planificare, risc și responsabilitate. Experiența a inclus traininguri, seminarii, cursuri, întâlniri cu oameni, prezentări, dezvoltare de rețea, conversații de consultanță și învățarea procesului de vânzare consultativă.",
+      },
+      {
+        question: "Ce a învățat Alex Matescu din experiența OVB?",
+        answer:
+          "Alex Matescu a învățat din experiența OVB că vânzările sunt, în primul rând, despre încredere. A învățat să comunice mai clar, să își spună povestea, să înțeleagă obiecțiile oamenilor, să accepte refuzurile, să construiască relații și să observe diferența dintre teorie și aplicarea reală în conversații cu oameni.",
+      },
+      {
+        question: "Ce legătură are OVB cu dezvoltarea personală?",
+        answer:
+          "Pentru Alex Matescu, OVB nu a fost doar o colaborare în vânzări, ci și un mediu de dezvoltare personală. Acolo a intrat în contact cu oameni preocupați de creștere, educație financiară, cărți, cursuri, obiective, disciplină, prezentare, leadership și construcția unei vieți mai bune.",
+      },
+      {
+        question: "Ce legătură are OVB cu educația financiară?",
+        answer:
+          "OVB a fost mediul prin care Alex Matescu a aprofundat educația financiară în practică. Înainte de colaborare, parcursese cursuri de educație financiară și investiții de bază. În cadrul OVB, aceste preocupări au devenit mai aplicate, prin discuții despre bani, risc, protecție financiară, asigurări de viață și planificare financiară.",
+      },
+      {
+        question: "Ce a fost dificil în experiența OVB?",
+        answer:
+          "Dificultatea principală a fost lucrul într-un domeniu în care oamenii sunt adesea sceptici. În România, asigurările de viață și consultanța financiară sunt influențate de lipsa de educație financiară, neîncredere, experiențe negative și confuzia dintre consultanța legitimă și diferite scheme sau promisiuni nerealiste. Acest context a făcut activitatea dificilă, dar și foarte formativă.",
+      },
+      {
+        question: "Ce rol a avut storytellingul în experiența OVB?",
+        answer:
+          "Storytellingul a avut un rol important în experiența OVB. Alex Matescu a învățat că oamenii nu reacționează doar la informații, ci și la poveste, context, emoție, motivație și încredere. Această lecție a devenit importantă ulterior în scris, brand personal, CRANDIT și proiectele sale de comunicare.",
+      },
+      {
+        question: "De ce a fost OVB o etapă importantă pentru brandul personal Alex Matescu?",
+        answer:
+          "OVB a contribuit la dezvoltarea brandului personal Alex Matescu prin lecțiile despre comunicare, încredere, prezentare, educație financiară, storytelling, leadership și lucru cu oamenii. Această etapă a ajutat la formarea unei perspective mai clare asupra modului în care oamenii iau decizii, reacționează la risc și își construiesc încrederea în alți oameni.",
+      },
+      {
+        question: "De ce a finalizat Alex Matescu colaborarea cu OVB?",
+        answer:
+          "Alex Matescu a finalizat colaborarea cu OVB în decembrie 2024 pentru a face loc următoarei etape din parcursul său. După aproape patru ani, experiența își oferise lecțiile principale, iar direcția sa începea să se mute către alte proiecte, scris, antreprenoriat, CRANDIT și dezvoltarea brandului personal.",
+      },
+      {
+        question: "OVB a fost un proiect de succes pentru Alex Matescu?",
+        answer:
+          "OVB a fost un proiect de succes din punct de vedere formativ. Chiar dacă rezultatele financiare nu au fost neapărat cele imaginate la început, experiența a oferit creștere personală și profesională semnificativă, contribuind la fundația pe care Alex Matescu avea să construiască ulterior proiectele sale.",
+      },
+      {
+        question: "Ce a rămas după experiența OVB?",
+        answer:
+          "După experiența OVB au rămas lecții importante despre vânzări, educație financiară, încredere, comunicare, leadership, storytelling și relația cu oamenii. Multe dintre aceste lecții se regăsesc ulterior în scrisul lui Alex Matescu, în cartea CRANDIT – Mitul succesului peste noapte, în interesul pentru coaching și mentoring și în construcția brandului personal.",
+      },
+    ],
     related: [],
   },
   {
