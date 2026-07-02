@@ -1,21 +1,53 @@
 import { useState } from "react";
+import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Mail, Linkedin, Twitter, Facebook, Instagram, Rss } from "lucide-react";
 
 const reasons = ["Colaborare", "Coaching / mentoring", "Media / podcast", "Proiect", "Altceva"];
 
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Numele este obligatoriu").max(120),
+  email: z.string().trim().email("Adresă de email invalidă").max(254),
+  reason: z.string().max(120).optional(),
+  message: z.string().trim().min(1, "Mesajul nu poate fi gol").max(5000),
+});
+
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", reason: reasons[0], message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const parsed = contactSchema.safeParse(form);
+    if (!parsed.success) {
+      toast({ title: "Verifică datele", description: parsed.error.issues[0].message, variant: "destructive" });
+      return;
+    }
+    setSubmitting(true);
     try {
-      const list = JSON.parse(localStorage.getItem("am_contact") || "[]");
-      list.push({ ...form, at: new Date().toISOString() });
-      localStorage.setItem("am_contact", JSON.stringify(list));
-    } catch {}
-    toast({ title: "Mulțumesc.", description: "Mesajul tău a fost înregistrat. Revin când pot." });
-    setForm({ name: "", email: "", reason: reasons[0], message: "" });
+      const { error: dbError } = await supabase.from("contact_messages").insert({
+        name: parsed.data.name,
+        email: parsed.data.email,
+        reason: parsed.data.reason ?? null,
+        message: parsed.data.message,
+      });
+      if (dbError) throw dbError;
+
+      // Notificare pe email (best-effort; nu blocăm confirmarea dacă eșuează)
+      supabase.functions.invoke("send-contact-notification", { body: parsed.data }).catch(() => {});
+
+      toast({ title: "Mulțumesc.", description: "Mesajul tău a fost trimis. Revin când pot." });
+      setForm({ name: "", email: "", reason: reasons[0], message: "" });
+    } catch (err) {
+      toast({
+        title: "Nu am putut trimite mesajul",
+        description: err instanceof Error ? err.message : "Încearcă din nou în câteva momente.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputCls =
@@ -80,17 +112,18 @@ const Contact = () => {
           </label>
           <button
             type="submit"
-            className="h-12 px-8 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary/90 transition-colors"
+            disabled={submitting}
+            className="h-12 px-8 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary/90 transition-colors disabled:opacity-60"
           >
-            Trimite mesajul
+            {submitting ? "Se trimite…" : "Trimite mesajul"}
           </button>
         </form>
 
         <aside className="lg:col-span-5 space-y-10">
           <div>
             <p className="eyebrow mb-5">Direct</p>
-            <a href="mailto:hello@alexmatescu.ro" className="inline-flex items-center gap-3 font-serif text-2xl link-underline">
-              <Mail className="h-5 w-5" /> hello@alexmatescu.ro
+            <a href="mailto:alexmatescu.c@gmail.com" className="inline-flex items-center gap-3 font-serif text-2xl link-underline">
+              <Mail className="h-5 w-5" /> alexmatescu.c@gmail.com
             </a>
             <p className="mt-3 text-sm text-muted-foreground">Pentru orice subiect care merită un răspuns scris.</p>
           </div>

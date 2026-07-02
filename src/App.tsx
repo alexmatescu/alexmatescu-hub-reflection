@@ -15,6 +15,7 @@ import Book from "./pages/Book";
 import Contact from "./pages/Contact";
 import AdminAbonati from "./pages/AdminAbonati";
 import AdminCrandit from "./pages/AdminCrandit";
+import AdminMesaje from "./pages/AdminMesaje";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin/abonati" element={<AdminAbonati />} />
             <Route path="/admin/crandit" element={<AdminCrandit />} />
+            <Route path="/admin/mesaje" element={<AdminMesaje />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
