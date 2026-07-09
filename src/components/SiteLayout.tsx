@@ -8,15 +8,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const nav = [
-  { to: "/", label: "Acasă" },
-  { to: "/despre", label: "Despre" },
-  { to: "/calatoria", label: "Călătoria" },
-  { to: "/proiecte", label: "Proiecte", hasDropdown: true },
-  { to: "/carte", label: "CRANDIT" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
-];
+type NavItem = {
+  to: string;
+  label: string;
+  items?: { to: string; label: string }[];
+};
 
 const projectDropdownItems = [
   { to: "/proiecte/geo-ai-visibility", label: "GEO/AEO vizibility" },
@@ -29,20 +25,43 @@ const projectDropdownItems = [
   { to: "/proiecte/blogging", label: "Blogging" },
 ];
 
-const isProjectsActive = (pathname: string) =>
-  pathname.startsWith("/proiecte") ||
-  projectDropdownItems.some((item) => pathname === item.to);
+const aiVisibilityDropdownItems = [
+  { to: "/ai-visibility#ce-este", label: "Ce este AI Visibility" },
+  { to: "/ai-visibility#metodologie", label: "Metodologie GEO/AEO" },
+  { to: "/ai-visibility#audit", label: "Audit AI Visibility" },
+  { to: "/ai-visibility#studii-de-caz", label: "Studii de caz" },
+  { to: "/ai-visibility#resurse", label: "Resurse" },
+];
+
+const nav: NavItem[] = [
+  { to: "/", label: "Acasă" },
+  { to: "/despre", label: "Despre" },
+  { to: "/calatoria", label: "Călătoria" },
+  { to: "/proiecte", label: "Proiecte", items: projectDropdownItems },
+  { to: "/carte", label: "CRANDIT" },
+  { to: "/ai-visibility", label: "AI Visibility Lab", items: aiVisibilityDropdownItems },
+  { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Contact" },
+];
+
+const isDropdownActive = (pathname: string, item: NavItem) => {
+  if (!item.items) return false;
+  if (pathname === item.to || pathname.startsWith(item.to + "/")) return true;
+  return item.items.some((sub) => pathname === sub.to.split("#")[0]);
+};
 
 const SiteLayout = () => {
   const [open, setOpen] = useState(false);
-  const [projectsOpen, setProjectsOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
     setOpen(false);
-    setProjectsOpen(false);
-    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-  }, [location.pathname]);
+    setOpenMobileDropdown(null);
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -57,16 +76,16 @@ const SiteLayout = () => {
 
           <nav className="hidden md:flex items-center gap-8">
             {nav.map((item) =>
-              item.hasDropdown ? (
+              item.items ? (
                 <DropdownMenu key={item.to}>
                   <DropdownMenuTrigger asChild>
                     <button
                       className={`flex items-center gap-1 text-sm transition-colors outline-none ${
-                        isProjectsActive(location.pathname)
+                        isDropdownActive(location.pathname, item)
                           ? "text-foreground"
                           : "text-muted-foreground hover:text-foreground"
                       }`}
-                      aria-label="Proiecte"
+                      aria-label={item.label}
                     >
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5 opacity-70" />
@@ -77,8 +96,9 @@ const SiteLayout = () => {
                     sideOffset={12}
                     className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-sm"
                   >
-                    {projectDropdownItems.map((sub) => {
-                      const active = location.pathname === sub.to;
+                    {item.items.map((sub) => {
+                      const [subPath] = sub.to.split("#");
+                      const active = location.pathname + location.hash === sub.to || location.pathname === sub.to;
                       return (
                         <DropdownMenuItem key={sub.to} asChild>
                           <Link
@@ -129,29 +149,39 @@ const SiteLayout = () => {
           <div className="md:hidden border-t border-foreground/10 bg-background">
             <nav className="container-editorial py-6 flex flex-col gap-5">
               {nav.map((item) =>
-                item.hasDropdown ? (
+                item.items ? (
                   <div key={item.to} className="flex flex-col">
                     <button
-                      onClick={() => setProjectsOpen((s) => !s)}
+                      onClick={() =>
+                        setOpenMobileDropdown((s) => (s === item.to ? null : item.to))
+                      }
                       className={`flex items-center justify-between font-serif text-2xl ${
-                        isProjectsActive(location.pathname) ? "text-foreground" : "text-muted-foreground"
+                        isDropdownActive(location.pathname, item)
+                          ? "text-foreground"
+                          : "text-muted-foreground"
                       }`}
                     >
                       {item.label}
                       <ChevronDown
-                        className={`h-5 w-5 transition-transform ${projectsOpen ? "rotate-180" : ""}`}
+                        className={`h-5 w-5 transition-transform ${
+                          openMobileDropdown === item.to ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
-                    {projectsOpen && (
+                    {openMobileDropdown === item.to && (
                       <ul className="mt-4 ml-4 flex flex-col gap-3 border-l border-foreground/10 pl-4">
-                        {projectDropdownItems.map((sub) => {
-                          const active = location.pathname === sub.to;
+                        {item.items.map((sub) => {
+                          const active =
+                            location.pathname + location.hash === sub.to ||
+                            location.pathname === sub.to;
                           return (
                             <li key={sub.to}>
                               <Link
                                 to={sub.to}
                                 className={`text-sm transition-colors ${
-                                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                                  active
+                                    ? "text-foreground"
+                                    : "text-muted-foreground hover:text-foreground"
                                 }`}
                               >
                                 {sub.label}
