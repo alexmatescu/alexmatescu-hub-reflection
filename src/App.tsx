@@ -10,6 +10,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Projects from "./pages/Projects";
 import Calatoria from "./pages/Calatoria";
+import AiVisibility from "./pages/AiVisibility";
 import ProjectDetail from "./pages/ProjectDetail";
 import Book from "./pages/Book";
 import Contact from "./pages/Contact";
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/proiecte" element={<Projects />} />
             <Route path="/proiecte/:slug" element={<ProjectDetail />} />
             <Route path="/carte" element={<Book />} />
+            <Route path="/ai-visibility" element={<AiVisibility />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin/abonati" element={<AdminAbonati />} />
             <Route path="/admin/crandit" element={<AdminCrandit />} />
