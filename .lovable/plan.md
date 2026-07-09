@@ -1,22 +1,26 @@
-## Actualizare meniu navigare
+## Adăugare meniu „AI Visibility Lab"
 
-Reordonez și relabel-ez meniul (header + footer) astfel:
+### 1. `src/components/SiteLayout.tsx`
+- Adaug intrare nouă în `nav`, între „CRANDIT" și „Blog":
+  `{ to: "/ai-visibility", label: "AI Visibility Lab", hasDropdown: true }`
+- Introduc un al doilea array `aiVisibilityDropdownItems` cu ancorele:
+  - Ce este AI Visibility → `/ai-visibility#ce-este`
+  - Metodologie GEO/AEO → `/ai-visibility#metodologie`
+  - Audit AI Visibility → `/ai-visibility#audit`
+  - Studii de caz → `/ai-visibility#studii-de-caz`
+  - Resurse → `/ai-visibility#resurse`
+- Extind logica de dropdown (desktop + mobile) ca să suporte două meniuri cu dropdown, nu doar „Proiecte". Cel mai curat: în loc de flag boolean, fiecare item cu dropdown primește propriul array `items`, iar starea `projectsOpen` devine `openDropdown: string | null`.
 
-**Acasă | Despre | Călătoria | Proiecte | CRANDIT | Blog | Contact**
+### 2. Pagină nouă `src/pages/AiVisibility.tsx`
+- O singură pagină cu 5 secțiuni ancorate (`id="ce-este"`, `id="metodologie"`, `id="audit"`, `id="studii-de-caz"`, `id="resurse"`).
+- Hero scurt sus (titlu „AI Visibility Lab", subtitlu, paragraf intro).
+- Fiecare secțiune: eyebrow + titlu + paragraf placeholder editorial („Conținut în lucru — se completează ulterior."), în stilul editorial existent (Fraunces + Inter, `container-editorial`).
+- Scroll la ancoră gestionat nativ prin `id` + un mic `useEffect` care face `scrollIntoView` când `location.hash` se schimbă (pentru cazul când utilizatorul dă click pe același item de mai multe ori).
 
-### Modificări concrete
+### 3. `src/App.tsx`
+- Adaug ruta `/ai-visibility` → `AiVisibility` în interiorul `SiteLayout`.
 
-1. **`src/components/SiteLayout.tsx`** — rescriu array-ul `nav` în această ordine, cu eticheta „CRANDIT" (păstrând URL `/carte`) și adăugând „Călătoria" (URL `/calatoria`). Header-ul și footer-ul folosesc același array, deci se actualizează amândouă.
-
-2. **Pagină nouă `src/pages/Calatoria.tsx`** — pagină nouă cu scopul: „Cum am ajuns aici?" și un timeline complet al parcursului tău. Structură:
-   - Hero scurt: titlu „Călătoria", subtitlu „Cum am ajuns aici", paragraf intro despre scopul paginii.
-   - Secțiune timeline vertical (stil editorial, coerent cu restul site-ului): listă cronologică de momente/etape, fiecare cu an, titlu, descriere scurtă. Voi popula cu intrări-placeholder pe care le poți edita ulterior (ex: începuturi, momente-cheie, lansarea proiectelor, CRANDIT etc.).
-   - CTA final spre `/proiecte` și `/carte`.
-
-3. **`src/App.tsx`** — adaug ruta `/calatoria` → `Calatoria` în interiorul `SiteLayout`.
-
-### Notă
-
-- Eticheta „CRANDIT" se afișează cu majuscule așa cum ai cerut; restul etichetelor rămân în stilul actual (Title Case).
-- URL-ul pentru CRANDIT rămâne `/carte` — nu se sparg link-uri existente.
-- Conținutul timeline-ului este placeholder editorial; după implementare îmi poți spune evenimentele exacte și le populez.
+### Note
+- Nu modific conținutul altor pagini.
+- Textul din cele 5 secțiuni rămâne placeholder — îl completezi tu ulterior când ai materialul.
+- Ordinea finală meniu: Acasă | Despre | Călătoria | Proiecte ▾ | CRANDIT | AI Visibility Lab ▾ | Blog | Contact.
