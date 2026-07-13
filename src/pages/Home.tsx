@@ -195,6 +195,16 @@ const Home = () => {
                     {p!.status}
                   </span>
                 </div>
+                {p!.slug === "geo-ai-visibility" && (
+                  <div className="aspect-[16/9] w-full overflow-hidden rounded-sm border border-foreground/10 bg-[#0b0f0e]">
+                    <img
+                      src={aiVisibilityHero.url}
+                      alt="AI Visibility Lab — vizibilitate în epoca modelelor generative"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 {(p!.slug === "taste-the-corn" || p!.slug === "ovb") && (
                   <div className="w-24 h-24 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white">
                     <img
