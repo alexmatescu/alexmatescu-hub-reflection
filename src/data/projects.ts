@@ -229,7 +229,7 @@ export const projects: Project[] = [
   },
   {
     slug: "geo-ai-visibility",
-    title: "GEO / AI Visibility",
+    title: "AI Visibility Lab",
     tagline: "Vizibilitate în era căutării generative",
     status: "concept",
     description:

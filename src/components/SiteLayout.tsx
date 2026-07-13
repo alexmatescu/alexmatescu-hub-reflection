@@ -15,7 +15,7 @@ type NavItem = {
 };
 
 const projectDropdownItems = [
-  { to: "/proiecte/geo-ai-visibility", label: "GEO/AEO vizibility" },
+  { to: "/proiecte/geo-ai-visibility", label: "AI Visibility Lab" },
   { to: "/carte", label: "CRANDIT" },
   { to: "/proiecte/taste-the-corn", label: "TASTE THE CORN" },
   { to: "/proiecte/ovb", label: "OVB" },
