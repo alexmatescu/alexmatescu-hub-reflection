@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import heroImage from "@/assets/ai-visibility-hero.png.asset.json";
 
 const sections = [
   {
