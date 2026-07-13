@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import heroImage from "@/assets/ai-visibility-hero.png.asset.json";
 
 const sections = [
   {
@@ -48,13 +49,21 @@ const AiVisibility = () => {
 
   return (
     <div>
-      <section className="border-b border-foreground/10">
-        <div className="container-editorial py-20 md:py-28 max-w-4xl">
-          <p className="eyebrow mb-6">AI Visibility Lab</p>
-          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance">
-            Vizibilitate în epoca modelelor generative
+      <section className="relative border-b border-foreground/10 bg-[#0b0f0e] text-[#e8e0cf] overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage.url}
+            alt="AI Visibility Lab — ochiul care vede și este văzut de modelele generative"
+            className="w-full h-full object-cover object-right opacity-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f0e] via-[#0b0f0e]/85 to-transparent" />
+        </div>
+        <div className="relative container-editorial py-24 md:py-36 max-w-4xl">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#c9b98a] mb-6">AI Visibility Lab</p>
+          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance text-[#f0e8d6]">
+            Fi văzut. Fi înțeles. Fi citat.
           </h1>
-          <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="mt-8 text-lg md:text-xl text-[#e8e0cf]/80 leading-relaxed max-w-2xl">
             Un spațiu de lucru dedicat GEO și AEO — metodologie, audit, studii de caz și resurse pentru cei
             care vor să fie găsiți, citați și recomandați de ChatGPT, Gemini, Perplexity, Claude și Copilot.
           </p>
