@@ -1,0 +1,21 @@
+# Alex Matescu — delamatescu.ro
+
+> Hub personal al lui Alex Matescu: inginer, scriitor și antreprenor. Eseuri, cărți și proiecte despre claritate, disciplină, muncă și sens, scrise în limba română.
+
+Blog activ din 2014, relansat în 2025 pe acest domeniu. Conținutul e format din eseuri personale despre disciplină, identitate, muncă, relații și leadership, alături de proiecte antreprenoriale trecute și curente și o carte în lucru.
+
+## Pagini principale
+
+- [Acasă](https://delamatescu.ro/): prezentare generală și proiecte curente
+- [Despre](https://delamatescu.ro/despre): parcurs profesional și biografie
+- [Blog](https://delamatescu.ro/blog): peste 120 de articole, organizate pe categorii — Reflecții, Leadership, Experiențe, Jurnal de bord, Habits, Dragoste, Dreaming moments, Sfaturi utile
+- [Proiecte](https://delamatescu.ro/proiecte): proiecte antreprenoriale trecute și curente (afacere de familie, retail, consultanță financiară, GEO/AI Visibility)
+- [Carte](https://delamatescu.ro/carte): CRANDIT — Mitul succesului peste noapte (2026)
+- [AI Visibility Lab](https://delamatescu.ro/ai-visibility): cercetare despre vizibilitate în căutarea generativă (GEO/AI Visibility)
+- [Contact](https://delamatescu.ro/contact)
+
+## Note pentru agenți și crawlere
+
+- Site-ul este o aplicație React randată client-side (SPA). Dacă nu executați JavaScript, HTML-ul inițial nu conține textul integral al articolelor — doar shell-ul aplicației.
+- Toate paginile publice permit indexare și acces (vezi /robots.txt).
+- Limba conținutului: română.
