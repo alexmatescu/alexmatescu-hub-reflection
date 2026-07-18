@@ -87,7 +87,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
           <div className="bg-background p-8">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Nume</p>
-            <p className="font-serif text-xl">Alexandru (Alex) Matescu</p>
+            <p className="font-serif text-xl">(Alexandru-Costi) Alex Matescu</p>
           </div>
           <div className="bg-background p-8">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Locație</p>
