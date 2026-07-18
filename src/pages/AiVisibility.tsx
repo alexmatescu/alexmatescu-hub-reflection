@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import heroImage from "@/assets/ai-visibility-hero.png.asset.json";
+
+const heroImage = "/images/blog/ai-visibility-hero.png";
 
 const sections = [
   {
@@ -52,7 +53,7 @@ const AiVisibility = () => {
       <section className="relative border-b border-foreground/10 bg-[#0b0f0e] text-[#e8e0cf] overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={heroImage.url}
+            src={heroImage}
             alt="AI Visibility Lab — ochiul care vede și este văzut de modelele generative"
             className="w-full h-full object-cover object-right opacity-90"
           />

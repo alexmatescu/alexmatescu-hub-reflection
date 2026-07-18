@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
-import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
-import ovbLogo from "@/assets/ovb-logo.png.asset.json";
+
+const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.png";
+const ovbLogo = "/images/blog/ovb-logo.png";
 
 const statusTone: Record<string, string> = {
   "activ": "text-emerald-800 bg-emerald-100/60",
@@ -40,7 +41,7 @@ const Projects = () => {
                   {(p.slug === "taste-the-corn" || p.slug === "ovb") && (
                     <div className="w-20 h-20 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white mb-6">
                       <img
-                        src={p.slug === "ovb" ? ovbLogo.url : tasteTheCornLogo.url}
+                        src={p.slug === "ovb" ? ovbLogo : tasteTheCornLogo}
                         alt={`Logo ${p.title}${p.slug === "taste-the-corn" ? " — N-ai cum să-i spui nu" : ""}`}
                         className="w-full h-full object-contain"
                         loading="lazy"

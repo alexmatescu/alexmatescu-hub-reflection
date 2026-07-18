@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
-import cranditCover from "@/assets/crandit-cover.png.asset.json";
-import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
-import ovbLogo from "@/assets/ovb-logo.png.asset.json";
-import aiVisibilityHero from "@/assets/ai-visibility-hero.png.asset.json";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
+
+const cranditCover = "/images/blog/crandit-cover.png";
+const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.png";
+const ovbLogo = "/images/blog/ovb-logo.png";
+const aiVisibilityHero = "/images/blog/ai-visibility-hero.png";
 
 const statusTone: Record<string, string> = {
   "activ": "text-emerald-800 bg-emerald-100/60",
@@ -150,7 +151,7 @@ const Home = () => {
           <div className="md:col-span-5">
             <Link to="/carte" className="block group">
               <img
-                src={cranditCover.url}
+                src={cranditCover}
                 alt="Coperta cărții CRANDIT — Mitul succesului peste noapte de Alexandru Matescu"
                 className="w-full aspect-[3/4] object-cover border border-[#c9a86c]/15 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                 loading="lazy"
@@ -198,7 +199,7 @@ const Home = () => {
                 {p!.slug === "geo-ai-visibility" && (
                   <div className="aspect-[16/9] w-full overflow-hidden rounded-sm border border-foreground/10 bg-[#0b0f0e]">
                     <img
-                      src={aiVisibilityHero.url}
+                      src={aiVisibilityHero}
                       alt="AI Visibility Lab — vizibilitate în epoca modelelor generative"
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -208,7 +209,7 @@ const Home = () => {
                 {(p!.slug === "taste-the-corn" || p!.slug === "ovb") && (
                   <div className="w-24 h-24 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white">
                     <img
-                      src={p!.slug === "ovb" ? ovbLogo.url : tasteTheCornLogo.url}
+                      src={p!.slug === "ovb" ? ovbLogo : tasteTheCornLogo}
                       alt={`Logo ${p!.title}${p!.slug === "taste-the-corn" ? " — N-ai cum să-i spui nu" : ""}`}
                       className="w-full h-full object-contain"
                       loading="lazy"

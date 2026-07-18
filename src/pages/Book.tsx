@@ -1,4 +1,3 @@
-import cranditCover from "@/assets/crandit-cover.png.asset.json";
 import NewsletterForm from "@/components/NewsletterForm";
 import {
   Accordion,
@@ -7,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const cranditCover = "/images/blog/crandit-cover.png";
 const gold = "#c9a86c";
 const ink = "#151515";
 const inkLift = "#1a1a1a";
@@ -166,7 +166,7 @@ const Book = () => {
           </p>
           <div className="w-full max-w-md">
             <img
-              src={cranditCover.url}
+              src={cranditCover}
               alt="Coperta cărții CRANDIT — Mitul succesului peste noapte de Alexandru Matescu"
               className="w-full aspect-[3/4] object-cover border border-[#c9a86c]/15 shadow-2xl"
               loading="eager"

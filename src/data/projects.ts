@@ -1,5 +1,5 @@
-import tasteTheCornLogo from "@/assets/taste-the-corn-logo.png.asset.json";
-import ovbLogo from "@/assets/ovb-logo.png.asset.json";
+const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.png";
+const ovbLogo = "/images/blog/ovb-logo.png";
 
 export type ProjectStatus = "activ" | "în lucru" | "închis" | "finalizat" | "concept";
 
@@ -73,7 +73,7 @@ export const projects: Project[] = [
       categorie: "Antreprenoriat · Retail alimentar · Business local · Testare concept",
       locatie: "Sibiu, România",
     },
-    logo: tasteTheCornLogo.url,
+    logo: tasteTheCornLogo,
     sections: [
       {
         eyebrow: "Despre proiect",
@@ -285,7 +285,7 @@ export const projects: Project[] = [
       categorie: "Vânzări • Consultanță financiară • Educație financiară • Dezvoltare personală",
       locatie: "România",
     },
-    logo: ovbLogo.url,
+    logo: ovbLogo,
     sections: [
       {
         eyebrow: "Despre proiect",
