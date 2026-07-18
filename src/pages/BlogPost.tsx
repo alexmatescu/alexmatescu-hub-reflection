@@ -45,6 +45,22 @@ const BlogPost = () => {
           </div>
         </header>
 
+        {post.heroImage && (
+          <div className="container-prose">
+            <figure className="my-8">
+              <img
+                src={post.heroImage.src}
+                alt={post.heroImage.alt}
+                width={post.heroImage.width}
+                height={post.heroImage.height}
+                className="w-full aspect-video object-cover rounded-sm"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </figure>
+          </div>
+        )}
+
         <div className="container-editorial">
           <div className="rule" />
         </div>
