@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const cranditCover = "/images/blog/crandit-cover.png";
+const cranditCover = "/images/blog/crandit-cover.webp";
 const gold = "#c9a86c";
 const ink = "#151515";
 const inkLift = "#1a1a1a";

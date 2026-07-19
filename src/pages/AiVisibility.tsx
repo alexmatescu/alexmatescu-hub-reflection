@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const heroImage = "/images/blog/ai-visibility-hero.png";
+const heroImage = "/images/blog/ai-visibility-hero.webp";
 
 const sections = [
   {

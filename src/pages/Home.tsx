@@ -4,10 +4,10 @@ import NewsletterForm from "@/components/NewsletterForm";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
-const cranditCover = "/images/blog/crandit-cover.png";
-const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.png";
-const ovbLogo = "/images/blog/ovb-logo.png";
-const aiVisibilityHero = "/images/blog/ai-visibility-hero.png";
+const cranditCover = "/images/blog/crandit-cover.webp";
+const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
+const ovbLogo = "/images/blog/ovb-logo.webp";
+const aiVisibilityHero = "/images/blog/ai-visibility-hero.webp";
 
 const statusTone: Record<string, string> = {
   "activ": "text-emerald-800 bg-emerald-100/60",

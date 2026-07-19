@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
-const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.png";
-const ovbLogo = "/images/blog/ovb-logo.png";
+const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
+const ovbLogo = "/images/blog/ovb-logo.webp";
 
 const statusTone: Record<string, string> = {
   "activ": "text-emerald-800 bg-emerald-100/60",

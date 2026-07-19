@@ -1,5 +1,5 @@
-const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.png";
-const ovbLogo = "/images/blog/ovb-logo.png";
+const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
+const ovbLogo = "/images/blog/ovb-logo.webp";
 
 export type ProjectStatus = "activ" | "în lucru" | "închis" | "finalizat" | "concept";
 
