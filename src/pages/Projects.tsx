@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
+import Seo from "@/components/Seo";
 
 const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
 const ovbLogo = "/images/blog/ovb-logo.webp";
@@ -16,6 +17,11 @@ const statusTone: Record<string, string> = {
 const Projects = () => {
   return (
     <>
+      <Seo
+        title="Proiecte — Alex Matescu"
+        description="Portofoliul lui Alex Matescu: CRANDIT, AI Visibility Lab, afaceri de familie și experimente antreprenoriale, active sau închise, construite în timp."
+      />
+
       <section className="container-editorial pt-20 md:pt-32 pb-12">
         <p className="eyebrow mb-8">Proiecte</p>
         <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">

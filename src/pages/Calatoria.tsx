@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Seo from "@/components/Seo";
 
 type TimelineItem = { period: string; title: string; description: string };
 
@@ -287,6 +288,11 @@ const entities = [
 const Calatoria = () => {
   return (
     <div>
+      <Seo
+        title="Călătoria lui Alex Matescu — De la Gorj la CRANDIT"
+        description="Povestea lui Alex Matescu, de la Strâmba Jiu și Gorj la Craiova, Timișoara, București și Sibiu, prin studii tehnice, inginerie, antreprenoriat, CRANDIT și AI Visibility Lab."
+      />
+
       {/* Hero */}
       <section className="container-editorial pt-16 md:pt-24 pb-12">
         <p className="eyebrow mb-6">Călătoria</p>

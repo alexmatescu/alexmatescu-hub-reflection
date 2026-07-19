@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, ArrowUpRight } from "lucide-react";
 import { posts, categories } from "@/data/posts";
+import Seo from "@/components/Seo";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" });
@@ -24,6 +25,11 @@ const Blog = () => {
 
   return (
     <>
+      <Seo
+        title="Blog — Alex Matescu"
+        description="Articole de Alex Matescu despre claritate, disciplină, muncă, succes, tehnologie și antreprenoriat, scrise rar și deliberat."
+      />
+
       <section className="container-editorial pt-20 md:pt-32 pb-12">
         <p className="eyebrow mb-8">Blog</p>
         <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">

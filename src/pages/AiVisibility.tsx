@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Seo, { alexMatescuPerson } from "@/components/Seo";
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
 
@@ -50,6 +51,21 @@ const AiVisibility = () => {
 
   return (
     <div>
+      <Seo
+        title="AI Visibility Lab — GEO și AEO pentru branduri | Alex Matescu"
+        description="AI Visibility Lab este proiectul lui Alex Matescu despre GEO, AEO și vizibilitatea brandurilor în ChatGPT, Google AI Overviews și motoarele de căutare generative."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: "AI Visibility Lab",
+          description:
+            "AI Visibility Lab este proiectul lui Alex Matescu despre GEO, AEO și vizibilitatea brandurilor în ChatGPT, Google AI Overviews și motoarele de căutare generative.",
+          url: "https://delamatescu.ro/ai-visibility",
+          creator: alexMatescuPerson,
+          author: alexMatescuPerson,
+        }}
+      />
+
       <section className="relative border-b border-foreground/10 bg-[#0b0f0e] text-[#e8e0cf] overflow-hidden">
         <div className="absolute inset-0">
           <img

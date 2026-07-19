@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { posts } from "@/data/posts";
 import NewsletterForm from "@/components/NewsletterForm";
+import Seo, { alexMatescuPerson } from "@/components/Seo";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" });
@@ -25,6 +26,22 @@ const BlogPost = () => {
 
   return (
     <>
+      <Seo
+        title={`${post.title} — Alex Matescu`}
+        description={post.excerpt}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          dateModified: post.dateModified ?? post.date,
+          url: `https://delamatescu.ro/blog/${post.slug}`,
+          ...(post.heroImage?.src ? { image: post.heroImage.src } : {}),
+          author: alexMatescuPerson,
+        }}
+      />
+
       <article>
         <header className="container-editorial pt-20 md:pt-28 pb-12">
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12">

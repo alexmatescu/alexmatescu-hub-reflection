@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import type { Session } from "@supabase/supabase-js";
+import { useSeo } from "@/components/Seo";
 
 type Message = {
   id: string;
@@ -13,6 +14,8 @@ type Message = {
 };
 
 const AdminMesaje = () => {
+  useSeo({ title: "Admin — Mesaje | Alex Matescu", description: "Panou de administrare.", noIndex: true });
+
   const [session, setSession] = useState<Session | null>(null);
   const [checking, setChecking] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);

@@ -3,6 +3,7 @@ import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Mail, Linkedin, Twitter, Facebook, Instagram, Rss } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const reasons = ["Colaborare", "Coaching / mentoring", "Media / podcast", "Proiect", "Altceva"];
 
@@ -55,6 +56,11 @@ const Contact = () => {
 
   return (
     <>
+      <Seo
+        title="Contact — Alex Matescu"
+        description="Scrie-i lui Alex Matescu pentru colaborări, mentoring, media sau proiecte."
+      />
+
       <section className="container-editorial pt-20 md:pt-32 pb-12">
         <p className="eyebrow mb-8">Contact</p>
         <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-3xl">

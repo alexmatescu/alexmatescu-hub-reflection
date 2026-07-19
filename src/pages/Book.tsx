@@ -1,4 +1,5 @@
 import NewsletterForm from "@/components/NewsletterForm";
+import Seo, { alexMatescuPerson } from "@/components/Seo";
 import {
   Accordion,
   AccordionContent,
@@ -158,6 +159,20 @@ const Section = ({
 const Book = () => {
   return (
     <div className="bg-[#151515] text-[#f5f0e8]">
+      <Seo
+        title="CRANDIT — Mitul succesului peste noapte | Alex Matescu"
+        description="CRANDIT — Mitul succesului peste noapte este cartea lui Alex Matescu despre succes durabil, scrisă din experiențe trăite, lecții teoretice și practice, disciplină, claritate și costuri asumate."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Book",
+          name: "CRANDIT — Mitul succesului peste noapte",
+          description:
+            "CRANDIT — Mitul succesului peste noapte este cartea lui Alex Matescu despre succes durabil, scrisă din experiențe trăite, lecții teoretice și practice, disciplină, claritate și costuri asumate.",
+          url: "https://delamatescu.ro/carte",
+          author: alexMatescuPerson,
+        }}
+      />
+
       {/* HERO */}
       <section className="bg-[#151515] text-[#c9a86c]">
         <div className="container-editorial pt-20 md:pt-32 pb-20 md:pb-28 flex flex-col items-center text-center">

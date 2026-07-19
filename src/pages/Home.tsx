@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
+import Seo from "@/components/Seo";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
@@ -22,6 +23,11 @@ const Home = () => {
 
   return (
     <>
+      <Seo
+        title="Alex Matescu — Blog despre claritate, muncă și proiecte"
+        description="Blogul lui Alex Matescu despre claritate, muncă, disciplină, succes, tehnologie, antreprenoriat și proiecte personale construite în timp."
+      />
+
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grain opacity-70 pointer-events-none" />

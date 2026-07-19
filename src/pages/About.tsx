@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import Seo, { alexMatescuPerson } from "@/components/Seo";
 
 const values = [
   { word: "Claritate", note: "A vedea ce este, nu ce vrem să fie." },
@@ -40,6 +41,12 @@ const domains = [
 const About = () => {
   return (
     <>
+      <Seo
+        title="Despre Alex Matescu — Inginer, autor și antreprenor"
+        description="Cine este Alex Matescu: inginer în automotive, autor al CRANDIT, antreprenor și creator de conținut despre muncă, tehnologie și sens."
+        jsonLd={{ "@context": "https://schema.org", ...alexMatescuPerson }}
+      />
+
       {/* HERO */}
       <section className="container-editorial pt-20 md:pt-32 pb-16">
         <p className="eyebrow mb-8">Despre mine</p>
@@ -151,7 +158,7 @@ const About = () => {
         </div>
         <div className="md:col-span-8 prose-editorial">
           <p>
-            Mă numesc Alexandru (Alex) Matescu și locuiesc în Sibiu, România.
+            Mă numesc (Alexandru-Costi) Alex Matescu și locuiesc în Sibiu, România.
           </p>
           <p>
             Profesional, activez în industria automotive și a sistemelor autonome, unde lucrez la dezvoltarea de produse și tehnologii pentru vehiculele moderne. De-a lungul carierei am trecut prin roluri de documentație tehnică, arhitectură de sistem, inginerie de sistem și coordonare tehnică, acumulând experiență în dezvoltarea sistemelor complexe și în colaborarea cu echipe internaționale.

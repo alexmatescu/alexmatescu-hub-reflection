@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { posts } from "@/data/posts";
 import NewsletterForm from "@/components/NewsletterForm";
+import Seo from "@/components/Seo";
 import {
   Accordion,
   AccordionContent,
@@ -48,6 +49,8 @@ const ProjectDetail = () => {
 
   return (
     <>
+      <Seo title={`${project.title} — Alex Matescu`} description={project.description} />
+
       <header className="container-editorial pt-20 md:pt-28 pb-12">
         <Link
           to="/proiecte"
