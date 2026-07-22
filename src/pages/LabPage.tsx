@@ -2,6 +2,11 @@ import { Link, Navigate, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Seo, { alexMatescuPerson } from "@/components/Seo";
 import { findLabPage, findLabParent } from "@/data/lab";
+import { avl001IntroductionHtml } from "@/data/lab-content/avl-001";
+
+const labPageContent: Record<string, string> = {
+  "/lab/introducere": avl001IntroductionHtml,
+};
 
 const LabPage = () => {
   const location = useLocation();
@@ -12,6 +17,7 @@ const LabPage = () => {
   }
 
   const parent = findLabParent(page.to);
+  const content = labPageContent[page.to];
 
   return (
     <div>
@@ -50,15 +56,22 @@ const LabPage = () => {
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">{page.lead}</p>
 
-          <div className="mt-10 p-6 md:p-8 border border-dashed border-foreground/15 rounded-sm bg-surface/40">
-            <p className="text-sm uppercase tracking-[0.22em] text-muted-foreground mb-3">
-              Pagină în lucru
-            </p>
-            <p className="text-base text-foreground/80 leading-relaxed">
-              Conținutul acestei pagini urmează să fie completat. Reprezintă un cadru editorial
-              pregătit pentru textul final.
-            </p>
-          </div>
+          {content ? (
+            <div
+              className="prose-editorial mt-14 max-w-2xl"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          ) : (
+            <div className="mt-10 p-6 md:p-8 border border-dashed border-foreground/15 rounded-sm bg-surface/40">
+              <p className="text-sm uppercase tracking-[0.22em] text-muted-foreground mb-3">
+                Pagină în lucru
+              </p>
+              <p className="text-base text-foreground/80 leading-relaxed">
+                Conținutul acestei pagini urmează să fie completat. Reprezintă un cadru editorial
+                pregătit pentru textul final.
+              </p>
+            </div>
+          )}
 
           {page.children && (
             <div className="mt-16">
