@@ -8,6 +8,10 @@ import { avl102CumAlegHtml } from "@/data/lab-content/avl-102";
 import { avl103SeoVsGeoHtml } from "@/data/lab-content/avl-103";
 import { avl104MasurareHtml } from "@/data/lab-content/avl-104";
 import { avl105GlosarHtml } from "@/data/lab-content/avl-105";
+import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
+import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
+import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
+import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
 
 const labPageContent: Record<string, string> = {
   "/lab/introducere": avl001IntroductionHtml,
@@ -16,6 +20,10 @@ const labPageContent: Record<string, string> = {
   "/lab/cercetare/seo-vs-geo": avl103SeoVsGeoHtml,
   "/lab/cercetare/cum-se-masoara-ai-visibility": avl104MasurareHtml,
   "/lab/cercetare/glosar-geo-aeo": avl105GlosarHtml,
+  "/lab/metodologie/tabula-rasa-f0": avl201TabulaRasaF0Html,
+  "/lab/experimente-publice": avl301ExperimentePubliceHtml,
+  "/lab/articole": avl401ArticoleHtml,
+  "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 
 const LabPage = () => {
