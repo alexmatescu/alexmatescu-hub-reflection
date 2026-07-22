@@ -3,9 +3,19 @@ import { ArrowLeft } from "lucide-react";
 import Seo, { alexMatescuPerson } from "@/components/Seo";
 import { findLabPage, findLabParent } from "@/data/lab";
 import { avl001IntroductionHtml } from "@/data/lab-content/avl-001";
+import { avl101GeoAeoHtml } from "@/data/lab-content/avl-101";
+import { avl102CumAlegHtml } from "@/data/lab-content/avl-102";
+import { avl103SeoVsGeoHtml } from "@/data/lab-content/avl-103";
+import { avl104MasurareHtml } from "@/data/lab-content/avl-104";
+import { avl105GlosarHtml } from "@/data/lab-content/avl-105";
 
 const labPageContent: Record<string, string> = {
   "/lab/introducere": avl001IntroductionHtml,
+  "/lab/cercetare/ce-este-geo-aeo": avl101GeoAeoHtml,
+  "/lab/cercetare/cum-aleg-motoarele-ai": avl102CumAlegHtml,
+  "/lab/cercetare/seo-vs-geo": avl103SeoVsGeoHtml,
+  "/lab/cercetare/cum-se-masoara-ai-visibility": avl104MasurareHtml,
+  "/lab/cercetare/glosar-geo-aeo": avl105GlosarHtml,
 };
 
 const LabPage = () => {
