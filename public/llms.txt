@@ -11,7 +11,7 @@ Blog activ din 2014, relansat în 2025 pe acest domeniu. Conținutul e format di
 - [Blog](https://delamatescu.ro/blog): peste 120 de articole, organizate pe categorii — Reflecții, Leadership, Experiențe, Jurnal de bord, Habits, Dragoste, Dreaming moments, Sfaturi utile
 - [Proiecte](https://delamatescu.ro/proiecte): proiecte antreprenoriale trecute și curente (afacere de familie, retail, consultanță financiară, GEO/AI Visibility)
 - [Carte](https://delamatescu.ro/carte): CRANDIT — Mitul succesului peste noapte (2026)
-- [AI Visibility Lab](https://delamatescu.ro/ai-visibility): cercetare despre vizibilitate în căutarea generativă (GEO/AI Visibility)
+- [AI Visibility Lab](https://delamatescu.ro/lab): cercetare despre vizibilitate în căutarea generativă (GEO/AI Visibility)
 - [Contact](https://delamatescu.ro/contact)
 
 ## Note pentru agenți și crawlere

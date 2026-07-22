@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,7 +10,8 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Projects from "./pages/Projects";
 import Calatoria from "./pages/Calatoria";
-import AiVisibility from "./pages/AiVisibility";
+import Lab from "./pages/Lab";
+import LabPage from "./pages/LabPage";
 import ProjectDetail from "./pages/ProjectDetail";
 import Book from "./pages/Book";
 import Contact from "./pages/Contact";
@@ -37,7 +38,10 @@ const App = () => (
             <Route path="/proiecte" element={<Projects />} />
             <Route path="/proiecte/:slug" element={<ProjectDetail />} />
             <Route path="/carte" element={<Book />} />
-            <Route path="/ai-visibility" element={<AiVisibility />} />
+            <Route path="/lab" element={<Lab />} />
+            <Route path="/lab/:slug" element={<LabPage />} />
+            <Route path="/lab/:parent/:slug" element={<LabPage />} />
+            <Route path="/ai-visibility" element={<Navigate to="/lab" replace />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin/abonati" element={<AdminAbonati />} />
             <Route path="/admin/crandit" element={<AdminCrandit />} />

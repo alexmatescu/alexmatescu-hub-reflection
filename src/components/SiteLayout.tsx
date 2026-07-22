@@ -1,17 +1,27 @@
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { labNav } from "@/data/lab";
+
+type NavSubItem = {
+  to: string;
+  label: string;
+  items?: { to: string; label: string }[];
+};
 
 type NavItem = {
   to: string;
   label: string;
-  items?: { to: string; label: string }[];
+  items?: NavSubItem[];
 };
 
 const projectDropdownItems = [
@@ -25,13 +35,11 @@ const projectDropdownItems = [
   { to: "/proiecte/blogging", label: "Blogging" },
 ];
 
-const aiVisibilityDropdownItems = [
-  { to: "/ai-visibility#ce-este", label: "Ce este AI Visibility" },
-  { to: "/ai-visibility#metodologie", label: "Metodologie GEO/AEO" },
-  { to: "/ai-visibility#audit", label: "Audit AI Visibility" },
-  { to: "/ai-visibility#studii-de-caz", label: "Studii de caz" },
-  { to: "/ai-visibility#resurse", label: "Resurse" },
-];
+const labDropdownItems: NavSubItem[] = labNav.map((item) => ({
+  to: item.to,
+  label: item.label,
+  items: item.children?.map((child) => ({ to: child.to, label: child.label })),
+}));
 
 const nav: NavItem[] = [
   { to: "/", label: "Acasă" },
@@ -39,7 +47,7 @@ const nav: NavItem[] = [
   { to: "/calatoria", label: "Călătoria" },
   { to: "/proiecte", label: "Proiecte", items: projectDropdownItems },
   { to: "/carte", label: "CRANDIT" },
-  { to: "/ai-visibility", label: "AI Visibility Lab", items: aiVisibilityDropdownItems },
+  { to: "/lab", label: "Lab", items: labDropdownItems },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ];
@@ -50,14 +58,23 @@ const isDropdownActive = (pathname: string, item: NavItem) => {
   return item.items.some((sub) => pathname === sub.to.split("#")[0]);
 };
 
+const isSubActive = (pathname: string, sub: NavSubItem) => {
+  const subPath = sub.to.split("#")[0];
+  if (pathname === subPath) return true;
+  if (sub.items && pathname.startsWith(subPath + "/")) return true;
+  return false;
+};
+
 const SiteLayout = () => {
   const [open, setOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const [openMobileSub, setOpenMobileSub] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
     setOpen(false);
     setOpenMobileDropdown(null);
+    setOpenMobileSub(null);
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
     }
@@ -97,8 +114,59 @@ const SiteLayout = () => {
                     className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-sm"
                   >
                     {item.items.map((sub) => {
-                      const [subPath] = sub.to.split("#");
-                      const active = location.pathname + location.hash === sub.to || location.pathname === sub.to;
+                      const active = isSubActive(location.pathname, sub);
+
+                      if (sub.items && sub.items.length > 0) {
+                        return (
+                          <DropdownMenuSub key={sub.to}>
+                            <DropdownMenuSubTrigger
+                              className={`px-3 py-2.5 text-sm rounded-sm ${
+                                active
+                                  ? "bg-surface text-foreground"
+                                  : "text-muted-foreground"
+                              }`}
+                            >
+                              {sub.label}
+                            </DropdownMenuSubTrigger>
+                            <DropdownMenuSubContent className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-sm">
+                              <DropdownMenuItem asChild>
+                                <Link
+                                  to={sub.to}
+                                  className={`flex items-center justify-between px-3 py-2.5 text-sm transition-colors rounded-sm cursor-pointer ${
+                                    location.pathname === sub.to
+                                      ? "bg-surface text-foreground"
+                                      : "text-muted-foreground hover:bg-surface hover:text-foreground"
+                                  }`}
+                                >
+                                  {sub.label}
+                                  <ChevronRight className="h-3.5 w-3.5 opacity-50" />
+                                </Link>
+                              </DropdownMenuItem>
+                              {sub.items.map((child) => {
+                                const childActive = location.pathname === child.to;
+                                return (
+                                  <DropdownMenuItem key={child.to} asChild>
+                                    <Link
+                                      to={child.to}
+                                      className={`flex items-center justify-between px-3 py-2.5 text-sm transition-colors rounded-sm cursor-pointer ${
+                                        childActive
+                                          ? "bg-surface text-foreground"
+                                          : "text-muted-foreground hover:bg-surface hover:text-foreground"
+                                      }`}
+                                    >
+                                      {child.label}
+                                      {childActive && (
+                                        <span className="h-1.5 w-1.5 rounded-full bg-foreground/60" aria-hidden="true" />
+                                      )}
+                                    </Link>
+                                  </DropdownMenuItem>
+                                );
+                              })}
+                            </DropdownMenuSubContent>
+                          </DropdownMenuSub>
+                        );
+                      }
+
                       return (
                         <DropdownMenuItem key={sub.to} asChild>
                           <Link
@@ -171,9 +239,59 @@ const SiteLayout = () => {
                     {openMobileDropdown === item.to && (
                       <ul className="mt-4 ml-4 flex flex-col gap-3 border-l border-foreground/10 pl-4">
                         {item.items.map((sub) => {
-                          const active =
-                            location.pathname + location.hash === sub.to ||
-                            location.pathname === sub.to;
+                          const active = isSubActive(location.pathname, sub);
+
+                          if (sub.items && sub.items.length > 0) {
+                            return (
+                              <li key={sub.to}>
+                                <div className="flex items-center justify-between gap-2">
+                                  <Link
+                                    to={sub.to}
+                                    className={`text-sm transition-colors ${
+                                      active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                                    }`}
+                                  >
+                                    {sub.label}
+                                  </Link>
+                                  <button
+                                    onClick={() =>
+                                      setOpenMobileSub((s) => (s === sub.to ? null : sub.to))
+                                    }
+                                    aria-label={sub.label}
+                                    className="p-1 text-muted-foreground"
+                                  >
+                                    <ChevronDown
+                                      className={`h-4 w-4 transition-transform ${
+                                        openMobileSub === sub.to ? "rotate-180" : ""
+                                      }`}
+                                    />
+                                  </button>
+                                </div>
+                                {openMobileSub === sub.to && (
+                                  <ul className="mt-3 ml-4 flex flex-col gap-3 border-l border-foreground/10 pl-4">
+                                    {sub.items.map((child) => {
+                                      const childActive = location.pathname === child.to;
+                                      return (
+                                        <li key={child.to}>
+                                          <Link
+                                            to={child.to}
+                                            className={`text-sm transition-colors ${
+                                              childActive
+                                                ? "text-foreground"
+                                                : "text-muted-foreground hover:text-foreground"
+                                            }`}
+                                          >
+                                            {child.label}
+                                          </Link>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                )}
+                              </li>
+                            );
+                          }
+
                           return (
                             <li key={sub.to}>
                               <Link

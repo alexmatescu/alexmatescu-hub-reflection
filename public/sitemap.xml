@@ -31,9 +31,74 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://delamatescu.ro/ai-visibility</loc>
+    <loc>https://delamatescu.ro/lab</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/introducere</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/cercetare</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/cercetare/ce-este-geo-aeo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/cercetare/cum-aleg-motoarele-ai</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/cercetare/seo-vs-geo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/cercetare/cum-se-masoara-ai-visibility</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/cercetare/glosar-geo-aeo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/metodologie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/metodologie/tabula-rasa-f0</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/experimente-publice</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/audit-ai-visibility</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/despre-laborator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://delamatescu.ro/contact</loc>
