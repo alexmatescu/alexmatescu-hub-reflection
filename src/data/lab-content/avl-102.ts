@@ -18,7 +18,7 @@ export const avl102CumAlegHtml = `
         </table>
       </div>
 
-      <p>Această pagină face parte din seria de teorie AI Visibility Lab. Dacă nu ești familiarizat cu termenii de bază, începe cu Ce este GEO/AEO?.</p>
+      <p>Această pagină face parte din seria de teorie AI Visibility Lab. Dacă nu ești familiarizat cu termenii de bază, începe cu <a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO?</a>.</p>
 
       <h2>Răspunsul scurt</h2>
 
@@ -105,12 +105,12 @@ export const avl102CumAlegHtml = `
       <h2>Citește în continuare</h2>
 
       <ul>
-        <li>Ce este GEO/AEO? Ghid complet de AI Visibility — pagina definițională a seriei</li>
-        <li>SEO vs. GEO: ce se păstrează, ce se schimbă (în curs de publicare)</li>
-        <li>Cum se măsoară vizibilitatea AI (în curs de publicare)</li>
-        <li>Tabula Rasa: metodologia F0 (în curs de publicare)</li>
-        <li>Glosar GEO/AEO/AI — RAG, grounding, query fan-out, coliziune de entitate și restul termenilor din această pagină</li>
-        <li>AI Visibility Lab — metodologia completă</li>
+        <li><a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO? Ghid complet de AI Visibility</a> — pagina definițională a seriei</li>
+        <li><a href="/lab/cercetare/seo-vs-geo">SEO vs. GEO: ce se păstrează, ce se schimbă</a></li>
+        <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a></li>
+        <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — RAG, grounding, query fan-out, coliziune de entitate și restul termenilor din această pagină</li>
+        <li><a href="/lab">AI Visibility Lab</a> — metodologia completă</li>
       </ul>
 
       <h2>Surse și documentație oficială</h2>
@@ -128,5 +128,5 @@ export const avl102CumAlegHtml = `
         <li><a href="https://www.searchenginejournal.com/bing-adds-geo-to-official-guidelines-expands-ai-abuse-definitions/568442/" target="_blank" rel="noopener noreferrer">Microsoft Bing — Bing Webmaster Guidelines (revizuite februarie 2026: GEO, grounding, directive meta pentru Copilot); analiză</a></li>
       </ul>
 
-      <p>Pagina este actualizată pe măsură ce documentația oficială evoluează. Metodologia de măsurare a celor patru filtre este documentată în paginile Tabula Rasa și „Cum se măsoară vizibilitatea AI".</p>
+      <p>Pagina este actualizată pe măsură ce documentația oficială evoluează. Metodologia de măsurare a celor patru filtre este documentată în paginile <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a> și „<a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a>".</p>
 `;

@@ -957,7 +957,7 @@ Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K.
 
 # 25. Istoricul versiunilor
 
-## Versiunea 1.0.0 — iulie 2026
+## Versiunea 1.0.1 — iulie 2026
 
 Prima versiune publică. Documentul definește identitatea și misiunea AI
 Visibility Lab, stabilește domeniul cercetării, introduce clasificarea

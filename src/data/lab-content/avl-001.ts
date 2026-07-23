@@ -38,7 +38,7 @@ export const avl001IntroductionHtml = `
 
       <p>AVL-001 este documentul fondator al AI Visibility Lab. El stabilește cadrul comun în interiorul căruia sunt redactate și interpretate toate documentele de cercetare, metodologiile, experimentele și analizele publicate de laborator.</p>
 
-      <p>Documentul nu este un ghid introductiv despre Generative Engine Optimization, Answer Engine Optimization sau AI Visibility. Aceste concepte sunt tratate separat în documentele de cercetare ale laboratorului, începând cu AVL-101 — Ce este GEO/AEO și AI Visibility.</p>
+      <p>Documentul nu este un ghid introductiv despre Generative Engine Optimization, Answer Engine Optimization sau AI Visibility. Aceste concepte sunt tratate separat în documentele de cercetare ale laboratorului, începând cu <a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>.</p>
 
       <p>Rolul AVL-001 este să răspundă unei întrebări anterioare tuturor întrebărilor tehnice: Cum produce AI Visibility Lab informație și câtă încredere poate fi acordată unei afirmații publicate de laborator?</p>
 
@@ -122,7 +122,7 @@ export const avl001IntroductionHtml = `
 
       <h3>5.3. Dezvoltarea metodologiilor reproductibile</h3>
 
-      <p>Laboratorul transformă întrebările generale în protocoale de măsurare. Metodologia Tabula Rasa F0, de exemplu, documentează starea unei entități înainte de intervenții și creează referința necesară pentru orice comparație ulterioară.</p>
+      <p>Laboratorul transformă întrebările generale în protocoale de măsurare. Metodologia <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa F0</a>, de exemplu, documentează starea unei entități înainte de intervenții și creează referința necesară pentru orice comparație ulterioară.</p>
 
       <h3>5.4. Publicarea experimentelor și a limitărilor</h3>
 
@@ -308,7 +308,7 @@ export const avl001IntroductionHtml = `
 
       <h3>4. Stabilirea liniei de bază</h3>
 
-      <p>Starea inițială este documentată înaintea modificărilor. Metodologia Tabula Rasa F0 tratează această linie de bază ca livrabil independent.</p>
+      <p>Starea inițială este documentată înaintea modificărilor. Metodologia <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa F0</a> tratează această linie de bază ca livrabil independent.</p>
 
       <h3>5. Înghețarea elementelor de comparație</h3>
 
@@ -443,17 +443,17 @@ export const avl001IntroductionHtml = `
       <h3>Nivelul B — Research</h3>
 
       <ul>
-        <li>AVL-101 — Ce este GEO/AEO și AI Visibility</li>
-        <li>AVL-102 — Cum aleg sistemele AI sursele și citările</li>
-        <li>AVL-103 — SEO și GEO: relații, diferențe și suprapuneri</li>
-        <li>AVL-104 — Cum se măsoară AI Visibility</li>
-        <li>AVL-105 — Glosar GEO/AEO și AI Visibility</li>
+        <li><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a></li>
+        <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a></li>
+        <li><a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO și GEO: relații, diferențe și suprapuneri</a></li>
+        <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a></li>
+        <li><a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></li>
       </ul>
 
       <h3>Nivelul C — Methodology</h3>
 
       <ul>
-        <li>AVL-201 — Tabula Rasa F0</li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></li>
         <li>documentele ulterioare ale metodologiei F1–F3</li>
         <li>standardele de scor și evaluare</li>
       </ul>
@@ -613,12 +613,12 @@ export const avl001IntroductionHtml = `
       <h2>24. Documente asociate</h2>
 
       <ul>
-        <li>AVL-101 — Ce este GEO/AEO și AI Visibility</li>
-        <li>AVL-102 — Cum aleg sistemele AI sursele și citările</li>
-        <li>AVL-103 — SEO și GEO: relații, diferențe și suprapuneri</li>
-        <li>AVL-104 — Cum se măsoară AI Visibility</li>
-        <li>AVL-105 — Glosar GEO/AEO și AI Visibility</li>
-        <li>AVL-201 — Tabula Rasa F0</li>
+        <li><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a></li>
+        <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a></li>
+        <li><a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO și GEO: relații, diferențe și suprapuneri</a></li>
+        <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a></li>
+        <li><a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></li>
       </ul>
 
       <h2>25. Istoricul versiunilor</h2>

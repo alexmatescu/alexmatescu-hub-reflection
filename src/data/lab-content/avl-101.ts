@@ -77,7 +77,7 @@ export const avl101GeoAeoHtml = `
 
       <p><strong>Deficitul de surse citabile în română.</strong> Pentru multe subiecte de nișă, motoarele AI nu găsesc surse românești structurate și ajung să sintetizeze din surse străine sau din agregatoare slabe. Asta produce răspunsuri generice sau greșite despre piața locală — și, simultan, o oportunitate: primele surse românești riguroase pe un subiect devin implicit sursele citate.</p>
 
-      <p><strong>Vizibilitatea în căutare și vizibilitatea AI sunt variabile independente.</strong> Din măsurătorile noastre directe: o entitate poate fi invizibilă în Google/Bing și totuși citată corect de ChatGPT — și invers. De aceea un audit serios măsoară ambele straturi separat, cu metodologie documentată. Acesta este fundamentul fazei noastre F0, Tabula Rasa (pagină în curs de publicare).</p>
+      <p><strong>Vizibilitatea în căutare și vizibilitatea AI sunt variabile independente.</strong> Din măsurătorile noastre directe: o entitate poate fi invizibilă în Google/Bing și totuși citată corect de ChatGPT — și invers. De aceea un audit serios măsoară ambele straturi separat, cu metodologie documentată. Acesta este fundamentul fazei noastre F0, <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a>.</p>
 
       <h2>Întrebări frecvente</h2>
 
@@ -94,12 +94,12 @@ export const avl101GeoAeoHtml = `
       <h2>Citește în continuare</h2>
 
       <ul>
-        <li>Cum aleg motoarele AI ce citează (în curs de publicare)</li>
-        <li>SEO vs. GEO: ce se păstrează, ce se schimbă (în curs de publicare)</li>
-        <li>Cum se măsoară vizibilitatea AI (în curs de publicare)</li>
-        <li>Tabula Rasa: metodologia F0 (în curs de publicare)</li>
-        <li>Glosar GEO/AEO/AI — definițiile tuturor termenilor folosiți în această pagină</li>
-        <li>AI Visibility Lab — metodologia completă și studiile de caz</li>
+        <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a></li>
+        <li><a href="/lab/cercetare/seo-vs-geo">SEO vs. GEO: ce se păstrează, ce se schimbă</a></li>
+        <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a></li>
+        <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — definițiile tuturor termenilor folosiți în această pagină</li>
+        <li><a href="/lab">AI Visibility Lab</a> — metodologia completă și studiile de caz</li>
       </ul>
 
       <h2>Surse și documentație oficială</h2>
@@ -115,5 +115,5 @@ export const avl101GeoAeoHtml = `
         <li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">Aggarwal, P. et al. (2024) — GEO: Generative Engine Optimization, KDD '24 (arXiv)</a> · <a href="https://dl.acm.org/doi/10.1145/3637528.3671900" target="_blank" rel="noopener noreferrer">ACM Digital Library</a></li>
       </ul>
 
-      <p>Metodologia de măsurare folosită de AI Visibility Lab este documentată public în paginile Tabula Rasa și „Cum se măsoară vizibilitatea AI". Această pagină este actualizată pe măsură ce documentația oficială a furnizorilor evoluează.</p>
+      <p>Metodologia de măsurare folosită de AI Visibility Lab este documentată public în paginile <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a> și „<a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a>". Această pagină este actualizată pe măsură ce documentația oficială a furnizorilor evoluează.</p>
 `;

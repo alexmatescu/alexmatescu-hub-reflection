@@ -25,9 +25,7 @@ conținutului.
 
 # Ce publicăm?
 
-Laboratorul publică Foundation, Research, Methodology și Experiments,
-iar secțiunea Articole oferă analize și materiale educaționale despre
-subiecte conexe.
+AI Visibility Lab construiește o bază publică de cunoștințe despre AI Visibility. Pentru a separa clar informațiile normative de observațiile empirice și de conținutul educațional, laboratorul publică documentație, cercetări, metodologii, experimente și articole. Această structură permite fiecărui tip de conținut să își îndeplinească propriul rol, oferind în același timp o imagine coerentă asupra domeniului.
 
 # Cine coordonează laboratorul?
 
@@ -37,9 +35,7 @@ cercetările, metodologiile și experimentele privind AI Visibility.
 
 # Ce NU este AI Visibility Lab?
 
-Nu este o agenție SEO, nu este un instrument software și nu promite
-obținerea de citări sau poziții în sistemele AI. Scopul său este
-documentarea și explicarea fenomenelor observabile.
+AI Visibility Lab nu este o platformă care promite rezultate, ci una care publică dovezi. Nu oferă garanții privind vizibilitatea în sistemele AI și nu prezintă ipotezele drept certitudini. Fiecare concluzie urmărește să fie susținută prin surse, metodologii și experimente documentate.
 
 # Care este misiunea laboratorului?
 

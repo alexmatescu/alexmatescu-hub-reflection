@@ -52,9 +52,9 @@ export const avl301ExperimentePubliceHtml = `
       <p>Experimentele publice vor fi construite pe principiile definite în:</p>
 
       <ul>
-        <li>AVL-001 — AI Visibility Lab Foundation</li>
-        <li>AVL-104 — Cum se măsoară AI Visibility</li>
-        <li>AVL-201 — Tabula Rasa F0: Baseline Measurement Specification</li>
+        <li><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a></li>
+        <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0: Baseline Measurement Specification</a></li>
       </ul>
 
       <h2>Ce va conține fiecare experiment</h2>

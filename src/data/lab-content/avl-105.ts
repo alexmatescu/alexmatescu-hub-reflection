@@ -175,7 +175,7 @@ export const avl105GlosarHtml = `
       <h3>Taxonomia rezultatelor</h3>
       <p>Set stabil de categorii prin care sunt clasificate răspunsurile: citare corectă, citare parțială, mențiune, absență, coliziune, confabulare și alte stări definite de metodologie.</p>
 
-      <h3>Tabula Rasa F0</h3>
+      <h3><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa F0</a></h3>
       <p>Faza de baseline a metodologiei AI Visibility Lab, în care starea entității este documentată înainte de orice intervenție.</p>
 
       <h3>Trust / încredere</h3>

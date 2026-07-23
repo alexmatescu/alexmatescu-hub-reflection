@@ -18,7 +18,7 @@ export const avl103SeoVsGeoHtml = `
         </table>
       </div>
 
-      <p>Această pagină face parte din seria de teorie AI Visibility Lab și presupune că știi SEO. Dacă vii din altă direcție, începe cu Ce este GEO/AEO?; dacă vrei mecanica detaliată a citării, continuă cu Cum aleg motoarele AI ce citează.</p>
+      <p>Această pagină face parte din seria de teorie AI Visibility Lab și presupune că știi SEO. Dacă vii din altă direcție, începe cu <a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO?</a>; dacă vrei mecanica detaliată a citării, continuă cu <a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a>.</p>
 
       <h2>Răspunsul scurt</h2>
 
@@ -32,7 +32,7 @@ export const avl103SeoVsGeoHtml = `
 
       <p><strong>Microsoft: „GEO e categorie oficială".</strong> În februarie 2026, Bing a rescris Webmaster Guidelines introducând GEO ca noțiune numită, cu „grounding results and citations" ca rezultat de eligibilitate distinct și cu efecte documentate ale directivelor meta asupra răspunsurilor Copilot.</p>
 
-      <p><strong>Împăcarea.</strong> Google descrie fundația (aceleași sisteme, aceleași bune practici), Microsoft descrie noul strat de rezultat (citarea în răspunsuri, cu KPI proprii). Ambele sunt adevărate simultan — și exact așa trebuie să-ți structurezi practica: fundație SEO neschimbată, strat nou de obiective, măsurare și audit deasupra ei. Detaliile ambelor poziții, cu surse: pagina definițională.</p>
+      <p><strong>Împăcarea.</strong> Google descrie fundația (aceleași sisteme, aceleași bune practici), Microsoft descrie noul strat de rezultat (citarea în răspunsuri, cu KPI proprii). Ambele sunt adevărate simultan — și exact așa trebuie să-ți structurezi practica: fundație SEO neschimbată, strat nou de obiective, măsurare și audit deasupra ei. Detaliile ambelor poziții, cu surse: <a href="/lab/cercetare/ce-este-geo-aeo">pagina definițională</a>.</p>
 
       <h3>Ce se păstrează: capitalul tău SEO se transferă</h3>
 
@@ -63,7 +63,7 @@ export const avl103SeoVsGeoHtml = `
         <li><strong>Re-măsurarea pe set înghețat</strong> — repetarea liniei de bază după intervenții, pe aceleași interogări, pentru atribuire onestă a schimbării.</li>
       </ul>
 
-      <p>Punctele 2, 3 și 5 sunt exact fazele F0 și F3 din metodologia AI Visibility Lab — documentate public, cu instrumentar reproductibil, în Tabula Rasa și Cum se măsoară vizibilitatea AI.</p>
+      <p>Punctele 2, 3 și 5 sunt exact fazele F0 și F3 din metodologia AI Visibility Lab — documentate public, cu instrumentar reproductibil, în <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a> și <a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a>.</p>
 
       <h3>Ce să nu mai faci: anti-tiparele tranziției</h3>
 
@@ -99,12 +99,12 @@ export const avl103SeoVsGeoHtml = `
       <h2>Citește în continuare</h2>
 
       <ul>
-        <li>Ce este GEO/AEO? Ghid complet de AI Visibility — definiții, origine academică, pozițiile oficiale complete</li>
-        <li>Cum aleg motoarele AI ce citează — cele patru filtre și stratul de entitate, cu mecanica detaliată</li>
-        <li>Cum se măsoară vizibilitatea AI (în curs de publicare)</li>
-        <li>Tabula Rasa: metodologia F0 (în curs de publicare)</li>
-        <li>Glosar GEO/AEO/AI — toți termenii folosiți în această pagină</li>
-        <li>AI Visibility Lab — metodologia completă și studiile de caz</li>
+        <li><a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO? Ghid complet de AI Visibility</a> — definiții, origine academică, pozițiile oficiale complete</li>
+        <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a> — cele patru filtre și stratul de entitate, cu mecanica detaliată</li>
+        <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a></li>
+        <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — toți termenii folosiți în această pagină</li>
+        <li><a href="/lab">AI Visibility Lab</a> — metodologia completă și studiile de caz</li>
       </ul>
 
       <h2>Surse și documentație oficială</h2>

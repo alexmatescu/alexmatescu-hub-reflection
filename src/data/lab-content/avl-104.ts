@@ -18,7 +18,7 @@ export const avl104MasurareHtml = `
         </table>
       </div>
 
-      <p>Această pagină face parte din seria de teorie AI Visibility Lab. Context recomandat: Ce este GEO/AEO? pentru definiții și Cum aleg motoarele AI ce citează pentru mecanica citării.</p>
+      <p>Această pagină face parte din seria de teorie AI Visibility Lab. Context recomandat: <a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO?</a> pentru definiții și <a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a> pentru mecanica citării.</p>
 
       <h2>Răspunsul scurt</h2>
 
@@ -76,9 +76,9 @@ export const avl104MasurareHtml = `
 
       <h3>3. Categoriile de bază ale rezultatelor: HIT / HIT parțial / COLIZIUNE / CONFABULARE / NULL</h3>
 
-      <p>Pentru explicarea generală a măsurării, fiecare rulare poate fi grupată într-una dintre cinci categorii de bază — HIT, HIT parțial, COLIZIUNE, CONFABULARE și NULL. Implementarea operațională folosește taxonomia extinsă și codurile definite în AVL-201 — Tabula Rasa F0: Baseline Measurement Specification, care detaliază inclusiv HIT-C, MENȚIUNE, SURSĂ GREȘITĂ, FAPT ÎNVECHIT și REFUZ / LIMITARE.</p>
+      <p>Pentru explicarea generală a măsurării, fiecare rulare poate fi grupată într-una dintre cinci categorii de bază — HIT, HIT parțial, COLIZIUNE, CONFABULARE și NULL. Implementarea operațională folosește taxonomia extinsă și codurile definite în <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0: Baseline Measurement Specification</a>, care detaliază inclusiv HIT-C, MENȚIUNE, SURSĂ GREȘITĂ, FAPT ÎNVECHIT și REFUZ / LIMITARE.</p>
 
-      <p>De ce cinci categorii de bază și nu doar două (apare/nu apare)? Pentru că fiecare categorie indică un mod de eșec diferit: NULL se tratează prin construcția prezenței și verificarea accesului; COLIZIUNEA prin dezambiguizare; CONFABULAREA prin publicarea și coroborarea unor surse autoritative; iar HIT parțial prin actualizare și consolidare. Taxonomia extinsă din AVL-201 păstrează aceste familii de diagnostic, dar oferă coduri mai precise pentru execuție, audit și scorare.</p>
+      <p>De ce cinci categorii de bază și nu doar două (apare/nu apare)? Pentru că fiecare categorie indică un mod de eșec diferit: NULL se tratează prin construcția prezenței și verificarea accesului; COLIZIUNEA prin dezambiguizare; CONFABULAREA prin publicarea și coroborarea unor surse autoritative; iar HIT parțial prin actualizare și consolidare. Taxonomia extinsă din <a href="/lab/metodologie/tabula-rasa-f0">AVL-201</a> păstrează aceste familii de diagnostic, dar oferă coduri mai precise pentru execuție, audit și scorare.</p>
 
       <p>Din clasificări derivă metricile agregate: rata de HIT per motor și per tip de interogare, rata de coliziune, distribuția pe categoriile de bază și, în implementarea conformă AVL-201, distribuția pe codurile taxonomiei extinse. Se adaugă analiza surselor citate: ce site-uri folosesc motoarele când răspund despre domeniul analizat și unde trebuie consolidată prezența entității.</p>
 
@@ -88,7 +88,7 @@ export const avl104MasurareHtml = `
 
       <h3>De la măsurare la optimizare: bucla completă</h3>
 
-      <p>Măsurarea nu e un scop în sine; e capătul și începutul buclei de optimizare. În metodologia AI Visibility Lab, bucla are patru faze: F0 — linia de bază (tot ce descrie această pagină, executat înainte de orice intervenție; faza poartă numele Tabula Rasa), F1 — casa entității (sursa canonică: site, date structurate, dezambiguizare), F2 — prezența distribuită (coroborarea din surse independente), F3 — re-măsurarea (același set înghețat, același protocol, aceleași metrici — atribuire onestă a schimbării). Detaliile fiecărei faze: pagina metodologiei.</p>
+      <p>Măsurarea nu e un scop în sine; e capătul și începutul buclei de optimizare. În metodologia AI Visibility Lab, bucla are patru faze: F0 — linia de bază (tot ce descrie această pagină, executat înainte de orice intervenție; faza poartă numele Tabula Rasa), F1 — casa entității (sursa canonică: site, date structurate, dezambiguizare), F2 — prezența distribuită (coroborarea din surse independente), F3 — re-măsurarea (același set înghețat, același protocol, aceleași metrici — atribuire onestă a schimbării). Detaliile fiecărei faze: <a href="/lab/metodologie">pagina metodologiei</a>.</p>
 
       <h3>Limitele metodei, spuse onest</h3>
 
@@ -121,12 +121,12 @@ export const avl104MasurareHtml = `
       <h2>Citește în continuare</h2>
 
       <ul>
-        <li>Tabula Rasa: metodologia F0 (în curs de publicare) — faza de linie de bază, pas cu pas</li>
-        <li>Ce este GEO/AEO? Ghid complet de AI Visibility — definiții și context</li>
-        <li>Cum aleg motoarele AI ce citează — cele patru filtre pe care măsurarea le diagnostichează</li>
-        <li>SEO vs. GEO: ce se păstrează, ce se schimbă — pentru cine vine din SEO</li>
-        <li>Glosar GEO/AEO/AI — HIT, coliziune de entitate, confabulare și restul termenilor</li>
-        <li>AI Visibility Lab — metodologia completă F0–F3 și studiile de caz</li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a> — faza de linie de bază, pas cu pas</li>
+        <li><a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO? Ghid complet de AI Visibility</a> — definiții și context</li>
+        <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a> — cele patru filtre pe care măsurarea le diagnostichează</li>
+        <li><a href="/lab/cercetare/seo-vs-geo">SEO vs. GEO: ce se păstrează, ce se schimbă</a> — pentru cine vine din SEO</li>
+        <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — HIT, coliziune de entitate, confabulare și restul termenilor</li>
+        <li><a href="/lab">AI Visibility Lab</a> — metodologia completă F0–F3 și studiile de caz</li>
       </ul>
 
       <h2>Surse și documentație oficială</h2>
@@ -142,5 +142,5 @@ export const avl104MasurareHtml = `
         <li><a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener noreferrer">Perplexity — Perplexity Crawlers</a></li>
       </ul>
 
-      <p>Categoriile de bază HIT / HIT parțial / COLIZIUNE / CONFABULARE / NULL și protocolul de sesiune curată sunt dezvoltate de AI Visibility Lab. Taxonomia operațională extinsă este definită în AVL-201 și este utilizată pentru execuție, audit și scorare. Pagina este actualizată pe măsură ce instrumentele oficiale de măsurare evoluează.</p>
+      <p>Categoriile de bază HIT / HIT parțial / COLIZIUNE / CONFABULARE / NULL și protocolul de sesiune curată sunt dezvoltate de AI Visibility Lab. Taxonomia operațională extinsă este definită în <a href="/lab/metodologie/tabula-rasa-f0">AVL-201</a> și este utilizată pentru execuție, audit și scorare. Pagina este actualizată pe măsură ce instrumentele oficiale de măsurare evoluează.</p>
 `;

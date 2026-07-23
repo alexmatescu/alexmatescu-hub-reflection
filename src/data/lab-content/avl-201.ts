@@ -15,8 +15,8 @@ export const avl201TabulaRasaF0Html = `
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
         <tr><th scope="row">Ultima actualizare</th><td>21 iulie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
-        <tr><th scope="row">Dependențe normative</th><td>AVL-001, AVL-104</td></tr>
-        <tr><th scope="row">Dependențe informative</th><td>AVL-101, AVL-102, AVL-103, AVL-105</td></tr>
+        <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a></td></tr>
+        <tr><th scope="row">Dependențe informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105</a></td></tr>
         </tbody>
         </table>
       </div>
@@ -534,11 +534,11 @@ export const avl201TabulaRasaF0Html = `
       <h2>23. Referințe și documente asociate</h2>
 
       <ul>
-        <li><strong>AVL-001 — AI Visibility Lab Foundation:</strong> Document fondator și standard epistemic.</li>
-        <li><strong>AVL-101 — Ce este GEO/AEO și AI Visibility:</strong> Definiții și context.</li>
-        <li><strong>AVL-102 — Cum aleg sistemele AI sursele și citările:</strong> Modelul celor patru filtre.</li>
-        <li><strong>AVL-104 — Cum se măsoară AI Visibility:</strong> Fundamentele taxonomiei și măsurării.</li>
-        <li><strong>AVL-105 — Glosar GEO/AEO și AI Visibility:</strong> Terminologie extinsă.</li>
+        <li><strong><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>:</strong> Document fondator și standard epistemic.</li>
+        <li><strong><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>:</strong> Definiții și context.</li>
+        <li><strong><a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>:</strong> Modelul celor patru filtre.</li>
+        <li><strong><a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>:</strong> Fundamentele taxonomiei și măsurării.</li>
+        <li><strong><a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a>:</strong> Terminologie extinsă.</li>
         <li><a href="https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec" target="_blank" rel="noopener noreferrer">Google — robots.txt specification</a></li>
         <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">OpenAI — Overview of OpenAI Crawlers</a></li>
         <li><a href="https://support.anthropic.com/en/articles/8896518" target="_blank" rel="noopener noreferrer">Anthropic — Web crawling documentation</a></li>
