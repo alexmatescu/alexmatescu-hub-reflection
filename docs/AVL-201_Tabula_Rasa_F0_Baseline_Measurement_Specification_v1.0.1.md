@@ -26,52 +26,43 @@ Baseline Measurement Specification
 
 # Controlul documentului
 
-AVL-201 este primul document normativ al metodologiei AI Visibility Lab.
-El descrie condițiile minime, pașii obligatorii, dovezile acceptate,
-taxonomia, regulile de scorare și livrabilele necesare pentru ca o
-măsurare să poată fi declarată conformă cu Tabula Rasa F0.
+AVL-201 este primul document normativ al metodologiei AI Visibility Lab. El descrie condițiile minime, pașii obligatorii, dovezile acceptate, taxonomia, regulile de scorare și livrabilele necesare pentru ca o măsurare să poată fi declarată conformă cu Tabula Rasa F0.
 
-În acest document, termenii normativi „TREBUIE”, „NU TREBUIE”, „ESTE
-OBLIGATORIU”, „AR TREBUI”, „NU AR TREBUI” și „POATE” sunt utilizați în
-sensul convenției RFC 2119, adaptată în limba română. „TREBUIE” exprimă
-o condiție obligatorie pentru conformitate; „AR TREBUI” exprimă o
-recomandare puternică ce poate fi încălcată numai cu justificare
-documentată; „POATE” indică o opțiune permisă. În afara propozițiilor
-normative și a cerințelor identificate F0-REQ, acești termeni nu trebuie
-interpretați automat ca cerințe de conformitate.
+În acest document, termenii normativi „TREBUIE”, „NU TREBUIE”, „ESTE OBLIGATORIU”, „AR TREBUI”, „NU AR TREBUI” și „POATE” sunt utilizați în sensul convenției RFC 2119, adaptată în limba română.
+
+- „TREBUIE” exprimă o condiție obligatorie pentru conformitate;
+
+- „AR TREBUI” exprimă o recomandare puternică ce poate fi încălcată numai cu justificare
+documentată;
+
+- „POATE” indică o opțiune permisă.
+
+În afara propozițiilor normative și a cerințelor identificate F0-REQ, acești termeni nu trebuie interpretați automat ca cerințe de conformitate.
 
 # Rezumat executiv
 
-Tabula Rasa F0 este faza de documentare completă a stării unei entități
-în ecosistemul AI înainte de orice intervenție. F0 nu optimizează, nu
-repară și nu promite rezultate. Măsoară. Faza produce un instantaneu
-verificabil al identității entității, accesibilității tehnice, datelor
-structurate, percepției motoarelor AI, surselor citate, prezenței
-distribuite și corpusului de conținut.
+Tabula Rasa F0 este faza de documentare completă a stării unei entități în ecosistemul AI înainte de orice intervenție. F0 nu optimizează, nu repară și nu promite rezultate. Măsoară. Faza produce un instantaneu verificabil al identității entității, accesibilității tehnice, datelor structurate, percepției motoarelor AI, surselor citate, prezenței distribuite și corpusului de conținut.
 
-O implementare conformă AVL-201 trebuie să permită unui terț competent
-să răspundă la patru întrebări: ce s-a măsurat, în ce condiții, cu ce
-dovezi și prin ce reguli au fost obținute concluziile. Fără aceste
-răspunsuri, rezultatul poate fi util ca observație, dar nu poate fi
-revendicat drept baseline Tabula Rasa conform AVL-201.
+O implementare conformă AVL-201 trebuie să permită unui terț competent să răspundă la patru întrebări:
+
+- ce s-a măsurat,
+
+- în ce condiții a fost măsurat,
+
+- cu ce dovezi a fost măsurat,
+
+- prin ce reguli au fost obținute concluziile.
+
+Fără aceste răspunsuri, rezultatul poate fi util ca observație, dar nu poate fi revendicat drept baseline Tabula Rasa F0 conform AVL-201.
 
 # 1. Scop
 
-Scopul AVL-201 este să definească o specificație publică, repetabilă și
-auditabilă pentru măsurarea stării inițiale a unei entități în sistemele
-de căutare și răspuns bazate pe inteligență artificială. Documentul
-stabilește ce trebuie făcut înaintea oricărei intervenții GEO/AEO, cum
-trebuie păstrate dovezile și cum trebuie delimitate observațiile de
-interpretări.
+Scopul AVL-201 este să definească o specificație publică, repetabilă și auditabilă pentru măsurarea stării inițiale a unei entități în sistemele de căutare și răspuns bazate pe inteligență artificială. Documentul stabilește ce trebuie făcut înaintea oricărei intervenții GEO/AEO, cum
+trebuie păstrate dovezile și cum trebuie delimitate observațiile de interpretări.
 
-**F0-REQ-001 —** Nicio intervenție asupra entității, site-ului,
-profilurilor, datelor structurate sau prezenței distribuite NU TREBUIE
-aplicată după începerea F0 și înainte de închiderea oficială a
-măsurătorii.
+**F0-REQ-001 —** După începerea F0 și până la închiderea oficială a măsurătorii, entitatea, site-ul, profilurile, datele structurate și prezența distribuită TREBUIE menținute neschimbate.
 
-**F0-REQ-002 —** Orice abatere accidentală de la starea inițială TREBUIE
-consemnată ca incident de contaminare și evaluată înainte ca rezultatul
-să fie declarat valid.
+**F0-REQ-002 —** Orice abatere accidentală de la starea inițială TREBUIE consemnată ca incident de contaminare și evaluată înainte ca rezultatul să fie declarat valid.
 
 # 2. Obiective
 
@@ -79,8 +70,7 @@ să fie declarat valid.
 
 - Documentarea stării tehnice și semantice înainte de optimizare.
 
-- Măsurarea prezenței, corectitudinii și citării în sistemele AI
-  selectate.
+- Măsurarea prezenței, corectitudinii și citării în sistemele AI selectate.
 
 - Identificarea modului principal de eșec: acces, recuperare, sinteză,
   citare sau identitate.
