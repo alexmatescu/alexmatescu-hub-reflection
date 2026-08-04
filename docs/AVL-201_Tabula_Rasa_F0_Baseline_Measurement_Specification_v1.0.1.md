@@ -72,32 +72,23 @@ trebuie păstrate dovezile și cum trebuie delimitate observațiile de interpret
 
 - Măsurarea prezenței, corectitudinii și citării în sistemele AI selectate.
 
-- Identificarea modului principal de eșec: acces, recuperare, sinteză,
-  citare sau identitate.
+- Identificarea modului principal de eșec: acces, recuperare, sinteză, citare sau identitate.
 
 - Crearea unei referințe comparabile pentru fazele F1, F2 și F3.
 
-- Producerea unui pachet de dovezi suficient pentru verificare
-  independentă.
+- Producerea unui pachet de dovezi suficient pentru verificare independentă.
 
-- Protejarea clientului sau subiectului împotriva atribuirii nefondate a
-  unor rezultate.
+- Protejarea clientului sau subiectului împotriva atribuirii nefondate a unor rezultate.
 
 # 3. Domeniu de aplicare
 
-AVL-201 se poate aplica unei persoane, companii, organizații,
-instituții, mărci, produse, servicii, proiecte, publicații sau unui
-site, cu condiția ca obiectul măsurării să fie definit drept entitate și
-să poată fi diferențiat de alte entități.
+AVL-201 se poate aplica unei persoane, companii, organizații, instituții, mărci, produse, servicii, proiecte, publicații sau unui site, cu condiția ca obiectul măsurării să fie definit drept entitate și să poată fi diferențiat de alte entități.
 
-Metodologia este potrivită pentru evaluări individuale, proiecte pilot,
-studii de caz, audituri comerciale, cercetare academică aplicată și
-monitorizare longitudinală.
+Metodologia este potrivită pentru evaluări individuale, proiecte pilot, studii de caz, audituri comerciale, cercetare academică aplicată și monitorizare longitudinală.
 
 # 4. În afara domeniului
 
-F0 nu este, prin el însuși, o măsurare completă a performanței
-comerciale sau SEO. El nu măsoară direct:
+Tabula Rasa F0 nu este, prin el însuși, o măsurare completă a performanței comerciale sau SEO. El nu măsoară direct:
 
 - venituri, vânzări sau leaduri;
 
@@ -122,65 +113,47 @@ comerciale sau SEO. El nu măsoară direct:
 
 # 5. Terminologie și definiții operaționale
 
-**Entitate:** Obiectul distinct al măsurării: persoană, organizație,
-marcă, produs, serviciu, proiect sau instituție.
+**Entitate:** Obiectul distinct al măsurării: persoană, organizație, marcă, produs, serviciu, proiect sau instituție.
 
-**Formă canonică:** Numele și identificarea oficială stabilite pentru
-entitate și folosite ca referință în analiză.
+**Formă canonică:** Numele și identificarea oficială stabilite pentru entitate și folosite ca referință în analiză.
 
 **Baseline:** Starea măsurată și documentată înainte de intervenție.
 
-**Snapshot / instantaneu:** Pachetul datat care conservă configurația,
-răspunsurile, dovezile și rezultatele unei sesiuni de măsurare.
+**Snapshot / instantaneu:** Pachetul datat care conservă configurația, răspunsurile, dovezile și rezultatele unei sesiuni de măsurare.
 
-**Set de interogări:** Colecția versionată de întrebări folosită pentru
-testarea entității.
+**Set de interogări:** Colecția versionată de întrebări folosită pentru testarea entității.
 
-**Set înghețat:** Set de interogări care nu mai este modificat între F0
-și comparația F3.
+**Set înghețat:** Set de interogări care nu mai este modificat între F0 și comparația F3.
 
-**Rulare:** O execuție individuală a unei interogări într-un motor sau o
-interfață AI.
+**Rulare:** O execuție individuală a unei interogări într-un motor sau o interfață AI.
 
-**Sesiune de măsurare:** Grup de rulări efectuate într-un interval și
-într-o configurație documentată.
+**Sesiune de măsurare:** Grup de rulări efectuate într-un interval și într-o configurație documentată.
 
-**Sesiune curată:** Sesiune configurată pentru reducerea personalizării
-și a contaminării istoricului.
+**Sesiune curată:** Sesiune configurată pentru reducerea personalizării și a contaminării istoricului.
 
 **Motor AI:** Sistemul sau interfața care generează răspunsul analizat.
 
-**Citare:** Afișarea explicită a unei surse asociate unei afirmații sau
-unui fragment al răspunsului.
+**Citare:** Afișarea explicită a unei surse asociate unei afirmații sau unui fragment al răspunsului.
 
-**Mențiune:** Apariția entității în răspuns, fără ca sursa canonică să
-fie neapărat citată.
+**Mențiune:** Apariția entității în răspuns, fără ca sursa canonică să fie neapărat citată.
 
-**HIT:** Rezultat în care entitatea este identificată corect și
-răspunsul satisface criteriul principal al interogării.
+**HIT:** Rezultat în care entitatea este identificată corect și răspunsul satisface criteriul principal al interogării.
 
-**HIT parțial:** Rezultat relevant, dar incomplet, imprecis, insuficient
-atribuit sau parțial depășit.
+**HIT parțial:** Rezultat relevant, dar incomplet, imprecis, insuficient atribuit sau parțial depășit.
 
-**COLIZIUNE:** Rezultat în care identitatea entității este amestecată
-sau înlocuită cu o altă entitate.
+**COLIZIUNE:** Rezultat în care identitatea entității este amestecată sau înlocuită cu o altă entitate.
 
-**CONFABULARE:** Afirmație factuală nesusținută sau inventată despre
-entitate.
+**CONFABULARE:** Afirmație factuală nesusținută sau inventată despre entitate.
 
 **NULL:** Absența unui rezultat relevant pentru entitate.
 
-**Dovadă primară:** Captură, export, răspuns brut, log, fișier sau
-înregistrare care arată direct ce a fost observat.
+**Dovadă primară:** Captură, export, răspuns brut, log, fișier sau înregistrare care arată direct ce a fost observat.
 
-**Metadate de rulare:** Data, ora, platforma, modelul afișat, limba,
-locația, contul, modul de sesiune și alte condiții relevante.
+**Metadate de rulare:** Data, ora, platforma, modelul afișat, limba, locația, contul, modul de sesiune și alte condiții relevante.
 
-**Contaminare:** Orice schimbare sau influență care compromite
-comparabilitatea stării inițiale.
+**Contaminare:** Orice schimbare sau influență care compromite comparabilitatea stării inițiale.
 
-**Conformitate AVL-201:** Îndeplinirea cerințelor obligatorii din
-această specificație, cu abaterile documentate.
+**Conformitate AVL-201:** Îndeplinirea cerințelor obligatorii din această specificație, cu abaterile documentate.
 
 # 6. Roluri și responsabilități
 
@@ -272,13 +245,11 @@ această specificație, cu abaterile documentate.
 
 - Lista priorităților pentru F1 și F2
 
-**F0-REQ-003 —** Un raport fără arhivă de dovezi NU TREBUIE prezentat
-drept implementare completă AVL-201.
+**F0-REQ-003 —** Un raport fără arhivă de dovezi NU TREBUIE prezentat drept implementare completă AVL-201.
 
 # 9. Instrumente și condiții minime
 
-AVL-201 nu impune un furnizor unic de instrumente. Implementarea trebuie
-însă să permită reproducerea și auditul.
+AVL-201 nu impune un furnizor unic de instrumente. Implementarea trebuie însă să permită reproducerea și auditul.
 
 - browser actualizat și profil separat sau mod privat;
 
@@ -297,17 +268,13 @@ AVL-201 nu impune un furnizor unic de instrumente. Implementarea trebuie
 
 - spațiu de stocare cu versiuni și permisiuni controlate;
 
-- instrument de generare a checksum-urilor, recomandat pentru pachetele
-  publice.
+- instrument de generare a checksum-urilor, recomandat pentru pachetele publice.
 
 # 10. Protocolul de măsurare în zece pași
 
 ## 10.1. Pasul 1 — Definirea entității
 
-Se stabilește forma canonică a numelui, variantele legitime, atributele
-de identitate și candidații de coliziune. Forma canonică trebuie să fie
-suficient de precisă încât un revizor să poată decide dacă un răspuns se
-referă la entitatea corectă.
+Se stabilește forma canonică a numelui, variantele legitime, atributele de identitate și candidații de coliziune. Forma canonică trebuie să fie suficient de precisă încât un revizor să poată decide dacă un răspuns se referă la entitatea corectă.
 
 ### Cerințe minime
 
@@ -321,10 +288,19 @@ referă la entitatea corectă.
 
 ## 10.2. Pasul 2 — Construcția setului de interogări
 
-Interogările se construiesc înainte de examinarea sistematică a
-rezultatelor și se împart pe intenții: identitate, rol/expertiză,
-informație factuală, comparație și recomandare. Pentru proiectele
-inițiale, domeniul poate fi restrâns, dar restricția trebuie declarată.
+Interogările se construiesc înainte de examinarea sistematică a rezultatelor și se împart pe intenții:
+
+- identitate,
+
+- rol/expertiză,
+
+- informație factuală,
+
+- comparație,
+
+- recomandare.
+
+Pentru proiectele inițiale, domeniul poate fi restrâns, dar restricția trebuie declarată.
 
 ### Cerințe minime
 
@@ -340,10 +316,7 @@ inițiale, domeniul poate fi restrâns, dar restricția trebuie declarată.
 
 ## 10.3. Pasul 3 — Verificarea accesului crawlerelor
 
-Se verifică robots.txt, răspunsurile HTTP, regulile CDN/WAF și logurile
-disponibile pentru agenții relevanți. Controlul accesului pentru
-căutare, utilizator și antrenare trebuie tratat separat atunci când
-furnizorul face această distincție.
+Se verifică robots.txt, răspunsurile HTTP, regulile CDN/WAF și logurile disponibile pentru agenții relevanți. Controlul accesului pentru căutare, utilizator și antrenare trebuie tratat separat atunci când furnizorul face această distincție.
 
 ### Cerințe minime
 
@@ -359,10 +332,7 @@ furnizorul face această distincție.
 
 ## 10.4. Pasul 4 — Auditul datelor structurate
 
-Se inventariază JSON-LD și alte marcaje, se verifică entitățile
-declarate, @id-urile, tipurile, relațiile și concordanța cu textul
-vizibil. Auditul urmărește claritatea și consistența, nu presupune că
-schema garantează citarea.
+Se inventariază JSON-LD și alte marcaje, se verifică entitățile declarate, @id-urile, tipurile, relațiile și concordanța cu textul vizibil. Auditul urmărește claritatea și consistența, nu presupune că schema garantează citarea.
 
 ### Cerințe minime
 
@@ -376,9 +346,7 @@ schema garantează citarea.
 
 ## 10.5. Pasul 5 — Linia de bază a răspunsurilor și citărilor
 
-Setul înghețat se rulează pe motoarele selectate, în condiții cât mai
-comparabile și documentate. Fiecare răspuns se păstrează integral și se
-clasifică. Nu este permisă păstrarea exclusivă a celei mai favorabile
+Setul înghețat se rulează pe motoarele selectate, în condiții cât mai comparabile și documentate. Fiecare răspuns se păstrează integral și se clasifică. Nu este permisă păstrarea exclusivă a celei mai favorabile
 rulări.
 
 ### Cerințe minime
@@ -395,10 +363,23 @@ rulări.
 
 ## 10.6. Pasul 6 — Linia de bază a înțelegerii entității
 
-Se analizează descrierea produsă de fiecare motor: rol, locație,
-experiență, organizații asociate, cronologie, ton și actualitate. Scopul
-este identificarea diferenței dintre simpla apariție și reprezentarea
-corectă.
+Se analizează descrierea produsă de fiecare motor:
+
+- rol,
+
+- locație,
+
+- experiență,
+
+- organizații asociate,
+
+- cronologie,
+
+- ton,
+
+- actualitate.
+
+Scopul este identificarea diferenței dintre simpla apariție și reprezentarea corectă.
 
 ### Cerințe minime
 
@@ -410,9 +391,7 @@ corectă.
 
 ## 10.7. Pasul 7 — Analiza surselor citate
 
-Pentru interogările relevante se inventariază sursele pe care motoarele
-le afișează, inclusiv atunci când entitatea analizată nu apare. Se
-separă sursa citată de sursa presupus folosită.
+Pentru interogările relevante se inventariază sursele pe care motoarele le afișează, inclusiv atunci când entitatea analizată nu apare. Se separă sursa citată de sursa presupus folosită.
 
 ### Cerințe minime
 
@@ -426,9 +405,7 @@ separă sursa citată de sursa presupus folosită.
 
 ## 10.8. Pasul 8 — Auditul prezenței distribuite
 
-Se inventariază profilurile, directoarele, publicațiile, registrele și
-mențiunile externe. Se urmăresc numele, descrierea, actualitatea,
-legătura către sursa canonică și contradicțiile.
+Se inventariază profilurile, directoarele, publicațiile, registrele și mențiunile externe. Sunt urmărite numele, descrierea, actualitatea, legătura către sursa canonică și contradicțiile.
 
 ### Cerințe minime
 
@@ -440,9 +417,7 @@ legătura către sursa canonică și contradicțiile.
 
 ## 10.9. Pasul 9 — Auditul corpusului de conținut
 
-Se inventariază conținutul sursei canonice și se evaluează relevanța,
-calitatea, actualitatea și valoarea de coroborare. În F0 se documentează
-deciziile propuse, dar nu se execută.
+Se inventariază conținutul sursei canonice și se evaluează relevanța, calitatea, actualitatea și valoarea de coroborare. În F0 se documentează deciziile propuse, dar nu se execută.
 
 ### Cerințe minime
 
@@ -456,10 +431,7 @@ deciziile propuse, dar nu se execută.
 
 ## 10.10. Pasul 10 — Instantaneul reproductibil
 
-Toate artefactele sunt înghețate într-un pachet datat și neschimbabil.
-Pachetul trebuie să includă un manifest al fișierelor și registrul
-versiunilor. Pentru proiectele cu cerință ridicată de audit se recomandă
-checksum-uri.
+Toate artefactele sunt înghețate într-un pachet datat și neschimbabil. Pachetul trebuie să includă un manifest al fișierelor și registrul versiunilor. Pentru proiectele cu cerință ridicată de audit se recomandă checksum-uri.
 
 ### Cerințe minime
 
@@ -475,20 +447,23 @@ checksum-uri.
 
 # 11. Protocolul sesiunii curate
 
-**F0-REQ-004 —** Configurația sesiunii TREBUIE stabilită înainte de
-prima rulare și folosită consecvent în interiorul aceleiași serii.
+**F0-REQ-004 —** Configurația sesiunii TREBUIE stabilită înainte de prima rulare și folosită consecvent în interiorul aceleiași serii.
 
-**F0-REQ-005 —** Contul, memoria, istoricul, locația, limba și
-disponibilitatea căutării web TREBUIE documentate.
+**F0-REQ-005 —** Contul, memoria, istoricul, locația, limba și disponibilitatea căutării web TREBUIE documentate.
 
-**F0-REQ-006 —** Atunci când o platformă nu permite controlul unei
-variabile, limitarea TREBUIE declarată, nu ascunsă.
+**F0-REQ-006 —** Atunci când o platformă nu permite controlul unei variabile, limitarea TREBUIE declarată, nu ascunsă.
 
-Configurația recomandată include: fereastră privată sau profil dedicat,
-conversație nouă pentru fiecare interogare, memorie dezactivată unde
-este posibil, limbă explicită, locație reală fără VPN, fără introducerea
-prealabilă a numelui entității în aceeași sesiune și fără reformulări
-iterative înaintea capturării rezultatului principal.
+Configurația recomandată include:
+
+- fereastră privată sau profil dedicat,
+
+- conversație nouă pentru fiecare interogare,
+
+- memorie dezactivată unde este posibil,
+
+- limbă explicită,
+
+- locație reală fără VPN, fără introducerea prealabilă a numelui entității în aceeași sesiune și fără reformulări iterative înaintea capturării rezultatului principal.
 
 # 12. Standardul de dovezi
 
