@@ -115,7 +115,20 @@ export const useSeo = ({
       if (noIndex) setMetaContent('meta[name="robots"]', "index, follow");
       if (jsonLdString) document.getElementById(JSONLD_SCRIPT_ID)?.remove();
     };
-  }, [title, description, noIndex, jsonLdString]);
+  }, [
+    title,
+    description,
+    noIndex,
+    jsonLdString,
+    canonicalUrl,
+    ogType,
+    ogTitle,
+    ogDescription,
+    twitterTitle,
+    twitterDescription,
+    imageUrl,
+    imageAlt,
+  ]);
 };
 
 const Seo = (props: SeoProps) => {
