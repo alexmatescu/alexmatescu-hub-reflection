@@ -5,6 +5,14 @@ type SeoProps = {
   description: string;
   noIndex?: boolean;
   jsonLd?: object | object[];
+  canonicalUrl?: string;
+  ogType?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  imageUrl?: string;
+  imageAlt?: string;
 };
 
 const JSONLD_SCRIPT_ID = "route-jsonld";
@@ -28,20 +36,69 @@ const setMetaContent = (selector: string, content: string) => {
   if (el) el.setAttribute("content", content);
 };
 
-export const useSeo = ({ title, description, noIndex = false, jsonLd }: SeoProps) => {
+const setMetaProperty = (property: string, content: string) => {
+  let el = document.querySelector(`meta[property="${property}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute("property", property);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+};
+
+const setMetaName = (name: string, content: string) => {
+  let el = document.querySelector(`meta[name="${name}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute("name", name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+};
+
+export const useSeo = ({
+  title,
+  description,
+  noIndex = false,
+  jsonLd,
+  canonicalUrl,
+  ogType,
+  ogTitle,
+  ogDescription,
+  twitterTitle,
+  twitterDescription,
+  imageUrl,
+  imageAlt,
+}: SeoProps) => {
   const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : undefined;
 
   useEffect(() => {
     document.title = title;
     setMetaContent('meta[name="description"]', description);
-    setMetaContent('meta[property="og:title"]', title);
-    setMetaContent('meta[name="twitter:title"]', title);
-    setMetaContent('meta[property="og:description"]', description);
-    setMetaContent('meta[name="twitter:description"]', description);
+    setMetaContent('meta[property="og:title"]', ogTitle ?? title);
+    setMetaContent('meta[name="twitter:title"]', twitterTitle ?? ogTitle ?? title);
+    setMetaContent('meta[property="og:description"]', ogDescription ?? description);
+    setMetaContent('meta[name="twitter:description"]', twitterDescription ?? ogDescription ?? description);
+
+    if (canonicalUrl) {
+      const link = document.querySelector('link[rel="canonical"]');
+      if (link) link.setAttribute("href", canonicalUrl);
+      setMetaProperty("og:url", canonicalUrl);
+    }
+    if (ogType) setMetaProperty("og:type", ogType);
+    if (imageUrl) {
+      setMetaProperty("og:image", imageUrl);
+      setMetaName("twitter:image", imageUrl);
+    }
+    if (imageAlt) {
+      setMetaProperty("og:image:alt", imageAlt);
+      setMetaName("twitter:image:alt", imageAlt);
+    }
 
     if (noIndex) {
       setMetaContent('meta[name="robots"]', "noindex, nofollow");
     }
+
 
     if (jsonLdString) {
       let script = document.getElementById(JSONLD_SCRIPT_ID) as HTMLScriptElement | null;
@@ -58,7 +115,20 @@ export const useSeo = ({ title, description, noIndex = false, jsonLd }: SeoProps
       if (noIndex) setMetaContent('meta[name="robots"]', "index, follow");
       if (jsonLdString) document.getElementById(JSONLD_SCRIPT_ID)?.remove();
     };
-  }, [title, description, noIndex, jsonLdString]);
+  }, [
+    title,
+    description,
+    noIndex,
+    jsonLdString,
+    canonicalUrl,
+    ogType,
+    ogTitle,
+    ogDescription,
+    twitterTitle,
+    twitterDescription,
+    imageUrl,
+    imageAlt,
+  ]);
 };
 
 const Seo = (props: SeoProps) => {

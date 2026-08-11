@@ -27,20 +27,58 @@ const BlogPost = () => {
   return (
     <>
       <Seo
-        title={`${post.title} — Alex Matescu`}
-        description={post.excerpt}
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          headline: post.title,
-          description: post.excerpt,
-          datePublished: post.date,
-          dateModified: post.dateModified ?? post.date,
-          url: `https://delamatescu.ro/blog/${post.slug}`,
-          ...(post.heroImage?.src ? { image: post.heroImage.src } : {}),
-          author: alexMatescuPerson,
-        }}
+        title={post.seoTitle ? `${post.seoTitle} | Alex Matescu` : `${post.title} — Alex Matescu`}
+        description={post.metaDescription ?? post.excerpt}
+        canonicalUrl={`https://delamatescu.ro/blog/${post.slug}`}
+        ogType="article"
+        ogTitle={post.seoTitle ?? post.title}
+        {...(post.heroImage?.src
+          ? {
+              imageUrl: post.heroImage.src.startsWith("http")
+                ? post.heroImage.src
+                : `https://delamatescu.ro${post.heroImage.src}`,
+              imageAlt: post.heroImage.alt,
+            }
+          : {})}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "@id": `https://delamatescu.ro/blog/${post.slug}#article`,
+            headline: post.title,
+            name: post.title,
+            description: post.metaDescription ?? post.excerpt,
+            datePublished: post.date,
+            dateModified: post.dateModified ?? post.date,
+            url: `https://delamatescu.ro/blog/${post.slug}`,
+            inLanguage: "ro-RO",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://delamatescu.ro/blog/${post.slug}`,
+            },
+            articleSection: post.category,
+            ...(post.tags?.length ? { keywords: post.tags } : {}),
+            ...(post.heroImage?.src ? { image: post.heroImage.src } : {}),
+            author: alexMatescuPerson,
+            publisher: { "@id": "https://delamatescu.ro/#alex-matescu" },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Acasă", item: "https://delamatescu.ro/" },
+              { "@type": "ListItem", position: 2, name: "Blog", item: "https://delamatescu.ro/blog" },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: post.title,
+                item: `https://delamatescu.ro/blog/${post.slug}`,
+              },
+            ],
+          },
+        ]}
       />
+
 
       <article>
         <header className="container-editorial pt-20 md:pt-28 pb-12">
