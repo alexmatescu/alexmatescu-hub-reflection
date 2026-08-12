@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { Search, ArrowUpRight } from "lucide-react";
 import { posts, categories } from "@/data/posts";
 import Seo from "@/components/Seo";
@@ -49,7 +49,7 @@ const Blog = () => {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Caută în articole..."
-              className="w-full pl-7 h-10 bg-transparent border-b border-foreground/10 focus:border-foreground/40 outline-none text-sm transition-colors"
+              className="w-full pl-7 h-10 bg-transparent border-b border-foreground/10 focus:border-foreground/40 outline-hidden text-sm transition-colors"
             />
           </div>
           <div className="flex flex-wrap gap-2">

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import Seo, { alexMatescuPerson } from "@/components/Seo";
 import { labNav } from "@/data/lab";
 

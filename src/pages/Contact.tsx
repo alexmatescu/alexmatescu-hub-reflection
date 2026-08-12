@@ -52,7 +52,7 @@ const Contact = () => {
   };
 
   const inputCls =
-    "w-full h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-none text-sm transition-colors";
+    "w-full h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-hidden text-sm transition-colors";
 
   return (
     <>
@@ -113,7 +113,7 @@ const Contact = () => {
               rows={7}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full mt-2 p-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-none text-sm transition-colors resize-none"
+              className="w-full mt-2 p-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-hidden text-sm transition-colors resize-none"
             />
           </label>
           <button

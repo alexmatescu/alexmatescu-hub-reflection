@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import Seo from "@/components/Seo";
@@ -45,7 +45,7 @@ const Projects = () => {
                 </div>
                 <div className="md:col-span-7">
                   {(p.slug === "taste-the-corn" || p.slug === "ovb") && (
-                    <div className="w-20 h-20 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white mb-6">
+                    <div className="w-20 h-20 rounded-2xl overflow-hidden border border-foreground/10 shadow-xs bg-white mb-6">
                       <img
                         src={p.slug === "ovb" ? ovbLogo : tasteTheCornLogo}
                         alt={`Logo ${p.title}${p.slug === "taste-the-corn" ? " — N-ai cum să-i spui nu" : ""}`}
