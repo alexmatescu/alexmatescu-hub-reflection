@@ -1,0 +1,20 @@
+{
+  "customizations": [
+    { "token": "--background/--foreground core neutral HSL palette (light + dark)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--surface / --surface-elevated tokens + color-surface mapping", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--primary deep forest green + --secondary/--muted/--accent stone palette", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--rule variable", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius: 0.25rem editorial radius scale", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--shadow-soft / --shadow-card (shadow-soft, shadow-card utilities)", "source": "src/index.css + tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "--transition-smooth + ease-smooth timing function", "source": "src/index.css + tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "--sidebar-* token set", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "font-serif (Fraunces) / font-sans (Inter) / font-display (Bodoni Moda) / font-trajan (Cinzel) families", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "keyframes + animations: accordion-down, accordion-up, fade-up, fade-in", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "container centering + 1.5rem padding + 1400px max (v3 container config)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "base layer: border-border, font smoothing, body font-features, ::selection, serif headings", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "components layer: container-editorial, container-prose, eyebrow, rule, link-underline", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "components layer: prose-editorial typography suite", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "components layer: avl-doc-card / avl-meta-table suite", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "utilities layer: text-balance, text-pretty, bg-grain, font-trajan", "source": "src/index.css", "reappliedIn": "src/styles.css" }
+  ]
+}

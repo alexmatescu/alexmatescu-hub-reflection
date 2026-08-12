@@ -98,9 +98,9 @@ const AdminMesaje = () => {
         <h1 className="font-serif text-3xl md:text-4xl mb-8">Autentificare</h1>
         <form onSubmit={handleAuth} className="flex flex-col gap-3">
           <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email"
-            className="h-12 px-4 bg-background border border-foreground/15 outline-none text-sm" />
+            className="h-12 px-4 bg-background border border-foreground/15 outline-hidden text-sm" />
           <input type="password" required minLength={8} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="parolă"
-            className="h-12 px-4 bg-background border border-foreground/15 outline-none text-sm" />
+            className="h-12 px-4 bg-background border border-foreground/15 outline-hidden text-sm" />
           <button type="submit" disabled={authLoading}
             className="h-12 px-6 bg-primary text-primary-foreground text-sm hover:bg-primary/90 disabled:opacity-50">
             {authLoading ? "Se procesează…" : "Intră"}

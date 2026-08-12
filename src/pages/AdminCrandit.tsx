@@ -117,7 +117,7 @@ const AdminCrandit = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="email"
-            className="h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-none text-sm"
+            className="h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-hidden text-sm"
           />
           <input
             type="password"
@@ -125,7 +125,7 @@ const AdminCrandit = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="parolă"
-            className="h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-none text-sm"
+            className="h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-hidden text-sm"
           />
           <button
             type="submit"

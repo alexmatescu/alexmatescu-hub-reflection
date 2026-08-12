@@ -55,7 +55,7 @@ const NewsletterForm = ({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="adresa@email.ro"
-          className="flex-1 h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-none text-sm transition-colors"
+          className="flex-1 h-12 px-4 bg-background border border-foreground/15 focus:border-foreground/40 outline-hidden text-sm transition-colors"
         />
         <button
           type="submit"
@@ -101,7 +101,7 @@ const NewsletterForm = ({
             onChange={(e) => setEmail(e.target.value)}
             placeholder="adresa@email.ro"
             className={cn(
-              "h-12 px-4 border outline-none text-sm transition-colors",
+              "h-12 px-4 border outline-hidden text-sm transition-colors",
               theme === "crandit"
                 ? "bg-[#151515] border-[#c9a86c]/20 text-[#f5f0e8] placeholder:text-[#f5f0e8]/40 focus:border-[#c9a86c]/50"
                 : "bg-background border-foreground/15 focus:border-foreground/40"

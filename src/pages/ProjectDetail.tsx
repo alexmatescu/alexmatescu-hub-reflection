@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "@/lib/router-compat";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { posts } from "@/data/posts";

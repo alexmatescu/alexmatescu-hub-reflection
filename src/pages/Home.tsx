@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
 import Seo from "@/components/Seo";
@@ -213,7 +213,7 @@ const Home = () => {
                   </div>
                 )}
                 {(p!.slug === "taste-the-corn" || p!.slug === "ovb") && (
-                  <div className="w-24 h-24 rounded-2xl overflow-hidden border border-foreground/10 shadow-sm bg-white">
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden border border-foreground/10 shadow-xs bg-white">
                     <img
                       src={p!.slug === "ovb" ? ovbLogo : tasteTheCornLogo}
                       alt={`Logo ${p!.title}${p!.slug === "taste-the-corn" ? " — N-ai cum să-i spui nu" : ""}`}

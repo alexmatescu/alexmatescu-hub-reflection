@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "@/lib/router-compat";
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import {
@@ -38,7 +38,7 @@ const projectDropdownItems = [
 const labDropdownItems: NavSubItem[] = labNav.map((item) => ({
   to: item.to,
   label: item.label,
-  items: item.children?.map((child) => ({ to: child.to, label: child.label })),
+  ...(item.children ? { items: item.children.map((child) => ({ to: child.to, label: child.label })) } : {}),
 }));
 
 const nav: NavItem[] = [
@@ -97,7 +97,7 @@ const SiteLayout = () => {
                 <DropdownMenu key={item.to}>
                   <DropdownMenuTrigger asChild>
                     <button
-                      className={`flex items-center gap-1 text-sm transition-colors outline-none ${
+                      className={`flex items-center gap-1 text-sm transition-colors outline-hidden ${
                         isDropdownActive(location.pathname, item)
                           ? "text-foreground"
                           : "text-muted-foreground hover:text-foreground"
@@ -111,7 +111,7 @@ const SiteLayout = () => {
                   <DropdownMenuContent
                     align="start"
                     sideOffset={12}
-                    className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-sm"
+                    className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-xs"
                   >
                     {item.items.map((sub) => {
                       const active = isSubActive(location.pathname, sub);
@@ -128,7 +128,7 @@ const SiteLayout = () => {
                             >
                               {sub.label}
                             </DropdownMenuSubTrigger>
-                            <DropdownMenuSubContent className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-sm">
+                            <DropdownMenuSubContent className="min-w-[16rem] rounded-md border border-foreground/10 bg-background p-1 shadow-xs">
                               <DropdownMenuItem asChild>
                                 <Link
                                   to={sub.to}
@@ -188,18 +188,17 @@ const SiteLayout = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <NavLink
+                <Link
                   key={item.to}
                   to={item.to}
-                  end={item.to === "/"}
-                  className={({ isActive }) =>
-                    `text-sm transition-colors ${
-                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                    }`
-                  }
+                  className={`text-sm transition-colors ${
+                    (item.to === "/" ? location.pathname === "/" : location.pathname === item.to || location.pathname.startsWith(item.to + "/"))
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {item.label}
-                </NavLink>
+                </Link>
               ),
             )}
           </nav>
@@ -311,16 +310,17 @@ const SiteLayout = () => {
                     )}
                   </div>
                 ) : (
-                  <NavLink
+                  <Link
                     key={item.to}
                     to={item.to}
-                    end={item.to === "/"}
-                    className={({ isActive }) =>
-                      `font-serif text-2xl ${isActive ? "text-foreground" : "text-muted-foreground"}`
-                    }
+                    className={`font-serif text-2xl ${
+                      (item.to === "/" ? location.pathname === "/" : location.pathname === item.to || location.pathname.startsWith(item.to + "/"))
+                        ? "text-foreground"
+                        : "text-muted-foreground"
+                    }`}
                   >
                     {item.label}
-                  </NavLink>
+                  </Link>
                 ),
               )}
             </nav>

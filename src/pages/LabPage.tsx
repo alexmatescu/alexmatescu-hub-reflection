@@ -1,4 +1,4 @@
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
 import Seo, { alexMatescuPerson } from "@/components/Seo";
 import { findLabPage, findLabParent } from "@/data/lab";
