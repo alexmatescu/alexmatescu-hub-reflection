@@ -22,7 +22,7 @@ const Contact = () => {
     e.preventDefault();
     const parsed = contactSchema.safeParse(form);
     if (!parsed.success) {
-      toast({ title: "Verifică datele", description: parsed.error.issues[0].message, variant: "destructive" });
+      toast({ title: "Verifică datele", description: parsed.error.issues[0]?.message ?? "Date invalide", variant: "destructive" });
       return;
     }
     setSubmitting(true);

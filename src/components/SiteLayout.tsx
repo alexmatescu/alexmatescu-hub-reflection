@@ -38,7 +38,7 @@ const projectDropdownItems = [
 const labDropdownItems: NavSubItem[] = labNav.map((item) => ({
   to: item.to,
   label: item.label,
-  items: item.children?.map((child) => ({ to: child.to, label: child.label })),
+  ...(item.children ? { items: item.children.map((child) => ({ to: child.to, label: child.label })) } : {}),
 }));
 
 const nav: NavItem[] = [
