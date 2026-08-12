@@ -47,6 +47,7 @@ const Blog = () => {
             <Search className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               value={q}
+              aria-label="Caută în articole"
               onChange={(e) => setQ(e.target.value)}
               placeholder="Caută în articole..."
               className="w-full pl-7 h-10 bg-transparent border-b border-foreground/10 focus:border-foreground/40 outline-hidden text-sm transition-colors"
