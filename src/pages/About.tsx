@@ -51,7 +51,7 @@ const About = () => {
       <section className="container-editorial pt-20 md:pt-32 pb-16">
         <p className="eyebrow mb-8">Despre mine</p>
         <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">
-          Alex Matescu
+          Alex Matescu — Inginer și autor
         </h1>
         <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-3xl text-balance">
           Inginer, autor și antreprenor din România.

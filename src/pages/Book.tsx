@@ -138,10 +138,10 @@ const quickFacts = [
 ];
 
 const GoldEyebrow = ({ children }: { children: React.ReactNode }) => (
-  <p className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#c9a86c] font-medium">
+  <h2 className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#c9a86c] font-medium">
     <span className="inline-block h-px w-8 bg-[#c9a86c]/40" />
     {children}
-  </p>
+  </h2>
 );
 
 const Section = ({
@@ -179,6 +179,9 @@ const Book = () => {
           <p className="text-xs uppercase tracking-[0.22em] text-[#c9a86c] mb-8 font-sans">
             Carte · În lucru · 2026
           </p>
+          <h1 className="font-trajan text-3xl md:text-5xl text-[#c9a86c] text-balance leading-tight mb-10">
+            CRANDIT — Mitul succesului peste noapte
+          </h1>
           <div className="w-full max-w-md">
             <img
               src={cranditCover}
@@ -448,7 +451,7 @@ const Book = () => {
       <Section lifted>
         <div className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.22em] text-[#c9a86c]/60">Rezumatul cărții</p>
+            <h2 className="text-xs uppercase tracking-[0.22em] text-[#c9a86c]/60">Rezumatul cărții</h2>
           </div>
           <div className="md:col-span-8 md:text-[1.0625rem] leading-[1.8] text-[#f5f0e8]/85">
             <p>
