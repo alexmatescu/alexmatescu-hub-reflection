@@ -36,7 +36,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Alex Matescu" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
       {
         property: "og:title",
         content: "Alex Matescu — Scris, proiecte și reflecții despre claritate și muncă",
@@ -70,7 +69,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "canonical", href: "/" },
+      
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
