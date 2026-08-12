@@ -281,7 +281,7 @@ const About = () => {
       {/* CE CONSTRUIESC ACUM */}
       <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
-          <p className="eyebrow">04 · Ce construiesc acum</p>
+          <h2 className="eyebrow">04 · Ce construiesc acum</h2>
         </div>
         <div className="md:col-span-8 prose-editorial">
           <p>
