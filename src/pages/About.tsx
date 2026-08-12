@@ -154,7 +154,7 @@ const About = () => {
       {/* CINE SUNT */}
       <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
-          <p className="eyebrow">01 · Cine sunt</p>
+          <h2 className="eyebrow">01 · Cine sunt</h2>
         </div>
         <div className="md:col-span-8 prose-editorial">
           <p>
@@ -186,7 +186,7 @@ const About = () => {
       {/* CE FAC */}
       <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
-          <p className="eyebrow">02 · Ce fac</p>
+          <h2 className="eyebrow">02 · Ce fac</h2>
         </div>
         <div className="md:col-span-8 prose-editorial">
           <h3 className="font-serif text-2xl mb-4">Activitate profesională</h3>
@@ -259,7 +259,7 @@ const About = () => {
       {/* DOMENII DE INTERES */}
       <section className="container-editorial py-20 md:py-28 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
-          <p className="eyebrow">03 · Domenii de interes</p>
+          <h2 className="eyebrow">03 · Domenii de interes</h2>
         </div>
         <div className="md:col-span-8">
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl">

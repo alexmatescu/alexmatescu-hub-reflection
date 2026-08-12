@@ -52,6 +52,7 @@ const NewsletterForm = ({
         <input
           type="email"
           required
+          aria-label="Adresă de email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="adresa@email.ro"
@@ -97,6 +98,7 @@ const NewsletterForm = ({
           <input
             type="email"
             required
+            aria-label="Adresă de email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="adresa@email.ro"
