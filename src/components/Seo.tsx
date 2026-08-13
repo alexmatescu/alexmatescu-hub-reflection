@@ -9,10 +9,13 @@ type SeoProps = {
   ogType?: string;
   ogTitle?: string;
   ogDescription?: string;
+  ogSiteName?: string;
+  ogLocale?: string;
   twitterTitle?: string;
   twitterDescription?: string;
   imageUrl?: string;
   imageAlt?: string;
+  robots?: string;
 };
 
 const JSONLD_SCRIPT_ID = "route-jsonld";
@@ -22,7 +25,25 @@ export const alexMatescuPerson = {
   "@id": "https://delamatescu.ro/#alex-matescu",
   name: "Alex Matescu",
   alternateName: ["Alexandru Matescu", "Alexandru-Costi Matescu"],
-  url: "https://delamatescu.ro",
+  url: "https://delamatescu.ro/",
+  description:
+    "Alex Matescu este autor, inginer și antreprenor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
+  homeLocation: {
+    "@type": "Place",
+    name: "Sibiu, România",
+  },
+  knowsAbout: [
+    "Inteligență artificială",
+    "AI Visibility",
+    "Generative Engine Optimization",
+    "Answer Engine Optimization",
+    "Inginerie de sistem",
+    "Sisteme automotive",
+    "Antreprenoriat",
+    "Scris",
+    "Leadership",
+    "Disciplină",
+  ],
   sameAs: [
     "https://www.linkedin.com/in/alex-matescu-8b2b8813b/",
     "https://x.com/MatescuAlex",
@@ -65,10 +86,13 @@ export const useSeo = ({
   ogType,
   ogTitle,
   ogDescription,
+  ogSiteName,
+  ogLocale,
   twitterTitle,
   twitterDescription,
   imageUrl,
   imageAlt,
+  robots,
 }: SeoProps) => {
   const jsonLdString = jsonLd ? JSON.stringify(jsonLd) : undefined;
 
@@ -86,6 +110,8 @@ export const useSeo = ({
       setMetaProperty("og:url", canonicalUrl);
     }
     if (ogType) setMetaProperty("og:type", ogType);
+    if (ogSiteName) setMetaProperty("og:site_name", ogSiteName);
+    if (ogLocale) setMetaProperty("og:locale", ogLocale);
     if (imageUrl) {
       setMetaProperty("og:image", imageUrl);
       setMetaName("twitter:image", imageUrl);
@@ -95,8 +121,10 @@ export const useSeo = ({
       setMetaName("twitter:image:alt", imageAlt);
     }
 
-    if (noIndex) {
-      setMetaContent('meta[name="robots"]', "noindex, nofollow");
+    if (robots) {
+      setMetaName("robots", robots);
+    } else if (noIndex) {
+      setMetaName("robots", "noindex, nofollow");
     }
 
 
@@ -112,7 +140,7 @@ export const useSeo = ({
     }
 
     return () => {
-      if (noIndex) setMetaContent('meta[name="robots"]', "index, follow");
+      if (robots || noIndex) setMetaName("robots", "index, follow");
       if (jsonLdString) document.getElementById(JSONLD_SCRIPT_ID)?.remove();
     };
   }, [
@@ -124,10 +152,13 @@ export const useSeo = ({
     ogType,
     ogTitle,
     ogDescription,
+    ogSiteName,
+    ogLocale,
     twitterTitle,
     twitterDescription,
     imageUrl,
     imageAlt,
+    robots,
   ]);
 };
 

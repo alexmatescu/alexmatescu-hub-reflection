@@ -44,6 +44,8 @@ const About = () => {
       <Seo
         title="Despre Alex Matescu — Inginer, autor și antreprenor"
         description="Cine este Alex Matescu: inginer în automotive, autor al CRANDIT, antreprenor și creator de conținut despre muncă, tehnologie și sens."
+        imageUrl="https://delamatescu.ro/images/AlexMatescu-profile-picture.jpg"
+        imageAlt="Alex Matescu"
         jsonLd={{ "@context": "https://schema.org", ...alexMatescuPerson }}
       />
 

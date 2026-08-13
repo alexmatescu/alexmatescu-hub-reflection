@@ -1,9 +1,11 @@
 import { Link } from "@/lib/router-compat";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
-import Seo from "@/components/Seo";
+import Seo, { alexMatescuPerson } from "@/components/Seo";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
+
+const BASE_URL = "https://delamatescu.ro";
 
 const cranditCover = "/images/blog/crandit-cover.webp";
 const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
@@ -24,8 +26,39 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="Alex Matescu — Blog despre claritate, muncă și proiecte"
-        description="Blogul lui Alex Matescu despre claritate, muncă, disciplină, succes, tehnologie, antreprenoriat și proiecte personale construite în timp."
+        title="Alex Matescu — Autor, inginer și antreprenor"
+        description="Site-ul personal al lui Alex Matescu, autor, inginer și antreprenor din Sibiu. Articole și proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
+        ogType="website"
+        ogSiteName="Alex Matescu"
+        ogLocale="ro_RO"
+        ogDescription="Hubul personal al lui Alex Matescu: articole, proiecte și cercetare despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
+        twitterDescription="Articole, proiecte și cercetare despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
+        robots="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            alexMatescuPerson,
+            {
+              "@type": "WebSite",
+              "@id": `${BASE_URL}/#website`,
+              url: `${BASE_URL}/`,
+              name: "Alex Matescu",
+              description: "Hubul personal al lui Alex Matescu pentru articole, proiecte, cercetare și scris.",
+              inLanguage: "ro-RO",
+              publisher: { "@id": alexMatescuPerson["@id"] },
+            },
+            {
+              "@type": "WebPage",
+              "@id": `${BASE_URL}/#webpage`,
+              url: `${BASE_URL}/`,
+              name: "Alex Matescu — Autor, inginer și antreprenor",
+              isPartOf: { "@id": `${BASE_URL}/#website` },
+              about: { "@id": alexMatescuPerson["@id"] },
+              mainEntity: { "@id": alexMatescuPerson["@id"] },
+              inLanguage: "ro-RO",
+            },
+          ],
+        }}
       />
 
       {/* HERO */}

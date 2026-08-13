@@ -13,14 +13,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
+import { alexMatescuPerson } from "@/components/Seo";
 import appCss from "../styles.css?url";
 
 const personJsonLd = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Alex Matescu",
-  jobTitle: "Inginer, scriitor, antreprenor",
-  url: "/",
+  ...alexMatescuPerson,
 });
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({

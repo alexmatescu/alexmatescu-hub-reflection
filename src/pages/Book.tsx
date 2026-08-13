@@ -162,13 +162,14 @@ const Book = () => {
       <Seo
         title="CRANDIT — Mitul succesului peste noapte | Alex Matescu"
         description="CRANDIT — Mitul succesului peste noapte este cartea lui Alex Matescu despre succes durabil, scrisă din experiențe trăite, lecții teoretice și practice, disciplină, claritate și costuri asumate."
+        canonicalUrl="https://delamatescu.ro/carte-crandit-mitul-succesului-peste-noapte"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Book",
           name: "CRANDIT — Mitul succesului peste noapte",
           description:
             "CRANDIT — Mitul succesului peste noapte este cartea lui Alex Matescu despre succes durabil, scrisă din experiențe trăite, lecții teoretice și practice, disciplină, claritate și costuri asumate.",
-          url: "https://delamatescu.ro/carte",
+          url: "https://delamatescu.ro/carte-crandit-mitul-succesului-peste-noapte",
           author: alexMatescuPerson,
         }}
       />

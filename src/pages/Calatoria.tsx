@@ -291,6 +291,8 @@ const Calatoria = () => {
       <Seo
         title="Călătoria lui Alex Matescu — De la Gorj la CRANDIT"
         description="Povestea lui Alex Matescu, de la Strâmba Jiu și Gorj la Craiova, Timișoara, București și Sibiu, prin studii tehnice, inginerie, antreprenoriat, CRANDIT și AI Visibility Lab."
+        imageUrl="https://delamatescu.ro/images/AlexMatescu-profile-picture.jpg"
+        imageAlt="Alex Matescu"
       />
 
       {/* Hero */}

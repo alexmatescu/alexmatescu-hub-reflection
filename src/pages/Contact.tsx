@@ -59,6 +59,8 @@ const Contact = () => {
       <Seo
         title="Contact — Alex Matescu"
         description="Scrie-i lui Alex Matescu pentru colaborări, mentoring, media sau proiecte."
+        imageUrl="https://delamatescu.ro/images/AlexMatescu-profile-picture.jpg"
+        imageAlt="Alex Matescu"
       />
 
       <section className="container-editorial pt-20 md:pt-32 pb-12">
