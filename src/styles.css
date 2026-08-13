@@ -256,6 +256,12 @@
   .prose-editorial table:not(.avl-meta-table) td {
     @apply border border-foreground/10 px-4 py-2.5 text-left;
   }
+  .prose-editorial sup a {
+    @apply no-underline text-xs text-muted-foreground hover:text-foreground;
+  }
+  .avl-footnotes {
+    @apply mt-4 text-sm text-muted-foreground space-y-3;
+  }
 }
 
 @layer utilities {

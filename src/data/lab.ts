@@ -64,6 +64,20 @@ export const labNav: LabPage[] = [
     to: "/lab/articole",
     label: "Articole",
     lead: "Articole, analize și note de lucru despre GEO, AEO și vizibilitatea în motoarele generative.",
+    children: [
+      {
+        to: "/lab/articole/istoria-cautarii-internet-evolutia-seo",
+        label:
+          "Istoria căutării pe internet: cum fiecare eră a creat un punct orb pe care optimizarea a încercat să-l exploateze",
+        lead: "De la Archie și primele indexuri ale internetului la răspunsurile generative din 2026: momentele-cheie din evoluția căutării, originea disputată a termenului SEO și o ipoteză despre tiparul care se repetă.",
+      },
+      {
+        to: "/lab/articole/motoare-cautare-comparatie-2026",
+        label:
+          "Motoarele de căutare comparate în 2026: cifrele care se contrazic, deciziile care au schimbat clasamentul și oamenii din spatele lor",
+        lead: "Cotele de piață reale, de ce studiile diferă cu două ordine de mărime, și deciziile de distribuție care au decis fiecare schimbare de clasament din istoria căutării. Analiză AI Visibility Lab.",
+      },
+    ],
   },
   {
     to: "/lab/audit-ai-visibility",

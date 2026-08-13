@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import LabPage from "@/pages/LabPage";
+import Lab from "@/pages/Lab";
 
 const BASE = "https://delamatescu.ro";
 
 export const Route = createFileRoute("/_site/lab/$parent/$slug")({
-  component: LabPage,
+  component: Lab,
   head: ({ params }) => ({
     meta: [
       {
