@@ -24,8 +24,8 @@ import { Route as SiteBlogSlugRouteImport } from './routes/_site/blog/$slug'
 import { Route as SiteLabIndexRouteImport } from './routes/_site/lab/index'
 import { Route as SiteLabSlugRouteImport } from './routes/_site/lab/$slug'
 import { Route as SiteProiecteIndexRouteImport } from './routes/_site/proiecte/index'
-import { Route as SiteProiecteGeoAiVisibilityRouteImport } from './routes/_site/proiecte/geo-ai-visibility'
 import { Route as SiteProiecteSlugRouteImport } from './routes/_site/proiecte/$slug'
+import { Route as SiteProiecteGeoAiVisibilityRouteImport } from './routes/_site/proiecte/geo-ai-visibility'
 import { Route as SiteLabParentSlugRouteImport } from './routes/_site/lab/$parent.$slug'
 
 const SiteRoute = SiteRouteImport.update({
@@ -102,16 +102,17 @@ const SiteProiecteIndexRoute = SiteProiecteIndexRouteImport.update({
   path: '/proiecte/',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteProiecteGeoAiVisibilityRoute = SiteProiecteGeoAiVisibilityRouteImport.update({
-  id: '/proiecte/geo-ai-visibility',
-  path: '/proiecte/geo-ai-visibility',
-  getParentRoute: () => SiteRoute,
-} as any)
 const SiteProiecteSlugRoute = SiteProiecteSlugRouteImport.update({
   id: '/proiecte/$slug',
   path: '/proiecte/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
+const SiteProiecteGeoAiVisibilityRoute =
+  SiteProiecteGeoAiVisibilityRouteImport.update({
+    id: '/proiecte/geo-ai-visibility',
+    path: '/proiecte/geo-ai-visibility',
+    getParentRoute: () => SiteRoute,
+  } as any)
 const SiteLabParentSlugRoute = SiteLabParentSlugRouteImport.update({
   id: '/lab/$parent/$slug',
   path: '/lab/$parent/$slug',
@@ -130,8 +131,8 @@ export interface FileRoutesByFullPath {
   '/admin/mesaje': typeof SiteAdminMesajeRoute
   '/blog/$slug': typeof SiteBlogSlugRoute
   '/lab/$slug': typeof SiteLabSlugRoute
-  '/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
   '/proiecte/$slug': typeof SiteProiecteSlugRoute
+  '/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
   '/blog/': typeof SiteBlogIndexRoute
   '/lab/': typeof SiteLabIndexRoute
   '/proiecte/': typeof SiteProiecteIndexRoute
@@ -149,8 +150,8 @@ export interface FileRoutesByTo {
   '/admin/mesaje': typeof SiteAdminMesajeRoute
   '/blog/$slug': typeof SiteBlogSlugRoute
   '/lab/$slug': typeof SiteLabSlugRoute
-  '/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
   '/proiecte/$slug': typeof SiteProiecteSlugRoute
+  '/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
   '/blog': typeof SiteBlogIndexRoute
   '/lab': typeof SiteLabIndexRoute
   '/proiecte': typeof SiteProiecteIndexRoute
@@ -170,8 +171,8 @@ export interface FileRoutesById {
   '/_site/admin/mesaje': typeof SiteAdminMesajeRoute
   '/_site/blog/$slug': typeof SiteBlogSlugRoute
   '/_site/lab/$slug': typeof SiteLabSlugRoute
-  '/_site/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
   '/_site/proiecte/$slug': typeof SiteProiecteSlugRoute
+  '/_site/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
   '/_site/blog/': typeof SiteBlogIndexRoute
   '/_site/lab/': typeof SiteLabIndexRoute
   '/_site/proiecte/': typeof SiteProiecteIndexRoute
@@ -191,8 +192,8 @@ export interface FileRouteTypes {
     | '/admin/mesaje'
     | '/blog/$slug'
     | '/lab/$slug'
-    | '/proiecte/geo-ai-visibility'
     | '/proiecte/$slug'
+    | '/proiecte/geo-ai-visibility'
     | '/blog/'
     | '/lab/'
     | '/proiecte/'
@@ -210,8 +211,8 @@ export interface FileRouteTypes {
     | '/admin/mesaje'
     | '/blog/$slug'
     | '/lab/$slug'
-    | '/proiecte/geo-ai-visibility'
     | '/proiecte/$slug'
+    | '/proiecte/geo-ai-visibility'
     | '/blog'
     | '/lab'
     | '/proiecte'
@@ -230,8 +231,8 @@ export interface FileRouteTypes {
     | '/_site/admin/mesaje'
     | '/_site/blog/$slug'
     | '/_site/lab/$slug'
-    | '/_site/proiecte/geo-ai-visibility'
     | '/_site/proiecte/$slug'
+    | '/_site/proiecte/geo-ai-visibility'
     | '/_site/blog/'
     | '/_site/lab/'
     | '/_site/proiecte/'
@@ -349,18 +350,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteProiecteIndexRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/proiecte/geo-ai-visibility': {
-      id: '/_site/proiecte/geo-ai-visibility'
-      path: '/proiecte/geo-ai-visibility'
-      fullPath: '/proiecte/geo-ai-visibility'
-      preLoaderRoute: typeof SiteProiecteGeoAiVisibilityRouteImport
-      parentRoute: typeof SiteRoute
-    }
     '/_site/proiecte/$slug': {
       id: '/_site/proiecte/$slug'
       path: '/proiecte/$slug'
       fullPath: '/proiecte/$slug'
       preLoaderRoute: typeof SiteProiecteSlugRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/proiecte/geo-ai-visibility': {
+      id: '/_site/proiecte/geo-ai-visibility'
+      path: '/proiecte/geo-ai-visibility'
+      fullPath: '/proiecte/geo-ai-visibility'
+      preLoaderRoute: typeof SiteProiecteGeoAiVisibilityRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/lab/$parent/$slug': {
@@ -385,8 +386,8 @@ interface SiteRouteChildren {
   SiteAdminMesajeRoute: typeof SiteAdminMesajeRoute
   SiteBlogSlugRoute: typeof SiteBlogSlugRoute
   SiteLabSlugRoute: typeof SiteLabSlugRoute
-  SiteProiecteGeoAiVisibilityRoute: typeof SiteProiecteGeoAiVisibilityRoute
   SiteProiecteSlugRoute: typeof SiteProiecteSlugRoute
+  SiteProiecteGeoAiVisibilityRoute: typeof SiteProiecteGeoAiVisibilityRoute
   SiteBlogIndexRoute: typeof SiteBlogIndexRoute
   SiteLabIndexRoute: typeof SiteLabIndexRoute
   SiteProiecteIndexRoute: typeof SiteProiecteIndexRoute
@@ -405,8 +406,8 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteAdminMesajeRoute: SiteAdminMesajeRoute,
   SiteBlogSlugRoute: SiteBlogSlugRoute,
   SiteLabSlugRoute: SiteLabSlugRoute,
-  SiteProiecteGeoAiVisibilityRoute: SiteProiecteGeoAiVisibilityRoute,
   SiteProiecteSlugRoute: SiteProiecteSlugRoute,
+  SiteProiecteGeoAiVisibilityRoute: SiteProiecteGeoAiVisibilityRoute,
   SiteBlogIndexRoute: SiteBlogIndexRoute,
   SiteLabIndexRoute: SiteLabIndexRoute,
   SiteProiecteIndexRoute: SiteProiecteIndexRoute,
