@@ -31,6 +31,16 @@ export type Post = {
   canonicalPath?: string;
   featured?: boolean;
 
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  imageAlt?: string;
+  about?: string[];
+  mentions?: string[];
+  schemaKeywords?: string[];
+
+
   /** Original Blogger HTML (sanitized). When present, rendered as HTML. */
   html?: string;
 
