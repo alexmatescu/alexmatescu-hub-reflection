@@ -35,8 +35,8 @@ const BlogPost = () => {
         ogDescription={post.ogDescription ?? post.metaDescription ?? post.excerpt}
         ogSiteName="Alex Matescu"
         ogLocale="ro_RO"
-        twitterTitle={post.twitterTitle}
-        twitterDescription={post.twitterDescription}
+        {...(post.twitterTitle ? { twitterTitle: post.twitterTitle } : {})}
+        {...(post.twitterDescription ? { twitterDescription: post.twitterDescription } : {})}
         robots="index, follow"
         {...(post.heroImage?.src
           ? {
