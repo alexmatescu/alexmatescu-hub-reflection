@@ -77,6 +77,11 @@ export const labNav: LabPage[] = [
           "Motoarele de căutare comparate în 2026: cifrele care se contrazic, deciziile care au schimbat clasamentul și oamenii din spatele lor",
         lead: "Cotele de piață reale, de ce studiile diferă cu două ordine de mărime, și deciziile de distribuție care au decis fiecare schimbare de clasament din istoria căutării. Analiză AI Visibility Lab.",
       },
+      {
+        to: "/lab/articole/social-media-vizibilitate-ai",
+        label: "De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI",
+        lead: "Cum diferă vizibilitatea umană de vizibilitatea AI în social media. Analiză bazată pe surse publice, studii comerciale tratate separat după metodologie și reguli operaționale pentru artefacte persistente, entity resolution și distribuție.",
+      },
     ],
   },
   {

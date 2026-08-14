@@ -308,5 +308,5 @@ export const motoareCautareHtml = `
         <li id="fn-13">IndexNow — FAQ și lista motoarelor participante. Protocolul notifică instant motoarele despre schimbarea URL-urilor, dar notificarea nu reprezintă o garanție de indexare imediată: <a href="https://www.indexnow.org/faq" target="_blank" rel="noopener noreferrer">indexnow.org/faq</a> · <a href="https://www.indexnow.org/searchengines" target="_blank" rel="noopener noreferrer">indexnow.org/searchengines</a></li>
       </ol>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu, inginer de sisteme și consultant în vizibilitate AI, Sibiu. Ultima verificare factuală și actualizare: 10 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu, inginer de sisteme și consultant în vizibilitate AI, Sibiu. Ultima verificare factuală și actualizare: 14 august 2026.</em></p>
 `;

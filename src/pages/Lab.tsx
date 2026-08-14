@@ -2,6 +2,7 @@ import { Link, Navigate } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
 import Seo, { alexMatescuPerson } from "@/components/Seo";
 import { findLabPage, findLabParent, labNav } from "@/data/lab";
+import { buildArticleJsonLd, labArticleMeta } from "@/data/lab-seo";
 import { avl001IntroductionHtml } from "@/data/lab-content/avl-001";
 import { avl101GeoAeoHtml } from "@/data/lab-content/avl-101";
 import { avl102CumAlegHtml } from "@/data/lab-content/avl-102";
@@ -12,14 +13,9 @@ import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
-import {
-  istoriaCautariiHtml,
-  istoriaCautariiMeta,
-} from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
-import {
-  motoareCautareHtml,
-  motoareCautareMeta,
-} from "@/data/lab-content/motoare-cautare-comparatie-2026";
+import { istoriaCautariiHtml } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
+import { motoareCautareHtml } from "@/data/lab-content/motoare-cautare-comparatie-2026";
+import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/social-media-vizibilitate-ai";
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
 
@@ -35,48 +31,18 @@ const labPageContent: Record<string, string> = {
   "/lab/articole": avl401ArticoleHtml,
   "/lab/articole/istoria-cautarii-internet-evolutia-seo": istoriaCautariiHtml,
   "/lab/articole/motoare-cautare-comparatie-2026": motoareCautareHtml,
+  "/lab/articole/social-media-vizibilitate-ai": socialMediaVizibilitateAiHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 
 /**
- * Metadatele articolelor individuale (nu sunt documente AVL) — folosite pentru
- * a genera override-uri de JSON-LD cu scheme Article/FAQPage, nu CreativeWork generic.
+ * JSON-LD Article/FAQPage per articol, derivat din aceeași sursă (@/data/lab-seo)
+ * folosită și de head()-ul server-side al rutei /lab/articole/$slug — o singură
+ * definiție, ca structured data-ul din HTML-ul inițial și cel injectat client-side
+ * la hidratare să nu diveargă niciodată.
  */
-const labArticleMeta = [istoriaCautariiMeta, motoareCautareMeta];
-
-const labPageJsonLdOverrides: Record<string, object | object[]> = Object.fromEntries(
-  labArticleMeta.map((meta) => [
-    new URL(meta.canonical).pathname,
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: meta.title,
-        description: meta.description,
-        inLanguage: "ro-RO",
-        datePublished: meta.datePublished,
-        dateModified: meta.dateModified,
-        url: meta.canonical,
-        mainEntityOfPage: { "@type": "WebPage", "@id": meta.canonical },
-        author: alexMatescuPerson,
-        publisher: {
-          "@type": "Organization",
-          name: "AI Visibility Lab",
-          url: "https://delamatescu.ro/lab",
-        },
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        inLanguage: "ro-RO",
-        mainEntity: meta.faq.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
-    ],
-  ]),
+const labPageJsonLdOverrides: Record<string, object[]> = Object.fromEntries(
+  labArticleMeta.map((meta) => [new URL(meta.canonical).pathname, buildArticleJsonLd(meta)]),
 );
 
 export const LabIndex = () => (
@@ -158,28 +124,34 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
 
   const parent = findLabParent(page.to);
   const content = labPageContent[page.to];
+  const isArticle = page.to in labPageJsonLdOverrides;
 
   return (
     <div>
       <Seo
         title={`${page.label} — AI Visibility Lab | Alex Matescu`}
         description={page.lead}
-        jsonLd={
-          labPageJsonLdOverrides[page.to] ?? {
-            "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            name: page.label,
-            description: page.lead,
-            url: `https://delamatescu.ro${page.to}`,
-            isPartOf: {
-              "@type": "CreativeWork",
-              name: "AI Visibility Lab",
-              url: "https://delamatescu.ro/lab",
-            },
-            creator: alexMatescuPerson,
-            author: alexMatescuPerson,
-          }
-        }
+        {...(isArticle
+          ? // Titlu/descriere/OG rămân utile pentru actualizarea client-side la
+            // navigare SPA; JSON-LD-ul Article/FAQPage e deja randat server-side
+            // de head()-ul rutei (@/data/lab-seo), deci nu-l mai duplicăm aici.
+            { ogType: "article" }
+          : {
+              jsonLd: {
+                "@context": "https://schema.org",
+                "@type": "CreativeWork",
+                name: page.label,
+                description: page.lead,
+                url: `https://delamatescu.ro${page.to}`,
+                isPartOf: {
+                  "@type": "CreativeWork",
+                  name: "AI Visibility Lab",
+                  url: "https://delamatescu.ro/lab",
+                },
+                creator: alexMatescuPerson,
+                author: alexMatescuPerson,
+              },
+            })}
       />
 
       <section className="border-b border-foreground/10">
