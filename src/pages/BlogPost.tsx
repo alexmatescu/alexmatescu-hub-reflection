@@ -31,13 +31,19 @@ const BlogPost = () => {
         description={post.metaDescription ?? post.excerpt}
         canonicalUrl={`https://delamatescu.ro/blog/${post.slug}`}
         ogType="article"
-        ogTitle={post.seoTitle ?? post.title}
+        ogTitle={post.ogTitle ?? post.seoTitle ?? post.title}
+        ogDescription={post.ogDescription ?? post.metaDescription ?? post.excerpt}
+        ogSiteName="Alex Matescu"
+        ogLocale="ro_RO"
+        twitterTitle={post.twitterTitle}
+        twitterDescription={post.twitterDescription}
+        robots="index, follow"
         {...(post.heroImage?.src
           ? {
               imageUrl: post.heroImage.src.startsWith("http")
                 ? post.heroImage.src
                 : `https://delamatescu.ro${post.heroImage.src}`,
-              imageAlt: post.heroImage.alt,
+              imageAlt: post.imageAlt ?? post.heroImage.alt,
             }
           : {})}
         jsonLd={[
@@ -57,8 +63,24 @@ const BlogPost = () => {
               "@id": `https://delamatescu.ro/blog/${post.slug}`,
             },
             articleSection: post.category,
-            ...(post.tags?.length ? { keywords: post.tags } : {}),
-            ...(post.heroImage?.src ? { image: post.heroImage.src } : {}),
+            ...(post.schemaKeywords?.length
+              ? { keywords: post.schemaKeywords }
+              : post.tags?.length
+                ? { keywords: post.tags }
+                : {}),
+            ...(post.about?.length
+              ? { about: post.about.map((name) => ({ "@type": "Thing", name })) }
+              : {}),
+            ...(post.mentions?.length
+              ? { mentions: post.mentions.map((name) => ({ "@type": "Person", name })) }
+              : {}),
+            ...(post.heroImage?.src
+              ? {
+                  image: post.heroImage.src.startsWith("http")
+                    ? post.heroImage.src
+                    : `https://delamatescu.ro${post.heroImage.src}`,
+                }
+              : {}),
             author: alexMatescuPerson,
             publisher: { "@id": "https://delamatescu.ro/#alex-matescu" },
           },
