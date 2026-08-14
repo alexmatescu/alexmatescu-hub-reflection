@@ -1,4 +1,4 @@
-import { Link, Navigate, useLocation } from "@/lib/router-compat";
+import { Link, Navigate } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
 import Seo, { alexMatescuPerson } from "@/components/Seo";
 import { findLabPage, findLabParent, labNav } from "@/data/lab";
@@ -79,7 +79,7 @@ const labPageJsonLdOverrides: Record<string, object | object[]> = Object.fromEnt
   ]),
 );
 
-const LabIndex = () => (
+export const LabIndex = () => (
   <div>
     <Seo
       title="AI Visibility Lab — GEO și AEO pentru branduri | Alex Matescu"
@@ -149,7 +149,7 @@ const LabIndex = () => (
   </div>
 );
 
-const LabDetail = ({ pathname }: { pathname: string }) => {
+export const LabDetail = ({ pathname }: { pathname: string }) => {
   const page = findLabPage(pathname);
 
   if (!page) {
@@ -242,16 +242,3 @@ const LabDetail = ({ pathname }: { pathname: string }) => {
     </div>
   );
 };
-
-const Lab = () => {
-  const location = useLocation();
-  const clean = location.pathname.replace(/\/+$/, "") || "/";
-
-  if (clean === "/lab") {
-    return <LabIndex />;
-  }
-
-  return <LabDetail pathname={location.pathname} />;
-};
-
-export default Lab;

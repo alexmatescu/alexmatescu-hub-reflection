@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import Lab from "@/pages/Lab";
+import { LabDetail } from "@/pages/Lab";
 
 const BASE = "https://delamatescu.ro";
 
 export const Route = createFileRoute("/_site/lab/$parent/$slug")({
-  component: Lab,
+  component: RouteComponent,
   head: ({ params }) => ({
     meta: [
       {
@@ -17,3 +17,10 @@ export const Route = createFileRoute("/_site/lab/$parent/$slug")({
     ],
   }),
 });
+
+// See $slug.tsx for why this reads Route.useParams() (match-scoped) instead
+// of the global location.
+function RouteComponent() {
+  const { parent, slug } = Route.useParams();
+  return <LabDetail pathname={`/lab/${parent}/${slug}`} />;
+}
