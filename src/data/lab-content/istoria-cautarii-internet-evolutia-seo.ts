@@ -9,31 +9,43 @@ export const istoriaCautariiMeta = {
     "De la Archie și primele indexuri ale internetului la răspunsurile generative din 2026: momentele-cheie din evoluția căutării, originea disputată a termenului SEO și o ipoteză despre tiparul care se repetă.",
   canonical: "https://delamatescu.ro/lab/articole/istoria-cautarii-internet-evolutia-seo",
   datePublished: "2026-08-06",
-  dateModified: "2026-08-10",
+  dateModified: "2026-08-14",
   faq: [
     {
       q: "Care a fost primul motor de căutare de pe internet?",
-      a: "Archie este considerat în mod obișnuit primul motor de căutare de pe internet. Alan Emtage l-a creat la Universitatea McGill, care datează creația inițială în 1989. Archie indexa liste de fișiere de pe servere FTP, nu pagini web.",
+      a: "Archie este considerat în mod obișnuit primul motor de căutare de pe internet. Alan Emtage l-a creat la McGill; universitatea datează creația în 1989, deși unele istorii folosesc 1990 pentru etapele ulterioare ale dezvoltării și răspândirii. Archie indexa liste de fișiere de pe servere FTP, nu pagini web.",
+    },
+    {
+      q: "Care a fost primul crawler al webului?",
+      a: "Matthew Gray descrie World Wide Web Wanderer, dezvoltat în 1993, drept primul agent autonom al webului, iar resursele MIT îl descriu drept primul web spider. Era folosit inițial pentru măsurarea dimensiunii webului.",
     },
     {
       q: "Cine a inventat termenul SEO?",
-      a: "Nu există un inventator unic demonstrat. Istoria disponibilă indică mai multe apariții și revendicări independente în perioada 1995-1997, asociate cu nume precum Bruce Clay, John Audette, Bob Heyman, Leland Harden și Viktor Grant.",
+      a: "Nu există un inventator unic demonstrat. Istoria disponibilă indică mai multe persoane care au folosit sau revendicat independent formulări apropiate în perioada 1995-1997. O investigație Search Engine Land din 2025 discută cinci nume: Bruce Clay, John Audette, Bob Heyman, Leland Harden și Viktor Grant. Danny Sullivan a avut un rol important în popularizarea și documentarea terminologiei.",
     },
     {
       q: "Ce a schimbat PageRank?",
-      a: "PageRank a folosit structura de linkuri a webului ca semnal pentru evaluarea paginilor, mutând o parte importantă a analizei din interiorul documentului spre relațiile dintre documente.",
+      a: "PageRank a făcut din structura de linkuri a webului un semnal important pentru evaluarea paginilor. În loc să se bazeze doar pe ce declara documentul despre el însuși, motorul putea analiza și relațiile dintre documente.",
+    },
+    {
+      q: "Când a devenit căutarea o piață publicitară?",
+      a: "Monetizarea căutării a evoluat în mai multe etape. GoTo.com a popularizat licitațiile PPC la sfârșitul anilor 1990. Google a lansat AdWords self-service în octombrie 2000, inițial cu tarifare CPM, iar în februarie 2002 a lansat AdWords Select, cu CPC și ordonare bazată pe combinația dintre bid și performanța anunțului.",
     },
     {
       q: "De ce nu mai contează meta keywords pentru Google?",
-      a: "Google spune explicit că meta keywords nu este folosit pentru ranking în Google Search.",
+      a: "Google spune explicit că meta keywords nu este folosit pentru ranking în Google Search. Motivul practic pentru care astfel de semnale sunt slabe este evident: proprietarul paginii le poate completa fără ca ele să demonstreze relevanța reală a conținutului.",
     },
     {
       q: "Există un markup special pentru AI Overviews sau AI Mode?",
-      a: "Nu. Google spune că nu este necesar un markup special, un fișier AI precum llms.txt sau alt format separat pentru a apărea în funcțiile generative Google Search.",
+      a: "Nu. Ghidul Google din 2026 spune explicit că nu este necesar un markup special, un fișier AI precum llms.txt sau alt format separat pentru a apărea în funcțiile generative Google Search. Fundamentele SEO existente rămân baza recomandată.",
     },
     {
-      q: "Este coroborarea factorul de ranking al GEO?",
-      a: "Nu există dovezi publice suficiente pentru a afirma că există un singur factor de ranking numit coroborare. Motoarele generative folosesc pipeline-uri complexe, iar coroborarea este tratată în acest articol ca ipoteză de cercetare, nu ca mecanism algoritmic demonstrat.",
+      q: "Este coroborarea „factorul de ranking” al GEO?",
+      a: "Nu există dovezi publice suficiente pentru o asemenea afirmație. Coroborarea între surse este o ipoteză relevantă pentru credibilitate și sinteză, dar motoarele generative folosesc pipeline-uri complexe, iar factorii și ponderile exacte nu sunt publice. În acest articol, coroborarea este tratată ca ipoteză de cercetare, nu ca fapt algoritmic demonstrat.",
+    },
+    {
+      q: "Ce ar putea urma după GEO?",
+      a: "Predicția AI Visibility Lab este că, dacă mențiunile și referințele externe devin o zonă importantă de optimizare, sistemele vor avea nevoie de metode mai bune pentru a distinge semnalele autentice de cele fabricate. Este o extrapolare din istoria SEO, nu o schimbare algoritmică anunțată.",
     },
   ],
 };
@@ -342,5 +354,5 @@ export const istoriaCautariiHtml = `
         <li id="fn-25">Sunghwan Kim et al. — <em>SAGEO Arena: A Realistic Environment for Evaluating Search-Augmented Generative Engine Optimization</em>, 2026: <a href="https://arxiv.org/abs/2602.12187" target="_blank" rel="noopener noreferrer">arxiv.org/abs/2602.12187</a></li>
       </ol>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitatea în motoare de căutare și sisteme generative al lui Alex Matescu. Ultima verificare factuală: 10 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu, inginer de sisteme și consultant în vizibilitate AI, Sibiu. Ultima verificare factuală și actualizare: 14 august 2026.</em></p>
 `;

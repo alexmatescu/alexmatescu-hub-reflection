@@ -8,8 +8,8 @@ export const motoareCautareMeta = {
   description:
     "Cotele de piață reale, de ce studiile diferă cu două ordine de mărime, și deciziile de distribuție care au decis fiecare schimbare de clasament din istoria căutării. Analiză AI Visibility Lab.",
   canonical: "https://delamatescu.ro/lab/articole/motoare-cautare-comparatie-2026",
-  datePublished: "2026-08-06",
-  dateModified: "2026-08-10",
+  datePublished: "2026-08-14",
+  dateModified: "2026-08-14",
   faq: [
     {
       q: "Care este cota de piață a Google în 2026?",
