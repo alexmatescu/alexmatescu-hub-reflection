@@ -226,7 +226,7 @@ const Home = () => {
             .map((p, i) => (
               <Link
                 key={p!.slug}
-                to={`/proiecte/${p!.slug}`}
+                to={p!.slug === "geo-ai-visibility" ? "/lab/introducere" : `/proiecte/${p!.slug}`}
                 className="group bg-background p-8 md:p-10 flex flex-col gap-5 hover:bg-surface transition-colors duration-500"
               >
                 <div className="flex items-start justify-between gap-4">

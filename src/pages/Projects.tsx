@@ -37,7 +37,7 @@ const Projects = () => {
           {projects.map((p, i) => (
             <li key={p.slug}>
               <Link
-                to={`/proiecte/${p.slug}`}
+                to={p.slug === "geo-ai-visibility" ? "/lab/introducere" : `/proiecte/${p.slug}`}
                 className="group grid md:grid-cols-12 gap-6 py-12 md:py-16 items-start hover:bg-surface/50 transition-colors px-2 md:px-4 -mx-2 md:-mx-4"
               >
                 <div className="md:col-span-2 text-xs text-muted-foreground tabular-nums">
