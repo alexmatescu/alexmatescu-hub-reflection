@@ -1,0 +1,72 @@
+{
+  "_comment": "Date verificate la 17 august 2026 prin accesarea directa a articolelor. Titlurile si autorii sunt verbatim.",
+  "entries": [
+    {
+      "id": "economedia-taste-the-corn-2025-07",
+      "kind": "article-about",
+      "story": "lansare-taste-the-corn",
+      "title": "Un tânăr inginer din Sibiu a investit 10.000 de euro într-o afacere în care vinde porumb cu toppings: „Ne-am dorit să fie ceva sănătos, ușor de consumat și rapid de preparat”",
+      "publication": "Economedia",
+      "publicationUrl": "https://economedia.ro",
+      "author": "Redacția",
+      "url": "https://economedia.ro/un-tanar-inginer-din-sibiu-a-investit-10-000-de-euro-intr-o-afacere-in-care-vinde-porumb-cu-toppings-ne-am-dorit-sa-fie-ceva-sanatos-usor-de-consumat-si-rapid-de-preparat.html",
+      "date": "2025-07-04",
+      "context": "Interviu despre lansarea Taste The Corn: investiția inițială, decizia de a găti porumbul la abur în loc de fiert, și logica din spatele conceptului.",
+      "subject": "taste-the-corn",
+      "language": "ro",
+      "featured": true
+    },
+    {
+      "id": "turnul-sfatului-taste-the-corn-2025-07",
+      "kind": "article-about",
+      "story": "lansare-taste-the-corn",
+      "title": "Un tânăr inginer din Sibiu a investit 10.000 de euro într-un stand în care vinde porumb, la Shopping City Sibiu. „Ne-am dorit să fie ceva sănătos, ușor de consumat și rapid de preparat”",
+      "publication": "Turnul Sfatului",
+      "publicationUrl": "https://www.turnulsfatului.ro",
+      "author": "Adina Bota",
+      "url": "https://www.turnulsfatului.ro/2025/07/04/un-tanar-inginer-din-sibiu-a-investit-10-000-de-euro-intr-un-stand-in-care-vinde-porumb-la-shopping-city-sibiu-ne-am-dorit-sa-fie-ceva-sanatos-usor-de-consumat-si-rapid-de-preparat-221113/",
+      "date": "2025-07-04",
+      "context": "Profil în publicația locală din Sibiu, cu detalii despre amplasarea standului la intrarea Carrefour din Shopping City Sibiu.",
+      "subject": "taste-the-corn",
+      "language": "ro",
+      "featured": true
+    },
+    {
+      "id": "ampress-taste-the-corn-2025-07",
+      "kind": "article-about",
+      "story": "lansare-taste-the-corn",
+      "title": "De la inginer în oraș la afacere de succes cu porumb aromat la Sibiu! Incredibil cum a reușit Alex să cucerească clienții",
+      "publication": "A.M. Press",
+      "publicationUrl": "https://ampress.ro",
+      "author": "Mihai",
+      "url": "https://ampress.ro/de-la-inginer-in-oras-la-afacere-de-succes-cu-porumb-aromat-la-sibiu-incredibil-cum-a-reusit-alex-sa-cucereasca-clientii/",
+      "date": "2025-07-04",
+      "context": "Preluare a poveștii de lansare, cu accent pe identificarea nișei neacoperite în Sibiu.",
+      "subject": "taste-the-corn",
+      "language": "ro",
+      "featured": false
+    },
+    {
+      "id": "sabotorii-taste-the-corn-2025-07",
+      "kind": "article-about",
+      "story": "lansare-taste-the-corn",
+      "title": "A dat lovitura cu o afacere în care a investit doar 10.000 de euro",
+      "publication": "Sabotorii",
+      "publicationUrl": "https://sabotorii.ro",
+      "author": "Alexandru",
+      "url": "https://sabotorii.ro/articol/a-dat-lovitura-cu-o-afacere-in-care-a-investit-doa_29370.html",
+      "date": "2025-07-05",
+      "context": "Preluare a poveștii de lansare Taste The Corn.",
+      "subject": "taste-the-corn",
+      "language": "ro",
+      "featured": false
+    }
+  ],
+  "stories": {
+    "lansare-taste-the-corn": {
+      "label": "Lansarea Taste The Corn",
+      "date": "2025-07-04",
+      "summary": "Lansarea standului Taste The Corn la Shopping City Sibiu, cu o investiție de 10.000 de euro. Preluată de patru publicații în aceeași săptămână."
+    }
+  }
+}

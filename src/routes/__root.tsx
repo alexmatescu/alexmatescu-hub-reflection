@@ -14,11 +14,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import { alexMatescuPerson } from "@/components/Seo";
+import { getPresaSubjectOfRefs } from "@/lib/presa";
 import appCss from "../styles.css?url";
 
+// `subjectOf` se calculează din presa.json (nu din Seo.tsx, ca să evităm un
+// import ciclic Seo.tsx ↔ presa.ts) — @id-urile aparițiilor în presă în care
+// Person e subiect. Vezi @/lib/presa pentru regulile de mapare kind → relație.
 const personJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   ...alexMatescuPerson,
+  subjectOf: getPresaSubjectOfRefs(),
 });
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({

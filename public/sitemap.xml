@@ -26,6 +26,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://delamatescu.ro/presa</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://delamatescu.ro/carte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

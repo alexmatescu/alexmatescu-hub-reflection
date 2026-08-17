@@ -40,12 +40,13 @@ const labPageContent: Record<string, string> = {
 };
 
 /**
- * JSON-LD Article/FAQPage per articol, derivat din aceeași sursă (@/data/lab-seo)
- * folosită și de head()-ul server-side al rutei /lab/articole/$slug — o singură
- * definiție, ca structured data-ul din HTML-ul inițial și cel injectat client-side
- * la hidratare să nu diveargă niciodată.
+ * JSON-LD per articol, derivat din aceeași sursă (@/data/lab-seo) folosită și de
+ * head()-ul server-side al rutei /lab/articole/$slug — o singură definiție, ca
+ * structured data-ul din HTML-ul inițial și cel injectat client-side la hidratare
+ * să nu diveargă niciodată. Valorile nu sunt randate direct de aici (doar cheile,
+ * via `in`, mai jos) — forma exactă (array legacy vs @graph) diferă pe articol.
  */
-const labPageJsonLdOverrides: Record<string, object[]> = Object.fromEntries(
+const labPageJsonLdOverrides: Record<string, unknown> = Object.fromEntries(
   labArticleMeta.map((meta) => [new URL(meta.canonical).pathname, buildArticleJsonLd(meta)]),
 );
 

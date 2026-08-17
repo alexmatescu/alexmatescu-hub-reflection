@@ -1,7 +1,7 @@
 import { Link } from "@/lib/router-compat";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
-import Seo, { alexMatescuPerson } from "@/components/Seo";
+import Seo, { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
@@ -38,15 +38,7 @@ const Home = () => {
           "@context": "https://schema.org",
           "@graph": [
             alexMatescuPerson,
-            {
-              "@type": "WebSite",
-              "@id": `${BASE_URL}/#website`,
-              url: `${BASE_URL}/`,
-              name: "Alex Matescu",
-              description: "Hubul personal al lui Alex Matescu pentru articole, proiecte, cercetare și scris.",
-              inLanguage: "ro-RO",
-              publisher: { "@id": alexMatescuPerson["@id"] },
-            },
+            alexMatescuWebSite,
             {
               "@type": "WebPage",
               "@id": `${BASE_URL}/#webpage`,

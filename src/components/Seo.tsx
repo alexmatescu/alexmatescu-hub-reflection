@@ -52,6 +52,24 @@ export const alexMatescuPerson = {
   ],
 } as const;
 
+/**
+ * Nodul WebSite global — sursă unică, ca să nu diverg în text/`inLanguage` între
+ * paginile care îl embed (Home.tsx randează nodul complet; alte pagini pot
+ * referenția doar `{ "@id": alexMatescuWebSite["@id"] }` dacă embed-ul complet
+ * al lui Person e deja suficient pentru pagina respectivă, sau pot embed nodul
+ * complet dacă au nevoie de el self-contained — ex. articolele /lab/articole).
+ */
+export const alexMatescuWebSite = {
+  "@type": "WebSite",
+  "@id": "https://delamatescu.ro/#website",
+  url: "https://delamatescu.ro/",
+  name: "Alex Matescu",
+  description:
+    "Hubul personal al lui Alex Matescu pentru articole, proiecte, cercetare și scris.",
+  inLanguage: "ro-RO",
+  publisher: { "@id": alexMatescuPerson["@id"] },
+} as const;
+
 const setMetaContent = (selector: string, content: string) => {
   const el = document.querySelector(selector);
   if (el) el.setAttribute("content", content);
@@ -100,9 +118,18 @@ export const useSeo = ({
     document.title = title;
     setMetaContent('meta[name="description"]', description);
     setMetaContent('meta[property="og:title"]', ogTitle ?? title);
-    setMetaContent('meta[name="twitter:title"]', twitterTitle ?? ogTitle ?? title);
-    setMetaContent('meta[property="og:description"]', ogDescription ?? description);
-    setMetaContent('meta[name="twitter:description"]', twitterDescription ?? ogDescription ?? description);
+    setMetaContent(
+      'meta[name="twitter:title"]',
+      twitterTitle ?? ogTitle ?? title,
+    );
+    setMetaContent(
+      'meta[property="og:description"]',
+      ogDescription ?? description,
+    );
+    setMetaContent(
+      'meta[name="twitter:description"]',
+      twitterDescription ?? ogDescription ?? description,
+    );
 
     if (canonicalUrl) {
       const link = document.querySelector('link[rel="canonical"]');
@@ -127,9 +154,10 @@ export const useSeo = ({
       setMetaName("robots", "noindex, nofollow");
     }
 
-
     if (jsonLdString) {
-      let script = document.getElementById(JSONLD_SCRIPT_ID) as HTMLScriptElement | null;
+      let script = document.getElementById(
+        JSONLD_SCRIPT_ID,
+      ) as HTMLScriptElement | null;
       if (!script) {
         script = document.createElement("script");
         script.type = "application/ld+json";

@@ -16,6 +16,7 @@ import { Route as SiteCalatoriaRouteImport } from './routes/_site/calatoria'
 import { Route as SiteCarteRouteImport } from './routes/_site/carte'
 import { Route as SiteContactRouteImport } from './routes/_site/contact'
 import { Route as SiteDespreRouteImport } from './routes/_site/despre'
+import { Route as SitePresaRouteImport } from './routes/_site/presa'
 import { Route as SiteAdminAbonatiRouteImport } from './routes/_site/admin/abonati'
 import { Route as SiteAdminCranditRouteImport } from './routes/_site/admin/crandit'
 import { Route as SiteAdminMesajeRouteImport } from './routes/_site/admin/mesaje'
@@ -60,6 +61,11 @@ const SiteContactRoute = SiteContactRouteImport.update({
 const SiteDespreRoute = SiteDespreRouteImport.update({
   id: '/despre',
   path: '/despre',
+  getParentRoute: () => SiteRoute,
+} as any)
+const SitePresaRoute = SitePresaRouteImport.update({
+  id: '/presa',
+  path: '/presa',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteAdminAbonatiRoute = SiteAdminAbonatiRouteImport.update({
@@ -126,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/carte': typeof SiteCarteRoute
   '/contact': typeof SiteContactRoute
   '/despre': typeof SiteDespreRoute
+  '/presa': typeof SitePresaRoute
   '/admin/abonati': typeof SiteAdminAbonatiRoute
   '/admin/crandit': typeof SiteAdminCranditRoute
   '/admin/mesaje': typeof SiteAdminMesajeRoute
@@ -144,6 +151,7 @@ export interface FileRoutesByTo {
   '/carte': typeof SiteCarteRoute
   '/contact': typeof SiteContactRoute
   '/despre': typeof SiteDespreRoute
+  '/presa': typeof SitePresaRoute
   '/': typeof SiteIndexRoute
   '/admin/abonati': typeof SiteAdminAbonatiRoute
   '/admin/crandit': typeof SiteAdminCranditRoute
@@ -165,6 +173,7 @@ export interface FileRoutesById {
   '/_site/carte': typeof SiteCarteRoute
   '/_site/contact': typeof SiteContactRoute
   '/_site/despre': typeof SiteDespreRoute
+  '/_site/presa': typeof SitePresaRoute
   '/_site/': typeof SiteIndexRoute
   '/_site/admin/abonati': typeof SiteAdminAbonatiRoute
   '/_site/admin/crandit': typeof SiteAdminCranditRoute
@@ -187,6 +196,7 @@ export interface FileRouteTypes {
     | '/carte'
     | '/contact'
     | '/despre'
+    | '/presa'
     | '/admin/abonati'
     | '/admin/crandit'
     | '/admin/mesaje'
@@ -205,6 +215,7 @@ export interface FileRouteTypes {
     | '/carte'
     | '/contact'
     | '/despre'
+    | '/presa'
     | '/'
     | '/admin/abonati'
     | '/admin/crandit'
@@ -225,6 +236,7 @@ export interface FileRouteTypes {
     | '/_site/carte'
     | '/_site/contact'
     | '/_site/despre'
+    | '/_site/presa'
     | '/_site/'
     | '/_site/admin/abonati'
     | '/_site/admin/crandit'
@@ -292,6 +304,13 @@ declare module '@tanstack/react-router' {
       path: '/despre'
       fullPath: '/despre'
       preLoaderRoute: typeof SiteDespreRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/presa': {
+      id: '/_site/presa'
+      path: '/presa'
+      fullPath: '/presa'
+      preLoaderRoute: typeof SitePresaRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/admin/abonati': {
@@ -380,6 +399,7 @@ interface SiteRouteChildren {
   SiteCarteRoute: typeof SiteCarteRoute
   SiteContactRoute: typeof SiteContactRoute
   SiteDespreRoute: typeof SiteDespreRoute
+  SitePresaRoute: typeof SitePresaRoute
   SiteIndexRoute: typeof SiteIndexRoute
   SiteAdminAbonatiRoute: typeof SiteAdminAbonatiRoute
   SiteAdminCranditRoute: typeof SiteAdminCranditRoute
@@ -400,6 +420,7 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteCarteRoute: SiteCarteRoute,
   SiteContactRoute: SiteContactRoute,
   SiteDespreRoute: SiteDespreRoute,
+  SitePresaRoute: SitePresaRoute,
   SiteIndexRoute: SiteIndexRoute,
   SiteAdminAbonatiRoute: SiteAdminAbonatiRoute,
   SiteAdminCranditRoute: SiteAdminCranditRoute,

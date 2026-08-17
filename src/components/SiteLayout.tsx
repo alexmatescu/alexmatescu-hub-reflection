@@ -35,10 +35,12 @@ const projectDropdownItems = [
   { to: "/proiecte/blogging", label: "Blogging" },
 ];
 
+// Doar primul nivel de sub-pagini Lab în dropdown-ul din meniul principal —
+// al doilea nivel (ex. copiii "Cercetare" sau "Articole") rămâne accesibil
+// din pagina-părinte, care își listează deja subiectele ("În această secțiune").
 const labDropdownItems: NavSubItem[] = labNav.map((item) => ({
   to: item.to,
   label: item.label,
-  ...(item.children ? { items: item.children.map((child) => ({ to: child.to, label: child.label })) } : {}),
 }));
 
 const nav: NavItem[] = [
@@ -354,6 +356,13 @@ const SiteLayout = () => {
                   </Link>
                 </li>
               ))}
+              {/* Nu face parte din `nav` (deci nu apare în meniul principal, care
+                  are deja 8 intrări) — dar rămâne accesibil din footer. */}
+              <li>
+                <Link to="/presa" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Presă
+                </Link>
+              </li>
             </ul>
           </div>
 

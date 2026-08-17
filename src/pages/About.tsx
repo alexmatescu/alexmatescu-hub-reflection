@@ -135,6 +135,11 @@ const About = () => {
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              <Link to="/presa" className="link-underline text-foreground">
+                Apariții în presă →
+              </Link>
+            </p>
           </div>
           <div className="md:col-span-6 space-y-10">
             <div>
