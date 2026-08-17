@@ -20,7 +20,6 @@ const mainProjects = [
   { name: "Atracțiile României", desc: "Proiect digital de turism cultural — 2021–2023" },
   { name: "OVB Allfinanz România", desc: "Consultanță financiară — decembrie 2021 – decembrie 2024" },
   { name: "Afacerea cu haine", desc: "Primul magazin, prima lecție reală de antreprenoriat — 2017" },
-  { name: "Leadership Artificial", desc: "Cercetare în curs despre AI, leadership și viitorul muncii" },
 ];
 
 const domains = [
@@ -50,17 +49,30 @@ const About = () => {
       />
 
       {/* HERO */}
-      <section className="container-editorial pt-20 md:pt-32 pb-16">
-        <p className="eyebrow mb-8">Despre mine</p>
-        <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">
-          Alex Matescu — Inginer și autor
-        </h1>
-        <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-3xl text-balance">
-          Inginer, autor și antreprenor din România.
-        </p>
-        <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
-          Construiesc proiecte, scriu despre ceea ce învăț și documentez procesul prin care încerc să înțeleg munca, succesul, tehnologia și omul.
-        </p>
+      <section className="container-editorial pt-20 md:pt-32 pb-16 grid md:grid-cols-12 gap-12 items-start">
+        <div className="md:col-span-7">
+          <p className="eyebrow mb-8">Despre mine</p>
+          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">
+            Alex Matescu — Inginer și autor
+          </h1>
+          <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-3xl text-balance">
+            Inginer, autor și antreprenor din România.
+          </p>
+          <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
+            Construiesc proiecte, scriu despre ceea ce învăț și documentez procesul prin care încerc să înțeleg munca, succesul, tehnologia și omul.
+          </p>
+        </div>
+        <div className="md:col-span-5">
+          <img
+            src="/images/AlexMatescu-profile-picture.jpg"
+            alt="Alex Matescu"
+            className="w-full aspect-square object-cover border border-foreground/10 shadow-2xl"
+            width={800}
+            height={800}
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
       </section>
 
       <div className="rule container-editorial" />
@@ -293,8 +305,7 @@ const About = () => {
             <li>finalizarea manuscrisului și construirea comunității în jurul cărții CRANDIT;</li>
             <li>dezvoltarea direcției GEO / AI Visibility;</li>
             <li>scrisul constant pe blogul delamatescu.ro, relansat în 2025;</li>
-            <li>coordonarea afacerii de familie în mediul rural;</li>
-            <li>cercetarea și documentarea cărții Leadership Artificial — despre AI, leadership și viitorul muncii.</li>
+            <li>coordonarea afacerii de familie în mediul rural.</li>
           </ul>
           <p>
             <Link to="/proiecte" className="link-underline">Vezi toate proiectele</Link>.

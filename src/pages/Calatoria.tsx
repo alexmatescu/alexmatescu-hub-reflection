@@ -279,7 +279,6 @@ const entities = [
   "Taste the Corn",
   "Atracțiile României",
   "GEO / AI Visibility",
-  "Leadership Artificial",
   "Automatică și Informatică Aplicată",
   "Facultatea de Automatică, Calculatoare și Electronică din Craiova",
   "John Maxwell Team",
@@ -340,8 +339,8 @@ const Calatoria = () => {
           </p>
           <p className="text-muted-foreground">
             Printre proiectele sale se numără CRANDIT – Mitul succesului peste noapte,
-            afacerea de familie din mediul rural, Taste the Corn, Atracțiile României,
-            GEO / AI Visibility și Leadership Artificial.
+            afacerea de familie din mediul rural, Taste the Corn, Atracțiile României
+            și GEO / AI Visibility.
           </p>
         </div>
       </section>

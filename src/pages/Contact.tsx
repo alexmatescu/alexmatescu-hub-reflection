@@ -5,7 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Mail, Linkedin, Twitter, Facebook, Instagram, Rss } from "lucide-react";
 import Seo from "@/components/Seo";
 
-const reasons = ["Colaborare", "Coaching / mentoring", "Media / podcast", "Proiect", "Altceva"];
+const reasons = ["Colaborare", "Media / podcast", "Proiect", "Altceva"];
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Numele este obligatoriu").max(120),
@@ -58,7 +58,7 @@ const Contact = () => {
     <>
       <Seo
         title="Contact — Alex Matescu"
-        description="Scrie-i lui Alex Matescu pentru colaborări, mentoring, media sau proiecte."
+        description="Scrie-i lui Alex Matescu pentru colaborări, media sau proiecte."
         imageUrl="https://delamatescu.ro/images/AlexMatescu-profile-picture.jpg"
         imageAlt="Alex Matescu"
       />
@@ -69,7 +69,7 @@ const Contact = () => {
           Scrie-mi. Răspund când pot, dar răspund.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          Pentru colaborări, conversații cu jurnaliști, propuneri de mentoring sau proiecte. Cuvântul „concis” ajută mereu.
+          Pentru colaborări, conversații cu jurnaliști sau proiecte. Cuvântul „concis” ajută mereu.
         </p>
       </section>
 

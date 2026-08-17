@@ -13,8 +13,10 @@ import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
+import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
 import { istoriaCautariiHtml } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
 import { motoareCautareHtml } from "@/data/lab-content/motoare-cautare-comparatie-2026";
+import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/social-media-vizibilitate-ai";
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
@@ -32,6 +34,8 @@ const labPageContent: Record<string, string> = {
   "/lab/articole/istoria-cautarii-internet-evolutia-seo": istoriaCautariiHtml,
   "/lab/articole/motoare-cautare-comparatie-2026": motoareCautareHtml,
   "/lab/articole/social-media-vizibilitate-ai": socialMediaVizibilitateAiHtml,
+  "/lab/articole/cat-dureaza-indexare-citare-ai": catDureazaIndexareCitareAiHtml,
+  "/lab/articole/paradoxul-site-ului-terminat": paradoxulSiteuluiTerminatHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 

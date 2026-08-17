@@ -1,6 +1,8 @@
 import { alexMatescuPerson } from "@/components/Seo";
+import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
 import { istoriaCautariiMeta } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
 import { motoareCautareMeta } from "@/data/lab-content/motoare-cautare-comparatie-2026";
+import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/social-media-vizibilitate-ai";
 
 export type LabArticleMeta = {
@@ -26,6 +28,8 @@ export const labArticleMeta: LabArticleMeta[] = [
   istoriaCautariiMeta,
   motoareCautareMeta,
   socialMediaVizibilitateAiMeta,
+  catDureazaIndexareCitareAiMeta,
+  paradoxulSiteuluiTerminatMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>

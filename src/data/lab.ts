@@ -82,6 +82,18 @@ export const labNav: LabPage[] = [
         label: "De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI",
         lead: "Cum diferă vizibilitatea umană de vizibilitatea AI în social media. Analiză bazată pe surse publice, studii comerciale tratate separat după metodologie și reguli operaționale pentru artefacte persistente, entity resolution și distribuție.",
       },
+      {
+        to: "/lab/articole/cat-dureaza-indexare-citare-ai",
+        label:
+          "Cât durează până apari în Google și cât până te citează AI-ul? Ce știm, ce nu știm și ce poți măsura",
+        lead: "Ce documentează sursele oficiale despre crawl, indexare și apariția în răspunsurile AI, ce termene nu sunt publice și cum separi descoperirea, indexarea, clasarea și citarea. Analiză AI Visibility Lab.",
+      },
+      {
+        to: "/lab/articole/paradoxul-site-ului-terminat",
+        label:
+          "Paradoxul site-ului terminat: același URL poate arăta diferit pentru om, crawler și instrumentul de audit",
+        lead: "Studiu de caz pe un site React construit cu Lovable: un request generic primește SPA shell-ul, în timp ce documentația Lovable spune că crawlerele verificate primesc HTML pre-randat. Ce demonstrează testul, ce nu demonstrează și cum verifici corect metadata, canonicalizarea și crawlabilitatea.",
+      },
     ],
   },
   {
