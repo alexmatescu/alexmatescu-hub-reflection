@@ -27,7 +27,7 @@ export const alexMatescuPerson = {
   alternateName: ["Alexandru Matescu", "Alexandru-Costi Matescu"],
   url: "https://delamatescu.ro/",
   description:
-    "Alex Matescu este autor, inginer și antreprenor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
+    "Alex Matescu este inginer, antreprenor, consultant AI Visibility și autor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
   homeLocation: {
     "@type": "Place",
     name: "Sibiu, România",

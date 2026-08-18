@@ -35,7 +35,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Hubul personal al lui Alex Matescu: inginer, scriitor și antreprenor. Articole, cărți și proiecte despre claritate, disciplină, muncă și sens.",
+          "Hubul personal al lui Alex Matescu: inginer, antreprenor, consultant AI Visibility și autor. Articole, cărți și proiecte despre claritate, disciplină, muncă și sens.",
       },
       { name: "author", content: "Alex Matescu" },
       { property: "og:type", content: "website" },
@@ -46,7 +46,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Hubul personal al lui Alex Matescu: inginer, scriitor și antreprenor. Articole, cărți și proiecte despre claritate, disciplină, muncă și sens.",
+          "Hubul personal al lui Alex Matescu: inginer, antreprenor, consultant AI Visibility și autor. Articole, cărți și proiecte despre claritate, disciplină, muncă și sens.",
       },
       {
         property: "og:image",
@@ -61,7 +61,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "Hubul personal al lui Alex Matescu: inginer, scriitor și antreprenor. Articole, cărți și proiecte despre claritate, disciplină, muncă și sens.",
+          "Hubul personal al lui Alex Matescu: inginer, antreprenor, consultant AI Visibility și autor. Articole, cărți și proiecte despre claritate, disciplină, muncă și sens.",
       },
       {
         name: "twitter:image",

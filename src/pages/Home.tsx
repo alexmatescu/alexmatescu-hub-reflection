@@ -1,11 +1,9 @@
 import { Link } from "@/lib/router-compat";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
-import Seo, { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
+import Seo from "@/components/Seo";
 import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
-
-const BASE_URL = "https://delamatescu.ro";
 
 const cranditCover = "/images/blog/crandit-cover.webp";
 const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
@@ -26,31 +24,16 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="Alex Matescu — Autor, inginer și antreprenor"
-        description="Site-ul personal al lui Alex Matescu, autor, inginer și antreprenor din Sibiu. Articole și proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
+        title="Alex Matescu — Inginer, antreprenor, consultant AI Visibility și autor"
+        description="Site-ul personal al lui Alex Matescu, inginer, antreprenor, consultant AI Visibility și autor din Sibiu. Articole și proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
         ogType="website"
         ogSiteName="Alex Matescu"
         ogLocale="ro_RO"
         ogDescription="Hubul personal al lui Alex Matescu: articole, proiecte și cercetare despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
         twitterDescription="Articole, proiecte și cercetare despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
         robots="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@graph": [
-            alexMatescuPerson,
-            alexMatescuWebSite,
-            {
-              "@type": "WebPage",
-              "@id": `${BASE_URL}/#webpage`,
-              url: `${BASE_URL}/`,
-              name: "Alex Matescu — Autor, inginer și antreprenor",
-              isPartOf: { "@id": `${BASE_URL}/#website` },
-              about: { "@id": alexMatescuPerson["@id"] },
-              mainEntity: { "@id": alexMatescuPerson["@id"] },
-              inLanguage: "ro-RO",
-            },
-          ],
-        }}
+        // JSON-LD e deja randat server-side de head()-ul rutei (@/routes/_site/index.tsx),
+        // ca să fie vizibil și pentru crawlere fără JS — nu-l mai duplicăm aici.
       />
 
       {/* HERO */}

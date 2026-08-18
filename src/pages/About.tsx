@@ -41,8 +41,8 @@ const About = () => {
   return (
     <>
       <Seo
-        title="Despre Alex Matescu — Inginer, autor și antreprenor"
-        description="Cine este Alex Matescu: inginer în automotive, autor al CRANDIT, antreprenor și creator de conținut despre muncă, tehnologie și sens."
+        title="Despre Alex Matescu — Inginer, antreprenor, consultant AI Visibility și autor"
+        description="Cine este Alex Matescu: inginer în automotive, antreprenor, consultant AI Visibility și autor al CRANDIT — creator de conținut despre muncă, tehnologie și sens."
         imageUrl="https://delamatescu.ro/images/AlexMatescu-profile-picture.jpg"
         imageAlt="Alex Matescu"
         jsonLd={{ "@context": "https://schema.org", ...alexMatescuPerson }}
@@ -53,10 +53,11 @@ const About = () => {
         <div className="md:col-span-7">
           <p className="eyebrow mb-8">Despre mine</p>
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">
-            Alex Matescu — Inginer și autor
+            Alex Matescu — Inginer, antreprenor, consultant AI Visibility și
+            autor
           </h1>
           <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-3xl text-balance">
-            Inginer, autor și antreprenor din România.
+            Inginer, antreprenor, consultant AI Visibility și autor din România.
           </p>
           <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
             Construiesc proiecte, scriu despre ceea ce învăț și documentez procesul prin care încerc să înțeleg munca, succesul, tehnologia și omul.
@@ -120,7 +121,9 @@ const About = () => {
           </div>
           <div className="bg-background p-8">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Activități</p>
-            <p className="font-serif text-xl">Inginer • Autor • Antreprenor • Creator de conținut</p>
+            <p className="font-serif text-xl">
+              Inginer • Antreprenor • Consultant AI Visibility • Autor
+            </p>
           </div>
         </div>
 

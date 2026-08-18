@@ -319,8 +319,8 @@ const Calatoria = () => {
         <p className="eyebrow mb-6">Pe scurt</p>
         <div className="max-w-3xl space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            Alexandru (Alex) Matescu este inginer, autor și antreprenor român, născut și
-            crescut în Strâmba Jiu, județul Gorj.
+            Alexandru (Alex) Matescu este inginer, antreprenor, consultant AI Visibility și
+            autor român, născut și crescut în Strâmba Jiu, județul Gorj.
           </p>
           <p className="text-muted-foreground">
             Parcursul său include experiențe în mediul rural, educație tehnică, muncă în

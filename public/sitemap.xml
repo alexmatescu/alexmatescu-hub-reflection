@@ -127,6 +127,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://delamatescu.ro/lab/articole/metadata-citare-ai-studiu-de-caz</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/audit-site-fara-acces-cod</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://delamatescu.ro/lab/audit-ai-visibility</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

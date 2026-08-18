@@ -1,6 +1,6 @@
 import { Link, Navigate } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
-import Seo, { alexMatescuPerson } from "@/components/Seo";
+import Seo from "@/components/Seo";
 import { findLabPage, findLabParent, labNav } from "@/data/lab";
 import { buildArticleJsonLd, labArticleMeta } from "@/data/lab-seo";
 import { avl001IntroductionHtml } from "@/data/lab-content/avl-001";
@@ -13,8 +13,10 @@ import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
+import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
 import { istoriaCautariiHtml } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
+import { metadataCitareAiStudiuDeCazHtml } from "@/data/lab-content/metadata-citare-ai-studiu-de-caz";
 import { motoareCautareHtml } from "@/data/lab-content/motoare-cautare-comparatie-2026";
 import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/social-media-vizibilitate-ai";
@@ -36,6 +38,8 @@ const labPageContent: Record<string, string> = {
   "/lab/articole/social-media-vizibilitate-ai": socialMediaVizibilitateAiHtml,
   "/lab/articole/cat-dureaza-indexare-citare-ai": catDureazaIndexareCitareAiHtml,
   "/lab/articole/paradoxul-site-ului-terminat": paradoxulSiteuluiTerminatHtml,
+  "/lab/articole/metadata-citare-ai-studiu-de-caz": metadataCitareAiStudiuDeCazHtml,
+  "/lab/articole/audit-site-fara-acces-cod": auditSiteFaraAccesCodHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 
@@ -55,16 +59,8 @@ export const LabIndex = () => (
     <Seo
       title="AI Visibility Lab — GEO și AEO pentru branduri | Alex Matescu"
       description="AI Visibility Lab este proiectul lui Alex Matescu despre GEO, AEO și vizibilitatea brandurilor în ChatGPT, Google AI Overviews și motoarele de căutare generative."
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        name: "AI Visibility Lab",
-        description:
-          "AI Visibility Lab este proiectul lui Alex Matescu despre GEO, AEO și vizibilitatea brandurilor în ChatGPT, Google AI Overviews și motoarele de căutare generative.",
-        url: "https://delamatescu.ro/lab",
-        creator: alexMatescuPerson,
-        author: alexMatescuPerson,
-      }}
+      // JSON-LD e deja randat server-side de head()-ul rutei (@/routes/_site/lab/index.tsx),
+      // ca să fie vizibil și pentru crawlere fără JS — nu-l mai duplicăm aici.
     />
 
     <section className="relative border-b border-foreground/10 bg-[#0b0f0e] text-[#e8e0cf] overflow-hidden">
@@ -133,30 +129,17 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
 
   return (
     <div>
+      {/*
+        Titlu/descriere/OG rămân utile pentru actualizarea client-side la
+        navigare SPA. JSON-LD (Article+FAQPage pentru articole, CreativeWork
+        pentru restul paginilor /lab) e deja randat server-side de head()-ul
+        rutei (@/data/lab-seo: buildLabArticleHead / buildLabPageHead), deci
+        nu-l mai duplicăm aici.
+      */}
       <Seo
-        title={`${page.label} — AI Visibility Lab | Alex Matescu`}
+        title={`${page.seoTitle ?? page.label} — AI Visibility Lab | Alex Matescu`}
         description={page.lead}
-        {...(isArticle
-          ? // Titlu/descriere/OG rămân utile pentru actualizarea client-side la
-            // navigare SPA; JSON-LD-ul Article/FAQPage e deja randat server-side
-            // de head()-ul rutei (@/data/lab-seo), deci nu-l mai duplicăm aici.
-            { ogType: "article" }
-          : {
-              jsonLd: {
-                "@context": "https://schema.org",
-                "@type": "CreativeWork",
-                name: page.label,
-                description: page.lead,
-                url: `https://delamatescu.ro${page.to}`,
-                isPartOf: {
-                  "@type": "CreativeWork",
-                  name: "AI Visibility Lab",
-                  url: "https://delamatescu.ro/lab",
-                },
-                creator: alexMatescuPerson,
-                author: alexMatescuPerson,
-              },
-            })}
+        {...(isArticle ? { ogType: "article" } : {})}
       />
 
       <section className="border-b border-foreground/10">
@@ -171,7 +154,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
 
           <p className="eyebrow mb-6">AI Visibility Lab{parent ? ` · ${parent.label}` : ""}</p>
           <h1 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-balance">
-            {page.label}
+            {page.pageTitle ?? page.label}
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">{page.lead}</p>
 

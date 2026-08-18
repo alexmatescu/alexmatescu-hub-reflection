@@ -9,7 +9,7 @@ export const avl401ArticoleHtml = `
         <tr><th scope="row">Document ID</th><td>AVL-401</td></tr>
         <tr><th scope="row">Nivel</th><td>E — Articole</td></tr>
         <tr><th scope="row">Versiune</th><td>1.0.0</td></tr>
-        <tr><th scope="row">Statut</th><td>În pregătire</td></tr>
+        <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
         <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
         </tbody>
@@ -76,9 +76,9 @@ export const avl401ArticoleHtml = `
 
       <h2>Statutul secțiunii</h2>
 
-      <p><strong>În pregătire</strong></p>
+      <p><strong>Activ</strong></p>
 
-      <p>Primele articole vor fi publicate pe măsură ce activitatea AI Visibility Lab evoluează și vor completa documentația, metodologia și experimentele publicate în celelalte secțiuni ale site-ului.</p>
+      <p>Articolele sunt publicate constant pe măsură ce activitatea AI Visibility Lab evoluează și completează documentația, metodologia și experimentele publicate în celelalte secțiuni ale site-ului.</p>
 
       <blockquote>Pagina Articole va deveni biblioteca publică de analize și resurse AI Visibility Lab, oferind context și explicații despre AI Visibility, GEO, AEO și domeniile conexe, fără a înlocui documentația oficială sau rezultatele experimentale.</blockquote>
 `;

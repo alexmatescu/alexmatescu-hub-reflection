@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LabDetail } from "@/pages/Lab";
-import { buildLabArticleHead } from "@/data/lab-seo";
+import { buildLabArticleHead, buildLabPageHead } from "@/data/lab-seo";
 
 const BASE = "https://delamatescu.ro";
 
@@ -9,8 +9,11 @@ export const Route = createFileRoute("/_site/lab/$parent/$slug")({
   head: ({ params }) =>
     // Articolele din /lab/articole/:slug au meta dedicată (title, description,
     // OG/Twitter, JSON-LD Article+FAQPage) randată aici server-side. Restul
-    // paginilor /lab/:parent/:slug cad pe fallback-ul generic (og:url + canonical).
-    buildLabArticleHead(params.slug) ?? {
+    // paginilor /lab/:parent/:slug (ex. /lab/cercetare/*, /lab/metodologie/*)
+    // cad pe head-ul generic de pagină Lab (CreativeWork), și doar dacă nici
+    // acela nu găsește pagina, pe fallback-ul minim (og:url + canonical).
+    buildLabArticleHead(params.slug) ??
+    buildLabPageHead(`/lab/${params.parent}/${params.slug}`) ?? {
       meta: [
         {
           property: "og:url",
@@ -18,7 +21,10 @@ export const Route = createFileRoute("/_site/lab/$parent/$slug")({
         },
       ],
       links: [
-        { rel: "canonical", href: `${BASE}/lab/${params.parent}/${params.slug}` },
+        {
+          rel: "canonical",
+          href: `${BASE}/lab/${params.parent}/${params.slug}`,
+        },
       ],
     },
 });

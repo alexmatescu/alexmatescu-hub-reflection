@@ -1,19 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import About from "@/pages/About";
+import { alexMatescuPerson } from "@/components/Seo";
+import { buildSeoHead } from "@/lib/seo-head";
 
 const BASE = "https://delamatescu.ro";
 
 export const Route = createFileRoute("/_site/despre")({
   component: About,
-  head: () => ({
-    meta: [
-      { property: "og:url", content: `${BASE}/despre` },
+  head: () =>
+    buildSeoHead({
+      title:
+        "Despre Alex Matescu — Inginer, antreprenor, consultant AI Visibility și autor",
+      description:
+        "Cine este Alex Matescu: inginer în automotive, antreprenor, consultant AI Visibility și autor al CRANDIT — creator de conținut despre muncă, tehnologie și sens.",
+      canonical: `${BASE}/despre`,
       // Suprascrie placeholder-ul generic din __root.tsx server-side, ca share-urile
       // pe social media să afișeze poza lui Alex Matescu, nu imaginea implicită a hub-ului.
-      { property: "og:image", content: `${BASE}/images/AlexMatescu-profile-picture.jpg` },
-      { name: "twitter:image", content: `${BASE}/images/AlexMatescu-profile-picture.jpg` },
-      { property: "og:image:alt", content: "Alex Matescu" },
-    ],
-    links: [{ rel: "canonical", href: `${BASE}/despre` }],
-  }),
+      imageUrl: `${BASE}/images/AlexMatescu-profile-picture.jpg`,
+      imageAlt: "Alex Matescu",
+      jsonLd: { "@context": "https://schema.org", ...alexMatescuPerson },
+    }),
 });

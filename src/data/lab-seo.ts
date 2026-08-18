@@ -1,9 +1,15 @@
 import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
+import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
 import { istoriaCautariiMeta } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
+import { metadataCitareAiStudiuDeCazMeta } from "@/data/lab-content/metadata-citare-ai-studiu-de-caz";
 import { motoareCautareMeta } from "@/data/lab-content/motoare-cautare-comparatie-2026";
 import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/social-media-vizibilitate-ai";
+import { findLabPage } from "@/data/lab";
+import { buildSeoHead } from "@/lib/seo-head";
+
+const BASE = "https://delamatescu.ro";
 
 export type LabArticleMeta = {
   title: string;
@@ -43,6 +49,8 @@ export const labArticleMeta: LabArticleMeta[] = [
   socialMediaVizibilitateAiMeta,
   catDureazaIndexareCitareAiMeta,
   paradoxulSiteuluiTerminatMeta,
+  metadataCitareAiStudiuDeCazMeta,
+  auditSiteFaraAccesCodMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>
@@ -209,4 +217,41 @@ export const buildLabArticleHead = (slug: string) => {
       },
     ],
   };
+};
+
+/**
+ * Head SSR pentru paginile /lab/:slug și /lab/:parent/:slug care NU sunt
+ * articole (ex. /lab/introducere, /lab/cercetare/ce-este-geo-aeo) — folosit ca
+ * fallback în rutele `_site/lab/$slug.tsx` și `_site/lab/$parent.$slug.tsx`
+ * atunci când `buildLabArticleHead` nu găsește meta de articol pentru slug.
+ * Randează același JSON-LD `CreativeWork` pe care LabDetail îl seta doar
+ * client-side; <Seo> din Lab.tsx păstrează title/description pentru
+ * actualizarea la navigare SPA, dar nu mai duplică JSON-LD-ul. Returnează
+ * `undefined` pentru un pathname fără pagină corespunzătoare în `labNav`.
+ */
+export const buildLabPageHead = (pathname: string) => {
+  const page = findLabPage(pathname);
+  if (!page) return undefined;
+
+  const canonical = `${BASE}${page.to}`;
+
+  return buildSeoHead({
+    title: `${page.seoTitle ?? page.label} — AI Visibility Lab | Alex Matescu`,
+    description: page.lead,
+    canonical,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: page.pageTitle ?? page.label,
+      description: page.lead,
+      url: canonical,
+      isPartOf: {
+        "@type": "CreativeWork",
+        name: "AI Visibility Lab",
+        url: `${BASE}/lab`,
+      },
+      creator: alexMatescuPerson,
+      author: alexMatescuPerson,
+    },
+  });
 };

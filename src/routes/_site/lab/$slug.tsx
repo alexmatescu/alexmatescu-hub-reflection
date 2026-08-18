@@ -1,14 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LabDetail } from "@/pages/Lab";
+import { buildLabPageHead } from "@/data/lab-seo";
 
 const BASE = "https://delamatescu.ro";
 
 export const Route = createFileRoute("/_site/lab/$slug")({
   component: RouteComponent,
-  head: ({ params }) => ({
-    meta: [{ property: "og:url", content: `${BASE}/lab/${params.slug}` }],
-    links: [{ rel: "canonical", href: `${BASE}/lab/${params.slug}` }],
-  }),
+  head: ({ params }) =>
+    buildLabPageHead(`/lab/${params.slug}`) ?? {
+      meta: [{ property: "og:url", content: `${BASE}/lab/${params.slug}` }],
+      links: [{ rel: "canonical", href: `${BASE}/lab/${params.slug}` }],
+    },
 });
 
 // Derives the page from this route's own matched params (Route.useParams is

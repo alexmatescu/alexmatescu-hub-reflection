@@ -231,7 +231,7 @@ export const projects: Project[] = [
     slug: "geo-ai-visibility",
     title: "AI Visibility Lab",
     tagline: "Vizibilitate în era căutării generative",
-    status: "concept",
+    status: "în lucru",
     description:
       "O direcție de lucru dedicată Generative Engine Optimization: cum sunt selectate, citate și expuse brandurile în răspunsurile generate de AI.",
     why: "SEO clasic se transformă. Cine înțelege primul cum funcționează vizibilitatea în LLM-uri are un avantaj real.",
@@ -242,7 +242,8 @@ export const projects: Project[] = [
       "Conținutul structurat și citabil bate conținutul scris pentru click.",
       "Autoritatea de domeniu se redefinește în jurul faptelor verificabile.",
     ],
-    currentStatus: "Concept în dezvoltare. Primele studii de caz în pregătire.",
+    currentStatus:
+      "În lucru: cercetare, metodologie și articole publicate constant în AI Visibility Lab (/lab).",
     related: ["munca-in-era-inteligentei-artificiale"],
   },
   {

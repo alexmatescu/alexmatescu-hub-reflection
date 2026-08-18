@@ -1,5 +1,5 @@
 import NewsletterForm from "@/components/NewsletterForm";
-import Seo, { alexMatescuPerson } from "@/components/Seo";
+import Seo from "@/components/Seo";
 import {
   Accordion,
   AccordionContent,
@@ -162,16 +162,9 @@ const Book = () => {
       <Seo
         title="CRANDIT — Mitul succesului peste noapte | Alex Matescu"
         description="CRANDIT — Mitul succesului peste noapte este cartea lui Alex Matescu despre succes durabil, scrisă din experiențe trăite, lecții teoretice și practice, disciplină, claritate și costuri asumate."
-        canonicalUrl="https://delamatescu.ro/carte-crandit-mitul-succesului-peste-noapte"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Book",
-          name: "CRANDIT — Mitul succesului peste noapte",
-          description:
-            "CRANDIT — Mitul succesului peste noapte este cartea lui Alex Matescu despre succes durabil, scrisă din experiențe trăite, lecții teoretice și practice, disciplină, claritate și costuri asumate.",
-          url: "https://delamatescu.ro/carte-crandit-mitul-succesului-peste-noapte",
-          author: alexMatescuPerson,
-        }}
+        canonicalUrl="https://delamatescu.ro/carte"
+        // JSON-LD e deja randat server-side de head()-ul rutei (@/routes/_site/carte.tsx),
+        // ca să fie vizibil și pentru crawlere fără JS — nu-l mai duplicăm aici.
       />
 
       {/* HERO */}

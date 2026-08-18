@@ -3,6 +3,10 @@ export type LabPage = {
   label: string;
   lead: string;
   children?: LabPage[];
+  /** Titlu SEO dedicat, dacă diferă de `label` (folosit doar pentru <title>). */
+  seoTitle?: string;
+  /** H1 dedicat, dacă diferă de `label` (folosit doar pentru titlul vizibil al paginii). */
+  pageTitle?: string;
 };
 
 export const labNav: LabPage[] = [
@@ -63,7 +67,9 @@ export const labNav: LabPage[] = [
   {
     to: "/lab/articole",
     label: "Articole",
-    lead: "Articole, analize și note de lucru despre GEO, AEO și vizibilitatea în motoarele generative.",
+    seoTitle: "Articole GEO, AEO și AI Visibility",
+    pageTitle: "Articole despre GEO, AEO și AI Visibility",
+    lead: "Analize, cercetări și studii de caz despre GEO, AEO, SEO, AI Search, citarea surselor și vizibilitatea în ChatGPT, Google AI, Perplexity și alte sisteme generative.",
     children: [
       {
         to: "/lab/articole/istoria-cautarii-internet-evolutia-seo",
@@ -93,6 +99,18 @@ export const labNav: LabPage[] = [
         label:
           "Paradoxul site-ului terminat: același URL poate arăta diferit pentru om, crawler și instrumentul de audit",
         lead: "Studiu de caz pe un site React construit cu Lovable: un request generic primește SPA shell-ul, în timp ce documentația Lovable spune că crawlerele verificate primesc HTML pre-randat. Ce demonstrează testul, ce nu demonstrează și cum verifici corect metadata, canonicalizarea și crawlabilitatea.",
+      },
+      {
+        to: "/lab/articole/metadata-citare-ai-studiu-de-caz",
+        label:
+          "Metadata și citarea AI: ce poate demonstra o citare identică și unde începe inferența",
+        lead: "Studiu de caz AI Visibility Lab: după actualizarea metadata, un sistem AI a citat textual formularea publicată pe delamatescu.ro. Ce demonstrează exact match-ul, ce nu demonstrează și cum transformi observația într-un experiment reproductibil.",
+      },
+      {
+        to: "/lab/articole/audit-site-fara-acces-cod",
+        label:
+          "Ce poți citi și ce poți schimba la un site fără acces la cod: ghid de audit din exterior",
+        lead: "Ce poți observa din exteriorul unui site, ce poți modifica fără acces la repository și unde se termină dovada tehnică și începe inferența. Ghid AI Visibility Lab bazat pe documentație oficială și teste reproductibile.",
       },
     ],
   },

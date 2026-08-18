@@ -2,7 +2,7 @@ import { Link, useParams } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
 import { posts } from "@/data/posts";
 import NewsletterForm from "@/components/NewsletterForm";
-import Seo, { alexMatescuPerson } from "@/components/Seo";
+import Seo from "@/components/Seo";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" });
@@ -46,59 +46,9 @@ const BlogPost = () => {
               imageAlt: post.imageAlt ?? post.heroImage.alt,
             }
           : {})}
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "@id": `https://delamatescu.ro/blog/${post.slug}#article`,
-            headline: post.title,
-            name: post.title,
-            description: post.metaDescription ?? post.excerpt,
-            datePublished: post.date,
-            dateModified: post.dateModified ?? post.date,
-            url: `https://delamatescu.ro/blog/${post.slug}`,
-            inLanguage: "ro-RO",
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": `https://delamatescu.ro/blog/${post.slug}`,
-            },
-            articleSection: post.category,
-            ...(post.schemaKeywords?.length
-              ? { keywords: post.schemaKeywords }
-              : post.tags?.length
-                ? { keywords: post.tags }
-                : {}),
-            ...(post.about?.length
-              ? { about: post.about.map((name) => ({ "@type": "Thing", name })) }
-              : {}),
-            ...(post.mentions?.length
-              ? { mentions: post.mentions.map((name) => ({ "@type": "Person", name })) }
-              : {}),
-            ...(post.heroImage?.src
-              ? {
-                  image: post.heroImage.src.startsWith("http")
-                    ? post.heroImage.src
-                    : `https://delamatescu.ro${post.heroImage.src}`,
-                }
-              : {}),
-            author: alexMatescuPerson,
-            publisher: { "@id": "https://delamatescu.ro/#alex-matescu" },
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Acasă", item: "https://delamatescu.ro/" },
-              { "@type": "ListItem", position: 2, name: "Blog", item: "https://delamatescu.ro/blog" },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: post.title,
-                item: `https://delamatescu.ro/blog/${post.slug}`,
-              },
-            ],
-          },
-        ]}
+        // JSON-LD (BlogPosting + BreadcrumbList) e deja randat server-side de
+        // head()-ul rutei (@/lib/blog-seo.ts), vizibil și pentru crawlere fără
+        // JS — nu-l mai duplicăm aici.
       />
 
 
