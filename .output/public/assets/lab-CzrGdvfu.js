@@ -1,0 +1,1 @@
+import{n as e}from"./Lab-BhhoWHbi.js";var t=e;export{t as component};

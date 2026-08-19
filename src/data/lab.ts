@@ -67,8 +67,8 @@ export const labNav: LabPage[] = [
   {
     to: "/lab/articole",
     label: "Articole",
-    seoTitle: "Articole GEO, AEO și AI Visibility",
-    pageTitle: "Articole despre GEO, AEO și AI Visibility",
+    seoTitle: "Articole GEO, AEO și AI Visibility — AI Visibility Lab | Alex Matescu",
+    pageTitle: "Articole GEO, AEO și AI Visibility — AI Visibility Lab | Alex Matescu",
     lead: "Analize, cercetări și studii de caz despre GEO, AEO, SEO, AI Search, citarea surselor și vizibilitatea în ChatGPT, Google AI, Perplexity și alte sisteme generative.",
     children: [
       {
@@ -111,6 +111,24 @@ export const labNav: LabPage[] = [
         label:
           "Ce poți citi și ce poți schimba la un site fără acces la cod: ghid de audit din exterior",
         lead: "Ce poți observa din exteriorul unui site, ce poți modifica fără acces la repository și unde se termină dovada tehnică și începe inferența. Ghid AI Visibility Lab bazat pe documentație oficială și teste reproductibile.",
+      },
+      {
+        to: "/lab/articole/cuvant-cheie-vs-fraza-tokenizare",
+        label:
+          "Cuvânt-cheie vs frază în AI Search: query rewriting, tokenizare și ce putem spune corect despre limba română",
+        lead: "Cum rescriu ChatGPT Search și Google AI Search interogările, ce este query fan-out, cum funcționează tokenizarea și de ce diferențele dintre limbi trebuie măsurate cu tokenizerul real, nu estimate din octeți.",
+      },
+      {
+        to: "/lab/articole/paradoxul-specificitatii-continut-generic",
+        label:
+          "Paradoxul specificității: când contextul schimbă răspunsul și când doar fragmentează conținutul",
+        lead: "Specificitatea ajută când adaugă informație care schimbă răspunsul. Devine contraproductivă când multiplică pagini sau introduce constrângeri fără valoare. Analiză AI Visibility Lab despre relevance, query fan-out și doorway pages.",
+      },
+      {
+        to: "/lab/articole/ce-este-entitate-ai-studiu-de-caz",
+        label:
+          "Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul",
+        lead: "Ce înseamnă entity resolution, cum apar coliziunea, fragmentarea și contaminarea identității și ce poate demonstra un studiu de caz real fără a inventa mecanisme interne ale Google sau sistemelor AI.",
       },
     ],
   },

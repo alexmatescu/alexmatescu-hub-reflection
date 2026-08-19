@@ -1,6 +1,9 @@
 import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
 import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
+import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/ce-este-entitate-ai-studiu-de-caz";
+import { cuvantCheieVsFrazaTokenizareMeta } from "@/data/lab-content/cuvant-cheie-vs-fraza-tokenizare";
+import { paradoxulSpecificitatiiContinutGenericMeta } from "@/data/lab-content/paradoxul-specificitatii-continut-generic";
 import { istoriaCautariiMeta } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
 import { metadataCitareAiStudiuDeCazMeta } from "@/data/lab-content/metadata-citare-ai-studiu-de-caz";
 import { motoareCautareMeta } from "@/data/lab-content/motoare-cautare-comparatie-2026";
@@ -51,6 +54,9 @@ export const labArticleMeta: LabArticleMeta[] = [
   paradoxulSiteuluiTerminatMeta,
   metadataCitareAiStudiuDeCazMeta,
   auditSiteFaraAccesCodMeta,
+  cuvantCheieVsFrazaTokenizareMeta,
+  paradoxulSpecificitatiiContinutGenericMeta,
+  ceEsteEntitateAiStudiuDeCazMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>

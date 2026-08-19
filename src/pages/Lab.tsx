@@ -15,9 +15,12 @@ import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
+import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/ce-este-entitate-ai-studiu-de-caz";
+import { cuvantCheieVsFrazaTokenizareHtml } from "@/data/lab-content/cuvant-cheie-vs-fraza-tokenizare";
 import { istoriaCautariiHtml } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
 import { metadataCitareAiStudiuDeCazHtml } from "@/data/lab-content/metadata-citare-ai-studiu-de-caz";
 import { motoareCautareHtml } from "@/data/lab-content/motoare-cautare-comparatie-2026";
+import { paradoxulSpecificitatiiContinutGenericHtml } from "@/data/lab-content/paradoxul-specificitatii-continut-generic";
 import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/social-media-vizibilitate-ai";
 
@@ -40,6 +43,9 @@ const labPageContent: Record<string, string> = {
   "/lab/articole/paradoxul-site-ului-terminat": paradoxulSiteuluiTerminatHtml,
   "/lab/articole/metadata-citare-ai-studiu-de-caz": metadataCitareAiStudiuDeCazHtml,
   "/lab/articole/audit-site-fara-acces-cod": auditSiteFaraAccesCodHtml,
+  "/lab/articole/cuvant-cheie-vs-fraza-tokenizare": cuvantCheieVsFrazaTokenizareHtml,
+  "/lab/articole/paradoxul-specificitatii-continut-generic": paradoxulSpecificitatiiContinutGenericHtml,
+  "/lab/articole/ce-este-entitate-ai-studiu-de-caz": ceEsteEntitateAiStudiuDeCazHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 
@@ -166,11 +172,10 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
           ) : (
             <div className="mt-10 p-6 md:p-8 border border-dashed border-foreground/15 rounded-sm bg-surface/40">
               <p className="text-sm uppercase tracking-[0.22em] text-muted-foreground mb-3">
-                Pagină în lucru
+                Pagină dedicată articolelor și studiilor de caz
               </p>
               <p className="text-base text-foreground/80 leading-relaxed">
-                Conținutul acestei pagini urmează să fie completat. Reprezintă un cadru editorial
-                pregătit pentru textul final.
+                Secțiunea reunește în prezent analize și studii de caz publicate de AI Visibility Lab și este actualizată pe măsură ce activitatea de cercetare evoluează.”
               </p>
             </div>
           )}

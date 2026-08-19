@@ -220,6 +220,17 @@ Opțional. Nu crea FAQ doar pentru schema markup — doar dacă există întreb�
 
 Conversie manuală (nu convertor markdown generic), respectând stilul existent: `<p>`, `<h2>`/`<h3>`, `<table>` cu headers explicite, `<blockquote>` dacă sursa are citate, referințe inline `<sup><a href="#fn-N">N</a></sup>`, secțiune finală „Surse și metodologie” cu `<ol class="avl-footnotes">`. Linkuri externe: `target="_blank" rel="noopener noreferrer"` (patternul actual al proiectului). Verifică semantică HTML, accesibilitate, headers de tabel, liste, ancore.
 
+### 6.1 — Byline
+
+Primul element din corpul `.ts` (imediat sub titlu/lead-ul deja randat de pagină) este blocul de byline, cu structura:
+
+```html
+<p><a href="/despre">Alex Matescu</a> · AI Visibility Lab</p>
+<p>Publicat: {date_published, ex. „10 august 2026”} · Actualizat: {date_modified} · Ultima verificare factuală: {last_reviewed sau data verificării reale}</p>
+```
+
+`Alex Matescu` este mereu link către `/despre` (pagina personală a autorului — nu `/lab/despre-laborator`, care e despre laborator, nu despre persoană). Nu mai adăuga separat, la finalul articolului, paragraful `<em>Articol publicat de AI Visibility Lab…</em>` — informația de byline stă doar aici, la început; secțiunea finală de surse (Faza 7) se încheie cu „Notă de volatilitate”, fără paragraful de byline duplicat la coadă.
+
 ---
 
 ## Faza 7 — Surse și metodologie
