@@ -130,6 +130,18 @@ export const labNav: LabPage[] = [
           "Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul",
         lead: "Ce înseamnă entity resolution, cum apar coliziunea, fragmentarea și contaminarea identității și ce poate demonstra un studiu de caz real fără a inventa mecanisme interne ale Google sau sistemelor AI.",
       },
+      {
+        to: "/lab/articole/harta-de-citare-mentiuni-externe-romania",
+        label:
+          "Harta de citare: cum afli empiric ce surse contează pentru vizibilitatea AI în România",
+        lead: "Cum construiești o hartă de citare pentru nișa ta, cum separi mențiunile de citări, ce arată studiile Muck Rack, AirOps și Ahrefs și de ce prezența externă trebuie măsurată, nu presupusă.",
+      },
+      {
+        to: "/lab/articole/decalaj-viteza-ai-adoptie-2026",
+        label:
+          "407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026",
+        lead: "Analiză verificată a ritmului lansărilor AI și a adopției în 2026: 407 lansări urmărite editorial, 17,8% utilizare GenAI globală în Q1 2026, diferențe de metodologie între Microsoft, Eurostat, OECD, McKinsey și PwC, plus date pentru România.",
+      },
     ],
   },
   {

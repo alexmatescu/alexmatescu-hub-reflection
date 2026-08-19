@@ -13,16 +13,18 @@ import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
-import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/audit-site-fara-acces-cod";
-import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
-import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/ce-este-entitate-ai-studiu-de-caz";
-import { cuvantCheieVsFrazaTokenizareHtml } from "@/data/lab-content/cuvant-cheie-vs-fraza-tokenizare";
-import { istoriaCautariiHtml } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
-import { metadataCitareAiStudiuDeCazHtml } from "@/data/lab-content/metadata-citare-ai-studiu-de-caz";
-import { motoareCautareHtml } from "@/data/lab-content/motoare-cautare-comparatie-2026";
-import { paradoxulSpecificitatiiContinutGenericHtml } from "@/data/lab-content/paradoxul-specificitatii-continut-generic";
-import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/paradoxul-site-ului-terminat";
-import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/social-media-vizibilitate-ai";
+import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
+import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
+import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
+import { cuvantCheieVsFrazaTokenizareHtml } from "@/data/lab-content/8. cuvant-cheie-vs-fraza-tokenizare";
+import { decalajVitezaAiAdoptie2026Html } from "@/data/lab-content/12. decalaj-viteza-ai-adoptie-2026";
+import { hartaDeCitareMentiuniExterneRomaniaHtml } from "@/data/lab-content/11. harta-de-citare-mentiuni-externe-romania";
+import { istoriaCautariiHtml } from "@/data/lab-content/1. istoria-cautarii-internet-evolutia-seo";
+import { metadataCitareAiStudiuDeCazHtml } from "@/data/lab-content/6. metadata-citare-ai-studiu-de-caz";
+import { motoareCautareHtml } from "@/data/lab-content/2. motoare-cautare-comparatie-2026";
+import { paradoxulSpecificitatiiContinutGenericHtml } from "@/data/lab-content/9. paradoxul-specificitatii-continut-generic";
+import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
+import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/3. social-media-vizibilitate-ai";
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
 
@@ -46,6 +48,8 @@ const labPageContent: Record<string, string> = {
   "/lab/articole/cuvant-cheie-vs-fraza-tokenizare": cuvantCheieVsFrazaTokenizareHtml,
   "/lab/articole/paradoxul-specificitatii-continut-generic": paradoxulSpecificitatiiContinutGenericHtml,
   "/lab/articole/ce-este-entitate-ai-studiu-de-caz": ceEsteEntitateAiStudiuDeCazHtml,
+  "/lab/articole/harta-de-citare-mentiuni-externe-romania": hartaDeCitareMentiuniExterneRomaniaHtml,
+  "/lab/articole/decalaj-viteza-ai-adoptie-2026": decalajVitezaAiAdoptie2026Html,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 

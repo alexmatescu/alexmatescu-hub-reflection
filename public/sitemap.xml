@@ -157,6 +157,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://delamatescu.ro/lab/articole/harta-de-citare-mentiuni-externe-romania</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/decalaj-viteza-ai-adoptie-2026</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://delamatescu.ro/lab/audit-ai-visibility</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

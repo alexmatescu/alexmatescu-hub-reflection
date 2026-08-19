@@ -1,14 +1,16 @@
 import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
-import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/audit-site-fara-acces-cod";
-import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/cat-dureaza-indexare-citare-ai";
-import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/ce-este-entitate-ai-studiu-de-caz";
-import { cuvantCheieVsFrazaTokenizareMeta } from "@/data/lab-content/cuvant-cheie-vs-fraza-tokenizare";
-import { paradoxulSpecificitatiiContinutGenericMeta } from "@/data/lab-content/paradoxul-specificitatii-continut-generic";
-import { istoriaCautariiMeta } from "@/data/lab-content/istoria-cautarii-internet-evolutia-seo";
-import { metadataCitareAiStudiuDeCazMeta } from "@/data/lab-content/metadata-citare-ai-studiu-de-caz";
-import { motoareCautareMeta } from "@/data/lab-content/motoare-cautare-comparatie-2026";
-import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/paradoxul-site-ului-terminat";
-import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/social-media-vizibilitate-ai";
+import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/7. audit-site-fara-acces-cod";
+import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
+import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
+import { cuvantCheieVsFrazaTokenizareMeta } from "@/data/lab-content/8. cuvant-cheie-vs-fraza-tokenizare";
+import { decalajVitezaAiAdoptie2026Meta } from "@/data/lab-content/12. decalaj-viteza-ai-adoptie-2026";
+import { hartaDeCitareMentiuniExterneRomaniaMeta } from "@/data/lab-content/11. harta-de-citare-mentiuni-externe-romania";
+import { paradoxulSpecificitatiiContinutGenericMeta } from "@/data/lab-content/9. paradoxul-specificitatii-continut-generic";
+import { istoriaCautariiMeta } from "@/data/lab-content/1. istoria-cautarii-internet-evolutia-seo";
+import { metadataCitareAiStudiuDeCazMeta } from "@/data/lab-content/6. metadata-citare-ai-studiu-de-caz";
+import { motoareCautareMeta } from "@/data/lab-content/2. motoare-cautare-comparatie-2026";
+import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
+import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/3. social-media-vizibilitate-ai";
 import { findLabPage } from "@/data/lab";
 import { buildSeoHead } from "@/lib/seo-head";
 
@@ -57,6 +59,8 @@ export const labArticleMeta: LabArticleMeta[] = [
   cuvantCheieVsFrazaTokenizareMeta,
   paradoxulSpecificitatiiContinutGenericMeta,
   ceEsteEntitateAiStudiuDeCazMeta,
+  hartaDeCitareMentiuniExterneRomaniaMeta,
+  decalajVitezaAiAdoptie2026Meta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>
