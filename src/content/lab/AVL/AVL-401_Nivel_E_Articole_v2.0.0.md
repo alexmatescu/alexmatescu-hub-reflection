@@ -103,3 +103,21 @@ Articolele sunt destinate:
 Visibility Lab, oferind context și explicații despre AI Visibility, GEO,
 AEO și domeniile conexe, fără a înlocui documentația oficială sau
 rezultatele experimentale.**
+
+# Actualizare 2.0.0
+
+- **Document ID**: AVL-401
+- **Nivel**: E — Articole
+- **Versiune**: 2.0.0
+- **Statut**: În derulare (anterior: Activ)
+- **Data actualizării**: 19 august 2026
+
+Față de v1.0.0:
+
+- Statutul secțiunii a fost schimbat din „În pregătire” în „În derulare”.
+- Paragraful de tranziție („Primele articole vor fi publicate pe măsură
+  ce...”) a fost eliminat, întrucât secțiunea publică deja articole.
+- Paragraful final a fost reformulat la timpul prezent („Pagina Articole
+  este biblioteca publică...”), înlocuind formularea anterioară la
+  timpul viitor („va deveni biblioteca publică...”), pentru a reflecta
+  faptul că secțiunea publică deja articole.

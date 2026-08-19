@@ -132,6 +132,10 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
   const parent = findLabParent(page.to);
   const content = labPageContent[page.to];
   const isArticle = page.to in labPageJsonLdOverrides;
+  // Pe /lab/articole, lista articolelor deja publicate trebuie să apară
+  // înaintea documentației/textului introductiv — invers față de restul
+  // paginilor /lab, unde documentația precede lista de sub-pagini.
+  const articlesFirst = page.to === "/lab/articole";
 
   return (
     <div>
@@ -164,44 +168,62 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">{page.lead}</p>
 
-          {content ? (
-            <div
-              className="prose-editorial mt-14 max-w-2xl"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
-          ) : (
-            <div className="mt-10 p-6 md:p-8 border border-dashed border-foreground/15 rounded-sm bg-surface/40">
-              <p className="text-sm uppercase tracking-[0.22em] text-muted-foreground mb-3">
-                Pagină dedicată articolelor și studiilor de caz
-              </p>
-              <p className="text-base text-foreground/80 leading-relaxed">
-                Secțiunea reunește în prezent analize și studii de caz publicate de AI Visibility Lab și este actualizată pe măsură ce activitatea de cercetare evoluează.”
-              </p>
-            </div>
-          )}
+          {(() => {
+            const contentBlock = content ? (
+              <div
+                key="content"
+                className="prose-editorial mt-14 max-w-2xl"
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
+            ) : (
+              <div
+                key="content"
+                className="mt-10 p-6 md:p-8 border border-dashed border-foreground/15 rounded-sm bg-surface/40"
+              >
+                <p className="text-sm uppercase tracking-[0.22em] text-muted-foreground mb-3">
+                  Pagină dedicată articolelor și studiilor de caz
+                </p>
+                <p className="text-base text-foreground/80 leading-relaxed">
+                  Secțiunea reunește în prezent analize și studii de caz publicate de AI Visibility Lab și este actualizată pe măsură ce activitatea de cercetare evoluează.”
+                </p>
+              </div>
+            );
 
-          {page.children && (
-            <div className="mt-16">
-              <p className="eyebrow mb-6">În această secțiune</p>
-              <ul className="grid gap-px bg-foreground/10 border border-foreground/10 sm:grid-cols-2">
-                {page.children.map((child) => (
-                  <li key={child.to} className="bg-background">
-                    <Link
-                      to={child.to}
-                      className="group flex flex-col p-6 hover:bg-surface/60 transition-colors h-full"
-                    >
-                      <span className="font-serif text-lg leading-tight text-balance group-hover:text-foreground">
-                        {child.label}
-                      </span>
-                      <span className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                        {child.lead}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+            const childrenBlock = page.children && (
+              <div key="children" className="mt-16">
+                <p className="eyebrow mb-6">În această secțiune</p>
+                <ul className="grid gap-px bg-foreground/10 border border-foreground/10 sm:grid-cols-2">
+                  {page.children.map((child) => (
+                    <li key={child.to} className="bg-background">
+                      <Link
+                        to={child.to}
+                        className="group flex flex-col p-6 hover:bg-surface/60 transition-colors h-full"
+                      >
+                        <span className="font-serif text-lg leading-tight text-balance group-hover:text-foreground">
+                          {child.label}
+                        </span>
+                        <span className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                          {child.lead}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+
+            return articlesFirst ? (
+              <>
+                {childrenBlock}
+                {contentBlock}
+              </>
+            ) : (
+              <>
+                {contentBlock}
+                {childrenBlock}
+              </>
+            );
+          })()}
         </div>
       </section>
     </div>
