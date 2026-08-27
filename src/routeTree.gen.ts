@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SiteRouteImport } from './routes/_site'
 import { Route as SiteIndexRouteImport } from './routes/_site/index'
-import { Route as SiteAiVisibilityRouteImport } from './routes/_site/ai-visibility'
+import { Route as SiteAiVisibilityLabRouteImport } from './routes/_site/ai-visibility-lab'
 import { Route as SiteCalatoriaRouteImport } from './routes/_site/calatoria'
 import { Route as SiteCarteRouteImport } from './routes/_site/carte'
 import { Route as SiteContactRouteImport } from './routes/_site/contact'
@@ -26,7 +26,7 @@ import { Route as SiteLabIndexRouteImport } from './routes/_site/lab/index'
 import { Route as SiteLabSlugRouteImport } from './routes/_site/lab/$slug'
 import { Route as SiteProiecteIndexRouteImport } from './routes/_site/proiecte/index'
 import { Route as SiteProiecteSlugRouteImport } from './routes/_site/proiecte/$slug'
-import { Route as SiteProiecteGeoAiVisibilityRouteImport } from './routes/_site/proiecte/geo-ai-visibility'
+import { Route as SiteProiecteGeoAeoAiVisibilityLabRouteImport } from './routes/_site/proiecte/geo-aeo-ai-visibility-lab'
 import { Route as SiteLabParentSlugRouteImport } from './routes/_site/lab/$parent.$slug'
 
 const SiteRoute = SiteRouteImport.update({
@@ -38,9 +38,9 @@ const SiteIndexRoute = SiteIndexRouteImport.update({
   path: '/',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteAiVisibilityRoute = SiteAiVisibilityRouteImport.update({
-  id: '/ai-visibility',
-  path: '/ai-visibility',
+const SiteAiVisibilityLabRoute = SiteAiVisibilityLabRouteImport.update({
+  id: '/ai-visibility-lab',
+  path: '/ai-visibility-lab',
   getParentRoute: () => SiteRoute,
 } as any)
 const SiteCalatoriaRoute = SiteCalatoriaRouteImport.update({
@@ -113,10 +113,10 @@ const SiteProiecteSlugRoute = SiteProiecteSlugRouteImport.update({
   path: '/proiecte/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
-const SiteProiecteGeoAiVisibilityRoute =
-  SiteProiecteGeoAiVisibilityRouteImport.update({
-    id: '/proiecte/geo-ai-visibility',
-    path: '/proiecte/geo-ai-visibility',
+const SiteProiecteGeoAeoAiVisibilityLabRoute =
+  SiteProiecteGeoAiVisibilityLabRouteImport.update({
+    id: '/proiecte/geo-aeo-ai-visibility-lab',
+    path: '/proiecte/geo-aeo-ai-visibility-lab',
     getParentRoute: () => SiteRoute,
   } as any)
 const SiteLabParentSlugRoute = SiteLabParentSlugRouteImport.update({
@@ -127,7 +127,7 @@ const SiteLabParentSlugRoute = SiteLabParentSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
-  '/ai-visibility': typeof SiteAiVisibilityRoute
+  '/ai-visibility-lab': typeof SiteAiVisibilityLabRoute
   '/calatoria': typeof SiteCalatoriaRoute
   '/carte': typeof SiteCarteRoute
   '/contact': typeof SiteContactRoute
@@ -139,14 +139,14 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof SiteBlogSlugRoute
   '/lab/$slug': typeof SiteLabSlugRoute
   '/proiecte/$slug': typeof SiteProiecteSlugRoute
-  '/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
+  '/proiecte/geo-aeo-ai-visibility-lab': typeof SiteProiecteGeoAeoAiVisibilityLabRoute
   '/blog/': typeof SiteBlogIndexRoute
   '/lab/': typeof SiteLabIndexRoute
   '/proiecte/': typeof SiteProiecteIndexRoute
   '/lab/$parent/$slug': typeof SiteLabParentSlugRoute
 }
 export interface FileRoutesByTo {
-  '/ai-visibility': typeof SiteAiVisibilityRoute
+  '/ai-visibility-lab': typeof SiteAiVisibilityLabRoute
   '/calatoria': typeof SiteCalatoriaRoute
   '/carte': typeof SiteCarteRoute
   '/contact': typeof SiteContactRoute
@@ -159,7 +159,7 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof SiteBlogSlugRoute
   '/lab/$slug': typeof SiteLabSlugRoute
   '/proiecte/$slug': typeof SiteProiecteSlugRoute
-  '/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
+  '/proiecte/geo-aeo-ai-visibility-lab': typeof SiteProiecteGeoAeoAiVisibilityLabRoute
   '/blog': typeof SiteBlogIndexRoute
   '/lab': typeof SiteLabIndexRoute
   '/proiecte': typeof SiteProiecteIndexRoute
@@ -168,7 +168,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_site': typeof SiteRouteWithChildren
-  '/_site/ai-visibility': typeof SiteAiVisibilityRoute
+  '/_site/ai-visibility-lab': typeof SiteAiVisibilityLabRoute
   '/_site/calatoria': typeof SiteCalatoriaRoute
   '/_site/carte': typeof SiteCarteRoute
   '/_site/contact': typeof SiteContactRoute
@@ -181,7 +181,7 @@ export interface FileRoutesById {
   '/_site/blog/$slug': typeof SiteBlogSlugRoute
   '/_site/lab/$slug': typeof SiteLabSlugRoute
   '/_site/proiecte/$slug': typeof SiteProiecteSlugRoute
-  '/_site/proiecte/geo-ai-visibility': typeof SiteProiecteGeoAiVisibilityRoute
+  '/_site/proiecte/geo-aeo-ai-visibility-lab': typeof SiteProiecteGeoAeoAiVisibilityLabRoute
   '/_site/blog/': typeof SiteBlogIndexRoute
   '/_site/lab/': typeof SiteLabIndexRoute
   '/_site/proiecte/': typeof SiteProiecteIndexRoute
@@ -203,14 +203,14 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/lab/$slug'
     | '/proiecte/$slug'
-    | '/proiecte/geo-ai-visibility'
+    | '/proiecte/geo-aeo-ai-visibility-lab'
     | '/blog/'
     | '/lab/'
     | '/proiecte/'
     | '/lab/$parent/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/ai-visibility'
+    | '/ai-visibility-lab'
     | '/calatoria'
     | '/carte'
     | '/contact'
@@ -223,7 +223,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/lab/$slug'
     | '/proiecte/$slug'
-    | '/proiecte/geo-ai-visibility'
+    | '/proiecte/geo-aeo-ai-visibility-lab'
     | '/blog'
     | '/lab'
     | '/proiecte'
@@ -244,7 +244,7 @@ export interface FileRouteTypes {
     | '/_site/blog/$slug'
     | '/_site/lab/$slug'
     | '/_site/proiecte/$slug'
-    | '/_site/proiecte/geo-ai-visibility'
+    | '/_site/proiecte/geo-aeo-ai-visibility-lab'
     | '/_site/blog/'
     | '/_site/lab/'
     | '/_site/proiecte/'
@@ -271,11 +271,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteIndexRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/ai-visibility': {
-      id: '/_site/ai-visibility'
-      path: '/ai-visibility'
-      fullPath: '/ai-visibility'
-      preLoaderRoute: typeof SiteAiVisibilityRouteImport
+    '/_site/ai-visibility-lab': {
+      id: '/_site/ai-visibility-lab'
+      path: '/ai-visibility-lab'
+      fullPath: '/ai-visibility-lab'
+      preLoaderRoute: typeof SiteAiVisibilityLabRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/calatoria': {
@@ -376,11 +376,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteProiecteSlugRouteImport
       parentRoute: typeof SiteRoute
     }
-    '/_site/proiecte/geo-ai-visibility': {
-      id: '/_site/proiecte/geo-ai-visibility'
-      path: '/proiecte/geo-ai-visibility'
-      fullPath: '/proiecte/geo-ai-visibility'
-      preLoaderRoute: typeof SiteProiecteGeoAiVisibilityRouteImport
+    '/_site/proiecte/geo-aeo-ai-visibility-lab': {
+      id: '/_site/proiecte/geo-aeo-ai-visibility-lab'
+      path: '/proiecte/geo-aeo-ai-visibility-lab'
+      fullPath: '/proiecte/geo-aeo-ai-visibility-lab'
+      preLoaderRoute: typeof SiteProiecteGeoAeoAiVisibilityLabRouteImport
       parentRoute: typeof SiteRoute
     }
     '/_site/lab/$parent/$slug': {
@@ -394,7 +394,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface SiteRouteChildren {
-  SiteAiVisibilityRoute: typeof SiteAiVisibilityRoute
+  SiteAiVisibilityLabRoute: typeof SiteAiVisibilityLabRoute
   SiteCalatoriaRoute: typeof SiteCalatoriaRoute
   SiteCarteRoute: typeof SiteCarteRoute
   SiteContactRoute: typeof SiteContactRoute
@@ -407,7 +407,7 @@ interface SiteRouteChildren {
   SiteBlogSlugRoute: typeof SiteBlogSlugRoute
   SiteLabSlugRoute: typeof SiteLabSlugRoute
   SiteProiecteSlugRoute: typeof SiteProiecteSlugRoute
-  SiteProiecteGeoAiVisibilityRoute: typeof SiteProiecteGeoAiVisibilityRoute
+  SiteProiecteGeoAeoAiVisibilityLabRoute: typeof SiteProiecteGeoAeoAiVisibilityLabRoute
   SiteBlogIndexRoute: typeof SiteBlogIndexRoute
   SiteLabIndexRoute: typeof SiteLabIndexRoute
   SiteProiecteIndexRoute: typeof SiteProiecteIndexRoute
@@ -415,7 +415,7 @@ interface SiteRouteChildren {
 }
 
 const SiteRouteChildren: SiteRouteChildren = {
-  SiteAiVisibilityRoute: SiteAiVisibilityRoute,
+  SiteAiVisibilityLabRoute: SiteAiVisibilityLabRoute,
   SiteCalatoriaRoute: SiteCalatoriaRoute,
   SiteCarteRoute: SiteCarteRoute,
   SiteContactRoute: SiteContactRoute,
@@ -428,7 +428,7 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteBlogSlugRoute: SiteBlogSlugRoute,
   SiteLabSlugRoute: SiteLabSlugRoute,
   SiteProiecteSlugRoute: SiteProiecteSlugRoute,
-  SiteProiecteGeoAiVisibilityRoute: SiteProiecteGeoAiVisibilityRoute,
+  SiteProiecteGeoAeoAiVisibilityLabRoute: SiteProiecteGeoAeoAiVisibilityLabRoute,
   SiteBlogIndexRoute: SiteBlogIndexRoute,
   SiteLabIndexRoute: SiteLabIndexRoute,
   SiteProiecteIndexRoute: SiteProiecteIndexRoute,

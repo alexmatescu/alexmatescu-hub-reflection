@@ -90,7 +90,7 @@ const Home = () => {
           </div>
           <div className="md:col-span-8">
             <p className="font-serif text-2xl md:text-3xl leading-relaxed text-balance">
-              Sunt Alex Matescu: inginer prin formație, scriitor prin practică, antreprenor prin experiment. Construiesc proiecte personale precum cartea CRANDIT, Taste the Corn, Atracțiile României, afacerea de familie, afacerea cu haine, și blogging. Scriu despre ce văd la întâlnirea dintre tehnologie, muncă și om.
+              Sunt Alex Matescu: inginer prin formație, scriitor prin practică, antreprenor prin experiment. Construiesc proiecte personale precum cartea CRANDIT, Taste the Corn, AI Visibility Lab, Atracțiile României, afacerea de familie, afacerea cu haine, și blogging. Scriu despre ce văd la întâlnirea dintre tehnologie, muncă și om.
             </p>
           </div>
         </div>
