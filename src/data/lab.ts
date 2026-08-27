@@ -142,6 +142,12 @@ export const labNav: LabPage[] = [
           "407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026",
         lead: "Analiză verificată a ritmului lansărilor AI și a adopției în 2026: 407 lansări urmărite editorial, 17,8% utilizare GenAI globală în Q1 2026, diferențe de metodologie între Microsoft, Eurostat, OECD, McKinsey și PwC, plus date pentru România.",
       },
+      {
+        to: "/lab/articole/eticheta-abonat-relatia-prezentare-ai-search",
+        label:
+          "Eticheta „Abonat”: cum folosește Google relația cu publicul pentru a evidenția surse în AI Search",
+        lead: "Google evidențiază în AI Overviews și AI Mode linkurile din publicațiile la care utilizatorul are un abonament legat de contul Google. Ce demonstrează funcția, ce nu dovedește despre ranking și ce pot face publisherii, creatorii și firmele.",
+      },
     ],
   },
   {

@@ -4,6 +4,7 @@ import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaz
 import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
 import { cuvantCheieVsFrazaTokenizareMeta } from "@/data/lab-content/8. cuvant-cheie-vs-fraza-tokenizare";
 import { decalajVitezaAiAdoptie2026Meta } from "@/data/lab-content/12. decalaj-viteza-ai-adoptie-2026";
+import { etichetaAbonatRelatiaPrezentareAiSearchMeta } from "@/data/lab-content/13. eticheta-abonat-relatia-prezentare-ai-search";
 import { hartaDeCitareMentiuniExterneRomaniaMeta } from "@/data/lab-content/11. harta-de-citare-mentiuni-externe-romania";
 import { paradoxulSpecificitatiiContinutGenericMeta } from "@/data/lab-content/9. paradoxul-specificitatii-continut-generic";
 import { istoriaCautariiMeta } from "@/data/lab-content/1. istoria-cautarii-internet-evolutia-seo";
@@ -61,6 +62,7 @@ export const labArticleMeta: LabArticleMeta[] = [
   ceEsteEntitateAiStudiuDeCazMeta,
   hartaDeCitareMentiuniExterneRomaniaMeta,
   decalajVitezaAiAdoptie2026Meta,
+  etichetaAbonatRelatiaPrezentareAiSearchMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>
@@ -219,6 +221,17 @@ export const buildLabArticleHead = (slug: string) => {
       { property: "article:modified_time", content: meta.dateModified },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: meta.description },
+      // Suprascrie placeholder-ul global (__root.tsx) cu imaginea proprie a
+      // articolului, dacă există una (`meta.image`, vezi SKILL.md §5.3) — altfel
+      // rutele fără imagine dedicată cad pe fallback-ul global, nemodificat.
+      ...(meta.image
+        ? [
+            { property: "og:image", content: meta.image.url },
+            { property: "og:image:alt", content: meta.image.alt },
+            { name: "twitter:image", content: meta.image.url },
+            { name: "twitter:image:alt", content: meta.image.alt },
+          ]
+        : []),
     ],
     links: [{ rel: "canonical", href: meta.canonical }],
     scripts: [

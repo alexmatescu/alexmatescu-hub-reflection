@@ -129,6 +129,9 @@ export const auditSiteFaraAccesCodMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const auditSiteFaraAccesCodHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-18">18 august 2026</time> · Actualizat: <time datetime="2026-08-18">18 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-18">18 august 2026</time></p>
+
       <p><strong>Fără acces administrativ poți inspecta o parte importantă din suprafața publică a unui site: răspunsurile HTTP, HTML-ul livrat requestului tău, <code>robots.txt</code>, sitemapurile publice, datele structurate, unele endpointuri publice, DNS și certificate. Nu poți vedea însă configurația internă a serverului, codul privat, baza de date, secretele, regulile complete ale infrastructurii sau setările care nu sunt expuse public. Iar DevTools nu publică modificările pe care le faci local: este un instrument de diagnostic și prototipare, nu un substitut pentru accesul la site.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup></p>
 
       <p>Această distincție este esențială într-un audit tehnic: trebuie separat <strong>ce ai observat</strong> de <strong>ce ai dedus</strong> și, mai ales, de <strong>ce poți modifica efectiv</strong>.</p>

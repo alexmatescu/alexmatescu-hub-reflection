@@ -222,6 +222,8 @@
   .prose-editorial ol { @apply my-6 pl-6 list-decimal space-y-2; }
   .prose-editorial a { @apply underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground transition-colors; }
   .prose-editorial img { @apply my-10 mx-auto rounded-sm max-w-full h-auto; }
+  .prose-editorial figure img { @apply mb-3; }
+  .prose-editorial figcaption { @apply -mt-6 mb-10 text-center text-sm text-muted-foreground leading-snug; }
   .prose-editorial hr { @apply my-12 border-foreground/15; }
   .prose-editorial strong { @apply text-foreground font-medium; }
   .prose-editorial em { @apply italic; }

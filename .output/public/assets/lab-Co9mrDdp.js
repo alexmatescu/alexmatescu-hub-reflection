@@ -1,0 +1,1 @@
+import{n as e}from"./Lab-DyOLxVhp.js";var t=e;export{t as component};

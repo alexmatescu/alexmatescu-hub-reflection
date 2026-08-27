@@ -82,6 +82,9 @@ export const ceEsteEntitateAiStudiuDeCazMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const ceEsteEntitateAiStudiuDeCazHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-05">5 august 2026</time> · Actualizat: <time datetime="2026-08-11">11 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
+
       <p><strong>O identitate digitală devine mai ușor de dezambiguizat atunci când aceeași persoană, aceleași variante legitime de nume, aceleași roluri și aceleași surse sunt legate coerent între ele. Structured data, paginile canonice de identitate și sursele independente pot contribui la această coerență, dar niciuna nu garantează singură felul în care Google sau un sistem AI va reprezenta persoana.</strong></p>
 
       <p>Aceasta este miza corectă a studiului.</p>

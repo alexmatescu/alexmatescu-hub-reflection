@@ -95,8 +95,8 @@ export const hartaDeCitareMentiuniExterneRomaniaMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const hartaDeCitareMentiuniExterneRomaniaHtml = `
-      <p><a href="/despre">Alex Matescu</a> · AI Visibility Lab</p>
-      <p>Publicat: 19 august 2026 · Actualizat: 19 august 2026 · Ultima verificare factuală: 19 august 2026</p>
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
 
       <p><strong>Sursele externe apar frecvent în citările și mențiunile observate în studiile comerciale de AI visibility, dar nu există un multiplicator universal între earned media și conținutul propriu. Metoda robustă este să măsori direct ce domenii apar pentru întrebările relevante nișei tale și să construiești o hartă de citare actualizabilă.</strong></p>
 

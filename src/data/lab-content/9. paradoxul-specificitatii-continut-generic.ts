@@ -90,6 +90,9 @@ export const paradoxulSpecificitatiiContinutGenericMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const paradoxulSpecificitatiiContinutGenericHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
+
       <p><strong>Specificitatea este utilă atunci când adaugă informație care schimbă răspunsul. Devine contraproductivă când doar multiplică pagini sau introduce constrângeri care nu schimbă nimic pentru utilizator.</strong></p>
 
       <p>Aceasta este miza articolului.</p>

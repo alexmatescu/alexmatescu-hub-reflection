@@ -102,8 +102,8 @@ export const decalajVitezaAiAdoptie2026Meta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const decalajVitezaAiAdoptie2026Html = `
-      <p><a href="/despre">Alex Matescu</a> · AI Visibility Lab</p>
-      <p>Publicat: 19 august 2026 · Actualizat: 19 august 2026 · Ultima verificare factuală: 19 august 2026</p>
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
 
       <p><strong>Între ianuarie și iulie 2026, trackerul editorial ThursdAI a catalogat 407 lansări și actualizări relevante din ecosistemul AI, adică aproximativ 1,9 intrări pe zi. Separat, Microsoft estimează că 17,8% din populația globală cu vârste între 15 și 64 de ani a folosit un produs de AI generativ în primul trimestru din 2026. Iar în sondajul global PwC publicat în ianuarie 2026, 56% dintre CEO au spus că organizațiile lor nu au obținut în ultimele 12 luni nici creșteri de venit, nici reduceri de cost atribuite AI. Cifrele descriu lucruri diferite, dar puse una lângă alta arată un fapt important: viteza cu care apar capabilități noi este mult mai mare decât viteza cu care utilizarea, procesele și rezultatele economice se răspândesc.</strong></p>
 

@@ -61,6 +61,9 @@ export const socialMediaVizibilitateAiMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const socialMediaVizibilitateAiHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-08-14">14 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-14">14 august 2026</time></p>
+
       <p><strong>Vizibilitatea socială și vizibilitatea AI nu sunt același lucru. Numărul de urmăritori, reach-ul și engagementul unei platforme nu garantează că ideile publicate acolo pot fi recuperate, interpretate sau citate de un sistem AI. Pentru retrieval și citare contează în special dacă informația lasă în urmă un artefact persistent, adresabil, accesibil și ușor de extras. Platforma contează, dar accesul diferă între motoare și se schimbă în timp.</strong></p>
 
       <p>Acest articol separă explicit patru niveluri de certitudine: <strong>fapte documentate</strong>, <strong>rezultate ale unor studii comerciale specifice</strong>, <strong>interpretări AI Visibility Lab</strong> și <strong>ipoteze de lucru</strong>. Comportamentul motoarelor AI, politicile platformelor sociale și ponderile surselor citate se schimbă frecvent; afirmațiile despre starea actuală sunt datate și nu trebuie tratate ca adevăruri permanente.</p>
@@ -423,5 +426,5 @@ export const socialMediaVizibilitateAiHtml = `
         <li id="fn-10">Meta Newsroom — anunț din iulie 2026 privind folosirea Meta AI în Threads și posibilitatea de a partaja postări, imagini și videoclipuri Threads către Meta AI: <a href="https://about.fb.com/ja/news/2026/07/threads-meta-ai-dm/" target="_blank" rel="noopener noreferrer">about.fb.com/ja/news/2026/07/threads-meta-ai-dm</a></li>
       </ol>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și actualizare: 10 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și actualizare: 14 august 2026.</em></p>
 `;

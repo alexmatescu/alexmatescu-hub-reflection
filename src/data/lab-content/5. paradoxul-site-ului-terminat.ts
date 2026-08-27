@@ -46,6 +46,9 @@ export const paradoxulSiteuluiTerminatMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const paradoxulSiteuluiTerminatHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-05">5 august 2026</time> · Actualizat: <time datetime="2026-08-10">10 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-10">10 august 2026</time></p>
+
       <p><strong>Un site poate părea complet în browser și, în același timp, poate furniza reprezentări diferite în funcție de agentul care îl accesează. În testul documentat aici, un request HTTP generic către două rute ale propriului meu site a primit același shell HTML: metadate în <code>&lt;head&gt;</code>, fără textul principal pe care îl vede utilizatorul după executarea aplicației în browser. Asta nu demonstrează că ChatGPT, Perplexity, Google sau alte crawlere verificate primesc același răspuns. Documentația Lovable verificată la 10 august 2026 spune explicit că proiectele mai vechi React + Vite folosesc pre-randare la cerere pentru crawlere verificate, în timp ce agenții neverificați și scanerele SEO terțe primesc aplicația SPA obișnuită. Studiul de caz arată, prin urmare, altceva: același URL poate avea mai multe reprezentări tehnice, iar un simplu <code>curl</code> nu trebuie confundat cu ceea ce vede un crawler verificat.</strong><sup><a href="#fn-1">1</a></sup></p>
 
       <p>Această distincție schimbă teza articolului.</p>

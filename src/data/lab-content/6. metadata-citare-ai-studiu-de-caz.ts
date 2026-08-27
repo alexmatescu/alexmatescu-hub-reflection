@@ -90,6 +90,9 @@ export const metadataCitareAiStudiuDeCazMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const metadataCitareAiStudiuDeCazHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-05">5 august 2026</time> · Actualizat: <time datetime="2026-08-10">10 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-17">17 august 2026</time></p>
+
       <p><strong>În cazul documentat aici, un sistem AI a citat textual o formulare publicată în metadata de pe delamatescu.ro. Acest exact match este o evidență puternică că textul respectiv a intrat în lanțul de regăsire sau de generare folosit pentru răspuns. Nu demonstrează însă, de unul singur, că modificarea metadata a cauzat apariția citării, că sistemul a extras textul direct din câmpul <code>meta description</code> în acel moment sau că aceeași tehnică va produce același rezultat pe alte motoare. Studiul este util tocmai pentru această diferență: putem observa sursa textuală, dar trebuie să fim mai prudenți când descriem mecanismul și cauzalitatea.</strong></p>
 
       <p>Aceasta este miza corectă a documentului.</p>

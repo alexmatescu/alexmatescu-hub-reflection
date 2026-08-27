@@ -18,6 +18,7 @@ import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaz
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
 import { cuvantCheieVsFrazaTokenizareHtml } from "@/data/lab-content/8. cuvant-cheie-vs-fraza-tokenizare";
 import { decalajVitezaAiAdoptie2026Html } from "@/data/lab-content/12. decalaj-viteza-ai-adoptie-2026";
+import { etichetaAbonatRelatiaPrezentareAiSearchHtml } from "@/data/lab-content/13. eticheta-abonat-relatia-prezentare-ai-search";
 import { hartaDeCitareMentiuniExterneRomaniaHtml } from "@/data/lab-content/11. harta-de-citare-mentiuni-externe-romania";
 import { istoriaCautariiHtml } from "@/data/lab-content/1. istoria-cautarii-internet-evolutia-seo";
 import { metadataCitareAiStudiuDeCazHtml } from "@/data/lab-content/6. metadata-citare-ai-studiu-de-caz";
@@ -50,6 +51,7 @@ const labPageContent: Record<string, string> = {
   "/lab/articole/ce-este-entitate-ai-studiu-de-caz": ceEsteEntitateAiStudiuDeCazHtml,
   "/lab/articole/harta-de-citare-mentiuni-externe-romania": hartaDeCitareMentiuniExterneRomaniaHtml,
   "/lab/articole/decalaj-viteza-ai-adoptie-2026": decalajVitezaAiAdoptie2026Html,
+  "/lab/articole/eticheta-abonat-relatia-prezentare-ai-search": etichetaAbonatRelatiaPrezentareAiSearchHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 

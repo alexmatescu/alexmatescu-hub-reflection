@@ -1,1 +1,0 @@
-import{n as e}from"./Lab-n3-eUMP0.js";var t=e;export{t as component};

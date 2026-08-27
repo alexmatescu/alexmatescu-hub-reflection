@@ -106,6 +106,9 @@ export const cuvantCheieVsFrazaTokenizareMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const cuvantCheieVsFrazaTokenizareHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
+
       <p><strong>În AI Search, formularea tastată de utilizator nu este neapărat interogarea trimisă mai departe către un motor de căutare. OpenAI documentează că ChatGPT Search poate rescrie promptul într-una sau mai multe interogări țintite, iar Google documentează pentru AI Overviews și AI Mode tehnica de query fan-out, prin care modelul poate genera mai multe căutări conexe. Asta nu înseamnă însă că există o nouă regulă de tip „optimizează pentru query-ul intern". Din perspectiva publisherului, strategia robustă rămâne să acoperi intenția utilizatorului, să folosești terminologia clară și canonică atunci când este relevantă și să construiești conținut suficient de explicit pentru a putea fi regăsit prin mai multe formulări.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup></p>
 
       <p>Acest articol separă trei lucruri care sunt ușor de confundat:</p>

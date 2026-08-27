@@ -6,7 +6,7 @@ export const motoareCautareMeta = {
   title:
     "Motoarele de căutare comparate în 2026: cifrele care se contrazic, deciziile care au schimbat clasamentul și oamenii din spatele lor",
   description:
-    "Cotele de piață reale, de ce studiile diferă cu două ordine de mărime, și deciziile de distribuție care au decis fiecare schimbare de clasament din istoria căutării. Analiză AI Visibility Lab.",
+    "Cotele de piață reale, de ce studiile diferă cu două ordine de mărime, și deciziile de distribuție care au decis fiecare schimbare de clasament din istoria căutării. Analiză AI Vis§ibility Lab.",
   canonical: "https://delamatescu.ro/lab/articole/motoare-cautare-comparatie-2026",
   datePublished: "2026-08-14",
   dateModified: "2026-08-14",
@@ -36,6 +36,9 @@ export const motoareCautareMeta = {
 
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const motoareCautareHtml = `
+      <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
+      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-08-14">14 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-18">18 august 2026</time></p>
+
       <p><strong>În iunie 2026, Google deține 91,27% din piața globală a motoarelor de căutare măsurată de StatCounter, Bing 4,68%, Yahoo 1,28%, Yandex 0,79%, DuckDuckGo 0,67% și Baidu 0,43%. În Statele Unite, Google are 86,67%, iar Bing 8,73%; pe desktop, Bing urcă la 11,64%. În paralel, utilizarea instrumentelor AI nu poate fi redusă la o singură „cotă de piață”: traficul de referință, numărul de utilizatori, volumul de interogări și crawlingul măsoară fenomene diferite. Teza acestui articol este mai îngustă decât formula simplistă „distribuția bate produsul”: în search, calitatea poate crea avantajul, dar distribuția decide cât de repede și cât de departe poate scala acel avantaj.</strong></p>
 
       <h2>Clasamentul global, iunie 2026</h2>

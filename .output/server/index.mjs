@@ -18,283 +18,297 @@ globalThis.__nitro_vite_envs__ = services;
 var public_assets_data_default = {
 	"/.DS_Store": {
 		"type": "text/plain; charset=utf-8",
-		"etag": "\"2004-PN9wWJVZfTW0CQC4X9Qv4HrJAPI\"",
-		"mtime": "2026-08-19T17:59:34.579Z",
+		"etag": "\"2004-KCn+r3oOetKAFGLdMVTr07Qg6tc\"",
+		"mtime": "2026-08-27T16:14:38.819Z",
 		"size": 8196,
 		"path": "../public/.DS_Store"
 	},
 	"/favicon.webp": {
 		"type": "image/webp",
 		"etag": "\"4db8-Ry/uts93Y7Vz8x5TqzwpeVRfzP0\"",
-		"mtime": "2026-08-19T17:59:34.582Z",
+		"mtime": "2026-08-27T16:14:38.820Z",
 		"size": 19896,
 		"path": "../public/favicon.webp"
 	},
 	"/llms.txt": {
 		"type": "text/plain; charset=utf-8",
-		"etag": "\"62e-eadvCiyjMC1/daeCTq8N1312H0w\"",
-		"mtime": "2026-08-19T17:59:34.579Z",
-		"size": 1582,
+		"etag": "\"69f-OuMFtEAbOU648YNCQYEZSz08k6E\"",
+		"mtime": "2026-08-27T16:14:38.820Z",
+		"size": 1695,
 		"path": "../public/llms.txt"
-	},
-	"/placeholder.svg": {
-		"type": "image/svg+xml",
-		"etag": "\"6fd1-qWQOhyJn/rRMFfFPaVsAALDm3NY\"",
-		"mtime": "2026-08-19T17:59:34.580Z",
-		"size": 28625,
-		"path": "../public/placeholder.svg"
 	},
 	"/robots.txt": {
 		"type": "text/plain; charset=utf-8",
 		"etag": "\"390-kRF36TK1OPqP+SprMwVFc0yRyiU\"",
-		"mtime": "2026-08-19T17:59:34.581Z",
+		"mtime": "2026-08-27T16:14:38.821Z",
 		"size": 912,
 		"path": "../public/robots.txt"
 	},
-	"/sitemap.xml": {
-		"type": "application/xml",
-		"etag": "\"7c8d-FUFvCKx8jgQOW3zYkO1wBvx8Bik\"",
-		"mtime": "2026-08-19T17:59:34.581Z",
-		"size": 31885,
-		"path": "../public/sitemap.xml"
-	},
 	"/images/.DS_Store": {
 		"type": "text/plain; charset=utf-8",
-		"etag": "\"2004-hXpOPPCp1tNGGkh3/MxG5Uhdtj8\"",
-		"mtime": "2026-08-19T17:59:34.522Z",
+		"etag": "\"2004-JsqymuDU0dBDyyPgSoijNPS6ofI\"",
+		"mtime": "2026-08-27T16:14:38.756Z",
 		"size": 8196,
 		"path": "../public/images/.DS_Store"
 	},
-	"/assets/NewsletterForm-CbaMZP5n.js": {
+	"/placeholder.svg": {
+		"type": "image/svg+xml",
+		"etag": "\"6fd1-qWQOhyJn/rRMFfFPaVsAALDm3NY\"",
+		"mtime": "2026-08-27T16:14:38.821Z",
+		"size": 28625,
+		"path": "../public/placeholder.svg"
+	},
+	"/sitemap.xml": {
+		"type": "application/xml",
+		"etag": "\"7d62-T/li4DV6/lStlSb4nbHSeVRF9V4\"",
+		"mtime": "2026-08-27T16:14:38.822Z",
+		"size": 32098,
+		"path": "../public/sitemap.xml"
+	},
+	"/assets/NewsletterForm-G4_7ZYTQ.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"cb2-cpfwJSCz/yAlHOva6/+Fn/DY71Y\"",
-		"mtime": "2026-08-19T17:59:34.263Z",
+		"etag": "\"cb2-48Tauv8ZMeLbKGbwQ4URbicOQ7s\"",
+		"mtime": "2026-08-27T16:14:38.504Z",
 		"size": 3250,
-		"path": "../public/assets/NewsletterForm-CbaMZP5n.js"
+		"path": "../public/assets/NewsletterForm-G4_7ZYTQ.js"
 	},
-	"/assets/Seo-B2m5xV9m.js": {
+	"/assets/Seo-bZDNNx_t.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"aa8-6jpxDvKXsaZ5LihHSS8xJnnBByY\"",
-		"mtime": "2026-08-19T17:59:34.263Z",
-		"size": 2728,
-		"path": "../public/assets/Seo-B2m5xV9m.js"
+		"etag": "\"af6-a69P3Fb2heKUbxSlJM0f0U3YrX0\"",
+		"mtime": "2026-08-27T16:14:38.504Z",
+		"size": 2806,
+		"path": "../public/assets/Seo-bZDNNx_t.js"
 	},
-	"/assets/_slug-5cQULhLv.js": {
+	"/assets/_parent._slug-CfzP3pPY.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1c30-ZaqfVUgqtEuTxlnp+8+2PQlA3V8\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 7216,
-		"path": "../public/assets/_slug-5cQULhLv.js"
-	},
-	"/assets/_slug-IZlng1tE.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1026-3feh0G5SlTb6G46X1byODtSxm3Y\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 4134,
-		"path": "../public/assets/_slug-IZlng1tE.js"
-	},
-	"/assets/_site-DMiPRK5n.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"c34f-emES9owCuKXI17rRBzwj4Z8wzxg\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 49999,
-		"path": "../public/assets/_site-DMiPRK5n.js"
-	},
-	"/assets/_slug-g4YOUZqJ.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"ee-11rpxMPNNY7TSF/lEfeFaSzKyNc\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 238,
-		"path": "../public/assets/_slug-g4YOUZqJ.js"
-	},
-	"/assets/_parent._slug-C5cZEXWv.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"f7-d/VSKtS5UGP9B1Nl2p4c1S1fffE\"",
-		"mtime": "2026-08-19T17:59:34.263Z",
+		"etag": "\"f7-vunmagfTdn6Bram2Fz8jbWyr+8U\"",
+		"mtime": "2026-08-27T16:14:38.504Z",
 		"size": 247,
-		"path": "../public/assets/_parent._slug-C5cZEXWv.js"
+		"path": "../public/assets/_parent._slug-CfzP3pPY.js"
 	},
-	"/assets/_site-BEHxrwsK.js": {
+	"/assets/_slug-D-lgR4eg.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"3381-Ss5DUm+J588A8avGQXK/O5VGdzs\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 13185,
-		"path": "../public/assets/_site-BEHxrwsK.js"
+		"etag": "\"1026-VGfOdaPEC7RKiCAK2Gx2v07ss0Q\"",
+		"mtime": "2026-08-27T16:14:38.505Z",
+		"size": 4134,
+		"path": "../public/assets/_slug-D-lgR4eg.js"
 	},
-	"/assets/accordion-DI9cFTQZ.js": {
+	"/assets/_slug-BVHrxj5D.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1b89-kcIPdkwhe4m8GM7O6SAi1ApYF/4\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 7049,
-		"path": "../public/assets/accordion-DI9cFTQZ.js"
+		"etag": "\"ee-GBo0aiqCeK8iqHtadmjwaNFsp5Q\"",
+		"mtime": "2026-08-27T16:14:38.505Z",
+		"size": 238,
+		"path": "../public/assets/_slug-BVHrxj5D.js"
 	},
-	"/assets/arrow-left-BEErJzv1.js": {
+	"/assets/_site-BFpfVr0M.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"a5-fu0y5jXiAyqtT4U2xP1iV0sq+fs\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 165,
-		"path": "../public/assets/arrow-left-BEErJzv1.js"
+		"etag": "\"33b8-aUceRZ3cgb5HdxqvE5BGtsVA7dI\"",
+		"mtime": "2026-08-27T16:14:38.505Z",
+		"size": 13240,
+		"path": "../public/assets/_site-BFpfVr0M.js"
 	},
-	"/assets/abonati-DGSSCL6Q.js": {
+	"/assets/Lab-DyOLxVhp.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"19d5-WhPqgPK2DuORyvUb6wMfNtF4KBQ\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
+		"etag": "\"2eb28-s3AwVSvpTCT8JroXr1/rzOfb03E\"",
+		"mtime": "2026-08-27T16:14:38.504Z",
+		"size": 191272,
+		"path": "../public/assets/Lab-DyOLxVhp.js"
+	},
+	"/assets/_slug-pr-3qV9m.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"1c30-4ZQcfbKotf9uIfIthr7Utf/f/Ek\"",
+		"mtime": "2026-08-27T16:14:38.505Z",
+		"size": 7216,
+		"path": "../public/assets/_slug-pr-3qV9m.js"
+	},
+	"/assets/abonati-BS1V1D1d.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"19d5-bcQ8eJig/62agVXEQsMdPmd+buM\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
 		"size": 6613,
-		"path": "../public/assets/abonati-DGSSCL6Q.js"
+		"path": "../public/assets/abonati-BS1V1D1d.js"
 	},
-	"/assets/arrow-up-right-Dl8303pE.js": {
+	"/assets/_site-Dc4qQN0P.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"a7-71P8QbdWZbg4Qf7+K7sIPPbScqU\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 167,
-		"path": "../public/assets/arrow-up-right-Dl8303pE.js"
-	},
-	"/assets/blog-T3ak4i9y.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"f7c-gYecBDrcyzV1YrHWxsp96JLlmyE\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 3964,
-		"path": "../public/assets/blog-T3ak4i9y.js"
+		"etag": "\"c351-M+GlYuJ4ceDRmkrR1WnypHg5xjk\"",
+		"mtime": "2026-08-27T16:14:38.505Z",
+		"size": 50001,
+		"path": "../public/assets/_site-Dc4qQN0P.js"
 	},
 	"/assets/arrow-right-D5pQCwSL.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"a5-ZEAsrP4e3qMmAxYVGwTMi/L1e3g\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
+		"mtime": "2026-08-27T16:14:38.506Z",
 		"size": 165,
 		"path": "../public/assets/arrow-right-D5pQCwSL.js"
 	},
-	"/assets/Lab-n3-eUMP0.js": {
+	"/assets/arrow-up-right-Dl8303pE.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"2cf50-5k0CNDxS7JFIxFIhBb/aoVhW400\"",
-		"mtime": "2026-08-19T17:59:34.263Z",
-		"size": 184144,
-		"path": "../public/assets/Lab-n3-eUMP0.js"
+		"etag": "\"a7-71P8QbdWZbg4Qf7+K7sIPPbScqU\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
+		"size": 167,
+		"path": "../public/assets/arrow-up-right-Dl8303pE.js"
 	},
-	"/assets/calatoria-D4wtq29i.js": {
+	"/assets/blog-DsYQ6NXb.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"7fb5-HKVocWllT9blI4udgDL44mUZSfk\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 32693,
-		"path": "../public/assets/calatoria-D4wtq29i.js"
+		"etag": "\"f7c-VcdsbgwyPNO6vYqNZOO48SVOT1c\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
+		"size": 3964,
+		"path": "../public/assets/blog-DsYQ6NXb.js"
 	},
-	"/favicon.png": {
-		"type": "image/png",
-		"etag": "\"14a47c-CMPRlWHZApWhGU9oBTyuTRhGDOs\"",
-		"mtime": "2026-08-19T17:59:34.586Z",
-		"size": 1352828,
-		"path": "../public/favicon.png"
+	"/assets/arrow-left-BEErJzv1.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"a5-fu0y5jXiAyqtT4U2xP1iV0sq+fs\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
+		"size": 165,
+		"path": "../public/assets/arrow-left-BEErJzv1.js"
+	},
+	"/assets/accordion-BdYUxmNU.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"1b89-RoKm1t+7rB1QVM812W+AgNz2ggw\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
+		"size": 7049,
+		"path": "../public/assets/accordion-BdYUxmNU.js"
+	},
+	"/assets/calatoria-1L8pmXs_.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"8009-K/b0HWQBgPEutqLReVrgJa4PNZA\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
+		"size": 32777,
+		"path": "../public/assets/calatoria-1L8pmXs_.js"
 	},
 	"/images/AlexMatescu-profile-picture.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"1529dc-YTxU0P4nZbB8/7TvUy6xqnB+l0g\"",
-		"mtime": "2026-08-19T17:59:34.524Z",
+		"mtime": "2026-08-27T16:14:38.759Z",
 		"size": 1386972,
 		"path": "../public/images/AlexMatescu-profile-picture.jpg"
 	},
-	"/assets/carte-CWI2qBai.js": {
+	"/favicon.png": {
+		"type": "image/png",
+		"etag": "\"14a47c-CMPRlWHZApWhGU9oBTyuTRhGDOs\"",
+		"mtime": "2026-08-27T16:14:38.824Z",
+		"size": 1352828,
+		"path": "../public/favicon.png"
+	},
+	"/assets/carte-CTuj9skw.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"6836-e+Qasl6Qb3OMnHQ/kNBlw4yhr8s\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
+		"etag": "\"6836-3g8zDemzYKHksYHNTZcgRkzsqIc\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
 		"size": 26678,
-		"path": "../public/assets/carte-CWI2qBai.js"
-	},
-	"/assets/contact-COR3m-3i.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"f649-AMJvSYMSZV+fMSR1bKY4bOBPMac\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
-		"size": 63049,
-		"path": "../public/assets/contact-COR3m-3i.js"
-	},
-	"/assets/crandit-g16EzF08.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"16c9-cEdpTk+5+WGE0bD7SY/WcGO4rTc\"",
-		"mtime": "2026-08-19T17:59:34.265Z",
-		"size": 5833,
-		"path": "../public/assets/crandit-g16EzF08.js"
-	},
-	"/assets/createLucideIcon-CEGepnBf.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"4ab-9w7034WUPiHI10TPGK6P975saJ0\"",
-		"mtime": "2026-08-19T17:59:34.265Z",
-		"size": 1195,
-		"path": "../public/assets/createLucideIcon-CEGepnBf.js"
+		"path": "../public/assets/carte-CTuj9skw.js"
 	},
 	"/assets/client-BdTZYWw5.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"331cf-pZv3raxOx2UbJ0yph9/4GhWcPX0\"",
-		"mtime": "2026-08-19T17:59:34.264Z",
+		"mtime": "2026-08-27T16:14:38.506Z",
 		"size": 209359,
 		"path": "../public/assets/client-BdTZYWw5.js"
 	},
-	"/assets/despre-CewnUi4C.js": {
+	"/assets/contact-rUpxUGlO.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"48f1-37lCOszT7K/fwmaVl7INRY8ofuY\"",
-		"mtime": "2026-08-19T17:59:34.265Z",
-		"size": 18673,
-		"path": "../public/assets/despre-CewnUi4C.js"
+		"etag": "\"f6bb-I6M3HJ7MWvBrkbYK7g83v2Dvcp8\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
+		"size": 63163,
+		"path": "../public/assets/contact-rUpxUGlO.js"
 	},
-	"/assets/dist-COgOIooo.js": {
+	"/assets/crandit-CXw_8eTe.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"28a-eC4gIZ2dFYCfIc4cNJKzbIjPfI0\"",
-		"mtime": "2026-08-19T17:59:34.266Z",
-		"size": 650,
-		"path": "../public/assets/dist-COgOIooo.js"
+		"etag": "\"16c9-BTv2neRSmShfeuekB3//EDqTsVo\"",
+		"mtime": "2026-08-27T16:14:38.506Z",
+		"size": 5833,
+		"path": "../public/assets/crandit-CXw_8eTe.js"
+	},
+	"/assets/createLucideIcon-CEGepnBf.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"4ab-9w7034WUPiHI10TPGK6P975saJ0\"",
+		"mtime": "2026-08-27T16:14:38.507Z",
+		"size": 1195,
+		"path": "../public/assets/createLucideIcon-CEGepnBf.js"
+	},
+	"/assets/despre-BflhD3Nb.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"4c9d-iorHKVWRCEeGeMfl+7qrWd+PD0Y\"",
+		"mtime": "2026-08-27T16:14:38.507Z",
+		"size": 19613,
+		"path": "../public/assets/despre-BflhD3Nb.js"
 	},
 	"/assets/dist-20AqsKik.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"43dd-h7AXJWLpFlmtIRHMjudHFGHmp+8\"",
-		"mtime": "2026-08-19T17:59:34.266Z",
+		"mtime": "2026-08-27T16:14:38.507Z",
 		"size": 17373,
 		"path": "../public/assets/dist-20AqsKik.js"
+	},
+	"/assets/dist-COgOIooo.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"28a-eC4gIZ2dFYCfIc4cNJKzbIjPfI0\"",
+		"mtime": "2026-08-27T16:14:38.507Z",
+		"size": 650,
+		"path": "../public/assets/dist-COgOIooo.js"
 	},
 	"/assets/jsx-runtime-Cltr0gcK.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"20ee-ObwGPj96dlkL76iVLbX2wLAXzuw\"",
-		"mtime": "2026-08-19T17:59:34.266Z",
+		"mtime": "2026-08-27T16:14:38.507Z",
 		"size": 8430,
 		"path": "../public/assets/jsx-runtime-Cltr0gcK.js"
 	},
-	"/assets/lab-BiN0Ud-e.js": {
+	"/assets/lab-Co9mrDdp.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"45-8YcVwjTSF43TCrRaleGUHSV0E54\"",
-		"mtime": "2026-08-19T17:59:34.266Z",
+		"etag": "\"45-fAtg8KqCoh3GoUSF6EfOxsU+CFc\"",
+		"mtime": "2026-08-27T16:14:38.507Z",
 		"size": 69,
-		"path": "../public/assets/lab-BiN0Ud-e.js"
+		"path": "../public/assets/lab-Co9mrDdp.js"
 	},
-	"/assets/mesaje-CajdQl6Z.js": {
+	"/assets/mesaje-wr3NhMGH.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1393-dPu6lKskctMKWS5bem11w/RyLVU\"",
-		"mtime": "2026-08-19T17:59:34.266Z",
+		"etag": "\"1393-AbvnfPnY5epoyHZWGAV5ct45/XQ\"",
+		"mtime": "2026-08-27T16:14:38.507Z",
 		"size": 5011,
-		"path": "../public/assets/mesaje-CajdQl6Z.js"
+		"path": "../public/assets/mesaje-wr3NhMGH.js"
 	},
-	"/assets/presa-DFS8nYIO.js": {
+	"/assets/presa-Ce-V4baj.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"7ae-YLKVcxmC1l/rnSIiQfp3qo4TMYY\"",
-		"mtime": "2026-08-19T17:59:34.266Z",
+		"etag": "\"7ae-1kcBJ5mLVT4NJwBYVvuym+nbw4c\"",
+		"mtime": "2026-08-27T16:14:38.507Z",
 		"size": 1966,
-		"path": "../public/assets/presa-DFS8nYIO.js"
+		"path": "../public/assets/presa-Ce-V4baj.js"
 	},
-	"/assets/proiecte-jxKqnxOQ.js": {
+	"/assets/proiecte-B3j-ntcI.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"e98-N/6MCU+hoh73SxvLcTixQCNLRjQ\"",
-		"mtime": "2026-08-19T17:59:34.267Z",
+		"etag": "\"e98-VCrGRwAny1/jrHhpIGL0YqNmm4Y\"",
+		"mtime": "2026-08-27T16:14:38.507Z",
 		"size": 3736,
-		"path": "../public/assets/proiecte-jxKqnxOQ.js"
+		"path": "../public/assets/proiecte-B3j-ntcI.js"
 	},
 	"/assets/react-dom-c8CiVcdp.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"dde-v2rj0M/R609wdLvPW5J0CbS25fk\"",
-		"mtime": "2026-08-19T17:59:34.267Z",
+		"mtime": "2026-08-27T16:14:38.507Z",
 		"size": 3550,
 		"path": "../public/assets/react-dom-c8CiVcdp.js"
 	},
 	"/assets/router-compat-Bw9qB0WQ.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"12118-4Yiqc+Epbtdn7xR1E+LVp2qcmT8\"",
-		"mtime": "2026-08-19T17:59:34.267Z",
+		"mtime": "2026-08-27T16:14:38.508Z",
 		"size": 74008,
 		"path": "../public/assets/router-compat-Bw9qB0WQ.js"
+	},
+	"/assets/styles-CdyG-eRX.css": {
+		"type": "text/css; charset=utf-8",
+		"etag": "\"19ac0-JCXEr4URGcE8YBcij7UCIk3GB9c\"",
+		"mtime": "2026-08-27T16:14:38.508Z",
+		"size": 105152,
+		"path": "../public/assets/styles-CdyG-eRX.css"
+	},
+	"/assets/tslib.es6-Tae09705.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"42d-qJHuGuq51+EbLaebsBAkbj1JLbk\"",
+		"mtime": "2026-08-27T16:14:38.508Z",
+		"size": 1069,
+		"path": "../public/assets/tslib.es6-Tae09705.js"
 	},
 	"/images/blog/.gitkeep": {
 		"type": "text/plain; charset=utf-8",
@@ -303,990 +317,983 @@ var public_assets_data_default = {
 		"size": 0,
 		"path": "../public/images/blog/.gitkeep"
 	},
-	"/assets/tslib.es6-Tae09705.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"42d-qJHuGuq51+EbLaebsBAkbj1JLbk\"",
-		"mtime": "2026-08-19T17:59:34.267Z",
-		"size": 1069,
-		"path": "../public/assets/tslib.es6-Tae09705.js"
-	},
-	"/assets/styles-BpXBZU3Z.css": {
-		"type": "text/css; charset=utf-8",
-		"etag": "\"198c4-2w9VP+dEYcD9DH694jB2tnHioWg\"",
-		"mtime": "2026-08-19T17:59:34.267Z",
-		"size": 104644,
-		"path": "../public/assets/styles-BpXBZU3Z.css"
-	},
 	"/images/blog/150107151100-large.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"e72e-q4QktgFwH3S2B5vCY4lY1LPY17U\"",
-		"mtime": "2026-08-19T17:59:34.583Z",
+		"mtime": "2026-08-27T16:14:38.757Z",
 		"size": 59182,
 		"path": "../public/images/blog/150107151100-large.jpg"
 	},
 	"/images/blog/Captura__de_ecran_din_2025-09-22_la_19.23.58.webp": {
 		"type": "image/webp",
 		"etag": "\"881e-Xu2e1bVktGOH37WliOR92XVubJ0\"",
-		"mtime": "2026-08-19T17:59:34.583Z",
+		"mtime": "2026-08-27T16:14:38.757Z",
 		"size": 34846,
 		"path": "../public/images/blog/Captura__de_ecran_din_2025-09-22_la_19.23.58.webp"
 	},
 	"/images/blog/ChatGPT_Image_Feb_12__2026__05_52_18_PM.webp": {
 		"type": "image/webp",
 		"etag": "\"16d3c-cQ92zzN20IRsLBFKKCm3Z+2Qhys\"",
-		"mtime": "2026-08-19T17:59:34.584Z",
+		"mtime": "2026-08-27T16:14:38.757Z",
 		"size": 93500,
 		"path": "../public/images/blog/ChatGPT_Image_Feb_12__2026__05_52_18_PM.webp"
 	},
 	"/images/blog/IMG_11031227295966.jpeg": {
 		"type": "image/jpeg",
 		"etag": "\"965d-m5UtkG1F8XHAZY5JD02bfjGDk/o\"",
-		"mtime": "2026-08-19T17:59:34.585Z",
+		"mtime": "2026-08-27T16:14:38.757Z",
 		"size": 38493,
 		"path": "../public/images/blog/IMG_11031227295966.jpeg"
 	},
 	"/images/blog/IMG_49311441823328.jpeg": {
 		"type": "image/jpeg",
 		"etag": "\"10171-+MqBfB+USERDyyI3Lgkm9+kJe24\"",
-		"mtime": "2026-08-19T17:59:34.585Z",
+		"mtime": "2026-08-27T16:14:38.758Z",
 		"size": 65905,
 		"path": "../public/images/blog/IMG_49311441823328.jpeg"
 	},
 	"/images/blog/Stiinta.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"a105-Byt5yznlBwb5+Q+ePtZi8Y7sGtE\"",
-		"mtime": "2026-08-19T17:59:34.586Z",
+		"mtime": "2026-08-27T16:14:38.757Z",
 		"size": 41221,
 		"path": "../public/images/blog/Stiinta.jpg"
 	},
-	"/assets/index-B-pFPf1A.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1cb635-l+sL25VrrLaIDVySwz7DKgDZ/Ms\"",
-		"mtime": "2026-08-19T17:59:34.262Z",
-		"size": 1881653,
-		"path": "../public/assets/index-B-pFPf1A.js"
-	},
-	"/images/blog/_blog_-_eseu_-_Somn__mis_care__hrana__-_baza_ignorata__a_echilibrului_mental.webp": {
+	"/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp": {
 		"type": "image/webp",
-		"etag": "\"1cbd2-30qdR1qHjAzh1gFyqNHnOYogjlQ\"",
-		"mtime": "2026-08-19T17:59:34.587Z",
-		"size": 117714,
-		"path": "../public/images/blog/_blog_-_eseu_-_Somn__mis_care__hrana__-_baza_ignorata__a_echilibrului_mental.webp"
+		"etag": "\"22c9c-4SPEKOgRNuudbHhQsh+cOiWLQWM\"",
+		"mtime": "2026-08-27T16:14:38.759Z",
+		"size": 142492,
+		"path": "../public/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp"
+	},
+	"/assets/index-BXOrt1EA.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"1ce6b0-V2lTTBiCPnQ+sKd4RhcgGpk8ec0\"",
+		"mtime": "2026-08-27T16:14:38.504Z",
+		"size": 1894064,
+		"path": "../public/assets/index-BXOrt1EA.js"
 	},
 	"/images/blog/aaaqqqw.webp": {
 		"type": "image/webp",
 		"etag": "\"8aea-7sK2rg63xWGOEZWr9PSqK1ZOfAg\"",
-		"mtime": "2026-08-19T17:59:34.586Z",
+		"mtime": "2026-08-27T16:14:38.760Z",
 		"size": 35562,
 		"path": "../public/images/blog/aaaqqqw.webp"
 	},
 	"/images/blog/ai-visibility-hero.webp": {
 		"type": "image/webp",
 		"etag": "\"2f96a-SEkLBW0SXnAA3UeisbUhE5CNYHY\"",
-		"mtime": "2026-08-19T17:59:34.587Z",
+		"mtime": "2026-08-27T16:14:38.768Z",
 		"size": 194922,
 		"path": "../public/images/blog/ai-visibility-hero.webp"
+	},
+	"/images/blog/alegeri-vara.webp": {
+		"type": "image/webp",
+		"etag": "\"2cd0c-I4oyMUQLRAY2TxDZYL/3dwvYc/c\"",
+		"mtime": "2026-08-27T16:14:38.760Z",
+		"size": 183564,
+		"path": "../public/images/blog/alegeri-vara.webp"
 	},
 	"/images/blog/are_blog_-_Atent_ia_a_devenit_noua_moneda_._Iar_noi_o_cheltuim_react_iona_nd.webp": {
 		"type": "image/webp",
 		"etag": "\"ba86-Pmn4DTtKBCP0ZqoOXP3tWycitwI\"",
-		"mtime": "2026-08-19T17:59:34.588Z",
+		"mtime": "2026-08-27T16:14:38.760Z",
 		"size": 47750,
 		"path": "../public/images/blog/are_blog_-_Atent_ia_a_devenit_noua_moneda_._Iar_noi_o_cheltuim_react_iona_nd.webp"
 	},
 	"/images/blog/bad.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"d451-yLOUuUzKaJZvHm0vOTAL3dWivDM\"",
-		"mtime": "2026-08-19T17:59:34.590Z",
+		"mtime": "2026-08-27T16:14:38.760Z",
 		"size": 54353,
 		"path": "../public/images/blog/bad.jpg"
-	},
-	"/images/blog/alegeri-vara.webp": {
-		"type": "image/webp",
-		"etag": "\"2cd0c-I4oyMUQLRAY2TxDZYL/3dwvYc/c\"",
-		"mtime": "2026-08-19T17:59:34.588Z",
-		"size": 183564,
-		"path": "../public/images/blog/alegeri-vara.webp"
 	},
 	"/images/blog/bg.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"5955-YbyWMeHrgFJbBBu+0RRyiXb5u3Y\"",
-		"mtime": "2026-08-19T17:59:34.589Z",
+		"mtime": "2026-08-27T16:14:38.761Z",
 		"size": 22869,
 		"path": "../public/images/blog/bg.jpg"
+	},
+	"/images/blog/blog1.JPG": {
+		"type": "image/jpeg",
+		"etag": "\"12744-8xRG/u1cN/9nq99RReo6n054cOs\"",
+		"mtime": "2026-08-27T16:14:38.762Z",
+		"size": 75588,
+		"path": "../public/images/blog/blog1.JPG"
 	},
 	"/images/blog/bgg.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"103ba-4QBomt1CqzzXQAoeObcllYFK0II\"",
-		"mtime": "2026-08-19T17:59:34.522Z",
+		"mtime": "2026-08-27T16:14:38.761Z",
 		"size": 66490,
 		"path": "../public/images/blog/bgg.jpg"
 	},
 	"/images/blog/blogg.webp": {
 		"type": "image/webp",
 		"etag": "\"864c-4+63+cb207PmbJlpEof/1PGPtBc\"",
-		"mtime": "2026-08-19T17:59:34.522Z",
+		"mtime": "2026-08-27T16:14:38.761Z",
 		"size": 34380,
 		"path": "../public/images/blog/blogg.webp"
 	},
-	"/images/blog/blog1.JPG": {
-		"type": "image/jpeg",
-		"etag": "\"12744-8xRG/u1cN/9nq99RReo6n054cOs\"",
-		"mtime": "2026-08-19T17:59:34.522Z",
-		"size": 75588,
-		"path": "../public/images/blog/blog1.JPG"
+	"/images/blog/caesar.webp": {
+		"type": "image/webp",
+		"etag": "\"619e-mTx1lcVZ4mdSJfguPsreiRAyoPk\"",
+		"mtime": "2026-08-27T16:14:38.762Z",
+		"size": 24990,
+		"path": "../public/images/blog/caesar.webp"
 	},
 	"/images/blog/changes.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"1f68b-crkiVW0tzL3qz6Y1Gl9RY2mEFa0\"",
-		"mtime": "2026-08-19T17:59:34.523Z",
+		"mtime": "2026-08-27T16:14:38.764Z",
 		"size": 128651,
 		"path": "../public/images/blog/changes.jpg"
 	},
 	"/images/blog/chioices.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"2ee9-kLWLk3mIzK1bsCnkU4SJzFBST8I\"",
-		"mtime": "2026-08-19T17:59:34.523Z",
+		"mtime": "2026-08-27T16:14:38.763Z",
 		"size": 12009,
 		"path": "../public/images/blog/chioices.jpg"
 	},
-	"/images/blog/costul-invizibil-istoriei.webp": {
-		"type": "image/webp",
-		"etag": "\"49608-odN/gpWtsUIDBQ3KMEfL/LgR//Q\"",
-		"mtime": "2026-08-19T17:59:34.526Z",
-		"size": 300552,
-		"path": "../public/images/blog/costul-invizibil-istoriei.webp"
-	},
-	"/images/blog/confused_by_vonzilla.jpg": {
+	"/images/blog/cheating.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"5b2b-hYU6xGTN5AmxhekKL7S4FzkmZCM\"",
-		"mtime": "2026-08-19T17:59:34.525Z",
-		"size": 23339,
-		"path": "../public/images/blog/confused_by_vonzilla.jpg"
+		"etag": "\"5700f-7dP+g2tEIUWzES99dazkKPlKuH4\"",
+		"mtime": "2026-08-27T16:14:38.765Z",
+		"size": 356367,
+		"path": "../public/images/blog/cheating.jpg"
 	},
 	"/images/blog/cifrul-succesului-hero.webp": {
 		"type": "image/webp",
 		"etag": "\"346a6-IK/1Fn9OtaoFZYoLUAstdXU3o6M\"",
-		"mtime": "2026-08-19T17:59:34.526Z",
+		"mtime": "2026-08-27T16:14:38.767Z",
 		"size": 214694,
 		"path": "../public/images/blog/cifrul-succesului-hero.webp"
 	},
-	"/images/blog/caesar.webp": {
-		"type": "image/webp",
-		"etag": "\"619e-mTx1lcVZ4mdSJfguPsreiRAyoPk\"",
-		"mtime": "2026-08-19T17:59:34.522Z",
-		"size": 24990,
-		"path": "../public/images/blog/caesar.webp"
+	"/images/blog/confused_by_vonzilla.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5b2b-hYU6xGTN5AmxhekKL7S4FzkmZCM\"",
+		"mtime": "2026-08-27T16:14:38.764Z",
+		"size": 23339,
+		"path": "../public/images/blog/confused_by_vonzilla.jpg"
 	},
 	"/images/blog/crandit-cover.webp": {
 		"type": "image/webp",
 		"etag": "\"17024-ADvaHYiitTn2lTEabxvefKrSGSQ\"",
-		"mtime": "2026-08-19T17:59:34.527Z",
+		"mtime": "2026-08-27T16:14:38.764Z",
 		"size": 94244,
 		"path": "../public/images/blog/crandit-cover.webp"
 	},
 	"/images/blog/cuplu-fericit-razand.webp": {
 		"type": "image/webp",
 		"etag": "\"a148-RRH5DZXruSpJUh7JF2wf1egCwZo\"",
-		"mtime": "2026-08-19T17:59:34.527Z",
+		"mtime": "2026-08-27T16:14:38.765Z",
 		"size": 41288,
 		"path": "../public/images/blog/cuplu-fericit-razand.webp"
 	},
-	"/images/blog/decisions.jpeg": {
-		"type": "image/jpeg",
-		"etag": "\"6826-wwmggca2ofZKyX4z95QNlgrUBnQ\"",
-		"mtime": "2026-08-19T17:59:34.578Z",
-		"size": 26662,
-		"path": "../public/images/blog/decisions.jpeg"
+	"/images/blog/costul-invizibil-istoriei.webp": {
+		"type": "image/webp",
+		"etag": "\"49608-odN/gpWtsUIDBQ3KMEfL/LgR//Q\"",
+		"mtime": "2026-08-27T16:14:38.765Z",
+		"size": 300552,
+		"path": "../public/images/blog/costul-invizibil-istoriei.webp"
+	},
+	"/images/blog/_blog_-_eseu_-_Somn__mis_care__hrana__-_baza_ignorata__a_echilibrului_mental.webp": {
+		"type": "image/webp",
+		"etag": "\"1cbd2-30qdR1qHjAzh1gFyqNHnOYogjlQ\"",
+		"mtime": "2026-08-27T16:14:38.758Z",
+		"size": 117714,
+		"path": "../public/images/blog/_blog_-_eseu_-_Somn__mis_care__hrana__-_baza_ignorata__a_echilibrului_mental.webp"
 	},
 	"/images/blog/de-ce-3.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"19f72-PZH/ezXC5JMRFsAjKmXVtdcg6PM\"",
-		"mtime": "2026-08-19T17:59:34.529Z",
+		"mtime": "2026-08-27T16:14:38.767Z",
 		"size": 106354,
 		"path": "../public/images/blog/de-ce-3.jpg"
 	},
-	"/images/blog/cheating.jpg": {
+	"/images/blog/decisions.jpeg": {
 		"type": "image/jpeg",
-		"etag": "\"5700f-7dP+g2tEIUWzES99dazkKPlKuH4\"",
-		"mtime": "2026-08-19T17:59:34.524Z",
-		"size": 356367,
-		"path": "../public/images/blog/cheating.jpg"
+		"etag": "\"6826-wwmggca2ofZKyX4z95QNlgrUBnQ\"",
+		"mtime": "2026-08-27T16:14:38.766Z",
+		"size": 26662,
+		"path": "../public/images/blog/decisions.jpeg"
 	},
 	"/images/blog/dsa.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"6272-d9k8alLdtVehVtLkFyQqORgtPJ0\"",
-		"mtime": "2026-08-19T17:59:34.528Z",
+		"mtime": "2026-08-27T16:14:38.766Z",
 		"size": 25202,
 		"path": "../public/images/blog/dsa.jpg"
 	},
 	"/images/blog/eseu_Recorder-Justitie.webp": {
 		"type": "image/webp",
 		"etag": "\"563aa-1HBNqfbwVBVNcYc2paVo8qut3Is\"",
-		"mtime": "2026-08-19T17:59:34.530Z",
+		"mtime": "2026-08-27T16:14:38.769Z",
 		"size": 353194,
 		"path": "../public/images/blog/eseu_Recorder-Justitie.webp"
 	},
 	"/images/blog/femei.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"ebd5-rRcSlc9ViKvImA6wDsIVneBVkEU\"",
-		"mtime": "2026-08-19T17:59:34.529Z",
+		"mtime": "2026-08-27T16:14:38.768Z",
 		"size": 60373,
 		"path": "../public/images/blog/femei.jpg"
 	},
 	"/images/blog/focus.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"26316-Qe/NA7e760rirUEC4ZOU2M1ycxo\"",
-		"mtime": "2026-08-19T17:59:34.532Z",
+		"mtime": "2026-08-27T16:14:38.770Z",
 		"size": 156438,
 		"path": "../public/images/blog/focus.jpg"
-	},
-	"/images/blog/girl.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"404cd-4/paLoW7L2o44gvsjPOLGXBmGTk\"",
-		"mtime": "2026-08-19T17:59:34.534Z",
-		"size": 263373,
-		"path": "../public/images/blog/girl.jpg"
 	},
 	"/images/blog/fucking.webp": {
 		"type": "image/webp",
 		"etag": "\"8d8e-KtMIu7ABO/8ex7s77za4IRQotvM\"",
-		"mtime": "2026-08-19T17:59:34.530Z",
+		"mtime": "2026-08-27T16:14:38.769Z",
 		"size": 36238,
 		"path": "../public/images/blog/fucking.webp"
 	},
-	"/images/blog/indiferenta.jpg": {
+	"/images/blog/girl.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"38e2-D8sXzja44ypmqUJRCZvdIc94o9o\"",
-		"mtime": "2026-08-19T17:59:34.532Z",
-		"size": 14562,
-		"path": "../public/images/blog/indiferenta.jpg"
+		"etag": "\"404cd-4/paLoW7L2o44gvsjPOLGXBmGTk\"",
+		"mtime": "2026-08-27T16:14:38.772Z",
+		"size": 263373,
+		"path": "../public/images/blog/girl.jpg"
 	},
 	"/images/blog/images.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"13a2-Xon6+Jbn00zQ0NAinf129Rj78Lo\"",
-		"mtime": "2026-08-19T17:59:34.530Z",
+		"mtime": "2026-08-27T16:14:38.769Z",
 		"size": 5026,
 		"path": "../public/images/blog/images.jpg"
 	},
-	"/images/blog/informatia-care-exista-hero.webp": {
-		"type": "image/webp",
-		"etag": "\"3bdde-m9p09Bmqp9WWFdKvnE2yKPIlWf0\"",
-		"mtime": "2026-08-19T17:59:34.533Z",
-		"size": 245214,
-		"path": "../public/images/blog/informatia-care-exista-hero.webp"
+	"/images/blog/indiferenta.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"38e2-D8sXzja44ypmqUJRCZvdIc94o9o\"",
+		"mtime": "2026-08-27T16:14:38.771Z",
+		"size": 14562,
+		"path": "../public/images/blog/indiferenta.jpg"
 	},
 	"/images/blog/jurnal_de_bord_07.04.2024-77777ad6.webp": {
 		"type": "image/webp",
 		"etag": "\"bb30-ZknohJSUKvPFGBgubyezmDPrzHA\"",
-		"mtime": "2026-08-19T17:59:34.533Z",
+		"mtime": "2026-08-27T16:14:38.770Z",
 		"size": 47920,
 		"path": "../public/images/blog/jurnal_de_bord_07.04.2024-77777ad6.webp"
+	},
+	"/images/blog/jurnal_de_bord_07.04.2024-e6241ae5.webp": {
+		"type": "image/webp",
+		"etag": "\"bb30-ZknohJSUKvPFGBgubyezmDPrzHA\"",
+		"mtime": "2026-08-27T16:14:38.771Z",
+		"size": 47920,
+		"path": "../public/images/blog/jurnal_de_bord_07.04.2024-e6241ae5.webp"
 	},
 	"/images/blog/jurnal_de_bord_07.04.2024-c345991b.webp": {
 		"type": "image/webp",
 		"etag": "\"bb30-ZknohJSUKvPFGBgubyezmDPrzHA\"",
-		"mtime": "2026-08-19T17:59:34.533Z",
+		"mtime": "2026-08-27T16:14:38.770Z",
 		"size": 47920,
 		"path": "../public/images/blog/jurnal_de_bord_07.04.2024-c345991b.webp"
 	},
 	"/images/blog/jurnal_de_bord_07.04.2024-c9c497c7.webp": {
 		"type": "image/webp",
 		"etag": "\"bb30-ZknohJSUKvPFGBgubyezmDPrzHA\"",
-		"mtime": "2026-08-19T17:59:34.534Z",
+		"mtime": "2026-08-27T16:14:38.771Z",
 		"size": 47920,
 		"path": "../public/images/blog/jurnal_de_bord_07.04.2024-c9c497c7.webp"
-	},
-	"/images/blog/jurnal_de_bord_07.04.2024-e6241ae5.webp": {
-		"type": "image/webp",
-		"etag": "\"bb30-ZknohJSUKvPFGBgubyezmDPrzHA\"",
-		"mtime": "2026-08-19T17:59:34.534Z",
-		"size": 47920,
-		"path": "../public/images/blog/jurnal_de_bord_07.04.2024-e6241ae5.webp"
 	},
 	"/images/blog/jurnal_de_bord_07.04.2024-eddd28c1.webp": {
 		"type": "image/webp",
 		"etag": "\"bb30-ZknohJSUKvPFGBgubyezmDPrzHA\"",
-		"mtime": "2026-08-19T17:59:34.534Z",
+		"mtime": "2026-08-27T16:14:38.771Z",
 		"size": 47920,
 		"path": "../public/images/blog/jurnal_de_bord_07.04.2024-eddd28c1.webp"
 	},
 	"/images/blog/lantul-pe-care-ni-l-punem-singuri.webp": {
 		"type": "image/webp",
 		"etag": "\"207d6-+N0Hj83cd5YLd+pUwwdGgPdaHRI\"",
-		"mtime": "2026-08-19T17:59:34.537Z",
+		"mtime": "2026-08-27T16:14:38.774Z",
 		"size": 133078,
 		"path": "../public/images/blog/lantul-pe-care-ni-l-punem-singuri.webp"
 	},
 	"/images/blog/lovers_in_bed.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"93df-ozGPMbtGvGd9SUWOplZlbsgoepE\"",
-		"mtime": "2026-08-19T17:59:34.537Z",
+		"mtime": "2026-08-27T16:14:38.777Z",
 		"size": 37855,
 		"path": "../public/images/blog/lovers_in_bed.jpg"
 	},
 	"/images/blog/new.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"9877-p1cReO5De62VcFKNsm/f4ioSRPQ\"",
-		"mtime": "2026-08-19T17:59:34.538Z",
+		"mtime": "2026-08-27T16:14:38.774Z",
 		"size": 39031,
 		"path": "../public/images/blog/new.jpg"
+	},
+	"/images/blog/ovb-logo.webp": {
+		"type": "image/webp",
+		"etag": "\"2af4-NaFcQlWz2CxOvSpz5ggGP5NicZQ\"",
+		"mtime": "2026-08-27T16:14:38.775Z",
+		"size": 10996,
+		"path": "../public/images/blog/ovb-logo.webp"
 	},
 	"/images/blog/lonely.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"43d82-saZffsVZ0+xVLCmsUf1QfRxYZU4\"",
-		"mtime": "2026-08-19T17:59:34.537Z",
+		"mtime": "2026-08-27T16:14:38.775Z",
 		"size": 277890,
 		"path": "../public/images/blog/lonely.jpg"
 	},
 	"/images/blog/perf_morn.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"76b4-+ADOuLk+WzJ1bhVUj7+gyCJ4IHo\"",
-		"mtime": "2026-08-19T17:59:34.539Z",
+		"mtime": "2026-08-27T16:14:38.776Z",
 		"size": 30388,
 		"path": "../public/images/blog/perf_morn.jpg"
-	},
-	"/images/blog/ovb-logo.webp": {
-		"type": "image/webp",
-		"etag": "\"2af4-NaFcQlWz2CxOvSpz5ggGP5NicZQ\"",
-		"mtime": "2026-08-19T17:59:34.538Z",
-		"size": 10996,
-		"path": "../public/images/blog/ovb-logo.webp"
-	},
-	"/images/blog/postaer_blog_-_ziua_2__stii_ca_nu_stii.webp": {
-		"type": "image/webp",
-		"etag": "\"dfc2-CnGeJFAE16YVhbvflqPJWup3Zt0\"",
-		"mtime": "2026-08-19T17:59:34.540Z",
-		"size": 57282,
-		"path": "../public/images/blog/postaer_blog_-_ziua_2__stii_ca_nu_stii.webp"
-	},
-	"/images/blog/posatre_blog__seria_despre_ras__ziua_2_-_hihi_de_acceptare.webp": {
-		"type": "image/webp",
-		"etag": "\"2c400-hxHQNjQGqhymmeazGfq3HWsZRW8\"",
-		"mtime": "2026-08-19T17:59:34.540Z",
-		"size": 181248,
-		"path": "../public/images/blog/posatre_blog__seria_despre_ras__ziua_2_-_hihi_de_acceptare.webp"
 	},
 	"/images/blog/motttttt.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"48826-cBXPAWKiv2KzQ4soGZcac2BOvBg\"",
-		"mtime": "2026-08-19T17:59:34.540Z",
+		"mtime": "2026-08-27T16:14:38.775Z",
 		"size": 296998,
 		"path": "../public/images/blog/motttttt.jpg"
+	},
+	"/images/blog/informatia-care-exista-hero.webp": {
+		"type": "image/webp",
+		"etag": "\"3bdde-m9p09Bmqp9WWFdKvnE2yKPIlWf0\"",
+		"mtime": "2026-08-27T16:14:38.772Z",
+		"size": 245214,
+		"path": "../public/images/blog/informatia-care-exista-hero.webp"
+	},
+	"/images/blog/posatre_blog__seria_despre_ras__ziua_2_-_hihi_de_acceptare.webp": {
+		"type": "image/webp",
+		"etag": "\"2c400-hxHQNjQGqhymmeazGfq3HWsZRW8\"",
+		"mtime": "2026-08-27T16:14:38.776Z",
+		"size": 181248,
+		"path": "../public/images/blog/posatre_blog__seria_despre_ras__ziua_2_-_hihi_de_acceptare.webp"
+	},
+	"/images/blog/postaer_blog_-_ziua_2__stii_ca_nu_stii.webp": {
+		"type": "image/webp",
+		"etag": "\"dfc2-CnGeJFAE16YVhbvflqPJWup3Zt0\"",
+		"mtime": "2026-08-27T16:14:38.776Z",
+		"size": 57282,
+		"path": "../public/images/blog/postaer_blog_-_ziua_2__stii_ca_nu_stii.webp"
 	},
 	"/images/blog/postare_blog_-_Alexandru_cel_Mare.webp": {
 		"type": "image/webp",
 		"etag": "\"3e556-3M7/vq9f8oqHS7Vz9+R1nPAUnrI\"",
-		"mtime": "2026-08-19T17:59:34.542Z",
+		"mtime": "2026-08-27T16:14:38.779Z",
 		"size": 255318,
 		"path": "../public/images/blog/postare_blog_-_Alexandru_cel_Mare.webp"
 	},
 	"/images/blog/Vâsla și curentul.png": {
 		"type": "image/png",
 		"etag": "\"30a032-OlrIA7pmfVhFjbsCa3/wLgk+Nz8\"",
-		"mtime": "2026-08-19T17:59:34.591Z",
+		"mtime": "2026-08-27T16:14:38.783Z",
 		"size": 3186738,
 		"path": "../public/images/blog/Vâsla și curentul.png"
-	},
-	"/images/blog/postare_blog_-_Ginghis_Han.webp": {
-		"type": "image/webp",
-		"etag": "\"4e964-MdyVBVkUbto9whvFurv6xh4kL2k\"",
-		"mtime": "2026-08-19T17:59:34.543Z",
-		"size": 321892,
-		"path": "../public/images/blog/postare_blog_-_Ginghis_Han.webp"
 	},
 	"/images/blog/postare_blog_-_Carol_Quintul.webp": {
 		"type": "image/webp",
 		"etag": "\"20856-ghxX1PZUNUMVNDTS/JbwX5d/Y68\"",
-		"mtime": "2026-08-19T17:59:34.542Z",
+		"mtime": "2026-08-27T16:14:38.784Z",
 		"size": 133206,
 		"path": "../public/images/blog/postare_blog_-_Carol_Quintul.webp"
+	},
+	"/images/blog/postare_blog_-_Ginghis_Han.webp": {
+		"type": "image/webp",
+		"etag": "\"4e964-MdyVBVkUbto9whvFurv6xh4kL2k\"",
+		"mtime": "2026-08-27T16:14:38.780Z",
+		"size": 321892,
+		"path": "../public/images/blog/postare_blog_-_Ginghis_Han.webp"
 	},
 	"/images/blog/postare_blog_-_Ra_zboaiele_nu_i_ncep_din_ura_.webp": {
 		"type": "image/webp",
 		"etag": "\"1d940-ebzQYKlCp88z03Aqzha8amD5+2o\"",
-		"mtime": "2026-08-19T17:59:34.543Z",
+		"mtime": "2026-08-27T16:14:38.779Z",
 		"size": 121152,
 		"path": "../public/images/blog/postare_blog_-_Ra_zboaiele_nu_i_ncep_din_ura_.webp"
-	},
-	"/images/blog/postare_blog_-_SUA__Europa_s_i_diferent_ele_care_construiesc_lumea.webp": {
-		"type": "image/webp",
-		"etag": "\"384a0-rNSoJaR+ll5ul8V/4G6q/5rBsr8\"",
-		"mtime": "2026-08-19T17:59:34.544Z",
-		"size": 230560,
-		"path": "../public/images/blog/postare_blog_-_SUA__Europa_s_i_diferent_ele_care_construiesc_lumea.webp"
 	},
 	"/images/blog/postare_blog_-_anatomia_declinului.webp": {
 		"type": "image/webp",
 		"etag": "\"31536-A9Rm0QW9y4M/6SpDrsqe6pLywko\"",
-		"mtime": "2026-08-19T17:59:34.544Z",
+		"mtime": "2026-08-27T16:14:38.781Z",
 		"size": 202038,
 		"path": "../public/images/blog/postare_blog_-_anatomia_declinului.webp"
 	},
-	"/images/blog/postare_blog_-_asimetrie_si_actiune_-_balanta.webp": {
+	"/images/blog/postare_blog_-_SUA__Europa_s_i_diferent_ele_care_construiesc_lumea.webp": {
 		"type": "image/webp",
-		"etag": "\"1f9e8-XR4Te75Wy92b11794VkORVEf9uE\"",
-		"mtime": "2026-08-19T17:59:34.547Z",
-		"size": 129512,
-		"path": "../public/images/blog/postare_blog_-_asimetrie_si_actiune_-_balanta.webp"
-	},
-	"/images/blog/postare_blog_-_Soliman_Magnificul.webp": {
-		"type": "image/webp",
-		"etag": "\"50b58-KvnLdeVn/ASm/an0ghkog3RJSoY\"",
-		"mtime": "2026-08-19T17:59:34.544Z",
-		"size": 330584,
-		"path": "../public/images/blog/postare_blog_-_Soliman_Magnificul.webp"
+		"etag": "\"384a0-rNSoJaR+ll5ul8V/4G6q/5rBsr8\"",
+		"mtime": "2026-08-27T16:14:38.779Z",
+		"size": 230560,
+		"path": "../public/images/blog/postare_blog_-_SUA__Europa_s_i_diferent_ele_care_construiesc_lumea.webp"
 	},
 	"/images/blog/postare_blog_-_Imperiul_Mogul.webp": {
 		"type": "image/webp",
 		"etag": "\"6220e-LveKqCLzFtsAPrJCZQpFv5cz2tk\"",
-		"mtime": "2026-08-19T17:59:34.545Z",
+		"mtime": "2026-08-27T16:14:38.783Z",
 		"size": 401934,
 		"path": "../public/images/blog/postare_blog_-_Imperiul_Mogul.webp"
 	},
-	"/images/blog/postare_blog_-_biserica_de_paste.webp": {
+	"/images/blog/postare_blog_-_asimetrie_si_actiune_-_balanta.webp": {
 		"type": "image/webp",
-		"etag": "\"32e88-Ul5c08UATDd2mOMxu7Dq3UBvdKU\"",
-		"mtime": "2026-08-19T17:59:34.547Z",
-		"size": 208520,
-		"path": "../public/images/blog/postare_blog_-_biserica_de_paste.webp"
-	},
-	"/images/blog/postare_blog_-_bun_vs_rau_si_nuante.webp": {
-		"type": "image/webp",
-		"etag": "\"26184-R4N1ASUhWAbM7gJbPQoLRvJ5hXA\"",
-		"mtime": "2026-08-19T17:59:34.546Z",
-		"size": 156036,
-		"path": "../public/images/blog/postare_blog_-_bun_vs_rau_si_nuante.webp"
-	},
-	"/images/blog/postare_blog_-_cele_4_etape_ale_invatarii.webp": {
-		"type": "image/webp",
-		"etag": "\"21624-RoQD23uGdu3/wVt+tshFHDbZZ6c\"",
-		"mtime": "2026-08-19T17:59:34.549Z",
-		"size": 136740,
-		"path": "../public/images/blog/postare_blog_-_cele_4_etape_ale_invatarii.webp"
-	},
-	"/images/blog/postare_blog_-_conginerea__organism_care_traieste_in_simbioza.webp": {
-		"type": "image/webp",
-		"etag": "\"e1d8-IXu/NCZrZPkX288aCDqG7op5ZKE\"",
-		"mtime": "2026-08-19T17:59:34.546Z",
-		"size": 57816,
-		"path": "../public/images/blog/postare_blog_-_conginerea__organism_care_traieste_in_simbioza.webp"
-	},
-	"/images/blog/postare_blog_-_controlul_sovietic_vs_controlul_AI_V2.webp": {
-		"type": "image/webp",
-		"etag": "\"3a384-2eOO4iQ+rplW6aj0F+nshl/1KV4\"",
-		"mtime": "2026-08-19T17:59:34.547Z",
-		"size": 238468,
-		"path": "../public/images/blog/postare_blog_-_controlul_sovietic_vs_controlul_AI_V2.webp"
+		"etag": "\"1f9e8-XR4Te75Wy92b11794VkORVEf9uE\"",
+		"mtime": "2026-08-27T16:14:38.785Z",
+		"size": 129512,
+		"path": "../public/images/blog/postare_blog_-_asimetrie_si_actiune_-_balanta.webp"
 	},
 	"/images/blog/postare_blog_-_ce_spune_Alex_de_la_18_ani.webp": {
 		"type": "image/webp",
 		"etag": "\"16584-eHe4ni4EXCPP2SjuY9fJG+sIAgc\"",
-		"mtime": "2026-08-19T17:59:34.546Z",
+		"mtime": "2026-08-27T16:14:38.785Z",
 		"size": 91524,
 		"path": "../public/images/blog/postare_blog_-_ce_spune_Alex_de_la_18_ani.webp"
 	},
-	"/images/blog/postare_blog_-_costurile_si_claritatea.webp": {
+	"/images/blog/postare_blog_-_bun_vs_rau_si_nuante.webp": {
 		"type": "image/webp",
-		"etag": "\"1d0b0-NwJHvFwPsPqSyiPQ2ipnA7EskZ0\"",
-		"mtime": "2026-08-19T17:59:34.548Z",
-		"size": 118960,
-		"path": "../public/images/blog/postare_blog_-_costurile_si_claritatea.webp"
+		"etag": "\"26184-R4N1ASUhWAbM7gJbPQoLRvJ5hXA\"",
+		"mtime": "2026-08-27T16:14:38.785Z",
+		"size": 156036,
+		"path": "../public/images/blog/postare_blog_-_bun_vs_rau_si_nuante.webp"
 	},
-	"/images/blog/postare_blog_-_dinastia_lui_Kangxi.webp": {
+	"/images/blog/postare_blog_-_Soliman_Magnificul.webp": {
 		"type": "image/webp",
-		"etag": "\"34aec-FzenL0nJTdrRbzMxT6MEoF4JmmY\"",
-		"mtime": "2026-08-19T17:59:34.548Z",
-		"size": 215788,
-		"path": "../public/images/blog/postare_blog_-_dinastia_lui_Kangxi.webp"
+		"etag": "\"50b58-KvnLdeVn/ASm/an0ghkog3RJSoY\"",
+		"mtime": "2026-08-27T16:14:38.781Z",
+		"size": 330584,
+		"path": "../public/images/blog/postare_blog_-_Soliman_Magnificul.webp"
+	},
+	"/images/blog/postare_blog_-_conginerea__organism_care_traieste_in_simbioza.webp": {
+		"type": "image/webp",
+		"etag": "\"e1d8-IXu/NCZrZPkX288aCDqG7op5ZKE\"",
+		"mtime": "2026-08-27T16:14:38.785Z",
+		"size": 57816,
+		"path": "../public/images/blog/postare_blog_-_conginerea__organism_care_traieste_in_simbioza.webp"
+	},
+	"/images/blog/postare_blog_-_biserica_de_paste.webp": {
+		"type": "image/webp",
+		"etag": "\"32e88-Ul5c08UATDd2mOMxu7Dq3UBvdKU\"",
+		"mtime": "2026-08-27T16:14:38.786Z",
+		"size": 208520,
+		"path": "../public/images/blog/postare_blog_-_biserica_de_paste.webp"
 	},
 	"/images/blog/postare_blog_-_cum_invatam_cu_adevarat.webp": {
 		"type": "image/webp",
 		"etag": "\"9f4e-J5R4Hgvf24UuIyLrfTY69d085oQ\"",
-		"mtime": "2026-08-19T17:59:34.550Z",
+		"mtime": "2026-08-27T16:14:38.787Z",
 		"size": 40782,
 		"path": "../public/images/blog/postare_blog_-_cum_invatam_cu_adevarat.webp"
 	},
-	"/images/blog/postare_blog_-_directia_si_disciplina_v2.webp": {
+	"/images/blog/postare_blog_-_cele_4_etape_ale_invatarii.webp": {
 		"type": "image/webp",
-		"etag": "\"52946-u39zOqo4Ov2R7ONizIY5GkyswF8\"",
-		"mtime": "2026-08-19T17:59:34.550Z",
-		"size": 338246,
-		"path": "../public/images/blog/postare_blog_-_directia_si_disciplina_v2.webp"
+		"etag": "\"21624-RoQD23uGdu3/wVt+tshFHDbZZ6c\"",
+		"mtime": "2026-08-27T16:14:38.789Z",
+		"size": 136740,
+		"path": "../public/images/blog/postare_blog_-_cele_4_etape_ale_invatarii.webp"
+	},
+	"/images/blog/postare_blog_-_controlul_sovietic_vs_controlul_AI_V2.webp": {
+		"type": "image/webp",
+		"etag": "\"3a384-2eOO4iQ+rplW6aj0F+nshl/1KV4\"",
+		"mtime": "2026-08-27T16:14:38.786Z",
+		"size": 238468,
+		"path": "../public/images/blog/postare_blog_-_controlul_sovietic_vs_controlul_AI_V2.webp"
+	},
+	"/images/blog/postare_blog_-_dinastia_lui_Kangxi.webp": {
+		"type": "image/webp",
+		"etag": "\"34aec-FzenL0nJTdrRbzMxT6MEoF4JmmY\"",
+		"mtime": "2026-08-27T16:14:38.787Z",
+		"size": 215788,
+		"path": "../public/images/blog/postare_blog_-_dinastia_lui_Kangxi.webp"
+	},
+	"/images/blog/postare_blog_-_costurile_si_claritatea.webp": {
+		"type": "image/webp",
+		"etag": "\"1d0b0-NwJHvFwPsPqSyiPQ2ipnA7EskZ0\"",
+		"mtime": "2026-08-27T16:14:38.787Z",
+		"size": 118960,
+		"path": "../public/images/blog/postare_blog_-_costurile_si_claritatea.webp"
 	},
 	"/images/blog/postare_blog_-_earned_vs_unearned_success.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"1ac4a-DEU4cQCyzhfrb0jeBJVzyOqlGWM\"",
-		"mtime": "2026-08-19T17:59:34.551Z",
+		"mtime": "2026-08-27T16:14:38.789Z",
 		"size": 109642,
 		"path": "../public/images/blog/postare_blog_-_earned_vs_unearned_success.jpg"
+	},
+	"/images/blog/postare_blog_-_directia_si_disciplina_v2.webp": {
+		"type": "image/webp",
+		"etag": "\"52946-u39zOqo4Ov2R7ONizIY5GkyswF8\"",
+		"mtime": "2026-08-27T16:14:38.788Z",
+		"size": 338246,
+		"path": "../public/images/blog/postare_blog_-_directia_si_disciplina_v2.webp"
 	},
 	"/images/blog/postare_blog_-_eliberarea_spatiului_mental.webp": {
 		"type": "image/webp",
 		"etag": "\"f1e2-QH8F7hF2tGuTVkjQVVK273alSdE\"",
-		"mtime": "2026-08-19T17:59:34.549Z",
+		"mtime": "2026-08-27T16:14:38.787Z",
 		"size": 61922,
 		"path": "../public/images/blog/postare_blog_-_eliberarea_spatiului_mental.webp"
-	},
-	"/images/blog/postare_blog_-_eroist_post-factum_vs_realitate.webp": {
-		"type": "image/webp",
-		"etag": "\"222d2-aRmVtDhHj7XovCuJdQubqrj+K/E\"",
-		"mtime": "2026-08-19T17:59:34.552Z",
-		"size": 139986,
-		"path": "../public/images/blog/postare_blog_-_eroist_post-factum_vs_realitate.webp"
 	},
 	"/images/blog/postare_blog_-_epilog_anatomia_declinului.webp": {
 		"type": "image/webp",
 		"etag": "\"47b18-0TtfIl1HP+oq74WqfYscpENS8IM\"",
-		"mtime": "2026-08-19T17:59:34.551Z",
+		"mtime": "2026-08-27T16:14:38.789Z",
 		"size": 293656,
 		"path": "../public/images/blog/postare_blog_-_epilog_anatomia_declinului.webp"
 	},
 	"/images/blog/lantul pe care ni-l punem singuri.png": {
 		"type": "image/png",
 		"etag": "\"20f0a8-F7H3xm4kzxkHfCa9wHNkEzoWuvg\"",
-		"mtime": "2026-08-19T17:59:34.540Z",
+		"mtime": "2026-08-27T16:14:38.778Z",
 		"size": 2158760,
 		"path": "../public/images/blog/lantul pe care ni-l punem singuri.png"
+	},
+	"/images/blog/postare_blog_-_eroist_post-factum_vs_realitate.webp": {
+		"type": "image/webp",
+		"etag": "\"222d2-aRmVtDhHj7XovCuJdQubqrj+K/E\"",
+		"mtime": "2026-08-27T16:14:38.791Z",
+		"size": 139986,
+		"path": "../public/images/blog/postare_blog_-_eroist_post-factum_vs_realitate.webp"
 	},
 	"/images/blog/postare_blog_-_hegemonia_americana.webp": {
 		"type": "image/webp",
 		"etag": "\"31684-0KgCm0HluP/m7p8CgeCUyVY0mc4\"",
-		"mtime": "2026-08-19T17:59:34.552Z",
+		"mtime": "2026-08-27T16:14:38.793Z",
 		"size": 202372,
 		"path": "../public/images/blog/postare_blog_-_hegemonia_americana.webp"
 	},
 	"/images/blog/postare_blog_-_hobby.webp": {
 		"type": "image/webp",
 		"etag": "\"4c220-0fxKmPezCVPu4NnQWppUWa0rJME\"",
-		"mtime": "2026-08-19T17:59:34.555Z",
+		"mtime": "2026-08-27T16:14:38.792Z",
 		"size": 311840,
 		"path": "../public/images/blog/postare_blog_-_hobby.webp"
-	},
-	"/images/blog/postare_blog_-_identitatea_si_integritatea.webp": {
-		"type": "image/webp",
-		"etag": "\"25836-8hOnFDZHcutA7mfb3d++vXW4Ub0\"",
-		"mtime": "2026-08-19T17:59:34.554Z",
-		"size": 153654,
-		"path": "../public/images/blog/postare_blog_-_identitatea_si_integritatea.webp"
 	},
 	"/images/blog/postare_blog_-_manageri_in_corporatii.webp": {
 		"type": "image/webp",
 		"etag": "\"97bc-wR6CKGxOPHjEZWfQDW33HE3pulQ\"",
-		"mtime": "2026-08-19T17:59:34.553Z",
+		"mtime": "2026-08-27T16:14:38.794Z",
 		"size": 38844,
 		"path": "../public/images/blog/postare_blog_-_manageri_in_corporatii.webp"
+	},
+	"/images/blog/postare_blog_-_identitatea_si_integritatea.webp": {
+		"type": "image/webp",
+		"etag": "\"25836-8hOnFDZHcutA7mfb3d++vXW4Ub0\"",
+		"mtime": "2026-08-27T16:14:38.792Z",
+		"size": 153654,
+		"path": "../public/images/blog/postare_blog_-_identitatea_si_integritatea.webp"
 	},
 	"/images/blog/postare_blog_-_mediocru_vs_performer.webp": {
 		"type": "image/webp",
 		"etag": "\"15ba8-gMWMm7g8AC9jSQXGsi6GPOmJ5FU\"",
-		"mtime": "2026-08-19T17:59:34.555Z",
+		"mtime": "2026-08-27T16:14:38.792Z",
 		"size": 89e3,
 		"path": "../public/images/blog/postare_blog_-_mediocru_vs_performer.webp"
 	},
 	"/images/blog/postare_blog_-_mastile_de_toate_zilele.webp": {
 		"type": "image/webp",
 		"etag": "\"11548-yrwMs4R6kZoaDd+LVyacTQ1bEic\"",
-		"mtime": "2026-08-19T17:59:34.554Z",
+		"mtime": "2026-08-27T16:14:38.791Z",
 		"size": 70984,
 		"path": "../public/images/blog/postare_blog_-_mastile_de_toate_zilele.webp"
-	},
-	"/images/blog/postare_blog_-_neuroplasticitate_biologica_si_momentum_.webp": {
-		"type": "image/webp",
-		"etag": "\"1e964-4pYWvDh2qO/pT5YX67TPmxJLGS8\"",
-		"mtime": "2026-08-19T17:59:34.556Z",
-		"size": 125284,
-		"path": "../public/images/blog/postare_blog_-_neuroplasticitate_biologica_si_momentum_.webp"
-	},
-	"/images/blog/postare_blog_-_mereu_obosit__mereu_in_priva_V2.webp": {
-		"type": "image/webp",
-		"etag": "\"77f52-eyCnlMZBppPdFGzdwAPB4lOlBis\"",
-		"mtime": "2026-08-19T17:59:34.556Z",
-		"size": 491346,
-		"path": "../public/images/blog/postare_blog_-_mereu_obosit__mereu_in_priva_V2.webp"
-	},
-	"/images/blog/postare_blog_-_normal_ca_n-ai_timp_V2.webp": {
-		"type": "image/webp",
-		"etag": "\"269b0-1ag0CUutMscOqGOjawWv/2JENjs\"",
-		"mtime": "2026-08-19T17:59:34.557Z",
-		"size": 158128,
-		"path": "../public/images/blog/postare_blog_-_normal_ca_n-ai_timp_V2.webp"
 	},
 	"/images/blog/postare_blog_-_norocul_si_navigarea.webp": {
 		"type": "image/webp",
 		"etag": "\"2bfca-zVdRhu5j0B1NA8LP8+LkFMY3gAQ\"",
-		"mtime": "2026-08-19T17:59:34.558Z",
+		"mtime": "2026-08-27T16:14:38.795Z",
 		"size": 180170,
 		"path": "../public/images/blog/postare_blog_-_norocul_si_navigarea.webp"
+	},
+	"/images/blog/postare_blog_-_normal_ca_n-ai_timp_V2.webp": {
+		"type": "image/webp",
+		"etag": "\"269b0-1ag0CUutMscOqGOjawWv/2JENjs\"",
+		"mtime": "2026-08-27T16:14:38.797Z",
+		"size": 158128,
+		"path": "../public/images/blog/postare_blog_-_normal_ca_n-ai_timp_V2.webp"
+	},
+	"/images/blog/postare_blog_-_neuroplasticitate_biologica_si_momentum_.webp": {
+		"type": "image/webp",
+		"etag": "\"1e964-4pYWvDh2qO/pT5YX67TPmxJLGS8\"",
+		"mtime": "2026-08-27T16:14:38.794Z",
+		"size": 125284,
+		"path": "../public/images/blog/postare_blog_-_neuroplasticitate_biologica_si_momentum_.webp"
+	},
+	"/images/blog/postare_blog_-_perfectionism.webp": {
+		"type": "image/webp",
+		"etag": "\"ddec-fqciofIl3gi5ztUr1145BlAj+zA\"",
+		"mtime": "2026-08-27T16:14:38.795Z",
+		"size": 56812,
+		"path": "../public/images/blog/postare_blog_-_perfectionism.webp"
+	},
+	"/images/blog/postare_blog_-_mereu_obosit__mereu_in_priva_V2.webp": {
+		"type": "image/webp",
+		"etag": "\"77f52-eyCnlMZBppPdFGzdwAPB4lOlBis\"",
+		"mtime": "2026-08-27T16:14:38.796Z",
+		"size": 491346,
+		"path": "../public/images/blog/postare_blog_-_mereu_obosit__mereu_in_priva_V2.webp"
+	},
+	"/images/blog/postare_blog_-_placebo__credintele_care_vindeca.webp": {
+		"type": "image/webp",
+		"etag": "\"758a-VsDB/I7V9R9Pl4YRRT1BqaEgmu4\"",
+		"mtime": "2026-08-27T16:14:38.794Z",
+		"size": 30090,
+		"path": "../public/images/blog/postare_blog_-_placebo__credintele_care_vindeca.webp"
 	},
 	"/images/blog/postare_blog_-_principiul_precedentului_creat.webp": {
 		"type": "image/webp",
 		"etag": "\"2e186-rUxSMS7Fhy7bVi7xvMfRQEVktcc\"",
-		"mtime": "2026-08-19T17:59:34.559Z",
+		"mtime": "2026-08-27T16:14:38.796Z",
 		"size": 188806,
 		"path": "../public/images/blog/postare_blog_-_principiul_precedentului_creat.webp"
 	},
 	"/images/blog/postare_blog_-_provocare_vs_problema.webp": {
 		"type": "image/webp",
 		"etag": "\"7504-9fEdO6yJTsBUil06mlUfjcCQIJo\"",
-		"mtime": "2026-08-19T17:59:34.560Z",
+		"mtime": "2026-08-27T16:14:38.797Z",
 		"size": 29956,
 		"path": "../public/images/blog/postare_blog_-_provocare_vs_problema.webp"
-	},
-	"/images/blog/postare_blog_-_placebo__credintele_care_vindeca.webp": {
-		"type": "image/webp",
-		"etag": "\"758a-VsDB/I7V9R9Pl4YRRT1BqaEgmu4\"",
-		"mtime": "2026-08-19T17:59:34.558Z",
-		"size": 30090,
-		"path": "../public/images/blog/postare_blog_-_placebo__credintele_care_vindeca.webp"
 	},
 	"/images/blog/postare_blog_-_precedentul_pozitiv.webp": {
 		"type": "image/webp",
 		"etag": "\"39128-vo+MeoMMVTgzgj5j86s9BeIqITA\"",
-		"mtime": "2026-08-19T17:59:34.559Z",
+		"mtime": "2026-08-27T16:14:38.796Z",
 		"size": 233768,
 		"path": "../public/images/blog/postare_blog_-_precedentul_pozitiv.webp"
-	},
-	"/images/blog/postare_blog_-_perfectionism.webp": {
-		"type": "image/webp",
-		"etag": "\"ddec-fqciofIl3gi5ztUr1145BlAj+zA\"",
-		"mtime": "2026-08-19T17:59:34.557Z",
-		"size": 56812,
-		"path": "../public/images/blog/postare_blog_-_perfectionism.webp"
-	},
-	"/images/blog/postare_blog_-_razboaie_fara_adversar.webp": {
-		"type": "image/webp",
-		"etag": "\"1c972-S3x33k8lJO++k1GdvxX8byTkJe8\"",
-		"mtime": "2026-08-19T17:59:34.562Z",
-		"size": 117106,
-		"path": "../public/images/blog/postare_blog_-_razboaie_fara_adversar.webp"
-	},
-	"/images/blog/postare_blog_-_rabdare_si_repetitie.webp": {
-		"type": "image/webp",
-		"etag": "\"5d948-0B9Z1yhaCB7ye8JVVFVhi+twBB8\"",
-		"mtime": "2026-08-19T17:59:34.561Z",
-		"size": 383304,
-		"path": "../public/images/blog/postare_blog_-_rabdare_si_repetitie.webp"
 	},
 	"/images/blog/postare_blog_-_razboaie_fara_adversar__ziua_2.webp": {
 		"type": "image/webp",
 		"etag": "\"30234-IH+EmzSUfoqu6oeTxLBhp/SYPoE\"",
-		"mtime": "2026-08-19T17:59:34.562Z",
+		"mtime": "2026-08-27T16:14:38.799Z",
 		"size": 197172,
 		"path": "../public/images/blog/postare_blog_-_razboaie_fara_adversar__ziua_2.webp"
+	},
+	"/images/blog/postare_blog_-_razboaie_fara_adversar.webp": {
+		"type": "image/webp",
+		"etag": "\"1c972-S3x33k8lJO++k1GdvxX8byTkJe8\"",
+		"mtime": "2026-08-27T16:14:38.799Z",
+		"size": 117106,
+		"path": "../public/images/blog/postare_blog_-_razboaie_fara_adversar.webp"
+	},
+	"/images/blog/postare_blog_-_puzzle.webp": {
+		"type": "image/webp",
+		"etag": "\"5f0b4-4Gn06KgWViFIQpL7SiKKlwNK9+w\"",
+		"mtime": "2026-08-27T16:14:38.797Z",
+		"size": 389300,
+		"path": "../public/images/blog/postare_blog_-_puzzle.webp"
+	},
+	"/images/blog/postare_blog_-_rabdare_si_repetitie.webp": {
+		"type": "image/webp",
+		"etag": "\"5d948-0B9Z1yhaCB7ye8JVVFVhi+twBB8\"",
+		"mtime": "2026-08-27T16:14:38.803Z",
+		"size": 383304,
+		"path": "../public/images/blog/postare_blog_-_rabdare_si_repetitie.webp"
+	},
+	"/images/blog/postare_blog_-_razboaie_sociale_v2.webp": {
+		"type": "image/webp",
+		"etag": "\"371fe-3F/OasXCfbv0wwylNXIPy7y1Veg\"",
+		"mtime": "2026-08-27T16:14:38.800Z",
+		"size": 225790,
+		"path": "../public/images/blog/postare_blog_-_razboaie_sociale_v2.webp"
 	},
 	"/images/blog/postare_blog_-_regatul_britanic_si_regina_Victoria.webp": {
 		"type": "image/webp",
 		"etag": "\"1f486-0hI2C86+NWdduLbgXLKzXJKO0hU\"",
-		"mtime": "2026-08-19T17:59:34.562Z",
+		"mtime": "2026-08-27T16:14:38.800Z",
 		"size": 128134,
 		"path": "../public/images/blog/postare_blog_-_regatul_britanic_si_regina_Victoria.webp"
 	},
 	"/images/blog/postare_blog_-_roma._Marcus_Aurelius_si_Commodus.webp": {
 		"type": "image/webp",
 		"etag": "\"31300-Zh3i0lpCyDB1EaxtS6+l0rdUPSo\"",
-		"mtime": "2026-08-19T17:59:34.563Z",
+		"mtime": "2026-08-27T16:14:38.801Z",
 		"size": 201472,
 		"path": "../public/images/blog/postare_blog_-_roma._Marcus_Aurelius_si_Commodus.webp"
-	},
-	"/images/blog/postare_blog_-_razboaie_sociale_v2.webp": {
-		"type": "image/webp",
-		"etag": "\"371fe-3F/OasXCfbv0wwylNXIPy7y1Veg\"",
-		"mtime": "2026-08-19T17:59:34.573Z",
-		"size": 225790,
-		"path": "../public/images/blog/postare_blog_-_razboaie_sociale_v2.webp"
 	},
 	"/images/blog/postare_blog_-_romanii_performanti1.webp": {
 		"type": "image/webp",
 		"etag": "\"489a8-NYREFj+GT+0YKU0wG2hNTEvVhoA\"",
-		"mtime": "2026-08-19T17:59:34.565Z",
+		"mtime": "2026-08-27T16:14:38.802Z",
 		"size": 297384,
 		"path": "../public/images/blog/postare_blog_-_romanii_performanti1.webp"
-	},
-	"/images/blog/postare_blog_-_puzzle.webp": {
-		"type": "image/webp",
-		"etag": "\"5f0b4-4Gn06KgWViFIQpL7SiKKlwNK9+w\"",
-		"mtime": "2026-08-19T17:59:34.559Z",
-		"size": 389300,
-		"path": "../public/images/blog/postare_blog_-_puzzle.webp"
 	},
 	"/images/blog/postare_blog_-_scopul_maretiei_V2.webp": {
 		"type": "image/webp",
 		"etag": "\"21cb4-4/qd1wBxhw1eLfk5e/Wjsf+ug5I\"",
-		"mtime": "2026-08-19T17:59:34.565Z",
+		"mtime": "2026-08-27T16:14:38.804Z",
 		"size": 138420,
 		"path": "../public/images/blog/postare_blog_-_scopul_maretiei_V2.webp"
 	},
 	"/images/blog/postare_blog_-_serie_de_Craciun__ziua_1.webp": {
 		"type": "image/webp",
 		"etag": "\"eab4-OOroEYt0aUrWpNYHfAGAUyNqTVE\"",
-		"mtime": "2026-08-19T17:59:34.563Z",
+		"mtime": "2026-08-27T16:14:38.805Z",
 		"size": 60084,
 		"path": "../public/images/blog/postare_blog_-_serie_de_Craciun__ziua_1.webp"
 	},
 	"/images/blog/postare_blog_-_serie_de_Craciun__ziua_8_-_intoarcerea.webp": {
 		"type": "image/webp",
 		"etag": "\"263cc-tK2hy/FgLhtA+bHwNPimQWw7Ozs\"",
-		"mtime": "2026-08-19T17:59:34.565Z",
+		"mtime": "2026-08-27T16:14:38.805Z",
 		"size": 156620,
 		"path": "../public/images/blog/postare_blog_-_serie_de_Craciun__ziua_8_-_intoarcerea.webp"
-	},
-	"/images/blog/postare_blog_-_succes_fara_sens.webp": {
-		"type": "image/webp",
-		"etag": "\"112b8-o9Hqzguz0SkchRtRL3xwNBgghNE\"",
-		"mtime": "2026-08-19T17:59:34.567Z",
-		"size": 70328,
-		"path": "../public/images/blog/postare_blog_-_succes_fara_sens.webp"
 	},
 	"/images/blog/postare_blog_-_spectacol_intr-o_arena_goala.webp": {
 		"type": "image/webp",
 		"etag": "\"33f9c-JUb8RMnSWVWUqYwSdKMPB/TOnJM\"",
-		"mtime": "2026-08-19T17:59:34.565Z",
+		"mtime": "2026-08-27T16:14:38.804Z",
 		"size": 212892,
 		"path": "../public/images/blog/postare_blog_-_spectacol_intr-o_arena_goala.webp"
+	},
+	"/images/blog/postare_blog_-_succes_fara_sens.webp": {
+		"type": "image/webp",
+		"etag": "\"112b8-o9Hqzguz0SkchRtRL3xwNBgghNE\"",
+		"mtime": "2026-08-27T16:14:38.803Z",
+		"size": 70328,
+		"path": "../public/images/blog/postare_blog_-_succes_fara_sens.webp"
 	},
 	"/images/blog/postare_blog_-_teoriile_conspiratiilor_v2.webp": {
 		"type": "image/webp",
 		"etag": "\"21920-Fq3XBztn+BK77sBbM2FIjjOP/LU\"",
-		"mtime": "2026-08-19T17:59:34.566Z",
+		"mtime": "2026-08-27T16:14:38.805Z",
 		"size": 137504,
 		"path": "../public/images/blog/postare_blog_-_teoriile_conspiratiilor_v2.webp"
 	},
 	"/images/blog/postare_blog_-_training_tribal.webp": {
 		"type": "image/webp",
 		"etag": "\"1a828-FXqxpbnTS1nVcpeKq86bC/4WKNo\"",
-		"mtime": "2026-08-19T17:59:34.566Z",
+		"mtime": "2026-08-27T16:14:38.806Z",
 		"size": 108584,
 		"path": "../public/images/blog/postare_blog_-_training_tribal.webp"
 	},
 	"/images/blog/postare_blog_-_trib_-_tema1_energii.webp": {
 		"type": "image/webp",
 		"etag": "\"1fd2c-AJnHr6CMh0HiD20mXYsfgJy1pX4\"",
-		"mtime": "2026-08-19T17:59:34.566Z",
+		"mtime": "2026-08-27T16:14:38.806Z",
 		"size": 130348,
 		"path": "../public/images/blog/postare_blog_-_trib_-_tema1_energii.webp"
-	},
-	"/images/blog/postare_blog_-_trib_-_tema2_oglinzi.webp": {
-		"type": "image/webp",
-		"etag": "\"39162-NQo+o3BHYa9Vo73+4MM3F56/Rt0\"",
-		"mtime": "2026-08-19T17:59:34.566Z",
-		"size": 233826,
-		"path": "../public/images/blog/postare_blog_-_trib_-_tema2_oglinzi.webp"
-	},
-	"/images/blog/postare_blog_-_trib_-_tema3_multiplicare.webp": {
-		"type": "image/webp",
-		"etag": "\"2a244-eJRjGvyM3avTYmSW6a83Wj9glTo\"",
-		"mtime": "2026-08-19T17:59:34.567Z",
-		"size": 172612,
-		"path": "../public/images/blog/postare_blog_-_trib_-_tema3_multiplicare.webp"
-	},
-	"/images/blog/postare_blog_-_uniunea_sovietica.webp": {
-		"type": "image/webp",
-		"etag": "\"5211e-Z+c7mCJcwajrR/DCigULQ635nCU\"",
-		"mtime": "2026-08-19T17:59:34.571Z",
-		"size": 336158,
-		"path": "../public/images/blog/postare_blog_-_uniunea_sovietica.webp"
 	},
 	"/images/blog/postare_blog_-_ziua_1__nu_stii_ca_nu_stii.webp": {
 		"type": "image/webp",
 		"etag": "\"12128-uDVcA+ywYiSN0lVmvKHfQLRji/U\"",
-		"mtime": "2026-08-19T17:59:34.568Z",
+		"mtime": "2026-08-27T16:14:38.807Z",
 		"size": 74024,
 		"path": "../public/images/blog/postare_blog_-_ziua_1__nu_stii_ca_nu_stii.webp"
 	},
 	"/images/blog/postare_blog_-_ziua_2__a_sti_ce_face_bine_vs_a_face_bine_v2.webp": {
 		"type": "image/webp",
 		"etag": "\"10dec-Re9knwABbhatleTbgJz6cycxp9w\"",
-		"mtime": "2026-08-19T17:59:34.568Z",
+		"mtime": "2026-08-27T16:14:38.808Z",
 		"size": 69100,
 		"path": "../public/images/blog/postare_blog_-_ziua_2__a_sti_ce_face_bine_vs_a_face_bine_v2.webp"
 	},
 	"/images/blog/postare_blog_-_ziua_3__energia_pentru_o_noua_zi.webp": {
 		"type": "image/webp",
 		"etag": "\"ccc6-BBruKQFB3AKNz/Q6PiL6wuaxZtM\"",
-		"mtime": "2026-08-19T17:59:34.568Z",
+		"mtime": "2026-08-27T16:14:38.807Z",
 		"size": 52422,
 		"path": "../public/images/blog/postare_blog_-_ziua_3__energia_pentru_o_noua_zi.webp"
+	},
+	"/images/blog/postare_blog_-_trib_-_tema3_multiplicare.webp": {
+		"type": "image/webp",
+		"etag": "\"2a244-eJRjGvyM3avTYmSW6a83Wj9glTo\"",
+		"mtime": "2026-08-27T16:14:38.807Z",
+		"size": 172612,
+		"path": "../public/images/blog/postare_blog_-_trib_-_tema3_multiplicare.webp"
+	},
+	"/images/blog/postare_blog_-_trib_-_tema2_oglinzi.webp": {
+		"type": "image/webp",
+		"etag": "\"39162-NQo+o3BHYa9Vo73+4MM3F56/Rt0\"",
+		"mtime": "2026-08-27T16:14:38.806Z",
+		"size": 233826,
+		"path": "../public/images/blog/postare_blog_-_trib_-_tema2_oglinzi.webp"
 	},
 	"/images/blog/postare_blog_-_ziua_4__dimineata_lenesa.webp": {
 		"type": "image/webp",
 		"etag": "\"f330-NKytYviAHBXrNpONxXl8ZD7e0F8\"",
-		"mtime": "2026-08-19T17:59:34.569Z",
+		"mtime": "2026-08-27T16:14:38.808Z",
 		"size": 62256,
 		"path": "../public/images/blog/postare_blog_-_ziua_4__dimineata_lenesa.webp"
+	},
+	"/images/blog/postare_blog_-_uniunea_sovietica.webp": {
+		"type": "image/webp",
+		"etag": "\"5211e-Z+c7mCJcwajrR/DCigULQ635nCU\"",
+		"mtime": "2026-08-27T16:14:38.811Z",
+		"size": 336158,
+		"path": "../public/images/blog/postare_blog_-_uniunea_sovietica.webp"
 	},
 	"/images/blog/postare_blog_-_ziua_3__stii_ca_stii.webp": {
 		"type": "image/webp",
 		"etag": "\"2cc88-vDtNxVLg6rPmUEr4FMOpoGKbajY\"",
-		"mtime": "2026-08-19T17:59:34.569Z",
+		"mtime": "2026-08-27T16:14:38.808Z",
 		"size": 183432,
 		"path": "../public/images/blog/postare_blog_-_ziua_3__stii_ca_stii.webp"
-	},
-	"/images/blog/postare_blog_-_ziua_4__nu_stii_ca_stii.webp": {
-		"type": "image/webp",
-		"etag": "\"2e2c6-ts/8W8E1tTkcW6GQPMnzh0uwAAw\"",
-		"mtime": "2026-08-19T17:59:34.570Z",
-		"size": 189126,
-		"path": "../public/images/blog/postare_blog_-_ziua_4__nu_stii_ca_stii.webp"
-	},
-	"/images/blog/postare_blog_-_ziua_5__incheiere.webp": {
-		"type": "image/webp",
-		"etag": "\"25afe-/oIS6rRPoVKW+MJE7z5gEohElQ0\"",
-		"mtime": "2026-08-19T17:59:34.570Z",
-		"size": 154366,
-		"path": "../public/images/blog/postare_blog_-_ziua_5__incheiere.webp"
-	},
-	"/images/blog/postare_blog_-_ziua_5__ziua_buna_incepe_in_seara_de_dinainte.webp": {
-		"type": "image/webp",
-		"etag": "\"a396-ym4oKOrB9VssimYVG1tYUdqd58o\"",
-		"mtime": "2026-08-19T17:59:34.569Z",
-		"size": 41878,
-		"path": "../public/images/blog/postare_blog_-_ziua_5__ziua_buna_incepe_in_seara_de_dinainte.webp"
 	},
 	"/images/blog/postare_blog_-_ziua_6__motivatie_fara_actiune.webp": {
 		"type": "image/webp",
 		"etag": "\"106da-J0fgZwxm0u68bm8vO+8b7ZPKqA4\"",
-		"mtime": "2026-08-19T17:59:34.570Z",
+		"mtime": "2026-08-27T16:14:38.810Z",
 		"size": 67290,
 		"path": "../public/images/blog/postare_blog_-_ziua_6__motivatie_fara_actiune.webp"
+	},
+	"/images/blog/postare_blog_-_ziua_5__incheiere.webp": {
+		"type": "image/webp",
+		"etag": "\"25afe-/oIS6rRPoVKW+MJE7z5gEohElQ0\"",
+		"mtime": "2026-08-27T16:14:38.809Z",
+		"size": 154366,
+		"path": "../public/images/blog/postare_blog_-_ziua_5__incheiere.webp"
+	},
+	"/images/blog/postare_blog_-_ziua_4__nu_stii_ca_stii.webp": {
+		"type": "image/webp",
+		"etag": "\"2e2c6-ts/8W8E1tTkcW6GQPMnzh0uwAAw\"",
+		"mtime": "2026-08-27T16:14:38.809Z",
+		"size": 189126,
+		"path": "../public/images/blog/postare_blog_-_ziua_4__nu_stii_ca_stii.webp"
+	},
+	"/images/blog/postare_blog_-_ziua_5__ziua_buna_incepe_in_seara_de_dinainte.webp": {
+		"type": "image/webp",
+		"etag": "\"a396-ym4oKOrB9VssimYVG1tYUdqd58o\"",
+		"mtime": "2026-08-27T16:14:38.810Z",
+		"size": 41878,
+		"path": "../public/images/blog/postare_blog_-_ziua_5__ziua_buna_incepe_in_seara_de_dinainte.webp"
+	},
+	"/images/blog/postare_blog__seria_despre_ras__ziua_3_-_haha_de_amortizare_a_durerii.webp": {
+		"type": "image/webp",
+		"etag": "\"14df6-jb6jHCrfvguAhdbQzvg9d2BDMFI\"",
+		"mtime": "2026-08-27T16:14:38.809Z",
+		"size": 85494,
+		"path": "../public/images/blog/postare_blog__seria_despre_ras__ziua_3_-_haha_de_amortizare_a_durerii.webp"
 	},
 	"/images/blog/postare_blog__seria_despre_ras__ziua_5_-_hehe_de_retragere_dupa_atac.webp": {
 		"type": "image/webp",
 		"etag": "\"fab0-MTCfH35MThZgDtH+Gen2XMGEln0\"",
-		"mtime": "2026-08-19T17:59:34.572Z",
+		"mtime": "2026-08-27T16:14:38.812Z",
 		"size": 64176,
 		"path": "../public/images/blog/postare_blog__seria_despre_ras__ziua_5_-_hehe_de_retragere_dupa_atac.webp"
 	},
 	"/images/blog/postare_blog__seria_despre_ras__ziua_4_-_hoho_de_protejare_a_relatiei.webp": {
 		"type": "image/webp",
 		"etag": "\"22296-8MlvbEMHgpJCGPqJ0swGQNmWOFg\"",
-		"mtime": "2026-08-19T17:59:34.571Z",
+		"mtime": "2026-08-27T16:14:38.810Z",
 		"size": 139926,
 		"path": "../public/images/blog/postare_blog__seria_despre_ras__ziua_4_-_hoho_de_protejare_a_relatiei.webp"
-	},
-	"/images/blog/postare_blog__seria_despre_ras__ziua_3_-_haha_de_amortizare_a_durerii.webp": {
-		"type": "image/webp",
-		"etag": "\"14df6-jb6jHCrfvguAhdbQzvg9d2BDMFI\"",
-		"mtime": "2026-08-19T17:59:34.573Z",
-		"size": 85494,
-		"path": "../public/images/blog/postare_blog__seria_despre_ras__ziua_3_-_haha_de_amortizare_a_durerii.webp"
 	},
 	"/images/blog/postare_blog__serie_despre_ras__ziua_1_-_introducere.webp": {
 		"type": "image/webp",
 		"etag": "\"106d0-Xpmp1F7L+a0+kQ/p0w8CrykS3OU\"",
-		"mtime": "2026-08-19T17:59:34.572Z",
+		"mtime": "2026-08-27T16:14:38.812Z",
 		"size": 67280,
 		"path": "../public/images/blog/postare_blog__serie_despre_ras__ziua_1_-_introducere.webp"
-	},
-	"/images/blog/postare_blog__ziua_7_-_pilot_automat.webp": {
-		"type": "image/webp",
-		"etag": "\"23e28-a0XdSPW/pqQzsjDQl2KgSANbEro\"",
-		"mtime": "2026-08-19T17:59:34.574Z",
-		"size": 146984,
-		"path": "../public/images/blog/postare_blog__ziua_7_-_pilot_automat.webp"
 	},
 	"/images/blog/postare_blog__ziua_10_-_mitul_pesterii_in_modern.webp": {
 		"type": "image/webp",
 		"etag": "\"20ed4-eC8BSnlotxN8j2Pp9atfb1YWEPI\"",
-		"mtime": "2026-08-19T17:59:34.572Z",
+		"mtime": "2026-08-27T16:14:38.813Z",
 		"size": 134868,
 		"path": "../public/images/blog/postare_blog__ziua_10_-_mitul_pesterii_in_modern.webp"
+	},
+	"/images/blog/postare_blog__ziua_7_-_pilot_automat.webp": {
+		"type": "image/webp",
+		"etag": "\"23e28-a0XdSPW/pqQzsjDQl2KgSANbEro\"",
+		"mtime": "2026-08-27T16:14:38.812Z",
+		"size": 146984,
+		"path": "../public/images/blog/postare_blog__ziua_7_-_pilot_automat.webp"
 	},
 	"/images/blog/postare_blog__ziua_8_-_schimbarea_de_perspectiva.webp": {
 		"type": "image/webp",
 		"etag": "\"7a1e-DH08EKPSCOubBNd3uq5VKwsBmHU\"",
-		"mtime": "2026-08-19T17:59:34.572Z",
+		"mtime": "2026-08-27T16:14:38.811Z",
 		"size": 31262,
 		"path": "../public/images/blog/postare_blog__ziua_8_-_schimbarea_de_perspectiva.webp"
 	},
 	"/images/blog/postare_blog__ziua_9_-_motivatie__flow__sens.webp": {
 		"type": "image/webp",
 		"etag": "\"209f4-YWIQTnLh93tRThStcT0jw7e9ESQ\"",
-		"mtime": "2026-08-19T17:59:34.574Z",
+		"mtime": "2026-08-27T16:14:38.813Z",
 		"size": 133620,
 		"path": "../public/images/blog/postare_blog__ziua_9_-_motivatie__flow__sens.webp"
-	},
-	"/images/blog/re_blog_-_serie_de_Craciun__ziua_4_-_traditiile_au_fost_mai_mult_decat_decor.webp": {
-		"type": "image/webp",
-		"etag": "\"60d40-KVxjIRnq4Fp5uv9EoQLaANtt0is\"",
-		"mtime": "2026-08-19T17:59:34.580Z",
-		"size": 396608,
-		"path": "../public/images/blog/re_blog_-_serie_de_Craciun__ziua_4_-_traditiile_au_fost_mai_mult_decat_decor.webp"
-	},
-	"/images/blog/taste-the-corn-logo.webp": {
-		"type": "image/webp",
-		"etag": "\"18524-EEOjjaO2OyEogOlgVGw25iDbqe8\"",
-		"mtime": "2026-08-19T17:59:34.574Z",
-		"size": 99620,
-		"path": "../public/images/blog/taste-the-corn-logo.webp"
-	},
-	"/images/blog/tomorrow.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"971f-hTw+i+J5tU47UQxMRn4zERcWyWc\"",
-		"mtime": "2026-08-19T17:59:34.575Z",
-		"size": 38687,
-		"path": "../public/images/blog/tomorrow.jpg"
-	},
-	"/images/blog/timp-cover-int.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"110be-xp05edX5w8RaYACK3hwrzR7h96Y\"",
-		"mtime": "2026-08-19T17:59:34.576Z",
-		"size": 69822,
-		"path": "../public/images/blog/timp-cover-int.jpg"
-	},
-	"/images/blog/question_behind_question.webp": {
-		"type": "image/webp",
-		"etag": "\"bda2-4QMBUTCciAcUQgLNJZ/T26Wg/2o\"",
-		"mtime": "2026-08-19T17:59:34.574Z",
-		"size": 48546,
-		"path": "../public/images/blog/question_behind_question.webp"
-	},
-	"/images/blog/rian.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"4383a-Oj5ljaPUVFpUVOYfnU5JN4prStw\"",
-		"mtime": "2026-08-19T17:59:34.575Z",
-		"size": 276538,
-		"path": "../public/images/blog/rian.jpg"
-	},
-	"/images/blog/tumblr_m93zeaYZQ41qbnvdao1_500.gif": {
-		"type": "image/gif",
-		"etag": "\"7c0bb-lEwxh1E19ycktGihtZMkHx3eEio\"",
-		"mtime": "2026-08-19T17:59:34.578Z",
-		"size": 508091,
-		"path": "../public/images/blog/tumblr_m93zeaYZQ41qbnvdao1_500.gif"
 	},
 	"/images/blog/postare_blog_cum_mi-am_dat_seama_ca_am_toate_resursele.webp": {
 		"type": "image/webp",
 		"etag": "\"11dec-KFkMAPO5dlisA08v+xDPNGzqqHs\"",
-		"mtime": "2026-08-19T17:59:34.572Z",
+		"mtime": "2026-08-27T16:14:38.813Z",
 		"size": 73196,
 		"path": "../public/images/blog/postare_blog_cum_mi-am_dat_seama_ca_am_toate_resursele.webp"
 	},
-	"/images/blog/va.jpg": {
+	"/images/blog/question_behind_question.webp": {
+		"type": "image/webp",
+		"etag": "\"bda2-4QMBUTCciAcUQgLNJZ/T26Wg/2o\"",
+		"mtime": "2026-08-27T16:14:38.814Z",
+		"size": 48546,
+		"path": "../public/images/blog/question_behind_question.webp"
+	},
+	"/images/blog/taste-the-corn-logo.webp": {
+		"type": "image/webp",
+		"etag": "\"18524-EEOjjaO2OyEogOlgVGw25iDbqe8\"",
+		"mtime": "2026-08-27T16:14:38.816Z",
+		"size": 99620,
+		"path": "../public/images/blog/taste-the-corn-logo.webp"
+	},
+	"/images/blog/timp-cover-int.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"14d75-a4+rlxxhK9oCFLOCTvNSQG0mtps\"",
-		"mtime": "2026-08-19T17:59:34.577Z",
-		"size": 85365,
-		"path": "../public/images/blog/va.jpg"
+		"etag": "\"110be-xp05edX5w8RaYACK3hwrzR7h96Y\"",
+		"mtime": "2026-08-27T16:14:38.817Z",
+		"size": 69822,
+		"path": "../public/images/blog/timp-cover-int.jpg"
+	},
+	"/images/blog/tomorrow.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"971f-hTw+i+J5tU47UQxMRn4zERcWyWc\"",
+		"mtime": "2026-08-27T16:14:38.815Z",
+		"size": 38687,
+		"path": "../public/images/blog/tomorrow.jpg"
+	},
+	"/images/blog/rian.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"4383a-Oj5ljaPUVFpUVOYfnU5JN4prStw\"",
+		"mtime": "2026-08-27T16:14:38.816Z",
+		"size": 276538,
+		"path": "../public/images/blog/rian.jpg"
+	},
+	"/images/blog/re_blog_-_serie_de_Craciun__ziua_4_-_traditiile_au_fost_mai_mult_decat_decor.webp": {
+		"type": "image/webp",
+		"etag": "\"60d40-KVxjIRnq4Fp5uv9EoQLaANtt0is\"",
+		"mtime": "2026-08-27T16:14:38.816Z",
+		"size": 396608,
+		"path": "../public/images/blog/re_blog_-_serie_de_Craciun__ziua_4_-_traditiile_au_fost_mai_mult_decat_decor.webp"
 	},
 	"/images/blog/valent.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"699d-Yzo8OsMqUp0CP4HvTIDxzQMmbfc\"",
-		"mtime": "2026-08-19T17:59:34.576Z",
+		"mtime": "2026-08-27T16:14:38.817Z",
 		"size": 27037,
 		"path": "../public/images/blog/valent.jpg"
 	},
 	"/images/blog/work.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"6a7a-aOHbiV1bm7NHDHTGpQ19Ne18Vvw\"",
-		"mtime": "2026-08-19T17:59:34.577Z",
+		"mtime": "2026-08-27T16:14:38.818Z",
 		"size": 27258,
 		"path": "../public/images/blog/work.jpg"
+	},
+	"/images/blog/va.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"14d75-a4+rlxxhK9oCFLOCTvNSQG0mtps\"",
+		"mtime": "2026-08-27T16:14:38.819Z",
+		"size": 85365,
+		"path": "../public/images/blog/va.jpg"
+	},
+	"/images/blog/tumblr_m93zeaYZQ41qbnvdao1_500.gif": {
+		"type": "image/gif",
+		"etag": "\"7c0bb-lEwxh1E19ycktGihtZMkHx3eEio\"",
+		"mtime": "2026-08-27T16:14:38.817Z",
+		"size": 508091,
+		"path": "../public/images/blog/tumblr_m93zeaYZQ41qbnvdao1_500.gif"
 	},
 	"/images/blog/vasla-si-curentul-hero.webp": {
 		"type": "image/webp",
 		"etag": "\"5a690-THRPZQC1L/p5OzNwP81/Tjekroo\"",
-		"mtime": "2026-08-19T17:59:34.581Z",
+		"mtime": "2026-08-27T16:14:38.822Z",
 		"size": 370320,
 		"path": "../public/images/blog/vasla-si-curentul-hero.webp"
 	}
