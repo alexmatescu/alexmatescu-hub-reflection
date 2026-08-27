@@ -589,5 +589,5 @@ curl -sIL "$S/pagina"                   # statusuri și redirecturi observabile<
 
       <p>Comportamentul crawlerelor AI, documentația OpenAI/Perplexity, lista participanților IndexNow și poziția providerilor față de <code>llms.txt</code> se pot modifica. Afirmațiile despre aceste produse și protocoale descriu <strong>starea verificată la 18 august 2026</strong> și trebuie reverificate înaintea unei actualizări viitoare.</p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu. Ultima verificare factuală și a surselor: 18 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 18 august 2026.</em></p>
 `;

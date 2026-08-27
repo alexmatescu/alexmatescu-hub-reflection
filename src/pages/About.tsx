@@ -13,7 +13,7 @@ const values = [
 
 const mainProjects = [
   { name: "CRANDIT", desc: "Carte în lucru — Mitul succesului peste noapte (2026)" },
-  { name: "GEO / AI Visibility", desc: "Vizibilitate în era căutării generative — direcție în formare" },
+  { name: "GEO / AEO / AI Visibility Lab", desc: "Vizibilitate în era căutării generative — direcție în formare" },
   { name: "Blogging", desc: "delamatescu.ro — scris constant din 2014, relansat în 2025" },
   { name: "Afacerea de familie", desc: "Magazin mixt rural — activ din aprilie 2021" },
   { name: "Taste the Corn", desc: "Concept de retail alimentar în Sibiu — construit, testat și închis (2025)" },
@@ -22,10 +22,15 @@ const mainProjects = [
   { name: "Afacerea cu haine", desc: "Primul magazin, prima lecție reală de antreprenoriat — 2017" },
 ];
 
-const domains = [
-  "Inteligență Artificială (AI)",
+const appliedDomains = [
+  "AI Visibility Lab",
   "Generative Engine Optimization (GEO)",
   "Answer Engine Optimization (AEO)",
+  "AI Search și sisteme generative",
+  "Identificarea și vizibilitatea entităților digitale",
+];
+
+const studyDomains = [
   "Leadership",
   "Sisteme autonome și tehnologie automotive",
   "Productivitate",
@@ -41,8 +46,8 @@ const About = () => {
   return (
     <>
       <Seo
-        title="Despre Alex Matescu — Inginer, antreprenor, consultant AI Visibility și autor"
-        description="Cine este Alex Matescu: inginer în automotive, antreprenor, consultant AI Visibility și autor al CRANDIT — creator de conținut despre muncă, tehnologie și sens."
+        title="Despre Alex Matescu — Inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor"
+        description="Cine este Alex Matescu: inginer în automotive, antreprenor, fondator și coordonator AI Visibility Lab și autor al CRANDIT — creator de conținut despre muncă, tehnologie și sens."
         imageUrl="https://delamatescu.ro/images/AlexMatescu-profile-picture.jpg"
         imageAlt="Alex Matescu"
         jsonLd={{ "@context": "https://schema.org", ...alexMatescuPerson }}
@@ -53,11 +58,11 @@ const About = () => {
         <div className="md:col-span-7">
           <p className="eyebrow mb-8">Despre mine</p>
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">
-            Alex Matescu — Inginer, antreprenor, consultant AI Visibility și
+            Alex Matescu — Inginer, antreprenor, fondator AI Visibility Lab și
             autor
           </h1>
           <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-3xl text-balance">
-            Inginer, antreprenor, consultant AI Visibility și autor din România.
+            Inginer, antreprenor, fondator AI Visibility și autor din România.
           </p>
           <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
             Construiesc proiecte, scriu despre ceea ce învăț și documentez procesul prin care încerc să înțeleg munca, succesul, tehnologia și omul.
@@ -122,7 +127,7 @@ const About = () => {
           <div className="bg-background p-8">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Activități</p>
             <p className="font-serif text-xl">
-              Inginer • Antreprenor • Consultant AI Visibility • Autor
+              Inginer • Antreprenor • Fondator AI Visibility Lab • Autor
             </p>
           </div>
         </div>
@@ -152,7 +157,7 @@ const About = () => {
                 <li>Fondator Taste the Corn — concept de retail alimentar în Sibiu, construit, lansat, operat și închis între ianuarie și decembrie 2025.</li>
                 <li>Fondator Atracțiile României — proiect digital de turism cultural, dezvoltat constant între 2021 și 2023.</li>
                 <li>Prima experiență antreprenorială: un magazin de haine deschis în 2017 la Craiova — încheiat rapid, dar formator.</li>
-                <li>Inițiator al direcției GEO / AI Visibility — vizibilitate pentru branduri în era căutării generative.</li>
+                <li>Fondator și coordonator AI Visibility — vizibilitate pentru branduri în era căutării generative.</li>
               </ul>
             </div>
             <div>
@@ -254,10 +259,10 @@ const About = () => {
             Una dintre cele mai importante experiențe antreprenoriale a fost dezvoltarea unei afaceri de familie în mediul rural, un magazin mixt construit în jurul nevoilor reale ale comunității locale și aflat în funcțiune și astăzi.
           </p>
           <p>
-            Ulterior am explorat și alte direcții antreprenoriale, de la proiecte digitale și promovare online până la concepte din zona de retail alimentar și servicii bazate pe inteligență artificială.
+            Ulterior am explorat și alte direcții antreprenoriale, de la proiecte digitale și promovare online până la concepte din zona de retail alimentar și cercetare aplicată în inteligență artificială și AI Visibility.
           </p>
           <p>
-            Printre proiectele dezvoltate se numără Atracțiile României, Taste the Corn și inițiativa GEO / AI Visibility.
+            Printre proiectele dezvoltate se numără Atracțiile României, Taste the Corn și AI Visibility Lab.
           </p>
           <p>
             Unele proiecte au avut succes comercial, altele au rămas experimente sau lecții importante. Toate au contribuit la dezvoltarea unei înțelegeri mai profunde asupra execuției, riscului, responsabilității și construcției pe termen lung.
@@ -284,11 +289,24 @@ const About = () => {
           <h2 className="eyebrow">03 · Domenii de interes</h2>
         </div>
         <div className="md:col-span-8">
+          <h3 className="font-serif text-2xl mb-3">Activitate aplicată</h3>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-            În prezent studiez și scriu despre:
+            În prezent lucrez aplicat în AI Visibility, Generative Engine Optimization (GEO) și Answer Engine Optimization (AEO), pe care le testez prin măsurători, optimizări și studii de caz publicate în AI Visibility Lab.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
-            {domains.map((d) => (
+            {appliedDomains.map((d) => (
+              <div key={d} className="flex items-center gap-3 p-4 border border-foreground/10 bg-surface/40">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                <span className="text-sm">{d}</span>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="font-serif text-2xl mb-3 mt-12">
+            Domenii pe care continui să le studiez și despre care scriu
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {studyDomains.map((d) => (
               <div key={d} className="flex items-center gap-3 p-4 border border-foreground/10 bg-surface/40">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                 <span className="text-sm">{d}</span>
@@ -311,7 +329,7 @@ const About = () => {
           </p>
           <ul>
             <li>finalizarea manuscrisului și construirea comunității în jurul cărții CRANDIT;</li>
-            <li>dezvoltarea direcției GEO / AI Visibility;</li>
+            <li>dezvoltarea AI Visibility Lab prin cercetare aplicată, măsurători, optimizări GEO/AEO și publicarea de studii de caz;</li>
             <li>scrisul constant pe blogul delamatescu.ro, relansat în 2025;</li>
             <li>coordonarea afacerii de familie în mediul rural.</li>
           </ul>

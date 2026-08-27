@@ -8,9 +8,11 @@ export const avl501DespreLaboratorHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-501</td></tr>
         <tr><th scope="row">Nivel</th><td>F — Despre laborator</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -35,6 +37,8 @@ export const avl501DespreLaboratorHtml = `
 
       <p>AI Visibility Lab este inițiat și coordonat de Alex Matescu. Laboratorul reprezintă cadrul public în care sunt dezvoltate și publicate cercetările, metodologiile și experimentele privind AI Visibility.</p>
 
+      <p>Activitatea sa în cadrul Lab-ului include cercetare aplicată, măsurarea AI Visibility, optimizări GEO/AEO și documentarea publică a rezultatelor și limitărilor.</p>
+
       <h2>Ce NU este AI Visibility Lab?</h2>
 
       <p>Nu este o agenție SEO, nu este un instrument software și nu promite obținerea de citări sau poziții în sistemele AI. Scopul său este documentarea și explicarea fenomenelor observabile.</p>
@@ -48,4 +52,13 @@ export const avl501DespreLaboratorHtml = `
       <p>AI Visibility Lab este un proiect în dezvoltare continuă. Conținutul este revizuit și extins pe măsură ce apar noi platforme, funcționalități și documentații oficiale.</p>
 
       <blockquote>AI Visibility Lab își propune să construiască o bază publică de cunoștințe despre vizibilitatea în sistemele AI, separând documentația, cercetarea, metodologia și experimentele într-o structură clară și verificabilă.</blockquote>
+
+      <h2>Istoricul versiunilor</h2>
+
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.1.0</td><td>26 august 2026</td><td>Activ</td><td>MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); adăugat un paragraf la secțiunea „Cine coordonează laboratorul?" despre activitatea aplicată a lui Alex Matescu în cadrul Lab-ului (prima versiune cu numerotare explicită a documentului).</td></tr>
+        </tbody>
+      </table>
 `;

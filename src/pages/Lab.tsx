@@ -94,6 +94,14 @@ export const LabIndex = () => (
           și audit pentru cei care vor să fie găsiți, citați și recomandați de ChatGPT, Gemini,
           Perplexity, Claude și Copilot.
         </p>
+        <p className="mt-4 text-base text-[#e8e0cf]/70 leading-relaxed max-w-2xl">
+          AI Visibility Lab este fondat și coordonat de{" "}
+          <Link to="/despre" className="underline underline-offset-4 hover:text-[#f0e8d6]">
+            Alex Matescu
+          </Link>
+          , care documentează aici cercetarea, măsurătorile și optimizările realizate în domeniul AI
+          Visibility, GEO și AEO.
+        </p>
       </div>
     </section>
 

@@ -8,12 +8,12 @@ export const avl101GeoAeoHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-101</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>21 iulie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -58,7 +58,7 @@ export const avl101GeoAeoHtml = `
 
       <p><strong>Google</strong> folosește Google-Extended ca token separat de control pentru utilizarea conținutului în modelele Gemini, distinct de Googlebot-ul clasic de căutare.</p>
 
-      <p>Concluzia pentru orice audit de AI Visibility: verificarea accesului crawlerelor AI este pasul zero. Este una dintre cele mai frecvente probleme găsite în practică — site-uri cu SEO decent care blochează, adesea fără să știe (prin firewall, CDN sau setări implicite de CMS), exact roboții care le-ar aduce citări.</p>
+      <p>Concluzia pentru orice audit de AI Visibility: verificarea accesului crawlerelor AI este pasul zero. Este un risc practic pe care metodologia AI Visibility Lab îl verifică explicit — site-uri cu SEO decent pot bloca, adesea fără să știe (prin firewall, CDN sau setări implicite de CMS), exact roboții care le-ar aduce citări — și care este documentat și de furnizorii platformelor.</p>
 
       <h2>De ce contează acum?</h2>
 
@@ -77,7 +77,7 @@ export const avl101GeoAeoHtml = `
 
       <p><strong>Deficitul de surse citabile în română.</strong> Pentru multe subiecte de nișă, motoarele AI nu găsesc surse românești structurate și ajung să sintetizeze din surse străine sau din agregatoare slabe. Asta produce răspunsuri generice sau greșite despre piața locală — și, simultan, o oportunitate: primele surse românești riguroase pe un subiect devin implicit sursele citate.</p>
 
-      <p><strong>Vizibilitatea în căutare și vizibilitatea AI sunt variabile independente.</strong> Din măsurătorile noastre directe: o entitate poate fi invizibilă în Google/Bing și totuși citată corect de ChatGPT — și invers. De aceea un audit serios măsoară ambele straturi separat, cu metodologie documentată. Acesta este fundamentul fazei noastre F0, <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a>.</p>
+      <p><strong>Vizibilitatea în căutare și vizibilitatea AI sunt variabile independente.</strong> În măsurătorile publicate până acum de AI Visibility Lab, o entitate poate fi invizibilă în Google/Bing și totuși citată corect de ChatGPT — și invers. De aceea un audit serios măsoară ambele straturi separat, cu metodologie documentată — vezi <a href="/lab/cercetare/cum-se-masoara-ai-visibility">cum măsurăm AI Visibility</a> și fundamentul fazei F0, <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a>.</p>
 
       <h2>Întrebări frecvente</h2>
 
@@ -116,4 +116,14 @@ export const avl101GeoAeoHtml = `
       </ul>
 
       <p>Metodologia de măsurare folosită de AI Visibility Lab este documentată public în paginile <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a> și „<a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a>". Această pagină este actualizată pe măsură ce documentația oficială a furnizorilor evoluează.</p>
+
+      <h2>Istoricul versiunilor</h2>
+
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
+          <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); reformulate afirmațiile despre variabilitatea vizibilității Google vs. ChatGPT și despre blocarea crawlerelor, pentru a nu depăși baza empirică disponibilă, cu trimitere către metodologia de măsurare.</td></tr>
+        </tbody>
+      </table>
 `;

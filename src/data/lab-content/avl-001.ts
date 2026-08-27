@@ -8,12 +8,12 @@ export const avl001IntroductionHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-001</td></tr>
         <tr><th scope="row">Nivel</th><td>A — Foundation</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>21 iulie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         <tr><th scope="row">Limba</th><td>română</td></tr>
         <tr><th scope="row">URL canonic propus</th><td>https://delamatescu.ro/lab — de confirmat la publicare</td></tr>
         </tbody>
@@ -626,6 +626,10 @@ export const avl001IntroductionHtml = `
       <h3>Versiunea 1.0.0 — iulie 2026</h3>
 
       <p>Prima versiune publică. Documentul definește identitatea și misiunea AI Visibility Lab, stabilește domeniul cercetării, introduce clasificarea afirmațiilor și ierarhia surselor, descrie metodologia generală, regulile de interpretare a rezultatelor, structura corpusului, regulile de versiune și corecție și declarația de independență.</p>
+
+      <h3>Versiunea 1.0.2 — 26 august 2026</h3>
+
+      <p>PATCH: în tabelul de metadate, câmpurile Autor și Organizație au fost transformate în linkuri interne (Autor → /despre, Organizație → /lab), pentru consistența relației autor–organizație în întregul corpus AI Visibility Lab.</p>
 
       <p>Documentația laboratorului descrie ceea ce este documentat, observat sau susținut de dovezi. Nu pretinde acces la mecanisme interne nepublice și nu transformă observațiile limitate sau corelațiile experimentale în reguli universale.</p>
 `;

@@ -74,7 +74,7 @@ image_alt: ""
 
 - `image`/`image_alt` opționale — dacă nu există imagine, nu inventa URL; semnalează lipsa în raport (§14), nu o completa.
 - `last_reviewed` = ultima verificare factuală reală (poate diferi de `date_modified`).
-- `date_modified` se schimbă doar dacă articolul a fost efectiv modificat; `date_published` nu se resetează la update.
+- `date_modified` se schimbă doar dacă articolul a fost efectiv modificat; `date_published` nu se resetează la update. Regulile complete ale celor trei date (când se schimbă fiecare, cum apar în byline și în JSON-LD) — §6.2.
 - `keywords` reflectă conținutul real, nu keyword stuffing. Nu adăuga `tags` separat — ar duplica `keywords` fără un consumator real în site (nu există filtrare pe tag-uri în `/lab`).
 - Nu adăuga `slug` sau `article_section` în frontmatter (vezi Faza 0 și §5.1 — derivate/hardcodate, nu per-articol).
 - Articolele publicate **înainte** de acest contract (frontmatter vechi, fără `last_reviewed`) rămân valide — nu le migra retroactiv decât dacă li se face oricum un update de conținut.
@@ -191,11 +191,18 @@ Nu inventa un URL pentru `image` dacă nu există unul real.
 
 ### 5.1 — Entity consistency (politica actuală a proiectului — nu inventa alta)
 
-- **Person**: `alexMatescuPerson` din `@/components/Seo`, `@id: https://delamatescu.ro/#alex-matescu`. Randat global (orice pagină) prin `personJsonLd` în `src/routes/__root.tsx`. Referențiază-l mereu prin acest `@id` — nu crea un nod Person nou sau un `@id` diferit.
+- **Person**: `alexMatescuPerson` din `@/components/Seo`, `@id: https://delamatescu.ro/#alex-matescu`. Randat global (orice pagină) prin `personJsonLd` în `src/routes/__root.tsx`. Referențiază-l mereu prin acest `@id` — nu crea un nod Person nou sau un `@id` diferit. `name` rămâne strict `"Alex Matescu"` — nu introduce titulaturi („consultant AI Visibility”, „Fondator și coordonator AI Visibility Lab”, „expert GEO” etc.) în acest câmp; rolul apare doar în byline-ul HTML (§6.1), nu în `Person.name`.
+- **Author (per articol)** — `Article`/`BlogPosting` din JSON-LD referă autorul prin același `@id`, nu printr-un nod nou:
+  ```json
+  "author": { "@id": "https://delamatescu.ro/#alex-matescu" }
+  ```
+  Dacă `buildArticleJsonLd` produce deja acest pattern (verifică output-ul real, nu presupune), nu-l duplica altfel.
 - **WebSite**: `alexMatescuWebSite` din `@/components/Seo`, `@id: https://delamatescu.ro/#website`. Randat doar pe `/` (client-side, prin `Seo jsonLd`) — **nu** e global. Un articol care îl referențiază trebuie să-l embed-uiască complet (nu doar `{"@id": ...}`), altfel pagina lui nu e self-contained pentru unelte care citesc o singură pagină.
 - **Publisher**: `Organization`, `name: "AI Visibility Lab"`, `url: "https://delamatescu.ro/lab"` (constanta `labPublisher` din `lab-seo.ts`) — identic pe toate articolele, legacy și noi. AI Visibility Lab nu e modelat ca persoană juridică independentă — e reprezentat ca brand editorial (`articleSection`) + publisher Organization, nu altfel.
 
 Nu inventa link-uri `sameAs` noi — reutilizează cele deja din `alexMatescuPerson.sameAs`.
+
+`alexMatescuPerson.url` (constanta din `Seo.tsx`) indică `https://delamatescu.ro/despre` (actualizat 26 august 2026, decizie explicită a userului — anterior indica homepage-ul) — consistent cu linkul vizibil din byline (§6.1). Acest skill **nu** modifică `alexMatescuPerson` din fluxul de publicare a unui articol (e definit o singură dată, global, în `Seo.tsx`, folosit pe orice pagină) — orice schimbare ulterioară a acelei constante e o decizie separată, semnalată userului, nu o modificare per-articol.
 
 ### 5.2 — JSON-LD (`buildArticleJsonLd` din `lab-seo.ts`)
 
@@ -205,6 +212,8 @@ Funcția are **două căi**, alese automat după prezența `lastReviewed` în me
 - **Graph** (cu `lastReviewed`) — un singur obiect `{"@context", "@graph": [...]}` cu `Person` (embed complet) + `WebSite` (embed complet) + `WebPage` (`@id: {canonical}#webpage`) + `Article` (`@id: {canonical}#article`, `mainEntityOfPage` → webpage) + `FAQPage` (`@id: {canonical}#faq`, doar dacă există FAQ). `citation` conține **numai** sursele efectiv folosite în articol — nu linkuri decorative.
 
 Un articol nou capătă automat formatul `graph` din momentul în care are `last_reviewed` completat (frontmatter) → `lastReviewed` (Meta `.ts`). Nu seta `lastReviewed` "ca să obții @graph" fără să fi făcut de fapt verificarea — câmpul înseamnă exact ce spune numele lui.
+
+**Sincronizare cu byline-ul (§6.1/§6.2):** `datePublished`/`dateModified` din JSON-LD trebuie să coincidă semantic cu datele afișate în byline — nu e permisă o divergență de tipul „byline arată 10 august, JSON-LD arată 11 august”. `dateModified` nu se schimbă automat doar pentru că `lastReviewed`/`last_reviewed` s-a schimbat — regulile complete ale celor trei date sunt la §6.2, valabile identic pentru HTML și JSON-LD. Nu inventa o proprietate Schema.org separată pentru `last_reviewed` dacă `buildArticleJsonLd` nu are deja una validă și justificată — verificarea factuală rămâne informație editorială (byline HTML + footer), nu structured data suplimentară.
 
 ### 5.3 — Imagine
 
@@ -222,20 +231,58 @@ Conversie manuală (nu convertor markdown generic), respectând stilul existent:
 
 ### 6.1 — Byline
 
-Primul element din corpul `.ts` (imediat sub titlu/lead-ul deja randat de pagină) este blocul de byline, cu structura:
+Primul element din corpul `.ts` (imediat sub titlu/lead-ul deja randat de pagină) este blocul de byline, cu structura canonică (standard final, 26 august 2026):
 
 ```html
-<p><a href="/despre">Alex Matescu</a> · AI Visibility Lab</p>
-<p>Publicat: {date_published, ex. „10 august 2026”} · Actualizat: {date_modified} · Ultima verificare factuală: {last_reviewed sau data verificării reale}</p>
+<p>
+  <a href="/despre" rel="author">Alex Matescu</a>
+  · Fondator și coordonator
+  <a href="/lab">AI Visibility Lab</a>
+</p>
+<p>
+  Publicat: <time datetime="{date_published ISO, YYYY-MM-DD}">{date_published, ex. „10 august 2026”}</time>
+  · Actualizat: <time datetime="{date_modified ISO}">{date_modified}</time>
+  · Ultima verificare factuală: <time datetime="{last_reviewed ISO}">{last_reviewed}</time>
+</p>
 ```
 
-`Alex Matescu` este mereu link către `/despre` (pagina personală a autorului — nu `/lab/despre-laborator`, care e despre laborator, nu despre persoană). Nu mai adăuga separat, la finalul articolului, paragraful `<em>Articol publicat de AI Visibility Lab…</em>` — informația de byline stă doar aici, la început; secțiunea finală de surse (Faza 7) se încheie cu „Notă de volatilitate”, fără paragraful de byline duplicat la coadă.
+Text vizibil rezultat: **Alex Matescu · Fondator și coordonator AI Visibility Lab**.
+
+Reguli fixe, fără excepție:
+
+- `Alex Matescu` → mereu link către `/despre` (pagina `Person` a autorului — nu `/lab/despre-laborator`, care descrie laboratorul, nu persoana), cu `rel="author"`.
+- `AI Visibility Lab` → mereu link către `/lab`.
+- Rolul afișat e mereu „Fondator și coordonator” — nu „consultant AI Visibility”, „expert GEO” sau altă titulatură; nu inventa un rol diferit per articol.
+- Fiecare dată apare dublu: text vizibil în română (ex. „10 august 2026”) **și** atributul `datetime` în format ISO (`YYYY-MM-DD`) al elementului `<time>`. Ce înseamnă fiecare dată și când se schimbă — vezi §6.2.
+- Dacă articolul n-a fost efectiv modificat după publicare, nu afișa un „Actualizat:” care sugerează fals o actualizare recentă — vezi §6.2.
+
+Pe lângă byline-ul de mai sus, fiecare articol se încheie — Faza 7, imediat după „Notă de volatilitate” — cu paragraful standardizat de footer, identic cuvânt cu cuvânt pe toate cele 12 articole publicate (uniformizat 26 august 2026):
+
+```html
+<p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală [și a surselor]: {data verificării reale}.</em></p>
+```
+
+Nu parafraza formula „Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu.” — variantele vechi („proiectul de cercetare în vizibilitate AI al lui Alex Matescu”, „inginer de sisteme, antreprenor și consultant în vizibilitate AI”, byline-ul fără rol explicit `Alex Matescu · AI Visibility Lab` etc.) sunt înlocuite; copiaz-o exact, la fiecare articol nou. Doar clauza de dată variază: „Ultima verificare factuală: {dată}.” sau „Ultima verificare factuală și a surselor: {dată}.”, după ce a fost verificat efectiv — vezi Faza 7.
+
+Byline-ul și footerul au roluri diferite și **amândouă** trebuie păstrate — nu elimina footerul pe motiv că relația autor–Lab apare acum și în byline. Byline-ul identifică cine a scris articolul și relația lui cu Lab-ul, imediat la începutul textului. Footerul stabilește, la coadă, cine publică articolul, ce este AI Visibility Lab și care e statutul editorial al materialului.
+
+### 6.2 — Cele trei date ale articolului
+
+`date_published`, `date_modified` și `last_reviewed` (frontmatter, §0.3) **nu sunt sinonime** — fiecare are o regulă proprie de actualizare, valabilă atât pentru byline-ul HTML (§6.1), cât și pentru `datePublished`/`dateModified` din JSON-LD (§5.2):
+
+- **`date_published`** — data primei publicări. Nu se rescrie niciodată ulterior, indiferent de câte actualizări sau reverificări urmează.
+- **`date_modified`** — data ultimei modificări editoriale/substanțiale reale a textului. Nu se atinge doar pentru: recitirea articolului, reverificarea surselor, confirmarea că informația e încă validă, sau o simplă schimbare a `last_reviewed`. Dacă articolul a fost verificat factual dar textul n-a fost modificat substanțial, `date_modified` rămâne neschimbat — se schimbă doar `last_reviewed`.
+- **`last_reviewed`** — data ultimei verificări factuale/a surselor, efectiv realizată în task-ul curent. Nu completa automat cu data publicării sau cu data curentă „ca să fie safe” — valoarea înseamnă exact ce spune numele ei.
+
+Nu inventa o actualizare pentru freshness: dacă articolul n-a fost modificat după publicare, nu afișa în byline un „Actualizat:” fictiv doar ca semnal de prospețime. Dacă implementarea tehnică cere o valoare pentru `dateModified` în JSON-LD (câmp neopțional în tipul curent), poate fi tehnic egală cu `datePublished`, dar interfața vizibilă (byline) nu trebuie să sugereze cititorului o actualizare care nu a avut loc.
 
 ---
 
 ## Faza 7 — Surse și metodologie
 
 Păstrează secțiunea finală de surse. Pentru articole cu research important, un tabel `Sursă | Tip | Ce validează | Limită` ajută cititorul — nu e obligatoriu pentru orice articol. Pentru informație volatilă, adaugă o „Notă de volatilitate” care spune explicit că produsul/crawlerul/politica/documentația se pot schimba, cu data reală a verificării.
+
+Ultimul element din `.ts`, după „Notă de volatilitate” (sau, dacă articolul nu are una, ca ultim paragraf al articolului): paragraful standardizat de footer — vezi formula exactă la §6.1. Nu-l omite și nu-l parafraza.
 
 ---
 
@@ -351,7 +398,7 @@ Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doa
 - [ ] Nicio experiență personală fabricată, niciun mecanism algoritmic inventat.
 - [ ] Articolul oferă valoare distinctă / non-commodity (§2), fără canibalizare semantică cu alt articol (§0.1).
 - [ ] Internal linking relevant evaluat.
-- [ ] `last_reviewed` reflectă data reală a verificării; `date_modified` nu s-a schimbat fără modificare reală.
+- [ ] `last_reviewed` reflectă data reală a verificării; `date_modified` nu s-a schimbat fără modificare reală (§6.2).
 - [ ] Metadata din `.md`, `.ts` și runtime nu se contrazic.
 - [ ] `@id`-ul Person e `https://delamatescu.ro/#alex-matescu` peste tot; publisher e `labPublisher` consistent (§5.1).
 - [ ] `citation` (dacă există) conține doar surse efectiv relevante.
@@ -361,6 +408,11 @@ Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doa
 - [ ] Nu se pretinde că `llms.txt`/schema/FAQ/metadata garantează citarea AI (§11.1).
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Claim ledger inclus în raport.
+- [ ] Byline: `Alex Matescu` → `/despre` cu `rel="author"`; rol vizibil „Fondator și coordonator”; `AI Visibility Lab` → `/lab` (§6.1).
+- [ ] Toate cele trei date din byline folosesc `<time datetime="YYYY-MM-DD">`, cu text vizibil în română.
+- [ ] Byline-ul apare imediat sub titlu/lead, înaintea corpului articolului; footerul standardizat apare integral, nemodificat, la coadă — ambele prezente, niciunul nu-l înlocuiește pe celălalt (§6.1).
+- [ ] JSON-LD `author` referă `{"@id": "https://delamatescu.ro/#alex-matescu"}`; `datePublished`/`dateModified` coerente cu byline-ul (§5.1/§5.2).
+- [ ] Nicio variantă veche de byline/footer (`Alex Matescu · AI Visibility Lab` fără rol, „consultant AI Visibility”, „proiectul de cercetare... al lui Alex Matescu” etc.) nu a fost regenerată.
 
 ---
 

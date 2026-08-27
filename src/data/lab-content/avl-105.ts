@@ -8,12 +8,12 @@ export const avl105GlosarHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-105</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>21 iulie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -210,4 +210,14 @@ export const avl105GlosarHtml = `
         <li><a href="https://schema.org/docs/documents.html" target="_blank" rel="noopener noreferrer">Schema.org Documentation</a> și <a href="https://www.w3.org/TR/json-ld11/" target="_blank" rel="noopener noreferrer">W3C JSON-LD 1.1</a></li>
         <li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">Aggarwal et al. — GEO: Generative Engine Optimization, KDD 2024</a></li>
       </ul>
+
+      <h2>Istoricul versiunilor</h2>
+
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
+          <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab).</td></tr>
+        </tbody>
+      </table>
 `;

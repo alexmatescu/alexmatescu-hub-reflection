@@ -450,5 +450,5 @@ grep -i 'application/ld+json' /tmp/page.html</code></pre>
 
       <p>Documentația Lovable și OpenAI se poate modifica rapid. Afirmațiile despre stivele Lovable, prerendering, migrarea la TanStack Start și <code>OAI-SearchBot</code> descriu <strong>starea documentată la 17 august 2026</strong> și trebuie reverificate înaintea unei republicări ulterioare.</p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu. Ultima verificare factuală și a surselor: 17 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 17 august 2026.</em></p>
 `;

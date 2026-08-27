@@ -13,7 +13,7 @@ export const labNav: LabPage[] = [
   {
     to: "/lab/introducere",
     label: "Introducere",
-    lead: "De ce contează AI Visibility, cui i se adresează acest laborator și cum e organizat conținutul de mai jos.",
+    lead: "De ce contează AI Visibility Lab, cui i se adresează acest laborator și cum e organizat conținutul de mai jos.",
   },
   {
     to: "/lab/cercetare",
@@ -22,7 +22,7 @@ export const labNav: LabPage[] = [
     children: [
       {
         to: "/lab/cercetare/ce-este-geo-aeo",
-        label: "Ce este GEO/AEO (AI Visibility)",
+        label: "Ce este GEO/AEO (AI Visibility Lab)",
         lead: "Definiții, termeni și diferența dintre a fi indexat și a fi citat de un model generativ.",
       },
       {
@@ -67,8 +67,8 @@ export const labNav: LabPage[] = [
   {
     to: "/lab/articole",
     label: "Articole",
-    seoTitle: "Articole GEO, AEO și AI Visibility — AI Visibility Lab | Alex Matescu",
-    pageTitle: "Articole GEO, AEO și AI Visibility — AI Visibility Lab | Alex Matescu",
+    seoTitle: "Articole GEO, AEO și AI Visibility Lan",
+    pageTitle: "Articole GEO, AEO și AI Visibility Lab",
     lead: "Analize, cercetări și studii de caz despre GEO, AEO, SEO, AI Search, citarea surselor și vizibilitatea în ChatGPT, Google AI, Perplexity și alte sisteme generative.",
     children: [
       {
@@ -146,7 +146,7 @@ export const labNav: LabPage[] = [
   },
   {
     to: "/lab/audit-ai-visibility",
-    label: "Audit AI Visibility",
+    label: "Audit AI Visibility Lab",
     lead: "Evaluare a prezenței tale în răspunsurile modelelor generative: ce spun despre tine, ce lipsește, ce trebuie corectat.",
   },
   {

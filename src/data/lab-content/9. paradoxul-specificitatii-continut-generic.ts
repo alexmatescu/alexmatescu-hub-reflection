@@ -694,5 +694,5 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>AI Mode, ChatGPT Search, query fan-out și comportamentele de search se pot modifica. Afirmațiile despre produse descriu <strong>starea documentată la 19 august 2026</strong>, dată la care sursele de mai sus au fost verificate live, inclusiv o corecție: citarea Semrush despre AI Mode se referă la studiul publicat la 30 iulie 2025 (nu 2026, cum indica o versiune anterioară a acestei surse), pe un eșantion din perioada mai–iulie 2025.</p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
 `;

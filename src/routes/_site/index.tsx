@@ -10,9 +10,9 @@ export const Route = createFileRoute("/_site/")({
   head: () =>
     buildSeoHead({
       title:
-        "Alex Matescu — Inginer, antreprenor, consultant AI Visibility și autor",
+        "Alex Matescu — Inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor",
       description:
-        "Site-ul personal al lui Alex Matescu, inginer, antreprenor, consultant AI Visibility și autor din Sibiu. Articole și proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
+        "Site-ul personal al lui Alex Matescu, inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor din Sibiu. Articole și proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
       canonical: `${BASE}/`,
       ogType: "website",
       ogSiteName: "Alex Matescu",
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/_site/")({
             "@type": "WebPage",
             "@id": `${BASE}/#webpage`,
             url: `${BASE}/`,
-            name: "Alex Matescu — Inginer, antreprenor, consultant AI Visibility și autor",
+            name: "Alex Matescu — Inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor",
             isPartOf: { "@id": `${BASE}/#website` },
             about: { "@id": alexMatescuPerson["@id"] },
             mainEntity: { "@id": alexMatescuPerson["@id"] },

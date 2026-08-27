@@ -8,12 +8,12 @@ export const avl104MasurareHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-104</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>21 iulie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -31,7 +31,7 @@ export const avl104MasurareHtml = `
       <ol>
         <li><strong>Sistemele sunt black-box.</strong> Lucrarea fondatoare a domeniului formulează exact această problemă: creatorii de conținut nu controlează și nu pot inspecta modul în care motoarele generative le folosesc și le afișează conținutul, deci vizibilitatea trebuie stabilită empiric, din exterior, prin observarea răspunsurilor (GEO: Generative Engine Optimization, KDD 2024). Aceeași lucrare arată că măsurarea citărilor cere metrici mai fini decât „apare/nu apare": citările sunt încorporate în text și intercalate, deci contează și proeminența, nu doar prezența.</li>
         <li><strong>Vizibilitatea s-a decuplat de trafic.</strong> Microsoft avertizează explicit, în contextul noilor ghiduri Bing, că scăderea click-urilor nu mai înseamnă automat scădere de vizibilitate — conținutul poate apărea drept citare în răspunsurile Copilot fără click asociat. Analytics-ul clasic nu vede acest strat; doar măsurarea directă a răspunsurilor îl vede.</li>
-        <li><strong>Modurile de eșec noi sunt invizibile în orice raport clasic.</strong> Poziții bune în SERP și trafic stabil pot coexista cu o entitate pe care motoarele AI o confundă cu alta omonimă sau o descriu cu detalii inventate. Niciun instrument SEO nu semnalează asta. Am documentat pe propriile măsurători și situația inversă: entitate absentă din rezultatele Google/Bing, dar citată corect de ChatGPT — cele două straturi sunt variabile independente și trebuie măsurate separat.</li>
+        <li><strong>Modurile de eșec noi sunt invizibile în orice raport clasic.</strong> Poziții bune în SERP și trafic stabil pot coexista cu o entitate pe care motoarele AI o confundă cu alta omonimă sau o descriu cu detalii inventate. Niciun instrument SEO nu semnalează asta. În măsurătorile realizate și documentate de AI Visibility Lab am observat inclusiv situația inversă: entitate absentă din rezultatele Google/Bing, dar citată corect de ChatGPT — cele două straturi sunt variabile independente și trebuie măsurate separat.</li>
       </ol>
 
       <h3>Stratul 1: instrumentele oficiale de platformă (și limitele lor)</h3>
@@ -143,4 +143,14 @@ export const avl104MasurareHtml = `
       </ul>
 
       <p>Categoriile de bază HIT / HIT parțial / COLIZIUNE / CONFABULARE / NULL și protocolul de sesiune curată sunt dezvoltate de AI Visibility Lab. Taxonomia operațională extinsă este definită în <a href="/lab/metodologie/tabula-rasa-f0">AVL-201</a> și este utilizată pentru execuție, audit și scorare. Pagina este actualizată pe măsură ce instrumentele oficiale de măsurare evoluează.</p>
+
+      <h2>Istoricul versiunilor</h2>
+
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
+          <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); reformulată afirmația despre observarea situației inverse (entitate absentă din Google/Bing, citată corect de ChatGPT), cu atribuire explicită sursei observației.</td></tr>
+        </tbody>
+      </table>
 `;

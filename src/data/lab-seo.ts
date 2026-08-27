@@ -72,6 +72,7 @@ const labPublisher = {
   "@type": "Organization",
   name: "AI Visibility Lab",
   url: "https://delamatescu.ro/lab",
+  founder: { "@id": alexMatescuPerson["@id"] },
 };
 
 /**

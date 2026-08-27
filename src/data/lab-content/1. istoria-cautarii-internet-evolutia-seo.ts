@@ -342,5 +342,5 @@ export const istoriaCautariiHtml = `
         <li id="fn-25">Sunghwan Kim et al. — <em>SAGEO Arena: A Realistic Environment for Evaluating Search-Augmented Generative Engine Optimization</em>, 2026: <a href="https://arxiv.org/abs/2602.12187" target="_blank" rel="noopener noreferrer">arxiv.org/abs/2602.12187</a></li>
       </ol>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitatea în motoare de căutare și sisteme generative al lui Alex Matescu. Ultima verificare factuală: 14 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 14 august 2026.</em></p>
 `;

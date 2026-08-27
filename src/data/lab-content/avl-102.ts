@@ -8,12 +8,12 @@ export const avl102CumAlegHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-102</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>21 iulie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -129,4 +129,14 @@ export const avl102CumAlegHtml = `
       </ul>
 
       <p>Pagina este actualizată pe măsură ce documentația oficială evoluează. Metodologia de măsurare a celor patru filtre este documentată în paginile <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a> și „<a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a>".</p>
+
+      <h2>Istoricul versiunilor</h2>
+
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
+          <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab).</td></tr>
+        </tbody>
+      </table>
 `;

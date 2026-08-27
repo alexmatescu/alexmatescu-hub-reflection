@@ -346,5 +346,5 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>În schimb, afirmațiile de tip „platforma nu publică un SLA” trebuie reverificate atunci când documentația platformei este actualizată.</p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu. Ultima verificare factuală și a surselor: 10 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 10 august 2026.</em></p>
 `;

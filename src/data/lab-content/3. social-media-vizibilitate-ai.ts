@@ -423,5 +423,5 @@ export const socialMediaVizibilitateAiHtml = `
         <li id="fn-10">Meta Newsroom — anunț din iulie 2026 privind folosirea Meta AI în Threads și posibilitatea de a partaja postări, imagini și videoclipuri Threads către Meta AI: <a href="https://about.fb.com/ja/news/2026/07/threads-meta-ai-dm/" target="_blank" rel="noopener noreferrer">about.fb.com/ja/news/2026/07/threads-meta-ai-dm</a></li>
       </ol>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu. Ultima verificare factuală și actualizare: 10 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și actualizare: 10 august 2026.</em></p>
 `;

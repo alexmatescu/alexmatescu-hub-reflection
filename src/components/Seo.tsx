@@ -25,9 +25,10 @@ export const alexMatescuPerson = {
   "@id": "https://delamatescu.ro/#alex-matescu",
   name: "Alex Matescu",
   alternateName: ["Alexandru Matescu", "Alexandru-Costi Matescu"],
-  url: "https://delamatescu.ro/",
+  url: "https://delamatescu.ro/despre",
+  jobTitle: "Fondator și coordonator AI Visibility Lab",
   description:
-    "Alex Matescu este inginer, antreprenor, consultant AI Visibility și autor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
+    "Alex Matescu este inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
   homeLocation: {
     "@type": "Place",
     name: "Sibiu, România",

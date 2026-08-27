@@ -649,5 +649,5 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Query rewriting, query fan-out, mappingul modelelor către encodings și comportamentul produselor AI se pot modifica. Afirmațiile despre OpenAI și Google descriu <strong>starea documentată la 19 august 2026</strong> — dată la care sursele de mai sus au fost reverificate live, fără schimbări față de starea consemnată inițial la 11 august 2026.</p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
 `;

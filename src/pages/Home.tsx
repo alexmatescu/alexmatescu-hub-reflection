@@ -24,8 +24,8 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="Alex Matescu — Inginer, antreprenor, consultant AI Visibility și autor"
-        description="Site-ul personal al lui Alex Matescu, inginer, antreprenor, consultant AI Visibility și autor din Sibiu. Articole și proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
+        title="Alex Matescu — Inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor"
+        description="Site-ul personal al lui Alex Matescu, inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor din Sibiu. Articole și proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens."
         ogType="website"
         ogSiteName="Alex Matescu"
         ogLocale="ro_RO"

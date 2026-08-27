@@ -442,4 +442,6 @@ export const decalajVitezaAiAdoptie2026Html = `
       <h3>Notă de volatilitate</h3>
 
       <p>Ritmul lansărilor AI, rapoartele de adopție și calendarul de aplicare al AI Act se schimbă rapid. Trackerul ThursdAI, în special, este o sursă dinamică: numărătoarea unei luni se poate modifica pe măsură ce arhiva este completată retroactiv. Afirmațiile din acest articol descriu <strong>starea verificată la 19 august 2026</strong>.</p>
+
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
 `;

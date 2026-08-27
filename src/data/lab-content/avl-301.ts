@@ -8,10 +8,11 @@ export const avl301ExperimentePubliceHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-301</td></tr>
         <tr><th scope="row">Nivel</th><td>D — Experimente publice</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
         <tr><th scope="row">Statut</th><td>În pregătire</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -78,4 +79,16 @@ export const avl301ExperimentePubliceHtml = `
       </ul>
 
       <blockquote>Această secțiune nu publică încă rezultate. Ea stabilește locul în care experimentele AI Visibility Lab vor fi documentate pe măsură ce cercetarea avansează.</blockquote>
+
+      <p>Studiile de caz și observațiile aplicate publicate în secțiunea <a href="/lab/articole">Articole</a> nu trebuie confundate cu experimentele formale ale acestei secțiuni, care folosesc protocoale și linii de bază prestabilite.</p>
+
+      <h2>Istoricul versiunilor</h2>
+
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0.0</td><td>iulie 2026</td><td>În pregătire</td><td>Prima versiune a documentului de poziționare a secțiunii Experimente publice.</td></tr>
+          <tr><td>1.1.0</td><td>26 august 2026</td><td>În pregătire</td><td>MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); adăugată o precizare care distinge studiile de caz publicate în Articole de experimentele formale ale acestei secțiuni.</td></tr>
+        </tbody>
+      </table>
 `;

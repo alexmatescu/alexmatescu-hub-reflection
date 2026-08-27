@@ -104,7 +104,7 @@ const timeline: TimelineItem[] = [
     period: "2026",
     title: "Hub personal și direcție nouă",
     description:
-      "Dezvoltarea hubului personal Alex Matescu și începutul unei direcții noi în jurul GEO, AEO, inteligenței artificiale, scrisului și leadershipului.",
+      "Dezvoltarea hubului personal Alex Matescu, lansarea AI Visibility Lab și trecerea de la studiul GEO/AEO la aplicarea practică a metodologiilor pe proiecte proprii, prin măsurători, optimizări și documentare publică.",
   },
 ];
 
@@ -278,7 +278,7 @@ const entities = [
   "CRANDIT – Mitul succesului peste noapte",
   "Taste the Corn",
   "Atracțiile României",
-  "GEO / AI Visibility",
+  "AI Visibility Lab",
   "Automatică și Informatică Aplicată",
   "Facultatea de Automatică, Calculatoare și Electronică din Craiova",
   "John Maxwell Team",
@@ -319,8 +319,8 @@ const Calatoria = () => {
         <p className="eyebrow mb-6">Pe scurt</p>
         <div className="max-w-3xl space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            Alexandru (Alex) Matescu este inginer, antreprenor, consultant AI Visibility și
-            autor român, născut și crescut în Strâmba Jiu, județul Gorj.
+            Alexandru (Alex) Matescu este inginer, antreprenor, fondator și coordonator 
+            AI Visibility Lab și autor român, născut și crescut în Strâmba Jiu, județul Gorj.
           </p>
           <p className="text-muted-foreground">
             Parcursul său include experiențe în mediul rural, educație tehnică, muncă în
@@ -340,7 +340,7 @@ const Calatoria = () => {
           <p className="text-muted-foreground">
             Printre proiectele sale se numără CRANDIT – Mitul succesului peste noapte,
             afacerea de familie din mediul rural, Taste the Corn, Atracțiile României
-            și GEO / AI Visibility.
+            și AI Visibility Lab.
           </p>
         </div>
       </section>

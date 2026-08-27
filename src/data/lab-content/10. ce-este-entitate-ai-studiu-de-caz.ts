@@ -746,5 +746,5 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Politicile Wikidata și documentația Google pot fi actualizate. Afirmațiile despre acestea descriu <strong>starea verificată la 19 august 2026</strong>, dată la care sursele de mai sus au fost reverificate live, fără schimbări față de starea consemnată inițial la 11 august 2026. Observația despre propriul nume rămâne o fotografie a rezultatelor văzute în august 2026 și nu a fost repetată pentru această verificare — rezultatele de căutare personalizate se pot schimba de la o rulare la alta.</p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiectul de cercetare în vizibilitate AI al lui Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
 `;

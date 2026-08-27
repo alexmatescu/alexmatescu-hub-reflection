@@ -988,4 +988,6 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
       <h3>Notă de volatilitate</h3>
 
       <p>Citation behavior, modelele, search providers și documentațiile se schimbă rapid. Toate sursele de mai sus au fost reverificate live la <strong>19 august 2026</strong>, fără schimbări față de starea consemnată inițial la 11 august 2026. Afirmațiile despre produse și studiile de piață descriu starea verificată la această dată.</p>
+
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
 `;

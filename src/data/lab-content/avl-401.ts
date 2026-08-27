@@ -8,10 +8,11 @@ export const avl401ArticoleHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-401</td></tr>
         <tr><th scope="row">Nivel</th><td>E — Articole</td></tr>
-        <tr><th scope="row">Versiune</th><td>2.0.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>2.0.1</td></tr>
         <tr><th scope="row">Statut</th><td>În derulare</td></tr>
-        <tr><th scope="row">Autor</th><td>Alex Matescu</td></tr>
-        <tr><th scope="row">Organizație</th><td>AI Visibility Lab</td></tr>
+        <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
+        <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -79,4 +80,14 @@ export const avl401ArticoleHtml = `
       <p><strong>În derulare</strong></p>
 
       <blockquote>Pagina Articole este biblioteca publică de analize și resurse AI Visibility Lab, oferind context și explicații despre AI Visibility, GEO, AEO și domeniile conexe, fără a înlocui documentația oficială sau rezultatele experimentale.</blockquote>
+
+      <h2>Istoricul versiunilor</h2>
+
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>2.0.0</td><td>iulie 2026</td><td>În derulare</td><td>Versiune anterioară a documentului de poziționare a secțiunii Articole.</td></tr>
+          <tr><td>2.0.1</td><td>26 august 2026</td><td>În derulare</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); reparat titlul dublat al paginii (Home/SEO) în datele de rutare (/lab).</td></tr>
+        </tbody>
+      </table>
 `;
