@@ -9,8 +9,8 @@ export const etichetaAbonatRelatiaPrezentareAiSearchMeta = {
     "Google evidențiază în AI Overviews și AI Mode linkurile din publicațiile la care utilizatorul are un abonament legat de contul Google. Ce demonstrează funcția, ce nu dovedește despre ranking și ce pot face publisherii, creatorii și firmele.",
   canonical:
     "https://delamatescu.ro/lab/articole/eticheta-abonat-relatia-prezentare-ai-search",
-  datePublished: "2026-08-14",
-  dateModified: "2026-08-26",
+  datePublished: "2026-08-27",
+  dateModified: "2026-08-27",
   lastReviewed: "2026-08-27",
   image: {
     url: "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",

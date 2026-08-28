@@ -12,14 +12,14 @@ const values = [
 ];
 
 const mainProjects = [
-  { name: "CRANDIT", desc: "Carte în lucru — Mitul succesului peste noapte (2026)" },
-  { name: "GEO / AEO / AI Visibility Lab", desc: "Vizibilitate în era căutării generative — direcție în formare" },
-  { name: "Blogging", desc: "delamatescu.ro — scris constant din 2014, relansat în 2025" },
-  { name: "Afacerea de familie", desc: "Magazin mixt rural — activ din aprilie 2021" },
-  { name: "Taste the Corn", desc: "Concept de retail alimentar în Sibiu — construit, testat și închis (2025)" },
-  { name: "Atracțiile României", desc: "Proiect digital de turism cultural — 2021–2023" },
-  { name: "OVB Allfinanz România", desc: "Consultanță financiară — decembrie 2021 – decembrie 2024" },
-  { name: "Afacerea cu haine", desc: "Primul magazin, prima lecție reală de antreprenoriat — 2017" },
+  { name: "CRANDIT", desc: "Carte în lucru — Mitul succesului peste noapte (2026)", to: "/carte" },
+  { name: "AI Visibility Lab", desc: "Cercetare aplicată, măsurare și optimizare a vizibilității în sisteme AI prin GEO și AEO — proiect activ", to: "/lab/introducere" },
+  { name: "Blogging", desc: "delamatescu.ro — scris constant din 2014, relansat în 2025", to: "/blog" },
+  { name: "Afacerea de familie", desc: "Magazin mixt rural — activ din aprilie 2021", to: "/proiecte/afacerea-de-familie" },
+  { name: "Taste the Corn", desc: "Concept de retail alimentar în Sibiu — construit, testat și închis (2025)", to: "/proiecte/taste-the-corn" },
+  { name: "Atracțiile României", desc: "Proiect digital de turism cultural — 2021–2023", to: "/proiecte/atractiile-romaniei" },
+  { name: "OVB Allfinanz România", desc: "Consultanță financiară — decembrie 2021 – decembrie 2024", to: "/proiecte/ovb" },
+  { name: "Afacerea cu haine", desc: "Primul magazin, prima lecție reală de antreprenoriat — 2017", to: "/proiecte/afacerea-cu-haine" },
 ];
 
 const appliedDomains = [
@@ -58,11 +58,11 @@ const About = () => {
         <div className="md:col-span-7">
           <p className="eyebrow mb-8">Despre mine</p>
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance max-w-4xl">
-            Alex Matescu — Inginer, antreprenor, fondator AI Visibility Lab și
-            autor
+            Alex Matescu — Inginer, antreprenor, fondator și coordonator AI
+            Visibility Lab și autor
           </h1>
           <p className="mt-6 text-xl md:text-2xl text-muted-foreground max-w-3xl text-balance">
-            Inginer, antreprenor, fondator AI Visibility și autor din România.
+            Inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor din România.
           </p>
           <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
             Construiesc proiecte, scriu despre ceea ce învăț și documentez procesul prin care încerc să înțeleg munca, succesul, tehnologia și omul.
@@ -127,7 +127,7 @@ const About = () => {
           <div className="bg-background p-8">
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Activități</p>
             <p className="font-serif text-xl">
-              Inginer • Antreprenor • Fondator AI Visibility Lab • Autor
+              Inginer • Antreprenor • Fondator și coordonator AI Visibility Lab • Autor
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ const About = () => {
             <div className="divide-y divide-foreground/10 border-t border-foreground/10">
               {mainProjects.map((p) => (
                 <div key={p.name} className="py-5 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-                  <p className="font-medium">{p.name}</p>
+                  <Link to={p.to} className="font-medium link-underline">{p.name}</Link>
                   <p className="text-sm text-muted-foreground">{p.desc}</p>
                 </div>
               ))}
@@ -157,7 +157,7 @@ const About = () => {
                 <li>Fondator Taste the Corn — concept de retail alimentar în Sibiu, construit, lansat, operat și închis între ianuarie și decembrie 2025.</li>
                 <li>Fondator Atracțiile României — proiect digital de turism cultural, dezvoltat constant între 2021 și 2023.</li>
                 <li>Prima experiență antreprenorială: un magazin de haine deschis în 2017 la Craiova — încheiat rapid, dar formator.</li>
-                <li>Fondator și coordonator AI Visibility — vizibilitate pentru branduri în era căutării generative.</li>
+                <li>Fondator și coordonator <Link to="/lab/introducere" className="link-underline text-foreground">AI Visibility Lab</Link> — proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO.</li>
               </ul>
             </div>
             <div>
@@ -265,6 +265,9 @@ const About = () => {
             Printre proiectele dezvoltate se numără Atracțiile României, Taste the Corn și AI Visibility Lab.
           </p>
           <p>
+            În 2026 am trecut de la studiul sistematic al GEO/AEO la aplicarea practică a metodologiilor pe propriile proiecte, prin măsurare, optimizare și documentarea publică a rezultatelor în AI Visibility Lab.
+          </p>
+          <p>
             Unele proiecte au avut succes comercial, altele au rămas experimente sau lecții importante. Toate au contribuit la dezvoltarea unei înțelegeri mai profunde asupra execuției, riscului, responsabilității și construcției pe termen lung.
           </p>
 
@@ -292,6 +295,9 @@ const About = () => {
           <h3 className="font-serif text-2xl mb-3">Activitate aplicată</h3>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
             În prezent lucrez aplicat în AI Visibility, Generative Engine Optimization (GEO) și Answer Engine Optimization (AEO), pe care le testez prin măsurători, optimizări și studii de caz publicate în AI Visibility Lab.
+          </p>
+          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+            <Link to="/lab/metodologie" className="link-underline text-foreground">Vezi metodologia</Link> și <Link to="/lab/articole" className="link-underline text-foreground">articolele publicate</Link> în AI Visibility Lab.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {appliedDomains.map((d) => (
