@@ -1,15 +1,23 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const etichetaAbonatRelatiaPrezentareAiSearchMeta = {
+export const etichetaAbonatRelatiaPrezentareAiSearchMeta: LabArticleMeta = {
   title:
     "Eticheta „Abonat”: cum folosește Google relația cu publicul pentru a evidenția surse în AI Search",
   description:
     "Google evidențiază în AI Overviews și AI Mode linkurile din publicațiile la care utilizatorul are un abonament legat de contul Google. Ce demonstrează funcția, ce nu dovedește despre ranking și ce pot face publisherii, creatorii și firmele.",
   canonical:
     "https://delamatescu.ro/lab/articole/eticheta-abonat-relatia-prezentare-ai-search",
-  datePublished: "2026-08-27",
+  category: "Entities & Citations",
+  articleType: "Analiză",
+  // Momentul real al primei publicări publice (confirmat de user): 27 august
+  // 2026, ora 20:00, România. Full ISO cu offset — contractul frontmatter
+  // nou (SKILL.md §0.3) cere oră+timezone pentru date_published; dateModified/
+  // lastReviewed rămân date-only (§6.2 — nu s-a modificat nimic după publicare).
+  datePublished: "2026-08-27T20:00:00+03:00",
   dateModified: "2026-08-27",
   lastReviewed: "2026-08-27",
   image: {
@@ -109,7 +117,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-08-26">26 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-27">27 august 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-27T20:00:00+03:00">27 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-27">27 august 2026</time></p>
 
       <figure>
         <img src="/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp" alt="Captură de ecran din anunțul oficial Google (mai 2026, „5 new ways to explore the web with generative AI in Search”): un răspuns AI Mode pentru interogarea „I'm looking for free kid-friendly events in Nashville this summer”, în care sursa The Local Tribune apare marcată cu eticheta „Subscribed”, alături de un panou cu surse conexe recomandate de Google AI Search." width="2000" height="1088" loading="lazy" />

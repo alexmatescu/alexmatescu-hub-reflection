@@ -1,13 +1,17 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const istoriaCautariiMeta = {
+export const istoriaCautariiMeta: LabArticleMeta = {
   title:
     "Istoria căutării pe internet: cum fiecare eră a creat un punct orb pe care optimizarea a încercat să-l exploateze",
   description:
     "De la Archie și primele indexuri ale internetului la răspunsurile generative din 2026: momentele-cheie din evoluția căutării, originea disputată a termenului SEO și o ipoteză despre tiparul care se repetă.",
   canonical: "https://delamatescu.ro/lab/articole/istoria-cautarii-internet-evolutia-seo",
+  category: "Search & Retrieval",
+  articleType: "Analiză",
   datePublished: "2026-08-14",
   dateModified: "2026-08-14",
   faq: [

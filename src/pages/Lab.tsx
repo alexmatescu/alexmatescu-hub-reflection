@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { Link, Navigate } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
 import { findLabPage, findLabParent, labNav } from "@/data/lab";
-import { buildArticleJsonLd, labArticleMeta } from "@/data/lab-seo";
+import {
+  buildArticleJsonLd,
+  formatLabArticleDate,
+  LAB_ARTICLE_CATEGORIES,
+  labArticleMeta,
+  labArticlePathname,
+  latestLabArticle,
+  sortedLabArticles,
+  type LabArticleCategory,
+} from "@/data/lab-seo";
 import { avl001IntroductionHtml } from "@/data/lab-content/avl-001";
 import { avl101GeoAeoHtml } from "@/data/lab-content/avl-101";
 import { avl102CumAlegHtml } from "@/data/lab-content/avl-102";
@@ -63,8 +73,124 @@ const labPageContent: Record<string, string> = {
  * via `in`, mai jos) — forma exactă (array legacy vs @graph) diferă pe articol.
  */
 const labPageJsonLdOverrides: Record<string, unknown> = Object.fromEntries(
-  labArticleMeta.map((meta) => [new URL(meta.canonical).pathname, buildArticleJsonLd(meta)]),
+  labArticleMeta.map((meta) => [
+    labArticlePathname(meta),
+    buildArticleJsonLd(meta),
+  ]),
 );
+
+const ALL_CATEGORIES_FILTER = "Toate" as const;
+type LabArticleCategoryFilter =
+  typeof ALL_CATEGORIES_FILTER | LabArticleCategory;
+
+/**
+ * Index editorial „Featured + Article index” pentru /lab/articole — o singură
+ * listă verticală, sortată automat din `sortedLabArticles` (@/data/lab-seo).
+ * Nu există aici nicio poziție manuală, niciun flag `featured` și nicio
+ * dependență de `labNav.children`: publicarea unui articol nou cu un
+ * `datePublished` mai recent îl mută automat pe primul loc și îi transferă
+ * eticheta „CEL MAI NOU”, fără nicio modificare a acestei componente.
+ */
+const LabArticleIndex = () => {
+  const [activeCategory, setActiveCategory] =
+    useState<LabArticleCategoryFilter>(ALL_CATEGORIES_FILTER);
+
+  // „CEL MAI NOU” se calculează mereu pe corpusul întreg, înainte de filtrare —
+  // dacă articolul global cel mai nou nu e în categoria selectată, eticheta
+  // dispare din rezultatele filtrate în loc să „alunece” pe alt articol.
+  const visibleArticles =
+    activeCategory === ALL_CATEGORIES_FILTER
+      ? sortedLabArticles
+      : sortedLabArticles.filter((meta) => meta.category === activeCategory);
+
+  return (
+    <div className="mt-16">
+      <p className="eyebrow mb-6">Articole</p>
+
+      <div
+        role="group"
+        aria-label="Filtrează articolele după categorie"
+        className="flex flex-wrap gap-2 mb-10"
+      >
+        {[ALL_CATEGORIES_FILTER, ...LAB_ARTICLE_CATEGORIES].map((category) => {
+          const isActive = category === activeCategory;
+          return (
+            <button
+              key={category}
+              type="button"
+              aria-pressed={isActive}
+              onClick={() => setActiveCategory(category)}
+              className={`px-3.5 py-1.5 text-xs uppercase tracking-[0.12em] font-medium border rounded-sm transition-colors ${
+                isActive
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-foreground/20 text-muted-foreground hover:border-foreground/40 hover:text-foreground"
+              }`}
+            >
+              {category}
+            </button>
+          );
+        })}
+      </div>
+
+      <ul>
+        {visibleArticles.map((meta) => {
+          const isLatest =
+            latestLabArticle !== undefined &&
+            meta.canonical === latestLabArticle.canonical;
+          const href = labArticlePathname(meta);
+
+          return (
+            <li
+              key={meta.canonical}
+              className="border-b border-foreground/10 first:border-t"
+            >
+              <Link
+                to={href}
+                className={`group block py-8 md:py-10 ${
+                  isLatest
+                    ? "px-6 md:px-8 -mx-6 md:-mx-8 bg-surface/50 border-x border-foreground/10"
+                    : ""
+                }`}
+              >
+                {isLatest && (
+                  <p className="mb-3 text-[11px] uppercase tracking-[0.22em] font-semibold text-foreground">
+                    Cel mai nou
+                  </p>
+                )}
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1.5">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
+                    {meta.category} · {meta.articleType}
+                  </p>
+                  <time
+                    dateTime={meta.datePublished}
+                    className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground/80 whitespace-nowrap"
+                  >
+                    {formatLabArticleDate(meta.datePublished)}
+                  </time>
+                </div>
+                <h2
+                  className={`font-serif leading-tight tracking-tight text-balance mt-3 group-hover:text-foreground ${
+                    isLatest ? "text-2xl md:text-4xl" : "text-xl md:text-2xl"
+                  }`}
+                >
+                  {meta.title}
+                </h2>
+                <p
+                  className={`mt-3 text-muted-foreground leading-relaxed max-w-2xl ${isLatest ? "text-base" : "text-sm"}`}
+                >
+                  {meta.description}
+                </p>
+                <span className="link-underline mt-4 text-sm font-medium">
+                  Citește →
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
 
 export const LabIndex = () => (
   <div>
@@ -203,27 +329,36 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
               </div>
             );
 
-            const childrenBlock = page.children && (
-              <div key="children" className="mt-16">
-                <p className="eyebrow mb-6">În această secțiune</p>
-                <ul className="grid gap-px bg-foreground/10 border border-foreground/10 sm:grid-cols-2">
-                  {page.children.map((child) => (
-                    <li key={child.to} className="bg-background">
-                      <Link
-                        to={child.to}
-                        className="group flex flex-col p-6 hover:bg-surface/60 transition-colors h-full"
-                      >
-                        <span className="font-serif text-lg leading-tight text-balance group-hover:text-foreground">
-                          {child.label}
-                        </span>
-                        <span className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                          {child.lead}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            // Pe /lab/articole, lista nu mai e derivată din `page.children`
+            // (labNav) — index-ul editorial „Featured + Article index” își ia
+            // articolele și ordinea direct din `sortedLabArticles`
+            // (@/data/lab-seo), sursa canonică de metadata. Restul paginilor
+            // /lab păstrează grid-ul generic de sub-pagini din `labNav.children`.
+            const childrenBlock = articlesFirst ? (
+              <LabArticleIndex key="children" />
+            ) : (
+              page.children && (
+                <div key="children" className="mt-16">
+                  <p className="eyebrow mb-6">În această secțiune</p>
+                  <ul className="grid gap-px bg-foreground/10 border border-foreground/10 sm:grid-cols-2">
+                    {page.children.map((child) => (
+                      <li key={child.to} className="bg-background">
+                        <Link
+                          to={child.to}
+                          className="group flex flex-col p-6 hover:bg-surface/60 transition-colors h-full"
+                        >
+                          <span className="font-serif text-lg leading-tight text-balance group-hover:text-foreground">
+                            {child.label}
+                          </span>
+                          <span className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                            {child.lead}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
             );
 
             return articlesFirst ? (

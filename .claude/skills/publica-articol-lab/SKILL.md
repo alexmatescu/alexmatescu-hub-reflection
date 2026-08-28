@@ -1,6 +1,6 @@
 ---
 name: publica-articol-lab
-description: Editor autonom pentru AI Visibility Lab (/lab/articole) — pipeline complet de publicare/actualizare articole, de la .md la integrare în site, cu verificare factuală live pe ierarhie de surse, gate de originalitate/E-E-A-T, arhitectură GEO/AEO/SEO a conținutului, entity consistency (Person/WebSite/Organization), JSON-LD @graph, și audit anti-halucinare final. Invocă atunci când userul cere publicarea/actualizarea unui articol din AI Visibility Lab, sau cere "un agent care postează articole".
+description: Editor autonom pentru AI Visibility Lab (/lab/articole) — pipeline complet de publicare/actualizare articole, de la .md la integrare în site, cu verificare factuală live pe ierarhie de surse, gate de originalitate/E-E-A-T, arhitectură GEO/AEO/SEO a conținutului, clasificare editorială (category/articleType), entity consistency (Person/WebSite/Organization), JSON-LD @graph, și audit anti-halucinare final. Indexul din /lab/articole (Featured + listă, sortare și filtre pe categorie) e complet automat din metadata — skill-ul nu reordonează sau marchează manual Featured. Invocă atunci când userul cere publicarea/actualizarea unui articol din AI Visibility Lab, sau cere "un agent care postează articole".
 ---
 
 # Publică articol — AI Visibility Lab
@@ -27,7 +27,7 @@ O cifră fără definiția exactă a ce măsoară (ex. „17,8% folosesc AI”) 
 
 ## Faza 0 — Inspecție și ingest
 
-Citește obligatoriu, înainte de orice modificare: fișierul `.md` sursă; `src/data/lab-seo.ts` (tipuri + `buildArticleJsonLd`); `src/pages/Lab.tsx`; `src/data/lab.ts`; un articol `.ts` existent ca referință de stil; `src/components/Seo.tsx` (`alexMatescuPerson`, `alexMatescuWebSite`); `public/sitemap.xml`; `public/robots.txt` (context, de regulă nu necesită modificare — vezi §9.1); `public/llms.txt` (doar context, vezi §8.2).
+Citește obligatoriu, înainte de orice modificare: fișierul `.md` sursă; `src/data/lab-seo.ts` (tipuri, `sortedLabArticles`/`latestLabArticle`/`labArticlePathname`/`formatLabArticleDate` și `buildArticleJsonLd` — sursa canonică a indexului `/lab/articole`, vezi Faza 8); `src/pages/Lab.tsx` (`LabArticleIndex`, componenta indexului); `src/data/lab.ts` (`labNav` — navigare/routing, NU sursa ordinii indexului); un articol `.ts` existent ca referință de stil; `src/components/Seo.tsx` (`alexMatescuPerson`, `alexMatescuWebSite`); `public/sitemap.xml`; `public/robots.txt` (context, de regulă nu necesită modificare — vezi §9.1); `public/llms.txt` (doar context, vezi §8.3).
 
 **Nu presupune din acest document structura reală a codului** dacă implementarea proiectului s-a schimbat între timp — verifică mereu fișierele de mai sus, nu memoria acestui SKILL.md.
 
@@ -56,9 +56,12 @@ description: ""
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 
-date_published: "YYYY-MM-DD"
+date_published: "YYYY-MM-DDTHH:mm:ss±HH:mm"
 date_modified: "YYYY-MM-DD"
 last_reviewed: "YYYY-MM-DD"
+
+category: ""
+article_type: ""
 
 language: "ro-RO"
 
@@ -75,9 +78,24 @@ image_alt: ""
 - `image`/`image_alt` opționale — dacă nu există imagine, nu inventa URL; semnalează lipsa în raport (§14), nu o completa.
 - `last_reviewed` = ultima verificare factuală reală (poate diferi de `date_modified`).
 - `date_modified` se schimbă doar dacă articolul a fost efectiv modificat; `date_published` nu se resetează la update. Regulile complete ale celor trei date (când se schimbă fiecare, cum apar în byline și în JSON-LD) — §6.2.
-- `keywords` reflectă conținutul real, nu keyword stuffing. Nu adăuga `tags` separat — ar duplica `keywords` fără un consumator real în site (nu există filtrare pe tag-uri în `/lab`).
+- **`date_published`** — pentru orice articol **nou**, momentul real al primei publicări publice, ISO complet cu oră și offset: `"YYYY-MM-DDTHH:mm:ss±HH:mm"` (ex. `"2026-08-27T20:00:00+03:00"`). Regula completă — §0.4 și §6.2. Articolele legacy, publicate înainte de acest contract, rămân cu `"YYYY-MM-DD"` — nu le migra retroactiv la timestamp complet fără o dovadă reală a orei (§0.4). `date_modified`/`last_reviewed` rămân `"YYYY-MM-DD"` — nu au nevoie de oră, nu schimba asta fără un motiv tehnic real.
+- **`category`** — clasificarea editorială principală, EXACT una dintre cele patru din taxonomia controlată: `Search & Retrieval`, `Technical Visibility`, `Entities & Citations`, `AI Ecosystem`. Sursă unică pentru indexul și filtrele din `/lab/articole` (§8/§5.5) — nu inventa o categorie nouă automat; dacă articolul nu se potrivește rezonabil în niciuna, semnalează în raport (§14) și cere decizie editorială înainte de a extinde taxonomia.
+- **`article_type`** — tipul editorial al materialului. Valorile editoriale existente în corpus: `Analiză`, `Studiu de caz`, `Ghid`, `Ghid / Analiză metodologică`. Distinct de `category` (clasificare tematică) și de `keywords` (metadata SEO, fără rol în filtrare).
+- `keywords` reflectă conținutul real, nu keyword stuffing — rol pur SEO/tematic, fără rol în filtrare. Nu adăuga `tags` separat: filtrarea din `/lab/articole` există, dar se bazează exclusiv pe `category` (§5.5); un `tags` separat ar duplica `keywords` fără un consumator real.
 - Nu adăuga `slug` sau `article_section` în frontmatter (vezi Faza 0 și §5.1 — derivate/hardcodate, nu per-articol).
-- Articolele publicate **înainte** de acest contract (frontmatter vechi, fără `last_reviewed`) rămân valide — nu le migra retroactiv decât dacă li se face oricum un update de conținut.
+- Articolele publicate **înainte** de acest contract (frontmatter vechi, fără `last_reviewed`/`category`/`article_type`) rămân valide — nu le migra retroactiv decât dacă li se face oricum un update de conținut. Excepție unică documentată: cele 13 articole publicate până la 27 august 2026 au primit `category`/`article_type` retroactiv, într-o migrare punctuală a arhitecturii indexului (28 august 2026) — nu un precedent pentru migrări retroactive de rutină.
+
+### 0.4 — Regula publication time
+
+`date_published` înseamnă strict **momentul primei publicări publice**. NU: momentul creării draftului, momentul în care a început research-ul, ultima modificare, ultima verificare factuală, ora rulării agentului sau a unui commit Git, ora la care a fost creat fișierul. Un commit Git nu devine automat publication timestamp doar pentru că a introdus articolul — poate fi folosit ca timestamp de publicare **numai** dacă poți demonstra că acel commit/deploy reprezintă efectiv prima publicare publică (nu doar presupune asta).
+
+Pentru orice articol nou:
+
+1. Dacă userul furnizează data și ora publicării, folosește exact acea informație.
+2. Dacă agentul publică efectiv articolul în task-ul curent, determină momentul real de publicare în timezone `Europe/Bucharest` și folosește-l, cu offset explicit (`+02:00`/`+03:00` după sezon).
+3. Nu inventa niciodată o valoare — nu `00:00`, nu `09:00`, nu ora commitului, nu ora rulării agentului "ca să fie completă".
+
+Pentru articolele **legacy** (publicate înainte de acest contract, cu `date_published` doar `YYYY-MM-DD`): dacă ora reală a publicării nu poate fi verificată dintr-o sursă first-party clară (nu doar un commit timestamp — vezi mai sus), păstrează data existentă, fără oră. Sortarea/indexul (§8) sunt backward-compatible cu acest format.
 
 ---
 
@@ -172,20 +190,24 @@ Dacă primești un draft: păstrează teza și vocea autorului, corectează afir
 
 ## Faza 5 — Meta data (`.ts`)
 
-Referință canonică de stil: `src/data/lab-content/cat-dureaza-indexare-citare-ai.ts`. Tipul `LabArticleMeta` (`src/data/lab-seo.ts`) e deja extins cu câmpurile de mai jos — **toate opționale**, backward-compatibile cu articolele vechi:
+Referință canonică de stil: `src/data/lab-content/cat-dureaza-indexare-citare-ai.ts`. Tipul `LabArticleMeta` (`src/data/lab-seo.ts`) e:
 
 ```ts
 {
   title, description, canonical, datePublished, dateModified, faq,  // câmpuri existente dinainte
+  category: LabArticleCategory,               // OBLIGATORIU — vezi §5.5, sursă unică pentru index/filtre
+  articleType: LabArticleType,                // OBLIGATORIU — vezi §5.5
   about?,                                    // deja exista
-  lastReviewed?,                             // NOU — semnalul de opt-in către JSON-LD @graph, vezi §5.2
+  lastReviewed?,                             // semnalul de opt-in către JSON-LD @graph, vezi §5.2
   keywords?: string[],
   citations?: { name: string; url: string }[],
   image?: { url: string; alt: string },
 }
 ```
 
-Nu adăuga `articleSection`/`language`/`tags` la nivel de Meta — `articleSection` e hardcodat în `buildArticleJsonLd` (identic pentru orice articol din secțiune), `inLanguage` e deja hardcodat `"ro-RO"`, `tags` a fost eliminat ca redundant cu `keywords`.
+`category`/`articleType` sunt **obligatorii** — tipul `LabArticleMeta` e folosit exclusiv de articolele `/lab/articole` (nu de obiecte legacy din alt domeniu al site-ului), deci nu are sens un fallback opțional; orice `{slug}Meta` nou trebuie adnotat explicit `: LabArticleMeta` (`import type { LabArticleMeta } from "@/data/lab-seo";`) ca TypeScript să oblige prezența lor la compilare, nu doar la runtime.
+
+Nu adăuga `language`/`tags` la nivel de Meta — `inLanguage` e deja hardcodat `"ro-RO"`, `tags` a fost eliminat ca redundant cu `keywords`. `articleSection` din JSON-LD (format graph) e acum derivat din `category` — vezi §5.2.
 
 Nu inventa un URL pentru `image` dacă nu există unul real.
 
@@ -198,7 +220,7 @@ Nu inventa un URL pentru `image` dacă nu există unul real.
   ```
   Dacă `buildArticleJsonLd` produce deja acest pattern (verifică output-ul real, nu presupune), nu-l duplica altfel.
 - **WebSite**: `alexMatescuWebSite` din `@/components/Seo`, `@id: https://delamatescu.ro/#website`. Randat doar pe `/` (client-side, prin `Seo jsonLd`) — **nu** e global. Un articol care îl referențiază trebuie să-l embed-uiască complet (nu doar `{"@id": ...}`), altfel pagina lui nu e self-contained pentru unelte care citesc o singură pagină.
-- **Publisher**: `Organization`, `name: "AI Visibility Lab"`, `url: "https://delamatescu.ro/lab"` (constanta `labPublisher` din `lab-seo.ts`) — identic pe toate articolele, legacy și noi. AI Visibility Lab nu e modelat ca persoană juridică independentă — e reprezentat ca brand editorial (`articleSection`) + publisher Organization, nu altfel.
+- **Publisher**: `Organization`, `name: "AI Visibility Lab"`, `url: "https://delamatescu.ro/lab"` (constanta `labPublisher` din `lab-seo.ts`) — identic pe toate articolele, legacy și noi. AI Visibility Lab nu e modelat ca persoană juridică independentă — e reprezentat ca brand editorial (publisher Organization), nu altfel. `articleSection` (format graph) descrie acum clasificarea tematică a articolului (`meta.category`), nu brandul — vezi §5.2.
 
 Nu inventa link-uri `sameAs` noi — reutilizează cele deja din `alexMatescuPerson.sameAs`.
 
@@ -209,7 +231,7 @@ Nu inventa link-uri `sameAs` noi — reutilizează cele deja din `alexMatescuPer
 Funcția are **două căi**, alese automat după prezența `lastReviewed` în meta — nu alege manual, nu duplica logica în altă parte:
 
 - **Legacy** (fără `lastReviewed`) — `[Article, FAQPage]` ca array simplu, fără `@graph`, fără `@id` proprii. Folosită de articolele publicate înainte de acest upgrade. **Nu modifica acest cod** — orice articol vechi trebuie să producă exact același JSON-LD ca înainte.
-- **Graph** (cu `lastReviewed`) — un singur obiect `{"@context", "@graph": [...]}` cu `Person` (embed complet) + `WebSite` (embed complet) + `WebPage` (`@id: {canonical}#webpage`) + `Article` (`@id: {canonical}#article`, `mainEntityOfPage` → webpage) + `FAQPage` (`@id: {canonical}#faq`, doar dacă există FAQ). `citation` conține **numai** sursele efectiv folosite în articol — nu linkuri decorative.
+- **Graph** (cu `lastReviewed`) — un singur obiect `{"@context", "@graph": [...]}` cu `Person` (embed complet) + `WebSite` (embed complet) + `WebPage` (`@id: {canonical}#webpage`) + `Article` (`@id: {canonical}#article`, `mainEntityOfPage` → webpage, `articleSection: meta.category`) + `FAQPage` (`@id: {canonical}#faq`, doar dacă există FAQ). `citation` conține **numai** sursele efectiv folosite în articol — nu linkuri decorative. `articleSection` fiind derivat direct din `category` (obligatoriu în `LabArticleMeta`, §5.5), nu are nevoie de fallback runtime — nu inventa unul.
 
 Un articol nou capătă automat formatul `graph` din momentul în care are `last_reviewed` completat (frontmatter) → `lastReviewed` (Meta `.ts`). Nu seta `lastReviewed` "ca să obții @graph" fără să fi făcut de fapt verificarea — câmpul înseamnă exact ce spune numele lui.
 
@@ -222,6 +244,16 @@ Dacă articolul are imagine principală: păstrează URL + alt text în `image`/
 ### 5.4 — FAQ
 
 Opțional. Nu crea FAQ doar pentru schema markup — doar dacă există întrebări reale care completează articolul sau clarifică ambiguități. FAQ vizibil == FAQ în structured data (nu inventa răspunsuri suplimentare doar pentru JSON-LD). Fără FAQ util, `faq` poate fi un array gol. Nu pretinde că FAQPage garantează rich results.
+
+### 5.5 — Clasificare editorială (`category` / `articleType`)
+
+Sursa unică pentru indexul și filtrele din `/lab/articole` (§8) — nu duplica aceste valori în alt registry (`labNav.children`, un array separat de cards etc.).
+
+- **`category`** (`LabArticleCategory`, `src/data/lab-seo.ts`) — clasificarea editorială principală, taxonomie controlată, EXACT patru valori: `Search & Retrieval`, `Technical Visibility`, `Entities & Citations`, `AI Ecosystem`. Nu inventa o categorie nouă automat: dacă articolul nu se potrivește rezonabil în niciuna dintre ele, semnalează explicit în raport (§14) și cere decizie editorială explicită înainte de a extinde union type-ul. Determină `articleSection` în JSON-LD graph (§5.2).
+- **`articleType`** (`LabArticleType`) — tipul editorial al materialului. Valorile existente în corpus: `Analiză`, `Studiu de caz`, `Ghid`, `Ghid / Analiză metodologică`. Extinde doar cu decizie editorială explicită, nu automat.
+- Distincție de rol: `category` = clasificare tematică (index + filtre); `articleType` = tipul materialului (afișat lângă `category` în index, format `CATEGORIE · TIP`); `keywords` = metadata SEO/tematică, fără rol în filtrare. Nu introduce `tags` — a fost evaluat și respins explicit (§0.3).
+- Capitalizarea editorială (`"Search & Retrieval"`, `"Analiză"` etc.) e valoarea canonică din date — UI-ul poate aplica `text-transform: uppercase` prin CSS pentru afișare, dar nu schimba valoarea din `.ts`/`.md` doar pentru styling.
+- `category`/`articleType` din `.md` (frontmatter) și `.ts` (Meta) trebuie să fie identice — verifică asta explicit (checklist final).
 
 ---
 
@@ -240,7 +272,8 @@ Primul element din corpul `.ts` (imediat sub titlu/lead-ul deja randat de pagin�
   <a href="/lab">AI Visibility Lab</a>
 </p>
 <p>
-  Publicat: <time datetime="{date_published ISO, YYYY-MM-DD}">{date_published, ex. „10 august 2026”}</time>
+  Publicat: <time datetime="{date_published ISO — legacy YYYY-MM-DD, sau ISO complet cu oră/offset pentru articole noi}">{doar data, ex. „27 august 2026” — NICIODATĂ ora}</time>
+  <!-- clauza "Actualizat" apare NUMAI dacă date_modified diferă efectiv de date_published (zi calendaristică diferită) — vezi regula de mai jos -->
   · Actualizat: <time datetime="{date_modified ISO}">{date_modified}</time>
   · Ultima verificare factuală: <time datetime="{last_reviewed ISO}">{last_reviewed}</time>
 </p>
@@ -253,10 +286,10 @@ Reguli fixe, fără excepție:
 - `Alex Matescu` → mereu link către `/despre` (pagina `Person` a autorului — nu `/lab/despre-laborator`, care descrie laboratorul, nu persoana), cu `rel="author"`.
 - `AI Visibility Lab` → mereu link către `/lab`.
 - Rolul afișat e mereu „Fondator și coordonator” — nu „consultant AI Visibility”, „expert GEO” sau altă titulatură; nu inventa un rol diferit per articol.
-- Fiecare dată apare dublu: text vizibil în română (ex. „10 august 2026”) **și** atributul `datetime` în format ISO (`YYYY-MM-DD`) al elementului `<time>`. Ce înseamnă fiecare dată și când se schimbă — vezi §6.2.
-- Dacă articolul n-a fost efectiv modificat după publicare, nu afișa un „Actualizat:” care sugerează fals o actualizare recentă — vezi §6.2.
+- Fiecare dată apare dublu: text vizibil în română, **doar data, fără oră** (ex. „27 august 2026”), **și** atributul `datetime` al elementului `<time>`. Pentru `date_published` al unui articol nou, `datetime` poate și trebuie să păstreze timestampul ISO complet cu oră/offset (`"2026-08-27T20:00:00+03:00"`) chiar dacă textul vizibil arată doar data — formatează textul vizibil în timezone `Europe/Bucharest` (nu ora browserului/serverului, ca să nu afișezi accidental ziua alăturată). `date_modified`/`last_reviewed` rămân `YYYY-MM-DD` în `datetime`, ca înainte. Ce înseamnă fiecare dată și când se schimbă — vezi §6.2.
+- **Clauza „Actualizat:” e condiționată, nu fixă**: include-o doar dacă `date_modified` reprezintă efectiv o zi calendaristică diferită de `date_published` — adică articolul chiar a fost modificat după publicare. Dacă articolul n-a fost efectiv modificat după publicare (cazul obișnuit pentru un articol nou, în ziua publicării), omite complet clauza „Actualizat: ...” din byline — nu afișa un „Actualizat:” care sugerează fals o actualizare recentă, nici măcar cu aceeași dată ca „Publicat”. Vezi §6.2.
 
-Pe lângă byline-ul de mai sus, fiecare articol se încheie — Faza 7, imediat după „Notă de volatilitate” — cu paragraful standardizat de footer, identic cuvânt cu cuvânt pe toate cele 12 articole publicate (uniformizat 26 august 2026):
+Pe lângă byline-ul de mai sus, fiecare articol se încheie — Faza 7, imediat după „Notă de volatilitate” — cu paragraful standardizat de footer, identic cuvânt cu cuvânt pe toate articolele publicate (uniformizat 26 august 2026):
 
 ```html
 <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală [și a surselor]: {data verificării reale}.</em></p>
@@ -270,7 +303,7 @@ Byline-ul și footerul au roluri diferite și **amândouă** trebuie păstrate �
 
 `date_published`, `date_modified` și `last_reviewed` (frontmatter, §0.3) **nu sunt sinonime** — fiecare are o regulă proprie de actualizare, valabilă atât pentru byline-ul HTML (§6.1), cât și pentru `datePublished`/`dateModified` din JSON-LD (§5.2):
 
-- **`date_published`** — data primei publicări. Nu se rescrie niciodată ulterior, indiferent de câte actualizări sau reverificări urmează.
+- **`date_published`** — momentul primei publicări (regula completă — §0.4). Nu se rescrie niciodată ulterior, indiferent de câte actualizări sau reverificări urmează. Pentru articole noi, ISO complet cu oră/offset; textul vizibil din byline și din indexul `/lab/articole` arată totuși doar data, niciodată ora (§6.1/§8).
 - **`date_modified`** — data ultimei modificări editoriale/substanțiale reale a textului. Nu se atinge doar pentru: recitirea articolului, reverificarea surselor, confirmarea că informația e încă validă, sau o simplă schimbare a `last_reviewed`. Dacă articolul a fost verificat factual dar textul n-a fost modificat substanțial, `date_modified` rămâne neschimbat — se schimbă doar `last_reviewed`.
 - **`last_reviewed`** — data ultimei verificări factuale/a surselor, efectiv realizată în task-ul curent. Nu completa automat cu data publicării sau cu data curentă „ca să fie safe” — valoarea înseamnă exact ce spune numele ei.
 
@@ -290,14 +323,27 @@ Ultimul element din `.ts`, după „Notă de volatilitate” (sau, dacă articol
 
 Actualizează exact:
 
-1. **`src/data/lab-seo.ts`** — import `{slug}Meta`, adaugă în `labArticleMeta`.
-2. **`src/pages/Lab.tsx`** — import `{slug}Html`, adaugă în `labPageContent` cu cheia `/lab/articole/{slug}`.
-3. **`src/data/lab.ts`** — copil nou în `children` al nodului `/lab/articole` din `labNav`: `{ to, label: title, lead: description }`.
-4. **`public/sitemap.xml`** — vezi §8.1.
+1. **`src/data/lab-content/{n}. {slug}.ts`** — fișier nou: `export const {slug}Meta: LabArticleMeta = {...}` (cu `category`/`articleType` obligatorii, §5.5) + `export const {slug}Html = \`...\``. Adnotează explicit `: LabArticleMeta` (import type din `@/data/lab-seo`) — TypeScript refuză compilarea dacă lipsește `category`/`articleType`, ceea ce e intenționat.
+2. **`src/data/lab-seo.ts`** — import `{slug}Meta`, adaugă-l în array-ul `labArticleMeta`. **Poziția în array nu contează** — nu insera la început, la sfârșit sau într-o poziție anume ca să influențezi ordinea afișată; `sortedLabArticles` (derivat automat din `labArticleMeta`, tot în `lab-seo.ts`) reordonează totul după `datePublished` la runtime. Adaugă-l oriunde e convenabil (convențional, la coadă).
+3. **`src/pages/Lab.tsx`** — import `{slug}Html`, adaugă în `labPageContent` cu cheia `/lab/articole/{slug}`.
+4. **`src/data/lab.ts`** — copil nou în `children` al nodului `/lab/articole` din `labNav`: `{ to, label: title, lead: description }`. Necesar pentru routing (`findLabPage`/`findLabParent`) și pentru H1/lead al paginii individuale a articolului — **NU** controlează indexul de pe `/lab/articole` (vezi mai jos) și nici poziția în el.
+5. **`public/sitemap.xml`** — vezi §8.2.
 
-**Nu** edita manual `src/data/lab-content/avl-401.ts` — pagina index `/lab/articole` își ia lista din `labNav.children` automat (`LabDetail`, `Lab.tsx`).
+**Nu** edita manual `src/data/lab-content/avl-401.ts` (introducerea/textul din josul indexului) — rămâne conținut static, separat de lista de articole.
 
-### 8.1 — Sitemap
+### 8.1 — Cum se construiește indexul `/lab/articole` (arhitectură automată — NU manuală)
+
+Pagina index `/lab/articole` (componenta `LabArticleIndex`, `src/pages/Lab.tsx`) **nu** își ia lista sau ordinea din `labNav.children`. Fluxul real:
+
+1. **Sursa canonică** — `labArticleMeta` (`src/data/lab-seo.ts`), array-ul de `{slug}Meta` din `src/data/lab-content/*.ts`. Fiecare intrare are deja `title`, `description`, `canonical`, `datePublished`, `category`, `articleType` — tot ce are nevoie indexul, fără alt registry.
+2. **Sortarea** — `sortedLabArticles` (tot în `lab-seo.ts`): copie a `labArticleMeta`, sortată descrescător **exclusiv** după `datePublished` (parsat cu `Date`, nu lexicografic), cu un tie-breaker determinist pe `canonical` pentru articole legacy publicate în aceeași zi fără oră verificabilă. Nu depinde de `dateModified`, `lastReviewed`, ordinea din `labArticleMeta`, ordinea importurilor sau `labNav.children`.
+3. **Featured automat** — `latestLabArticle` = `sortedLabArticles[0]`. `LabArticleIndex` marchează „CEL MAI NOU” comparând `meta.canonical === latestLabArticle.canonical` pentru fiecare rând — nu există niciun flag `featured`/`isFeatured`, nicio listă separată, niciun slug hardcodat. Când un articol nou primește un `datePublished` mai recent, devine automat primul și automat „CEL MAI NOU”, iar articolul anterior devine automat rând normal — fără nicio modificare de cod.
+4. **URL-ul fiecărui rând** — `labArticlePathname(meta)` (`new URL(meta.canonical).pathname`) — nu există câmp `slug` separat în `LabArticleMeta` (§0.3).
+5. **Filtrele de categorie** — client-side, pe `meta.category`; „CEL MAI NOU” rămâne mereu legat de `latestLabArticle` (cel mai nou din întreg corpusul), nu de cel mai nou din categoria filtrată — dacă articolul global cel mai nou nu e în categoria selectată, eticheta dispare din rezultatele filtrate, nu se mută pe alt articol.
+
+**Ce înseamnă asta pentru tine, la publicarea unui articol nou**: după Faza 8 pas 1–2, articolul apare automat la locul corect în index, cu sau fără eticheta „CEL MAI NOU”, determinat exclusiv de `datePublished`. **Nu** reordona manual `labArticleMeta`, **nu** seta un flag Featured, **nu** modifica `LabArticleIndex`/`sortedLabArticles` pentru un singur articol — dacă simți nevoia să faci oricare din astea, ceva e greșit în `datePublished` sau `category` al articolului, nu în index.
+
+### 8.2 — Sitemap
 
 ```xml
 <url>
@@ -310,11 +356,11 @@ Actualizează exact:
 
 Proiectul folosește deja consistent `changefreq`/`priority` pe toate intrările — păstrează-le, nu e nevoie de refactor global pentru un singur articol; nu le prezenta însă ca optimizări SEO importante, sunt semnale slabe pe care motoarele le ignoră frecvent. `lastmod` reflectă o modificare **reală** a paginii — nu-l atinge doar pentru că a rulat agentul.
 
-### 8.2 — llms.txt
+### 8.3 — llms.txt
 
 Nu adăuga automat o linie per articol — nu tratat ca cerință universală GEO. Modifică-l doar dacă arhitectura o cere sau userul cere explicit.
 
-### 8.3 — IndexNow
+### 8.4 — IndexNow
 
 Verificat: proiectul **nu are** integrare IndexNow (niciun fișier de cheie, niciun cod de notificare). Nu construi una automat în timpul publicării unui articol. Menționează opțional în raport dacă ar fi utilă.
 
@@ -325,6 +371,7 @@ Verificat: proiectul **nu are** integrare IndexNow (niciun fișier de cheie, nic
 **On-page**: un singur H1, title, description, canonical, headings, internal/external links, image alt, `language`, date, structured data, FAQ dacă există.
 **Indexability**: fără `noindex` accidental, canonical corect, rută existentă, fără conflict canonical/sitemap.
 **URL consistency**: identice — canonical, slug, rută, sitemap, `lab.ts`, `Lab.tsx`, `lab-seo.ts`, numele fișierului `.ts`.
+**Index `/lab/articole`**: `category`/`articleType` identice între `.md` și `.ts` (§5.5); articolul apare exact o dată în index, la poziția corectă (sortare descrescătoare după `datePublished`, §8.1); dacă are cel mai recent `datePublished` din corpus, e singurul cu eticheta „CEL MAI NOU”; `articleSection` din JSON-LD graph reflectă `category` (§5.2).
 
 ### 9.1 — AI crawler accessibility
 
@@ -344,7 +391,7 @@ npm run build
 
 ### 10.1 — Runtime audit
 
-Dacă mediul permite, pornește serverul de dev și confirmă pe ruta reală: title, meta description, canonical, H1, conținut, footnotes, linkuri interne/externe, JSON-LD (formă corectă — legacy sau graph, după caz), FAQ, imagine dacă există. Dacă nu poți rula verificarea runtime, spune explicit în raport (nu presupune că a trecut).
+Dacă mediul permite, pornește serverul de dev și confirmă pe ruta reală: title, meta description, canonical, H1, conținut, footnotes, linkuri interne/externe, JSON-LD (formă corectă — legacy sau graph, după caz), FAQ, imagine dacă există. Verifică și pe `/lab/articole`: articolul nou apare (o singură dată), la poziția corectă în listă, cu „CEL MAI NOU” dacă și numai dacă e efectiv cel mai nou global, cu `category`/`articleType` afișate corect, cu data vizibilă fără oră, și că filtrul categoriei lui îl include. Dacă nu poți rula verificarea runtime, spune explicit în raport (nu presupune că a trecut).
 
 ---
 
@@ -377,11 +424,12 @@ Scalează cu scopul din §0.2. Pentru **articol nou/rescriere majoră**, raportu
 3. Claim ledger (tabel — poate fi sintetizat pentru afirmații repetitive).
 4. Afirmații eliminate/reformulate — ce și de ce.
 5. Surse volatile — ce trebuie reverificat în viitor.
-6. Metadata: title, description, canonical, date, `lastReviewed`, slug, keywords, imagine dacă există.
-7. Entity/schema: Person, WebSite (dacă `graph`), Article, WebPage (dacă `graph`), FAQ dacă există, publisher, citation.
+6. Metadata: title, description, canonical, date (`datePublished` — precizează dacă e timestamp complet sau legacy date-only, și publication time identificat), `category`, `articleType`, `lastReviewed`, slug, keywords, imagine dacă există.
+7. Entity/schema: Person, WebSite (dacă `graph`), Article (inclusiv `articleSection` = `category`), WebPage (dacă `graph`), FAQ dacă există, publisher, citation.
 8. Internal linking adăugat.
-9. Rezultate tehnice: `typecheck` / `lint` / `build` / `runtime check` — fiecare PASS/FAIL/NOT RUN.
-10. Limitări — ce nu a putut fi verificat.
+9. Index `/lab/articole`: confirmare că articolul apare automat (poziție + Featured determinate de `datePublished`, fără nicio modificare manuală a indexului) — vezi §8.1.
+10. Rezultate tehnice: `typecheck` / `lint` / `build` / `runtime check` — fiecare PASS/FAIL/NOT RUN.
+11. Limitări — ce nu a putut fi verificat (inclusiv, dacă e cazul, ora reală de publicare nedemonstrabilă pentru un articol legacy — §0.4).
 
 Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doar afirmațiile modificate din claim ledger, rezultatele tehnice.
 
@@ -409,17 +457,37 @@ Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doa
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Claim ledger inclus în raport.
 - [ ] Byline: `Alex Matescu` → `/despre` cu `rel="author"`; rol vizibil „Fondator și coordonator”; `AI Visibility Lab` → `/lab` (§6.1).
-- [ ] Toate cele trei date din byline folosesc `<time datetime="YYYY-MM-DD">`, cu text vizibil în română.
+- [ ] Toate cele trei date din byline au text vizibil în română, doar data, fără oră; `datetime` e `YYYY-MM-DD` pentru `date_modified`/`last_reviewed`, și ISO complet cu oră/offset pentru `date_published` al unui articol nou (§6.1).
 - [ ] Byline-ul apare imediat sub titlu/lead, înaintea corpului articolului; footerul standardizat apare integral, nemodificat, la coadă — ambele prezente, niciunul nu-l înlocuiește pe celălalt (§6.1).
 - [ ] JSON-LD `author` referă `{"@id": "https://delamatescu.ro/#alex-matescu"}`; `datePublished`/`dateModified` coerente cu byline-ul (§5.1/§5.2).
 - [ ] Nicio variantă veche de byline/footer (`Alex Matescu · AI Visibility Lab` fără rol, „consultant AI Visibility”, „proiectul de cercetare... al lui Alex Matescu” etc.) nu a fost regenerată.
+
+**Index `/lab/articole` (§5.5/§8.1) — verificări obligatorii:**
+
+- [ ] `category` e una dintre cele patru valori permise (§5.5).
+- [ ] `articleType` e una dintre valorile permise (§5.5).
+- [ ] `datePublished` reprezintă prima publicare publică reală (§0.4), nu creare draft/research/ultima modificare/ora agentului/commit Git.
+- [ ] Un articol nou are `date_published` cu timestamp complet și timezone (`Europe/Bucharest`), nu doar dată.
+- [ ] Ora publicării nu a fost inventată — dacă nu poate fi demonstrată (articol legacy), a rămas `YYYY-MM-DD` fără oră (§0.4).
+- [ ] Ora publicării nu e afișată nicăieri vizibil (nici în byline, nici în index) — doar data, în `Europe/Bucharest`.
+- [ ] Indexul `/lab/articole` e sortat descrescător exclusiv după `datePublished`; cel mai nou articol global e primul.
+- [ ] Numai cel mai nou articol global are eticheta „CEL MAI NOU” — nu cel mai nou din categoria filtrată.
+- [ ] Nu există niciun flag `featured`/`isFeatured` manual nicăieri în cod.
+- [ ] Indexul nu depinde de ordinea din `labNav.children` — poziția nouă a articolului nu a fost obținută prin reordonare manuală a vreunui array.
+- [ ] Filtrarea pe categorie funcționează și nu creează pagini/URL-uri/canonicaluri noi, indexabile.
+- [ ] `articleSection` (JSON-LD graph) reflectă `category`.
+- [ ] Articolul apare exact o singură dată în index (nicio duplicare Featured + listă).
+- [ ] Articolul nou apare automat în index după Faza 8, fără nicio modificare a `LabArticleIndex`/`sortedLabArticles`.
+- [ ] Niciun count de articole nu e hardcodat în cod sau în formulările din acest SKILL.md.
+- [ ] `category`/`articleType` din `.md` și `.ts` sunt identice.
+- [ ] Timestamp-ul complet din metadata și data vizibilă (byline + index) nu se contrazic.
 
 ---
 
 ## Utilizare
 
 ```
-/publica-articol-lab src/content/lab/articles/13.titlu-nou-articol.md
+/publica-articol-lab src/content/lab/articles/14.titlu-nou-articol.md
 ```
 
 Nu face commit/push fără cerere explicită.

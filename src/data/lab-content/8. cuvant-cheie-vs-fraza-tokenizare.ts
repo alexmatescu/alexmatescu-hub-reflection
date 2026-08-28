@@ -1,13 +1,17 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const cuvantCheieVsFrazaTokenizareMeta = {
+export const cuvantCheieVsFrazaTokenizareMeta: LabArticleMeta = {
   title:
     "Cuvânt-cheie vs frază în AI Search: query rewriting, tokenizare și ce putem spune corect despre limba română",
   description:
     "Cum rescriu ChatGPT Search și Google AI Search interogările, ce este query fan-out, cum funcționează tokenizarea și de ce diferențele dintre limbi trebuie măsurate cu tokenizerul real, nu estimate din octeți.",
   canonical: "https://delamatescu.ro/lab/articole/cuvant-cheie-vs-fraza-tokenizare",
+  category: "Search & Retrieval",
+  articleType: "Analiză",
   datePublished: "2026-08-19",
   dateModified: "2026-08-19",
   lastReviewed: "2026-08-19",

@@ -1,13 +1,17 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const paradoxulSpecificitatiiContinutGenericMeta = {
+export const paradoxulSpecificitatiiContinutGenericMeta: LabArticleMeta = {
   title:
     "Paradoxul specificității: când contextul schimbă răspunsul și când doar fragmentează conținutul",
   description:
     "Specificitatea ajută când adaugă informație care schimbă răspunsul. Devine contraproductivă când multiplică pagini sau introduce constrângeri fără valoare. Analiză AI Visibility Lab despre relevance, query fan-out și doorway pages.",
   canonical: "https://delamatescu.ro/lab/articole/paradoxul-specificitatii-continut-generic",
+  category: "Search & Retrieval",
+  articleType: "Analiză",
   datePublished: "2026-08-19",
   dateModified: "2026-08-19",
   lastReviewed: "2026-08-19",

@@ -1,14 +1,18 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const decalajVitezaAiAdoptie2026Meta = {
+export const decalajVitezaAiAdoptie2026Meta: LabArticleMeta = {
   title:
     "407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026",
   description:
     "Analiză verificată a ritmului lansărilor AI și a adopției în 2026: 407 lansări și actualizări urmărite editorial între ianuarie și iulie, 17,8% utilizare GenAI în populația 15–64 ani în Q1 2026, diferențe de metodologie între Microsoft, Eurostat, OECD, McKinsey și PwC, plus date pentru România.",
   canonical:
     "https://delamatescu.ro/lab/articole/decalaj-viteza-ai-adoptie-2026",
+  category: "AI Ecosystem",
+  articleType: "Analiză",
   datePublished: "2026-08-19",
   dateModified: "2026-08-19",
   lastReviewed: "2026-08-19",

@@ -1,13 +1,17 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const catDureazaIndexareCitareAiMeta = {
+export const catDureazaIndexareCitareAiMeta: LabArticleMeta = {
   title:
     "Cât durează până apari în Google și cât până te citează AI-ul? Ce știm, ce nu știm și ce poți măsura",
   description:
     "Ce documentează sursele oficiale despre crawl, indexare și apariția în răspunsurile AI, ce termene nu sunt publice și cum separi descoperirea, indexarea, clasarea și citarea. Analiză AI Visibility Lab.",
   canonical: "https://delamatescu.ro/lab/articole/cat-dureaza-indexare-citare-ai",
+  category: "Search & Retrieval",
+  articleType: "Analiză",
   datePublished: "2026-08-05",
   dateModified: "2026-08-10",
   about: [

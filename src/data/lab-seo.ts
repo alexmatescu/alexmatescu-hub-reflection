@@ -17,12 +17,55 @@ import { buildSeoHead } from "@/lib/seo-head";
 
 const BASE = "https://delamatescu.ro";
 
+/**
+ * Clasificarea editorială principală (index + filtre pe /lab/articole). Valorile
+ * sunt EXACT cele patru din taxonomia controlată — nu inventa altele automat;
+ * un articol care nu se potrivește rezonabil în niciuna dintre ele semnalează
+ * o decizie editorială (SKILL.md §19), nu o extindere silențioasă a acestui union.
+ */
+export type LabArticleCategory =
+  | "Search & Retrieval"
+  | "Technical Visibility"
+  | "Entities & Citations"
+  | "AI Ecosystem";
+
+/** Ordinea canonică de afișare a categoriilor în filtrele din /lab/articole. */
+export const LAB_ARTICLE_CATEGORIES: readonly LabArticleCategory[] = [
+  "Search & Retrieval",
+  "Technical Visibility",
+  "Entities & Citations",
+  "AI Ecosystem",
+];
+
+/**
+ * Tipul editorial al materialului — distinct de `category` (clasificare tematică)
+ * și de `keywords` (metadata SEO, fără rol în filtrare). Valorile editoriale
+ * existente în corpus; extinde doar cu decizie editorială explicită.
+ */
+export type LabArticleType =
+  "Analiză" | "Studiu de caz" | "Ghid" | "Ghid / Analiză metodologică";
+
 export type LabArticleMeta = {
   title: string;
   description: string;
   canonical: string;
+  /**
+   * Momentul primei publicări publice — NU data creării draftului, a
+   * research-ului sau a ultimei modificări (SKILL.md §6.2). Acceptă două
+   * formate, ambele parsabile de `Date`:
+   *  - legacy: `"YYYY-MM-DD"` (articolele publicate înainte de acest contract);
+   *  - nou, pentru orice articol publicat de acum înainte: ISO complet cu
+   *    oră și offset, `"YYYY-MM-DDTHH:mm:ss±HH:mm"` (ex. `"2026-08-27T20:00:00+03:00"`).
+   * Sursa unică pentru sortarea și pentru Featured-ul din /lab/articole —
+   * vezi `sortedLabArticles`/`latestLabArticle` mai jos. Nu folosi `dateModified`
+   * sau `lastReviewed` pentru asta.
+   */
   datePublished: string;
   dateModified: string;
+  /** Clasificarea editorială principală — sursă unică pentru index și filtre (nu duplica în alt registry). */
+  category: LabArticleCategory;
+  /** Tipul editorial al materialului — sursă unică pentru index (nu duplica în alt registry). */
+  articleType: LabArticleType;
   faq: { q: string; a: string }[];
   /** Entități tematice opționale (schema.org `about`), pentru articolele care le definesc. */
   about?: { name: string }[];
@@ -69,6 +112,75 @@ const findArticleMetaBySlug = (slug: string) =>
   labArticleMeta.find((meta) =>
     meta.canonical.endsWith(`/lab/articole/${slug}`),
   );
+
+/**
+ * Ruta articolului (`/lab/articole/{slug}`), derivată din `canonical` — nu
+ * există un câmp `slug` separat în `LabArticleMeta` (ar duplica aceeași
+ * informație, vezi SKILL.md Faza 0/§2). Folosită de indexul din Lab.tsx pentru
+ * link-ul fiecărui rând.
+ */
+export const labArticlePathname = (meta: LabArticleMeta) =>
+  new URL(meta.canonical).pathname;
+
+/**
+ * Parsează `datePublished` la un timestamp real (`Date`), acceptând deopotrivă
+ * formatul legacy `YYYY-MM-DD` și formatul nou ISO complet cu oră/offset —
+ * ambele sunt parsabile nativ de `Date`. Nu face sortare lexicografică pe
+ * string: string-ul `"YYYY-MM-DD"` sortează corect lexicografic, dar
+ * `"YYYY-MM-DDTHH:mm:ss±HH:mm"` nu garantează asta odată ce intră offset-uri
+ * diferite de UTC, deci parserul real e obligatoriu.
+ */
+const parsePublishedTimestamp = (datePublished: string): number => {
+  const t = new Date(datePublished).getTime();
+  return Number.isNaN(t) ? 0 : t;
+};
+
+/**
+ * Sursa unică de ordonare pentru /lab/articole: toate articolele, sortate
+ * descrescător exclusiv după `datePublished` (nu `dateModified`, nu
+ * `lastReviewed`, nu ordinea din `labNav.children`, nu ordinea importurilor
+ * de mai sus, nu un flag `featured`). Cel mai nou articol e mereu primul —
+ * vezi `latestLabArticle`.
+ *
+ * Tie-breaker: articole legacy publicate în aceeași zi, fără oră verificabilă,
+ * compară egal pe timestamp; ordinea dintre ele e decisă determinist prin
+ * `canonical` (string stabil, independent de import/fișier/poziție manuală).
+ * Acest tie-breaker NU e și nu reprezintă ora reală de publicare — doar
+ * garantează un rezultat identic la fiecare build.
+ */
+export const sortedLabArticles: LabArticleMeta[] = [...labArticleMeta].sort(
+  (a, b) => {
+    const diff =
+      parsePublishedTimestamp(b.datePublished) -
+      parsePublishedTimestamp(a.datePublished);
+    if (diff !== 0) return diff;
+    return a.canonical < b.canonical ? 1 : a.canonical > b.canonical ? -1 : 0;
+  },
+);
+
+/**
+ * "CEL MAI NOU" — mereu cel mai nou articol din ÎNTREG corpusul, calculat
+ * automat din `sortedLabArticles[0]`. Nu există flag manual `featured`/
+ * `isFeatured` nicăieri în proiect: când un articol nou primește un
+ * `datePublished` mai recent, devine automat acesta, fără nicio modificare
+ * de cod (Lab.tsx compară fiecare rând cu `latestLabArticle.canonical`).
+ */
+export const latestLabArticle: LabArticleMeta | undefined =
+  sortedLabArticles[0];
+
+/**
+ * Formatează `datePublished` pentru afișare pe /lab/articole și în byline:
+ * doar data, fără oră, în timezone `Europe/Bucharest` (fix — nu ora
+ * browserului/serverului), ca un timestamp cu offset diferit de UTC să nu
+ * "alunece" pe ziua alăturată. Ex.: `"2026-08-27T20:00:00+03:00"` → „27 august 2026”.
+ */
+export const formatLabArticleDate = (datePublished: string): string =>
+  new Intl.DateTimeFormat("ro-RO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "Europe/Bucharest",
+  }).format(new Date(datePublished));
 
 const labPublisher = {
   "@type": "Organization",
@@ -149,8 +261,10 @@ const buildGraphArticleJsonLd = (meta: LabArticleMeta) => {
       inLanguage: "ro-RO",
       datePublished: meta.datePublished,
       dateModified: meta.dateModified,
-      // Sitewide, identic pentru orice articol din secțiune — nu se cere per-articol.
-      articleSection: "AI Visibility Lab",
+      // `category` e obligatoriu în tipul `LabArticleMeta` (folosit exclusiv de
+      // articolele /lab/articole — vezi §12 SKILL.md), deci fiecare intrare din
+      // `labArticleMeta` îl are garantat; nu e nevoie de un fallback runtime.
+      articleSection: meta.category,
       author: { "@id": alexMatescuPerson["@id"] },
       publisher: labPublisher,
       ...(meta.keywords ? { keywords: meta.keywords.join(", ") } : {}),

@@ -1,14 +1,18 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const metadataCitareAiStudiuDeCazMeta = {
+export const metadataCitareAiStudiuDeCazMeta: LabArticleMeta = {
   title:
     "Metadata și citarea AI: ce poate demonstra o citare identică și unde începe inferența",
   description:
     "Studiu de caz AI Visibility Lab: după actualizarea metadata, un sistem AI a citat textual formularea publicată pe delamatescu.ro. Ce demonstrează exact match-ul, ce nu demonstrează și cum transformi observația într-un experiment reproductibil.",
   canonical:
     "https://delamatescu.ro/lab/articole/metadata-citare-ai-studiu-de-caz",
+  category: "Technical Visibility",
+  articleType: "Studiu de caz",
   datePublished: "2026-08-05",
   dateModified: "2026-08-10",
   lastReviewed: "2026-08-17",

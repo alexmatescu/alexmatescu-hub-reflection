@@ -1,13 +1,17 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const auditSiteFaraAccesCodMeta = {
+export const auditSiteFaraAccesCodMeta: LabArticleMeta = {
   title:
     "Ce poți citi și ce poți schimba la un site fără acces la cod: ghid de audit din exterior",
   description:
     "Ce poți observa din exteriorul unui site, ce poți modifica fără acces la repository și unde se termină dovada tehnică și începe inferența. Ghid AI Visibility Lab bazat pe documentație oficială și teste reproductibile.",
   canonical: "https://delamatescu.ro/lab/articole/audit-site-fara-acces-cod",
+  category: "Technical Visibility",
+  articleType: "Ghid",
   datePublished: "2026-08-18",
   dateModified: "2026-08-18",
   lastReviewed: "2026-08-18",

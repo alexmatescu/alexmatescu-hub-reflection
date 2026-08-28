@@ -1,13 +1,17 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const motoareCautareMeta = {
+export const motoareCautareMeta: LabArticleMeta = {
   title:
     "Motoarele de căutare comparate în 2026: cifrele care se contrazic, deciziile care au schimbat clasamentul și oamenii din spatele lor",
   description:
     "Cotele de piață reale, de ce studiile diferă cu două ordine de mărime, și deciziile de distribuție care au decis fiecare schimbare de clasament din istoria căutării. Analiză AI Vis§ibility Lab.",
   canonical: "https://delamatescu.ro/lab/articole/motoare-cautare-comparatie-2026",
+  category: "Search & Retrieval",
+  articleType: "Analiză",
   datePublished: "2026-08-14",
   dateModified: "2026-08-14",
   faq: [

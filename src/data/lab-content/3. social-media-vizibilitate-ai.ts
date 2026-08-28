@@ -1,12 +1,16 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const socialMediaVizibilitateAiMeta = {
+export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
   title: "De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI",
   description:
     "Cum diferă vizibilitatea umană de vizibilitatea AI în social media. Analiză bazată pe surse publice, studii comerciale tratate separat după metodologie și reguli operaționale pentru artefacte persistente, entity resolution și distribuție.",
   canonical: "https://delamatescu.ro/lab/articole/social-media-vizibilitate-ai",
+  category: "Entities & Citations",
+  articleType: "Analiză",
   datePublished: "2026-08-14",
   dateModified: "2026-08-14",
   about: [

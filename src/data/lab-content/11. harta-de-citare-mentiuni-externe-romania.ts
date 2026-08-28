@@ -1,14 +1,18 @@
+import type { LabArticleMeta } from "@/data/lab-seo";
+
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
-export const hartaDeCitareMentiuniExterneRomaniaMeta = {
+export const hartaDeCitareMentiuniExterneRomaniaMeta: LabArticleMeta = {
   title:
     "Harta de citare: cum afli empiric ce surse contează pentru vizibilitatea AI în România",
   description:
     "Cum construiești o hartă de citare pentru nișa ta, cum separi mențiunile de citări, ce arată studiile Muck Rack, AirOps și Ahrefs și de ce prezența externă trebuie măsurată, nu presupusă.",
   canonical:
     "https://delamatescu.ro/lab/articole/harta-de-citare-mentiuni-externe-romania",
+  category: "Entities & Citations",
+  articleType: "Ghid / Analiză metodologică",
   datePublished: "2026-08-19",
   dateModified: "2026-08-19",
   lastReviewed: "2026-08-19",
