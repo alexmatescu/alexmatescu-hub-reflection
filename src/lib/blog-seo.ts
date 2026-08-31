@@ -75,6 +75,15 @@ export const buildBlogPostHead = (slug: string) => {
               })),
             }
           : {}),
+        ...(post.citations?.length
+          ? {
+              citation: post.citations.map((c) => ({
+                "@type": "CreativeWork",
+                name: c.name,
+                url: c.url,
+              })),
+            }
+          : {}),
         ...(imageUrl ? { image: imageUrl } : {}),
         author: alexMatescuPerson,
         publisher: { "@id": alexMatescuPerson["@id"] },
@@ -98,6 +107,23 @@ export const buildBlogPostHead = (slug: string) => {
           },
         ],
       },
+      // FAQPage — doar dacă articolul definește `faq` (textul vizibil tot
+      // trebuie scris manual în `html`; vezi comentariul câmpului în Post).
+      ...(post.faq?.length
+        ? [
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "@id": `${canonical}#faq`,
+              inLanguage: "ro-RO",
+              mainEntity: post.faq.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+          ]
+        : []),
     ],
   });
 };
