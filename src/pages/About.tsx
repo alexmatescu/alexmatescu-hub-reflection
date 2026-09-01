@@ -1,6 +1,6 @@
 import { Link } from "@/lib/router-compat";
 import { ArrowRight } from "lucide-react";
-import Seo, { alexMatescuPerson } from "@/components/Seo";
+import Seo from "@/components/Seo";
 
 const values = [
   { word: "Claritate", note: "A vedea ce este, nu ce vrem să fie." },
@@ -13,7 +13,7 @@ const values = [
 
 const mainProjects = [
   { name: "CRANDIT", desc: "Carte în lucru — Mitul succesului peste noapte (2026)", to: "/carte" },
-  { name: "AI Visibility Lab", desc: "Cercetare aplicată, măsurare și optimizare a vizibilității în sisteme AI prin GEO și AEO — proiect activ", to: "/lab/introducere" },
+  { name: "AI Visibility Lab", desc: "Cercetare aplicată, măsurare și optimizare a vizibilității în sisteme AI prin GEO și AEO — proiect activ", to: "/lab" },
   { name: "Blogging", desc: "delamatescu.ro — scris constant din 2014, relansat în 2025", to: "/blog" },
   { name: "Afacerea de familie", desc: "Magazin mixt rural — activ din aprilie 2021", to: "/proiecte/afacerea-de-familie" },
   { name: "Taste the Corn", desc: "Concept de retail alimentar în Sibiu — construit, testat și închis (2025)", to: "/proiecte/taste-the-corn" },
@@ -45,12 +45,14 @@ const studyDomains = [
 const About = () => {
   return (
     <>
+      {/* JSON-LD (Person + ProfilePage) e randat server-side prin head()-ul
+          rutei (src/routes/_site/despre.tsx), sursa reală pentru runtime —
+          nu-l duplicăm aici ca să nu emitem un al doilea set identic. */}
       <Seo
-        title="Despre Alex Matescu — Inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor"
-        description="Cine este Alex Matescu: inginer în automotive, antreprenor, fondator și coordonator AI Visibility Lab și autor al CRANDIT — creator de conținut despre muncă, tehnologie și sens."
+        title="Despre Alex Matescu — Inginer, antreprenor și autor"
+        description="„Cine este Alex Matescu: inginer în automotive, antreprenor, autor al CRANDIT și fondator și coordonator AI Visibility Lab, unde documentează cercetare aplicată în AI Visibility, GEO și AEO."
         imageUrl="https://delamatescu.ro/images/AlexMatescu-profile-picture.jpg"
         imageAlt="Alex Matescu"
-        jsonLd={{ "@context": "https://schema.org", ...alexMatescuPerson }}
       />
 
       {/* HERO */}
@@ -157,7 +159,7 @@ const About = () => {
                 <li>Fondator Taste the Corn — concept de retail alimentar în Sibiu, construit, lansat, operat și închis între ianuarie și decembrie 2025.</li>
                 <li>Fondator Atracțiile României — proiect digital de turism cultural, dezvoltat constant între 2021 și 2023.</li>
                 <li>Prima experiență antreprenorială: un magazin de haine deschis în 2017 la Craiova — încheiat rapid, dar formator.</li>
-                <li>Fondator și coordonator <Link to="/lab/introducere" className="link-underline text-foreground">AI Visibility Lab</Link> — proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO.</li>
+                <li>Fondator și coordonator <Link to="/lab" className="link-underline text-foreground">AI Visibility Lab</Link> — proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO.</li>
               </ul>
             </div>
             <div>
@@ -169,7 +171,7 @@ const About = () => {
             <div>
               <p className="eyebrow mb-4">Activitate editorială</p>
               <p className="text-muted-foreground">
-                Autor al cărții <strong>CRANDIT – Mitul succesului peste noapte</strong> (în lucru, 2026) și autor al blogului <em>delamatescu.ro</em>, început în decembrie 2014 și relansat în 2025 ca spațiu central de gândire și scriere.
+                Autor al cărții <strong>CRANDIT – Mitul succesului peste noapte</strong> (în lucru, 2026) și autor al blogului <em>delamatescu.ro/blog</em>, început în decembrie 2014 și relansat în 2025 ca spațiu central de gândire și scriere.
               </p>
             </div>
           </div>
@@ -265,11 +267,23 @@ const About = () => {
             Printre proiectele dezvoltate se numără Atracțiile României, Taste the Corn și AI Visibility Lab.
           </p>
           <p>
-            În 2026 am trecut de la studiul sistematic al GEO/AEO la aplicarea practică a metodologiilor pe propriile proiecte, prin măsurare, optimizare și documentarea publică a rezultatelor în AI Visibility Lab.
+            În 2026 am trecut de la studiul sistematic al GEO/AEO la aplicarea practică a metodologiilor pe propriile proiecte, prin măsurare, optimizare și documentarea publică a rezultatelor în AI Visibility Lab. Practic testez metode de îmbunătățire a vizibilității conținutului și entităților în sisteme de căutare și AI, inclusiv discovery, structurare, entity resolution și citare.
+          </p>
+          <p>
+            În cuvinte mai simple, prin Lab testez și documentez cum pot fi îmbunătățite descoperirea, înțelegerea și citarea conținutului și a entităților în sisteme de căutare și AI. Public metodologia, măsurătorile, studiile de caz, sursele și limitele concluziilor, astfel încât procesul să poată fi urmărit și verificat.
           </p>
           <p>
             Unele proiecte au avut succes comercial, altele au rămas experimente sau lecții importante. Toate au contribuit la dezvoltarea unei înțelegeri mai profunde asupra execuției, riscului, responsabilității și construcției pe termen lung.
           </p>
+
+          <div className="mt-10">
+            <Link
+              to="/lab/introducere"
+              className="inline-flex items-center gap-2 h-12 px-6 border border-foreground/20 text-sm tracking-wide no-underline hover:bg-foreground hover:text-background transition-colors"
+            >
+              Explorează AI Visibility Lab <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
 
           <h3 className="font-serif text-2xl mt-12 mb-4">Vânzări și consultanță</h3>
           <p>

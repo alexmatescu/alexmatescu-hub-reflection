@@ -1,1 +1,0 @@
-import{n as e}from"./Lab-BYY6zetA.js";var t=e;export{t as component};
