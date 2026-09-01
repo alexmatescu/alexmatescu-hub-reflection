@@ -15,7 +15,7 @@ export const avl001IntroductionHtml = `
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
         <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
         <tr><th scope="row">Limba</th><td>română</td></tr>
-        <tr><th scope="row">URL canonic propus</th><td>https://delamatescu.ro/lab — de confirmat la publicare</td></tr>
+        <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/introducere">https://delamatescu.ro/lab/introducere</a></td></tr>
         </tbody>
         </table>
       </div>
@@ -497,7 +497,7 @@ export const avl001IntroductionHtml = `
 
       <p>O observație sau ipoteză nu trebuie citată ca informație confirmată oficial.</p>
 
-      <p>Citarea recomandată: Matescu, Alex. „AI Visibility Lab Foundation”. AI Visibility Lab Documentation, AVL-001, versiunea 1.0.0, 2026.</p>
+      <p>Citarea recomandată: Matescu, Alex. „AI Visibility Lab Foundation”. AI Visibility Lab Documentation, AVL-001, versiunea 1.0.2, 2026.</p>
 
       <h2>19. Versiuni, revizuiri și corecții</h2>
 

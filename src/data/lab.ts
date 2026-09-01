@@ -67,7 +67,7 @@ export const labNav: LabPage[] = [
   {
     to: "/lab/articole",
     label: "Articole",
-    seoTitle: "Articole GEO, AEO și AI Visibility Lan",
+    seoTitle: "Articole GEO, AEO și AI Visibility Lab",
     pageTitle: "Articole GEO, AEO și AI Visibility Lab",
     lead: "Analize, cercetări și studii de caz despre GEO, AEO, SEO, AI Search, citarea surselor și vizibilitatea în ChatGPT, Google AI, Perplexity și alte sisteme generative.",
     children: [

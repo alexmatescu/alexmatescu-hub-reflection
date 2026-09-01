@@ -15,7 +15,7 @@ documentației
 | **Data publicării** | iulie 2026 |
 | **Ultima actualizare** | 21 iulie 2026 |
 | **Limba** | română |
-| **URL canonic propus** | https://delamatescu.ro/lab — de confirmat la publicare |
+| **URL canonic propus** | https://delamatescu.ro/lab |
 
 **Scopul documentului:** definirea identității AI Visibility Lab, a
 principiilor de cercetare și a regulilor prin care sunt documentate,
