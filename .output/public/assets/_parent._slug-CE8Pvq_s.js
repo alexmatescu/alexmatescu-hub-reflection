@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-Cltr0gcK.js";import{t}from"./index-CeTs2G7a.js";import{t as n}from"./Lab-DoqIMAae.js";var r=e();function i(){let{parent:e,slug:i}=t.useParams();return(0,r.jsx)(n,{pathname:`/lab/${e}/${i}`})}export{i as component};

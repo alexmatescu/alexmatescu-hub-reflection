@@ -68,9 +68,14 @@ export const labNav: LabPage[] = [
     to: "/lab/studii-de-caz",
     label: "Studii de caz",
     lead: "Colaborări reale în care metodologia și principiile AI Visibility Lab sunt aplicate direct, cu dovezi, limite și rezultate publicate integral.",
-    // Intenționat FĂRĂ `children`: secțiunea e activă, dar primul studiu de
-    // caz (#001 — Alex Matescu, CS-001) rămâne nepublicat — activare separată,
-    // ulterioară (nod copil + labPageContent + labCaseStudyMeta + sitemap).
+    children: [
+      {
+        to: "/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search",
+        label:
+          "Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search",
+        lead: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini și Perplexity rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice.",
+      },
+    ],
   },
   {
     to: "/lab/articole",

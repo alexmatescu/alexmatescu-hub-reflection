@@ -8,7 +8,7 @@ export const avl350StudiiDeCazHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-350</td></tr>
         <tr><th scope="row">Nivel</th><td>D2 — Case Studies</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.2.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
@@ -58,6 +58,7 @@ export const avl350StudiiDeCazHtml = `
           <tr><td>1.0.0</td><td>4 septembrie 2026</td><td>Activ</td><td>Prima versiune a documentului de poziționare a secțiunii.</td></tr>
           <tr><td>1.1.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR, audit metodologic: clarificare ID (CS-NNN pentru instanțe, niciodată AVL-xxx); reformularea listei de conținut a unui studiu de caz (Query Universe/Query Set înghețat, audit/baseline, experimente incluse — nu „ipoteză experimentală" generică, care ar confunda Case Study cu Experiment). Secțiunea rămâne pregătită tehnic (routing, meta, JSON-LD), dar neactivată în navigație până la publicarea primului studiu de caz.</td></tr>
           <tr><td>1.2.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR: secțiunea activată în navigație (labNav, index /lab) — infrastructura confirmată și testată. Primul studiu de caz (#001 — Alex Matescu, CS-001) rămâne intenționat nepublicat; va fi activat separat, într-un pas independent ulterior.</td></tr>
+          <tr><td>1.3.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR: primul studiu de caz (#001 — Alex Matescu, CS-001, experiment Tabula Rasa) publicat și conectat în navigație, prin skill-ul dedicat <code>.claude/skills/publica-studiu-de-caz</code>.</td></tr>
         </tbody>
       </table>
 `;

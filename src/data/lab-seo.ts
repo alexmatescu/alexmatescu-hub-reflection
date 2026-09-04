@@ -12,6 +12,7 @@ import { metadataCitareAiStudiuDeCazMeta } from "@/data/lab-content/6. metadata-
 import { motoareCautareMeta } from "@/data/lab-content/2. motoare-cautare-comparatie-2026";
 import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/3. social-media-vizibilitate-ai";
+import { tabulaRasaIdentitateSearchAiSearchMeta } from "@/data/lab-content/tabula-rasa-identitate-search-ai-search";
 import { findLabPage } from "@/data/lab";
 import { buildSeoHead } from "@/lib/seo-head";
 
@@ -131,15 +132,12 @@ const findArticleMetaBySlug = (slug: string) =>
  * studiu de caz publicat prin acest pipeline capătă exact același rigoare de
  * structured data (Article/@graph, entity consistency) ca un articol.
  *
- * Intenționat GOL: secțiunea /lab/studii-de-caz e activă (labNav, Lab.tsx),
- * dar studiul de caz #001 (Alex Matescu, CS-001) există complet ca fișier în
- * @/data/lab-content și rămâne intenționat nepublicat — pas separat, ulterior
- * (2026-09-04). Reactivare: reimportă meta din
- * "@/data/lab-content/tabula-rasa-identitate-search-ai-search" și adaug-o
- * aici (plus copilul în lab.ts, intrarea în labPageContent din Lab.tsx și
- * URL-ul din sitemap.xml).
+ * Primul studiu de caz (#001 — Alex Matescu, CS-001, experiment Tabula Rasa)
+ * publicat 2026-09-04 prin skill-ul `.claude/skills/publica-studiu-de-caz`.
  */
-export const labCaseStudyMeta: LabArticleMeta[] = [];
+export const labCaseStudyMeta: LabArticleMeta[] = [
+  tabulaRasaIdentitateSearchAiSearchMeta,
+];
 
 const findCaseStudyMetaBySlug = (slug: string) =>
   labCaseStudyMeta.find((meta) =>
@@ -200,6 +198,35 @@ export const sortedLabArticles: LabArticleMeta[] = [...labArticleMeta].sort(
  */
 export const latestLabArticle: LabArticleMeta | undefined =
   sortedLabArticles[0];
+
+/**
+ * Echivalentul `sortedLabArticles` pentru /lab/studii-de-caz — sursa unică
+ * de ordonare a listei de pe pagina index a secțiunii: toate studiile de caz,
+ * sortate descrescător exclusiv după `datePublished`, cu același
+ * tie-breaker determinist pe `canonical`. Array separat de `sortedLabArticles`
+ * în mod intenționat (§ `labCaseStudyMeta` mai sus) — studiile de caz nu se
+ * amestecă niciodată cu articolele într-o singură listă.
+ */
+export const sortedLabCaseStudies: LabArticleMeta[] = [
+  ...labCaseStudyMeta,
+].sort((a, b) => {
+  const diff =
+    parsePublishedTimestamp(b.datePublished) -
+    parsePublishedTimestamp(a.datePublished);
+  if (diff !== 0) return diff;
+  return a.canonical < b.canonical ? 1 : a.canonical > b.canonical ? -1 : 0;
+});
+
+/**
+ * "CEL MAI NOU" pentru /lab/studii-de-caz — cel mai nou studiu de caz din
+ * întreg corpusul secțiunii, calculat automat din `sortedLabCaseStudies[0]`.
+ * Când un studiu de caz nou (sau o fază nouă cu `datePublished` mai recent —
+ * n.b. o fază nouă nu schimbă `datePublished`, vezi `publica-studiu-de-caz`
+ * §0.3) devine cel mai recent, preia automat locul întâi și eticheta, fără
+ * nicio modificare de cod.
+ */
+export const latestLabCaseStudy: LabArticleMeta | undefined =
+  sortedLabCaseStudies[0];
 
 /**
  * Formatează `datePublished` pentru afișare pe /lab/articole și în byline:

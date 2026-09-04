@@ -11,7 +11,9 @@ import {
   labArticlePathname,
   labCaseStudyMeta,
   latestLabArticle,
+  latestLabCaseStudy,
   sortedLabArticles,
+  sortedLabCaseStudies,
   type LabArticleCategory,
 } from "@/data/lab-seo";
 import { avl001IntroductionHtml } from "@/data/lab-content/avl-001";
@@ -38,13 +40,7 @@ import { motoareCautareHtml } from "@/data/lab-content/2. motoare-cautare-compar
 import { paradoxulSpecificitatiiContinutGenericHtml } from "@/data/lab-content/9. paradoxul-specificitatii-continut-generic";
 import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/3. social-media-vizibilitate-ai";
-// NOTĂ: "tabula-rasa-identitate-search-ai-search" (studiul de caz #001, Alex
-// Matescu, CS-001) există ca fișier complet în @/data/lab-content, dar e
-// intenționat neimportat aici — secțiunea /lab/studii-de-caz e activă
-// (avl-350, mai jos), dar primul studiu de caz nu e încă publicat (pas
-// separat, ulterior). Reactivare: reimportă + readaugă intrarea în
-// labPageContent, plus copilul în @/data/lab.ts și meta în
-// labCaseStudyMeta (@/data/lab-seo.ts) și sitemap.xml.
+import { tabulaRasaIdentitateSearchAiSearchHtml } from "@/data/lab-content/tabula-rasa-identitate-search-ai-search";
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
 
@@ -58,6 +54,8 @@ const labPageContent: Record<string, string> = {
   "/lab/metodologie/tabula-rasa-f0": avl201TabulaRasaF0Html,
   "/lab/experimente-publice": avl301ExperimentePubliceHtml,
   "/lab/studii-de-caz": avl350StudiiDeCazHtml,
+  "/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search":
+    tabulaRasaIdentitateSearchAiSearchHtml,
   "/lab/articole": avl401ArticoleHtml,
   "/lab/articole/istoria-cautarii-internet-evolutia-seo": istoriaCautariiHtml,
   "/lab/articole/motoare-cautare-comparatie-2026": motoareCautareHtml,
@@ -214,6 +212,73 @@ const LabArticleIndex = () => {
   );
 };
 
+/**
+ * Index editorial pentru /lab/studii-de-caz — listă verticală, sortată
+ * automat din `sortedLabCaseStudies` (@/data/lab-seo), cel mai nou studiu de
+ * caz primul. La fel ca `LabArticleIndex`: nicio poziție manuală, nicio
+ * dependență de `labNav.children` — publicarea unui studiu de caz nou cu un
+ * `datePublished` mai recent îl mută automat pe primul loc, fără nicio
+ * modificare a acestei componente. Fără filtre de categorie (spre deosebire
+ * de `LabArticleIndex`) — nesolicitate pentru această secțiune.
+ */
+const LabCaseStudyIndex = () => (
+  <div className="mt-16">
+    <p className="eyebrow mb-6">Studii de caz</p>
+
+    <ul>
+      {sortedLabCaseStudies.map((meta) => {
+        const isLatest =
+          latestLabCaseStudy !== undefined &&
+          meta.canonical === latestLabCaseStudy.canonical;
+        const href = labArticlePathname(meta);
+
+        return (
+          <li
+            key={meta.canonical}
+            className="border-b border-foreground/10 first:border-t"
+          >
+            <Link
+              to={href}
+              className={`group block py-8 md:py-10 ${
+                isLatest
+                  ? "px-6 md:px-8 -mx-6 md:-mx-8 bg-surface/50 border-x border-foreground/10"
+                  : ""
+              }`}
+            >
+              {isLatest && (
+                <p className="mb-3 text-[11px] uppercase tracking-[0.22em] font-semibold text-foreground">
+                  Cel mai nou
+                </p>
+              )}
+              <time
+                dateTime={meta.datePublished}
+                className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground/80"
+              >
+                {formatLabArticleDate(meta.datePublished)}
+              </time>
+              <h2
+                className={`font-serif leading-tight tracking-tight text-balance mt-3 group-hover:text-foreground ${
+                  isLatest ? "text-2xl md:text-4xl" : "text-xl md:text-2xl"
+                }`}
+              >
+                {meta.title}
+              </h2>
+              <p
+                className={`mt-3 text-muted-foreground leading-relaxed max-w-2xl ${isLatest ? "text-base" : "text-sm"}`}
+              >
+                {meta.description}
+              </p>
+              <span className="link-underline mt-4 text-sm font-medium">
+                Citește →
+              </span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+);
+
 export const LabIndex = () => (
   <div>
     <Seo
@@ -303,10 +368,12 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
   const parent = findLabParent(page.to);
   const content = labPageContent[page.to];
   const isArticle = page.to in labPageJsonLdOverrides;
-  // Pe /lab/articole, lista articolelor deja publicate trebuie să apară
-  // înaintea documentației/textului introductiv — invers față de restul
-  // paginilor /lab, unde documentația precede lista de sub-pagini.
+  // Pe /lab/articole și /lab/studii-de-caz, lista conținutului deja publicat
+  // trebuie să apară înaintea documentației/textului introductiv — invers
+  // față de restul paginilor /lab, unde documentația precede lista de
+  // sub-pagini.
   const articlesFirst = page.to === "/lab/articole";
+  const caseStudiesFirst = page.to === "/lab/studii-de-caz";
 
   return (
     <div>
@@ -366,13 +433,17 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
               </div>
             );
 
-            // Pe /lab/articole, lista nu mai e derivată din `page.children`
-            // (labNav) — index-ul editorial „Featured + Article index” își ia
-            // articolele și ordinea direct din `sortedLabArticles`
-            // (@/data/lab-seo), sursa canonică de metadata. Restul paginilor
-            // /lab păstrează grid-ul generic de sub-pagini din `labNav.children`.
+            // Pe /lab/articole și /lab/studii-de-caz, lista nu mai e derivată
+            // din `page.children` (labNav, folosit acolo doar pentru routing)
+            // — indexurile editoriale își iau conținutul și ordinea direct din
+            // `sortedLabArticles`/`sortedLabCaseStudies` (@/data/lab-seo),
+            // sursa canonică de metadata, sortate descrescător după
+            // `datePublished`. Restul paginilor /lab păstrează grid-ul generic
+            // de sub-pagini din `labNav.children`.
             const childrenBlock = articlesFirst ? (
               <LabArticleIndex key="children" />
+            ) : caseStudiesFirst ? (
+              <LabCaseStudyIndex key="children" />
             ) : (
               page.children && (
                 <div key="children" className="mt-16">
@@ -398,7 +469,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
               )
             );
 
-            return articlesFirst ? (
+            return articlesFirst || caseStudiesFirst ? (
               <>
                 {childrenBlock}
                 {contentBlock}
