@@ -5,7 +5,11 @@ import { posts, categories } from "@/data/posts";
 import Seo from "@/components/Seo";
 
 const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" });
+  new Date(iso).toLocaleDateString("ro-RO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
 const Blog = () => {
   const [q, setQ] = useState("");
@@ -36,7 +40,8 @@ const Blog = () => {
           Texte despre claritate, disciplină, muncă și sens.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          Scriu rar și deliberat. Fiecare articol este o încercare de a numi onest ceva ce văd.
+          Scriu rar și deliberat. Fiecare articol este o încercare de a numi
+          onest ceva ce văd.
         </p>
       </section>
 
@@ -74,7 +79,9 @@ const Blog = () => {
       {/* LIST */}
       <section className="container-editorial py-16">
         {filtered.length === 0 ? (
-          <p className="text-muted-foreground py-20 text-center">Niciun articol pentru această căutare.</p>
+          <p className="text-muted-foreground py-20 text-center">
+            Niciun articol pentru această căutare.
+          </p>
         ) : (
           <ul className="divide-y divide-foreground/10 border-b border-foreground/10">
             {filtered.map((p) => (
@@ -84,7 +91,9 @@ const Blog = () => {
                   className="group grid md:grid-cols-12 gap-6 py-10 md:py-14 items-start hover:bg-surface/50 transition-colors px-2 md:px-4 -mx-2 md:-mx-4"
                 >
                   <div className="md:col-span-3 flex flex-col gap-2 text-sm text-muted-foreground">
-                    <span className="uppercase tracking-[0.22em] text-[11px]">{p.category}</span>
+                    <span className="uppercase tracking-[0.22em] text-[11px]">
+                      {p.category}
+                    </span>
                     <span>{formatDate(p.date)}</span>
                     <span>{p.readingTime}</span>
                   </div>
@@ -92,8 +101,12 @@ const Blog = () => {
                     <h2 className="font-serif text-3xl md:text-4xl leading-tight text-balance group-hover:text-primary transition-colors">
                       {p.title}
                     </h2>
-                    <p className="mt-3 font-serif italic text-muted-foreground text-lg">{p.subtitle}</p>
-                    <p className="mt-5 text-muted-foreground max-w-2xl">{p.excerpt}</p>
+                    <p className="mt-3 font-serif italic text-muted-foreground text-lg">
+                      {p.subtitle}
+                    </p>
+                    <p className="mt-5 text-muted-foreground max-w-2xl">
+                      {p.excerpt}
+                    </p>
                     <span className="mt-6 inline-flex items-center gap-2 text-sm">
                       Citește articolul
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

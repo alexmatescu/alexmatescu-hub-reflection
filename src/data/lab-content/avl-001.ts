@@ -8,12 +8,12 @@ export const avl001IntroductionHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-001</td></tr>
         <tr><th scope="row">Nivel</th><td>A — Foundation</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>4 septembrie 2026</td></tr>
         <tr><th scope="row">Limba</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/introducere">https://delamatescu.ro/lab/introducere</a></td></tr>
         </tbody>
@@ -274,6 +274,8 @@ export const avl001IntroductionHtml = `
         <li>articole editoriale și surse secundare.</li>
       </ol>
 
+      <p>„Studii de caz" în această ierarhie desemnează studii de caz <em>externe</em>, folosite ca sursă/dovadă terță într-o cercetare — un sens distinct de „Studii de caz" ca secțiune proprie a laboratorului (Nivelul D2, §17), care documentează aplicarea metodologiei AI Visibility Lab asupra unei entități reale, nu o sursă citată din exterior.</p>
+
       <p>Această ordine nu înseamnă că o sursă aflată mai sus este suficientă pentru orice afirmație. Sursele sunt evaluate și după proximitatea față de afirmație, data actualizării, stabilitatea documentului, transparența metodologiei, posibilitatea de verificare, existența unor conflicte de interese și concordanța cu alte surse primare.</p>
 
       <h2>11. Cum folosim documentația oficială</h2>
@@ -458,11 +460,32 @@ export const avl001IntroductionHtml = `
         <li>standardele de scor și evaluare</li>
       </ul>
 
+      <p>„Tabula Rasa" desemnează, canonic, metodologia AI Visibility Lab de măsurare longitudinală a unei entități, iar F0–F3 sunt fazele ei — nu identificatori de rulări individuale (acelea au ID propriu, vezi Rulare/Run în AVL-201 §5) și nu sinonime interschimbabile:</p>
+
+      <ul>
+        <li><strong>F0 — baseline</strong> (Tabula Rasa): starea entității înainte de orice intervenție (AVL-201).</li>
+        <li><strong>F1 — casa entității</strong>: consolidarea sursei canonice — site, date structurate, dezambiguizare.</li>
+        <li><strong>F2 — prezența distribuită</strong>: corroborarea din surse independente.</li>
+        <li><strong>F3 — re-măsurarea</strong>: același set înghețat, același protocol, aceeași taxonomie, atribuire onestă a schimbării.</li>
+      </ul>
+
+      <p>Definiția F1–F3 de mai sus e deja descrisă la nivel de cercetare (<a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>), dar nu are încă un document normativ propriu de Nivel C (AVL-202/203/204) — acestea rămân de scris. Până atunci, orice utilizare informală a „F1"/„F2" într-un document nepublicat sau într-un draft (ex. ca sinonim pentru „a doua fereastră de măsurare") e legacy/pre-canonică și trebuie reconciliată cu definiția de mai sus înainte de publicare.</p>
+
       <h3>Nivelul D — Experiments</h3>
 
       <ul>
         <li>experimentele publice, ipotezele, intervențiile, dovezile, rezultatele și limitările</li>
       </ul>
+
+      <h3>Nivelul D2 — Case Studies</h3>
+
+      <ul>
+        <li>AVL-350 — Studii de caz (documentul de poziționare a secțiunii)</li>
+      </ul>
+
+      <p>Documentează colaborări reale în care metodologia și principiile laboratorului sunt aplicate direct pe o entitate sau un brand concret, cu dovezi, limite și rezultate publicate integral — distinct de experimentele publice cu ipoteză declarată dinainte (Nivelul D) și de proiectele comerciale, care vor fi documentate separat, în cadrul Nivelului D.</p>
+
+      <p>Un studiu de caz individual (ex. „Alex Matescu") NU primește un identificator AVL-xxx. ID-urile AVL desemnează exclusiv documente normative sau de poziționare a unei secțiuni (ca AVL-350 însuși) — nu instanțe concrete. O instanță de studiu de caz primește un identificator propriu, format CS-NNN (ex. CS-001), definit în registrul de ID-uri al laboratorului. Aceeași separare se aplică oricărei alte instanțe concrete (experiment, audit, intervenție): identificatorul ei nu e niciodată un AVL-xxx.</p>
 
       <p>Articolele și observațiile editoriale pot exista în afara numerotării principale atunci când nu reprezintă documente stabile de referință.</p>
 
@@ -630,6 +653,10 @@ export const avl001IntroductionHtml = `
       <h3>Versiunea 1.0.2 — 26 august 2026</h3>
 
       <p>PATCH: în tabelul de metadate, câmpurile Autor și Organizație au fost transformate în linkuri interne (Autor → /despre, Organizație → /lab), pentru consistența relației autor–organizație în întregul corpus AI Visibility Lab.</p>
+
+      <h3>Versiunea 1.1.0 — 4 septembrie 2026</h3>
+
+      <p>MINOR: integrarea arhitecturală a Nivelului D2 — Case Studies (secțiunea „Studii de caz"), introdus ca extensie a structurii corpusului odată cu pregătirea primului studiu de caz (Alex Matescu, CS-001, nepublicat încă). Clarificări adăugate, fără schimbarea principiilor fundamentale: identificatorii AVL-xxx sunt rezervați exclusiv documentelor normative sau de poziționare a unei secțiuni, niciodată instanțelor concrete (studiu de caz, experiment, audit, intervenție — acestea primesc un registru de ID-uri propriu); dezambiguizare între „studii de caz" ca sursă externă citată (§10) și „Studii de caz" ca secțiune a laboratorului (§17); sensul canonic al fazelor F0–F3 (Tabula Rasa) — F0 baseline, F1 casa entității, F2 prezența distribuită, F3 re-măsurarea — reconciliat cu utilizarea deja publicată în AVL-104, cu nota explicită că F1–F3 nu au încă documente normative proprii de Nivel C.</p>
 
       <p>Documentația laboratorului descrie ceea ce este documentat, observat sau susținut de dovezi. Nu pretinde acces la mecanisme interne nepublice și nu transformă observațiile limitate sau corelațiile experimentale în reguli universale.</p>
 `;

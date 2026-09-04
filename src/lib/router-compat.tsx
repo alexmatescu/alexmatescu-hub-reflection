@@ -13,19 +13,34 @@ import {
   Navigate as TSNavigate,
   Outlet as TSOutlet,
 } from "@tanstack/react-router";
-import { useMemo, useCallback, forwardRef, type ComponentProps, type ReactNode } from "react";
+import {
+  useMemo,
+  useCallback,
+  forwardRef,
+  type ComponentProps,
+  type ReactNode,
+} from "react";
 
 // ---------- shared URL parsing ----------
 
-function parseTo(to: string): { pathname: string; search?: Record<string, string>; hash?: string } {
+function parseTo(to: string): {
+  pathname: string;
+  search?: Record<string, string>;
+  hash?: string;
+} {
   const [beforeHash = "", hashStr] = (to ?? "").split("#");
   const [pathname = "", searchStr] = beforeHash.split("?");
   // react-router keeps the current path for search-only ("?a=1") and
   // hash-only ("#section") targets; TanStack's "." means current route.
-  const result: { pathname: string; search?: Record<string, string>; hash?: string } = {
+  const result: {
+    pathname: string;
+    search?: Record<string, string>;
+    hash?: string;
+  } = {
     pathname: pathname || ".",
   };
-  if (searchStr) result.search = Object.fromEntries(new URLSearchParams(searchStr));
+  if (searchStr)
+    result.search = Object.fromEntries(new URLSearchParams(searchStr));
   if (hashStr) result.hash = hashStr;
   return result;
 }
@@ -42,19 +57,23 @@ type NavigateFn = {
 export function useNavigate(): NavigateFn {
   const tsNav = tsNavigate();
   const router = useRouter();
-  return useCallback((to: string | number, options?: NavigateOptions) => {
-    if (typeof to === "number") {
-      router.history.go(to);
-      return;
-    }
-    const { pathname, search, hash } = parseTo(to);
-    const navOptions: Record<string, unknown> = { to: pathname };
-    if (search !== undefined) navOptions["search"] = search;
-    if (hash !== undefined) navOptions["hash"] = hash;
-    if (options?.state !== undefined) navOptions["state"] = options.state;
-    if (options?.replace !== undefined) navOptions["replace"] = options.replace;
-    tsNav(navOptions as never);
-  }, [tsNav, router]) as NavigateFn;
+  return useCallback(
+    (to: string | number, options?: NavigateOptions) => {
+      if (typeof to === "number") {
+        router.history.go(to);
+        return;
+      }
+      const { pathname, search, hash } = parseTo(to);
+      const navOptions: Record<string, unknown> = { to: pathname };
+      if (search !== undefined) navOptions["search"] = search;
+      if (hash !== undefined) navOptions["hash"] = hash;
+      if (options?.state !== undefined) navOptions["state"] = options.state;
+      if (options?.replace !== undefined)
+        navOptions["replace"] = options.replace;
+      tsNav(navOptions as never);
+    },
+    [tsNav, router],
+  ) as NavigateFn;
 }
 
 // ---------- useLocation ----------
@@ -75,21 +94,40 @@ export function useLocation() {
 
 // ---------- useParams ----------
 
-export function useParams<T extends Record<string, string | undefined> = Record<string, string | undefined>>(): T {
+export function useParams<
+  T extends Record<string, string | undefined> = Record<
+    string,
+    string | undefined
+  >,
+>(): T {
   return tsParams({ strict: false } as never) as T;
 }
 
-
 // ---------- useSearchParams (react-router-dom compat) ----------
 
-export function useSearchParams(): [URLSearchParams, (init: URLSearchParams | Record<string, string> | ((prev: URLSearchParams) => URLSearchParams), opts?: { replace?: boolean }) => void] {
+export function useSearchParams(): [
+  URLSearchParams,
+  (
+    init:
+      | URLSearchParams
+      | Record<string, string>
+      | ((prev: URLSearchParams) => URLSearchParams),
+    opts?: { replace?: boolean },
+  ) => void,
+] {
   const loc = tsLocation();
   const nav = tsNavigate();
   const router = useRouter();
-  const params = useMemo(() => new URLSearchParams(loc.searchStr ?? ""), [loc.searchStr]);
+  const params = useMemo(
+    () => new URLSearchParams(loc.searchStr ?? ""),
+    [loc.searchStr],
+  );
   const setParams = useCallback(
     (
-      init: URLSearchParams | Record<string, string> | ((prev: URLSearchParams) => URLSearchParams),
+      init:
+        | URLSearchParams
+        | Record<string, string>
+        | ((prev: URLSearchParams) => URLSearchParams),
       opts?: { replace?: boolean },
     ) => {
       // Functional updaters read the router's live location, not the render
@@ -104,8 +142,13 @@ export function useSearchParams(): [URLSearchParams, (init: URLSearchParams | Re
             ? init
             : new URLSearchParams(init);
       const searchObj: Record<string, string> = {};
-      next.forEach((v, k) => { searchObj[k] = v; });
-      const setOptions: Record<string, unknown> = { to: live.pathname, search: searchObj };
+      next.forEach((v, k) => {
+        searchObj[k] = v;
+      });
+      const setOptions: Record<string, unknown> = {
+        to: live.pathname,
+        search: searchObj,
+      };
       if (opts?.replace !== undefined) setOptions["replace"] = opts.replace;
       nav(setOptions as never);
     },
@@ -144,17 +187,26 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   );
 });
 
-
 // ---------- Navigate ----------
 
-export function Navigate({ to, replace, state }: { to: string; replace?: boolean; state?: unknown }) {
+export function Navigate({
+  to,
+  replace,
+  state,
+}: {
+  to: string;
+  replace?: boolean;
+  state?: unknown;
+}) {
   const { pathname, search, hash } = parseTo(to);
   const navProps: Record<string, unknown> = { to: pathname };
   if (search !== undefined) navProps["search"] = search;
   if (hash !== undefined) navProps["hash"] = hash;
   if (replace !== undefined) navProps["replace"] = replace;
   if (state !== undefined) navProps["state"] = state;
-  return <TSNavigate {...(navProps as never as ComponentProps<typeof TSNavigate>)} />;
+  return (
+    <TSNavigate {...(navProps as never as ComponentProps<typeof TSNavigate>)} />
+  );
 }
 
 // ---------- Outlet ----------

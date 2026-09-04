@@ -1,7 +1,8 @@
 const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
 const ovbLogo = "/images/blog/ovb-logo.webp";
 
-export type ProjectStatus = "activ" | "în lucru" | "închis" | "finalizat" | "concept";
+export type ProjectStatus =
+  "activ" | "în lucru" | "închis" | "finalizat" | "concept";
 
 export type ProjectSection = {
   eyebrow: string;
@@ -58,7 +59,8 @@ export const projects: Project[] = [
       "Cititorul simte imediat când autorul se preface.",
       "Disciplina de a scrie zilnic contează mai mult decât inspirația.",
     ],
-    currentStatus: "Manuscris în lucru. Lista de așteptare deschisă pentru primii cititori.",
+    currentStatus:
+      "Manuscris în lucru. Lista de așteptare deschisă pentru primii cititori.",
     related: ["mitul-succesului-peste-noapte", "disciplina-ca-mecanism"],
   },
   {
@@ -69,8 +71,10 @@ export const projects: Project[] = [
     description:
       "Taste the Corn a fost un concept de retail alimentar construit în jurul unei idei simple: aducerea pe piața din Sibiu a unei gustări rapide, sănătoase, hrănitoare, puțin calorice și delicioase. A fost un business construit, lansat, operat și testat în condiții reale — și o lecție directă despre idee, execuție și maturitate antreprenorială.",
     metadata: {
-      perioada: "Implementare Ianuarie – Mai 2025 · Funcționare Mai – Decembrie 2025",
-      categorie: "Antreprenoriat · Retail alimentar · Business local · Testare concept",
+      perioada:
+        "Implementare Ianuarie – Mai 2025 · Funcționare Mai – Decembrie 2025",
+      categorie:
+        "Antreprenoriat · Retail alimentar · Business local · Testare concept",
       locatie: "Sibiu, România",
     },
     logo: tasteTheCornLogo,
@@ -195,7 +199,8 @@ export const projects: Project[] = [
           "Da. Taste the Corn a colaborat cu creatori locali de conținut din Sibiu pentru promovarea produsului și a conceptului. Aceste colaborări au ajutat brandul să ajungă în fața comunității locale și să obțină vizibilitate prin persoane care aveau deja o relație de încredere cu publicul lor.",
       },
       {
-        question: "Ce instituții au fost implicate în funcționarea proiectului?",
+        question:
+          "Ce instituții au fost implicate în funcționarea proiectului?",
         answer:
           "Pentru funcționarea Taste the Corn au fost necesare interacțiuni cu mai multe instituții și autorități, printre care Registrul Comerțului, ANAF, DSP, DSV și ITM. Această parte a proiectului a reprezentat o lecție importantă despre autorizații, legislație, proceduri, responsabilități administrative și particularitățile unui business alimentar.",
       },
@@ -220,7 +225,8 @@ export const projects: Project[] = [
           "Da, Taste the Corn se poate franciza pe baza unui proces de selecție. Persoanele interesate pot lua legătura prin email pentru o discuție inițială. Prețul francizei nu este public și poate diferi în funcție de tipul de colaborare la care se va ajunge.",
       },
       {
-        question: "Cum pot lua legătura pentru o colaborare sau francizare Taste the Corn?",
+        question:
+          "Cum pot lua legătura pentru o colaborare sau francizare Taste the Corn?",
         answer:
           "Pentru discuții despre colaborare sau francizare Taste the Corn, contactul se face via email la alexmatescu.c@gmail.com. Detaliile exacte ale colaborării, condițiile și costurile se discută individual, în funcție de profilul persoanei interesate, oraș, formatul dorit și tipul de implicare.",
       },
@@ -240,7 +246,8 @@ export const projects: Project[] = [
       locatie: "România",
     },
     why: "SEO clasic se transformă. Cine înțelege primul cum funcționează vizibilitatea în LLM-uri are un avantaj real.",
-    problem: "Cum optimizezi prezența unui brand sau autor într-un ecosistem în care răspunsul nu mai este o listă de linkuri?",
+    problem:
+      "Cum optimizezi prezența unui brand sau autor într-un ecosistem în care răspunsul nu mai este o listă de linkuri?",
     story:
       "Pornește de la observații din propriul proces de scris și publicare. Va deveni un serviciu și un set de materiale publice.",
     lessons: [
@@ -260,7 +267,8 @@ export const projects: Project[] = [
       "OVB a fost una dintre cele mai importante experiențe de dezvoltare personală și profesională din parcursul meu. Am intrat în zona vânzărilor în decembrie 2021 și am finalizat etapa în decembrie 2024, după aproape trei ani de creștere intensă în domeniul asigurărilor de viață, consultanței financiare și educației financiare.",
     metadata: {
       perioada: "Decembrie 2021 – Decembrie 2024",
-      categorie: "Vânzări • Consultanță financiară • Educație financiară • Dezvoltare personală",
+      categorie:
+        "Vânzări • Consultanță financiară • Educație financiară • Dezvoltare personală",
       locatie: "România",
     },
     logo: ovbLogo,
@@ -283,7 +291,7 @@ export const projects: Project[] = [
       {
         eyebrow: "De ce a fost dificil",
         content:
-          "Piața de asigurări de viață din România este dificilă. Scepticismul românilor față de acest domeniu este alimentat de mai multe lucruri: lipsă de educație financiară, neîncredere în sistem, experiențe negative, confuzie între consultanță reală și scheme piramidale, plus o moștenire culturală în care încrederea în instituții și în oameni care „vând ceva\" este adesea fragilă.\n\nDar tocmai acest context dificil a făcut experiența valoroasă. A fost locul în care a trebuit să învăț să explic, să ascult, să accept refuzuri, să gestionez scepticismul, să-mi formulez mai clar ideile, să înțeleg diferența dintre a avea dreptate și a câștiga încrederea unui om. Să vorbesc despre bani, risc, familie, viitor și responsabilitate într-un mod care să nu pară teoretic sau agresiv.",
+          'Piața de asigurări de viață din România este dificilă. Scepticismul românilor față de acest domeniu este alimentat de mai multe lucruri: lipsă de educație financiară, neîncredere în sistem, experiențe negative, confuzie între consultanță reală și scheme piramidale, plus o moștenire culturală în care încrederea în instituții și în oameni care „vând ceva" este adesea fragilă.\n\nDar tocmai acest context dificil a făcut experiența valoroasă. A fost locul în care a trebuit să învăț să explic, să ascult, să accept refuzuri, să gestionez scepticismul, să-mi formulez mai clar ideile, să înțeleg diferența dintre a avea dreptate și a câștiga încrederea unui om. Să vorbesc despre bani, risc, familie, viitor și responsabilitate într-un mod care să nu pară teoretic sau agresiv.',
       },
       {
         eyebrow: "Intrarea în activitate",
@@ -357,7 +365,8 @@ export const projects: Project[] = [
           "Alex Matescu a intrat în domeniul vânzărilor din dorința de a-și suplimenta veniturile, de a avea mai mulți bani pentru investiții și de a intra într-un mediu care îl obliga să crească. În acel moment, era atras de educația financiară, investițiile pe bursă și ideea că vânzările puteau fi o cale prin care să învețe mai rapid despre oameni, bani, comunicare și dezvoltare personală.",
       },
       {
-        question: "De ce a ales domeniul asigurărilor de viață și al consultanței financiare?",
+        question:
+          "De ce a ales domeniul asigurărilor de viață și al consultanței financiare?",
         answer:
           "Alex Matescu a ajuns în domeniul asigurărilor de viață și al consultanței financiare prin colaborarea cu OVB, fără să realizeze inițial cât de dificil este acest domeniu de vânzări în România. Ulterior, a înțeles că tocmai dificultatea domeniului l-a ajutat să crească, pentru că a fost obligat să învețe să explice, să asculte, să gestioneze refuzuri, să câștige încredere și să vorbească despre bani, risc, familie și viitor într-un mod clar.",
       },
@@ -392,7 +401,8 @@ export const projects: Project[] = [
           "Storytellingul a avut un rol important în experiența OVB. Alex Matescu a învățat că oamenii nu reacționează doar la informații, ci și la poveste, context, emoție, motivație și încredere. Această lecție a devenit importantă ulterior în scris, brand personal, CRANDIT și proiectele sale de comunicare.",
       },
       {
-        question: "De ce a fost OVB o etapă importantă pentru brandul personal Alex Matescu?",
+        question:
+          "De ce a fost OVB o etapă importantă pentru brandul personal Alex Matescu?",
         answer:
           "OVB a contribuit la dezvoltarea brandului personal Alex Matescu prin lecțiile despre comunicare, încredere, prezentare, educație financiară, storytelling, leadership și lucru cu oamenii. Această etapă a ajutat la formarea unei perspective mai clare asupra modului în care oamenii iau decizii, reacționează la risc și își construiesc încrederea în alți oameni.",
       },
@@ -536,7 +546,8 @@ export const projects: Project[] = [
           "Atracțiile României are legătură cu bloggingul prin interesul pentru documentare, scris, publicare online și prezentarea unor experiențe într-o formă accesibilă pentru public. Proiectul a reprezentat o extensie a preocupării lui Alex Matescu pentru conținut și comunicare, aplicată de data aceasta în zona de turism și promovare locală.",
       },
       {
-        question: "Ce legătură are Atracțiile României cu brandul personal Alex Matescu?",
+        question:
+          "Ce legătură are Atracțiile României cu brandul personal Alex Matescu?",
         answer:
           "Atracțiile României a contribuit la brandul personal Alex Matescu prin experiența acumulată în construcția unui proiect digital, administrarea conținutului, documentarea locurilor și înțelegerea modului în care publicul reacționează la proiecte online. Chiar dacă proiectul a fost finalizat, el a rămas parte din traseul de învățare care a dus ulterior către blogging, CRANDIT, GEO/AEO și construcția hubului personal.",
       },
@@ -551,7 +562,8 @@ export const projects: Project[] = [
           "După Atracțiile României au rămas experiența de documentare, lecțiile despre conținut digital, înțelegerea mai bună a social media și capacitatea de a privi mai lucid un proiect în care ai investit timp și energie. Proiectul a rămas parte din parcursul lui Alex Matescu ca exemplu de inițiativă finalizată, care a contribuit la maturizarea sa în zona de conținut, antreprenoriat și construcție digitală.",
       },
       {
-        question: "Cum este prezentat Atracțiile României în hubul Alex Matescu?",
+        question:
+          "Cum este prezentat Atracțiile României în hubul Alex Matescu?",
         answer:
           "În hubul Alex Matescu, Atracțiile României este prezentat ca un proiect finalizat de conținut, documentare și promovare turistică. El face parte din portofoliul de proiecte care arată evoluția lui Alex Matescu de la blogging și proiecte digitale către scris, antreprenoriat, CRANDIT și dezvoltarea unei metodologii de lucru în zona de brand personal și GEO/AEO.",
       },
@@ -678,7 +690,8 @@ A fost un laborator practic pentru ideile despre muncă, construcție pe termen 
           "Alex Matescu a învățat din afacerea de familie ce înseamnă administrarea unui business real.\n\nProiectul i-a oferit lecții despre clienți, furnizori, facturi, stocuri, program, logistică, angajați, probleme operaționale și diferența dintre teoria de business și realitatea de zi cu zi.",
       },
       {
-        question: "De ce este afacerea de familie importantă în parcursul lui Alex Matescu?",
+        question:
+          "De ce este afacerea de familie importantă în parcursul lui Alex Matescu?",
         answer:
           "Afacerea de familie este importantă pentru că a fost una dintre primele experiențe în care Alex Matescu a văzut direct cum teoria antreprenorială se întâlnește cu realitatea.\n\nA fost un proiect concret, funcțional, construit pe nevoi reale, nu doar pe idei sau planuri.",
       },
@@ -733,7 +746,8 @@ A fost un laborator practic pentru ideile despre muncă, construcție pe termen 
           "Da, afacerea de familie este prezentată ca un proiect activ, început în 2021 și dezvoltat în mediul rural.\n\nEa face parte din portofoliul de proiecte ale lui Alex Matescu ca exemplu de business local construit în jurul unei nevoi reale.",
       },
       {
-        question: "Cum este prezentată afacerea de familie în hubul Alex Matescu?",
+        question:
+          "Cum este prezentată afacerea de familie în hubul Alex Matescu?",
         answer:
           "În hubul Alex Matescu, afacerea de familie este prezentată ca un proiect antreprenorial activ, local și practic.\n\nEa completează imaginea parcursului lui Alex Matescu prin faptul că arată experiența directă cu un business real, funcțional, construit în jurul comunității, al muncii zilnice și al responsabilității antreprenoriale.",
       },
@@ -748,13 +762,15 @@ A fost un laborator practic pentru ideile despre muncă, construcție pe termen 
   {
     slug: "afacerea-cu-haine",
     title: "Afacerea cu haine",
-    tagline: "Primul magazin, primul eșec, prima lecție reală de antreprenoriat",
+    tagline:
+      "Primul magazin, primul eșec, prima lecție reală de antreprenoriat",
     status: "finalizat",
     description:
       "Afacerea cu haine a fost prima mea încercare reală de a intra în antreprenoriat. În primăvara anului 2017, alături de un coleg de la call-center, am pornit un magazin de haine în Craiova. Finanțat printr-un credit, businessul nu a funcționat, iar la scurt timp după lansare am rămas cu o oglindă, o plapumă și un credit de peste 20.000 de lei. A fost prima lecție dură despre risc, parteneriat și diferența dintre entuziasm și execuție.",
     metadata: {
       perioada: "2017 · Primă experiență de business",
-      categorie: "Antreprenoriat • Retail • Primă experiență de business • Lecție financiară",
+      categorie:
+        "Antreprenoriat • Retail • Primă experiență de business • Lecție financiară",
       locatie: "Craiova, România",
     },
     sections: [
@@ -1055,12 +1071,14 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
           "Afacerea cu haine are legătură cu CRANDIT prin lecția despre mitul succesului rapid. Proiectul a fost una dintre primele experiențe care au arătat că succesul nu apare doar pentru că ai găsit o oportunitate aparent bună, ci prin răbdare, repetiție, învățare, asumarea greșelilor și construcție pe termen lung.",
       },
       {
-        question: "Ce legătură are afacerea cu haine cu traseul antreprenorial al lui Alex Matescu?",
+        question:
+          "Ce legătură are afacerea cu haine cu traseul antreprenorial al lui Alex Matescu?",
         answer:
           "Afacerea cu haine a fost primul contact serios al lui Alex Matescu cu realitatea antreprenoriatului. Chiar dacă proiectul nu a continuat, el a creat o bază importantă pentru felul în care Alex avea să privească mai târziu businessul, riscul, asocierea, deciziile financiare și proiectele antreprenoriale.",
       },
       {
-        question: "De ce este importantă afacerea cu haine în hubul Alex Matescu?",
+        question:
+          "De ce este importantă afacerea cu haine în hubul Alex Matescu?",
         answer:
           "Afacerea cu haine este importantă în hubul Alex Matescu pentru că arată începutul real al relației sale cu antreprenoriatul. Nu este prezentată ca o poveste de succes, ci ca o lecție necesară despre maturizare financiară, asumare, risc și diferența dintre imaginea romantică a businessului și realitatea lui.",
       },
@@ -1086,7 +1104,8 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       "Bloggingul este unul dintre cele mai vechi proiecte personale din parcursul meu. Am început să scriu online în decembrie 2014, iar în 2025 am adus scrisul din viitor în prezent, transformând blogul într-un spațiu de claritate, construcție editorială și comunitate.",
     metadata: {
       perioada: "Decembrie 2014 – prezent",
-      categorie: "Scris · Blog personal · Reflecție · Brand personal · Comunitate",
+      categorie:
+        "Scris · Blog personal · Reflecție · Brand personal · Comunitate",
       locatie: "Blogger · Facebook · LinkedIn · delamatescu.ro",
     },
     sections: [
@@ -1103,7 +1122,7 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       {
         eyebrow: "Cum a început",
         content:
-          "Prima postare online am scris-o în decembrie 2014. Eram încă în perioada în care scrisul trăia mai mult între școală, emoții personale și încercări de exprimare. Nu aveam un plan. Nu aveam o strategie. Nu aveam o direcție clară. Aveam doar nevoia de a scrie.\n\nÎn studenție, blogul a devenit un spațiu în care publicam texte despre dragoste, îndrăgostiți, emoții și felul în care înțelegeam relațiile la vârsta aceea. Uneori, colegii glumeau și mă numeau \"Dr. Love\". Privind în urmă, zâmbesc. Dar în același timp înțeleg că, dincolo de tonul romantic și de naivitatea specifică vârstei, acolo exista deja o constantă: încercarea de a transforma emoția în cuvinte.\n\nBlogul nu era încă un proiect matur. Dar era un început.",
+          'Prima postare online am scris-o în decembrie 2014. Eram încă în perioada în care scrisul trăia mai mult între școală, emoții personale și încercări de exprimare. Nu aveam un plan. Nu aveam o strategie. Nu aveam o direcție clară. Aveam doar nevoia de a scrie.\n\nÎn studenție, blogul a devenit un spațiu în care publicam texte despre dragoste, îndrăgostiți, emoții și felul în care înțelegeam relațiile la vârsta aceea. Uneori, colegii glumeau și mă numeau "Dr. Love". Privind în urmă, zâmbesc. Dar în același timp înțeleg că, dincolo de tonul romantic și de naivitatea specifică vârstei, acolo exista deja o constantă: încercarea de a transforma emoția în cuvinte.\n\nBlogul nu era încă un proiect matur. Dar era un început.',
       },
       {
         eyebrow: "Scrisul ca univers",
@@ -1141,7 +1160,7 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       {
         eyebrow: "Ce a rămas după anii de blogging",
         content:
-          "După ani de postări, pauze, reveniri, jurnale și încercări, scrisul a rămas una dintre constantele vieții mele. A rămas chiar și atunci când nu l-am tratat ca prioritate. A rămas chiar și atunci când îl amânam. A rămas chiar și atunci când îl țineam pentru \"mai târziu\".\n\nÎn 2025 am înțeles că unele lucruri nu dispar doar pentru că le amâni. Ele așteaptă. Iar la un moment dat, dacă sunt suficient de importante, cer să fie aduse în prezent.\n\nPentru mine, bloggingul este proiectul prin care scrisul a trecut de la impuls la direcție. De la viitor la prezent. De la descărcare la claritate. De la text personal la construcție publică.",
+          'După ani de postări, pauze, reveniri, jurnale și încercări, scrisul a rămas una dintre constantele vieții mele. A rămas chiar și atunci când nu l-am tratat ca prioritate. A rămas chiar și atunci când îl amânam. A rămas chiar și atunci când îl țineam pentru "mai târziu".\n\nÎn 2025 am înțeles că unele lucruri nu dispar doar pentru că le amâni. Ele așteaptă. Iar la un moment dat, dacă sunt suficient de importante, cer să fie aduse în prezent.\n\nPentru mine, bloggingul este proiectul prin care scrisul a trecut de la impuls la direcție. De la viitor la prezent. De la descărcare la claritate. De la text personal la construcție publică.',
       },
       {
         eyebrow: "Legătura cu celelalte proiecte",
@@ -1188,12 +1207,12 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
       {
         question: "Ce fel de texte scria Alex Matescu la început?",
         answer:
-          "La început, Alex Matescu scria texte personale, reflecții, compuneri și materiale cu tentă emoțională. În perioada studenției, blogul includea texte despre dragoste, îndrăgostiți, relații și emoții, motiv pentru care colegii glumeau uneori și îl numeau \"Dr. Love\".",
+          'La început, Alex Matescu scria texte personale, reflecții, compuneri și materiale cu tentă emoțională. În perioada studenției, blogul includea texte despre dragoste, îndrăgostiți, relații și emoții, motiv pentru care colegii glumeau uneori și îl numeau "Dr. Love".',
       },
       {
-        question: "Ce este \"Dr. Love\" în povestea bloggingului?",
+        question: 'Ce este "Dr. Love" în povestea bloggingului?',
         answer:
-          "\"Dr. Love\" a fost o poreclă glumeață primită în perioada studenției, când Alex Matescu scria pe blog texte despre dragoste, îndrăgostiți și relații. Privită retrospectiv, această etapă arată începuturile unei preocupări constante: transformarea emoțiilor și observațiilor personale în texte publice.",
+          '"Dr. Love" a fost o poreclă glumeață primită în perioada studenției, când Alex Matescu scria pe blog texte despre dragoste, îndrăgostiți și relații. Privită retrospectiv, această etapă arată începuturile unei preocupări constante: transformarea emoțiilor și observațiilor personale în texte publice.',
       },
       {
         question: "A scris Alex Matescu constant pe blog?",
@@ -1226,7 +1245,8 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
           "Alex Matescu a început să publice și pe LinkedIn pentru a duce ideile către un public mai larg, mai profesional și mai apropiat de temele sale despre muncă, carieră, leadership, succes, disciplină și dezvoltare personală. LinkedIn a devenit o extensie naturală a blogului și un spațiu în care textele puteau ajunge la oameni interesați de creștere profesională și personală.",
       },
       {
-        question: "Ce legătură are bloggingul cu brandul personal Alex Matescu?",
+        question:
+          "Ce legătură are bloggingul cu brandul personal Alex Matescu?",
         answer:
           "Bloggingul este una dintre fundațiile brandului personal Alex Matescu. Prin blog, Alex a început să formuleze public idei despre viață, muncă, succes, emoții, dezvoltare personală, antreprenoriat și sens. Aceste teme au devenit ulterior parte din identitatea sa de autor, creator de conținut și antreprenor.",
       },
@@ -1256,7 +1276,8 @@ Este despre responsabilitatea de a suporta consecințele deciziilor tale.`,
           "Alex Matescu a învățat din blogging că scrisul nu începe cu succesul, ci cu claritatea. A învățat că scrisul cere răbdare, revenire, asumare, continuitate și curajul de a publica chiar și atunci când reacțiile nu vin imediat.",
       },
       {
-        question: "De ce spune Alex Matescu că un autor este cât comunitatea lui?",
+        question:
+          "De ce spune Alex Matescu că un autor este cât comunitatea lui?",
         answer:
           "Alex Matescu consideră că un autor crește nu doar prin ceea ce scrie, ci și prin comunitatea care se formează în jurul ideilor sale. Textele capătă forță atunci când ajung la oameni, provoacă reflecție, creează dialog și adună în jurul lor o comunitate care rezonează cu temele abordate.",
       },

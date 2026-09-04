@@ -2,10 +2,23 @@ import { useState } from "react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Mail, Linkedin, Twitter, Facebook, Instagram, Rss } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram,
+  Rss,
+} from "lucide-react";
 import Seo from "@/components/Seo";
 
-const reasons = ["Colaborare", "AI Visibility Lab/GEO/AEO", "Media / podcast", "Proiect", "Altceva"];
+const reasons = [
+  "Colaborare",
+  "AI Visibility Lab/GEO/AEO",
+  "Media / podcast",
+  "Proiect",
+  "Altceva",
+];
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Numele este obligatoriu").max(120),
@@ -15,35 +28,54 @@ const contactSchema = z.object({
 });
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", reason: reasons[0], message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    reason: reasons[0],
+    message: "",
+  });
   const [submitting, setSubmitting] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = contactSchema.safeParse(form);
     if (!parsed.success) {
-      toast({ title: "Verifică datele", description: parsed.error.issues[0]?.message ?? "Date invalide", variant: "destructive" });
+      toast({
+        title: "Verifică datele",
+        description: parsed.error.issues[0]?.message ?? "Date invalide",
+        variant: "destructive",
+      });
       return;
     }
     setSubmitting(true);
     try {
-      const { error: dbError } = await supabase.from("contact_messages").insert({
-        name: parsed.data.name,
-        email: parsed.data.email,
-        reason: parsed.data.reason ?? null,
-        message: parsed.data.message,
-      });
+      const { error: dbError } = await supabase
+        .from("contact_messages")
+        .insert({
+          name: parsed.data.name,
+          email: parsed.data.email,
+          reason: parsed.data.reason ?? null,
+          message: parsed.data.message,
+        });
       if (dbError) throw dbError;
 
       // Notificare pe email (best-effort; nu blocăm confirmarea dacă eșuează)
-      supabase.functions.invoke("send-contact-notification", { body: parsed.data }).catch(() => {});
+      supabase.functions
+        .invoke("send-contact-notification", { body: parsed.data })
+        .catch(() => {});
 
-      toast({ title: "Mulțumesc.", description: "Mesajul tău a fost trimis. Revin când pot." });
+      toast({
+        title: "Mulțumesc.",
+        description: "Mesajul tău a fost trimis. Revin când pot.",
+      });
       setForm({ name: "", email: "", reason: reasons[0], message: "" });
     } catch (err) {
       toast({
         title: "Nu am putut trimite mesajul",
-        description: err instanceof Error ? err.message : "Încearcă din nou în câteva momente.",
+        description:
+          err instanceof Error
+            ? err.message
+            : "Încearcă din nou în câteva momente.",
         variant: "destructive",
       });
     } finally {
@@ -69,15 +101,21 @@ const Contact = () => {
           Scrie-mi. Răspund când pot, dar răspund.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          Pentru colaborări, cercetare, studii de caz sau discuții legate de AI Visibility Lab, poți folosi formularul de mai jos.
+          Pentru colaborări, cercetare, studii de caz sau discuții legate de AI
+          Visibility Lab, poți folosi formularul de mai jos.
         </p>
       </section>
 
       <section className="container-editorial pb-24 grid lg:grid-cols-12 gap-12">
-        <form onSubmit={submit} className="lg:col-span-7 space-y-5 border border-foreground/10 p-8 md:p-10 bg-surface/40">
+        <form
+          onSubmit={submit}
+          className="lg:col-span-7 space-y-5 border border-foreground/10 p-8 md:p-10 bg-surface/40"
+        >
           <div className="grid sm:grid-cols-2 gap-5">
             <label className="block">
-              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Nume</span>
+              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                Nume
+              </span>
               <input
                 required
                 value={form.name}
@@ -86,7 +124,9 @@ const Contact = () => {
               />
             </label>
             <label className="block">
-              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Email</span>
+              <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                Email
+              </span>
               <input
                 type="email"
                 required
@@ -97,7 +137,9 @@ const Contact = () => {
             </label>
           </div>
           <label className="block">
-            <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Motivul contactului</span>
+            <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              Motivul contactului
+            </span>
             <select
               value={form.reason}
               onChange={(e) => setForm({ ...form, reason: e.target.value })}
@@ -109,7 +151,9 @@ const Contact = () => {
             </select>
           </label>
           <label className="block">
-            <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Mesaj</span>
+            <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              Mesaj
+            </span>
             <textarea
               required
               rows={7}
@@ -130,24 +174,54 @@ const Contact = () => {
         <aside className="lg:col-span-5 space-y-10">
           <div>
             <p className="eyebrow mb-5">Direct</p>
-            <a href="mailto:alexmatescu.c@gmail.com" className="inline-flex items-center gap-3 font-serif text-2xl link-underline">
+            <a
+              href="mailto:alexmatescu.c@gmail.com"
+              className="inline-flex items-center gap-3 font-serif text-2xl link-underline"
+            >
               <Mail className="h-5 w-5" /> alexmatescu.c@gmail.com
             </a>
-            <p className="mt-3 text-sm text-muted-foreground">Pentru orice subiect care merită un răspuns scris.</p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Pentru orice subiect care merită un răspuns scris.
+            </p>
           </div>
 
           <div>
             <p className="eyebrow mb-5">Social</p>
             <ul className="space-y-3">
               {[
-                { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
-                { label: "X / Twitter", icon: Twitter, href: "https://x.com/MatescuAlex" },
-                { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/alexmatescu" },
-                { label: "Instagram", icon: Instagram, href: "https://www.instagram.com/alexmatescu.c" },
+                {
+                  label: "LinkedIn",
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/",
+                },
+                {
+                  label: "X / Twitter",
+                  icon: Twitter,
+                  href: "https://x.com/MatescuAlex",
+                },
+                {
+                  label: "Facebook",
+                  icon: Facebook,
+                  href: "https://www.facebook.com/alexmatescu",
+                },
+                {
+                  label: "Instagram",
+                  icon: Instagram,
+                  href: "https://www.instagram.com/alexmatescu.c",
+                },
                 { label: "Blog (RSS)", icon: Rss, href: "/blog" },
               ].map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined} className="inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <a
+                    href={s.href}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      s.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                  >
                     <s.icon className="h-4 w-4" /> {s.label}
                   </a>
                 </li>
@@ -157,7 +231,8 @@ const Contact = () => {
 
           <div className="border-t border-foreground/10 pt-8">
             <p className="font-serif italic text-lg text-muted-foreground leading-snug">
-              „Răspund de obicei într-o săptămână. Câteodată mai târziu. Niciodată automat.”
+              „Răspund de obicei într-o săptămână. Câteodată mai târziu.
+              Niciodată automat.”
             </p>
           </div>
         </aside>

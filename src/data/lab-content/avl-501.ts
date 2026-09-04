@@ -8,11 +8,11 @@ export const avl501DespreLaboratorHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-501</td></tr>
         <tr><th scope="row">Nivel</th><td>F — Despre laborator</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.2.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>4 septembrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -31,7 +31,7 @@ export const avl501DespreLaboratorHtml = `
 
       <h2>Ce publicăm?</h2>
 
-      <p>Laboratorul publică Foundation, Research, Methodology și Experiments, iar secțiunea Articole oferă analize și materiale educaționale despre subiecte conexe.</p>
+      <p>Laboratorul publică Foundation, Research, Methodology, Experiments și Studii de caz, iar secțiunea Articole oferă analize și materiale educaționale despre subiecte conexe. Studiile de caz documentează aplicarea metodologiei asupra unor entități reale, de-a lungul mai multor ferestre de măsurare — distinct de experimentele publice, care testează o ipoteză declarată dinainte.</p>
 
       <h2>Cine coordonează laboratorul?</h2>
 
@@ -59,6 +59,7 @@ export const avl501DespreLaboratorHtml = `
         <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
         <tbody>
           <tr><td>1.1.0</td><td>26 august 2026</td><td>Activ</td><td>MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); adăugat un paragraf la secțiunea „Cine coordonează laboratorul?" despre activitatea aplicată a lui Alex Matescu în cadrul Lab-ului (prima versiune cu numerotare explicită a documentului).</td></tr>
+          <tr><td>1.2.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR: „Ce publicăm?" recunoaște Studiile de caz (Nivelul D2) ca tip distinct de conținut publicat, cu o propoziție de delimitare față de Experimentele publice.</td></tr>
         </tbody>
       </table>
 `;

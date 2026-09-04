@@ -41,9 +41,18 @@ export const LAB_ARTICLE_CATEGORIES: readonly LabArticleCategory[] = [
  * Tipul editorial al materialului — distinct de `category` (clasificare tematică)
  * și de `keywords` (metadata SEO, fără rol în filtrare). Valorile editoriale
  * existente în corpus; extinde doar cu decizie editorială explicită.
+ *
+ * „Analiză de caz" (nu „Studiu de caz") — redenumit 2026-09-04, audit
+ * metodologic: de la introducerea secțiunii /lab/studii-de-caz (Nivelul D2,
+ * AVL-001 §17), substantivul propriu „Studiu de caz" e rezervat exclusiv
+ * acelei secțiuni (documentare longitudinală a unei entități reale). Un
+ * articol din /lab/articole ancorat într-un caz concret, dar fără caracterul
+ * longitudinal/multi-fază al unui Case Study, e „Analiză de caz" — păstrează
+ * sensul editorial, elimină coliziunea de nume. Nu redenumește retroactiv
+ * conceptul, doar eticheta afișată (vezi cele 2 articole din corpus).
  */
 export type LabArticleType =
-  "Analiză" | "Studiu de caz" | "Ghid" | "Ghid / Analiză metodologică";
+  "Analiză" | "Analiză de caz" | "Ghid" | "Ghid / Analiză metodologică";
 
 export type LabArticleMeta = {
   title: string;
@@ -111,6 +120,30 @@ export const labArticleMeta: LabArticleMeta[] = [
 const findArticleMetaBySlug = (slug: string) =>
   labArticleMeta.find((meta) =>
     meta.canonical.endsWith(`/lab/articole/${slug}`),
+  );
+
+/**
+ * Metadatele studiilor de caz din /lab/studii-de-caz — array separat de
+ * `labArticleMeta`, intenționat: studiile de caz nu fac parte din indexul
+ * „Featured + Article index” al /lab/articole (`sortedLabArticles`/
+ * `LabArticleIndex`, vezi Lab.tsx) și nu trebuie să apară acolo. Reutilizează
+ * însă același tip `LabArticleMeta` și același `buildArticleJsonLd` — un
+ * studiu de caz publicat prin acest pipeline capătă exact același rigoare de
+ * structured data (Article/@graph, entity consistency) ca un articol.
+ *
+ * Intenționat GOL: secțiunea /lab/studii-de-caz e activă (labNav, Lab.tsx),
+ * dar studiul de caz #001 (Alex Matescu, CS-001) există complet ca fișier în
+ * @/data/lab-content și rămâne intenționat nepublicat — pas separat, ulterior
+ * (2026-09-04). Reactivare: reimportă meta din
+ * "@/data/lab-content/tabula-rasa-identitate-search-ai-search" și adaug-o
+ * aici (plus copilul în lab.ts, intrarea în labPageContent din Lab.tsx și
+ * URL-ul din sitemap.xml).
+ */
+export const labCaseStudyMeta: LabArticleMeta[] = [];
+
+const findCaseStudyMetaBySlug = (slug: string) =>
+  labCaseStudyMeta.find((meta) =>
+    meta.canonical.endsWith(`/lab/studii-de-caz/${slug}`),
   );
 
 /**
@@ -338,6 +371,50 @@ export const buildLabArticleHead = (slug: string) => {
       // Suprascrie placeholder-ul global (__root.tsx) cu imaginea proprie a
       // articolului, dacă există una (`meta.image`, vezi SKILL.md §5.3) — altfel
       // rutele fără imagine dedicată cad pe fallback-ul global, nemodificat.
+      ...(meta.image
+        ? [
+            { property: "og:image", content: meta.image.url },
+            { property: "og:image:alt", content: meta.image.alt },
+            { name: "twitter:image", content: meta.image.url },
+            { name: "twitter:image:alt", content: meta.image.alt },
+          ]
+        : []),
+    ],
+    links: [{ rel: "canonical", href: meta.canonical }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(buildArticleJsonLd(meta)),
+      },
+    ],
+  };
+};
+
+/**
+ * Echivalentul `buildLabArticleHead` pentru /lab/studii-de-caz/:slug — aceeași
+ * logică (title, description, OG/Twitter, JSON-LD randate server-side), doar
+ * căutând în `labCaseStudyMeta` în loc de `labArticleMeta`. Returnează
+ * `undefined` pentru slug-uri fără meta dedicată (ex. articole normale),
+ * caz în care ruta apelantă cade pe `buildLabPageHead`.
+ */
+export const buildLabCaseStudyHead = (slug: string) => {
+  const meta = findCaseStudyMetaBySlug(slug);
+  if (!meta) return undefined;
+
+  const title = `${meta.title} — AI Visibility Lab | Alex Matescu`;
+
+  return {
+    meta: [
+      { title },
+      { name: "description", content: meta.description },
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: title },
+      { property: "og:description", content: meta.description },
+      { property: "og:url", content: meta.canonical },
+      { property: "article:published_time", content: meta.datePublished },
+      { property: "article:modified_time", content: meta.dateModified },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: meta.description },
       ...(meta.image
         ? [
             { property: "og:image", content: meta.image.url },

@@ -11,10 +11,10 @@ const ovbLogo = "/images/blog/ovb-logo.webp";
 const aiVisibilityHero = "/images/blog/ai-visibility-hero.webp";
 
 const statusTone: Record<string, string> = {
-  "activ": "text-emerald-800 bg-emerald-100/60",
+  activ: "text-emerald-800 bg-emerald-100/60",
   "în lucru": "text-amber-900 bg-amber-100/60",
-  "închis": "text-stone-700 bg-stone-200/70",
-  "concept": "text-foreground/70 bg-foreground/5",
+  închis: "text-stone-700 bg-stone-200/70",
+  concept: "text-foreground/70 bg-foreground/5",
 };
 
 const Home = () => {
@@ -42,13 +42,20 @@ const Home = () => {
         <div className="container-editorial relative pt-20 md:pt-32 pb-20 md:pb-32">
           <div className="grid md:grid-cols-12 gap-10 items-end">
             <div className="md:col-span-8">
-              <p className="eyebrow mb-8 animate-fade-in">Alex Matescu — hub personal</p>
+              <p className="eyebrow mb-8 animate-fade-in">
+                Alex Matescu — hub personal
+              </p>
               <h1 className="font-serif text-4xl sm:text-5xl md:text-[64px] leading-[1.05] tracking-tight text-balance animate-fade-up">
                 Construiesc idei, proiecte și texte despre{" "}
-                <em className="not-italic text-primary">claritate, disciplină, muncă</em> și sens.
+                <em className="not-italic text-primary">
+                  claritate, disciplină, muncă
+                </em>{" "}
+                și sens.
               </h1>
               <p className="mt-8 md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up [animation-delay:120ms]">
-                Un hub personal pentru scris, reflecții, proiecte antreprenoriale și direcția în care încerc să leg munca, tehnologia și omul.
+                Un hub personal pentru scris, reflecții, proiecte
+                antreprenoriale și direcția în care încerc să leg munca,
+                tehnologia și omul.
               </p>
               <div className="mt-10 flex flex-wrap gap-3 animate-fade-up [animation-delay:220ms]">
                 <Link
@@ -74,9 +81,12 @@ const Home = () => {
 
             <div className="md:col-span-4 md:pl-8 md:border-l border-foreground/10 animate-fade-up [animation-delay:300ms]">
               <p className="font-serif italic text-xl leading-snug text-foreground/80">
-                „Nu pretind răspunsuri finale. Documentez procesul de a deveni mai clar, mai disciplinat și mai onest cu realitatea.”
+                „Nu pretind răspunsuri finale. Documentez procesul de a deveni
+                mai clar, mai disciplinat și mai onest cu realitatea.”
               </p>
-              <p className="mt-4 text-xs uppercase tracking-[0.22em] text-muted-foreground">— A.M.</p>
+              <p className="mt-4 text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                — A.M.
+              </p>
             </div>
           </div>
         </div>
@@ -90,7 +100,11 @@ const Home = () => {
           </div>
           <div className="md:col-span-8">
             <p className="font-serif text-2xl md:text-3xl leading-relaxed text-balance">
-              Sunt Alex Matescu: inginer prin formație, scriitor prin practică, antreprenor prin experiment. Construiesc proiecte personale precum cartea CRANDIT, Taste the Corn, AI Visibility Lab, Atracțiile României, afacerea de familie, afacerea cu haine, și blogging. Scriu despre ce văd la întâlnirea dintre tehnologie, muncă și om.
+              Sunt Alex Matescu: inginer prin formație, scriitor prin practică,
+              antreprenor prin experiment. Construiesc proiecte personale precum
+              cartea CRANDIT, Taste the Corn, AI Visibility Lab, Atracțiile
+              României, afacerea de familie, afacerea cu haine, și blogging.
+              Scriu despre ce văd la întâlnirea dintre tehnologie, muncă și om.
             </p>
           </div>
         </div>
@@ -101,9 +115,14 @@ const Home = () => {
         <div className="flex items-end justify-between mb-12">
           <div>
             <p className="eyebrow mb-4">Ultimele articole</p>
-            <h2 className="font-serif text-3xl md:text-5xl tracking-tight">De pe blog</h2>
+            <h2 className="font-serif text-3xl md:text-5xl tracking-tight">
+              De pe blog
+            </h2>
           </div>
-          <Link to="/blog" className="hidden md:inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/blog"
+            className="hidden md:inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
             Toate articolele <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -116,15 +135,20 @@ const Home = () => {
               className="group bg-background p-8 flex flex-col hover:bg-surface transition-colors duration-500"
             >
               <div className="flex items-center justify-between text-xs text-muted-foreground mb-6">
-                <span className="uppercase tracking-[0.22em]">{p.category}</span>
+                <span className="uppercase tracking-[0.22em]">
+                  {p.category}
+                </span>
                 <span>{p.readingTime}</span>
               </div>
               <h3 className="font-serif text-2xl leading-snug text-balance group-hover:text-primary transition-colors">
                 {p.title}
               </h3>
-              <p className="mt-4 text-muted-foreground text-[15px] leading-relaxed flex-1">{p.excerpt}</p>
+              <p className="mt-4 text-muted-foreground text-[15px] leading-relaxed flex-1">
+                {p.excerpt}
+              </p>
               <span className="mt-8 inline-flex items-center gap-2 text-sm">
-                Citește <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                Citește{" "}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </Link>
           ))}
@@ -145,7 +169,9 @@ const Home = () => {
               </span>
             </h2>
             <p className="mt-8 text-[#f5f0e8]/80 text-lg leading-relaxed max-w-xl">
-              O carte despre ce se află, de fapt, sub poveștile de succes pe care le admirăm. Despre disciplină, identitate, timp și iluzia ascensiunii rapide.
+              O carte despre ce se află, de fapt, sub poveștile de succes pe
+              care le admirăm. Despre disciplină, identitate, timp și iluzia
+              ascensiunii rapide.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
@@ -183,7 +209,9 @@ const Home = () => {
             Proiecte personale: ce construiesc, ce testez, ce las să se aşeze.
           </h2>
           <p className="mt-4 text-muted-foreground text-[15px] leading-relaxed">
-            Fiecare proiect este un răspuns la o întrebare reală. Unele sunt active, altele au fost duse până la capăt și închise cu lecții clare.
+            Fiecare proiect este un răspuns la o întrebare reală. Unele sunt
+            active, altele au fost duse până la capăt și închise cu lecții
+            clare.
           </p>
         </div>
 
@@ -201,12 +229,20 @@ const Home = () => {
             .map((p, i) => (
               <Link
                 key={p!.slug}
-                to={p!.slug === "geo-ai-visibility" ? "/lab/introducere" : `/proiecte/${p!.slug}`}
+                to={
+                  p!.slug === "geo-ai-visibility"
+                    ? "/lab/introducere"
+                    : `/proiecte/${p!.slug}`
+                }
                 className="group bg-background p-8 md:p-10 flex flex-col gap-5 hover:bg-surface transition-colors duration-500"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="text-xs text-muted-foreground tabular-nums">0{i + 1}</span>
-                  <span className={`text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 ${statusTone[p!.status]}`}>
+                  <span className="text-xs text-muted-foreground tabular-nums">
+                    0{i + 1}
+                  </span>
+                  <span
+                    className={`text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 ${statusTone[p!.status]}`}
+                  >
                     {p!.status}
                   </span>
                 </div>
@@ -234,13 +270,19 @@ const Home = () => {
                   <h3 className="font-serif text-3xl md:text-4xl leading-tight text-balance group-hover:text-primary transition-colors">
                     {p!.title}
                   </h3>
-                  <p className="mt-2 font-serif italic text-muted-foreground">{p!.tagline}</p>
+                  <p className="mt-2 font-serif italic text-muted-foreground">
+                    {p!.tagline}
+                  </p>
                 </div>
-                <p className="text-muted-foreground text-[15px] leading-relaxed">{p!.description}</p>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  {p!.description}
+                </p>
 
                 {p!.metadata && (
                   <div className="text-xs text-muted-foreground leading-relaxed">
-                    <span className="font-medium text-foreground/70">Fapte: </span>
+                    <span className="font-medium text-foreground/70">
+                      Fapte:{" "}
+                    </span>
                     {[
                       p!.metadata.perioada,
                       p!.metadata.locatie,
@@ -269,7 +311,8 @@ const Home = () => {
                 </p>
 
                 <span className="mt-auto inline-flex items-center gap-2 text-sm">
-                  Explorează proiectul <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  Explorează proiectul{" "}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
               </Link>
             ))}
@@ -289,7 +332,8 @@ const Home = () => {
         <div className="container-editorial py-24 md:py-32 text-center max-w-3xl mx-auto">
           <p className="eyebrow justify-center mb-8">Punct</p>
           <p className="font-serif text-3xl md:text-5xl leading-[1.15] text-balance">
-            Nu construiesc o platformă. Construiesc o practică — în timp, cu răbdare, fără grabă.
+            Nu construiesc o platformă. Construiesc o practică — în timp, cu
+            răbdare, fără grabă.
           </p>
           <Link
             to="/contact"

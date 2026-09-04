@@ -69,7 +69,9 @@ const isSubActive = (pathname: string, sub: NavSubItem) => {
 
 const SiteLayout = () => {
   const [open, setOpen] = useState(false);
-  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+    null,
+  );
   const [openMobileSub, setOpenMobileSub] = useState<string | null>(null);
   const location = useLocation();
 
@@ -86,8 +88,14 @@ const SiteLayout = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-foreground/10">
         <div className="container-editorial flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="group flex items-center gap-3" aria-label="Alex Matescu — acasă">
-            <span className="font-serif text-xl tracking-tight">Alex Matescu</span>
+          <Link
+            to="/"
+            className="group flex items-center gap-3"
+            aria-label="Alex Matescu — acasă"
+          >
+            <span className="font-serif text-xl tracking-tight">
+              Alex Matescu
+            </span>
             <span className="hidden md:inline text-[11px] uppercase tracking-[0.22em] text-muted-foreground border-l border-foreground/15 pl-3">
               Scris · Proiecte
             </span>
@@ -145,7 +153,8 @@ const SiteLayout = () => {
                                 </Link>
                               </DropdownMenuItem>
                               {sub.items.map((child) => {
-                                const childActive = location.pathname === child.to;
+                                const childActive =
+                                  location.pathname === child.to;
                                 return (
                                   <DropdownMenuItem key={child.to} asChild>
                                     <Link
@@ -158,7 +167,10 @@ const SiteLayout = () => {
                                     >
                                       {child.label}
                                       {childActive && (
-                                        <span className="h-1.5 w-1.5 rounded-full bg-foreground/60" aria-hidden="true" />
+                                        <span
+                                          className="h-1.5 w-1.5 rounded-full bg-foreground/60"
+                                          aria-hidden="true"
+                                        />
                                       )}
                                     </Link>
                                   </DropdownMenuItem>
@@ -181,7 +193,10 @@ const SiteLayout = () => {
                           >
                             {sub.label}
                             {active && (
-                              <span className="h-1.5 w-1.5 rounded-full bg-foreground/60" aria-hidden="true" />
+                              <span
+                                className="h-1.5 w-1.5 rounded-full bg-foreground/60"
+                                aria-hidden="true"
+                              />
                             )}
                           </Link>
                         </DropdownMenuItem>
@@ -194,7 +209,12 @@ const SiteLayout = () => {
                   key={item.to}
                   to={item.to}
                   className={`text-sm transition-colors ${
-                    (item.to === "/" ? location.pathname === "/" : location.pathname === item.to || location.pathname.startsWith(item.to + "/"))
+                    (
+                      item.to === "/"
+                        ? location.pathname === "/"
+                        : location.pathname === item.to ||
+                          location.pathname.startsWith(item.to + "/")
+                    )
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
@@ -222,7 +242,9 @@ const SiteLayout = () => {
                   <div key={item.to} className="flex flex-col">
                     <button
                       onClick={() =>
-                        setOpenMobileDropdown((s) => (s === item.to ? null : item.to))
+                        setOpenMobileDropdown((s) =>
+                          s === item.to ? null : item.to,
+                        )
                       }
                       className={`flex items-center justify-between font-serif text-2xl ${
                         isDropdownActive(location.pathname, item)
@@ -249,21 +271,27 @@ const SiteLayout = () => {
                                   <Link
                                     to={sub.to}
                                     className={`text-sm transition-colors ${
-                                      active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                                      active
+                                        ? "text-foreground"
+                                        : "text-muted-foreground hover:text-foreground"
                                     }`}
                                   >
                                     {sub.label}
                                   </Link>
                                   <button
                                     onClick={() =>
-                                      setOpenMobileSub((s) => (s === sub.to ? null : sub.to))
+                                      setOpenMobileSub((s) =>
+                                        s === sub.to ? null : sub.to,
+                                      )
                                     }
                                     aria-label={sub.label}
                                     className="p-1 text-muted-foreground"
                                   >
                                     <ChevronDown
                                       className={`h-4 w-4 transition-transform ${
-                                        openMobileSub === sub.to ? "rotate-180" : ""
+                                        openMobileSub === sub.to
+                                          ? "rotate-180"
+                                          : ""
                                       }`}
                                     />
                                   </button>
@@ -271,7 +299,8 @@ const SiteLayout = () => {
                                 {openMobileSub === sub.to && (
                                   <ul className="mt-3 ml-4 flex flex-col gap-3 border-l border-foreground/10 pl-4">
                                     {sub.items.map((child) => {
-                                      const childActive = location.pathname === child.to;
+                                      const childActive =
+                                        location.pathname === child.to;
                                       return (
                                         <li key={child.to}>
                                           <Link
@@ -316,7 +345,12 @@ const SiteLayout = () => {
                     key={item.to}
                     to={item.to}
                     className={`font-serif text-2xl ${
-                      (item.to === "/" ? location.pathname === "/" : location.pathname === item.to || location.pathname.startsWith(item.to + "/"))
+                      (
+                        item.to === "/"
+                          ? location.pathname === "/"
+                          : location.pathname === item.to ||
+                            location.pathname.startsWith(item.to + "/")
+                      )
                         ? "text-foreground"
                         : "text-muted-foreground"
                     }`}
@@ -339,10 +373,13 @@ const SiteLayout = () => {
           <div className="md:col-span-5">
             <p className="font-serif text-2xl text-balance leading-snug">
               Documentez procesul. Construiesc în timp. <br />
-              <span className="text-muted-foreground">Scriu despre ce învăț.</span>
+              <span className="text-muted-foreground">
+                Scriu despre ce învăț.
+              </span>
             </p>
             <p className="mt-6 text-sm text-muted-foreground max-w-md">
-              Un hub personal pentru articole, carte și proiecte despre claritate, disciplină, muncă și sens.
+              Un hub personal pentru articole, carte și proiecte despre
+              claritate, disciplină, muncă și sens.
             </p>
           </div>
 
@@ -351,7 +388,10 @@ const SiteLayout = () => {
             <ul className="space-y-3 text-sm">
               {nav.map((n) => (
                 <li key={n.to}>
-                  <Link to={n.to} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    to={n.to}
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     {n.label}
                   </Link>
                 </li>
@@ -359,7 +399,10 @@ const SiteLayout = () => {
               {/* Nu face parte din `nav` (deci nu apare în meniul principal, care
                   are deja 8 intrări) — dar rămâne accesibil din footer. */}
               <li>
-                <Link to="/presa" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  to="/presa"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Presă
                 </Link>
               </li>
@@ -370,14 +413,32 @@ const SiteLayout = () => {
             <p className="eyebrow mb-5">Urmărește</p>
             <ul className="space-y-3 text-sm">
               {[
-                { label: "LinkedIn", href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/" },
+                {
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/in/alex-matescu-8b2b8813b/",
+                },
                 { label: "X / Twitter", href: "https://x.com/MatescuAlex" },
-                { label: "Facebook", href: "https://www.facebook.com/alexmatescu" },
-                { label: "Instagram", href: "https://www.instagram.com/alexmatescu.c" },
+                {
+                  label: "Facebook",
+                  href: "https://www.facebook.com/alexmatescu",
+                },
+                {
+                  label: "Instagram",
+                  href: "https://www.instagram.com/alexmatescu.c",
+                },
                 { label: "Blog (RSS)", href: "/blog" },
               ].map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a
+                    href={s.href}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      s.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     {s.label}
                   </a>
                 </li>
@@ -388,7 +449,10 @@ const SiteLayout = () => {
 
         <div className="border-t border-foreground/10">
           <div className="container-editorial py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-muted-foreground">
-            <p>© {new Date().getFullYear()} Alex Matescu. Toate drepturile rezervate.</p>
+            <p>
+              © {new Date().getFullYear()} Alex Matescu. Toate drepturile
+              rezervate.
+            </p>
             <p className="font-serif italic">„Claritate, muncă, sens.”</p>
           </div>
         </div>

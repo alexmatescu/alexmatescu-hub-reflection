@@ -8,12 +8,12 @@ export const avl105GlosarHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-105</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>4 septembrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -40,6 +40,9 @@ export const avl105GlosarHtml = `
       <h3>Apariție</h3>
       <p>Prezența numelui, mărcii sau sursei într-un răspuns AI, indiferent dacă există o citare sau un link.</p>
 
+      <h3>Audit</h3>
+      <p>Proces de evaluare a stării unei entități sau a unui ecosistem informațional — poate fi folosit ca parte a unui baseline, ca diagnostic autonom, în cadrul unei strategii, al unui studiu de caz sau al unui experiment. Auditul nu este el însuși un experiment (nu testează neapărat o ipoteză prin intervenție și re-măsurare) și nu este un studiu de caz (nu documentează neapărat evoluția longitudinală a unei entități) — poate însă alimenta pe amândouă.</p>
+
       <h3>Autoritate</h3>
       <p>Calitate atribuită unei surse sau entități pe baza expertizei, reputației, recunoașterii și coerenței informației. În corpus nu este tratată ca un factor algoritmic unic sau direct măsurabil.</p>
 
@@ -48,6 +51,9 @@ export const avl105GlosarHtml = `
 
       <h3>Black-box</h3>
       <p>Sistem ale cărui mecanisme interne nu pot fi inspectate integral de cercetător. Intrările și ieșirile pot fi observate, dar procesul intern rămâne parțial necunoscut.</p>
+
+      <h3>Case study / studiu de caz</h3>
+      <p>Documentarea aplicării metodologiei AI Visibility Lab asupra unei entități reale, de-a lungul mai multor ferestre de măsurare. Poate conține unul sau mai multe audituri, un Query Universe, seturi de interogări înghețate, intervenții și, opțional, unul sau mai multe experimente controlate. Distinct de „Experiment public" (care testează o ipoteză printr-un protocol definit dinainte, cu sau fără legătură la o entitate anume) și de „Audit" (o evaluare punctuală, fără obligația de a documenta evoluția în timp). „Studii de caz" desemnează și secțiunea dedicată a laboratorului (Nivelul D2, AVL-001 §17) — nu se confundă cu studiile de caz externe folosite ca sursă/dovadă într-o cercetare (AVL-001 §10).</p>
 
       <h3>Citation / citare</h3>
       <p>Referință vizibilă către o sursă folosită sau asociată unui răspuns. Poate apărea ca link, notă, card de sursă ori alt element al interfeței.</p>
@@ -79,6 +85,9 @@ export const avl105GlosarHtml = `
       <h3>Entity resolution</h3>
       <p>Procesul de asociere a mențiunilor și înregistrărilor diferite cu aceeași entitate reală.</p>
 
+      <h3>Evidence / dovadă</h3>
+      <p>Dovada asociată unei observații sau rulări — captură, export, log ori altă înregistrare care arată direct ce a fost observat (vezi „Dovadă primară", AVL-201 §5). Se disting trei stări: evidence brut (raw, nemodificat, niciodată suprascris), evidence derivat (crop, montaj, comparație, adnotare — trebuie să indice sursa) și asset de publicare (selectat pentru publicare — trebuie să indice evidence-ul din care provine).</p>
+
       <h3>Experiment public</h3>
       <p>Test documentat prin întrebare, ipoteză, condiții, intervenție, măsurare, dovezi, limitări și concluzii, publicat pentru verificare sau reproducere.</p>
 
@@ -106,6 +115,9 @@ export const avl105GlosarHtml = `
       <h3>Interogare / query</h3>
       <p>Întrebarea sau instrucțiunea adresată unui sistem. În experimente, formularea interogării este păstrată exact pentru comparabilitate.</p>
 
+      <h3>Intervenție / intervention</h3>
+      <p>Schimbare aplicată asupra entității sau ecosistemului ei — de exemplu date structurate, accesibilitate tehnică, conținut, consolidare de entitate, internal linking, consistența profilurilor, consistența surselor, crawlability sau canonicalizare. O intervenție nu este automat un experiment: devine parte dintr-un experiment doar atunci când e legată explicit de o ipoteză, un protocol și o re-măsurare planificată dinainte.</p>
+
       <h3>Knowledge graph</h3>
       <p>Reprezentare structurată a entităților și relațiilor dintre ele. Poate sprijini dezambiguizarea și organizarea cunoașterii, dar termenul nu desemnează un singur produs sau o singură implementare.</p>
 
@@ -131,7 +143,10 @@ export const avl105GlosarHtml = `
       <p>Tehnică prin care o întrebare este descompusă în mai multe căutări sau subinterogări, pentru recuperarea informațiilor necesare unui răspuns mai complex.</p>
 
       <h3>Query set / set de interogări</h3>
-      <p>Colecție fixă de întrebări folosită pentru măsurare. Setul se îngheață la baseline pentru ca rezultatele înainte și după intervenție să rămână comparabile.</p>
+      <p>Colecție fixă de întrebări folosită pentru o măsurare anume — subsetul ales din Query Universe pentru fereastra respectivă. Versiunea folosită pentru comparații longitudinale (F0→F3) se îngheață la baseline și nu se mai modifică retroactiv (Frozen Query Set / „Set înghețat", AVL-201 §5); interogări noi intră într-o versiune nouă, nu se amestecă în setul înghețat original.</p>
+
+      <h3>Query universe</h3>
+      <p>Universul larg de interogări candidate, relevante pentru entitate sau business — sursa din care se selectează, la fiecare fereastră, Query Set-ul folosit efectiv. Spre deosebire de Query Set, Query Universe poate evolua liber în timp; nu se îngheață. Query Universe și Query Set nu sunt sinonime: primul e bazinul de candidați, al doilea e selecția fixată pentru o măsurare.</p>
 
       <h3>Ranking / clasificare</h3>
       <p>Procesul de ordonare a rezultatelor sau candidaților după relevanță și alte criterii. Clasarea în căutarea clasică și selecția surselor într-un răspuns generativ nu trebuie presupuse identice.</p>
@@ -153,6 +168,9 @@ export const avl105GlosarHtml = `
 
       <h3>Robots.txt</h3>
       <p>Fișier standard prin care proprietarul unui site comunică reguli de acces pentru crawlere. Respectarea și interpretarea regulilor depind de crawler.</p>
+
+      <h3>Run / rulare</h3>
+      <p>O execuție individuală a unei interogări într-un motor sau o interfață AI (AVL-201 §5). O rulare primește un identificator propriu, distinct de identificatorul interogării — mai multe rulări pot folosi aceeași interogare, în aceeași fereastră de măsurare sau în ferestre diferite. Nu se confundă cu faza (F0–F3): faza e nivelul metodologic, rularea e execuția individuală din interiorul ei.</p>
 
       <h3>Schema.org</h3>
       <p>Vocabular colaborativ de tipuri și proprietăți pentru descrierea structurată a entităților și conținutului de pe web.</p>
@@ -218,6 +236,7 @@ export const avl105GlosarHtml = `
         <tbody>
           <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
           <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab).</td></tr>
+          <tr><td>1.1.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR: intrări noi — Audit, Case study / studiu de caz, Evidence / dovadă, Intervenție / intervention, Query universe, Run / rulare — pregătind terminologia pentru Nivelul D2 (Studii de caz) fără a schimba definițiile existente.</td></tr>
         </tbody>
       </table>
 `;

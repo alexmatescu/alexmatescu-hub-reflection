@@ -19,7 +19,13 @@ const statusTone: Record<string, string> = {
   concept: "text-foreground/70 bg-foreground/5",
 };
 
-const Section = ({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) => (
+const Section = ({
+  eyebrow,
+  children,
+}: {
+  eyebrow: string;
+  children: React.ReactNode;
+}) => (
   <section className="grid md:grid-cols-12 gap-10 py-14 border-t border-foreground/10">
     <div className="md:col-span-4">
       <p className="eyebrow">{eyebrow}</p>
@@ -27,7 +33,6 @@ const Section = ({ eyebrow, children }: { eyebrow: string; children: React.React
     <div className="md:col-span-8 prose-editorial">{children}</div>
   </section>
 );
-
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -37,7 +42,10 @@ const ProjectDetail = () => {
     return (
       <section className="container-editorial py-32 text-center">
         <h1 className="font-serif text-4xl">Proiectul nu există</h1>
-        <Link to="/proiecte" className="mt-8 inline-flex items-center gap-2 link-underline">
+        <Link
+          to="/proiecte"
+          className="mt-8 inline-flex items-center gap-2 link-underline"
+        >
           <ArrowLeft className="h-4 w-4" /> Înapoi la proiecte
         </Link>
       </section>
@@ -49,7 +57,10 @@ const ProjectDetail = () => {
 
   return (
     <>
-      <Seo title={`${project.title} — Alex Matescu`} description={project.description} />
+      <Seo
+        title={`${project.title} — Alex Matescu`}
+        description={project.description}
+      />
 
       <header className="container-editorial pt-20 md:pt-28 pb-12">
         <Link
@@ -94,19 +105,29 @@ const ProjectDetail = () => {
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-foreground/10 pt-10">
             {project.metadata.perioada && (
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Perioadă</p>
-                <p className="text-foreground/90">{project.metadata.perioada}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                  Perioadă
+                </p>
+                <p className="text-foreground/90">
+                  {project.metadata.perioada}
+                </p>
               </div>
             )}
             {project.metadata.categorie && (
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Categorie</p>
-                <p className="text-foreground/90">{project.metadata.categorie}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                  Categorie
+                </p>
+                <p className="text-foreground/90">
+                  {project.metadata.categorie}
+                </p>
               </div>
             )}
             {project.metadata.locatie && (
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Locație</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                  Locație
+                </p>
                 <p className="text-foreground/90">{project.metadata.locatie}</p>
               </div>
             )}
@@ -123,17 +144,23 @@ const ProjectDetail = () => {
                 className={`py-16 ${i > 0 ? "border-t border-foreground/10" : ""}`}
               >
                 <div className="max-w-3xl">
-                  <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-8">{section.eyebrow}</h2>
+                  <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-8">
+                    {section.eyebrow}
+                  </h2>
                 </div>
                 <div className="max-w-3xl prose-editorial">
                   {section.content && (
-                    <div className="whitespace-pre-line leading-relaxed">{section.content}</div>
+                    <div className="whitespace-pre-line leading-relaxed">
+                      {section.content}
+                    </div>
                   )}
                   {section.items && (
                     <ul className="space-y-4 list-none p-0">
                       {section.items.map((item, idx) => (
                         <li key={idx} className="flex gap-4">
-                          <span className="font-serif text-muted-foreground tabular-nums">0{idx + 1}</span>
+                          <span className="font-serif text-muted-foreground tabular-nums">
+                            0{idx + 1}
+                          </span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -165,7 +192,9 @@ const ProjectDetail = () => {
                 <ul className="space-y-4 list-none p-0">
                   {project.lessons.map((l, i) => (
                     <li key={i} className="flex gap-4">
-                      <span className="font-serif text-muted-foreground tabular-nums">0{i + 1}</span>
+                      <span className="font-serif text-muted-foreground tabular-nums">
+                        0{i + 1}
+                      </span>
                       <span>{l}</span>
                     </li>
                   ))}
@@ -188,13 +217,18 @@ const ProjectDetail = () => {
               <div className="md:col-span-4">
                 <p className="eyebrow">Întrebări frecvente</p>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Răspunsuri la cele mai comune curiozități despre {project.title}.
+                  Răspunsuri la cele mai comune curiozități despre{" "}
+                  {project.title}.
                 </p>
               </div>
               <div className="md:col-span-8">
                 <Accordion type="single" collapsible className="w-full">
                   {project.faq.map((item, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`} className="border-foreground/10">
+                    <AccordionItem
+                      key={idx}
+                      value={`item-${idx}`}
+                      className="border-foreground/10"
+                    >
                       <AccordionTrigger className="text-left font-serif text-lg hover:no-underline">
                         {item.question}
                       </AccordionTrigger>
@@ -210,7 +244,6 @@ const ProjectDetail = () => {
         </section>
       )}
 
-
       {relatedPosts.length > 0 && (
         <section className="border-y border-foreground/10 bg-surface/60 mt-10">
           <div className="container-editorial py-16">
@@ -222,7 +255,9 @@ const ProjectDetail = () => {
                   to={`/blog/${p.slug}`}
                   className="group bg-background p-8 hover:bg-surface transition-colors"
                 >
-                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">{p.category}</p>
+                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">
+                    {p.category}
+                  </p>
                   <h3 className="font-serif text-2xl leading-snug group-hover:text-primary transition-colors">
                     {p.title}
                   </h3>

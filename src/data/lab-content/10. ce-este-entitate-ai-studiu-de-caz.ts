@@ -9,9 +9,10 @@ export const ceEsteEntitateAiStudiuDeCazMeta: LabArticleMeta = {
     "Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul",
   description:
     "Ce înseamnă entity resolution, cum apar coliziunea, fragmentarea și contaminarea identității și ce poate demonstra un studiu de caz real fără a inventa mecanisme interne ale Google sau sistemelor AI.",
-  canonical: "https://delamatescu.ro/lab/articole/ce-este-entitate-ai-studiu-de-caz",
+  canonical:
+    "https://delamatescu.ro/lab/articole/ce-este-entitate-ai-studiu-de-caz",
   category: "Entities & Citations",
-  articleType: "Studiu de caz",
+  articleType: "Analiză de caz",
   datePublished: "2026-08-05",
   dateModified: "2026-08-11",
   lastReviewed: "2026-08-19",

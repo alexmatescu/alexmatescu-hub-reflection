@@ -65,6 +65,14 @@ export const labNav: LabPage[] = [
     lead: "Teste publice, cu ipoteze declarate dinainte și rezultate publicate indiferent dacă confirmă sau infirmă ipoteza.",
   },
   {
+    to: "/lab/studii-de-caz",
+    label: "Studii de caz",
+    lead: "Colaborări reale în care metodologia și principiile AI Visibility Lab sunt aplicate direct, cu dovezi, limite și rezultate publicate integral.",
+    // Intenționat FĂRĂ `children`: secțiunea e activă, dar primul studiu de
+    // caz (#001 — Alex Matescu, CS-001) rămâne nepublicat — activare separată,
+    // ulterioară (nod copil + labPageContent + labCaseStudyMeta + sitemap).
+  },
+  {
     to: "/lab/articole",
     label: "Articole",
     seoTitle: "Articole GEO, AEO și AI Visibility Lab",
@@ -85,7 +93,8 @@ export const labNav: LabPage[] = [
       },
       {
         to: "/lab/articole/social-media-vizibilitate-ai",
-        label: "De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI",
+        label:
+          "De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI",
         lead: "Cum diferă vizibilitatea umană de vizibilitatea AI în social media. Analiză bazată pe surse publice, studii comerciale tratate separat după metodologie și reguli operaționale pentru artefacte persistente, entity resolution și distribuție.",
       },
       {

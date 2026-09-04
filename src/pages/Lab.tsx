@@ -9,6 +9,7 @@ import {
   LAB_ARTICLE_CATEGORIES,
   labArticleMeta,
   labArticlePathname,
+  labCaseStudyMeta,
   latestLabArticle,
   sortedLabArticles,
   type LabArticleCategory,
@@ -21,6 +22,7 @@ import { avl104MasurareHtml } from "@/data/lab-content/avl-104";
 import { avl105GlosarHtml } from "@/data/lab-content/avl-105";
 import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
+import { avl350StudiiDeCazHtml } from "@/data/lab-content/avl-350";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
@@ -36,6 +38,13 @@ import { motoareCautareHtml } from "@/data/lab-content/2. motoare-cautare-compar
 import { paradoxulSpecificitatiiContinutGenericHtml } from "@/data/lab-content/9. paradoxul-specificitatii-continut-generic";
 import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/3. social-media-vizibilitate-ai";
+// NOTĂ: "tabula-rasa-identitate-search-ai-search" (studiul de caz #001, Alex
+// Matescu, CS-001) există ca fișier complet în @/data/lab-content, dar e
+// intenționat neimportat aici — secțiunea /lab/studii-de-caz e activă
+// (avl-350, mai jos), dar primul studiu de caz nu e încă publicat (pas
+// separat, ulterior). Reactivare: reimportă + readaugă intrarea în
+// labPageContent, plus copilul în @/data/lab.ts și meta în
+// labCaseStudyMeta (@/data/lab-seo.ts) și sitemap.xml.
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
 
@@ -48,32 +57,45 @@ const labPageContent: Record<string, string> = {
   "/lab/cercetare/glosar-geo-aeo": avl105GlosarHtml,
   "/lab/metodologie/tabula-rasa-f0": avl201TabulaRasaF0Html,
   "/lab/experimente-publice": avl301ExperimentePubliceHtml,
+  "/lab/studii-de-caz": avl350StudiiDeCazHtml,
   "/lab/articole": avl401ArticoleHtml,
   "/lab/articole/istoria-cautarii-internet-evolutia-seo": istoriaCautariiHtml,
   "/lab/articole/motoare-cautare-comparatie-2026": motoareCautareHtml,
   "/lab/articole/social-media-vizibilitate-ai": socialMediaVizibilitateAiHtml,
-  "/lab/articole/cat-dureaza-indexare-citare-ai": catDureazaIndexareCitareAiHtml,
+  "/lab/articole/cat-dureaza-indexare-citare-ai":
+    catDureazaIndexareCitareAiHtml,
   "/lab/articole/paradoxul-site-ului-terminat": paradoxulSiteuluiTerminatHtml,
-  "/lab/articole/metadata-citare-ai-studiu-de-caz": metadataCitareAiStudiuDeCazHtml,
+  "/lab/articole/metadata-citare-ai-studiu-de-caz":
+    metadataCitareAiStudiuDeCazHtml,
   "/lab/articole/audit-site-fara-acces-cod": auditSiteFaraAccesCodHtml,
-  "/lab/articole/cuvant-cheie-vs-fraza-tokenizare": cuvantCheieVsFrazaTokenizareHtml,
-  "/lab/articole/paradoxul-specificitatii-continut-generic": paradoxulSpecificitatiiContinutGenericHtml,
-  "/lab/articole/ce-este-entitate-ai-studiu-de-caz": ceEsteEntitateAiStudiuDeCazHtml,
-  "/lab/articole/harta-de-citare-mentiuni-externe-romania": hartaDeCitareMentiuniExterneRomaniaHtml,
-  "/lab/articole/decalaj-viteza-ai-adoptie-2026": decalajVitezaAiAdoptie2026Html,
-  "/lab/articole/eticheta-abonat-relatia-prezentare-ai-search": etichetaAbonatRelatiaPrezentareAiSearchHtml,
+  "/lab/articole/cuvant-cheie-vs-fraza-tokenizare":
+    cuvantCheieVsFrazaTokenizareHtml,
+  "/lab/articole/paradoxul-specificitatii-continut-generic":
+    paradoxulSpecificitatiiContinutGenericHtml,
+  "/lab/articole/ce-este-entitate-ai-studiu-de-caz":
+    ceEsteEntitateAiStudiuDeCazHtml,
+  "/lab/articole/harta-de-citare-mentiuni-externe-romania":
+    hartaDeCitareMentiuniExterneRomaniaHtml,
+  "/lab/articole/decalaj-viteza-ai-adoptie-2026":
+    decalajVitezaAiAdoptie2026Html,
+  "/lab/articole/eticheta-abonat-relatia-prezentare-ai-search":
+    etichetaAbonatRelatiaPrezentareAiSearchHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 
 /**
- * JSON-LD per articol, derivat din aceeași sursă (@/data/lab-seo) folosită și de
- * head()-ul server-side al rutei /lab/articole/$slug — o singură definiție, ca
- * structured data-ul din HTML-ul inițial și cel injectat client-side la hidratare
- * să nu diveargă niciodată. Valorile nu sunt randate direct de aici (doar cheile,
- * via `in`, mai jos) — forma exactă (array legacy vs @graph) diferă pe articol.
+ * JSON-LD per articol/studiu de caz, derivat din aceeași sursă (@/data/lab-seo)
+ * folosită și de head()-ul server-side al rutei /lab/articole/$slug (respectiv
+ * /lab/studii-de-caz/$slug) — o singură definiție, ca structured data-ul din
+ * HTML-ul inițial și cel injectat client-side la hidratare să nu diveargă
+ * niciodată. Valorile nu sunt randate direct de aici (doar cheile, via `in`,
+ * mai jos) — forma exactă (array legacy vs @graph) diferă pe articol.
+ * `labCaseStudyMeta` e inclus doar aici (pentru `isArticle`/og:type); indexul
+ * `/lab/articole` (`sortedLabArticles`) rămâne derivat exclusiv din
+ * `labArticleMeta`, fără studii de caz amestecate în el.
  */
 const labPageJsonLdOverrides: Record<string, unknown> = Object.fromEntries(
-  labArticleMeta.map((meta) => [
+  [...labArticleMeta, ...labCaseStudyMeta].map((meta) => [
     labArticlePathname(meta),
     buildArticleJsonLd(meta),
   ]),
@@ -218,17 +240,21 @@ export const LabIndex = () => (
           Fi văzut. Fi înțeles. Fi citat.
         </p>
         <p className="mt-8 text-lg md:text-xl text-[#e8e0cf]/80 leading-relaxed max-w-2xl">
-          Un spațiu de lucru dedicat GEO și AEO — cercetare, metodologie, experimente publice, articole
-          și audit pentru cei care vor să fie găsiți, citați și recomandați de ChatGPT, Gemini,
+          Un spațiu de lucru dedicat GEO și AEO — cercetare, metodologie,
+          experimente publice, studii de caz, articole și audit pentru cei care
+          vor să fie găsiți, citați și recomandați de ChatGPT, Gemini,
           Perplexity, Claude și Copilot.
         </p>
         <p className="mt-4 text-base text-[#e8e0cf]/70 leading-relaxed max-w-2xl">
           AI Visibility Lab este fondat și coordonat de{" "}
-          <Link to="/despre" className="underline underline-offset-4 hover:text-[#f0e8d6]">
+          <Link
+            to="/despre"
+            className="underline underline-offset-4 hover:text-[#f0e8d6]"
+          >
             Alex Matescu
           </Link>
-          , care documentează aici cercetarea, măsurătorile și optimizările realizate în domeniul AI
-          Visibility, GEO și AEO.
+          , care documentează aici cercetarea, măsurătorile și optimizările
+          realizate în domeniul AI Visibility, GEO și AEO.
         </p>
       </div>
     </section>
@@ -245,11 +271,16 @@ export const LabIndex = () => (
             <h2 className="font-serif text-2xl leading-tight tracking-tight text-balance group-hover:text-foreground">
               {item.label}
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{item.lead}</p>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+              {item.lead}
+            </p>
             {item.children && (
               <ul className="mt-6 space-y-2 border-t border-foreground/10 pt-4">
                 {item.children.map((child) => (
-                  <li key={child.to} className="text-sm text-muted-foreground/80">
+                  <li
+                    key={child.to}
+                    className="text-sm text-muted-foreground/80"
+                  >
                     {child.label}
                   </li>
                 ))}
@@ -302,11 +333,15 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
             {parent ? parent.label : "AI Visibility Lab"}
           </Link>
 
-          <p className="eyebrow mb-6">AI Visibility Lab{parent ? ` · ${parent.label}` : ""}</p>
+          <p className="eyebrow mb-6">
+            AI Visibility Lab{parent ? ` · ${parent.label}` : ""}
+          </p>
           <h1 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-balance">
             {page.pageTitle ?? page.label}
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">{page.lead}</p>
+          <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
+            {page.lead}
+          </p>
 
           {(() => {
             const contentBlock = content ? (
@@ -324,7 +359,9 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
                   Pagină dedicată articolelor și studiilor de caz
                 </p>
                 <p className="text-base text-foreground/80 leading-relaxed">
-                  Secțiunea reunește în prezent analize și studii de caz publicate de AI Visibility Lab și este actualizată pe măsură ce activitatea de cercetare evoluează.”
+                  Secțiunea reunește în prezent analize și studii de caz
+                  publicate de AI Visibility Lab și este actualizată pe măsură
+                  ce activitatea de cercetare evoluează.”
                 </p>
               </div>
             );

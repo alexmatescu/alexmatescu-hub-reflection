@@ -12,7 +12,11 @@ type Subscriber = {
 };
 
 const AdminAbonati = () => {
-  useSeo({ title: "Admin — Abonați | Alex Matescu", description: "Panou de administrare.", noIndex: true });
+  useSeo({
+    title: "Admin — Abonați | Alex Matescu",
+    description: "Panou de administrare.",
+    noIndex: true,
+  });
 
   const [session, setSession] = useState<Session | null>(null);
   const [checking, setChecking] = useState(true);
@@ -66,7 +70,11 @@ const AdminAbonati = () => {
       .order("created_at", { ascending: false });
     setLoadingSubs(false);
     if (error) {
-      toast({ title: "Eroare", description: error.message, variant: "destructive" });
+      toast({
+        title: "Eroare",
+        description: error.message,
+        variant: "destructive",
+      });
       return;
     }
     setSubs((data as Subscriber[]) ?? []);
@@ -75,23 +83,31 @@ const AdminAbonati = () => {
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setAuthLoading(true);
-    const fn = mode === "signin"
-      ? supabase.auth.signInWithPassword({ email, password })
-      : supabase.auth.signUp({
-          email,
-          password,
-          options: { emailRedirectTo: `${window.location.origin}/admin/abonati` },
-        });
+    const fn =
+      mode === "signin"
+        ? supabase.auth.signInWithPassword({ email, password })
+        : supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              emailRedirectTo: `${window.location.origin}/admin/abonati`,
+            },
+          });
     const { error } = await fn;
     setAuthLoading(false);
     if (error) {
-      toast({ title: "Autentificare eșuată", description: error.message, variant: "destructive" });
+      toast({
+        title: "Autentificare eșuată",
+        description: error.message,
+        variant: "destructive",
+      });
       return;
     }
     if (mode === "signup") {
       toast({
         title: "Cont creat",
-        description: "Te poți autentifica. Cere-mi să-ți atribui rolul de admin.",
+        description:
+          "Te poți autentifica. Cere-mi să-ți atribui rolul de admin.",
       });
       setMode("signin");
     }
@@ -103,9 +119,16 @@ const AdminAbonati = () => {
 
   const removeSub = async (id: string) => {
     if (!confirm("Sigur ștergi acest abonat?")) return;
-    const { error } = await supabase.from("newsletter_subscribers").delete().eq("id", id);
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .delete()
+      .eq("id", id);
     if (error) {
-      toast({ title: "Eroare", description: error.message, variant: "destructive" });
+      toast({
+        title: "Eroare",
+        description: error.message,
+        variant: "destructive",
+      });
       return;
     }
     setSubs((s) => s.filter((x) => x.id !== id));
@@ -126,7 +149,9 @@ const AdminAbonati = () => {
   };
 
   if (checking) {
-    return <div className="container py-24 text-muted-foreground">Se încarcă…</div>;
+    return (
+      <div className="container py-24 text-muted-foreground">Se încarcă…</div>
+    );
   }
 
   // Not signed in → auth form
@@ -160,14 +185,20 @@ const AdminAbonati = () => {
             disabled={authLoading}
             className="h-12 px-6 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary/90 transition-colors disabled:opacity-50"
           >
-            {authLoading ? "Se procesează…" : mode === "signin" ? "Intră" : "Creează cont"}
+            {authLoading
+              ? "Se procesează…"
+              : mode === "signin"
+                ? "Intră"
+                : "Creează cont"}
           </button>
         </form>
         <button
           onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
           className="mt-6 text-sm text-muted-foreground underline underline-offset-4"
         >
-          {mode === "signin" ? "Nu ai cont? Creează unul" : "Ai deja cont? Autentifică-te"}
+          {mode === "signin"
+            ? "Nu ai cont? Creează unul"
+            : "Ai deja cont? Autentifică-te"}
         </button>
       </div>
     );
@@ -178,12 +209,16 @@ const AdminAbonati = () => {
     return (
       <div className="container py-24 max-w-xl">
         <p className="eyebrow mb-4">Acces restricționat</p>
-        <h1 className="font-serif text-3xl mb-4">Contul tău nu are rol de admin</h1>
+        <h1 className="font-serif text-3xl mb-4">
+          Contul tău nu are rol de admin
+        </h1>
         <p className="text-muted-foreground mb-2">
-          Autentificat ca <span className="text-foreground">{session.user.email}</span>.
+          Autentificat ca{" "}
+          <span className="text-foreground">{session.user.email}</span>.
         </p>
         <p className="text-muted-foreground mb-8">
-          Pentru a accesa lista de abonați, trebuie să-mi spui acest email ca să-ți atribui rolul de admin în baza de date.
+          Pentru a accesa lista de abonați, trebuie să-mi spui acest email ca
+          să-ți atribui rolul de admin în baza de date.
         </p>
         <button
           onClick={signOut}
@@ -201,7 +236,9 @@ const AdminAbonati = () => {
       <div className="flex items-end justify-between gap-4 mb-10 flex-wrap">
         <div>
           <p className="eyebrow mb-3">Administrare</p>
-          <h1 className="font-serif text-3xl md:text-4xl">Abonați newsletter</h1>
+          <h1 className="font-serif text-3xl md:text-4xl">
+            Abonați newsletter
+          </h1>
           <p className="text-muted-foreground mt-2">
             {subs.length} {subs.length === 1 ? "abonat" : "abonați"} ·{" "}
             <span className="text-foreground/70">{session.user.email}</span>
@@ -249,7 +286,9 @@ const AdminAbonati = () => {
               {subs.map((s) => (
                 <tr key={s.id} className="border-t border-foreground/10">
                   <td className="px-4 py-3">{s.email}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{s.source ?? "—"}</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    {s.source ?? "—"}
+                  </td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {new Date(s.created_at).toLocaleString("ro-RO")}
                   </td>

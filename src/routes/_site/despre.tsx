@@ -9,8 +9,7 @@ export const Route = createFileRoute("/_site/despre")({
   component: About,
   head: () =>
     buildSeoHead({
-      title:
-        "Despre Alex Matescu — Inginer, antreprenor și autor",
+      title: "Despre Alex Matescu — Inginer, antreprenor și autor",
       description:
         "„Cine este Alex Matescu: inginer în automotive, antreprenor, autor al CRANDIT și fondator și coordonator AI Visibility Lab, unde documentează cercetare aplicată în AI Visibility, GEO și AEO.",
       canonical: `${BASE}/despre`,

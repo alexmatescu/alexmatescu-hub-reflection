@@ -302,14 +302,15 @@ const Calatoria = () => {
         </h1>
         <div className="mt-8 max-w-2xl space-y-5 text-lg text-muted-foreground leading-relaxed">
           <p>
-            Aceasta este povestea drumului meu de la copilăria într-un sat din Gorj
-            până la inginerie, antreprenoriat, scris și proiectele pe care le construiesc
-            astăzi.
+            Aceasta este povestea drumului meu de la copilăria într-un sat din
+            Gorj până la inginerie, antreprenoriat, scris și proiectele pe care
+            le construiesc astăzi.
           </p>
           <p>Nu este o poveste despre un traseu liniar.</p>
           <p>
-            Este o poveste despre încercări, muncă, mutări, eșecuri, disciplină, oameni,
-            locuri, proiecte și lecțiile care au început, în timp, să capete sens.
+            Este o poveste despre încercări, muncă, mutări, eșecuri, disciplină,
+            oameni, locuri, proiecte și lecțiile care au început, în timp, să
+            capete sens.
           </p>
         </div>
       </section>
@@ -319,28 +320,32 @@ const Calatoria = () => {
         <p className="eyebrow mb-6">Pe scurt</p>
         <div className="max-w-3xl space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            Alexandru (Alex) Matescu este inginer, antreprenor, fondator și coordonator 
-            AI Visibility Lab și autor român, născut și crescut în Strâmba Jiu, județul Gorj.
+            Alexandru (Alex) Matescu este inginer, antreprenor, fondator și
+            coordonator AI Visibility Lab și autor român, născut și crescut în
+            Strâmba Jiu, județul Gorj.
           </p>
           <p className="text-muted-foreground">
-            Parcursul său include experiențe în mediul rural, educație tehnică, muncă în
-            restaurante, call-center, fabrică, inginerie automotive, vânzări, consultanță
-            financiară, antreprenoriat, scris și dezvoltare personală.
+            Parcursul său include experiențe în mediul rural, educație tehnică,
+            muncă în restaurante, call-center, fabrică, inginerie automotive,
+            vânzări, consultanță financiară, antreprenoriat, scris și dezvoltare
+            personală.
           </p>
           <p className="text-muted-foreground">
-            A studiat Automatică și Informatică Aplicată la Facultatea de Automatică,
-            Calculatoare și Electronică din Craiova, unde a urmat studiile de licență în
-            perioada 2013–2017 și studiile de master în perioada 2017–2020.
+            A studiat Automatică și Informatică Aplicată la Facultatea de
+            Automatică, Calculatoare și Electronică din Craiova, unde a urmat
+            studiile de licență în perioada 2013–2017 și studiile de master în
+            perioada 2017–2020.
           </p>
           <p className="text-muted-foreground">
-            După ce a lucrat în domenii diferite și a construit proiecte care au avut
-            rezultate diferite, Alex Matescu a început să documenteze public lecțiile
-            învățate despre muncă, disciplină, succes, tehnologie, antreprenoriat și sens.
+            După ce a lucrat în domenii diferite și a construit proiecte care au
+            avut rezultate diferite, Alex Matescu a început să documenteze
+            public lecțiile învățate despre muncă, disciplină, succes,
+            tehnologie, antreprenoriat și sens.
           </p>
           <p className="text-muted-foreground">
-            Printre proiectele sale se numără CRANDIT – Mitul succesului peste noapte,
-            afacerea de familie din mediul rural, Taste the Corn, Atracțiile României
-            și AI Visibility Lab.
+            Printre proiectele sale se numără CRANDIT – Mitul succesului peste
+            noapte, afacerea de familie din mediul rural, Taste the Corn,
+            Atracțiile României și AI Visibility Lab.
           </p>
         </div>
       </section>
@@ -434,7 +439,9 @@ const Calatoria = () => {
           >
             <div>
               <p className="eyebrow mb-3">Continuă</p>
-              <p className="font-serif text-2xl leading-snug">Vezi proiectele</p>
+              <p className="font-serif text-2xl leading-snug">
+                Vezi proiectele
+              </p>
               <p className="mt-3 text-sm text-muted-foreground">
                 Ce construiesc acum și ce am închis pe drum.
               </p>
@@ -448,7 +455,9 @@ const Calatoria = () => {
           >
             <div>
               <p className="eyebrow mb-3">Citește</p>
-              <p className="font-serif text-2xl leading-snug">CRANDIT — cartea</p>
+              <p className="font-serif text-2xl leading-snug">
+                CRANDIT — cartea
+              </p>
               <p className="mt-3 text-sm text-muted-foreground">
                 Distilarea acestui drum într-un singur volum.
               </p>

@@ -12,7 +12,7 @@ export const metadataCitareAiStudiuDeCazMeta: LabArticleMeta = {
   canonical:
     "https://delamatescu.ro/lab/articole/metadata-citare-ai-studiu-de-caz",
   category: "Technical Visibility",
-  articleType: "Studiu de caz",
+  articleType: "Analiză de caz",
   datePublished: "2026-08-05",
   dateModified: "2026-08-10",
   lastReviewed: "2026-08-17",

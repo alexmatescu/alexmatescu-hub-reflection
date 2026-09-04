@@ -8,11 +8,11 @@ const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
 const ovbLogo = "/images/blog/ovb-logo.webp";
 
 const statusTone: Record<string, string> = {
-  "activ": "text-emerald-800 bg-emerald-100/60",
+  activ: "text-emerald-800 bg-emerald-100/60",
   "în lucru": "text-amber-900 bg-amber-100/60",
-  "închis": "text-stone-700 bg-stone-200/70",
-  "finalizat": "text-stone-700 bg-stone-200/70",
-  "concept": "text-foreground/70 bg-foreground/5",
+  închis: "text-stone-700 bg-stone-200/70",
+  finalizat: "text-stone-700 bg-stone-200/70",
+  concept: "text-foreground/70 bg-foreground/5",
 };
 
 /** „Economedia · Turnul Sfatului · +2” — featured primele, restul numărate. */
@@ -20,10 +20,14 @@ const pressSummary = (slug: string): string | null => {
   const entries = getPresaEntriesBySubject(slug);
   if (entries.length === 0) return null;
 
-  const sorted = [...entries].sort((a, b) => (a.featured === b.featured ? 0 : a.featured ? -1 : 1));
+  const sorted = [...entries].sort((a, b) =>
+    a.featured === b.featured ? 0 : a.featured ? -1 : 1,
+  );
   const shown = sorted.slice(0, 2).map((e) => e.publication);
   const remaining = sorted.length - shown.length;
-  return remaining > 0 ? `${shown.join(" · ")} · +${remaining}` : shown.join(" · ");
+  return remaining > 0
+    ? `${shown.join(" · ")} · +${remaining}`
+    : shown.join(" · ");
 };
 
 const Projects = () => {
@@ -40,7 +44,9 @@ const Projects = () => {
           Ce construiesc, ce testez, ce las să se așeze.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          Un portofoliu viu: cărți, experimente antreprenoriale, direcții de lucru. Unele sunt active, altele s-au închis, câteva sunt încă în formare.
+          Un portofoliu viu: cărți, experimente antreprenoriale, direcții de
+          lucru. Unele sunt active, altele s-au închis, câteva sunt încă în
+          formare.
         </p>
       </section>
 
@@ -51,7 +57,11 @@ const Projects = () => {
             return (
               <li key={p.slug}>
                 <Link
-                  to={p.slug === "geo-ai-visibility" ? "/lab/introducere" : `/proiecte/${p.slug}`}
+                  to={
+                    p.slug === "geo-ai-visibility"
+                      ? "/lab/introducere"
+                      : `/proiecte/${p.slug}`
+                  }
                   className="group grid md:grid-cols-12 gap-6 py-12 md:pt-16 md:pb-8 items-start hover:bg-surface/50 transition-colors px-2 md:px-4 -mx-2 md:-mx-4"
                 >
                   <div className="md:col-span-2 text-xs text-muted-foreground tabular-nums">
@@ -71,11 +81,17 @@ const Projects = () => {
                     <h2 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-balance group-hover:text-primary transition-colors">
                       {p.title}
                     </h2>
-                    <p className="mt-2 font-serif italic text-lg text-muted-foreground">{p.tagline}</p>
-                    <p className="mt-5 text-muted-foreground max-w-xl">{p.description}</p>
+                    <p className="mt-2 font-serif italic text-lg text-muted-foreground">
+                      {p.tagline}
+                    </p>
+                    <p className="mt-5 text-muted-foreground max-w-xl">
+                      {p.description}
+                    </p>
                   </div>
                   <div className="md:col-span-3 flex flex-col items-start md:items-end gap-4">
-                    <span className={`text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 ${statusTone[p.status]}`}>
+                    <span
+                      className={`text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 ${statusTone[p.status]}`}
+                    >
                       {p.status}
                     </span>
                     <span className="inline-flex items-center gap-2 text-sm">

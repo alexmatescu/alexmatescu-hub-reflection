@@ -80,7 +80,7 @@ image_alt: ""
 - `date_modified` se schimbă doar dacă articolul a fost efectiv modificat; `date_published` nu se resetează la update. Regulile complete ale celor trei date (când se schimbă fiecare, cum apar în byline și în JSON-LD) — §6.2.
 - **`date_published`** — pentru orice articol **nou**, momentul real al primei publicări publice, ISO complet cu oră și offset: `"YYYY-MM-DDTHH:mm:ss±HH:mm"` (ex. `"2026-08-27T20:00:00+03:00"`). Regula completă — §0.4 și §6.2. Articolele legacy, publicate înainte de acest contract, rămân cu `"YYYY-MM-DD"` — nu le migra retroactiv la timestamp complet fără o dovadă reală a orei (§0.4). `date_modified`/`last_reviewed` rămân `"YYYY-MM-DD"` — nu au nevoie de oră, nu schimba asta fără un motiv tehnic real.
 - **`category`** — clasificarea editorială principală, EXACT una dintre cele patru din taxonomia controlată: `Search & Retrieval`, `Technical Visibility`, `Entities & Citations`, `AI Ecosystem`. Sursă unică pentru indexul și filtrele din `/lab/articole` (§8/§5.5) — nu inventa o categorie nouă automat; dacă articolul nu se potrivește rezonabil în niciuna, semnalează în raport (§14) și cere decizie editorială înainte de a extinde taxonomia.
-- **`article_type`** — tipul editorial al materialului. Valorile editoriale existente în corpus: `Analiză`, `Studiu de caz`, `Ghid`, `Ghid / Analiză metodologică`. Distinct de `category` (clasificare tematică) și de `keywords` (metadata SEO, fără rol în filtrare).
+- **`article_type`** — tipul editorial al materialului. Valorile editoriale existente în corpus: `Analiză`, `Analiză de caz`, `Ghid`, `Ghid / Analiză metodologică`. Distinct de `category` (clasificare tematică) și de `keywords` (metadata SEO, fără rol în filtrare). **Nu folosi `Studiu de caz`** — de la introducerea secțiunii `/lab/studii-de-caz` (audit metodologic 2026-09-04), acel substantiv propriu e rezervat exclusiv documentării longitudinale a unei entități reale în acea secțiune; un articol din `/lab/articole` ancorat într-un caz concret, dar fără caracter longitudinal/multi-fază, e `Analiză de caz`.
 - `keywords` reflectă conținutul real, nu keyword stuffing — rol pur SEO/tematic, fără rol în filtrare. Nu adăuga `tags` separat: filtrarea din `/lab/articole` există, dar se bazează exclusiv pe `category` (§5.5); un `tags` separat ar duplica `keywords` fără un consumator real.
 - Nu adăuga `slug` sau `article_section` în frontmatter (vezi Faza 0 și §5.1 — derivate/hardcodate, nu per-articol).
 - Articolele publicate **înainte** de acest contract (frontmatter vechi, fără `last_reviewed`/`category`/`article_type`) rămân valide — nu le migra retroactiv decât dacă li se face oricum un update de conținut. Excepție unică documentată: cele 13 articole publicate până la 27 august 2026 au primit `category`/`article_type` retroactiv, într-o migrare punctuală a arhitecturii indexului (28 august 2026) — nu un precedent pentru migrări retroactive de rutină.
@@ -96,6 +96,12 @@ Pentru orice articol nou:
 3. Nu inventa niciodată o valoare — nu `00:00`, nu `09:00`, nu ora commitului, nu ora rulării agentului "ca să fie completă".
 
 Pentru articolele **legacy** (publicate înainte de acest contract, cu `date_published` doar `YYYY-MM-DD`): dacă ora reală a publicării nu poate fi verificată dintr-o sursă first-party clară (nu doar un commit timestamp — vezi mai sus), păstrează data existentă, fără oră. Sortarea/indexul (§8) sunt backward-compatible cu acest format.
+
+### 0.5 — Structură de articol cu imagini (folder per articol)
+
+Un articol poate fi furnizat fie ca fișier `.md` unic (structura curentă, `src/content/lab/articles/{n}.{slug}.md`), fie ca **folder dedicat** conținând fișierul `.md` sursă și un subfolder `images/` cu imaginile referențiate în el (`{folder-articol}/{slug}.md` + `{folder-articol}/images/*`). Ambele forme sunt valide — detectează care e cazul înainte de a continua.
+
+Dacă `.md`-ul conține imagini Markdown locale de forma `![alt text](./images/nume-fisier.jpg)`, tratează calea ca fiind relativă la fișierul `.md` sursă (nu la rădăcina proiectului). Regulile complete de procesare a acestor imagini — verificare, copiere, HTML semantic, ce oprește publicarea — sunt la §6.3; nu le duplica sau reinterpreta aici.
 
 ---
 
@@ -250,7 +256,7 @@ Opțional. Nu crea FAQ doar pentru schema markup — doar dacă există întreb�
 Sursa unică pentru indexul și filtrele din `/lab/articole` (§8) — nu duplica aceste valori în alt registry (`labNav.children`, un array separat de cards etc.).
 
 - **`category`** (`LabArticleCategory`, `src/data/lab-seo.ts`) — clasificarea editorială principală, taxonomie controlată, EXACT patru valori: `Search & Retrieval`, `Technical Visibility`, `Entities & Citations`, `AI Ecosystem`. Nu inventa o categorie nouă automat: dacă articolul nu se potrivește rezonabil în niciuna dintre ele, semnalează explicit în raport (§14) și cere decizie editorială explicită înainte de a extinde union type-ul. Determină `articleSection` în JSON-LD graph (§5.2).
-- **`articleType`** (`LabArticleType`) — tipul editorial al materialului. Valorile existente în corpus: `Analiză`, `Studiu de caz`, `Ghid`, `Ghid / Analiză metodologică`. Extinde doar cu decizie editorială explicită, nu automat.
+- **`articleType`** (`LabArticleType`) — tipul editorial al materialului. Valorile existente în corpus: `Analiză`, `Analiză de caz`, `Ghid`, `Ghid / Analiză metodologică`. Extinde doar cu decizie editorială explicită, nu automat. `Analiză de caz` (nu `Studiu de caz` — rezervat secțiunii `/lab/studii-de-caz`, vezi §0.3).
 - Distincție de rol: `category` = clasificare tematică (index + filtre); `articleType` = tipul materialului (afișat lângă `category` în index, format `CATEGORIE · TIP`); `keywords` = metadata SEO/tematică, fără rol în filtrare. Nu introduce `tags` — a fost evaluat și respins explicit (§0.3).
 - Capitalizarea editorială (`"Search & Retrieval"`, `"Analiză"` etc.) e valoarea canonică din date — UI-ul poate aplica `text-transform: uppercase` prin CSS pentru afișare, dar nu schimba valoarea din `.ts`/`.md` doar pentru styling.
 - `category`/`articleType` din `.md` (frontmatter) și `.ts` (Meta) trebuie să fie identice — verifică asta explicit (checklist final).
@@ -309,6 +315,34 @@ Byline-ul și footerul au roluri diferite și **amândouă** trebuie păstrate �
 
 Nu inventa o actualizare pentru freshness: dacă articolul n-a fost modificat după publicare, nu afișa în byline un „Actualizat:” fictiv doar ca semnal de prospețime. Dacă implementarea tehnică cere o valoare pentru `dateModified` în JSON-LD (câmp neopțional în tipul curent), poate fi tehnic egală cu `datePublished`, dar interfața vizibilă (byline) nu trebuie să sugereze cititorului o actualizare care nu a avut loc.
 
+### 6.3 — Imagini inline / evidence figures
+
+Distinct de imaginea principală de articol (`image`/`imageAlt`, frontmatter + Meta, §0.3/§5.3): un articol poate conține, în corpul `.md`, imagini locale referențiate inline, de forma:
+
+```markdown
+![alt text](./images/nume-fisier.jpg)
+```
+
+Calea e relativă la fișierul `.md` sursă (§0.5), nu la rădăcina proiectului. Pentru fiecare imagine inline găsită în `.md`:
+
+1. **Verifică fizic** că fișierul există la calea indicată, relativ la `.md`.
+2. **Nu** înlocui imaginea, nu o regenera, nu-i modifica conținutul — e evidence/captură reală, nu ilustrație generată.
+3. **Copiaz-o neschimbată** în `public/images/lab/{slug}/`.
+4. Păstrează **numele original** al fișierului, dacă nu apare un conflict tehnic (ex. alt fișier deja prezent cu același nume în același folder). Dacă apare un conflict, nu redenumi silențios — semnalează-l explicit în raport (§14) și cere decizie.
+5. În HTML-ul articolului (`.ts`, Faza 6), înlocuiește calea relativă din Markdown cu calea publică: `/images/lab/{slug}/{filename}`.
+6. Convertește imaginea și caption-ul asociat într-un element semantic `<figure>`:
+   ```html
+   <figure>
+     <img src="/images/lab/{slug}/{filename}" alt="{alt text — exact din Markdown}" loading="lazy" />
+     <figcaption>{caption — exact din documentul sursă, dacă există}</figcaption>
+   </figure>
+   ```
+   `alt` = exact textul din `![...]` al Markdown-ului sursă. `figcaption` = exact caption-ul deja existent lângă imagine în document (paragraf/italic imediat sub ea, sau orice convenție folosită efectiv de autor) — nu un rezumat sau o reformulare.
+7. **Nu inventa** `alt`, caption, filename sau imagine lipsă. Dacă `.md` nu are un caption vizibil lângă o imagine, `<figure>` rămâne fără `<figcaption>` — nu completa unul ca să pară complet.
+8. Dacă o imagine referențiată în `.md` **nu există** fizic în `images/`, **oprește publicarea** și raportează exact fișierul lipsă (numele așteptat + calea relativă din Markdown) — nu publica articolul cu o imagine spartă, nu o înlocui cu un placeholder, nu omite silențios `<figure>`-ul.
+9. Dacă în folderul `images/` există fișiere **care nu sunt referențiate** în `.md`, nu le copia și nu le publica automat — listează-le explicit în raportul final (§14) ca fișiere neutilizate; decizia de a le folosi sau șterge rămâne a userului.
+10. După build (Faza 10), verifică efectiv — pe disc, și runtime dacă mediul permite (§10.1) — că fiecare `src` de imagine folosit în articol corespunde unui fișier existent în `public/images/lab/{slug}/`. Nu presupune că o copiere reușită mai devreme e încă validă.
+
 ---
 
 ## Faza 7 — Surse și metodologie
@@ -327,7 +361,8 @@ Actualizează exact:
 2. **`src/data/lab-seo.ts`** — import `{slug}Meta`, adaugă-l în array-ul `labArticleMeta`. **Poziția în array nu contează** — nu insera la început, la sfârșit sau într-o poziție anume ca să influențezi ordinea afișată; `sortedLabArticles` (derivat automat din `labArticleMeta`, tot în `lab-seo.ts`) reordonează totul după `datePublished` la runtime. Adaugă-l oriunde e convenabil (convențional, la coadă).
 3. **`src/pages/Lab.tsx`** — import `{slug}Html`, adaugă în `labPageContent` cu cheia `/lab/articole/{slug}`.
 4. **`src/data/lab.ts`** — copil nou în `children` al nodului `/lab/articole` din `labNav`: `{ to, label: title, lead: description }`. Necesar pentru routing (`findLabPage`/`findLabParent`) și pentru H1/lead al paginii individuale a articolului — **NU** controlează indexul de pe `/lab/articole` (vezi mai jos) și nici poziția în el.
-5. **`public/sitemap.xml`** — vezi §8.2.
+5. **`public/images/lab/{slug}/`** — dacă articolul are imagini inline (§6.3/§0.5), confirmă că toate au fost copiate neschimbate aici, cu numele original, înainte de a considera wiring-ul complet.
+6. **`public/sitemap.xml`** — vezi §8.2.
 
 **Nu** edita manual `src/data/lab-content/avl-401.ts` (introducerea/textul din josul indexului) — rămâne conținut static, separat de lista de articole.
 
@@ -372,6 +407,7 @@ Verificat: proiectul **nu are** integrare IndexNow (niciun fișier de cheie, nic
 **Indexability**: fără `noindex` accidental, canonical corect, rută existentă, fără conflict canonical/sitemap.
 **URL consistency**: identice — canonical, slug, rută, sitemap, `lab.ts`, `Lab.tsx`, `lab-seo.ts`, numele fișierului `.ts`.
 **Index `/lab/articole`**: `category`/`articleType` identice între `.md` și `.ts` (§5.5); articolul apare exact o dată în index, la poziția corectă (sortare descrescătoare după `datePublished`, §8.1); dacă are cel mai recent `datePublished` din corpus, e singurul cu eticheta „CEL MAI NOU”; `articleSection` din JSON-LD graph reflectă `category` (§5.2).
+**Imagini inline** (dacă articolul are, §6.3): fiecare `src` folosit în `.ts` corespunde unui fișier existent fizic în `public/images/lab/{slug}/`; nicio imagine referențiată în `.md` nu lipsește din output; nicio imagine neutilizată din `images/` n-a fost copiată fără să fie raportată.
 
 ### 9.1 — AI crawler accessibility
 
@@ -391,7 +427,7 @@ npm run build
 
 ### 10.1 — Runtime audit
 
-Dacă mediul permite, pornește serverul de dev și confirmă pe ruta reală: title, meta description, canonical, H1, conținut, footnotes, linkuri interne/externe, JSON-LD (formă corectă — legacy sau graph, după caz), FAQ, imagine dacă există. Verifică și pe `/lab/articole`: articolul nou apare (o singură dată), la poziția corectă în listă, cu „CEL MAI NOU” dacă și numai dacă e efectiv cel mai nou global, cu `category`/`articleType` afișate corect, cu data vizibilă fără oră, și că filtrul categoriei lui îl include. Dacă nu poți rula verificarea runtime, spune explicit în raport (nu presupune că a trecut).
+Dacă mediul permite, pornește serverul de dev și confirmă pe ruta reală: title, meta description, canonical, H1, conținut, footnotes, linkuri interne/externe, JSON-LD (formă corectă — legacy sau graph, după caz), FAQ, imagine dacă există. Dacă articolul are imagini inline (§6.3), confirmă că fiecare `<figure>` se randează efectiv (imaginea se încarcă, nu 404), cu `alt`/`figcaption` corecte. Verifică și pe `/lab/articole`: articolul nou apare (o singură dată), la poziția corectă în listă, cu „CEL MAI NOU” dacă și numai dacă e efectiv cel mai nou global, cu `category`/`articleType` afișate corect, cu data vizibilă fără oră, și că filtrul categoriei lui îl include. Dacă nu poți rula verificarea runtime, spune explicit în raport (nu presupune că a trecut).
 
 ---
 
@@ -428,8 +464,9 @@ Scalează cu scopul din §0.2. Pentru **articol nou/rescriere majoră**, raportu
 7. Entity/schema: Person, WebSite (dacă `graph`), Article (inclusiv `articleSection` = `category`), WebPage (dacă `graph`), FAQ dacă există, publisher, citation.
 8. Internal linking adăugat.
 9. Index `/lab/articole`: confirmare că articolul apare automat (poziție + Featured determinate de `datePublished`, fără nicio modificare manuală a indexului) — vezi §8.1.
-10. Rezultate tehnice: `typecheck` / `lint` / `build` / `runtime check` — fiecare PASS/FAIL/NOT RUN.
-11. Limitări — ce nu a putut fi verificat (inclusiv, dacă e cazul, ora reală de publicare nedemonstrabilă pentru un articol legacy — §0.4).
+10. Imagini inline (dacă articolul are, §6.3): listă exactă a imaginilor copiate în `public/images/lab/{slug}/`; orice fișier lipsă care a oprit publicarea; orice fișier din `images/` neutilizat în `.md`, raportat dar necopiat.
+11. Rezultate tehnice: `typecheck` / `lint` / `build` / `runtime check` — fiecare PASS/FAIL/NOT RUN.
+12. Limitări — ce nu a putut fi verificat (inclusiv, dacă e cazul, ora reală de publicare nedemonstrabilă pentru un articol legacy — §0.4).
 
 Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doar afirmațiile modificate din claim ledger, rezultatele tehnice.
 
@@ -481,6 +518,16 @@ Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doa
 - [ ] Niciun count de articole nu e hardcodat în cod sau în formulările din acest SKILL.md.
 - [ ] `category`/`articleType` din `.md` și `.ts` sunt identice.
 - [ ] Timestamp-ul complet din metadata și data vizibilă (byline + index) nu se contrazic.
+
+**Imagini inline / evidence figures (§0.5/§6.3) — dacă articolul are:**
+
+- [ ] Fiecare imagine referențiată în `.md` a fost verificată fizic înainte de conversie — nicio presupunere de existență.
+- [ ] Nicio imagine n-a fost înlocuită, regenerată sau modificată — copiate neschimbate, cu numele original (sau conflict semnalat explicit).
+- [ ] Toate au fost copiate în `public/images/lab/{slug}/`, iar `<img src>` din `.ts` folosește exact `/images/lab/{slug}/{filename}`.
+- [ ] Fiecare imagine e într-un `<figure>` semantic, cu `alt` preluat exact din Markdown și `figcaption` preluat exact din caption-ul existent (fără `<figcaption>` inventat dacă nu exista caption).
+- [ ] Nicio imagine lipsă n-a fost ignorată — dacă a fost cazul, publicarea s-a oprit și fișierul lipsă a fost raportat explicit (§14), nu înlocuit cu placeholder.
+- [ ] Imaginile din `images/` neutilizate în `.md` au fost doar raportate (§14), nu copiate/publicate automat.
+- [ ] După build, fiecare `src` de imagine din articol a fost verificat că există fizic în `public/images/lab/{slug}/` (§10.1).
 
 ---
 

@@ -1,18 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LabDetail } from "@/pages/Lab";
-import { buildLabArticleHead, buildLabPageHead } from "@/data/lab-seo";
+import {
+  buildLabArticleHead,
+  buildLabCaseStudyHead,
+  buildLabPageHead,
+} from "@/data/lab-seo";
 
 const BASE = "https://delamatescu.ro";
 
 export const Route = createFileRoute("/_site/lab/$parent/$slug")({
   component: RouteComponent,
   head: ({ params }) =>
-    // Articolele din /lab/articole/:slug au meta dedicată (title, description,
+    // Articolele din /lab/articole/:slug și studiile de caz din
+    // /lab/studii-de-caz/:slug au meta dedicată (title, description,
     // OG/Twitter, JSON-LD Article+FAQPage) randată aici server-side. Restul
     // paginilor /lab/:parent/:slug (ex. /lab/cercetare/*, /lab/metodologie/*)
     // cad pe head-ul generic de pagină Lab (CreativeWork), și doar dacă nici
     // acela nu găsește pagina, pe fallback-ul minim (og:url + canonical).
     buildLabArticleHead(params.slug) ??
+    buildLabCaseStudyHead(params.slug) ??
     buildLabPageHead(`/lab/${params.parent}/${params.slug}`) ?? {
       meta: [
         {

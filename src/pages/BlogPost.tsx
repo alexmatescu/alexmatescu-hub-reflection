@@ -5,7 +5,11 @@ import NewsletterForm from "@/components/NewsletterForm";
 import Seo from "@/components/Seo";
 
 const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString("ro-RO", { day: "numeric", month: "long", year: "numeric" });
+  new Date(iso).toLocaleDateString("ro-RO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -15,7 +19,10 @@ const BlogPost = () => {
     return (
       <section className="container-editorial py-32 text-center">
         <h1 className="font-serif text-4xl">Articolul nu există</h1>
-        <Link to="/blog" className="mt-8 inline-flex items-center gap-2 link-underline">
+        <Link
+          to="/blog"
+          className="mt-8 inline-flex items-center gap-2 link-underline"
+        >
           <ArrowLeft className="h-4 w-4" /> Înapoi la blog
         </Link>
       </section>
@@ -27,16 +34,24 @@ const BlogPost = () => {
   return (
     <>
       <Seo
-        title={post.seoTitle ? `${post.seoTitle} | Alex Matescu` : `${post.title} — Alex Matescu`}
+        title={
+          post.seoTitle
+            ? `${post.seoTitle} | Alex Matescu`
+            : `${post.title} — Alex Matescu`
+        }
         description={post.metaDescription ?? post.excerpt}
         canonicalUrl={`https://delamatescu.ro/blog/${post.slug}`}
         ogType="article"
         ogTitle={post.ogTitle ?? post.seoTitle ?? post.title}
-        ogDescription={post.ogDescription ?? post.metaDescription ?? post.excerpt}
+        ogDescription={
+          post.ogDescription ?? post.metaDescription ?? post.excerpt
+        }
         ogSiteName="Alex Matescu"
         ogLocale="ro_RO"
         {...(post.twitterTitle ? { twitterTitle: post.twitterTitle } : {})}
-        {...(post.twitterDescription ? { twitterDescription: post.twitterDescription } : {})}
+        {...(post.twitterDescription
+          ? { twitterDescription: post.twitterDescription }
+          : {})}
         robots="index, follow"
         {...(post.heroImage?.src
           ? {
@@ -51,10 +66,12 @@ const BlogPost = () => {
         // JS — nu-l mai duplicăm aici.
       />
 
-
       <article>
         <header className="container-editorial pt-20 md:pt-28 pb-12">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
+          >
             <ArrowLeft className="h-4 w-4" /> Toate articolele
           </Link>
           <div className="max-w-3xl">
@@ -121,9 +138,17 @@ const BlogPost = () => {
             <p className="eyebrow mb-8">Continuă lectura</p>
             <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
               {related.map((p) => (
-                <Link key={p.slug} to={`/blog/${p.slug}`} className="group bg-background p-8 hover:bg-surface transition-colors">
-                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">{p.category}</p>
-                  <h3 className="font-serif text-2xl leading-snug group-hover:text-primary transition-colors">{p.title}</h3>
+                <Link
+                  key={p.slug}
+                  to={`/blog/${p.slug}`}
+                  className="group bg-background p-8 hover:bg-surface transition-colors"
+                >
+                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">
+                    {p.category}
+                  </p>
+                  <h3 className="font-serif text-2xl leading-snug group-hover:text-primary transition-colors">
+                    {p.title}
+                  </h3>
                   <p className="mt-3 text-muted-foreground">{p.excerpt}</p>
                 </Link>
               ))}

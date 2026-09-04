@@ -26,29 +26,39 @@ const NewsletterForm = ({
     e.preventDefault();
     if (!email.includes("@")) return;
     setLoading(true);
-    const source = typeof window !== "undefined" ? window.location.pathname : null;
-    const table = list === "crandit" ? "crandit_waitlist" : "newsletter_subscribers";
+    const source =
+      typeof window !== "undefined" ? window.location.pathname : null;
+    const table =
+      list === "crandit" ? "crandit_waitlist" : "newsletter_subscribers";
     const { error } = await supabase
       .from(table)
       .insert({ email: email.trim().toLowerCase(), source });
     setLoading(false);
     if (error && error.code !== "23505") {
-      toast({ title: "Ceva nu a mers", description: error.message, variant: "destructive" });
+      toast({
+        title: "Ceva nu a mers",
+        description: error.message,
+        variant: "destructive",
+      });
       return;
     }
     setSent(true);
     toast({
       title: "Mulțumesc.",
-      description: error?.code === "23505"
-        ? "Erai deja pe listă."
-        : "Te-am adăugat pe listă.",
+      description:
+        error?.code === "23505"
+          ? "Erai deja pe listă."
+          : "Te-am adăugat pe listă.",
     });
     setEmail("");
   };
 
   if (variant === "compact") {
     return (
-      <form onSubmit={handle} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+      <form
+        onSubmit={handle}
+        className="flex flex-col sm:flex-row gap-3 w-full max-w-md"
+      >
         <input
           type="email"
           required
@@ -69,30 +79,48 @@ const NewsletterForm = ({
   }
 
   return (
-    <div className={cn(
-      "relative overflow-hidden border p-8 md:p-14",
-      theme === "crandit"
-        ? "border-[#c9a86c]/15 bg-[#1a1a1a]"
-        : "border-foreground/10 bg-surface"
-    )}>
-      <div className={cn(
-        "absolute inset-0 bg-grain opacity-60 pointer-events-none",
-        theme === "crandit" && "opacity-40"
-      )} />
+    <div
+      className={cn(
+        "relative overflow-hidden border p-8 md:p-14",
+        theme === "crandit"
+          ? "border-[#c9a86c]/15 bg-[#1a1a1a]"
+          : "border-foreground/10 bg-surface",
+      )}
+    >
+      <div
+        className={cn(
+          "absolute inset-0 bg-grain opacity-60 pointer-events-none",
+          theme === "crandit" && "opacity-40",
+        )}
+      />
       <div className="relative grid md:grid-cols-12 gap-8 items-end">
         <div className="md:col-span-7">
-          <p className={cn(
-            "eyebrow mb-5",
-            theme === "crandit" && "text-[#c9a86c]"
-          )}>Newsletter</p>
-          <h3 className={cn(
-            "text-3xl md:text-4xl leading-tight text-balance",
-            theme === "crandit" ? "font-trajan text-[#c9a86c]" : "font-serif"
-          )}>{title}</h3>
-          <p className={cn(
-            "mt-4 max-w-lg",
-            theme === "crandit" ? "text-[#f5f0e8]/70" : "text-muted-foreground"
-          )}>{description}</p>
+          <p
+            className={cn(
+              "eyebrow mb-5",
+              theme === "crandit" && "text-[#c9a86c]",
+            )}
+          >
+            Newsletter
+          </p>
+          <h3
+            className={cn(
+              "text-3xl md:text-4xl leading-tight text-balance",
+              theme === "crandit" ? "font-trajan text-[#c9a86c]" : "font-serif",
+            )}
+          >
+            {title}
+          </h3>
+          <p
+            className={cn(
+              "mt-4 max-w-lg",
+              theme === "crandit"
+                ? "text-[#f5f0e8]/70"
+                : "text-muted-foreground",
+            )}
+          >
+            {description}
+          </p>
         </div>
         <form onSubmit={handle} className="md:col-span-5 flex flex-col gap-3">
           <input
@@ -106,7 +134,7 @@ const NewsletterForm = ({
               "h-12 px-4 border outline-hidden text-sm transition-colors",
               theme === "crandit"
                 ? "bg-[#151515] border-[#c9a86c]/20 text-[#f5f0e8] placeholder:text-[#f5f0e8]/40 focus:border-[#c9a86c]/50"
-                : "bg-background border-foreground/15 focus:border-foreground/40"
+                : "bg-background border-foreground/15 focus:border-foreground/40",
             )}
           />
           <button
@@ -115,15 +143,21 @@ const NewsletterForm = ({
               "h-12 px-6 text-sm tracking-wide transition-colors",
               theme === "crandit"
                 ? "bg-[#c9a86c] text-[#151515] hover:bg-[#c9a86c]/90"
-                : "bg-primary text-primary-foreground hover:bg-primary/90"
+                : "bg-primary text-primary-foreground hover:bg-primary/90",
             )}
           >
             {sent ? "Te-am adăugat" : "Intră pe listă"}
           </button>
-          <p className={cn(
-            "text-xs",
-            theme === "crandit" ? "text-[#f5f0e8]/50" : "text-muted-foreground"
-          )}>Te poți dezabona oricând. Fără spam.</p>
+          <p
+            className={cn(
+              "text-xs",
+              theme === "crandit"
+                ? "text-[#f5f0e8]/50"
+                : "text-muted-foreground",
+            )}
+          >
+            Te poți dezabona oricând. Fără spam.
+          </p>
         </form>
       </div>
     </div>

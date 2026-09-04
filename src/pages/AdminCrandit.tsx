@@ -12,7 +12,11 @@ type Entry = {
 };
 
 const AdminCrandit = () => {
-  useSeo({ title: "Admin — CRANDIT | Alex Matescu", description: "Panou de administrare.", noIndex: true });
+  useSeo({
+    title: "Admin — CRANDIT | Alex Matescu",
+    description: "Panou de administrare.",
+    noIndex: true,
+  });
 
   const [session, setSession] = useState<Session | null>(null);
   const [checking, setChecking] = useState(true);
@@ -30,7 +34,9 @@ const AdminCrandit = () => {
       setSession(data.session);
       setChecking(false);
     });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setSession(s));
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) =>
+      setSession(s),
+    );
     return () => sub.subscription.unsubscribe();
   }, []);
 
@@ -61,7 +67,11 @@ const AdminCrandit = () => {
       .order("created_at", { ascending: false });
     setLoading(false);
     if (error) {
-      toast({ title: "Eroare", description: error.message, variant: "destructive" });
+      toast({
+        title: "Eroare",
+        description: error.message,
+        variant: "destructive",
+      });
       return;
     }
     setEntries((data as Entry[]) ?? []);
@@ -70,10 +80,17 @@ const AdminCrandit = () => {
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setAuthLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
     setAuthLoading(false);
     if (error) {
-      toast({ title: "Autentificare eșuată", description: error.message, variant: "destructive" });
+      toast({
+        title: "Autentificare eșuată",
+        description: error.message,
+        variant: "destructive",
+      });
     }
   };
 
@@ -83,9 +100,16 @@ const AdminCrandit = () => {
 
   const remove = async (id: string) => {
     if (!confirm("Sigur ștergi această intrare?")) return;
-    const { error } = await supabase.from("crandit_waitlist").delete().eq("id", id);
+    const { error } = await supabase
+      .from("crandit_waitlist")
+      .delete()
+      .eq("id", id);
     if (error) {
-      toast({ title: "Eroare", description: error.message, variant: "destructive" });
+      toast({
+        title: "Eroare",
+        description: error.message,
+        variant: "destructive",
+      });
       return;
     }
     setEntries((s) => s.filter((x) => x.id !== id));
@@ -93,7 +117,9 @@ const AdminCrandit = () => {
 
   const exportCsv = () => {
     const header = "email,source,created_at\n";
-    const rows = entries.map((s) => `${s.email},${s.source ?? ""},${s.created_at}`).join("\n");
+    const rows = entries
+      .map((s) => `${s.email},${s.source ?? ""},${s.created_at}`)
+      .join("\n");
     const blob = new Blob([header + rows], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -103,7 +129,10 @@ const AdminCrandit = () => {
     URL.revokeObjectURL(url);
   };
 
-  if (checking) return <div className="container py-24 text-muted-foreground">Se încarcă…</div>;
+  if (checking)
+    return (
+      <div className="container py-24 text-muted-foreground">Se încarcă…</div>
+    );
 
   if (!session) {
     return (
@@ -145,9 +174,13 @@ const AdminCrandit = () => {
         <p className="eyebrow mb-4">Acces restricționat</p>
         <h1 className="font-serif text-3xl mb-4">Cont fără rol de admin</h1>
         <p className="text-muted-foreground mb-8">
-          Autentificat ca <span className="text-foreground">{session.user.email}</span>.
+          Autentificat ca{" "}
+          <span className="text-foreground">{session.user.email}</span>.
         </p>
-        <button onClick={signOut} className="text-sm underline underline-offset-4">
+        <button
+          onClick={signOut}
+          className="text-sm underline underline-offset-4"
+        >
           Deconectare
         </button>
       </div>
@@ -159,7 +192,9 @@ const AdminCrandit = () => {
       <div className="flex items-end justify-between gap-4 mb-10 flex-wrap">
         <div>
           <p className="eyebrow mb-3">Administrare</p>
-          <h1 className="font-serif text-3xl md:text-4xl">Listă de așteptare CRANDIT</h1>
+          <h1 className="font-serif text-3xl md:text-4xl">
+            Listă de așteptare CRANDIT
+          </h1>
           <p className="text-muted-foreground mt-2">
             {entries.length} {entries.length === 1 ? "înscris" : "înscriși"} ·{" "}
             <span className="text-foreground/70">{session.user.email}</span>
@@ -179,7 +214,10 @@ const AdminCrandit = () => {
           >
             Reîncarcă
           </button>
-          <button onClick={signOut} className="h-10 px-4 text-sm text-muted-foreground hover:text-foreground">
+          <button
+            onClick={signOut}
+            className="h-10 px-4 text-sm text-muted-foreground hover:text-foreground"
+          >
             Deconectare
           </button>
         </div>
@@ -204,7 +242,9 @@ const AdminCrandit = () => {
               {entries.map((s) => (
                 <tr key={s.id} className="border-t border-foreground/10">
                   <td className="px-4 py-3">{s.email}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{s.source ?? "—"}</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    {s.source ?? "—"}
+                  </td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {new Date(s.created_at).toLocaleString("ro-RO")}
                   </td>

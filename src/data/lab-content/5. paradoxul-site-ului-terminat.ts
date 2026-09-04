@@ -11,7 +11,7 @@ export const paradoxulSiteuluiTerminatMeta: LabArticleMeta = {
     "Studiu de caz pe un site React construit cu Lovable: un request generic primește SPA shell-ul, în timp ce documentația Lovable spune că crawlerele verificate primesc HTML pre-randat. Ce demonstrează testul, ce nu demonstrează și cum verifici corect metadata, canonicalizarea și crawlabilitatea.",
   canonical: "https://delamatescu.ro/lab/articole/paradoxul-site-ului-terminat",
   category: "Technical Visibility",
-  articleType: "Studiu de caz",
+  articleType: "Analiză de caz",
   datePublished: "2026-08-05",
   dateModified: "2026-08-10",
   about: [

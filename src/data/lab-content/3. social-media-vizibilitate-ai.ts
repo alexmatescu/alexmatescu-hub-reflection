@@ -5,14 +5,15 @@ import type { LabArticleMeta } from "@/data/lab-seo";
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
  */
 export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
-  title: "De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI",
+  title:
+    "De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI",
   description:
     "Cum diferă vizibilitatea umană de vizibilitatea AI în social media. Analiză bazată pe surse publice, studii comerciale tratate separat după metodologie și reguli operaționale pentru artefacte persistente, entity resolution și distribuție.",
   canonical: "https://delamatescu.ro/lab/articole/social-media-vizibilitate-ai",
   category: "Entities & Citations",
   articleType: "Analiză",
   datePublished: "2026-08-14",
-  dateModified: "2026-08-14",
+  dateModified: "2026-09-04",
   about: [
     { name: "AI visibility" },
     { name: "Social media" },
@@ -66,7 +67,7 @@ export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const socialMediaVizibilitateAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-08-14">14 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-14">14 august 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-09-04">4 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-04">4 septembrie 2026</time></p>
 
       <p><strong>Vizibilitatea socială și vizibilitatea AI nu sunt același lucru. Numărul de urmăritori, reach-ul și engagementul unei platforme nu garantează că ideile publicate acolo pot fi recuperate, interpretate sau citate de un sistem AI. Pentru retrieval și citare contează în special dacă informația lasă în urmă un artefact persistent, adresabil, accesibil și ușor de extras. Platforma contează, dar accesul diferă între motoare și se schimbă în timp.</strong></p>
 
@@ -121,6 +122,8 @@ export const socialMediaVizibilitateAiHtml = `
       <p>Google și Reddit au anunțat în 2024 o colaborare care oferă Google acces mai structurat la conținutul Reddit.<sup><a href="#fn-3">3</a></sup> OpenAI și Reddit au anunțat separat un parteneriat în 2024.<sup><a href="#fn-4">4</a></sup></p>
 
       <p>Valoarea de aproximativ <strong>60 milioane USD anual</strong> asociată acordului Google–Reddit a fost raportată în presă în 2024 și trebuie tratată ca o valoare raportată pentru acel context, nu ca sumă contractuală permanentă.<sup><a href="#fn-5">5</a></sup></p>
+
+      <p>Acordul Google–Reddit nu e static: presa a raportat în iulie 2026 că negocierile de reînnoire au întâmpinat dificultăți, Reddit evaluând inclusiv posibilitatea de a restrânge accesul Google la conținutul platformei.<sup><a href="#fn-11">11</a></sup> La data verificării acestui articol, acordul nu era nici confirmat reînnoit, nici confirmat încheiat — situația trebuie tratată ca fluidă, nu ca fapt stabilit.</p>
 
       <p>Aceste acorduri pot facilita accesul la conținut, dar <strong>nu demonstrează că existența lor este cauza dominantă a frecvenței citării Reddit</strong>. Relevanța, retrieval-ul, forma întrebării, calitatea răspunsului, popularitatea și arhitectura fiecărui motor pot contribui separat.</p>
 
@@ -413,14 +416,14 @@ export const socialMediaVizibilitateAiHtml = `
 
       <h3>Notă de volatilitate</h3>
 
-      <p><strong>Ultima verificare factuală și a surselor: 10 august 2026.</strong> Comportamentul motoarelor AI, politicile platformelor sociale, accesul crawlerelor, acordurile comerciale, produsele AI și ponderile surselor citate se pot modifica frecvent. Afirmațiile despre accesibilitate, frecvența citării și prioritizarea platformelor descriu starea observabilă la această dată și trebuie reverificate periodic.</p>
+      <p><strong>Ultima verificare factuală și a surselor: 4 septembrie 2026.</strong> Comportamentul motoarelor AI, politicile platformelor sociale, accesul crawlerelor, acordurile comerciale, produsele AI și ponderile surselor citate se pot modifica frecvent. Afirmațiile despre accesibilitate, frecvența citării și prioritizarea platformelor descriu starea observabilă la această dată și trebuie reverificate periodic.</p>
 
       <h2>Surse și note</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">LinkedIn Help — documentația privind vizibilitatea profilului public în motoarele de căutare: <a href="https://www.linkedin.com/help/linkedin/answer/a543660/profile-does-or-doesn-t-appear-after-name-search-on-web" target="_blank" rel="noopener noreferrer">linkedin.com/help/…/a543660</a></li>
         <li id="fn-2">Lantern — <em>AI Citation Content Visibility Report</em>, februarie 2026. Raport comercial; cifrele trebuie interpretate strict în cadrul datasetului său: <a href="https://www.asklantern.com/reports/ai-citation-content-visibility-february-2026" target="_blank" rel="noopener noreferrer">asklantern.com/reports/ai-citation-content-visibility-february-2026</a></li>
-        <li id="fn-3">Reddit — anunț privind parteneriatul extins cu Google, februarie 2024: <a href="https://redditinc.com/news/our-partnership-with-google" target="_blank" rel="noopener noreferrer">redditinc.com/news/our-partnership-with-google</a></li>
+        <li id="fn-3">Google — anunț oficial privind parteneriatul extins cu Reddit (acces la Data API, colaborare Cloud/Vertex AI), 22 februarie 2024: <a href="https://blog.google/company-news/inside-google/company-announcements/expanded-reddit-partnership/" target="_blank" rel="noopener noreferrer">blog.google/…/expanded-reddit-partnership</a></li>
         <li id="fn-4">OpenAI — parteneriat cu Reddit, mai 2024: <a href="https://openai.com/index/openai-and-reddit-partnership/" target="_blank" rel="noopener noreferrer">openai.com/index/openai-and-reddit-partnership</a></li>
         <li id="fn-5">Reuters — relatări din 2024 privind valoarea de aproximativ 60 milioane USD/an a acordului Reddit–Google. Valoare raportată în presă, nu prezentată aici drept sumă contractuală permanentă.</li>
         <li id="fn-6">Evertune Documentation — definițiile metricilor precum Source Share, Visibility Score și Share of Answer: <a href="https://docs.evertune.ai/en/articles/12271101-evertune-metrics" target="_blank" rel="noopener noreferrer">docs.evertune.ai/en/articles/12271101-evertune-metrics</a></li>
@@ -428,7 +431,8 @@ export const socialMediaVizibilitateAiHtml = `
         <li id="fn-8">Reveal Marketing Research — „Accelerated integration of AI into Romanians' routines: usage increases from 47% to 68% in one year”, 2026. Raport comercial cu metodologie proprie; ChatGPT 83%, Gemini 35% în rezultatele publicate: <a href="https://reveal.ro/en/media-en/accelerated-integration-of-ai-into-romanians-routines-usage-increases-from-47-to-68-in-one-year/" target="_blank" rel="noopener noreferrer">reveal.ro/…/accelerated-integration-of-ai-into-romanians-routines</a></li>
         <li id="fn-9">Meta Newsroom — „New AI Tools to Help You Make Things Happen on Facebook”, 15 iunie 2026. Meta descrie AI Mode ca răspunzând pe baza opiniilor și recomandărilor distribuite public în aplicațiile Meta: <a href="https://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/" target="_blank" rel="noopener noreferrer">about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook</a></li>
         <li id="fn-10">Meta Newsroom — anunț din iulie 2026 privind folosirea Meta AI în Threads și posibilitatea de a partaja postări, imagini și videoclipuri Threads către Meta AI: <a href="https://about.fb.com/ja/news/2026/07/threads-meta-ai-dm/" target="_blank" rel="noopener noreferrer">about.fb.com/ja/news/2026/07/threads-meta-ai-dm</a></li>
+        <li id="fn-11">CNBC — „Reddit stock sinks on report it may not renew Google AI content deal", 22 iulie 2026, relatând o știre Wall Street Journal despre dificultăți în negocierile de reînnoire a acordului Reddit–Google din 2024: <a href="https://www.cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal.html" target="_blank" rel="noopener noreferrer">cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal</a></li>
       </ol>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și actualizare: 14 august 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și actualizare: 4 septembrie 2026.</em></p>
 `;

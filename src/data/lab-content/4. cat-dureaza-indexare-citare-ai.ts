@@ -9,7 +9,8 @@ export const catDureazaIndexareCitareAiMeta: LabArticleMeta = {
     "Cât durează până apari în Google și cât până te citează AI-ul? Ce știm, ce nu știm și ce poți măsura",
   description:
     "Ce documentează sursele oficiale despre crawl, indexare și apariția în răspunsurile AI, ce termene nu sunt publice și cum separi descoperirea, indexarea, clasarea și citarea. Analiză AI Visibility Lab.",
-  canonical: "https://delamatescu.ro/lab/articole/cat-dureaza-indexare-citare-ai",
+  canonical:
+    "https://delamatescu.ro/lab/articole/cat-dureaza-indexare-citare-ai",
   category: "Search & Retrieval",
   articleType: "Analiză",
   datePublished: "2026-08-05",

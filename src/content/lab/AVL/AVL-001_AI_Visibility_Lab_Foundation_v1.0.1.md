@@ -8,12 +8,12 @@ documentației
 | **Document ID** | AVL-001 |
 |----|----|
 | **Nivel** | A — Foundation |
-| **Versiune** | 1.0.1 |
+| **Versiune** | 1.1.0 |
 | **Statut** | Activ |
 | **Autor** | Alex Matescu |
 | **Organizație** | AI Visibility Lab |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 21 iulie 2026 |
+| **Ultima actualizare** | 4 septembrie 2026 |
 | **Limba** | română |
 | **URL canonic propus** | https://delamatescu.ro/lab |
 
@@ -480,6 +480,12 @@ diferența dintre fapt, observație și interpretare este esențială.
 
 16. articole editoriale și surse secundare.
 
+„Studii de caz" în această ierarhie desemnează studii de caz *externe*,
+folosite ca sursă/dovadă terță într-o cercetare — un sens distinct de
+„Studii de caz" ca secțiune proprie a laboratorului (Nivelul D2, §17),
+care documentează aplicarea metodologiei AI Visibility Lab asupra unei
+entități reale, nu o sursă citată din exterior.
+
 Această ordine nu înseamnă că o sursă aflată mai sus este suficientă
 pentru orice afirmație. Sursele sunt evaluate și după proximitatea față
 de afirmație, data actualizării, stabilitatea documentului, transparența
@@ -734,10 +740,49 @@ suficiente dovezi pentru confirmare.
 
 - standardele de scor și evaluare
 
+„Tabula Rasa" desemnează, canonic, metodologia AI Visibility Lab de
+măsurare longitudinală a unei entități, iar F0–F3 sunt fazele ei — nu
+identificatori de rulări individuale (acelea au ID propriu, vezi
+Rulare/Run în AVL-201 §5) și nu sinonime interschimbabile:
+
+- **F0 — baseline** (Tabula Rasa): starea entității înainte de orice
+  intervenție (AVL-201).
+- **F1 — casa entității**: consolidarea sursei canonice — site, date
+  structurate, dezambiguizare.
+- **F2 — prezența distribuită**: corroborarea din surse independente.
+- **F3 — re-măsurarea**: același set înghețat, același protocol, aceeași
+  taxonomie, atribuire onestă a schimbării.
+
+Definiția F1–F3 de mai sus e deja descrisă la nivel de cercetare
+(AVL-104), dar nu are încă un document normativ propriu de Nivel C
+(AVL-202/203/204) — acestea rămân de scris. Până atunci, orice utilizare
+informală a „F1"/„F2" într-un document nepublicat sau într-un draft (ex.
+ca sinonim pentru „a doua fereastră de măsurare") e legacy/pre-canonică
+și trebuie reconciliată cu definiția de mai sus înainte de publicare.
+
 ## Nivelul D — Experiments
 
 - experimentele publice, ipotezele, intervențiile, dovezile, rezultatele
   și limitările
+
+## Nivelul D2 — Case Studies
+
+- AVL-350 — Studii de caz (documentul de poziționare a secțiunii)
+
+Documentează colaborări reale în care metodologia și principiile
+laboratorului sunt aplicate direct pe o entitate sau un brand concret, cu
+dovezi, limite și rezultate publicate integral — distinct de experimentele
+publice cu ipoteză declarată dinainte (Nivelul D) și de proiectele
+comerciale, care vor fi documentate separat, în cadrul Nivelului D.
+
+Un studiu de caz individual (ex. „Alex Matescu") NU primește un
+identificator AVL-xxx. ID-urile AVL desemnează exclusiv documente
+normative sau de poziționare a unei secțiuni (ca AVL-350 însuși) — nu
+instanțe concrete. O instanță de studiu de caz primește un identificator
+propriu, format CS-NNN (ex. CS-001), definit în registrul de ID-uri al
+laboratorului. Aceeași separare se aplică oricărei alte instanțe concrete
+(experiment, audit, intervenție): identificatorul ei nu e niciodată un
+AVL-xxx.
 
 Articolele și observațiile editoriale pot exista în afara numerotării
 principale atunci când nu reprezintă documente stabile de referință.
@@ -956,6 +1001,22 @@ Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K.
 - AVL-201 — Tabula Rasa F0
 
 # 25. Istoricul versiunilor
+
+## Versiunea 1.1.0 — 4 septembrie 2026
+
+MINOR: integrarea arhitecturală a Nivelului D2 — Case Studies (secțiunea
+„Studii de caz"), introdus ca extensie a structurii corpusului odată cu
+pregătirea primului studiu de caz (Alex Matescu, CS-001, nepublicat încă).
+Clarificări adăugate, fără schimbarea principiilor fundamentale:
+identificatorii AVL-xxx sunt rezervați exclusiv documentelor normative sau
+de poziționare a unei secțiuni, niciodată instanțelor concrete (studiu de
+caz, experiment, audit, intervenție — acestea primesc un registru de
+ID-uri propriu); dezambiguizare între „studii de caz" ca sursă externă
+citată (§10) și „Studii de caz" ca secțiune a laboratorului (§17); sensul
+canonic al fazelor F0–F3 (Tabula Rasa) — F0 baseline, F1 casa entității,
+F2 prezența distribuită, F3 re-măsurarea — reconciliat cu utilizarea deja
+publicată în AVL-104, cu nota explicită că F1–F3 nu au încă documente
+normative proprii de Nivel C.
 
 ## Versiunea 1.0.1 — iulie 2026
 
