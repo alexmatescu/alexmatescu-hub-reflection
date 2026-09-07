@@ -40,7 +40,7 @@ import { motoareCautareHtml } from "@/data/lab-content/2. motoare-cautare-compar
 import { paradoxulSpecificitatiiContinutGenericHtml } from "@/data/lab-content/9. paradoxul-specificitatii-continut-generic";
 import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/3. social-media-vizibilitate-ai";
-import { tabulaRasaIdentitateSearchAiSearchHtml } from "@/data/lab-content/tabula-rasa-identitate-search-ai-search";
+import { tabulaRasaEntityResolutionStudiuDeCazHtml } from "@/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz";
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
 
@@ -54,8 +54,8 @@ const labPageContent: Record<string, string> = {
   "/lab/metodologie/tabula-rasa-f0": avl201TabulaRasaF0Html,
   "/lab/experimente-publice": avl301ExperimentePubliceHtml,
   "/lab/studii-de-caz": avl350StudiiDeCazHtml,
-  "/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search":
-    tabulaRasaIdentitateSearchAiSearchHtml,
+  "/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz":
+    tabulaRasaEntityResolutionStudiuDeCazHtml,
   "/lab/articole": avl401ArticoleHtml,
   "/lab/articole/istoria-cautarii-internet-evolutia-seo": istoriaCautariiHtml,
   "/lab/articole/motoare-cautare-comparatie-2026": motoareCautareHtml,

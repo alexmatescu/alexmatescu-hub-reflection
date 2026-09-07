@@ -4,12 +4,12 @@ description: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Cla
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 date_published: "2026-09-04T09:06:00+03:00"
-date_modified: "2026-09-04"
-last_reviewed: "2026-09-04"
+date_modified: "2026-09-07"
+last_reviewed: "2026-09-07"
 category: "Entities & Citations"
 article_type: "Studiu de caz"
 language: "ro-RO"
-canonical: "https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search"
+canonical: "https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz"
 keywords:
   - "AI Visibility"
   - "Tabula Rasa"
@@ -22,6 +22,10 @@ keywords:
   - "Claude"
   - "Gemini"
   - "Perplexity"
+  - "Google"
+  - "Bing"
+  - "Google AI Overviews"
+  - "Google AI Mode"
   - "Alex Matescu"
 ---
 
@@ -32,7 +36,7 @@ keywords:
 **Status:** în desfășurare  
 **Faze analizate:** T0/F0 → F1  
 **Obiect de studiu:** rezoluția unei entități personale în motoare de căutare și sisteme AI  
-**Ultima actualizare:** 3 septembrie 2026
+**Ultima actualizare:** 7 septembrie 2026
 
 > **Evidence-backed case study**  
 > Rezultatele experimentale prezentate în această pagină sunt susținute, acolo unde evidence set-ul permite, prin capturi originale din ferestrele Tabula Rasa. Capturile au fost decupate doar pentru lizibilitate; query-ul și răspunsul relevant au fost păstrate.

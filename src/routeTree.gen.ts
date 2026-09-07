@@ -28,6 +28,7 @@ import { Route as SiteProiecteIndexRouteImport } from './routes/_site/proiecte/i
 import { Route as SiteProiecteSlugRouteImport } from './routes/_site/proiecte/$slug'
 import { Route as SiteProiecteGeoAiVisibilityRouteImport } from './routes/_site/proiecte/geo-ai-visibility'
 import { Route as SiteLabParentSlugRouteImport } from './routes/_site/lab/$parent.$slug'
+import { Route as SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRouteImport } from './routes/_site/lab/studii-de-caz.tabula-rasa-identitate-search-ai-search'
 
 const SiteRoute = SiteRouteImport.update({
   id: '/_site',
@@ -124,6 +125,12 @@ const SiteLabParentSlugRoute = SiteLabParentSlugRouteImport.update({
   path: '/lab/$parent/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
+const SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute =
+  SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRouteImport.update({
+    id: '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search',
+    path: '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search',
+    getParentRoute: () => SiteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof SiteIndexRoute
@@ -144,6 +151,7 @@ export interface FileRoutesByFullPath {
   '/lab/': typeof SiteLabIndexRoute
   '/proiecte/': typeof SiteProiecteIndexRoute
   '/lab/$parent/$slug': typeof SiteLabParentSlugRoute
+  '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
 }
 export interface FileRoutesByTo {
   '/ai-visibility': typeof SiteAiVisibilityRoute
@@ -164,6 +172,7 @@ export interface FileRoutesByTo {
   '/lab': typeof SiteLabIndexRoute
   '/proiecte': typeof SiteProiecteIndexRoute
   '/lab/$parent/$slug': typeof SiteLabParentSlugRoute
+  '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -186,6 +195,7 @@ export interface FileRoutesById {
   '/_site/lab/': typeof SiteLabIndexRoute
   '/_site/proiecte/': typeof SiteProiecteIndexRoute
   '/_site/lab/$parent/$slug': typeof SiteLabParentSlugRoute
+  '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -208,6 +218,7 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/proiecte/'
     | '/lab/$parent/$slug'
+    | '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/ai-visibility'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/lab'
     | '/proiecte'
     | '/lab/$parent/$slug'
+    | '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
   id:
     | '__root__'
     | '/_site'
@@ -249,6 +261,7 @@ export interface FileRouteTypes {
     | '/_site/lab/'
     | '/_site/proiecte/'
     | '/_site/lab/$parent/$slug'
+    | '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -390,6 +403,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteLabParentSlugRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': {
+      id: '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
+      path: '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
+      fullPath: '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
+      preLoaderRoute: typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRouteImport
+      parentRoute: typeof SiteRoute
+    }
   }
 }
 
@@ -412,6 +432,7 @@ interface SiteRouteChildren {
   SiteLabIndexRoute: typeof SiteLabIndexRoute
   SiteProiecteIndexRoute: typeof SiteProiecteIndexRoute
   SiteLabParentSlugRoute: typeof SiteLabParentSlugRoute
+  SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute: typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
 }
 
 const SiteRouteChildren: SiteRouteChildren = {
@@ -433,6 +454,8 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteLabIndexRoute: SiteLabIndexRoute,
   SiteProiecteIndexRoute: SiteProiecteIndexRoute,
   SiteLabParentSlugRoute: SiteLabParentSlugRoute,
+  SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute:
+    SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute,
 }
 
 const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)

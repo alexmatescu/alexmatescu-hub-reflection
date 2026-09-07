@@ -3,27 +3,26 @@ import type { LabArticleMeta } from "@/data/lab-seo";
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
- * Sursă: src/content/studii de caz/01. Alex Matescu/tabula-rasa-identitate-search-ai-search.md
+ * Sursă: src/content/studii de caz/01. Alex Matescu/tabula-rasa-entity-resolution-studiu-de-caz.md
  */
-export const tabulaRasaIdentitateSearchAiSearchMeta: LabArticleMeta = {
+export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
   title:
     "Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search",
   description:
     "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini și Perplexity rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice.",
   canonical:
-    "https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search",
+    "https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz",
   category: "Entities & Citations",
   // "Analiză de caz" e valoarea cea mai apropiată din LabArticleType — câmp
   // inert pentru un Case Study (nu se afișează nicăieri; LabArticleIndex,
   // singurul consumator vizual al lui `articleType`, ia datele exclusiv din
   // `labArticleMeta`, niciodată din `labCaseStudyMeta`). LabArticleMeta e
   // reutilizat aici doar pentru `buildArticleJsonLd`, nu pentru taxonomia de
-  // articol. Neatins altfel — audit metodologic 2026-09-04, studiul rămâne
-  // nepublicat.
+  // articol.
   articleType: "Analiză de caz",
   datePublished: "2026-09-04T09:06:00+03:00",
-  dateModified: "2026-09-04",
-  lastReviewed: "2026-09-04",
+  dateModified: "2026-09-07",
+  lastReviewed: "2026-09-07",
   about: [
     { name: "Alex Matescu" },
     { name: "Entity resolution" },
@@ -32,6 +31,10 @@ export const tabulaRasaIdentitateSearchAiSearchMeta: LabArticleMeta = {
     { name: "Claude" },
     { name: "Gemini" },
     { name: "Perplexity" },
+    { name: "Google" },
+    { name: "Bing" },
+    { name: "Google AI Overviews" },
+    { name: "Google AI Mode" },
   ],
   keywords: [
     "AI Visibility",
@@ -45,15 +48,19 @@ export const tabulaRasaIdentitateSearchAiSearchMeta: LabArticleMeta = {
     "Claude",
     "Gemini",
     "Perplexity",
+    "Google",
+    "Bing",
+    "Google AI Overviews",
+    "Google AI Mode",
     "Alex Matescu",
   ],
   faq: [],
 };
 
 /** Conținutul propriu-zis al studiului de caz — fără metadate tehnice. */
-export const tabulaRasaIdentitateSearchAiSearchHtml = `
+export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-04">4 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Actualizat: <time datetime="2026-09-07">7 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-07">7 septembrie 2026</time></p>
 
       <table>
         <tbody>
@@ -199,7 +206,7 @@ export const tabulaRasaIdentitateSearchAiSearchHtml = `
       <p>Captura de mai jos este dovada celei de-a doua stări.</p>
 
       <figure>
-        <img src="/images/lab/tabula-rasa-identitate-search-ai-search/fig_f0_chatgpt_delamatescu_r2.jpg" alt="F0 ChatGPT delamatescu.ro" loading="lazy" />
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_f0_chatgpt_delamatescu_r2.jpg" alt="F0 ChatGPT delamatescu.ro" loading="lazy" />
         <figcaption>Fig. 1 — ChatGPT, F0, rulare ulterioară pentru <code>delamatescu.ro</code>. Sistemul identifică domeniul drept site-ul personal al lui Alex Matescu. Verdictul acestei rulări: HIT. Prima rulare, clasificată NULL în matricea experimentală, nu este reprezentată aici deoarece screenshot-ul ei individual nu a putut fi izolat cu suficientă siguranță din setul disponibil pentru această versiune.</figcaption>
       </figure>
 
@@ -224,7 +231,7 @@ export const tabulaRasaIdentitateSearchAiSearchHtml = `
       <p>În acest caz, sistemul recunoaște că există persoane diferite și începe să trateze explicit coliziunea.</p>
 
       <figure>
-        <img src="/images/lab/tabula-rasa-identitate-search-ai-search/fig_chatgpt_hit_vs_collision.jpg" alt="ChatGPT HIT versus coliziune" loading="lazy" />
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_chatgpt_hit_vs_collision.jpg" alt="ChatGPT HIT versus coliziune" loading="lazy" />
         <figcaption>Fig. 2 — ChatGPT, F1. În stânga, query-ul generic <code>Cine este Alex Matescu?</code> rezolvă direct entitatea urmărită. În dreapta, forma <code>Alex Mateescu</code> activează o coliziune de nume și sistemul separă explicit persoanele. Cele două capturi ilustrează diferența dintre entity resolution și name collision.</figcaption>
       </figure>
 
@@ -249,7 +256,7 @@ export const tabulaRasaIdentitateSearchAiSearchHtml = `
       <p>rezultatul se schimbă.</p>
 
       <figure>
-        <img src="/images/lab/tabula-rasa-identitate-search-ai-search/fig_claude_generic_vs_anchor.jpg" alt="Claude generic versus anchor" loading="lazy" />
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_claude_generic_vs_anchor.jpg" alt="Claude generic versus anchor" loading="lazy" />
         <figcaption>Fig. 3 — Claude, F1. În stânga, query fără ancoră: NULL. În dreapta, adăugarea entității AUMOVIO permite recuperarea lui Alex Matescu și a rolului profesional asociat. Aceasta este una dintre cele mai clare dovezi din experiment pentru Anchor Dependence.</figcaption>
       </figure>
 
@@ -288,7 +295,7 @@ export const tabulaRasaIdentitateSearchAiSearchHtml = `
       <p>Atunci când query-ul devine <strong>„Alex Matescu AUMOVIO”</strong>, Gemini identifică persoana urmărită și rolul profesional.</p>
 
       <figure>
-        <img src="/images/lab/tabula-rasa-identitate-search-ai-search/fig_gemini_generic_vs_anchor.jpg" alt="Gemini confabulation versus anchor" loading="lazy" />
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_gemini_generic_vs_anchor.jpg" alt="Gemini confabulation versus anchor" loading="lazy" />
         <figcaption>Fig. 4 — Gemini, F1. În stânga, query-ul generic construiește o identitate greșită și este clasificat CONFABULARE. În dreapta, ancora <code>AUMOVIO</code> conduce la entitatea corectă. Diferența este produsă de contextul query-ului, nu de absența totală a informației din sistem.</figcaption>
       </figure>
 
@@ -323,7 +330,7 @@ export const tabulaRasaIdentitateSearchAiSearchHtml = `
       <p>Perplexity prezintă un alt tip de problemă. Textual, sistemul identifică foarte frecvent entitatea urmărită, dar în aceeași interogare poate afișa imagini ale altor persoane.</p>
 
       <figure>
-        <img src="/images/lab/tabula-rasa-identitate-search-ai-search/fig_perplexity_image_mismatch.jpg" alt="Perplexity image entity mismatch" loading="lazy" />
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_perplexity_image_mismatch.jpg" alt="Perplexity image entity mismatch" loading="lazy" />
         <figcaption>Fig. 5 — Perplexity, F1, <code>Cine este Alex Matescu?</code>. Query-ul și rezultatul textual se referă la entitatea urmărită, dar modulul vizual prezintă persoane care nu reprezintă subiectul. Fenomen clasificat aici drept image–entity mismatch.</figcaption>
       </figure>
 
@@ -346,7 +353,7 @@ export const tabulaRasaIdentitateSearchAiSearchHtml = `
       <p>În ChatGPT, Claude și Perplexity apar variante care introduc persoana asociată cu PRO TV.</p>
 
       <figure>
-        <img src="/images/lab/tabula-rasa-identitate-search-ai-search/fig_query_drift_chatgpt.jpg" alt="Query drift" loading="lazy" />
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_query_drift_chatgpt.jpg" alt="Query drift" loading="lazy" />
         <figcaption>Fig. 6 — Evidence pentru Query Drift. În stânga, Gemini este testat cu varianta <code>Alex Matescu vs Alexandru Mateescu avocat</code>. În dreapta, ChatGPT primește <code>Alex Matescu vs Ale Mateescu PRO TV</code>. Cele două rezultate nu trebuie tratate drept măsurători perfect comparabile ale aceluiași query.</figcaption>
       </figure>
 
@@ -587,5 +594,5 @@ export const tabulaRasaIdentitateSearchAiSearchHtml = `
 
       <p><strong>Status: studiu longitudinal în desfășurare.</strong></p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 4 septembrie 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 7 septembrie 2026.</em></p>
 `;

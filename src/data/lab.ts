@@ -70,7 +70,7 @@ export const labNav: LabPage[] = [
     lead: "Colaborări reale în care metodologia și principiile AI Visibility Lab sunt aplicate direct, cu dovezi, limite și rezultate publicate integral.",
     children: [
       {
-        to: "/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search",
+        to: "/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz",
         label:
           "Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search",
         lead: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini și Perplexity rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice.",

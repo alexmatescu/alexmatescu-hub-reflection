@@ -12,7 +12,7 @@ import { metadataCitareAiStudiuDeCazMeta } from "@/data/lab-content/6. metadata-
 import { motoareCautareMeta } from "@/data/lab-content/2. motoare-cautare-comparatie-2026";
 import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/3. social-media-vizibilitate-ai";
-import { tabulaRasaIdentitateSearchAiSearchMeta } from "@/data/lab-content/tabula-rasa-identitate-search-ai-search";
+import { tabulaRasaEntityResolutionStudiuDeCazMeta } from "@/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz";
 import { findLabPage } from "@/data/lab";
 import { buildSeoHead } from "@/lib/seo-head";
 
@@ -136,7 +136,7 @@ const findArticleMetaBySlug = (slug: string) =>
  * publicat 2026-09-04 prin skill-ul `.claude/skills/publica-studiu-de-caz`.
  */
 export const labCaseStudyMeta: LabArticleMeta[] = [
-  tabulaRasaIdentitateSearchAiSearchMeta,
+  tabulaRasaEntityResolutionStudiuDeCazMeta,
 ];
 
 const findCaseStudyMetaBySlug = (slug: string) =>
