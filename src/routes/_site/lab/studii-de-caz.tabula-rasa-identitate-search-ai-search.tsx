@@ -17,6 +17,7 @@ export const Route = createFileRoute(
         slug: "tabula-rasa-entity-resolution-studiu-de-caz",
       },
       replace: true,
+      statusCode: 301,
     });
   },
 });

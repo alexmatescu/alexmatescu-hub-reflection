@@ -1,0 +1,41 @@
+# Copy this file into your project (e.g. evidence/incoming/<entity-slug>-<mp>.evidence-package.yaml),
+# fill in the real values, and invoke:
+#
+#   /evidence-release evidence/incoming/<entity-slug>-<mp>.evidence-package.yaml
+#
+# See ../references/config-schema.md for the full field list.
+
+project: AI Visibility Lab
+study_name: Example Study
+entity_name: Example Entity
+entity_slug: example-entity
+entity_code: EE
+
+measurement_point: T1
+measurement_window:
+  start: 2026-09-02
+  end: 2026-09-07
+
+timezone: Europe/Bucharest
+
+archive:
+  path: ./evidence/incoming/example-entity-t1.zip
+  version: "1.0"
+
+metadata_version: "1.0"
+
+query_set:
+  path: ./query-set.csv
+  required: false
+
+extra_columns:
+  - logged_in
+  - incognito
+  - model
+
+github:
+  repository: owner/repository
+  release_tag: evidence-example-entity-t1-v1.0
+  draft: true
+
+notes: ""
