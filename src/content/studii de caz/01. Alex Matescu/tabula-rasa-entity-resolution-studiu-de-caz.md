@@ -4,8 +4,8 @@ description: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Cla
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 date_published: "2026-09-04T09:06:00+03:00"
-date_modified: "2026-09-07"
-last_reviewed: "2026-09-07"
+date_modified: "2026-09-14"
+last_reviewed: "2026-09-14"
 category: "Entities & Citations"
 article_type: "Studiu de caz"
 language: "ro-RO"
@@ -36,7 +36,7 @@ keywords:
 **Status:** în desfășurare  
 **Faze analizate:** T0/F0 → F1  
 **Obiect de studiu:** rezoluția unei entități personale în motoare de căutare și sisteme AI  
-**Ultima actualizare:** 7 septembrie 2026
+**Ultima actualizare:** 14 septembrie 2026
 
 > **Evidence-backed case study**  
 > Rezultatele experimentale prezentate în această pagină sunt susținute, acolo unde evidence set-ul permite, prin capturi originale din ferestrele Tabula Rasa. Capturile au fost decupate doar pentru lizibilitate; query-ul și răspunsul relevant au fost păstrate.
@@ -175,6 +175,16 @@ Captura de mai jos este dovada celei de-a doua stări.
 *Fig. 1 — ChatGPT, F0, rulare ulterioară pentru `delamatescu.ro`. Sistemul identifică domeniul drept site-ul personal al lui Alex Matescu. Verdictul acestei rulări: HIT. Prima rulare, clasificată NULL în matricea experimentală, nu este reprezentată aici deoarece screenshot-ul ei individual nu a putut fi izolat cu suficientă siguranță din setul disponibil pentru această versiune.*
 
 Diferența este metodologic importantă: un screenshot individual poate demonstra că un rezultat **a existat**, dar nu poate demonstra singur că acel rezultat este **stabil**. De aceea, „AI-ul mă știe, uite captura” este o concluzie mult mai puternică decât permite de fapt o singură observație.
+
+### Pachetul de dovezi T0, publicat ulterior
+
+Acest studiu a fost publicat inițial pe 4 septembrie 2026, pe baza observațiilor descrise mai sus. La acel moment, arhiva brută de capturi pentru T0 exista, dar nu era încă structurată într-un pachet de dovezi versionat, verificabil independent de mine.
+
+Pe 13 septembrie 2026 am formalizat și publicat acest pachet: 152 de capturi/dovezi din T0, acoperind ChatGPT, Claude, Gemini, Perplexity, Google Search, Google AI Mode, Bing și Microsoft Copilot, însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca [GitHub Release — Alex Matescu T0 Evidence Archive v1.0](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v1.0) (arhivă v1.0 / metadate v1.0).
+
+Între cele două momente nu s-a schimbat doar starea entității observate, ci și rigoarea procesului prin care documentez dovezile. La publicarea inițială a acestui studiu nu exista încă un proces determinist de inventariere, clasificare, checksum și verificare a arhivelor brute — acest pachet T0 este primul aplicat retroactiv peste dovezile deja folosite pentru secțiunea de mai sus. Formalizarea nu schimbă verdictele deja descrise pentru T0 mai sus; schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Contaminarea de sesiune și anomaliile de arhivare identificate în acest set sunt documentate explicit în pachet, nu ascunse — consecvent cu motivul pentru care public și erorile (secțiunea 21).
+
+Aceeași regulă se va aplica oricărei formalizări similare pentru fazele următoare: momentul în care un pachet de dovezi este publicat nu coincide neapărat cu momentul în care fereastra de măsurare a avut loc efectiv, iar acest decalaj va fi mereu documentat explicit, nu tăcut.
 
 ---
 
@@ -562,9 +572,9 @@ Acest studiu folosește identitatea autorului AI Visibility Lab drept subiect ex
 
 În același timp, această situație permite documentarea directă a surselor, intervențiilor și identității reale care trebuie evaluată.
 
-Capturile originale sunt păstrate în evidence set.
+Capturile originale sunt păstrate în evidence set. Pentru T0, acestea sunt publicate integral, verificabil prin checksum SHA-256, ca pachet de dovezi separat (secțiunea 5) — proces care nu exista în această formă la publicarea inițială a studiului și care a fost aplicat retroactiv, fără a modifica verdictele deja descrise.
 
-T0/F0 conține limitări metodologice și nu a fost reconstruit retrospectiv pentru a respecta standardele dezvoltate ulterior.
+T0/F0 conține limitări metodologice și nu a fost reconstruit retrospectiv pentru a respecta standardele dezvoltate ulterior. Maturizarea procesului de documentare a dovezilor, descrisă în secțiunea 5, este distinctă de maturizarea entității observate — prima privește rigoarea mea ca experimentator, a doua privește obiectul studiului.
 
 Query Drift-ul identificat în F1 este păstrat în studiu.
 

@@ -21,8 +21,8 @@ export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
   // articol.
   articleType: "Analiză de caz",
   datePublished: "2026-09-04T09:06:00+03:00",
-  dateModified: "2026-09-07",
-  lastReviewed: "2026-09-07",
+  dateModified: "2026-09-14",
+  lastReviewed: "2026-09-14",
   about: [
     { name: "Alex Matescu" },
     { name: "Entity resolution" },
@@ -60,7 +60,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al studiului de caz — fără metadate tehnice. */
 export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Actualizat: <time datetime="2026-09-07">7 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-07">7 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Actualizat: <time datetime="2026-09-14">14 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-14">14 septembrie 2026</time></p>
 
       <table>
         <tbody>
@@ -211,6 +211,16 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       </figure>
 
       <p>Diferența este metodologic importantă: un screenshot individual poate demonstra că un rezultat <strong>a existat</strong>, dar nu poate demonstra singur că acel rezultat este <strong>stabil</strong>. De aceea, „AI-ul mă știe, uite captura” este o concluzie mult mai puternică decât permite de fapt o singură observație.</p>
+
+      <h3>Pachetul de dovezi T0, publicat ulterior</h3>
+
+      <p>Acest studiu a fost publicat inițial pe 4 septembrie 2026, pe baza observațiilor descrise mai sus. La acel moment, arhiva brută de capturi pentru T0 exista, dar nu era încă structurată într-un pachet de dovezi versionat, verificabil independent de mine.</p>
+
+      <p>Pe 13 septembrie 2026 am formalizat și publicat acest pachet: 152 de capturi/dovezi din T0, acoperind ChatGPT, Claude, Gemini, Perplexity, Google Search, Google AI Mode, Bing și Microsoft Copilot, însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v1.0" target="_blank" rel="noopener noreferrer">GitHub Release — Alex Matescu T0 Evidence Archive v1.0</a> (arhivă v1.0 / metadate v1.0).</p>
+
+      <p>Între cele două momente nu s-a schimbat doar starea entității observate, ci și rigoarea procesului prin care documentez dovezile. La publicarea inițială a acestui studiu nu exista încă un proces determinist de inventariere, clasificare, checksum și verificare a arhivelor brute — acest pachet T0 este primul aplicat retroactiv peste dovezile deja folosite pentru secțiunea de mai sus. Formalizarea nu schimbă verdictele deja descrise pentru T0 mai sus; schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Contaminarea de sesiune și anomaliile de arhivare identificate în acest set sunt documentate explicit în pachet, nu ascunse — consecvent cu motivul pentru care public și erorile (secțiunea 21).</p>
+
+      <p>Aceeași regulă se va aplica oricărei formalizări similare pentru fazele următoare: momentul în care un pachet de dovezi este publicat nu coincide neapărat cu momentul în care fereastra de măsurare a avut loc efectiv, iar acest decalaj va fi mereu documentat explicit, nu tăcut.</p>
 
       <h2>6. F1 — prima fereastră în care diferențele dintre sisteme devin foarte clare</h2>
 
@@ -582,9 +592,9 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>În același timp, această situație permite documentarea directă a surselor, intervențiilor și identității reale care trebuie evaluată.</p>
 
-      <p>Capturile originale sunt păstrate în evidence set.</p>
+      <p>Capturile originale sunt păstrate în evidence set. Pentru T0, acestea sunt publicate integral, verificabil prin checksum SHA-256, ca pachet de dovezi separat (secțiunea 5) — proces care nu exista în această formă la publicarea inițială a studiului și care a fost aplicat retroactiv, fără a modifica verdictele deja descrise.</p>
 
-      <p>T0/F0 conține limitări metodologice și nu a fost reconstruit retrospectiv pentru a respecta standardele dezvoltate ulterior.</p>
+      <p>T0/F0 conține limitări metodologice și nu a fost reconstruit retrospectiv pentru a respecta standardele dezvoltate ulterior. Maturizarea procesului de documentare a dovezilor, descrisă în secțiunea 5, este distinctă de maturizarea entității observate — prima privește rigoarea mea ca experimentator, a doua privește obiectul studiului.</p>
 
       <p>Query Drift-ul identificat în F1 este păstrat în studiu.</p>
 
@@ -594,5 +604,5 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>Status: studiu longitudinal în desfășurare.</strong></p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 7 septembrie 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 14 septembrie 2026.</em></p>
 `;

@@ -1,0 +1,1 @@
+import{n as e}from"./Lab-CpoPucno.js";var t=e;export{t as component};

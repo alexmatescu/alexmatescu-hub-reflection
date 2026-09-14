@@ -1,1 +1,0 @@
-import{n as e}from"./Lab-Cd0fmVSS.js";var t=e;export{t as component};
