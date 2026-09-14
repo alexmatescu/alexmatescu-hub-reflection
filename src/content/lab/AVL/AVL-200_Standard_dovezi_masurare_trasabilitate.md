@@ -3,16 +3,16 @@ document_id: "AVL-200"
 title: "Standardul de dovezi, măsurare și trasabilitate"
 subtitle: "Evidence, Measurement & Traceability Standard"
 level: "C — Methodology"
-version: "0.9.0"
-status: "Draft pentru revizuire"
+version: "1.0.0"
+status: "Activ"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-09-13"
-date_published: null
-date_modified: "2026-09-13"
-last_reviewed: "2026-09-13"
-canonical_proposed: "https://delamatescu.ro/lab/metodologie/standard-dovezi-masurare-trasabilitate"
+date_published: "2026-09-14T08:57:00+03:00"
+date_modified: "2026-09-14"
+last_reviewed: "2026-09-14"
+canonical: "https://delamatescu.ro/lab/metodologie/standard-dovezi-masurare-trasabilitate"
 normative_dependencies:
   - "AVL-001 — AI Visibility Lab Foundation"
   - "AVL-104 — Cum se măsoară AI Visibility"
@@ -44,7 +44,9 @@ AVL-200 pornește de la o regulă simplă:
 
 AVL-200 este un document normativ de nivel C — Methodology în corpusul AI Visibility Lab Documentation.
 
-Versiunea curentă, **0.9.0**, este un draft pentru revizuire. Ea NU TREBUIE citată drept standard activ al laboratorului înainte de publicarea și activarea formală a versiunii 1.0.0.
+Versiunea curentă, **1.0.0**, este activă. AVL-200 este standardul activ al laboratorului pentru evidence, măsurare și trasabilitate, aplicabil transversal conform domeniului de aplicare din §2.
+
+Un set limitat de decizii pur operaționale (politica finală asupra unor artefacte ale Evidence Package, validarea end-to-end a implementării de referință pe un pachet real, auditul complet al schemei Evidence Index față de cerințele `AVL200-REQ`) rămân deschise și sunt documentate explicit, ca excepții acceptate, în §38. Ele nu afectează aplicabilitatea normativă a cerințelor din acest document.
 
 În acest document, termenii **TREBUIE**, **NU TREBUIE**, **ESTE OBLIGATORIU**, **AR TREBUI**, **NU AR TREBUI** și **POATE** sunt utilizați în sensul convențiilor RFC 2119 și RFC 8174, adaptate în limba română:
 
@@ -1070,7 +1072,9 @@ AVL-201 definește protocolul concret pentru baseline-ul Tabula Rasa F0.
 
 AVL-200 definește standardul transversal de evidence, measurement și traceability pe care baseline-ul și viitoarele faze îl pot utiliza.
 
-La următoarea revizie a AVL-201, elementele generic aplicabile tuturor studiilor AR TREBUI referențiate către AVL-200, în timp ce AVL-201 ar trebui să păstreze ceea ce este specific F0:
+Începând cu activarea AVL-200 (v1.0.0, 14 septembrie 2026), AVL-201 declară AVL-200 ca dependință normativă explicită în controlul documentului. Rescrierea efectivă a secțiunilor generice din AVL-201 pentru a referenția direct AVL-200, în locul duplicării actuale, rămâne o revizie de conținut separată, neexecutată încă — adăugarea dependinței nu presupune, prin ea însăși, că duplicarea a fost eliminată.
+
+La următoarea revizie de conținut a AVL-201, elementele generic aplicabile tuturor studiilor AR TREBUI referențiate către AVL-200, în timp ce AVL-201 ar trebui să păstreze ceea ce este specific F0:
 
 - scopul baseline-ului;
 - condiția fără intervenție;
@@ -1090,6 +1094,8 @@ Primul baseline poate fi publicat în forma în care a fost executat și documen
 Ulterior, revizia documentației poate introduce mapping-ul dintre faza metodologică și measurement point fără a pretinde că artefactele istorice au fost denumite altfel decât au fost în realitate.
 
 Aceasta este o aplicație directă a principiului AI Visibility Lab conform căruia metodologia se actualizează prin documentarea erorilor și a abaterilor, nu prin cosmetizarea retrospectivă a rezultatului.
+
+Mapping-ul de nomenclatură dintre `F0` (numele istoric al fazei de baseline) și `T0` (notația generică de measurement point folosită de AI Visibility Lab începând cu AVL-202) este documentat explicit în **AVL-202 §„Cum se citesc identificatorii AVL"** și în nota de nomenclatură din corpul AVL-202. AVL-200 nu duplică acel mapping aici — artefactele și rutele deja publicate sub convenția F0 nu sunt rescrise retroactiv (§17.3).
 
 ---
 
@@ -1257,25 +1263,21 @@ La publicarea acestui document:
 | Versiune | Dată | Statut | Modificări |
 |---|---|---|---|
 | 0.9.0 | 13 septembrie 2026 | Draft pentru revizuire | Prima versiune completă propusă. Formalizează lanțul Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation; introduce Evidence-to-Claim Traceability, separarea phase/timepoint, semanticile UNKNOWN/NO/NOT_APPLICABLE/UNCLASSIFIED, provenance/integrity/validity, versionarea arhivei/metadatelor/regulii de măsurare, state model-ul Evidence Package, freeze/integrity, human review, privacy și relația cu implementarea `evidence-release`. |
+| 1.0.0 | 14 septembrie 2026 | Activ | Activare formală. Canonicalul devine definitiv (`/lab/metodologie/standard-dovezi-masurare-trasabilitate`); AVL-001 actualizat pentru a include AVL-200 la Nivelul C; AVL-201 actualizat pentru a declara AVL-200 ca dependință normativă; mapping-ul istoric F0/T0 referențiat explicit către AVL-202; fact-check final al citărilor externe (RFC 2119, RFC 8174, NIST FIPS 180-4) efectuat și confirmat. Un set de decizii pur operaționale rămân deschise, documentate explicit ca excepții acceptate în §38 — activarea nu a fost condiționată de închiderea lor completă, decizie confirmată de Alex Matescu la 14 septembrie 2026. |
 
 ---
 
-# 38. Decizii deschise înainte de 1.0.0
+# 38. Excepții acceptate la activare (v1.0.0)
 
-Următoarele puncte TREBUIE închise înainte ca documentul să devină `Activ 1.0.0`:
+Secțiunea „Decizii deschise înainte de 1.0.0” din draftul 0.9.0 avea 12 puncte. La activare (14 septembrie 2026), punctele 1, 2, 3, 4, 10 și 11 au fost închise (vezi §37). Punctele rămase sunt decizii pur operaționale, fără impact asupra aplicabilității normative a cerințelor `AVL200-REQ` din acest document, și au fost acceptate explicit ca excepții deschise de Alex Matescu la activare:
 
-1. stabilirea canonicalului final și implementarea rutei publice;
-2. actualizarea AVL-001 astfel încât nivelul C să includă AVL-200;
-3. actualizarea AVL-201 astfel încât dependențele normative să includă AVL-200;
-4. documentarea mapping-ului istoric F/T fără rescrierea artefactelor existente;
-5. stabilirea dacă `validation-report.md` este artefact public protejat de manifest sau artefact intern;
-6. stabilirea statutului `release-notes.md` în Evidence Package;
-7. stabilirea politicii pentru audit trail final și eventuala lui fixare/hash-uire;
-8. validarea `evidence-release` end-to-end pe primul pachet real;
-9. verificarea că schema Evidence Index și implementarea agentului satisfac toate cerințele AVL200-REQ aplicabile;
-10. publicarea paginii `/lab/metodologie` ca hartă a sistemului metodologic;
-11. fact-check final conform regulilor editoriale AI Visibility Lab;
-12. activarea versiunii 1.0.0 numai după închiderea punctelor de mai sus sau documentarea explicită a excepțiilor rămase.
+5. statutul `validation-report.md` (artefact public protejat de manifest vs. artefact intern) — nedecis; tratat provizoriu drept artefact intern (§22.2) până la o decizie explicită;
+6. statutul `release-notes.md` în Evidence Package — nedecis;
+7. politica pentru audit trail final și eventuala lui fixare/hash-uire — nedecisă;
+8. validarea end-to-end a implementării de referință `evidence-release` pe un pachet real — neconfirmată; există cel puțin o arhivă de evidence brută candidată în lucru, dar parcurgerea completă a pipeline-ului (inventariere → hash → clasificare → review → index → README → validare → freeze → checksum → verificare → draft release) nu a fost documentată ca finalizată;
+9. verificarea explicită că schema Evidence Index și implementarea agentului `evidence-release` satisfac integral cerințele `AVL200-REQ` aplicabile — neauditată.
+
+Aceste puncte NU TREBUIE tratate ca închise. Statutul lor real rămâne cel descris mai sus până la o verificare sau decizie explicită ulterioară, documentată la rândul ei într-o versiune viitoare (§19.4).
 
 ---
 

@@ -1,0 +1,1 @@
+import{n as e}from"./Lab-E_KnS5SV.js";var t=e;export{t as component};

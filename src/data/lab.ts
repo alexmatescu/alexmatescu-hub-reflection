@@ -50,8 +50,15 @@ export const labNav: LabPage[] = [
   {
     to: "/lab/metodologie",
     label: "Metodologie",
-    lead: "Cadrul de lucru aplicat în acest laborator: ipoteze, experimente și modul în care sunt validate rezultatele.",
+    lead: "AVL-202 definește cadrul metodologic AI Visibility Lab pentru măsurare, baseline, dovezi, query set, intervenții, re-măsurare și comparații longitudinale în Search și AI Search.",
+    seoTitle: "Cadrul metodologic AI Visibility Lab",
+    pageTitle: "Cadrul metodologic AI Visibility Lab",
     children: [
+      {
+        to: "/lab/metodologie/standard-dovezi-masurare-trasabilitate",
+        label: "Standard dovezi, măsurare și trasabilitate",
+        lead: "AVL-200: standardul transversal prin care AI Visibility Lab transformă artefacte brute de cercetare în informație măsurabilă și interpretări trasabile până la dovezile care le susțin.",
+      },
       {
         to: "/lab/metodologie/tabula-rasa-f0",
         label: "Tabula Rasa F0",

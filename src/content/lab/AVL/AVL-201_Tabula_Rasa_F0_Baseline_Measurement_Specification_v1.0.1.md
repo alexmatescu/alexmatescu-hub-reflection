@@ -11,15 +11,15 @@ Baseline Measurement Specification
 | **Document ID** | AVL-201 |
 |----|----|
 | **Nivel** | C — Methodology |
-| **Versiune** | 1.0.1 |
+| **Versiune** | 1.1.1 |
 | **Statut** | Activ |
-| **Autor** | Alex Matescu |
-| **Organizație** | AI Visibility Lab |
+| **Autor** | [Alex Matescu](/despre) |
+| **Organizație** | [AI Visibility Lab](/lab) |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 21 iulie 2026 |
+| **Ultima actualizare** | 14 septembrie 2026 |
 | **Limbă** | română |
-| **Dependențe normative** | AVL-001, AVL-104 |
-| **Dependențe informative** | AVL-101, AVL-102, AVL-103, AVL-105 |
+| **Dependențe normative** | [AVL-001](/lab/introducere), [AVL-104](/lab/cercetare/cum-se-masoara-ai-visibility), [AVL-200](/lab/metodologie/standard-dovezi-masurare-trasabilitate) |
+| **Dependențe informative** | [AVL-101](/lab/cercetare/ce-este-geo-aeo), [AVL-102](/lab/cercetare/cum-aleg-motoarele-ai), [AVL-103](/lab/cercetare/seo-vs-geo), [AVL-105](/lab/cercetare/glosar-geo-aeo) |
 | **URL canonic propus** | https://delamatescu.ro/lab/metodologie/tabula-rasa-f0 — de confirmat la publicare |
 
 ***„Iată ce era înainte. Iată ce este acum. Iată diferența.”***
@@ -60,7 +60,7 @@ Fără aceste răspunsuri, rezultatul poate fi util ca observație, dar nu poate
 Scopul AVL-201 este să definească o specificație publică, repetabilă și auditabilă pentru măsurarea stării inițiale a unei entități în sistemele de căutare și răspuns bazate pe inteligență artificială. Documentul stabilește ce trebuie făcut înaintea oricărei intervenții GEO/AEO, cum
 trebuie păstrate dovezile și cum trebuie delimitate observațiile de interpretări.
 
-**F0-REQ-001 —** După începerea F0 și până la închiderea oficială a măsurătorii, entitatea, site-ul, profilurile, datele structurate și prezența distribuită TREBUIE menținute neschimbate.
+**F0-REQ-001 —** Nicio intervenție asupra entității, site-ului, profilurilor, datelor structurate sau prezenței distribuite NU TREBUIE aplicată după începerea F0 și înainte de închiderea oficială a măsurătorii.
 
 **F0-REQ-002 —** Orice abatere accidentală de la starea inițială TREBUIE consemnată ca incident de contaminare și evaluată înainte ca rezultatul să fie declarat valid.
 
@@ -85,6 +85,8 @@ trebuie păstrate dovezile și cum trebuie delimitate observațiile de interpret
 AVL-201 se poate aplica unei persoane, companii, organizații, instituții, mărci, produse, servicii, proiecte, publicații sau unui site, cu condiția ca obiectul măsurării să fie definit drept entitate și să poată fi diferențiat de alte entități.
 
 Metodologia este potrivită pentru evaluări individuale, proiecte pilot, studii de caz, audituri comerciale, cercetare academică aplicată și monitorizare longitudinală.
+
+Faptul că metodologia poate fi aplicată în audituri comerciale descrie o capacitate a protocolului, nu o ofertă de servicii comerciale active din partea AI Visibility Lab.
 
 # 4. În afara domeniului
 
@@ -405,7 +407,7 @@ Pentru interogările relevante se inventariază sursele pe care motoarele le afi
 
 ## 10.8. Pasul 8 — Auditul prezenței distribuite
 
-Se inventariază profilurile, directoarele, publicațiile, registrele și mențiunile externe. Sunt urmărite numele, descrierea, actualitatea, legătura către sursa canonică și contradicțiile.
+Se inventariază profilurile, directoarele, publicațiile, registrele și mențiunile externe. Se urmăresc numele, descrierea, actualitatea, legătura către sursa canonică și contradicțiile.
 
 ### Cerințe minime
 
@@ -815,6 +817,8 @@ profesional nu stă în secretul pașilor, ci în execuție, disciplină, date
 |----|----|----|----|
 | 1.0.0 | iulie 2026 | Activ | Prima versiune normativă publică a specificației Tabula Rasa F0. |
 | 1.0.1 | 21 iulie 2026 | Activ | PATCH: uniformizare metadate; referință la RFC 2119; marcarea URL-ului canonic ca propus până la confirmarea publicării. |
+| 1.1.0 | 26 august 2026 | Activ | MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); precizare adăugată la secțiunea 3 care distinge aplicabilitatea metodologiei în audituri comerciale de o ofertă activă de servicii comerciale ale AI Visibility Lab. |
+| 1.1.1 | 14 septembrie 2026 | Activ | PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate ca dependință normativă explicită, ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026). Fișierul sursă a fost resincronizat integral cu versiunea publicată la această dată: linkuri Autor/Organizație/dependențe, precizarea din §3, formularea F0-REQ-001 și o mică diferență de formulare la Pasul 8 (§10.8) — toate aliniate la textul deja live. |
 
 | **Declarație finală:** Tabula Rasa F0 nu demonstrează că o intervenție viitoare va funcționa. Ea stabilește condițiile minime pentru ca o schimbare ulterioară să poată fi comparată, verificată și discutată onest. |
 |----|

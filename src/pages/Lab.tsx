@@ -22,7 +22,9 @@ import { avl102CumAlegHtml } from "@/data/lab-content/avl-102";
 import { avl103SeoVsGeoHtml } from "@/data/lab-content/avl-103";
 import { avl104MasurareHtml } from "@/data/lab-content/avl-104";
 import { avl105GlosarHtml } from "@/data/lab-content/avl-105";
+import { avl200StandardDovaziMasurareTrasabilitateHtml } from "@/data/lab-content/avl-200";
 import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
+import { avl202CadruMetodologicHtml } from "@/data/lab-content/avl-202";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl350StudiiDeCazHtml } from "@/data/lab-content/avl-350";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
@@ -51,6 +53,9 @@ const labPageContent: Record<string, string> = {
   "/lab/cercetare/seo-vs-geo": avl103SeoVsGeoHtml,
   "/lab/cercetare/cum-se-masoara-ai-visibility": avl104MasurareHtml,
   "/lab/cercetare/glosar-geo-aeo": avl105GlosarHtml,
+  "/lab/metodologie": avl202CadruMetodologicHtml,
+  "/lab/metodologie/standard-dovezi-masurare-trasabilitate":
+    avl200StandardDovaziMasurareTrasabilitateHtml,
   "/lab/metodologie/tabula-rasa-f0": avl201TabulaRasaF0Html,
   "/lab/experimente-publice": avl301ExperimentePubliceHtml,
   "/lab/studii-de-caz": avl350StudiiDeCazHtml,

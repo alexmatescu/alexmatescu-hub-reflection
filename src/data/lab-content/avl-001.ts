@@ -8,12 +8,12 @@ export const avl001IntroductionHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-001</td></tr>
         <tr><th scope="row">Nivel</th><td>A — Foundation</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.1.1</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>4 septembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>14 septembrie 2026</td></tr>
         <tr><th scope="row">Limba</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/introducere">https://delamatescu.ro/lab/introducere</a></td></tr>
         </tbody>
@@ -455,6 +455,7 @@ export const avl001IntroductionHtml = `
       <h3>Nivelul C — Methodology</h3>
 
       <ul>
+        <li><a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standard dovezi, măsurare și trasabilitate</a></li>
         <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></li>
         <li>documentele ulterioare ale metodologiei F1–F3</li>
         <li>standardele de scor și evaluare</li>
@@ -469,7 +470,7 @@ export const avl001IntroductionHtml = `
         <li><strong>F3 — re-măsurarea</strong>: același set înghețat, același protocol, aceeași taxonomie, atribuire onestă a schimbării.</li>
       </ul>
 
-      <p>Definiția F1–F3 de mai sus e deja descrisă la nivel de cercetare (<a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>), dar nu are încă un document normativ propriu de Nivel C (AVL-202/203/204) — acestea rămân de scris. Până atunci, orice utilizare informală a „F1"/„F2" într-un document nepublicat sau într-un draft (ex. ca sinonim pentru „a doua fereastră de măsurare") e legacy/pre-canonică și trebuie reconciliată cu definiția de mai sus înainte de publicare.</p>
+      <p>Definiția F1–F3 de mai sus e deja descrisă la nivel de cercetare (<a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>), dar nu are încă un document normativ propriu de Nivel C dedicat — acesta rămâne de scris, cu un identificator alocat la momentul înregistrării lui, nu speculat dinainte (AVL-202 a fost între timp alocat cadrului metodologic general, nu unui protocol F1–F3; vezi <a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a>). Până atunci, orice utilizare informală a „F1"/„F2" într-un document nepublicat sau într-un draft (ex. ca sinonim pentru „a doua fereastră de măsurare") e legacy/pre-canonică și trebuie reconciliată cu definiția de mai sus înainte de publicare.</p>
 
       <h3>Nivelul D — Experiments</h3>
 
@@ -641,6 +642,7 @@ export const avl001IntroductionHtml = `
         <li><a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO și GEO: relații, diferențe și suprapuneri</a></li>
         <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a></li>
         <li><a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></li>
+        <li><a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standard dovezi, măsurare și trasabilitate</a></li>
         <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></li>
       </ul>
 
@@ -657,6 +659,10 @@ export const avl001IntroductionHtml = `
       <h3>Versiunea 1.1.0 — 4 septembrie 2026</h3>
 
       <p>MINOR: integrarea arhitecturală a Nivelului D2 — Case Studies (secțiunea „Studii de caz"), introdus ca extensie a structurii corpusului odată cu pregătirea primului studiu de caz (Alex Matescu, CS-001, nepublicat încă). Clarificări adăugate, fără schimbarea principiilor fundamentale: identificatorii AVL-xxx sunt rezervați exclusiv documentelor normative sau de poziționare a unei secțiuni, niciodată instanțelor concrete (studiu de caz, experiment, audit, intervenție — acestea primesc un registru de ID-uri propriu); dezambiguizare între „studii de caz" ca sursă externă citată (§10) și „Studii de caz" ca secțiune a laboratorului (§17); sensul canonic al fazelor F0–F3 (Tabula Rasa) — F0 baseline, F1 casa entității, F2 prezența distribuită, F3 re-măsurarea — reconciliat cu utilizarea deja publicată în AVL-104, cu nota explicită că F1–F3 nu au încă documente normative proprii de Nivel C.</p>
+
+      <h3>Versiunea 1.1.1 — 14 septembrie 2026</h3>
+
+      <p>PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate la Nivelul C — Methodology (§22) și la lista „Documente asociate” (§24), ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026). Corectată și referința speculativă la identificatoare viitoare neconfirmate („AVL-202/203/204” pentru documentele F1–F3), înlocuită cu o formulare care nu presupune numere de identificator încă neatribuite — AVL-202 a fost între timp alocat cadrului metodologic general, nu unui protocol F1–F3. Nicio schimbare de principiu.</p>
 
       <p>Documentația laboratorului descrie ceea ce este documentat, observat sau susținut de dovezi. Nu pretinde acces la mecanisme interne nepublice și nu transformă observațiile limitate sau corelațiile experimentale în reguli universale.</p>
 `;

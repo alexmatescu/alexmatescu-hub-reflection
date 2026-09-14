@@ -8,12 +8,12 @@ documentației
 | **Document ID** | AVL-001 |
 |----|----|
 | **Nivel** | A — Foundation |
-| **Versiune** | 1.1.0 |
+| **Versiune** | 1.1.1 |
 | **Statut** | Activ |
 | **Autor** | Alex Matescu |
 | **Organizație** | AI Visibility Lab |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 4 septembrie 2026 |
+| **Ultima actualizare** | 14 septembrie 2026 |
 | **Limba** | română |
 | **URL canonic propus** | https://delamatescu.ro/lab |
 
@@ -734,6 +734,8 @@ suficiente dovezi pentru confirmare.
 
 ## Nivelul C — Methodology
 
+- AVL-200 — Standard dovezi, măsurare și trasabilitate
+
 - AVL-201 — Tabula Rasa F0
 
 - documentele ulterioare ale metodologiei F1–F3
@@ -755,7 +757,10 @@ Rulare/Run în AVL-201 §5) și nu sinonime interschimbabile:
 
 Definiția F1–F3 de mai sus e deja descrisă la nivel de cercetare
 (AVL-104), dar nu are încă un document normativ propriu de Nivel C
-(AVL-202/203/204) — acestea rămân de scris. Până atunci, orice utilizare
+dedicat — acesta rămâne de scris, cu un identificator alocat la momentul
+înregistrării lui, nu speculat dinainte (AVL-202 a fost între timp
+alocat cadrului metodologic general, nu unui protocol F1–F3; vezi
+AVL-202 — Cadrul metodologic AI Visibility Lab). Până atunci, orice utilizare
 informală a „F1"/„F2" într-un document nepublicat sau într-un draft (ex.
 ca sinonim pentru „a doua fereastră de măsurare") e legacy/pre-canonică
 și trebuie reconciliată cu definiția de mai sus înainte de publicare.
@@ -998,9 +1003,22 @@ Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K.
 
 - AVL-105 — Glosar GEO/AEO și AI Visibility
 
+- AVL-200 — Standard dovezi, măsurare și trasabilitate
+
 - AVL-201 — Tabula Rasa F0
 
 # 25. Istoricul versiunilor
+
+## Versiunea 1.1.1 — 14 septembrie 2026
+
+PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate la
+Nivelul C — Methodology (§ dedicată) și la lista „Documente asociate”
+(§24), ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie
+2026). Corectată și referința speculativă la identificatoare viitoare
+neconfirmate („AVL-202/203/204” pentru documentele F1–F3), înlocuită cu
+o formulare care nu presupune numere de identificator încă neatribuite
+— AVL-202 a fost între timp alocat cadrului metodologic general, nu
+unui protocol F1–F3. Nicio schimbare de principiu.
 
 ## Versiunea 1.1.0 — 4 septembrie 2026
 
