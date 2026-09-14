@@ -29,6 +29,7 @@ import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl350StudiiDeCazHtml } from "@/data/lab-content/avl-350";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
+import { aiOglindaAmplificatorHtml } from "@/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -83,6 +84,8 @@ const labPageContent: Record<string, string> = {
     decalajVitezaAiAdoptie2026Html,
   "/lab/articole/eticheta-abonat-relatia-prezentare-ai-search":
     etichetaAbonatRelatiaPrezentareAiSearchHtml,
+  "/lab/articole/ai-oglinda-amplificator-intentie-context-anthropic":
+    aiOglindaAmplificatorHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 

@@ -169,6 +169,12 @@ export const labNav: LabPage[] = [
           "Eticheta „Abonat”: cum folosește Google relația cu publicul pentru a evidenția surse în AI Search",
         lead: "Google evidențiază în AI Overviews și AI Mode linkurile din publicațiile la care utilizatorul are un abonament legat de contul Google. Ce demonstrează funcția, ce nu dovedește despre ranking și ce pot face publisherii, creatorii și firmele.",
       },
+      {
+        to: "/lab/articole/ai-oglinda-amplificator-intentie-context-anthropic",
+        label:
+          "AI ca oglindă și amplificator: ce arată raportul Anthropic despre intenție, context și folosirea Claude",
+        lead: "Raportul Anthropic din septembrie 2026 arată cum actori foarte diferiți au folosit Claude pentru operațiuni cibernetice, supraveghere, influență, fraude și alte forme de abuz. Analiza separă faptele documentate de interpretarea editorială despre intenție, context și amplificare.",
+      },
     ],
   },
   {

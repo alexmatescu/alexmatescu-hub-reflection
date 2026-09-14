@@ -1,4 +1,5 @@
 import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
+import { aiOglindaAmplificatorMeta } from "@/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic";
 import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -116,6 +117,7 @@ export const labArticleMeta: LabArticleMeta[] = [
   hartaDeCitareMentiuniExterneRomaniaMeta,
   decalajVitezaAiAdoptie2026Meta,
   etichetaAbonatRelatiaPrezentareAiSearchMeta,
+  aiOglindaAmplificatorMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>

@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.output
 *.local
 
 # evidence-release working directories (raw archives + extracted screenshots
@@ -18,6 +19,11 @@ dist-ssr
 evidence/incoming
 evidence/work
 evidence/output
+
+# safety net: a baseline/evidence zip should never sit under public/ (it gets
+# swept into .output and into git on every build/push) — raw archives belong
+# in evidence/incoming instead
+public/baselines/*.zip
 
 # Editor directories and files
 .vscode/*

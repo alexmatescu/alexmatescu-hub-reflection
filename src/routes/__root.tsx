@@ -55,8 +55,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           property: "og:image",
-          content:
-            "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/df808e43-32d8-4a1f-b7ec-a5ba465e5fd2/id-preview-0eba6373--c63c8481-9d39-4bae-9ba3-3610a6510394.lovable.app-1782658308599.png",
+          content: "https://delamatescu.ro/favicon.webp",
         },
         { name: "twitter:card", content: "summary_large_image" },
         {
@@ -71,13 +70,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         },
         {
           name: "twitter:image",
-          content:
-            "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/df808e43-32d8-4a1f-b7ec-a5ba465e5fd2/id-preview-0eba6373--c63c8481-9d39-4bae-9ba3-3610a6510394.lovable.app-1782658308599.png",
+          content: "https://delamatescu.ro/favicon.webp",
         },
       ],
       links: [
         { rel: "stylesheet", href: appCss },
-        { rel: "icon", href: "/favicon.png", type: "image/png" },
+        { rel: "icon", href: "/favicon.webp", type: "image/webp" },
 
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
