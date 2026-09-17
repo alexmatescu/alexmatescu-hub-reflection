@@ -4,8 +4,8 @@ description: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Cla
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 date_published: "2026-09-04T09:06:00+03:00"
-date_modified: "2026-09-14"
-last_reviewed: "2026-09-14"
+date_modified: "2026-09-17"
+last_reviewed: "2026-09-17"
 category: "Entities & Citations"
 article_type: "Studiu de caz"
 language: "ro-RO"
@@ -36,7 +36,7 @@ keywords:
 **Status:** în desfășurare  
 **Faze analizate:** T0/F0 → F1  
 **Obiect de studiu:** rezoluția unei entități personale în motoare de căutare și sisteme AI  
-**Ultima actualizare:** 14 septembrie 2026
+**Ultima actualizare:** 17 septembrie 2026
 
 > **Evidence-backed case study**  
 > Rezultatele experimentale prezentate în această pagină sunt susținute, acolo unde evidence set-ul permite, prin capturi originale din ferestrele Tabula Rasa. Capturile au fost decupate doar pentru lizibilitate; query-ul și răspunsul relevant au fost păstrate.
@@ -195,6 +195,14 @@ Pentru F1 am putut adjudeca integral setul de 14 query-uri în patru sisteme AI:
 **ChatGPT, Claude, Gemini și Perplexity.**
 
 Rezultatele lor nu descriu aceeași realitate.
+
+### Pachetul de dovezi F1, publicat ulterior
+
+Rezultatele F1 descrise în această secțiune și în secțiunile 7–15 au fost capturate în perioada 4–6 august 2026. Ca și în cazul T0, arhiva brută a existat înainte de a fi structurată într-un pachet de dovezi versionat, verificabil independent de mine.
+
+Pe 17 septembrie 2026 am publicat acest pachet: 492 de capturi/dovezi, acoperind cele patru sisteme adjudecate integral în matricea din secțiunea 14 (ChatGPT, Claude, Gemini, Perplexity), precum și Google Search, Google AI Mode, Bing și Microsoft Copilot — sistemele NEADJUDICAT din secțiunea 15 — însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca [GitHub Release — Alex Matescu T0 Evidence Archive v2.0](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v2.0) (arhivă v2.0 / metadate v2.0).
+
+La fel ca la T0, formalizarea nu schimbă niciun verdict deja descris pentru F1 — schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Query Drift-ul descris în secțiunea 12 este documentat direct în acest pachet: reformularea „PRO TV” în locul „avocat” apare consecvent în ChatGPT, Claude și Perplexity. Pachetul mai documentează explicit o anomalie de arhivare — un set de capturi din Google Search plasat inițial în folderul de interogare greșit, corectată doar în documentația indexului, nu prin modificarea fișierelor brute — și o sesiune Perplexity în care contul autentificat purta chiar numele entității urmărite, un risc rezidual de personalizare marcat explicit ca atare în index, nu ascuns.
 
 ---
 

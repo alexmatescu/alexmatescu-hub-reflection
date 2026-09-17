@@ -21,8 +21,8 @@ export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
   // articol.
   articleType: "Analiză de caz",
   datePublished: "2026-09-04T09:06:00+03:00",
-  dateModified: "2026-09-14",
-  lastReviewed: "2026-09-14",
+  dateModified: "2026-09-17",
+  lastReviewed: "2026-09-17",
   about: [
     { name: "Alex Matescu" },
     { name: "Entity resolution" },
@@ -60,7 +60,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al studiului de caz — fără metadate tehnice. */
 export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Actualizat: <time datetime="2026-09-14">14 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-14">14 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Actualizat: <time datetime="2026-09-17">17 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-17">17 septembrie 2026</time></p>
 
       <table>
         <tbody>
@@ -229,6 +229,14 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       <p><strong>ChatGPT, Claude, Gemini și Perplexity.</strong></p>
 
       <p>Rezultatele lor nu descriu aceeași realitate.</p>
+
+      <h3>Pachetul de dovezi F1, publicat ulterior</h3>
+
+      <p>Rezultatele F1 descrise în această secțiune și în secțiunile 7–15 au fost capturate în perioada 4–6 august 2026. Ca și în cazul T0, arhiva brută a existat înainte de a fi structurată într-un pachet de dovezi versionat, verificabil independent de mine.</p>
+
+      <p>Pe 17 septembrie 2026 am publicat acest pachet: 492 de capturi/dovezi, acoperind cele patru sisteme adjudecate integral în matricea din secțiunea 14 (ChatGPT, Claude, Gemini, Perplexity), precum și Google Search, Google AI Mode, Bing și Microsoft Copilot — sistemele NEADJUDICAT din secțiunea 15 — însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v2.0" target="_blank" rel="noopener noreferrer">GitHub Release — Alex Matescu T0 Evidence Archive v2.0</a> (arhivă v2.0 / metadate v2.0).</p>
+
+      <p>La fel ca la T0, formalizarea nu schimbă niciun verdict deja descris pentru F1 — schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Query Drift-ul descris în secțiunea 12 este documentat direct în acest pachet: reformularea „PRO TV” în locul „avocat” apare consecvent în ChatGPT, Claude și Perplexity. Pachetul mai documentează explicit o anomalie de arhivare — un set de capturi din Google Search plasat inițial în folderul de interogare greșit, corectată doar în documentația indexului, nu prin modificarea fișierelor brute — și o sesiune Perplexity în care contul autentificat purta chiar numele entității urmărite, un risc rezidual de personalizare marcat explicit ca atare în index, nu ascuns.</p>
 
       <h2>7. ChatGPT — rezoluție puternică inclusiv fără ancoră</h2>
 
@@ -604,5 +612,5 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>Status: studiu longitudinal în desfășurare.</strong></p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 14 septembrie 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 17 septembrie 2026.</em></p>
 `;

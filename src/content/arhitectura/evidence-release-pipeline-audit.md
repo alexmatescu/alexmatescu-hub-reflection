@@ -132,7 +132,7 @@ Un script (`.mjs`, Node, fără librării externe) face absolut tot restul: calc
 
 A doua regulă, la fel de strictă (`SKILL.md` §1.1):
 
-> **Nimic ce intră în manifestul de checksum-uri nu mai este modificat după ce a fost generat.**
+> **Nimic din ceea ce intră în manifestul de checksum-uri nu mai este modificat după ce a fost generat.**
 
 Asta explică de ce pipeline-ul are exact ordinea pe care o are: generează → validează → **îngheață fișierele pe disc (chmod read-only)** → calculează checksum-uri → verifică-le imediat → verifică-le din nou chiar înainte de upload. Fiecare din aceste verificări e implementată ca un cod care oprește execuția (`process.exit(1)`), nu ca o instrucțiune pe care aș putea să o „interpretez" diferit într-o sesiune viitoare.
 
