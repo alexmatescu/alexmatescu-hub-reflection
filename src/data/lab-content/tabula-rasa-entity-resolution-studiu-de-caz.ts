@@ -9,7 +9,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
   title:
     "Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search",
   description:
-    "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini și Perplexity rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice.",
+    "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini, Perplexity, Google Search, Bing și Google AI Mode rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice.",
   canonical:
     "https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz",
   category: "Entities & Citations",
@@ -21,8 +21,8 @@ export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
   // articol.
   articleType: "Analiză de caz",
   datePublished: "2026-09-04T09:06:00+03:00",
-  dateModified: "2026-09-17",
-  lastReviewed: "2026-09-17",
+  dateModified: "2026-09-18",
+  lastReviewed: "2026-09-18",
   about: [
     { name: "Alex Matescu" },
     { name: "Entity resolution" },
@@ -60,7 +60,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al studiului de caz — fără metadate tehnice. */
 export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Actualizat: <time datetime="2026-09-17">17 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-17">17 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-09-04T09:06:00+03:00">4 septembrie 2026</time> · Actualizat: <time datetime="2026-09-18">18 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-18">18 septembrie 2026</time></p>
 
       <table>
         <tbody>
@@ -191,6 +191,12 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>NEDETERMINAT</strong> înseamnă că dovezile disponibile nu permit o clasificare suficient de sigură.</p>
 
+      <p><strong>NEADJUDICAT</strong> este folosit pentru un sistem sau un set de capturi pe care nu le pot încă încadra cu suficientă siguranță în taxonomia de mai sus — de obicei din motive de volum, mapping sau configurație de sesiune necontrolată — și pe care prefer să le las neadjudecate decât să public un verdict aproximativ.</p>
+
+      <p><strong>HIT-C</strong> este un HIT însoțit de citarea explicită a sursei canonice (de regulă delamatescu.ro) de către sistem.</p>
+
+      <p>O coliziune (<strong>COLIZIUNE</strong>) nu este un fenomen unic: în unele cazuri sistemul contopește greșit două persoane într-una singură sau alege cu încredere persoana greșită; în altele enumeră separat mai multe persoane reale cu nume apropiate, inclusiv pe cea urmărită, cu informații corecte pentru fiecare, fără să le confunde. A doua situație o marchez explicit ca <strong>coliziune dezambiguizată corect</strong> — nu este echivalentă cu o eroare de rezoluție, dar rămâne o coliziune pentru că mai multe entități ocupă același spațiu de răspuns și cea urmărită nu e singurul rezultat oferit.</p>
+
       <h2>5. T0/F0 — punctul de pornire</h2>
 
       <p>T0 este baseline-ul real al experimentului, dar nu este și nu trebuie prezentat ca o măsurătoare perfectă. La momentul respectiv, protocolul însuși era încă în formare. Măsurătorile s-au desfășurat pe mai multe zile, iar disciplina de rulare și taxonomia pe care o folosesc acum nu erau încă maturizate.</p>
@@ -218,7 +224,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Pe 13 septembrie 2026 am formalizat și publicat acest pachet: 152 de capturi/dovezi din T0, acoperind ChatGPT, Claude, Gemini, Perplexity, Google Search, Google AI Mode, Bing și Microsoft Copilot, însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v1.0" target="_blank" rel="noopener noreferrer">GitHub Release — Alex Matescu T0 Evidence Archive v1.0</a> (arhivă v1.0 / metadate v1.0).</p>
 
-      <p>Între cele două momente nu s-a schimbat doar starea entității observate, ci și rigoarea procesului prin care documentez dovezile. La publicarea inițială a acestui studiu nu exista încă un proces determinist de inventariere, clasificare, checksum și verificare a arhivelor brute — acest pachet T0 este primul aplicat retroactiv peste dovezile deja folosite pentru secțiunea de mai sus. Formalizarea nu schimbă verdictele deja descrise pentru T0 mai sus; schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Contaminarea de sesiune și anomaliile de arhivare identificate în acest set sunt documentate explicit în pachet, nu ascunse — consecvent cu motivul pentru care public și erorile (secțiunea 21).</p>
+      <p>Între cele două momente nu s-a schimbat doar starea entității observate, ci și rigoarea procesului prin care documentez dovezile. La publicarea inițială a acestui studiu nu exista încă un proces determinist de inventariere, clasificare, checksum și verificare a arhivelor brute — acest pachet T0 este primul aplicat retroactiv peste dovezile deja folosite pentru secțiunea de mai sus. Formalizarea nu schimbă verdictele deja descrise pentru T0 mai sus; schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Contaminarea de sesiune și anomaliile de arhivare identificate în acest set sunt documentate explicit în pachet, nu ascunse — consecvent cu motivul pentru care public și erorile (secțiunea 25).</p>
 
       <p>Aceeași regulă se va aplica oricărei formalizări similare pentru fazele următoare: momentul în care un pachet de dovezi este publicat nu coincide neapărat cu momentul în care fereastra de măsurare a avut loc efectiv, iar acest decalaj va fi mereu documentat explicit, nu tăcut.</p>
 
@@ -232,9 +238,9 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <h3>Pachetul de dovezi F1, publicat ulterior</h3>
 
-      <p>Rezultatele F1 descrise în această secțiune și în secțiunile 7–15 au fost capturate în perioada 4–6 august 2026. Ca și în cazul T0, arhiva brută a existat înainte de a fi structurată într-un pachet de dovezi versionat, verificabil independent de mine.</p>
+      <p>Rezultatele F1 descrise în această secțiune și în secțiunile 7–14 au fost capturate în perioada 4–6 august 2026. Ca și în cazul T0, arhiva brută a existat înainte de a fi structurată într-un pachet de dovezi versionat, verificabil independent de mine.</p>
 
-      <p>Pe 17 septembrie 2026 am publicat acest pachet: 492 de capturi/dovezi, acoperind cele patru sisteme adjudecate integral în matricea din secțiunea 14 (ChatGPT, Claude, Gemini, Perplexity), precum și Google Search, Google AI Mode, Bing și Microsoft Copilot — sistemele NEADJUDICAT din secțiunea 15 — însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v2.0" target="_blank" rel="noopener noreferrer">GitHub Release — Alex Matescu T0 Evidence Archive v2.0</a> (arhivă v2.0 / metadate v2.0).</p>
+      <p>Pe 17 septembrie 2026 am publicat acest pachet: 492 de capturi/dovezi, acoperind cele patru sisteme adjudecate integral în matricea din secțiunea 14 (ChatGPT, Claude, Gemini, Perplexity), precum și Google Search, Google AI Mode, Bing și Microsoft Copilot — sistemele lăsate atunci NEADJUDICAT (adjudecate ulterior, pentru Google/Bing/Google AI Mode, în secțiunile 15–19) — însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v2.0" target="_blank" rel="noopener noreferrer">GitHub Release — Alex Matescu T0 Evidence Archive v2.0</a> (arhivă v2.0 / metadate v2.0).</p>
 
       <p>La fel ca la T0, formalizarea nu schimbă niciun verdict deja descris pentru F1 — schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Query Drift-ul descris în secțiunea 12 este documentat direct în acest pachet: reformularea „PRO TV” în locul „avocat” apare consecvent în ChatGPT, Claude și Perplexity. Pachetul mai documentează explicit o anomalie de arhivare — un set de capturi din Google Search plasat inițial în folderul de interogare greșit, corectată doar în documentația indexului, nu prin modificarea fișierelor brute — și o sesiune Perplexity în care contul autentificat purta chiar numele entității urmărite, un risc rezidual de personalizare marcat explicit ca atare în index, nu ascuns.</p>
 
@@ -441,15 +447,172 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>În plus, aceeași prudență trebuie aplicată și în interiorul fiecărui rezultat: un <code>NULL</code> Claude poate reflecta tocmai o politică mai prudentă de evitare a atribuirii informației unei persoane atunci când dovezile sunt insuficiente. Un răspuns mai „bogat” nu este automat un răspuns mai bun.</p>
 
-      <h2>15. Google, Bing, Google AI Search și Copilot</h2>
+      <h2>15. Pachetul de dovezi v3.0 — adjudecarea Google, Bing și Google AI Mode</h2>
 
-      <p>Evidence set-ul conține și rulări pentru Google Search, Bing, Google AI Search și Copilot, dar aceste sisteme nu sunt incluse încă în agregarea cantitativă prezentată mai sus dintr-un motiv metodologic:</p>
+      <p>Secțiunea anterioară a acestui studiu lăsa patru sisteme drept <strong>NEADJUDICAT</strong>: Google Search, Bing, Google AI Mode și Microsoft Copilot. Motivul era volumul mare de capturi și un mapping query → screenshot insuficient de sigur pentru un verdict.</p>
 
-      <p>Numărul mare de capturi, paginile succesive și mapping-ul query → screenshot nu permit încă aceeași adjudecare sigură pe care am realizat-o pentru cele patru sisteme incluse.</p>
+      <p>Pe 16 septembrie 2026 am publicat un al treilea pachet de dovezi, distinct de T0 v1.0 și de F1 v2.0: 808 capturi/dovezi, cu condiții experimentale marcate explicit pe fiecare folder de captură — model, stare de autentificare, fereastră incognito sau normală — acoperind aceleași 14 interogări pe ChatGPT, Claude, Copilot, Gemini, Perplexity, Google AI Mode, Bing și Google Search. Pachetul este disponibil ca <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v3.0" target="_blank" rel="noopener noreferrer">GitHub Release — Alex Matescu T0 Evidence Archive v3.0</a> (arhivă v3.0 / metadate v3.0). La momentul publicării acestui studiu, eliberarea este încă în starea <code>draft</code> pe GitHub — devine public accesibilă abia când o marchez explicit ca atare, separat de actualizarea studiului.</p>
 
-      <p>Prin urmare, în această versiune prefer <strong>NEADJUDICAT</strong> în locul unui rezultat aproximativ. Datele există, dar verdictul nu este încă suficient de sigur.</p>
+      <p>Capturile relevante pentru Google Search, Bing și Google AI Mode au fost făcute în perioada 2–7 septembrie 2026, la peste o lună după fereastra F1 din august. Acest decalaj temporal este documentat explicit, nu ascuns: rezultatele de mai jos nu trebuie citite ca fiind din aceeași fereastră de măsurare cu ChatGPT/Claude/Gemini/Perplexity din secțiunile 7–14, ci ca o adjudecare separată, pe un eșantion mai mare și cu condiții experimentale mai bine documentate, a acelorași sisteme lăsate deschise în secțiunea anterioară.</p>
 
-      <h2>16. Ce s-a schimbat între T0 și F1?</h2>
+      <p>Din cele 808 de capturi, 346 (grupate în 41 de execuții distincte de query) au trecut pragul de includere în baza curată de analiză pentru Google Search, Bing și Google AI Mode. Restul — majoritatea din Google Search și Bing — sunt marcate <code>REVIEW_REQUIRED</code> sau <code>EXCLUDE_FROM_CLEAN_BASELINE</code> în Evidence Index și nu au fost folosite pentru verdicte.</p>
+
+      <h3>Copilot rămâne NEADJUDICAT</h3>
+
+      <p>Toate cele 25 de capturi Copilot din acest pachet au fost făcute în modul „Temporary” al copilot.microsoft.com (<code>chats/temporary</code>), nu în modul standard autentificat folosit pentru celelalte sisteme. Diferența de configurație de sesiune înseamnă că aceste capturi nu sunt comparabile cu protocolul curat descris în metodologia laboratorului, iar Evidence Index le marchează explicit <code>REVIEW_REQUIRED</code>. Nu adjudec Copilot pe baza lor. Copilot rămâne <strong>NEADJUDICAT</strong> și pentru această versiune — nu din lipsă de date, ci pentru că datele disponibile nu respectă configurația de sesiune pe care o cer pentru un verdict.</p>
+
+      <h3>O eroare de verificare, corectată înainte de publicare</h3>
+
+      <p>În timpul adjudecării acestui pachet am comis o eroare pe care o public aici, integral, pentru că se leagă direct de standardul de dovezi al acestui studiu.</p>
+
+      <p>Mai multe rezultate — pe Google AI Mode, Google Search și Bing — asociau numele urmărit cu „Taste the Corn”, un stand de street-food cu porumb aromat în Shopping City Sibiu. Pentru că detaliul nu se potrivea cu profilul deja documentat (System Lead Engineer la AUMOVIO), verificarea inițială a tratat asocierea drept confabulare — o identitate inventată de sisteme, nu una reală.</p>
+
+      <p>Verdictul a fost greșit. „Taste the Corn” este un proiect real, al meu, documentat pe propriul domeniu (<a href="https://delamatescu.ro/proiecte/taste-the-corn" target="_blank" rel="noopener noreferrer">delamatescu.ro/proiecte/taste-the-corn</a>), activ ianuarie–decembrie 2025 în Sibiu, și acoperit de presă locală (Economedia, Turnul Sfatului, ampress.ro) în iulie 2025. Inclusiv un detaliu suplimentar pe care Google AI Mode l-a atribuit corect și pe care verificarea inițială l-a pus de asemenea la îndoială — studiile de Sisteme Automate Încorporate la Facultatea de Automatică, Calculatoare și Electronică din Craiova — s-a confirmat exact.</p>
+
+      <p>Eroarea nu a fost a sistemelor AI evaluate, ci a procesului de verificare din spatele acestui studiu: rezultatele au fost adjudecate inițial pe bază de plauzibilitate („nu sună a profilul cunoscut, deci probabil e inventat”), nu pe bază de dovadă — exact ce principiul „dovada precede afirmația” interzice. Singura sursă autoritară pentru identitatea proprie a subiectului sunt eu, iar verificarea a ajuns la mine abia după ce un prim set de verdicte fusese deja formulat, nu înainte. Corectura a intervenit înainte de publicarea acestei versiuni a studiului — niciun verdict CONFABULARE greșit nu a fost publicat vreodată public pe acest subiect — dar consecința pentru verdictele de mai jos este reală: mai multe rezultate calificate inițial drept COLIZIUNE sau CONFABULARE sunt de fapt HIT.</p>
+
+      <p>Păstrez acest incident vizibil în studiu din același motiv pentru care păstrez Query Drift-ul din secțiunea 12 sau instabilitatea din T0: un studiu care își ascunde propriile erori de proces e un experiment mai slab, nu unul mai curat (secțiunea 25).</p>
+
+      <h2>16. Bing — rezoluție puternică pe ancore, eșec pe interogarea propriului domeniu</h2>
+
+      <p>Bing rezolvă entitatea corect pe jumătate din cele 14 interogări, direct pe pagina 1, fără nicio ancoră explicită.</p>
+
+      <p>Pentru <strong>„Cine este Alex Matescu?”</strong>, primele două rezultate organice sunt chiar delamatescu.ro. Pentru <strong>„Alex Matescu AUMOVIO”</strong>, <strong>„delamatescu.ro”</strong> și <strong>„Alex Matescu LinkedIn”</strong>, rezultatul corect apare pe poziția 1. Pentru <strong>„Alex Matescu Sibiu”</strong>, rezultatele combină corect profilurile profesionale (delamatescu.ro, LinkedIn) cu acoperirea de presă despre „Taste the Corn” — exact tipul de asociere pe care verificarea inițială a acestui pachet a tratat-o greșit drept coliziune cu o altă persoană (secțiunea 15). Corectată, aceasta e una dintre cele mai bogate rezoluții din tot pachetul v3.0: patru surse independente, toate despre aceeași persoană.</p>
+
+      <p>Profilul se inversează la interogările de dezambiguizare. Pentru <strong>„Alexandru Matescu”</strong> și <strong>„Alex Mateescu”</strong>, Bing nu confundă subiectul cu alte persoane care poartă acele variante de nume, dar nici nu îl recuperează — rezultatele sunt exclusiv despre alte persoane reale (fotbalist, avocați, profesioniști LinkedIn fără legătură). Cel mai izbitor caz este însă <strong>„Cine este în spatele delamatescu.ro?”</strong> — o interogare care conține chiar domeniul subiectului — unde Bing nu returnează niciun rezultat relevant în primele opt capturi ale paginii, în contrast direct cu interogarea „delamatescu.ro” simplă, care rezolvă curat pe poziția 1.</p>
+
+      <figure>
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_bing_null_delamatescu_domain.jpg" alt="Bing NULL pe interogarea despre propriul domeniu" loading="lazy" />
+        <figcaption>Fig. 7 — Bing, v3.0, „Cine este în spatele delamatescu.ro?”. Din 29.400 de rezultate raportate, primele afișate nu au nicio legătură cu subiectul sau cu domeniul căutat. Aceeași interogare redusă la simplul „delamatescu.ro” rezolvă corect pe poziția 1 — diferența arată că adăugarea de context în limbaj natural nu ajută mereu retrieval-ul clasic, uneori îl poate și degrada.</figcaption>
+      </figure>
+
+      <h3>Rezultate pe interogare</h3>
+
+      <table>
+        <thead>
+          <tr><th>Query</th><th>Verdict</th><th>Notă</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q01 Cine este Alex Matescu?</td><td>HIT</td><td>Primele 2 rezultate organice: delamatescu.ro.</td></tr>
+          <tr><td>Q02 Ce știi despre Alex Matescu?</td><td>HIT PARȚIAL</td><td>Conținut corect (AI Visibility Lab) prezent, dar la poziția 11-20, diluat de omonime.</td></tr>
+          <tr><td>Q03 Cu ce se ocupă Alex Matescu?</td><td>HIT PARȚIAL</td><td>Rezultat corect prezent, dar la poziția 31-40.</td></tr>
+          <tr><td>Q04 Alex Matescu Sibiu</td><td>HIT</td><td>Corectat față de verificarea inițială (secțiunea 15) — delamatescu.ro/LinkedIn și presa despre Taste the Corn, aceeași persoană.</td></tr>
+          <tr><td>Q05 Cine este Alex Matescu din Sibiu?</td><td>NEDETERMINAT</td><td>Anomalie de arhivă: un screenshot din secvența Q06 a fost găsit mapat greșit în grupul Q05. Verdict reținut până la o reverificare completă.</td></tr>
+          <tr><td>Q06 Alex Matescu (simplu)</td><td>HIT PARȚIAL</td><td>Rezultat corect prezent la a doua pagină, alături de cel puțin 3 omonime distincte.</td></tr>
+          <tr><td>Q07 Alexandru Matescu</td><td>NULL</td><td>Doar omonime reale (fotbalist, avocați); subiectul absent, dar și necontopit cu ei.</td></tr>
+          <tr><td>Q08 Alex Mateescu</td><td>NULL</td><td>Doar profiluri ale altor persoane cu acest nume.</td></tr>
+          <tr><td>Q09 Alex Matescu vs Alexandru Mateescu avocat</td><td>NULL</td><td>Fără drift de formulare pe Bing; rezultatele se rezolvă integral spre firma de avocatură, subiectul absent din comparație.</td></tr>
+          <tr><td>Q10 Alex Matescu AUMOVIO</td><td>HIT</td><td>Rezultat LinkedIn pe poziția 1, cu apartenența istorică la Continental menționată corect.</td></tr>
+          <tr><td>Q11 Alex Matescu inginer / engineer</td><td>HIT PARȚIAL</td><td>Conținut relevant confirmat, dar abia la pagina 6 din secvența disponibilă.</td></tr>
+          <tr><td>Q12 delamatescu.ro</td><td>HIT</td><td>Primele 5 rezultate: exclusiv delamatescu.ro.</td></tr>
+          <tr><td>Q13 Cine este în spatele delamatescu.ro?</td><td>NULL</td><td>Fig. 7 — nicio urmă a subiectului, deși domeniul e numit explicit în interogare.</td></tr>
+          <tr><td>Q14 Alex Matescu LinkedIn</td><td>HIT</td><td>Profilul corect, poziția 1.</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Agregat Bing (v3.0):</strong> 5 HIT · 4 HIT PARȚIAL · 4 NULL · 1 NEDETERMINAT.</p>
+
+      <p>O a doua constatare, distinctă de verdictele de mai sus: pentru mai multe grupuri de interogare (Q05, Q07, Q08), primul screenshot al secvenței s-a dovedit a fi, la verificare, o captură reziduală dintr-o interogare anterioară, nu o captură nouă a interogării proprii — câmpul „Mapping status: CONFIRMED” din Evidence Index nu a prins această eroare. Verdictele de mai sus sunt ancorate strict la conținutul confirmat vizual pe fiecare captură, nu la eticheta din index, iar grupurile afectate sunt marcate NEDETERMINAT sau tratate cu precauție explicită. Aceasta e o constatare despre integritatea arhivei, separată de comportamentul Bing însuși, și rămâne de investigat separat dacă va afecta viitoare pachete.</p>
+
+      <h2>17. Google Search — un mecanism nou: autocorectarea silențioasă a numelui</h2>
+
+      <p>Google reproduce, la rândul lui, Anchor Dependence deja documentată pentru sistemele AI: interogările ancorate (<code>AUMOVIO</code>, <code>inginer</code>, <code>delamatescu.ro</code>) rezolvă curat, cele generice și de dezambiguizare se pierd în omonime.</p>
+
+      <p>Dar Google Search introduce un mecanism absent din toate celelalte sisteme analizate până acum: <strong>autocorectarea silențioasă a numelui</strong>. Pentru interogările <strong>„Cine este Alex Matescu?”</strong> și <strong>„Alex Matescu AUMOVIO”</strong>, Google rescrie automat „Matescu” în „Mateescu” — afișând explicit „Ai căutat inițial... Vezi rezultate pentru...” — și înlocuiește complet setul de rezultate cu omonime, înainte ca orice competiție de retrieval sau ranking să mai conteze.</p>
+
+      <figure>
+        <img src="/images/lab/tabula-rasa-entity-resolution-studiu-de-caz/fig_google_autocorrect_matescu_vs_mateescu.jpg" alt="Autocorectarea Google: Matescu devine Mateescu" loading="lazy" />
+        <figcaption>Fig. 8 — Google Search, v3.0, „Cine este Alex Matescu?”. Motorul rescrie silențios interogarea în „Alex Mateescu” și afișează rezultate exclusiv pentru omonimi. Spre deosebire de coliziunile observate la sistemele AI, aici entitatea corectă nu pierde o competiție de relevanță — e eliminată înainte ca aceasta să înceapă.</figcaption>
+      </figure>
+
+      <p>Această corectare ortografică nu e specifică unei interogări — apare consecvent la mai multe formulări cu „Matescu” (nu „Mateescu”), inclusiv la cea care conține ancora <code>AUMOVIO</code>, unde termenul e apoi raportat explicit ca „Lipsesc: aumovio” în rezultate.</p>
+
+      <p>O a doua constatare, similară celei de la Bing: pentru o secvență de capturi Google Search (sesiunea S7, interogările Q03–Q08), eticheta „Query ID” din Evidence Index nu corespunde consecvent cu interogarea vizibilă pe ecran în fiecare captură — de exemplu, fișiere etichetate „Q03” arată de fapt continuarea paginării pentru Q04. Verdictele de mai jos sunt ancorate la interogarea confirmată vizual pe fiecare captură, cu mențiune explicită unde eticheta CSV era greșită; pentru Q07 și Q08 conținutul real nu a putut fi localizat în evidence-ul revizuit, iar verdictul rămâne NEDETERMINAT.</p>
+
+      <h3>Rezultate pe interogare</h3>
+
+      <table>
+        <thead>
+          <tr><th>Query (confirmată vizual)</th><th>Verdict</th><th>Notă</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q01 Cine este Alex Matescu?</td><td>COLIZIUNE</td><td>Autocorectat silențios spre „Mateescu” — Fig. 8.</td></tr>
+          <tr><td>Q02 Ce știi despre Alex Matescu?</td><td>HIT PARȚIAL</td><td>Pagina 2: delamatescu.ro apare ca rezultat organic real.</td></tr>
+          <tr><td>Q03 Cu ce se ocupă Alex Matescu?</td><td>HIT</td><td>Top 5 rezultate organice: delamatescu.ro. (Etichetă CSV inițial greșită — conținut confirmat vizual.)</td></tr>
+          <tr><td>Q04 Alex Matescu Sibiu</td><td>COLIZIUNE</td><td>~5 pagini revizuite, 100% omonime reale, fără urmă a subiectului la această formulare.</td></tr>
+          <tr><td>Q05 Cine este Alex Matescu din Sibiu?</td><td>HIT</td><td>delamatescu.ro apare organic, inclusiv pagina proprie „Apariții în presă” care documentează chiar povestea Taste the Corn.</td></tr>
+          <tr><td>Q06 Alex Matescu (simplu)</td><td>HIT PARȚIAL</td><td>delamatescu.ro prezent pe pagina 1, diluat de omonime pe rețele sociale.</td></tr>
+          <tr><td>Q07 Alexandru Matescu</td><td>NEDETERMINAT</td><td>Conținut real al acestei interogări nu a putut fi localizat în evidence-ul revizuit (anomalie de mapping).</td></tr>
+          <tr><td>Q08 Alex Mateescu</td><td>NEDETERMINAT</td><td>Aceeași anomalie de mapping ca Q07.</td></tr>
+          <tr><td>Q09 Alex Matescu vs Alexandru Mateescu avocat</td><td>—</td><td>Fără dovezi incluse în baza curată pentru această interogare pe Google Search.</td></tr>
+          <tr><td>Q10 Alex Matescu AUMOVIO</td><td>COLIZIUNE</td><td>Același mecanism de autocorectare ca Q01; „aumovio” raportat ca termen lipsă din rezultate.</td></tr>
+          <tr><td>Q11 Alex Matescu inginer / engineer</td><td>HIT</td><td>RocketReach și LinkedIn identifică corect rolul și compania.</td></tr>
+          <tr><td>Q12 delamatescu.ro</td><td>HIT</td><td>Toate rezultatele organice: delamatescu.ro.</td></tr>
+          <tr><td>Q13 Cine este în spatele delamatescu.ro?</td><td>HIT-C</td><td>AI Overview identifică și citează explicit delamatescu.ro drept sursă.</td></tr>
+          <tr><td>Q14 Alex Matescu LinkedIn</td><td>COLIZIUNE</td><td>Pagina 1 dominată de profiluri „Alexandru Mateescu” fără legătură.</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Agregat Google Search (v3.0):</strong> 4 HIT · 1 HIT-C · 2 HIT PARȚIAL · 4 COLIZIUNE · 2 NEDETERMINAT · 1 fără dovadă.</p>
+
+      <h2>18. Google AI Mode — coliziune, dar cu dezambiguizare explicită și corectă</h2>
+
+      <p>Google AI Mode se comportă ca un sistem de sinteză, nu ca o căutare clasică: generează text, citează surse inline și, la interogările generice, alege frecvent să enumere mai multe persoane reale cu numele „Alex/Alexandru (M)ateescu” în loc să aleagă una singură. Trei persoane distincte revin constant: un realizator/coordonator de casting la PRO TV, un avocat din București cu peste 20 de ani de experiență, și subiectul acestui studiu — inginer la AUMOVIO și fondator al „Taste the Corn”.</p>
+
+      <p>La interogările generice (<code>Cine este Alex Matescu?</code>, <code>Ce știi despre Alex Matescu?</code>, <code>Cu ce se ocupă Alex Matescu?</code>), Google AI Mode alege consecvent să prezinte doar PRO TV și avocatul drept „cele mai căutate” profiluri — subiectul e absent din răspunsul principal la primele două, și menționat doar într-o notă de subsol la a doua („există și alte mențiuni mai puțin mediatizate, cum ar fi un tânăr inginer din Sibiu care a deschis o afacere stradală cu porumb”) — notă corectă, dar care nu ridică subiectul la statutul de răspuns principal.</p>
+
+      <p>La interogările <code>Alex Matescu</code> (simplu), <code>Alexandru Matescu</code> și <code>Alex Mateescu</code>, comportamentul se schimbă: sistemul listează toate cele trei persoane separat, cu detalii complete și corecte pentru fiecare, inclusiv pentru subiect (AUMOVIO, Taste the Corn, delamatescu.ro). Aceasta e o <strong>coliziune dezambiguizată corect</strong> (secțiunea 4) — spre deosebire de fuziunea de identități observată la Gemini în F1 (secțiunea 9), aici sistemul nu amestecă persoanele și nu atribuie greșit fapte, doar nu alege una singură ca răspuns.</p>
+
+      <p>La interogările ancorate (<code>AUMOVIO</code>, <code>inginer/engineer</code>, <code>delamatescu.ro</code>, „cine e în spate”, <code>LinkedIn</code>), rezoluția e curată și, verificat, complet corectă — inclusiv detalii fine precum studiile de Sisteme Automate Încorporate la Facultatea din Craiova sau vechimea blogului din decembrie 2014.</p>
+
+      <p>O observație separată, minoră dar reală: în textul câtorva răspunsuri (Q04, Q05), Google AI Mode scrie numele subiectului „Alex Mateescu” (cu doi de e), deși interogarea introdusă folosea „Matescu” (un singur e) — un drift de scriere în interiorul unui răspuns altfel corect, distinct de Query Drift-ul din secțiunea 12 (acela privea formularea interogării, nu ortografia din răspuns).</p>
+
+      <h3>Rezultate pe interogare</h3>
+
+      <table>
+        <thead>
+          <tr><th>Query</th><th>Verdict</th><th>Notă</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q01 Cine este Alex Matescu?</td><td>COLIZIUNE</td><td>Doar PRO TV/avocat; subiectul absent.</td></tr>
+          <tr><td>Q02 Ce știi despre Alex Matescu?</td><td>COLIZIUNE</td><td>PRO TV/avocat primari; subiectul menționat corect, dar doar într-o notă de subsol.</td></tr>
+          <tr><td>Q03 Cu ce se ocupă Alex Matescu?</td><td>COLIZIUNE</td><td>Doar PRO TV/avocat; fără nicio mențiune a subiectului.</td></tr>
+          <tr><td>Q04 Alex Matescu Sibiu</td><td>HIT</td><td>Taste the Corn, Shopping City Sibiu, blogul personal — toate corecte.</td></tr>
+          <tr><td>Q05 Cine este Alex Matescu din Sibiu?</td><td>HIT</td><td>Idem, plus studiile din Craiova — confirmat corect. Drift de ortografie „Mateescu” în text.</td></tr>
+          <tr><td>Q06 Alex Matescu (simplu)</td><td>COLIZIUNE (dezambiguizată corect)</td><td>3 persoane listate separat; subiectul primul, informații corecte.</td></tr>
+          <tr><td>Q07 Alexandru Matescu</td><td>COLIZIUNE (dezambiguizată corect)</td><td>Aceleași 3 persoane, subiectul al treilea, informații corecte.</td></tr>
+          <tr><td>Q08 Alex Mateescu</td><td>COLIZIUNE (dezambiguizată corect)</td><td>Aceleași 3 persoane, subiectul primul, informații corecte.</td></tr>
+          <tr><td>Q09 Alex Matescu vs Alexandru Mateescu avocat</td><td>COLIZIUNE</td><td>Compară explicit 2 avocați; notă corectă că „tânărul inginer din Sibiu” nu are legătură cu dreptul.</td></tr>
+          <tr><td>Q10 Alex Matescu AUMOVIO</td><td>HIT</td><td>Fuziune corectă AUMOVIO/Continental + Taste the Corn, aceeași persoană.</td></tr>
+          <tr><td>Q11 Alex Matescu inginer / engineer</td><td>HIT</td><td>Carieră completă și corectă, inclusiv Craiova.</td></tr>
+          <tr><td>Q12 delamatescu.ro</td><td>HIT-C</td><td>Citează domeniul direct; blog din 2014, CRANDIT, AI Visibility Lab — toate corecte.</td></tr>
+          <tr><td>Q13 Cine este în spatele delamatescu.ro?</td><td>HIT</td><td>Descrie corect cele trei fațete ale activității subiectului.</td></tr>
+          <tr><td>Q14 Alex Matescu LinkedIn</td><td>HIT</td><td>Profil curat, corect atribuit.</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Agregat Google AI Mode (v3.0):</strong> 6 HIT · 1 HIT-C · 3 COLIZIUNE (dezambiguizată corect) · 4 COLIZIUNE.</p>
+
+      <h2>19. Matricea extinsă v3.0</h2>
+
+      <table>
+        <thead>
+          <tr><th>Sistem</th><th>HIT</th><th>HIT-C</th><th>HIT parțial</th><th>COLIZIUNE</th><th>NULL</th><th>NEDETERMINAT</th><th>Fără dovadă</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bing</td><td>5</td><td>0</td><td>4</td><td>0</td><td>4</td><td>1</td><td>0</td></tr>
+          <tr><td>Google Search</td><td>4</td><td>1</td><td>2</td><td>4</td><td>0</td><td>2</td><td>1</td></tr>
+          <tr><td>Google AI Mode</td><td>6</td><td>1</td><td>0</td><td>7*</td><td>0</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
+
+      <p><em>* Din cele 7 COLIZIUNE la Google AI Mode, 3 sunt dezambiguizate corect (secțiunea 4 și 18) — sistemul listează subiectul separat, cu informații corecte, alături de alte două persoane reale cu nume apropiate, fără să le confunde.</em></p>
+
+      <p>Acest tabel nu se combină cu matricea din secțiunea 14: acoperă alte trei sisteme, capturate într-o fereastră diferită (2–7 septembrie 2026, față de 4–6 august pentru ChatGPT/Claude/Gemini/Perplexity), cu un protocol care documentează explicit condiții experimentale (model, autentificare, fereastră incognito/normală) pe care F1 nu le-a marcat separat. Rămâne, ca și matricea din secțiunea 14, o descriere a comportamentului pe o singură entitate și un singur Query Set — nu un benchmark general între motoare de căutare.</p>
+
+      <p>Privite împreună, cele trei sisteme confirmă Anchor Dependence deja documentată pentru sistemele AI, dar adaugă două mecanisme noi, specifice căutării clasice și absente din sistemele conversaționale analizate în F1: <strong>autocorectarea silențioasă a numelui</strong> (Google Search, secțiunea 17), care elimină entitatea înainte ca retrieval-ul să înceapă, și <strong>coliziunea dezambiguizată corect</strong> (Google AI Mode, secțiunea 18), un mod de a gestiona nume apropiate mai transparent decât fuziunea de identități observată la Gemini în F1 — dar tot o formă de coliziune, pentru că subiectul nu e niciodată singurul răspuns.</p>
+
+      <h2>20. Ce s-a schimbat între T0 și F1?</h2>
 
       <p>Între cele două ferestre, ecosistemul digital al entității s-a schimbat. Website-ul delamatescu.ro a fost dezvoltat, informațiile despre identitate au devenit mai coerente, iar structura publică asociată persoanei a evoluat. Totuși, istoricul complet al intervențiilor dintre T0 și F1 nu este încă reconstruit cu suficiente dovezi cronologice din cod, motiv pentru care studiul nu formulează afirmații de forma:</p>
 
@@ -463,7 +626,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Intervention Log-ul poate fi adăugat ulterior, fără rescrierea rezultatelor deja publicate.</p>
 
-      <h2>17. De ce T0 imperfect nu trebuie eliminat</h2>
+      <h2>21. De ce T0 imperfect nu trebuie eliminat</h2>
 
       <p>Ar fi tentant să declar că metodologia începe cu versiunea actuală și să ignor prima rundă de măsurători. Ar produce un experiment mai curat, dar ar elimina tocmai punctul de pornire real:</p>
 
@@ -482,7 +645,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Tabula Rasa pornește de la primele, de la <strong>date imperfecte</strong>.</p>
 
-      <h2>18. Ce NU demonstrează acest studiu</h2>
+      <h2>22. Ce NU demonstrează acest studiu</h2>
 
       <p>Acest studiu nu demonstrează că modificarea unui JSON-LD, publicarea unui articol, introducerea unui <code>sameAs</code> sau orice altă intervenție individuală a determinat un model să producă un anumit răspuns.</p>
 
@@ -507,7 +670,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Experimentul poate observa rezultatul însă nu controlează întreaga infrastructură care îl produce.</p>
 
-      <h2>19. AI Visibility nu este o variabilă binară</h2>
+      <h2>23. AI Visibility nu este o variabilă binară</h2>
 
       <p>Unul dintre cele mai importante lucruri pe care experimentul le arată deja este că <strong>„apare / nu apare”</strong> este o definiție prea slabă a vizibilității AI.</p>
 
@@ -526,7 +689,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Toate acestea sunt forme diferite de relație dintre sistem și entitate, iar reducerea lor la un procent unic pierde informație.</p>
 
-      <h2>20. Un model provizoriu al maturității entității</h2>
+      <h2>24. Un model provizoriu al maturității entității</h2>
 
       <p>Datele de până acum sugerează o posibilă succesiune:</p>
 
@@ -540,7 +703,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Aceasta este una dintre ipotezele rezultate din observarea F0 și F1 și trebuie testată în fazele următoare, nefiind încă un model validat.</p>
 
-      <h2>21. De ce public și erorile</h2>
+      <h2>25. De ce public și erorile</h2>
 
       <ul>
         <li>Query Drift-ul putea fi eliminat din articol.</li>
@@ -554,7 +717,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Tabula Rasa urmărește să documenteze ce se întâmplă, nu urmărește să demonstreze retrospectiv că o strategie a funcționat. Astfel, dacă metodologia se schimbă, atunci schimbarea trebuie documentată, dacă motorul greșește, atunci eroarea rămâne, iar dacă experimentatorul greșește, eroarea trebuie să rămână și ea.</p>
 
-      <h2>22. Ce urmărim în următoarele faze</h2>
+      <h2>26. Ce urmărim în următoarele faze</h2>
 
       <p>Următoarele ferestre vor testa în primul rând dacă query-urile generale ajung să rezolve mai constant entitatea și dacă dependența de <code>AUMOVIO</code>, <code>Sibiu</code>, <code>engineer</code> sau <code>delamatescu.ro</code> scade.</p>
 
@@ -571,7 +734,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Query Set-ul va fi înghețat pentru fazele comparabile, iar orice abatere va fi marcată explicit.</p>
 
-      <h2>23. Concluzie provizorie</h2>
+      <h2>27. Concluzie provizorie</h2>
 
       <p>Prima concluzie Tabula Rasa nu este <strong>„Alex Matescu a devenit vizibil în AI.”</strong> Datele descriu ceva mai interesant:</p>
 
@@ -598,19 +761,19 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Acest studiu folosește identitatea autorului AI Visibility Lab drept subiect experimental. Autorul controlează delamatescu.ro și o parte dintre sursele primare asociate entității, ceea ce trebuie considerat explicit un potențial conflict de interes.</p>
 
-      <p>În același timp, această situație permite documentarea directă a surselor, intervențiilor și identității reale care trebuie evaluată.</p>
+      <p>În același timp, această situație permite documentarea directă a surselor, intervențiilor și identității reale care trebuie evaluată — și, așa cum arată incidentul din secțiunea 15, chiar o condiționează: verificarea rezultatelor despre „Taste the Corn” a putut fi corectată corect doar pentru că subiectul studiat și autorul lui sunt aceeași persoană, singura sursă autoritară pentru propria identitate. Pentru o entitate terță, o eroare similară de verificare ar fi putut rămâne needetectată.</p>
 
-      <p>Capturile originale sunt păstrate în evidence set. Pentru T0, acestea sunt publicate integral, verificabil prin checksum SHA-256, ca pachet de dovezi separat (secțiunea 5) — proces care nu exista în această formă la publicarea inițială a studiului și care a fost aplicat retroactiv, fără a modifica verdictele deja descrise.</p>
+      <p>Capturile originale sunt păstrate în evidence set. Pentru T0, acestea sunt publicate integral, verificabil prin checksum SHA-256, ca pachet de dovezi separat (secțiunea 5) — proces care nu exista în această formă la publicarea inițială a studiului și care a fost aplicat retroactiv, fără a modifica verdictele deja descrise. Pachetul v3.0 (secțiunea 15) extinde aceeași disciplină de verificare la Google Search, Bing și Google AI Mode.</p>
 
       <p>T0/F0 conține limitări metodologice și nu a fost reconstruit retrospectiv pentru a respecta standardele dezvoltate ulterior. Maturizarea procesului de documentare a dovezilor, descrisă în secțiunea 5, este distinctă de maturizarea entității observate — prima privește rigoarea mea ca experimentator, a doua privește obiectul studiului.</p>
 
       <p>Query Drift-ul identificat în F1 este păstrat în studiu.</p>
 
-      <p>Motoarele insuficient adjudecate nu sunt incluse în agregările cantitative.</p>
+      <p>Microsoft Copilot rămâne NEADJUDICAT (secțiunea 15) — nu din lipsă de date, ci pentru că datele disponibile din pachetul v3.0 au fost capturate într-o configurație de sesiune necomparabilă cu protocolul curat. Motoarele insuficient adjudecate nu sunt incluse în agregările cantitative.</p>
 
       <p>Corelația temporală dintre intervențiile digitale și schimbarea răspunsurilor nu este prezentată drept cauzalitate.</p>
 
       <p><strong>Status: studiu longitudinal în desfășurare.</strong></p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 17 septembrie 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală: 18 septembrie 2026.</em></p>
 `;

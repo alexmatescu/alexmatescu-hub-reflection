@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, Navigate } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
+import ContentLightbox from "@/components/ContentLightbox";
 import { findLabPage, findLabParent, labNav } from "@/data/lab";
 import {
   buildArticleJsonLd,
@@ -420,10 +421,10 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
 
           {(() => {
             const contentBlock = content ? (
-              <div
+              <ContentLightbox
                 key="content"
+                html={content}
                 className="prose-editorial mt-14 max-w-2xl"
-                dangerouslySetInnerHTML={{ __html: content }}
               />
             ) : (
               <div

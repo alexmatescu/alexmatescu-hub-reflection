@@ -221,7 +221,7 @@
   .prose-editorial ul { @apply my-6 pl-6 list-disc space-y-2; }
   .prose-editorial ol { @apply my-6 pl-6 list-decimal space-y-2; }
   .prose-editorial a { @apply underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground transition-colors; }
-  .prose-editorial img { @apply my-10 mx-auto rounded-sm max-w-full h-auto; }
+  .prose-editorial img { @apply my-10 mx-auto rounded-sm max-w-full h-auto cursor-zoom-in transition-opacity hover:opacity-90; }
   .prose-editorial figure img { @apply mb-3; }
   .prose-editorial figcaption { @apply mt-2 mb-10 text-center text-sm text-muted-foreground leading-snug; }
   .prose-editorial hr { @apply my-12 border-foreground/15; }

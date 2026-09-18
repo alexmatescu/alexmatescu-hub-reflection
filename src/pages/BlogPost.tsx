@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { posts } from "@/data/posts";
 import NewsletterForm from "@/components/NewsletterForm";
 import Seo from "@/components/Seo";
+import ContentLightbox from "@/components/ContentLightbox";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("ro-RO", {
@@ -111,10 +112,7 @@ const BlogPost = () => {
 
         <div className="container-prose py-16">
           {post.html ? (
-            <div
-              className="prose-editorial"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
+            <ContentLightbox html={post.html} className="prose-editorial" />
           ) : (
             <div className="prose-editorial">
               {post.content?.map((para, i) => (
