@@ -117,7 +117,7 @@ Cadrul metodologic AI Visibility Lab
  ┌─────────────────────┬─────────────────────┬─────────────────────┐
  ↓                     ↓                     ↓
 AVL-200               AVL-201               viitoare documente
-Standard dovezi,      Tabula Rasa F0        metodologice /
+Standard dovezi,      Tabula Rasa T0        metodologice /
 măsurare și           Baseline              protocoale
 trasabilitate
 ```
@@ -259,7 +259,10 @@ T0 trebuie să permită unui terț competent să înțeleagă:
 
 AVL-201 tratează baseline-ul ca pe un livrabil independent, nu ca pe o etapă informală înaintea „adevăratului” experiment.
 
-> **Notă de nomenclatură:** în corpusul existent, `F0` denumește faza de baseline Tabula Rasa. În studiile longitudinale, un punct de măsurare poate fi notat `T0`, urmat de `T1`, `T2` și așa mai departe. Atunci când un studiu istoric folosește o convenție mai veche, aceasta nu este rescrisă retroactiv; echivalențele sunt documentate explicit.
+> **Notă de nomenclatură:**
+În corpusul existent, `F0` denumește faza de baseline Tabula Rasa.
+În studiile longitudinale, un baseline va fi notat `T0`,urmat de puncte de măsurare `F1`, `F2` și așa mai departe.
+Atunci când un studiu istoric folosește o convenție mai veche, aceasta nu este rescrisă retroactiv; echivalențele sunt documentate explicit.
 
 **→ [Citește AVL-201 — Tabula Rasa T0](/lab/metodologie/tabula-rasa-f0)**
 

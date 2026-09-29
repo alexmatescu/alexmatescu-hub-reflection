@@ -335,7 +335,7 @@ Faza descrie rolul unei etape într-o metodologie.
 
 Exemple existente în AI Visibility Lab:
 
-- `F0` — baseline / Tabula Rasa;
+- `T0` — baseline / Tabula Rasa;
 - `F1` — intervenție asupra sursei canonice;
 - `F2` — consolidarea prezenței distribuite;
 - `F3` — remăsurare în arhitectura curentă a metodologiei.
@@ -348,22 +348,25 @@ Punctul de măsurare identifică o observație longitudinală în timp, independ
 
 Convenția recomandată prospectiv:
 
-- `T0` — primul punct de măsurare;
-- `T1` — următorul punct;
-- `T2` etc.;
+- `T0` — baseline;
+- `F0` — primul punct de măsurare;
+- `F1` — următorul punct;
+- `F2` etc.;
 - sau o fereastră temporală explicită atunci când un singur punct nu este suficient.
 
-Un singur F poate include mai multe T-uri.
+Un singur T va include mai multe F-uri.
 
 Exemplu:
 
 ```text
-F1 / T1
-F1 / T2
-F1 / T3
+T1 / F1
+T1 / F2
+T1 / F3
 ```
 
-Această situație poate apărea dacă aceeași intervenție este remăsurată de mai multe ori fără trecerea la o altă fază metodologică.
+Această situație poate apărea dacă aceeași intervenție este remăsurată de mai multe ori fără trecerea la o altă fază metodologică. 
+
+Un set nou de query-uri va presupune întotdeauna un baseline T0 nou, urmat de n rulări succesive F.
 
 ## 7.3. Convenții istorice și deviații
 
