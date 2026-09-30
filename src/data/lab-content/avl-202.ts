@@ -8,18 +8,19 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima verificare</th><td>14 septembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>30 septembrie 2026</td></tr>
+        <tr><th scope="row">Ultima verificare</th><td>30 septembrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie">https://delamatescu.ro/lab/metodologie</a></td></tr>
         <tr><th scope="row">Dependență</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a></td></tr>
         <tr><th scope="row">Documente informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO vs GEO</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></td></tr>
         <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa T0</a></td></tr>
+        <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code> (documente planificate, încă nepublicate)</td></tr>
         </tbody>
         </table>
       </div>
@@ -54,34 +55,62 @@ export const avl202CadruMetodologicHtml = `
 
       <p>Aceste ID-uri nu se renumerotează retrospectiv doar pentru a produce o succesiune numerică mai elegantă.</p>
 
+      <h3>Identificatorii de familie: <code>AVL-MKT-*</code></h3>
+
+      <p>Pe lângă seria numerică <code>AVL-NNN</code>, Nivelul C poate conține familii metodologice cu namespace propriu. Prima familie de acest tip este <strong>Market Measurement</strong>, cu identificatori de forma <code>AVL-MKT-NNN</code>. Definiția completă a namespace-ului este stabilită în <a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>, §17.</p>
+
+      <p>Într-un identificator <code>AVL-MKT-NNN</code>, <code>AVL</code> indică apartenența la corpusul normativ AI Visibility Lab, <code>MKT</code> indică familia Market Measurement, iar <code>NNN</code> identifică permanent documentul în interiorul familiei. Numerotarea familiei începe cu <code>001</code>, este independentă de seria <code>AVL-NNN</code> și reflectă ordinea de înregistrare în familie, nu ordinea de lectură. <strong>AVL-MKT-001</strong> și <strong>AVL-001</strong> sunt documente diferite: numărul comun nu exprimă nicio relație între ele.</p>
+
       <h3>Ordinea de înregistrare</h3>
 
       <p><strong>AVL-200 → AVL-201 → AVL-202</strong></p>
 
+      <p>Familia <code>AVL-MKT-*</code> are propria ordine de înregistrare, care începe cu AVL-MKT-001.</p>
+
       <h3>Ordinea conceptuală recomandată de lectură</h3>
 
-      <p><strong>AVL-001 → AVL-202 → AVL-200 / AVL-201</strong></p>
+      <p><strong>AVL-001 → AVL-202 → AVL-200 / AVL-201 → documentele familiei AVL-MKT (după publicare)</strong></p>
 
-      <p>AVL-001 stabilește principiile Foundation. AVL-202 descrie cadrul metodologic general. AVL-200 și AVL-201 formalizează componente specifice ale acelui cadru.</p>
+      <p>AVL-001 stabilește principiile Foundation. AVL-202 descrie cadrul metodologic general. AVL-200 și AVL-201 formalizează componente specifice ale acelui cadru. Documentele <code>AVL-MKT-*</code> vor formaliza măsurarea reprezentării unei piețe și se citesc după AVL-202.</p>
 
       <h2>Arhitectura metodologiei</h2>
 
-      <p>Relația dintre documentele existente este:</p>
+      <p>Relația dintre documentele existente și cele planificate este:</p>
 
       <pre><code>AVL-001
 Foundation
-   ↓
+   │
+   ▼
 AVL-202
 Cadrul metodologic AI Visibility Lab
-   ↓
- ┌─────────────────────┬─────────────────────┬─────────────────────┐
- ↓                     ↓                     ↓
-AVL-200               AVL-201               viitoare documente
-Standard dovezi,      Tabula Rasa F0        metodologice /
-măsurare și           Baseline              protocoale
-trasabilitate</code></pre>
+   │
+   ├── Metodologia de bază (Core Methodology)
+   │     ├── AVL-200  Standard dovezi, măsurare și trasabilitate
+   │     ├── AVL-201  Tabula Rasa F0 — Baseline
+   │     └── viitoare documente metodologice / protocoale
+   │
+   └── Market Measurement — familia AVL-MKT-*
+         ├── AVL-MKT-001  Market Scope &amp; Eligibility Protocol   (planificat)
+         ├── AVL-MKT-002  Market Query Panel                    (planificat)
+         └── viitoare protocoale ale familiei (AVL-MKT-003 …)</code></pre>
 
       <p>Relația este <strong>conceptuală și normativă</strong>, nu cronologică. AVL-200 și AVL-201 au fost înregistrate înainte ca documentul-cadru AVL-202 să fie formalizat; acest istoric este păstrat, nu rescris.</p>
+
+      <p><strong>AVL-MKT este o familie funcțională în interiorul Nivelului C — Methodology și nu reprezintă un nivel normativ separat.</strong> Documentele familiei sunt guvernate de AVL-001 și de AVL-202 la fel ca oricare alt document de Nivel C.</p>
+
+      <h3>Precedența normativă</h3>
+
+      <pre><code>AVL-001
+   ↓
+AVL-202
+   ↓
+protocoale normative specifice familiei (ex. AVL-MKT-*)
+   ↓
+instanțe ale metodologiei (ex. Market Reference Set, măsurători concrete)
+   ↓
+măsurare</code></pre>
+
+      <p>Un protocol de familie poate detalia, dar nu poate contrazice AVL-202 sau AVL-001. O instanță aplică protocolul; nu îl modifică.</p>
 
       <h3>Rolul paginii /lab/metodologie</h3>
 
@@ -91,7 +120,7 @@ trasabilitate</code></pre>
         <li>prezintă cadrul metodologic general;</li>
         <li>explică ciclul metodologic și principiile comune;</li>
         <li>oferă punctul de intrare către documentele normative;</li>
-        <li>arată relațiile dintre standarde, baseline-uri și protocoalele viitoare.</li>
+        <li>arată relațiile dintre standarde, baseline-uri, familiile metodologice și protocoalele viitoare.</li>
       </ol>
 
       <p>În acest hub, ordinea de afișare trebuie să urmărească <strong>ordinea logică de lectură</strong>, nu ordinea numerică a ID-urilor:</p>
@@ -100,8 +129,11 @@ trasabilitate</code></pre>
         <li><strong>AVL-202 — Cadrul metodologic AI Visibility Lab</strong></li>
         <li><strong>AVL-200 — Standard dovezi, măsurare și trasabilitate</strong></li>
         <li><strong>AVL-201 — Tabula Rasa T0</strong></li>
+        <li>documentele familiei Market Measurement (<code>AVL-MKT-*</code>), după publicare;</li>
         <li>documentele metodologice viitoare.</li>
       </ol>
+
+      <p>Documentele planificate, dar nepublicate, sunt menționate în text fără link. Hub-ul nu conține pagini placeholder pentru documente care nu există încă.</p>
 
       <h2>Răspunsul scurt</h2>
 
@@ -110,6 +142,8 @@ trasabilitate</code></pre>
       <p><strong>întrebare → documentare → ipoteză → baseline → intervenție → așteptare → re-măsurare → comparație → concluzii și limite</strong></p>
 
       <p>Linia de bază este documentată prin <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa T0</a>, prima specificație normativă a laboratorului. Aceasta stabilește condițiile minime pentru măsurarea stării inițiale a unei entități: ce trebuie inventariat, ce interogări sunt folosite, cum sunt păstrate dovezile, cum sunt clasificate răspunsurile și ce poate fi comparat ulterior.</p>
+
+      <p>Cadrul include și o ramură dedicată măsurării unei piețe, nu doar a unei entități: familia <strong>Market Measurement (<code>AVL-MKT-*</code>)</strong>. În această ramură, piața este definită și verificată independent, conform unui protocol publicat, înainte ca reprezentarea ei în sistemele AI să fie măsurată (vezi secțiunea 14).</p>
 
       <p>Metodologia nu promite răspunsuri identice la rulări repetate și nu pretinde control asupra indexării, retrievalului, modelelor sau celorlalte componente interne ale furnizorilor. Scopul metodologiei este <strong>auditabilitatea procesului</strong>: să putem arăta ce a fost măsurat, în ce condiții, cu ce dovezi, ce s-a schimbat și cât de puternică poate fi concluzia rezultată.</p>
 
@@ -468,6 +502,171 @@ trasabilitate</code></pre>
         <li>corelația temporală nu este prezentată automat drept cauzalitate.</li>
       </ul>
 
+      <h2>14. Market Measurement — măsurarea reprezentării unei piețe</h2>
+
+      <p>Market Measurement este ramura Nivelului C care se ocupă de măsurarea modului în care sistemele AI reprezintă o piață — o populație de furnizori — nu o singură entitate. Ramura este formalizată prin familia normativă <code>AVL-MKT-*</code> și rămâne subordonată AVL-001 și AVL-202.</p>
+
+      <p>Diferența față de măsurarea unei entități este obiectul măsurării. Pentru o entitate, referința este chiar entitatea studiată. Pentru o piață, referința trebuie construită mai întâi: cine face parte din piață, după ce criterii și cu ce dovezi. Fără această referință, nu se poate spune ce a omis, a adăugat sau a reprezentat greșit un sistem AI.</p>
+
+      <p>Această secțiune descrie arhitectura ramurii. Nu conține criteriile de eligibilitate, regulile de construire a panelului de interogări sau alte cerințe operaționale; acestea vor fi definite în documentele <code>AVL-MKT-*</code>.</p>
+
+      <h3>14.1. Protocol normativ și instanță a protocolului</h3>
+
+      <p>Ramura Market Measurement separă strict <strong>regula</strong> de <strong>rezultatul aplicării regulii</strong>:</p>
+
+      <pre><code>STRAT NORMATIV
+AVL-MKT-001
+Market Scope &amp; Eligibility Protocol
+
+        ↓ aplicat asupra unei piețe concrete
+
+STRAT DE INSTANȚĂ / DOVADĂ
+Market Reference Set</code></pre>
+
+      <p><strong>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</strong> (planificat) va defini, înainte de orice măsurare: obiectul pieței, criteriile de eligibilitate, criteriile de includere și excludere, tipurile de dovezi acceptate, regulile geografice și temporale, data de cutoff, clasificările folosite și tratamentul cazurilor ambigue.</p>
+
+      <p><strong>Market Reference Set</strong> este rezultatul aplicării protocolului asupra unei piețe concrete, la un moment determinat. Market Reference Set nu este document normativ și nu primește identificator <code>AVL-MKT-*</code>. El aparține unei instanțe de măsurare.</p>
+
+      <h3>14.2. Fluxul Market Measurement</h3>
+
+      <pre><code>AVL-MKT-001
+Market Scope &amp; Eligibility Protocol
+        ↓
+Market Discovery
+        ↓
+Market Verification
+        ↓
+Market Reference Set
+        ↓
+Market Query Universe
+        ↓
+AVL-MKT-002
+Market Query Panel
+        ↓
+AI Execution
+        ↓
+Measurement
+        ↓
+Quarterly Market Report</code></pre>
+
+      <p>Numerotarea AVL-MKT-001 și AVL-MKT-002 exprimă ordinea de înregistrare în familie. Ea nu înseamnă că AVL-MKT-002 este aplicat imediat după AVL-MKT-001: între cele două se află aplicarea protocolului și constituirea Market Reference Set.</p>
+
+      <div class="overflow-x-auto">
+      <table>
+        <thead>
+          <tr><th>Etapă</th><th>Strat</th><th>Rol</th><th>Identificator <code>AVL-MKT-*</code></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</td><td>normativ</td><td>Definește, înaintea măsurării, piața, criteriile, regulile, dovezile acceptate și eligibilitatea.</td><td>da</td></tr>
+          <tr><td>Market Discovery</td><td>instanță</td><td>Identifică larg candidații potențiali.</td><td>nu</td></tr>
+          <tr><td>Market Verification</td><td>instanță</td><td>Aplică regulile AVL-MKT-001 fiecărui candidat.</td><td>nu</td></tr>
+          <tr><td>Market Reference Set</td><td>instanță (referință)</td><td>Populația identificată și verificată conform protocolului la data de cutoff; stratul independent de referință pentru măsurarea ulterioară.</td><td>nu</td></tr>
+          <tr><td>Market Query Universe</td><td>instanță</td><td>Spațiul interogărilor plauzibile prin care utilizatorii sau sistemele pot ajunge la piața analizată.</td><td>nu</td></tr>
+          <tr><td>AVL-MKT-002 — Market Query Panel</td><td>normativ</td><td>Definește cum este selectat din Query Universe un subset controlat și reproductibil, folosit pentru măsurare longitudinală.</td><td>da</td></tr>
+          <tr><td>AI Execution</td><td>instanță</td><td>Aplică panelul sistemelor AI analizate.</td><td>nu</td></tr>
+          <tr><td>Measurement</td><td>instanță</td><td>Compară reprezentarea produsă de sistemele AI cu Market Reference Set și cu celelalte variabile definite metodologic.</td><td>nu</td></tr>
+          <tr><td>Quarterly Market Report</td><td>instanță (publicare)</td><td>Publică rezultatul unei instanțe concrete de măsurare.</td><td>nu</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Etapele marcate ca instanță nu devin documente AVL. Ele sunt produse ale aplicării metodologiei și sunt identificate prin instanța de măsurare căreia îi aparțin (secțiunea 14.5).</p>
+
+      <h3>14.3. Ordinea temporală și protecția împotriva selection bias</h3>
+
+      <p>Criteriile de eligibilitate trebuie fixate înainte ca populația pieței să fie cunoscută. Altfel, criteriile pot fi ajustate, conștient sau nu, pentru a include sau exclude furnizori deja observați. Ordinea planificată este:</p>
+
+      <pre><code>AVL-MKT-001 Draft
+        ↓
+pilot intern
+        ↓
+corectarea protocolului
+        ↓
+AVL-MKT-001 v1.0.0 / Activ
+        ↓
+Market Discovery oficial
+        ↓
+Market Verification oficială
+        ↓
+înghețarea Market Reference Set
+        ↓
+Market Query Panel
+        ↓
+măsurarea AI</code></pre>
+
+      <p><strong>Pilotul intern</strong> testează dacă protocolul poate clasifica coerent cazuri-limită. Pilotul:</p>
+
+      <ul>
+        <li>nu constituie Market Reference Set oficial;</li>
+        <li>nu stabilește populația finală a pieței;</li>
+        <li>nu este prezentat ca măsurare trimestrială;</li>
+        <li>poate conduce la modificarea draftului AVL-MKT-001 înainte de versiunea 1.0.0.</li>
+      </ul>
+
+      <p>După publicarea AVL-MKT-001 v1.0.0, criteriile nu sunt modificate pentru a acomoda furnizori identificați ulterior fără o versiune metodologică nouă, declarată explicit și datată. Măsurătorile realizate sub o versiune anterioară rămân atribuite acelei versiuni.</p>
+
+      <p>Scopul acestei ordini este ca fiecare raport de piață să poată afirma verificabil că <strong>criteriile de eligibilitate au fost definite și publicate înainte de constituirea Market Reference Set și înainte de măsurarea reprezentării furnizorilor în sistemele AI</strong>.</p>
+
+      <h3>14.4. Stratul de referință și stratul de reprezentare AI</h3>
+
+      <p>Market Measurement compară două straturi care nu trebuie confundate:</p>
+
+      <pre><code>STRAT DE REFERINȚĂ
+Market Reference Set
+= furnizori identificați și verificați independent,
+  conform AVL-MKT-001
+
+        versus
+
+STRAT DE REPREZENTARE AI
+Răspunsurile sistemelor AI
+= furnizori identificați / menționați / citați / recomandați
+  de sistemele măsurate</code></pre>
+
+      <p>Un furnizor poate fi, de exemplu:</p>
+
+      <div class="overflow-x-auto">
+      <table>
+        <thead>
+          <tr><th>Stare în Market Reference Set</th><th>Stare în răspunsurile AI</th><th>Ce descrie</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>eligibil</td><td>apare (surfaced)</td><td>furnizor documentat și reprezentat de sistemele AI</td></tr>
+          <tr><td>eligibil</td><td>nu apare (not surfaced)</td><td>furnizor documentat, absent din reprezentarea AI</td></tr>
+          <tr><td>neverificat</td><td>apare (surfaced)</td><td>furnizor adus de AI, fără verificare conform protocolului</td></tr>
+          <tr><td>ambiguu</td><td>apare (surfaced)</td><td>furnizor adus de AI, al cărui statut nu poate fi stabilit conform protocolului</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>Apariția într-un răspuns AI nu demonstrează eligibilitatea. Absența din răspunsurile AI nu invalidează eligibilitatea. Eligibilitatea este stabilită exclusiv prin aplicarea AVL-MKT-001; răspunsurile AI sunt obiectul măsurării, nu sursa referinței.</p>
+
+      <p>Această separare face măsurabilă diferența dintre <strong>piața documentată</strong> și <strong>piața reprezentată de AI</strong>.</p>
+
+      <h3>14.5. Instanțele Market Measurement (<code>MKT-*</code>)</h3>
+
+      <p>Documentele normative și instanțele concrete folosesc identificatori diferiți:</p>
+
+      <ul>
+        <li><code>AVL-MKT-NNN</code> — protocol normativ al familiei Market Measurement;</li>
+        <li><code>MKT-{țară}-{domeniu}-{an}Q{trimestru}</code> — instanță concretă de măsurare a unei piețe (de exemplu, <code>MKT-RO-AIV-2026Q4</code>).</li>
+      </ul>
+
+      <p>Formatul instanțelor și regulile lui sunt definite în AVL-001, §17. Aceeași piață poate fi măsurată longitudinal (<code>MKT-RO-AIV-2026Q4</code>, <code>MKT-RO-AIV-2027Q1</code>, <code>MKT-RO-AIV-2027Q2</code> …) fără modificarea protocoalelor normative. Exemplul este ilustrativ; nicio instanță <code>MKT-*</code> nu a fost creată la data acestei versiuni.</p>
+
+      <h3>Principiul ramurii</h3>
+
+      <pre><code>REGULA
+AVL-MKT-001
+        ↓
+REFERINȚA DESPRE PIAȚĂ
+Market Reference Set
+        ↓
+REPREZENTAREA AI
+Market Query Panel + răspunsurile AI</code></pre>
+
+      <p>Mai întâi este definită regula. Apoi este construită independent referința despre piață. Abia după aceea este măsurat modul în care sistemele AI reprezintă acea piață.</p>
+
       <h2>Documentele metodologiei</h2>
 
       <p>Documentele de nivel C nu sunt ordonate semantic prin numărul lor. Pentru orientare, această pagină le afișează în ordinea recomandată de lectură.</p>
@@ -482,7 +681,7 @@ trasabilitate</code></pre>
 
       <p><strong>Depinde de:</strong> AVL-001 — AI Visibility Lab Foundation.</p>
 
-      <p><strong>Leagă și contextualizează:</strong> AVL-200, AVL-201 și viitoarele documente metodologice.</p>
+      <p><strong>Leagă și contextualizează:</strong> AVL-200, AVL-201, familia Market Measurement (<code>AVL-MKT-*</code>) și viitoarele documente metodologice.</p>
 
       <h3>AVL-200 — Standard dovezi, măsurare și trasabilitate</h3>
 
@@ -519,6 +718,21 @@ trasabilitate</code></pre>
 
       <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește Tabula Rasa T0</a></strong></p>
 
+      <h3>Familia Market Measurement (<code>AVL-MKT-*</code>)</h3>
+
+      <p><em>Market Measurement</em></p>
+
+      <p>Familia normativă pentru definirea piețelor, construirea instrumentelor de măsurare și compararea longitudinală a reprezentării piețelor în sistemele AI (secțiunea 14). Documentele familiei sunt planificate și nu sunt încă publicate:</p>
+
+      <ul>
+        <li><strong>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</strong> (planificat): definește piața, criteriile de eligibilitate, dovezile acceptate și regulile aplicate înainte de măsurare.</li>
+        <li><strong>AVL-MKT-002 — Market Query Panel</strong> (planificat): definește selecția reproductibilă a panelului de interogări folosit pentru măsurarea longitudinală.</li>
+      </ul>
+
+      <p><strong>Rol:</strong> protocoale normative de familie, în interiorul Nivelului C.</p>
+
+      <p><strong>Depind de:</strong> AVL-001 și AVL-202. Dependențele normative suplimentare vor fi declarate de fiecare document la publicare.</p>
+
       <h3>Metodologia evoluează odată cu cercetarea</h3>
 
       <p>AI Visibility Lab tratează metodologia ca pe un sistem versionat, nu ca pe un set definitiv de reguli.</p>
@@ -526,6 +740,8 @@ trasabilitate</code></pre>
       <p>Documente noi pot fi adăugate atunci când cercetarea produce nevoia unor specificații distincte pentru alte faze, tipuri de măsurare, scoruri, evidence processing sau protocoale.</p>
 
       <p>Orice document metodologic nou trebuie să rămână compatibil cu principiile Foundation și să declare explicit dependențele, versiunea, statutul și limitările sale. Numărul alocat rămâne un identificator permanent; ordinea de lectură și precedența normativă sunt declarate separat.</p>
+
+      <p>Documentele metodologice existente nu sunt versionate în cascadă doar pentru că apare o familie metodologică nouă. Documentele noi își declară propriile dependențe față de documentele existente.</p>
 
       <p>O metodologie nouă nu rescrie retrospectiv măsurătorile istorice. Atunci când protocolul se maturizează, diferența dintre versiuni este documentată.</p>
 
@@ -567,7 +783,7 @@ trasabilitate</code></pre>
 
       <h2>Citare recomandată</h2>
 
-      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.0.0, 2026. https://delamatescu.ro/lab/metodologie</p>
+      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.1.0, 2026. https://delamatescu.ro/lab/metodologie</p>
 
       <h2>Istoricul versiunilor</h2>
 
@@ -581,6 +797,12 @@ trasabilitate</code></pre>
             <td>14 septembrie 2026</td>
             <td>Activ</td>
             <td>Prima versiune publică a AVL-202. Formalizează cadrul metodologic general, stabilește relația conceptuală dintre AVL-001, AVL-200 și AVL-201, explică permanența identificatorilor AVL și definește ciclul metodologic, separarea observației de interpretare, intervenția, remăsurarea și comparația longitudinală.</td>
+          </tr>
+          <tr>
+            <td>1.1.0</td>
+            <td>30 septembrie 2026</td>
+            <td>Activ</td>
+            <td>MINOR: introduce Market Measurement ca ramură explicită a Nivelului C — Methodology, formalizată prin familia normativă <code>AVL-MKT-*</code> (familie funcțională, nu nivel normativ separat). Adaugă secțiunea 14: separarea dintre protocolul normativ AVL-MKT-001 și Market Reference Set, fluxul Market Measurement, ordinea temporală pilot → protocol activ → Market Reference Set → măsurare, separarea dintre stratul de referință și stratul de reprezentare AI și identificarea instanțelor <code>MKT-*</code>. Actualizează arhitectura, precedența normativă, ordinea de lectură și lista documentelor. AVL-MKT-001 și AVL-MKT-002 sunt menționate ca documente planificate, nepublicate. AVL-200 și AVL-201 nu sunt modificate.</td>
           </tr>
         </tbody>
       </table>

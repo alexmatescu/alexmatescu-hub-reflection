@@ -31,7 +31,7 @@ Scopul acestui skill nu e doar wiring tehnic, ci păstrarea integrității unui 
 
 **Ce e un document Nivel C — Methodology**: un document normativ transversal care definește *cum* laboratorul măsoară, colectează dovezi, clasifică rezultate sau structurează un protocol — nu un articol, nu un studiu de caz al unei entități reale, nu un document de poziționare a unei secțiuni a site-ului.
 
-**Identificator**: format `AVL-NNN`, permanent, alocat prin scanarea reală a corpusului (§4.4) — nu presupune un interval numeric rezervat (ex. „Nivel C = mereu 2xx”) doar pe baza celor trei precedente curente (AVL-200/201/202); verifică alocarea efectivă la momentul execuției.
+**Identificator**: format `AVL-NNN`, permanent, alocat prin scanarea reală a corpusului (§4.4) — nu presupune un interval numeric rezervat (ex. „Nivel C = mereu 2xx”) doar pe baza celor trei precedente curente (AVL-200/201/202); verifică alocarea efectivă la momentul execuției. Excepție: documentele unei familii funcționale de Nivel C folosesc namespace-ul familiei — la data acestei note, `AVL-MKT-NNN` (Market Measurement, AVL-001 §17 v1.2.0 și AVL-202 §14 v1.1.0), cu numerotare proprie care începe de la `001`, independentă de seria `AVL-NNN`. Instanțele (Market Reference Set, rapoarte trimestriale etc.) primesc `MKT-{țară}-{domeniu}-{an}Q{n}`, niciodată `AVL-MKT-*`.
 
 **Ce NU e** (verifică înainte de a trata un document ca fiind în domeniul acestui skill):
 - **AVL-001 (Nivel A — Foundation)** și **AVL-101–105 (Nivel B — Research)** — niveluri distincte, fără skill dedicat la data acestui document. Nu le publica/actualiza cu acest pipeline; semnalează lipsa unui skill propriu și cere direcție.

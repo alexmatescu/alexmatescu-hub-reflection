@@ -8,12 +8,12 @@ documentației
 | **Document ID** | AVL-001 |
 |----|----|
 | **Nivel** | A — Foundation |
-| **Versiune** | 1.1.1 |
+| **Versiune** | 1.2.0 |
 | **Statut** | Activ |
 | **Autor** | Alex Matescu |
 | **Organizație** | AI Visibility Lab |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 14 septembrie 2026 |
+| **Ultima actualizare** | 30 septembrie 2026 |
 | **Limba** | română |
 | **URL canonic propus** | https://delamatescu.ro/lab |
 
@@ -734,9 +734,16 @@ suficiente dovezi pentru confirmare.
 
 ## Nivelul C — Methodology
 
+- AVL-202 — Cadrul metodologic AI Visibility Lab (documentul-cadru al
+  Nivelului C)
+
 - AVL-200 — Standard dovezi, măsurare și trasabilitate
 
 - AVL-201 — Tabula Rasa F0
+
+- familia Market Measurement (`AVL-MKT-*`): AVL-MKT-001 — Market Scope &
+  Eligibility Protocol (planificat) și AVL-MKT-002 — Market Query Panel
+  (planificat)
 
 - documentele ulterioare ale metodologiei F1–F3
 
@@ -764,6 +771,92 @@ AVL-202 — Cadrul metodologic AI Visibility Lab). Până atunci, orice utilizar
 informală a „F1"/„F2" într-un document nepublicat sau într-un draft (ex.
 ca sinonim pentru „a doua fereastră de măsurare") e legacy/pre-canonică
 și trebuie reconciliată cu definiția de mai sus înainte de publicare.
+
+## Familia Market Measurement — `AVL-MKT-*` (Nivelul C)
+
+`AVL-MKT-*` este namespace-ul familiei normative **Market Measurement**.
+Familia conține protocoalele folosite pentru definirea piețelor,
+construirea instrumentelor de măsurare și compararea longitudinală a
+reprezentării piețelor în sistemele AI.
+
+Familia aparține Nivelului C — Methodology. Este o extensie funcțională a
+metodologiei AI Visibility Lab, nu un nivel metodologic nou, și este
+guvernată de AVL-001 și de AVL-202 — Cadrul metodologic AI Visibility Lab.
+
+Structura unui identificator `AVL-MKT-NNN`:
+
+- `AVL` — apartenența la corpusul normativ AI Visibility Lab;
+
+- `MKT` — familia metodologică Market Measurement;
+
+- `NNN` — numărul care identifică permanent documentul în interiorul
+  familiei.
+
+Numerotarea familiei începe cu `001` și continuă secvențial
+(`AVL-MKT-001`, `AVL-MKT-002`, `AVL-MKT-003` …), independent de seria
+`AVL-NNN`. Identificatorul este permanent și nu se renumerotează. Numărul
+reflectă ordinea de înregistrare în familie, nu ordinea de lectură și
+nici ordinea de execuție. AVL-MKT-001 nu are nicio relație cu AVL-001
+prin număr.
+
+Documentele `AVL-MKT-*` sunt exclusiv documente normative și
+metodologice. Documentele planificate ale familiei sunt:
+
+- AVL-MKT-001 — Market Scope & Eligibility Protocol (planificat,
+  nepublicat);
+
+- AVL-MKT-002 — Market Query Panel (planificat, nepublicat).
+
+### Protocol normativ și instanță
+
+Familia separă regula de rezultatul aplicării ei. AVL-MKT-001 va defini
+obiectul pieței, criteriile de eligibilitate, criteriile de includere și
+excludere, dovezile acceptate, regulile geografice și temporale, data de
+cutoff, clasificările și tratamentul cazurilor ambigue. **Market
+Reference Set** este rezultatul aplicării acestui protocol asupra unei
+piețe concrete, la un moment determinat. Market Reference Set nu este
+document normativ și nu primește identificator `AVL-MKT-*`.
+
+Nu primesc identificatori `AVL-MKT-*`: Market Reference Sets, Market
+Query Universes, seturile de date, execuțiile, măsurătorile și
+rapoartele trimestriale. Acestea sunt instanțe ale metodologiei, conform
+regulii generale de mai jos (Nivelul D2): identificatorul unei instanțe
+concrete nu este niciodată un identificator AVL.
+
+### Identificatorii instanțelor: `MKT-*`
+
+O instanță concretă de măsurare a unei piețe primește un identificator
+de forma:
+
+`MKT-{țară}-{domeniu}-{an}Q{trimestru}` — de exemplu,
+`MKT-RO-AIV-2026Q4`.
+
+- `{țară}` — codul ISO 3166-1 alpha-2 al pieței geografice definite
+  conform AVL-MKT-001 (ex. `RO`);
+
+- `{domeniu}` — tokenul scurt, cu majuscule, al pieței analizate; este
+  fixat la prima instanță a pieței și nu se schimbă între instanțele
+  aceleiași serii;
+
+- `{an}Q{trimestru}` — trimestrul calendaristic al măsurării (ex.
+  `2026Q4`).
+
+Un identificator de instanță nu are niciodată forma `MKT-NNN`, pentru a
+nu putea fi confundat cu un document normativ `AVL-MKT-NNN`. Aceeași
+piață poate fi măsurată longitudinal (`MKT-RO-AIV-2026Q4`,
+`MKT-RO-AIV-2027Q1`, `MKT-RO-AIV-2027Q2` …) fără modificarea
+protocoalelor normative; fiecare instanță declară versiunile
+protocoalelor `AVL-MKT-*` pe care le-a aplicat. Identificarea detaliată
+a artefactelor din interiorul unei instanțe (Market Reference Set,
+panel, execuții, dovezi) va fi stabilită de documentele `AVL-MKT-*` și
+de AVL-200.
+
+Tokenul de domeniu `AIV` (AI Visibility) este propus pentru piața
+serviciilor GEO, AEO și AI Visibility, deoarece acoperă întregul
+domeniu, nu doar una dintre practicile lui. Un token precum `GEO` ar
+exclude implicit AEO și, plasat după codul de țară, ar putea fi citit
+ca referință geografică. Exemplele de mai sus sunt ilustrative; nicio
+instanță `MKT-*` nu a fost creată la data versiunii 1.2.0.
 
 ## Nivelul D — Experiments
 
@@ -835,7 +928,7 @@ O observație sau ipoteză nu trebuie citată ca informație confirmată
 oficial.
 
 Citarea recomandată: Matescu, Alex. „AI Visibility Lab Foundation”. AI
-Visibility Lab Documentation, AVL-001, versiunea 1.0.0, 2026.
+Visibility Lab Documentation, AVL-001, versiunea 1.2.0, 2026.
 
 # 19. Versiuni, revizuiri și corecții
 
@@ -1007,7 +1100,24 @@ Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K.
 
 - AVL-201 — Tabula Rasa F0
 
+- AVL-202 — Cadrul metodologic AI Visibility Lab
+
 # 25. Istoricul versiunilor
+
+## Versiunea 1.2.0 — 30 septembrie 2026
+
+MINOR: introducerea namespace-ului `AVL-MKT-*` pentru protocoalele
+normative Market Measurement, ca familie funcțională în Nivelul C —
+Methodology, nu ca nivel nou (§17). Formalizată separarea dintre
+protocoalele normative `AVL-MKT-*`, Market Reference Sets și instanțele
+concrete de măsurare a pieței, care primesc identificatori `MKT-*`, nu
+identificatori AVL. AVL-MKT-001 — Market Scope & Eligibility Protocol
+și AVL-MKT-002 — Market Query Panel sunt înregistrate ca documente
+planificate, nepublicate. Corectată și omisiunea AVL-202 — Cadrul
+metodologic AI Visibility Lab din lista Nivelului C (§17) și din
+„Documente asociate” (§24), precum și versiunea din citarea recomandată
+(§18). Nicio schimbare de principiu; niciun identificator existent nu a
+fost modificat.
 
 ## Versiunea 1.1.1 — 14 septembrie 2026
 
