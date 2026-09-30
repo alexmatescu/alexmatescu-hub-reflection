@@ -42,6 +42,119 @@ Scopul acestui skill nu e doar wiring tehnic, ci păstrarea integrității unui 
 
 ---
 
+## Pasul 0 — Registrul de conținut
+
+Registrul de conținut — `docs/REGISTRU-CONTINUT.md` (pentru citit) și `docs/registru-continut.json` (pentru interogare programatică) — e evidența întregului corpus de pe delamatescu.ro: articole Lab, studii de caz, documente AVL de orice nivel, articole de blog (arhiva migrată și cele noi) și materiale încă nepublicate. Ce conține fiecare intrare e documentat în legenda fișierului însuși — citește-o acolo, nu e reprodusă aici.
+
+**E generat, nu scris de mână**, din sursele de adevăr reale ale repository-ului plus istoricul git și `public/sitemap.xml`. O valoare scrisă direct în el se pierde la următoarea rulare: dacă o valoare e greșită, greșită e *sursa*.
+
+Consecința practică: „a introduce un material în evidență" nu înseamnă a edita registrul, ci a pune fișierul sursă la locul lui canonic, cu frontmatter corect, și a regenera — după care intrarea apare automat (`draft`/`nepublicat` înainte de wiring, `publicat` după).
+
+### 0.A — Snapshot de pornire (obligatoriu)
+
+Prima comandă, înaintea oricărei inspecții sau modificări de fișier:
+
+```bash
+node scripts/build-content-registry.mjs --snapshot .registry-before.json
+```
+
+Regenerează registrul **și** salvează starea de pornire, ca verificarea de la final să fie o măsurătoare, nu o declarație. `.registry-before.json` e fișier de lucru temporar (ignorat de git) — șterge-l la final.
+
+### 0.B — Există documentul în registru?
+
+Caută după `document_id`. Registrul e **scanarea reală a corpusului de identificatori** cerută de §4.4 — nu presupune un interval numeric rezervat:
+
+```bash
+python3 -c "
+import json
+d = json.load(open('docs/registru-continut.json'))
+for e in d['intrari']:
+    if str(e['id']).startswith('AVL'):
+        print(f\"{e['id']:<14} {e['suprafata']:<18} v{e.get('versiune')} · {e.get('statusNormativ')} · {e['status']}\")
+"
+```
+
+Output-ul îți dă, într-un singur loc: ce `AVL-NNN` (și ce identificatori de familie, ex. `AVL-MKT-NNN`) sunt deja alocați, la ce nivel, cu ce versiune și ce statut normativ. Identificatorii sunt permanenți — registrul e dovada a ce e ocupat.
+
+Registrul distinge și suprafețele pe care **acest skill nu le acoperă**: `lab/foundation` (AVL-001), `lab/cercetare` (AVL-101–105), `lab/secțiuni` (AVL-301/350/401/501). Dacă cererea vizează una dintre ele, semnalează lipsa unui pipeline dedicat și cere direcție, conform §1 — nu improviza.
+
+### 0.C — Dacă EXISTĂ: compară versiunea și statutul înainte de a scrie
+
+| Câmp în registru | Comparat cu | Ce înseamnă o diferență |
+|---|---|---|
+| `versiune` | `version` din frontmatter | Dacă versiunea din fișierul primit e **mai mică sau egală** cu cea din registru, ai o copie învechită sau un bump lipsă — **STOP**, întreabă. Nu publica o versiune care regresează un document normativ. |
+| `statusNormativ` | `status` | `Activ` în registru + `Draft` în fișier = regresie de maturitate, aproape sigur o greșeală. `Draft` în registru + `Activ` în fișier = **activare**, care obligă la gate-ul din Faza 3, nu se aplică tacit. |
+| `dataPublicare` | `date_published` | Nu se rescrie. Un document deja publicat își păstrează prima publicare prin toate versiunile ulterioare. |
+| `dataModificare` | `date_modified` | Mai veche în fișier decât în registru → copie învechită, **STOP**. |
+| `ultimaVerificare` | `last_reviewed` | Se schimbă doar dacă ai verificat efectiv acum. |
+| `nivel` | `level`/`document_level` | O schimbare de nivel nu e o actualizare de rutină — e o rearhitecturare a corpusului, cu impact pe AVL-202 (Faza 5). Confirmare explicită. |
+| `wiring` | — | `·✓✓✓` e starea normală pentru un document Nivel C (poziția „registru" nu se aplică: documentele normative nu intră în `labArticleMeta`/`labCaseStudyMeta`, §8 pas 6). Un `✗` real arată wiring incomplet. |
+| `anomalii` | — | Preexistente; rezolvă sau raportează. |
+
+**Decizia „are sens actualizarea?"**:
+
+- **Cerință `{PREFIX}-REQ-NNN` nouă/modificată/retrasă** → actualizare materială: bump de `version` (minor dacă adaugă fără să rupă compatibilitatea, major dacă schimbă sensul unei cerințe existente) + rând nou în „Istoricul versiunilor" (§0.2).
+- **Doar typo/link mort** → patch, fără ceremonie. Nu bump-ui minor pentru o virgulă.
+- **Nimic material, dar ai reverificat sursele externe** → doar `last_reviewed`.
+- **Fișier primit cu versiune ≤ registru** → **STOP**. Într-un corpus normativ, suprascrierea unei versiuni cu una anterioară nu strică un document, strică regula după care sunt verificate toate celelalte materiale.
+- **Impact pe alte documente** → registrul arată toate documentele Nivel C cu versiunea lor, deci poți verifica dacă lista de documente și ordinea de lectură din AVL-202 mai corespund realității (Faza 5). Orice modificare a AVL-202 rămâne **pas separat, semnalat explicit**, niciodată efect automat.
+
+### 0.D — Dacă NU EXISTĂ: introdu-l în evidență acum
+
+1. Alocă `document_id` pe baza scanării de la 0.B — nu pe baza unui interval presupus, și cu excepția namespace-urilor de familie documentată în §1.
+2. Pune sursa `.md` în `src/content/lab/AVL/`, cu `document_id` în frontmatter și în numele fișierului (convenția observată: `AVL-NNN_Titlu_descriptiv.md`, opțional cu versiune).
+3. Regenerează și confirmă apariția:
+
+```bash
+node scripts/build-content-registry.mjs --diff .registry-before.json
+```
+
+Un document AVL nou, încă neconectat la site, apare în registru ca `nepublicat`, cu `statusNormativ` luat din frontmatter — exact starea corectă pentru un draft care n-a trecut încă gate-ul de activare (Faza 3). Dacă nu apare, `document_id`-ul lipsește din frontmatter și din numele fișierului.
+
+4. Verifică **suprapunerea semantică** cu documentele Nivel C existente (Faza 4 — „Why"), folosind titlurile și nivelurile din registru: un subiect care poate fi absorbit ca secțiune într-un document existent nu justifică un `document_id` nou.
+
+### 0.E — Verificare pe site-ul live (opțional, unde ajută efectiv)
+
+Pentru un material care apare în registru cu status `publicat`, poți verifica direct pe `https://delamatescu.ro` — util în special înainte de a suprascrie conținut care e deja public:
+
+- `https://delamatescu.ro{ruta}` întoarce 200 și conține titlul din registru;
+- `date_published`/`date_modified` din JSON-LD-ul paginii live corespund cu registrul;
+- intrarea există în `https://delamatescu.ro/sitemap.xml`.
+
+**Interpretarea corectă a unei diferențe local ↔ live**: acest skill se oprește înainte de `git push` și deploy, deci site-ul live reflectă ultimul deploy, nu working tree-ul. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
+
+Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev server + build) — o completează. Dacă `delamatescu.ro` nu răspunde sau blochează cererea, notează-o ca neverificată; nu trata un fetch eșuat drept dovadă că pagina nu există.
+
+### 0.F — Ce NU face acest pas
+
+- **Nu editează registrul** — e generat.
+- **Nu renumerotează niciun `document_id`**, oricât de „logică" ar părea o reordonare pe baza a ceea ce vede în registru. Ordinea de înregistrare nu e ordinea de precedență conceptuală (§0 principii).
+- **Nu activează un document** pe baza a ceea ce arată registrul. Statutul `Activ` se setează exclusiv prin gate-ul din Faza 3.
+- **Nu modifică AVL-202** ca efect secundar. E el însuși document `Activ`; orice atingere e pas separat, semnalat explicit (Faza 5 pct. 3).
+- **Nu pornește o curățare a corpusului**; anomaliile altor documente se raportează.
+
+### Pasul final — verifică dacă evidența a fost efectiv actualizată
+
+După wiring și după verificările tehnice, înainte de raportul final:
+
+```bash
+node scripts/build-content-registry.mjs --strict --diff .registry-before.json
+```
+
+Comanda compară starea actuală cu snapshot-ul de la 0.A și listează ce s-a schimbat: intrări noi sau dispărute, câmpuri modificate, wiring, delta de anomalii. Confirmă în raport, pe baza output-ului real, nu din memorie:
+
+1. **Intrarea există** — apare ca `+ INTRARE NOUĂ` sau `~ MODIFICAT`.
+2. **Diferențele sunt exact cele intenționate** — orice câmp schimbat pe care nu l-ai modificat deliberat e un efect secundar; investighează-l înainte de a raporta succes.
+3. **Wiring complet** pentru un material publicat: `✓✓✓✓` (sau `·✓✓✓` unde poziția „registru" nu se aplică suprafeței).
+4. **Zero anomalii noi** — linia de anomalii arată `înainte → după`; dacă a crescut, cele noi sunt ale tale: rezolvă-le sau raportează-le cu motivul.
+5. `REGISTRUL NU S-A SCHIMBAT`, deși ai publicat sau actualizat ceva, **înseamnă că ceva a eșuat** — sursa nu e la locul canonic, wiring-ul lipsește, sau ai modificat un fișier care nu alimentează registrul. Nu raporta succes.
+
+`--strict` dă exit 1 la orice anomalie din corpus, inclusiv preexistentă — de aceea delta din `--diff` e cea care separă anomaliile tale de cele vechi.
+
+Șterge `.registry-before.json` după verificare.
+
+---
+
 ## Faza 0 — Inspecție și ingest
 
 Citește obligatoriu, înainte de orice modificare:
@@ -215,6 +328,8 @@ Identic cu `publica-articol-lab` Faza 11/11.1, plus specific documentelor normat
 
 ## Checklist final obligatoriu
 
+- [ ] Pasul 0 parcurs integral: snapshot la început, `document_id` verificat prin scanarea reală a registrului, comparație de versiune/statut + decizie de actualizare dacă documentul exista deja, sau introducerea lui în evidență dacă nu exista.
+- [ ] `node scripts/build-content-registry.mjs --strict --diff .registry-before.json` a rulat la final; diff-ul arată `document_id`, versiunea și statutul normativ corecte, wiring complet, doar diferențele intenționate și zero anomalii noi. `.registry-before.json` șters.
 - [ ] Domeniul de aplicare confirmat — documentul e efectiv Nivel C — Methodology, nu articol/studiu de caz/alt nivel fără skill propriu (§1).
 - [ ] `document_id` verificat față de registrul real al corpusului, niciodată renumerotat.
 - [ ] Termeni RFC 2119/RFC 8174 folosiți doar cu sensul declarat, doar în propoziții normative/cerințe.

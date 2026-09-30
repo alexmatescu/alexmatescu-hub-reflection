@@ -97,6 +97,142 @@ Nu modifica:
 
 ---
 
+## Pasul 0 — Registrul de conținut
+
+Registrul de conținut — `docs/REGISTRU-CONTINUT.md` (pentru citit) și `docs/registru-continut.json` (pentru interogare programatică) — e evidența întregului corpus de pe delamatescu.ro: articole Lab, studii de caz, documente AVL de orice nivel, articole de blog (arhiva migrată și cele noi) și materiale încă nepublicate. Ce conține fiecare intrare e documentat în legenda fișierului însuși — citește-o acolo, nu e reprodusă aici.
+
+**E generat, nu scris de mână**, din sursele de adevăr reale ale repository-ului plus istoricul git și `public/sitemap.xml`. O valoare scrisă direct în el se pierde la următoarea rulare: dacă o valoare e greșită, greșită e *sursa*.
+
+Consecința practică: „a introduce un material în evidență" nu înseamnă a edita registrul, ci a pune fișierul sursă la locul lui canonic, cu frontmatter corect, și a regenera — după care intrarea apare automat (`draft`/`nepublicat` înainte de wiring, `publicat` după).
+
+### 0.0 — Limita strictă: registrul e instrument TEHNIC, nu editorial
+
+Acest pas există în tensiune directă cu §2, §12.9, §12.10 și §44, care interzic explicit compararea articolului nou cu arhiva. Limita e următoarea, și nu se negociază:
+
+**Permis** (inspectare tehnică, conform §2 — „Această inspectare tehnică NU constituie comparație editorială"):
+- dacă slug-ul/canonical-path-ul e deja ocupat;
+- pe ce suprafață e ocupat (`blog` vs. `blog (arhivă)`);
+- dacă wiring-ul, sitemap-ul și datele unei intrări existente sunt corecte;
+- ce anomalii tehnice are intrarea articolului pe care lucrezi.
+
+**Interzis** (comparație editorială, rămâne interzisă indiferent ce arată registrul):
+- a citi titlurile din arhivă ca să decizi cum să scrii sau despre ce să scrii;
+- a studia distribuția categoriilor din arhivă ca să alegi `category` (§12.9 — explicit interzis);
+- a deduce `articleType` din tipurile altor articole (§12.10);
+- a folosi arhiva ca template editorial sau ca benchmark de stil (§2, §44);
+- a modifica textul articolului ca să semene cu ce e deja publicat.
+
+`category` și `articleType` se aleg **exclusiv din analiza articolului primit** (§12.9/§12.10) și din contractul tehnic curent al tipului `Post`. Registrul nu are nicio voce în această decizie. Dacă te surprinzi deschizând registrul ca să vezi „ce categorii se folosesc de obicei", te-ai abătut de la §12.9 — oprește-te.
+
+### 0.A — Snapshot de pornire (obligatoriu)
+
+Prima comandă, înaintea oricărei inspecții sau modificări de fișier:
+
+```bash
+node scripts/build-content-registry.mjs --snapshot .registry-before.json
+```
+
+Regenerează registrul **și** salvează starea de pornire, ca verificarea de la final să fie o măsurătoare, nu o declarație. `.registry-before.json` e fișier de lucru temporar (ignorat de git) — șterge-l la final.
+
+### 0.B — Există articolul în registru?
+
+Caută exclusiv după slug/canonical-path — identitate tehnică, nu subiect:
+
+```bash
+python3 -c "
+import json,sys
+slug = sys.argv[1]
+d = json.load(open('docs/registru-continut.json'))
+hit = [e for e in d['intrari'] if e.get('slug') == slug]
+for e in hit:
+    print(f\"{e['id']} | suprafață: {e['suprafata']} | status: {e['status']} | \"
+          f\"publicat: {e['dataPublicare']} | modificat: {e['dataModificare']} | \"
+          f\"wiring: {e['wiring']} | anomalii: {e['anomalii']}\")
+print('NU EXISTĂ în registru' if not hit else '')
+" "{slug}"
+```
+
+Suprafața returnată decide totul:
+
+- **`blog (arhivă)`** — slug ocupat de unul dintre articolele migrate din Blogger, în `blogger-posts.json`. Un articol nou **nu are voie** să reutilizeze acest slug: ar produce o coliziune de rută. Alege alt slug, sau, dacă intenția reală e editarea articolului istoric, **oprește-te și întreabă** — `blogger-posts.json` e arhivă înghețată, nu se editează pentru a insera sau rescrie conținut (§6).
+- **`blog`** — slug ocupat de un articol nou, deja în `src/data/blog-content/`. E update, nu articol nou: trece la 0.C.
+- **`NU EXISTĂ`** — articol nou: trece la 0.D.
+
+### 0.C — Dacă EXISTĂ pe suprafața `blog`: compară tehnic și decide
+
+| Câmp în registru | Comparat cu | Ce înseamnă o diferență |
+|---|---|---|
+| `titlu` | `title` | Verifică că nu ai primit de fapt **alt articol** peste slug-ul greșit. Nu e o invitație de a compara calitatea editorială. |
+| `dataPublicare` | `date` | **Nu se rescrie** și **nu se backdatează** fără instrucțiune explicită (§12.6). Dacă fișierul primit diferă, greșit e fișierul. |
+| `dataModificare` | `dateModified` | Se schimbă doar când conținutul public s-a modificat material (§12.7). Dacă valoarea din fișierul primit e **mai veche** decât cea din registru → copie învechită, **STOP**, întreabă. |
+| `ultimaVerificare` | `lastReviewed` | În Blog e metadată informativă (§12.8) — completează-o doar dacă a existat efectiv o revizuire. Nu importa comportamentul Lab. |
+| `categorie` / `tip` | `category` / `articleType` | O schimbare e reclasificare editorială — cere confirmare. Alegerea rămâne pe baza articolului (§0.0), nu pe baza a ce e în registru. |
+| `wiring` | — | Poziția „sitemap" pe `✗` la un articol publicat înseamnă intrare lipsă din `sitemap.xml` — exact clasa de problemă pe care §25 o acoperă. |
+| `fisierTs` | calea reală | Confirmă că articolul e în `src/data/blog-content/`, nu în `blogger-posts.json` (§6). |
+| `anomalii` | — | Preexistente pe acest articol; rezolvă-le în task sau raportează-le explicit. |
+
+**Decizia „are sens actualizarea?"**:
+
+- **Conținut modificat material** → actualizare justificată, `dateModified` se schimbă.
+- **Nimic material** → nu fabrica o modificare. Raportează că nu era nevoie și oprește-te.
+- **Fișier primit mai vechi decât registrul** → **STOP**, întreabă. Nu suprascrie conținut mai nou.
+- **Slug identic dar articol vizibil diferit** → foarte probabil o greșeală de rutare a cererii; întreabă înainte de a scrie.
+
+### 0.D — Dacă NU EXISTĂ: introdu-l în evidență acum
+
+1. Pune fișierul `.md` sursă la locul canonic al blogului: `src/content/blog/{slug}.md`, cu frontmatter care conține cel puțin `title`, `canonical` (`https://delamatescu.ro/blog/{slug}`), `category`, `article_type`, `date_published`, `date_modified`.
+2. Regenerează și confirmă apariția:
+
+```bash
+node scripts/build-content-registry.mjs --diff .registry-before.json
+```
+
+Trebuie să vezi `+ INTRARE NOUĂ  blog|{slug}`, cu status `draft`/`nepublicat` — corect, wiring-ul nu există încă. Dacă apare pe suprafața `nealocat`, canonicalul din frontmatter lipsește sau e malformat; repară înainte de a continua.
+
+3. Abia apoi continuă cu pipeline-ul existent: analiza articolului (§8), metadata (§12), fișierul `src/data/blog-content/<slug>.ts` + înregistrarea în `newPosts` (§6), suprafețele interne (§24), sitemap (§25).
+
+### 0.E — Verificare pe site-ul live (opțional, unde ajută efectiv)
+
+Pentru un material care apare în registru cu status `publicat`, poți verifica direct pe `https://delamatescu.ro` — util în special înainte de a suprascrie conținut care e deja public:
+
+- `https://delamatescu.ro{ruta}` întoarce 200 și conține titlul din registru;
+- `date_published`/`date_modified` din JSON-LD-ul paginii live corespund cu registrul;
+- intrarea există în `https://delamatescu.ro/sitemap.xml`.
+
+**Interpretarea corectă a unei diferențe local ↔ live**: acest skill se oprește înainte de `git push` și deploy, deci site-ul live reflectă ultimul deploy, nu working tree-ul. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
+
+Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev server + build) — o completează. Dacă `delamatescu.ro` nu răspunde sau blochează cererea, notează-o ca neverificată; nu trata un fetch eșuat drept dovadă că pagina nu există.
+
+### 0.F — Ce NU face acest pas
+
+- **Nu editează registrul** — e generat; o valoare scrisă direct se pierde.
+- **Nu deschide arhiva pentru inspirație editorială.** Vezi 0.0 — limita e absolută, nu o recomandare.
+- **Nu atinge `blogger-posts.json`.** Nimic din ce citești în registru nu justifică editarea arhivei înghețate (§6, §44).
+- **Nu modifică articole Lab** pe baza anomaliilor pe care registrul le listează pe suprafețele `lab/*`. Sunt domeniul altor skill-uri (§1); aici se raportează, cel mult.
+- **Nu pornește o curățare a corpusului.** Rezolvă doar anomaliile articolului pe care lucrezi.
+
+### Pasul final — verifică dacă evidența a fost efectiv actualizată
+
+După wiring și după verificările tehnice, înainte de raportul final:
+
+```bash
+node scripts/build-content-registry.mjs --strict --diff .registry-before.json
+```
+
+Comanda compară starea actuală cu snapshot-ul de la 0.A și listează ce s-a schimbat: intrări noi sau dispărute, câmpuri modificate, wiring, delta de anomalii. Confirmă în raport, pe baza output-ului real, nu din memorie:
+
+1. **Intrarea există** — apare ca `+ INTRARE NOUĂ` sau `~ MODIFICAT`.
+2. **Diferențele sunt exact cele intenționate** — orice câmp schimbat pe care nu l-ai modificat deliberat e un efect secundar; investighează-l înainte de a raporta succes.
+3. **Wiring complet** pentru un material publicat: `✓✓✓✓` (sau `·✓✓✓` unde poziția „registru" nu se aplică suprafeței).
+4. **Zero anomalii noi** — linia de anomalii arată `înainte → după`; dacă a crescut, cele noi sunt ale tale: rezolvă-le sau raportează-le cu motivul.
+5. `REGISTRUL NU S-A SCHIMBAT`, deși ai publicat sau actualizat ceva, **înseamnă că ceva a eșuat** — sursa nu e la locul canonic, wiring-ul lipsește, sau ai modificat un fișier care nu alimentează registrul. Nu raporta succes.
+
+`--strict` dă exit 1 la orice anomalie din corpus, inclusiv preexistentă — de aceea delta din `--diff` e cea care separă anomaliile tale de cele vechi.
+
+Șterge `.registry-before.json` după verificare.
+
+---
+
 # 2. PRINCIPIUL FUNDAMENTAL
 
 Articolul furnizat de utilizator este sursa editorială principală și trebuie tratat ca document independent.
@@ -1950,6 +2086,9 @@ NU:
 
 # 52. CHECKLIST FINAL REPOSITORY
 
+[ ] Pasul 0 parcurs integral: snapshot la început, slug verificat în registru (coliziune cu `blog (arhivă)` exclusă), comparație tehnică + decizie dacă exista deja, sau introducerea lui în evidență dacă nu exista
+[ ] registrul NU a fost folosit pentru comparație editorială, alegerea categoriei sau benchmark de stil (§0.0, §2, §12.9, §12.10, §44)
+[ ] `node scripts/build-content-registry.mjs --strict --diff .registry-before.json` a rulat la final; diff-ul arată articolul pe suprafața `blog`, cu date corecte, doar diferențele intenționate și zero anomalii noi; `.registry-before.json` șters
 [ ] `git diff` inspectat
 [ ] `git status` inspectat
 [ ] numai fișiere necesare au fost modificate de agent

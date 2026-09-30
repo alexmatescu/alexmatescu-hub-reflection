@@ -35,3 +35,6 @@ public/baselines/*.zip
 *.njsproj
 *.sln
 *.sw?
+
+# fișier de lucru al Pasului 0 din skill-urile de publicare (snapshot registru)
+.registry-before.json

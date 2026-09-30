@@ -25,6 +25,123 @@ O cifră fără definiția exactă a ce măsoară (ex. „17,8% folosesc AI”) 
 
 ---
 
+## Pasul 0 — Registrul de conținut
+
+Registrul de conținut — `docs/REGISTRU-CONTINUT.md` (pentru citit) și `docs/registru-continut.json` (pentru interogare programatică) — e evidența întregului corpus de pe delamatescu.ro: articole Lab, studii de caz, documente AVL de orice nivel, articole de blog (arhiva migrată și cele noi) și materiale încă nepublicate. Ce conține fiecare intrare e documentat în legenda fișierului însuși — citește-o acolo, nu e reprodusă aici.
+
+**E generat, nu scris de mână**, din sursele de adevăr reale ale repository-ului plus istoricul git și `public/sitemap.xml`. O valoare scrisă direct în el se pierde la următoarea rulare: dacă o valoare e greșită, greșită e *sursa*.
+
+Consecința practică: „a introduce un material în evidență" nu înseamnă a edita registrul, ci a pune fișierul sursă la locul lui canonic, cu frontmatter corect, și a regenera — după care intrarea apare automat (`draft`/`nepublicat` înainte de wiring, `publicat` după).
+
+### 0.A — Snapshot de pornire (obligatoriu)
+
+Prima comandă, înaintea oricărei inspecții sau modificări de fișier:
+
+```bash
+node scripts/build-content-registry.mjs --snapshot .registry-before.json
+```
+
+Regenerează registrul **și** salvează starea de pornire, ca verificarea de la final să fie o măsurătoare, nu o declarație. `.registry-before.json` e fișier de lucru temporar (ignorat de git) — șterge-l la final.
+
+### 0.B — Există articolul în registru?
+
+Caută materialul primit în `docs/registru-continut.json`, în această ordine de precizie:
+
+1. **după `canonical`/rută** — cheia de identitate reală (`/lab/articole/{slug}`);
+2. **după slug**, dacă articolul primit n-are încă un canonical;
+3. **după `fisierMd`/`fisierTs`**, dacă ți s-a dat o cale de fișier, nu un articol.
+
+```bash
+python3 -c "
+import json,sys
+slug = sys.argv[1]
+d = json.load(open('docs/registru-continut.json'))
+hit = [e for e in d['intrari'] if (e.get('slug') == slug) or (e.get('ruta') or '').endswith('/'+slug)]
+print(json.dumps(hit, ensure_ascii=False, indent=2) if hit else 'NU EXISTĂ în registru')
+" "{slug}"
+```
+
+Un rezultat cu status `draft`/`nepublicat` înseamnă că sursa `.md` există deja în corpus, dar wiring-ul nu — **nu porni de la zero**, continuă de la ce există.
+
+### 0.C — Dacă EXISTĂ: compară și decide dacă actualizarea are sens
+
+Pune față în față valorile din registru și valorile fișierului primit. Nu presupune că fișierul nou e automat mai bun sau mai recent.
+
+| Câmp în registru | Comparat cu | Ce înseamnă o diferență |
+|---|---|---|
+| `titlu` | `title` | Schimbare editorială, permisă — dar verifică că nu ai primit de fapt **alt articol** peste slug-ul greșit. |
+| `categorie` | `category` | Schimbă indexul și filtrele din `/lab/articole` și `articleSection` din JSON-LD. **Cere confirmare explicită**, nu o aplica tacit. |
+| `tip` | `article_type` | Idem — afișat în index ca `CATEGORIE · TIP`. |
+| `dataPublicare` | `date_published` | **Nu se rescrie niciodată** (§0.4/§6.2). Dacă fișierul primit diferă, greșit e fișierul: păstrează valoarea din registru și semnalează divergența. |
+| `dataModificare` | `date_modified` | Dacă valoarea din fișier e **mai veche** decât cea din registru, ai primit o copie învechită — **oprește-te și întreabă**, nu suprascrie conținut mai nou. |
+| `ultimaVerificare` + zile | `last_reviewed` | Se schimbă doar dacă ai verificat efectiv acum. Un număr mare de zile face reverificarea factuală (Faza 1) obligatorie, nu opțională. |
+| `status` + `wiring` | — | `publicat` cu `✓✓✓✓` înseamnă că modifici conținut deja public. Verificarea live (0.E) devine utilă aici. |
+| `fisierMd` | calea reală a sursei primite | Dacă diferă, există deja un al doilea `.md` pentru același articol. Nu crea un al treilea — consolidează sau întreabă. |
+| `anomalii` | — | Anomaliile preexistente ale acestui articol. Rezolvă-le în cadrul task-ului sau raportează-le explicit ca rămase, cu motivul. |
+
+**Decizia „are sens actualizarea?"** — aplică regulile astea înainte de a scrie orice:
+
+- **Nimic nu diferă material, iar tu ai reverificat sursele** → actualizează *doar* `last_reviewed`. `date_modified` rămâne neschimbat (§6.2). Asta e un rezultat valid, nu un eșec.
+- **Nimic nu diferă și n-ai verificat nimic** → nu e nevoie de actualizare. Raportează asta și oprește-te; nu fabrica o modificare pentru prospețime.
+- **Fișierul primit e mai vechi** (`date_modified` anterior, conținut regresat) → **STOP**, întreabă userul. Nu suprascrie.
+- **`canonical`/slug diferă de cel din registru** → e un material diferit, sau o redenumire. Redenumirea unui URL deja public e o decizie separată, cu consecințe de indexare — niciodată un efect secundar al unei actualizări de conținut.
+- **Diferă `category`/`articleType`** → confirmare explicită înainte, fiind o reclasificare vizibilă în index.
+
+### 0.D — Dacă NU EXISTĂ: introdu-l în evidență acum, înainte de restul pipeline-ului
+
+1. Alege identificatorul și prefixul numeric pe baza celor **deja alocate în registru** (coloana ID a suprafeței `lab/articole`), nu prin presupunere. Registrul e dovada a ce e ocupat; coloana de anomalii semnalează explicit coliziunile de prefix.
+2. Pune fișierul `.md` sursă la locul lui canonic: `src/content/lab/articles/{n}.{slug}.md`, cu frontmatter complet conform §0.3 — în special un `canonical` corect și un `date_published` care respectă §0.4 (`null` până la publicarea reală, niciodată un placeholder de tip `TO_BE_SET_AT_PUBLICATION`).
+3. Regenerează și confirmă că intrarea a apărut:
+
+```bash
+node scripts/build-content-registry.mjs --diff .registry-before.json
+```
+
+Trebuie să vezi `+ INTRARE NOUĂ  lab/articole|{id}`. Dacă nu apare, sursa nu e la locul canonic sau frontmatter-ul nu e citibil — repară înainte de a continua.
+
+4. Verifică **suprapunerea semantică** conform §0.1 — registrul e vederea completă a corpusului de care acel pas are nevoie (titluri, categorii, tipuri), deci folosește-l ca sursă acolo.
+5. Verifică ce se întâmplă cu indexul: registrul arată `datePublished` al tuturor articolelor, deci poți afla *înainte* de publicare dacă articolul nou devine primul în `/lab/articole` și care articol pierde eticheta „CEL MAI NOU" (§8.1).
+
+### 0.E — Verificare pe site-ul live (opțional, unde ajută efectiv)
+
+Pentru un material care apare în registru cu status `publicat`, poți verifica direct pe `https://delamatescu.ro` — util în special înainte de a suprascrie conținut care e deja public:
+
+- `https://delamatescu.ro{ruta}` întoarce 200 și conține titlul din registru;
+- `date_published`/`date_modified` din JSON-LD-ul paginii live corespund cu registrul;
+- intrarea există în `https://delamatescu.ro/sitemap.xml`.
+
+**Interpretarea corectă a unei diferențe local ↔ live**: acest skill se oprește înainte de `git push` și deploy, deci site-ul live reflectă ultimul deploy, nu working tree-ul. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
+
+Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev server + build) — o completează. Dacă `delamatescu.ro` nu răspunde sau blochează cererea, notează-o ca neverificată; nu trata un fetch eșuat drept dovadă că pagina nu există.
+
+### 0.F — Ce NU face acest pas
+
+- **Nu editează registrul** — nici `docs/REGISTRU-CONTINUT.md`, nici `docs/registru-continut.json`. Sunt generate.
+- **Nu pornește o curățare a corpusului.** Registrul listează anomalii pe toate cele 162 de intrări. Rezolvă-le doar pe ale materialului pe care lucrezi; pe celelalte le **raportează**, nu le atinge, dacă userul nu a cerut explicit altceva.
+- **Nu reordonează și nu marchează manual Featured.** Poziția în index și eticheta „CEL MAI NOU" rămân complet derivate din `datePublished` (§8.1). Registrul e pentru *citit* starea, nu pentru a o forța.
+
+### Pasul final — verifică dacă evidența a fost efectiv actualizată
+
+După wiring și după verificările tehnice, înainte de raportul final:
+
+```bash
+node scripts/build-content-registry.mjs --strict --diff .registry-before.json
+```
+
+Comanda compară starea actuală cu snapshot-ul de la 0.A și listează ce s-a schimbat: intrări noi sau dispărute, câmpuri modificate, wiring, delta de anomalii. Confirmă în raport, pe baza output-ului real, nu din memorie:
+
+1. **Intrarea există** — apare ca `+ INTRARE NOUĂ` sau `~ MODIFICAT`.
+2. **Diferențele sunt exact cele intenționate** — orice câmp schimbat pe care nu l-ai modificat deliberat e un efect secundar; investighează-l înainte de a raporta succes.
+3. **Wiring complet** pentru un material publicat: `✓✓✓✓` (sau `·✓✓✓` unde poziția „registru" nu se aplică suprafeței).
+4. **Zero anomalii noi** — linia de anomalii arată `înainte → după`; dacă a crescut, cele noi sunt ale tale: rezolvă-le sau raportează-le cu motivul.
+5. `REGISTRUL NU S-A SCHIMBAT`, deși ai publicat sau actualizat ceva, **înseamnă că ceva a eșuat** — sursa nu e la locul canonic, wiring-ul lipsește, sau ai modificat un fișier care nu alimentează registrul. Nu raporta succes.
+
+`--strict` dă exit 1 la orice anomalie din corpus, inclusiv preexistentă — de aceea delta din `--diff` e cea care separă anomaliile tale de cele vechi.
+
+Șterge `.registry-before.json` după verificare.
+
+---
+
 ## Faza 0 — Inspecție și ingest
 
 Citește obligatoriu, înainte de orice modificare: fișierul `.md` sursă; `src/data/lab-seo.ts` (tipuri, `sortedLabArticles`/`latestLabArticle`/`labArticlePathname`/`formatLabArticleDate` și `buildArticleJsonLd` — sursa canonică a indexului `/lab/articole`, vezi Faza 8); `src/pages/Lab.tsx` (`LabArticleIndex`, componenta indexului); `src/data/lab.ts` (`labNav` — navigare/routing, NU sursa ordinii indexului); un articol `.ts` existent ca referință de stil; `src/components/Seo.tsx` (`alexMatescuPerson`, `alexMatescuWebSite`); `public/sitemap.xml`; `public/robots.txt` (context, de regulă nu necesită modificare — vezi §9.1); `public/llms.txt` (doar context, vezi §8.3).
@@ -33,7 +150,7 @@ Citește obligatoriu, înainte de orice modificare: fișierul `.md` sursă; `src
 
 **Slug**: derivă din ultima componentă a `canonical`-ului; trebuie să coincidă cu numele fișierului `.md` (fără prefixul numeric) și cu ruta. Nu adăuga un câmp `slug` separat în frontmatter — ar duplica aceeași informație în două locuri cu risc de divergență; canonicalul rămâne sursa unică.
 
-**Detectare update vs. articol nou**: `grep` slug-ul în `lab-seo.ts`/`Lab.tsx`/`lab.ts`. Dacă există deja, e update — tratează fișierele deja create ca atare, nu duplica intrări.
+**Detectare update vs. articol nou**: rezolvată deja la Pasul 0 (§0.B) — registrul e singurul mecanism pentru asta. Nu re-determina prin `grep` în `lab-seo.ts`/`Lab.tsx`/`lab.ts`: două surse pentru aceeași întrebare pot da răspunsuri diferite. Dacă registrul arată intrarea, e update — tratează fișierele deja create ca atare, nu duplica intrări.
 
 ### 0.1 — Suprapunere semantică
 
@@ -474,6 +591,8 @@ Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doa
 
 ## Checklist final obligatoriu
 
+- [ ] Pasul 0 parcurs integral: snapshot la început, căutarea articolului în registru, comparație + decizie de actualizare dacă exista deja, sau introducerea lui în evidență dacă nu exista.
+- [ ] `node scripts/build-content-registry.mjs --strict --diff .registry-before.json` a rulat la final; diff-ul arată intrarea cu datele corecte, wiring `✓✓✓✓`, doar diferențele intenționate și zero anomalii noi. `.registry-before.json` șters.
 - [ ] Toate afirmațiile materiale au fost verificate live, în sesiunea curentă.
 - [ ] Cifrele au denominator, perioadă și definiție corecte (§1.4).
 - [ ] Afirmațiile volatile au fost reverificate live, nu copiate dintr-un articol anterior.
