@@ -207,12 +207,20 @@ async function incarcaModule() {
 
 // ───────────────── index: fișiere .md sursă, după canonical ─────────────────
 
+/**
+ * Directoare din src/content care țin documentație internă de tooling, nu
+ * conținut al site-ului — nu intră în corpus (ex. auditul agentului
+ * evidence-release din `arhitectura/`).
+ */
+const EXCLUSE_DIN_CORPUS = ["src/content/arhitectura/"];
+
 function indexeazaSurseMd() {
   const dir = path.join(ROOT, "src/content");
   const dupaCanonical = new Map();
   const dupaSlug = new Map();
   const toate = [];
   for (const abs of walkMd(dir)) {
+    if (EXCLUSE_DIN_CORPUS.some((p) => rel(abs).startsWith(p))) continue;
     const fm = frontmatter(abs);
     const canonical = (fm.canonical || "").replace(/^<|>$/g, "");
     const numeFisier = path.basename(abs, ".md");

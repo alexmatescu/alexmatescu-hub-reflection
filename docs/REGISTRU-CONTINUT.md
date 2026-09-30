@@ -7,13 +7,13 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-09-30 · 162 intrări · **21 anomalii** în 10 intrări
+Generat: 2026-09-30 · 161 intrări · **18 anomalii** în 9 intrări
 
 ## Sinteză
 
 | Suprafață | Publicat | Draft / nepublicat | Total | Anomalii |
 |---|--:|--:|--:|--:|
-| `lab/articole` | 14 | 1 | 15 | 20 |
+| `lab/articole` | 15 | 0 | 15 | 17 |
 | `lab/studii-de-caz` | 1 | 0 | 1 | 0 |
 | `lab/metodologie` | 3 | 0 | 3 | 0 |
 | `lab/foundation` | 1 | 0 | 1 | 0 |
@@ -21,8 +21,7 @@ Generat: 2026-09-30 · 162 intrări · **21 anomalii** în 10 intrări
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 1 | 0 | 1 | 0 |
 | `blog (arhivă)` | 131 | 0 | 131 | 1 |
-| `nealocat` | 0 | 1 | 1 | 0 |
-| **Total** | **160** | **2** | **162** | **21** |
+| **Total** | **161** | **0** | **161** | **18** |
 
 ## Legendă
 
@@ -39,7 +38,7 @@ Generat: 2026-09-30 · 162 intrări · **21 anomalii** în 10 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `de-la-web-visibility-la-machine-accessibility` | [De la web visibility la machine accessibility: ce se schimbă când AI-ul nu mai doar citește internetul, ci acționează în el?](/lab/articole/de-la-web-visibility-la-machine-accessibility) | AI Visibility | Analiză | draft | 2026-09-30 | — | 2026-09-30 | 2026-09-30 (0z) | `✗✗✗✗` | `src/content/lab/articles/14.de-la-web-visibility-la-machine-accessibility.md` | — |
+| `LAB-15` | [De la web visibility la machine accessibility: ce se schimbă când AI-ul nu mai doar citește internetul, ci acționează în el?](/lab/articole/de-la-web-visibility-la-machine-accessibility) | AI Ecosystem | Analiză | publicat | — | 2026-09-30 | 2026-09-30 | 2026-09-30 (0z) | `✓✓✓✓` | `src/content/lab/articles/15.de-la-web-visibility-la-machine-accessibility.md` | `src/data/lab-content/15. de-la-web-visibility-la-machine-accessibility.ts` |
 | `LAB-14` | [AI ca oglindă și amplificator: ce arată raportul Anthropic despre intenție, context și folosirea Claude](/lab/articole/ai-oglinda-amplificator-intentie-context-anthropic) | AI Ecosystem | Analiză | publicat | 2026-09-14 | 2026-09-14 | 2026-09-30 | 2026-09-30 (0z) | `✓✓✓✓` | `src/content/lab/articles/14.ai-oglinda-amplificator-intentie-context-anthropic.md` | `src/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic.ts` |
 | `LAB-13` | [Eticheta „Abonat”: cum folosește Google relația cu publicul pentru a evidenția surse în AI Search](/lab/articole/eticheta-abonat-relatia-prezentare-ai-search) | Entities & Citations | Analiză | publicat | 2026-08-27 | 2026-08-27 | 2026-08-27 | 2026-08-27 (34z) | `✓✓✓✓` | `src/content/lab/articles/13.eticheta-abonat-relatia-prezentare-ai-search-revizuit.md` | `src/data/lab-content/13. eticheta-abonat-relatia-prezentare-ai-search.ts` |
 | `LAB-11` | [Harta de citare: cum afli empiric ce surse contează pentru vizibilitatea AI în România](/lab/articole/harta-de-citare-mentiuni-externe-romania) | Entities & Citations | Ghid / Analiză metodologică | publicat | 2026-08-13 | 2026-08-19 | 2026-08-19 | 2026-08-19 (42z) | `✓✓✓✓` | `src/content/lab/articles/11.harta-de-citare-mentiuni-externe-romania.md` | `src/data/lab-content/11. harta-de-citare-mentiuni-externe-romania.ts` |
@@ -236,27 +235,13 @@ Generat: 2026-09-30 · 162 intrări · **21 anomalii** în 10 intrări
 | `tomorrow-is-first-blak-page-of-365-page` | "Tomorrow, is the first blak page of a 365 page book." | Reflecții | publicat | 2014-12-31 | — | `✓✓·✓` | — |
 | `mult-mai-usor-sa-zambesti-decat-sa` | Mastile nu te reprezinta. Fii tu! | Reflecții | publicat | 2014-12-30 | — | `✓✓·✓` | — |
 
-## `nealocat` — 1 intrare
-
-| ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| `evidence-release-pipeline-audit` | [evidence-release-pipeline-audit](#) | — | — | nepublicat | 2026-09-13 | — | — | — | `✗✗✗✗` | `src/content/arhitectura/evidence-release-pipeline-audit.md` | — |
-
 ## Anomalii
-
-### `de-la-web-visibility-la-machine-accessibility` — De la web visibility la machine accessibility: ce se schimbă când AI-ul nu mai doar citește internetul, ci acționează în el?
-
-`lab/articole` · /lab/articole/de-la-web-visibility-la-machine-accessibility
-
-- `category` în afara taxonomiei: «AI Visibility»
-- prefix numeric duplicat (14) cu: src/content/lab/articles/14.ai-oglinda-amplificator-intentie-context-anthropic.md
 
 ### `LAB-14` — AI ca oglindă și amplificator: ce arată raportul Anthropic despre intenție, context și folosirea Claude
 
 `lab/articole` · /lab/articole/ai-oglinda-amplificator-intentie-context-anthropic
 
 - imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`
-- prefix numeric duplicat (14) cu: src/content/lab/articles/14.de-la-web-visibility-la-machine-accessibility.md
 
 ### `LAB-13` — Eticheta „Abonat”: cum folosește Google relația cu publicul pentru a evidenția surse în AI Search
 

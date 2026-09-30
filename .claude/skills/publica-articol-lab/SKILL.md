@@ -117,7 +117,7 @@ Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev s
 ### 0.F — Ce NU face acest pas
 
 - **Nu editează registrul** — nici `docs/REGISTRU-CONTINUT.md`, nici `docs/registru-continut.json`. Sunt generate.
-- **Nu pornește o curățare a corpusului.** Registrul listează anomalii pe toate cele 162 de intrări. Rezolvă-le doar pe ale materialului pe care lucrezi; pe celelalte le **raportează**, nu le atinge, dacă userul nu a cerut explicit altceva.
+- **Nu pornește o curățare a corpusului.** Registrul listează anomalii pe tot corpusul. Rezolvă-le doar pe ale materialului pe care lucrezi; pe celelalte le **raportează**, nu le atinge, dacă userul nu a cerut explicit altceva.
 - **Nu reordonează și nu marchează manual Featured.** Poziția în index și eticheta „CEL MAI NOU" rămân complet derivate din `datePublished` (§8.1). Registrul e pentru *citit* starea, nu pentru a o forța.
 
 ### Pasul final — verifică dacă evidența a fost efectiv actualizată

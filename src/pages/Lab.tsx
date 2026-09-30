@@ -31,6 +31,7 @@ import { avl350StudiiDeCazHtml } from "@/data/lab-content/avl-350";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
 import { aiOglindaAmplificatorHtml } from "@/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic";
+import { deLaWebVisibilityLaMachineAccessibilityHtml } from "@/data/lab-content/15. de-la-web-visibility-la-machine-accessibility";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -87,6 +88,8 @@ const labPageContent: Record<string, string> = {
     etichetaAbonatRelatiaPrezentareAiSearchHtml,
   "/lab/articole/ai-oglinda-amplificator-intentie-context-anthropic":
     aiOglindaAmplificatorHtml,
+  "/lab/articole/de-la-web-visibility-la-machine-accessibility":
+    deLaWebVisibilityLaMachineAccessibilityHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 

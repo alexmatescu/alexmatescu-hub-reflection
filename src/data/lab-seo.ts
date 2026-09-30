@@ -1,5 +1,6 @@
 import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
 import { aiOglindaAmplificatorMeta } from "@/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic";
+import { deLaWebVisibilityLaMachineAccessibilityMeta } from "@/data/lab-content/15. de-la-web-visibility-la-machine-accessibility";
 import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -118,6 +119,7 @@ export const labArticleMeta: LabArticleMeta[] = [
   decalajVitezaAiAdoptie2026Meta,
   etichetaAbonatRelatiaPrezentareAiSearchMeta,
   aiOglindaAmplificatorMeta,
+  deLaWebVisibilityLaMachineAccessibilityMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>

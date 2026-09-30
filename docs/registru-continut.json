@@ -1,39 +1,38 @@
 {
   "generat": "2026-09-30",
   "pragReverificareZile": 180,
-  "totalIntrari": 162,
-  "totalAnomalii": 21,
+  "totalIntrari": 161,
+  "totalAnomalii": 18,
   "intrari": [
     {
-      "id": "de-la-web-visibility-la-machine-accessibility",
+      "id": "LAB-15",
       "titlu": "De la web visibility la machine accessibility: ce se schimbă când AI-ul nu mai doar citește internetul, ci acționează în el?",
       "suprafata": "lab/articole",
       "ruta": "/lab/articole/de-la-web-visibility-la-machine-accessibility",
       "slug": "de-la-web-visibility-la-machine-accessibility",
-      "categorie": "AI Visibility",
+      "categorie": "AI Ecosystem",
       "tip": "Analiză",
-      "status": "draft",
+      "status": "publicat",
       "statusNormativ": null,
-      "versiune": "0.9.0",
-      "dataCreare": "2026-09-30",
-      "dataPublicare": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-09-30T20:59:00+03:00",
       "dataModificare": "2026-09-30",
       "ultimaVerificare": "2026-09-30",
-      "fisierMd": "src/content/lab/articles/14.de-la-web-visibility-la-machine-accessibility.md",
-      "fisierTs": null,
+      "fisierMd": "src/content/lab/articles/15.de-la-web-visibility-la-machine-accessibility.md",
+      "fisierTs": "src/data/lab-content/15. de-la-web-visibility-la-machine-accessibility.ts",
       "wiring": {
-        "registru": false,
-        "pagina": false,
-        "nav": false,
-        "sitemap": false
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
       },
-      "sitemapLastmod": null,
+      "sitemapLastmod": "2026-09-30",
       "imagine": null,
+      "jsonLd": "@graph",
+      "nrCitari": 9,
       "zileDeLaVerificare": 0,
-      "anomalii": [
-        "`category` în afara taxonomiei: «AI Visibility»",
-        "prefix numeric duplicat (14) cu: src/content/lab/articles/14.ai-oglinda-amplificator-intentie-context-anthropic.md"
-      ]
+      "anomalii": []
     },
     {
       "id": "LAB-14",
@@ -64,8 +63,7 @@
       "nrCitari": 4,
       "zileDeLaVerificare": 0,
       "anomalii": [
-        "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`",
-        "prefix numeric duplicat (14) cu: src/content/lab/articles/14.de-la-web-visibility-la-machine-accessibility.md"
+        "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
     },
     {
@@ -4586,34 +4584,6 @@
         "sitemap": true
       },
       "sitemapLastmod": "2014-12-30",
-      "imagine": null,
-      "zileDeLaVerificare": null,
-      "anomalii": []
-    },
-    {
-      "id": "evidence-release-pipeline-audit",
-      "titlu": "evidence-release-pipeline-audit",
-      "suprafata": "nealocat",
-      "ruta": null,
-      "slug": "evidence-release-pipeline-audit",
-      "categorie": null,
-      "tip": null,
-      "status": "nepublicat",
-      "statusNormativ": null,
-      "versiune": null,
-      "dataCreare": "2026-09-13",
-      "dataPublicare": null,
-      "dataModificare": null,
-      "ultimaVerificare": null,
-      "fisierMd": "src/content/arhitectura/evidence-release-pipeline-audit.md",
-      "fisierTs": null,
-      "wiring": {
-        "registru": false,
-        "pagina": false,
-        "nav": false,
-        "sitemap": false
-      },
-      "sitemapLastmod": null,
       "imagine": null,
       "zileDeLaVerificare": null,
       "anomalii": []

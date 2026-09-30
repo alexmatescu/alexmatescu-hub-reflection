@@ -175,6 +175,12 @@ export const labNav: LabPage[] = [
           "AI ca oglindă și amplificator: ce arată raportul Anthropic despre intenție, context și folosirea Claude",
         lead: "Raportul Anthropic din septembrie 2026 arată cum actori foarte diferiți au folosit Claude pentru operațiuni cibernetice, supraveghere, influență, fraude și alte forme de abuz. Analiza separă faptele documentate de interpretarea editorială despre intenție, context și amplificare.",
       },
+      {
+        to: "/lab/articole/de-la-web-visibility-la-machine-accessibility",
+        label:
+          "De la web visibility la machine accessibility: ce se schimbă când AI-ul nu mai doar citește internetul, ci acționează în el?",
+        lead: "Vizibilitatea în AI se extinde de la citare și recomandare la acces și acțiune. Pornind de la anunțurile Meta, Anthropic, OpenAI și Cloudflare din 2026, analiza propune termenul machine accessibility și un cadru de lucru în șapte niveluri pentru a evalua dacă un agent AI poate descoperi, accesa, verifica și folosi informația despre un business.",
+      },
     ],
   },
   {
