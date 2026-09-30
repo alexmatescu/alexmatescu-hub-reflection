@@ -14,8 +14,8 @@ export const aiOglindaAmplificatorMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-09-14T12:10:00+03:00",
-  dateModified: "2026-09-14",
-  lastReviewed: "2026-09-14",
+  dateModified: "2026-09-30",
+  lastReviewed: "2026-09-30",
   image: {
     url: "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
     alt: "Ilustrație conceptuală pentru acest articol: un bărbat lucrează concentrat la laptop, în timp ce o lupă reflectă, pe de-o parte, momente simbolice din istoria umanității (curiozitate, descoperiri, cunoaștere, progres) și, pe de altă parte, cele șapte arii de risc din raportul Anthropic „Detecting and countering misuse of AI: September 2026” — operațiuni cibernetice, operațiuni de influență, supraveghere, escrocherii și fraude, abuz biologic, dezvoltare de arme convenționale și distilare ilicită.",
@@ -44,7 +44,7 @@ export const aiOglindaAmplificatorMeta: LabArticleMeta = {
     },
     {
       name: "Anthropic — Prompting best practices, Claude Platform Docs",
-      url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables",
+      url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
     },
     {
       name: "OpenAI — Prompt engineering best practices for ChatGPT",
@@ -78,7 +78,7 @@ export const aiOglindaAmplificatorMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const aiOglindaAmplificatorHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-09-14T12:10:00+03:00">14 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-14">14 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-09-14T12:10:00+03:00">14 septembrie 2026</time> · Actualizat: <time datetime="2026-09-30">30 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-30">30 septembrie 2026</time></p>
 
       <figure>
         <img src="/images/blog/ai-oglinda-amplificator.webp" alt="Ilustrație conceptuală pentru acest articol: un bărbat lucrează concentrat la laptop, în timp ce o lupă reflectă, pe de-o parte, momente simbolice din istoria umanității (curiozitate, descoperiri, cunoaștere, progres) și, pe de altă parte, cele șapte arii de risc din raportul Anthropic „Detecting and countering misuse of AI: September 2026” — operațiuni cibernetice, operațiuni de influență, supraveghere, escrocherii și fraude, abuz biologic, dezvoltare de arme convenționale și distilare ilicită." width="1672" height="941" loading="lazy" />
@@ -319,14 +319,14 @@ export const aiOglindaAmplificatorHtml = `
 
       <ol class="avl-footnotes">
         <li id="fn-1">Anthropic — „Detecting and countering misuse of AI: September 2026”, 10 septembrie 2026. Sursa primară pentru toate cazurile GTG, cifrele și citatele din raport, verificate direct în raportul complet: <a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener noreferrer">anthropic.com/…/threat-intelligence-report-september-2026</a></li>
-        <li id="fn-2">Anthropic — „Prompting best practices”, Claude Platform Docs. Recomandă claritate și instrucțiuni directe, context suplimentar și folosirea exemplelor pentru a îmbunătăți rezultatele: <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables" target="_blank" rel="noopener noreferrer">docs.anthropic.com/…/prompt-templates-and-variables</a></li>
+        <li id="fn-2">Anthropic — „Prompting best practices”, Claude Platform Docs. Recomandă claritate și instrucțiuni directe, context suplimentar și folosirea exemplelor pentru a îmbunătăți rezultatele: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener noreferrer">platform.claude.com/…/claude-prompting-best-practices</a></li>
         <li id="fn-3">OpenAI — „Prompt engineering best practices for ChatGPT”. Recomandă prompturi clare și specifice, cu rafinarea cererii după evaluarea răspunsului primit: <a href="https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt" target="_blank" rel="noopener noreferrer">help.openai.com/…/prompt-engineering-best-practices-for-chatgpt</a></li>
         <li id="fn-4">Anthropic — „Effective context engineering for AI agents”. Definește context engineering ca selecția și organizarea contextului pentru a maximiza probabilitatea comportamentului dorit al modelului și documentează mecanisme de context persistent (memory tool, structured note-taking) în sisteme agentice: <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener noreferrer">anthropic.com/engineering/effective-context-engineering-for-ai-agents</a></li>
       </ol>
 
       <h3>Notă de volatilitate</h3>
 
-      <p>Documentația produselor AI, capabilitățile modelelor și mecanismele de memorie, context și siguranță se pot modifica. Afirmațiile despre produsele curente au fost verificate la <strong>14 septembrie 2026</strong>.</p>
+      <p>Documentația produselor AI, capabilitățile modelelor și mecanismele de memorie, context și siguranță se pot modifica. Afirmațiile despre produsele curente au fost verificate la <strong>30 septembrie 2026</strong>.</p>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 14 septembrie 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 30 septembrie 2026.</em></p>
 `;
