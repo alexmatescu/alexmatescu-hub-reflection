@@ -6,7 +6,7 @@ import type { LabArticleMeta } from "@/data/lab-seo";
  */
 export const deLaWebVisibilityLaMachineAccessibilityMeta: LabArticleMeta = {
   title:
-    "De la web visibility la machine accessibility: ce se schimbă când AI-ul nu mai doar citește internetul, ci acționează în el?",
+    "De la web visibility la machine accessibility: ce se schimbă când AI-ul nu doar citește internetul, ci acționează în el?",
   description:
     "Vizibilitatea în AI se extinde de la citare și recomandare la acces și acțiune. Pornind de la anunțurile Meta, Anthropic, OpenAI și Cloudflare din 2026, analiza propune termenul machine accessibility și un cadru de lucru în șapte niveluri pentru a evalua dacă un agent AI poate descoperi, accesa, verifica și folosi informația despre un business.",
   canonical:
