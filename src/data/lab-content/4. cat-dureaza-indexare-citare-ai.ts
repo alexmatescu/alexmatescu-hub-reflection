@@ -13,8 +13,8 @@ export const catDureazaIndexareCitareAiMeta: LabArticleMeta = {
     "https://delamatescu.ro/lab/articole/cat-dureaza-indexare-citare-ai",
   category: "Search & Retrieval",
   articleType: "Analiză",
-  datePublished: "2026-08-05",
-  dateModified: "2026-08-10",
+  datePublished: "2026-08-17",
+  dateModified: "2026-08-17",
   about: [
     { name: "Google indexing" },
     { name: "AI citations" },
@@ -56,7 +56,7 @@ export const catDureazaIndexareCitareAiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const catDureazaIndexareCitareAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-05">5 august 2026</time> · Actualizat: <time datetime="2026-08-10">10 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-10">10 august 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-17">17 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-10">10 august 2026</time></p>
 
       <p><strong>Nu există un termen universal și verificabil care să spună după câte zile o pagină nouă va fi indexată de Google sau citată de ChatGPT, Perplexity, Copilot ori funcțiile AI din Google Search. Google spune oficial că recrawl-ul poate dura de la câteva zile la câteva săptămâni și că solicitarea de crawl nu garantează indexarea. OpenAI și Perplexity documentează condițiile tehnice prin care un site poate fi accesat de sistemele lor de căutare, dar nu publică un SLA pentru timpul de la publicare la prima citare. IndexNow notifică instant motoarele participante că un URL s-a schimbat, dar nici protocolul nu garantează că pagina va fi indexată sau afișată imediat.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup></p>
 

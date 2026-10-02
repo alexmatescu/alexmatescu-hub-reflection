@@ -2,7 +2,7 @@
   "generat": "2026-10-02",
   "pragReverificareZile": 180,
   "totalIntrari": 169,
-  "totalAnomalii": 17,
+  "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
     {
@@ -202,7 +202,7 @@
       "dataPublicare": "2026-08-27T20:00:00+03:00",
       "dataModificare": "2026-08-27",
       "ultimaVerificare": "2026-08-27",
-      "fisierMd": "src/content/lab/articles/13.eticheta-abonat-relatia-prezentare-ai-search-revizuit.md",
+      "fisierMd": "src/content/lab/articles/13.eticheta-abonat-relatia-prezentare-ai-search.md",
       "fisierTs": "src/data/lab-content/13. eticheta-abonat-relatia-prezentare-ai-search.ts",
       "wiring": {
         "registru": true,
@@ -216,9 +216,38 @@
       "nrCitari": 10,
       "zileDeLaVerificare": 36,
       "anomalii": [
-        "numele fișierului `.md` (eticheta-abonat-relatia-prezentare-ai-search-revizuit) ≠ slug (eticheta-abonat-relatia-prezentare-ai-search)",
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
+    },
+    {
+      "id": "LAB-10",
+      "titlu": "Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/ce-este-entitate-ai-studiu-de-caz",
+      "slug": "ce-este-entitate-ai-studiu-de-caz",
+      "categorie": "Entities & Citations",
+      "tip": "Analiză de caz",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": "2026-08-13",
+      "dataPublicare": "2026-08-19",
+      "dataModificare": "2026-08-19",
+      "ultimaVerificare": "2026-08-19",
+      "fisierMd": "src/content/lab/articles/10.ce-este-entitate-ai-studiu-de-caz.md",
+      "fisierTs": "src/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-08-19",
+      "imagine": null,
+      "jsonLd": "@graph",
+      "nrCitari": 6,
+      "zileDeLaVerificare": 44,
+      "anomalii": []
     },
     {
       "id": "LAB-11",
@@ -303,16 +332,12 @@
         "nav": true,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-08-18",
+      "sitemapLastmod": "2026-08-19",
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
       "zileDeLaVerificare": 44,
-      "anomalii": [
-        "`date_published` diferă între `.md` și `.ts`",
-        "`date_modified` diferă între `.md` și `.ts`",
-        "`lastmod` din sitemap (2026-08-18) ≠ ultima modificare (2026-08-19)"
-      ]
+      "anomalii": []
     },
     {
       "id": "LAB-09",
@@ -342,6 +367,36 @@
       "jsonLd": "@graph",
       "nrCitari": 8,
       "zileDeLaVerificare": 44,
+      "anomalii": []
+    },
+    {
+      "id": "LAB-06",
+      "titlu": "Metadata și citarea AI: ce poate demonstra o citare identică și unde începe inferența",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/metadata-citare-ai-studiu-de-caz",
+      "slug": "metadata-citare-ai-studiu-de-caz",
+      "categorie": "Technical Visibility",
+      "tip": "Analiză de caz",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": "2026-08-13",
+      "dataPublicare": "2026-08-18",
+      "dataModificare": "2026-08-18",
+      "ultimaVerificare": "2026-08-17",
+      "fisierMd": "src/content/lab/articles/6.metadata-citare-ai-studiu-de-caz.md",
+      "fisierTs": "src/data/lab-content/6. metadata-citare-ai-studiu-de-caz.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-08-18",
+      "imagine": null,
+      "jsonLd": "@graph",
+      "nrCitari": 8,
+      "zileDeLaVerificare": 46,
       "anomalii": []
     },
     {
@@ -375,6 +430,66 @@
       "anomalii": []
     },
     {
+      "id": "LAB-04",
+      "titlu": "Cât durează până apari în Google și cât până te citează AI-ul? Ce știm, ce nu știm și ce poți măsura",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/cat-dureaza-indexare-citare-ai",
+      "slug": "cat-dureaza-indexare-citare-ai",
+      "categorie": "Search & Retrieval",
+      "tip": "Analiză",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": "2026-08-13",
+      "dataPublicare": "2026-08-17",
+      "dataModificare": "2026-08-17",
+      "ultimaVerificare": null,
+      "fisierMd": "src/content/lab/articles/4.cat-dureaza-indexare-citare-ai.md",
+      "fisierTs": "src/data/lab-content/4. cat-dureaza-indexare-citare-ai.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-08-17",
+      "imagine": null,
+      "jsonLd": "legacy",
+      "nrCitari": 0,
+      "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
+      "id": "LAB-05",
+      "titlu": "Paradoxul site-ului terminat: același URL poate arăta diferit pentru om, crawler și instrumentul de audit",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/paradoxul-site-ului-terminat",
+      "slug": "paradoxul-site-ului-terminat",
+      "categorie": "Technical Visibility",
+      "tip": "Analiză de caz",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": "2026-08-13",
+      "dataPublicare": "2026-08-17",
+      "dataModificare": "2026-08-17",
+      "ultimaVerificare": null,
+      "fisierMd": "src/content/lab/articles/5.paradoxul-site-ului-terminat.md",
+      "fisierTs": "src/data/lab-content/5. paradoxul-site-ului-terminat.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-08-17",
+      "imagine": null,
+      "jsonLd": "legacy",
+      "nrCitari": 0,
+      "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
       "id": "LAB-01",
       "titlu": "Istoria căutării pe internet: cum fiecare eră a creat un punct orb pe care optimizarea a încercat să-l exploateze",
       "suprafata": "lab/articole",
@@ -402,10 +517,7 @@
       "jsonLd": "legacy",
       "nrCitari": 0,
       "zileDeLaVerificare": null,
-      "anomalii": [
-        "`date_published` diferă între `.md` și `.ts`",
-        "`date_modified` diferă între `.md` și `.ts`"
-      ]
+      "anomalii": []
     },
     {
       "id": "LAB-02",
@@ -460,144 +572,12 @@
         "nav": true,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-08-14",
-      "imagine": null,
-      "jsonLd": "legacy",
-      "nrCitari": 0,
-      "zileDeLaVerificare": null,
-      "anomalii": [
-        "`lastmod` din sitemap (2026-08-14) ≠ ultima modificare (2026-09-04)"
-      ]
-    },
-    {
-      "id": "LAB-10",
-      "titlu": "Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul",
-      "suprafata": "lab/articole",
-      "ruta": "/lab/articole/ce-este-entitate-ai-studiu-de-caz",
-      "slug": "ce-este-entitate-ai-studiu-de-caz",
-      "categorie": "Entities & Citations",
-      "tip": "Analiză de caz",
-      "status": "publicat",
-      "statusNormativ": null,
-      "versiune": null,
-      "dataCreare": "2026-08-13",
-      "dataPublicare": "2026-08-05",
-      "dataModificare": "2026-08-11",
-      "ultimaVerificare": "2026-08-19",
-      "fisierMd": "src/content/lab/articles/10.ce-este-entitate-ai-studiu-de-caz.md",
-      "fisierTs": "src/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz.ts",
-      "wiring": {
-        "registru": true,
-        "pagina": true,
-        "nav": true,
-        "sitemap": true
-      },
-      "sitemapLastmod": "2026-08-11",
-      "imagine": null,
-      "jsonLd": "@graph",
-      "nrCitari": 6,
-      "zileDeLaVerificare": 44,
-      "anomalii": [
-        "`article_type` diferă: .md «Studiu de caz» ≠ .ts «Analiză de caz»",
-        "`date_published` diferă între `.md` și `.ts`",
-        "`date_modified` diferă între `.md` și `.ts`"
-      ]
-    },
-    {
-      "id": "LAB-04",
-      "titlu": "Cât durează până apari în Google și cât până te citează AI-ul? Ce știm, ce nu știm și ce poți măsura",
-      "suprafata": "lab/articole",
-      "ruta": "/lab/articole/cat-dureaza-indexare-citare-ai",
-      "slug": "cat-dureaza-indexare-citare-ai",
-      "categorie": "Search & Retrieval",
-      "tip": "Analiză",
-      "status": "publicat",
-      "statusNormativ": null,
-      "versiune": null,
-      "dataCreare": "2026-08-13",
-      "dataPublicare": "2026-08-05",
-      "dataModificare": "2026-08-10",
-      "ultimaVerificare": null,
-      "fisierMd": "src/content/lab/articles/4.cat-dureaza-indexare-citare-ai.md",
-      "fisierTs": "src/data/lab-content/4. cat-dureaza-indexare-citare-ai.ts",
-      "wiring": {
-        "registru": true,
-        "pagina": true,
-        "nav": true,
-        "sitemap": true
-      },
-      "sitemapLastmod": "2026-08-10",
+      "sitemapLastmod": "2026-09-04",
       "imagine": null,
       "jsonLd": "legacy",
       "nrCitari": 0,
       "zileDeLaVerificare": null,
       "anomalii": []
-    },
-    {
-      "id": "LAB-05",
-      "titlu": "Paradoxul site-ului terminat: același URL poate arăta diferit pentru om, crawler și instrumentul de audit",
-      "suprafata": "lab/articole",
-      "ruta": "/lab/articole/paradoxul-site-ului-terminat",
-      "slug": "paradoxul-site-ului-terminat",
-      "categorie": "Technical Visibility",
-      "tip": "Analiză de caz",
-      "status": "publicat",
-      "statusNormativ": null,
-      "versiune": null,
-      "dataCreare": "2026-08-13",
-      "dataPublicare": "2026-08-05",
-      "dataModificare": "2026-08-10",
-      "ultimaVerificare": null,
-      "fisierMd": "src/content/lab/articles/5.paradoxul-site-ului-terminat.md",
-      "fisierTs": "src/data/lab-content/5. paradoxul-site-ului-terminat.ts",
-      "wiring": {
-        "registru": true,
-        "pagina": true,
-        "nav": true,
-        "sitemap": true
-      },
-      "sitemapLastmod": "2026-08-10",
-      "imagine": null,
-      "jsonLd": "legacy",
-      "nrCitari": 0,
-      "zileDeLaVerificare": null,
-      "anomalii": [
-        "`article_type` diferă: .md «Studiu de caz» ≠ .ts «Analiză de caz»"
-      ]
-    },
-    {
-      "id": "LAB-06",
-      "titlu": "Metadata și citarea AI: ce poate demonstra o citare identică și unde începe inferența",
-      "suprafata": "lab/articole",
-      "ruta": "/lab/articole/metadata-citare-ai-studiu-de-caz",
-      "slug": "metadata-citare-ai-studiu-de-caz",
-      "categorie": "Technical Visibility",
-      "tip": "Analiză de caz",
-      "status": "publicat",
-      "statusNormativ": null,
-      "versiune": null,
-      "dataCreare": "2026-08-13",
-      "dataPublicare": "2026-08-05",
-      "dataModificare": "2026-08-10",
-      "ultimaVerificare": "2026-08-17",
-      "fisierMd": "src/content/lab/articles/6.metadata-citare-ai-studiu-de-caz.md",
-      "fisierTs": "src/data/lab-content/6. metadata-citare-ai-studiu-de-caz.ts",
-      "wiring": {
-        "registru": true,
-        "pagina": true,
-        "nav": true,
-        "sitemap": true
-      },
-      "sitemapLastmod": "2026-08-10",
-      "imagine": null,
-      "jsonLd": "@graph",
-      "nrCitari": 8,
-      "zileDeLaVerificare": 46,
-      "anomalii": [
-        "`article_type` diferă: .md «Studiu de caz» ≠ .ts «Analiză de caz»",
-        "`date_published` diferă între `.md` și `.ts`",
-        "`date_modified` diferă între `.md` și `.ts`"
-      ]
     },
     {
       "id": "CS-001",
@@ -1173,14 +1153,12 @@
         "registru": true,
         "pagina": true,
         "nav": null,
-        "sitemap": false
+        "sitemap": true
       },
-      "sitemapLastmod": null,
+      "sitemapLastmod": "2026-07-18",
       "imagine": "/images/blog/cifrul-succesului-hero.webp",
       "zileDeLaVerificare": null,
-      "anomalii": [
-        "wiring incomplet: sitemap"
-      ]
+      "anomalii": []
     },
     {
       "id": "informatia-care-exista-dar-nu-poate-fi-gasita",
