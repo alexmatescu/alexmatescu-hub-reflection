@@ -13,33 +13,88 @@ export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
   category: "Entities & Citations",
   articleType: "Analiză",
   datePublished: "2026-08-14",
-  dateModified: "2026-09-04",
+  dateModified: "2026-10-02",
+  lastReviewed: "2026-10-02",
   about: [
     { name: "AI visibility" },
     { name: "Social media" },
     { name: "Generative Engine Optimization" },
     { name: "Entity resolution" },
   ],
+  citations: [
+    {
+      name: "LinkedIn Help — vizibilitatea profilului public în motoarele de căutare",
+      url: "https://www.linkedin.com/help/linkedin/answer/a543660/profile-does-or-doesn-t-appear-after-name-search-on-web",
+    },
+    {
+      name: "Lantern — AI Citation Content Visibility Report, februarie 2026",
+      url: "https://www.asklantern.com/reports/ai-citation-content-visibility-february-2026",
+    },
+    {
+      name: "Google — An expanded partnership with Reddit",
+      url: "https://blog.google/company-news/inside-google/company-announcements/expanded-reddit-partnership/",
+    },
+    {
+      name: "OpenAI — OpenAI and Reddit Partnership",
+      url: "https://openai.com/index/openai-and-reddit-partnership/",
+    },
+    {
+      name: "Reuters — „Reddit in AI content licensing deal with Google, sources say”",
+      url: "https://www.nasdaq.com/articles/exclusive-reddit-in-ai-content-licensing-deal-with-google-sources-say",
+    },
+    {
+      name: "Evertune Documentation — Evertune Metrics",
+      url: "https://docs.evertune.ai/en/articles/12271101-evertune-metrics",
+    },
+    {
+      name: "Eurostat — „32.7% of EU people used generative AI tools in 2025”",
+      url: "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251216-3",
+    },
+    {
+      name: "Reveal Marketing Research — „Accelerated integration of AI into Romanians' routines: usage increases from 47% to 68% in one year”",
+      url: "https://reveal.ro/en/media-en/accelerated-integration-of-ai-into-romanians-routines-usage-increases-from-47-to-68-in-one-year/",
+    },
+    {
+      name: "Meta Newsroom — „New AI Tools to Help You Make Things Happen on Facebook”",
+      url: "https://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/",
+    },
+    {
+      name: "Meta Newsroom — Threads: Meta AI în mesaje directe (pagină în limba japoneză)",
+      url: "https://about.fb.com/ja/news/2026/07/threads-meta-ai-dm/",
+    },
+    {
+      name: "CNBC — „Reddit stock sinks on report it may not renew Google AI content deal”",
+      url: "https://www.cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal.html",
+    },
+    {
+      name: "MediaPost — „Reddit Ending Data-Scraping, Will Keep Existing Agreements”",
+      url: "https://www.mediapost.com/publications/article/418430/reddit-ending-data-scraping-will-keep-existing-ag.html",
+    },
+    {
+      name: "LinkedIn Help — „Update to our Terms and data use”",
+      url: "https://www.linkedin.com/help/linkedin/answer/a8059228",
+    },
+  ],
   faq: [
     {
       q: "AI-ul poate citi postările mele de pe LinkedIn?",
-      a: "Unele postări LinkedIn au URL public, dar accesul și indexarea externă sunt mai puțin predictibile decât în cazul unui domeniu propriu. LinkedIn documentează explicit indexabilitatea profilurilor publice, iar situația postărilor și crawlerelor se poate schimba în timp.",
+      a: "Unele postări LinkedIn au URL public, dar accesul și indexarea externă sunt mai puțin predictibile decât în cazul unui domeniu propriu. LinkedIn documentează explicit indexabilitatea profilurilor publice. Situația postărilor și a crawlerelor trebuie reverificată dacă platforma își schimbă politicile. Separat de indexare, din 3 noiembrie 2025 LinkedIn poate folosi, în anumite regiuni (UE, SEE, Elveția, Regatul Unit, Canada, Hong Kong), detalii de profil și conținut public pentru antrenarea propriilor modele generative, cu opțiune de opt-out — ceea ce nu înseamnă că o postare va fi recuperată sau citată de un sistem AI extern.",
     },
     {
       q: "Ce platformă socială produce cea mai multă vizibilitate AI?",
-      a: "Nu există un răspuns universal. Rezultatul depinde de motor, prompturi, perioadă și metodologie. În raportul Lantern din februarie 2026, YouTube este domeniul social cel mai bine plasat în datasetul analizat, dar alte studii pot găsi rezultate diferite.",
+      a: "Nu există un răspuns universal. În raportul Lantern din februarie 2026, YouTube este domeniul social cel mai bine plasat în datasetul analizat, în timp ce alte studii comerciale pot găsi ponderi diferite pentru Reddit sau alte platforme. Rezultatul depinde de motor, prompturi și metodologie.",
     },
     {
       q: "De ce Reddit este citat frecvent în unele sisteme?",
-      a: "Reddit produce pagini publice cu discuții în limbaj natural și are acorduri de acces/licențiere cu Google și OpenAI. Aceste acorduri pot facilita accesul, dar nu demonstrează că ele sunt cauza unică sau dominantă a citărilor.",
+      a: "Reddit produce pagini publice cu discuții în limbaj natural și a anunțat în 2024 acorduri de acces/licențiere cu Google și OpenAI; la 2 octombrie 2026, reînnoirea acordului cu Google nu era confirmată public. Aceste acorduri pot facilita accesul, dar nu demonstrează că ele sunt cauza unică sau dominantă a citărilor.",
     },
     {
       q: "Merită să mai postez pe LinkedIn?",
-      a: "Da, pentru distribuție către oameni, networking și reputație profesională. Pentru ideile importante este prudent să existe și o versiune persistentă pe un domeniu controlat direct.",
+      a: "Da, pentru distribuție către oameni, networking și reputație profesională. Pentru ideile importante este prudent să existe și o versiune persistentă pe un domeniu controlat direct, fără a presupune că LinkedIn este „invizibil” pentru AI.",
     },
     {
       q: "Contează numărul de urmăritori pentru citarea AI?",
-      a: "Numărul de urmăritori nu este un factor public demonstrat de citare AI. Unele platforme sau sisteme pot avea acces la semnale de popularitate, însă efectul lor exact nu este public.",
+      a: "Numărul de urmăritori nu este un factor public demonstrat de citare AI. Unele platforme sau sisteme pot avea acces la semnale de popularitate, însă efectul lor exact nu este public. Follower count-ul nu trebuie folosit ca substitut pentru măsurarea retrieval-ului sau citării.",
     },
     {
       q: "Un cont de X ajută la vizibilitatea AI?",
@@ -47,19 +102,19 @@ export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
     },
     {
       q: "Pe ce platforme merită să fii prezent în România?",
-      a: "Ca orientare la 10 august 2026: domeniu propriu și identitate coerentă în primul rând, apoi platformele și sursele unde publicul relevant există efectiv. Facebook, Instagram și Threads trebuie evaluate separat pentru web retrieval extern și pentru ecosistemul Meta AI.",
+      a: "Ca orientare la 10 august 2026: domeniu propriu și identitate coerentă în primul rând; apoi platformele și sursele unde publicul relevant există efectiv — de exemplu YouTube, comunități Reddit, publicații de industrie, podcasturi cu transcript și profile publice bine structurate. Facebook, Instagram și Threads trebuie evaluate separat pentru web retrieval extern și pentru ecosistemul Meta AI.",
     },
     {
       q: "Contează diacriticele pentru vizibilitatea AI în română?",
-      a: "Consistența ajută, dar nu există dovadă că variantele cu și fără diacritice sunt tratate automat ca entități diferite. O formă canonică și aliasurile relevante din datele structurate pot ajuta la clarificarea identității fără a garanta ranking sau citare.",
+      a: "Consistența ajută, dar nu există dovadă că variantele cu și fără diacritice sunt tratate automat ca entități diferite. Folosirea unei forme canonice și declararea aliasurilor relevante prin alternateName poate clarifica identitatea, fără a garanta un efect de ranking sau citare.",
     },
     {
       q: "Ce procent dintre români folosesc AI?",
-      a: "Depinde de metodologie. Eurostat raportează 17,8% pentru România în 2025 în rândul persoanelor 16–74 ani care folosiseră instrumente AI generative în ultimele trei luni. Reveal raportează 68% în propriul studiu din 2026, pe baza unei metodologii diferite.",
+      a: "Depinde de metodologie. Eurostat raportează 17,8% pentru România în 2025 în rândul persoanelor 16–74 ani care folosiseră instrumente AI generative în ultimele trei luni. Reveal raportează 68% în studiul său din 2026, pe baza unei metodologii diferite. Cele două cifre nu trebuie comparate ca și cum ar măsura aceeași populație în același mod.",
     },
     {
       q: "Cum aleg un consultant GEO/AEO?",
-      a: "Cere metodologia de măsurare, baseline-ul, lista de motoare și prompturi, ordinea verificărilor tehnice și limitele serviciului. Orice promisiune de apariție organică garantată într-un anumit răspuns AI trebuie tratată cu scepticism.",
+      a: "Cere metodologia de măsurare, baseline-ul, lista de motoare și prompturi, ordinea verificărilor tehnice și limitele serviciului. Orice promisiune de apariție organică garantată într-un anumit răspuns AI trebuie tratată cu scepticism. Vizibilitatea consultantului însuși poate fi un indiciu, nu o dovadă suficientă de competență.",
     },
   ],
 };
@@ -67,7 +122,7 @@ export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const socialMediaVizibilitateAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-09-04">4 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-04">4 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-10-02">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-02">2 octombrie 2026</time></p>
 
       <p><strong>Vizibilitatea socială și vizibilitatea AI nu sunt același lucru. Numărul de urmăritori, reach-ul și engagementul unei platforme nu garantează că ideile publicate acolo pot fi recuperate, interpretate sau citate de un sistem AI. Pentru retrieval și citare contează în special dacă informația lasă în urmă un artefact persistent, adresabil, accesibil și ușor de extras. Platforma contează, dar accesul diferă între motoare și se schimbă în timp.</strong></p>
 
@@ -77,7 +132,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Reflexul comun este să întrebi „ce platformă contează pentru AI?”. Întrebarea mai utilă este: <strong>ce rămâne în urmă după ce publici și prin ce mecanism poate fi recuperat?</strong></p>
 
-      <p>Sistemele AI pot obține informații prin mecanisme diferite: crawling public, indexuri proprii, motoare de căutare, API-uri, browsere automatizate, integrări contractuale sau alte surse de date. De aceea, nu este corect să presupunem că toate sistemele „văd webul” în același fel sau că un URL public este singura cale prin care conținutul poate ajunge într-un răspuns.</p>
+      <p>Sistemele AI pot obține informații prin mecanisme diferite: crawling public, indexuri proprii, motoare de căutare, API-uri, browsere automatizate, integrări contractuale sau alte surse de date. De aceea, nu este corect să presupunem că toate sistemele „văd webul” în același fel sau că un URL public este singura cale prin care conținutul poate ajunge într-un răspuns. De ce fiecare sistem AI poate ajunge la surse diferite, pe căi diferite, este explicat în <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a>.</p>
 
       <h3>Legea artefactului — principiu operațional AI Visibility Lab</h3>
 
@@ -93,13 +148,13 @@ export const socialMediaVizibilitateAiHtml = `
 
       <h2>Ce spun datele despre platforme</h2>
 
-      <p>Nu există, în august 2026, o ierarhie universală și stabilă a platformelor sociale pentru toate motoarele AI. Rezultatul depinde de motor, tipul de interogare, țară, perioadă, setul de prompturi și definiția metricii.</p>
+      <p>Nu există, la data ultimei verificări (2 octombrie 2026), o ierarhie universală și stabilă a platformelor sociale pentru toate motoarele AI. Rezultatul depinde de motor, tipul de interogare, țară, perioadă, setul de prompturi și definiția metricii.</p>
 
       <table>
         <thead>
           <tr>
             <th>Platformă</th>
-            <th>Ce se poate spune defensabil în august 2026</th>
+            <th>Ce se poate spune defensabil la 2 octombrie 2026</th>
             <th>Limită / volatilitate</th>
           </tr>
         </thead>
@@ -123,7 +178,8 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Valoarea de aproximativ <strong>60 milioane USD anual</strong> asociată acordului Google–Reddit a fost raportată în presă în 2024 și trebuie tratată ca o valoare raportată pentru acel context, nu ca sumă contractuală permanentă.<sup><a href="#fn-5">5</a></sup></p>
 
-      <p>Acordul Google–Reddit nu e static: presa a raportat în iulie 2026 că negocierile de reînnoire au întâmpinat dificultăți, Reddit evaluând inclusiv posibilitatea de a restrânge accesul Google la conținutul platformei.<sup><a href="#fn-11">11</a></sup> La data verificării acestui articol, acordul nu era nici confirmat reînnoit, nici confirmat încheiat — situația trebuie tratată ca fluidă, nu ca fapt stabilit.</p>
+      <p>Acordul Google–Reddit nu e static: presa a raportat în iulie 2026 că negocierile de reînnoire au întâmpinat dificultăți, Reddit evaluând inclusiv posibilitatea de a restrânge accesul Google la conținutul platformei.<sup><a href="#fn-11">11</a></sup> La 1 octombrie 2026, Reddit a anunțat retragerea feed-urilor RSS (13 noiembrie 2026) și eliminarea treptată a accesului public la vechiul Data API (până în martie 2027); potrivit relatărilor, acordurile existente de conținut cu Google și OpenAI nu sunt afectate de aceste schimbări.<sup><a href="#fn-12">12</a></sup> La ultima verificare (2 octombrie 2026), reînnoirea acordului cu Google nu era confirmată public — situația trebuie tratată ca fluidă, nu ca fapt stabilit.</p>
+      <p>Cum ajunge conținutul social la sistemele AI — prin antrenare, retrieval, acces nativ al platformei sau acorduri prin API — și de ce aceste căi nu trebuie confundate este analizat în <a href="/lab/articole/social-media-devine-strat-informational-pentru-ai">Social media devine strat informațional pentru AI</a>.</p>
 
       <p>Aceste acorduri pot facilita accesul la conținut, dar <strong>nu demonstrează că existența lor este cauza dominantă a frecvenței citării Reddit</strong>. Relevanța, retrieval-ul, forma întrebării, calitatea răspunsului, popularitatea și arhitectura fiecărui motor pot contribui separat.</p>
 
@@ -252,7 +308,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Acesta este un indicator statistic oficial pentru populația 16–74 ani și nu trebuie descris drept „Eurostat 2026”, chiar dacă este citat într-un articol publicat în 2026.</p>
 
-      <p><strong>Reveal Marketing Research:</strong> studiul publicat în 2026 raportează o creștere de la <strong>47% în 2025 la 68% în 2026</strong> în propriul eșantion și identifică ChatGPT la <strong>83%</strong> și Gemini la <strong>35%</strong> între platformele utilizate.<sup><a href="#fn-8">8</a></sup> Aceste cifre trebuie prezentate în contextul metodologiei Reveal, nu ca procente directe ale întregii populații a României.</p>
+      <p><strong>Reveal Marketing Research:</strong> studiul publicat în 2026 raportează o creștere de la <strong>47% în 2025 la 68% în 2026</strong> în propriul eșantion (sondaj online, 1.000 de respondenți, populația urbană de 18+ ani care folosește internetul, 14–20 ianuarie 2026) și identifică ChatGPT la <strong>83%</strong> și Gemini la <strong>35%</strong> între platformele utilizate.<sup><a href="#fn-8">8</a></sup> Aceste cifre trebuie prezentate în contextul metodologiei Reveal, nu ca procente directe ale întregii populații a României.</p>
 
       <p>Prin urmare, Eurostat și Reveal măsoară populații și contexte diferite. Diferența dintre ele nu trebuie tratată ca „eroare”, dar nici ca două estimări concurente ale exact aceleiași variabile.</p>
 
@@ -310,7 +366,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Nu mai este corect să afirmăm că Facebook și Instagram „nu contribuie la vizibilitatea AI”.</p>
 
-      <p>În iunie 2026, Meta a anunțat <strong>AI Mode pe Facebook</strong>, descris ca o experiență care oferă răspunsuri bazate inclusiv pe opinii și recomandări distribuite public în aplicațiile Meta.<sup><a href="#fn-9">9</a></sup> În iulie 2026, Meta a anunțat și integrarea Meta AI în conversațiile Threads, unde utilizatorul poate partaja postări, imagini și videoclipuri Threads către Meta AI.<sup><a href="#fn-10">10</a></sup></p>
+      <p>În iunie 2026, Meta a anunțat <strong>AI Mode pe Facebook</strong>, descris ca o experiență care oferă răspunsuri bazate inclusiv pe opinii și recomandări distribuite public în aplicațiile Meta.<sup><a href="#fn-9">9</a></sup> În iulie 2026, Meta a anunțat și integrarea Meta AI în conversațiile Threads, unde utilizatorul poate partaja postări, imagini și videoclipuri Threads către Meta AI; din 3 septembrie 2026, Meta AI poate fi menționat și în postările publice, cu <code>@meta.ai</code>.<sup><a href="#fn-10">10</a></sup></p>
 
       <p>Prin urmare trebuie separate două obiective:</p>
 
@@ -344,13 +400,13 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Nu există un mecanism public prin care cineva să poată garanta o anumită apariție organică în ChatGPT, Gemini, Claude sau Perplexity. În prezent, pentru răspunsurile organice ale principalelor sisteme AI, <strong>nu există o „poziție” universală, stabilă și comparabilă cu rankingul clasic SEO</strong>. Această afirmație trebuie reverificată dacă apar produse de placement, ranking explicit sau mecanisme comerciale noi.</p>
 
-      <p>Piața GEO/AEO din România poate fi descrisă mai sigur ca <strong>emergentă și fără standarde profesionale consolidate</strong>, nu ca „neocupată”. Vizibilitatea propriului consultant în sistemele AI poate fi un indiciu suplimentar, dar nu este un test definitiv al competenței.</p>
+      <p>Piața GEO/AEO din România poate fi descrisă mai sigur ca <strong>emergentă și fără standarde profesionale consolidate</strong>, nu ca „neocupată”. Vizibilitatea propriului consultant în sistemele AI poate fi un indiciu suplimentar, dar nu este un test definitiv al competenței. Criteriile după care AI Visibility Lab va delimita și va măsura această piață sunt publicate în <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a>, ca draft pentru revizuire.</p>
 
       <h2>Întrebări frecvente</h2>
 
       <h3>AI-ul poate citi postările mele de pe LinkedIn?</h3>
 
-      <p>Unele postări LinkedIn au URL public, dar accesul și indexarea externă sunt mai puțin predictibile decât în cazul unui domeniu propriu. LinkedIn documentează explicit indexabilitatea profilurilor publice. Situația postărilor și a crawlerelor trebuie reverificată dacă platforma își schimbă politicile.<sup><a href="#fn-1">1</a></sup></p>
+      <p>Unele postări LinkedIn au URL public, dar accesul și indexarea externă sunt mai puțin predictibile decât în cazul unui domeniu propriu. LinkedIn documentează explicit indexabilitatea profilurilor publice. Situația postărilor și a crawlerelor trebuie reverificată dacă platforma își schimbă politicile.<sup><a href="#fn-1">1</a></sup> Separat de indexare, din 3 noiembrie 2025 LinkedIn poate folosi, în anumite regiuni (UE, SEE, Elveția, Regatul Unit, Canada, Hong Kong), detalii de profil și conținut public pentru antrenarea propriilor modele generative, cu opțiune de opt-out — ceea ce nu înseamnă că o postare va fi recuperată sau citată de un sistem AI extern.<sup><a href="#fn-13">13</a></sup></p>
 
       <h3>Ce platformă socială produce cea mai multă vizibilitate AI?</h3>
 
@@ -358,7 +414,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <h3>De ce Reddit este citat frecvent în unele sisteme?</h3>
 
-      <p>Reddit produce pagini publice cu discuții în limbaj natural și are acorduri de acces/licențiere cu Google și OpenAI. Aceste acorduri pot facilita accesul, dar nu demonstrează că ele sunt cauza unică sau dominantă a citărilor.<sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup></p>
+      <p>Reddit produce pagini publice cu discuții în limbaj natural și a anunțat în 2024 acorduri de acces/licențiere cu Google și OpenAI; la 2 octombrie 2026, reînnoirea acordului cu Google nu era confirmată public. Aceste acorduri pot facilita accesul, dar nu demonstrează că ele sunt cauza unică sau dominantă a citărilor.<sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
       <h3>Merită să mai postez pe LinkedIn?</h3>
 
@@ -416,7 +472,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <h3>Notă de volatilitate</h3>
 
-      <p><strong>Ultima verificare factuală și a surselor: 4 septembrie 2026.</strong> Comportamentul motoarelor AI, politicile platformelor sociale, accesul crawlerelor, acordurile comerciale, produsele AI și ponderile surselor citate se pot modifica frecvent. Afirmațiile despre accesibilitate, frecvența citării și prioritizarea platformelor descriu starea observabilă la această dată și trebuie reverificate periodic.</p>
+      <p><strong>Ultima verificare factuală și a surselor: 2 octombrie 2026.</strong> Comportamentul motoarelor AI, politicile platformelor sociale, accesul crawlerelor, acordurile comerciale, produsele AI și ponderile surselor citate se pot modifica frecvent. Afirmațiile despre accesibilitate, frecvența citării și prioritizarea platformelor descriu starea observabilă la această dată și trebuie reverificate periodic.</p>
 
       <h2>Surse și note</h2>
 
@@ -425,14 +481,16 @@ export const socialMediaVizibilitateAiHtml = `
         <li id="fn-2">Lantern — <em>AI Citation Content Visibility Report</em>, februarie 2026. Raport comercial; cifrele trebuie interpretate strict în cadrul datasetului său: <a href="https://www.asklantern.com/reports/ai-citation-content-visibility-february-2026" target="_blank" rel="noopener noreferrer">asklantern.com/reports/ai-citation-content-visibility-february-2026</a></li>
         <li id="fn-3">Google — anunț oficial privind parteneriatul extins cu Reddit (acces la Data API, colaborare Cloud/Vertex AI), 22 februarie 2024: <a href="https://blog.google/company-news/inside-google/company-announcements/expanded-reddit-partnership/" target="_blank" rel="noopener noreferrer">blog.google/…/expanded-reddit-partnership</a></li>
         <li id="fn-4">OpenAI — parteneriat cu Reddit, mai 2024: <a href="https://openai.com/index/openai-and-reddit-partnership/" target="_blank" rel="noopener noreferrer">openai.com/index/openai-and-reddit-partnership</a></li>
-        <li id="fn-5">Reuters — relatări din 2024 privind valoarea de aproximativ 60 milioane USD/an a acordului Reddit–Google. Valoare raportată în presă, nu prezentată aici drept sumă contractuală permanentă.</li>
+        <li id="fn-5">Reuters — „Reddit in AI content licensing deal with Google, sources say”, 21 februarie 2024 (preluare Nasdaq), privind valoarea de aproximativ 60 milioane USD/an a acordului Reddit–Google. Valoare raportată în presă, nu prezentată aici drept sumă contractuală permanentă: <a href="https://www.nasdaq.com/articles/exclusive-reddit-in-ai-content-licensing-deal-with-google-sources-say" target="_blank" rel="noopener noreferrer">nasdaq.com/articles/exclusive-reddit-in-ai-content-licensing-deal-with-google-sources-say</a></li>
         <li id="fn-6">Evertune Documentation — definițiile metricilor precum Source Share, Visibility Score și Share of Answer: <a href="https://docs.evertune.ai/en/articles/12271101-evertune-metrics" target="_blank" rel="noopener noreferrer">docs.evertune.ai/en/articles/12271101-evertune-metrics</a></li>
         <li id="fn-7">Eurostat — „32.7% of EU people used generative AI tools in 2025”, 16 decembrie 2025. România: 17,8%; populație 16–74 ani; experiențe în ultimele trei luni: <a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251216-3" target="_blank" rel="noopener noreferrer">ec.europa.eu/eurostat/…/ddn-20251216-3</a></li>
         <li id="fn-8">Reveal Marketing Research — „Accelerated integration of AI into Romanians' routines: usage increases from 47% to 68% in one year”, 2026. Raport comercial cu metodologie proprie; ChatGPT 83%, Gemini 35% în rezultatele publicate: <a href="https://reveal.ro/en/media-en/accelerated-integration-of-ai-into-romanians-routines-usage-increases-from-47-to-68-in-one-year/" target="_blank" rel="noopener noreferrer">reveal.ro/…/accelerated-integration-of-ai-into-romanians-routines</a></li>
         <li id="fn-9">Meta Newsroom — „New AI Tools to Help You Make Things Happen on Facebook”, 15 iunie 2026. Meta descrie AI Mode ca răspunzând pe baza opiniilor și recomandărilor distribuite public în aplicațiile Meta: <a href="https://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/" target="_blank" rel="noopener noreferrer">about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook</a></li>
-        <li id="fn-10">Meta Newsroom — anunț din iulie 2026 privind folosirea Meta AI în Threads și posibilitatea de a partaja postări, imagini și videoclipuri Threads către Meta AI: <a href="https://about.fb.com/ja/news/2026/07/threads-meta-ai-dm/" target="_blank" rel="noopener noreferrer">about.fb.com/ja/news/2026/07/threads-meta-ai-dm</a></li>
+        <li id="fn-10">Meta Newsroom (pagină în limba japoneză) — anunț din 28 iulie 2026, actualizat la 4 septembrie 2026, privind folosirea Meta AI în Threads prin mesaje directe, cu posibilitatea de a partaja postări, imagini și videoclipuri, și mențiunea <code>@meta.ai</code> în postările publice (din 3 septembrie 2026): <a href="https://about.fb.com/ja/news/2026/07/threads-meta-ai-dm/" target="_blank" rel="noopener noreferrer">about.fb.com/ja/news/2026/07/threads-meta-ai-dm</a></li>
         <li id="fn-11">CNBC — „Reddit stock sinks on report it may not renew Google AI content deal", 22 iulie 2026, relatând o știre Wall Street Journal despre dificultăți în negocierile de reînnoire a acordului Reddit–Google din 2024: <a href="https://www.cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal.html" target="_blank" rel="noopener noreferrer">cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal</a></li>
+        <li id="fn-12">MediaPost — „Reddit Ending Data-Scraping, Will Keep Existing Agreements”, 1 octombrie 2026. Relatează anunțurile Reddit privind retragerea feed-urilor RSS și a accesului public la vechiul Data API și faptul că acordurile existente cu Google și OpenAI nu sunt afectate. Publicație secundară: <a href="https://www.mediapost.com/publications/article/418430/reddit-ending-data-scraping-will-keep-existing-ag.html" target="_blank" rel="noopener noreferrer">mediapost.com/publications/article/418430</a></li>
+        <li id="fn-13">LinkedIn Help — „Update to our Terms and data use”, consultat la 2 octombrie 2026. Din 3 noiembrie 2025, în UE, SEE, Elveția, Regatul Unit, Canada și Hong Kong, LinkedIn poate folosi detalii de profil și conținut public pentru antrenarea modelelor generative de creare de conținut, cu opt-out: <a href="https://www.linkedin.com/help/linkedin/answer/a8059228" target="_blank" rel="noopener noreferrer">linkedin.com/help/linkedin/answer/a8059228</a></li>
       </ol>
 
-      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și actualizare: 4 septembrie 2026.</em></p>
+      <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 2 octombrie 2026.</em></p>
 `;

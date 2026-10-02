@@ -562,8 +562,8 @@
       "versiune": null,
       "dataCreare": "2026-08-13",
       "dataPublicare": "2026-08-14",
-      "dataModificare": "2026-09-04",
-      "ultimaVerificare": null,
+      "dataModificare": "2026-10-02",
+      "ultimaVerificare": "2026-10-02",
       "fisierMd": "src/content/lab/articles/3.social-media-vizibilitate-ai.md",
       "fisierTs": "src/data/lab-content/3. social-media-vizibilitate-ai.ts",
       "wiring": {
@@ -572,11 +572,11 @@
         "nav": true,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-09-04",
+      "sitemapLastmod": "2026-10-02",
       "imagine": null,
-      "jsonLd": "legacy",
-      "nrCitari": 0,
-      "zileDeLaVerificare": null,
+      "jsonLd": "@graph",
+      "nrCitari": 13,
+      "zileDeLaVerificare": 0,
       "anomalii": []
     },
     {
