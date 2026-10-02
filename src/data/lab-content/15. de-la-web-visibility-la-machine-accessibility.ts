@@ -14,7 +14,7 @@ export const deLaWebVisibilityLaMachineAccessibilityMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-09-30T20:59:00+03:00",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-02",
   lastReviewed: "2026-09-30",
   about: [
     { name: "Machine accessibility" },
@@ -98,7 +98,7 @@ export const deLaWebVisibilityLaMachineAccessibilityMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const deLaWebVisibilityLaMachineAccessibilityHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-09-30T20:59:00+03:00">30 septembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-30">30 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-09-30T20:59:00+03:00">30 septembrie 2026</time> · Actualizat: <time datetime="2026-10-02">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-30">30 septembrie 2026</time></p>
 
       <p><strong>Vizibilitatea în AI începe să însemne mai mult decât să fii găsit, citat sau recomandat. Pe măsură ce agenții AI capătă acces la aplicații, date, instrumente și acțiuni, devine relevant dacă un sistem poate descoperi o entitate, accesa informația potrivită, o înțelege, o verifică și apoi poate face ceva util cu ea.</strong></p>
       <p>În ultimii ani, discuția despre vizibilitate digitală a fost dominată de o întrebare familiară: poate un motor de căutare să găsească și să indexeze pagina mea?</p>
@@ -307,6 +307,17 @@ Actionability</code></pre>
       <p>Nu ar trebui, potrivit Cloudflare. Setarea „Disallow AI Training” a fost gândită tocmai pentru a separa search-ul de training la crawlerele cu utilizare mixtă, iar Cloudflare afirmă că Apple, Google și Microsoft s-au angajat să o respecte fără efect asupra ranking-ului în search. Pentru operatorii care nu și-au asumat acest angajament, comportamentul trebuie verificat separat.</p>
       <h3>Înlocuiește machine accessibility SEO, GEO sau AEO?</h3>
       <p>Nu. Articolul susține că problema se extinde, nu că disciplinele existente devin inutile. Indexarea, înțelegerea conținutului și prezența în răspunsurile generative rămân condiții ale traseului; machine accessibility adaugă întrebările despre acces autorizat, verificare și acțiune.</p>
+
+      <hr />
+
+      <h2>Seria „Machine accessibility și agentic web”</h2>
+      <ol>
+        <li><strong>De la web visibility la machine accessibility</strong> (acest articol)</li>
+        <li><a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a></li>
+        <li><a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">Site-ul nu dispare. Își schimbă clientul</a></li>
+        <li><a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">De la menționare la tranzacție: ce înseamnă Agentic Visibility</a></li>
+        <li><a href="/lab/articole/social-media-devine-strat-informational-pentru-ai">Social media devine strat informațional pentru AI</a></li>
+      </ol>
 
       <hr />
 

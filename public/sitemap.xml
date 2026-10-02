@@ -203,7 +203,31 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/de-la-web-visibility-la-machine-accessibility</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/site-ul-nu-dispare-isi-schimba-clientul</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/social-media-devine-strat-informational-pentru-ai</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

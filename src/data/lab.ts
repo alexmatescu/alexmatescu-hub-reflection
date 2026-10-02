@@ -186,6 +186,30 @@ export const labNav: LabPage[] = [
           "De la web visibility la machine accessibility: ce se schimbă când AI-ul nu mai doar citește internetul, ci acționează în el?",
         lead: "Vizibilitatea în AI se extinde de la citare și recomandare la acces și acțiune. Pornind de la anunțurile Meta, Anthropic, OpenAI și Cloudflare din 2026, analiza propune termenul machine accessibility și un cadru de lucru în șapte niveluri pentru a evalua dacă un agent AI poate descoperi, accesa, verifica și folosi informația despre un business.",
       },
+      {
+        to: "/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit",
+        label:
+          "Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit",
+        lead: "De ce ChatGPT, Claude, Gemini, Grok și alte sisteme AI pot recupera informații diferite din același internet. Explicăm crawling, training, retrieval, acces nativ, conectori și o metodă exploratorie de Source Accessibility Mapping.",
+      },
+      {
+        to: "/lab/articole/site-ul-nu-dispare-isi-schimba-clientul",
+        label:
+          "Site-ul nu dispare. Își schimbă clientul: cum se pregătește web-ul pentru agenți AI",
+        lead: "Ce înseamnă un site pregătit pentru agenți AI și ce nu înseamnă. Analizăm crawling, browser use, WebMCP, MCP, API-uri, structured data, autentificare și o metodă de măsurare bazată pe dovezi, fără a confunda accesibilitatea tehnică cu vizibilitatea sau recomandarea AI.",
+      },
+      {
+        to: "/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility",
+        label:
+          "De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business",
+        lead: "Ce înseamnă Agentic Visibility și cum extinde problema GEO/AEO dincolo de citare și menționare, către descoperire, recomandare, interacțiune și tranzacție. Analizăm OpenAI Agentic Commerce Protocol, Google Universal Commerce Protocol, Meta Business Agent, Cloudflare Agentic Commerce și protocoalele de plăți pentru agenți.",
+      },
+      {
+        to: "/lab/articole/social-media-devine-strat-informational-pentru-ai",
+        label:
+          "Social media devine strat informațional pentru AI: când postările, comentariile și comunitățile intră în răspunsuri",
+        lead: "Cum intră conținutul din Facebook, Instagram, Threads, X, Reddit și LinkedIn în ecosistemele AI? Separăm training, retrieval, native platform context, citation și recommendation și propunem un cadru verificabil pentru Social Source Accessibility în AI Visibility Lab.",
+      },
     ],
   },
   {

@@ -33,6 +33,10 @@ import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
 import { aiOglindaAmplificatorHtml } from "@/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic";
 import { deLaWebVisibilityLaMachineAccessibilityHtml } from "@/data/lab-content/15. de-la-web-visibility-la-machine-accessibility";
+import { publicNuInseamnaAccesibilHtml } from "@/data/lab-content/16. public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit";
+import { siteulNuDispareIsiSchimbaClientulHtml } from "@/data/lab-content/17. site-ul-nu-dispare-isi-schimba-clientul";
+import { deLaMentionareLaTranzactieAgenticVisibilityHtml } from "@/data/lab-content/18. de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility";
+import { socialMediaStratInformationalPentruAiHtml } from "@/data/lab-content/19. social-media-devine-strat-informational-pentru-ai";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -93,6 +97,14 @@ const labPageContent: Record<string, string> = {
     aiOglindaAmplificatorHtml,
   "/lab/articole/de-la-web-visibility-la-machine-accessibility":
     deLaWebVisibilityLaMachineAccessibilityHtml,
+  "/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit":
+    publicNuInseamnaAccesibilHtml,
+  "/lab/articole/site-ul-nu-dispare-isi-schimba-clientul":
+    siteulNuDispareIsiSchimbaClientulHtml,
+  "/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility":
+    deLaMentionareLaTranzactieAgenticVisibilityHtml,
+  "/lab/articole/social-media-devine-strat-informational-pentru-ai":
+    socialMediaStratInformationalPentruAiHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 

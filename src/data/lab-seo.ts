@@ -1,6 +1,10 @@
 import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
 import { aiOglindaAmplificatorMeta } from "@/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic";
 import { deLaWebVisibilityLaMachineAccessibilityMeta } from "@/data/lab-content/15. de-la-web-visibility-la-machine-accessibility";
+import { publicNuInseamnaAccesibilMeta } from "@/data/lab-content/16. public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit";
+import { siteulNuDispareIsiSchimbaClientulMeta } from "@/data/lab-content/17. site-ul-nu-dispare-isi-schimba-clientul";
+import { deLaMentionareLaTranzactieAgenticVisibilityMeta } from "@/data/lab-content/18. de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility";
+import { socialMediaStratInformationalPentruAiMeta } from "@/data/lab-content/19. social-media-devine-strat-informational-pentru-ai";
 import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -120,6 +124,10 @@ export const labArticleMeta: LabArticleMeta[] = [
   etichetaAbonatRelatiaPrezentareAiSearchMeta,
   aiOglindaAmplificatorMeta,
   deLaWebVisibilityLaMachineAccessibilityMeta,
+  publicNuInseamnaAccesibilMeta,
+  siteulNuDispareIsiSchimbaClientulMeta,
+  deLaMentionareLaTranzactieAgenticVisibilityMeta,
+  socialMediaStratInformationalPentruAiMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>

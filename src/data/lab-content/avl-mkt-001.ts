@@ -14,7 +14,7 @@ export const avlMkt001MarketScopeEligibilityHtml = `
         <tr><th scope="row">Statut</th><td>Draft pentru revizuire</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
-        <tr><th scope="row">Data versiunii</th><td>2 octombrie 2026</td></tr>
+        <tr><th scope="row">Data publicării</th><td>2 octombrie 2026</td></tr>
         <tr><th scope="row">Ultima actualizare</th><td>2 octombrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>2 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>

@@ -9,7 +9,7 @@ author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-09-30"
-date_published: null
+date_published: "2026-10-02T07:41:45+03:00"
 date_modified: "2026-10-02"
 last_reviewed: "2026-10-02"
 canonical: "https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate"
@@ -55,7 +55,7 @@ keywords:
 | Statut | Draft pentru revizuire |
 | Autor | [Alex Matescu](/despre) |
 | Organizație | [AI Visibility Lab](/lab) |
-| Data versiunii | 2 octombrie 2026 |
+| Data publicării | 2 octombrie 2026 |
 | Ultima verificare | 2 octombrie 2026 |
 | Limbă | română |
 | URL canonic | https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate |

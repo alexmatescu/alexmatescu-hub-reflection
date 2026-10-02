@@ -3,20 +3,8 @@ import type { LabArticleMeta } from "@/data/lab-seo";
 /**
  * Metadate tehnice ale documentului sursă (frontmatter + JSON-LD din markdown).
  * Folosite doar pentru SEO/structured data — nu sunt afișate în conținutul paginii.
- *
- * PREGĂTIT, NEPUBLICAT. Articolul 2 al seriei „Machine accessibility și agentic web”
- * se publică odată cu articolele 3–5 (link-urile interne trimit spre ele). La wiring:
- * tipul devine `LabArticleMeta`, se adaugă `datePublished` (momentul real al publicării,
- * Europe/Bucharest, ISO cu offset) și linia „Publicat:” din byline. Până atunci
- * `datePublished` lipsește intenționat — tipul `Omit<…>` împiedică importarea în
- * `labArticleMeta` fără această completare. Fișierul stă în src/content/lab/pregatite/
- * (nu în src/data/lab-content/) ca registrul să nu-l raporteze drept publicat; la
- * wiring se mută în src/data/lab-content/ cu același nume.
  */
-export const publicNuInseamnaAccesibilMeta: Omit<
-  LabArticleMeta,
-  "datePublished"
-> = {
+export const publicNuInseamnaAccesibilMeta: LabArticleMeta = {
   title:
     "Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit",
   description:
@@ -25,7 +13,8 @@ export const publicNuInseamnaAccesibilMeta: Omit<
     "https://delamatescu.ro/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit",
   category: "AI Ecosystem",
   articleType: "Analiză",
-  dateModified: "2026-10-01",
+  datePublished: "2026-10-02T09:07:00+03:00",
+  dateModified: "2026-10-02",
   lastReviewed: "2026-10-01",
   about: [
     { name: "Machine accessibility" },
@@ -98,8 +87,7 @@ export const publicNuInseamnaAccesibilMeta: Omit<
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const publicNuInseamnaAccesibilHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <!-- La wiring: „Publicat: <time datetime="{ISO cu offset}">{data}</time> · ” înaintea verificării factuale. -->
-      <p>Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-02T09:07:00+03:00">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
 
       <p><strong>Faptul că o informație este publică nu garantează că fiecare sistem AI o poate găsi, recupera sau folosi într-un răspuns.</strong> ChatGPT, Claude, Gemini, Grok sau un agent conectat la aplicațiile unei companii pot ajunge la surse diferite, pe căi diferite, în momente diferite. Diferența nu este doar între modele; este și între infrastructurile prin care informația ajunge la ele.</p>
       <p>În <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol al seriei</a>, am introdus <em>machine accessibility</em>: capacitatea sistemelor AI de a descoperi, accesa, interpreta, verifica și utiliza informația despre o entitate. Acum restrângem problema la o întrebare esențială: <strong>accesibilă pentru cine, prin ce mecanism și în ce condiții?</strong></p>
