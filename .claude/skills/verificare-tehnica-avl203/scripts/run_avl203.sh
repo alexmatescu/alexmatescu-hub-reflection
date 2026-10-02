@@ -15,8 +15,8 @@
 
 set -u
 
-SCRIPT_VERSION="0.2.0"
-PROTOCOL_VERSION="0.2.0"
+SCRIPT_VERSION="0.2.1"
+PROTOCOL_VERSION="0.3.0"
 SKILL_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 UA_MANIFEST="$SKILL_DIR/config/user-agents.v0.1.0.tsv"
 CONNECT_TIMEOUT=15
@@ -51,6 +51,8 @@ echo "$LABEL" | grep -Eq '^(T0|F[1-9][0-9]*|TEST)$' || die "--label invalid: $LA
 [ ${#URLS[@]} -gt 0 ] || die "niciun URL"
 for u in "${URLS[@]}"; do echo "$u" | grep -Eq '^https?://[^/]+' || die "URL invalid: $u"; done
 [ -z "$PLAN" ] || [ -f "$PLAN" ] || die "planul nu există: $PLAN"
+# AVL203-REQ-001: planul de măsurare e obligatoriu pentru rulările din serie (T0, F1…Fn)
+[ -n "$PLAN" ] || [ "$LABEL" = "TEST" ] || die "--plan lipsește: planul de măsurare e obligatoriu pentru $LABEL (AVL203-REQ-001)"
 command -v curl >/dev/null || die "curl lipsește"
 command -v python3 >/dev/null || die "python3 lipsește"
 

@@ -3,16 +3,16 @@ document_id: "AVL-203"
 title: "Protocolul minim de verificare tehnică a unui site pentru AI Visibility"
 subtitle: "Core Technical Web Measurement Protocol"
 level: "C — Methodology"
-version: "0.2.0"
+version: "0.3.0"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-01"
-date_published: null
+date_published: "2026-10-02T16:29:00+03:00"
 date_modified: "2026-10-02"
 last_reviewed: "2026-10-01"
-canonical_proposed: "https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica"
+canonical: "https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica"
 normative_dependencies:
   - "AVL-001 — AI Visibility Lab Foundation"
   - "AVL-202 — Cadrul metodologic AI Visibility Lab"
@@ -42,7 +42,7 @@ keywords:
 
 AVL-203 este un document de nivel C — Methodology în corpusul AI Visibility Lab Documentation, propus ca protocol în ramura Core Methodology descrisă de AVL-202.
 
-Versiunea curentă, **0.2.0**, este un **draft pentru revizuire** și nu este activă. Documentul nu are încă URL canonic definitiv, dată de publicare sau cerințe identificate `AVL203-REQ-*`. Deciziile rămase deschise înainte de activare sunt enumerate în §17.
+Versiunea curentă, **0.3.0**, este un **draft public pentru revizuire** și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate `AVL203-REQ-*`; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §18.
 
 Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr liber din seria documentelor Nivelului C, după scanarea registrului de conținut și a corpusului, și confirmat de Alex Matescu. Eticheta de lucru folosită anterior pentru acest draft, „AVL-TECH-001”, nu este un identificator normativ și nu introduce o familie `AVL-TECH-*`.
 
@@ -50,19 +50,25 @@ Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr l
 | --- | --- |
 | Document ID | AVL-203 |
 | Nivel | C — Methodology |
-| Versiune | 0.2.0 |
+| Versiune | 0.3.0 |
 | Statut | Draft pentru revizuire |
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
 | Data creării | 1 octombrie 2026 |
-| Data publicării | — (nepublicat) |
+| Data publicării | 2 octombrie 2026 |
 | Ultima verificare | 1 octombrie 2026 |
 | Limbă | română |
-| URL canonic propus | https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica |
+| URL canonic | https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica |
 | Dependențe normative | AVL-001; AVL-202; AVL-200 |
 | Relație cu AVL-201 | componentă reutilizabilă la baseline și remăsurări; nu înlocuiește AVL-201 |
 
-În această versiune de draft, cuvintele „trebuie” și „nu trebuie” din text exprimă intenția protocolului. Ele vor deveni cerințe de conformitate abia după formalizarea lor ca cerințe identificate `AVL203-REQ-*`, cu sensul RFC 2119 / RFC 8174 adoptat de AVL-200 (§17, decizia 3).
+În acest document, termenii **TREBUIE**, **NU TREBUIE**, **ESTE OBLIGATORIU**, **AR TREBUI**, **NU AR TREBUI** și **POATE** sunt utilizați în sensul convențiilor RFC 2119 și RFC 8174, adaptate în limba română:
+
+- **TREBUIE / NU TREBUIE** — condiție obligatorie pentru conformitate;
+- **AR TREBUI / NU AR TREBUI** — recomandare puternică; abaterea este permisă numai cu justificare documentată;
+- **POATE** — opțiune permisă.
+
+În afara propozițiilor normative și a cerințelor identificate `AVL203-REQ-*`, acești termeni nu trebuie interpretați automat ca cerințe de conformitate. Cât timp documentul are statutul „Draft pentru revizuire”, cerințele descriu regula propusă pentru versiunea 1.0.0; o rulare făcută acum le poate respecta, dar nu poate fi declarată „conformă AVL-203 1.0.0”.
 
 ---
 
@@ -72,7 +78,13 @@ Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr l
 
 Acest protocol se aplică site-urilor și paginilor selectate într-un plan de măsurare declarat. O singură pagină nu reprezintă automat întregul domeniu. Lista URL-urilor testate, motivele alegerii și limitele eșantionului se declară înaintea rulării, în fișa experimentului sau în documentul proiectului.
 
+> **AVL203-REQ-001 — Lista URL-urilor testate, motivul alegerii fiecăruia și limitele eșantionului TREBUIE declarate înaintea primului request al unei rulări din seria de măsurare.**
+
 Protocolul conservă și rezultate negative, erori, redirecturi neașteptate, date indisponibile și abateri. Absența unei dovezi nu se transformă într-un `NO` nejustificat (AVL-200 §6).
+
+> **AVL203-REQ-002 — Rezultatele negative, erorile, redirecturile neașteptate, datele indisponibile și abaterile TREBUIE conservate și raportate.**
+
+> **AVL203-REQ-003 — Absența unei dovezi NU TREBUIE raportată ca `NO`; o valoare care nu poate fi stabilită TREBUIE raportată ca `UNKNOWN`, `NOT_APPLICABLE` sau eroare, distinct de `NO`.**
 
 ---
 
@@ -106,6 +118,8 @@ Published Claim (unde este cazul)
 
 Pentru fiecare măsurare publicată trebuie să existe trasabilitate de la concluzie la artefactul conservat, conform AVL-200 §4. Captura, indexarea, observația, măsurarea și interpretarea nu se contopesc într-o singură judecată automată.
 
+> **AVL203-REQ-004 — Captura, indexarea, observația, măsurarea și interpretarea NU TREBUIE contopite într-o singură judecată automată.**
+
 ---
 
 # 3. Ce intră în setul minim de verificări?
@@ -125,6 +139,8 @@ Pentru fiecare măsurare publicată trebuie să existe trasabilitate de la concl
 
 Aceste ID-uri (`TC-*`) sunt identificatori **interni ai verificărilor**, nu identificatori `AVL-NNN` ai documentelor și nu identificatori de instanță. Orice modificare a definițiilor lor care afectează comparabilitatea impune versionarea protocolului (AVL-200 §19).
 
+> **AVL203-REQ-005 — O modificare a definiției unei verificări `TC-*` care afectează comparabilitatea rezultatelor TREBUIE să producă o versiune nouă a protocolului.**
+
 ---
 
 # 4. Cum identificăm o rulare reproductibilă?
@@ -133,6 +149,8 @@ Aceste ID-uri (`TC-*`) sunt identificatori **interni ai verificărilor**, nu ide
 
 Câmpuri minime: run ID unic, entitate/domeniu, URL exact, origin, lista URL-urilor testate, data/ora UTC de început și de final, versiunea protocolului, versiunea scriptului, `curl --version`, mediul de executare, user-agent-urile efective și versiunea manifestului User-Agent (§9), timeouts, redirect policy, compresie, codul de ieșire `curl` al fiecărui request, eventuale erori și abateri. Dacă este relevant și disponibil, se înregistrează mediul de rețea/regiunea, fără a publica date personale.
 
+> **AVL203-REQ-006 — Înaintea primului request, rularea TREBUIE să înregistreze în manifest câmpurile minime de mai sus; câmpurile care nu pot fi stabilite TREBUIE marcate explicit.**
+
 ```bash
 # Exemplu de captură a mediului; scriptul final trebuie să salveze automat outputul.
 date -u +'%Y-%m-%dT%H:%M:%SZ'
@@ -140,6 +158,8 @@ curl --version
 ```
 
 Tokenurile, cookie-urile, credențialele și datele sensibile nu trebuie publicate în evidența brută accesibilă publicului. Redactarea se face prin copii derivate; originalele se protejează în regimul prevăzut de AVL-200 §18.
+
+> **AVL203-REQ-007 — Tokenurile, cookie-urile, credențialele și alte date sensibile NU TREBUIE publicate în evidența brută accesibilă publicului; redactarea TREBUIE făcută prin copii derivate, cu originalele protejate conform AVL-200 §18.**
 
 ---
 
@@ -159,13 +179,23 @@ echo "curl_exit=$?" >> page.metrics
 
 Codul de ieșire `curl` se înregistrează pentru fiecare request. Cu `--silent`, o eroare de rețea, DNS sau TLS nu produce un status HTTP (`http_code=000`), iar fără codul de ieșire eroarea nu rămâne identificabilă în dovezi.
 
+> **AVL203-REQ-008 — Pentru fiecare request, rularea TREBUIE să păstreze separat headerele și corpul răspunsului și să înregistreze statusul, URL-ul final, numărul de redirecturi, tipul, dimensiunea și codul de ieșire al clientului HTTP.**
+
 Cu `--location`, fișierul `page.headers` conține headerele tuturor răspunsurilor din lanțul de redirecturi, în ordine, nu doar pe ale răspunsului final. Interpretarea trebuie să identifice explicit blocul răspunsului final.
+
+> **AVL203-REQ-009 — Când lanțul de redirecturi este urmărit, observațiile despre răspunsul final TREBUIE să se refere la blocul de headere al răspunsului final, identificat explicit.**
 
 O matrice de patru variante (`http`/`https`, `www`/non-`www`) se aplică originului unde variantele sunt relevante, fără a presupune că fiecare domeniu folosește sau controlează ambele hostname-uri. Se păstrează destinația și eventualele erori (inclusiv TLS/DNS), fără a le ascunde prin `--insecure`.
 
+> **AVL203-REQ-010 — Erorile TLS sau DNS NU TREBUIE ascunse prin dezactivarea verificării certificatelor; ele TREBUIE păstrate ca observații.**
+
 `HEAD` poate fi folosit auxiliar, dar nu înlocuiește GET: RFC 9110 §9.3.2 permite serverului să omită în răspunsul la HEAD headerele a căror valoare se determină numai la generarea conținutului.
 
+> **AVL203-REQ-011 — Verificările TC-01, TC-02 și TC-06 TREBUIE făcute cu GET; HEAD POATE fi folosit doar auxiliar.**
+
 `HTTP 200` reprezintă un răspuns reușit al requestului, nu un diagnostic de indexare. `403` indică faptul că serverul a înțeles requestul, dar refuză să-l onoreze (RFC 9110 §15.5.4); nu dovedește singur că un furnizor AI nu poate accesa resursa.
+
+> **AVL203-REQ-012 — Un răspuns `200` NU TREBUIE prezentat drept indexare, iar un `403` pentru un User-Agent declarat NU TREBUIE prezentat drept dovadă că infrastructura furnizorului este blocată.**
 
 ---
 
@@ -181,6 +211,8 @@ curl --silent --show-error --location \
 ```
 
 Se documentează statusul, URL-ul efectiv, redirecturile, corpul și grupurile `User-agent`, `Allow`, `Disallow`, precum și declarațiile `Sitemap`. Interpretarea unei reguli pentru un URL cere aplicarea corectă a RFC 9309 și a extensiilor furnizorului: selecția grupului specific produsului înaintea grupului `*`, combinarea grupurilor care corespund aceluiași token și regula celei mai specifice potriviri între `Allow` și `Disallow` (RFC 9309 §2.2). `grep` este doar inspecție preliminară; dacă parserul complet lipsește, rezultatul politicii rămâne `NEDETERMINAT`, nu `ALLOW` implicit.
+
+> **AVL203-REQ-013 — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire); în lipsa unui parser conform, rezultatul TREBUIE raportat `NEDETERMINAT`.**
 
 Matricea Core urmărește politica relevantă pentru `*`, `Googlebot`, `bingbot`, `OAI-SearchBot`, `Claude-SearchBot` și `PerplexityBot`. La data verificării acestui draft (1 octombrie 2026), documentația furnizorilor descrie `OAI-SearchBot`, `Claude-SearchBot` și `PerplexityBot` drept crawlere asociate căutării sau afișării surselor, nu antrenării modelelor; rolul lor se reverifică la fiecare versiune a protocolului.
 
@@ -219,6 +251,10 @@ Statusul se atribuie după următoarea regulă:
 
 Statusul descrie declarația și accesibilitatea sitemap-ului, nu validitatea lui. Nu deducem că întregul site este descoperibil din prezența unui singur sitemap. Validarea XML completă, crawlingul integral al URL-urilor și identificarea paginilor orfane sunt excluse din Core, dacă planul de studiu nu le justifică.
 
+> **AVL203-REQ-014 — Statusul TC-04 TREBUIE atribuit după regula din tabelul de mai sus.**
+
+> **AVL203-REQ-015 — Prezența sau accesibilitatea unui sitemap NU TREBUIE prezentată drept dovadă că întregul site este descoperibil.**
+
 ---
 
 # 8. Ce semnale ale documentului extragem din răspunsul brut?
@@ -233,7 +269,11 @@ Un document poate conține `X-Robots-Tag` deși în HTML nu există meta robots;
 
 Canonicalul declarat nu este automat cel selectat de Google: Google descrie metodele de declarare a canonicalului drept preferințe, nu obligații. Prezența JSON-LD nu demonstrează validitatea vocabularului sau utilizarea lui de către un model. Raw HTML nu echivalează cu DOM-ul randat.
 
+> **AVL203-REQ-016 — Semnalele TC-05 TREBUIE extrase din raw HTML-ul și headerele răspunsului final, cu locația originală, și NU TREBUIE prezentate drept DOM randat, canonical selectat de un motor sau validare Schema.org.**
+
 În implementare, parsingul robust trebuie să suporte schimbări de ordine ale atributelor, ghilimele diferite și taguri pe mai multe linii. Exemplele `grep` nu sunt validatori HTML. Dacă extracția nu este sigură, păstrăm valoarea `UNKNOWN` cu motiv, nu inventăm `ABSENT`.
+
+> **AVL203-REQ-017 — Un semnal TC-05 a cărui extracție nu este sigură TREBUIE raportat `UNKNOWN`, cu motiv, și NU TREBUIE raportat `ABSENT`.**
 
 ---
 
@@ -254,7 +294,9 @@ Profilul de lucru cuprinde clientul implicit și reprezentanți pentru Googlebot
 | `DOAR_TOKEN` | furnizorul nu publică un șir complet; se trimite doar tokenul |
 | `NECONFIRMAT` | șir complet care nu a putut fi citit dintr-o sursă oficială la data înghețării |
 
-La înghețarea manifestului v0.1.0 (2 octombrie 2026): OpenAI și Perplexity publică șiruri complete pentru `OAI-SearchBot` și `PerplexityBot`; Google publică șirul Googlebot cu placeholder de versiune Chrome; Anthropic descrie `Claude-SearchBot`, dar nu publică un șir complet; șirul complet `bingbot` nu a putut fi confirmat din pagina Bing (§17.6). O schimbare a manifestului înseamnă o versiune nouă a lui.
+La înghețarea manifestului v0.1.0 (2 octombrie 2026): OpenAI și Perplexity publică șiruri complete pentru `OAI-SearchBot` și `PerplexityBot`; Google publică șirul Googlebot cu placeholder de versiune Chrome; Anthropic descrie `Claude-SearchBot`, dar nu publică un șir complet; șirul complet `bingbot` nu a putut fi confirmat din pagina Bing (§18.6). O schimbare a manifestului înseamnă o versiune nouă a lui.
+
+> **AVL203-REQ-018 — Șirurile User-Agent folosite la TC-06 TREBUIE luate dintr-un manifest versionat, iar rularea TREBUIE să înregistreze versiunea manifestului aplicat.**
 
 ### Dubla captură a clientului de referință
 
@@ -265,6 +307,10 @@ La înghețarea manifestului v0.1.0 (2 octombrie 2026): OpenAI și Perplexity pu
 
 Dubla captură este obligatorie pentru TC-06. O rulare fără ea raportează comparația de conținut ca `UNKNOWN`.
 
+> **AVL203-REQ-019 — Pentru TC-06, fiecare URL TREBUIE capturat de cel puțin două ori cu clientul de referință, cu aceiași parametri; fără dubla captură, comparația de conținut TREBUIE raportată `UNKNOWN`.**
+
+> **AVL203-REQ-020 — Când capturile clientului de referință diferă, diferențele de dimensiune sau hash dintre User-Agent-uri NU TREBUIE atribuite User-Agent-ului.**
+
 ```bash
 curl --silent --show-error --location --compressed \
   --user-agent 'OAI-SearchBot' \
@@ -274,6 +320,8 @@ curl --silent --show-error --location --compressed \
 ```
 
 Se compară codurile, destinațiile, headerele relevante, dimensiunile și hash-urile, ținând cont de variabilitatea intrinsecă stabilită mai sus. O diferență de hash semnalează doar că octeții sunt diferiți. Ea poate proveni din timestampuri, din conținut dinamic sau din protecții anti-bot. Nu devine automat dovadă de cloaking și nici de inaccesibilitate efectivă pentru furnizor.
+
+> **AVL203-REQ-021 — O diferență între răspunsurile pentru User-Agent-uri declarate NU TREBUIE prezentată drept cloaking sau drept accesul efectiv al crawlerului furnizorului.**
 
 ---
 
@@ -305,9 +353,13 @@ shasum -a 256 -c integrity/sha256sums.txt
 
 Manifestul rulării (`manifest/`) intră în lista de checksum-uri, pentru că descrie condițiile capturii și trebuie protejat la fel ca artefactele. Fișierul `integrity/sha256sums.txt` nu se include în propria listă.
 
+> **AVL203-REQ-022 — Rularea TREBUIE să genereze un manifest de checksum SHA-256 care acoperă `manifest/` și artefactele brute, fără fișierul de checksum însuși, să îl verifice și să documenteze utilitarul folosit.**
+
 Pe sisteme Linux, echivalentul uzual este `sha256sum`; scriptul trebuie să documenteze utilitarul efectiv folosit.
 
 Nu se rescrie un artefact brut pentru a obține un raport mai lizibil (AVL-200 §8.1). Câmpurile deterministe (dimensiune, hash, path) se calculează programatic; clasificările incerte sunt marcate ca atare și revizuite (AVL-200 §5, §16). Un hash verifică integritatea octeților **după** captură, nu autenticitatea sursei înaintea capturii (AVL-200 §10).
+
+> **AVL203-REQ-023 — Un artefact brut NU TREBUIE modificat după captură, iar fiecare artefact TREBUIE legat de run ID-ul rulării care l-a produs.**
 
 ---
 
@@ -317,9 +369,17 @@ Nu se rescrie un artefact brut pentru a obține un raport mai lizibil (AVL-200 �
 
 Manifestul identifică fiecare rulare prin poziția ei în seria de măsurare: **`T0`** este baseline-ul, iar rulările ulterioare sunt **`F1`, `F2` … `Fn`**, în ordinea executării. Eticheta unei rulări se atribuie la înregistrarea ei și nu se schimbă ulterior.
 
+> **AVL203-REQ-024 — Rulările aceleiași serii TREBUIE să folosească aceeași versiune a protocolului, același manifest User-Agent și același set de URL-uri; orice abatere TREBUIE documentată.**
+
+> **AVL203-REQ-025 — Eticheta unei rulări (`T0`, `F1` … `Fn` sau `TEST`) TREBUIE atribuită la înregistrare și NU TREBUIE schimbată ulterior.**
+
 Rulările de probă (de exemplu, verificarea unei implementări sau a unui mediu nou) primesc eticheta **`TEST`**. Ele nu fac parte din nicio serie de măsurare, nu ocupă o poziție `T0`/`Fn` și nu se compară cu rulările unei serii. Dovezile lor se păstrează separat și nu susțin concluzii publicate. Când studii istorice folosesc altă nomenclatură, se păstrează numele istorice și se explică mapping-ul, fără redenumirea retroactivă a dovezilor (AVL-200 §7.3).
 
+> **AVL203-REQ-026 — O rulare `TEST` NU TREBUIE comparată cu rulările unei serii de măsurare și NU TREBUIE folosită pentru a susține o concluzie publicată.**
+
 O schimbare a robots.txt, a canonicalului sau a răspunsului declarat pentru un agent reprezintă o observație tehnică. O schimbare concomitentă a mențiunilor ori a citărilor se măsoară separat. Succesiunea temporală singură nu demonstrează cauzalitatea.
+
+> **AVL203-REQ-027 — O schimbare tehnică observată NU TREBUIE prezentată drept cauză a unei schimbări de vizibilitate pe baza succesiunii temporale.**
 
 ---
 
@@ -345,9 +405,46 @@ Răspunsul `200` nu se prezintă drept indexare, iar un `403` pentru un User-Age
 
 Livrabilele minime sunt: manifestul rulării (inclusiv versiunea manifestului User-Agent), răspunsurile și headerele colectate, codurile de ieșire `curl`, rezultatul verificărilor per element `TC-*` (inclusiv variabilitatea intrinsecă de la TC-06), clasificările `UNKNOWN`/`NOT_APPLICABLE`/erori păstrate distinct de `NO`, evidence index, hash-uri, excepții și versiunea protocolului/scriptului. Un rezumat interpretativ poate fi publicat separat doar dacă rămâne trasabil până la evidență. Schema exactă și identificatorii se validează față de AVL-200 și față de implementarea de referință.
 
+> **AVL203-REQ-028 — O execuție conformă TREBUIE să livreze toate livrabilele minime de mai sus.**
+
 ---
 
-# 15. Documente asociate
+# 15. Checklist de conformitate
+
+Fiecare rulare declarată conformă verifică explicit cerințele:
+
+- [ ] **AVL203-REQ-001** — Lista URL-urilor testate, motivul alegerii fiecăruia și limitele eșantionului TREBUIE declarate înaintea primului request al unei rulări din seria de măsurare.
+- [ ] **AVL203-REQ-002** — Rezultatele negative, erorile, redirecturile neașteptate, datele indisponibile și abaterile TREBUIE conservate și raportate.
+- [ ] **AVL203-REQ-003** — Absența unei dovezi NU TREBUIE raportată ca `NO`.
+- [ ] **AVL203-REQ-004** — Captura, indexarea, observația, măsurarea și interpretarea NU TREBUIE contopite într-o singură judecată automată.
+- [ ] **AVL203-REQ-005** — O modificare a definiției unei verificări `TC-*` care afectează comparabilitatea rezultatelor TREBUIE să producă o versiune nouă a protocolului.
+- [ ] **AVL203-REQ-006** — Înaintea primului request, rularea TREBUIE să înregistreze în manifest câmpurile minime de mai sus.
+- [ ] **AVL203-REQ-007** — Tokenurile, cookie-urile, credențialele și alte date sensibile NU TREBUIE publicate în evidența brută accesibilă publicului.
+- [ ] **AVL203-REQ-008** — Pentru fiecare request, rularea TREBUIE să păstreze separat headerele și corpul răspunsului și să înregistreze statusul, URL-ul final, numărul de redirecturi, tipul, dimensiunea și codul de ieșire al clientului HTTP.
+- [ ] **AVL203-REQ-009** — Când lanțul de redirecturi este urmărit, observațiile despre răspunsul final TREBUIE să se refere la blocul de headere al răspunsului final, identificat explicit.
+- [ ] **AVL203-REQ-010** — Erorile TLS sau DNS NU TREBUIE ascunse prin dezactivarea verificării certificatelor.
+- [ ] **AVL203-REQ-011** — Verificările TC-01, TC-02 și TC-06 TREBUIE făcute cu GET.
+- [ ] **AVL203-REQ-012** — Un răspuns `200` NU TREBUIE prezentat drept indexare, iar un `403` pentru un User-Agent declarat NU TREBUIE prezentat drept dovadă că infrastructura furnizorului este blocată.
+- [ ] **AVL203-REQ-013** — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire).
+- [ ] **AVL203-REQ-014** — Statusul TC-04 TREBUIE atribuit după regula din tabelul de mai sus.
+- [ ] **AVL203-REQ-015** — Prezența sau accesibilitatea unui sitemap NU TREBUIE prezentată drept dovadă că întregul site este descoperibil.
+- [ ] **AVL203-REQ-016** — Semnalele TC-05 TREBUIE extrase din raw HTML-ul și headerele răspunsului final, cu locația originală, și NU TREBUIE prezentate drept DOM randat, canonical selectat de un motor sau validare Schema.org.
+- [ ] **AVL203-REQ-017** — Un semnal TC-05 a cărui extracție nu este sigură TREBUIE raportat `UNKNOWN`, cu motiv, și NU TREBUIE raportat `ABSENT`.
+- [ ] **AVL203-REQ-018** — Șirurile User-Agent folosite la TC-06 TREBUIE luate dintr-un manifest versionat, iar rularea TREBUIE să înregistreze versiunea manifestului aplicat.
+- [ ] **AVL203-REQ-019** — Pentru TC-06, fiecare URL TREBUIE capturat de cel puțin două ori cu clientul de referință, cu aceiași parametri.
+- [ ] **AVL203-REQ-020** — Când capturile clientului de referință diferă, diferențele de dimensiune sau hash dintre User-Agent-uri NU TREBUIE atribuite User-Agent-ului.
+- [ ] **AVL203-REQ-021** — O diferență între răspunsurile pentru User-Agent-uri declarate NU TREBUIE prezentată drept cloaking sau drept accesul efectiv al crawlerului furnizorului.
+- [ ] **AVL203-REQ-022** — Rularea TREBUIE să genereze un manifest de checksum SHA-256 care acoperă `manifest/` și artefactele brute, fără fișierul de checksum însuși, să îl verifice și să documenteze utilitarul folosit.
+- [ ] **AVL203-REQ-023** — Un artefact brut NU TREBUIE modificat după captură, iar fiecare artefact TREBUIE legat de run ID-ul rulării care l-a produs.
+- [ ] **AVL203-REQ-024** — Rulările aceleiași serii TREBUIE să folosească aceeași versiune a protocolului, același manifest User-Agent și același set de URL-uri.
+- [ ] **AVL203-REQ-025** — Eticheta unei rulări (`T0`, `F1` … `Fn` sau `TEST`) TREBUIE atribuită la înregistrare și NU TREBUIE schimbată ulterior.
+- [ ] **AVL203-REQ-026** — O rulare `TEST` NU TREBUIE comparată cu rulările unei serii de măsurare și NU TREBUIE folosită pentru a susține o concluzie publicată.
+- [ ] **AVL203-REQ-027** — O schimbare tehnică observată NU TREBUIE prezentată drept cauză a unei schimbări de vizibilitate pe baza succesiunii temporale.
+- [ ] **AVL203-REQ-028** — O execuție conformă TREBUIE să livreze toate livrabilele minime de mai sus.
+
+---
+
+# 16. Documente asociate
 
 ## Normative
 
@@ -378,20 +475,21 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 
 ---
 
-# 16. Istoricul versiunilor
+# 17. Istoricul versiunilor
 
 | Versiune | Dată | Statut | Modificări |
 |---|---|---|---|
 | 0.1.0 | 1 octombrie 2026 | Draft pentru revizuire | Primul draft înregistrat. Definește setul minim de verificări `TC-00`–`TC-07`, poziționarea Evidence Capture Process înaintea lanțului AVL-200, convenția de etichetare a rulărilor (`T0` baseline, `F1` … `Fn` rulări ulterioare) și limitele protocolului. Identificator AVL-203 alocat din registru și confirmat de Alex Matescu; eticheta de lucru „AVL-TECH-001” retrasă. Slugul `/lab/metodologie/protocol-verificare-tehnica` confirmat. Afirmațiile despre RFC 9309, RFC 9110, Sitemaps, Google, OpenAI, Anthropic și Perplexity verificate la sursă la 1 octombrie 2026. |
-| 0.2.0 | 2 octombrie 2026 | Draft pentru revizuire | Revizie după prima implementare candidată și o rulare de test. TC-06: dubla captură a clientului de referință devine obligatorie, iar diferențele de dimensiune/hash nu se atribuie User-Agent-ului când răspunsul variază intrinsec (constatare din rularea de test: corpul paginii a diferit între două requesturi identice). Manifest User-Agent versionat, cu statusuri `OFICIAL` / `OFICIAL_CU_VERSIUNE_ALEASA` / `DOAR_TOKEN` / `NECONFIRMAT`, înghețat la v0.1.0 cu șiruri verificate la sursă la 2 octombrie 2026. TC-04: căile convenționale (`/sitemap.xml`, `/sitemap_index.xml`) și regula de atribuire a statusurilor. TC-05: variantele meta robots pentru `googlebot`/`bingbot` și validitatea sintactică JSON a blocurilor JSON-LD ca observații permise. Codul de ieșire `curl` înregistrat pentru fiecare request. Manifestul rulării inclus în checksum-uri. Eticheta `TEST` pentru rulări de probă din afara seriilor de măsurare. §17.4 și §17.6 actualizate. |
+| 0.2.0 | 2 octombrie 2026 | Draft pentru revizuire | Revizie după prima implementare candidată și o rulare de test. TC-06: dubla captură a clientului de referință devine obligatorie, iar diferențele de dimensiune/hash nu se atribuie User-Agent-ului când răspunsul variază intrinsec (constatare din rularea de test: corpul paginii a diferit între două requesturi identice). Manifest User-Agent versionat, cu statusuri `OFICIAL` / `OFICIAL_CU_VERSIUNE_ALEASA` / `DOAR_TOKEN` / `NECONFIRMAT`, înghețat la v0.1.0 cu șiruri verificate la sursă la 2 octombrie 2026. TC-04: căile convenționale (`/sitemap.xml`, `/sitemap_index.xml`) și regula de atribuire a statusurilor. TC-05: variantele meta robots pentru `googlebot`/`bingbot` și validitatea sintactică JSON a blocurilor JSON-LD ca observații permise. Codul de ieșire `curl` înregistrat pentru fiecare request. Manifestul rulării inclus în checksum-uri. Eticheta `TEST` pentru rulări de probă din afara seriilor de măsurare. §18.4 și §18.6 actualizate. Publicat ca draft public la `/lab/metodologie/protocol-verificare-tehnica`; canonicalul devine definitiv; §17.2 actualizat. |
+| 0.3.0 | 2 octombrie 2026 | Draft pentru revizuire | Cerințele de conformitate formalizate: 28 de cerințe `AVL203-REQ-001` … `AVL203-REQ-028`, derivate din intenția normativă a versiunii 0.2.0, fără reguli noi. Declarația RFC 2119 / RFC 8174 din „Controlul documentului” înlocuiește nota despre intenția protocolului. Secțiune nouă „Checklist de conformitate” (§15); secțiunile următoare renumerotate (§16–§18). Decizia deschisă 3 actualizată. |
 
 ---
 
-# 17. Decizii deschise înainte de 1.0.0
+# 18. Decizii deschise înainte de 1.0.0
 
 1. **Aliniarea corpusului la convenția T0/F1…Fn.** Convenția din §11 (decizie Alex Matescu, 1 octombrie 2026) contrazice versiunea publicată a AVL-200 §7 și AVL-001 §17, unde `F0–F3` sunt faze metodologice și `T0, T1…` puncte de măsurare. AVL-200 și AVL-001 trebuie actualizate, ca pas separat, înainte de activarea acestui document.
-2. **Locul în AVL-202.** Includerea AVL-203 în arhitectura metodologiei, în lista documentelor și în ordinea de lectură din AVL-202 (și în lista Nivelului C din AVL-001 §17) este o modificare a unor documente active și se face ca pas separat, la activare.
-3. **Cerințe identificate.** Formularea „trebuie / nu trebuie” din acest draft nu este încă formalizată în cerințe `AVL203-REQ-*`. Trebuie decis care propoziții devin cerințe de conformitate și cu ce nivel RFC 2119.
+2. **Locul în corpus.** De la publicarea ca draft public (2 octombrie 2026), AVL-202 menționează AVL-203 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor, cu statutul „Draft pentru revizuire”. Rămân de făcut la activare: actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001 §17.
+3. **Cerințe identificate.** Formulate în v0.3.0 (2 octombrie 2026): 28 de cerințe `AVL203-REQ-001` … `AVL203-REQ-028`, derivate din intenția normativă deja existentă în text, fără reguli noi. Toate sunt la nivel TREBUIE / NU TREBUIE, cu o singură opțiune POATE (REQ-011). Rămâne de confirmat, la activare, setul final și nivelul fiecărei cerințe.
 4. **Implementarea de referință.** Comenzile din document sunt exemple. Există o implementare candidată, versionată (skill-ul `verificare-tehnica-avl203` din repository, script v0.2.0), rulată la 2 octombrie 2026 într-o rulare `TEST` pe un singur origin (macOS, curl 8.7.1). Validarea ca implementare de referință cere rulări pe mai multe origini și configurații (redirecturi, erori TLS/DNS, robots.txt indisponibil, răspunsuri non-HTML, protecții anti-bot) și teste ale analizorului. Statut: candidată, nevalidată.
 5. **Parserul robots.txt.** Trebuie ales sau scris un parser conform RFC 9309 (selecția grupurilor, combinarea lor, cea mai specifică potrivire), altfel `TC-03` rămâne limitat la `NEDETERMINAT`.
 6. **Șirurile User-Agent.** Manifestul v0.1.0 a fost înghețat la 2 octombrie 2026 (§9). Rămân deschise: confirmarea șirului complet `bingbot` dintr-o sursă oficială, tratamentul `Claude-SearchBot` (doar token, cât timp Anthropic nu publică un șir complet) și regula de alegere a versiunii Chrome din șirul Googlebot.

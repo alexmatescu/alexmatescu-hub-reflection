@@ -8,7 +8,7 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.2.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
@@ -19,7 +19,7 @@ export const avl202CadruMetodologicHtml = `
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie">https://delamatescu.ro/lab/metodologie</a></td></tr>
         <tr><th scope="row">Dependență</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a></td></tr>
         <tr><th scope="row">Documente informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO vs GEO</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></td></tr>
-        <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa T0</a></td></tr>
+        <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa T0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire)</td></tr>
         <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code>: <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.9.0); AVL-MKT-002 — Market Query Panel (planificat)</td></tr>
         </tbody>
         </table>
@@ -50,7 +50,8 @@ export const avl202CadruMetodologicHtml = `
       <ul>
         <li><strong>AVL-200</strong> rămâne identificatorul permanent pentru <strong>Standard dovezi, măsurare și trasabilitate</strong>;</li>
         <li><strong>AVL-201</strong> rămâne identificatorul permanent pentru <strong>Tabula Rasa T0</strong>;</li>
-        <li><strong>AVL-202</strong> este identificatorul permanent pentru <strong>Cadrul metodologic AI Visibility Lab</strong>.</li>
+        <li><strong>AVL-202</strong> este identificatorul permanent pentru <strong>Cadrul metodologic AI Visibility Lab</strong>;</li>
+        <li><strong>AVL-203</strong> este identificatorul permanent pentru <strong>Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong>.</li>
       </ul>
 
       <p>Aceste ID-uri nu se renumerotează retrospectiv doar pentru a produce o succesiune numerică mai elegantă.</p>
@@ -63,15 +64,15 @@ export const avl202CadruMetodologicHtml = `
 
       <h3>Ordinea de înregistrare</h3>
 
-      <p><strong>AVL-200 → AVL-201 → AVL-202</strong></p>
+      <p><strong>AVL-200 → AVL-201 → AVL-202 → AVL-203</strong></p>
 
       <p>Familia <code>AVL-MKT-*</code> are propria ordine de înregistrare, care începe cu AVL-MKT-001.</p>
 
       <h3>Ordinea conceptuală recomandată de lectură</h3>
 
-      <p><strong>AVL-001 → AVL-202 → AVL-200 / AVL-201 → documentele familiei AVL-MKT</strong></p>
+      <p><strong>AVL-001 → AVL-202 → AVL-200 / AVL-201 / AVL-203 → documentele familiei AVL-MKT</strong></p>
 
-      <p>AVL-001 stabilește principiile Foundation. AVL-202 descrie cadrul metodologic general. AVL-200 și AVL-201 formalizează componente specifice ale acelui cadru. Documentele <code>AVL-MKT-*</code> formalizează măsurarea reprezentării unei piețe și se citesc după AVL-202.</p>
+      <p>AVL-001 stabilește principiile Foundation. AVL-202 descrie cadrul metodologic general. AVL-200, AVL-201 și AVL-203 (draft pentru revizuire) formalizează componente specifice ale acelui cadru. Documentele <code>AVL-MKT-*</code> formalizează măsurarea reprezentării unei piețe și se citesc după AVL-202.</p>
 
       <h2>Arhitectura metodologiei</h2>
 
@@ -87,6 +88,7 @@ Cadrul metodologic AI Visibility Lab
    ├── Metodologia de bază (Core Methodology)
    │     ├── AVL-200  Standard dovezi, măsurare și trasabilitate
    │     ├── AVL-201  Tabula Rasa F0 — Baseline
+   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.3.0)
    │     └── viitoare documente metodologice / protocoale
    │
    └── Market Measurement — familia AVL-MKT-*
@@ -129,6 +131,7 @@ măsurare</code></pre>
         <li><strong>AVL-202 — Cadrul metodologic AI Visibility Lab</strong></li>
         <li><strong>AVL-200 — Standard dovezi, măsurare și trasabilitate</strong></li>
         <li><strong>AVL-201 — Tabula Rasa T0</strong></li>
+        <li><strong>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong> (draft pentru revizuire);</li>
         <li>documentele familiei Market Measurement (<code>AVL-MKT-*</code>), începând cu AVL-MKT-001;</li>
         <li>documentele metodologice viitoare.</li>
       </ol>
@@ -658,7 +661,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><strong>Depinde de:</strong> AVL-001 — AI Visibility Lab Foundation.</p>
 
-      <p><strong>Leagă și contextualizează:</strong> AVL-200, AVL-201, familia Market Measurement (<code>AVL-MKT-*</code>) și viitoarele documente metodologice.</p>
+      <p><strong>Leagă și contextualizează:</strong> AVL-200, AVL-201, AVL-203, familia Market Measurement (<code>AVL-MKT-*</code>) și viitoarele documente metodologice.</p>
 
       <h3>AVL-200 — Standard dovezi, măsurare și trasabilitate</h3>
 
@@ -694,6 +697,20 @@ Market Query Panel + răspunsurile AI</code></pre>
       </ul>
 
       <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește Tabula Rasa T0</a></strong></p>
+
+      <h3>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</h3>
+
+      <p><em>Core Technical Web Measurement Protocol</em></p>
+
+      <p><strong>Versiune 0.3.0 · Draft pentru revizuire</strong></p>
+
+      <p>Setul minim și repetabil de verificări tehnice care documentează ce livrează un server în condiții declarate: accesibilitatea HTTP și redirecturile, variantele de host și protocol, robots.txt, descoperirea sitemap-ului, semnalele raw HTML, paritatea răspunsurilor pentru User-Agent-uri declarate și integritatea dovezilor. Nu confundă accesibilitatea tehnică cu indexarea, citarea sau recomandarea.</p>
+
+      <p><strong>Rol:</strong> protocol al ramurii Core Methodology; componentă reutilizabilă la baseline și remăsurări, fără a înlocui AVL-201.</p>
+
+      <p><strong>Depinde de:</strong> AVL-001, AVL-202 și AVL-200.</p>
+
+      <p><strong>→ <a href="/lab/metodologie/protocol-verificare-tehnica">Citește AVL-203</a></strong></p>
 
       <h3>Familia Market Measurement (<code>AVL-MKT-*</code>)</h3>
 
@@ -769,7 +786,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <h2>Citare recomandată</h2>
 
-      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.2.0, 2026. https://delamatescu.ro/lab/metodologie</p>
+      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.3.0, 2026. https://delamatescu.ro/lab/metodologie</p>
 
       <h2>Istoricul versiunilor</h2>
 
@@ -795,6 +812,12 @@ Market Query Panel + răspunsurile AI</code></pre>
             <td>2 octombrie 2026</td>
             <td>Activ</td>
             <td>MINOR: AVL-MKT-001 — Market Scope &amp; Eligibility Protocol este publicat ca draft pentru revizuire (v0.9.0) și devine singura sursă a regulilor operaționale de delimitare a pieței și de eligibilitate. Din secțiunea 14 sunt eliminate detaliile operaționale preluate de AVL-MKT-001 (procedura pilotului intern, regula de versionare a criteriilor, tabelul statusurilor), înlocuite cu trimiteri. Se păstrează definiția ramurii, poziția în Nivelul C, precedența normativă, separarea protocol / instanță, fluxul și separarea dintre stratul de referință și stratul de reprezentare AI. Arhitectura, ordinea de lectură și lista documentelor sunt actualizate; AVL-MKT-002 rămâne planificat.</td>
+          </tr>
+          <tr>
+            <td>1.3.0</td>
+            <td>2 octombrie 2026</td>
+            <td>Activ</td>
+            <td>MINOR: AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility este publicat ca draft pentru revizuire (v0.3.0) și inclus în corpus: identificatori, ordinea de înregistrare, ordinea conceptuală de lectură, arborele arhitecturii (ramura Core Methodology), ordinea din hub și lista documentelor metodologiei. AVL-203 nu este activ; statutul lui se actualizează aici la activare. Nicio altă schimbare de principiu.</td>
           </tr>
         </tbody>
       </table>

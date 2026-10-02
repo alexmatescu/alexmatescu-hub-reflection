@@ -11,7 +11,7 @@ Agent de execuție pentru `src/content/lab/AVL/AVL-203_Protocol_minim_verificare
 
 ## Statutul acestei implementări
 
-- AVL-203 este **Draft 0.2.0**, neactivat. Rezultatele unei rulări sunt observații tehnice valide ca dovezi, dar procesul nu este încă „conform AVL-203 1.0.0”.
+- AVL-203 este **Draft 0.3.0**, neactivat, cu cerințele de conformitate `AVL203-REQ-001` … `028` (§15 din document conține checklist-ul). Rezultatele unei rulări sunt observații tehnice valide ca dovezi, dar procesul nu este încă „conform AVL-203 1.0.0”.
 - Scriptul este **implementare candidată, NEVALIDATĂ** ca implementare de referință (AVL-203 §17.4). Fiecare rulare declară asta în `manifest/run.json` și `exceptions.md`.
 - Limitări asumate, care decurg din deciziile deschise ale AVL-203 §17:
   - **TC-03:** politica robots aplicabilă rămâne `NEDETERMINAT` pentru toți agenții — nu există încă parser RFC 9309 validat (§17.5). Agentul inventariază grupurile și regulile declarate, nu decide `ALLOW`/`DISALLOW`.
@@ -31,7 +31,7 @@ AVL-203 §1 cere ca lista URL-urilor, motivele alegerii și limitele eșantionul
 
 1. cere-i URL-urile exacte, entitatea, eticheta rulării și motivul alegerii fiecărui URL;
 2. scrie planul într-un fișier (ex. `evidence/work/avl203/plan-{entitate}-{eticheta}.md`) și arată-l userului;
-3. abia apoi rulează.
+3. abia apoi rulează. Pentru `T0` și `F1`…`Fn`, scriptul refuză rularea fără `--plan` (AVL203-REQ-001); doar `TEST` poate rula fără plan.
 
 **Eticheta rulării** (AVL-203 §11): `T0` pentru baseline, `F1`, `F2` … `Fn` pentru rulările ulterioare, în ordinea executării; `TEST` pentru rulări de probă care nu intră într-o serie de măsurare. Eticheta se atribuie la înregistrare și nu se schimbă ulterior. Pentru o remăsurare, folosește **aceleași URL-uri** și aceeași versiune a protocolului și a manifestului UA ca la `T0`; orice abatere se declară.
 
