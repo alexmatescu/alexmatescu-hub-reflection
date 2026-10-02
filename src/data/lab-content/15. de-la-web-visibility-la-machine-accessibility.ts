@@ -175,6 +175,7 @@ Actionable              = NU</code></pre>
       <p>De aceea, o formulă mai corectă este:</p>
       <blockquote><p><strong>Published ≠ Crawlable ≠ Retrievable ≠ Authorized ≠ Actionable</strong></p></blockquote>
       <p>Această diferență va deveni tot mai importantă pe măsură ce agenții vor opera pe web în numele utilizatorilor.</p>
+      <p>Diferențele dintre aceste trasee — crawling, căutare, antrenare, acces nativ și conectori — sunt analizate în al doilea articol al seriei: <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a>.</p>
       <hr />
       <h2>4. De ce conectorii și API-urile devin la fel de importante ca paginile web?</h2>
       <p><strong>Pentru că un sistem AI poate primi informația printr-un canal direct și structurat, fără să depindă exclusiv de crawling-ul web.</strong></p>
@@ -192,6 +193,7 @@ Authorized business data → AI
 Product feed → AI
 Internal system → AI</code></pre>
       <p>Din perspectiva AI Visibility, această schimbare înseamnă că trebuie măsurată nu doar <strong>prezența informației</strong>, ci și <strong>calea prin care un sistem o poate accesa</strong>.</p>
+      <p>Ce înseamnă această schimbare pentru site-ul propriu, inclusiv WebMCP, MCP și API-urile puse la dispoziția agenților, este tema celui de-al treilea articol: <a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">Site-ul nu dispare. Își schimbă clientul</a>.</p>
       <hr />
       <h2>5. Ce schimbă agentic commerce?</h2>
       <p><strong>Transformă recomandarea într-un posibil punct intermediar, nu într-un rezultat final.</strong></p>
@@ -214,6 +216,7 @@ Interact with me
 Transact with me</code></pre>
       <p>Ultimele două etape nu mai țin doar de vizibilitate în sensul tradițional.</p>
       <p>Ele țin de capacitatea entității de a fi <strong>accesată operațional</strong> de un sistem AI.</p>
+      <p>Traseul complet, de la menționare și recomandare până la tranzacție, este analizat în al patrulea articol: <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business</a>.</p>
       <hr />
       <h2>6. Cum poate fi măsurată această schimbare?</h2>
       <p><strong>Machine accessibility poate fi transformată din concept într-un set de teste observabile.</strong></p>
@@ -287,6 +290,7 @@ Actionability</code></pre>
       <hr />
       <h2>Concluzie</h2>
       <p>Internetul nu încetează să fie format din website-uri, documentație, baze de date, platforme sociale și aplicații.</p>
+      <p>Platformele sociale au propriile trasee prin care conținutul lor ajunge la sistemele AI, analizate în ultimul articol al seriei: <a href="/lab/articole/social-media-devine-strat-informational-pentru-ai">Social media devine strat informațional pentru AI</a>.</p>
       <p>Ceea ce se schimbă este <strong>interfața prin care aceste resurse sunt descoperite și utilizate</strong>.</p>
       <p>Motorul de căutare a fost mult timp intermediarul dominant dintre informație și om.</p>
       <p>Modelele generative au devenit un nou intermediar între sursă și răspuns.</p>

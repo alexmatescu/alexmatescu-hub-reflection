@@ -231,7 +231,7 @@ const Home = () => {
                 key={p!.slug}
                 to={
                   p!.slug === "geo-ai-visibility"
-                    ? "/lab/introducere"
+                    ? "/lab"
                     : `/proiecte/${p!.slug}`
                 }
                 className="group bg-background p-8 md:p-10 flex flex-col gap-5 hover:bg-surface transition-colors duration-500"

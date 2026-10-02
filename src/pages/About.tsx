@@ -429,7 +429,7 @@ const About = () => {
 
           <div className="mt-10">
             <Link
-              to="/lab/introducere"
+              to="/lab"
               className="inline-flex items-center gap-2 h-12 px-6 border border-foreground/20 text-sm tracking-wide no-underline hover:bg-foreground hover:text-background transition-colors"
             >
               Explorează AI Visibility Lab <ArrowRight className="h-4 w-4" />

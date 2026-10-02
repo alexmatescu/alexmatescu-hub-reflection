@@ -46,7 +46,7 @@ export const istoriaCautariiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const istoriaCautariiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-08-14">14 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-14">14 august 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-14">14 august 2026</time></p>
 
       <p><strong>Istoria căutării pe internet poate fi citită ca o succesiune de mecanisme prin care motoarele au încercat să aproximeze relevanța, autoritatea și utilitatea. În această analiză împart evoluția căutării web în șase ere, precedate de o etapă pre-web. Teza AI Visibility Lab este că fiecare mecanism de aproximare creează inevitabil o distanță între semnal și realitatea pe care încearcă să o măsoare, iar optimizarea tinde să se mute exact în acea distanță. Uneori o reduce legitim, alteori o exploatează. Când semnalul devine prea ușor de manipulat, sistemele de căutare îl devalorizează, îl combină cu altele sau îl înlocuiesc.</strong></p>
 

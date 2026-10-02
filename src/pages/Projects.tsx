@@ -59,7 +59,7 @@ const Projects = () => {
                 <Link
                   to={
                     p.slug === "geo-ai-visibility"
-                      ? "/lab/introducere"
+                      ? "/lab"
                       : `/proiecte/${p.slug}`
                   }
                   className="group grid md:grid-cols-12 gap-6 py-12 md:pt-16 md:pb-8 items-start hover:bg-surface/50 transition-colors px-2 md:px-4 -mx-2 md:-mx-4"

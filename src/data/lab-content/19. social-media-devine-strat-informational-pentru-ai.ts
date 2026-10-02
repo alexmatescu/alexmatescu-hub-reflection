@@ -374,19 +374,20 @@ Operational data</code></pre>
       <p>Aceasta este exact problema pe care seria de cinci articole a încercat să o definească.</p>
       <h2>De la machine accessibility la information topology</h2>
       <p>Dacă punem împreună cele cinci articole, traseul urmează modelul în șapte niveluri propus în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a>, iar fiecare articol al seriei a privit o parte a lui:</p>
-      <pre><code>1. Presence          Există o urmă digitală clară a entității?        → articolul 5
-        ↓
-2. Discoverability   Poate sistemul găsi entitatea și sursele?        → articolele 2, 3, 5
-        ↓
-3. Accessibility     Poate accesa efectiv informația?                 → articolele 2, 3, 5
-        ↓
-4. Understanding     O identifică și o interpretează corect?          → articolele 3, 5
-        ↓
-5. Verifiability     O poate confirma prin surse actuale?             → articolele 3, 5
-        ↓
-6. Recommendability  O poate include într-o recomandare relevantă?    → articolul 4
-        ↓
-7. Actionability     Poate executa următorul pas permis?              → articolele 3, 4</code></pre>
+      <table>
+        <thead>
+          <tr><th>Nivel</th><th>Întrebare</th><th>Articolele seriei care îl tratează</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. Presence</td><td>Există o urmă digitală clară a entității?</td><td><strong>5. acest articol</strong></td></tr>
+          <tr><td>2. Discoverability</td><td>Poate sistemul găsi entitatea și sursele?</td><td><a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">2. Public nu mai înseamnă accesibil</a>, <a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">3. Site-ul nu dispare</a>, <strong>5. acest articol</strong></td></tr>
+          <tr><td>3. Accessibility</td><td>Poate accesa efectiv informația?</td><td><a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">2. Public nu mai înseamnă accesibil</a>, <a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">3. Site-ul nu dispare</a>, <strong>5. acest articol</strong></td></tr>
+          <tr><td>4. Understanding</td><td>O identifică și o interpretează corect?</td><td><a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">3. Site-ul nu dispare</a>, <strong>5. acest articol</strong></td></tr>
+          <tr><td>5. Verifiability</td><td>O poate confirma prin surse actuale?</td><td><a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">3. Site-ul nu dispare</a>, <strong>5. acest articol</strong></td></tr>
+          <tr><td>6. Recommendability</td><td>O poate include într-o recomandare relevantă?</td><td><a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">4. De la menționare la tranzacție</a></td></tr>
+          <tr><td>7. Actionability</td><td>Poate executa următorul pas permis?</td><td><a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">3. Site-ul nu dispare</a>, <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">4. De la menționare la tranzacție</a></td></tr>
+        </tbody>
+      </table>
       <p>Peste aceste niveluri trece o întrebare care nu este un nivel în plus, ci o dimensiune a fiecăruia: <strong>din ce strat informațional provine răspunsul?</strong> Site propriu, social media, feed de produse, API sau conector — la fiecare nivel, rezultatul poate depinde de stratul la care sistemul are acces.</p>
       <p>Social media adaugă o dimensiune importantă pentru că introduce:</p>
       <ul>

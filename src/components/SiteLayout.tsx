@@ -25,7 +25,7 @@ type NavItem = {
 };
 
 const projectDropdownItems = [
-  { to: "/lab/introducere", label: "AI Visibility Lab" },
+  { to: "/lab", label: "AI Visibility Lab" },
   { to: "/carte", label: "CRANDIT" },
   { to: "/proiecte/taste-the-corn", label: "TASTE THE CORN" },
   { to: "/proiecte/ovb", label: "OVB" },
