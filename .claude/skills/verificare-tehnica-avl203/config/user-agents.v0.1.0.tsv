@@ -1,0 +1,14 @@
+# AVL-203 · TC-06 · Manifest User-Agent v0.1.0 (înghețat la 2026-10-02)
+# Coloane (TAB): cheie<TAB>token_robots<TAB>status<TAB>sursa<TAB>sir_user_agent
+# status: OFICIAL = șir complet copiat din documentația furnizorului la data înghețării;
+#         OFICIAL_CU_VERSIUNE_ALEASA = șir oficial cu placeholder de versiune Chrome înlocuit de operator (vezi CHROME_VERSION);
+#         DOAR_TOKEN = furnizorul nu publică șirul complet; se trimite doar tokenul;
+#         NECONFIRMAT = șir complet necitit din sursă oficială la data înghețării (AVL-203 §17.6).
+# Rândul „client” e clientul implicit de referință (curl fără User-Agent explicit) — sir gol.
+# Orice modificare a acestui fișier = versiune nouă a manifestului (AVL-203 §9, AVL-200 §19).
+client	*	REFERINTA	curl implicit
+googlebot	Googlebot	OFICIAL_CU_VERSIUNE_ALEASA	https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers	Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{CHROME_VERSION} Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+bingbot	bingbot	NECONFIRMAT	https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0 (pagină randată client-side; șir neconfirmat)	Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+oai-searchbot	OAI-SearchBot	OFICIAL	https://developers.openai.com/api/docs/bots	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot
+claude-searchbot	Claude-SearchBot	DOAR_TOKEN	https://support.claude.com/en/articles/8896518 (nu publică șirul complet)	Claude-SearchBot
+perplexitybot	PerplexityBot	OFICIAL	https://docs.perplexity.ai/guides/bots	Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)
