@@ -1,8 +1,9 @@
 {
   "generat": "2026-10-02",
   "pragReverificareZile": 180,
-  "totalIntrari": 168,
+  "totalIntrari": 169,
   "totalAnomalii": 17,
+  "anomaliiGlobale": [],
   "intrari": [
     {
       "id": "LAB-16",
@@ -1096,6 +1097,34 @@
       "anomalii": []
     },
     {
+      "id": "lantul-pe-care-ni-l-punem-singuri",
+      "titlu": "Lanțul pe care ni-l punem singuri",
+      "suprafata": "blog (arhivă)",
+      "ruta": "/blog/lantul-pe-care-ni-l-punem-singuri",
+      "slug": "lantul-pe-care-ni-l-punem-singuri",
+      "categorie": "Reflecții",
+      "tip": null,
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-08-14",
+      "dataModificare": "2026-08-14",
+      "ultimaVerificare": null,
+      "fisierMd": "src/data/blogger-posts.json",
+      "fisierTs": null,
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": null,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-08-14",
+      "imagine": "/images/blog/lantul-pe-care-ni-l-punem-singuri.webp",
+      "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
       "id": "vasla-si-curentul",
       "titlu": "Vâsla și curentul",
       "suprafata": "blog (arhivă)",
@@ -1119,7 +1148,7 @@
         "sitemap": true
       },
       "sitemapLastmod": "2026-08-11",
-      "imagine": null,
+      "imagine": "/images/blog/vasla-si-curentul-hero.webp",
       "zileDeLaVerificare": null,
       "anomalii": []
     },

@@ -700,6 +700,52 @@ for (const e of intrari) {
   }
 }
 
+// URL-uri din sitemap fără sursă: nici intrare în registru, nici rută statică,
+// nici proiect. Un astfel de URL e servit ca 404 (sau, înainte de loader-ele
+// notFound, ca pagină goală cu 200) — precedent: articolul de blog șters
+// accidental pe 2026-08-27, rămas în sitemap.
+const anomaliiGlobale = [];
+{
+  const BASE_URL = "https://delamatescu.ro";
+  const cunoscute = new Set(intrari.map((e) => e.ruta).filter(Boolean));
+  // Rute statice: fișierele din src/routes/_site fără segmente dinamice ($).
+  const radacinaRute = path.join(ROOT, "src/routes/_site");
+  const parcurge = (dir) =>
+    fs
+      .readdirSync(dir, { withFileTypes: true })
+      .flatMap((d) =>
+        d.isDirectory()
+          ? parcurge(path.join(dir, d.name))
+          : [path.join(dir, d.name)],
+      );
+  for (const f of parcurge(radacinaRute)) {
+    if (!f.endsWith(".tsx") || f.includes("$")) continue;
+    const r = path
+      .relative(radacinaRute, f)
+      .replace(/\.tsx$/, "")
+      .split(path.sep)
+      .flatMap((seg) => seg.split("."))
+      .filter((seg) => seg !== "index")
+      .join("/");
+    cunoscute.add("/" + r);
+  }
+  // Pagini Lab din navigare (labNav), inclusiv secțiunile fără document AVL propriu.
+  for (const m of SRC.labNav.matchAll(/\bto: "(\/lab[^"]*)"/g))
+    cunoscute.add(m[1]);
+  // Proiecte: /proiecte/$slug se rezolvă din src/data/projects.ts.
+  for (const m of rd("src/data/projects.ts").matchAll(
+    /^\s{4}slug: "([^"]+)"/gm,
+  ))
+    cunoscute.add(`/proiecte/${m[1]}`);
+  for (const m of SRC.sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+    const ruta = m[1].replace(BASE_URL, "").replace(/\/$/, "") || "/";
+    if (!cunoscute.has(ruta))
+      anomaliiGlobale.push(
+        `URL în sitemap fără sursă (va răspunde 404): ${ruta}`,
+      );
+  }
+}
+
 // ─────────────────────────────── randare ───────────────────────────────
 
 const ORDINE_SUPRAFETE = [
@@ -728,7 +774,8 @@ const bif = (v) => (v === null ? "·" : v ? "✓" : "✗");
 const wiringText = (w) =>
   `${bif(w.registru)}${bif(w.pagina)}${bif(w.nav)}${bif(w.sitemap)}`;
 
-const totalAnomalii = intrari.reduce((n, e) => n + e.anomalii.length, 0);
+const totalAnomalii =
+  intrari.reduce((n, e) => n + e.anomalii.length, 0) + anomaliiGlobale.length;
 const cuAnomalii = intrari.filter((e) => e.anomalii.length);
 
 const L = [];
@@ -814,9 +861,15 @@ for (const s of ORDINE_SUPRAFETE) {
 
 L.push("## Anomalii");
 L.push("");
-if (!cuAnomalii.length) {
+if (!cuAnomalii.length && !anomaliiGlobale.length) {
   L.push("Niciuna.");
 } else {
+  if (anomaliiGlobale.length) {
+    L.push("### Sitemap și rute");
+    L.push("");
+    for (const a of anomaliiGlobale) L.push(`- ${a}`);
+    L.push("");
+  }
   for (const e of cuAnomalii) {
     L.push(`### \`${e.id}\` — ${e.titlu}`);
     L.push("");
@@ -834,6 +887,7 @@ const json = JSON.stringify(
     pragReverificareZile: PRAG_REVERIFICARE_ZILE,
     totalIntrari: intrari.length,
     totalAnomalii,
+    anomaliiGlobale,
     intrari: intrari.map(({ md: _md, ...rest }) => rest),
   },
   null,
@@ -907,6 +961,8 @@ console.log(
 );
 if (totalAnomalii) {
   console.log("\nanomalii:");
+  for (const a of anomaliiGlobale)
+    console.log(`  ${"sitemap".padEnd(12)} ${a}`);
   for (const e of cuAnomalii)
     for (const a of e.anomalii)
       console.log(`  ${e.id.padEnd(12)} ${a.replace(/`/g, "")}`);

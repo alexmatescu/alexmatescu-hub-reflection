@@ -1,14 +1,20 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { LabDetail } from "@/pages/Lab";
 import {
   buildLabArticleHead,
   buildLabCaseStudyHead,
   buildLabPageHead,
 } from "@/data/lab-seo";
+import { findLabPage } from "@/data/lab";
 
 const BASE = "https://delamatescu.ro";
 
 export const Route = createFileRoute("/_site/lab/$parent/$slug")({
+  // Vezi $slug.tsx: căutarea se face pe calea completă, deci și un slug valid
+  // sub un părinte greșit (ex. /lab/cercetare/{slug-articol}) întoarce 404.
+  loader: ({ params }) => {
+    if (!findLabPage(`/lab/${params.parent}/${params.slug}`)) throw notFound();
+  },
   component: RouteComponent,
   head: ({ params }) =>
     // Articolele din /lab/articole/:slug și studiile de caz din

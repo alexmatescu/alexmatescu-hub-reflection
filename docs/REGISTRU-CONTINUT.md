@@ -7,7 +7,7 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-10-02 · 168 intrări · **17 anomalii** în 9 intrări
+Generat: 2026-10-02 · 169 intrări · **17 anomalii** în 9 intrări
 
 ## Sinteză
 
@@ -20,9 +20,9 @@ Generat: 2026-10-02 · 168 intrări · **17 anomalii** în 9 intrări
 | `lab/cercetare` | 5 | 0 | 5 | 0 |
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 1 | 0 | 1 | 0 |
-| `blog (arhivă)` | 131 | 0 | 131 | 1 |
+| `blog (arhivă)` | 132 | 0 | 132 | 1 |
 | `nealocat` | 0 | 1 | 1 | 0 |
-| **Total** | **166** | **2** | **168** | **17** |
+| **Total** | **167** | **2** | **169** | **17** |
 
 ## Legendă
 
@@ -106,10 +106,11 @@ Generat: 2026-10-02 · 168 intrări · **17 anomalii** în 9 intrări
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `o-lume-prea-mare-pentru-un-singur-om` | [O lume prea mare pentru un singur om](/blog/o-lume-prea-mare-pentru-un-singur-om) | Reflecții | Reflecție | publicat | 2026-08-31 | 2026-08-30 | 2026-08-30 | — | `✓✓·✓` | `src/content/blog/o-lume-prea-mare-pentru-un-singur-om.md` | `src/data/blog-content/o-lume-prea-mare-pentru-un-singur-om.ts` |
 
-## `blog (arhivă)` — 131 intrări
+## `blog (arhivă)` — 132 intrări
 
 | Slug | Titlu | Categorie | Status | Publicat | Modificat | Wiring | Anomalii |
 |---|---|---|---|---|---|---|--:|
+| `lantul-pe-care-ni-l-punem-singuri` | Lanțul pe care ni-l punem singuri | Reflecții | publicat | 2026-08-14 | 2026-08-14 | `✓✓·✓` | — |
 | `vasla-si-curentul` | Vâsla și curentul | Reflecții | publicat | 2026-08-11 | 2026-08-11 | `✓✓·✓` | — |
 | `cifrul-succesului-definitie-personala` | Cifrul succesului: de ce succesul este diferit pentru fiecare om | Reflecții | publicat | 2026-07-18 | 2026-07-18 | `✓✓·✗` | 1 |
 | `informatia-care-exista-dar-nu-poate-fi-gasita` | Informația care există, dar nu poate fi găsită | Reflecții | publicat | 2026-07-17 | — | `✓✓·✓` | — |

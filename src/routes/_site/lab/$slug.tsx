@@ -1,10 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { LabDetail } from "@/pages/Lab";
 import { buildLabPageHead } from "@/data/lab-seo";
+import { findLabPage } from "@/data/lab";
 
 const BASE = "https://delamatescu.ro";
 
 export const Route = createFileRoute("/_site/lab/$slug")({
+  // Un slug necunoscut întoarce 404 real (server-side), nu o pagină 200 care
+  // abia apoi redirecționează client-side spre /lab.
+  loader: ({ params }) => {
+    if (!findLabPage(`/lab/${params.slug}`)) throw notFound();
+  },
   component: RouteComponent,
   head: ({ params }) =>
     buildLabPageHead(`/lab/${params.slug}`) ?? {
