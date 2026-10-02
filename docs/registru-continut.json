@@ -1,8 +1,8 @@
 {
-  "generat": "2026-10-01",
+  "generat": "2026-10-02",
   "pragReverificareZile": 180,
-  "totalIntrari": 167,
-  "totalAnomalii": 26,
+  "totalIntrari": 168,
+  "totalAnomalii": 18,
   "intrari": [
     {
       "id": "site-ul-nu-dispare-isi-schimba-clientul",
@@ -10,8 +10,8 @@
       "suprafata": "lab/articole",
       "ruta": "/lab/articole/site-ul-nu-dispare-isi-schimba-clientul",
       "slug": "site-ul-nu-dispare-isi-schimba-clientul",
-      "categorie": "AI Visibility",
-      "tip": "Analiză metodologică",
+      "categorie": "AI Ecosystem",
+      "tip": "Analiză",
       "status": "draft",
       "statusNormativ": null,
       "versiune": "0.9.0",
@@ -29,11 +29,8 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 0,
-      "anomalii": [
-        "`category` în afara taxonomiei: «AI Visibility»",
-        "`articleType` în afara taxonomiei: «Analiză metodologică»"
-      ]
+      "zileDeLaVerificare": 1,
+      "anomalii": []
     },
     {
       "id": "de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility",
@@ -41,8 +38,8 @@
       "suprafata": "lab/articole",
       "ruta": "/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility",
       "slug": "de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility",
-      "categorie": "AI Visibility",
-      "tip": "Analiză metodologică",
+      "categorie": "AI Ecosystem",
+      "tip": "Analiză",
       "status": "draft",
       "statusNormativ": null,
       "versiune": "0.9.0",
@@ -60,11 +57,8 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 0,
-      "anomalii": [
-        "`category` în afara taxonomiei: «AI Visibility»",
-        "`articleType` în afara taxonomiei: «Analiză metodologică»"
-      ]
+      "zileDeLaVerificare": 1,
+      "anomalii": []
     },
     {
       "id": "social-media-devine-strat-informational-pentru-ai",
@@ -72,15 +66,15 @@
       "suprafata": "lab/articole",
       "ruta": "/lab/articole/social-media-devine-strat-informational-pentru-ai",
       "slug": "social-media-devine-strat-informational-pentru-ai",
-      "categorie": "AI Visibility",
-      "tip": "Analiză metodologică",
+      "categorie": "AI Ecosystem",
+      "tip": "Analiză",
       "status": "draft",
       "statusNormativ": null,
-      "versiune": "0.9.0",
+      "versiune": "0.9.1",
       "dataCreare": "2026-10-01",
       "dataPublicare": null,
-      "dataModificare": "2026-10-01",
-      "ultimaVerificare": "2026-10-01",
+      "dataModificare": "2026-10-02",
+      "ultimaVerificare": "2026-10-02",
       "fisierMd": "src/content/lab/articles/19.social-media-devine-strat-informational-pentru-ai.md",
       "fisierTs": null,
       "wiring": {
@@ -92,10 +86,7 @@
       "sitemapLastmod": null,
       "imagine": null,
       "zileDeLaVerificare": 0,
-      "anomalii": [
-        "`category` în afara taxonomiei: «AI Visibility»",
-        "`articleType` în afara taxonomiei: «Analiză metodologică»"
-      ]
+      "anomalii": []
     },
     {
       "id": "LAB-15",
@@ -124,7 +115,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 2,
       "anomalii": []
     },
     {
@@ -133,15 +124,15 @@
       "suprafata": "lab/articole",
       "ruta": "/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit",
       "slug": "public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit",
-      "categorie": "AI Visibility",
-      "tip": "Analiză metodologică",
+      "categorie": "AI Ecosystem",
+      "tip": "Analiză",
       "status": "draft",
       "statusNormativ": null,
       "versiune": "0.9.0",
       "dataCreare": "2026-09-30",
       "dataPublicare": null,
-      "dataModificare": "2026-09-30",
-      "ultimaVerificare": "2026-09-30",
+      "dataModificare": "2026-10-01",
+      "ultimaVerificare": "2026-10-01",
       "fisierMd": "src/content/lab/articles/16.public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit.md",
       "fisierTs": null,
       "wiring": {
@@ -153,10 +144,7 @@
       "sitemapLastmod": null,
       "imagine": null,
       "zileDeLaVerificare": 1,
-      "anomalii": [
-        "`category` în afara taxonomiei: «AI Visibility»",
-        "`articleType` în afara taxonomiei: «Analiză metodologică»"
-      ]
+      "anomalii": []
     },
     {
       "id": "LAB-14",
@@ -185,7 +173,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 2,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -217,7 +205,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 35,
+      "zileDeLaVerificare": 36,
       "anomalii": [
         "numele fișierului `.md` (eticheta-abonat-relatia-prezentare-ai-search-revizuit) ≠ slug (eticheta-abonat-relatia-prezentare-ai-search)",
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
@@ -250,7 +238,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 43,
+      "zileDeLaVerificare": 44,
       "anomalii": []
     },
     {
@@ -280,7 +268,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 43,
+      "zileDeLaVerificare": 44,
       "anomalii": []
     },
     {
@@ -310,7 +298,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 43,
+      "zileDeLaVerificare": 44,
       "anomalii": [
         "`date_published` diferă între `.md` și `.ts`",
         "`date_modified` diferă între `.md` și `.ts`",
@@ -344,7 +332,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 43,
+      "zileDeLaVerificare": 44,
       "anomalii": []
     },
     {
@@ -374,7 +362,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 44,
+      "zileDeLaVerificare": 45,
       "anomalii": []
     },
     {
@@ -469,7 +457,6 @@
       "nrCitari": 0,
       "zileDeLaVerificare": null,
       "anomalii": [
-        "`date_modified` diferă între `.md` și `.ts`",
         "`lastmod` din sitemap (2026-08-14) ≠ ultima modificare (2026-09-04)"
       ]
     },
@@ -500,7 +487,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 43,
+      "zileDeLaVerificare": 44,
       "anomalii": [
         "`article_type` diferă: .md «Studiu de caz» ≠ .ts «Analiză de caz»",
         "`date_published` diferă între `.md` și `.ts`",
@@ -596,7 +583,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 45,
+      "zileDeLaVerificare": 46,
       "anomalii": [
         "`article_type` diferă: .md «Studiu de caz» ≠ .ts «Analiză de caz»",
         "`date_published` diferă între `.md` și `.ts`",
@@ -630,7 +617,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 0,
-      "zileDeLaVerificare": 13,
+      "zileDeLaVerificare": 14,
       "anomalii": []
     },
     {
@@ -659,7 +646,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 1,
       "anomalii": []
     },
     {
@@ -688,7 +675,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 17,
+      "zileDeLaVerificare": 18,
       "anomalii": []
     },
     {
@@ -702,11 +689,11 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.1.0",
+      "versiune": "1.2.0",
       "dataCreare": "2026-09-14",
       "dataPublicare": "2026-09-14",
-      "dataModificare": "2026-09-30",
-      "ultimaVerificare": "2026-09-30",
+      "dataModificare": "2026-10-02",
+      "ultimaVerificare": "2026-10-02",
       "fisierMd": "src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md",
       "fisierTs": "src/data/lab-content/avl-202.ts",
       "wiring": {
@@ -717,7 +704,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 0,
       "anomalii": []
     },
     {
@@ -750,6 +737,37 @@
       "anomalii": []
     },
     {
+      "id": "AVL-MKT-001",
+      "titlu": "AVL-MKT-001 — Market Scope & Eligibility Protocol",
+      "suprafata": "lab/metodologie",
+      "nivel": "C — Methodology",
+      "ruta": "/lab/metodologie/protocol-delimitare-piata-eligibilitate",
+      "slug": "protocol-delimitare-piata-eligibilitate",
+      "categorie": "C — Methodology",
+      "tip": "Document normativ",
+      "status": "publicat",
+      "statusNormativ": "Draft pentru revizuire",
+      "versiune": "0.9.0",
+      "dataCreare": null,
+      "dataPublicare": null,
+      "dataModificare": "2026-10-02",
+      "ultimaVerificare": "2026-10-02",
+      "fisierMd": "src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md",
+      "fisierTs": "src/data/lab-content/avl-mkt-001.ts",
+      "wiring": {
+        "registru": null,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": null,
+      "imagine": null,
+      "zileDeLaVerificare": 0,
+      "anomalii": [
+        "publicat fără dată de publicare"
+      ]
+    },
+    {
       "id": "AVL-001",
       "titlu": "AVL-001 — AI Visibility Lab Foundation",
       "suprafata": "lab/foundation",
@@ -760,10 +778,10 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.2.0",
+      "versiune": "1.2.1",
       "dataCreare": "2026-07-22",
       "dataPublicare": "2026-07",
-      "dataModificare": "2026-09-30",
+      "dataModificare": "2026-10-02",
       "ultimaVerificare": null,
       "fisierMd": "src/content/lab/AVL/AVL-001_AI_Visibility_Lab_Foundation_v1.0.1.md",
       "fisierTs": "src/data/lab-content/avl-001.ts",
@@ -4752,7 +4770,7 @@
       "status": "nepublicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-01",
       "dataPublicare": null,
       "dataModificare": null,
       "ultimaVerificare": null,

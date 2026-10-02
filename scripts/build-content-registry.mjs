@@ -615,7 +615,7 @@ for (const e of intrari) {
     a.push(`\`.md\` în folderul greșit: \`${e.md.rel}\``);
   if (e.md && e.suprafata === "blog" && !e.md.rel.startsWith("src/content/blog/"))
     a.push(`\`.md\` în folderul greșit: \`${e.md.rel}\``);
-  const eAvlDoc = /^AVL-\d+$/.test(e.id);
+  const eAvlDoc = /^AVL-(?:[A-Z]+-)?\d+$/.test(e.id);
   if (eAvlDoc) {
     // Nivelul B e un corpus unic (`AVL-101-105`): un interval din nume acoperă
     // legitim toate documentele din el, nu doar pe cel al cărui id apare literal.

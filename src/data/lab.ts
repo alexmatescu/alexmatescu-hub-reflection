@@ -64,6 +64,11 @@ export const labNav: LabPage[] = [
         label: "Tabula Rasa F0",
         lead: "Punctul de plecare al metodologiei: un site sau brand pornit de la zero, fără istoric, folosit ca teren de experimentare controlată.",
       },
+      {
+        to: "/lab/metodologie/protocol-delimitare-piata-eligibilitate",
+        label: "AVL-MKT-001 — Market Scope & Eligibility Protocol",
+        lead: "Draft pentru revizuire, v0.9.0. Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification și regulile de constituire a Market Reference Set.",
+      },
     ],
   },
   {

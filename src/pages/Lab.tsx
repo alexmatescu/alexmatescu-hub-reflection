@@ -26,6 +26,7 @@ import { avl105GlosarHtml } from "@/data/lab-content/avl-105";
 import { avl200StandardDovaziMasurareTrasabilitateHtml } from "@/data/lab-content/avl-200";
 import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
 import { avl202CadruMetodologicHtml } from "@/data/lab-content/avl-202";
+import { avlMkt001MarketScopeEligibilityHtml } from "@/data/lab-content/avl-mkt-001";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl350StudiiDeCazHtml } from "@/data/lab-content/avl-350";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
@@ -60,6 +61,8 @@ const labPageContent: Record<string, string> = {
   "/lab/metodologie/standard-dovezi-masurare-trasabilitate":
     avl200StandardDovaziMasurareTrasabilitateHtml,
   "/lab/metodologie/tabula-rasa-f0": avl201TabulaRasaF0Html,
+  "/lab/metodologie/protocol-delimitare-piata-eligibilitate":
+    avlMkt001MarketScopeEligibilityHtml,
   "/lab/experimente-publice": avl301ExperimentePubliceHtml,
   "/lab/studii-de-caz": avl350StudiiDeCazHtml,
   "/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz":

@@ -7,22 +7,22 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-10-01 · 167 intrări · **26 anomalii** în 13 intrări
+Generat: 2026-10-02 · 168 intrări · **18 anomalii** în 10 intrări
 
 ## Sinteză
 
 | Suprafață | Publicat | Draft / nepublicat | Total | Anomalii |
 |---|--:|--:|--:|--:|
-| `lab/articole` | 15 | 4 | 19 | 25 |
+| `lab/articole` | 15 | 4 | 19 | 16 |
 | `lab/studii-de-caz` | 1 | 0 | 1 | 0 |
-| `lab/metodologie` | 3 | 1 | 4 | 0 |
+| `lab/metodologie` | 4 | 1 | 5 | 1 |
 | `lab/foundation` | 1 | 0 | 1 | 0 |
 | `lab/cercetare` | 5 | 0 | 5 | 0 |
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 1 | 0 | 1 | 0 |
 | `blog (arhivă)` | 131 | 0 | 131 | 1 |
 | `nealocat` | 0 | 1 | 1 | 0 |
-| **Total** | **161** | **6** | **167** | **26** |
+| **Total** | **162** | **6** | **168** | **18** |
 
 ## Legendă
 
@@ -39,46 +39,47 @@ Generat: 2026-10-01 · 167 intrări · **26 anomalii** în 13 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `site-ul-nu-dispare-isi-schimba-clientul` | [Site-ul nu dispare. Își schimbă clientul: cum se pregătește web-ul pentru agenți AI](/lab/articole/site-ul-nu-dispare-isi-schimba-clientul) | AI Visibility | Analiză metodologică | draft | 2026-10-01 | — | 2026-10-01 | 2026-10-01 (0z) | `✗✗✗✗` | `src/content/lab/articles/17.site-ul-nu-dispare-isi-schimba-clientul.md` | — |
-| `de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility` | [De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business](/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility) | AI Visibility | Analiză metodologică | draft | 2026-10-01 | — | 2026-10-01 | 2026-10-01 (0z) | `✗✗✗✗` | `src/content/lab/articles/18.de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility.md` | — |
-| `social-media-devine-strat-informational-pentru-ai` | [Social media devine strat informațional pentru AI: când postările, comentariile și comunitățile intră în răspunsuri](/lab/articole/social-media-devine-strat-informational-pentru-ai) | AI Visibility | Analiză metodologică | draft | 2026-10-01 | — | 2026-10-01 | 2026-10-01 (0z) | `✗✗✗✗` | `src/content/lab/articles/19.social-media-devine-strat-informational-pentru-ai.md` | — |
-| `LAB-15` | [De la web visibility la machine accessibility: ce se schimbă când AI-ul nu doar citește internetul, ci acționează în el?](/lab/articole/de-la-web-visibility-la-machine-accessibility) | AI Ecosystem | Analiză | publicat | 2026-09-30 | 2026-09-30 | 2026-09-30 | 2026-09-30 (1z) | `✓✓✓✓` | `src/content/lab/articles/15.de-la-web-visibility-la-machine-accessibility.md` | `src/data/lab-content/15. de-la-web-visibility-la-machine-accessibility.ts` |
-| `public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit` | [Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit](/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit) | AI Visibility | Analiză metodologică | draft | 2026-09-30 | — | 2026-09-30 | 2026-09-30 (1z) | `✗✗✗✗` | `src/content/lab/articles/16.public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit.md` | — |
-| `LAB-14` | [AI ca oglindă și amplificator: ce arată raportul Anthropic despre intenție, context și folosirea Claude](/lab/articole/ai-oglinda-amplificator-intentie-context-anthropic) | AI Ecosystem | Analiză | publicat | 2026-09-14 | 2026-09-14 | 2026-09-30 | 2026-09-30 (1z) | `✓✓✓✓` | `src/content/lab/articles/14.ai-oglinda-amplificator-intentie-context-anthropic.md` | `src/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic.ts` |
-| `LAB-13` | [Eticheta „Abonat”: cum folosește Google relația cu publicul pentru a evidenția surse în AI Search](/lab/articole/eticheta-abonat-relatia-prezentare-ai-search) | Entities & Citations | Analiză | publicat | 2026-08-27 | 2026-08-27 | 2026-08-27 | 2026-08-27 (35z) | `✓✓✓✓` | `src/content/lab/articles/13.eticheta-abonat-relatia-prezentare-ai-search-revizuit.md` | `src/data/lab-content/13. eticheta-abonat-relatia-prezentare-ai-search.ts` |
-| `LAB-11` | [Harta de citare: cum afli empiric ce surse contează pentru vizibilitatea AI în România](/lab/articole/harta-de-citare-mentiuni-externe-romania) | Entities & Citations | Ghid / Analiză metodologică | publicat | 2026-08-13 | 2026-08-19 | 2026-08-19 | 2026-08-19 (43z) | `✓✓✓✓` | `src/content/lab/articles/11.harta-de-citare-mentiuni-externe-romania.md` | `src/data/lab-content/11. harta-de-citare-mentiuni-externe-romania.ts` |
-| `LAB-12` | [407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026](/lab/articole/decalaj-viteza-ai-adoptie-2026) | AI Ecosystem | Analiză | publicat | 2026-08-14 | 2026-08-19 | 2026-08-19 | 2026-08-19 (43z) | `✓✓✓✓` | `src/content/lab/articles/12.decalaj-viteza-ai-adoptie-2026.md` | `src/data/lab-content/12. decalaj-viteza-ai-adoptie-2026.ts` |
-| `LAB-08` | [Cuvânt-cheie vs frază în AI Search: query rewriting, tokenizare și ce putem spune corect despre limba română](/lab/articole/cuvant-cheie-vs-fraza-tokenizare) | Search & Retrieval | Analiză | publicat | 2026-08-13 | 2026-08-19 | 2026-08-19 | 2026-08-19 (43z) | `✓✓✓✓` | `src/content/lab/articles/8.cuvant-cheie-vs-fraza-tokenizare.md` | `src/data/lab-content/8. cuvant-cheie-vs-fraza-tokenizare.ts` |
-| `LAB-09` | [Paradoxul specificității: când contextul schimbă răspunsul și când doar fragmentează conținutul](/lab/articole/paradoxul-specificitatii-continut-generic) | Search & Retrieval | Analiză | publicat | 2026-08-13 | 2026-08-19 | 2026-08-19 | 2026-08-19 (43z) | `✓✓✓✓` | `src/content/lab/articles/9.paradoxul-specificitatii-continut-generic.md` | `src/data/lab-content/9. paradoxul-specificitatii-continut-generic.ts` |
-| `LAB-07` | [Ce poți citi și ce poți schimba la un site fără acces la cod: ghid de audit din exterior](/lab/articole/audit-site-fara-acces-cod) | Technical Visibility | Ghid | publicat | 2026-08-13 | 2026-08-18 | 2026-08-18 | 2026-08-18 (44z) | `✓✓✓✓` | `src/content/lab/articles/7.audit-site-fara-acces-cod.md` | `src/data/lab-content/7. audit-site-fara-acces-cod.ts` |
+| `site-ul-nu-dispare-isi-schimba-clientul` | [Site-ul nu dispare. Își schimbă clientul: cum se pregătește web-ul pentru agenți AI](/lab/articole/site-ul-nu-dispare-isi-schimba-clientul) | AI Ecosystem | Analiză | draft | 2026-10-01 | — | 2026-10-01 | 2026-10-01 (1z) | `✗✗✗✗` | `src/content/lab/articles/17.site-ul-nu-dispare-isi-schimba-clientul.md` | — |
+| `de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility` | [De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business](/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility) | AI Ecosystem | Analiză | draft | 2026-10-01 | — | 2026-10-01 | 2026-10-01 (1z) | `✗✗✗✗` | `src/content/lab/articles/18.de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility.md` | — |
+| `social-media-devine-strat-informational-pentru-ai` | [Social media devine strat informațional pentru AI: când postările, comentariile și comunitățile intră în răspunsuri](/lab/articole/social-media-devine-strat-informational-pentru-ai) | AI Ecosystem | Analiză | draft | 2026-10-01 | — | 2026-10-02 | 2026-10-02 (0z) | `✗✗✗✗` | `src/content/lab/articles/19.social-media-devine-strat-informational-pentru-ai.md` | — |
+| `LAB-15` | [De la web visibility la machine accessibility: ce se schimbă când AI-ul nu doar citește internetul, ci acționează în el?](/lab/articole/de-la-web-visibility-la-machine-accessibility) | AI Ecosystem | Analiză | publicat | 2026-09-30 | 2026-09-30 | 2026-09-30 | 2026-09-30 (2z) | `✓✓✓✓` | `src/content/lab/articles/15.de-la-web-visibility-la-machine-accessibility.md` | `src/data/lab-content/15. de-la-web-visibility-la-machine-accessibility.ts` |
+| `public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit` | [Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit](/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit) | AI Ecosystem | Analiză | draft | 2026-09-30 | — | 2026-10-01 | 2026-10-01 (1z) | `✗✗✗✗` | `src/content/lab/articles/16.public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit.md` | — |
+| `LAB-14` | [AI ca oglindă și amplificator: ce arată raportul Anthropic despre intenție, context și folosirea Claude](/lab/articole/ai-oglinda-amplificator-intentie-context-anthropic) | AI Ecosystem | Analiză | publicat | 2026-09-14 | 2026-09-14 | 2026-09-30 | 2026-09-30 (2z) | `✓✓✓✓` | `src/content/lab/articles/14.ai-oglinda-amplificator-intentie-context-anthropic.md` | `src/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic.ts` |
+| `LAB-13` | [Eticheta „Abonat”: cum folosește Google relația cu publicul pentru a evidenția surse în AI Search](/lab/articole/eticheta-abonat-relatia-prezentare-ai-search) | Entities & Citations | Analiză | publicat | 2026-08-27 | 2026-08-27 | 2026-08-27 | 2026-08-27 (36z) | `✓✓✓✓` | `src/content/lab/articles/13.eticheta-abonat-relatia-prezentare-ai-search-revizuit.md` | `src/data/lab-content/13. eticheta-abonat-relatia-prezentare-ai-search.ts` |
+| `LAB-11` | [Harta de citare: cum afli empiric ce surse contează pentru vizibilitatea AI în România](/lab/articole/harta-de-citare-mentiuni-externe-romania) | Entities & Citations | Ghid / Analiză metodologică | publicat | 2026-08-13 | 2026-08-19 | 2026-08-19 | 2026-08-19 (44z) | `✓✓✓✓` | `src/content/lab/articles/11.harta-de-citare-mentiuni-externe-romania.md` | `src/data/lab-content/11. harta-de-citare-mentiuni-externe-romania.ts` |
+| `LAB-12` | [407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026](/lab/articole/decalaj-viteza-ai-adoptie-2026) | AI Ecosystem | Analiză | publicat | 2026-08-14 | 2026-08-19 | 2026-08-19 | 2026-08-19 (44z) | `✓✓✓✓` | `src/content/lab/articles/12.decalaj-viteza-ai-adoptie-2026.md` | `src/data/lab-content/12. decalaj-viteza-ai-adoptie-2026.ts` |
+| `LAB-08` | [Cuvânt-cheie vs frază în AI Search: query rewriting, tokenizare și ce putem spune corect despre limba română](/lab/articole/cuvant-cheie-vs-fraza-tokenizare) | Search & Retrieval | Analiză | publicat | 2026-08-13 | 2026-08-19 | 2026-08-19 | 2026-08-19 (44z) | `✓✓✓✓` | `src/content/lab/articles/8.cuvant-cheie-vs-fraza-tokenizare.md` | `src/data/lab-content/8. cuvant-cheie-vs-fraza-tokenizare.ts` |
+| `LAB-09` | [Paradoxul specificității: când contextul schimbă răspunsul și când doar fragmentează conținutul](/lab/articole/paradoxul-specificitatii-continut-generic) | Search & Retrieval | Analiză | publicat | 2026-08-13 | 2026-08-19 | 2026-08-19 | 2026-08-19 (44z) | `✓✓✓✓` | `src/content/lab/articles/9.paradoxul-specificitatii-continut-generic.md` | `src/data/lab-content/9. paradoxul-specificitatii-continut-generic.ts` |
+| `LAB-07` | [Ce poți citi și ce poți schimba la un site fără acces la cod: ghid de audit din exterior](/lab/articole/audit-site-fara-acces-cod) | Technical Visibility | Ghid | publicat | 2026-08-13 | 2026-08-18 | 2026-08-18 | 2026-08-18 (45z) | `✓✓✓✓` | `src/content/lab/articles/7.audit-site-fara-acces-cod.md` | `src/data/lab-content/7. audit-site-fara-acces-cod.ts` |
 | `LAB-01` | [Istoria căutării pe internet: cum fiecare eră a creat un punct orb pe care optimizarea a încercat să-l exploateze](/lab/articole/istoria-cautarii-internet-evolutia-seo) | Search & Retrieval | Analiză | publicat | 2026-08-13 | 2026-08-14 | 2026-08-14 | — | `✓✓✓✓` | `src/content/lab/articles/1.istoria-cautarii-internet-evolutia-seo.md` | `src/data/lab-content/1. istoria-cautarii-internet-evolutia-seo.ts` |
 | `LAB-02` | [Motoarele de căutare comparate în 2026: cifrele care se contrazic, deciziile care au schimbat clasamentul și oamenii din spatele lor](/lab/articole/motoare-cautare-comparatie-2026) | Search & Retrieval | Analiză | publicat | 2026-08-13 | 2026-08-14 | 2026-08-14 | — | `✓✓✓✓` | `src/content/lab/articles/2.motoare-cautare-comparatie-2026.md` | `src/data/lab-content/2. motoare-cautare-comparatie-2026.ts` |
 | `LAB-03` | [De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI](/lab/articole/social-media-vizibilitate-ai) | Entities & Citations | Analiză | publicat | 2026-08-13 | 2026-08-14 | 2026-09-04 | — | `✓✓✓✓` | `src/content/lab/articles/3.social-media-vizibilitate-ai.md` | `src/data/lab-content/3. social-media-vizibilitate-ai.ts` |
-| `LAB-10` | [Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul](/lab/articole/ce-este-entitate-ai-studiu-de-caz) | Entities & Citations | Analiză de caz | publicat | 2026-08-13 | 2026-08-05 | 2026-08-11 | 2026-08-19 (43z) | `✓✓✓✓` | `src/content/lab/articles/10.ce-este-entitate-ai-studiu-de-caz.md` | `src/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz.ts` |
+| `LAB-10` | [Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul](/lab/articole/ce-este-entitate-ai-studiu-de-caz) | Entities & Citations | Analiză de caz | publicat | 2026-08-13 | 2026-08-05 | 2026-08-11 | 2026-08-19 (44z) | `✓✓✓✓` | `src/content/lab/articles/10.ce-este-entitate-ai-studiu-de-caz.md` | `src/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz.ts` |
 | `LAB-04` | [Cât durează până apari în Google și cât până te citează AI-ul? Ce știm, ce nu știm și ce poți măsura](/lab/articole/cat-dureaza-indexare-citare-ai) | Search & Retrieval | Analiză | publicat | 2026-08-13 | 2026-08-05 | 2026-08-10 | — | `✓✓✓✓` | `src/content/lab/articles/4.cat-dureaza-indexare-citare-ai.md` | `src/data/lab-content/4. cat-dureaza-indexare-citare-ai.ts` |
 | `LAB-05` | [Paradoxul site-ului terminat: același URL poate arăta diferit pentru om, crawler și instrumentul de audit](/lab/articole/paradoxul-site-ului-terminat) | Technical Visibility | Analiză de caz | publicat | 2026-08-13 | 2026-08-05 | 2026-08-10 | — | `✓✓✓✓` | `src/content/lab/articles/5.paradoxul-site-ului-terminat.md` | `src/data/lab-content/5. paradoxul-site-ului-terminat.ts` |
-| `LAB-06` | [Metadata și citarea AI: ce poate demonstra o citare identică și unde începe inferența](/lab/articole/metadata-citare-ai-studiu-de-caz) | Technical Visibility | Analiză de caz | publicat | 2026-08-13 | 2026-08-05 | 2026-08-10 | 2026-08-17 (45z) | `✓✓✓✓` | `src/content/lab/articles/6.metadata-citare-ai-studiu-de-caz.md` | `src/data/lab-content/6. metadata-citare-ai-studiu-de-caz.ts` |
+| `LAB-06` | [Metadata și citarea AI: ce poate demonstra o citare identică și unde începe inferența](/lab/articole/metadata-citare-ai-studiu-de-caz) | Technical Visibility | Analiză de caz | publicat | 2026-08-13 | 2026-08-05 | 2026-08-10 | 2026-08-17 (46z) | `✓✓✓✓` | `src/content/lab/articles/6.metadata-citare-ai-studiu-de-caz.md` | `src/data/lab-content/6. metadata-citare-ai-studiu-de-caz.ts` |
 
 ## `lab/studii-de-caz` — 1 intrare
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `CS-001` | [Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search](/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz) | Entities & Citations | Analiză de caz | publicat | 2026-09-04 | 2026-09-04 | 2026-09-18 | 2026-09-18 (13z) | `✓✓✓✓` | `src/content/studii de caz/01. Alex Matescu/tabula-rasa-entity-resolution-studiu-de-caz.md` | `src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts` |
+| `CS-001` | [Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search](/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz) | Entities & Citations | Analiză de caz | publicat | 2026-09-04 | 2026-09-04 | 2026-09-18 | 2026-09-18 (14z) | `✓✓✓✓` | `src/content/studii de caz/01. Alex Matescu/tabula-rasa-entity-resolution-studiu-de-caz.md` | `src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts` |
 
-## `lab/metodologie` — 4 intrări
+## `lab/metodologie` — 5 intrări
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `AVL-203` | Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.1.0 | Draft pentru revizuire | 2026-10-01 | — | 2026-10-01 | 2026-10-01 | `·✗✗✗` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `—` |
 | `AVL-200` | AVL-200 — Standardul de dovezi, măsurare și trasabilitate | C — Methodology | 1.0.0 | Activ | 2026-09-13 | 2026-09-14 | 2026-09-14 | 2026-09-14 | `·✓✓✓` | `src/content/lab/AVL/AVL-200_Standard_dovezi_masurare_trasabilitate.md` | `src/data/lab-content/avl-200.ts` |
-| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.1.0 | Activ | 2026-09-14 | 2026-09-14 | 2026-09-30 | 2026-09-30 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
+| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.2.0 | Activ | 2026-09-14 | 2026-09-14 | 2026-10-02 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
 | `AVL-201` | AVL-201 — Tabula Rasa F0: Baseline Measurement Specification | C — Methodology | 1.1.1 | Activ | 2026-07-22 | 2026-07 | 2026-09-14 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification_v1.0.1.md` | `src/data/lab-content/avl-201.ts` |
+| `AVL-MKT-001` | AVL-MKT-001 — Market Scope & Eligibility Protocol | C — Methodology | 0.9.0 | Draft pentru revizuire | — | — | 2026-10-02 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md` | `src/data/lab-content/avl-mkt-001.ts` |
 
 ## `lab/foundation` — 1 intrare
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `AVL-001` | AVL-001 — AI Visibility Lab Foundation | A — Foundation | 1.2.0 | Activ | 2026-07-22 | 2026-07 | 2026-09-30 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-001_AI_Visibility_Lab_Foundation_v1.0.1.md` | `src/data/lab-content/avl-001.ts` |
+| `AVL-001` | AVL-001 — AI Visibility Lab Foundation | A — Foundation | 1.2.1 | Activ | 2026-07-22 | 2026-07 | 2026-10-02 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-001_AI_Visibility_Lab_Foundation_v1.0.1.md` | `src/data/lab-content/avl-001.ts` |
 
 ## `lab/cercetare` — 5 intrări
 
@@ -245,37 +246,9 @@ Generat: 2026-10-01 · 167 intrări · **26 anomalii** în 13 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `AVL_articol_protocol_tehnic_pentru_claude_code` | [AVL_articol_protocol_tehnic_pentru_claude_code](#) | — | — | nepublicat | — | — | — | — | `✗✗✗✗` | `src/content/lab/articles/AVL_articol_protocol_tehnic_pentru_claude_code.md` | — |
+| `AVL_articol_protocol_tehnic_pentru_claude_code` | [AVL_articol_protocol_tehnic_pentru_claude_code](#) | — | — | nepublicat | 2026-10-01 | — | — | — | `✗✗✗✗` | `src/content/lab/articles/AVL_articol_protocol_tehnic_pentru_claude_code.md` | — |
 
 ## Anomalii
-
-### `site-ul-nu-dispare-isi-schimba-clientul` — Site-ul nu dispare. Își schimbă clientul: cum se pregătește web-ul pentru agenți AI
-
-`lab/articole` · /lab/articole/site-ul-nu-dispare-isi-schimba-clientul
-
-- `category` în afara taxonomiei: «AI Visibility»
-- `articleType` în afara taxonomiei: «Analiză metodologică»
-
-### `de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility` — De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business
-
-`lab/articole` · /lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility
-
-- `category` în afara taxonomiei: «AI Visibility»
-- `articleType` în afara taxonomiei: «Analiză metodologică»
-
-### `social-media-devine-strat-informational-pentru-ai` — Social media devine strat informațional pentru AI: când postările, comentariile și comunitățile intră în răspunsuri
-
-`lab/articole` · /lab/articole/social-media-devine-strat-informational-pentru-ai
-
-- `category` în afara taxonomiei: «AI Visibility»
-- `articleType` în afara taxonomiei: «Analiză metodologică»
-
-### `public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit` — Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit
-
-`lab/articole` · /lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit
-
-- `category` în afara taxonomiei: «AI Visibility»
-- `articleType` în afara taxonomiei: «Analiză metodologică»
 
 ### `LAB-14` — AI ca oglindă și amplificator: ce arată raportul Anthropic despre intenție, context și folosirea Claude
 
@@ -309,7 +282,6 @@ Generat: 2026-10-01 · 167 intrări · **26 anomalii** în 13 intrări
 
 `lab/articole` · /lab/articole/social-media-vizibilitate-ai
 
-- `date_modified` diferă între `.md` și `.ts`
 - `lastmod` din sitemap (2026-08-14) ≠ ultima modificare (2026-09-04)
 
 ### `LAB-10` — Ce este o entitate pentru AI și motoarele de căutare. Studiu de caz: de ce internetul mă asociază cu porumbul
@@ -333,6 +305,12 @@ Generat: 2026-10-01 · 167 intrări · **26 anomalii** în 13 intrări
 - `article_type` diferă: .md «Studiu de caz» ≠ .ts «Analiză de caz»
 - `date_published` diferă între `.md` și `.ts`
 - `date_modified` diferă între `.md` și `.ts`
+
+### `AVL-MKT-001` — AVL-MKT-001 — Market Scope & Eligibility Protocol
+
+`lab/metodologie` · /lab/metodologie/protocol-delimitare-piata-eligibilitate
+
+- publicat fără dată de publicare
 
 ### `cifrul-succesului-definitie-personala` — Cifrul succesului: de ce succesul este diferit pentru fiecare om
 

@@ -8,12 +8,12 @@ documentației
 | **Document ID** | AVL-001 |
 |----|----|
 | **Nivel** | A — Foundation |
-| **Versiune** | 1.2.0 |
+| **Versiune** | 1.2.1 |
 | **Statut** | Activ |
 | **Autor** | Alex Matescu |
 | **Organizație** | AI Visibility Lab |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 30 septembrie 2026 |
+| **Ultima actualizare** | 2 octombrie 2026 |
 | **Limba** | română |
 | **URL canonic propus** | https://delamatescu.ro/lab |
 
@@ -741,8 +741,9 @@ suficiente dovezi pentru confirmare.
 
 - AVL-201 — Tabula Rasa F0
 
-- familia Market Measurement (`AVL-MKT-*`): AVL-MKT-001 — Market Scope &
-  Eligibility Protocol (planificat) și AVL-MKT-002 — Market Query Panel
+- familia Market Measurement (`AVL-MKT-*`): [AVL-MKT-001 — Market Scope &
+  Eligibility Protocol](/lab/metodologie/protocol-delimitare-piata-eligibilitate)
+  (Draft pentru revizuire, v0.9.0) și AVL-MKT-002 — Market Query Panel
   (planificat)
 
 - documentele ulterioare ale metodologiei F1–F3
@@ -800,19 +801,19 @@ nici ordinea de execuție. AVL-MKT-001 nu are nicio relație cu AVL-001
 prin număr.
 
 Documentele `AVL-MKT-*` sunt exclusiv documente normative și
-metodologice. Documentele planificate ale familiei sunt:
+metodologice. Documentele familiei sunt:
 
-- AVL-MKT-001 — Market Scope & Eligibility Protocol (planificat,
-  nepublicat);
+- [AVL-MKT-001 — Market Scope & Eligibility
+  Protocol](/lab/metodologie/protocol-delimitare-piata-eligibilitate)
+  (publicat ca Draft pentru revizuire, v0.9.0);
 
 - AVL-MKT-002 — Market Query Panel (planificat, nepublicat).
 
 ### Protocol normativ și instanță
 
-Familia separă regula de rezultatul aplicării ei. AVL-MKT-001 va defini
-obiectul pieței, criteriile de eligibilitate, criteriile de includere și
-excludere, dovezile acceptate, regulile geografice și temporale, data de
-cutoff, clasificările și tratamentul cazurilor ambigue. **Market
+Familia separă regula de rezultatul aplicării ei. AVL-MKT-001 definește
+regula de delimitare a pieței și de eligibilitate; criteriile operaționale
+se află numai în acel document. **Market
 Reference Set** este rezultatul aplicării acestui protocol asupra unei
 piețe concrete, la un moment determinat. Market Reference Set nu este
 document normativ și nu primește identificator `AVL-MKT-*`.
@@ -856,7 +857,7 @@ serviciilor GEO, AEO și AI Visibility, deoarece acoperă întregul
 domeniu, nu doar una dintre practicile lui. Un token precum `GEO` ar
 exclude implicit AEO și, plasat după codul de țară, ar putea fi citit
 ca referință geografică. Exemplele de mai sus sunt ilustrative; nicio
-instanță `MKT-*` nu a fost creată la data versiunii 1.2.0.
+instanță `MKT-*` nu a fost creată la data versiunii 1.2.1.
 
 ## Nivelul D — Experiments
 
@@ -928,7 +929,7 @@ O observație sau ipoteză nu trebuie citată ca informație confirmată
 oficial.
 
 Citarea recomandată: Matescu, Alex. „AI Visibility Lab Foundation”. AI
-Visibility Lab Documentation, AVL-001, versiunea 1.2.0, 2026.
+Visibility Lab Documentation, AVL-001, versiunea 1.2.1, 2026.
 
 # 19. Versiuni, revizuiri și corecții
 
@@ -1102,7 +1103,14 @@ Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K.
 
 - AVL-202 — Cadrul metodologic AI Visibility Lab
 
+- AVL-MKT-001 — Market Scope & Eligibility Protocol (Draft pentru
+  revizuire, v0.9.0)
+
 # 25. Istoricul versiunilor
+
+## Versiunea 1.2.1 — 2 octombrie 2026
+
+PATCH: AVL-MKT-001 — Market Scope & Eligibility Protocol este publicat ca draft pentru revizuire (v0.9.0) și nu mai este doar planificat. Lista Nivelului C, secțiunea familiei Market Measurement (§17) și „Documente asociate” (§24) reflectă noul statut; AVL-MKT-002 — Market Query Panel rămâne planificat. Descrierea conținutului operațional al AVL-MKT-001 este înlocuită cu o trimitere: criteriile de eligibilitate se află numai în AVL-MKT-001. Nicio schimbare de principiu; niciun identificator existent nu a fost modificat.
 
 ## Versiunea 1.2.0 — 30 septembrie 2026
 
