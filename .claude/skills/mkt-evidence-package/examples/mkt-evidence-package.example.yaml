@@ -1,0 +1,49 @@
+# Config pentru pilotul Discovery MKT-RO-AIV-2026Q4-PILOT.
+# Valorile marcate TODO sunt de completat de operator înainte de rulare.
+#
+#   /mkt-evidence-package evidence/incoming/mkt/mkt-ro-aiv-2026q4-pilot.mkt-package.yaml
+#
+# Schema completă: ../references/config-schema.md
+
+series_id: MKT-RO-AIV
+instance_id: MKT-RO-AIV-2026Q4-PILOT
+instance_slug: mkt-ro-aiv-2026q4-pilot
+instance_type: PILOT
+quarter: 2026Q4
+
+capture_folder:
+  path: evidence/incoming/MKT-Evidence
+
+# surface_map: nu e necesar — agentul detectează subfolderele (naming-convention.md §2.1)
+
+archive:
+  version: "1.0"
+metadata_version: "1.0"
+
+query_set:
+  source_path: docs/drafts/MKT-RO-AIV-discovery-query-set-v0.1.0.md
+  source_sha256: 898e1a26ab2e66940164487152b63f0126188810dfc6ab08c2968bde60f817b7
+  query_set_id: MKT-RO-AIV-DISCOVERY-v0.1.0
+
+queries_executed:
+  - Q-DISC-001
+  - Q-DISC-006
+  - Q-DISC-009
+  - Q-DISC-011
+
+run_sheet:
+  path: TODO            # run-sheet.yaml completat (references/run-sheet-template.md)
+
+search:
+  declared_depth: 20    # din DISCOVERY v0.1.0 §6; capturat: 3 pagini (abaterea DEV-03)
+  depth_band_size: 10
+
+# filename_timestamp.pattern: nu e necesar — agentul detectează tiparul (naming-convention.md §6.1)
+
+timezone: Europe/Bucharest
+
+release:
+  github:
+    enabled: false      # decizie încă deschisă
+
+notes: ""
