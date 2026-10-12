@@ -1,5 +1,8 @@
 import data from "./blogger-posts.json";
 import { oLumePreaMarePentruUnSingurOmPost } from "@/data/blog-content/o-lume-prea-mare-pentru-un-singur-om";
+import { capcanaPerfectiuniiPost } from "@/data/blog-content/capcana-perfectiunii";
+import { cumConstruimInRomaniaPost } from "@/data/blog-content/cum-construim-in-romania-ceea-ce-admiram-in-strainatate";
+import { douaBlocuriDePiatraPost } from "@/data/blog-content/doua-blocuri-de-piatra";
 
 /**
  * Structura articolelor de blog — câmpurile de mai jos sunt grupate și ordonate
@@ -115,7 +118,12 @@ const legacyPosts: Post[] = data.posts as Post[];
  * Ordinea cronologică se rezolvă automat mai jos (sortare după `date`) —
  * nu contează unde îl pui în listă.
  */
-const newPosts: Post[] = [oLumePreaMarePentruUnSingurOmPost];
+const newPosts: Post[] = [
+  oLumePreaMarePentruUnSingurOmPost,
+  capcanaPerfectiuniiPost,
+  cumConstruimInRomaniaPost,
+  douaBlocuriDePiatraPost,
+];
 
 export const posts: Post[] = [...newPosts, ...legacyPosts].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),

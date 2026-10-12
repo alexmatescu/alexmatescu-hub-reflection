@@ -1,7 +1,7 @@
 {
-  "generat": "2026-10-02",
+  "generat": "2026-10-12",
   "pragReverificareZile": 180,
-  "totalIntrari": 169,
+  "totalIntrari": 173,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
@@ -32,7 +32,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -62,7 +62,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -92,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -122,7 +122,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -152,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 2,
+      "zileDeLaVerificare": 12,
       "anomalii": []
     },
     {
@@ -182,7 +182,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 2,
+      "zileDeLaVerificare": 12,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -214,7 +214,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 36,
+      "zileDeLaVerificare": 46,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -246,7 +246,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 44,
+      "zileDeLaVerificare": 54,
       "anomalii": []
     },
     {
@@ -276,7 +276,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 44,
+      "zileDeLaVerificare": 54,
       "anomalii": []
     },
     {
@@ -306,7 +306,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 44,
+      "zileDeLaVerificare": 54,
       "anomalii": []
     },
     {
@@ -336,7 +336,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 44,
+      "zileDeLaVerificare": 54,
       "anomalii": []
     },
     {
@@ -366,7 +366,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 44,
+      "zileDeLaVerificare": 54,
       "anomalii": []
     },
     {
@@ -396,7 +396,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 46,
+      "zileDeLaVerificare": 56,
       "anomalii": []
     },
     {
@@ -426,7 +426,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 45,
+      "zileDeLaVerificare": 55,
       "anomalii": []
     },
     {
@@ -576,7 +576,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -606,7 +606,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 0,
-      "zileDeLaVerificare": 14,
+      "zileDeLaVerificare": 24,
       "anomalii": []
     },
     {
@@ -635,7 +635,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -649,10 +649,10 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Draft pentru revizuire",
-      "versiune": "0.9.0",
+      "versiune": "0.9.1",
       "dataCreare": "2026-10-02",
       "dataPublicare": "2026-10-02",
-      "dataModificare": "2026-10-02",
+      "dataModificare": "2026-10-12",
       "ultimaVerificare": "2026-10-02",
       "fisierMd": "src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md",
       "fisierTs": "src/data/lab-content/avl-mkt-001.ts",
@@ -664,7 +664,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -693,7 +693,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 18,
+      "zileDeLaVerificare": 28,
       "anomalii": []
     },
     {
@@ -722,7 +722,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -1045,6 +1045,90 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
+      "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
+      "id": "capcana-perfectiunii",
+      "titlu": "Capcana perfecțiunii: de ce nu e suficient să fii bun",
+      "suprafata": "blog",
+      "ruta": "/blog/capcana-perfectiunii",
+      "slug": "capcana-perfectiunii",
+      "categorie": "Reflecții",
+      "tip": "Eseu",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-12",
+      "dataModificare": "2026-10-12",
+      "ultimaVerificare": null,
+      "fisierMd": "src/content/blog/capcana-perfectiunii.md",
+      "fisierTs": "src/data/blog-content/capcana-perfectiunii.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": null,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-12",
+      "imagine": "/images/blog/capcana-perfectiunii.webp",
+      "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
+      "id": "cum-construim-in-romania-ceea-ce-admiram-in-strainatate",
+      "titlu": "Cum construim în România ceea ce admirăm în străinătate?",
+      "suprafata": "blog",
+      "ruta": "/blog/cum-construim-in-romania-ceea-ce-admiram-in-strainatate",
+      "slug": "cum-construim-in-romania-ceea-ce-admiram-in-strainatate",
+      "categorie": "Reflecții",
+      "tip": "Eseu",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-12",
+      "dataModificare": "2026-10-12",
+      "ultimaVerificare": null,
+      "fisierMd": "src/content/blog/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.md",
+      "fisierTs": "src/data/blog-content/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": null,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-12",
+      "imagine": "/images/blog/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.webp",
+      "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
+      "id": "doua-blocuri-de-piatra",
+      "titlu": "Două blocuri de piatră",
+      "suprafata": "blog",
+      "ruta": "/blog/doua-blocuri-de-piatra",
+      "slug": "doua-blocuri-de-piatra",
+      "categorie": "Leadership",
+      "tip": "Eseu",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-12",
+      "dataModificare": "2026-10-12",
+      "ultimaVerificare": null,
+      "fisierMd": "src/content/blog/doua-blocuri-de-piatra.md",
+      "fisierTs": "src/data/blog-content/doua-blocuri-de-piatra.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": null,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-12",
+      "imagine": "/images/blog/doua-blocuri-de-piatra.webp",
       "zileDeLaVerificare": null,
       "anomalii": []
     },
@@ -4788,6 +4872,34 @@
       "dataModificare": null,
       "ultimaVerificare": null,
       "fisierMd": "src/content/lab/articles/AVL_articol_protocol_tehnic_pentru_claude_code.md",
+      "fisierTs": null,
+      "wiring": {
+        "registru": false,
+        "pagina": false,
+        "nav": false,
+        "sitemap": false
+      },
+      "sitemapLastmod": null,
+      "imagine": null,
+      "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
+      "id": "draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta",
+      "titlu": "draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta",
+      "suprafata": "nealocat",
+      "ruta": null,
+      "slug": "draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta",
+      "categorie": null,
+      "tip": null,
+      "status": "nepublicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": null,
+      "dataModificare": null,
+      "ultimaVerificare": null,
+      "fisierMd": "src/content/blog/draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta.md",
       "fisierTs": null,
       "wiring": {
         "registru": false,
