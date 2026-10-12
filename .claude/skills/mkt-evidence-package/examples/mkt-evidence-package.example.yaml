@@ -12,7 +12,7 @@ instance_type: PILOT
 quarter: 2026Q4
 
 capture_folder:
-  path: evidence/incoming/MKT-Evidence
+  path: evidence/incoming/MKT-Evidence/mkt-ro-aiv-2026q4-pilot   # un subfolder per rulare, numit după instance_slug
 
 # surface_map: nu e necesar — agentul detectează subfolderele (naming-convention.md §2.1)
 

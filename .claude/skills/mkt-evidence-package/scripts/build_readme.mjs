@@ -19,7 +19,7 @@ const FIXED = {
   scope:
     "Acest pachet conservă capturile și observațiile brute ale unei rulări Discovery. Documentează ce au afișat suprafețele la momentul capturii. Nu constituie Candidate Set, Market Reference Set sau o evaluare a furnizorilor.",
   asReturned:
-    "Au fost înregistrate exclusiv rezultatele afișate direct de suprafață ca răspuns la interogare: rezultate SERP (poziție, titlu, URL afișat, fragment) și textul răspunsurilor AI cu sursele afișate. Paginile rezultatelor și sursele citate nu au fost deschise. Entitățile din interiorul directoarelor sau articolelor nu au fost extrase, cu excepția numelor vizibile în fragmentul SERP.",
+    "Au fost înregistrate exclusiv rezultatele afișate direct de suprafață ca răspuns la interogare: rezultate SERP (poziție, titlu, URL afișat, fragment), textul răspunsurilor AI cu sursele afișate și, separat de rezultatele organice, blocurile generate de motoarele de căutare (AI Overview, răspunsul generat de Bing), atunci când au fost capturate. Paginile rezultatelor și sursele citate nu au fost deschise. Entitățile din interiorul directoarelor sau articolelor nu au fost extrase, cu excepția numelor vizibile în fragmentul SERP.",
   session:
     "Contextul de sesiune a fost stabilit din indicatorii vizibili în capturi. NOT_VISIBLE înseamnă că indicatorul nu apare pe ecran, nu că starea respectivă lipsea. Fereastra privată și conversația nouă nu garantează absența personalizării sau a localizării.",
   relevance:
@@ -115,10 +115,20 @@ async function main() {
     "",
   );
   if (sheet) {
-    const ws = Object.entries(sheet.work_sessions ?? {}).map(([id, w]) => `${id}: data ${w.date || "UNKNOWN"}, locație fizică ${w.physical_location || "UNKNOWN"}, dispozitiv ${w.device || "UNKNOWN"}, browser ${w.browser || "UNKNOWN"}`);
+    const ws = Object.entries(sheet.work_sessions ?? {}).map(
+      ([id, w]) =>
+        `${id}: data ${w.date || "UNKNOWN"}, locație fizică ${w.physical_location || "UNKNOWN"}, ` +
+        `rețea ${w.network || "UNKNOWN"}, locație raportată de browser ${w.browser_reported_location || "UNKNOWN"}, ` +
+        `dispozitiv ${w.device || "UNKNOWN"}, browser ${w.browser || "UNKNOWN"}`,
+    );
     L.push(`Declarat de operator (${sheet.operator ?? "UNKNOWN"}) în fișa rulării: ${ws.join("; ")}.`, "");
-    const notes = Object.entries(sheet.surfaces ?? {}).filter(([, d]) => d?.notes).map(([s, d]) => [s, d.notes]);
-    if (notes.length) L.push(table(["Suprafață", "Notă declarată"], notes), "");
+    // Toate câmpurile declarate pe suprafață, verbatim (cookies, fereastră nouă per query, pagini etc.).
+    const declared = Object.entries(sheet.surfaces ?? {})
+      .map(([s, d]) => [s, Object.entries(d ?? {}).filter(([k, v]) => k !== "work_session" && String(v ?? "").trim() !== "").map(([k, v]) => `${k}: ${v}`).join("; ")])
+      .filter(([, txt]) => txt);
+    if (declared.length) L.push(table(["Suprafață", "Declarat în fișa rulării"], declared), "");
+    const undeclared = Object.keys(session.by_surface).filter((s) => !declared.some(([d]) => d === s));
+    if (undeclared.length) L.push(`Suprafețe fără declarații în fișa rulării: ${undeclared.join(", ")}.`, "");
   }
   const priv = cap.filter((c) => c.privacy_flag !== "NONE_OBSERVED").length;
   if (priv) L.push(`Capturi cu date de cont vizibile (${priv}): marcate \`${[...new Set(cap.filter((c) => c.privacy_flag !== "NONE_OBSERVED").map((c) => c.privacy_flag))].join(", ")}\`. Datele de cont nu au fost transcrise.`, "");
@@ -140,6 +150,7 @@ async function main() {
     ["Evidence ID", `${manifest.files[0].evidence_id} … ${manifest.files[manifest.files.length - 1].evidence_id}`],
     ["Tipar nume fișiere", `${manifest.filename_timestamp.pattern_id ?? "per fișier"} (${manifest.filename_timestamp.matched}/${manifest.filename_timestamp.total}); sursa: OS_FILENAME`],
     ["Fișiere de sistem excluse", manifest.excluded_system_files.map((f) => f.path).join(", ") || "—"],
+    ["Documente ale operatorului (în arhivă, fără Evidence ID)", (manifest.operator_documents ?? []).map((d) => `${d.document_id} ${d.relative_path_nfc} (SHA-256 \`${d.sha256}\`)`).join("; ") || "—"],
     ...Object.entries(manifest.verification).map(([k, v]) => [`Verificare: ${k}`, v]),
   ]), "");
 
@@ -152,13 +163,29 @@ async function main() {
 
   L.push("## 8. Observation Register", "");
   L.push(countTable("Proveniență", count(reg, "provenance")), "");
+  L.push(countTable("Bloc SERP (doar Search)", count(reg.filter((r) => r.serp_block !== "NOT_APPLICABLE"), "serp_block")), "");
   const sp = {};
   for (const r of reg) sp[`${r.surface} · ${r.provenance}`] = (sp[`${r.surface} · ${r.provenance}`] ?? 0) + 1;
   L.push(countTable("Suprafață · proveniență", sp), "");
   L.push(countTable("Bandă de adâncime (doar Search)", count(reg.filter((r) => r.depth_band !== "NOT_APPLICABLE"), "depth_band")), "");
   L.push(countTable("Relevanță față de query", count(reg, "query_relevance")), "");
   L.push(countTable("Includere în reuniunea de candidați", count(reg, "candidate_union_inclusion")), "");
-  L.push(`Observații fără URL vizibil: ${reg.filter((r) => r.url_displayed === "NOT_VISIBLE").length}. Execuții fără nicio observație: ${noObs.length ? noObs.join(", ") : "niciuna"}.`, "");
+  L.push(`Observații fără URL vizibil: ${reg.filter((r) => r.url_displayed === "NOT_VISIBLE").length}.`, "");
+  // Rezultatul pe execuție: lipsa rândurilor e un rezultat al răspunsului, nu o execuție lipsă.
+  const outcome = (e) => {
+    const st = execs.get(e).execution_status;
+    const rows = reg.filter((r) => r.execution_id === e);
+    if (st !== "COMPLETED") return st;
+    if (!rows.length) return "COMPLETED_NO_NAMED_ENTITIES";
+    return rows.some((r) => r.candidate_union_inclusion === "INCLUDE") ? "COMPLETED_WITH_CANDIDATES" : "COMPLETED_NO_UNION_CANDIDATES";
+  };
+  const outcomes = [...execs.keys()].map((e) => [e, outcome(e)]);
+  L.push(countTable("Rezultatul execuției", outcomes.reduce((m, [, o]) => ((m[o] = (m[o] ?? 0) + 1), m), {})), "");
+  const special = outcomes.filter(([, o]) => o !== "COMPLETED_WITH_CANDIDATES");
+  if (special.length) {
+    L.push("COMPLETED_NO_NAMED_ENTITIES = răspuns complet care nu numește nicio entitate. COMPLETED_NO_UNION_CANDIDATES = răspuns cu observații, dar fără candidați (ex. doar publicații sau rezultate irelevante). Niciuna nu e o execuție lipsă și niciuna nu dovedește absența furnizorilor.", "");
+    L.push(table(["Execuție", "Rezultat"], special), "");
+  } else L.push(`Execuții fără nicio observație: ${noObs.length ? noObs.join(", ") : "niciuna"}.`, "");
 
   L.push("## 9. Relevanța față de query", "", FIXED.relevance, "");
   const partial = execRows.filter((e) => e.response_relevance !== "RELEVANT");

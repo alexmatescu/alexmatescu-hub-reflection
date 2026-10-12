@@ -12,7 +12,7 @@ de mai jos sunt cele ale pilotului, ca exemplu.
 | `instance_slug` | string | kebab-case, ex. `mkt-ro-aiv-2026q4-pilot`. Folosit în căi și nume de fișiere. |
 | `instance_type` | enum | `PILOT`, `T0`, `F<n>` (ex. `F1`). Pilotul nu e niciodată `T0`. |
 | `quarter` | string | `^\d{4}Q[1-4]$`, ex. `2026Q4`. |
-| `capture_folder.path` | string | Folderul nearhivat cu capturile. Nu se scrie niciodată în el. Subfolderele și numele fișierelor le determină agentul (`naming-convention.md` §2, §6). |
+| `capture_folder.path` | string | Folderul nearhivat cu capturile. Nu se scrie niciodată în el. Subfolderele și numele fișierelor le determină agentul (`naming-convention.md` §2, §6). Documentele operatorului din rădăcină se sigilează separat (§3.1). Folderul unei instanțe nu trebuie să conțină folderul altei instanțe: fiecare rulare are folderul ei, `evidence/incoming/MKT-Evidence/<instance_slug>/`. |
 | `archive.version` | string | ex. `"1.0"`. |
 | `metadata_version` | string | ex. `"1.0"`. Independent de `archive.version`. |
 | `query_set.source_path` | string | Fișierul `.md` sursă al setului. |

@@ -12,30 +12,12 @@
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import { parseCsv, toCsv, writeText, writeJson, appendLog, assertNotFrozen } from "./lib/common.mjs";
-import { loadConfig, instancePaths, artifactName } from "./lib/mkt.mjs";
+import { loadConfig, instancePaths, artifactName, SURFACES } from "./lib/mkt.mjs";
+import { OBSERVATION_STAGING_HEADER } from "./lib/schema.mjs";
 
 const SCRIPT = "build_register.mjs";
 
-export const STAGING_HEADER = [
-  "execution_id",
-  "evidence_ids",
-  "provenance",
-  "serp_block",
-  "organic_position",
-  "observed_order",
-  "parent_observation_order",
-  "observed_name",
-  "title_displayed",
-  "url_displayed",
-  "url_truncated",
-  "snippet_or_description_observed",
-  "entity_kind_observed",
-  "named_as_recommendation",
-  "query_relevance",
-  "relevance_basis",
-  "review_status",
-  "notes",
-];
+export const STAGING_HEADER = OBSERVATION_STAGING_HEADER;
 
 export const REGISTER_HEADER = [
   "observation_id",
@@ -70,18 +52,29 @@ export const REGISTER_HEADER = [
 ];
 
 const ENUMS = {
-  provenance: ["SERP_RESULT", "SERP_SNIPPET", "AI_RESPONSE", "AI_CITATION"],
-  serp_block: ["ORGANIC", "ADS", "LOCAL", "OTHER", "NOT_APPLICABLE"],
+  provenance: ["SERP_RESULT", "SERP_SNIPPET", "AI_RESPONSE", "AI_CITATION", "AI_IMAGE_TEXT"],
+  serp_block: ["ORGANIC", "ADS", "LOCAL", "PAA", "AI_OVERVIEW", "GENERATED_ANSWER", "OTHER", "NOT_APPLICABLE"],
   url_truncated: ["YES", "NO", "UNKNOWN", "NOT_APPLICABLE"],
   entity_kind_observed: [
     "PROVIDER_PAGE", "PROVIDER_NAMED", "ARTICLE_GUIDE", "DIRECTORY_LIST", "SOFTWARE_TOOL",
-    "PUBLISHER", "PERSON_PROFILE", "FORUM_SOCIAL", "OTHER", "UNCERTAIN",
+    "PUBLISHER", "PERSON_PROFILE", "PERSON_ASSOCIATED", "FORUM_SOCIAL", "OTHER", "UNCERTAIN",
   ],
   named_as_recommendation: ["YES", "NO", "UNCERTAIN", "NOT_APPLICABLE"],
   query_relevance: ["RELEVANT", "IRRELEVANT", "UNCERTAIN"],
   review_status: ["REVIEWED", "REVIEW_REQUIRED"],
 };
 const OPTIONAL = new Set(["relevance_basis", "notes"]);
+// Blocurile SERP generate de AI: rândurile lor au proveniență AI_*, pe o suprafață SEARCH.
+const SERP_AI_BLOCKS = ["AI_OVERVIEW", "GENERATED_ANSWER"];
+const AI_PROVENANCE = ["AI_RESPONSE", "AI_CITATION", "AI_IMAGE_TEXT"];
+
+/** Rezultatul execuției, separat de prezența rândurilor (observation-register-schema.md §Execuții). */
+function executionOutcome(status, rows) {
+  if (status !== "COMPLETED") return status || "UNKNOWN";
+  if (rows.length === 0) return "COMPLETED_NO_NAMED_ENTITIES";
+  if (!rows.some((r) => r.candidate_union_inclusion === "INCLUDE")) return "COMPLETED_NO_UNION_CANDIDATES";
+  return "COMPLETED_WITH_CANDIDATES";
+}
 
 function inclusion(r) {
   if (r.query_relevance === "IRRELEVANT") return "EXCLUDE_IRRELEVANT";
@@ -108,8 +101,9 @@ async function main() {
   const execs = new Map();
   for (const c of capIndex) {
     if (c.execution_id === "NOT_APPLICABLE") continue;
-    if (!execs.has(c.execution_id)) execs.set(c.execution_id, { surface: c.mapped_surface, query_id: c.query_id, contamination: c.execution_contamination_status, evidence: new Set() });
+    if (!execs.has(c.execution_id)) execs.set(c.execution_id, { surface: c.mapped_surface, query_id: c.query_id, contamination: c.execution_contamination_status, status: c.execution_status, aiOverview: new Set(), evidence: new Set() });
     execs.get(c.execution_id).evidence.add(c.evidence_id);
+    execs.get(c.execution_id).aiOverview.add(c.ai_overview_status);
   }
 
   const depth = Number(config.search?.declared_depth ?? NaN);
@@ -155,7 +149,25 @@ async function main() {
       for (const [h, allowed] of Object.entries(ENUMS)) {
         if (r[h] !== "UNCLASSIFIED" && !allowed.includes(r[h])) add(id, h, "INVALID_ENUM", r[h]);
       }
-      r.result_layer = ["ADS", "LOCAL"].includes(r.serp_block) ? "SUPPLEMENTAL" : "PRIMARY";
+      // Doar rezultatele organice și răspunsurile suprafețelor AI sunt PRIMARY; orice modul SERP e SUPPLEMENTAL.
+      r.result_layer = ["ORGANIC", "NOT_APPLICABLE"].includes(r.serp_block) ? "PRIMARY" : "SUPPLEMENTAL";
+      const stype = SURFACES[r.surface];
+      if (stype === "AI") {
+        if (r.serp_block !== "NOT_APPLICABLE") add(id, "serp_block", "PROVENANCE_SURFACE_MISMATCH", `${r.serp_block} pe suprafața AI ${r.surface}`);
+        if (!AI_PROVENANCE.includes(r.provenance)) add(id, "provenance", "PROVENANCE_SURFACE_MISMATCH", `${r.provenance} pe suprafața AI ${r.surface}`);
+      } else if (stype === "SEARCH") {
+        if (AI_PROVENANCE.includes(r.provenance) && !SERP_AI_BLOCKS.includes(r.serp_block)) {
+          add(id, "serp_block", "PROVENANCE_SURFACE_MISMATCH", `${r.provenance} pe Search cere serp_block ${SERP_AI_BLOCKS.join("/")}`);
+        }
+        if (r.provenance === "AI_IMAGE_TEXT") add(id, "provenance", "PROVENANCE_SURFACE_MISMATCH", "AI_IMAGE_TEXT doar pe suprafețele AI");
+        if (r.serp_block === "NOT_APPLICABLE") add(id, "serp_block", "PROVENANCE_SURFACE_MISMATCH", "rândurile Search au un bloc SERP");
+      }
+      if (r.serp_block === "AI_OVERVIEW" && ex && !ex.aiOverview.has("CAPTURED")) {
+        add(id, "serp_block", "AI_OVERVIEW_STATUS_MISMATCH", `ai_overview_status=${[...ex.aiOverview].join(";")}`);
+      }
+      if (r.entity_kind_observed === "PERSON_ASSOCIATED" && !r.notes) {
+        add(id, "notes", "ASSOCIATION_NOTE_REQUIRED", "numește organizația și rolul (ex. «fondator gr.AI»)");
+      }
       const pos = Number(r.organic_position);
       if (Number.isInteger(pos) && pos > 0) {
         const lo = Math.floor((pos - 1) / band) * band + 1;
@@ -173,6 +185,12 @@ async function main() {
       if (r.review_status === "REVIEW_REQUIRED") add(id, "review_status", "REVIEW_REQUIRED", r.notes);
       rows.push(r);
     });
+    // observed_order unic pe execuție: e cheia deciziilor de review (apply_review_decisions.mjs).
+    const seenOrder = new Map();
+    for (const { s } of list) seenOrder.set(s.observed_order, (seenOrder.get(s.observed_order) ?? 0) + 1);
+    for (const [o, n] of seenOrder) {
+      if (n > 1) issues.push({ scope: "EXECUTION", id: execId, field: "observed_order", issue: "DUPLICATE_OBSERVED_ORDER", detail: `${o} ×${n}` });
+    }
     // SERP_SNIPPET → părintele trebuie să existe în aceeași execuție.
     const orders = new Set(list.filter(({ s }) => s.provenance === "SERP_RESULT").map(({ s }) => s.observed_order));
     for (const { s } of list) {
@@ -194,11 +212,17 @@ async function main() {
     }
   }
 
-  // Execuții fără observații (valide pentru clarificări; raportate, nu blocante).
+  // Rezultatul fiecărei execuții. Execuțiile fără observații nu sunt lipsă: se confirmă la REVIEW (2).
   const noObs = [...execs.keys()].filter((e) => !byExec.has(e));
-  for (const e of noObs) issues.push({ scope: "EXECUTION", id: e, field: "observations", issue: "NO_OBSERVATIONS", detail: "" });
+  const outcomes = {};
+  for (const [e, ex] of execs) {
+    outcomes[e] = executionOutcome(ex.status, rows.filter((r) => r.execution_id === e));
+    if (outcomes[e] !== "COMPLETED_WITH_CANDIDATES") {
+      issues.push({ scope: "EXECUTION", id: e, field: "execution_outcome", issue: outcomes[e], detail: "de confirmat la REVIEW (2): rezultatul răspunsului, nu absență a furnizorilor" });
+    }
+  }
 
-  const blockingKinds = ["UNCLASSIFIED", "INVALID_ENUM", "UNKNOWN_EXECUTION", "EVIDENCE_NOT_IN_EXECUTION", "POSITION_REQUIRED", "PARENT_REQUIRED", "PARENT_NOT_FOUND", "BASIS_REQUIRED", "POSITIONS_NOT_CONTIGUOUS"];
+  const blockingKinds = ["UNCLASSIFIED", "INVALID_ENUM", "UNKNOWN_EXECUTION", "EVIDENCE_NOT_IN_EXECUTION", "POSITION_REQUIRED", "PARENT_REQUIRED", "PARENT_NOT_FOUND", "BASIS_REQUIRED", "POSITIONS_NOT_CONTIGUOUS", "PROVENANCE_SURFACE_MISMATCH", "AI_OVERVIEW_STATUS_MISMATCH", "ASSOCIATION_NOTE_REQUIRED", "DUPLICATE_OBSERVED_ORDER"];
   const blocking = issues.filter((i) => blockingKinds.includes(i.issue));
   const stagingOut = path.join(P.workDir, "observation-register.staging.csv");
   const reviewOut = path.join(P.workDir, "observation-review.csv");
@@ -210,6 +234,7 @@ async function main() {
     generated_at: new Date().toISOString(),
     observations: rows.length,
     by_provenance: count("provenance"),
+    by_serp_block: count("serp_block"),
     by_surface: count("surface"),
     by_query: count("query_id"),
     by_depth_band: count("depth_band"),
@@ -218,6 +243,8 @@ async function main() {
     by_entity_kind: count("entity_kind_observed"),
     without_url: rows.filter((r) => r.url_displayed === "NOT_VISIBLE").length,
     executions_without_observations: noObs,
+    execution_outcomes: outcomes,
+    by_execution_outcome: Object.values(outcomes).reduce((m, o) => ((m[o] = (m[o] ?? 0) + 1), m), {}),
     blocking_issue_count: blocking.length,
     review_item_count: issues.length - blocking.length,
   };
@@ -237,7 +264,7 @@ async function main() {
   await appendLog(P.logPath, { operation: finalize ? "register_finalize" : "register_staging", status: blocking.length ? "INCOMPLETE" : "OK", script: SCRIPT, output: { observations: rows.length, issues: issues.length } });
 
   console.log(`OBSERVATION REGISTER — ${rows.length} observații; ${blocking.length} probleme blocante; ${issues.length - blocking.length} elemente de review`);
-  for (const k of ["by_provenance", "by_query_relevance", "by_inclusion", "by_depth_band"]) console.log(`  ${k}: ${JSON.stringify(stats[k])}`);
+  for (const k of ["by_provenance", "by_serp_block", "by_query_relevance", "by_inclusion", "by_depth_band", "by_execution_outcome"]) console.log(`  ${k}: ${JSON.stringify(stats[k])}`);
   console.log(`  fără URL: ${stats.without_url}; execuții fără observații: ${noObs.length}`);
   console.log(`  → ${stagingOut}\n  → ${reviewOut}`);
   if (blocking.length) process.exitCode = 1;

@@ -67,7 +67,11 @@ interogării: rezultatele SERP organice (poziție, titlu, URL afișat, fragment)
 citate nu se deschid. Un director/listă apare ca rezultat de tip
 `DIRECTORY_LIST`; entitățile din interiorul lui **nu** se extrag — cu excepția
 numelor vizibile chiar în fragmentul SERP (`SERP_SNIPPET`). Proveniențe
-permise: `SERP_RESULT`, `SERP_SNIPPET`, `AI_RESPONSE`, `AI_CITATION`.
+permise: `SERP_RESULT`, `SERP_SNIPPET`, `AI_RESPONSE`, `AI_CITATION`,
+`AI_IMAGE_TEXT`. Blocurile generate de motoarele de căutare (AI Overview în
+Google, răspunsul generat de Bing) fac parte din execuția Search și se
+înregistrează cu blocul lor (`AI_OVERVIEW` / `GENERATED_ANSWER`), separat de
+rezultatele organice (`observation-register-schema.md` §Proveniență și blocuri).
 
 ### 2.2 Relevanța față de query
 
@@ -131,7 +135,7 @@ Validează structural config-ul (`instance_id`, `instance_type`, căi, query set
 ```
 node .claude/skills/mkt-evidence-package/scripts/seal_capture_folder.mjs <config>
 ```
-1. **Detecție.** Parcurge folderul fără să scrie în el. Detectează subfolderele, le mapează la suprafețe (§2.1), alege tiparul de timestamp din nume (§6.1) și scrie `detection-report.json`. Căile se păstrează cu bytes-ii exacți de pe disc (macOS folosește NFD), iar pentru sortare se folosește forma NFC. Fișierele de sistem (`.DS_Store`) apar în manifest ca `SYSTEM_FILE_EXCLUDED`: nu primesc Evidence ID și nu intră în zip.
+1. **Detecție.** Parcurge folderul fără să scrie în el. Detectează subfolderele, le mapează la suprafețe (§2.1), alege tiparul de timestamp din nume (§6.1) și scrie `detection-report.json`. Documentele operatorului din rădăcină (de exemplu notițele rulării în `.docx`) se sigilează și intră în zip, cu Document ID în loc de Evidence ID (`naming-convention.md` §3.1). Orice alt fișier din rădăcină sau un fișier care nu e captură într-un subfolder oprește sigilarea (cod 3). Căile se păstrează cu bytes-ii exacți de pe disc (macOS folosește NFD), iar pentru sortare se folosește forma NFC. Fișierele de sistem (`.DS_Store`) apar în manifest ca `SYSTEM_FILE_EXCLUDED`: nu primesc Evidence ID și nu intră în zip.
 2. Calculează SHA-256 pe fiecare fișier și atribuie Evidence ID în această ordine (`references/naming-convention.md` §3). Ordinea e doar de identificare, nu cronologică.
 3. Scrie `capture-manifest.json` (cale, nume, dimensiune, SHA-256, Evidence ID, subfolder, `filename_timestamp_raw`).
 4. Creează zip-ul cu fișierele în ordinea manifestului (`zip -X`, fără atribute extinse), în `evidence/incoming/mkt/`.
@@ -158,6 +162,14 @@ captură cu `Read` și extrage **doar contextul de sesiune vizibil**, în
 Fiecare valoare are o bază vizuală (`*_basis`): ce element de pe ecran o
 susține. Lipsa unui indicator nu dovedește starea opusă (§2.4). În acest pas
 nu se clasifică query-ul și nu se extrag rezultate.
+
+**Documentele operatorului.** Dacă manifestul are `operator_documents`, Claude
+le citește din copia extrasă (pentru `.docx`: `textutil -convert txt -stdout`
+pe macOS sau `pandoc`). Dacă nu există o fișă a rulării, Claude propune una
+transcriind declarațiile din document (`run-sheet-template.md`), cu
+`source_document: <Document ID>`. Câmpurile despre care documentul nu spune
+nimic rămân goale. Fișa propusă se arată la REVIEW (0) și se folosește doar
+după confirmarea userului.
 
 `build_session_context.mjs` agregă apoi valorile pe execuție și pe suprafață
 (`CONSISTENT` / `CONFLICT` / `NOT_VISIBLE`) și le compară cu fișa rulării,
@@ -195,8 +207,11 @@ confirmarea explicită.** Corecțiile → înapoi la STEP 7.
 Pentru fiecare execuție confirmată, completează `observation-staging.csv`
 (`references/observation-register-schema.md`):
 
-- **SERP**: un rând `SERP_RESULT` pentru fiecare rezultat organic vizibil (poziție, titlu, URL afișat, numele afișat al site-ului, tipul paginii); câte un rând `SERP_SNIPPET` pentru fiecare nume de furnizor vizibil în fragmentul unui rezultat terț, legat de rândul-părinte;
-- **AI**: un rând `AI_RESPONSE` pentru fiecare entitate numită în text, în ordinea primei apariții (inclusiv fără URL — `url_displayed = NOT_VISIBLE`); un rând `AI_CITATION` pentru fiecare sursă afișată;
+- **SERP**: un rând `SERP_RESULT` pentru fiecare rezultat organic vizibil (poziție, titlu, URL afișat, numele afișat al site-ului, tipul paginii); câte un rând `SERP_SNIPPET` pentru fiecare nume de furnizor vizibil în fragmentul unui rezultat terț, legat de rândul-părinte; rezultatele din module (reclame, „People also ask”, alte module) cu blocul lor, fără poziție organică;
+- **AI Overview / răspunsul generat de Bing**: aceleași reguli ca pentru AI (`AI_RESPONSE`, `AI_CITATION`), cu `serp_block = AI_OVERVIEW` / `GENERATED_ANSWER`. Execuția trebuie să aibă `ai_overview_status = CAPTURED` pentru AI Overview;
+- **AI**: un rând `AI_RESPONSE` pentru fiecare entitate numită în text, în ordinea primei apariții (inclusiv fără URL — `url_displayed = NOT_VISIBLE`); un rând `AI_CITATION` pentru fiecare sursă afișată; un rând `AI_IMAGE_TEXT` pentru un nume vizibil doar în imaginea unui card;
+- persoanele numite doar ca fondator, lider sau autor al unei organizații: `PERSON_ASSOCIATED`, cu organizația și rolul în `notes`;
+- `observed_order` unic în execuție;
 - `observed_name`, `title_displayed`, `snippet_or_description_observed` — **verbatim**, fără corectare;
 - `query_relevance` + `relevance_basis`; `entity_kind_observed`.
 
@@ -204,9 +219,20 @@ Execuțiile `IRRELEVANT` se extrag la fel de complet — irelevanța e o calific
 
 ### STEP 10 — REVIEW (2) observații — obligatoriu
 `build_register.mjs` (staging) → `observation-review.csv` + sumar: observații pe
-proveniență / suprafață / query / bandă de adâncime; `IRRELEVANT`, `UNCERTAIN`,
-`UNCLASSIFIED`; rânduri fără URL. Toate rândurile `IRRELEVANT`/`UNCERTAIN` se
-confirmă explicit de user. Corecțiile → înapoi la STEP 9.
+proveniență / bloc SERP / suprafață / query / bandă de adâncime; `IRRELEVANT`,
+`UNCERTAIN`, `UNCLASSIFIED`; rânduri fără URL; rezultatul fiecărei execuții.
+Toate rândurile `IRRELEVANT`/`UNCERTAIN` și toate execuțiile cu alt rezultat
+decât `COMPLETED_WITH_CANDIDATES` se confirmă explicit de user.
+
+Deciziile userului se scriu în `review-decisions.csv`, **un rând per
+observație** (cheia `execution_id` + `observed_order`, cu `observed_name` ca
+protecție), apoi:
+```
+node .claude/skills/mkt-evidence-package/scripts/apply_review_decisions.mjs <config>
+node .claude/skills/mkt-evidence-package/scripts/build_register.mjs <config>
+```
+Scriptul refuză o decizie care nu atinge exact un rând. Nu se aplică decizii
+prin scripturi ad-hoc indexate pe nume. Corecțiile de extragere → înapoi la STEP 9.
 
 ### STEP 11 — ARTIFACTS
 ```
@@ -255,7 +281,11 @@ Fiecare script scrie în `evidence/work/mkt/<instance-slug>/processing-log.jsonl
 - `references/package-policy.md` — imutabilitate, versionare, freeze, release, privacy, git.
 - `examples/mkt-evidence-package.example.yaml` — config pentru pilotul MKT-RO-AIV-2026Q4-PILOT.
 
-## 7. Checklist final
+## 7. Istoric
+
+- **2026-10-12** — după pilotul din 2026-10-09 (raportul intern v0.1, RV-01, RV-10, RV-14, RV-15, RV-19): documentele operatorului se sigilează cu Document ID; alias pentru „Google Search + AI Overview”; blocurile `AI_OVERVIEW`, `GENERATED_ANSWER`, `PAA`, `REMOVAL_NOTICE`; proveniența `AI_IMAGE_TEXT`; tipul `PERSON_ASSOCIATED`; orice modul SERP e `SUPPLEMENTAL`; rezultatul pe execuție (`COMPLETED_NO_NAMED_ENTITIES` etc.); `apply_review_decisions.mjs` cu cheie pe rând; `observed_order` unic; locația afișată pe toate suprafețele; câmpuri noi în fișa rulării (rețea, locația din browser, cookies, fereastră nouă per query).
+
+## 8. Checklist final
 
 - [ ] Folderul sursă neatins; manifestul folder = manifestul zip = SHA-urile din index.
 - [ ] `archive_sha256` identic între STEP 2 și STEP 12.
@@ -263,7 +293,8 @@ Fiecare script scrie în `evidence/work/mkt/<instance-slug>/processing-log.jsonl
 - [ ] Setul de query-uri verificat prin SHA-256; toate `query_id`-urile din index ∈ set.
 - [ ] Execuțiile lipsă față de `queries_executed × surfaces` declarate, nu ascunse.
 - [ ] Contextul de sesiune extras din capturi, cu bază vizuală pentru fiecare valoare. Conflictele, nepotrivirile și contaminările confirmate la REVIEW (0).
-- [ ] REVIEW (0), REVIEW (1) și REVIEW (2) confirmate explicit de user.
+- [ ] REVIEW (0), REVIEW (1) și REVIEW (2) confirmate explicit de user; deciziile REVIEW (2) aplicate cu `apply_review_decisions.mjs`.
+- [ ] Documentele operatorului sigilate și transcrise în fișa rulării (dacă există).
 - [ ] Toate rândurile `IRRELEVANT`/`UNCERTAIN` au `relevance_basis` și au fost confirmate.
 - [ ] Nicio observație din pagini neafișate (as-returned).
 - [ ] `CONTENT_VALID` (sau `HUMAN_REVIEW_REQUIRED` confirmat) înainte de freeze.

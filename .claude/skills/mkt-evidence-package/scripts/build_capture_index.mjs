@@ -79,7 +79,7 @@ const ENUMS = {
   archive_anomaly: ["NONE", "MISFILED_SURFACE", "UNEXPECTED_FILE", "ORDER_CONFLICT", "OTHER"],
   review_status: ["REVIEWED", "REVIEW_REQUIRED"],
 };
-const BLOCKS = ["ORGANIC", "ADS", "LOCAL", "PAA", "AI_OVERVIEW", "OTHER", "NOT_APPLICABLE"];
+const BLOCKS = ["ORGANIC", "ADS", "LOCAL", "PAA", "AI_OVERVIEW", "GENERATED_ANSWER", "REMOVAL_NOTICE", "OTHER", "NOT_APPLICABLE"];
 const OPTIONAL = new Set(["relevance_basis", "reviewer_comment", "notes"]);
 const INT_OR_NA = ["serp_page"];
 const INT = ["attempt", "part_number", "parts_total"];

@@ -31,7 +31,7 @@ Codurile noi se adaugă doar documentat aici, înaintea rulării.
 
 | Cod | Aliasuri (după normalizare) |
 |---|---|
-| `GSEARCH` | `google`, `google search`, `google organic`, `google serp` |
+| `GSEARCH` | `google`, `google search`, `google organic`, `google serp`, `google search + ai overview`, `google + ai overview`, `google search ai overview`, `google search si ai overview` |
 | `BSEARCH` | `bing`, `bing search`, `bing organic`, `bing serp` |
 | `GAIMODE` | `google ai mode`, `ai mode`, `gaimode` |
 | `CHATGPT` | `chatgpt`, `chat gpt`, `openai chatgpt` |
@@ -68,6 +68,21 @@ SHA-256). La o arhivă nouă (`archive.version` nouă), perechile identice își
 păstrează ID-ul. Fișierele noi primesc numere după ultimul ID existent, iar
 un număr nu se reutilizează niciodată.
 
+### 3.1 Documentele operatorului (Document ID)
+
+Un fișier direct în rădăcina folderului de capturi, cu extensie de document
+(`docx`, `doc`, `pdf`, `md`, `txt`, `rtf`, `odt`, `pages`, `xlsx`, `csv`,
+`yaml`, `yml`), e un **document al operatorului**, de exemplu notițele rulării
+într-un fișier Word. El:
+
+- se sigilează: SHA-256 în manifest (`operator_documents`), intră în zip după capturi și trece prin aceleași verificări;
+- primește `<instance_id>-D<NN>` (ordinea: cale NFC), nu Evidence ID, și nu are rând în capture index sau în session context;
+- se citește la STEP 5: declarațiile din el se transcriu în fișa rulării, cu trimitere la Document ID.
+
+Orice alt fișier din rădăcină (de exemplu o captură fără subfolder) sau un
+fișier care nu e captură într-un subfolder de suprafață oprește sigilarea și
+cere decizia userului.
+
 ## 4. Execution ID și Observation ID
 
 ```
@@ -80,9 +95,11 @@ Exemplu: `MKT-RO-AIV-2026Q4-PILOT-GSEARCH-Q-DISC-001` și
 
 `-A<n>` apare doar de la a doua încercare (reîncercare după eroare tehnică).
 Prima încercare nu are sufix. `O<NNN>` urmează ordinea observată: poziția
-organică pentru SERP (`SERP_SNIPPET` imediat după părintele lui), ordinea
-primei apariții pentru AI (`AI_CITATION` după toate rândurile
-`AI_RESPONSE`).
+afișării pentru SERP (blocurile AI Overview, reclamele și răspunsul generat
+apar în ordinea în care se văd pe pagină; `SERP_SNIPPET` imediat după
+părintele lui), ordinea primei apariții pentru AI (`AI_CITATION` după toate
+rândurile `AI_RESPONSE` și `AI_IMAGE_TEXT`). `observed_order` e unic în
+execuție: e cheia deciziilor de review.
 
 ## 5. Fișiere și tag
 
@@ -160,6 +177,8 @@ evidence/
     observation-staging.csv       # staging, Claude/user
     observation-register.staging.csv
     observation-review.csv
+    review-decisions.csv          # deciziile REVIEW (2), una pe rând (STEP 10)
+    observation-staging.pre-review.csv  # copia dinaintea aplicării deciziilor
     stats.json
     processing-log.jsonl
   output/mkt/<instance-slug>/<metadata_version>/

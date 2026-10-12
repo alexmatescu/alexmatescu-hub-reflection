@@ -20,9 +20,9 @@ eligibilitate. Aceeași entitate apare de câte ori a fost afișată.
 | 6 | `query_set_id` | DETERMINISTIC | | |
 | 7 | `query_layer` | DERIVAT | `CORE-CANDIDATE` / `EXPLORATORY` | Preluat din `query-set.csv`. |
 | 8 | `evidence_ids` | CLASIFICARE → validat | listă de Evidence ID separate prin `;` | Capturile în care se vede observația. Cel puțin una. |
-| 9 | `provenance` | CLASIFICARE | `SERP_RESULT` / `SERP_SNIPPET` / `AI_RESPONSE` / `AI_CITATION` | |
-| 10 | `serp_block` | CLASIFICARE | `ORGANIC` / `ADS` / `LOCAL` / `NOT_APPLICABLE` | `ADS` / `LOCAL` → `result_layer = SUPPLEMENTAL`. |
-| 11 | `result_layer` | DERIVAT | `PRIMARY` / `SUPPLEMENTAL` | `SUPPLEMENTAL` pentru `ADS` / `LOCAL`. |
+| 9 | `provenance` | CLASIFICARE | `SERP_RESULT` / `SERP_SNIPPET` / `AI_RESPONSE` / `AI_CITATION` / `AI_IMAGE_TEXT` | Vezi §Proveniență și blocuri. |
+| 10 | `serp_block` | CLASIFICARE | `ORGANIC` / `ADS` / `LOCAL` / `PAA` / `AI_OVERVIEW` / `GENERATED_ANSWER` / `OTHER` / `NOT_APPLICABLE` | `NOT_APPLICABLE` pe suprafețele AI și numai acolo. |
+| 11 | `result_layer` | DERIVAT | `PRIMARY` / `SUPPLEMENTAL` | `PRIMARY` doar pentru `ORGANIC` și pentru suprafețele AI (`NOT_APPLICABLE`); orice alt bloc SERP → `SUPPLEMENTAL`. |
 | 12 | `organic_position` | CLASIFICARE | întreg ≥1 / `NOT_APPLICABLE` | Doar pentru `SERP_RESULT` organic. Pentru `SERP_SNIPPET`, poziția părintelui. |
 | 13 | `observed_order` | CLASIFICARE | întreg ≥1 | Ordinea în execuție. Pentru AI e ordinea primei apariții. |
 | 14 | `depth_band` | DERIVAT | `1-10`, `11-20`, … / `NOT_APPLICABLE` | |
@@ -42,12 +42,35 @@ eligibilitate. Aceeași entitate apare de câte ori a fost afișată.
 | 27 | `review_status` | CLASIFICARE | `REVIEWED` / `REVIEW_REQUIRED` | |
 | 28 | `notes` | CLASIFICARE | text / gol | |
 
+## Proveniență și blocuri
+
+| Proveniență | Unde | Ce înregistrează |
+|---|---|---|
+| `SERP_RESULT` | Search | Un rezultat afișat: organic (`ORGANIC`, cu poziție) sau într-un modul (`ADS`, `LOCAL`, `PAA`, `OTHER`, fără poziție organică). |
+| `SERP_SNIPPET` | Search | Un nume de posibil furnizor scris în titlul sau fragmentul unui rezultat terț. Moștenește blocul părintelui. |
+| `AI_RESPONSE` | AI; Search doar cu `AI_OVERVIEW` / `GENERATED_ANSWER` | O entitate numită în textul răspunsului. |
+| `AI_CITATION` | AI; Search doar cu `AI_OVERVIEW` / `GENERATED_ANSWER` | O sursă afișată (link, card, chip, notă). |
+| `AI_IMAGE_TEXT` | doar AI | Un nume vizibil doar în imaginea unui card din răspuns (logo, text în imagine), diferit de numele din text. Se notează în `notes` cardul căruia îi aparține. |
+
+**AI Overview și răspunsul generat de Bing** fac parte din execuția `GSEARCH`,
+respectiv `BSEARCH`. Rândurile lor au `serp_block = AI_OVERVIEW` sau
+`GENERATED_ANSWER`, proveniență `AI_RESPONSE` / `AI_CITATION`, fără poziție
+organică, și `result_layer = SUPPLEMENTAL`. `serp_block = AI_OVERVIEW` cere
+`ai_overview_status = CAPTURED` pe execuție. Scriptul oprește combinațiile
+care nu se potrivesc (de exemplu `AI_RESPONSE` cu `ORGANIC`).
+
 ## Enum `entity_kind_observed`
 
 `PROVIDER_PAGE` (pagina comercială a unui posibil prestator),
 `PROVIDER_NAMED` (entitate numită ca prestator, fără pagină proprie în
 rezultat), `ARTICLE_GUIDE`, `DIRECTORY_LIST`, `SOFTWARE_TOOL`, `PUBLISHER`,
-`PERSON_PROFILE`, `FORUM_SOCIAL`, `OTHER`, `UNCERTAIN`.
+`PERSON_PROFILE`, `PERSON_ASSOCIATED`, `FORUM_SOCIAL`, `OTHER`, `UNCERTAIN`.
+
+`PERSON_ASSOCIATED` = persoană numită doar în legătură cu o organizație
+(fondator, lider, autor, angajat), fără să fie propusă ca ajutor. `notes`
+numește organizația și rolul („fondator gr.AI”). Rândul rămâne în registru, dar
+nu intră în reuniune (regula 5). O persoană propusă ca prestator, chiar dacă e
+asociată unui brand („Paul Dan (AI Engine Optim)”), rămâne `PROVIDER_NAMED`.
 
 ## Regula `candidate_union_inclusion`
 
@@ -69,7 +92,31 @@ intră în materialul pentru Candidate Set. Nu înseamnă eligibilitate.
 1. **As-returned.** Se extrage doar ce se vede în capturile execuției. Paginile și sursele nu se deschid.
 2. **SERP.** Fiecare rezultat organic vizibil devine un rând `SERP_RESULT`, chiar dacă e irelevant sau nu e furnizor. Pozițiile sunt continue pe toate paginile capturate.
 3. **SERP_SNIPPET.** Câte un rând pentru fiecare nume de posibil furnizor scris efectiv în titlul sau fragmentul unui rezultat terț, legat de părinte.
-4. **AI.** Fiecare entitate numită în text devine un rând `AI_RESPONSE`, chiar și fără URL. Excepție: nu se extrag numele produselor și platformelor AI sau de căutare folosite ca subiect general al răspunsului (ChatGPT, Gemini, Claude, Perplexity, Copilot, Google AI Overviews, Google, Bing, OpenAI), nici standardele tehnice (Schema.org). Ele nu sunt candidați, iar o listă completă ar dilua registrul. Platformele de listare sau recenzii recomandate ca acțiune (Clutch, TripAdvisor, Wikipedia etc.) se extrag, cu `entity_kind_observed = OTHER`. Un nume repetat în același răspuns devine un singur rând, la prima apariție. Fiecare sursă afișată (link, card, notă de subsol) devine un rând `AI_CITATION`.
-5. **Clarificare.** Dacă AI-ul cere o clarificare și nu numește nimic, execuția nu are rânduri. Asta se vede în statistici ca „execuții fără observații”, nu ca lipsă.
+4. **AI.** Fiecare entitate numită în text devine un rând `AI_RESPONSE`, chiar și fără URL. Același lucru pentru textul unui AI Overview sau al răspunsului generat de Bing, cu blocul corespunzător (§Proveniență și blocuri). Excepție: nu se extrag numele produselor și platformelor AI sau de căutare folosite ca subiect general al răspunsului (ChatGPT, Gemini, Claude, Perplexity, Copilot, Google AI Overviews, Google, Bing, OpenAI), nici standardele tehnice (Schema.org). Ele nu sunt candidați, iar o listă completă ar dilua registrul. Platformele de listare sau recenzii recomandate ca acțiune (Clutch, TripAdvisor, Wikipedia etc.) se extrag, cu `entity_kind_observed = OTHER`. Un nume repetat în același răspuns devine un singur rând, la prima apariție. Fiecare sursă afișată (link, card, notă de subsol) devine un rând `AI_CITATION`.
+5. **Execuții fără rânduri.** Dacă AI-ul cere o clarificare sau răspunde complet fără să numească nimic, execuția nu are rânduri. Scriptul îi dă un rezultat (§Rezultatul execuției), care se confirmă la REVIEW (2). Nu e o execuție lipsă.
+5a. **Imaginile cardurilor.** Dacă imaginea unui card arată alt nume decât textul cardului (de exemplu logo-ul „Brand B” pe cardul „Brand A”), numele din imagine devine un rând `AI_IMAGE_TEXT`, legat în `notes` de card. Nu se presupune că cele două nume sunt aceeași entitate.
 6. **Irelevanță.** Rândurile unei execuții irelevante se extrag complet și se marchează. Nu se omit.
 7. **Verbatim.** Numele, titlurile, URL-urile și fragmentele se transcriu exact, cu diacriticele și greșelile originale. O transcriere nesigură se marchează în `notes` cu `TRANSCRIPTION_UNCERTAIN`.
+
+## Rezultatul execuției
+
+Scriptul derivă, pe fiecare execuție, un rezultat separat de numărul de rânduri
+(`register-stats.json` → `execution_outcomes`; tabel în README §8):
+
+| Rezultat | Când |
+|---|---|
+| `COMPLETED_WITH_CANDIDATES` | Cel puțin un rând `INCLUDE`. |
+| `COMPLETED_NO_UNION_CANDIDATES` | Rânduri, dar niciunul `INCLUDE` (ex. doar publicații sau rezultate irelevante). |
+| `COMPLETED_NO_NAMED_ENTITIES` | Răspuns complet care nu numește nicio entitate și nu afișează surse. |
+| `CLARIFICATION_REQUESTED` / `UNAVAILABLE` / `TECHNICAL_ERROR` / `UNKNOWN` | Preluat din `execution_status`. |
+
+Orice rezultat diferit de `COMPLETED_WITH_CANDIDATES` apare în
+`observation-review.csv` și se confirmă la REVIEW (2).
+
+## Deciziile REVIEW (2)
+
+Deciziile userului se scriu în `review-decisions.csv`, câte una pe rând, și se
+aplică cu `apply_review_decisions.mjs`. Cheia e `(execution_id,
+observed_order)`, iar `observed_name` se verifică. O decizie atinge un singur
+rând: un nume care apare de două ori în aceeași execuție primește două decizii
+separate. Nu se scriu scripturi ad-hoc care aplică decizii după nume.

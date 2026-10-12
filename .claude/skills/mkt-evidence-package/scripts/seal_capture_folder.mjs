@@ -32,7 +32,10 @@ import {
   detectFilenamePattern,
   applyFilenamePattern,
   evidenceId,
+  documentId,
   isSystemFile,
+  isOperatorDocument,
+  isCaptureFile,
 } from "./lib/mkt.mjs";
 
 const SCRIPT = "seal_capture_folder.mjs";
@@ -65,7 +68,12 @@ async function main() {
   const allFiles = await walkFilesRaw(folder);
   const systemPatterns = Array.isArray(config.system_file_patterns) ? config.system_file_patterns : undefined;
   const systemFiles = allFiles.filter((f) => isSystemFile(f, systemPatterns));
-  const captures = allFiles.filter((f) => !isSystemFile(f, systemPatterns));
+  const nonSystem = allFiles.filter((f) => !isSystemFile(f, systemPatterns));
+  // Documentele operatorului din rădăcină (ex. fișa rulării în Word) se sigilează
+  // și intră în arhivă, dar nu sunt capturi: primesc Document ID, nu Evidence ID.
+  const operatorDocs = nonSystem.filter((f) => isOperatorDocument(f)).sort(compareNfc);
+  const captures = nonSystem.filter((f) => !isOperatorDocument(f));
+  const nonCaptureFiles = captures.filter((f) => !isCaptureFile(f));
 
   const folders = new Map(); // top-level folder (raw) -> info
   const rootFiles = [];
@@ -107,6 +115,10 @@ async function main() {
   for (const [code, names] of codeToFolders) {
     if (names.length > 1) blocking.push(`mai multe subfoldere mapate la ${code}: ${names.join(", ")}`);
   }
+  for (const rel of rootFiles) blocking.push(`fișier direct în rădăcină, fără suprafață și fără extensie de document: "${rel.normalize("NFC")}"`);
+  for (const rel of nonCaptureFiles.filter((f) => f.includes("/"))) {
+    blocking.push(`fișier care nu e captură (extensie neacceptată) într-un subfolder de suprafață: "${rel.normalize("NFC")}"`);
+  }
 
   const filenames = captures.map((rel) => rel.split("/").pop());
   const patternChoice = detectFilenamePattern(filenames, config.filename_timestamp?.pattern);
@@ -131,6 +143,7 @@ async function main() {
     subfolders: folderReport,
     surfaces_detected: [...codeToFolders.keys()],
     files_at_root: rootFiles,
+    operator_documents: operatorDocs.map((f) => f.normalize("NFC")),
     system_files_excluded: systemFiles,
     capture_count: captures.length,
     filename_timestamp: {
@@ -149,7 +162,7 @@ async function main() {
   }
   console.log(`  tipar nume: ${patternChoice.pattern_id ?? "per fișier"} — ${tsMatched}/${filenames.length} potrivite`);
   if (systemFiles.length) console.log(`  fișiere de sistem excluse: ${systemFiles.join(", ")}`);
-  if (rootFiles.length) console.log(`  ATENȚIE: ${rootFiles.length} fișier(e) direct în rădăcină (fără suprafață)`);
+  if (operatorDocs.length) console.log(`  documente ale operatorului (sigilate, fără Evidence ID): ${operatorDocs.map((f) => f.normalize("NFC")).join(", ")}`);
 
   if (blocking.length) {
     console.error("\nSTOP — detecția cere decizia userului:");
@@ -162,14 +175,18 @@ async function main() {
   // ---- 2. Hash + Evidence ID ----------------------------------------------
   console.log("\nCalculez SHA-256 pentru fiecare captură...");
   const hashes = await hashAll(folder, captures);
+  const docHashes = await hashAll(folder, operatorDocs);
 
   let previous = null;
   if (await pathExists(P.manifestPath)) previous = await readJson(P.manifestPath);
 
   if (previous) {
+    const prevDocs = previous.operator_documents ?? [];
     const same =
       previous.files.length === captures.length &&
-      previous.files.every((f) => hashes.get(f.original_relative_path)?.sha256 === f.sha256);
+      previous.files.every((f) => hashes.get(f.original_relative_path)?.sha256 === f.sha256) &&
+      prevDocs.length === operatorDocs.length &&
+      prevDocs.every((d) => docHashes.get(d.original_relative_path)?.sha256 === d.sha256);
     if (same && previous.archive_version === String(config.archive.version) && (await pathExists(previous.archive_path))) {
       const archSha = await sha256File(previous.archive_path);
       if (archSha === previous.archive_sha256) {
@@ -223,6 +240,18 @@ async function main() {
     };
   });
 
+  const documents = operatorDocs.map((rel, i) => ({
+    document_id: documentId(config.instance_id, i + 1),
+    original_relative_path: rel,
+    relative_path_nfc: rel.normalize("NFC"),
+    original_filename: rel,
+    file_size_bytes: docHashes.get(rel).size,
+    sha256: docHashes.get(rel).sha256,
+    status: "OPERATOR_DOCUMENT",
+  }));
+  const archived = [...files.map((f) => f.original_relative_path), ...documents.map((d) => d.original_relative_path)];
+  const expectedSha = new Map([...files, ...documents].map((f) => [f.original_relative_path, f.sha256]));
+
   // ---- 3. Zip ----------------------------------------------------------------
   if (await pathExists(P.archivePath)) {
     console.error(`FAIL: arhiva există deja și nu se suprascrie: ${P.archivePath}`);
@@ -234,7 +263,7 @@ async function main() {
   }
   await fs.mkdir(P.incomingDir, { recursive: true });
   console.log(`Creez arhiva: ${P.archivePath}`);
-  const listInput = files.map((f) => f.original_relative_path).join("\n") + "\n";
+  const listInput = archived.join("\n") + "\n";
   const zipRes = await new Promise((resolve, reject) => {
     import("node:child_process").then(({ spawn }) => {
       const child = spawn("zip", ["-X", "-D", "-q", P.archivePath, "-@"], { cwd: folder });
@@ -256,7 +285,7 @@ async function main() {
   verification.unzip_test = t.code === 0 ? "PASS" : "FAIL";
 
   const zipNames = await readZipEntryNames(P.archivePath);
-  const expected = files.map((f) => Buffer.from(f.original_relative_path, "utf8"));
+  const expected = archived.map((rel) => Buffer.from(rel, "utf8"));
   verification.zip_entries_match =
     zipNames.length === expected.length && zipNames.every((n, i) => n.equals(expected[i])) ? "PASS" : "FAIL";
 
@@ -266,21 +295,21 @@ async function main() {
   const ux = await run("unzip", ["-q", P.archivePath, "-d", verifyDir]);
   let zipHashOk = ux.code === 0;
   if (zipHashOk) {
-    for (const f of files) {
-      const h = await sha256File(path.join(verifyDir, f.original_relative_path)).catch(() => null);
-      if (h !== f.sha256) {
+    for (const rel of archived) {
+      const h = await sha256File(path.join(verifyDir, rel)).catch(() => null);
+      if (h !== expectedSha.get(rel)) {
         zipHashOk = false;
-        console.error(`  nepotrivire în zip: ${f.relative_path_nfc}`);
+        console.error(`  nepotrivire în zip: ${rel.normalize("NFC")}`);
       }
     }
   }
   await fs.rm(verifyDir, { recursive: true, force: true });
   verification.zip_hashes_match = zipHashOk ? "PASS" : "FAIL";
 
-  const rehash = await hashAll(folder, captures);
+  const rehash = await hashAll(folder, archived);
   const nowFiles = (await walkFilesRaw(folder)).filter((f) => !isSystemFile(f, systemPatterns));
   verification.source_unchanged =
-    nowFiles.length === captures.length && files.every((f) => rehash.get(f.original_relative_path)?.sha256 === f.sha256)
+    nowFiles.length === archived.length && archived.every((rel) => rehash.get(rel)?.sha256 === expectedSha.get(rel))
       ? "PASS"
       : "FAIL";
 
@@ -305,6 +334,7 @@ async function main() {
     filename_timestamp: detection.filename_timestamp,
     verification,
     excluded_system_files: systemFiles.map((p) => ({ path: p, status: "SYSTEM_FILE_EXCLUDED" })),
+    operator_documents: documents,
     files,
   };
   await writeJson(P.manifestPath, manifest);
@@ -319,6 +349,7 @@ async function main() {
   console.log("\nSIGILARE OK");
   for (const [k, v] of Object.entries(verification)) console.log(`  ${k}: ${v}`);
   console.log(`  capturi: ${files.length} (${files[0].evidence_id} … ${files[files.length - 1].evidence_id})`);
+  for (const d of documents) console.log(`  document al operatorului: ${d.document_id} ${d.relative_path_nfc}`);
   console.log(`  archive_sha256: ${archiveSha}`);
   console.log(`  manifest: ${P.manifestPath}`);
 }

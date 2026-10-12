@@ -104,6 +104,17 @@ async function main() {
     });
   }
 
+  // Documentele operatorului: aceeași verificare a copiei extrase; nu primesc rânduri în schelete.
+  const documents = [];
+  for (const d of manifest.operator_documents ?? []) {
+    const full = path.join(P.extractedDir, d.original_relative_path);
+    if ((await sha256File(full)) !== d.sha256) {
+      console.error(`FAIL: copia extrasă a documentului diferă de manifest: ${d.relative_path_nfc}`);
+      process.exit(1);
+    }
+    documents.push({ ...d, extracted_path: full });
+  }
+
   await writeJson(P.inventoryPath, {
     generated_at: new Date().toISOString(),
     instance_id: manifest.instance_id,
@@ -111,6 +122,7 @@ async function main() {
     archive_sha256: archSha,
     capture_count: files.length,
     duplicates: files.filter((f) => f.duplicate_status === "DUPLICATE").length,
+    operator_documents: documents,
     files,
   });
 
@@ -160,6 +172,7 @@ async function main() {
   console.log(`INVENTORY OK — ${files.length} capturi, ${files.filter((f) => f.duplicate_status === "DUPLICATE").length} duplicate byte-identice`);
   for (const [s, n] of Object.entries(bySurface)) console.log(`  ${s.padEnd(11)} ${n}`);
   console.log(`  copie de inspecție: ${P.extractedDir}`);
+  for (const d of documents) console.log(`  document al operatorului (de citit la STEP 5, pentru fișa rulării): ${d.document_id} ${d.extracted_path}`);
   console.log(`  schelet: ${P.sessionContextPath}`);
   console.log(`  schelet: ${P.captureClassificationPath}`);
   if (dropped.length) console.warn(`ATENȚIE: rânduri existente fără captură corespunzătoare: ${dropped.join(", ")}`);

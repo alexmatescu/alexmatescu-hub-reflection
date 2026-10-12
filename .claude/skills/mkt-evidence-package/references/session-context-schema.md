@@ -35,8 +35,8 @@ este `NOT_APPLICABLE`.
 | 9 | `account_state_basis` | dacă col. 8 ≠ `NOT_VISIBLE` | text | Ex. „buton Conectați-vă în antet”, „avatar în colțul dreapta-sus”. |
 | 10 | `account_identity_visible` | toate | `YES` / `NO` / `NOT_APPLICABLE` | `YES` → col. 27 = `PRIVACY_REVIEW_REQUIRED`. |
 | 11 | `account_tier_observed` | A | verbatim (ex. `Plus`, `Pro`) / `NOT_VISIBLE` | |
-| 12 | `location_displayed` | S | verbatim / `NOT_VISIBLE` | Locația afișată de motor, ex. în subsolul Google. Se transcrie exact. |
-| 13 | `location_source` | S | `FOOTER` / `LOCAL_MODULE` / `SETTINGS` / `OTHER` / `NOT_APPLICABLE` | |
+| 12 | `location_displayed` | toate | verbatim / `NOT_VISIBLE` | Locația afișată de produs: subsolul Google, interfața Gemini sau AI Mode, un oraș menționat de răspuns ca locație a utilizatorului. Se transcrie exact. Locația raportată de browser și cea fizică se declară în fișa rulării. |
+| 13 | `location_source` | toate | `FOOTER` / `LOCAL_MODULE` / `SETTINGS` / `AI_INTERFACE` / `RESPONSE_TEXT` / `OTHER` / `NOT_APPLICABLE` | `NOT_APPLICABLE` când col. 12 = `NOT_VISIBLE`. |
 | 14 | `ui_language_observed` | toate | cod (ex. `ro`, `en`) / `NOT_VISIBLE` | Limba interfeței, nu limba răspunsului. |
 | 15 | `conversation_mode_observed` | A | `TEMPORARY` / `NEW_CONVERSATION` / `EXISTING_CONVERSATION` / `NOT_VISIBLE` | `TEMPORARY` cere eticheta modului temporar sau incognito al produsului. `EXISTING_CONVERSATION` cere mesaje anterioare vizibile în același fir. `NEW_CONVERSATION` cere ca începutul firului să fie vizibil și să conțină doar query-ul curent. |
 | 16 | `conversation_mode_basis` | dacă col. 15 ≠ `NOT_VISIBLE` | text | |

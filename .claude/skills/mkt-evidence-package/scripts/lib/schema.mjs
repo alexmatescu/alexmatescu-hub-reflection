@@ -24,11 +24,12 @@ export const SESSION_COLUMNS = [
   { name: "account_state_basis", applies: "ALL", basisFor: "account_state_observed" },
   { name: "account_identity_visible", applies: "ALL", enum: ["YES", "NO", "NOT_APPLICABLE"] },
   { name: "account_tier_observed", applies: "AI", enum: null, sentinels: ["NOT_VISIBLE"] },
-  { name: "location_displayed", applies: "SEARCH", enum: null, sentinels: ["NOT_VISIBLE"] },
+  // Locația se notează pe toate suprafețele: Gemini și AI Mode o pot afișa în interfață.
+  { name: "location_displayed", applies: "ALL", enum: null, sentinels: ["NOT_VISIBLE"] },
   {
     name: "location_source",
-    applies: "SEARCH",
-    enum: ["FOOTER", "LOCAL_MODULE", "SETTINGS", "OTHER", "NOT_APPLICABLE"],
+    applies: "ALL",
+    enum: ["FOOTER", "LOCAL_MODULE", "SETTINGS", "AI_INTERFACE", "RESPONSE_TEXT", "OTHER", "NOT_APPLICABLE"],
   },
   { name: "ui_language_observed", applies: "ALL", enum: null, sentinels: ["NOT_VISIBLE"] },
   {
@@ -135,3 +136,28 @@ export const CAPTURE_CLASSIFICATION_HEADER = [
   "notes",
 ];
 
+
+// ---------------------------------------------------------------------------
+// Observation staging (observation-register-schema.md) — completat de Claude/user
+// ---------------------------------------------------------------------------
+
+export const OBSERVATION_STAGING_HEADER = [
+  "execution_id",
+  "evidence_ids",
+  "provenance",
+  "serp_block",
+  "organic_position",
+  "observed_order",
+  "parent_observation_order",
+  "observed_name",
+  "title_displayed",
+  "url_displayed",
+  "url_truncated",
+  "snippet_or_description_observed",
+  "entity_kind_observed",
+  "named_as_recommendation",
+  "query_relevance",
+  "relevance_basis",
+  "review_status",
+  "notes",
+];

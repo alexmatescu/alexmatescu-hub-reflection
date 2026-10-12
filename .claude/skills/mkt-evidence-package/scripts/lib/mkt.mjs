@@ -23,7 +23,11 @@ export const SURFACES = {
 };
 
 export const SURFACE_ALIASES = {
-  GSEARCH: ["google", "google search", "google organic", "google serp"],
+  GSEARCH: [
+    "google", "google search", "google organic", "google serp",
+    // AI Overview e un bloc al execuției GSEARCH, nu o suprafață separată.
+    "google search + ai overview", "google + ai overview", "google search ai overview", "google search si ai overview",
+  ],
   BSEARCH: ["bing", "bing search", "bing organic", "bing serp"],
   GAIMODE: ["google ai mode", "ai mode", "gaimode"],
   CHATGPT: ["chatgpt", "chat gpt", "openai chatgpt"],
@@ -213,6 +217,28 @@ export function evidenceId(instanceId, n, width) {
 export function executionId(instanceId, surface, queryId, attempt) {
   const base = `${instanceId}-${surface}-${queryId}`;
   return attempt && Number(attempt) > 1 ? `${base}-A${attempt}` : base;
+}
+
+// ---------------------------------------------------------------------------
+// Documente ale operatorului din rădăcina folderului (naming-convention.md §3.1)
+// ---------------------------------------------------------------------------
+
+export const CAPTURE_EXTENSIONS = ["png", "jpg", "jpeg", "heic", "webp"];
+export const OPERATOR_DOCUMENT_EXTENSIONS = ["docx", "doc", "pdf", "md", "txt", "rtf", "odt", "pages", "xlsx", "csv", "yaml", "yml"];
+
+const extOf = (rel) => (rel.split("/").pop().split(".").length > 1 ? rel.split(".").pop().toLowerCase() : "");
+
+/** Fișier direct în rădăcina folderului, cu extensie de document (nu captură). */
+export function isOperatorDocument(relPath) {
+  return !relPath.includes("/") && OPERATOR_DOCUMENT_EXTENSIONS.includes(extOf(relPath));
+}
+
+export function isCaptureFile(relPath) {
+  return CAPTURE_EXTENSIONS.includes(extOf(relPath));
+}
+
+export function documentId(instanceId, n) {
+  return `${instanceId}-D${String(n).padStart(2, "0")}`;
 }
 
 // ---------------------------------------------------------------------------

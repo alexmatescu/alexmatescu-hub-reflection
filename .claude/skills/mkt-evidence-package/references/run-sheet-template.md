@@ -23,6 +23,8 @@ work_sessions:
     end: ""               # HH:MM
     timezone: Europe/Bucharest
     physical_location: "" # ex. România, oraș
+    network: ""           # ex. Wi-Fi mobil (nu rețeaua obișnuită)
+    browser_reported_location: ""  # locația dată de browser / IP, dacă diferă de cea fizică
     device: ""            # ex. MacBook, macOS
     browser: ""           # ex. Chrome <versiune>
 
@@ -36,14 +38,19 @@ surfaces:
     displayed_location: ""   # locația afișată de Google, dacă s-a văzut
     language_interface: ""
     pages_captured: 3
-    ai_overview_captured: NO
+    ai_overview_captured: ""   # YES / NO
+    cookies: ""              # REJECTED / ACCEPTED / UNKNOWN
+    new_window_per_query: "" # YES / NO
   BSEARCH:
     work_session: WS1
     account_state: ""
     private_window: ""
     displayed_location: ""
     language_interface: ""
-    pages_captured: 3
+    pages_captured: 1
+    cookies: ""
+    new_window_per_query: ""
+    notices: ""              # ex. „Some results have been removed”
   GAIMODE:
     work_session: WS1
     account_state: ""        # LOGGED_OUT / LOGGED_IN / UNKNOWN
@@ -53,6 +60,8 @@ surfaces:
     memory_personalization: "" # OFF / ON / NOT_AVAILABLE / UNKNOWN
     special_modes: NONE      # fără Deep Research / agent în condiția de bază
     new_conversation_per_query: ""  # YES / NO
+    cookies: ""              # REJECTED / ACCEPTED / UNKNOWN
+    new_window_per_query: "" # YES / NO (fereastră privată nouă pentru fiecare query)
   CHATGPT:
     work_session: WS1
     account_state: ""        # LOGGED_OUT / LOGGED_IN / UNKNOWN
@@ -62,6 +71,8 @@ surfaces:
     memory_personalization: "" # OFF / ON / NOT_AVAILABLE / UNKNOWN
     special_modes: NONE      # fără Deep Research / agent în condiția de bază
     new_conversation_per_query: ""  # YES / NO
+    cookies: ""              # REJECTED / ACCEPTED / UNKNOWN
+    new_window_per_query: "" # YES / NO (fereastră privată nouă pentru fiecare query)
   CLAUDE:
     work_session: WS1
     account_state: ""        # LOGGED_OUT / LOGGED_IN / UNKNOWN
@@ -71,6 +82,8 @@ surfaces:
     memory_personalization: "" # OFF / ON / NOT_AVAILABLE / UNKNOWN
     special_modes: NONE      # fără Deep Research / agent în condiția de bază
     new_conversation_per_query: ""  # YES / NO
+    cookies: ""              # REJECTED / ACCEPTED / UNKNOWN
+    new_window_per_query: "" # YES / NO (fereastră privată nouă pentru fiecare query)
   COPILOT:
     work_session: WS1
     account_state: ""        # LOGGED_OUT / LOGGED_IN / UNKNOWN
@@ -80,6 +93,8 @@ surfaces:
     memory_personalization: "" # OFF / ON / NOT_AVAILABLE / UNKNOWN
     special_modes: NONE      # fără Deep Research / agent în condiția de bază
     new_conversation_per_query: ""  # YES / NO
+    cookies: ""              # REJECTED / ACCEPTED / UNKNOWN
+    new_window_per_query: "" # YES / NO (fereastră privată nouă pentru fiecare query)
   GEMINI:
     work_session: WS1
     account_state: ""        # LOGGED_OUT / LOGGED_IN / UNKNOWN
@@ -89,6 +104,8 @@ surfaces:
     memory_personalization: "" # OFF / ON / NOT_AVAILABLE / UNKNOWN
     special_modes: NONE      # fără Deep Research / agent în condiția de bază
     new_conversation_per_query: ""  # YES / NO
+    cookies: ""              # REJECTED / ACCEPTED / UNKNOWN
+    new_window_per_query: "" # YES / NO (fereastră privată nouă pentru fiecare query)
   PERPLEXITY:
     work_session: WS1
     account_state: ""        # LOGGED_OUT / LOGGED_IN / UNKNOWN
@@ -98,6 +115,8 @@ surfaces:
     memory_personalization: "" # OFF / ON / NOT_AVAILABLE / UNKNOWN
     special_modes: NONE      # fără Deep Research / agent în condiția de bază
     new_conversation_per_query: ""  # YES / NO
+    cookies: ""              # REJECTED / ACCEPTED / UNKNOWN
+    new_window_per_query: "" # YES / NO (fereastră privată nouă pentru fiecare query)
 
 incidents:                # un bloc per incident: INC-01, INC-02, ...
   INC-01:
@@ -133,5 +152,16 @@ ancore, liste inline sau liste de obiecte. De aceea sesiunile, incidentele și
 abaterile sunt blocuri cu cheie (`WS1`, `INC-01`, `DEV-01`). Un incident cu
 toate câmpurile goale se ignoră.
 
-Abaterile DEV-01…DEV-04 sunt cele cunoscute pentru pilot, la 2026-10-11.
+Abaterile DEV-01…DEV-04 sunt cele cunoscute pentru primul pilot, la 2026-10-11.
 Câmpul `reason` îl completează operatorul.
+
+**Notițele operatorului într-un document.** Dacă operatorul pune în rădăcina
+folderului de capturi un document (de exemplu `Draft pilot 2 Romania.docx`),
+documentul se sigilează (Document ID, `naming-convention.md` §3.1), iar
+agentul îi transcrie declarațiile în fișa rulării. Fiecare câmp transcris
+păstrează sensul documentului, fără completări. Ce documentul nu spune rămâne
+gol. Fișa notează sursa: `source_document: <Document ID>`.
+
+Câmpurile pe suprafață sunt preluate verbatim în README (§4). Doar
+`account_state`, `private_window`, `displayed_location`, `model_displayed`,
+`account_tier` și `language_interface` se compară cu ce se vede în capturi.
