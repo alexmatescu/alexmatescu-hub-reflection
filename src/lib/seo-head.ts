@@ -8,6 +8,24 @@
  * diveargă. Vezi `buildLabArticleHead` (@/data/lab-seo) și `buildPresaHead`
  * (@/lib/presa) pentru variantele existente, mai vechi, ale aceluiași tipar.
  */
+/**
+ * Lungimea maximă a `<title>`, după convenția Google (~60 de caractere afișate
+ * în rezultate). Titlul de bază al paginii nu se taie niciodată: se adaugă
+ * cel mai lung sufix de brand care încape în limită, iar dacă niciunul nu
+ * încape, `<title>` e doar titlul de bază (numele site-ului apare oricum separat
+ * în rezultatele Google). Dacă titlul de bază singur depășește limita,
+ * pagina are nevoie de un `seoTitle` scurtat, scris editorial.
+ */
+export const SEO_TITLE_MAX_LENGTH = 60;
+
+export const fitSeoTitle = (base: string, suffixes: readonly string[]) => {
+  for (const suffix of suffixes) {
+    const candidate = `${base}${suffix}`;
+    if (candidate.length <= SEO_TITLE_MAX_LENGTH) return candidate;
+  }
+  return base;
+};
+
 export type SeoHeadProps = {
   title: string;
   description: string;

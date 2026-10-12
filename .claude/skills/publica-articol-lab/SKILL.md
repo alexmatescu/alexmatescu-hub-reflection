@@ -307,7 +307,14 @@ Un articol nu e gata doar pentru că e corect — trebuie să răspundă: **de c
 Dacă primești un draft: păstrează teza și vocea autorului, corectează afirmațiile neconfirmate, nu dilua ideile doar pentru o nuanțare necesară, marchează clar interpretările. Dacă primești doar un brief: research → claim ledger → gate de originalitate (Faza 2) → arhitectură (Faza 3) → abia apoi redactare. Nu scrie întâi textul și nu căuta apoi surse care să-l confirme.
 
 `title` — descrie corect articolul, nu promite mai mult decât demonstrează, distinct în corpus, fără clickbait factual.
-`description` — rezumă fidel, conține ideea principală, nu inventează rezultate. Nu aplica limite rigide de caractere (60/155) — optimizează pentru claritate, nu pentru praguri inexistente.
+`description` — rezumă fidel, conține ideea principală, nu inventează rezultate. Nu aplica limite rigide de caractere (155) — optimizează pentru claritate, nu pentru praguri inexistente.
+
+`<title>` — **limita de 60 de caractere (convenția Google) se aplică.** `<title>` se compune automat prin `labSeoTitle` (`src/data/lab-seo.ts`) și `fitSeoTitle` (`src/lib/seo-head.ts`): titlul de bază (`seoTitle ?? title`) plus cel mai lung sufix de brand care încape în 60 de caractere („ — AI Visibility Lab | Alex Matescu”, apoi „ — AI Visibility Lab”), altfel doar titlul de bază. Tăietura din rezultatele Google se face de la coadă, deci sufixul e partea care se sacrifică; numele site-ului apare oricum separat în rezultate.
+
+- `title` ≤ 60 de caractere → fără `seoTitle`.
+- `title` > 60 de caractere → `seoTitle` **obligatoriu** în meta: cel mult 60 de caractere, **scurtează** titlul (nu îl înlocuiește cu altă idee), păstrează întrebarea/promisiunea și tema principală în primele cuvinte, fără slogan sau clickbait, fără numele autorului ori al Lab-ului (sufixul îl adaugă helperul).
+- `seoTitle` afectează doar `<title>`; `og:title` și `twitter:title` folosesc `title`, întreg.
+- Un `seoTitle` primit de la autor se evaluează după aceleași reguli, nu se copiază. Raportul final spune ce `<title>` rezultă (text și număr de caractere) și de ce există `seoTitle`, dacă există.
 
 ---
 
@@ -318,6 +325,7 @@ Referință canonică de stil: `src/data/lab-content/cat-dureaza-indexare-citare
 ```ts
 {
   title, description, canonical, datePublished, dateModified, faq,  // câmpuri existente dinainte
+  seoTitle?,                                 // obligatoriu doar dacă `title` > 60 de caractere — vezi Faza 4
   category: LabArticleCategory,               // OBLIGATORIU — vezi §5.5, sursă unică pentru index/filtre
   articleType: LabArticleType,                // OBLIGATORIU — vezi §5.5
   about?,                                    // deja exista
@@ -594,6 +602,7 @@ Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doa
 - [ ] Pasul 0 parcurs integral: snapshot la început, căutarea articolului în registru, comparație + decizie de actualizare dacă exista deja, sau introducerea lui în evidență dacă nu exista.
 - [ ] `node scripts/build-content-registry.mjs --strict --diff .registry-before.json` a rulat la final; diff-ul arată intrarea cu datele corecte, wiring `✓✓✓✓`, doar diferențele intenționate și zero anomalii noi. `.registry-before.json` șters.
 - [ ] Toate afirmațiile materiale au fost verificate live, în sesiunea curentă.
+- [ ] `<title>` randat are cel mult 60 de caractere; `seoTitle` există numai dacă `title` depășește 60 și scurtează titlul fără să-l înlocuiască (Faza 4).
 - [ ] Cifrele au denominator, perioadă și definiție corecte (§1.4).
 - [ ] Afirmațiile volatile au fost reverificate live, nu copiate dintr-un articol anterior.
 - [ ] Sursele comerciale sunt identificate ca atare când e relevant.

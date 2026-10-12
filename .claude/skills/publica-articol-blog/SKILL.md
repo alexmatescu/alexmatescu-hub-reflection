@@ -650,6 +650,13 @@ Nu îl schimba doar pentru SEO.
 
 Dacă trebuie corectat, păstrează sensul și intenția.
 
+**Lungimea pentru `<title>` (convenția Google, max. 60 de caractere).** `<title>` se compune automat prin `blogSeoTitle` (`src/lib/blog-seo.ts`) și `fitSeoTitle` (`src/lib/seo-head.ts`): titlul de bază (`seoTitle ?? title`) plus „ — Alex Matescu” **numai dacă întregul încape în 60 de caractere**. Altfel `<title>` e doar titlul de bază. Numele autorului nu se pierde: Google îl afișează separat, ca nume de site. Consecința practică:
+
+- titlu ≤ 60 de caractere → nu e nevoie de `seoTitle` (§12.19);
+- titlu > 60 de caractere → `seoTitle` e obligatoriu, scris după §12.19.
+
+Un titlu bun pentru căutare promite un răspuns sau atinge o întrebare reală a cititorului; un titlu-concept sau un slogan („X: de la A la B”) sună bine pentru cine te cunoaște, dar nu spune nimic cuiva care dă peste el în rezultate.
+
 ---
 
 # 12.2 `subtitle`
@@ -968,23 +975,29 @@ Nu crea două descrieri contradictorii pentru aceeași imagine.
 
 # 12.19 `seoTitle`
 
-Override opțional.
+Override opțional, cu o singură justificare acceptată: **`title` are peste 60 de caractere**.
 
-Nu îl completa automat.
+Nu îl completa automat și nu îl copia din frontmatter-ul primit. Un `seoTitle` venit de la autor se evaluează la fel ca unul propus de agent: rămâne doar dacă `title` depășește 60 de caractere și formularea respectă regulile de mai jos. Altfel se elimină și se lasă fallback-ul.
 
-Dacă `title` funcționează bine ca titlu SEO, lasă fallback-ul să funcționeze.
+De ce: tăietura din rezultatele Google se face de la coadă, iar `fitSeoTitle` renunță primul la sufixul de brand. Un titlu de ≤ 60 de caractere se vede deci întreg. În plus, un `<title>` diferit de H1 e rescris des de Google; când cele două coincid, de regulă e păstrat — controlul rămâne la autor.
 
-Folosește `seoTitle` numai când există un motiv editorial/SEO real.
+Când e necesar, `seoTitle`:
+
+- are cel mult 60 de caractere;
+- **scurtează** titlul editorial, nu îl înlocuiește cu altă idee;
+- păstrează întrebarea sau promisiunea titlului și tema/`focusKeyword` în primele cuvinte;
+- nu e slogan, nu e clickbait, nu promite ce articolul nu livrează;
+- nu conține numele autorului (sufixul îl adaugă helperul, dacă încape).
+
+`seoTitle` afectează doar `<title>`. Preview-ul social (OG/Twitter) folosește `title`.
 
 ---
 
 # 12.20 `ogTitle`
 
-Override opțional.
+Override opțional. Fallback-ul este `title` (nu `seoTitle`), deci titlul editorial ajunge întreg în preview-ul social fără niciun override.
 
-Folosește numai dacă preview-ul social beneficiază real de o formulare diferită.
-
-Altfel folosește fallback-ul.
+Folosește `ogTitle` numai dacă preview-ul social beneficiază real de o formulare diferită de titlul editorial. Nu îl seta egal cu `title` — ar fi redundant.
 
 ---
 
@@ -994,25 +1007,27 @@ Override opțional.
 
 Nu completa doar pentru că există.
 
-Altfel folosește descrierea normală.
+Motivul legitim: contextul social diferă de cel de căutare. În căutare, cititorul caută un răspuns — meta description răspunde la asta. Pe social, oamenii derulează — un preview care deschide o poveste sau o tensiune personală („Am vrut să plec din România…”) oprește derularea. Dacă există un astfel de text, distinct și fidel articolului, `ogDescription` își are rostul. Dacă ar repeta meta description cu alte cuvinte, lasă fallback-ul.
 
 ---
 
 # 12.22 `twitterTitle`
 
-Override opțional.
+Override opțional. Fallback-ul este `ogTitle ?? title`.
 
-Folosește numai când este justificat.
-
-Altfel păstrează fallback-ul existent.
+Folosește numai când X/Twitter are nevoie de altă formulare decât celelalte rețele (rar). Altfel păstrează fallback-ul.
 
 ---
 
 # 12.23 `twitterDescription`
 
-Override opțional.
+Override opțional. Fallback-ul este `ogDescription ?? metaDescription ?? excerpt`.
 
-Nu duplica mecanic `ogDescription`.
+Nu duplica mecanic `ogDescription` — fallback-ul o preia deja.
+
+# 12.23.1 Raportarea override-urilor
+
+Pentru fiecare override păstrat (`seoTitle`, `ogTitle`, `ogDescription`, `twitterTitle`, `twitterDescription`), raportul final (§53) spune **de ce** există. Pentru fiecare override primit în frontmatter și eliminat, raportul spune că a fost eliminat și de ce.
 
 ---
 
@@ -1974,7 +1989,7 @@ NU:
 [ ] `citations` evaluate
 [ ] `heroImage` verificată dacă există
 [ ] `imageAlt` evaluat
-[ ] `seoTitle` evaluat
+[ ] `seoTitle` evaluat: există numai dacă `title` > 60 de caractere (§12.19)
 [ ] `ogTitle` evaluat
 [ ] `ogDescription` evaluată
 [ ] `twitterTitle` evaluat
@@ -2013,7 +2028,7 @@ NU:
 
 # 48. CHECKLIST HTML HEAD
 
-[ ] `<title>`
+[ ] `<title>` are cel mult 60 de caractere și coincide cu titlul editorial sau cu `seoTitle` (+ sufix doar dacă încape)
 [ ] meta description
 [ ] canonical
 [ ] og:title
@@ -2132,9 +2147,10 @@ About:
 Mentions:
 FAQ: da/nu
 Citations: număr
-SEO title override: da/nu
-OG overrides: da/nu
-Twitter overrides: da/nu
+`<title>` final: textul și numărul de caractere (≤ 60)
+SEO title override: da/nu, cu motivul
+OG overrides: da/nu, cu motivul
+Twitter overrides: da/nu, cu motivul
 Hero image: da/nu
 Reading time:
 Featured:

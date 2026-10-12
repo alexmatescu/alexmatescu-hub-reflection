@@ -20,9 +20,20 @@ import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/5. paradoxul-s
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/3. social-media-vizibilitate-ai";
 import { tabulaRasaEntityResolutionStudiuDeCazMeta } from "@/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz";
 import { findLabPage } from "@/data/lab";
-import { buildSeoHead } from "@/lib/seo-head";
+import { buildSeoHead, fitSeoTitle } from "@/lib/seo-head";
 
 const BASE = "https://delamatescu.ro";
+
+/**
+ * `<title>` pentru paginile Lab: titlul de bază plus cel mai lung sufix de brand
+ * care încape în 60 de caractere („ — AI Visibility Lab | Alex Matescu”, apoi
+ * „ — AI Visibility Lab”), altfel doar titlul de bază (vezi `fitSeoTitle`).
+ */
+export const labSeoTitle = (base: string) =>
+  fitSeoTitle(base, [
+    " — AI Visibility Lab | Alex Matescu",
+    " — AI Visibility Lab",
+  ]);
 
 /**
  * Clasificarea editorială principală (index + filtre pe /lab/articole). Valorile
@@ -63,6 +74,13 @@ export type LabArticleType =
 
 export type LabArticleMeta = {
   title: string;
+  /**
+   * Titlu scurtat pentru `<title>`, numai când `title` singur depășește 60 de
+   * caractere (convenția Google). Păstrează tema și cuvântul cheie principal
+   * în primele cuvinte; nu e un slogan alternativ. Preview-ul social (OG/Twitter)
+   * folosește în continuare `title`.
+   */
+  seoTitle?: string;
   description: string;
   canonical: string;
   /**
@@ -155,6 +173,19 @@ const findCaseStudyMetaBySlug = (slug: string) =>
   labCaseStudyMeta.find((meta) =>
     meta.canonical.endsWith(`/lab/studii-de-caz/${slug}`),
   );
+
+/**
+ * `<title>` pentru o pagină Lab după path: dacă path-ul are meta de articol sau
+ * de studiu de caz, folosește `seoTitle ?? title` din meta (ca head-ul
+ * server-side), altfel titlul paginii din `labNav`. Folosit de <Seo> din
+ * Lab.tsx, ca titlul client-side să fie identic cu cel server-side.
+ */
+export const labSeoTitleForPath = (pathname: string, fallbackBase: string) => {
+  const meta = [...labArticleMeta, ...labCaseStudyMeta].find((m) =>
+    m.canonical.endsWith(pathname),
+  );
+  return labSeoTitle(meta ? (meta.seoTitle ?? meta.title) : fallbackBase);
+};
 
 /**
  * Ruta articolului (`/lab/articole/{slug}`), derivată din `canonical` — nu
@@ -393,19 +424,19 @@ export const buildLabArticleHead = (slug: string) => {
   const meta = findArticleMetaBySlug(slug);
   if (!meta) return undefined;
 
-  const title = `${meta.title} — AI Visibility Lab | Alex Matescu`;
+  const title = labSeoTitle(meta.seoTitle ?? meta.title);
 
   return {
     meta: [
       { title },
       { name: "description", content: meta.description },
       { property: "og:type", content: "article" },
-      { property: "og:title", content: title },
+      { property: "og:title", content: meta.title },
       { property: "og:description", content: meta.description },
       { property: "og:url", content: meta.canonical },
       { property: "article:published_time", content: meta.datePublished },
       { property: "article:modified_time", content: meta.dateModified },
-      { name: "twitter:title", content: title },
+      { name: "twitter:title", content: meta.title },
       { name: "twitter:description", content: meta.description },
       // Suprascrie placeholder-ul global (__root.tsx) cu imaginea proprie a
       // articolului, dacă există una (`meta.image`, vezi SKILL.md §5.3) — altfel
@@ -440,19 +471,19 @@ export const buildLabCaseStudyHead = (slug: string) => {
   const meta = findCaseStudyMetaBySlug(slug);
   if (!meta) return undefined;
 
-  const title = `${meta.title} — AI Visibility Lab | Alex Matescu`;
+  const title = labSeoTitle(meta.seoTitle ?? meta.title);
 
   return {
     meta: [
       { title },
       { name: "description", content: meta.description },
       { property: "og:type", content: "article" },
-      { property: "og:title", content: title },
+      { property: "og:title", content: meta.title },
       { property: "og:description", content: meta.description },
       { property: "og:url", content: meta.canonical },
       { property: "article:published_time", content: meta.datePublished },
       { property: "article:modified_time", content: meta.dateModified },
-      { name: "twitter:title", content: title },
+      { name: "twitter:title", content: meta.title },
       { name: "twitter:description", content: meta.description },
       ...(meta.image
         ? [
@@ -490,7 +521,7 @@ export const buildLabPageHead = (pathname: string) => {
   const canonical = `${BASE}${page.to}`;
 
   return buildSeoHead({
-    title: `${page.seoTitle ?? page.label} — AI Visibility Lab | Alex Matescu`,
+    title: labSeoTitle(page.seoTitle ?? page.label),
     description: page.lead,
     canonical,
     jsonLd: {

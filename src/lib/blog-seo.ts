@@ -1,8 +1,18 @@
 import { posts } from "@/data/posts";
 import { alexMatescuPerson } from "@/components/Seo";
-import { buildSeoHead } from "@/lib/seo-head";
+import { buildSeoHead, fitSeoTitle } from "@/lib/seo-head";
+import type { Post } from "@/data/posts";
 
 const BASE = "https://delamatescu.ro";
+
+/**
+ * `<title>` pentru un articol de blog: `seoTitle` (doar dacă titlul editorial
+ * singur depășește 60 de caractere) sau `title`, plus „ — Alex Matescu” numai
+ * dacă încape în limita de 60 (vezi `fitSeoTitle`). Folosit și de <Seo> din
+ * BlogPost.tsx, ca titlul server-side și cel client-side să fie identice.
+ */
+export const blogSeoTitle = (post: Pick<Post, "title" | "seoTitle">) =>
+  fitSeoTitle(post.seoTitle ?? post.title, [" — Alex Matescu"]);
 
 /**
  * Head SSR pentru /blog/:slug — sursă unică, folosită atât de head()-ul rutei
@@ -15,9 +25,7 @@ export const buildBlogPostHead = (slug: string) => {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return undefined;
 
-  const title = post.seoTitle
-    ? `${post.seoTitle} | Alex Matescu`
-    : `${post.title} — Alex Matescu`;
+  const title = blogSeoTitle(post);
   const description = post.metaDescription ?? post.excerpt;
   const canonical = `${BASE}/blog/${post.slug}`;
   const imageUrl = post.heroImage?.src
@@ -34,7 +42,9 @@ export const buildBlogPostHead = (slug: string) => {
     description,
     canonical,
     ogType: "article",
-    ogTitle: post.ogTitle ?? post.seoTitle ?? post.title,
+    // Preview-ul social primește titlul editorial, nu varianta scurtată pentru
+    // rezultatele de căutare; brandul vine din og:site_name.
+    ogTitle: post.ogTitle ?? post.title,
     ogDescription: post.ogDescription ?? post.metaDescription ?? post.excerpt,
     ogSiteName: "Alex Matescu",
     ogLocale: "ro_RO",

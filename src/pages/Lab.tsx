@@ -11,6 +11,7 @@ import {
   labArticleMeta,
   labArticlePathname,
   labCaseStudyMeta,
+  labSeoTitleForPath,
   latestLabArticle,
   latestLabCaseStudy,
   sortedLabArticles,
@@ -415,7 +416,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
         nu-l mai duplicăm aici.
       */}
       <Seo
-        title={`${page.seoTitle ?? page.label} — AI Visibility Lab | Alex Matescu`}
+        title={labSeoTitleForPath(page.to, page.seoTitle ?? page.label)}
         description={page.lead}
         {...(isArticle ? { ogType: "article" } : {})}
       />

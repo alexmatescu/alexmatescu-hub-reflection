@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { posts } from "@/data/posts";
 import NewsletterForm from "@/components/NewsletterForm";
 import Seo from "@/components/Seo";
+import { blogSeoTitle } from "@/lib/blog-seo";
 import ContentLightbox from "@/components/ContentLightbox";
 
 const formatDate = (iso: string) =>
@@ -35,15 +36,11 @@ const BlogPost = () => {
   return (
     <>
       <Seo
-        title={
-          post.seoTitle
-            ? `${post.seoTitle} | Alex Matescu`
-            : `${post.title} — Alex Matescu`
-        }
+        title={blogSeoTitle(post)}
         description={post.metaDescription ?? post.excerpt}
         canonicalUrl={`https://delamatescu.ro/blog/${post.slug}`}
         ogType="article"
-        ogTitle={post.ogTitle ?? post.seoTitle ?? post.title}
+        ogTitle={post.ogTitle ?? post.title}
         ogDescription={
           post.ogDescription ?? post.metaDescription ?? post.excerpt
         }
