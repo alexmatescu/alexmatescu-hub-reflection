@@ -83,6 +83,28 @@ Orice alt fișier din rădăcină (de exemplu o captură fără subfolder) sau u
 fișier care nu e captură într-un subfolder de suprafață oprește sigilarea și
 cere decizia userului.
 
+### 3.2 Evidence ID al blocului AI Overview
+
+```
+<Evidence ID>-AIO
+```
+
+Exemplu: `MKT-RO-AIV-2026Q4-PILOT-2-E001-AIO`.
+
+AI Overview e un bloc integrat în SERP-ul Google. Nu are subfolder, rulare
+sau capturi proprii: se capturează în aceeași execuție `GSEARCH`, în aceleași
+fișiere ca rezultatele organice. În evidențe e tratat distinct: fiecare
+captură `GSEARCH` în care se vede blocul (`blocks_visible` conține
+`AI_OVERVIEW`) primește un Evidence ID al blocului, format din Evidence ID-ul
+capturii plus sufixul `-AIO`.
+
+- ID-ul e derivat de `build_capture_index.mjs`, nu la sigilare. Nu e un fișier: trimite la aceeași captură, cu același SHA-256, și nu are rând în manifest.
+- Capture index-ul îl scrie în `ai_overview_evidence_id`, iar partea blocului în `ai_overview_part` (`1/2`, `2/2`…, în ordinea `part_number`).
+- Rândurile din registru cu `serp_block = AI_OVERVIEW` citează **doar** ID-uri `-AIO`. Celelalte rânduri nu citează niciodată un ID `-AIO`. Scripturile opresc orice abatere.
+- Răspunsul generat de Bing (`GENERATED_ANSWER`) nu primește ID de bloc.
+
+Decizie: RV-05 din raportul pilotului 2, 2026-10-12.
+
 ## 4. Execution ID și Observation ID
 
 ```

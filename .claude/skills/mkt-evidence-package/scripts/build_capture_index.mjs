@@ -51,6 +51,8 @@ export const CAPTURE_INDEX_HEADER = [
   "response_relevance",
   "relevance_basis",
   "ai_overview_status",
+  "ai_overview_evidence_id",
+  "ai_overview_part",
   "capture_time_on_screen",
   "filename_timestamp_raw",
   "filename_timestamp_parsed",
@@ -204,11 +206,27 @@ async function main() {
     }
     if (statuses.size > 1) issues.push({ scope: "EXECUTION", id, field: "execution_status", issue: "CONFLICT", detail: [...statuses].join("|") });
     if (relevances.size > 1) issues.push({ scope: "EXECUTION", id, field: "response_relevance", issue: "CONFLICT", detail: [...relevances].join("|") });
+    // AI Overview (RV-05, 2026-10-12): bloc integrat în SERP-ul Google, cu ID de evidență propriu
+    // pe fiecare captură în care se vede (naming-convention.md §3.2). Nu e un fișier separat.
+    const aio = list
+      .filter((r) => r.blocks_visible.split(";").map((x) => x.trim()).includes("AI_OVERVIEW"))
+      .sort((a, b) => Number(a.part_number) - Number(b.part_number));
+    const aioStatus = new Set(list.map((r) => r.ai_overview_status));
+    if (aio.length && list[0].mapped_surface !== "GSEARCH") {
+      issues.push({ scope: "EXECUTION", id, field: "blocks_visible", issue: "AI_OVERVIEW_STATUS_MISMATCH", detail: `AI_OVERVIEW pe ${list[0].mapped_surface}` });
+    } else if (list[0].mapped_surface === "GSEARCH" && (aio.length > 0) !== aioStatus.has("CAPTURED")) {
+      issues.push({ scope: "EXECUTION", id, field: "ai_overview_status", issue: "AI_OVERVIEW_STATUS_MISMATCH", detail: `ai_overview_status=${[...aioStatus].join("|")}; capturi cu blocul AI_OVERVIEW=${aio.length}` });
+    }
+    aio.forEach((r, i) => {
+      r.ai_overview_evidence_id = `${r.evidence_id}-AIO`;
+      r.ai_overview_part = `${i + 1}/${aio.length}`;
+    });
     execSummary[id] = {
       surface: list[0].mapped_surface,
       query_id: list[0].query_id,
       captures: list.length,
       evidence_ids: list.map((r) => r.evidence_id),
+      ai_overview_evidence_ids: aio.map((r) => r.ai_overview_evidence_id),
       execution_status: [...statuses].join("|"),
       response_relevance: [...relevances].join("|"),
       session_context_status: ctx,
@@ -216,6 +234,10 @@ async function main() {
     };
   }
   for (const r of rows) {
+    if (!r.ai_overview_evidence_id) {
+      r.ai_overview_evidence_id = "NOT_APPLICABLE";
+      r.ai_overview_part = "NOT_APPLICABLE";
+    }
     if (r.execution_id === "NOT_APPLICABLE") {
       r.session_context_status = "NOT_APPLICABLE";
       r.execution_contamination_status = "NOT_APPLICABLE";
@@ -231,7 +253,7 @@ async function main() {
   }
   for (const m of missing) issues.push({ scope: "EXECUTION", id: m, field: "execution_id", issue: "EXPECTED_EXECUTION_MISSING", detail: "" });
 
-  const blocking = issues.filter((i) => ["UNCLASSIFIED", "INVALID_ENUM", "NOT_INTEGER", "INVALID_FORMAT", "BASIS_REQUIRED", "NOT_IN_QUERY_SET", "PARTS_INCONSISTENT"].includes(i.issue));
+  const blocking = issues.filter((i) => ["UNCLASSIFIED", "INVALID_ENUM", "NOT_INTEGER", "INVALID_FORMAT", "BASIS_REQUIRED", "NOT_IN_QUERY_SET", "PARTS_INCONSISTENT", "AI_OVERVIEW_STATUS_MISMATCH"].includes(i.issue));
   const stagingPath = path.join(P.workDir, "capture-index.staging.csv");
   const reviewPath = path.join(P.workDir, "capture-review.csv");
   await writeText(stagingPath, toCsv(CAPTURE_INDEX_HEADER, rows));

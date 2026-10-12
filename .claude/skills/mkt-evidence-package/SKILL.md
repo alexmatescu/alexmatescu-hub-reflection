@@ -1,12 +1,13 @@
 ---
 name: mkt-evidence-package
-description: Transformă un folder brut de capturi de Market Discovery (seria MKT-RO-AIV — SERP-uri Google/Bing și răspunsuri AI, organizate pe suprafețe) într-un pachet de dovezi sigilat, documentat și verificabil, plus un registru de observații (fiecare rezultat/furnizor numit în fiecare execuție, cu poziție, URL acolo unde e vizibil, proveniență și calificarea relevanței față de query). Pipeline determinist SEAL → INVENTORY → QUERY SET → SESSION CONTEXT (analiza vizuală a contextului de sesiune: incognito, logat/nelogat, locație, chat temporar/existent, contaminare) → REVIEW → CAPTURE CLASSIFICATION → REVIEW → OBSERVATION EXTRACTION → REVIEW → ARTIFACTS → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → (opțional) GITHUB DRAFT RELEASE. NU face Verification/eligibilitate, NU deduplică entități în Candidate Set, NU interpretează rezultatele, NU modifică setul de query-uri sau capturile brute, NU publică. Distinct de `evidence-release` (rezervat studiilor pe entitatea Alex Matescu). Invocă atunci când userul cere procesarea capturilor unei rulări Discovery / pilot / T0 / Fn din Market Measurement, sau „pachetul de dovezi pentru Discovery".
+description: Transformă un folder brut de capturi de Market Discovery (seria MKT-RO-AIV — SERP-uri Google/Bing și răspunsuri AI, organizate pe suprafețe) într-un pachet de dovezi sigilat, documentat și verificabil, plus un registru de observații (fiecare rezultat/furnizor numit în fiecare execuție, cu poziție, URL acolo unde e vizibil, proveniență și calificarea relevanței față de query). Pipeline determinist SEAL → INVENTORY → QUERY SET → SESSION CONTEXT (analiza vizuală a contextului de sesiune: incognito, logat/nelogat, locație, chat temporar/existent, contaminare) → REVIEW → CAPTURE CLASSIFICATION → REVIEW → OBSERVATION EXTRACTION → REVIEW → ARTIFACTS → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → (opțional) GITHUB DRAFT RELEASE. NU face Verification/eligibilitate, NU deduplică entități în Candidate Set, NU interpretează rezultatele, NU modifică setul de query-uri sau capturile brute, NU publică. Distinct de `evidence-release` (rezervat studiilor pe entitatea Alex Matescu). Invocă atunci când userul cere procesarea capturilor unei rulări Discovery (pilot, rulare trimestrială FULL sau lunară M<luna>) din Market Measurement, sau „pachetul de dovezi pentru Discovery".
 ---
 
 # mkt-evidence-package — pachet de dovezi + registru de observații pentru Market Discovery
 
-Domeniul acestui skill: o **instanță** de rulare Discovery (pilot, T0, F1…Fn ai
-unei instanțe trimestriale MKT-RO-AIV) → pachet sigilat + registru de
+Domeniul acestui skill: o **instanță** de rulare Discovery (pilot, rularea trimestrială
+completă `-FULL` sau rularea lunară `-M<luna>` a unei instanțe trimestriale
+MKT-RO-AIV; T0 / F1…Fn nu se folosesc în Market Discovery) → pachet sigilat + registru de
 observații brute. Construit pornind de la `evidence-release` (principiile de
 imutabilitate, freeze și checksums sunt preluate), dar adaptat unei măsurători
 de **piață**, nu de entitate. Cele două skill-uri sunt independente: nu se
@@ -18,8 +19,9 @@ SEAL → INVENTORY → QUERY SET → SESSION CONTEXT → REVIEW (0) → CAPTURE 
   → CHECKSUMS → VERIFICATION → [GITHUB DRAFT RELEASE — opțional, dezactivat implicit]
 ```
 
-Bază metodologică: setul de query-uri declarat în config (pentru pilot:
-`docs/drafts/MKT-RO-AIV-discovery-query-set-v0.1.0.md`), AVL-200, AVL-MKT-001
+Bază metodologică: setul de query-uri declarat în config (pentru piloții 1–2:
+`docs/drafts/outdated/MKT-RO-AIV-discovery-query-set-v0.1.0.md`; de la v0.2.0:
+`docs/drafts/MKT-RO-AIV-market-discovery-v0.2.0.md`), AVL-200, AVL-MKT-001
 (draft). Skill-ul aplică regulile setului; nu le schimbă.
 
 ## 0. Ce NU face acest agent
@@ -72,6 +74,10 @@ permise: `SERP_RESULT`, `SERP_SNIPPET`, `AI_RESPONSE`, `AI_CITATION`,
 Google, răspunsul generat de Bing) fac parte din execuția Search și se
 înregistrează cu blocul lor (`AI_OVERVIEW` / `GENERATED_ANSWER`), separat de
 rezultatele organice (`observation-register-schema.md` §Proveniență și blocuri).
+AI Overview e un bloc integrat în SERP-ul Google, fără folder sau capturi
+proprii, dar cu Evidence ID propriu pe fiecare captură în care se vede
+(`<Evidence ID>-AIO`, `naming-convention.md` §3.2) și face parte din baza
+Discovery.
 
 ### 2.2 Relevanța față de query
 
@@ -94,7 +100,10 @@ Poziția organică se numără continuu peste paginile SERP (reclame, module
 locale, AI Overview, „People also ask" etc. nu primesc poziție organică). Banda
 de adâncime (`1-10`, `11-20`, `21-30`, …) e derivată de script. Adâncimea
 preregistrată din setul de query-uri e declarată în config; rândurile de peste
-ea sunt marcate `beyond_declared_depth = YES`, nu excluse.
+ea sunt marcate `beyond_declared_depth = YES`, nu excluse. Începând cu setul
+v0.2.0, adâncimea Google e de aproximativ 30 de poziții (`declared_depth: 30`),
+în funcție de câte rezultate încarcă fiecare pagină; primele 3 pagini de
+rezultate se capturează și se păstrează întotdeauna ca evidență.
 
 ### 2.4 Contextul de sesiune se observă, nu se presupune
 
@@ -208,7 +217,7 @@ Pentru fiecare execuție confirmată, completează `observation-staging.csv`
 (`references/observation-register-schema.md`):
 
 - **SERP**: un rând `SERP_RESULT` pentru fiecare rezultat organic vizibil (poziție, titlu, URL afișat, numele afișat al site-ului, tipul paginii); câte un rând `SERP_SNIPPET` pentru fiecare nume de furnizor vizibil în fragmentul unui rezultat terț, legat de rândul-părinte; rezultatele din module (reclame, „People also ask”, alte module) cu blocul lor, fără poziție organică;
-- **AI Overview / răspunsul generat de Bing**: aceleași reguli ca pentru AI (`AI_RESPONSE`, `AI_CITATION`), cu `serp_block = AI_OVERVIEW` / `GENERATED_ANSWER`. Execuția trebuie să aibă `ai_overview_status = CAPTURED` pentru AI Overview;
+- **AI Overview / răspunsul generat de Bing**: aceleași reguli ca pentru AI (`AI_RESPONSE`, `AI_CITATION`), cu `serp_block = AI_OVERVIEW` / `GENERATED_ANSWER`. Execuția trebuie să aibă `ai_overview_status = CAPTURED` pentru AI Overview, iar rândurile AI Overview citează ID-urile blocului din capture index (`ai_overview_evidence_id`, de forma `<Evidence ID>-AIO`), nu Evidence ID-ul capturii;
 - **AI**: un rând `AI_RESPONSE` pentru fiecare entitate numită în text, în ordinea primei apariții (inclusiv fără URL — `url_displayed = NOT_VISIBLE`); un rând `AI_CITATION` pentru fiecare sursă afișată; un rând `AI_IMAGE_TEXT` pentru un nume vizibil doar în imaginea unui card;
 - persoanele numite doar ca fondator, lider sau autor al unei organizații: `PERSON_ASSOCIATED`, cu organizația și rolul în `notes`;
 - `observed_order` unic în execuție;
@@ -285,11 +294,13 @@ Fiecare script scrie în `evidence/work/mkt/<instance-slug>/processing-log.jsonl
 
 - **2026-10-12** — după pilotul din 2026-10-09 (raportul intern v0.1, RV-01, RV-10, RV-14, RV-15, RV-19): documentele operatorului se sigilează cu Document ID; alias pentru „Google Search + AI Overview”; blocurile `AI_OVERVIEW`, `GENERATED_ANSWER`, `PAA`, `REMOVAL_NOTICE`; proveniența `AI_IMAGE_TEXT`; tipul `PERSON_ASSOCIATED`; orice modul SERP e `SUPPLEMENTAL`; rezultatul pe execuție (`COMPLETED_NO_NAMED_ENTITIES` etc.); `apply_review_decisions.mjs` cu cheie pe rând; `observed_order` unic; locația afișată pe toate suprafețele; câmpuri noi în fișa rulării (rețea, locația din browser, cookies, fereastră nouă per query).
 
+- **2026-10-12** — după pilotul din 2026-10-11 (raportul intern v0.1, RV-05, RV-06): AI Overview are Evidence ID de bloc `<Evidence ID>-AIO` (coloanele `ai_overview_evidence_id`, `ai_overview_part`), rândurile lui citează doar aceste ID-uri și sunt `PRIMARY`; adâncimea Google ~30 / 3 pagini pentru setul v0.2.0.
+
 ## 8. Checklist final
 
 - [ ] Folderul sursă neatins; manifestul folder = manifestul zip = SHA-urile din index.
 - [ ] `archive_sha256` identic între STEP 2 și STEP 12.
-- [ ] Fiecare captură are exact un Evidence ID, atribuit la sigilare.
+- [ ] Fiecare captură are exact un Evidence ID, atribuit la sigilare. Capturile Google cu AI Overview au și ID-ul blocului (`-AIO`), citat de rândurile AI Overview.
 - [ ] Setul de query-uri verificat prin SHA-256; toate `query_id`-urile din index ∈ set.
 - [ ] Execuțiile lipsă față de `queries_executed × surfaces` declarate, nu ascunse.
 - [ ] Contextul de sesiune extras din capturi, cu bază vizuală pentru fiecare valoare. Conflictele, nepotrivirile și contaminările confirmate la REVIEW (0).

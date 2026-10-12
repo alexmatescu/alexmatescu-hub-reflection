@@ -19,10 +19,10 @@ eligibilitate. Aceeași entitate apare de câte ori a fost afișată.
 | 5 | `query_id` | DERIVAT | | Preluat din execuție. |
 | 6 | `query_set_id` | DETERMINISTIC | | |
 | 7 | `query_layer` | DERIVAT | `CORE-CANDIDATE` / `EXPLORATORY` | Preluat din `query-set.csv`. |
-| 8 | `evidence_ids` | CLASIFICARE → validat | listă de Evidence ID separate prin `;` | Capturile în care se vede observația. Cel puțin una. |
+| 8 | `evidence_ids` | CLASIFICARE → validat | listă de Evidence ID separate prin `;` | Capturile în care se vede observația. Cel puțin una. Rândurile `AI_OVERVIEW` citează doar ID-urile blocului (`<Evidence ID>-AIO`, `naming-convention.md` §3.2); celelalte rânduri nu le citează. |
 | 9 | `provenance` | CLASIFICARE | `SERP_RESULT` / `SERP_SNIPPET` / `AI_RESPONSE` / `AI_CITATION` / `AI_IMAGE_TEXT` | Vezi §Proveniență și blocuri. |
 | 10 | `serp_block` | CLASIFICARE | `ORGANIC` / `ADS` / `LOCAL` / `PAA` / `AI_OVERVIEW` / `GENERATED_ANSWER` / `OTHER` / `NOT_APPLICABLE` | `NOT_APPLICABLE` pe suprafețele AI și numai acolo. |
-| 11 | `result_layer` | DERIVAT | `PRIMARY` / `SUPPLEMENTAL` | `PRIMARY` doar pentru `ORGANIC` și pentru suprafețele AI (`NOT_APPLICABLE`); orice alt bloc SERP → `SUPPLEMENTAL`. |
+| 11 | `result_layer` | DERIVAT | `PRIMARY` / `SUPPLEMENTAL` | `PRIMARY` pentru `ORGANIC`, `AI_OVERVIEW` și suprafețele AI (`NOT_APPLICABLE`); orice alt bloc SERP (inclusiv `GENERATED_ANSWER`) → `SUPPLEMENTAL`. |
 | 12 | `organic_position` | CLASIFICARE | întreg ≥1 / `NOT_APPLICABLE` | Doar pentru `SERP_RESULT` organic. Pentru `SERP_SNIPPET`, poziția părintelui. |
 | 13 | `observed_order` | CLASIFICARE | întreg ≥1 | Ordinea în execuție. Pentru AI e ordinea primei apariții. |
 | 14 | `depth_band` | DERIVAT | `1-10`, `11-20`, … / `NOT_APPLICABLE` | |
@@ -55,9 +55,12 @@ eligibilitate. Aceeași entitate apare de câte ori a fost afișată.
 **AI Overview și răspunsul generat de Bing** fac parte din execuția `GSEARCH`,
 respectiv `BSEARCH`. Rândurile lor au `serp_block = AI_OVERVIEW` sau
 `GENERATED_ANSWER`, proveniență `AI_RESPONSE` / `AI_CITATION`, fără poziție
-organică, și `result_layer = SUPPLEMENTAL`. `serp_block = AI_OVERVIEW` cere
-`ai_overview_status = CAPTURED` pe execuție. Scriptul oprește combinațiile
-care nu se potrivesc (de exemplu `AI_RESPONSE` cu `ORGANIC`).
+organică. AI Overview face parte din baza Discovery: `result_layer = PRIMARY`,
+iar `evidence_ids` sunt ID-urile blocului (`<Evidence ID>-AIO`). Răspunsul
+generat de Bing rămâne `SUPPLEMENTAL` și citează Evidence ID-ul capturii.
+`serp_block = AI_OVERVIEW` cere `ai_overview_status = CAPTURED` pe execuție.
+Scriptul oprește combinațiile care nu se potrivesc (de exemplu `AI_RESPONSE`
+cu `ORGANIC`, sau un rând `AI_OVERVIEW` care citează Evidence ID-ul capturii).
 
 ## Enum `entity_kind_observed`
 

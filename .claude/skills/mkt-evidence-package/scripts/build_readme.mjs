@@ -19,7 +19,7 @@ const FIXED = {
   scope:
     "Acest pachet conservă capturile și observațiile brute ale unei rulări Discovery. Documentează ce au afișat suprafețele la momentul capturii. Nu constituie Candidate Set, Market Reference Set sau o evaluare a furnizorilor.",
   asReturned:
-    "Au fost înregistrate exclusiv rezultatele afișate direct de suprafață ca răspuns la interogare: rezultate SERP (poziție, titlu, URL afișat, fragment), textul răspunsurilor AI cu sursele afișate și, separat de rezultatele organice, blocurile generate de motoarele de căutare (AI Overview, răspunsul generat de Bing), atunci când au fost capturate. Paginile rezultatelor și sursele citate nu au fost deschise. Entitățile din interiorul directoarelor sau articolelor nu au fost extrase, cu excepția numelor vizibile în fragmentul SERP.",
+    "Au fost înregistrate exclusiv rezultatele afișate direct de suprafață ca răspuns la interogare: rezultate SERP (poziție, titlu, URL afișat, fragment), textul răspunsurilor AI cu sursele afișate și, separat de rezultatele organice, blocurile generate de motoarele de căutare (AI Overview, răspunsul generat de Bing), atunci când au fost capturate. Blocul AI Overview are un Evidence ID propriu pe fiecare captură în care apare (<Evidence ID>-AIO), cu aceeași captură ca sursă. Paginile rezultatelor și sursele citate nu au fost deschise. Entitățile din interiorul directoarelor sau articolelor nu au fost extrase, cu excepția numelor vizibile în fragmentul SERP.",
   session:
     "Contextul de sesiune a fost stabilit din indicatorii vizibili în capturi. NOT_VISIBLE înseamnă că indicatorul nu apare pe ecran, nu că starea respectivă lipsea. Fereastra privată și conversația nouă nu garantează absența personalizării sau a localizării.",
   relevance:

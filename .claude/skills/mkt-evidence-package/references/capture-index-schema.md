@@ -15,7 +15,7 @@ Fiecare coloană are o singură sursă:
 |---|---|---|---|---|
 | 1 | `evidence_id` | SEAL | `naming-convention.md` §3 | |
 | 2 | `instance_id` | DETERMINISTIC | din config | |
-| 3 | `instance_type` | DETERMINISTIC | `PILOT` / `T0` / `F<n>` | |
+| 3 | `instance_type` | DETERMINISTIC | `PILOT` / `FULL` / `M<luna>` | |
 | 4 | `original_relative_path` | SEAL | verbatim | |
 | 5 | `original_filename` | SEAL | verbatim | |
 | 6 | `archive_surface_folder` | SEAL | verbatim | Primul segment din cale. |
@@ -36,6 +36,8 @@ Fiecare coloană are o singură sursă:
 | 21 | `response_relevance` | CLASIFICARE | `RELEVANT` / `PARTIALLY_RELEVANT` / `IRRELEVANT` / `UNCERTAIN` / `NOT_APPLICABLE` | La nivel de execuție (SKILL §2.2). |
 | 22 | `relevance_basis` | CLASIFICARE | text / gol | Obligatoriu dacă col. 21 nu e `RELEVANT` / `NOT_APPLICABLE`. Descrie ce se vede pe ecran. |
 | 23 | `ai_overview_status` | CLASIFICARE | `CAPTURED` / `NOT_CAPTURED` / `NOT_SHOWN` / `UNKNOWN` / `NOT_APPLICABLE` | Doar pentru `GSEARCH`, la nivel de execuție (aceeași valoare pe toate capturile ei). `CAPTURED` = blocul AI Overview se vede în cel puțin o captură a execuției. `NOT_SHOWN` doar când partea de sus a SERP-ului se vede și blocul lipsește. Pilotul din 2026-10-09: `NOT_CAPTURED`. |
+| 23a | `ai_overview_evidence_id` | DERIVAT | `<Evidence ID>-AIO` / `NOT_APPLICABLE` | Evidence ID-ul blocului AI Overview din această captură (`naming-convention.md` §3.2). Doar pe capturile `GSEARCH` cu `AI_OVERVIEW` în `blocks_visible`. Nepotrivirea cu `ai_overview_status` pe execuție blochează. |
+| 23b | `ai_overview_part` | DERIVAT | `n/N` / `NOT_APPLICABLE` | Partea blocului AI Overview: a câta captură cu blocul, din câte are execuția, în ordinea `part_number`. |
 | 24 | `capture_time_on_screen` | CLASIFICARE | `YYYY-MM-DD HH:MM` / `NOT_VISIBLE` | |
 | 25 | `filename_timestamp_raw` | SEAL | verbatim / `NONE` | |
 | 26 | `filename_timestamp_parsed` | DETERMINISTIC | ISO local / `UNKNOWN` | Sursa e `OS_FILENAME`. Nu e oră observată. |

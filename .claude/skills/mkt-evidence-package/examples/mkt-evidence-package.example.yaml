@@ -21,7 +21,7 @@ archive:
 metadata_version: "1.0"
 
 query_set:
-  source_path: docs/drafts/MKT-RO-AIV-discovery-query-set-v0.1.0.md
+  source_path: docs/drafts/outdated/MKT-RO-AIV-discovery-query-set-v0.1.0.md
   source_sha256: 898e1a26ab2e66940164487152b63f0126188810dfc6ab08c2968bde60f817b7
   query_set_id: MKT-RO-AIV-DISCOVERY-v0.1.0
 

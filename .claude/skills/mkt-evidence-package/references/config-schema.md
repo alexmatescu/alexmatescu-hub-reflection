@@ -10,7 +10,7 @@ de mai jos sunt cele ale pilotului, ca exemplu.
 | `series_id` | string | `MKT-RO-AIV`. |
 | `instance_id` | string | `^[A-Z0-9]+(-[A-Z0-9]+)*$`, ex. `MKT-RO-AIV-2026Q4-PILOT`. Prefix pentru toate ID-urile. Ales o dată, nu se schimbă. |
 | `instance_slug` | string | kebab-case, ex. `mkt-ro-aiv-2026q4-pilot`. Folosit în căi și nume de fișiere. |
-| `instance_type` | enum | `PILOT`, `T0`, `F<n>` (ex. `F1`). Pilotul nu e niciodată `T0`. |
+| `instance_type` | enum | `PILOT`, `FULL`, `M<luna>` (luna din calendar, două cifre, ex. `M11`). `FULL` = rularea trimestrială completă (`<instanță>-FULL`); `M<luna>` = rularea lunară (`<instanță>-M11`), cu luna în trimestrul instanței. T0 / F1…Fn nu se folosesc în Market Discovery (setul v0.2.0 §2). |
 | `quarter` | string | `^\d{4}Q[1-4]$`, ex. `2026Q4`. |
 | `capture_folder.path` | string | Folderul nearhivat cu capturile. Nu se scrie niciodată în el. Subfolderele și numele fișierelor le determină agentul (`naming-convention.md` §2, §6). Documentele operatorului din rădăcină se sigilează separat (§3.1). Folderul unei instanțe nu trebuie să conțină folderul altei instanțe: fiecare rulare are folderul ei, `evidence/incoming/MKT-Evidence/<instance_slug>/`. |
 | `archive.version` | string | ex. `"1.0"`. |
@@ -26,7 +26,7 @@ de mai jos sunt cele ale pilotului, ca exemplu.
 |---|---|---|
 | `surface_map` | detectat | Suprascriere manuală subfolder → cod. Se folosește doar dacă detecția automată (`naming-convention.md` §2) nu poate decide. |
 | `run_sheet.path` | — | Fișa rulării, opțională. Contextul de sesiune vizibil îl extrage agentul. |
-| `search.declared_depth` | — | Adâncimea preregistrată (ex. `20`). Rândurile de peste ea primesc `beyond_declared_depth = YES`. |
+| `search.declared_depth` | — | Adâncimea preregistrată. Pentru setul v0.2.0: `30` (~30 de poziții, după câte rezultate încarcă pagina; primele 3 pagini se păstrează întotdeauna). Rândurile de peste ea primesc `beyond_declared_depth = YES`. |
 | `search.depth_band_size` | `10` | Mărimea benzilor `1-10`, `11-20`… |
 | `filename_timestamp.pattern` | detectat | Suprascriere manuală a tiparului (regex cu grupuri numite `year`, `month`, `day`, `hour`, `minute`, `second`, opțional `ampm`). Implicit, agentul alege singur tiparul din biblioteca de la `naming-convention.md` §6. |
 | `timezone` | — | Folosit doar pentru câmpurile declarate în fișa rulării. |

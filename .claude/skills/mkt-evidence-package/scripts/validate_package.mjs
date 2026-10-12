@@ -80,6 +80,16 @@ async function main() {
   const badExec = reg.filter((r) => !execs.has(r.execution_id)).map((r) => r.observation_id);
   check("registru: execution_id există în capture index", badExec.length === 0, badExec.slice(0, 5).join(", "));
   const capExec = new Map(cap.map((c) => [c.evidence_id, c.execution_id]));
+  const aioIds = cap.filter((c) => c.ai_overview_evidence_id && c.ai_overview_evidence_id !== "NOT_APPLICABLE");
+  for (const c of aioIds) capExec.set(c.ai_overview_evidence_id, c.execution_id);
+  const badAioId = aioIds.filter((c) => c.ai_overview_evidence_id !== `${c.evidence_id}-AIO` || c.mapped_surface !== "GSEARCH" || c.ai_overview_status !== "CAPTURED").map((c) => c.evidence_id);
+  check("capture index: ID-urile AI Overview corespund capturilor GSEARCH cu blocul capturat", badAioId.length === 0, badAioId.join(", "));
+  const badAioObs = reg.filter((r) => {
+    const evs = r.evidence_ids.split(";");
+    const n = evs.filter((e) => e.endsWith("-AIO")).length;
+    return r.serp_block === "AI_OVERVIEW" ? n !== evs.length : n > 0;
+  }).map((r) => r.observation_id);
+  check("registru: rândurile AI Overview citează ID-urile -AIO, celelalte nu", badAioObs.length === 0, badAioObs.slice(0, 5).join(", "));
   const badEv = reg.filter((r) => r.evidence_ids.split(";").some((e) => capExec.get(e) !== r.execution_id)).map((r) => r.observation_id);
   check("registru: Evidence ID-urile aparțin execuției", badEv.length === 0, badEv.slice(0, 5).join(", "));
   const unclassR = reg.filter((r) => Object.values(r).includes("UNCLASSIFIED")).map((r) => r.observation_id);

@@ -103,6 +103,7 @@ async function main() {
     if (c.execution_id === "NOT_APPLICABLE") continue;
     if (!execs.has(c.execution_id)) execs.set(c.execution_id, { surface: c.mapped_surface, query_id: c.query_id, contamination: c.execution_contamination_status, status: c.execution_status, aiOverview: new Set(), evidence: new Set() });
     execs.get(c.execution_id).evidence.add(c.evidence_id);
+    if (c.ai_overview_evidence_id && c.ai_overview_evidence_id !== "NOT_APPLICABLE") execs.get(c.execution_id).evidence.add(c.ai_overview_evidence_id);
     execs.get(c.execution_id).aiOverview.add(c.ai_overview_status);
   }
 
@@ -149,8 +150,17 @@ async function main() {
       for (const [h, allowed] of Object.entries(ENUMS)) {
         if (r[h] !== "UNCLASSIFIED" && !allowed.includes(r[h])) add(id, h, "INVALID_ENUM", r[h]);
       }
-      // Doar rezultatele organice și răspunsurile suprafețelor AI sunt PRIMARY; orice modul SERP e SUPPLEMENTAL.
-      r.result_layer = ["ORGANIC", "NOT_APPLICABLE"].includes(r.serp_block) ? "PRIMARY" : "SUPPLEMENTAL";
+      // PRIMARY: rezultatele organice, AI Overview (bloc integrat în SERP-ul Google, RV-05) și
+      // răspunsurile suprafețelor AI. Orice alt modul SERP e SUPPLEMENTAL.
+      r.result_layer = ["ORGANIC", "AI_OVERVIEW", "NOT_APPLICABLE"].includes(r.serp_block) ? "PRIMARY" : "SUPPLEMENTAL";
+      // Rândurile AI Overview citează ID-urile de evidență ale blocului (<Evidence ID>-AIO); celelalte nu.
+      const evs = r.evidence_ids.split(";").map((x) => x.trim()).filter(Boolean);
+      const aioEv = evs.filter((e) => e.endsWith("-AIO"));
+      if (r.serp_block === "AI_OVERVIEW" && aioEv.length !== evs.length) {
+        add(id, "evidence_ids", "AI_OVERVIEW_EVIDENCE_MISMATCH", "rândurile AI_OVERVIEW citează doar <Evidence ID>-AIO");
+      } else if (r.serp_block !== "AI_OVERVIEW" && aioEv.length) {
+        add(id, "evidence_ids", "AI_OVERVIEW_EVIDENCE_MISMATCH", `${aioEv.join(";")} pe un rând ${r.serp_block}`);
+      }
       const stype = SURFACES[r.surface];
       if (stype === "AI") {
         if (r.serp_block !== "NOT_APPLICABLE") add(id, "serp_block", "PROVENANCE_SURFACE_MISMATCH", `${r.serp_block} pe suprafața AI ${r.surface}`);
@@ -222,7 +232,7 @@ async function main() {
     }
   }
 
-  const blockingKinds = ["UNCLASSIFIED", "INVALID_ENUM", "UNKNOWN_EXECUTION", "EVIDENCE_NOT_IN_EXECUTION", "POSITION_REQUIRED", "PARENT_REQUIRED", "PARENT_NOT_FOUND", "BASIS_REQUIRED", "POSITIONS_NOT_CONTIGUOUS", "PROVENANCE_SURFACE_MISMATCH", "AI_OVERVIEW_STATUS_MISMATCH", "ASSOCIATION_NOTE_REQUIRED", "DUPLICATE_OBSERVED_ORDER"];
+  const blockingKinds = ["UNCLASSIFIED", "INVALID_ENUM", "UNKNOWN_EXECUTION", "EVIDENCE_NOT_IN_EXECUTION", "POSITION_REQUIRED", "PARENT_REQUIRED", "PARENT_NOT_FOUND", "BASIS_REQUIRED", "POSITIONS_NOT_CONTIGUOUS", "PROVENANCE_SURFACE_MISMATCH", "AI_OVERVIEW_STATUS_MISMATCH", "AI_OVERVIEW_EVIDENCE_MISMATCH", "ASSOCIATION_NOTE_REQUIRED", "DUPLICATE_OBSERVED_ORDER"];
   const blocking = issues.filter((i) => blockingKinds.includes(i.issue));
   const stagingOut = path.join(P.workDir, "observation-register.staging.csv");
   const reviewOut = path.join(P.workDir, "observation-review.csv");
