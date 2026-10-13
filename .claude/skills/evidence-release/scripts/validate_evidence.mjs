@@ -54,7 +54,7 @@ async function main() {
     record(
       "FAIL",
       "measurement_point format",
-      `"${measurement_point}" must be Tn or window-YYYY-MM-DD_YYYY-MM-DD`,
+      `"${measurement_point}" must be T0, F1 … Fn or window-YYYY-MM-DD_YYYY-MM-DD`,
     );
   } else {
     record("PASS", "measurement_point format", measurement_point);

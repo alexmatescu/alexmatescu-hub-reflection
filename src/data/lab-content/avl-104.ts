@@ -8,12 +8,12 @@ export const avl104MasurareHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-104</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -60,7 +60,7 @@ export const avl104MasurareHtml = `
         <li><strong>Interogări de recomandare</strong> — „ce specialist în [domeniu] recomanzi în [oraș]?". Măsoară prezența în răspunsurile care aduc efectiv clienți — cele mai valoroase comercial și cele mai greu de câștigat.</li>
       </ul>
 
-      <p>Două reguli fac setul valid științific. Regula înghețării: setul se fixează la prima măsurare (F0) și nu se modifică până la re-măsurare (F3) — altfel comparația before/after e compromisă; interogări noi se pot adăuga oricând, dar se raportează separat, ca serie nouă. Regula bilingvismului: pentru piața românească, setul include formulări în română și în engleză, pentru că utilizatorii reali folosesc ambele, iar comportamentul motoarelor diferă între limbi.</p>
+      <p>Două reguli fac setul valid științific. Regula înghețării: setul se fixează la baseline (<code>T0</code>) și nu se modifică până la re-măsurare (<code>F1</code> … <code>Fn</code>) — altfel comparația before/after e compromisă; interogări noi se pot adăuga oricând, dar se raportează separat, ca serie nouă. Regula bilingvismului: pentru piața românească, setul include formulări în română și în engleză, pentru că utilizatorii reali folosesc ambele, iar comportamentul motoarelor diferă între limbi.</p>
 
       <h3>2. Protocolul de rulare: condiții controlate</h3>
 
@@ -84,19 +84,19 @@ export const avl104MasurareHtml = `
 
       <h3>4. Standardul de dovezi</h3>
 
-      <p>Fără dovezi, măsurarea e o afirmație. Standardul minim: captură de ecran datată pentru fiecare rulare, notarea manuală a surselor citate în răspuns, convenție de denumire consecventă a fișierelor (motor_interogare_rulare_dată), și un instantaneu reproductibil al întregii linii de bază — pachetul complet (set de interogări, configurații, clasificări, capturi) arhivat la data măsurării. Acesta e artefactul care face posibilă propoziția cu care se judecă orice serviciu de optimizare: „iată starea din [data F0], iată starea din [data F3], iată ce s-a schimbat".</p>
+      <p>Fără dovezi, măsurarea e o afirmație. Standardul minim: captură de ecran datată pentru fiecare rulare, notarea manuală a surselor citate în răspuns, convenție de denumire consecventă a fișierelor (motor_interogare_rulare_dată), și un instantaneu reproductibil al întregii linii de bază — pachetul complet (set de interogări, configurații, clasificări, capturi) arhivat la data măsurării. Acesta e artefactul care face posibilă propoziția cu care se judecă orice serviciu de optimizare: „iată starea din [data T0], iată starea din [data Fn], iată ce s-a schimbat".</p>
 
       <h3>De la măsurare la optimizare: bucla completă</h3>
 
-      <p>Măsurarea nu e un scop în sine; e capătul și începutul buclei de optimizare. În metodologia AI Visibility Lab, bucla are patru faze: F0 — linia de bază (tot ce descrie această pagină, executat înainte de orice intervenție; faza poartă numele Tabula Rasa), F1 — casa entității (sursa canonică: site, date structurate, dezambiguizare), F2 — prezența distribuită (coroborarea din surse independente), F3 — re-măsurarea (același set înghețat, același protocol, aceleași metrici — atribuire onestă a schimbării). Detaliile fiecărei faze: <a href="/lab/metodologie">pagina metodologiei</a>.</p>
+      <p>Măsurarea nu e un scop în sine; e capătul și începutul buclei de optimizare. În metodologia AI Visibility Lab, bucla are patru etape, identificate doar prin nume: etapa de baseline (tot ce descrie această pagină, executat înainte de orice intervenție; poartă numele Tabula Rasa și produce punctul de măsurare <code>T0</code>), etapa sursei canonice (site, date structurate, dezambiguizare), etapa prezenței distribuite (coroborarea din surse independente) și etapa de re-măsurare (același set înghețat, același protocol, aceleași metrici — atribuire onestă a schimbării; produce punctele de măsurare <code>F1</code> … <code>Fn</code>). Definițiile normative sunt în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>. Detaliile fiecărei etape: <a href="/lab/metodologie">pagina metodologiei</a>.</p>
 
       <h3>Limitele metodei, spuse onest</h3>
 
       <h3>O metodologie credibilă își declară limitele; iată-le pe ale noastre</h3>
 
-      <p><strong>Nedeterminismul.</strong> Același motor poate da răspunsuri diferite la aceeași interogare, în rulări succesive. De aceea măsurăm cu rulări repetate per interogare, raportăm rate, nu verdicte din rulare unică, și interpretăm direcția schimbării între F0 și F3, nu zecimalele unui procent.</p>
+      <p><strong>Nedeterminismul.</strong> Același motor poate da răspunsuri diferite la aceeași interogare, în rulări succesive. De aceea măsurăm cu rulări repetate per interogare, raportăm rate, nu verdicte din rulare unică, și interpretăm direcția schimbării între baseline (<code>T0</code>) și re-măsurări (<code>F1</code> … <code>Fn</code>), nu zecimalele unui procent.</p>
 
-      <p><strong>Actualizările de modele.</strong> Între F0 și F3, motoarele își schimbă modelele și indexurile — o variabilă necontrolabilă. O atenuăm consemnând configurația la fiecare rulare și interpretând prudent schimbările care coincid cu actualizări majore anunțate public.</p>
+      <p><strong>Actualizările de modele.</strong> Între baseline (<code>T0</code>) și re-măsurare (<code>F1</code> … <code>Fn</code>), motoarele își schimbă modelele și indexurile — o variabilă necontrolabilă. O atenuăm consemnând configurația la fiecare rulare și interpretând prudent schimbările care coincid cu actualizări majore anunțate public.</p>
 
       <p><strong>Eșantionul finit.</strong> Un set de interogări e un eșantion, nu recensământul tuturor întrebărilor posibile. Setul bun acoperă cele trei niveluri de intenție și e construit înainte de a vedea rezultatele — nu selectat ulterior ca să arate bine.</p>
 
@@ -112,7 +112,7 @@ export const avl104MasurareHtml = `
 
       <p><strong>Câte interogări și câte rulări sunt suficiente?</strong> Pentru o entitate individuală, un set de 10–20 de interogări pe trei niveluri de intenție, rulat pe cinci motoare, cu rulări repetate, produce o linie de bază informativă — ordinea de mărime folosită și în studiile noastre. Mai important decât volumul e disciplina: set înghețat, condiții controlate, dovezi datate.</p>
 
-      <p><strong>Cât de des se re-măsoară?</strong> Intervalul minim rezonabil între F0 și F3 e de ordinul săptămânilor–lunilor, pentru că intervențiile (conținut, coroborare) au nevoie de timp să fie crawl-uite și absorbite. Re-măsurarea prea devreme măsoară zgomot; prea târziu, amestecă efectul intervențiilor cu deriva modelelor.</p>
+      <p><strong>Cât de des se re-măsoară?</strong> Intervalul minim rezonabil între baseline (<code>T0</code>) și prima re-măsurare (<code>F1</code>) e de ordinul săptămânilor–lunilor, pentru că intervențiile (conținut, coroborare) au nevoie de timp să fie crawl-uite și absorbite. Re-măsurarea prea devreme măsoară zgomot; prea târziu, amestecă efectul intervențiilor cu deriva modelelor.</p>
 
       <p><strong>Rezultatele variază între rulări — mai e validă măsurarea?</strong> Da, cu condiția să fie proiectată pentru variabilitate: rulări repetate, raportare pe rate, interpretare pe direcția schimbării. E aceeași logică prin care sondajele rămân valide deși răspunsurile individuale variază. Ce nu e valid: concluzii din rulări unice sau compararea unor rulări făcute în condiții diferite.</p>
 
@@ -121,12 +121,12 @@ export const avl104MasurareHtml = `
       <h2>Citește în continuare</h2>
 
       <ul>
-        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a> — faza de linie de bază, pas cu pas</li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: etapa de baseline</a>, pas cu pas</li>
         <li><a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO? Ghid complet de AI Visibility</a> — definiții și context</li>
         <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a> — cele patru filtre pe care măsurarea le diagnostichează</li>
         <li><a href="/lab/cercetare/seo-vs-geo">SEO vs. GEO: ce se păstrează, ce se schimbă</a> — pentru cine vine din SEO</li>
         <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — HIT, coliziune de entitate, confabulare și restul termenilor</li>
-        <li><a href="/lab">AI Visibility Lab</a> — metodologia completă F0–F3 și studiile de caz</li>
+        <li><a href="/lab">AI Visibility Lab</a> — metodologia completă și studiile de caz</li>
       </ul>
 
       <h2>Surse și documentație oficială</h2>
@@ -151,6 +151,7 @@ export const avl104MasurareHtml = `
         <tbody>
           <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
           <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); reformulată afirmația despre observarea situației inverse (entitate absentă din Google/Bing, citată corect de ChatGPT), cu atribuire explicită sursei observației.</td></tr>
+          <tr><td>1.1.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: secțiunea despre bucla de optimizare descrie etapele metodologiei doar prin nume (baseline, sursa canonică, prezența distribuită, re-măsurare), iar punctele de măsurare cu T0 și F1 … Fn, conform AVL-200 §7 (v1.1.0); toate trimiterile la F0/F3 ca faze au fost înlocuite. Notația anterioară F0–F3 este documentată în AVL-200 §7.4.</td></tr>
         </tbody>
       </table>
 `;

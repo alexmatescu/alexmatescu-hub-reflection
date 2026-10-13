@@ -8,19 +8,19 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.4.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>2 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>2 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie">https://delamatescu.ro/lab/metodologie</a></td></tr>
         <tr><th scope="row">Dependență</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a></td></tr>
         <tr><th scope="row">Documente informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO vs GEO</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></td></tr>
-        <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa T0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire)</td></tr>
-        <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code>: <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.9.0); AVL-MKT-002 — Market Query Panel (planificat)</td></tr>
+        <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire)</td></tr>
+        <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code>: <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.9.2); AVL-MKT-002 — Market Query Panel (planificat)</td></tr>
         </tbody>
         </table>
       </div>
@@ -49,7 +49,7 @@ export const avl202CadruMetodologicHtml = `
 
       <ul>
         <li><strong>AVL-200</strong> rămâne identificatorul permanent pentru <strong>Standard dovezi, măsurare și trasabilitate</strong>;</li>
-        <li><strong>AVL-201</strong> rămâne identificatorul permanent pentru <strong>Tabula Rasa T0</strong>;</li>
+        <li><strong>AVL-201</strong> rămâne identificatorul permanent pentru <strong>Tabula Rasa F0</strong> (titlu istoric, vezi <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7.4</a>);</li>
         <li><strong>AVL-202</strong> este identificatorul permanent pentru <strong>Cadrul metodologic AI Visibility Lab</strong>;</li>
         <li><strong>AVL-203</strong> este identificatorul permanent pentru <strong>Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong>.</li>
       </ul>
@@ -88,11 +88,11 @@ Cadrul metodologic AI Visibility Lab
    ├── Metodologia de bază (Core Methodology)
    │     ├── AVL-200  Standard dovezi, măsurare și trasabilitate
    │     ├── AVL-201  Tabula Rasa F0 — Baseline
-   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.3.0)
+   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.3.1)
    │     └── viitoare documente metodologice / protocoale
    │
    └── Market Measurement — familia AVL-MKT-*
-         ├── AVL-MKT-001  Market Scope &amp; Eligibility Protocol   (Draft pentru revizuire, v0.9.0)
+         ├── AVL-MKT-001  Market Scope &amp; Eligibility Protocol   (Draft pentru revizuire, v0.9.2)
          ├── AVL-MKT-002  Market Query Panel                    (planificat)
          └── viitoare protocoale ale familiei (AVL-MKT-003 …)</code></pre>
 
@@ -130,7 +130,7 @@ măsurare</code></pre>
       <ol>
         <li><strong>AVL-202 — Cadrul metodologic AI Visibility Lab</strong></li>
         <li><strong>AVL-200 — Standard dovezi, măsurare și trasabilitate</strong></li>
-        <li><strong>AVL-201 — Tabula Rasa T0</strong></li>
+        <li><strong>AVL-201 — Tabula Rasa F0</strong></li>
         <li><strong>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong> (draft pentru revizuire);</li>
         <li>documentele familiei Market Measurement (<code>AVL-MKT-*</code>), începând cu AVL-MKT-001;</li>
         <li>documentele metodologice viitoare.</li>
@@ -144,7 +144,7 @@ măsurare</code></pre>
 
       <p><strong>întrebare → documentare → ipoteză → baseline → intervenție → așteptare → re-măsurare → comparație → concluzii și limite</strong></p>
 
-      <p>Linia de bază este documentată prin <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa T0</a>, prima specificație normativă a laboratorului. Aceasta stabilește condițiile minime pentru măsurarea stării inițiale a unei entități: ce trebuie inventariat, ce interogări sunt folosite, cum sunt păstrate dovezile, cum sunt clasificate răspunsurile și ce poate fi comparat ulterior.</p>
+      <p>Linia de bază este documentată prin <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa F0</a>, prima specificație normativă a laboratorului. Aceasta stabilește condițiile minime pentru măsurarea stării inițiale a unei entități: ce trebuie inventariat, ce interogări sunt folosite, cum sunt păstrate dovezile, cum sunt clasificate răspunsurile și ce poate fi comparat ulterior.</p>
 
       <p>Cadrul include și o ramură dedicată măsurării unei piețe, nu doar a unei entități: familia <strong>Market Measurement (<code>AVL-MKT-*</code>)</strong>. În această ramură, piața este definită și verificată independent, conform unui protocol publicat, înainte ca reprezentarea ei în sistemele AI să fie măsurată (vezi secțiunea 14).</p>
 
@@ -237,11 +237,11 @@ măsurare</code></pre>
 
       <p>O schimbare temporală este o observație. Explicația acelei schimbări poate fi o inferență sau o ipoteză și trebuie prezentată ca atare.</p>
 
-      <h2>3. F0 — stabilirea liniei de bază</h2>
+      <h2>3. Etapa de baseline — stabilirea liniei de bază</h2>
 
-      <p><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa T0</a> documentează starea unei entități înainte de intervenții.</p>
+      <p><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa F0</a> documentează starea unei entități înainte de intervenții.</p>
 
-      <p>T0 trebuie să permită unui terț competent să înțeleagă:</p>
+      <p>Baseline-ul (<code>T0</code>) trebuie să permită unui terț competent să înțeleagă:</p>
 
       <ul>
         <li>ce a fost măsurat;</li>
@@ -256,9 +256,9 @@ măsurare</code></pre>
 
       <p>AVL-201 tratează baseline-ul ca pe un livrabil independent, nu ca pe o etapă informală înaintea „adevăratului” experiment.</p>
 
-      <blockquote><strong>Notă de nomenclatură:</strong> în corpusul existent, <code>F0</code> denumește faza de baseline Tabula Rasa. În studiile longitudinale, un punct de măsurare poate fi notat <code>T0</code>, urmat de <code>T1</code>, <code>T2</code> și așa mai departe. Atunci când un studiu istoric folosește o convenție mai veche, aceasta nu este rescrisă retroactiv; echivalențele sunt documentate explicit.</blockquote>
+      <blockquote><strong>Notă de nomenclatură:</strong> etapele metodologice se identifică doar prin nume — etapa de baseline, etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare —, iar codurile se folosesc doar pentru punctele de măsurare: <code>T0</code> este baseline-ul, <code>F1</code> primul punct de măsurare după baseline, <code>F2</code> … <code>Fn</code> re-măsurările ulterioare. Definițiile și corespondența cu convențiile anterioare (<code>F0</code>–<code>F3</code> ca faze, <code>T0</code>/<code>T1</code>/<code>T2</code> ca puncte de măsurare) sunt în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>. Atunci când un studiu istoric folosește o convenție mai veche, aceasta nu este rescrisă retroactiv.</blockquote>
 
-      <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește AVL-201 — Tabula Rasa T0</a></strong></p>
+      <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește AVL-201 — Tabula Rasa F0</a></strong></p>
 
       <h2>4. Query set-ul</h2>
 
@@ -280,7 +280,7 @@ măsurare</code></pre>
         <li>recomandare.</li>
       </ul>
 
-      <p>Formulările folosite pentru comparație sunt păstrate exact, iar identificatorii query-urilor trebuie menținuți între fazele comparate. Interogările noi pot fi introduse ulterior, dar nu trebuie amestecate retrospectiv în seria comparativă principală.</p>
+      <p>Formulările folosite pentru comparație sunt păstrate exact, iar identificatorii query-urilor trebuie menținuți între punctele de măsurare comparate. Interogările noi pot fi introduse ulterior, dar nu trebuie amestecate retrospectiv în seria comparativă principală.</p>
 
       <p>Un query set este un eșantion documentat, nu recensământul tuturor întrebărilor posibile despre o entitate.</p>
 
@@ -342,7 +342,7 @@ măsurare</code></pre>
 
       <h2>7. Nu măsurăm doar răspunsul AI</h2>
 
-      <p>Tabula Rasa T0 tratează baseline-ul ca pe o fotografie mai largă a entității.</p>
+      <p>Tabula Rasa F0 tratează baseline-ul ca pe o fotografie mai largă a entității.</p>
 
       <p>În funcție de proiect pot fi auditate mai multe straturi.</p>
 
@@ -386,7 +386,7 @@ măsurare</code></pre>
         <li>păstrate într-un registru care poate fi folosit ulterior pentru interpretare.</li>
       </ul>
 
-      <p>Exemplele pot include modificări de conținut, structură, date structurate, dezambiguizare, internal linking, surse canonice sau prezență distribuită.</p>
+      <p>Exemplele pot include modificări de conținut, structură, date structurate, dezambiguizare, internal linking, surse canonice sau prezență distribuită. În metodologia AI Visibility Lab, intervențiile sunt grupate în etapa sursei canonice și etapa prezenței distribuite (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
 
       <p>Metodologia nu presupune că o schimbare observată după intervenție demonstrează automat cauzalitatea.</p>
 
@@ -408,7 +408,7 @@ măsurare</code></pre>
         <li>cache sau disponibilitate web.</li>
       </ul>
 
-      <p>Ferestrele ulterioare de măsurare reutilizează, pe cât posibil, aceleași query-uri, criterii și condiții.</p>
+      <p>Ferestrele ulterioare de măsurare reutilizează, pe cât posibil, aceleași query-uri, criterii și condiții. Punctele de măsurare de după baseline se notează <code>F1</code>, <code>F2</code> … <code>Fn</code>, în ordinea executării.</p>
 
       <p>Orice schimbare de motor, model, interfață, limbă, țară, stare a contului sau metodă de captură trebuie declarată atunci când poate afecta comparabilitatea.</p>
 
@@ -465,7 +465,7 @@ măsurare</code></pre>
 
       <p>Exemplu:</p>
 
-      <p><strong><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa T0</a></strong></p>
+      <p><strong><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></strong></p>
 
       <h3>Experimentul public</h3>
 
@@ -526,7 +526,7 @@ Market Scope &amp; Eligibility Protocol
 STRAT DE INSTANȚĂ / DOVADĂ
 Market Reference Set</code></pre>
 
-      <p><strong><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a></strong> (Draft pentru revizuire, v0.9.0) definește regulile după care o piață este delimitată și verificată înainte de orice măsurare. Criteriile, dovezile acceptate, statusurile și procedura completă se află numai în AVL-MKT-001.</p>
+      <p><strong><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a></strong> (Draft pentru revizuire, v0.9.2) definește regulile după care o piață este delimitată și verificată înainte de orice măsurare. Criteriile, dovezile acceptate, statusurile și procedura completă se află numai în AVL-MKT-001.</p>
 
       <p><strong>Market Reference Set</strong> este rezultatul aplicării protocolului asupra unei piețe concrete, la un moment determinat. Market Reference Set nu este document normativ și nu primește identificator <code>AVL-MKT-*</code>. El aparține unei instanțe de măsurare.</p>
 
@@ -632,7 +632,7 @@ Răspunsurile sistemelor AI
         <li><code>MKT-{țară}-{domeniu}-{an}Q{trimestru}</code> — instanță concretă de măsurare a unei piețe (de exemplu, <code>MKT-RO-AIV-2026Q4</code>).</li>
       </ul>
 
-      <p>Formatul instanțelor și regulile lui sunt definite în AVL-001, §17. Aceeași piață poate fi măsurată longitudinal (<code>MKT-RO-AIV-2026Q4</code>, <code>MKT-RO-AIV-2027Q1</code>, <code>MKT-RO-AIV-2027Q2</code> …) fără modificarea protocoalelor normative. Exemplul este ilustrativ; nicio instanță <code>MKT-*</code> nu a fost creată la data acestei versiuni. Relația dintre perioada unei instanțe (trimestrul) și axa rulărilor T0 / F1 … Fn este precizată în AVL-MKT-001.</p>
+      <p>Formatul instanțelor și regulile lui sunt definite în AVL-001, §17. Aceeași piață poate fi măsurată longitudinal (<code>MKT-RO-AIV-2026Q4</code>, <code>MKT-RO-AIV-2027Q1</code>, <code>MKT-RO-AIV-2027Q2</code> …) fără modificarea protocoalelor normative. Exemplul este ilustrativ; nicio instanță <code>MKT-*</code> nu a fost creată la data acestei versiuni. Relația dintre perioada unei instanțe (trimestrul) și axa punctelor de măsurare T0 / F1 … Fn este precizată în AVL-MKT-001.</p>
 
       <h3>Principiul ramurii</h3>
 
@@ -671,7 +671,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p>În raport cu AVL-202, rolul lui este să detalieze stratul de <strong>evidence integrity și traceability</strong>, fără ca AVL-202 să dubleze toate cerințele sale operaționale.</p>
 
-      <h3>AVL-201 — Tabula Rasa T0</h3>
+      <h3>AVL-201 — Tabula Rasa F0</h3>
 
       <p><em>Baseline Measurement Specification</em></p>
 
@@ -696,13 +696,13 @@ Market Query Panel + răspunsurile AI</code></pre>
         <li>comparabilitatea în timp.</li>
       </ul>
 
-      <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește Tabula Rasa T0</a></strong></p>
+      <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește Tabula Rasa F0</a></strong></p>
 
       <h3>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</h3>
 
       <p><em>Core Technical Web Measurement Protocol</em></p>
 
-      <p><strong>Versiune 0.3.0 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.3.1 · Draft pentru revizuire</strong></p>
 
       <p>Setul minim și repetabil de verificări tehnice care documentează ce livrează un server în condiții declarate: accesibilitatea HTTP și redirecturile, variantele de host și protocol, robots.txt, descoperirea sitemap-ului, semnalele raw HTML, paritatea răspunsurilor pentru User-Agent-uri declarate și integritatea dovezilor. Nu confundă accesibilitatea tehnică cu indexarea, citarea sau recomandarea.</p>
 
@@ -720,7 +720,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <h4>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</h4>
 
-      <p><strong>Versiune 0.9.0 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.9.2 · Draft pentru revizuire</strong></p>
 
       <p>Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification și regulile de constituire a Market Reference Set.</p>
 
@@ -786,7 +786,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <h2>Citare recomandată</h2>
 
-      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.3.0, 2026. https://delamatescu.ro/lab/metodologie</p>
+      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.4.0, 2026. https://delamatescu.ro/lab/metodologie</p>
 
       <h2>Istoricul versiunilor</h2>
 
@@ -818,6 +818,12 @@ Market Query Panel + răspunsurile AI</code></pre>
             <td>2 octombrie 2026</td>
             <td>Activ</td>
             <td>MINOR: AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility este publicat ca draft pentru revizuire (v0.3.0) și inclus în corpus: identificatori, ordinea de înregistrare, ordinea conceptuală de lectură, arborele arhitecturii (ramura Core Methodology), ordinea din hub și lista documentelor metodologiei. AVL-203 nu este activ; statutul lui se actualizează aici la activare. Nicio altă schimbare de principiu.</td>
+          </tr>
+          <tr>
+            <td>1.4.0</td>
+            <td>13 octombrie 2026</td>
+            <td>Activ</td>
+            <td>MINOR: aliniere la convenția din AVL-200 §7 (v1.1.0). Secțiunea 3 se numește „Etapa de baseline”; nota de nomenclatură descrie etapele denumite (baseline, sursa canonică, prezența distribuită, re-măsurare) și punctele de măsurare T0 / F1 … Fn și trimite la AVL-200 §7.4 pentru corespondența istorică; secțiunile 8 și 9 numesc etapele de intervenție și punctele de re-măsurare. AVL-201 este citat cu titlul său real, „Tabula Rasa F0” (titlu istoric), în locul formei „Tabula Rasa T0” folosite anterior în acest document. Fișierul sursă .md, care avea la aceeași versiune 1.3.0 o notă de nomenclatură diferită de pagina publicată, a fost aliniat. Trimiterile la versiunile curente ale drafturilor sunt actualizate (BL-001): AVL-MKT-001 la v0.9.2 și AVL-203 la v0.3.1, în tabelul de identitate, diagrama arhitecturii, §14 și cardurile documentelor; secvența planificată din §14 (v0.9.0 → pilot → v1.0.0) rămâne neschimbată, pentru că descrie planul de la publicarea draftului.</td>
           </tr>
         </tbody>
       </table>

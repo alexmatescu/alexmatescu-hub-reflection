@@ -18,10 +18,12 @@ Examples:
 
 `<entity-slug>`: lowercase kebab-case, matches `^[a-z0-9]+(-[a-z0-9]+)*$`.
 
-`<measurement-point>`: `T0`, `T1`, `T2`, … (longitudinal measurement point —
-**never** `F0`/`F1` in this agent's output, even if the parent study uses
-F-phase language editorially). If the dataset is a window that a Tn label
-would misrepresent, use `window-YYYY-MM-DD_YYYY-MM-DD` instead — but don't
+`<measurement-point>`: `T0` (baseline), then `F1`, `F2` … `Fn` (re-measurements,
+in execution order) — the AI Visibility Lab convention defined in AVL-200 §7
+(v1.1.0). Methodological stages are identified by name only and never appear
+as a code here; `F0` is not a valid measurement point. Packages released under
+the earlier convention keep their original labels (AVL200-REQ-013; mapping in
+AVL-200 §7.4). If the dataset is a window that a T0/Fn label would misrepresent, use `window-YYYY-MM-DD_YYYY-MM-DD` instead — but don't
 switch conventions silently; `evidence-package.yaml` declares which one
 applies and `validate_evidence.mjs` enforces the regex.
 

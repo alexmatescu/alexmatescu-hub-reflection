@@ -3,14 +3,14 @@ document_id: "AVL-200"
 title: "Standardul de dovezi, măsurare și trasabilitate"
 subtitle: "Evidence, Measurement & Traceability Standard"
 level: "C — Methodology"
-version: "1.0.0"
+version: "1.1.0"
 status: "Activ"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-09-13"
 date_published: "2026-09-14T08:57:00+03:00"
-date_modified: "2026-09-14"
+date_modified: "2026-10-13"
 last_reviewed: "2026-09-14"
 canonical: "https://delamatescu.ro/lab/metodologie/standard-dovezi-masurare-trasabilitate"
 normative_dependencies:
@@ -102,7 +102,7 @@ AVL-200 NU definește:
 - taxonomia specifică unui anumit protocol;
 - scorurile unei anumite metodologii;
 - query set-ul unui anumit studiu;
-- intervențiile F1/F2 sau ale altui protocol;
+- intervențiile din etapele sursei canonice și prezenței distribuite sau ale altui protocol;
 - mecanismele interne nepublicate ale furnizorilor AI;
 - o platformă obligatorie de stocare;
 - un limbaj de programare obligatoriu;
@@ -331,42 +331,42 @@ AVL-200 separă două concepte care pot coincide într-un anumit studiu, dar nu 
 
 ## 7.1. Methodological Phase
 
-Faza descrie rolul unei etape într-o metodologie.
+Faza (etapa) descrie rolul unei etape într-o metodologie. Etapele aparțin **designului metodologic** și se identifică exclusiv prin nume, fără coduri.
 
-Exemple existente în AI Visibility Lab:
+Termeni de bază:
 
-- `T0` — baseline / Tabula Rasa;
-- `F1` — intervenție asupra sursei canonice;
-- `F2` — consolidarea prezenței distribuite;
-- `F3` — remăsurare în arhitectura curentă a metodologiei.
+- **Sursa canonică** — ansamblul surselor controlate direct de entitate și desemnate drept referință oficială despre ea: site-ul oficial, paginile canonice, datele structurate și textele de identificare și dezambiguizare.
+- **Prezența distribuită** — ansamblul informațiilor despre entitate aflate în afara sursei canonice: profiluri, directoare, publicații, registre și mențiuni externe, controlate sau independente.
 
-Fazele aparțin **designului metodologic**.
+Etapele metodologiei AI Visibility Lab:
+
+- **Etapa de baseline** — documentarea stării entității înainte de orice intervenție, conform [AVL-201](/lab/metodologie/tabula-rasa-f0). Produce punctul de măsurare `T0`.
+- **Etapa sursei canonice** — intervenția asupra sursei canonice: consolidarea site-ului, a datelor structurate și a dezambiguizării.
+- **Etapa prezenței distribuite** — intervenția asupra prezenței distribuite: corectarea, alinierea și coroborarea informațiilor din surse independente.
+- **Etapa de re-măsurare** — repetarea măsurării cu același set înghețat de interogări, același protocol și aceeași taxonomie, pentru atribuirea onestă a schimbării. Produce punctele de măsurare `F1` … `Fn`.
 
 ## 7.2. Measurement Point
 
-Punctul de măsurare identifică o observație longitudinală în timp, independent de numele fazei metodologice.
+Punctul de măsurare identifică momentul sau fereastra în care a fost efectuată o măsurare — ansamblul rulărilor executate atunci — independent de etapa metodologică.
 
-Convenția recomandată prospectiv:
+Convenția AI Visibility Lab (decizie Alex Matescu, 1 octombrie 2026):
 
-- `T0` — baseline;
-- `F0` — primul punct de măsurare;
-- `F1` — următorul punct;
-- `F2` etc.;
+- `T0` — baseline-ul;
+- `F1` — primul punct de măsurare după baseline;
+- `F2` … `Fn` — re-măsurările ulterioare, în ordinea executării;
 - sau o fereastră temporală explicită atunci când un singur punct nu este suficient.
 
-Un singur T va include mai multe F-uri.
+> **AVL200-REQ-040 — Codurile `T0` și `F1` … `Fn` TREBUIE folosite exclusiv pentru punctele de măsurare; etapele metodologice NU TREBUIE notate cu aceste coduri sau cu alte coduri.**
 
-Exemplu:
+O singură etapă poate include mai multe puncte de măsurare. Exemplu:
 
 ```text
-T1 / F1
-T1 / F2
-T1 / F3
+Etapa de re-măsurare / F1
+Etapa de re-măsurare / F2
+Etapa de re-măsurare / F3
 ```
 
-Această situație poate apărea dacă aceeași intervenție este remăsurată de mai multe ori fără trecerea la o altă fază metodologică. 
-
-Un set nou de query-uri va presupune întotdeauna un baseline T0 nou, urmat de n rulări succesive F.
+Un set nou de interogări presupune un baseline `T0` nou, urmat de punctele de măsurare `F1` … `Fn` ale acelui set.
 
 ## 7.3. Convenții istorice și deviații
 
@@ -385,6 +385,22 @@ Corectarea corpusului TREBUIE făcută prin:
 > **AVL200-REQ-012 — Faza metodologică și measurement point-ul TREBUIE tratate ca dimensiuni distincte în noile implementări conforme AVL-200.**
 
 > **AVL200-REQ-013 — O etichetă istorică deja folosită în evidence sau într-un rezultat publicat NU TREBUIE schimbată silențios numai pentru a corespunde unei convenții ulterioare.**
+
+## 7.4. Corespondența cu convențiile anterioare
+
+Până la versiunea 1.1.0 a acestui standard, corpusul AI Visibility Lab a folosit codurile `F0`–`F3` pentru faze și `T0`, `T1`, `T2` … pentru punctele de măsurare. Această secțiune este sursa unică a corespondenței; celelalte documente trimit aici.
+
+| Etichetă anterioară | Sens în convenția curentă |
+|---|---|
+| `F0` (fază) | etapa de baseline; punctul ei de măsurare se notează `T0` |
+| `F1` (fază) — „casa entității” | etapa sursei canonice |
+| `F2` (fază) | etapa prezenței distribuite |
+| `F3` (fază) | etapa de re-măsurare; punctele ei de măsurare se notează `F1` … `Fn` |
+| `T0` (punct de măsurare) | `T0` — neschimbat |
+| `T1`, `T2` … (puncte de măsurare) | `F1`, `F2` … |
+
+Titlul documentului [AVL-201 — Tabula Rasa F0](/lab/metodologie/tabula-rasa-f0), ruta lui și identificatorii `F0-REQ-*` sunt etichete istorice permanente și nu se modifică prin această corespondență. Artefactele, dovezile și rezultatele deja publicate își păstrează etichetele originale (AVL200-REQ-013). Cazurile în care `F0` a fost folosit ca etichetă de punct de măsurare, în locul `T0` sau `F1`, se tratează separat.
+
 
 ---
 
@@ -1077,14 +1093,14 @@ AVL-200 definește standardul transversal de evidence, measurement și traceabil
 
 Începând cu activarea AVL-200 (v1.0.0, 14 septembrie 2026), AVL-201 declară AVL-200 ca dependință normativă explicită în controlul documentului. Rescrierea efectivă a secțiunilor generice din AVL-201 pentru a referenția direct AVL-200, în locul duplicării actuale, rămâne o revizie de conținut separată, neexecutată încă — adăugarea dependinței nu presupune, prin ea însăși, că duplicarea a fost eliminată.
 
-La următoarea revizie de conținut a AVL-201, elementele generic aplicabile tuturor studiilor AR TREBUI referențiate către AVL-200, în timp ce AVL-201 ar trebui să păstreze ceea ce este specific F0:
+La următoarea revizie de conținut a AVL-201, elementele generic aplicabile tuturor studiilor AR TREBUI referențiate către AVL-200, în timp ce AVL-201 ar trebui să păstreze ceea ce este specific baseline-ului:
 
 - scopul baseline-ului;
 - condiția fără intervenție;
-- query set-ul F0;
-- sesiunea curată F0;
-- taxonomia F0;
-- scoring-ul F0;
+- query set-ul baseline-ului;
+- sesiunea curată a baseline-ului;
+- taxonomia baseline-ului;
+- scoring-ul baseline-ului;
 - livrabilele specifice baseline-ului;
 - relația cu fazele ulterioare.
 
@@ -1098,7 +1114,7 @@ Ulterior, revizia documentației poate introduce mapping-ul dintre faza metodolo
 
 Aceasta este o aplicație directă a principiului AI Visibility Lab conform căruia metodologia se actualizează prin documentarea erorilor și a abaterilor, nu prin cosmetizarea retrospectivă a rezultatului.
 
-Mapping-ul de nomenclatură dintre `F0` (numele istoric al fazei de baseline) și `T0` (notația generică de measurement point folosită de AI Visibility Lab începând cu AVL-202) este documentat explicit în **AVL-202 §„Cum se citesc identificatorii AVL"** și în nota de nomenclatură din corpul AVL-202. AVL-200 nu duplică acel mapping aici — artefactele și rutele deja publicate sub convenția F0 nu sunt rescrise retroactiv (§17.3).
+Corespondența dintre convențiile anterioare (`F0`–`F3` ca faze, `T0`/`T1`/`T2` ca puncte de măsurare) și convenția curentă este documentată în §7.4, sursa unică a corespondenței pentru întregul corpus. Artefactele și rutele deja publicate sub convențiile anterioare nu sunt rescrise retroactiv (§7.3).
 
 ---
 
@@ -1218,6 +1234,7 @@ La publicarea acestui document:
 ## Measurement
 
 - [ ] Observația este separată de measurement.
+- [ ] Punctele de măsurare sunt notate `T0` / `F1` … `Fn`, iar etapele metodologice doar prin nume (AVL200-REQ-040).
 - [ ] Measurement rule este documentată.
 - [ ] Denominatorul și populația sunt declarate.
 - [ ] Tratamentul cazurilor excluse/contaminate este explicit.
@@ -1267,6 +1284,7 @@ La publicarea acestui document:
 |---|---|---|---|
 | 0.9.0 | 13 septembrie 2026 | Draft pentru revizuire | Prima versiune completă propusă. Formalizează lanțul Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation; introduce Evidence-to-Claim Traceability, separarea phase/timepoint, semanticile UNKNOWN/NO/NOT_APPLICABLE/UNCLASSIFIED, provenance/integrity/validity, versionarea arhivei/metadatelor/regulii de măsurare, state model-ul Evidence Package, freeze/integrity, human review, privacy și relația cu implementarea `evidence-release`. |
 | 1.0.0 | 14 septembrie 2026 | Activ | Activare formală. Canonicalul devine definitiv (`/lab/metodologie/standard-dovezi-masurare-trasabilitate`); AVL-001 actualizat pentru a include AVL-200 la Nivelul C; AVL-201 actualizat pentru a declara AVL-200 ca dependință normativă; mapping-ul istoric F0/T0 referențiat explicit către AVL-202; fact-check final al citărilor externe (RFC 2119, RFC 8174, NIST FIPS 180-4) efectuat și confirmat. Un set de decizii pur operaționale rămân deschise, documentate explicit ca excepții acceptate în §38 — activarea nu a fost condiționată de închiderea lor completă, decizie confirmată de Alex Matescu la 14 septembrie 2026. |
+| 1.1.0 | 13 octombrie 2026 | Activ | MINOR: §7 aliniat la convenția de etichetare AI Visibility Lab (decizie Alex Matescu, 1 octombrie 2026): T0 este baseline-ul, F1 primul punct de măsurare după baseline, F2 … Fn re-măsurările ulterioare. Etapele metodologice se identifică doar prin nume — etapa de baseline, etapa sursei canonice, etapa prezenței distribuite, etapa de re-măsurare — fără coduri; definiții noi pentru sursa canonică și prezența distribuită. §7.4 nou: corespondența cu convențiile anterioare (F0–F3 ca faze, T0/T1/T2 ca puncte), sursa unică pentru celelalte documente; §31 aliniat. Cerință nouă: AVL200-REQ-040 (codurile T0 și F1 … Fn se folosesc exclusiv pentru punctele de măsurare), adăugată și în checklist-ul de conformitate (§36). Cerințele AVL200-REQ-012 și AVL200-REQ-013 nu se schimbă. Fișierul sursă .md, care conținea o variantă nepublicată și contradictorie a §7 (modificată fără versiune nouă), a fost aliniat cu textul publicat. |
 
 ---
 

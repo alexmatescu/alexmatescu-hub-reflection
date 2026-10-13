@@ -8,12 +8,12 @@ export const avl102CumAlegHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-102</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.3</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -88,7 +88,7 @@ export const avl102CumAlegHtml = `
 
       <p>Filtrul 2 favorizează, deocamdată, sursele în engleză. Pentru multe subiecte, indexurile de retrieval au puține surse românești de calitate, deci fan-out-ul aduce material străin, iar răspunsul despre piața locală iese generic. Fereastra strategică: paginile românești care răspund complet la subteme specifice pieței locale au concurență minimă la recuperare.</p>
 
-      <p>Stratul de entitate e fragil pentru numele românești. Diacriticele, variantele de transliterare și omonimia (nume de familie frecvente, forme cu/fără diacritice tratate ca echivalente de modele) produc coliziuni de entitate mult mai des decât în piețele anglofone. Măsurarea coliziunilor e parte standard din faza noastră F0, Tabula Rasa.</p>
+      <p>Stratul de entitate e fragil pentru numele românești. Diacriticele, variantele de transliterare și omonimia (nume de familie frecvente, forme cu/fără diacritice tratate ca echivalente de modele) produc coliziuni de entitate mult mai des decât în piețele anglofone. Măsurarea coliziunilor e parte standard din etapa noastră de baseline, Tabula Rasa.</p>
 
       <h2>Întrebări frecvente</h2>
 
@@ -96,7 +96,7 @@ export const avl102CumAlegHtml = `
 
       <p><strong>Pot plăti ca să fiu citat?</strong> Nu există citare plătită în răspunsurile organice ale motoarelor majore. Există publicitate separată în unele produse (ex. ChatGPT a introdus formate publicitare, cu crawler dedicat de verificare a landing page-urilor), dar aceasta e marcată ca atare și nu influențează citările organice.</p>
 
-      <p><strong>Cât de repede se reflectă schimbările?</strong> Accesul (filtrul 1): ore–zile; furnizorii indică ~24h pentru propagarea robots.txt. Recuperarea (filtrul 2): zile–săptămâni, în ritmul de recrawl. Reprezentarea entității: săptămâni–luni, pentru că cere coroborare din mai multe surse. De aceea re-măsurarea (F3) se face pe același set de interogări, la interval suficient.</p>
+      <p><strong>Cât de repede se reflectă schimbările?</strong> Accesul (filtrul 1): ore–zile; furnizorii indică ~24h pentru propagarea robots.txt. Recuperarea (filtrul 2): zile–săptămâni, în ritmul de recrawl. Reprezentarea entității: săptămâni–luni, pentru că cere coroborare din mai multe surse. De aceea re-măsurarea (punctele de măsurare <code>F1</code> … <code>Fn</code>) se face pe același set de interogări, la interval suficient.</p>
 
       <p><strong>Contează linkurile (backlinks) în GEO?</strong> Da, indirect dar substanțial: la Google, retrieval-ul pentru RAG folosește sistemele de ranking din Search, unde linkurile rămân semnal; la celelalte motoare, autoritatea sursei influențează selecția citării. Ce s-a schimbat e că linkurile nu mai sunt singura monedă — coroborarea entității și extractibilitatea conținutului cântăresc alături de ele.</p>
 
@@ -108,7 +108,7 @@ export const avl102CumAlegHtml = `
         <li><a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO? Ghid complet de AI Visibility</a> — pagina definițională a seriei</li>
         <li><a href="/lab/cercetare/seo-vs-geo">SEO vs. GEO: ce se păstrează, ce se schimbă</a></li>
         <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a></li>
-        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: etapa de baseline</a></li>
         <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — RAG, grounding, query fan-out, coliziune de entitate și restul termenilor din această pagină</li>
         <li><a href="/lab">AI Visibility Lab</a> — metodologia completă</li>
       </ul>
@@ -137,6 +137,7 @@ export const avl102CumAlegHtml = `
         <tbody>
           <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
           <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab).</td></tr>
+          <tr><td>1.0.3</td><td>13 octombrie 2026</td><td>Activ</td><td>PATCH: terminologie aliniată la AVL-200 §7 (v1.1.0) — trimiterile la „faza F0”/„F3” devin etapa de baseline / etapa de re-măsurare, iar punctele de măsurare se notează T0 și F1 … Fn; nicio schimbare de conținut. Notația anterioară este documentată în AVL-200 §7.4.</td></tr>
         </tbody>
       </table>
 `;

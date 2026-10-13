@@ -8,12 +8,12 @@ export const avl101GeoAeoHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-101</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.3</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -77,7 +77,7 @@ export const avl101GeoAeoHtml = `
 
       <p><strong>Deficitul de surse citabile în română.</strong> Pentru multe subiecte de nișă, motoarele AI nu găsesc surse românești structurate și ajung să sintetizeze din surse străine sau din agregatoare slabe. Asta produce răspunsuri generice sau greșite despre piața locală — și, simultan, o oportunitate: primele surse românești riguroase pe un subiect devin implicit sursele citate.</p>
 
-      <p><strong>Vizibilitatea în căutare și vizibilitatea AI sunt variabile independente.</strong> În măsurătorile publicate până acum de AI Visibility Lab, o entitate poate fi invizibilă în Google/Bing și totuși citată corect de ChatGPT — și invers. De aceea un audit serios măsoară ambele straturi separat, cu metodologie documentată — vezi <a href="/lab/cercetare/cum-se-masoara-ai-visibility">cum măsurăm AI Visibility</a> și fundamentul fazei F0, <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a>.</p>
+      <p><strong>Vizibilitatea în căutare și vizibilitatea AI sunt variabile independente.</strong> În măsurătorile publicate până acum de AI Visibility Lab, o entitate poate fi invizibilă în Google/Bing și totuși citată corect de ChatGPT — și invers. De aceea un audit serios măsoară ambele straturi separat, cu metodologie documentată — vezi <a href="/lab/cercetare/cum-se-masoara-ai-visibility">cum măsurăm AI Visibility</a> și fundamentul etapei de baseline, <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a>.</p>
 
       <h2>Întrebări frecvente</h2>
 
@@ -97,7 +97,7 @@ export const avl101GeoAeoHtml = `
         <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a></li>
         <li><a href="/lab/cercetare/seo-vs-geo">SEO vs. GEO: ce se păstrează, ce se schimbă</a></li>
         <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a></li>
-        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: etapa de baseline</a></li>
         <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — definițiile tuturor termenilor folosiți în această pagină</li>
         <li><a href="/lab">AI Visibility Lab</a> — metodologia completă și studiile de caz</li>
       </ul>
@@ -124,6 +124,7 @@ export const avl101GeoAeoHtml = `
         <tbody>
           <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
           <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); reformulate afirmațiile despre variabilitatea vizibilității Google vs. ChatGPT și despre blocarea crawlerelor, pentru a nu depăși baza empirică disponibilă, cu trimitere către metodologia de măsurare.</td></tr>
+          <tr><td>1.0.3</td><td>13 octombrie 2026</td><td>Activ</td><td>PATCH: terminologie aliniată la AVL-200 §7 (v1.1.0) — trimiterile la „faza F0”/„F3” devin etapa de baseline / etapa de re-măsurare, iar punctele de măsurare se notează T0 și F1 … Fn; nicio schimbare de conținut. Notația anterioară este documentată în AVL-200 §7.4.</td></tr>
         </tbody>
       </table>
 `;

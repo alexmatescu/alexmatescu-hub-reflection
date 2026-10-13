@@ -10,12 +10,12 @@ export const avlMkt001MarketScopeEligibilityHtml = `
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
         <tr><th scope="row">Familie</th><td>Market Measurement — <code>AVL-MKT-*</code></td></tr>
         <tr><th scope="row">Rol</th><td>protocol normativ de familie</td></tr>
-        <tr><th scope="row">Versiune</th><td>0.9.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>0.9.2</td></tr>
         <tr><th scope="row">Statut</th><td>Draft pentru revizuire</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>2 octombrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>12 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>2 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate">https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate</a></td></tr>
@@ -34,7 +34,7 @@ export const avlMkt001MarketScopeEligibilityHtml = `
 
       <p>AVL-MKT-001 este primul document al familiei <strong>Market Measurement</strong> (<code>AVL-MKT-*</code>), o familie funcțională în interiorul Nivelului C — Methodology. Arhitectura familiei este descrisă în <a href="/lab/metodologie">AVL-202, secțiunea 14</a>; namespace-ul și identificatorii sunt definiți în <a href="/lab/introducere">AVL-001</a>.</p>
 
-      <p>Versiunea curentă, <strong>0.9.1</strong>, este un <strong>draft public pentru revizuire</strong>. Documentul nu este activ. Publicarea draftului are rolul unei pre-înregistrări publice: criteriile devin vizibile și datate înainte ca populația pieței să fie cunoscută. La data acestei versiuni:</p>
+      <p>Versiunea curentă, <strong>0.9.2</strong>, este un <strong>draft public pentru revizuire</strong>. Documentul nu este activ. Publicarea draftului are rolul unei pre-înregistrări publice: criteriile devin vizibile și datate înainte ca populația pieței să fie cunoscută. La data acestei versiuni:</p>
 
       <ul>
         <li>pilotul intern pe cazuri-limită nu a fost executat;</li>
@@ -511,6 +511,7 @@ AVL-MKT-002 — Market Query Panel → execuție AI → măsurare</code></pre>
           <tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr>
         </thead>
         <tbody>
+          <tr><td>0.9.2</td><td>13 octombrie 2026</td><td>Draft pentru revizuire</td><td>PATCH: decizia deschisă 5 („Convenția T0 / F1 … Fn în corpus”) este închisă și pentru restul corpusului: convenția și etapele denumite sunt definite în AVL-200 §7 (v1.1.0), iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate la 13 octombrie 2026. Fără modificări ale cerințelor sau ale regulilor Market Discovery.</td></tr>
           <tr><td>0.9.1</td><td>12 octombrie 2026</td><td>Draft pentru revizuire</td><td>Secțiunea 3.2 rescrisă: rulările Market Discovery se identifică prin <code>FULL</code> (rularea trimestrială completă) și <code>M{lună}</code> (rulările lunare); convenția T0 / F1 … Fn nu se folosește în Market Discovery și rămâne cea din AVL-200 §7 și Tabula Rasa (AVL-201); schema rulărilor de măsurare AI rămâne în AVL-MKT-002. Modificarea rezultă din două piloturi de Market Discovery (9 și 11 octombrie 2026): repetarea acelorași interogări la câteva zile distanță nu este o strategie longitudinală adecvată. Decizia deschisă 5 actualizată. Criteriile de eligibilitate, statusurile și cerințele <code>AVLMKT001-REQ-*</code> nu se schimbă.</td></tr>
           <tr><td>0.9.0</td><td>2 octombrie 2026</td><td>Draft pentru revizuire</td><td>Prima versiune publică, ca pre-înregistrare a criteriilor înainte de pilotul intern. Față de draftul intern din 30 septembrie 2026: cerințele unificate într-o singură serie <code>AVLMKT001-REQ-001 … 023</code> (înlocuiesc seriile interne <code>MKT-REQ</code> și <code>E-REQ</code>); clasele geografice generalizate (<code>{CC}-DOMESTIC</code> etc.), cu România păstrată ca exemplu de primă aplicare; separate perioada instanței (Q) și axa rulărilor (T0 / F1 … Fn); dovezile de eligibilitate legate de AVL-200; declarație explicită de conflict de interese și cerințele REQ-020 – REQ-021; adăugate REQ-002, REQ-010 și REQ-015; procedura pilotului preluată din AVL-202; regulile editoriale generale înlocuite cu trimitere la AVL-001; afirmațiile despre furnizorii AI reverificate și restrânse la documentația oficială.</td></tr>
         </tbody>
@@ -523,9 +524,9 @@ AVL-MKT-002 — Market Query Panel → execuție AI → măsurare</code></pre>
         <li><strong>Identificatorii artefactelor din instanță.</strong> Formatul identificatorilor pentru registrul de discovery, registrul de verification și Market Reference Set nu este încă stabilit (AVL-001 îl lasă documentelor <code>AVL-MKT-*</code> și AVL-200).</li>
         <li><strong>Dovezile pentru statusurile incerte.</strong> Dacă și în ce formă trebuie conservate dovezi pentru <code>UNVERIFIED</code> și <code>AMBIGUOUS</code>.</li>
         <li><strong>Verificarea de către o terță parte</strong> a deciziilor privind entitatea afiliată: control opțional sau cerință pentru instanțele viitoare.</li>
-        <li><strong>Convenția T0 / F1 … Fn în corpus.</strong> Pentru Market Discovery, închisă în versiunea 0.9.1: rulările se identifică prin <code>FULL</code> și <code>M{lună}</code> (secțiunea 3.2). Rămâne de aliniat definiția punctelor de măsurare între AVL-200, AVL-001 și AVL-202 pentru rulările de măsurare AI (AVL-MKT-002).</li>
+        <li><strong>Convenția T0 / F1 … Fn în corpus.</strong> Închisă. Pentru Market Discovery, în versiunea 0.9.1: rulările se identifică prin <code>FULL</code> și <code>M{lună}</code> (secțiunea 3.2). Pentru restul corpusului, la 13 octombrie 2026: convenția și etapele denumite sunt definite în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a> (v1.1.0), iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate. Schema rulărilor de măsurare AI rămâne în AVL-MKT-002.</li>
       </ol>
 
-      <p><em>AVL-MKT-001 este un document normativ al AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Versiunea 0.9.1 este un draft public pentru revizuire, nu un protocol activ. Ultima verificare factuală și a surselor: 2 octombrie 2026.</em></p>
+      <p><em>AVL-MKT-001 este un document normativ al AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Versiunea 0.9.2 este un draft public pentru revizuire, nu un protocol activ. Ultima verificare factuală și a surselor: 2 octombrie 2026.</em></p>
 
 `;

@@ -8,12 +8,12 @@ export const avl001IntroductionHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-001</td></tr>
         <tr><th scope="row">Nivel</th><td>A — Foundation</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.2.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>2 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         <tr><th scope="row">Limba</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/introducere">https://delamatescu.ro/lab/introducere</a></td></tr>
         </tbody>
@@ -458,21 +458,21 @@ export const avl001IntroductionHtml = `
         <li><a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a> (documentul-cadru al Nivelului C)</li>
         <li><a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standard dovezi, măsurare și trasabilitate</a></li>
         <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></li>
-        <li>familia Market Measurement (<code>AVL-MKT-*</code>): <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.9.0) și AVL-MKT-002 — Market Query Panel (planificat)</li>
-        <li>documentele ulterioare ale metodologiei F1–F3</li>
+        <li>familia Market Measurement (<code>AVL-MKT-*</code>): <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.9.2) și AVL-MKT-002 — Market Query Panel (planificat)</li>
+        <li>documentele ulterioare dedicate etapelor sursei canonice, prezenței distribuite și re-măsurării</li>
         <li>standardele de scor și evaluare</li>
       </ul>
 
-      <p>„Tabula Rasa" desemnează, canonic, metodologia AI Visibility Lab de măsurare longitudinală a unei entități, iar F0–F3 sunt fazele ei — nu identificatori de rulări individuale (acelea au ID propriu, vezi Rulare/Run în AVL-201 §5) și nu sinonime interschimbabile:</p>
+      <p>„Tabula Rasa" desemnează, canonic, metodologia AI Visibility Lab de măsurare longitudinală a unei entități. Etapele ei se identifică doar prin nume, fără coduri; codurile <code>T0</code> și <code>F1</code> … <code>Fn</code> desemnează exclusiv punctele de măsurare — nu etapele și nu rulările individuale (acelea au ID propriu, vezi Rulare/Run în AVL-201 §5). Definițiile normative se află în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>:</p>
 
       <ul>
-        <li><strong>F0 — baseline</strong> (Tabula Rasa): starea entității înainte de orice intervenție (AVL-201).</li>
-        <li><strong>F1 — casa entității</strong>: consolidarea sursei canonice — site, date structurate, dezambiguizare.</li>
-        <li><strong>F2 — prezența distribuită</strong>: corroborarea din surse independente.</li>
-        <li><strong>F3 — re-măsurarea</strong>: același set înghețat, același protocol, aceeași taxonomie, atribuire onestă a schimbării.</li>
+        <li><strong>Etapa de baseline</strong> (Tabula Rasa): starea entității înainte de orice intervenție (AVL-201); punctul de măsurare <code>T0</code>.</li>
+        <li><strong>Etapa sursei canonice</strong>: consolidarea sursei canonice — site, date structurate, dezambiguizare.</li>
+        <li><strong>Etapa prezenței distribuite</strong>: corectarea, alinierea și coroborarea informațiilor din surse independente.</li>
+        <li><strong>Etapa de re-măsurare</strong>: același set înghețat, același protocol, aceeași taxonomie, atribuire onestă a schimbării; punctele de măsurare <code>F1</code> … <code>Fn</code>.</li>
       </ul>
 
-      <p>Definiția F1–F3 de mai sus e deja descrisă la nivel de cercetare (<a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>), dar nu are încă un document normativ propriu de Nivel C dedicat — acesta rămâne de scris, cu un identificator alocat la momentul înregistrării lui, nu speculat dinainte (AVL-202 a fost între timp alocat cadrului metodologic general, nu unui protocol F1–F3; vezi <a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a>). Până atunci, orice utilizare informală a „F1"/„F2" într-un document nepublicat sau într-un draft (ex. ca sinonim pentru „a doua fereastră de măsurare") e legacy/pre-canonică și trebuie reconciliată cu definiția de mai sus înainte de publicare.</p>
+      <p>Etapele sursei canonice, prezenței distribuite și re-măsurării sunt descrise la nivel de cercetare (<a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>), dar nu au încă un document normativ propriu de Nivel C dedicat — acesta rămâne de scris, cu un identificator alocat la momentul înregistrării lui, nu speculat dinainte (AVL-202 a fost între timp alocat cadrului metodologic general; vezi <a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a>). Până la versiunea 1.3.0, acest document a notat etapele cu <code>F0</code>–<code>F3</code>; corespondența cu notația curentă se află în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7.4</a>.</p>
 
       <h3>Familia Market Measurement — <code>AVL-MKT-*</code> (Nivelul C)</h3>
 
@@ -493,7 +493,7 @@ export const avl001IntroductionHtml = `
       <p>Documentele <code>AVL-MKT-*</code> sunt exclusiv documente normative și metodologice. Documentele familiei sunt:</p>
 
       <ul>
-        <li><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (publicat ca Draft pentru revizuire, v0.9.0);</li>
+        <li><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (publicat ca Draft pentru revizuire, v0.9.2);</li>
         <li>AVL-MKT-002 — Market Query Panel (planificat, nepublicat).</li>
       </ul>
 
@@ -568,7 +568,7 @@ export const avl001IntroductionHtml = `
 
       <p>O observație sau ipoteză nu trebuie citată ca informație confirmată oficial.</p>
 
-      <p>Citarea recomandată: Matescu, Alex. „AI Visibility Lab Foundation”. AI Visibility Lab Documentation, AVL-001, versiunea 1.2.1, 2026.</p>
+      <p>Citarea recomandată: Matescu, Alex. „AI Visibility Lab Foundation”. AI Visibility Lab Documentation, AVL-001, versiunea 1.3.0, 2026.</p>
 
       <h2>19. Versiuni, revizuiri și corecții</h2>
 
@@ -692,7 +692,7 @@ export const avl001IntroductionHtml = `
         <li><a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standard dovezi, măsurare și trasabilitate</a></li>
         <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></li>
         <li><a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a></li>
-        <li><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.9.0)</li>
+        <li><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.9.2)</li>
       </ul>
 
       <h2>25. Istoricul versiunilor</h2>
@@ -720,6 +720,10 @@ export const avl001IntroductionHtml = `
       <h3>Versiunea 1.2.1 — 2 octombrie 2026</h3>
 
       <p>PATCH: AVL-MKT-001 — Market Scope &amp; Eligibility Protocol este publicat ca draft pentru revizuire (v0.9.0) și nu mai este doar planificat. Lista Nivelului C, secțiunea familiei Market Measurement (§17) și „Documente asociate” (§24) reflectă noul statut; AVL-MKT-002 — Market Query Panel rămâne planificat. Descrierea conținutului operațional al AVL-MKT-001 este înlocuită cu o trimitere: criteriile de eligibilitate se află numai în AVL-MKT-001. Nicio schimbare de principiu; niciun identificator existent nu a fost modificat.</p>
+
+      <h3>Versiunea 1.3.0 — 13 octombrie 2026</h3>
+
+      <p>MINOR: §17 aliniat la convenția din AVL-200 §7 (v1.1.0). Etapele metodologiei Tabula Rasa se identifică doar prin nume — etapa de baseline, etapa sursei canonice, etapa prezenței distribuite, etapa de re-măsurare —, iar codurile T0 și F1 … Fn desemnează exclusiv punctele de măsurare (T0 baseline, F1 primul punct de măsurare după baseline, F2 … Fn re-măsurări). Notația anterioară F0–F3 pentru faze este documentată ca istorică, cu trimitere la corespondența din AVL-200 §7.4; a fost eliminată regula care trata utilizarea „F1”/„F2” pentru ferestre de măsurare drept legacy, deoarece aceasta este acum convenția curentă. Niciun identificator existent nu a fost modificat. Trimiterile la AVL-MKT-001 din §17 și §24 sunt actualizate la versiunea curentă a draftului, v0.9.2 (BL-001).</p>
 
       <p>Documentația laboratorului descrie ceea ce este documentat, observat sau susținut de dovezi. Nu pretinde acces la mecanisme interne nepublice și nu transformă observațiile limitate sau corelațiile experimentale în reguli universale.</p>
 `;

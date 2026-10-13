@@ -8,7 +8,7 @@ export const avl201TabulaRasaF0Html = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-201</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.2.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
@@ -50,7 +50,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Documentarea stării tehnice și semantice înainte de optimizare.</li>
         <li>Măsurarea prezenței, corectitudinii și citării în sistemele AI selectate.</li>
         <li>Identificarea modului principal de eșec: acces, recuperare, sinteză, citare sau identitate.</li>
-        <li>Crearea unei referințe comparabile pentru fazele F1, F2 și F3.</li>
+        <li>Crearea unei referințe comparabile pentru etapele sursei canonice, prezenței distribuite și re-măsurării.</li>
         <li>Producerea unui pachet de dovezi suficient pentru verificare independentă.</li>
         <li>Protejarea clientului sau subiectului împotriva atribuirii nefondate a unor rezultate.</li>
       </ul>
@@ -88,7 +88,7 @@ export const avl201TabulaRasaF0Html = `
       <p><strong>Baseline:</strong> Starea măsurată și documentată înainte de intervenție.</p>
       <p><strong>Snapshot / instantaneu:</strong> Pachetul datat care conservă configurația, răspunsurile, dovezile și rezultatele unei sesiuni de măsurare.</p>
       <p><strong>Set de interogări:</strong> Colecția versionată de întrebări folosită pentru testarea entității.</p>
-      <p><strong>Set înghețat:</strong> Set de interogări care nu mai este modificat între F0 și comparația F3.</p>
+      <p><strong>Set înghețat:</strong> Set de interogări care nu mai este modificat între baseline (T0) și re-măsurări (F1 … Fn).</p>
       <p><strong>Rulare:</strong> O execuție individuală a unei interogări într-un motor sau o interfață AI.</p>
       <p><strong>Sesiune de măsurare:</strong> Grup de rulări efectuate într-un interval și într-o configurație documentată.</p>
       <p><strong>Sesiune curată:</strong> Sesiune configurată pentru reducerea personalizării și a contaminării istoricului.</p>
@@ -174,7 +174,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Registrul incidentelor și abaterilor</li>
         <li>Arhiva de dovezi</li>
         <li>Manifestul snapshot-ului și checksum-uri, când sunt folosite</li>
-        <li>Lista priorităților pentru F1 și F2</li>
+        <li>Lista priorităților pentru etapele sursei canonice și prezenței distribuite</li>
       </ul>
 
       <blockquote><strong>F0-REQ-003</strong> — Un raport fără arhivă de dovezi NU TREBUIE prezentat drept implementare completă AVL-201.</blockquote>
@@ -266,7 +266,7 @@ export const avl201TabulaRasaF0Html = `
         <li>URL, domeniu și tip de sursă.</li>
         <li>Frecvență per motor și interogare.</li>
         <li>Poziție sau proeminență, dacă este observabilă.</li>
-        <li>Relevanță pentru F2.</li>
+        <li>Relevanță pentru etapa prezenței distribuite.</li>
       </ul>
 
       <h3>10.8. Pasul 8 — Auditul prezenței distribuite</h3>
@@ -285,7 +285,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Inventar URL.</li>
         <li>Tip și temă.</li>
         <li>Stare tehnică și editorială.</li>
-        <li>Decizie propusă pentru F1.</li>
+        <li>Decizie propusă pentru etapa sursei canonice.</li>
       </ul>
 
       <h3>10.10. Pasul 10 — Instantaneul reproductibil</h3>
@@ -334,8 +334,9 @@ export const avl201TabulaRasaF0Html = `
       </ul>
 
       <h3>12.3. Convenția de denumire</h3>
-      <p>Format recomandat: <code>F0_[entitate]_[motor]_[queryID]_[run]_[YYYYMMDD-HHMM]_[limbă].ext</code></p>
-      <p>Exemplu: <code>F0_AlexMatescu_ChatGPT_QID03_R02_20260721-0935_RO.png</code></p>
+      <p>Format recomandat: <code>[punct de măsurare]_[entitate]_[motor]_[queryID]_[run]_[YYYYMMDD-HHMM]_[limbă].ext</code>, unde punctul de măsurare este <code>T0</code> pentru baseline și <code>F1</code> … <code>Fn</code> pentru re-măsurări (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>, AVL200-REQ-040).</p>
+      <p>Exemplu: <code>T0_AlexMatescu_ChatGPT_QID03_R02_20260721-0935_RO.png</code></p>
+      <p>Până la versiunea 1.3.0, acest format recomanda prefixul <code>F0_</code>. Dovezile deja arhivate sau publicate își păstrează numele originale — de exemplu, <code>F0_baseline_AlexMatescu.docx</code> din pachetul de dovezi T0 pentru Alex Matescu — și nu se redenumesc retroactiv (AVL200-REQ-013).</p>
 
       <h2>13. Taxonomia rezultatelor</h2>
 
@@ -405,15 +406,15 @@ export const avl201TabulaRasaF0Html = `
         <li>Raportul final TREBUIE să conțină limitările și incidentele.</li>
       </ul>
 
-      <h2>16. Repetabilitate și comparație F0–F3</h2>
+      <h2>16. Repetabilitate și comparație între baseline și re-măsurări</h2>
 
-      <p>F3 trebuie să reutilizeze același set înghețat, aceleași criterii și, pe cât posibil, aceeași configurație. Schimbările inevitabile ale platformelor se documentează ca variabile externe.</p>
+      <p>Re-măsurările (F1 … Fn) trebuie să reutilizeze același set înghețat, aceleași criterii și, pe cât posibil, aceeași configurație. Schimbările inevitabile ale platformelor se documentează ca variabile externe.</p>
 
-      <blockquote><strong>F0-REQ-008</strong> — Comparația F0–F3 TREBUIE realizată pe aceleași identificatoare de interogări. Interogările noi pot fi adăugate ca serie separată, dar NU TREBUIE amestecate în scorul comparativ principal.</blockquote>
+      <blockquote><strong>F0-REQ-008</strong> — Comparația dintre baseline (T0) și re-măsurări (F1 … Fn) TREBUIE realizată pe aceleași identificatoare de interogări. Interogările noi pot fi adăugate ca serie separată, dar NU TREBUIE amestecate în scorul comparativ principal.</blockquote>
 
       <blockquote><strong>F0-REQ-009</strong> — Orice schimbare de motor, model, interfață, țară, limbă sau metodă de captură TREBUIE semnalată în tabelul de comparabilitate.</blockquote>
 
-      <p>Intervalul dintre F0 și F3 nu este universal. El trebuie să permită crawl, indexare și propagarea schimbărilor, fără a fi atât de lung încât efectul intervențiilor să fie inseparabil de deriva naturală a sistemelor.</p>
+      <p>Intervalul dintre baseline (T0) și prima re-măsurare (F1) nu este universal. El trebuie să permită crawl, indexare și propagarea schimbărilor, fără a fi atât de lung încât efectul intervențiilor să fie inseparabil de deriva naturală a sistemelor.</p>
 
       <h2>17. Limitări</h2>
       <ul>
@@ -434,7 +435,7 @@ export const avl201TabulaRasaF0Html = `
       <table>
         <thead><tr><th>Profil observat</th><th>Interpretare inițială</th></tr></thead>
         <tbody>
-          <tr><td>Acces slab</td><td>Crawler sau infrastructură blocată; prioritatea F1 este remedierea accesului.</td></tr>
+          <tr><td>Acces slab</td><td>Crawler sau infrastructură blocată; prioritatea etapei sursei canonice este remedierea accesului.</td></tr>
           <tr><td>Acces bun, NULL ridicat</td><td>Conținutul nu este recuperat sau entitatea nu este suficient asociată cu domeniul interogării.</td></tr>
           <tr><td>Mențiuni multe, citări puține</td><td>Entitatea este cunoscută, dar sursa canonică nu este selectată sau afișată.</td></tr>
           <tr><td>HIT parțial / fapte învechite</td><td>Identitatea există, dar sursele dominante sunt incomplete sau depășite.</td></tr>
@@ -489,7 +490,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Scoruri și distribuții.</li>
         <li>Diagnostic pe filtre.</li>
         <li>Limitări și incidente.</li>
-        <li>Priorități pentru F1–F2.</li>
+        <li>Priorități pentru etapele sursei canonice și prezenței distribuite.</li>
         <li>Anexe și manifestul dovezilor.</li>
       </ol>
 
@@ -559,6 +560,7 @@ export const avl201TabulaRasaF0Html = `
           <tr><td>1.1.0</td><td>26 august 2026</td><td>Activ</td><td>MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); precizare adăugată la secțiunea 3 care distinge aplicabilitatea metodologiei în audituri comerciale de o ofertă activă de servicii comerciale ale AI Visibility Lab.</td></tr>
           <tr><td>1.1.1</td><td>14 septembrie 2026</td><td>Activ</td><td>PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate ca dependință normativă explicită, ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026).</td></tr>
           <tr><td>1.2.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: clarificare în secțiunea 3 — auditul AI Visibility (/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab, nu un serviciu al laboratorului; un audit nu devine automat studiu de caz, experiment public sau rezultat al laboratorului, iar o eventuală publicare respectă regulile AVL-001 privind declararea conflictelor de interese. Nicio cerință F0-REQ nu a fost adăugată sau modificată.</td></tr>
+          <tr><td>1.3.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: terminologie aliniată la AVL-200 §7 (v1.1.0). Trimiterile la fazele F1, F2 și F3 devin etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare, iar comparația longitudinală se exprimă între baseline (T0) și re-măsurări (F1 … Fn); formularea cerinței F0-REQ-008 a fost aliniată fără schimbarea sensului sau a identificatorului. Titlul documentului, identificatorii F0-REQ-* și folosirea „F0” ca nume istoric al etapei de baseline rămân neschimbate până la o revizie separată; corespondența este documentată în AVL-200 §7.4. §12.3: formatul recomandat de denumire a dovezilor folosește ca prefix punctul de măsurare (T0, F1 … Fn; AVL200-REQ-040) în locul prefixului F0_. Dovezile deja arhivate sau publicate își păstrează numele originale — inclusiv F0_baseline_AlexMatescu.docx din pachetul de dovezi T0 pentru Alex Matescu — și nu au fost redenumite sau modificate (AVL200-REQ-013).</td></tr>
         </tbody>
       </table>
 

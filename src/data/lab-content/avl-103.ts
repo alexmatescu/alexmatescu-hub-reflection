@@ -8,12 +8,12 @@ export const avl103SeoVsGeoHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-103</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.0.2</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.3</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 august 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -63,7 +63,7 @@ export const avl103SeoVsGeoHtml = `
         <li><strong>Re-măsurarea pe set înghețat</strong> — repetarea liniei de bază după intervenții, pe aceleași interogări, pentru atribuire onestă a schimbării.</li>
       </ul>
 
-      <p>Punctele 2, 3 și 5 sunt exact fazele F0 și F3 din metodologia AI Visibility Lab — documentate public, cu instrumentar reproductibil, în <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a> și <a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a>.</p>
+      <p>Punctele 2, 3 și 5 sunt exact etapele de baseline și de re-măsurare din metodologia AI Visibility Lab — documentate public, cu instrumentar reproductibil, în <a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa</a> și <a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a>.</p>
 
       <h3>Ce să nu mai faci: anti-tiparele tranziției</h3>
 
@@ -102,7 +102,7 @@ export const avl103SeoVsGeoHtml = `
         <li><a href="/lab/cercetare/ce-este-geo-aeo">Ce este GEO/AEO? Ghid complet de AI Visibility</a> — definiții, origine academică, pozițiile oficiale complete</li>
         <li><a href="/lab/cercetare/cum-aleg-motoarele-ai">Cum aleg motoarele AI ce citează</a> — cele patru filtre și stratul de entitate, cu mecanica detaliată</li>
         <li><a href="/lab/cercetare/cum-se-masoara-ai-visibility">Cum se măsoară vizibilitatea AI</a></li>
-        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: metodologia F0</a></li>
+        <li><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa: etapa de baseline</a></li>
         <li><a href="/lab/cercetare/glosar-geo-aeo">Glosar GEO/AEO/AI</a> — toți termenii folosiți în această pagină</li>
         <li><a href="/lab">AI Visibility Lab</a> — metodologia completă și studiile de caz</li>
       </ul>
@@ -131,6 +131,7 @@ export const avl103SeoVsGeoHtml = `
         <tbody>
           <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
           <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab).</td></tr>
+          <tr><td>1.0.3</td><td>13 octombrie 2026</td><td>Activ</td><td>PATCH: terminologie aliniată la AVL-200 §7 (v1.1.0) — trimiterile la „faza F0”/„F3” devin etapa de baseline / etapa de re-măsurare, iar punctele de măsurare se notează T0 și F1 … Fn; nicio schimbare de conținut. Notația anterioară este documentată în AVL-200 §7.4.</td></tr>
         </tbody>
       </table>
 `;

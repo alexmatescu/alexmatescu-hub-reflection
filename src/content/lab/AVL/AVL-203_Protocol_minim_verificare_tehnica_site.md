@@ -3,14 +3,14 @@ document_id: "AVL-203"
 title: "Protocolul minim de verificare tehnică a unui site pentru AI Visibility"
 subtitle: "Core Technical Web Measurement Protocol"
 level: "C — Methodology"
-version: "0.3.0"
+version: "0.3.1"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-01"
 date_published: "2026-10-02T16:29:00+03:00"
-date_modified: "2026-10-02"
+date_modified: "2026-10-13"
 last_reviewed: "2026-10-01"
 canonical: "https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica"
 normative_dependencies:
@@ -42,7 +42,7 @@ keywords:
 
 AVL-203 este un document de nivel C — Methodology în corpusul AI Visibility Lab Documentation, propus ca protocol în ramura Core Methodology descrisă de AVL-202.
 
-Versiunea curentă, **0.3.0**, este un **draft public pentru revizuire** și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate `AVL203-REQ-*`; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §18.
+Versiunea curentă, **0.3.1**, este un **draft public pentru revizuire** și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate `AVL203-REQ-*`; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §18.
 
 Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr liber din seria documentelor Nivelului C, după scanarea registrului de conținut și a corpusului, și confirmat de Alex Matescu. Eticheta de lucru folosită anterior pentru acest draft, „AVL-TECH-001”, nu este un identificator normativ și nu introduce o familie `AVL-TECH-*`.
 
@@ -50,7 +50,7 @@ Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr l
 | --- | --- |
 | Document ID | AVL-203 |
 | Nivel | C — Methodology |
-| Versiune | 0.3.0 |
+| Versiune | 0.3.1 |
 | Statut | Draft pentru revizuire |
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
@@ -482,12 +482,13 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 | 0.1.0 | 1 octombrie 2026 | Draft pentru revizuire | Primul draft înregistrat. Definește setul minim de verificări `TC-00`–`TC-07`, poziționarea Evidence Capture Process înaintea lanțului AVL-200, convenția de etichetare a rulărilor (`T0` baseline, `F1` … `Fn` rulări ulterioare) și limitele protocolului. Identificator AVL-203 alocat din registru și confirmat de Alex Matescu; eticheta de lucru „AVL-TECH-001” retrasă. Slugul `/lab/metodologie/protocol-verificare-tehnica` confirmat. Afirmațiile despre RFC 9309, RFC 9110, Sitemaps, Google, OpenAI, Anthropic și Perplexity verificate la sursă la 1 octombrie 2026. |
 | 0.2.0 | 2 octombrie 2026 | Draft pentru revizuire | Revizie după prima implementare candidată și o rulare de test. TC-06: dubla captură a clientului de referință devine obligatorie, iar diferențele de dimensiune/hash nu se atribuie User-Agent-ului când răspunsul variază intrinsec (constatare din rularea de test: corpul paginii a diferit între două requesturi identice). Manifest User-Agent versionat, cu statusuri `OFICIAL` / `OFICIAL_CU_VERSIUNE_ALEASA` / `DOAR_TOKEN` / `NECONFIRMAT`, înghețat la v0.1.0 cu șiruri verificate la sursă la 2 octombrie 2026. TC-04: căile convenționale (`/sitemap.xml`, `/sitemap_index.xml`) și regula de atribuire a statusurilor. TC-05: variantele meta robots pentru `googlebot`/`bingbot` și validitatea sintactică JSON a blocurilor JSON-LD ca observații permise. Codul de ieșire `curl` înregistrat pentru fiecare request. Manifestul rulării inclus în checksum-uri. Eticheta `TEST` pentru rulări de probă din afara seriilor de măsurare. §18.4 și §18.6 actualizate. Publicat ca draft public la `/lab/metodologie/protocol-verificare-tehnica`; canonicalul devine definitiv; §17.2 actualizat. |
 | 0.3.0 | 2 octombrie 2026 | Draft pentru revizuire | Cerințele de conformitate formalizate: 28 de cerințe `AVL203-REQ-001` … `AVL203-REQ-028`, derivate din intenția normativă a versiunii 0.2.0, fără reguli noi. Declarația RFC 2119 / RFC 8174 din „Controlul documentului” înlocuiește nota despre intenția protocolului. Secțiune nouă „Checklist de conformitate” (§15); secțiunile următoare renumerotate (§16–§18). Decizia deschisă 3 actualizată. |
+| 0.3.1 | 13 octombrie 2026 | Draft pentru revizuire | PATCH: decizia deschisă 1 („Aliniarea corpusului la convenția T0/F1…Fn”) este închisă: AVL-200 §7 (v1.1.0) definește convenția și etapele denumite, iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate la 13 octombrie 2026. Fără modificări ale cerințelor. |
 
 ---
 
 # 18. Decizii deschise înainte de 1.0.0
 
-1. **Aliniarea corpusului la convenția T0/F1…Fn.** Convenția din §11 (decizie Alex Matescu, 1 octombrie 2026) contrazice versiunea publicată a AVL-200 §7 și AVL-001 §17, unde `F0–F3` sunt faze metodologice și `T0, T1…` puncte de măsurare. AVL-200 și AVL-001 trebuie actualizate, ca pas separat, înainte de activarea acestui document.
+1. **Aliniarea corpusului la convenția T0/F1…Fn.** Închisă la 13 octombrie 2026: convenția din §11 este acum definită normativ în [AVL-200 §7](/lab/metodologie/standard-dovezi-masurare-trasabilitate) (v1.1.0), iar AVL-001 §17, AVL-202, AVL-101–105 și AVL-201 au fost aliniate.
 2. **Locul în corpus.** De la publicarea ca draft public (2 octombrie 2026), AVL-202 menționează AVL-203 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor, cu statutul „Draft pentru revizuire”. Rămân de făcut la activare: actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001 §17.
 3. **Cerințe identificate.** Formulate în v0.3.0 (2 octombrie 2026): 28 de cerințe `AVL203-REQ-001` … `AVL203-REQ-028`, derivate din intenția normativă deja existentă în text, fără reguli noi. Toate sunt la nivel TREBUIE / NU TREBUIE, cu o singură opțiune POATE (REQ-011). Rămâne de confirmat, la activare, setul final și nivelul fiecărei cerințe.
 4. **Implementarea de referință.** Comenzile din document sunt exemple. Există o implementare candidată, versionată (skill-ul `verificare-tehnica-avl203` din repository, script v0.2.0), rulată la 2 octombrie 2026 într-o rulare `TEST` pe un singur origin (macOS, curl 8.7.1). Validarea ca implementare de referință cere rulări pe mai multe origini și configurații (redirecturi, erori TLS/DNS, robots.txt indisponibil, răspunsuri non-HTML, protecții anti-bot) și teste ale analizorului. Statut: candidată, nevalidată.

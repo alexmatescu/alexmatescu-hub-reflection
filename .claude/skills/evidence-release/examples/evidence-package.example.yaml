@@ -11,7 +11,7 @@ entity_name: Example Entity
 entity_slug: example-entity
 entity_code: EE
 
-measurement_point: T1
+measurement_point: F1
 measurement_window:
   start: 2026-09-02
   end: 2026-09-07

@@ -419,8 +419,8 @@ export async function writeText(p, text) {
 /** entity-slug must be lowercase kebab-case. */
 export const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
-/** T0, T1, T2, ... or window-YYYY-MM-DD_YYYY-MM-DD */
-export const MEASUREMENT_POINT_RE = /^(T\d+|window-\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2})$/;
+/** T0 (baseline), F1, F2, ... Fn (re-measurements, AVL-200 §7) or window-YYYY-MM-DD_YYYY-MM-DD */
+export const MEASUREMENT_POINT_RE = /^(T0|F[1-9]\d*|window-\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2})$/;
 
 export function artifactFileName(entitySlug, measurementPoint, artifact, version, ext) {
   return `${entitySlug}_${measurementPoint}_${artifact}_v${version}.${ext}`;

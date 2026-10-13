@@ -11,7 +11,7 @@ Baseline Measurement Specification
 | **Document ID** | AVL-201 |
 |----|----|
 | **Nivel** | C — Methodology |
-| **Versiune** | 1.2.0 |
+| **Versiune** | 1.3.0 |
 | **Statut** | Activ |
 | **Autor** | [Alex Matescu](/despre) |
 | **Organizație** | [AI Visibility Lab](/lab) |
@@ -74,7 +74,7 @@ trebuie păstrate dovezile și cum trebuie delimitate observațiile de interpret
 
 - Identificarea modului principal de eșec: acces, recuperare, sinteză, citare sau identitate.
 
-- Crearea unei referințe comparabile pentru fazele F1, F2 și F3.
+- Crearea unei referințe comparabile pentru etapele sursei canonice, prezenței distribuite și re-măsurării.
 
 - Producerea unui pachet de dovezi suficient pentru verificare independentă.
 
@@ -125,7 +125,7 @@ Tabula Rasa F0 nu este, prin el însuși, o măsurare completă a performanței 
 
 **Set de interogări:** Colecția versionată de întrebări folosită pentru testarea entității.
 
-**Set înghețat:** Set de interogări care nu mai este modificat între F0 și comparația F3.
+**Set înghețat:** Set de interogări care nu mai este modificat între baseline (T0) și re-măsurări (F1 … Fn).
 
 **Rulare:** O execuție individuală a unei interogări într-un motor sau o interfață AI.
 
@@ -245,7 +245,7 @@ Tabula Rasa F0 nu este, prin el însuși, o măsurare completă a performanței 
 
 - Manifestul snapshot-ului și checksum-uri, când sunt folosite
 
-- Lista priorităților pentru F1 și F2
+- Lista priorităților pentru etapele sursei canonice și prezenței distribuite
 
 **F0-REQ-003 —** Un raport fără arhivă de dovezi NU TREBUIE prezentat drept implementare completă AVL-201.
 
@@ -403,7 +403,7 @@ Pentru interogările relevante se inventariază sursele pe care motoarele le afi
 
 - Poziție sau proeminență, dacă este observabilă.
 
-- Relevanță pentru F2.
+- Relevanță pentru etapa prezenței distribuite.
 
 ## 10.8. Pasul 8 — Auditul prezenței distribuite
 
@@ -429,7 +429,7 @@ Se inventariază conținutul sursei canonice și se evaluează relevanța, calit
 
 - Stare tehnică și editorială.
 
-- Decizie propusă pentru F1.
+- Decizie propusă pentru etapa sursei canonice.
 
 ## 10.10. Pasul 10 — Instantaneul reproductibil
 
@@ -503,10 +503,11 @@ Configurația recomandată include:
 
 ## 12.3. Convenția de denumire
 
-Format recomandat:
-F0\_\[entitate\]\_\[motor\]\_\[queryID\]\_\[run\]\_\[YYYYMMDD-HHMM\]\_\[limbă\].ext
+Format recomandat: `[punct de măsurare]_[entitate]_[motor]_[queryID]_[run]_[YYYYMMDD-HHMM]_[limbă].ext`, unde punctul de măsurare este `T0` pentru baseline și `F1` … `Fn` pentru re-măsurări ([AVL-200 §7](/lab/metodologie/standard-dovezi-masurare-trasabilitate), AVL200-REQ-040).
 
-Exemplu: F0_AlexMatescu_ChatGPT_QID03_R02_20260721-0935_RO.png
+Exemplu: `T0_AlexMatescu_ChatGPT_QID03_R02_20260721-0935_RO.png`
+
+Până la versiunea 1.3.0, acest format recomanda prefixul `F0_`. Dovezile deja arhivate sau publicate își păstrează numele originale — de exemplu, `F0_baseline_AlexMatescu.docx` din pachetul de dovezi T0 pentru Alex Matescu — și nu se redenumesc retroactiv (AVL200-REQ-013).
 
 # 13. Taxonomia rezultatelor
 
@@ -588,20 +589,20 @@ rulări, perioada, motoarele și distribuția categoriilor.
 
 - Raportul final TREBUIE să conțină limitările și incidentele.
 
-# 16. Repetabilitate și comparație F0–F3
+# 16. Repetabilitate și comparație între baseline și re-măsurări
 
-F3 trebuie să reutilizeze același set înghețat, aceleași criterii și, pe
+Re-măsurările (F1 … Fn) trebuie să reutilizeze același set înghețat, aceleași criterii și, pe
 cât posibil, aceeași configurație. Schimbările inevitabile ale
 platformelor se documentează ca variabile externe.
 
-**F0-REQ-008 —** Comparația F0–F3 TREBUIE realizată pe aceleași
+**F0-REQ-008 —** Comparația dintre baseline (T0) și re-măsurări (F1 … Fn) TREBUIE realizată pe aceleași
 identificatoare de interogări. Interogările noi pot fi adăugate ca serie
 separată, dar NU TREBUIE amestecate în scorul comparativ principal.
 
 **F0-REQ-009 —** Orice schimbare de motor, model, interfață, țară, limbă
 sau metodă de captură TREBUIE semnalată în tabelul de comparabilitate.
 
-Intervalul dintre F0 și F3 nu este universal. El trebuie să permită
+Intervalul dintre baseline (T0) și prima re-măsurare (F1) nu este universal. El trebuie să permită
 crawl, indexare și propagarea schimbărilor, fără a fi atât de lung încât
 efectul intervențiilor să fie inseparabil de deriva naturală a
 sistemelor.
@@ -634,7 +635,7 @@ la scorul total.
 
 | **Profil observat** | **Interpretare inițială** |
 |----|----|
-| Acces slab | Crawler sau infrastructură blocată; prioritatea F1 este remedierea accesului. |
+| Acces slab | Crawler sau infrastructură blocată; prioritatea etapei sursei canonice este remedierea accesului. |
 | Acces bun, NULL ridicat | Conținutul nu este recuperat sau entitatea nu este suficient asociată cu domeniul interogării. |
 | Mențiuni multe, citări puține | Entitatea este cunoscută, dar sursa canonică nu este selectată sau afișată. |
 | HIT parțial / fapte învechite | Identitatea există, dar sursele dominante sunt incomplete sau depășite. |
@@ -712,7 +713,7 @@ Niveluri recomandate de declarație:
 
 15. Limitări și incidente.
 
-16. Priorități pentru F1–F2.
+16. Priorități pentru etapele sursei canonice și prezenței distribuite.
 
 17. Anexe și manifestul dovezilor.
 
@@ -820,6 +821,7 @@ profesional nu stă în secretul pașilor, ci în execuție, disciplină, date
 | 1.1.0 | 26 august 2026 | Activ | MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); precizare adăugată la secțiunea 3 care distinge aplicabilitatea metodologiei în audituri comerciale de o ofertă activă de servicii comerciale ale AI Visibility Lab. |
 | 1.1.1 | 14 septembrie 2026 | Activ | PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate ca dependință normativă explicită, ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026). Fișierul sursă a fost resincronizat integral cu versiunea publicată la această dată: linkuri Autor/Organizație/dependențe, precizarea din §3, formularea F0-REQ-001 și o mică diferență de formulare la Pasul 8 (§10.8) — toate aliniate la textul deja live. |
 | 1.2.0 | 13 octombrie 2026 | Activ | MINOR: clarificare în secțiunea 3 — auditul AI Visibility (/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab, nu un serviciu al laboratorului; un audit nu devine automat studiu de caz, experiment public sau rezultat al laboratorului, iar o eventuală publicare respectă regulile AVL-001 privind declararea conflictelor de interese. Nicio cerință F0-REQ nu a fost adăugată sau modificată. |
+| 1.3.0 | 13 octombrie 2026 | Activ | MINOR: terminologie aliniată la AVL-200 §7 (v1.1.0). Trimiterile la fazele F1, F2 și F3 devin etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare, iar comparația longitudinală se exprimă între baseline (T0) și re-măsurări (F1 … Fn); formularea cerinței F0-REQ-008 a fost aliniată fără schimbarea sensului sau a identificatorului. Titlul documentului, identificatorii F0-REQ-* și folosirea „F0” ca nume istoric al etapei de baseline rămân neschimbate până la o revizie separată; corespondența este documentată în AVL-200 §7.4. §12.3: formatul recomandat de denumire a dovezilor folosește ca prefix punctul de măsurare (T0, F1 … Fn; AVL200-REQ-040) în locul prefixului F0_. Dovezile deja arhivate sau publicate își păstrează numele originale — inclusiv F0_baseline_AlexMatescu.docx din pachetul de dovezi T0 pentru Alex Matescu — și nu au fost redenumite sau modificate (AVL200-REQ-013). |
 
 | **Declarație finală:** Tabula Rasa F0 nu demonstrează că o intervenție viitoare va funcționa. Ea stabilește condițiile minime pentru ca o schimbare ulterioară să poată fi comparată, verificată și discutată onest. |
 |----|

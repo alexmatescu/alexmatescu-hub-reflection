@@ -63,7 +63,7 @@ Marchează explicit natura fiecărei afirmații importante, fără etichetare me
 
 **Dovezi insuficiente singure**: relatare verbală („mi-a apărut”), captură decupată fără interogare, captură fără dată/identificator de rulare, text copiat manual fără dovada contextului, rezumat al operatorului fără răspunsul brut, un singur rezultat selectat dintr-o serie nedeclarată.
 
-**Convenția de denumire a evidence set-ului brut** (arhiva internă, nu neapărat numele fișierului publicat — vezi §7.2): `{Fază}_{entitate}_{motor}_{queryID}_{run}_{YYYYMMDD-HHMM}_{limbă}.ext` (ex. `F0_AlexMatescu_ChatGPT_QID03_R02_20260721-0935_RO.png`).
+**Convenția de denumire a evidence set-ului brut** (arhiva internă, nu neapărat numele fișierului publicat — vezi §7.2): `{PunctDeMăsurare}_{entitate}_{motor}_{queryID}_{run}_{YYYYMMDD-HHMM}_{limbă}.ext` (ex. `T0_AlexMatescu_ChatGPT_QID03_R02_20260721-0935_RO.png`; arhivele istorice își păstrează prefixul original, ex. `F0_`).
 
 **Protocolul sesiunii curate** (AVL-201 §11) — pentru orice măsurătoare nouă inclusă în studiu: fereastră privată/profil dedicat, conversație nouă per interogare, memorie dezactivată unde e posibil, limbă și locație explicite fără VPN, fără introducerea prealabilă a numelui entității în aceeași sesiune, fără reformulări iterative înainte de capturarea rezultatului principal. Unde platforma nu permite controlul unei variabile, limitarea se declară explicit, nu se ascunde.
 
@@ -92,14 +92,18 @@ Dacă studiul publică un scor agregat, nu-l publica fără numărul de rulări,
 
 Documentație oficială a furnizorului → standarde/specificații publice → lucrări academice evaluate → publicații ale laboratoarelor de cercetare → experimente proprii reproductibile → declarații publice ale reprezentanților furnizorilor → analize tehnice independente → studii de caz *externe* (nu confunda cu secțiunea proprie — §1) → articole editoriale/surse secundare. Absența documentației unui semnal nu înseamnă confirmarea absenței lui — doar că folosirea lui nu e confirmată public.
 
-### 2.6 — Fazele longitudinale (AVL-001, F0–F3)
+### 2.6 — Etapele și punctele de măsurare (AVL-200 §7)
 
-- **F0/T0** — baseline-ul inițial, adesea imperfect (protocol încă în formare) — se păstrează ca atare (§0 mai sus).
-- **F1** — casa entității: consolidarea sursei canonice.
-- **F2** — prezența distribuită: corroborarea din surse independente.
-- **F3** — re-măsurarea: același set înghețat, același protocol, aceeași taxonomie, atribuire onestă a schimbării.
+Etapele metodologiei se identifică **doar prin nume**, fără coduri; codurile se folosesc **doar pentru punctele de măsurare** (AVL-200 §7, v1.1.0):
 
-F3 trebuie să reutilizeze exact aceleași identificatoare de interogări ca fazele anterioare; interogări noi pot fi adăugate ca serie separată, dar nu amestecate în scorul comparativ principal (F0-REQ-008). Orice schimbare de motor/model/interfață/țară/limbă/metodă de captură se semnalează explicit (F0-REQ-009). Definiția F1–F3 e descrisă la nivel de cercetare (AVL-104), nu are încă document normativ propriu de Nivel C — nu presupune o rigoare pe care sursa n-o afirmă încă.
+- **Etapa de baseline** — starea entității înainte de orice intervenție (AVL-201), adesea imperfectă la primul studiu (protocol încă în formare) — se păstrează ca atare (§0 mai sus). Punctul de măsurare: `T0`.
+- **Etapa sursei canonice** — intervenția asupra sursei canonice (site oficial, pagini canonice, date structurate, dezambiguizare).
+- **Etapa prezenței distribuite** — intervenția asupra prezenței distribuite (profiluri, directoare, publicații, registre, mențiuni externe): corectare, aliniere, coroborare din surse independente.
+- **Etapa de re-măsurare** — același set înghețat, același protocol, aceeași taxonomie, atribuire onestă a schimbării. Punctele de măsurare: `F1` (primul după baseline), `F2` … `Fn`.
+
+Re-măsurările trebuie să reutilizeze exact aceleași identificatoare de interogări ca baseline-ul; interogări noi pot fi adăugate ca serie separată, dar nu amestecate în scorul comparativ principal (F0-REQ-008). Orice schimbare de motor/model/interfață/țară/limbă/metodă de captură se semnalează explicit (F0-REQ-009). Etapele sursei canonice, prezenței distribuite și re-măsurării sunt descrise la nivel de cercetare (AVL-104) și definite în AVL-200 §7, dar nu au încă un protocol normativ propriu de Nivel C — nu presupune o rigoare pe care sursa n-o afirmă încă.
+
+**Etichete istorice.** Studiile publicate sub convenția anterioară (`F0`–`F3` ca faze, `T0`/`T1`/`T2` ca puncte, sau `T0/F0` pentru baseline — ex. CS-001) își păstrează etichetele; nu le rescrie retroactiv (AVL200-REQ-013). Corespondența e în AVL-200 §7.4.
 
 ---
 
@@ -237,7 +241,7 @@ src/content/studii de caz/{NN}. {Nume subiect}/images/*
 ### 0.2 — Scop: caz nou / fază nouă / update minor
 
 - **Studiu de caz nou** (prima publicare pentru un subiect fără `CS-NNN` alocat) → tot pipeline-ul (Faza 1–10 + audituri).
-- **Fază nouă / re-măsurare** pe un caz deja publicat (ex. adaugă F2 la un caz aflat la F0→F1) → Faza 1 pe conținutul nou, gate de originalitate doar dacă schimbă unghiul studiului, Faza 4 (arhitectură GEO/AEO) pe secțiunile noi, Faza 5–9 obligatorii pe tot documentul (metadata/HTML se regenerează integral din documentul actualizat), audit anti-halucinare pe tot documentul. Secțiunile fazelor anterioare **nu se rescriu** — se pot adăuga clarificări/corecții explicit datate, nu o „curățare” retroactivă (§0 principii).
+- **Fază nouă / re-măsurare** pe un caz deja publicat (ex. adaugă punctul de măsurare `F2` la un caz aflat la `T0` → `F1`) → Faza 1 pe conținutul nou, gate de originalitate doar dacă schimbă unghiul studiului, Faza 4 (arhitectură GEO/AEO) pe secțiunile noi, Faza 5–9 obligatorii pe tot documentul (metadata/HTML se regenerează integral din documentul actualizat), audit anti-halucinare pe tot documentul. Secțiunile fazelor anterioare **nu se rescriu** — se pot adăuga clarificări/corecții explicit datate, nu o „curățare” retroactivă (§0 principii).
 - **Update minor** (typo, link mort, o cifră depășită, corecție de figură) → verifică live doar afirmațiile modificate, sări gate-ul de originalitate și arhitectura GEO, rulează build/lint/typecheck, raport scurt (§9).
 
 ### 0.3 — Contract de frontmatter
@@ -334,7 +338,7 @@ Identic cu `publica-articol-lab` §6.1 — reutilizează exact același bloc, ac
 
 ### 6.2 — Tabelul de identificare a studiului
 
-Imediat sub byline, un tabel scurt cu rândurile: **Studiu de caz** (`CS-NNN` — subiect), **Experiment** (numele protocolului aplicat, ex. „Tabula Rasa”), **Status** (`în desfășurare` / `încheiat`), **Faze analizate** (ex. `T0/F0 → F1`), **Obiect de studiu** (o propoziție despre ce anume se măsoară). Acesta e locul unde `CS-NNN` devine vizibil — nu există alt câmp tehnic pentru el (§1).
+Imediat sub byline, un tabel scurt cu rândurile: **Studiu de caz** (`CS-NNN` — subiect), **Experiment** (numele protocolului aplicat, ex. „Tabula Rasa”), **Status** (`în desfășurare` / `încheiat`), **Puncte de măsurare analizate** (ex. `T0 → F1`; un studiu istoric păstrează eticheta originală a rândului și a valorii, ex. „Faze analizate: `T0/F0 → F1`” la CS-001), **Obiect de studiu** (o propoziție despre ce anume se măsoară). Acesta e locul unde `CS-NNN` devine vizibil — nu există alt câmp tehnic pentru el (§1).
 
 ### 6.3 — Disclosure de evidence-backing
 
@@ -540,10 +544,10 @@ Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afir
 /publica-studiu-de-caz "src/content/studii de caz/01. Alex Matescu/tabula-rasa-identitate-search-ai-search.md"
 ```
 
-sau, pentru o fază nouă pe un caz existent:
+sau, pentru un punct de măsurare nou pe un caz existent:
 
 ```
-/publica-studiu-de-caz fază nouă (F2) pentru CS-001, folosind [dovezi/draft nou]
+/publica-studiu-de-caz punct de măsurare nou (F2) pentru CS-001, folosind [dovezi/draft nou]
 ```
 
 Nu face `git add`, `git commit`, `git push` sau deploy fără cerere explicită.

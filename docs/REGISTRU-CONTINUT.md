@@ -69,27 +69,27 @@ Generat: 2026-10-13 · 172 intrări · **2 anomalii** în 2 intrări
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `AVL-203` | AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.3.0 | Draft pentru revizuire | 2026-10-01 | 2026-10-02 | 2026-10-02 | 2026-10-01 | `·✓✓✓` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `src/data/lab-content/avl-203.ts` |
-| `AVL-MKT-001` | AVL-MKT-001 — Market Scope & Eligibility Protocol | C — Methodology | 0.9.1 | Draft pentru revizuire | 2026-10-02 | 2026-10-02 | 2026-10-12 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md` | `src/data/lab-content/avl-mkt-001.ts` |
-| `AVL-200` | AVL-200 — Standardul de dovezi, măsurare și trasabilitate | C — Methodology | 1.0.0 | Activ | 2026-09-13 | 2026-09-14 | 2026-09-14 | 2026-09-14 | `·✓✓✓` | `src/content/lab/AVL/AVL-200_Standard_dovezi_masurare_trasabilitate.md` | `src/data/lab-content/avl-200.ts` |
-| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.3.0 | Activ | 2026-09-14 | 2026-09-14 | 2026-10-02 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
-| `AVL-201` | AVL-201 — Tabula Rasa F0: Baseline Measurement Specification | C — Methodology | 1.2.0 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md` | `src/data/lab-content/avl-201.ts` |
+| `AVL-203` | AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.3.1 | Draft pentru revizuire | 2026-10-01 | 2026-10-02 | 2026-10-13 | 2026-10-01 | `·✓✓✓` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `src/data/lab-content/avl-203.ts` |
+| `AVL-MKT-001` | AVL-MKT-001 — Market Scope & Eligibility Protocol | C — Methodology | 0.9.2 | Draft pentru revizuire | 2026-10-02 | 2026-10-02 | 2026-10-13 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md` | `src/data/lab-content/avl-mkt-001.ts` |
+| `AVL-200` | AVL-200 — Standardul de dovezi, măsurare și trasabilitate | C — Methodology | 1.1.0 | Activ | 2026-09-13 | 2026-09-14 | 2026-10-13 | 2026-09-14 | `·✓✓✓` | `src/content/lab/AVL/AVL-200_Standard_dovezi_masurare_trasabilitate.md` | `src/data/lab-content/avl-200.ts` |
+| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.4.0 | Activ | 2026-09-14 | 2026-09-14 | 2026-10-13 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
+| `AVL-201` | AVL-201 — Tabula Rasa F0: Baseline Measurement Specification | C — Methodology | 1.3.0 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md` | `src/data/lab-content/avl-201.ts` |
 
 ## `lab/foundation` — 1 intrare
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `AVL-001` | AVL-001 — AI Visibility Lab Foundation | A — Foundation | 1.2.1 | Activ | 2026-07-22 | 2026-07 | 2026-10-02 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-001_AI_Visibility_Lab_Foundation_v1.0.1.md` | `src/data/lab-content/avl-001.ts` |
+| `AVL-001` | AVL-001 — AI Visibility Lab Foundation | A — Foundation | 1.3.0 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-001_AI_Visibility_Lab_Foundation_v1.0.1.md` | `src/data/lab-content/avl-001.ts` |
 
 ## `lab/cercetare` — 5 intrări
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `AVL-101` | AVL-101 — Ce este GEO/AEO și AI Visibility | B — Research | 1.0.2 | Activ | 2026-07-22 | 2026-07 | 2026-08-26 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-101.ts` |
-| `AVL-102` | AVL-102 — Cum aleg sistemele AI sursele și citările | B — Research | 1.0.2 | Activ | 2026-07-22 | 2026-07 | 2026-08-26 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-102.ts` |
-| `AVL-103` | AVL-103 — SEO și GEO: relații, diferențe și suprapuneri | B — Research | 1.0.2 | Activ | 2026-07-22 | 2026-07 | 2026-08-26 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-103.ts` |
-| `AVL-104` | AVL-104 — Cum se măsoară AI Visibility | B — Research | 1.0.2 | Activ | 2026-07-22 | 2026-07 | 2026-08-26 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-104.ts` |
-| `AVL-105` | AVL-105 — Glosar GEO/AEO și AI Visibility | B — Research | 1.1.0 | Activ | 2026-07-22 | 2026-07 | 2026-09-04 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-105.ts` |
+| `AVL-101` | AVL-101 — Ce este GEO/AEO și AI Visibility | B — Research | 1.0.3 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-101.ts` |
+| `AVL-102` | AVL-102 — Cum aleg sistemele AI sursele și citările | B — Research | 1.0.3 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-102.ts` |
+| `AVL-103` | AVL-103 — SEO și GEO: relații, diferențe și suprapuneri | B — Research | 1.0.3 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-103.ts` |
+| `AVL-104` | AVL-104 — Cum se măsoară AI Visibility | B — Research | 1.1.0 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-104.ts` |
+| `AVL-105` | AVL-105 — Glosar GEO/AEO și AI Visibility | B — Research | 1.2.0 | Activ | 2026-07-22 | 2026-07 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AI_Visibility_Lab_Nivel_B_Research_AVL-101-105_v1.0.2.md` | `src/data/lab-content/avl-105.ts` |
 
 ## `lab/secțiuni` — 4 intrări
 

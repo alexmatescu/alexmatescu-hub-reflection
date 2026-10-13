@@ -19,9 +19,9 @@ circumstance:
 
 | # | Column | Source | Allowed values / format | Notes |
 |---|---|---|---|---|
-| 1 | Evidence ID | DERIVED | `<ENTITYCODE>-<Tn>-E###` | Stable once assigned — see `naming-convention.md` §3. |
+| 1 | Evidence ID | DERIVED | `<ENTITYCODE>-<T0|Fn>-E###` | Stable once assigned — see `naming-convention.md` §3. |
 | 2 | Entity name | DETERMINISTIC | free text | From config `entity_name`, copied identically to every row. |
-| 3 | Measurement point | DETERMINISTIC | `T0`, `T1`, … or `window-YYYY-MM-DD_YYYY-MM-DD` | From config. |
+| 3 | Measurement point | DETERMINISTIC | `T0`, `F1`, `F2` … or `window-YYYY-MM-DD_YYYY-MM-DD` | From config. |
 | 4 | Dataset version | DETERMINISTIC | `<metadata_version>` | From config, copied identically to every row. |
 | 5 | Archive platform folder | DETERMINISTIC | verbatim or `NOT_APPLICABLE` | The first path segment of `Original relative path`, taken literally (not corrected, not interpreted) — `NOT_APPLICABLE` if the file sits at archive root. |
 | 6 | Observed platform | CLASSIFICATION | free text, `UNKNOWN`, or `NOT_VISIBLE` | What Claude/reviewer actually sees on screen. |
@@ -36,7 +36,7 @@ circumstance:
 | 15 | Query bucket | CLASSIFICATION | free text or `NOT_APPLICABLE` | Functional category, from query_set if available. |
 | 16 | Query text | CLASSIFICATION | free text or `UNKNOWN` | Canonical text if it matches the query set, else the text actually observed. |
 | 17 | Query role | CLASSIFICATION | `main_query`, `clarification`, `additional_clarification_query`, `contaminated_query`, `procedural_control`, `setup`, `diagnostic`, `supplemental` | Extend only with an explicit new value documented in the README. |
-| 18 | Query group ID | DERIVED | `<ENTITYCODE>-<Tn>-<PLATFORM>-<SESSION>-<QUERY-ID>[-A#]` | Assembled by `build_index.mjs` from Observed platform + Session ID + Query ID + Query attempt number, per `naming-convention.md` §4 — Claude/reviewer supplies the parts, not the formatted string. |
+| 18 | Query group ID | DERIVED | `<ENTITYCODE>-<T0|Fn>-<PLATFORM>-<SESSION>-<QUERY-ID>[-A#]` | Assembled by `build_index.mjs` from Observed platform + Session ID + Query ID + Query attempt number, per `naming-convention.md` §4 — Claude/reviewer supplies the parts, not the formatted string. |
 | 19 | Query attempt number | CLASSIFICATION | integer ≥1 or `NOT_APPLICABLE` | |
 | 20 | Capture part number | CLASSIFICATION | integer ≥1 or `NOT_APPLICABLE` | Position within a multi-screenshot result. |
 | 21 | Capture parts total | CLASSIFICATION | integer ≥1 or `NOT_APPLICABLE` | Total screenshots in that query group. |

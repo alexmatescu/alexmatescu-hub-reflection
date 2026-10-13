@@ -8,12 +8,12 @@ export const avl105GlosarHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-105</td></tr>
         <tr><th scope="row">Nivel</th><td>B — Research</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.2.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>4 septembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -47,7 +47,7 @@ export const avl105GlosarHtml = `
       <p>Calitate atribuită unei surse sau entități pe baza expertizei, reputației, recunoașterii și coerenței informației. În corpus nu este tratată ca un factor algoritmic unic sau direct măsurabil.</p>
 
       <h3>Baseline / linie de bază</h3>
-      <p>Măsurarea stării inițiale înainte de intervenții. Permite comparația ulterioară și reduce riscul de a atribui unei modificări un rezultat care exista deja.</p>
+      <p>Măsurarea stării inițiale înainte de intervenții. Permite comparația ulterioară și reduce riscul de a atribui unei modificări un rezultat care exista deja. Se notează <code>T0</code> (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
 
       <h3>Black-box</h3>
       <p>Sistem ale cărui mecanisme interne nu pot fi inspectate integral de cercetător. Intrările și ieșirile pot fi observate, dar procesul intern rămâne parțial necunoscut.</p>
@@ -84,6 +84,9 @@ export const avl105GlosarHtml = `
 
       <h3>Entity resolution</h3>
       <p>Procesul de asociere a mențiunilor și înregistrărilor diferite cu aceeași entitate reală.</p>
+
+      <h3>Etapă metodologică</h3>
+      <p>Rolul unei etape în designul metodologic: ce se face, nu când se măsoară. Etapele se identifică doar prin nume, fără coduri: etapa de baseline, etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
 
       <h3>Evidence / dovadă</h3>
       <p>Dovada asociată unei observații sau rulări — captură, export, log ori altă înregistrare care arată direct ce a fost observat (vezi „Dovadă primară", AVL-201 §5). Se disting trei stări: evidence brut (raw, nemodificat, niciodată suprascris), evidence derivat (crop, montaj, comparație, adnotare — trebuie să indice sursa) și asset de publicare (selectat pentru publicare — trebuie să indice evidence-ul din care provine).</p>
@@ -136,14 +139,20 @@ export const avl105GlosarHtml = `
       <h3>Opinie editorială</h3>
       <p>Poziție argumentată a autorului sau laboratorului, distinctă de un fapt documentat ori de un rezultat experimental.</p>
 
+      <h3>Prezență distribuită</h3>
+      <p>Ansamblul informațiilor despre entitate aflate în afara sursei canonice: profiluri, directoare, publicații, registre și mențiuni externe, controlate sau independente. Intervenția asupra ei este etapa prezenței distribuite (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
+
       <h3>Prompt</h3>
       <p>Instrucțiunea transmisă unui model. În cercetarea AI Visibility, promptul poate include interogarea, contextul conversațional și alte condiții care influențează răspunsul.</p>
+
+      <h3>Punct de măsurare</h3>
+      <p>Momentul sau fereastra în care a fost efectuată o măsurare — ansamblul rulărilor executate atunci. Convenția AI Visibility Lab: <code>T0</code> este baseline-ul, <code>F1</code> primul punct de măsurare după baseline, <code>F2</code> … <code>Fn</code> re-măsurările ulterioare. Codurile se folosesc doar pentru punctele de măsurare, niciodată pentru etape (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
 
       <h3>Query fan-out</h3>
       <p>Tehnică prin care o întrebare este descompusă în mai multe căutări sau subinterogări, pentru recuperarea informațiilor necesare unui răspuns mai complex.</p>
 
       <h3>Query set / set de interogări</h3>
-      <p>Colecție fixă de întrebări folosită pentru o măsurare anume — subsetul ales din Query Universe pentru fereastra respectivă. Versiunea folosită pentru comparații longitudinale (F0→F3) se îngheață la baseline și nu se mai modifică retroactiv (Frozen Query Set / „Set înghețat", AVL-201 §5); interogări noi intră într-o versiune nouă, nu se amestecă în setul înghețat original.</p>
+      <p>Colecție fixă de întrebări folosită pentru o măsurare anume — subsetul ales din Query Universe pentru fereastra respectivă. Versiunea folosită pentru comparații longitudinale (de la baseline-ul <code>T0</code> la punctele de măsurare <code>F1</code> … <code>Fn</code>) se îngheață la baseline și nu se mai modifică retroactiv (Frozen Query Set / „Set înghețat", AVL-201 §5); interogări noi intră într-o versiune nouă, nu se amestecă în setul înghețat original.</p>
 
       <h3>Query universe</h3>
       <p>Universul larg de interogări candidate, relevante pentru entitate sau business — sursa din care se selectează, la fiecare fereastră, Query Set-ul folosit efectiv. Spre deosebire de Query Set, Query Universe poate evolua liber în timp; nu se îngheață. Query Universe și Query Set nu sunt sinonime: primul e bazinul de candidați, al doilea e selecția fixată pentru o măsurare.</p>
@@ -170,7 +179,7 @@ export const avl105GlosarHtml = `
       <p>Fișier standard prin care proprietarul unui site comunică reguli de acces pentru crawlere. Respectarea și interpretarea regulilor depind de crawler.</p>
 
       <h3>Run / rulare</h3>
-      <p>O execuție individuală a unei interogări într-un motor sau o interfață AI (AVL-201 §5). O rulare primește un identificator propriu, distinct de identificatorul interogării — mai multe rulări pot folosi aceeași interogare, în aceeași fereastră de măsurare sau în ferestre diferite. Nu se confundă cu faza (F0–F3): faza e nivelul metodologic, rularea e execuția individuală din interiorul ei.</p>
+      <p>O execuție individuală a unei interogări într-un motor sau o interfață AI (AVL-201 §5). O rulare primește un identificator propriu, distinct de identificatorul interogării — mai multe rulări pot folosi aceeași interogare, în aceeași fereastră de măsurare sau în ferestre diferite. Nu se confundă cu etapa metodologică sau cu punctul de măsurare: etapa descrie ce se face, punctul de măsurare (<code>T0</code>, <code>F1</code> … <code>Fn</code>) descrie când s-a măsurat, iar rularea este execuția individuală din interiorul unui punct de măsurare (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
 
       <h3>Schema.org</h3>
       <p>Vocabular colaborativ de tipuri și proprietăți pentru descrierea structurată a entităților și conținutului de pe web.</p>
@@ -190,11 +199,14 @@ export const avl105GlosarHtml = `
       <h3>Structured answer / răspuns structurat</h3>
       <p>Răspuns organizat în secțiuni, liste, tabele sau alte forme. Structura nu dovedește folosirea unei surse și nu garantează citarea.</p>
 
+      <h3>Sursă canonică</h3>
+      <p>Ansamblul surselor controlate direct de entitate și desemnate drept referință oficială despre ea: site-ul oficial, paginile canonice, datele structurate și textele de identificare și dezambiguizare. Intervenția asupra ei este etapa sursei canonice (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
+
       <h3>Taxonomia rezultatelor</h3>
       <p>Set stabil de categorii prin care sunt clasificate răspunsurile: citare corectă, citare parțială, mențiune, absență, coliziune, confabulare și alte stări definite de metodologie.</p>
 
       <h3><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa F0</a></h3>
-      <p>Faza de baseline a metodologiei AI Visibility Lab, în care starea entității este documentată înainte de orice intervenție.</p>
+      <p>Numele istoric al specificației AVL-201 pentru etapa de baseline a metodologiei AI Visibility Lab, în care starea entității este documentată înainte de orice intervenție. Produce punctul de măsurare <code>T0</code>; codul „F0” din nume este o etichetă istorică (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>).</p>
 
       <h3>Trust / încredere</h3>
       <p>Termen general folosit pentru a descrie evaluarea fiabilității unei surse sau afirmații. Nu este tratat în corpus ca scor intern cunoscut al unui furnizor.</p>
@@ -237,6 +249,7 @@ export const avl105GlosarHtml = `
           <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>Uniformizare metadate.</td></tr>
           <tr><td>1.0.2</td><td>26 august 2026</td><td>Activ</td><td>PATCH: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab).</td></tr>
           <tr><td>1.1.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR: intrări noi — Audit, Case study / studiu de caz, Evidence / dovadă, Intervenție / intervention, Query universe, Run / rulare — pregătind terminologia pentru Nivelul D2 (Studii de caz) fără a schimba definițiile existente.</td></tr>
+          <tr><td>1.2.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: aliniere la convenția din AVL-200 §7 (v1.1.0): intrări noi — Etapă metodologică, Prezență distribuită, Punct de măsurare, Sursă canonică; Baseline notat T0; Query set, Run / rulare și Tabula Rasa F0 nu mai folosesc fazele F0–F3, ci etapele denumite și punctele de măsurare T0 / F1 … Fn. „Rulare” își păstrează sensul de execuție individuală a unei interogări.</td></tr>
         </tbody>
       </table>
 `;

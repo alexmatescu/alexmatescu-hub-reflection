@@ -11,7 +11,7 @@ anywhere in `evidence-release` — every concrete value below is an example.
 | `entity_slug` | string | kebab-case, `^[a-z0-9]+(-[a-z0-9]+)*$`. |
 | `entity_code` | string | Short code for Evidence IDs, e.g. `AM`. Chosen once by the user — never derived automatically from the name in a way that could silently change between runs. |
 | `study_name` | string | e.g. `"Tabula Rasa"`. |
-| `measurement_point` | string | `T0`, `T1`, … or `window-YYYY-MM-DD_YYYY-MM-DD`. |
+| `measurement_point` | string | `T0` (baseline), `F1`, `F2` … (re-measurements, AVL-200 §7) or `window-YYYY-MM-DD_YYYY-MM-DD`. |
 | `archive.path` | string | Path to the raw archive (`.zip`). |
 | `archive.version` | string | e.g. `"1.0"`. |
 | `metadata_version` | string | e.g. `"1.0"`. Independent of `archive.version` — see `release-policy.md`. |
@@ -41,7 +41,7 @@ entity_name: Example Entity
 entity_slug: example-entity
 entity_code: EE
 
-measurement_point: T1
+measurement_point: F1
 measurement_window:
   start: 2026-09-02
   end: 2026-09-07

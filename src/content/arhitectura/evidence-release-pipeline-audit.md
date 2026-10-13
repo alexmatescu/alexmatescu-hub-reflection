@@ -110,9 +110,11 @@ Cele două skill-uri nu se suprapun niciodată:
 | Publică pe `delamatescu.ro` | Niciodată (nici draft-ul GitHub nu e pe site) | Da, dar se oprește înainte de `git push`/deploy |
 | Ține evidența taxonomiei AVL-201 (§2.3) | Nu — nu cunoaște taxonomia | Da |
 
-### 2.3 — De ce T0/T1/T2 aici, dar F0/F1/F2 în studiile de caz
+### 2.3 — Convenția punctelor de măsurare (T0 / F1 … Fn)
 
-Studiile de caz publicate (`src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts`, sursa `.md` din `src/content/studii de caz/01. Alex Matescu/`) folosesc convenția editorială F0→F3 din AVL-201/AVL-001 („Tabula Rasa F0: Baseline Measurement Specification"). `evidence-release` refuză deliberat această convenție și impune `T0`/`T1`/`T2`... (`naming-convention.md` §1, verificat de `MEASUREMENT_POINT_RE` în `lib/common.mjs`) — pentru că acest agent trebuie să funcționeze identic pentru orice entitate viitoare (o companie, un produs, un oraș), nu doar pentru Tabula Rasa. Nu presupune că viitoarele studii vor folosi terminologia F-phase a acestui laborator specific.
+De la 13 octombrie 2026, `evidence-release` folosește convenția AI Visibility Lab din AVL-200 §7 (v1.1.0): `T0` este baseline-ul, `F1` primul punct de măsurare după baseline, `F2` … `Fn` re-măsurările ulterioare (`naming-convention.md` §1, verificat de `MEASUREMENT_POINT_RE` în `lib/common.mjs`, care respinge `F0`). Etapele metodologice (baseline, sursa canonică, prezența distribuită, re-măsurare) se identifică doar prin nume și nu apar niciodată ca etichetă de pachet.
+
+Anterior, agentul impunea `T0`/`T1`/`T2`… și refuza etichetele F, pentru că studiile de caz foloseau F0→F3 ca faze editoriale. Singurul pachet produs până la schimbare este `T0` (Alex Matescu), valid în ambele convenții. Studiul de caz publicat (`src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts`) își păstrează etichetele istorice (`T0/F0`, `F1`); corespondența este în AVL-200 §7.4.
 
 ### 2.4 — Relația cu documentele normative AVL
 
@@ -201,7 +203,7 @@ node .claude/skills/evidence-release/scripts/build_index.mjs <config>
 
 Combină `inventory.json` (fapte deterministe) cu `classification.csv` (judecățile mele) într-un tabel complet de 43+ coloane (`FULL_HEADER` din `lib/schema.mjs`), calculând și câmpurile derivate:
 
-- **Evidence ID** (`<ENTITYCODE>-<Tn>-E###`) — atribuit în ordine alfabetică de cale, sortabil și reproductibil. Dacă există deja un index publicat pentru aceeași entitate/măsurare (scanează `evidence/output/<slug>/<mp>/*/`), ID-urile existente `(cale, SHA-256)` sunt **reutilizate**, nu re-atribuite — un fișier nu-și schimbă niciodată identificatorul.
+- **Evidence ID** (`<ENTITYCODE>-<T0|Fn>-E###`) — atribuit în ordine alfabetică de cale, sortabil și reproductibil. Dacă există deja un index publicat pentru aceeași entitate/măsurare (scanează `evidence/output/<slug>/<mp>/*/`), ID-urile existente `(cale, SHA-256)` sunt **reutilizate**, nu re-atribuite — un fișier nu-și schimbă niciodată identificatorul.
 - **Query group ID** — asamblat automat din platformă + sesiune + query ID + numărul de tentativă, urmând formatul din `naming-convention.md` §4. Eu ofer componentele; scriptul construiește string-ul exact, ca să nu existe erori de formatare umane.
 - **Continuation flag** / **Continuation of Evidence ID** — derivate automat din `Capture part number` și din coloana `Continuation of original relative path` (eu numesc fișierul primei părți, nu un ID care încă nu există în acel moment).
 - **Duplicate status** / **Duplicate of Evidence ID** — din comparația de hash de la STEP 3.
@@ -235,7 +237,7 @@ node .claude/skills/evidence-release/scripts/validate_evidence.mjs <config>
 
 Rulează, fără nicio dependență de `gh` sau de checksum-uri (care încă nu există):
 
-- format `entity_slug` (kebab-case), format `measurement_point` (`Tn` sau `window-YYYY-MM-DD_YYYY-MM-DD`);
+- format `entity_slug` (kebab-case), format `measurement_point` (`T0`, `F1` … `Fn` sau `window-YYYY-MM-DD_YYYY-MM-DD`);
 - arhiva existentă și integră (`unzip -t` din nou);
 - **recalculează SHA-256 al arhivei întregi și îl compară cu `archive_sha256` din `inventory.json`** (STEP 2) — dacă diferă, arhiva a fost suprascrisă/înlocuită/coruptă între timp, și pipeline-ul se oprește aici, înainte ca ceva să fie îngheţat;
 - CSV-ul e citibil, ID-urile de dovadă sunt unice, referințele de continuare și de duplicat se rezolvă la un rând existent, SHA-256 e prezent și valid (64 caractere hex) pe fiecare rând, nu există celule `UNCLASSIFIED`/`UNRESOLVED` rămase, toate fișierele din index există efectiv în arhivă, numărul de rânduri corespunde numărului de fișiere din arhivă (altfel `WARNING`, nu blocare automată — poate fi justificat), consistență de versiune între numele fișierelor.
