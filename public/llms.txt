@@ -90,7 +90,7 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 
 ## Servicii și contact
 
-- [Audit AI Visibility Lab](https://delamatescu.ro/lab/audit-ai-visibility): evaluarea prezenței unei persoane sau a unui brand în răspunsurile sistemelor AI — ce spun, ce lipsește, ce trebuie corectat
+- [Audit AI Visibility (GEO/AEO)](https://delamatescu.ro/lab/audit-ai-visibility): evaluare documentată, realizată de Alex Matescu pe baza metodologiei publice AVL, a modului în care o entitate este identificată, menționată, citată și recomandată în Search și AI Search; fără garanții de citare sau poziționare
 - [Contact](https://delamatescu.ro/contact): colaborări, cercetare, studii de caz și discuții despre AI Visibility, GEO și AEO
 
 ## Informații tehnice și resurse de indexare

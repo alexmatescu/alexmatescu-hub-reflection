@@ -1,7 +1,7 @@
 {
-  "generat": "2026-10-12",
+  "generat": "2026-10-13",
   "pragReverificareZile": 180,
-  "totalIntrari": 173,
+  "totalIntrari": 172,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
@@ -32,7 +32,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 11,
+      "zileDeLaVerificare": 12,
       "anomalii": []
     },
     {
@@ -62,7 +62,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 11,
+      "zileDeLaVerificare": 12,
       "anomalii": []
     },
     {
@@ -92,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 11,
+      "zileDeLaVerificare": 12,
       "anomalii": []
     },
     {
@@ -122,7 +122,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 10,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -152,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 12,
+      "zileDeLaVerificare": 13,
       "anomalii": []
     },
     {
@@ -182,7 +182,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 12,
+      "zileDeLaVerificare": 13,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -214,7 +214,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 46,
+      "zileDeLaVerificare": 47,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -246,7 +246,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 54,
+      "zileDeLaVerificare": 55,
       "anomalii": []
     },
     {
@@ -276,7 +276,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 54,
+      "zileDeLaVerificare": 55,
       "anomalii": []
     },
     {
@@ -306,7 +306,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 54,
+      "zileDeLaVerificare": 55,
       "anomalii": []
     },
     {
@@ -336,7 +336,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 54,
+      "zileDeLaVerificare": 55,
       "anomalii": []
     },
     {
@@ -366,7 +366,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 54,
+      "zileDeLaVerificare": 55,
       "anomalii": []
     },
     {
@@ -396,7 +396,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 56,
+      "zileDeLaVerificare": 57,
       "anomalii": []
     },
     {
@@ -426,7 +426,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 55,
+      "zileDeLaVerificare": 56,
       "anomalii": []
     },
     {
@@ -576,7 +576,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 10,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -606,7 +606,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 0,
-      "zileDeLaVerificare": 24,
+      "zileDeLaVerificare": 25,
       "anomalii": []
     },
     {
@@ -635,7 +635,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 11,
+      "zileDeLaVerificare": 12,
       "anomalii": []
     },
     {
@@ -664,7 +664,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 10,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -693,7 +693,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 28,
+      "zileDeLaVerificare": 29,
       "anomalii": []
     },
     {
@@ -722,7 +722,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 10,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -736,12 +736,12 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.1.1",
+      "versiune": "1.2.0",
       "dataCreare": "2026-07-22",
       "dataPublicare": "2026-07",
-      "dataModificare": "2026-09-14",
+      "dataModificare": "2026-10-13",
       "ultimaVerificare": null,
-      "fisierMd": "src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification_v1.0.1.md",
+      "fisierMd": "src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md",
       "fisierTs": "src/data/lab-content/avl-201.ts",
       "wiring": {
         "registru": null,
@@ -1030,12 +1030,12 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.2.0",
+      "versiune": "1.3.0",
       "dataCreare": "2026-07-22",
       "dataPublicare": null,
-      "dataModificare": "2026-09-04",
+      "dataModificare": "2026-10-13",
       "ultimaVerificare": null,
-      "fisierMd": "src/content/lab/AVL/AVL-501_Nivel_F_Despre_AI_Visibility_Lab_AEO.md",
+      "fisierMd": "src/content/lab/AVL/AVL-501_Despre_AI_Visibility_Lab.md",
       "fisierTs": "src/data/lab-content/avl-501.ts",
       "wiring": {
         "registru": null,
@@ -1059,7 +1059,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-12",
       "dataPublicare": "2026-10-12",
       "dataModificare": "2026-10-12",
       "ultimaVerificare": null,
@@ -1087,7 +1087,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-12",
       "dataPublicare": "2026-10-12",
       "dataModificare": "2026-10-12",
       "ultimaVerificare": null,
@@ -1115,7 +1115,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-12",
       "dataPublicare": "2026-10-12",
       "dataModificare": "2026-10-12",
       "ultimaVerificare": null,
@@ -4872,34 +4872,6 @@
       "dataModificare": null,
       "ultimaVerificare": null,
       "fisierMd": "src/content/lab/articles/AVL_articol_protocol_tehnic_pentru_claude_code.md",
-      "fisierTs": null,
-      "wiring": {
-        "registru": false,
-        "pagina": false,
-        "nav": false,
-        "sitemap": false
-      },
-      "sitemapLastmod": null,
-      "imagine": null,
-      "zileDeLaVerificare": null,
-      "anomalii": []
-    },
-    {
-      "id": "draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta",
-      "titlu": "draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta",
-      "suprafata": "nealocat",
-      "ruta": null,
-      "slug": "draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta",
-      "categorie": null,
-      "tip": null,
-      "status": "nepublicat",
-      "statusNormativ": null,
-      "versiune": null,
-      "dataCreare": null,
-      "dataPublicare": null,
-      "dataModificare": null,
-      "ultimaVerificare": null,
-      "fisierMd": "src/content/blog/draft_DO_NOT_USE_am-crezut-ca-valoarea-trebuie-sa-fie-perfecta.md",
       "fisierTs": null,
       "wiring": {
         "registru": false,

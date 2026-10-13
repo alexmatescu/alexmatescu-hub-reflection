@@ -8,12 +8,12 @@ export const avl201TabulaRasaF0Html = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-201</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.1.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.2.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>14 septembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>, <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a></td></tr>
         <tr><th scope="row">Dependențe informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105</a></td></tr>
@@ -61,7 +61,7 @@ export const avl201TabulaRasaF0Html = `
 
       <p>Metodologia este potrivită pentru evaluări individuale, proiecte pilot, studii de caz, audituri comerciale, cercetare academică aplicată și monitorizare longitudinală.</p>
 
-      <p>Faptul că metodologia poate fi aplicată în audituri comerciale descrie o capacitate a protocolului, nu o ofertă de servicii comerciale active din partea AI Visibility Lab.</p>
+      <p>Faptul că metodologia poate fi aplicată în audituri comerciale descrie o capacitate a protocolului, nu o ofertă de servicii comerciale a AI Visibility Lab. <a href="/lab/audit-ai-visibility">Auditul AI Visibility</a> este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab; nu este un serviciu al laboratorului. Un audit realizat în acest cadru nu devine automat studiu de caz, experiment public sau rezultat al laboratorului; o eventuală publicare respectă regulile <a href="/lab/introducere">AVL-001</a> privind declararea conflictelor de interese.</p>
 
       <h2>4. În afara domeniului</h2>
 
@@ -558,6 +558,7 @@ export const avl201TabulaRasaF0Html = `
           <tr><td>1.0.1</td><td>21 iulie 2026</td><td>Activ</td><td>PATCH: uniformizare metadate; referință la RFC 2119; marcarea URL-ului canonic ca propus până la confirmarea publicării.</td></tr>
           <tr><td>1.1.0</td><td>26 august 2026</td><td>Activ</td><td>MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); precizare adăugată la secțiunea 3 care distinge aplicabilitatea metodologiei în audituri comerciale de o ofertă activă de servicii comerciale ale AI Visibility Lab.</td></tr>
           <tr><td>1.1.1</td><td>14 septembrie 2026</td><td>Activ</td><td>PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate ca dependință normativă explicită, ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026).</td></tr>
+          <tr><td>1.2.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: clarificare în secțiunea 3 — auditul AI Visibility (/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab, nu un serviciu al laboratorului; un audit nu devine automat studiu de caz, experiment public sau rezultat al laboratorului, iar o eventuală publicare respectă regulile AVL-001 privind declararea conflictelor de interese. Nicio cerință F0-REQ nu a fost adăugată sau modificată.</td></tr>
         </tbody>
       </table>
 

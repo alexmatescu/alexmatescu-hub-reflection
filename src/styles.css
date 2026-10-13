@@ -258,11 +258,65 @@
   .prose-editorial table:not(.avl-meta-table) td {
     @apply border border-foreground/10 px-4 py-2.5 text-left;
   }
+  /* Pe mobil, tabelele late și codul lung derulează în interiorul lor, nu
+     împing toată pagina în lateral. Pe desktop, tabelele rămân la lățime plină. */
+  .prose-editorial pre {
+    @apply my-8 max-w-full overflow-x-auto;
+  }
+  .prose-editorial :not(pre) > code,
+  .prose-editorial a {
+    overflow-wrap: anywhere;
+  }
+  @media (max-width: 767px) {
+    .prose-editorial table:not(.avl-meta-table) {
+      @apply block max-w-full overflow-x-auto;
+    }
+  }
   .prose-editorial sup a {
     @apply no-underline text-xs text-muted-foreground hover:text-foreground;
   }
   .avl-footnotes {
     @apply mt-4 text-sm text-muted-foreground space-y-3;
+  }
+  /* Pagina de serviciu /lab/audit-ai-visibility */
+  .prose-editorial .avl-audit-actions {
+    @apply mt-10 flex flex-wrap items-center gap-x-6 gap-y-3;
+  }
+  .prose-editorial a.avl-audit-cta {
+    @apply inline-flex items-center px-5 py-3 text-sm font-medium no-underline rounded-sm bg-foreground text-background hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground;
+  }
+  .prose-editorial .avl-audit-note {
+    @apply mt-4 text-sm text-muted-foreground;
+  }
+  .prose-editorial .avl-audit-grid {
+    @apply my-8 pl-0 list-none grid gap-px space-y-0 bg-foreground/10 border border-foreground/10 sm:grid-cols-2;
+  }
+  .prose-editorial .avl-audit-grid-3 {
+    @apply sm:grid-cols-1;
+  }
+  .prose-editorial .avl-audit-grid > li {
+    @apply m-0 p-6 bg-background text-base leading-relaxed;
+  }
+  .prose-editorial .avl-audit-grid strong {
+    @apply block font-serif text-lg font-normal mb-2;
+  }
+  .prose-editorial .avl-audit-index {
+    @apply block text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3;
+  }
+  .prose-editorial .avl-audit-steps {
+    @apply my-8 pl-0 list-none space-y-0 border-l border-foreground/15;
+    counter-reset: avl-step;
+  }
+  .prose-editorial .avl-audit-steps > li {
+    @apply relative pl-10 pb-6 last:pb-0;
+    counter-increment: avl-step;
+  }
+  .prose-editorial .avl-audit-steps > li::before {
+    content: counter(avl-step);
+    @apply absolute -left-3.5 top-0 flex h-7 w-7 items-center justify-center rounded-full border border-foreground/20 bg-background text-xs font-medium;
+  }
+  .prose-editorial .avl-audit-caption {
+    @apply caption-bottom pt-3 text-left text-xs text-muted-foreground;
   }
 }
 

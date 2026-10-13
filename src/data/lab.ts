@@ -7,6 +7,8 @@ export type LabPage = {
   seoTitle?: string;
   /** H1 dedicat, dacă diferă de `label` (folosit doar pentru titlul vizibil al paginii). */
   pageTitle?: string;
+  /** Meta description dedicată, dacă diferă de `lead` (folosită doar în <head>). */
+  seoDescription?: string;
 };
 
 export const labNav: LabPage[] = [
@@ -219,8 +221,12 @@ export const labNav: LabPage[] = [
   },
   {
     to: "/lab/audit-ai-visibility",
-    label: "Audit AI Visibility Lab",
-    lead: "Evaluare a prezenței tale în răspunsurile modelelor generative: ce spun despre tine, ce lipsește, ce trebuie corectat.",
+    label: "Audit AI Visibility",
+    seoTitle: "Audit AI Visibility (GEO/AEO)",
+    pageTitle: "Audit AI Visibility: ce spun sistemele AI despre brandul tău?",
+    lead: "Evaluare GEO/AEO bazată pe măsurători, surse verificabile și dovezi.",
+    seoDescription:
+      "Află cum este identificat, menționat, citat și recomandat brandul tău în răspunsurile AI. Audit GEO/AEO cu baseline, dovezi și recomandări.",
   },
   {
     to: "/lab/despre-laborator",

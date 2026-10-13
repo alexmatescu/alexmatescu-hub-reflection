@@ -33,6 +33,7 @@ import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl350StudiiDeCazHtml } from "@/data/lab-content/avl-350";
 import { avl401ArticoleHtml } from "@/data/lab-content/avl-401";
 import { avl501DespreLaboratorHtml } from "@/data/lab-content/avl-501";
+import { auditAiVisibilityHtml } from "@/data/lab-content/audit-ai-visibility";
 import { aiOglindaAmplificatorHtml } from "@/data/lab-content/14. ai-oglinda-amplificator-intentie-context-anthropic";
 import { deLaWebVisibilityLaMachineAccessibilityHtml } from "@/data/lab-content/15. de-la-web-visibility-la-machine-accessibility";
 import { publicNuInseamnaAccesibilHtml } from "@/data/lab-content/16. public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit";
@@ -109,6 +110,7 @@ const labPageContent: Record<string, string> = {
     deLaMentionareLaTranzactieAgenticVisibilityHtml,
   "/lab/articole/social-media-devine-strat-informational-pentru-ai":
     socialMediaStratInformationalPentruAiHtml,
+  "/lab/audit-ai-visibility": auditAiVisibilityHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
 
@@ -337,9 +339,15 @@ export const LabIndex = () => (
         </p>
         <p className="mt-8 text-lg md:text-xl text-[#e8e0cf]/80 leading-relaxed max-w-2xl">
           Un spațiu de lucru dedicat GEO și AEO — cercetare, metodologie,
-          experimente publice, studii de caz, articole și audit pentru cei care
-          vor să fie găsiți, citați și recomandați de ChatGPT, Gemini,
-          Perplexity, Claude și Copilot.
+          experimente publice, studii de caz, articole și{" "}
+          <Link
+            to="/lab/audit-ai-visibility"
+            className="underline underline-offset-4 hover:text-[#f0e8d6]"
+          >
+            audit AI Visibility
+          </Link>{" "}
+          pentru cei care vor să fie găsiți, citați și recomandați de ChatGPT,
+          Gemini, Perplexity, Claude și Copilot.
         </p>
         <p className="mt-4 text-base text-[#e8e0cf]/70 leading-relaxed max-w-2xl">
           AI Visibility Lab este fondat și coordonat de{" "}
@@ -417,7 +425,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
       */}
       <Seo
         title={labSeoTitleForPath(page.to, page.seoTitle ?? page.label)}
-        description={page.lead}
+        description={page.seoDescription ?? page.lead}
         {...(isArticle ? { ogType: "article" } : {})}
       />
 
@@ -442,13 +450,15 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
           </p>
 
           {(() => {
+            // Caseta de rezervă apare doar pe paginile fără conținut și fără
+            // sub-pagini; o secțiune ca /lab/cercetare are deja lista de mai jos.
             const contentBlock = content ? (
               <ContentLightbox
                 key="content"
                 html={content}
                 className="prose-editorial mt-14 max-w-2xl"
               />
-            ) : (
+            ) : page.children ? null : (
               <div
                 key="content"
                 className="mt-10 p-6 md:p-8 border border-dashed border-foreground/15 rounded-sm bg-surface/40"
@@ -459,7 +469,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
                 <p className="text-base text-foreground/80 leading-relaxed">
                   Secțiunea reunește în prezent analize și studii de caz
                   publicate de AI Visibility Lab și este actualizată pe măsură
-                  ce activitatea de cercetare evoluează.”
+                  ce activitatea de cercetare evoluează.
                 </p>
               </div>
             );

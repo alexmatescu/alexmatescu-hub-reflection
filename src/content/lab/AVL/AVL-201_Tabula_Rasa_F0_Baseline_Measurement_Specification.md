@@ -11,12 +11,12 @@ Baseline Measurement Specification
 | **Document ID** | AVL-201 |
 |----|----|
 | **Nivel** | C — Methodology |
-| **Versiune** | 1.1.1 |
+| **Versiune** | 1.2.0 |
 | **Statut** | Activ |
 | **Autor** | [Alex Matescu](/despre) |
 | **Organizație** | [AI Visibility Lab](/lab) |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 14 septembrie 2026 |
+| **Ultima actualizare** | 13 octombrie 2026 |
 | **Limbă** | română |
 | **Dependențe normative** | [AVL-001](/lab/introducere), [AVL-104](/lab/cercetare/cum-se-masoara-ai-visibility), [AVL-200](/lab/metodologie/standard-dovezi-masurare-trasabilitate) |
 | **Dependențe informative** | [AVL-101](/lab/cercetare/ce-este-geo-aeo), [AVL-102](/lab/cercetare/cum-aleg-motoarele-ai), [AVL-103](/lab/cercetare/seo-vs-geo), [AVL-105](/lab/cercetare/glosar-geo-aeo) |
@@ -86,7 +86,7 @@ AVL-201 se poate aplica unei persoane, companii, organizații, instituții, măr
 
 Metodologia este potrivită pentru evaluări individuale, proiecte pilot, studii de caz, audituri comerciale, cercetare academică aplicată și monitorizare longitudinală.
 
-Faptul că metodologia poate fi aplicată în audituri comerciale descrie o capacitate a protocolului, nu o ofertă de servicii comerciale active din partea AI Visibility Lab.
+Faptul că metodologia poate fi aplicată în audituri comerciale descrie o capacitate a protocolului, nu o ofertă de servicii comerciale a AI Visibility Lab. [Auditul AI Visibility](/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab; nu este un serviciu al laboratorului. Un audit realizat în acest cadru nu devine automat studiu de caz, experiment public sau rezultat al laboratorului; o eventuală publicare respectă regulile [AVL-001](/lab/introducere) privind declararea conflictelor de interese.
 
 # 4. În afara domeniului
 
@@ -819,6 +819,7 @@ profesional nu stă în secretul pașilor, ci în execuție, disciplină, date
 | 1.0.1 | 21 iulie 2026 | Activ | PATCH: uniformizare metadate; referință la RFC 2119; marcarea URL-ului canonic ca propus până la confirmarea publicării. |
 | 1.1.0 | 26 august 2026 | Activ | MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); precizare adăugată la secțiunea 3 care distinge aplicabilitatea metodologiei în audituri comerciale de o ofertă activă de servicii comerciale ale AI Visibility Lab. |
 | 1.1.1 | 14 septembrie 2026 | Activ | PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate ca dependință normativă explicită, ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026). Fișierul sursă a fost resincronizat integral cu versiunea publicată la această dată: linkuri Autor/Organizație/dependențe, precizarea din §3, formularea F0-REQ-001 și o mică diferență de formulare la Pasul 8 (§10.8) — toate aliniate la textul deja live. |
+| 1.2.0 | 13 octombrie 2026 | Activ | MINOR: clarificare în secțiunea 3 — auditul AI Visibility (/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab, nu un serviciu al laboratorului; un audit nu devine automat studiu de caz, experiment public sau rezultat al laboratorului, iar o eventuală publicare respectă regulile AVL-001 privind declararea conflictelor de interese. Nicio cerință F0-REQ nu a fost adăugată sau modificată. |
 
 | **Declarație finală:** Tabula Rasa F0 nu demonstrează că o intervenție viitoare va funcționa. Ea stabilește condițiile minime pentru ca o schimbare ulterioară să poată fi comparată, verificată și discutată onest. |
 |----|

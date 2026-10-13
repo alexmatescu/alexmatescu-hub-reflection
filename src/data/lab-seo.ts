@@ -19,7 +19,7 @@ import { motoareCautareMeta } from "@/data/lab-content/2. motoare-cautare-compar
 import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/3. social-media-vizibilitate-ai";
 import { tabulaRasaEntityResolutionStudiuDeCazMeta } from "@/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz";
-import { findLabPage } from "@/data/lab";
+import { findLabPage, type LabPage } from "@/data/lab";
 import { buildSeoHead, fitSeoTitle } from "@/lib/seo-head";
 
 const BASE = "https://delamatescu.ro";
@@ -505,6 +505,72 @@ export const buildLabCaseStudyHead = (slug: string) => {
 };
 
 /**
+ * JSON-LD pentru pagina de serviciu /lab/audit-ai-visibility: WebPage + Service
+ * + BreadcrumbList cu @id proprii, cross-referențiate. Person și WebSite sunt
+ * embed-uite complet și referențiate prin @id-urile globale, ca în
+ * `buildGraphArticleJsonLd`. Intenționat fără Offer/price/Review/
+ * AggregateRating/FAQPage — pagina nu publică tarife, termene sau recenzii.
+ */
+const buildAuditServiceJsonLd = (page: LabPage, canonical: string) => {
+  const name = labSeoTitle(page.seoTitle ?? page.label);
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      alexMatescuPerson,
+      alexMatescuWebSite,
+      {
+        "@type": "WebPage",
+        "@id": `${canonical}#webpage`,
+        url: canonical,
+        name,
+        description:
+          "Evaluare a identificării, menționării, citării și recomandării unei entități în Search și AI Search, bazată pe dovezi și un set declarat de interogări.",
+        inLanguage: "ro-RO",
+        isPartOf: { "@id": alexMatescuWebSite["@id"] },
+        mainEntity: { "@id": `${canonical}#service` },
+        breadcrumb: { "@id": `${canonical}#breadcrumb` },
+      },
+      {
+        "@type": "Service",
+        "@id": `${canonical}#service`,
+        name: page.seoTitle ?? page.label,
+        serviceType: "Evaluare SEO, GEO, AEO și AI Search Visibility",
+        url: canonical,
+        description:
+          "Audit documentat al accesibilității informației, identității digitale, menționărilor, citărilor și recomandărilor observate în răspunsuri AI.",
+        provider: { "@id": alexMatescuPerson["@id"] },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonical}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "AI Visibility Lab",
+            item: `${BASE}/lab`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: page.label,
+            item: canonical,
+          },
+        ],
+      },
+    ],
+  };
+};
+
+/** JSON-LD dedicat pe pathname; restul paginilor /lab primesc `CreativeWork`. */
+const labPageJsonLdBuilders: Record<
+  string,
+  (page: LabPage, canonical: string) => object
+> = {
+  "/lab/audit-ai-visibility": buildAuditServiceJsonLd,
+};
+
+/**
  * Head SSR pentru paginile /lab/:slug și /lab/:parent/:slug care NU sunt
  * articole (ex. /lab/introducere, /lab/cercetare/ce-este-geo-aeo) — folosit ca
  * fallback în rutele `_site/lab/$slug.tsx` și `_site/lab/$parent.$slug.tsx`
@@ -522,9 +588,9 @@ export const buildLabPageHead = (pathname: string) => {
 
   return buildSeoHead({
     title: labSeoTitle(page.seoTitle ?? page.label),
-    description: page.lead,
+    description: page.seoDescription ?? page.lead,
     canonical,
-    jsonLd: {
+    jsonLd: labPageJsonLdBuilders[page.to]?.(page, canonical) ?? {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       name: page.pageTitle ?? page.label,

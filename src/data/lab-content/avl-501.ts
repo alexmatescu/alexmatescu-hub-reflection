@@ -2,17 +2,17 @@ export const avl501DespreLaboratorHtml = `
       <div class="avl-doc-card">
         <p class="avl-doc-overline">Document sursă</p>
         <p class="avl-doc-title">AVL-501 — Despre AI Visibility Lab</p>
-        <p class="avl-doc-lead">Text pentru pagina „Despre laborator" (optimizat AEO)</p>
+        <p class="avl-doc-lead">Ce este laboratorul, cum lucrează, ce publică și ce nu este</p>
 
       <table class="avl-meta-table">
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-501</td></tr>
         <tr><th scope="row">Nivel</th><td>F — Despre laborator</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.2.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>4 septembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         </tbody>
         </table>
       </div>
@@ -41,7 +41,7 @@ export const avl501DespreLaboratorHtml = `
 
       <h2>Ce NU este AI Visibility Lab?</h2>
 
-      <p>Nu este o agenție SEO, nu este un instrument software și nu promite obținerea de citări sau poziții în sistemele AI. Scopul său este documentarea și explicarea fenomenelor observabile.</p>
+      <p>Nu este o agenție SEO, nu este un instrument software și nu promite obținerea de citări sau poziții în sistemele AI. Scopul său este documentarea și explicarea fenomenelor observabile. <a href="/lab/audit-ai-visibility">Auditul AI Visibility</a> este un serviciu oferit separat de Alex Matescu, pe baza metodologiei publice a laboratorului; nu este un serviciu al AI Visibility Lab, iar un audit nu devine automat studiu de caz sau rezultat publicat al laboratorului.</p>
 
       <h2>Care este misiunea laboratorului?</h2>
 
@@ -60,6 +60,7 @@ export const avl501DespreLaboratorHtml = `
         <tbody>
           <tr><td>1.1.0</td><td>26 august 2026</td><td>Activ</td><td>MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); adăugat un paragraf la secțiunea „Cine coordonează laboratorul?" despre activitatea aplicată a lui Alex Matescu în cadrul Lab-ului (prima versiune cu numerotare explicită a documentului).</td></tr>
           <tr><td>1.2.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR: „Ce publicăm?" recunoaște Studiile de caz (Nivelul D2) ca tip distinct de conținut publicat, cu o propoziție de delimitare față de Experimentele publice.</td></tr>
+          <tr><td>1.3.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: „Ce NU este AI Visibility Lab?" precizează că Auditul AI Visibility (→ /lab/audit-ai-visibility) este un serviciu oferit separat de Alex Matescu, pe baza metodologiei publice a laboratorului, nu un serviciu al AI Visibility Lab; un audit nu devine automat studiu de caz sau rezultat publicat al laboratorului. Descrierea din cardul documentului („Text pentru pagina «Despre laborator» (optimizat AEO)”, o notă internă de redactare) a fost înlocuită cu o descriere a conținutului.</td></tr>
         </tbody>
       </table>
 `;
