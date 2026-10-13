@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-interface LightboxImage {
+export interface LightboxImage {
   src: string;
   alt: string;
   caption: string | undefined;
@@ -20,7 +20,12 @@ interface LightboxProps {
  * portal direct în `document.body`, ca să nu moștenească niciun `overflow`
  * sau `z-index` din containerul de conținut.
  */
-const Lightbox = ({ images, index, onClose, onNavigate }: LightboxProps) => {
+export const Lightbox = ({
+  images,
+  index,
+  onClose,
+  onNavigate,
+}: LightboxProps) => {
   const hasMultiple = images.length > 1;
   const current = images[index];
   const overlayRef = useRef<HTMLDivElement>(null);

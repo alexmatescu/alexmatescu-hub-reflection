@@ -1,10 +1,11 @@
 import { Link, useParams } from "@/lib/router-compat";
+import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { posts } from "@/data/posts";
 import NewsletterForm from "@/components/NewsletterForm";
 import Seo from "@/components/Seo";
 import { blogSeoTitle } from "@/lib/blog-seo";
-import ContentLightbox from "@/components/ContentLightbox";
+import ContentLightbox, { Lightbox } from "@/components/ContentLightbox";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("ro-RO", {
@@ -16,6 +17,7 @@ const formatDate = (iso: string) =>
 const BlogPost = () => {
   const { slug } = useParams();
   const post = posts.find((p) => p.slug === slug);
+  const [heroOpen, setHeroOpen] = useState(false);
 
   if (!post) {
     return (
@@ -90,17 +92,38 @@ const BlogPost = () => {
         {post.heroImage && (
           <div className="container-prose">
             <figure className="my-8">
-              <img
-                src={post.heroImage.src}
-                alt={post.heroImage.alt}
-                width={post.heroImage.width}
-                height={post.heroImage.height}
-                className="w-full aspect-video object-cover rounded-sm"
-                loading="eager"
-                fetchPriority="high"
-              />
+              <button
+                type="button"
+                onClick={() => setHeroOpen(true)}
+                aria-label="Mărește imaginea"
+                className="block w-full cursor-zoom-in"
+              >
+                <img
+                  src={post.heroImage.src}
+                  alt={post.heroImage.alt}
+                  width={post.heroImage.width}
+                  height={post.heroImage.height}
+                  className="w-full aspect-video object-cover rounded-sm transition-opacity hover:opacity-90"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </button>
             </figure>
           </div>
+        )}
+        {post.heroImage && heroOpen && (
+          <Lightbox
+            images={[
+              {
+                src: post.heroImage.src,
+                alt: post.heroImage.alt,
+                caption: undefined,
+              },
+            ]}
+            index={0}
+            onClose={() => setHeroOpen(false)}
+            onNavigate={() => {}}
+          />
         )}
 
         <div className="container-editorial">

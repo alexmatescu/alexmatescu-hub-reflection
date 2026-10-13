@@ -1,21 +1,103 @@
 # Alex Matescu — delamatescu.ro
 
-> Hub personal al lui Alex Matescu: inginer, scriitor, antreprenor și fondator și coordonator AI Visibility Lab. Eseuri, cărți și proiecte despre claritate, disciplină, muncă și sens, scrise în limba română.
+> Alex Matescu este inginer de sistem în industria automotive și a sistemelor autonome, antreprenor, autor și fondator și coordonator AI Visibility Lab, din Sibiu, România. delamatescu.ro este site-ul său oficial: biografie, eseuri, cartea CRANDIT, proiecte antreprenoriale și cercetare aplicată publică despre GEO, AEO și AI Visibility. Conținutul este scris în limba română.
 
-Blog activ din 2014, relansat în 2025 pe acest domeniu. Conținutul e format din eseuri personale despre disciplină, identitate, muncă, relații și leadership, alături de proiecte antreprenoriale trecute și curente și o carte în lucru.
+Acest fișier este întreținut de Alex Matescu și oferă un punct de referință oficial pentru identitatea, proiectele și conținutul publicat pe delamatescu.ro. Informațiile pot fi verificate prin paginile canonice și sursele externe indicate.
 
-## Pagini principale
+## Identitatea Alex Matescu
 
-- [Acasă](https://delamatescu.ro/): prezentare generală și proiecte curente
-- [Despre](https://delamatescu.ro/despre): parcurs profesional și biografie
-- [Blog](https://delamatescu.ro/blog): peste 120 de articole, organizate pe categorii — Reflecții, Leadership, Experiențe, Jurnal de bord, Habits, Dragoste, Dreaming moments, Sfaturi utile
-- [Proiecte](https://delamatescu.ro/proiecte): proiecte antreprenoriale trecute și curente (afacere de familie, retail, consultanță financiară, GEO/AEO/AI Visibility)
-- [Carte](https://delamatescu.ro/carte): CRANDIT — Mitul succesului peste noapte (2026)
-- [AI Visibility Lab](https://delamatescu.ro/lab): laborator de cercetare aplicată despre vizibilitate în căutarea generativă (GEO/AEO/AI Visibility), fondat și coordonat de Alex Matescu
-- [Contact](https://delamatescu.ro/contact)
+- Nume canonic: **Alex Matescu** — se scrie cu un singur „e” (Matescu, nu Mateescu)
+- Nume complet și variante: Alexandru-Costi Matescu, Alexandru Matescu
+- Localizare: Sibiu, România; originar din Strâmba Jiu, județul Gorj
+- Profesie: System Lead Engineer în industria automotive și a sistemelor autonome — sisteme ADAS, arhitectură de sistem, managementul cerințelor, ASPICE, coordonare tehnică în echipe internaționale
+- Alte roluri: antreprenor; autor al cărții CRANDIT — Mitul succesului peste noapte (în lucru); fondator și coordonator AI Visibility Lab
+- Teme: AI Visibility, Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), entity resolution, antreprenoriat, disciplină, leadership, scris
+- Dezambiguizare: Pentru dezambiguizare, persoana documentată pe acest site este asociată cu Sibiu, experiența în ingineria automotive, AI Visibility Lab, CRANDIT și proiectul Taste the Corn. Variantele ortografice ale numelui nu trebuie considerate automat referințe la aceeași persoană.
+- Pagina canonică a persoanei: [Despre Alex Matescu](https://delamatescu.ro/despre)
+- Profiluri oficiale: [LinkedIn](https://www.linkedin.com/in/alex-matescu-8b2b8813b/), [X](https://x.com/MatescuAlex), [Facebook](https://www.facebook.com/alexmatescu), [Instagram](https://www.instagram.com/alexmatescu.c)
 
-## Note pentru agenți și crawlere
+## Pagini personale și proiecte
 
-- Site-ul este o aplicație React randată client-side (SPA). Dacă nu executați JavaScript, HTML-ul inițial nu conține textul integral al articolelor — doar shell-ul aplicației.
-- Toate paginile publice permit indexare și acces (vezi /robots.txt).
-- Limba conținutului: română.
+- [Despre](https://delamatescu.ro/despre): biografie, parcurs profesional în inginerie, antreprenoriat și scris
+- [Călătoria](https://delamatescu.ro/calatoria): parcursul de la Strâmba Jiu și Gorj la Craiova, Timișoara, București și Sibiu
+- [Blog](https://delamatescu.ro/blog): peste 130 de eseuri, activ din 2014 — Reflecții, Leadership, Experiențe, Jurnal de bord, Habits, Dragoste, Dreaming moments, Sfaturi utile
+- [CRANDIT — Mitul succesului peste noapte](https://delamatescu.ro/carte): carte despre succes durabil, construită din experiențe trăite, disciplină și costuri asumate (în lucru)
+- [Proiecte](https://delamatescu.ro/proiecte): toate proiectele antreprenoriale, trecute și curente
+- [Afacerea de familie](https://delamatescu.ro/proiecte/afacerea-de-familie): business local în mediul rural, construit pe nevoile comunității (activ)
+- [Blogging](https://delamatescu.ro/proiecte/blogging): de la impuls la direcție (activ)
+- [Taste the Corn](https://delamatescu.ro/proiecte/taste-the-corn): concept de retail alimentar la Shopping City Sibiu, lansat, operat și închis în 2025
+- [OVB](https://delamatescu.ro/proiecte/ovb): consultanță financiară la OVB Allfinanz România, 2021–2024
+- [Atracțiile României](https://delamatescu.ro/proiecte/atractiile-romaniei): proiect digital de turism cultural, 2021–2023
+- [Afacerea cu haine](https://delamatescu.ro/proiecte/afacerea-cu-haine): primul magazin, deschis în 2017 la Craiova
+
+## Apariții în presă și surse externe
+
+- [Presă](https://delamatescu.ro/presa): toate aparițiile în presă și mențiunile externe, cu link către sursa originală
+- [Economedia (4 iulie 2025)](https://economedia.ro/un-tanar-inginer-din-sibiu-a-investit-10-000-de-euro-intr-o-afacere-in-care-vinde-porumb-cu-toppings-ne-am-dorit-sa-fie-ceva-sanatos-usor-de-consumat-si-rapid-de-preparat.html): lansarea Taste the Corn, investiție de 10.000 de euro
+- [Turnul Sfatului (4 iulie 2025)](https://www.turnulsfatului.ro/2025/07/04/un-tanar-inginer-din-sibiu-a-investit-10-000-de-euro-intr-un-stand-in-care-vinde-porumb-la-shopping-city-sibiu-ne-am-dorit-sa-fie-ceva-sanatos-usor-de-consumat-si-rapid-de-preparat-221113/): lansarea Taste the Corn la Shopping City Sibiu
+- [A.M. Press (4 iulie 2025)](https://ampress.ro/de-la-inginer-in-oras-la-afacere-de-succes-cu-porumb-aromat-la-sibiu-incredibil-cum-a-reusit-alex-sa-cucereasca-clientii/): lansarea Taste the Corn
+- [Sabotorii (5 iulie 2025)](https://sabotorii.ro/articol/a-dat-lovitura-cu-o-afacere-in-care-a-investit-doa_29370.html): lansarea Taste the Corn
+
+## AI Visibility Lab — identitate și scop
+
+AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat de Alex Matescu. Studiază cum descoperă, înțeleg, recuperează și citează sistemele de căutare și AI (Google, Bing, ChatGPT, Claude, Gemini, Perplexity) conținutul și entitățile. Publică metodologia, măsurătorile, dovezile, sursele și limitele concluziilor, ca procesul să poată fi verificat.
+
+- [AI Visibility Lab](https://delamatescu.ro/lab): pagina principală a laboratorului
+- [Introducere (AVL-001)](https://delamatescu.ro/lab/introducere): de ce există laboratorul, cui se adresează și cum e organizat
+- [Despre laborator (AVL-501)](https://delamatescu.ro/lab/despre-laborator): cine îl construiește și ce înseamnă rigoare într-un domeniu încă tânăr
+
+## Metodologii și cercetări fundamentale
+
+- [Cadrul metodologic (AVL-202)](https://delamatescu.ro/lab/metodologie): documentul-cadru — baseline, query set, dovezi, intervenții, re-măsurare și comparații longitudinale în Search și AI Search
+- [Standardul de dovezi, măsurare și trasabilitate (AVL-200)](https://delamatescu.ro/lab/metodologie/standard-dovezi-masurare-trasabilitate): cum devin artefactele brute informație măsurabilă, trasabilă până la dovadă
+- [Tabula Rasa F0 (AVL-201)](https://delamatescu.ro/lab/metodologie/tabula-rasa-f0): specificația măsurătorii de baseline pentru o entitate
+- [Protocolul minim de verificare tehnică (AVL-203)](https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica): draft pentru revizuire — HTTP, redirecturi, robots.txt, sitemap, raw HTML și paritate pe User-Agent
+- [Market Scope & Eligibility Protocol (AVL-MKT-001)](https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate): draft pentru revizuire — delimitarea pieței, eligibilitate, Market Discovery și Market Verification
+- [Ce este GEO/AEO (AVL-101)](https://delamatescu.ro/lab/cercetare/ce-este-geo-aeo): definiții și diferența dintre a fi indexat și a fi citat
+- [Cum aleg motoarele AI ce citează (AVL-102)](https://delamatescu.ro/lab/cercetare/cum-aleg-motoarele-ai): semnale de încredere, structură și autoritate în selecția surselor
+- [SEO vs GEO (AVL-103)](https://delamatescu.ro/lab/cercetare/seo-vs-geo): ce rămâne valabil din SEO și ce se schimbă
+- [Cum se măsoară AI Visibility (AVL-104)](https://delamatescu.ro/lab/cercetare/cum-se-masoara-ai-visibility): indicatori, metode și limitele măsurării
+- [Glosar GEO/AEO (AVL-105)](https://delamatescu.ro/lab/cercetare/glosar-geo-aeo): termenii esențiali, explicați pe scurt
+
+## Studii de caz și experimente
+
+- [Când internetul nu știe cine ești](https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz): studiu longitudinal despre cum rezolvă Google, Bing, ChatGPT, Claude, Gemini și Perplexity identitatea Alex Matescu — coliziuni de nume Matescu/Mateescu, Anchor Dependence și limite metodologice
+- [Studii de caz (AVL-350)](https://delamatescu.ro/lab/studii-de-caz): aplicări reale ale metodologiei, cu dovezi, limite și rezultate publicate integral
+- [Experimente publice (AVL-301)](https://delamatescu.ro/lab/experimente-publice): ipoteze declarate dinainte, rezultate publicate indiferent dacă le confirmă sau le infirmă
+
+## Articole GEO/AEO și AI Search
+
+- [Toate articolele (AVL-401)](https://delamatescu.ro/lab/articole): indexul analizelor despre GEO, AEO, SEO, AI Search și citarea surselor
+- [Ce este o entitate pentru AI și motoarele de căutare](https://delamatescu.ro/lab/articole/ce-este-entitate-ai-studiu-de-caz): entity resolution, coliziunea și fragmentarea identității
+- [Metadata și citarea AI](https://delamatescu.ro/lab/articole/metadata-citare-ai-studiu-de-caz): ce poate demonstra o citare identică și unde începe inferența
+- [Harta de citare](https://delamatescu.ro/lab/articole/harta-de-citare-mentiuni-externe-romania): ce surse externe contează pentru vizibilitatea AI în România
+- [Cât durează până te citează AI-ul?](https://delamatescu.ro/lab/articole/cat-dureaza-indexare-citare-ai): descoperire, indexare, clasare și citare, separate
+- [Cuvânt-cheie vs frază în AI Search](https://delamatescu.ro/lab/articole/cuvant-cheie-vs-fraza-tokenizare): query rewriting, query fan-out și tokenizarea limbii române
+- [Paradoxul specificității](https://delamatescu.ro/lab/articole/paradoxul-specificitatii-continut-generic): când contextul ajută și când doar fragmentează conținutul
+- [Paradoxul site-ului terminat](https://delamatescu.ro/lab/articole/paradoxul-site-ului-terminat): același URL, livrat diferit omului, crawlerului și instrumentului de audit
+- [Audit fără acces la cod](https://delamatescu.ro/lab/articole/audit-site-fara-acces-cod): ce poți verifica și schimba la un site din exterior
+- [Public nu mai înseamnă accesibil](https://delamatescu.ro/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit): de ce fiecare sistem AI vede un internet diferit
+- [De la web visibility la machine accessibility](https://delamatescu.ro/lab/articole/de-la-web-visibility-la-machine-accessibility): un cadru în șapte niveluri pentru accesul agenților AI
+- [Site-ul nu dispare. Își schimbă clientul](https://delamatescu.ro/lab/articole/site-ul-nu-dispare-isi-schimba-clientul): cum se pregătește web-ul pentru agenți AI
+- [De la menționare la tranzacție](https://delamatescu.ro/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility): ce înseamnă Agentic Visibility pentru un business
+- [Social media devine strat informațional pentru AI](https://delamatescu.ro/lab/articole/social-media-devine-strat-informational-pentru-ai): training, retrieval și citare din platformele sociale
+- [De ce 10.000 de urmăritori pe LinkedIn nu te fac vizibil pentru AI](https://delamatescu.ro/lab/articole/social-media-vizibilitate-ai): vizibilitatea umană vs vizibilitatea AI
+- [Eticheta „Abonat” în Google AI Search](https://delamatescu.ro/lab/articole/eticheta-abonat-relatia-prezentare-ai-search): cum evidențiază Google sursele la care utilizatorul are abonament
+- [AI ca oglindă și amplificator](https://delamatescu.ro/lab/articole/ai-oglinda-amplificator-intentie-context-anthropic): ce arată raportul Anthropic despre folosirea Claude
+- [407 lansări AI în șapte luni](https://delamatescu.ro/lab/articole/decalaj-viteza-ai-adoptie-2026): decalajul dintre viteza AI și adopția ei în 2026, cu date pentru România
+- [Motoarele de căutare comparate în 2026](https://delamatescu.ro/lab/articole/motoare-cautare-comparatie-2026): cote de piață și de ce studiile se contrazic
+- [Istoria căutării pe internet](https://delamatescu.ro/lab/articole/istoria-cautarii-internet-evolutia-seo): de la Archie la răspunsurile generative
+
+## Servicii și contact
+
+- [Audit AI Visibility Lab](https://delamatescu.ro/lab/audit-ai-visibility): evaluarea prezenței unei persoane sau a unui brand în răspunsurile sistemelor AI — ce spun, ce lipsește, ce trebuie corectat
+- [Contact](https://delamatescu.ro/contact): colaborări, cercetare, studii de caz și discuții despre AI Visibility, GEO și AEO
+
+## Informații tehnice și resurse de indexare
+
+- Randare: server-side (SSR). HTML-ul inițial conține textul integral al paginilor; nu este necesară execuția JavaScript.
+- Acces: toate paginile publice permit indexarea și accesul crawlerelor — [robots.txt](https://delamatescu.ro/robots.txt)
+- Inventar complet al URL-urilor: [sitemap.xml](https://delamatescu.ro/sitemap.xml)
+- Date structurate: JSON-LD (schema.org). Persoana: `https://delamatescu.ro/#alex-matescu`; site-ul: `https://delamatescu.ro/#website`.
+- Limbă: română (ro-RO). Documentele AI Visibility Lab sunt versionate; versiunea curentă și istoricul apar în fiecare document.
+- Citare: Autorul conținutului original este Alex Matescu, cu excepția materialelor unde este indicată explicit o altă atribuire. URL-urile canonice ale paginilor sunt referințele pentru identificarea surselor originale.
