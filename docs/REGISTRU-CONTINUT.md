@@ -98,7 +98,7 @@ Generat: 2026-10-13 · 172 intrări · **2 anomalii** în 2 intrări
 | `AVL-350` | AVL-350 — Studii de caz | D2 — Case Studies | 1.3.0 | Activ | 2026-09-04 | — | 2026-09-04 | — | `·✓✓✓` | — | `src/data/lab-content/avl-350.ts` |
 | `AVL-301` | AVL-301 — Experimente publice | D — Experimente publice | 1.1.0 | În pregătire | 2026-07-22 | — | 2026-08-26 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-301_Nivel_D_AI_Visibility_Lab_Experimente_publice_v1.0.0.docx.md` | `src/data/lab-content/avl-301.ts` |
 | `AVL-401` | AVL-401 — Articole | E — Articole | 2.0.1 | În derulare | 2026-07-22 | — | 2026-08-26 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-401_Nivel_E_Articole_v2.0.0.md` | `src/data/lab-content/avl-401.ts` |
-| `AVL-501` | AVL-501 — Despre AI Visibility Lab | F — Despre laborator | 1.3.0 | Activ | 2026-07-22 | — | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-501_Despre_AI_Visibility_Lab.md` | `src/data/lab-content/avl-501.ts` |
+| `AVL-501` | AVL-501 — Despre AI Visibility Lab | F — Despre laborator | 2.0.0 | Activ | 2026-10-13 | 2026-07-22 | 2026-10-13 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-501_Despre_AI_Visibility_Lab.md` | `src/data/lab-content/avl-501.ts` |
 
 ## `blog` — 4 intrări
 

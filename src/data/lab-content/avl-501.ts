@@ -8,10 +8,11 @@ export const avl501DespreLaboratorHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-501</td></tr>
         <tr><th scope="row">Nivel</th><td>F — Despre laborator</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>2.0.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
+        <tr><th scope="row">Data publicării</th><td>22 iulie 2026</td></tr>
         <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
         </tbody>
         </table>
@@ -61,6 +62,7 @@ export const avl501DespreLaboratorHtml = `
           <tr><td>1.1.0</td><td>26 august 2026</td><td>Activ</td><td>MINOR: linkuri interne pentru Autor (→ /despre) și Organizație (→ /lab); adăugat un paragraf la secțiunea „Cine coordonează laboratorul?" despre activitatea aplicată a lui Alex Matescu în cadrul Lab-ului (prima versiune cu numerotare explicită a documentului).</td></tr>
           <tr><td>1.2.0</td><td>4 septembrie 2026</td><td>Activ</td><td>MINOR: „Ce publicăm?" recunoaște Studiile de caz (Nivelul D2) ca tip distinct de conținut publicat, cu o propoziție de delimitare față de Experimentele publice.</td></tr>
           <tr><td>1.3.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: „Ce NU este AI Visibility Lab?" precizează că Auditul AI Visibility (→ /lab/audit-ai-visibility) este un serviciu oferit separat de Alex Matescu, pe baza metodologiei publice a laboratorului, nu un serviciu al AI Visibility Lab; un audit nu devine automat studiu de caz sau rezultat publicat al laboratorului. Descrierea din cardul documentului („Text pentru pagina «Despre laborator» (optimizat AEO)”, o notă internă de redactare) a fost înlocuită cu o descriere a conținutului.</td></tr>
+          <tr><td>2.0.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MAJOR: înregistrarea publică a unui incident de trasabilitate. În versiunea 1.3.0 (13 octombrie 2026), fișierul sursă al documentului a fost redenumit (AVL-501_Nivel_F_Despre_AI_Visibility_Lab_AEO.md → AVL-501_Despre_AI_Visibility_Lab.md) și rescris integral în aceeași modificare, pentru alinierea cu textul publicat. Din cauza volumului modificării, istoricul git (commit 3fda2a1) a înregistrat operația ca ștergerea unui fișier și crearea altuia, nu ca redenumire, iar legătura automată cu istoricul anterior al fișierului sursă s-a pierdut. Remediere: data publicării (22 iulie 2026, verificată în istoricul git al paginii și al sitemap-ului) este declarată explicit în tabelul documentului; istoricul anterior rămâne consultabil în git sub numele vechi al fișierului. Versiunea majoră marchează această discontinuitate a fișierului sursă; conținutul paginii nu se schimbă față de 1.3.0.</td></tr>
         </tbody>
       </table>
 `;
