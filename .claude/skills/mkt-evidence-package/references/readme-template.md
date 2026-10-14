@@ -24,7 +24,7 @@ Generated: <data ISO>
 ## 7. Capture Index                           (statistici: roluri, statusuri, relevanță)
 ## 8. Observation Register                    (pe proveniență / suprafață / query / bandă de adâncime / relevanță / inclusion)
 ## 9. Relevanța față de query                 (execuții și rânduri ≠ RELEVANT, cu relevance_basis)
-## 10. Incidente și anomalii                  (omisă dacă nu există)
+## 10. Incidente și anomalii                  (omisă dacă nu există; secțiunile următoare se renumerotează, fără gol)
 ## 11. Integritate                            (checksums, comanda de verificare)
 ## 12. Limitele interpretării
 ## 13. Ce NU conține pachetul

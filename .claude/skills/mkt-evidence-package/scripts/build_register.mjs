@@ -80,7 +80,7 @@ function inclusion(r) {
   if (r.query_relevance === "IRRELEVANT") return "EXCLUDE_IRRELEVANT";
   if (r.query_relevance === "UNCERTAIN") return r.review_status === "REVIEWED" ? "EXCLUDE_UNCERTAIN" : "REVIEW";
   if (["PROVIDER_PAGE", "PROVIDER_NAMED", "SOFTWARE_TOOL"].includes(r.entity_kind_observed)) return "INCLUDE";
-  if (r.entity_kind_observed === "UNCERTAIN") return "REVIEW";
+  if (r.entity_kind_observed === "UNCERTAIN") return r.review_status === "REVIEWED" ? "EXCLUDE_UNCERTAIN" : "REVIEW";
   return "EXCLUDE_NOT_PROVIDER";
 }
 

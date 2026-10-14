@@ -296,6 +296,8 @@ Fiecare script scrie în `evidence/work/mkt/<instance-slug>/processing-log.jsonl
 
 - **2026-10-12** — după pilotul din 2026-10-11 (raportul intern v0.1, RV-05, RV-06): AI Overview are Evidence ID de bloc `<Evidence ID>-AIO` (coloanele `ai_overview_evidence_id`, `ai_overview_part`), rândurile lui citează doar aceste ID-uri și sunt `PRIMARY`; adâncimea Google ~30 / 3 pagini pentru setul v0.2.0.
 
+- **2026-10-14** — după pilotul 3 (MKT-RO-AIV-2026Q4-PILOT-3): numerotarea secțiunilor README e consecutivă (`build_readme.mjs`). Înainte, secțiunea opțională „Incidente și anomalii” omisă lăsa un gol (§9 → §11). În `build_register.mjs`, regula 4 de includere: `entity_kind_observed = UNCERTAIN` devine `EXCLUDE_UNCERTAIN` după decizia userului, ca la regula 2.
+
 ## 8. Checklist final
 
 - [ ] Folderul sursă neatins; manifestul folder = manifestul zip = SHA-urile din index.

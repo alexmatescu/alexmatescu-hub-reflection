@@ -83,7 +83,7 @@ potrivește:
 1. `query_relevance = IRRELEVANT` → `EXCLUDE_IRRELEVANT`
 2. `query_relevance = UNCERTAIN` → `REVIEW` cât timp `review_status = REVIEW_REQUIRED`; după decizia userului (`REVIEWED`) → `EXCLUDE_UNCERTAIN` (rămâne incert, nu intră în reuniune). Claude marchează orice rând `UNCERTAIN` cu `REVIEW_REQUIRED`; doar decizia userului îl trece în `REVIEWED`
 3. `entity_kind_observed ∈ {PROVIDER_PAGE, PROVIDER_NAMED, SOFTWARE_TOOL}` → `INCLUDE`
-4. `entity_kind_observed = UNCERTAIN` → `REVIEW`
+4. `entity_kind_observed = UNCERTAIN` → `REVIEW` cât timp `review_status = REVIEW_REQUIRED`; după decizia userului (`REVIEWED`) → `EXCLUDE_UNCERTAIN` (tipul rămâne neclar, documentat, nu intră în reuniune)
 5. altfel → `EXCLUDE_NOT_PROVIDER` (articol, director, publisher etc. rămân în registru ca surse)
 
 `SOFTWARE_TOOL` intră în reuniune. Separarea furnizor / Technology Provider

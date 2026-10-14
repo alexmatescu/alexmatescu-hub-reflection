@@ -89,19 +89,22 @@ async function main() {
   L.push(`Captures: ${cap.length} · Executions: ${execs.size} · Observations: ${reg.length}  `);
   L.push(`Generated: ${today}`, "");
 
-  L.push("## 1. Scop", "", FIXED.scope, "");
+  // Numerotarea secțiunilor e consecutivă: o secțiune omisă (ex. „Incidente și anomalii”) nu lasă gol.
+  let section = 0;
+  const H = (title) => `## ${++section}. ${title}`;
+  L.push(H("Scop"), "", FIXED.scope, "");
   if (config.notes) L.push(String(config.notes), "");
 
-  L.push("## 2. Instanța și setul de query-uri", "");
+  L.push(H("Instanța și setul de query-uri"), "");
   L.push(`Setul de query-uri: \`${config.query_set.source_path}\` (${config.query_set.query_set_id}). Query-uri executate în instanță:`, "");
   L.push(table(["ID", "Strat", "Text exact"], qs.filter((q) => q.executed_in_instance === "YES").map((q) => [q.query_id, q.layer, q.query_exact])), "");
   L.push("Suprafețe detectate automat din subfolderele arhivei:", "");
   L.push(table(["Subfolder", "Suprafață", "Bază", "Capturi"], detection.subfolders.map((s) => [s.folder_nfc, s.mapped_surface, s.mapping_basis, String(s.file_count)])), "");
   L.push(`Execuții așteptate (query-uri × suprafețe): ${expected}. Execuții reconstituite din capturi: ${execs.size}.` + (expected === execs.size ? " Nu lipsește nicio execuție." : ` Lipsă: ${expected - execs.size}.`), "");
 
-  L.push("## 3. Principiul as-returned", "", FIXED.asReturned, "");
+  L.push(H("Principiul as-returned"), "", FIXED.asReturned, "");
 
-  L.push("## 4. Context de sesiune", "", FIXED.session, "");
+  L.push(H("Context de sesiune"), "", FIXED.session, "");
   const fv = (a, f) => a.fields[f]?.value ?? "NOT_VISIBLE";
   L.push(
     table(
@@ -133,7 +136,7 @@ async function main() {
   const priv = cap.filter((c) => c.privacy_flag !== "NONE_OBSERVED").length;
   if (priv) L.push(`Capturi cu date de cont vizibile (${priv}): marcate \`${[...new Set(cap.filter((c) => c.privacy_flag !== "NONE_OBSERVED").map((c) => c.privacy_flag))].join(", ")}\`. Datele de cont nu au fost transcrise.`, "");
 
-  L.push("## 5. Abateri și limite declarate", "");
+  L.push(H("Abateri și limite declarate"), "");
   if (sheet?.deviations) {
     L.push(table(["ID", "Regulă", "Ce s-a întâmplat", "Motiv"], Object.entries(sheet.deviations).map(([id, d]) => [id, d.rule, d.actual, d.reason || "—"])), "");
   } else L.push("Nu au fost declarate abateri.", "");
@@ -141,7 +144,7 @@ async function main() {
     L.push(table(["ID", "Subiect", "Descriere"], Object.entries(sheet.limitations).map(([id, d]) => [id, d.topic, d.description])), "");
   }
 
-  L.push("## 6. Sigilare și proveniență", "");
+  L.push(H("Sigilare și proveniență"), "");
   L.push(`Folderul de capturi a fost sigilat la ${manifest.sealed_at}. Fiecare captură a primit un Evidence ID la sigilare, legat de calea relativă și de SHA-256-ul ei.`, "");
   L.push(table(["Element", "Valoare"], [
     ["Arhivă", F.archive],
@@ -154,14 +157,14 @@ async function main() {
     ...Object.entries(manifest.verification).map(([k, v]) => [`Verificare: ${k}`, v]),
   ]), "");
 
-  L.push("## 7. Capture Index", "");
+  L.push(H("Capture Index"), "");
   L.push(countTable("Suprafață", count(cap, "mapped_surface")), "");
   L.push(countTable("Rol captură", count(cap, "capture_role")), "");
   const execRows = [...execs.values()];
   L.push(countTable("Status execuție", count(execRows, "execution_status")), "");
   L.push(countTable("Relevanța răspunsului (pe execuție)", count(execRows, "response_relevance")), "");
 
-  L.push("## 8. Observation Register", "");
+  L.push(H("Observation Register"), "");
   L.push(countTable("Proveniență", count(reg, "provenance")), "");
   L.push(countTable("Bloc SERP (doar Search)", count(reg.filter((r) => r.serp_block !== "NOT_APPLICABLE"), "serp_block")), "");
   const sp = {};
@@ -187,7 +190,7 @@ async function main() {
     L.push(table(["Execuție", "Rezultat"], special), "");
   } else L.push(`Execuții fără nicio observație: ${noObs.length ? noObs.join(", ") : "niciuna"}.`, "");
 
-  L.push("## 9. Relevanța față de query", "", FIXED.relevance, "");
+  L.push(H("Relevanța față de query"), "", FIXED.relevance, "");
   const partial = execRows.filter((e) => e.response_relevance !== "RELEVANT");
   if (partial.length) L.push(table(["Execuție", "Relevanță", "Bază"], partial.map((e) => [e.execution_id, e.response_relevance, e.relevance_basis])), "");
   L.push(`Rânduri IRRELEVANT în registru: ${reg.filter((r) => r.query_relevance === "IRRELEVANT").length}. Fiecare are relevance_basis și rămâne în registru.`, "");
@@ -195,22 +198,22 @@ async function main() {
   const anomalies = cap.filter((c) => c.archive_anomaly !== "NONE");
   const incidents = Object.entries(sheet?.incidents ?? {}).filter(([, i]) => i && Object.values(i).some((v) => String(v ?? "").trim()));
   if (anomalies.length || incidents.length) {
-    L.push("## 10. Incidente și anomalii", "");
+    L.push(H("Incidente și anomalii"), "");
     if (anomalies.length) L.push(table(["Evidence ID", "Anomalie", "Note"], anomalies.map((c) => [c.evidence_id, c.archive_anomaly, c.notes])), "");
     if (incidents.length) L.push(table(["ID", "Suprafață", "Query", "Descriere", "Reîncercare"], incidents.map(([id, i]) => [id, i.surface, i.query_id, i.description, i.retry])), "");
   }
 
-  L.push("## 11. Integritate", "");
+  L.push(H("Integritate"), "");
   L.push(`Manifestul \`${F.checksums}\` conține SHA-256 pentru arhivă și pentru toate artefactele de mai jos, înghețate (read-only) înainte de calcul. Verificare, din directorul pachetului:`, "");
   L.push("```", `shasum -a 256 -c ${F.checksums}`, "```", "");
 
-  L.push("## 12. Limitele interpretării", "", FIXED.limits, "");
-  L.push("## 13. Ce NU conține pachetul", "", FIXED.notIncluded, "");
+  L.push(H("Limitele interpretării"), "", FIXED.limits, "");
+  L.push(H("Ce NU conține pachetul"), "", FIXED.notIncluded, "");
 
-  L.push("## 14. Versionare", "");
+  L.push(H("Versionare"), "");
   L.push(`Arhivă v${config.archive.version} (se schimbă doar dacă se schimbă capturile). Metadate v${config.metadata_version} (se schimbă la orice corecție a indexului, registrului sau README-ului). Generat cu skill-ul \`mkt-evidence-package\`.`, "");
 
-  L.push("## 15. Fișiere", "");
+  L.push(H("Fișiere"), "");
   const desc = {
     archive: "Arhiva capturilor (sigilată)",
     manifest: "Manifestul de sigilare: Evidence ID, cale, SHA-256, timestamp din numele fișierului",
