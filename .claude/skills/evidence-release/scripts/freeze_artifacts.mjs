@@ -34,21 +34,45 @@ async function main() {
   const configPath = process.argv[2];
   const unfreeze = process.argv.includes("--unfreeze");
   if (!configPath) {
-    console.error("Usage: node freeze_artifacts.mjs <evidence-package.yaml> [--unfreeze]");
+    console.error(
+      "Usage: node freeze_artifacts.mjs <evidence-package.yaml> [--unfreeze]",
+    );
     process.exit(2);
   }
   const config = await readConfig(configPath);
   const { entity_slug, measurement_point, metadata_version } = config;
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
-  const outputDir = path.resolve("evidence/output", entity_slug, measurement_point, metadata_version);
+  const outputDir = path.resolve(
+    "evidence/output",
+    entity_slug,
+    measurement_point,
+    metadata_version,
+  );
 
-  const indexFile = artifactFileName(entity_slug, measurement_point, "evidence-index", metadata_version, "csv");
-  const readmeFile = artifactFileName(entity_slug, measurement_point, "readme", metadata_version, "md");
-  const targets = [path.join(outputDir, indexFile), path.join(outputDir, readmeFile)];
+  const indexFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "evidence-index",
+    metadata_version,
+    "csv",
+  );
+  const readmeFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "readme",
+    metadata_version,
+    "md",
+  );
+  const targets = [
+    path.join(outputDir, indexFile),
+    path.join(outputDir, readmeFile),
+  ];
 
   for (const t of targets) {
     if (!(await pathExists(t))) {
-      console.error(`FAIL: ${t} not found — run build_index.mjs --finalize and build_readme.mjs first (STEP 7).`);
+      console.error(
+        `FAIL: ${t} not found — run build_index.mjs --finalize and build_readme.mjs first (STEP 7).`,
+      );
       process.exit(1);
     }
   }

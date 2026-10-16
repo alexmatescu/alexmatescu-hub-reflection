@@ -18,7 +18,12 @@ const QUERY_HEADER_RE = /^(interogare exactă|prompt complet|expresia exactă)/i
 const CLASS_HEADER_RE = /^(clasă principală|intenție)$/i;
 
 function cells(line) {
-  return line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+  return line
+    .trim()
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((c) => c.trim());
 }
 
 function subgroupOf(id) {
@@ -45,7 +50,9 @@ async function main() {
   const src = path.resolve(config.query_set.source_path);
   const sha = await sha256File(src);
   if (sha !== config.query_set.source_sha256) {
-    console.error(`FAIL: SHA-256 al setului diferă.\n  așteptat: ${config.query_set.source_sha256}\n  găsit:    ${sha}`);
+    console.error(
+      `FAIL: SHA-256 al setului diferă.\n  așteptat: ${config.query_set.source_sha256}\n  găsit:    ${sha}`,
+    );
     process.exit(1);
   }
 
@@ -86,23 +93,48 @@ async function main() {
   }
 
   if (conflicts.length) {
-    console.error(`FAIL: ID-uri cu texte diferite în același document: ${conflicts.join(", ")}`);
+    console.error(
+      `FAIL: ID-uri cu texte diferite în același document: ${conflicts.join(", ")}`,
+    );
     process.exit(1);
   }
   const executed = config.queries_executed;
   const missing = executed.filter((q) => !rows.has(q));
   if (missing.length) {
-    console.error(`FAIL: queries_executed conține ID-uri absente din set: ${missing.join(", ")}`);
+    console.error(
+      `FAIL: queries_executed conține ID-uri absente din set: ${missing.join(", ")}`,
+    );
     process.exit(1);
   }
 
-  const out = [...rows.values()].map((r) => ({ ...r, executed_in_instance: executed.includes(r.query_id) ? "YES" : "NO" }));
-  const header2 = ["query_set_id", "query_id", "query_exact", "subgroup", "class", "layer", "executed_in_instance", "source_path", "source_sha256"];
+  const out = [...rows.values()].map((r) => ({
+    ...r,
+    executed_in_instance: executed.includes(r.query_id) ? "YES" : "NO",
+  }));
+  const header2 = [
+    "query_set_id",
+    "query_id",
+    "query_exact",
+    "subgroup",
+    "class",
+    "layer",
+    "executed_in_instance",
+    "source_path",
+    "source_sha256",
+  ];
   await writeText(P.querySetPath, toCsv(header2, out));
-  await appendLog(P.logPath, { operation: "query_set", status: "PASS", script: SCRIPT, output: { queries: out.length, executed: executed.length } });
+  await appendLog(P.logPath, {
+    operation: "query_set",
+    status: "PASS",
+    script: SCRIPT,
+    output: { queries: out.length, executed: executed.length },
+  });
 
-  console.log(`QUERY SET OK — ${out.length} query-uri extrase, ${executed.length} executate în instanță (SHA-256 verificat)`);
-  for (const r of out.filter((x) => x.executed_in_instance === "YES")) console.log(`  ${r.query_id}  ${r.query_exact}`);
+  console.log(
+    `QUERY SET OK — ${out.length} query-uri extrase, ${executed.length} executate în instanță (SHA-256 verificat)`,
+  );
+  for (const r of out.filter((x) => x.executed_in_instance === "YES"))
+    console.log(`  ${r.query_id}  ${r.query_exact}`);
   console.log(`  → ${P.querySetPath}`);
 }
 

@@ -24,9 +24,15 @@ export const SURFACES = {
 
 export const SURFACE_ALIASES = {
   GSEARCH: [
-    "google", "google search", "google organic", "google serp",
+    "google",
+    "google search",
+    "google organic",
+    "google serp",
     // AI Overview e un bloc al execuției GSEARCH, nu o suprafață separată.
-    "google search + ai overview", "google + ai overview", "google search ai overview", "google search si ai overview",
+    "google search + ai overview",
+    "google + ai overview",
+    "google search ai overview",
+    "google search si ai overview",
   ],
   BSEARCH: ["bing", "bing search", "bing organic", "bing serp"],
   GAIMODE: ["google ai mode", "ai mode", "gaimode"],
@@ -38,7 +44,9 @@ export const SURFACE_ALIASES = {
 };
 
 const ALIAS_INDEX = new Map(
-  Object.entries(SURFACE_ALIASES).flatMap(([code, aliases]) => aliases.map((a) => [a, code])),
+  Object.entries(SURFACE_ALIASES).flatMap(([code, aliases]) =>
+    aliases.map((a) => [a, code]),
+  ),
 );
 
 /** Desparte prefixul ordinal („01. ”) de nume și normalizează restul. */
@@ -47,7 +55,10 @@ export function normalizeFolderName(name) {
   const m = /^(\d+)\s*[.)_-]?\s*(.*)$/.exec(nfc);
   const ordinal = m && m[2] ? m[1] : null;
   const rest = m && m[2] ? m[2] : nfc;
-  return { ordinal, normalized: rest.toLowerCase().replace(/\s+/g, " ").trim() };
+  return {
+    ordinal,
+    normalized: rest.toLowerCase().replace(/\s+/g, " ").trim(),
+  };
 }
 
 /**
@@ -64,7 +75,9 @@ export function detectSurface(folderName, surfaceMapOverride) {
   }
   const { normalized } = normalizeFolderName(folderName);
   const code = ALIAS_INDEX.get(normalized) ?? null;
-  return code ? { code, basis: "FOLDER_NAME_ALIAS" } : { code: null, basis: null };
+  return code
+    ? { code, basis: "FOLDER_NAME_ALIAS" }
+    : { code: null, basis: null };
 }
 
 // ---------------------------------------------------------------------------
@@ -76,21 +89,24 @@ export const FILENAME_PATTERNS = [
   {
     id: "MACOS_RO",
     re: new RegExp(
-      String.raw`^Captură de ecran din (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) la (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?: \(\d+\))?` + EXT,
+      String.raw`^Captură de ecran din (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) la (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?: \(\d+\))?` +
+        EXT,
       "i",
     ),
   },
   {
     id: "MACOS_EN",
     re: new RegExp(
-      String.raw`^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) at (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?:[\s ](?<ampm>AM|PM))?(?: \(\d+\))?` + EXT,
+      String.raw`^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) at (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?:[\s ](?<ampm>AM|PM))?(?: \(\d+\))?` +
+        EXT,
       "i",
     ),
   },
   {
     id: "WINDOWS_SNIP",
     re: new RegExp(
-      String.raw`^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) (?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})` + EXT,
+      String.raw`^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) (?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})` +
+        EXT,
       "i",
     ),
   },
@@ -121,10 +137,16 @@ export function applyFilenamePattern(re, filename) {
  */
 export function detectFilenamePattern(filenames, overridePattern) {
   const library = overridePattern
-    ? [{ id: "CONFIG_OVERRIDE", re: new RegExp(overridePattern) }, ...FILENAME_PATTERNS]
+    ? [
+        { id: "CONFIG_OVERRIDE", re: new RegExp(overridePattern) },
+        ...FILENAME_PATTERNS,
+      ]
     : FILENAME_PATTERNS;
   for (const p of library) {
-    if (filenames.length > 0 && filenames.every((f) => applyFilenamePattern(p.re, f))) {
+    if (
+      filenames.length > 0 &&
+      filenames.every((f) => applyFilenamePattern(p.re, f))
+    ) {
       return { mode: "SINGLE_PATTERN", pattern_id: p.id, library };
     }
   }
@@ -155,7 +177,9 @@ const REQUIRED = [
 ];
 
 function getPath(obj, dotted) {
-  return dotted.split(".").reduce((o, k) => (o == null ? undefined : o[k]), obj);
+  return dotted
+    .split(".")
+    .reduce((o, k) => (o == null ? undefined : o[k]), obj);
 }
 
 /** Citește și validează config-ul. Aruncă eroare cu lista completă a problemelor. */
@@ -164,20 +188,35 @@ export async function loadConfig(configPath) {
   const problems = [];
   for (const key of REQUIRED) {
     const v = getPath(config, key);
-    if (v === undefined || v === null || v === "" || (Array.isArray(v) && v.length === 0)) {
+    if (
+      v === undefined ||
+      v === null ||
+      v === "" ||
+      (Array.isArray(v) && v.length === 0)
+    ) {
       problems.push(`lipsește câmpul obligatoriu: ${key}`);
     }
   }
-  if (config.instance_id && !INSTANCE_ID_RE.test(config.instance_id)) problems.push("instance_id invalid");
-  if (config.instance_slug && !SLUG_RE.test(config.instance_slug)) problems.push("instance_slug invalid (kebab-case)");
-  if (config.instance_type && !INSTANCE_TYPE_RE.test(config.instance_type)) problems.push("instance_type invalid (PILOT / T0 / F<n>)");
-  if (config.quarter && !QUARTER_RE.test(config.quarter)) problems.push("quarter invalid (YYYYQn)");
-  if (config.query_set?.source_sha256 && !/^[0-9a-f]{64}$/.test(config.query_set.source_sha256)) {
+  if (config.instance_id && !INSTANCE_ID_RE.test(config.instance_id))
+    problems.push("instance_id invalid");
+  if (config.instance_slug && !SLUG_RE.test(config.instance_slug))
+    problems.push("instance_slug invalid (kebab-case)");
+  if (config.instance_type && !INSTANCE_TYPE_RE.test(config.instance_type))
+    problems.push("instance_type invalid (PILOT / T0 / F<n>)");
+  if (config.quarter && !QUARTER_RE.test(config.quarter))
+    problems.push("quarter invalid (YYYYQn)");
+  if (
+    config.query_set?.source_sha256 &&
+    !/^[0-9a-f]{64}$/.test(config.query_set.source_sha256)
+  ) {
     problems.push("query_set.source_sha256 nu e un SHA-256 hex");
   }
-  if (config.release?.github?.draft === false) problems.push("release.github.draft trebuie să rămână true");
+  if (config.release?.github?.draft === false)
+    problems.push("release.github.draft trebuie să rămână true");
   if (problems.length) {
-    throw new Error(`Config invalid (${configPath}):\n  - ${problems.join("\n  - ")}`);
+    throw new Error(
+      `Config invalid (${configPath}):\n  - ${problems.join("\n  - ")}`,
+    );
   }
   return config;
 }
@@ -188,7 +227,11 @@ export function instancePaths(config) {
   return {
     workDir,
     incomingDir: path.resolve("evidence/incoming/mkt"),
-    outputDir: path.resolve("evidence/output/mkt", slug, String(config.metadata_version)),
+    outputDir: path.resolve(
+      "evidence/output/mkt",
+      slug,
+      String(config.metadata_version),
+    ),
     logPath: path.join(workDir, "processing-log.jsonl"),
     manifestPath: path.join(workDir, "capture-manifest.json"),
     detectionPath: path.join(workDir, "detection-report.json"),
@@ -224,13 +267,32 @@ export function executionId(instanceId, surface, queryId, attempt) {
 // ---------------------------------------------------------------------------
 
 export const CAPTURE_EXTENSIONS = ["png", "jpg", "jpeg", "heic", "webp"];
-export const OPERATOR_DOCUMENT_EXTENSIONS = ["docx", "doc", "pdf", "md", "txt", "rtf", "odt", "pages", "xlsx", "csv", "yaml", "yml"];
+export const OPERATOR_DOCUMENT_EXTENSIONS = [
+  "docx",
+  "doc",
+  "pdf",
+  "md",
+  "txt",
+  "rtf",
+  "odt",
+  "pages",
+  "xlsx",
+  "csv",
+  "yaml",
+  "yml",
+];
 
-const extOf = (rel) => (rel.split("/").pop().split(".").length > 1 ? rel.split(".").pop().toLowerCase() : "");
+const extOf = (rel) =>
+  rel.split("/").pop().split(".").length > 1
+    ? rel.split(".").pop().toLowerCase()
+    : "";
 
 /** Fișier direct în rădăcina folderului, cu extensie de document (nu captură). */
 export function isOperatorDocument(relPath) {
-  return !relPath.includes("/") && OPERATOR_DOCUMENT_EXTENSIONS.includes(extOf(relPath));
+  return (
+    !relPath.includes("/") &&
+    OPERATOR_DOCUMENT_EXTENSIONS.includes(extOf(relPath))
+  );
 }
 
 export function isCaptureFile(relPath) {
@@ -251,7 +313,9 @@ export function isSystemFile(relPath, patterns = DEFAULT_SYSTEM_PATTERNS) {
   const parts = relPath.split("/");
   if (parts[0] === "__MACOSX") return true;
   const base = parts[parts.length - 1];
-  return patterns.some((p) => (p.endsWith("*") ? base.startsWith(p.slice(0, -1)) : base === p));
+  return patterns.some((p) =>
+    p.endsWith("*") ? base.startsWith(p.slice(0, -1)) : base === p,
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -279,7 +343,13 @@ export function packageFiles(config) {
 
 /** Artefactele care se îngheață înainte de checksums (fără arhivă și manifestul de checksums). */
 export function frozenArtifactKeys(config) {
-  return ["manifest", "querySet", "runSheet", "sessionContext", "captureIndex", "register", "readme"].filter(
-    (k) => packageFiles(config)[k],
-  );
+  return [
+    "manifest",
+    "querySet",
+    "runSheet",
+    "sessionContext",
+    "captureIndex",
+    "register",
+    "readme",
+  ].filter((k) => packageFiles(config)[k]);
 }

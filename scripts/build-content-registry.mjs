@@ -61,9 +61,18 @@ const TIPURI_LAB = [
 const PRAG_REVERIFICARE_ZILE = 180;
 
 const LUNI_RO = {
-  ianuarie: "01", februarie: "02", martie: "03", aprilie: "04",
-  mai: "05", iunie: "06", iulie: "07", august: "08",
-  septembrie: "09", octombrie: "10", noiembrie: "11", decembrie: "12",
+  ianuarie: "01",
+  februarie: "02",
+  martie: "03",
+  aprilie: "04",
+  mai: "05",
+  iunie: "06",
+  iulie: "07",
+  august: "08",
+  septembrie: "09",
+  octombrie: "10",
+  noiembrie: "11",
+  decembrie: "12",
 };
 
 // ───────────────────────────── utilitare ─────────────────────────────
@@ -81,7 +90,8 @@ function dataRoLaIso(text) {
   if (m && LUNI_RO[m[2].toLowerCase()])
     return `${m[3]}-${LUNI_RO[m[2].toLowerCase()]}-${m[1].padStart(2, "0")}`;
   m = t.match(/^([a-zăâîșț]+)\s+(\d{4})$/i);
-  if (m && LUNI_RO[m[1].toLowerCase()]) return `${m[2]}-${LUNI_RO[m[1].toLowerCase()]}`;
+  if (m && LUNI_RO[m[1].toLowerCase()])
+    return `${m[2]}-${LUNI_RO[m[1].toLowerCase()]}`;
   return t;
 }
 
@@ -91,7 +101,7 @@ const zi = (v) => (v ? String(v).slice(0, 10) : null);
 function zileDe(iso) {
   const d = zi(iso);
   if (!d || d.length !== 10) return null;
-  const ms = Date.parse(`${d}T00:00:00Z`) ;
+  const ms = Date.parse(`${d}T00:00:00Z`);
   if (Number.isNaN(ms)) return null;
   return Math.round((Date.parse(`${TODAY}T00:00:00Z`) - ms) / 86400000);
 }
@@ -146,7 +156,10 @@ function frontmatter(absPath) {
     }
   }
   for (const k of Object.keys(out)) {
-    const v = out[k].trim().replace(/^["']|["']$/g, "").trim();
+    const v = out[k]
+      .trim()
+      .replace(/^["']|["']$/g, "")
+      .trim();
     // `cheie: null` / `cheie: ~` în YAML sunt valoarea nulă, nu textul „null”.
     out[k] = !v || v === "null" || v === "~" ? null : v;
   }
@@ -175,10 +188,14 @@ async function incarcaModule() {
 
   const linii = [];
   labFisiere.forEach((f, i) =>
-    linii.push(`import * as lab${i} from ${JSON.stringify("./src/data/lab-content/" + f)};`),
+    linii.push(
+      `import * as lab${i} from ${JSON.stringify("./src/data/lab-content/" + f)};`,
+    ),
   );
   blogFisiere.forEach((f, i) =>
-    linii.push(`import * as blog${i} from ${JSON.stringify("./src/data/blog-content/" + f)};`),
+    linii.push(
+      `import * as blog${i} from ${JSON.stringify("./src/data/blog-content/" + f)};`,
+    ),
   );
   linii.push(`import bloggerData from "./src/data/blogger-posts.json";`);
   linii.push(
@@ -225,9 +242,17 @@ function indexeazaSurseMd() {
     const canonical = (fm.canonical || "").replace(/^<|>$/g, "");
     const numeFisier = path.basename(abs, ".md");
     const slugFisier = numeFisier.replace(/^\d+[.\s]*/, "");
-    const inregistrare = { abs, rel: rel(abs), fm, canonical, slugFisier, numeFisier };
+    const inregistrare = {
+      abs,
+      rel: rel(abs),
+      fm,
+      canonical,
+      slugFisier,
+      numeFisier,
+    };
     toate.push(inregistrare);
-    if (canonical) dupaCanonical.set(canonical.replace(/\/$/, ""), inregistrare);
+    if (canonical)
+      dupaCanonical.set(canonical.replace(/\/$/, ""), inregistrare);
     if (!dupaSlug.has(slugFisier)) dupaSlug.set(slugFisier, inregistrare);
   }
   return { dupaCanonical, dupaSlug, toate };
@@ -354,7 +379,10 @@ function gasesteMdAvl(docId) {
       fisierTs,
       wiring: {
         registru: eNou
-          ? SRC.posts.includes(fisierBlog.get(p.slug)?.split("/").pop()?.replace(/\.ts$/, "") || "\u0000")
+          ? SRC.posts.includes(
+              fisierBlog.get(p.slug)?.split("/").pop()?.replace(/\.ts$/, "") ||
+                "\u0000",
+            )
           : true,
         pagina: true,
         nav: null,
@@ -399,7 +427,10 @@ function gasesteMdAvl(docId) {
         status: "publicat",
         statusNormativ: null,
         versiune: null,
-        dataCreare: dataCreareGit(md?.rel, `src/data/lab-content/${numeFisier}`),
+        dataCreare: dataCreareGit(
+          md?.rel,
+          `src/data/lab-content/${numeFisier}`,
+        ),
         dataPublicare: val.datePublished || null,
         dataModificare: val.dateModified || null,
         ultimaVerificare: val.lastReviewed || null,
@@ -411,7 +442,9 @@ function gasesteMdAvl(docId) {
             : SRC.labSeo.includes(numeExport),
           pagina: pageContent.has(ruta),
           nav: SRC.labNav.includes(`"${ruta}"`),
-          sitemap: SRC.sitemap.includes(`<loc>https://delamatescu.ro${ruta}</loc>`),
+          sitemap: SRC.sitemap.includes(
+            `<loc>https://delamatescu.ro${ruta}</loc>`,
+          ),
         },
         sitemapLastmod: sitemapLastmod(`https://delamatescu.ro${ruta}`),
         imagine: val.image?.url || null,
@@ -441,12 +474,13 @@ function gasesteMdAvl(docId) {
         meta[t[1].trim()] = t[2].replace(/<[^>]*>/g, "").trim() || null;
       const docId = meta["Document ID"];
       if (!docId) continue;
-      const titlu =
-        html.match(/avl-doc-title">([^<]*)/)?.[1]?.trim() || docId;
-      const ruta = [...pageContent].find(([, exp]) => exp === numeExport)?.[0] || null;
+      const titlu = html.match(/avl-doc-title">([^<]*)/)?.[1]?.trim() || docId;
+      const ruta =
+        [...pageContent].find(([, exp]) => exp === numeExport)?.[0] || null;
       const nivel = (meta["Nivel"] || "").trim();
       const litera = nivel.charAt(0);
-      const canonicalMeta = meta["URL canonic"] || meta["URL canonic propus"] || null;
+      const canonicalMeta =
+        meta["URL canonic"] || meta["URL canonic propus"] || null;
       const canonical = ruta ? `https://delamatescu.ro${ruta}` : canonicalMeta;
       const md = gasesteMd(canonicalMeta, null) || gasesteMdAvl(docId);
       if (md) mdFolosite.add(md.abs);
@@ -463,10 +497,14 @@ function gasesteMdAvl(docId) {
         // `Statut` din tabelul AVL descrie maturitatea normativă a documentului
         // („Activ”, „În derulare”, „În pregătire”), NU dacă pagina e publicată.
         // Starea de publicare se citește din wiring-ul real.
-        status: ruta && SRC.labNav.includes(`"${ruta}"`) ? "publicat" : "nepublicat",
+        status:
+          ruta && SRC.labNav.includes(`"${ruta}"`) ? "publicat" : "nepublicat",
         statusNormativ: statut,
         versiune: meta["Versiune"] || null,
-        dataCreare: dataCreareGit(md?.rel, `src/data/lab-content/${numeFisier}`),
+        dataCreare: dataCreareGit(
+          md?.rel,
+          `src/data/lab-content/${numeFisier}`,
+        ),
         dataPublicare: dataRoLaIso(meta["Data publicării"]),
         dataModificare: dataRoLaIso(meta["Ultima actualizare"]),
         ultimaVerificare: dataRoLaIso(meta["Ultima verificare"]),
@@ -547,9 +585,10 @@ for (const s of surseMd.toate) {
     statusNormativ: null,
     versiune: s.fm.version || null,
     dataCreare: s.fm.date_created || dataCreareGit(s.rel),
-    dataPublicare: s.fm.date_published && !/^TO_BE/.test(s.fm.date_published)
-      ? s.fm.date_published
-      : null,
+    dataPublicare:
+      s.fm.date_published && !/^TO_BE/.test(s.fm.date_published)
+        ? s.fm.date_published
+        : null,
     dataModificare: s.fm.date_modified || null,
     ultimaVerificare: s.fm.last_reviewed || null,
     fisierMd: s.rel,
@@ -570,19 +609,32 @@ for (const e of intrari) {
   // Date placeholder / lipsă
   if (/TO_BE|TBD|XXXX/i.test(String(fm.date_published || "")))
     a.push("`date_published` placeholder nerezolvat în `.md`");
-  if (e.status === "publicat" && !e.dataPublicare && e.suprafata !== "lab/secțiuni")
+  if (
+    e.status === "publicat" &&
+    !e.dataPublicare &&
+    e.suprafata !== "lab/secțiuni"
+  )
     a.push("publicat fără dată de publicare");
 
   // Canonical
   if (e.md && /^</.test(String(fm.canonical || "")))
     a.push("`canonical` cu paranteze unghiulare în `.md`");
-  if (e.md && e.ruta && e.md.canonical && new URL(e.md.canonical).pathname !== e.ruta)
-    a.push(`canonical din \`.md\` (${new URL(e.md.canonical).pathname}) ≠ ruta reală`);
+  if (
+    e.md &&
+    e.ruta &&
+    e.md.canonical &&
+    new URL(e.md.canonical).pathname !== e.ruta
+  )
+    a.push(
+      `canonical din \`.md\` (${new URL(e.md.canonical).pathname}) ≠ ruta reală`,
+    );
 
   // Divergență .md ↔ .ts
   if (e.md && e.fisierTs) {
     if (fm.category && e.categorie && fm.category !== e.categorie)
-      a.push(`\`category\` diferă: .md «${fm.category}» ≠ .ts «${e.categorie}»`);
+      a.push(
+        `\`category\` diferă: .md «${fm.category}» ≠ .ts «${e.categorie}»`,
+      );
     // Excepție deliberată, documentată în `publica-studiu-de-caz` §7.1: un studiu
     // de caz păstrează `"Studiu de caz"` în `.md` (corect editorial) și
     // `"Analiză de caz"` în `.ts`, pentru că `LabArticleType` nu conține prima
@@ -597,12 +649,26 @@ for (const e of intrari) {
       fm.article_type !== e.tip &&
       !divergentaIntentionata
     )
-      a.push(`\`article_type\` diferă: .md «${fm.article_type}» ≠ .ts «${e.tip}»`);
-    if (fm.date_published && e.dataPublicare && zi(fm.date_published) !== zi(e.dataPublicare))
+      a.push(
+        `\`article_type\` diferă: .md «${fm.article_type}» ≠ .ts «${e.tip}»`,
+      );
+    if (
+      fm.date_published &&
+      e.dataPublicare &&
+      zi(fm.date_published) !== zi(e.dataPublicare)
+    )
       a.push("`date_published` diferă între `.md` și `.ts`");
-    if (fm.date_modified && e.dataModificare && zi(fm.date_modified) !== zi(e.dataModificare))
+    if (
+      fm.date_modified &&
+      e.dataModificare &&
+      zi(fm.date_modified) !== zi(e.dataModificare)
+    )
       a.push("`date_modified` diferă între `.md` și `.ts`");
-    if (fm.last_reviewed && e.ultimaVerificare && zi(fm.last_reviewed) !== zi(e.ultimaVerificare))
+    if (
+      fm.last_reviewed &&
+      e.ultimaVerificare &&
+      zi(fm.last_reviewed) !== zi(e.ultimaVerificare)
+    )
       a.push("`last_reviewed` diferă între `.md` și `.ts`");
   }
 
@@ -611,9 +677,17 @@ for (const e of intrari) {
     a.push("fără fișier `.md` sursă identificabil");
   if (e.md && e.md.rel.includes("/AVL/") && !e.md.rel.includes(e.id))
     e.notaSursa = "corpus comun (mai multe documente în același fișier)";
-  if (e.md && e.suprafata === "lab/articole" && !e.md.rel.startsWith("src/content/lab/articles/"))
+  if (
+    e.md &&
+    e.suprafata === "lab/articole" &&
+    !e.md.rel.startsWith("src/content/lab/articles/")
+  )
     a.push(`\`.md\` în folderul greșit: \`${e.md.rel}\``);
-  if (e.md && e.suprafata === "blog" && !e.md.rel.startsWith("src/content/blog/"))
+  if (
+    e.md &&
+    e.suprafata === "blog" &&
+    !e.md.rel.startsWith("src/content/blog/")
+  )
     a.push(`\`.md\` în folderul greșit: \`${e.md.rel}\``);
   const eAvlDoc = /^AVL-(?:[A-Z]+-)?\d+$/.test(e.id);
   if (eAvlDoc) {
@@ -629,13 +703,19 @@ for (const e of intrari) {
       e.md.fm.document_id !== e.id &&
       !acoperitDeInterval
     )
-      a.push(`fișierul \`.md\` nu conține \`${e.id}\` în nume: \`${e.md.rel}\``);
+      a.push(
+        `fișierul \`.md\` nu conține \`${e.id}\` în nume: \`${e.md.rel}\``,
+      );
   } else if (e.md && e.slug && e.md.slugFisier !== e.slug) {
     a.push(`numele fișierului \`.md\` (${e.md.slugFisier}) ≠ slug (${e.slug})`);
   }
 
   // Taxonomie controlată
-  if (e.suprafata === "lab/articole" && e.categorie && !CATEGORII_LAB.includes(e.categorie))
+  if (
+    e.suprafata === "lab/articole" &&
+    e.categorie &&
+    !CATEGORII_LAB.includes(e.categorie)
+  )
     a.push(`\`category\` în afara taxonomiei: «${e.categorie}»`);
   if (e.suprafata === "lab/articole" && e.tip && !TIPURI_LAB.includes(e.tip))
     a.push(`\`articleType\` în afara taxonomiei: «${e.tip}»`);
@@ -652,7 +732,9 @@ for (const e of intrari) {
   if (e.wiring.sitemap && e.sitemapLastmod) {
     const asteptat = zi(e.dataModificare || e.dataPublicare);
     if (asteptat && asteptat.length === 10 && e.sitemapLastmod !== asteptat)
-      a.push(`\`lastmod\` din sitemap (${e.sitemapLastmod}) ≠ ultima modificare (${asteptat})`);
+      a.push(
+        `\`lastmod\` din sitemap (${e.sitemapLastmod}) ≠ ultima modificare (${asteptat})`,
+      );
   }
 
   // Imagine
@@ -660,7 +742,10 @@ for (const e of intrari) {
     const relImg = e.imagine.replace(/^https?:\/\/delamatescu\.ro/, "");
     if (relImg.startsWith("/") && !exists(path.join("public", relImg)))
       a.push(`imaginea nu există pe disc: \`${relImg}\``);
-    else if (e.suprafata === "lab/articole" && !relImg.startsWith("/images/lab/"))
+    else if (
+      e.suprafata === "lab/articole" &&
+      !relImg.startsWith("/images/lab/")
+    )
       a.push(`imagine în afara \`/images/lab/\`: \`${relImg}\``);
   }
 
@@ -672,7 +757,9 @@ for (const e of intrari) {
     e.zileDeLaVerificare !== null &&
     e.zileDeLaVerificare > PRAG_REVERIFICARE_ZILE
   )
-    a.push(`neverificat de ${e.zileDeLaVerificare} zile (prag ${PRAG_REVERIFICARE_ZILE})`);
+    a.push(
+      `neverificat de ${e.zileDeLaVerificare} zile (prag ${PRAG_REVERIFICARE_ZILE})`,
+    );
 
   e.anomalii = a;
 }
@@ -760,7 +847,8 @@ const ORDINE_SUPRAFETE = [
   "nealocat",
 ];
 
-const cheieData = (e) => zi(e.dataPublicare) || zi(e.dataCreare) || "0000-00-00";
+const cheieData = (e) =>
+  zi(e.dataPublicare) || zi(e.dataCreare) || "0000-00-00";
 intrari.sort((a, b) => {
   const da = ORDINE_SUPRAFETE.indexOf(a.suprafata);
   const db = ORDINE_SUPRAFETE.indexOf(b.suprafata);
@@ -769,7 +857,9 @@ intrari.sort((a, b) => {
 });
 
 const esc = (v) =>
-  v === null || v === undefined || v === "" ? "—" : String(v).replace(/\|/g, "\\|");
+  v === null || v === undefined || v === ""
+    ? "—"
+    : String(v).replace(/\|/g, "\\|");
 const bif = (v) => (v === null ? "·" : v ? "✓" : "✗");
 const wiringText = (w) =>
   `${bif(w.registru)}${bif(w.pagina)}${bif(w.nav)}${bif(w.sitemap)}`;
@@ -790,7 +880,9 @@ L.push(
   "> corectează sursa, nu registrul.",
 );
 L.push("");
-L.push(`Generat: ${TODAY} · ${intrari.length} intrări · **${totalAnomalii} anomalii** în ${cuAnomalii.length} intrări`);
+L.push(
+  `Generat: ${TODAY} · ${intrari.length} intrări · **${totalAnomalii} anomalii** în ${cuAnomalii.length} intrări`,
+);
 L.push("");
 
 L.push("## Sinteză");
@@ -806,51 +898,79 @@ for (const s of ORDINE_SUPRAFETE) {
     } | ${g.length} | ${g.reduce((n, e) => n + e.anomalii.length, 0)} |`,
   );
 }
-L.push(`| **Total** | **${intrari.filter((e) => e.status === "publicat").length}** | **${intrari.filter((e) => e.status !== "publicat").length}** | **${intrari.length}** | **${totalAnomalii}** |`);
+L.push(
+  `| **Total** | **${intrari.filter((e) => e.status === "publicat").length}** | **${intrari.filter((e) => e.status !== "publicat").length}** | **${intrari.length}** | **${totalAnomalii}** |`,
+);
 L.push("");
 
 L.push("## Legendă");
 L.push("");
-L.push("- **Wiring** — patru poziții, în ordine: `registru` · `pagină` · `navigație` · `sitemap`.");
-L.push("  `✓` prezent, `✗` lipsă, `·` neaplicabil pentru suprafața respectivă.");
-L.push("  Registru = array-ul sursă (`labArticleMeta`, `labCaseStudyMeta`, `posts.ts`);");
-L.push("  pagină = `labPageContent` din `Lab.tsx`; navigație = `labNav` din `lab.ts`.");
-L.push("- **Creat** — primul commit care a adăugat fișierul sursă (git). `—` pentru articolele");
-L.push("  migrate din Blogger, care nu au fișier sursă propriu și a căror dată de creare nu e recuperabilă.");
+L.push(
+  "- **Wiring** — patru poziții, în ordine: `registru` · `pagină` · `navigație` · `sitemap`.",
+);
+L.push(
+  "  `✓` prezent, `✗` lipsă, `·` neaplicabil pentru suprafața respectivă.",
+);
+L.push(
+  "  Registru = array-ul sursă (`labArticleMeta`, `labCaseStudyMeta`, `posts.ts`);",
+);
+L.push(
+  "  pagină = `labPageContent` din `Lab.tsx`; navigație = `labNav` din `lab.ts`.",
+);
+L.push(
+  "- **Creat** — primul commit care a adăugat fișierul sursă (git). `—` pentru articolele",
+);
+L.push(
+  "  migrate din Blogger, care nu au fișier sursă propriu și a căror dată de creare nu e recuperabilă.",
+);
 L.push("- **Verificat** — `last_reviewed`, cu numărul de zile scurse. Peste");
-L.push(`  ${PRAG_REVERIFICARE_ZILE} de zile, materialele din Lab intră în lista de reverificare.`);
+L.push(
+  `  ${PRAG_REVERIFICARE_ZILE} de zile, materialele din Lab intră în lista de reverificare.`,
+);
 L.push("");
 
 for (const s of ORDINE_SUPRAFETE) {
   const grup = intrari.filter((e) => e.suprafata === s);
   if (!grup.length) continue;
-  const eAvl = ["lab/metodologie", "lab/foundation", "lab/cercetare", "lab/secțiuni"].includes(s);
+  const eAvl = [
+    "lab/metodologie",
+    "lab/foundation",
+    "lab/cercetare",
+    "lab/secțiuni",
+  ].includes(s);
   const eArhiva = s === "blog (arhivă)";
 
-  L.push(`## \`${s}\` — ${grup.length} ${grup.length === 1 ? "intrare" : "intrări"}`);
+  L.push(
+    `## \`${s}\` — ${grup.length} ${grup.length === 1 ? "intrare" : "intrări"}`,
+  );
   L.push("");
   if (eAvl) {
-    L.push("| ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |");
+    L.push(
+      "| ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |",
+    );
     L.push("|---|---|---|---|---|---|---|---|---|---|---|---|");
     for (const e of grup)
       L.push(
         `| \`${e.id}\` | ${esc(e.titlu)} | ${esc(e.nivel)} | ${esc(e.versiune)} | ${esc(e.statusNormativ)} | ${esc(e.dataCreare)} | ${esc(zi(e.dataPublicare))} | ${esc(zi(e.dataModificare))} | ${esc(zi(e.ultimaVerificare))} | \`${wiringText(e.wiring)}\` | ${e.fisierMd ? `\`${e.fisierMd}\`` : "—"} | \`${esc(e.fisierTs)}\` |`,
       );
   } else if (eArhiva) {
-    L.push("| Slug | Titlu | Categorie | Status | Publicat | Modificat | Wiring | Anomalii |");
+    L.push(
+      "| Slug | Titlu | Categorie | Status | Publicat | Modificat | Wiring | Anomalii |",
+    );
     L.push("|---|---|---|---|---|---|---|--:|");
     for (const e of grup)
       L.push(
         `| \`${e.slug}\` | ${esc(e.titlu)} | ${esc(e.categorie)} | ${e.status} | ${esc(zi(e.dataPublicare))} | ${esc(zi(e.dataModificare))} | \`${wiringText(e.wiring)}\` | ${e.anomalii.length || "—"} |`,
       );
   } else {
-    L.push("| ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |");
+    L.push(
+      "| ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |",
+    );
     L.push("|---|---|---|---|---|---|---|---|---|---|---|---|");
     for (const e of grup) {
-      const ver =
-        e.ultimaVerificare
-          ? `${zi(e.ultimaVerificare)}${e.zileDeLaVerificare !== null ? ` (${e.zileDeLaVerificare}z)` : ""}`
-          : "—";
+      const ver = e.ultimaVerificare
+        ? `${zi(e.ultimaVerificare)}${e.zileDeLaVerificare !== null ? ` (${e.zileDeLaVerificare}z)` : ""}`
+        : "—";
       L.push(
         `| \`${e.id}\` | [${esc(e.titlu)}](${e.ruta || "#"}) | ${esc(e.categorie)} | ${esc(e.tip)} | ${e.status} | ${esc(e.dataCreare)} | ${esc(zi(e.dataPublicare))} | ${esc(zi(e.dataModificare))} | ${ver} | \`${wiringText(e.wiring)}\` | ${e.fisierMd ? `\`${e.fisierMd}\`` : "—"} | ${e.fisierTs ? `\`${e.fisierTs}\`` : "—"} |`,
       );
@@ -881,18 +1001,19 @@ if (!cuAnomalii.length && !anomaliiGlobale.length) {
 }
 
 const md = L.join("\n") + "\n";
-const json = JSON.stringify(
-  {
-    generat: TODAY,
-    pragReverificareZile: PRAG_REVERIFICARE_ZILE,
-    totalIntrari: intrari.length,
-    totalAnomalii,
-    anomaliiGlobale,
-    intrari: intrari.map(({ md: _md, ...rest }) => rest),
-  },
-  null,
-  2,
-) + "\n";
+const json =
+  JSON.stringify(
+    {
+      generat: TODAY,
+      pragReverificareZile: PRAG_REVERIFICARE_ZILE,
+      totalIntrari: intrari.length,
+      totalAnomalii,
+      anomaliiGlobale,
+      intrari: intrari.map(({ md: _md, ...rest }) => rest),
+    },
+    null,
+    2,
+  ) + "\n";
 
 if (!CHECK_ONLY) {
   fs.writeFileSync(OUT_MD, md);
@@ -914,9 +1035,19 @@ if (DIFF) {
     const hartaI = new Map(inainte.intrari.map((e) => [cheie(e), e]));
     const hartaA = new Map(intrari.map((e) => [cheie(e), e]));
     const CAMPURI = [
-      "titlu", "categorie", "tip", "status", "statusNormativ", "versiune",
-      "ruta", "dataPublicare", "dataModificare", "ultimaVerificare",
-      "fisierMd", "fisierTs", "sitemapLastmod",
+      "titlu",
+      "categorie",
+      "tip",
+      "status",
+      "statusNormativ",
+      "versiune",
+      "ruta",
+      "dataPublicare",
+      "dataModificare",
+      "ultimaVerificare",
+      "fisierMd",
+      "fisierTs",
+      "sitemapLastmod",
     ];
     const noi = [...hartaA.keys()].filter((k) => !hartaI.has(k));
     const dispărute = [...hartaI.keys()].filter((k) => !hartaA.has(k));
@@ -924,18 +1055,25 @@ if (DIFF) {
     for (const [k, a] of hartaA) {
       const i = hartaI.get(k);
       if (!i) continue;
-      const dif = CAMPURI.filter((c) => JSON.stringify(i[c]) !== JSON.stringify(a[c]))
-        .map((c) => `${c}: ${JSON.stringify(i[c])} → ${JSON.stringify(a[c])}`);
-      const wi = JSON.stringify(i.wiring), wa = JSON.stringify(a.wiring);
+      const dif = CAMPURI.filter(
+        (c) => JSON.stringify(i[c]) !== JSON.stringify(a[c]),
+      ).map((c) => `${c}: ${JSON.stringify(i[c])} → ${JSON.stringify(a[c])}`);
+      const wi = JSON.stringify(i.wiring),
+        wa = JSON.stringify(a.wiring);
       if (wi !== wa) dif.push(`wiring: ${wi} → ${wa}`);
-      const ai = (i.anomalii || []).join("¦"), aa = (a.anomalii || []).join("¦");
+      const ai = (i.anomalii || []).join("¦"),
+        aa = (a.anomalii || []).join("¦");
       if (ai !== aa)
-        dif.push(`anomalii: ${(i.anomalii || []).length} → ${(a.anomalii || []).length}`);
+        dif.push(
+          `anomalii: ${(i.anomalii || []).length} → ${(a.anomalii || []).length}`,
+        );
       if (dif.length) schimbate.push([k, dif]);
     }
     console.log(`\n=== diff față de ${DIFF} (${inainte.generat}) ===`);
     if (!noi.length && !dispărute.length && !schimbate.length)
-      console.log("  REGISTRUL NU S-A SCHIMBAT — nicio intrare adăugată, eliminată sau modificată.");
+      console.log(
+        "  REGISTRUL NU S-A SCHIMBAT — nicio intrare adăugată, eliminată sau modificată.",
+      );
     for (const k of noi) console.log(`  + INTRARE NOUĂ   ${k}`);
     for (const k of dispărute) console.log(`  - INTRARE DISPĂRUTĂ ${k}`);
     for (const [k, dif] of schimbate) {

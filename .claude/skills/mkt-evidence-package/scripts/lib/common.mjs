@@ -97,7 +97,11 @@ function dimsFromJPEG(buf) {
     }
     const marker = buf[offset + 1];
     // Standalone markers with no length field.
-    if (marker === 0xd8 || marker === 0xd9 || (marker >= 0xd0 && marker <= 0xd7)) {
+    if (
+      marker === 0xd8 ||
+      marker === 0xd9 ||
+      (marker >= 0xd0 && marker <= 0xd7)
+    ) {
       offset += 2;
       continue;
     }
@@ -123,7 +127,10 @@ function dimsFromJPEG(buf) {
 
 function dimsFromWEBP(buf) {
   if (buf.length < 30) return null;
-  if (buf.toString("ascii", 0, 4) !== "RIFF" || buf.toString("ascii", 8, 12) !== "WEBP") {
+  if (
+    buf.toString("ascii", 0, 4) !== "RIFF" ||
+    buf.toString("ascii", 8, 12) !== "WEBP"
+  ) {
     return null;
   }
   const fourcc = buf.toString("ascii", 12, 16);
@@ -249,7 +256,11 @@ export function parseSimpleYaml(text) {
       i++;
       if (rest === "") {
         // Nested block: object or list, one level deeper.
-        if (i < lines.length && lines[i].indent > indent && lines[i].content.startsWith("- ")) {
+        if (
+          i < lines.length &&
+          lines[i].indent > indent &&
+          lines[i].content.startsWith("- ")
+        ) {
           const arr = [];
           const childIndent = lines[i].indent;
           while (
@@ -363,11 +374,14 @@ export function parseCsv(text) {
   }
   if (rows.length === 0) return [];
   const headers = rows[0];
-  return rows.slice(1).filter((r) => r.length > 1 || r[0] !== "").map((r) => {
-    const obj = {};
-    headers.forEach((h, idx) => (obj[h] = r[idx] ?? ""));
-    return obj;
-  });
+  return rows
+    .slice(1)
+    .filter((r) => r.length > 1 || r[0] !== "")
+    .map((r) => {
+      const obj = {};
+      headers.forEach((h, idx) => (obj[h] = r[idx] ?? ""));
+      return obj;
+    });
 }
 
 // ---------------------------------------------------------------------------
@@ -443,7 +457,11 @@ export function nowIsoLocal(timeZone) {
  * and resolves to the same file, it's left alone; if it resolves elsewhere,
  * this throws rather than silently repointing it.
  */
-export async function ensureCanonicalArchiveLink(archivePath, workDir, canonicalName) {
+export async function ensureCanonicalArchiveLink(
+  archivePath,
+  workDir,
+  canonicalName,
+) {
   const linkPath = path.join(workDir, canonicalName);
   const realArchive = await fs.realpath(archivePath);
   await fs.mkdir(workDir, { recursive: true });
@@ -514,7 +532,10 @@ export async function assertNotFrozen(filePath, hint) {
  */
 export async function verifyChecksumManifest(dir, manifestFileName) {
   for (const tool of ["shasum", "sha256sum"]) {
-    const args = tool === "shasum" ? ["-a", "256", "-c", manifestFileName] : ["-c", manifestFileName];
+    const args =
+      tool === "shasum"
+        ? ["-a", "256", "-c", manifestFileName]
+        : ["-c", manifestFileName];
     const probe = await run(tool, ["--version"]).catch(() => ({ code: 1 }));
     if (probe.code !== 0) continue;
     const result = await run(tool, args, { cwd: dir });
@@ -522,10 +543,18 @@ export async function verifyChecksumManifest(dir, manifestFileName) {
       .split("\n")
       .map((l) => l.trim())
       .filter(Boolean);
-    return { ok: result.code === 0, lines, tool, raw: result.stdout + result.stderr };
+    return {
+      ok: result.code === 0,
+      lines,
+      tool,
+      raw: result.stdout + result.stderr,
+    };
   }
   // Fallback: no shasum/sha256sum on PATH — recompute in-process.
-  const manifestText = await fs.readFile(path.join(dir, manifestFileName), "utf8");
+  const manifestText = await fs.readFile(
+    path.join(dir, manifestFileName),
+    "utf8",
+  );
   const lines = [];
   let ok = true;
   for (const rawLine of manifestText.split("\n")) {
@@ -545,13 +574,21 @@ export async function verifyChecksumManifest(dir, manifestFileName) {
     if (!good) ok = false;
     lines.push(`${fname}: ${good ? "OK" : "FAILED"}`);
   }
-  return { ok, lines, tool: "node:crypto (fallback, no shasum/sha256sum on PATH)", raw: lines.join("\n") };
+  return {
+    ok,
+    lines,
+    tool: "node:crypto (fallback, no shasum/sha256sum on PATH)",
+    raw: lines.join("\n"),
+  };
 }
 
 /** Append one JSONL line to the audit log (append-only, never rewritten). */
 export async function appendLog(logPath, entry) {
   await fs.mkdir(path.dirname(logPath), { recursive: true });
-  const line = JSON.stringify({ timestamp: new Date().toISOString(), ...entry });
+  const line = JSON.stringify({
+    timestamp: new Date().toISOString(),
+    ...entry,
+  });
   await fs.appendFile(logPath, line + "\n", "utf8");
 }
 
@@ -574,7 +611,8 @@ export async function readZipEntryNames(zipPath) {
   let off = buf.readUInt32LE(eocd + 16);
   const names = [];
   for (let n = 0; n < count; n++) {
-    if (buf.readUInt32LE(off) !== 0x02014b50) throw new Error(`${zipPath}: director central invalid`);
+    if (buf.readUInt32LE(off) !== 0x02014b50)
+      throw new Error(`${zipPath}: director central invalid`);
     const nameLen = buf.readUInt16LE(off + 28);
     const extraLen = buf.readUInt16LE(off + 30);
     const commentLen = buf.readUInt16LE(off + 32);

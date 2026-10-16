@@ -10,8 +10,21 @@
 
 import path from "node:path";
 
-import { sha256File, pathExists, isFrozen, readJson, writeText, appendLog, ensureCanonicalArchiveLink } from "./lib/common.mjs";
-import { loadConfig, instancePaths, packageFiles, frozenArtifactKeys } from "./lib/mkt.mjs";
+import {
+  sha256File,
+  pathExists,
+  isFrozen,
+  readJson,
+  writeText,
+  appendLog,
+  ensureCanonicalArchiveLink,
+} from "./lib/common.mjs";
+import {
+  loadConfig,
+  instancePaths,
+  packageFiles,
+  frozenArtifactKeys,
+} from "./lib/mkt.mjs";
 
 const SCRIPT = "build_checksums.mjs";
 
@@ -26,32 +39,47 @@ async function main() {
   const F = packageFiles(config);
   const manifestPath = path.join(P.outputDir, F.checksums);
   if (await pathExists(manifestPath)) {
-    console.error(`FAIL: ${F.checksums} există deja. O versiune nouă cere o metadata_version nouă.`);
+    console.error(
+      `FAIL: ${F.checksums} există deja. O versiune nouă cere o metadata_version nouă.`,
+    );
     process.exit(1);
   }
   const keys = frozenArtifactKeys(config);
   for (const k of keys) {
     const p = path.join(P.outputDir, F[k]);
     if (!(await pathExists(p)) || !(await isFrozen(p))) {
-      console.error(`FAIL: ${F[k]} nu există sau nu e înghețat — rulează freeze_artifacts.mjs.`);
+      console.error(
+        `FAIL: ${F[k]} nu există sau nu e înghețat — rulează freeze_artifacts.mjs.`,
+      );
       process.exit(1);
     }
   }
   const manifest = await readJson(P.manifestPath);
-  await ensureCanonicalArchiveLink(manifest.archive_path, P.outputDir, F.archive);
+  await ensureCanonicalArchiveLink(
+    manifest.archive_path,
+    P.outputDir,
+    F.archive,
+  );
   const names = [F.archive, ...keys.map((k) => F[k])];
   const lines = [];
-  for (const n of names) lines.push(`${await sha256File(path.join(P.outputDir, n))}  ${n}`);
+  for (const n of names)
+    lines.push(`${await sha256File(path.join(P.outputDir, n))}  ${n}`);
   const archiveLine = lines[0].split("  ")[0];
   if (archiveLine !== manifest.archive_sha256) {
-    console.error("FAIL: hash-ul arhivei din directorul de output diferă de cel de la sigilare.");
+    console.error(
+      "FAIL: hash-ul arhivei din directorul de output diferă de cel de la sigilare.",
+    );
     process.exit(1);
   }
   await writeText(manifestPath, lines.join("\n") + "\n");
-  await appendLog(P.logPath, { operation: "checksums", status: "PASS", script: SCRIPT, output: { manifest: F.checksums, files: names.length } });
+  await appendLog(P.logPath, {
+    operation: "checksums",
+    status: "PASS",
+    script: SCRIPT,
+    output: { manifest: F.checksums, files: names.length },
+  });
   console.log(`CHECKSUMS → ${F.checksums} (${names.length} fișiere)`);
   for (const l of lines) console.log(`  ${l}`);
-
 }
 
 main().catch((err) => {

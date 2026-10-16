@@ -9,7 +9,12 @@
 
 import path from "node:path";
 import { verifyChecksumManifest, isFrozen, appendLog } from "./lib/common.mjs";
-import { loadConfig, instancePaths, packageFiles, frozenArtifactKeys } from "./lib/mkt.mjs";
+import {
+  loadConfig,
+  instancePaths,
+  packageFiles,
+  frozenArtifactKeys,
+} from "./lib/mkt.mjs";
 
 const SCRIPT = "verify_checksums.mjs";
 
@@ -24,9 +29,15 @@ async function main() {
   const F = packageFiles(config);
   const res = await verifyChecksumManifest(P.outputDir, F.checksums);
   const notFrozen = [];
-  for (const k of frozenArtifactKeys(config)) if (!(await isFrozen(path.join(P.outputDir, F[k])))) notFrozen.push(F[k]);
+  for (const k of frozenArtifactKeys(config))
+    if (!(await isFrozen(path.join(P.outputDir, F[k])))) notFrozen.push(F[k]);
   const ok = res.ok && notFrozen.length === 0;
-  await appendLog(P.logPath, { operation: "verify_checksums", status: ok ? "PASS" : "FAIL", script: SCRIPT, output: { tool: res.tool, lines: res.lines, notFrozen } });
+  await appendLog(P.logPath, {
+    operation: "verify_checksums",
+    status: ok ? "PASS" : "FAIL",
+    script: SCRIPT,
+    output: { tool: res.tool, lines: res.lines, notFrozen },
+  });
   console.log(`VERIFICATION — ${ok ? "PASS" : "FAIL"} (${res.tool})`);
   for (const l of res.lines) console.log(`  ${l}`);
   if (notFrozen.length) console.log(`  neînghețate: ${notFrozen.join(", ")}`);

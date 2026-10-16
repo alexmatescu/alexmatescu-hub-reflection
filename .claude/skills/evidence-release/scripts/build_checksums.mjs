@@ -41,12 +41,41 @@ async function main() {
   const config = await readConfig(configPath);
   const { entity_slug, measurement_point, metadata_version, archive } = config;
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
-  const outputDir = path.resolve("evidence/output", entity_slug, measurement_point, metadata_version);
+  const outputDir = path.resolve(
+    "evidence/output",
+    entity_slug,
+    measurement_point,
+    metadata_version,
+  );
 
-  const archiveCanonicalName = artifactFileName(entity_slug, measurement_point, "evidence-archive", archive.version, "zip");
-  const indexFile = artifactFileName(entity_slug, measurement_point, "evidence-index", metadata_version, "csv");
-  const readmeFile = artifactFileName(entity_slug, measurement_point, "readme", metadata_version, "md");
-  const shaFile = artifactFileName(entity_slug, measurement_point, "sha256sums", metadata_version, "txt");
+  const archiveCanonicalName = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "evidence-archive",
+    archive.version,
+    "zip",
+  );
+  const indexFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "evidence-index",
+    metadata_version,
+    "csv",
+  );
+  const readmeFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "readme",
+    metadata_version,
+    "md",
+  );
+  const shaFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "sha256sums",
+    metadata_version,
+    "txt",
+  );
 
   const indexPath = path.join(outputDir, indexFile);
   const readmePath = path.join(outputDir, readmeFile);
@@ -56,7 +85,9 @@ async function main() {
     ["README", readmePath],
   ]) {
     if (!(await pathExists(p))) {
-      console.error(`FAIL: ${label} not found at ${p} — generate it (STEP 7) before running build_checksums.mjs.`);
+      console.error(
+        `FAIL: ${label} not found at ${p} — generate it (STEP 7) before running build_checksums.mjs.`,
+      );
       process.exit(1);
     }
     if (!(await isFrozen(p))) {
@@ -90,7 +121,9 @@ async function main() {
   const shaPath = path.join(outputDir, shaFile);
   await writeText(shaPath, lines.join("\n") + "\n");
   console.log(`\nWrote ${shaPath}`);
-  console.log(`Next: verify_checksums.mjs (STEP 11), or manually: cd "${outputDir}" && shasum -a 256 -c "${shaFile}"`);
+  console.log(
+    `Next: verify_checksums.mjs (STEP 11), or manually: cd "${outputDir}" && shasum -a 256 -c "${shaFile}"`,
+  );
 
   await appendLog(path.join(workDir, "processing-log.jsonl"), {
     operation: "build_checksums",

@@ -31,7 +31,10 @@ import {
   parseCsv,
   sha256File,
 } from "./lib/common.mjs";
-import { CLASSIFICATION_COLUMNS, CLASSIFICATION_KEY_COLUMNS } from "./lib/schema.mjs";
+import {
+  CLASSIFICATION_COLUMNS,
+  CLASSIFICATION_KEY_COLUMNS,
+} from "./lib/schema.mjs";
 
 const IGNORED_BASENAMES = new Set([".DS_Store", "Thumbs.db"]);
 const IGNORED_DIR_PREFIXES = ["__MACOSX"];
@@ -46,11 +49,15 @@ function isIgnored(relPath) {
 function splitArchiveFolders(relPath) {
   const parts = relPath.split(path.sep);
   if (parts.length <= 1) {
-    return { archivePlatformFolder: "NOT_APPLICABLE", originalSessionFolder: "NOT_APPLICABLE" };
+    return {
+      archivePlatformFolder: "NOT_APPLICABLE",
+      originalSessionFolder: "NOT_APPLICABLE",
+    };
   }
   const archivePlatformFolder = parts[0];
   const middle = parts.slice(1, -1);
-  const originalSessionFolder = middle.length > 0 ? middle.join("/") : "NOT_APPLICABLE";
+  const originalSessionFolder =
+    middle.length > 0 ? middle.join("/") : "NOT_APPLICABLE";
   return { archivePlatformFolder, originalSessionFolder };
 }
 
@@ -103,14 +110,22 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("Hashing archive (whole-file SHA-256, for end-to-end integrity checking at STEP 8)...");
+  console.log(
+    "Hashing archive (whole-file SHA-256, for end-to-end integrity checking at STEP 8)...",
+  );
   const archiveSha256 = await sha256File(archivePath);
   console.log(`  ${archiveSha256}  ${path.basename(archivePath)}`);
 
   const extractedDir = path.join(workDir, "extracted");
   await fs.mkdir(extractedDir, { recursive: true });
   console.log(`Extracting (read-only inspection copy) to: ${extractedDir}`);
-  const unzipResult = await run("unzip", ["-o", "-q", archivePath, "-d", extractedDir]);
+  const unzipResult = await run("unzip", [
+    "-o",
+    "-q",
+    archivePath,
+    "-d",
+    extractedDir,
+  ]);
   if (unzipResult.code !== 0) {
     console.error("FAIL: extraction failed.");
     console.error(unzipResult.stderr || unzipResult.stdout);
@@ -124,7 +139,8 @@ async function main() {
   for (const rel of relFiles) {
     const full = path.join(extractedDir, rel);
     const st = await fs.stat(full);
-    const { archivePlatformFolder, originalSessionFolder } = splitArchiveFolders(rel);
+    const { archivePlatformFolder, originalSessionFolder } =
+      splitArchiveFolders(rel);
     files.push({
       original_relative_path: rel.split(path.sep).join("/"),
       original_filename: path.basename(rel),
@@ -159,13 +175,24 @@ async function main() {
     const existingText = await fs.readFile(classificationPath, "utf8");
     existingRows = parseCsv(existingText);
   }
-  const existingByPath = new Map(existingRows.map((r) => [r["Original relative path"], r]));
+  const existingByPath = new Map(
+    existingRows.map((r) => [r["Original relative path"], r]),
+  );
 
-  const extraColumns = Array.isArray(config.extra_columns) ? config.extra_columns : [];
-  const header = [...CLASSIFICATION_KEY_COLUMNS, ...CLASSIFICATION_COLUMNS, ...extraColumns];
+  const extraColumns = Array.isArray(config.extra_columns)
+    ? config.extra_columns
+    : [];
+  const header = [
+    ...CLASSIFICATION_KEY_COLUMNS,
+    ...CLASSIFICATION_COLUMNS,
+    ...extraColumns,
+  ];
   const rows = files.map((f) => {
     const existing = existingByPath.get(f.original_relative_path);
-    const row = { "Original relative path": f.original_relative_path, "Original filename": f.original_filename };
+    const row = {
+      "Original relative path": f.original_relative_path,
+      "Original filename": f.original_filename,
+    };
     for (const col of [...CLASSIFICATION_COLUMNS, ...extraColumns]) {
       row[col] = existing ? (existing[col] ?? "") : "";
     }
@@ -189,14 +216,22 @@ async function main() {
     operation: "inventory_evidence",
     status: "PASS",
     input: archivePath,
-    output: { inventoryPath, classificationPath, fileCount: files.length, archiveSha256 },
+    output: {
+      inventoryPath,
+      classificationPath,
+      fileCount: files.length,
+      archiveSha256,
+    },
     script: "inventory_evidence.mjs",
-    warnings: droppedPaths.length > 0 ? ["previously_classified_files_missing"] : [],
+    warnings:
+      droppedPaths.length > 0 ? ["previously_classified_files_missing"] : [],
   });
 
   console.log("\nNext: open each file under", extractedDir);
   console.log("and fill the judgment columns in", classificationPath);
-  console.log("(STEP 4 — visual analysis, query-execution grouping, classification).");
+  console.log(
+    "(STEP 4 — visual analysis, query-execution grouping, classification).",
+  );
 }
 
 main().catch((err) => {

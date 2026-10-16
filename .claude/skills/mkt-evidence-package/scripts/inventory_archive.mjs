@@ -36,16 +36,22 @@ const SCRIPT = "inventory_archive.mjs";
 async function mergeSkeleton(csvPath, header, rows, keyCol = "evidence_id") {
   let existing = new Map();
   if (await pathExists(csvPath)) {
-    existing = new Map(parseCsv(await fs.readFile(csvPath, "utf8")).map((r) => [r[keyCol], r]));
+    existing = new Map(
+      parseCsv(await fs.readFile(csvPath, "utf8")).map((r) => [r[keyCol], r]),
+    );
   }
   const merged = rows.map((row) => {
     const prev = existing.get(row[keyCol]);
     if (!prev) return row;
     const out = { ...row };
-    for (const h of header) if (prev[h] !== undefined && prev[h] !== "" && out[h] === "") out[h] = prev[h];
+    for (const h of header)
+      if (prev[h] !== undefined && prev[h] !== "" && out[h] === "")
+        out[h] = prev[h];
     return out;
   });
-  const dropped = [...existing.keys()].filter((k) => !rows.some((r) => r[keyCol] === k));
+  const dropped = [...existing.keys()].filter(
+    (k) => !rows.some((r) => r[keyCol] === k),
+  );
   await writeText(csvPath, toCsv(header, merged));
   return dropped;
 }
@@ -59,14 +65,18 @@ async function main() {
   const config = await loadConfig(configPath);
   const P = instancePaths(config);
   if (!(await pathExists(P.manifestPath))) {
-    console.error("FAIL: lipsește capture-manifest.json — rulează întâi seal_capture_folder.mjs.");
+    console.error(
+      "FAIL: lipsește capture-manifest.json — rulează întâi seal_capture_folder.mjs.",
+    );
     process.exit(1);
   }
   const manifest = await readJson(P.manifestPath);
 
   const archSha = await sha256File(manifest.archive_path);
   if (archSha !== manifest.archive_sha256) {
-    console.error("FAIL: SHA-256 al arhivei diferă de cel înregistrat la sigilare.");
+    console.error(
+      "FAIL: SHA-256 al arhivei diferă de cel înregistrat la sigilare.",
+    );
     process.exit(1);
   }
   const t = await run("unzip", ["-t", "-q", manifest.archive_path]);
@@ -77,7 +87,12 @@ async function main() {
 
   await fs.rm(P.extractedDir, { recursive: true, force: true });
   await fs.mkdir(P.extractedDir, { recursive: true });
-  const ux = await run("unzip", ["-q", manifest.archive_path, "-d", P.extractedDir]);
+  const ux = await run("unzip", [
+    "-q",
+    manifest.archive_path,
+    "-d",
+    P.extractedDir,
+  ]);
   if (ux.code !== 0) {
     console.error("FAIL: extragerea a eșuat.", ux.stderr);
     process.exit(1);
@@ -89,7 +104,9 @@ async function main() {
     const full = path.join(P.extractedDir, f.original_relative_path);
     const sha = await sha256File(full);
     if (sha !== f.sha256) {
-      console.error(`FAIL: copia extrasă diferă de manifest: ${f.relative_path_nfc}`);
+      console.error(
+        `FAIL: copia extrasă diferă de manifest: ${f.relative_path_nfc}`,
+      );
       process.exit(1);
     }
     const dims = parseImageDimensions(await readHeaderBuffer(full));
@@ -98,7 +115,9 @@ async function main() {
     files.push({
       ...f,
       extracted_path: full,
-      image_dimensions_pixels: dims ? `${dims.width}x${dims.height}` : "UNKNOWN",
+      image_dimensions_pixels: dims
+        ? `${dims.width}x${dims.height}`
+        : "UNKNOWN",
       duplicate_status: dupOf ? "DUPLICATE" : "UNIQUE",
       duplicate_of_evidence_id: dupOf ?? "NOT_APPLICABLE",
     });
@@ -109,7 +128,9 @@ async function main() {
   for (const d of manifest.operator_documents ?? []) {
     const full = path.join(P.extractedDir, d.original_relative_path);
     if ((await sha256File(full)) !== d.sha256) {
-      console.error(`FAIL: copia extrasă a documentului diferă de manifest: ${d.relative_path_nfc}`);
+      console.error(
+        `FAIL: copia extrasă a documentului diferă de manifest: ${d.relative_path_nfc}`,
+      );
       process.exit(1);
     }
     documents.push({ ...d, extracted_path: full });
@@ -133,14 +154,20 @@ async function main() {
     const row = {};
     for (const col of SESSION_COLUMNS) {
       if (col.name === "evidence_id") row[col.name] = f.evidence_id;
-      else if (col.name === "original_relative_path") row[col.name] = f.relative_path_nfc;
+      else if (col.name === "original_relative_path")
+        row[col.name] = f.relative_path_nfc;
       else if (col.name === "mapped_surface") row[col.name] = f.mapped_surface;
-      else if (!sessionColumnApplies(col, type)) row[col.name] = "NOT_APPLICABLE";
+      else if (!sessionColumnApplies(col, type))
+        row[col.name] = "NOT_APPLICABLE";
       else row[col.name] = "";
     }
     return row;
   });
-  const droppedS = await mergeSkeleton(P.sessionContextPath, SESSION_HEADER, sessionRows);
+  const droppedS = await mergeSkeleton(
+    P.sessionContextPath,
+    SESSION_HEADER,
+    sessionRows,
+  );
 
   const captureRows = files.map((f) => {
     const row = {};
@@ -153,10 +180,15 @@ async function main() {
       row.serp_page = "NOT_APPLICABLE";
       row.organic_positions_visible = "NOT_APPLICABLE";
     }
-    if (f.mapped_surface !== "GSEARCH") row.ai_overview_status = "NOT_APPLICABLE";
+    if (f.mapped_surface !== "GSEARCH")
+      row.ai_overview_status = "NOT_APPLICABLE";
     return row;
   });
-  const droppedC = await mergeSkeleton(P.captureClassificationPath, CAPTURE_CLASSIFICATION_HEADER, captureRows);
+  const droppedC = await mergeSkeleton(
+    P.captureClassificationPath,
+    CAPTURE_CLASSIFICATION_HEADER,
+    captureRows,
+  );
 
   const dropped = [...droppedS, ...droppedC];
   await appendLog(P.logPath, {
@@ -168,14 +200,24 @@ async function main() {
   });
 
   const bySurface = {};
-  for (const f of files) bySurface[f.mapped_surface] = (bySurface[f.mapped_surface] ?? 0) + 1;
-  console.log(`INVENTORY OK — ${files.length} capturi, ${files.filter((f) => f.duplicate_status === "DUPLICATE").length} duplicate byte-identice`);
-  for (const [s, n] of Object.entries(bySurface)) console.log(`  ${s.padEnd(11)} ${n}`);
+  for (const f of files)
+    bySurface[f.mapped_surface] = (bySurface[f.mapped_surface] ?? 0) + 1;
+  console.log(
+    `INVENTORY OK — ${files.length} capturi, ${files.filter((f) => f.duplicate_status === "DUPLICATE").length} duplicate byte-identice`,
+  );
+  for (const [s, n] of Object.entries(bySurface))
+    console.log(`  ${s.padEnd(11)} ${n}`);
   console.log(`  copie de inspecție: ${P.extractedDir}`);
-  for (const d of documents) console.log(`  document al operatorului (de citit la STEP 5, pentru fișa rulării): ${d.document_id} ${d.extracted_path}`);
+  for (const d of documents)
+    console.log(
+      `  document al operatorului (de citit la STEP 5, pentru fișa rulării): ${d.document_id} ${d.extracted_path}`,
+    );
   console.log(`  schelet: ${P.sessionContextPath}`);
   console.log(`  schelet: ${P.captureClassificationPath}`);
-  if (dropped.length) console.warn(`ATENȚIE: rânduri existente fără captură corespunzătoare: ${dropped.join(", ")}`);
+  if (dropped.length)
+    console.warn(
+      `ATENȚIE: rânduri existente fără captură corespunzătoare: ${dropped.join(", ")}`,
+    );
 }
 
 main().catch((err) => {

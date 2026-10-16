@@ -37,7 +37,14 @@ import {
 } from "./lib/common.mjs";
 
 function buildReleaseNotes(config, stats) {
-  const { project = "AI Visibility Lab", study_name, entity_name, measurement_point, archive, metadata_version } = config;
+  const {
+    project = "AI Visibility Lab",
+    study_name,
+    entity_name,
+    measurement_point,
+    archive,
+    metadata_version,
+  } = config;
   const lines = [];
   lines.push(`**Project:** ${project}`);
   if (study_name) lines.push(`**Study:** ${study_name}`);
@@ -47,10 +54,18 @@ function buildReleaseNotes(config, stats) {
   lines.push(`**Metadata version:** ${metadata_version}`);
   if (stats) {
     lines.push(`**Evidence count:** ${stats.total}`);
-    lines.push(`**Platforms:** ${(stats.platforms || []).join(", ") || "UNKNOWN"} (${(stats.platforms || []).length})`);
-    if (stats.sessionCounts) lines.push(`**Sessions:** ${Object.keys(stats.sessionCounts).length}`);
-    if (Array.isArray(config.extra_columns) && config.extra_columns.length > 0) {
-      lines.push(`**Experimental conditions tracked:** ${config.extra_columns.join(", ")}`);
+    lines.push(
+      `**Platforms:** ${(stats.platforms || []).join(", ") || "UNKNOWN"} (${(stats.platforms || []).length})`,
+    );
+    if (stats.sessionCounts)
+      lines.push(`**Sessions:** ${Object.keys(stats.sessionCounts).length}`);
+    if (
+      Array.isArray(config.extra_columns) &&
+      config.extra_columns.length > 0
+    ) {
+      lines.push(
+        `**Experimental conditions tracked:** ${config.extra_columns.join(", ")}`,
+      );
     }
   }
   lines.push("");
@@ -70,18 +85,28 @@ async function main() {
   const configPath = process.argv[2];
   const execute = process.argv.includes("--execute");
   if (!configPath) {
-    console.error("Usage: node github_release.mjs <evidence-package.yaml> [--execute]");
+    console.error(
+      "Usage: node github_release.mjs <evidence-package.yaml> [--execute]",
+    );
     process.exit(2);
   }
   const config = await readConfig(configPath);
-  const { entity_slug, entity_name, measurement_point, metadata_version, archive } = config;
+  const {
+    entity_slug,
+    entity_name,
+    measurement_point,
+    metadata_version,
+    archive,
+  } = config;
   const repo = config.github?.repository;
   if (!repo) {
     console.error("FAIL: config.github.repository is required (owner/repo).");
     process.exit(1);
   }
   if (config.github?.draft === false) {
-    console.error("FAIL: config.github.draft must not be false — evidence-release only ever creates draft releases.");
+    console.error(
+      "FAIL: config.github.draft must not be false — evidence-release only ever creates draft releases.",
+    );
     process.exit(1);
   }
 
@@ -91,19 +116,51 @@ async function main() {
   const title = `${entity_name} — ${measurement_point} Evidence Archive v${archive.version}`;
 
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
-  const outputDir = path.resolve("evidence/output", entity_slug, measurement_point, metadata_version);
+  const outputDir = path.resolve(
+    "evidence/output",
+    entity_slug,
+    measurement_point,
+    metadata_version,
+  );
   const logPath = path.join(workDir, "processing-log.jsonl");
 
-  const archiveCanonicalName = artifactFileName(entity_slug, measurement_point, "evidence-archive", archive.version, "zip");
-  const indexFile = artifactFileName(entity_slug, measurement_point, "evidence-index", metadata_version, "csv");
-  const readmeFile = artifactFileName(entity_slug, measurement_point, "readme", metadata_version, "md");
-  const shaFile = artifactFileName(entity_slug, measurement_point, "sha256sums", metadata_version, "txt");
+  const archiveCanonicalName = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "evidence-archive",
+    archive.version,
+    "zip",
+  );
+  const indexFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "evidence-index",
+    metadata_version,
+    "csv",
+  );
+  const readmeFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "readme",
+    metadata_version,
+    "md",
+  );
+  const shaFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "sha256sums",
+    metadata_version,
+    "txt",
+  );
 
   // The archive's canonical-named symlink lives in outputDir — created by
   // build_checksums.mjs (STEP 10), not here. github_release.mjs only ever
   // reads from the already-finalized/frozen/checksummed output directory.
   const assets = [
-    { name: archiveCanonicalName, path: path.join(outputDir, archiveCanonicalName) },
+    {
+      name: archiveCanonicalName,
+      path: path.join(outputDir, archiveCanonicalName),
+    },
     { name: indexFile, path: path.join(outputDir, indexFile) },
     { name: readmeFile, path: path.join(outputDir, readmeFile) },
     { name: shaFile, path: path.join(outputDir, shaFile) },
@@ -117,7 +174,10 @@ async function main() {
       process.exit(1);
     }
   }
-  for (const [label, file] of [["evidence index", indexFile], ["README", readmeFile]]) {
+  for (const [label, file] of [
+    ["evidence index", indexFile],
+    ["README", readmeFile],
+  ]) {
     if (!(await isFrozen(path.join(outputDir, file)))) {
       console.error(
         `FAIL: ${label} (${file}) is not frozen. Something wrote to the output directory after STEP 9 — ` +
@@ -141,18 +201,24 @@ async function main() {
 
   const ghv = await run("gh", ["--version"]);
   if (ghv.code !== 0) {
-    console.error("FAIL: gh CLI not found. Install it before running this step: https://cli.github.com/");
+    console.error(
+      "FAIL: gh CLI not found. Install it before running this step: https://cli.github.com/",
+    );
     process.exit(1);
   }
   const gha = await run("gh", ["auth", "status"]);
   if (gha.code !== 0) {
-    console.error("FAIL: gh CLI is not authenticated. Run `gh auth login` and re-run.");
+    console.error(
+      "FAIL: gh CLI is not authenticated. Run `gh auth login` and re-run.",
+    );
     console.error(gha.stderr);
     process.exit(1);
   }
 
   const statsPath = path.join(workDir, "index-stats.json");
-  const stats = (await pathExists(statsPath)) ? await readJson(statsPath) : null;
+  const stats = (await pathExists(statsPath))
+    ? await readJson(statsPath)
+    : null;
   const notesLines = buildReleaseNotes(config, stats);
   for (const a of assets) notesLines.push(`- \`${a.name}\``);
   const notesPath = path.join(workDir, "release-notes.md");
@@ -162,9 +228,19 @@ async function main() {
   console.log(`Title: ${title}`);
   console.log(`Repository: ${repo}`);
   console.log(`Notes file: ${notesPath}`);
-  console.log(`Assets:\n${assets.map((a) => `  - ${a.name}  (${a.path})`).join("\n")}`);
+  console.log(
+    `Assets:\n${assets.map((a) => `  - ${a.name}  (${a.path})`).join("\n")}`,
+  );
 
-  const view = await run("gh", ["release", "view", tag, "--repo", repo, "--json", "isDraft,assets,url"]);
+  const view = await run("gh", [
+    "release",
+    "view",
+    tag,
+    "--repo",
+    repo,
+    "--json",
+    "isDraft,assets,url",
+  ]);
   let releaseExists = view.code === 0;
   let existingInfo = null;
   if (releaseExists) {
@@ -176,20 +252,35 @@ async function main() {
       process.exit(1);
     }
     console.log(`\nDraft release ${tag} already exists (${existingInfo.url}).`);
-    const existingNames = new Set((existingInfo.assets || []).map((a) => a.name));
+    const existingNames = new Set(
+      (existingInfo.assets || []).map((a) => a.name),
+    );
     const missing = assets.filter((a) => !existingNames.has(a.name));
     const already = assets.filter((a) => existingNames.has(a.name));
     if (already.length > 0) {
-      console.log(`Already uploaded (skipped, never overwritten): ${already.map((a) => a.name).join(", ")}`);
+      console.log(
+        `Already uploaded (skipped, never overwritten): ${already.map((a) => a.name).join(", ")}`,
+      );
     }
-    console.log(`To upload: ${missing.length > 0 ? missing.map((a) => a.name).join(", ") : "(nothing — all assets already present)"}`);
+    console.log(
+      `To upload: ${missing.length > 0 ? missing.map((a) => a.name).join(", ") : "(nothing — all assets already present)"}`,
+    );
 
     if (!execute) {
-      console.log("\nDry-run only. Re-run with --execute after explicit user confirmation to actually upload.");
+      console.log(
+        "\nDry-run only. Re-run with --execute after explicit user confirmation to actually upload.",
+      );
       return;
     }
     for (const a of missing) {
-      const up = await run("gh", ["release", "upload", tag, a.path, "--repo", repo]);
+      const up = await run("gh", [
+        "release",
+        "upload",
+        tag,
+        a.path,
+        "--repo",
+        repo,
+      ]);
       if (up.code !== 0) {
         console.error(`FAIL: upload failed for ${a.name}: ${up.stderr}`);
         process.exit(1);
@@ -198,8 +289,12 @@ async function main() {
     }
   } else {
     if (!execute) {
-      console.log(`\nDry-run only. Would create DRAFT release ${tag} with the assets listed above.`);
-      console.log("Re-run with --execute after explicit user confirmation to actually create it.");
+      console.log(
+        `\nDry-run only. Would create DRAFT release ${tag} with the assets listed above.`,
+      );
+      console.log(
+        "Re-run with --execute after explicit user confirmation to actually create it.",
+      );
       return;
     }
     const createArgs = [
@@ -223,7 +318,15 @@ async function main() {
     console.log(create.stdout.trim());
   }
 
-  const postUploadView = await run("gh", ["release", "view", tag, "--repo", repo, "--json", "isDraft,assets,url"]);
+  const postUploadView = await run("gh", [
+    "release",
+    "view",
+    tag,
+    "--repo",
+    repo,
+    "--json",
+    "isDraft,assets,url",
+  ]);
   if (postUploadView.code !== 0) {
     console.error("WARNING: could not verify release after upload.");
   } else {
@@ -234,9 +337,13 @@ async function main() {
     console.log(`\nDraft release URL: ${info.url}`);
     console.log(`Assets present: ${names.join(", ")}`);
     if (missingAfter.length > 0) {
-      console.error(`WARNING: expected assets missing after upload: ${missingAfter.join(", ")}`);
+      console.error(
+        `WARNING: expected assets missing after upload: ${missingAfter.join(", ")}`,
+      );
     }
-    console.log("\nThe release remains a DRAFT. Publishing it is a separate, explicit action for you to take.");
+    console.log(
+      "\nThe release remains a DRAFT. Publishing it is a separate, explicit action for you to take.",
+    );
   }
 
   await appendLog(logPath, {

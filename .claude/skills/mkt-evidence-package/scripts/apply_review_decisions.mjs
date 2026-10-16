@@ -24,7 +24,13 @@
 
 import path from "node:path";
 import { promises as fs } from "node:fs";
-import { parseCsv, toCsv, writeText, appendLog, pathExists } from "./lib/common.mjs";
+import {
+  parseCsv,
+  toCsv,
+  writeText,
+  appendLog,
+  pathExists,
+} from "./lib/common.mjs";
 import { loadConfig, instancePaths } from "./lib/mkt.mjs";
 import { OBSERVATION_STAGING_HEADER as STAGING_HEADER } from "./lib/schema.mjs";
 
@@ -32,22 +38,39 @@ const SCRIPT = "apply_review_decisions.mjs";
 const FIELDS = {
   query_relevance: ["RELEVANT", "IRRELEVANT", "UNCERTAIN"],
   entity_kind_observed: [
-    "PROVIDER_PAGE", "PROVIDER_NAMED", "ARTICLE_GUIDE", "DIRECTORY_LIST", "SOFTWARE_TOOL",
-    "PUBLISHER", "PERSON_PROFILE", "PERSON_ASSOCIATED", "FORUM_SOCIAL", "OTHER", "UNCERTAIN",
+    "PROVIDER_PAGE",
+    "PROVIDER_NAMED",
+    "ARTICLE_GUIDE",
+    "DIRECTORY_LIST",
+    "SOFTWARE_TOOL",
+    "PUBLISHER",
+    "PERSON_PROFILE",
+    "PERSON_ASSOCIATED",
+    "FORUM_SOCIAL",
+    "OTHER",
+    "UNCERTAIN",
   ],
   named_as_recommendation: ["YES", "NO", "UNCERTAIN", "NOT_APPLICABLE"],
   KEEP: [""],
 };
-const nfc = (s) => String(s ?? "").normalize("NFC").trim();
+const nfc = (s) =>
+  String(s ?? "")
+    .normalize("NFC")
+    .trim();
 
 async function main() {
   const configPath = process.argv[2];
   if (!configPath) {
-    console.error("Usage: node apply_review_decisions.mjs <config.yaml> [--date YYYY-MM-DD]");
+    console.error(
+      "Usage: node apply_review_decisions.mjs <config.yaml> [--date YYYY-MM-DD]",
+    );
     process.exit(2);
   }
   const dateArg = process.argv.indexOf("--date");
-  const date = dateArg > 0 ? process.argv[dateArg + 1] : new Date().toISOString().slice(0, 10);
+  const date =
+    dateArg > 0
+      ? process.argv[dateArg + 1]
+      : new Date().toISOString().slice(0, 10);
   const config = await loadConfig(configPath);
   const P = instancePaths(config);
   const stagingPath = path.join(P.workDir, "observation-staging.csv");
@@ -73,30 +96,68 @@ async function main() {
     const line = `decizia ${i + 1} (${nfc(d.execution_id)} #${nfc(d.observed_order)} «${nfc(d.observed_name)}»)`;
     const field = nfc(d.field);
     const value = nfc(d.value);
-    if (!(field in FIELDS)) return problems.push(`${line}: câmp necunoscut „${field}”`);
-    if (field !== "KEEP" && !FIELDS[field].includes(value)) return problems.push(`${line}: valoare invalidă „${value}” pentru ${field}`);
-    if (field === "query_relevance" && value !== "RELEVANT" && !nfc(d.relevance_basis)) {
+    if (!(field in FIELDS))
+      return problems.push(`${line}: câmp necunoscut „${field}”`);
+    if (field !== "KEEP" && !FIELDS[field].includes(value))
+      return problems.push(
+        `${line}: valoare invalidă „${value}” pentru ${field}`,
+      );
+    if (
+      field === "query_relevance" &&
+      value !== "RELEVANT" &&
+      !nfc(d.relevance_basis)
+    ) {
       return problems.push(`${line}: ${value} cere relevance_basis`);
     }
-    const hits = rows.filter((r) => nfc(r.execution_id) === full(d.execution_id) && nfc(r.observed_order) === nfc(d.observed_order));
-    if (hits.length !== 1) return problems.push(`${line}: potriviri = ${hits.length} (trebuie exact 1)`);
+    const hits = rows.filter(
+      (r) =>
+        nfc(r.execution_id) === full(d.execution_id) &&
+        nfc(r.observed_order) === nfc(d.observed_order),
+    );
+    if (hits.length !== 1)
+      return problems.push(
+        `${line}: potriviri = ${hits.length} (trebuie exact 1)`,
+      );
     if (nfc(hits[0].observed_name) !== nfc(d.observed_name)) {
-      return problems.push(`${line}: numele din rând e «${nfc(hits[0].observed_name)}»`);
+      return problems.push(
+        `${line}: numele din rând e «${nfc(hits[0].observed_name)}»`,
+      );
     }
-    plan.push({ row: hits[0], field, value, basis: nfc(d.relevance_basis), label: nfc(d.decision_label) });
+    plan.push({
+      row: hits[0],
+      field,
+      value,
+      basis: nfc(d.relevance_basis),
+      label: nfc(d.decision_label),
+    });
   });
   const targets = plan.map((p) => p.row);
-  const dupTargets = targets.filter((r, i) => targets.indexOf(r) !== i && plan[i].field === plan[targets.indexOf(r)].field);
-  if (dupTargets.length) problems.push(`${dupTargets.length} rânduri primesc două decizii pe același câmp`);
+  const dupTargets = targets.filter(
+    (r, i) =>
+      targets.indexOf(r) !== i &&
+      plan[i].field === plan[targets.indexOf(r)].field,
+  );
+  if (dupTargets.length)
+    problems.push(
+      `${dupTargets.length} rânduri primesc două decizii pe același câmp`,
+    );
   if (problems.length) {
-    console.error(`FAIL: ${problems.length} decizii nu pot fi aplicate; nu s-a scris nimic.`);
+    console.error(
+      `FAIL: ${problems.length} decizii nu pot fi aplicate; nu s-a scris nimic.`,
+    );
     for (const p of problems) console.error(`  - ${p}`);
-    await appendLog(P.logPath, { operation: "apply_review_decisions", status: "FAIL", script: SCRIPT, warnings: problems });
+    await appendLog(P.logPath, {
+      operation: "apply_review_decisions",
+      status: "FAIL",
+      script: SCRIPT,
+      warnings: problems,
+    });
     process.exit(1);
   }
 
   // 2. Aplicare.
-  if (!(await pathExists(backupPath))) await fs.copyFile(stagingPath, backupPath);
+  if (!(await pathExists(backupPath)))
+    await fs.copyFile(stagingPath, backupPath);
   let changed = 0;
   for (const { row, field, value, basis, label } of plan) {
     const before = JSON.stringify(row);
@@ -108,7 +169,8 @@ async function main() {
     }
     row.review_status = "REVIEWED";
     const note = `${tag}${label ? ` (${label})` : ""}`;
-    if (!nfc(row.notes).includes(note)) row.notes = [nfc(row.notes), note].filter(Boolean).join("; ");
+    if (!nfc(row.notes).includes(note))
+      row.notes = [nfc(row.notes), note].filter(Boolean).join("; ");
     if (JSON.stringify(row) !== before) changed += 1;
   }
   await writeText(stagingPath, toCsv(STAGING_HEADER, rows));
@@ -119,10 +181,19 @@ async function main() {
     status: left.length ? "INCOMPLETE" : "OK",
     script: SCRIPT,
     input: decisionsPath,
-    output: { decisions: plan.length, rows_changed: changed, review_required_left: left.length },
+    output: {
+      decisions: plan.length,
+      rows_changed: changed,
+      review_required_left: left.length,
+    },
   });
-  console.log(`REVIEW (2) — ${plan.length} decizii, ${changed} rânduri modificate; rămase REVIEW_REQUIRED: ${left.length}`);
-  for (const r of left) console.log(`  ${r.execution_id} #${r.observed_order} «${r.observed_name}»`);
+  console.log(
+    `REVIEW (2) — ${plan.length} decizii, ${changed} rânduri modificate; rămase REVIEW_REQUIRED: ${left.length}`,
+  );
+  for (const r of left)
+    console.log(
+      `  ${r.execution_id} #${r.observed_order} «${r.observed_name}»`,
+    );
   console.log(`  → ${stagingPath}\n  copie înainte de review: ${backupPath}`);
   if (left.length) process.exitCode = 1;
 }

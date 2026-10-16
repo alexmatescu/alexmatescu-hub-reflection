@@ -66,12 +66,16 @@ async function main() {
 
   // ---- 1. Detecție ---------------------------------------------------------
   const allFiles = await walkFilesRaw(folder);
-  const systemPatterns = Array.isArray(config.system_file_patterns) ? config.system_file_patterns : undefined;
+  const systemPatterns = Array.isArray(config.system_file_patterns)
+    ? config.system_file_patterns
+    : undefined;
   const systemFiles = allFiles.filter((f) => isSystemFile(f, systemPatterns));
   const nonSystem = allFiles.filter((f) => !isSystemFile(f, systemPatterns));
   // Documentele operatorului din rădăcină (ex. fișa rulării în Word) se sigilează
   // și intră în arhivă, dar nu sunt capturi: primesc Document ID, nu Evidence ID.
-  const operatorDocs = nonSystem.filter((f) => isOperatorDocument(f)).sort(compareNfc);
+  const operatorDocs = nonSystem
+    .filter((f) => isOperatorDocument(f))
+    .sort(compareNfc);
   const captures = nonSystem.filter((f) => !isOperatorDocument(f));
   const nonCaptureFiles = captures.filter((f) => !isCaptureFile(f));
 
@@ -93,7 +97,9 @@ async function main() {
   const folderReport = [];
   const blocking = [];
   const codeToFolders = new Map();
-  for (const [name, info] of [...folders.entries()].sort((a, b) => compareNfc(a[0], b[0]))) {
+  for (const [name, info] of [...folders.entries()].sort((a, b) =>
+    compareNfc(a[0], b[0]),
+  )) {
     const { ordinal, normalized } = normalizeFolderName(name);
     const { code, basis } = detectSurface(name, config.surface_map);
     folderReport.push({
@@ -106,26 +112,42 @@ async function main() {
       file_count: info.files,
       has_nested_subfolders: info.nested,
     });
-    if (!code) blocking.push(`subfolder fără alias de suprafață: "${name}" (normalizat: "${normalized}")`);
+    if (!code)
+      blocking.push(
+        `subfolder fără alias de suprafață: "${name}" (normalizat: "${normalized}")`,
+      );
     else {
       if (!codeToFolders.has(code)) codeToFolders.set(code, []);
       codeToFolders.get(code).push(name);
     }
   }
   for (const [code, names] of codeToFolders) {
-    if (names.length > 1) blocking.push(`mai multe subfoldere mapate la ${code}: ${names.join(", ")}`);
+    if (names.length > 1)
+      blocking.push(
+        `mai multe subfoldere mapate la ${code}: ${names.join(", ")}`,
+      );
   }
-  for (const rel of rootFiles) blocking.push(`fișier direct în rădăcină, fără suprafață și fără extensie de document: "${rel.normalize("NFC")}"`);
+  for (const rel of rootFiles)
+    blocking.push(
+      `fișier direct în rădăcină, fără suprafață și fără extensie de document: "${rel.normalize("NFC")}"`,
+    );
   for (const rel of nonCaptureFiles.filter((f) => f.includes("/"))) {
-    blocking.push(`fișier care nu e captură (extensie neacceptată) într-un subfolder de suprafață: "${rel.normalize("NFC")}"`);
+    blocking.push(
+      `fișier care nu e captură (extensie neacceptată) într-un subfolder de suprafață: "${rel.normalize("NFC")}"`,
+    );
   }
 
   const filenames = captures.map((rel) => rel.split("/").pop());
-  const patternChoice = detectFilenamePattern(filenames, config.filename_timestamp?.pattern);
+  const patternChoice = detectFilenamePattern(
+    filenames,
+    config.filename_timestamp?.pattern,
+  );
   const tsFor = (filename) => {
     const lib = patternChoice.library;
     const ordered =
-      patternChoice.mode === "SINGLE_PATTERN" ? lib.filter((p) => p.id === patternChoice.pattern_id) : lib;
+      patternChoice.mode === "SINGLE_PATTERN"
+        ? lib.filter((p) => p.id === patternChoice.pattern_id)
+        : lib;
     for (const p of ordered) {
       const r = applyFilenamePattern(p.re, filename);
       if (r) return { ...r, pattern_id: p.id };
@@ -158,17 +180,32 @@ async function main() {
   await writeJson(P.detectionPath, detection);
   console.log(`Detecție → ${P.detectionPath}`);
   for (const f of folderReport) {
-    console.log(`  ${f.folder.normalize("NFC").padEnd(24)} → ${f.mapped_surface ?? "??"} (${f.file_count} fișiere, ${f.mapping_basis ?? "fără potrivire"})`);
+    console.log(
+      `  ${f.folder.normalize("NFC").padEnd(24)} → ${f.mapped_surface ?? "??"} (${f.file_count} fișiere, ${f.mapping_basis ?? "fără potrivire"})`,
+    );
   }
-  console.log(`  tipar nume: ${patternChoice.pattern_id ?? "per fișier"} — ${tsMatched}/${filenames.length} potrivite`);
-  if (systemFiles.length) console.log(`  fișiere de sistem excluse: ${systemFiles.join(", ")}`);
-  if (operatorDocs.length) console.log(`  documente ale operatorului (sigilate, fără Evidence ID): ${operatorDocs.map((f) => f.normalize("NFC")).join(", ")}`);
+  console.log(
+    `  tipar nume: ${patternChoice.pattern_id ?? "per fișier"} — ${tsMatched}/${filenames.length} potrivite`,
+  );
+  if (systemFiles.length)
+    console.log(`  fișiere de sistem excluse: ${systemFiles.join(", ")}`);
+  if (operatorDocs.length)
+    console.log(
+      `  documente ale operatorului (sigilate, fără Evidence ID): ${operatorDocs.map((f) => f.normalize("NFC")).join(", ")}`,
+    );
 
   if (blocking.length) {
     console.error("\nSTOP — detecția cere decizia userului:");
     for (const b of blocking) console.error(`  - ${b}`);
-    console.error("Rezolvare: adaugă `surface_map` în config pentru subfolderele respective.");
-    await appendLog(P.logPath, { operation: "seal", status: "NEEDS_USER_INPUT", script: SCRIPT, warnings: blocking });
+    console.error(
+      "Rezolvare: adaugă `surface_map` în config pentru subfolderele respective.",
+    );
+    await appendLog(P.logPath, {
+      operation: "seal",
+      status: "NEEDS_USER_INPUT",
+      script: SCRIPT,
+      warnings: blocking,
+    });
     process.exit(3);
   }
 
@@ -178,23 +215,41 @@ async function main() {
   const docHashes = await hashAll(folder, operatorDocs);
 
   let previous = null;
-  if (await pathExists(P.manifestPath)) previous = await readJson(P.manifestPath);
+  if (await pathExists(P.manifestPath))
+    previous = await readJson(P.manifestPath);
 
   if (previous) {
     const prevDocs = previous.operator_documents ?? [];
     const same =
       previous.files.length === captures.length &&
-      previous.files.every((f) => hashes.get(f.original_relative_path)?.sha256 === f.sha256) &&
+      previous.files.every(
+        (f) => hashes.get(f.original_relative_path)?.sha256 === f.sha256,
+      ) &&
       prevDocs.length === operatorDocs.length &&
-      prevDocs.every((d) => docHashes.get(d.original_relative_path)?.sha256 === d.sha256);
-    if (same && previous.archive_version === String(config.archive.version) && (await pathExists(previous.archive_path))) {
+      prevDocs.every(
+        (d) => docHashes.get(d.original_relative_path)?.sha256 === d.sha256,
+      );
+    if (
+      same &&
+      previous.archive_version === String(config.archive.version) &&
+      (await pathExists(previous.archive_path))
+    ) {
       const archSha = await sha256File(previous.archive_path);
       if (archSha === previous.archive_sha256) {
-        console.log("NO-OP: folderul corespunde manifestului existent, iar arhiva are hash-ul înregistrat.");
-        await appendLog(P.logPath, { operation: "seal", status: "NOOP", script: SCRIPT, output: { archive_sha256: archSha } });
+        console.log(
+          "NO-OP: folderul corespunde manifestului existent, iar arhiva are hash-ul înregistrat.",
+        );
+        await appendLog(P.logPath, {
+          operation: "seal",
+          status: "NOOP",
+          script: SCRIPT,
+          output: { archive_sha256: archSha },
+        });
         return;
       }
-      console.error("FAIL: arhiva existentă nu mai are hash-ul înregistrat la sigilare. Nu se suprascrie.");
+      console.error(
+        "FAIL: arhiva existentă nu mai are hash-ul înregistrat la sigilare. Nu se suprascrie.",
+      );
       process.exit(1);
     }
     if (previous.archive_version === String(config.archive.version)) {
@@ -207,9 +262,17 @@ async function main() {
   }
 
   const prevIds = new Map(
-    (previous?.files ?? []).map((f) => [`${f.original_relative_path}\u0000${f.sha256}`, f.evidence_id]),
+    (previous?.files ?? []).map((f) => [
+      `${f.original_relative_path}\u0000${f.sha256}`,
+      f.evidence_id,
+    ]),
   );
-  const prevMax = Math.max(0, ...(previous?.files ?? []).map((f) => parseInt(f.evidence_id.split("-E").pop(), 10)));
+  const prevMax = Math.max(
+    0,
+    ...(previous?.files ?? []).map((f) =>
+      parseInt(f.evidence_id.split("-E").pop(), 10),
+    ),
+  );
   const width = previous?.evidence_id_width ?? (captures.length > 999 ? 4 : 3);
   let next = prevMax + 1;
 
@@ -220,7 +283,8 @@ async function main() {
     const fr = top ? folderByName.get(top) : null;
     const h = hashes.get(rel);
     const key = `${rel}\u0000${h.sha256}`;
-    const id = prevIds.get(key) ?? evidenceId(config.instance_id, next++, width);
+    const id =
+      prevIds.get(key) ?? evidenceId(config.instance_id, next++, width);
     const filename = parts[parts.length - 1];
     const ts = tsFor(filename);
     return {
@@ -249,16 +313,25 @@ async function main() {
     sha256: docHashes.get(rel).sha256,
     status: "OPERATOR_DOCUMENT",
   }));
-  const archived = [...files.map((f) => f.original_relative_path), ...documents.map((d) => d.original_relative_path)];
-  const expectedSha = new Map([...files, ...documents].map((f) => [f.original_relative_path, f.sha256]));
+  const archived = [
+    ...files.map((f) => f.original_relative_path),
+    ...documents.map((d) => d.original_relative_path),
+  ];
+  const expectedSha = new Map(
+    [...files, ...documents].map((f) => [f.original_relative_path, f.sha256]),
+  );
 
   // ---- 3. Zip ----------------------------------------------------------------
   if (await pathExists(P.archivePath)) {
-    console.error(`FAIL: arhiva există deja și nu se suprascrie: ${P.archivePath}`);
+    console.error(
+      `FAIL: arhiva există deja și nu se suprascrie: ${P.archivePath}`,
+    );
     process.exit(1);
   }
   if (await pathExists(P.archivePath + ".FAILED")) {
-    console.error(`FAIL: există o sigilare eșuată anterior (${P.archivePath}.FAILED). Inspecteaz-o și șterge-o manual înainte de o nouă încercare.`);
+    console.error(
+      `FAIL: există o sigilare eșuată anterior (${P.archivePath}.FAILED). Inspecteaz-o și șterge-o manual înainte de o nouă încercare.`,
+    );
     process.exit(1);
   }
   await fs.mkdir(P.incomingDir, { recursive: true });
@@ -266,7 +339,9 @@ async function main() {
   const listInput = archived.join("\n") + "\n";
   const zipRes = await new Promise((resolve, reject) => {
     import("node:child_process").then(({ spawn }) => {
-      const child = spawn("zip", ["-X", "-D", "-q", P.archivePath, "-@"], { cwd: folder });
+      const child = spawn("zip", ["-X", "-D", "-q", P.archivePath, "-@"], {
+        cwd: folder,
+      });
       let err = "";
       child.stderr.on("data", (d) => (err += d));
       child.on("error", reject);
@@ -287,7 +362,10 @@ async function main() {
   const zipNames = await readZipEntryNames(P.archivePath);
   const expected = archived.map((rel) => Buffer.from(rel, "utf8"));
   verification.zip_entries_match =
-    zipNames.length === expected.length && zipNames.every((n, i) => n.equals(expected[i])) ? "PASS" : "FAIL";
+    zipNames.length === expected.length &&
+    zipNames.every((n, i) => n.equals(expected[i]))
+      ? "PASS"
+      : "FAIL";
 
   const verifyDir = path.join(P.workDir, ".seal-verify");
   await fs.rm(verifyDir, { recursive: true, force: true });
@@ -307,17 +385,27 @@ async function main() {
   verification.zip_hashes_match = zipHashOk ? "PASS" : "FAIL";
 
   const rehash = await hashAll(folder, archived);
-  const nowFiles = (await walkFilesRaw(folder)).filter((f) => !isSystemFile(f, systemPatterns));
+  const nowFiles = (await walkFilesRaw(folder)).filter(
+    (f) => !isSystemFile(f, systemPatterns),
+  );
   verification.source_unchanged =
-    nowFiles.length === archived.length && archived.every((rel) => rehash.get(rel)?.sha256 === expectedSha.get(rel))
+    nowFiles.length === archived.length &&
+    archived.every((rel) => rehash.get(rel)?.sha256 === expectedSha.get(rel))
       ? "PASS"
       : "FAIL";
 
   const failed = Object.entries(verification).filter(([, v]) => v !== "PASS");
   if (failed.length) {
     await fs.rename(P.archivePath, P.archivePath + ".FAILED");
-    console.error(`FAIL: verificarea sigilării: ${failed.map(([k]) => k).join(", ")}. Arhiva a fost redenumită .FAILED.`);
-    await appendLog(P.logPath, { operation: "seal", status: "FAIL", script: SCRIPT, warnings: failed.map(([k]) => k) });
+    console.error(
+      `FAIL: verificarea sigilării: ${failed.map(([k]) => k).join(", ")}. Arhiva a fost redenumită .FAILED.`,
+    );
+    await appendLog(P.logPath, {
+      operation: "seal",
+      status: "FAIL",
+      script: SCRIPT,
+      warnings: failed.map(([k]) => k),
+    });
     process.exit(1);
   }
 
@@ -333,7 +421,10 @@ async function main() {
     capture_count: files.length,
     filename_timestamp: detection.filename_timestamp,
     verification,
-    excluded_system_files: systemFiles.map((p) => ({ path: p, status: "SYSTEM_FILE_EXCLUDED" })),
+    excluded_system_files: systemFiles.map((p) => ({
+      path: p,
+      status: "SYSTEM_FILE_EXCLUDED",
+    })),
     operator_documents: documents,
     files,
   };
@@ -343,13 +434,23 @@ async function main() {
     status: "PASS",
     script: SCRIPT,
     input: folder,
-    output: { archive: P.archivePath, archive_sha256: archiveSha, captures: files.length },
+    output: {
+      archive: P.archivePath,
+      archive_sha256: archiveSha,
+      captures: files.length,
+    },
   });
 
   console.log("\nSIGILARE OK");
-  for (const [k, v] of Object.entries(verification)) console.log(`  ${k}: ${v}`);
-  console.log(`  capturi: ${files.length} (${files[0].evidence_id} … ${files[files.length - 1].evidence_id})`);
-  for (const d of documents) console.log(`  document al operatorului: ${d.document_id} ${d.relative_path_nfc}`);
+  for (const [k, v] of Object.entries(verification))
+    console.log(`  ${k}: ${v}`);
+  console.log(
+    `  capturi: ${files.length} (${files[0].evidence_id} … ${files[files.length - 1].evidence_id})`,
+  );
+  for (const d of documents)
+    console.log(
+      `  document al operatorului: ${d.document_id} ${d.relative_path_nfc}`,
+    );
   console.log(`  archive_sha256: ${archiveSha}`);
   console.log(`  manifest: ${P.manifestPath}`);
 }

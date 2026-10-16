@@ -35,7 +35,13 @@ import {
   CONTINUATION_REF_COLUMN,
 } from "./lib/schema.mjs";
 
-const SENTINEL_LIKE = new Set(["UNKNOWN", "NOT_APPLICABLE", "NOT_VISIBLE", "UNCLASSIFIED", ""]);
+const SENTINEL_LIKE = new Set([
+  "UNKNOWN",
+  "NOT_APPLICABLE",
+  "NOT_VISIBLE",
+  "UNCLASSIFIED",
+  "",
+]);
 
 function normalizeToken(value) {
   return String(value ?? "")
@@ -53,7 +59,11 @@ async function loadPreviousEvidenceIds(outputRoot, slug, mp) {
     const dirPath = path.join(outputRoot, versionDir.name);
     const files = await fsp.readdir(dirPath);
     for (const fname of files) {
-      if (!fname.startsWith(`${slug}_${mp}_evidence-index_v`) || !fname.endsWith(".csv")) continue;
+      if (
+        !fname.startsWith(`${slug}_${mp}_evidence-index_v`) ||
+        !fname.endsWith(".csv")
+      )
+        continue;
       const text = await fsp.readFile(path.join(dirPath, fname), "utf8");
       const rows = parseCsv(text);
       for (const row of rows) {
@@ -82,11 +92,19 @@ function isKnown(value) {
   return !SENTINEL_LIKE.has(value);
 }
 
-function deriveQueryGroupId(entityCode, mp, platform, session, queryId, attempt) {
+function deriveQueryGroupId(
+  entityCode,
+  mp,
+  platform,
+  session,
+  queryId,
+  attempt,
+) {
   if (![platform, session, queryId].every(isKnown)) return "REVIEW_REQUIRED";
   const base = `${entityCode}-${mp}-${normalizeToken(platform)}-${normalizeToken(session)}-${queryId}`;
   const attemptNum = parseInt(attempt, 10);
-  if (Number.isFinite(attemptNum) && attemptNum > 1) return `${base}-A${attemptNum}`;
+  if (Number.isFinite(attemptNum) && attemptNum > 1)
+    return `${base}-A${attemptNum}`;
   return base;
 }
 
@@ -99,7 +117,8 @@ function deriveContinuationFlag(partNumber) {
 
 function deriveCapturedAtIso(date, time, timezone) {
   if (![date, time, timezone].every(isKnown)) return "UNKNOWN";
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time)) return "UNKNOWN";
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time))
+    return "UNKNOWN";
   if (!/^[+-]\d{2}:\d{2}$/.test(timezone)) return "UNKNOWN";
   return `${date}T${time}:00${timezone}`;
 }
@@ -108,14 +127,30 @@ async function main() {
   const configPath = process.argv[2];
   const finalize = process.argv.includes("--finalize");
   if (!configPath) {
-    console.error("Usage: node build_index.mjs <evidence-package.yaml> [--finalize]");
+    console.error(
+      "Usage: node build_index.mjs <evidence-package.yaml> [--finalize]",
+    );
     process.exit(2);
   }
   const config = await readConfig(configPath);
-  const { entity_slug, entity_name, entity_code, measurement_point, metadata_version } = config;
-  const extraColumns = Array.isArray(config.extra_columns) ? config.extra_columns : [];
+  const {
+    entity_slug,
+    entity_name,
+    entity_code,
+    measurement_point,
+    metadata_version,
+  } = config;
+  const extraColumns = Array.isArray(config.extra_columns)
+    ? config.extra_columns
+    : [];
 
-  for (const [k, v] of Object.entries({ entity_slug, entity_name, entity_code, measurement_point, metadata_version })) {
+  for (const [k, v] of Object.entries({
+    entity_slug,
+    entity_name,
+    entity_code,
+    measurement_point,
+    metadata_version,
+  })) {
     if (!v) {
       console.error(`FAIL: config is missing required field "${k}".`);
       process.exit(1);
@@ -123,23 +158,38 @@ async function main() {
   }
 
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
-  const outputRoot = path.resolve("evidence/output", entity_slug, measurement_point);
+  const outputRoot = path.resolve(
+    "evidence/output",
+    entity_slug,
+    measurement_point,
+  );
   const logPath = path.join(workDir, "processing-log.jsonl");
 
   const inventoryPath = path.join(workDir, "inventory.json");
   const classificationPath = path.join(workDir, "classification.csv");
-  if (!(await pathExists(inventoryPath)) || !(await pathExists(classificationPath))) {
-    console.error("FAIL: run inventory_evidence.mjs and hash_evidence.mjs first.");
+  if (
+    !(await pathExists(inventoryPath)) ||
+    !(await pathExists(classificationPath))
+  ) {
+    console.error(
+      "FAIL: run inventory_evidence.mjs and hash_evidence.mjs first.",
+    );
     process.exit(1);
   }
 
   const inventory = await readJson(inventoryPath);
   if (!inventory.files.every((f) => f.sha256)) {
-    console.error("FAIL: inventory.json has files without SHA-256 — run hash_evidence.mjs first.");
+    console.error(
+      "FAIL: inventory.json has files without SHA-256 — run hash_evidence.mjs first.",
+    );
     process.exit(1);
   }
-  const classificationRows = parseCsv(await fsp.readFile(classificationPath, "utf8"));
-  const classByPath = new Map(classificationRows.map((r) => [r["Original relative path"], r]));
+  const classificationRows = parseCsv(
+    await fsp.readFile(classificationPath, "utf8"),
+  );
+  const classByPath = new Map(
+    classificationRows.map((r) => [r["Original relative path"], r]),
+  );
 
   const { map: prevIds, maxByPrefix } = await loadPreviousEvidenceIds(
     outputRoot,
@@ -198,7 +248,9 @@ async function main() {
       row["Query ID"],
       row["Query attempt number"],
     );
-    row["Continuation flag"] = deriveContinuationFlag(row["Capture part number"]);
+    row["Continuation flag"] = deriveContinuationFlag(
+      row["Capture part number"],
+    );
 
     const contRef = row[CONTINUATION_REF_COLUMN];
     delete row[CONTINUATION_REF_COLUMN];
@@ -231,7 +283,8 @@ async function main() {
     row["Duplicate status"] = f.duplicate_status;
     row["Duplicate of Evidence ID"] =
       f.duplicate_status === "DUPLICATE"
-        ? pathToEvidenceId.get(f.duplicate_of_original_relative_path) || "UNKNOWN"
+        ? pathToEvidenceId.get(f.duplicate_of_original_relative_path) ||
+          "UNKNOWN"
         : "NOT_APPLICABLE";
 
     for (const extra of extraColumns) {
@@ -249,7 +302,10 @@ async function main() {
         });
       }
     }
-    if (row["Mapping status"] === "CONFIRMED" && !isKnown(row["Mapping basis"])) {
+    if (
+      row["Mapping status"] === "CONFIRMED" &&
+      !isKnown(row["Mapping basis"])
+    ) {
       issues.push({
         evidence_id: evidenceId,
         original_relative_path: f.original_relative_path,
@@ -267,7 +323,10 @@ async function main() {
         reason: `Contamination status = ${row["Contamination status"]} but Contamination reason is empty`,
       });
     }
-    if (row["Query rewrite observed"] === "YES" && !isKnown(row["Query rewrite text"])) {
+    if (
+      row["Query rewrite observed"] === "YES" &&
+      !isKnown(row["Query rewrite text"])
+    ) {
       issues.push({
         evidence_id: evidenceId,
         original_relative_path: f.original_relative_path,
@@ -295,7 +354,8 @@ async function main() {
   }
 
   const header = [...FULL_HEADER];
-  for (const extra of extraColumns) if (!header.includes(extra)) header.push(extra);
+  for (const extra of extraColumns)
+    if (!header.includes(extra)) header.push(extra);
 
   const stagingPath = path.join(workDir, "evidence-index.staging.csv");
   await writeText(stagingPath, toCsv(header, rows));
@@ -314,11 +374,15 @@ async function main() {
   await writeText(statsPath, JSON.stringify(stats, null, 2) + "\n");
 
   console.log(`Wrote ${stagingPath} (${rows.length} rows).`);
-  console.log(`Wrote ${reviewPath} (${issues.length} items needing attention).`);
+  console.log(
+    `Wrote ${reviewPath} (${issues.length} items needing attention).`,
+  );
   console.log(`Wrote ${statsPath}.`);
   console.log("\nSummary:");
   console.log(`  Total screenshots: ${stats.total}`);
-  console.log(`  Mapped (Mapping status = CONFIRMED): ${stats.mappingConfirmed}`);
+  console.log(
+    `  Mapped (Mapping status = CONFIRMED): ${stats.mappingConfirmed}`,
+  );
   console.log(`  Review required: ${stats.reviewRequired}`);
   console.log(`  Contaminated: ${stats.contaminated}`);
   console.log(`  Control steps: ${stats.controlSteps}`);
@@ -326,7 +390,9 @@ async function main() {
   console.log(`  Anomalies: ${stats.anomalies}`);
   console.log(`  Possible duplicates: ${stats.duplicates}`);
 
-  const blockingUnclassified = issues.filter((i) => i.reason.includes("not yet classified"));
+  const blockingUnclassified = issues.filter((i) =>
+    i.reason.includes("not yet classified"),
+  );
 
   if (finalize) {
     if (blockingUnclassified.length > 0) {
@@ -354,7 +420,10 @@ async function main() {
       input: classificationPath,
       output: finalPath,
       script: "build_index.mjs",
-      warnings: issues.length > 0 ? [`${issues.length} review items remain (non-blocking)`] : [],
+      warnings:
+        issues.length > 0
+          ? [`${issues.length} review items remain (non-blocking)`]
+          : [],
     });
   } else {
     await appendLog(logPath, {
@@ -377,12 +446,18 @@ function computeStats(rows, extraColumns) {
   const queryGroups = new Set();
   const multiPartGroups = new Set();
   for (const r of rows) {
-    byPlatform[r["Observed platform"]] = (byPlatform[r["Observed platform"]] ?? 0) + 1;
+    byPlatform[r["Observed platform"]] =
+      (byPlatform[r["Observed platform"]] ?? 0) + 1;
     bySession[r["Session ID"]] = (bySession[r["Session ID"]] ?? 0) + 1;
-    byContamination[r["Contamination status"]] = (byContamination[r["Contamination status"]] ?? 0) + 1;
-    byAnomaly[r["Archive anomaly"]] = (byAnomaly[r["Archive anomaly"]] ?? 0) + 1;
+    byContamination[r["Contamination status"]] =
+      (byContamination[r["Contamination status"]] ?? 0) + 1;
+    byAnomaly[r["Archive anomaly"]] =
+      (byAnomaly[r["Archive anomaly"]] ?? 0) + 1;
     if (isKnown(r["Query group ID"])) queryGroups.add(r["Query group ID"]);
-    if (isKnown(r["Capture parts total"]) && parseInt(r["Capture parts total"], 10) > 1) {
+    if (
+      isKnown(r["Capture parts total"]) &&
+      parseInt(r["Capture parts total"], 10) > 1
+    ) {
       multiPartGroups.add(r["Query group ID"]);
     }
   }
@@ -395,19 +470,31 @@ function computeStats(rows, extraColumns) {
     anomalyCounts: byAnomaly,
     queryGroupCount: queryGroups.size,
     multiPartQueryGroupCount: multiPartGroups.size,
-    mappingConfirmed: rows.filter((r) => r["Mapping status"] === "CONFIRMED").length,
+    mappingConfirmed: rows.filter((r) => r["Mapping status"] === "CONFIRMED")
+      .length,
     reviewRequired: rows.filter(
-      (r) => r["Mapping status"] === "REVIEW_REQUIRED" || r["Review status"] === "REVIEW_REQUIRED",
+      (r) =>
+        r["Mapping status"] === "REVIEW_REQUIRED" ||
+        r["Review status"] === "REVIEW_REQUIRED",
     ).length,
-    contaminated: rows.filter((r) => r["Contamination status"] === "CONTAMINATED").length,
-    controlSteps: rows.filter((r) => r["Contamination status"] === "CONTROL_STEP").length,
+    contaminated: rows.filter(
+      (r) => r["Contamination status"] === "CONTAMINATED",
+    ).length,
+    controlSteps: rows.filter(
+      (r) => r["Contamination status"] === "CONTROL_STEP",
+    ).length,
     supplemental: rows.filter((r) => r["Query role"] === "supplemental").length,
-    anomalies: rows.filter((r) => isKnown(r["Archive anomaly"]) && r["Archive anomaly"] !== "NONE").length,
-    duplicates: rows.filter((r) => r["Duplicate status"] === "DUPLICATE").length,
+    anomalies: rows.filter(
+      (r) => isKnown(r["Archive anomaly"]) && r["Archive anomaly"] !== "NONE",
+    ).length,
+    duplicates: rows.filter((r) => r["Duplicate status"] === "DUPLICATE")
+      .length,
     excluded: rows.filter((r) =>
-      ["EXCLUDE_FROM_CLEAN_BASELINE", "EXCLUDE_CONTROL_STEP", "ARCHIVE_ONLY_NOT_PRIMARY_ANALYSIS"].includes(
-        r["Analysis inclusion status"],
-      ),
+      [
+        "EXCLUDE_FROM_CLEAN_BASELINE",
+        "EXCLUDE_CONTROL_STEP",
+        "ARCHIVE_ONLY_NOT_PRIMARY_ANALYSIS",
+      ].includes(r["Analysis inclusion status"]),
     ).length,
     extraColumns,
   };

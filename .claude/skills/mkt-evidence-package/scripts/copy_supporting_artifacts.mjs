@@ -11,7 +11,13 @@
 
 import path from "node:path";
 import { promises as fs } from "node:fs";
-import { pathExists, sha256File, appendLog, assertNotFrozen, parseCsv } from "./lib/common.mjs";
+import {
+  pathExists,
+  sha256File,
+  appendLog,
+  assertNotFrozen,
+  parseCsv,
+} from "./lib/common.mjs";
 import { loadConfig, instancePaths, packageFiles } from "./lib/mkt.mjs";
 import { SESSION_COLUMNS } from "./lib/schema.mjs";
 
@@ -31,10 +37,14 @@ async function main() {
   const session = parseCsv(await fs.readFile(P.sessionContextPath, "utf8"));
   const blanks = [];
   for (const r of session) {
-    for (const c of SESSION_COLUMNS) if (!c.optional && (r[c.name] ?? "").trim() === "") blanks.push(`${r.evidence_id}:${c.name}`);
+    for (const c of SESSION_COLUMNS)
+      if (!c.optional && (r[c.name] ?? "").trim() === "")
+        blanks.push(`${r.evidence_id}:${c.name}`);
   }
   if (blanks.length) {
-    console.error(`FAIL: session-context.csv are ${blanks.length} celule necompletate (ex. ${blanks.slice(0, 3).join(", ")}).`);
+    console.error(
+      `FAIL: session-context.csv are ${blanks.length} celule necompletate (ex. ${blanks.slice(0, 3).join(", ")}).`,
+    );
     process.exit(1);
   }
 
@@ -63,8 +73,15 @@ async function main() {
     copied.push(name);
     console.log(`  copiat → ${name}`);
   }
-  await appendLog(P.logPath, { operation: "copy_supporting_artifacts", status: "PASS", script: SCRIPT, output: copied });
-  console.log(`ARTEFACTE DE SUPORT OK — ${copied.length} fișiere în ${P.outputDir}`);
+  await appendLog(P.logPath, {
+    operation: "copy_supporting_artifacts",
+    status: "PASS",
+    script: SCRIPT,
+    output: copied,
+  });
+  console.log(
+    `ARTEFACTE DE SUPORT OK — ${copied.length} fișiere în ${P.outputDir}`,
+  );
 }
 
 main().catch((err) => {

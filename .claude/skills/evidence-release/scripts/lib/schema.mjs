@@ -49,7 +49,12 @@ export const OPTIONAL_BLANK_COLUMNS = new Set([
   "Contamination reason",
 ]);
 
-export const SENTINELS = new Set(["UNKNOWN", "NOT_APPLICABLE", "NOT_VISIBLE", "UNCLASSIFIED"]);
+export const SENTINELS = new Set([
+  "UNKNOWN",
+  "NOT_APPLICABLE",
+  "NOT_VISIBLE",
+  "UNCLASSIFIED",
+]);
 
 export const ENUMS = {
   "Query role": [
@@ -81,7 +86,13 @@ export const ENUMS = {
   ],
   "Query rewrite observed": ["YES", "NO", "UNKNOWN"],
   "Continuation flag": ["YES", "NO", "NOT_APPLICABLE"],
-  "Archive anomaly": ["NONE", "MISFILED_PLATFORM", "MISFILED_SESSION", "UNLABELED", "OTHER"],
+  "Archive anomaly": [
+    "NONE",
+    "MISFILED_PLATFORM",
+    "MISFILED_SESSION",
+    "UNLABELED",
+    "OTHER",
+  ],
 };
 
 // Full Evidence Index column order (§ evidence-schema.md). extra_columns
@@ -132,7 +143,9 @@ export const FULL_HEADER = [
   "Duplicate of Evidence ID",
 ];
 
-export const CLASSIFICATION_KEY_COLUMNS = ["Original relative path", "Original filename"];
+export const CLASSIFICATION_KEY_COLUMNS = [
+  "Original relative path",
+  "Original filename",
+];
 
 export const CONTINUATION_REF_COLUMN = "Continuation of original relative path";
-

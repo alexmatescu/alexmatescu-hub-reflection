@@ -24,7 +24,13 @@ import {
   assertNotFrozen,
 } from "./lib/common.mjs";
 
-const SENTINELS = new Set(["UNKNOWN", "NOT_APPLICABLE", "NOT_VISIBLE", "UNCLASSIFIED", ""]);
+const SENTINELS = new Set([
+  "UNKNOWN",
+  "NOT_APPLICABLE",
+  "NOT_VISIBLE",
+  "UNCLASSIFIED",
+  "",
+]);
 const isKnown = (v) => !SENTINELS.has(v);
 
 function distinctKnown(rows, col) {
@@ -49,46 +55,97 @@ async function main() {
     archive,
     project = "AI Visibility Lab",
   } = config;
-  const extraColumns = Array.isArray(config.extra_columns) ? config.extra_columns : [];
+  const extraColumns = Array.isArray(config.extra_columns)
+    ? config.extra_columns
+    : [];
 
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
-  const outputDir = path.resolve("evidence/output", entity_slug, measurement_point, metadata_version);
+  const outputDir = path.resolve(
+    "evidence/output",
+    entity_slug,
+    measurement_point,
+    metadata_version,
+  );
 
-  const indexFile = artifactFileName(entity_slug, measurement_point, "evidence-index", metadata_version, "csv");
-  const readmeFile = artifactFileName(entity_slug, measurement_point, "readme", metadata_version, "md");
-  const shaFile = artifactFileName(entity_slug, measurement_point, "sha256sums", metadata_version, "txt");
-  const archiveFile = artifactFileName(entity_slug, measurement_point, "evidence-archive", archive.version, "zip");
+  const indexFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "evidence-index",
+    metadata_version,
+    "csv",
+  );
+  const readmeFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "readme",
+    metadata_version,
+    "md",
+  );
+  const shaFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "sha256sums",
+    metadata_version,
+    "txt",
+  );
+  const archiveFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "evidence-archive",
+    archive.version,
+    "zip",
+  );
 
   const indexPath = path.join(outputDir, indexFile);
   if (!(await pathExists(indexPath))) {
-    console.error(`FAIL: ${indexPath} not found — run build_index.mjs --finalize first.`);
+    console.error(
+      `FAIL: ${indexPath} not found — run build_index.mjs --finalize first.`,
+    );
     process.exit(1);
   }
   const rows = parseCsv(await fsp.readFile(indexPath, "utf8"));
 
   const statsPath = path.join(workDir, "index-stats.json");
-  const stats = (await pathExists(statsPath)) ? await readJson(statsPath) : null;
+  const stats = (await pathExists(statsPath))
+    ? await readJson(statsPath)
+    : null;
 
   const platforms = distinctKnown(rows, "Observed platform");
   const evidenceTypes = distinctKnown(rows, "Evidence type");
   const sessions = distinctKnown(rows, "Session ID");
   const hasContamination = rows.some(
-    (r) => isKnown(r["Contamination status"]) && r["Contamination status"] !== "NONE_OBSERVED",
+    (r) =>
+      isKnown(r["Contamination status"]) &&
+      r["Contamination status"] !== "NONE_OBSERVED",
   );
-  const hasAnomalies = rows.some((r) => isKnown(r["Archive anomaly"]) && r["Archive anomaly"] !== "NONE");
+  const hasAnomalies = rows.some(
+    (r) => isKnown(r["Archive anomaly"]) && r["Archive anomaly"] !== "NONE",
+  );
   const hasQuerySet = Boolean(config.query_set?.path);
-  const multiPart = rows.filter((r) => isKnown(r["Capture parts total"]) && parseInt(r["Capture parts total"], 10) > 1);
+  const multiPart = rows.filter(
+    (r) =>
+      isKnown(r["Capture parts total"]) &&
+      parseInt(r["Capture parts total"], 10) > 1,
+  );
   const reviewRequired = rows.filter(
-    (r) => r["Mapping status"] === "REVIEW_REQUIRED" || r["Review status"] === "REVIEW_REQUIRED",
+    (r) =>
+      r["Mapping status"] === "REVIEW_REQUIRED" ||
+      r["Review status"] === "REVIEW_REQUIRED",
   );
   const excluded = rows.filter((r) =>
-    ["EXCLUDE_FROM_CLEAN_BASELINE", "EXCLUDE_CONTROL_STEP", "ARCHIVE_ONLY_NOT_PRIMARY_ANALYSIS"].includes(
-      r["Analysis inclusion status"],
-    ),
+    [
+      "EXCLUDE_FROM_CLEAN_BASELINE",
+      "EXCLUDE_CONTROL_STEP",
+      "ARCHIVE_ONLY_NOT_PRIMARY_ANALYSIS",
+    ].includes(r["Analysis inclusion status"]),
   );
-  const controlSteps = rows.filter((r) => r["Contamination status"] === "CONTROL_STEP");
+  const controlSteps = rows.filter(
+    (r) => r["Contamination status"] === "CONTROL_STEP",
+  );
 
-  const presentExtraColumns = extraColumns.filter((c) => rows.some((r) => isKnown(r[c])));
+  const presentExtraColumns = extraColumns.filter((c) =>
+    rows.some((r) => isKnown(r[c])),
+  );
 
   const today = new Date().toISOString().slice(0, 10);
 
@@ -98,7 +155,9 @@ async function main() {
   lines.push(`Project: ${project}`);
   lines.push(`Case study: ${study_name ?? "N/A"}`);
   lines.push(`Measurement point: ${measurement_point}`);
-  lines.push(`Evidence package version: archive v${archive.version} / metadata v${metadata_version}`);
+  lines.push(
+    `Evidence package version: archive v${archive.version} / metadata v${metadata_version}`,
+  );
   lines.push(`Evidence type(s): ${evidenceTypes.join(", ") || "UNKNOWN"}`);
   lines.push(`Evidence count: ${rows.length}`);
   lines.push(`Publication date: ${today}`);
@@ -113,12 +172,18 @@ async function main() {
 
   lines.push("## 2. Subject");
   lines.push("");
-  lines.push(`**${entity_name}**${study_name ? `, evaluated as part of the "${study_name}" study.` : "."}`);
+  lines.push(
+    `**${entity_name}**${study_name ? `, evaluated as part of the "${study_name}" study.` : "."}`,
+  );
   lines.push("");
 
   lines.push("## 3. Evidence sources");
   lines.push("");
-  lines.push(platforms.length > 0 ? `Platforms observed in this package: ${platforms.join(", ")}.` : "No platform could be determined from the classified evidence.");
+  lines.push(
+    platforms.length > 0
+      ? `Platforms observed in this package: ${platforms.join(", ")}.`
+      : "No platform could be determined from the classified evidence.",
+  );
   lines.push(`Total screenshots/evidence items: ${rows.length}.`);
   lines.push("");
 
@@ -143,9 +208,13 @@ async function main() {
   );
   if (multiPart.length > 0) {
     const groups = new Set(multiPart.map((r) => r["Query group ID"]));
-    lines.push(`This package includes ${groups.size} multi-part query execution(s), covering ${multiPart.length} screenshots.`);
+    lines.push(
+      `This package includes ${groups.size} multi-part query execution(s), covering ${multiPart.length} screenshots.`,
+    );
   } else {
-    lines.push("No multi-part query executions were identified in this package — each query execution is a single screenshot.");
+    lines.push(
+      "No multi-part query executions were identified in this package — each query execution is a single screenshot.",
+    );
   }
   lines.push("");
 
@@ -157,8 +226,12 @@ async function main() {
     lines.push("No canonical query set was provided for this package.");
   }
   const roleCounts = {};
-  for (const r of rows) if (isKnown(r["Query role"])) roleCounts[r["Query role"]] = (roleCounts[r["Query role"]] ?? 0) + 1;
-  const roleLines = Object.entries(roleCounts).map(([role, n]) => `- \`${role}\`: ${n}`);
+  for (const r of rows)
+    if (isKnown(r["Query role"]))
+      roleCounts[r["Query role"]] = (roleCounts[r["Query role"]] ?? 0) + 1;
+  const roleLines = Object.entries(roleCounts).map(
+    ([role, n]) => `- \`${role}\`: ${n}`,
+  );
   if (roleLines.length > 0) {
     lines.push("");
     lines.push("Evidence by query role:");
@@ -176,7 +249,9 @@ async function main() {
       lines.push(`- **${col}**: ${values.join(", ") || "UNKNOWN"}`);
     }
   } else {
-    lines.push("No structured experimental-condition columns were declared for this package.");
+    lines.push(
+      "No structured experimental-condition columns were declared for this package.",
+    );
   }
   lines.push("");
 
@@ -185,15 +260,21 @@ async function main() {
     lines.push("");
     const contamCounts = {};
     for (const r of rows) {
-      if (isKnown(r["Contamination status"]) && r["Contamination status"] !== "NONE_OBSERVED") {
-        contamCounts[r["Contamination status"]] = (contamCounts[r["Contamination status"]] ?? 0) + 1;
+      if (
+        isKnown(r["Contamination status"]) &&
+        r["Contamination status"] !== "NONE_OBSERVED"
+      ) {
+        contamCounts[r["Contamination status"]] =
+          (contamCounts[r["Contamination status"]] ?? 0) + 1;
       }
     }
     for (const [status, n] of Object.entries(contamCounts)) {
       lines.push(`- \`${status}\`: ${n} evidence item(s).`);
     }
     if (controlSteps.length > 0) {
-      lines.push(`- Of these, ${controlSteps.length} are documented control steps (\`CONTROL_STEP\`), not contamination of the primary analysis.`);
+      lines.push(
+        `- Of these, ${controlSteps.length} are documented control steps (\`CONTROL_STEP\`), not contamination of the primary analysis.`,
+      );
     }
     lines.push("");
     lines.push(
@@ -208,14 +289,19 @@ async function main() {
     const anomalyCounts = {};
     for (const r of rows) {
       if (isKnown(r["Archive anomaly"]) && r["Archive anomaly"] !== "NONE") {
-        anomalyCounts[r["Archive anomaly"]] = (anomalyCounts[r["Archive anomaly"]] ?? 0) + 1;
+        anomalyCounts[r["Archive anomaly"]] =
+          (anomalyCounts[r["Archive anomaly"]] ?? 0) + 1;
       }
     }
     for (const [anomaly, n] of Object.entries(anomalyCounts)) {
-      lines.push(`- \`${anomaly}\`: ${n} evidence item(s) — see \`Archive platform folder\` vs. \`Observed platform\` and \`Notes\` per row in the index.`);
+      lines.push(
+        `- \`${anomaly}\`: ${n} evidence item(s) — see \`Archive platform folder\` vs. \`Observed platform\` and \`Notes\` per row in the index.`,
+      );
     }
     lines.push("");
-    lines.push("The archive itself was not reorganized or corrected — only documented.");
+    lines.push(
+      "The archive itself was not reorganized or corrected — only documented.",
+    );
     lines.push("");
   }
 
@@ -236,19 +322,38 @@ async function main() {
   lines.push("## 13. Experimental limitations");
   lines.push("");
   const limitLines = [];
-  if (reviewRequired.length > 0) limitLines.push(`- ${reviewRequired.length} evidence item(s) remain marked \`REVIEW_REQUIRED\` for mapping or review status.`);
-  if (excluded.length > 0) limitLines.push(`- ${excluded.length} evidence item(s) are excluded from the clean analysis baseline (control steps, non-primary, or archive-only) — see \`Analysis inclusion status\`.`);
-  const dupCount = rows.filter((r) => r["Duplicate status"] === "DUPLICATE").length;
-  if (dupCount > 0) limitLines.push(`- ${dupCount} byte-identical duplicate file(s) were found and retained (not removed) — see \`Duplicate status\`.`);
-  if (!hasQuerySet) limitLines.push("- No canonical query set was available to cross-check Query IDs against.");
-  if (limitLines.length === 0) limitLines.push("- No unresolved review items, exclusions, or duplicates were identified at the time this package was finalized.");
+  if (reviewRequired.length > 0)
+    limitLines.push(
+      `- ${reviewRequired.length} evidence item(s) remain marked \`REVIEW_REQUIRED\` for mapping or review status.`,
+    );
+  if (excluded.length > 0)
+    limitLines.push(
+      `- ${excluded.length} evidence item(s) are excluded from the clean analysis baseline (control steps, non-primary, or archive-only) — see \`Analysis inclusion status\`.`,
+    );
+  const dupCount = rows.filter(
+    (r) => r["Duplicate status"] === "DUPLICATE",
+  ).length;
+  if (dupCount > 0)
+    limitLines.push(
+      `- ${dupCount} byte-identical duplicate file(s) were found and retained (not removed) — see \`Duplicate status\`.`,
+    );
+  if (!hasQuerySet)
+    limitLines.push(
+      "- No canonical query set was available to cross-check Query IDs against.",
+    );
+  if (limitLines.length === 0)
+    limitLines.push(
+      "- No unresolved review items, exclusions, or duplicates were identified at the time this package was finalized.",
+    );
   lines.push(...limitLines);
   lines.push("");
 
   lines.push("## 14. Relationship to study");
   lines.push("");
   lines.push("```");
-  lines.push("Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation");
+  lines.push(
+    "Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation",
+  );
   lines.push("```");
   lines.push("");
   lines.push(
@@ -273,7 +378,11 @@ async function main() {
 
   lines.push("## 17. Publisher");
   lines.push("");
-  lines.push(project === "AI Visibility Lab" ? "AI Visibility Lab\ndelamatescu.ro/lab" : project);
+  lines.push(
+    project === "AI Visibility Lab"
+      ? "AI Visibility Lab\ndelamatescu.ro/lab"
+      : project,
+  );
   lines.push("");
 
   const readmePath = path.join(outputDir, readmeFile);

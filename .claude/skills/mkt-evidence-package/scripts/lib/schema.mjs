@@ -15,40 +15,132 @@ export const SESSION_COLUMNS = [
   { name: "evidence_id", source: "PREFILL" },
   { name: "original_relative_path", source: "PREFILL" },
   { name: "mapped_surface", source: "PREFILL" },
-  { name: "observed_surface", applies: "ALL", enum: null, sentinels: ["UNKNOWN"] },
-  { name: "ui_frame_visible", applies: "ALL", enum: ["FULL", "PARTIAL", "CONTENT_ONLY"] },
-  { name: "browser_observed", applies: "ALL", enum: null, sentinels: ["NATIVE_APP", "NOT_VISIBLE"] },
-  { name: "private_window_observed", applies: "BROWSER", enum: ["YES", "NO", "NOT_VISIBLE"] },
-  { name: "private_window_basis", applies: "BROWSER", basisFor: "private_window_observed" },
-  { name: "account_state_observed", applies: "ALL", enum: ["LOGGED_IN", "LOGGED_OUT", "NOT_VISIBLE"] },
-  { name: "account_state_basis", applies: "ALL", basisFor: "account_state_observed" },
-  { name: "account_identity_visible", applies: "ALL", enum: ["YES", "NO", "NOT_APPLICABLE"] },
-  { name: "account_tier_observed", applies: "AI", enum: null, sentinels: ["NOT_VISIBLE"] },
+  {
+    name: "observed_surface",
+    applies: "ALL",
+    enum: null,
+    sentinels: ["UNKNOWN"],
+  },
+  {
+    name: "ui_frame_visible",
+    applies: "ALL",
+    enum: ["FULL", "PARTIAL", "CONTENT_ONLY"],
+  },
+  {
+    name: "browser_observed",
+    applies: "ALL",
+    enum: null,
+    sentinels: ["NATIVE_APP", "NOT_VISIBLE"],
+  },
+  {
+    name: "private_window_observed",
+    applies: "BROWSER",
+    enum: ["YES", "NO", "NOT_VISIBLE"],
+  },
+  {
+    name: "private_window_basis",
+    applies: "BROWSER",
+    basisFor: "private_window_observed",
+  },
+  {
+    name: "account_state_observed",
+    applies: "ALL",
+    enum: ["LOGGED_IN", "LOGGED_OUT", "NOT_VISIBLE"],
+  },
+  {
+    name: "account_state_basis",
+    applies: "ALL",
+    basisFor: "account_state_observed",
+  },
+  {
+    name: "account_identity_visible",
+    applies: "ALL",
+    enum: ["YES", "NO", "NOT_APPLICABLE"],
+  },
+  {
+    name: "account_tier_observed",
+    applies: "AI",
+    enum: null,
+    sentinels: ["NOT_VISIBLE"],
+  },
   // Locația se notează pe toate suprafețele: Gemini și AI Mode o pot afișa în interfață.
-  { name: "location_displayed", applies: "ALL", enum: null, sentinels: ["NOT_VISIBLE"] },
+  {
+    name: "location_displayed",
+    applies: "ALL",
+    enum: null,
+    sentinels: ["NOT_VISIBLE"],
+  },
   {
     name: "location_source",
     applies: "ALL",
-    enum: ["FOOTER", "LOCAL_MODULE", "SETTINGS", "AI_INTERFACE", "RESPONSE_TEXT", "OTHER", "NOT_APPLICABLE"],
+    enum: [
+      "FOOTER",
+      "LOCAL_MODULE",
+      "SETTINGS",
+      "AI_INTERFACE",
+      "RESPONSE_TEXT",
+      "OTHER",
+      "NOT_APPLICABLE",
+    ],
   },
-  { name: "ui_language_observed", applies: "ALL", enum: null, sentinels: ["NOT_VISIBLE"] },
+  {
+    name: "ui_language_observed",
+    applies: "ALL",
+    enum: null,
+    sentinels: ["NOT_VISIBLE"],
+  },
   {
     name: "conversation_mode_observed",
     applies: "AI",
-    enum: ["TEMPORARY", "NEW_CONVERSATION", "EXISTING_CONVERSATION", "NOT_VISIBLE"],
+    enum: [
+      "TEMPORARY",
+      "NEW_CONVERSATION",
+      "EXISTING_CONVERSATION",
+      "NOT_VISIBLE",
+    ],
   },
-  { name: "conversation_mode_basis", applies: "AI", basisFor: "conversation_mode_observed" },
-  { name: "prior_turns_visible", applies: "AI", enum: ["YES", "NO", "NOT_VISIBLE"] },
-  { name: "history_sidebar_visible", applies: "AI", enum: ["YES", "NO", "NOT_VISIBLE"] },
-  { name: "model_displayed", applies: "AI", enum: null, sentinels: ["NOT_VISIBLE"] },
+  {
+    name: "conversation_mode_basis",
+    applies: "AI",
+    basisFor: "conversation_mode_observed",
+  },
+  {
+    name: "prior_turns_visible",
+    applies: "AI",
+    enum: ["YES", "NO", "NOT_VISIBLE"],
+  },
+  {
+    name: "history_sidebar_visible",
+    applies: "AI",
+    enum: ["YES", "NO", "NOT_VISIBLE"],
+  },
+  {
+    name: "model_displayed",
+    applies: "AI",
+    enum: null,
+    sentinels: ["NOT_VISIBLE"],
+  },
   {
     name: "special_mode_observed",
     applies: "AI",
     enum: ["NONE_VISIBLE", "DEEP_RESEARCH", "AGENT", "REASONING", "OTHER"],
   },
-  { name: "web_search_indicator", applies: "AI", enum: ["VISIBLE", "NOT_VISIBLE"] },
-  { name: "memory_indicator", applies: "AI", enum: null, sentinels: ["NOT_VISIBLE"] },
-  { name: "attached_context_visible", applies: "AI", enum: ["YES", "NOT_VISIBLE"] },
+  {
+    name: "web_search_indicator",
+    applies: "AI",
+    enum: ["VISIBLE", "NOT_VISIBLE"],
+  },
+  {
+    name: "memory_indicator",
+    applies: "AI",
+    enum: null,
+    sentinels: ["NOT_VISIBLE"],
+  },
+  {
+    name: "attached_context_visible",
+    applies: "AI",
+    enum: ["YES", "NOT_VISIBLE"],
+  },
   {
     name: "contamination_status",
     applies: "ALL",
@@ -56,8 +148,16 @@ export const SESSION_COLUMNS = [
   },
   { name: "contamination_types", applies: "ALL", listEnum: true },
   { name: "contamination_basis", applies: "ALL" },
-  { name: "privacy_flag", applies: "ALL", enum: ["NONE_OBSERVED", "PRIVACY_REVIEW_REQUIRED", "PRIVACY_CONFIRMED"] },
-  { name: "review_status", applies: "ALL", enum: ["REVIEWED", "REVIEW_REQUIRED"] },
+  {
+    name: "privacy_flag",
+    applies: "ALL",
+    enum: ["NONE_OBSERVED", "PRIVACY_REVIEW_REQUIRED", "PRIVACY_CONFIRMED"],
+  },
+  {
+    name: "review_status",
+    applies: "ALL",
+    enum: ["REVIEWED", "REVIEW_REQUIRED"],
+  },
   { name: "notes", applies: "ALL", optional: true },
 ];
 
@@ -71,7 +171,12 @@ export const CONTAMINATION_TYPES = [
   "OTHER",
 ];
 
-export const CONTAMINATION_SEVERITY = ["CONTAMINATED", "SUSPECTED", "NONE_OBSERVED", "NOT_ASSESSABLE"];
+export const CONTAMINATION_SEVERITY = [
+  "CONTAMINATED",
+  "SUSPECTED",
+  "NONE_OBSERVED",
+  "NOT_ASSESSABLE",
+];
 
 /** Câmpurile de stare agregate pe suprafață / execuție (session-context-schema.md §4). */
 export const AGGREGATED_STATE_FIELDS = [
@@ -135,7 +240,6 @@ export const CAPTURE_CLASSIFICATION_HEADER = [
   "reviewer_comment",
   "notes",
 ];
-
 
 // ---------------------------------------------------------------------------
 // Observation staging (observation-register-schema.md) — completat de Claude/user

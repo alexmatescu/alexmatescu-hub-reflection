@@ -32,7 +32,9 @@ async function main() {
   const logPath = path.join(workDir, "processing-log.jsonl");
 
   if (!(await pathExists(inventoryPath))) {
-    console.error(`FAIL: ${inventoryPath} not found — run inventory_evidence.mjs first.`);
+    console.error(
+      `FAIL: ${inventoryPath} not found — run inventory_evidence.mjs first.`,
+    );
     process.exit(1);
   }
 
@@ -53,7 +55,9 @@ async function main() {
     ]);
     const dims = parseImageDimensions(headerBuf);
     file.sha256 = sha256;
-    file.image_dimensions_pixels = dims ? `${dims.width}x${dims.height}` : "UNKNOWN";
+    file.image_dimensions_pixels = dims
+      ? `${dims.width}x${dims.height}`
+      : "UNKNOWN";
 
     if (bySha.has(sha256)) {
       file.duplicate_status = "DUPLICATE";
@@ -67,27 +71,41 @@ async function main() {
   }
 
   // Write back merged into the same file map keyed by original inventory order.
-  const bySortedPath = new Map(sortedFiles.map((f) => [f.original_relative_path, f]));
-  inventory.files = inventory.files.map((f) => bySortedPath.get(f.original_relative_path));
+  const bySortedPath = new Map(
+    sortedFiles.map((f) => [f.original_relative_path, f]),
+  );
+  inventory.files = inventory.files.map((f) =>
+    bySortedPath.get(f.original_relative_path),
+  );
   inventory.hashed_at = new Date().toISOString();
 
   await writeJson(inventoryPath, inventory);
 
-  const dupCount = sortedFiles.filter((f) => f.duplicate_status === "DUPLICATE").length;
-  const unknownDims = sortedFiles.filter((f) => f.image_dimensions_pixels === "UNKNOWN").length;
+  const dupCount = sortedFiles.filter(
+    (f) => f.duplicate_status === "DUPLICATE",
+  ).length;
+  const unknownDims = sortedFiles.filter(
+    (f) => f.image_dimensions_pixels === "UNKNOWN",
+  ).length;
 
   console.log(`Hashed ${processed} files.`);
   console.log(`Duplicate (byte-identical) files: ${dupCount}`);
   console.log(`Files with unrecognized image dimensions: ${unknownDims}`);
   if (dupCount > 0) {
-    console.log("Duplicates are NOT deleted — marked in inventory.json / Evidence Index only.");
+    console.log(
+      "Duplicates are NOT deleted — marked in inventory.json / Evidence Index only.",
+    );
   }
 
   await appendLog(logPath, {
     operation: "hash_evidence",
     status: "PASS",
     input: inventoryPath,
-    output: { fileCount: processed, duplicates: dupCount, unknownDimensions: unknownDims },
+    output: {
+      fileCount: processed,
+      duplicates: dupCount,
+      unknownDimensions: unknownDims,
+    },
     script: "hash_evidence.mjs",
     warnings: [],
   });

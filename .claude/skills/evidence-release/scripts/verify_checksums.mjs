@@ -13,7 +13,13 @@
 // Usage: node verify_checksums.mjs <evidence-package.yaml>
 
 import path from "node:path";
-import { readConfig, pathExists, verifyChecksumManifest, appendLog, artifactFileName } from "./lib/common.mjs";
+import {
+  readConfig,
+  pathExists,
+  verifyChecksumManifest,
+  appendLog,
+  artifactFileName,
+} from "./lib/common.mjs";
 
 async function main() {
   const configPath = process.argv[2];
@@ -24,11 +30,24 @@ async function main() {
   const config = await readConfig(configPath);
   const { entity_slug, measurement_point, metadata_version } = config;
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
-  const outputDir = path.resolve("evidence/output", entity_slug, measurement_point, metadata_version);
-  const shaFile = artifactFileName(entity_slug, measurement_point, "sha256sums", metadata_version, "txt");
+  const outputDir = path.resolve(
+    "evidence/output",
+    entity_slug,
+    measurement_point,
+    metadata_version,
+  );
+  const shaFile = artifactFileName(
+    entity_slug,
+    measurement_point,
+    "sha256sums",
+    metadata_version,
+    "txt",
+  );
 
   if (!(await pathExists(path.join(outputDir, shaFile)))) {
-    console.error(`FAIL: ${shaFile} not found in ${outputDir} — run build_checksums.mjs (STEP 10) first.`);
+    console.error(
+      `FAIL: ${shaFile} not found in ${outputDir} — run build_checksums.mjs (STEP 10) first.`,
+    );
     process.exit(1);
   }
 
