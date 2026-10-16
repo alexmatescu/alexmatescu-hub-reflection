@@ -65,6 +65,13 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 - [Studii de caz (AVL-350)](https://delamatescu.ro/lab/studii-de-caz): aplicări reale ale metodologiei, cu dovezi, limite și rezultate publicate integral
 - [Experimente publice (AVL-301)](https://delamatescu.ro/lab/experimente-publice): ipoteze declarate dinainte, rezultate publicate indiferent dacă le confirmă sau le infirmă
 
+## Market Discovery (seria MKT-RO-AIV)
+
+- [Market Discovery](https://delamatescu.ro/lab/market-discovery): aceleași întrebări despre servicii de GEO, AEO și AI Visibility în România, puse pe Google, Bing, AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot; entități candidate numărate din capturi, înainte de Market Verification
+- [Pilotul 3 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-3): 8 întrebări × 8 suprafețe, 227 de capturi, 174 de entități candidate în bază, 241 cumulat pe cei trei piloți
+- [Pilotul 2 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-2): 4 întrebări × 8 suprafețe rulate din România, 84 de entități candidate în bază
+- [Pilotul 1 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-1): 4 întrebări × 8 suprafețe rulate din Italia, 91 de entități candidate în bază
+
 ## Articole GEO/AEO și AI Search
 
 - [Toate articolele (AVL-401)](https://delamatescu.ro/lab/articole): indexul analizelor despre GEO, AEO, SEO, AI Search și citarea surselor

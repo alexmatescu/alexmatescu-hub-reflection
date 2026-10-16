@@ -74,7 +74,7 @@ export const labNav: LabPage[] = [
       {
         to: "/lab/metodologie/protocol-delimitare-piata-eligibilitate",
         label: "AVL-MKT-001 — Market Scope & Eligibility Protocol",
-        lead: "Draft pentru revizuire, v0.9.2. Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification și regulile de constituire a Market Reference Set.",
+        lead: "Draft pentru revizuire, v0.10.0. Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification, publicarea registrelor și regulile de constituire a Market Reference Set.",
       },
     ],
   },
@@ -93,6 +93,28 @@ export const labNav: LabPage[] = [
         label:
           "Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search",
         lead: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini și Perplexity rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice.",
+      },
+    ],
+  },
+  {
+    to: "/lab/market-discovery",
+    label: "Market Discovery",
+    lead: "Seria MKT-RO-AIV: aceleași întrebări despre servicii de GEO, AEO și AI Visibility puse pe 8 suprafețe de căutare și AI, cu fiecare nume afișat capturat, clasificat și numărat.",
+    children: [
+      {
+        to: "/lab/market-discovery/2026q4-pilot-3",
+        label: "Pilotul 3 — 2026Q4",
+        lead: "Cele 8 întrebări nerulate anterior, pe 8 suprafețe: 64 de execuții, 174 de entități candidate în bază.",
+      },
+      {
+        to: "/lab/market-discovery/2026q4-pilot-2",
+        label: "Pilotul 2 — 2026Q4",
+        lead: "Aceleași 4 întrebări ca pilotul 1, rulate din România: 32 de execuții, 84 de entități candidate în bază.",
+      },
+      {
+        to: "/lab/market-discovery/2026q4-pilot-1",
+        label: "Pilotul 1 — 2026Q4",
+        lead: "Primul test al procedurii, rulat din Italia: 32 de execuții, 91 de entități candidate în bază.",
       },
     ],
   },

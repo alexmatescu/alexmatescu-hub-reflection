@@ -1,0 +1,7150 @@
+{
+  "slug": "2026q4-pilot-2",
+  "packageSlug": "mkt-ro-aiv-2026q4-pilot-2",
+  "instanceId": "MKT-RO-AIV-2026Q4-PILOT-2",
+  "label": "Pilotul 2",
+  "querySetId": "MKT-RO-AIV-DISCOVERY-v0.1.0",
+  "packageVersion": "1.0",
+  "reportVersion": "0.1",
+  "release": {
+    "tag": "mkt-evidence-mkt-ro-aiv-2026q4-pilot-2-v1.0",
+    "published": false
+  },
+  "integrity": {
+    "mkt-ro-aiv-2026q4-pilot-2_capture-index_v1.0.csv": "a47c1b5399aa7e8f65a3282ad08312f818e4f057bfa9a5ca031c91f1edad8a91",
+    "mkt-ro-aiv-2026q4-pilot-2_observation-register_v1.0.csv": "9729a46e9b46fc491a79351eef3e5f877cef504e3f284850ae58d0ff28260e84",
+    "mkt-ro-aiv-2026q4-pilot-2_query-set_MKT-RO-AIV-DISCOVERY-v0.1.0.csv": "ade5414fff973f24f97e3957fa2c54fce0bda8cd4e24a5d048c9d084ffd1d747",
+    "mkt-ro-aiv-2026q4-pilot-2_run-sheet_v1.0.yaml": "5fae245852b03bd742a58eeae7a7025291b0c19eb2dbfdaa13f4a3cceb5a9c5f",
+    "mkt-ro-aiv-2026q4-pilot-2_session-context_v1.0.csv": "c75c4bffb39be66445cea9f71263424808f288ef3ef1759d0ee797c7609d4cd6",
+    "mkt-ro-aiv-2026q4-pilot-2_capture-archive_v1.0.zip": "7386715a6788a086a2e88533fded1c689a701c5d2c9a61b296f54c86184a2d29"
+  },
+  "sessions": [
+    {
+      "id": "WS1",
+      "date": null,
+      "start": null,
+      "end": null,
+      "location": "România, Sibiu",
+      "reportedLocation": "Brașov",
+      "network": "Wi-Fi Vodafone (nu rețeaua standard Digi)"
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q-DISC-001",
+      "text": "Cine oferă servicii GEO (Generative Engine Optimization) pentru firme din România?",
+      "class": "TERM",
+      "layer": "CORE-CANDIDATE"
+    },
+    {
+      "id": "Q-DISC-006",
+      "text": "Cine poate ajuta o firmă din România să fie menționată sau recomandată în răspunsurile asistenților AI?",
+      "class": "PROBLEM",
+      "layer": "CORE-CANDIDATE"
+    },
+    {
+      "id": "Q-DISC-009",
+      "text": "Ce consultanți independenți oferă servicii de vizibilitate în răspunsurile AI pentru firme din România?",
+      "class": "PROVIDER",
+      "layer": "CORE-CANDIDATE"
+    },
+    {
+      "id": "Q-DISC-011",
+      "text": "Cine oferă servicii de monitorizare a mențiunilor și citărilor brandurilor din România în răspunsurile AI?",
+      "class": "SERVICE",
+      "layer": "CORE-CANDIDATE"
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "GSEARCH",
+      "captures": 35,
+      "date": null,
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [
+        "România · Brașov - Din adresa IP"
+      ],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "BSEARCH",
+      "captures": 12,
+      "date": null,
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "GAIMODE",
+      "captures": 8,
+      "date": null,
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "CHATGPT",
+      "captures": 20,
+      "date": null,
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "CLAUDE",
+      "captures": 7,
+      "date": null,
+      "accountState": null,
+      "privateWindow": null,
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "GEMINI",
+      "captures": 9,
+      "date": null,
+      "accountState": null,
+      "privateWindow": null,
+      "newConversationPerQuery": null,
+      "locationDisplayed": [
+        "Brașov, România · Pe baza adresei IP"
+      ],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "PERPLEXITY",
+      "captures": 9,
+      "date": null,
+      "accountState": null,
+      "privateWindow": null,
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "COPILOT",
+      "captures": 9,
+      "date": null,
+      "accountState": null,
+      "privateWindow": null,
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    }
+  ],
+  "totals": {
+    "captures": 109,
+    "executions": 32,
+    "observations": 545,
+    "include": 338,
+    "entitiesBase": 84,
+    "entitiesExtended": 102,
+    "entitiesUncertainOnly": 9,
+    "executionsWithoutCandidates": 4,
+    "sessionConflicts": 0,
+    "contamination": {
+      "NONE_OBSERVED": 109
+    }
+  },
+  "summary": [
+    "**Toate cele 32 de execuții sunt complete și toate au observații.** Patru nu au candidați: AI Mode, Claude, Gemini și Copilot la Q-DISC-006. Răspunsurile lor descriu tipuri de furnizori și numesc doar platforme (Google Business Profile, LinkedIn, Reddit etc.) sau doar surse.",
+    "**Cele 338 de rânduri INCLUDE se reduc la 84 de entități candidate în bază** (Google până la poziția 20, Bing organic, cele 6 suprafețe AI). Cu AI Overview, răspunsul generat Bing, reclamele și Google 21–29 sunt 102. Intervalul defensabil e **80–84 în bază și 98–111 cu explorarea și cazurile incerte**.",
+    "**AI Overview contează.** Numește 29 de entități. 9 dintre ele nu apar nicăieri altundeva, iar alte 3 apar doar în răspunsul generat Bing sau într-o reclamă.",
+    "**Fiecare query și fiecare suprafață aduc entități exclusive**, ca în pilotul 1. Q-DISC-011 aduce mai ales instrumente software (18 din 36), Q-DISC-009 toate cele 9 persoane.",
+    "**Două rulări ale acelorași query-uri se suprapun puțin.** Din 127 de entități găsite în bază de cei doi piloți, doar 48 apar în amândoi (Jaccard 0,38). Q-DISC-006 e cel mai instabil: 13 entități în fiecare pilot, doar 3 comune.",
+    "**Ce se repetă e previzibil.** Entitățile văzute în pilotul 1 în cel puțin două combinații query × suprafață au fost regăsite aproape toate (33 din 35). Cele văzute o singură dată au fost regăsite în 27% din cazuri (15 din 56).",
+    "**Rularea din România a schimbat Search-ul.** Pe Google, Q-DISC-011 are 55% rezultate irelevante (90% în pilotul 1). Pe Bing, 006 și 011 au devenit mult mai relevante. Q-DISC-006 și 009 rămân dominate de rezultate irelevante pe Google."
+  ],
+  "errata": [],
+  "matrix": [
+    {
+      "query": "Q-DISC-001",
+      "cells": {
+        "GSEARCH": 9,
+        "BSEARCH": 7,
+        "GAIMODE": 10,
+        "CHATGPT": 7,
+        "CLAUDE": 3,
+        "GEMINI": 6,
+        "PERPLEXITY": 8,
+        "COPILOT": 7
+      },
+      "union": 30
+    },
+    {
+      "query": "Q-DISC-006",
+      "cells": {
+        "GSEARCH": 2,
+        "BSEARCH": 2,
+        "GAIMODE": 0,
+        "CHATGPT": 5,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 6,
+        "COPILOT": 0
+      },
+      "union": 13
+    },
+    {
+      "query": "Q-DISC-009",
+      "cells": {
+        "GSEARCH": 2,
+        "BSEARCH": 5,
+        "GAIMODE": 9,
+        "CHATGPT": 6,
+        "CLAUDE": 4,
+        "GEMINI": 9,
+        "PERPLEXITY": 8,
+        "COPILOT": 12
+      },
+      "union": 37
+    },
+    {
+      "query": "Q-DISC-011",
+      "cells": {
+        "GSEARCH": 6,
+        "BSEARCH": 2,
+        "GAIMODE": 6,
+        "CHATGPT": 7,
+        "CLAUDE": 11,
+        "GEMINI": 10,
+        "PERPLEXITY": 8,
+        "COPILOT": 13
+      },
+      "union": 36
+    }
+  ],
+  "byQuery": [
+    {
+      "group": "Q-DISC-001",
+      "entities": 30,
+      "exclusive": 15,
+      "entitiesExtended": 37,
+      "exclusiveExtended": 20
+    },
+    {
+      "group": "Q-DISC-006",
+      "entities": 13,
+      "exclusive": 8,
+      "entitiesExtended": 22,
+      "exclusiveExtended": 12
+    },
+    {
+      "group": "Q-DISC-009",
+      "entities": 37,
+      "exclusive": 20,
+      "entitiesExtended": 43,
+      "exclusiveExtended": 24
+    },
+    {
+      "group": "Q-DISC-011",
+      "entities": 36,
+      "exclusive": 22,
+      "entitiesExtended": 40,
+      "exclusiveExtended": 25
+    }
+  ],
+  "bySurface": [
+    {
+      "group": "GSEARCH",
+      "entities": 17,
+      "exclusive": 6,
+      "entitiesExtended": 43,
+      "exclusiveExtended": 21
+    },
+    {
+      "group": "BSEARCH",
+      "entities": 15,
+      "exclusive": 3,
+      "entitiesExtended": 18,
+      "exclusiveExtended": 5
+    },
+    {
+      "group": "GAIMODE",
+      "entities": 22,
+      "exclusive": 2,
+      "entitiesExtended": 22,
+      "exclusiveExtended": 1
+    },
+    {
+      "group": "CHATGPT",
+      "entities": 18,
+      "exclusive": 5,
+      "entitiesExtended": 18,
+      "exclusiveExtended": 5
+    },
+    {
+      "group": "CLAUDE",
+      "entities": 15,
+      "exclusive": 8,
+      "entitiesExtended": 15,
+      "exclusiveExtended": 8
+    },
+    {
+      "group": "GEMINI",
+      "entities": 22,
+      "exclusive": 8,
+      "entitiesExtended": 22,
+      "exclusiveExtended": 7
+    },
+    {
+      "group": "PERPLEXITY",
+      "entities": 21,
+      "exclusive": 5,
+      "entitiesExtended": 21,
+      "exclusiveExtended": 5
+    },
+    {
+      "group": "COPILOT",
+      "entities": 30,
+      "exclusive": 14,
+      "entitiesExtended": 30,
+      "exclusiveExtended": 14
+    }
+  ],
+  "byFamily": [
+    {
+      "group": "SEARCH_ORGANIC",
+      "entities": 26,
+      "exclusive": 10,
+      "entitiesExtended": 51,
+      "exclusiveExtended": 28
+    },
+    {
+      "group": "AI_SURFACES",
+      "entities": 74,
+      "exclusive": 58,
+      "entitiesExtended": 74,
+      "exclusiveExtended": 51
+    }
+  ],
+  "breadth": [
+    {
+      "dimension": "surfaces",
+      "n": 1,
+      "entities": 51
+    },
+    {
+      "dimension": "surfaces",
+      "n": 2,
+      "entities": 15
+    },
+    {
+      "dimension": "surfaces",
+      "n": 3,
+      "entities": 5
+    },
+    {
+      "dimension": "surfaces",
+      "n": 4,
+      "entities": 6
+    },
+    {
+      "dimension": "surfaces",
+      "n": 5,
+      "entities": 3
+    },
+    {
+      "dimension": "surfaces",
+      "n": 6,
+      "entities": 3
+    },
+    {
+      "dimension": "surfaces",
+      "n": 7,
+      "entities": 1
+    },
+    {
+      "dimension": "surfaces",
+      "n": 8,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 1,
+      "entities": 65
+    },
+    {
+      "dimension": "queries",
+      "n": 2,
+      "entities": 8
+    },
+    {
+      "dimension": "queries",
+      "n": 3,
+      "entities": 9
+    },
+    {
+      "dimension": "queries",
+      "n": 4,
+      "entities": 2
+    }
+  ],
+  "executions": [
+    {
+      "surface": "GSEARCH",
+      "query": "Q-DISC-001",
+      "captures": 7,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 46,
+      "include": 32,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 14,
+      "excludeUncertain": 0,
+      "entitiesBase": 9,
+      "entitiesExtended": 20,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-DISC-006",
+      "captures": 9,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 44,
+      "include": 13,
+      "excludeIrrelevant": 24,
+      "excludeNotProvider": 6,
+      "excludeUncertain": 1,
+      "entitiesBase": 2,
+      "entitiesExtended": 9,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-DISC-009",
+      "captures": 11,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 44,
+      "include": 16,
+      "excludeIrrelevant": 25,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 1,
+      "entitiesBase": 2,
+      "entitiesExtended": 12,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-DISC-011",
+      "captures": 8,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 56,
+      "include": 19,
+      "excludeIrrelevant": 22,
+      "excludeNotProvider": 10,
+      "excludeUncertain": 5,
+      "entitiesBase": 6,
+      "entitiesExtended": 11,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-DISC-001",
+      "captures": 4,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 16,
+      "include": 11,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 5,
+      "excludeUncertain": 0,
+      "entitiesBase": 7,
+      "entitiesExtended": 8,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-DISC-006",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 15,
+      "include": 4,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 11,
+      "excludeUncertain": 0,
+      "entitiesBase": 2,
+      "entitiesExtended": 4,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-DISC-009",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 17,
+      "include": 11,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 6,
+      "excludeUncertain": 0,
+      "entitiesBase": 5,
+      "entitiesExtended": 5,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-DISC-011",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 11,
+      "include": 2,
+      "excludeIrrelevant": 3,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 4,
+      "entitiesBase": 2,
+      "entitiesExtended": 2,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-DISC-001",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 16,
+      "include": 15,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 0,
+      "entitiesBase": 10,
+      "entitiesExtended": 10,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-DISC-006",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 7,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 7,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-DISC-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 13,
+      "include": 10,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 9,
+      "entitiesExtended": 9,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-DISC-011",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 11,
+      "include": 7,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 4,
+      "excludeUncertain": 0,
+      "entitiesBase": 6,
+      "entitiesExtended": 6,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-DISC-001",
+      "captures": 6,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 18,
+      "include": 12,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 6,
+      "excludeUncertain": 0,
+      "entitiesBase": 7,
+      "entitiesExtended": 7,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-DISC-006",
+      "captures": 5,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 9,
+      "include": 8,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 0,
+      "entitiesBase": 5,
+      "entitiesExtended": 5,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-DISC-009",
+      "captures": 4,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 10,
+      "include": 7,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 6,
+      "entitiesExtended": 6,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-DISC-011",
+      "captures": 5,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 11,
+      "include": 9,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 0,
+      "entitiesBase": 7,
+      "entitiesExtended": 7,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-DISC-001",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 8,
+      "include": 5,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 3,
+      "entitiesExtended": 3,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-DISC-006",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 3,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-DISC-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 11,
+      "include": 5,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 6,
+      "excludeUncertain": 0,
+      "entitiesBase": 4,
+      "entitiesExtended": 4,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-DISC-011",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 20,
+      "include": 14,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 6,
+      "excludeUncertain": 0,
+      "entitiesBase": 11,
+      "entitiesExtended": 11,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-DISC-001",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 13,
+      "include": 12,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 0,
+      "entitiesBase": 6,
+      "entitiesExtended": 6,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-DISC-006",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 4,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 4,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-DISC-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 14,
+      "include": 14,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 9,
+      "entitiesExtended": 9,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-DISC-011",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 18,
+      "include": 16,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 0,
+      "entitiesBase": 10,
+      "entitiesExtended": 10,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-DISC-001",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 15,
+      "include": 14,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 0,
+      "entitiesBase": 8,
+      "entitiesExtended": 8,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-DISC-006",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 14,
+      "include": 12,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 0,
+      "entitiesBase": 6,
+      "entitiesExtended": 6,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-DISC-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 12,
+      "include": 10,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 0,
+      "entitiesBase": 8,
+      "entitiesExtended": 8,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-DISC-011",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 15,
+      "include": 12,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 8,
+      "entitiesExtended": 8,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-DISC-001",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 14,
+      "include": 14,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 7,
+      "entitiesExtended": 7,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-DISC-006",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 3,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-DISC-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 16,
+      "include": 14,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 0,
+      "entitiesBase": 12,
+      "entitiesExtended": 12,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-DISC-011",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 21,
+      "include": 20,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 0,
+      "entitiesBase": 13,
+      "entitiesExtended": 13,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    }
+  ],
+  "entities": [
+    {
+      "id": "CE-001",
+      "key": "upswing",
+      "name": "Upswing",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI",
+        "COPILOT"
+      ],
+      "cells": 5,
+      "observations": 10,
+      "recommendedOn": [
+        "GAIMODE",
+        "GEMINI",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://upswing.ro › geo-generative-engine-optimizatio...",
+          "evidence": [
+            "E002",
+            "E003"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "24",
+          "evidence": [
+            "E006"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E048"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E048",
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E083"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E083"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E107"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E107",
+            "E109"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-002",
+      "key": "space-media",
+      "name": "Space Media",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 7,
+      "observations": 15,
+      "recommendedOn": [
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "1",
+          "url": "https://spacemedia.ro › Servicii",
+          "evidence": [
+            "E002"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "GENERATED_ANSWER",
+          "recommended": true,
+          "evidence": [
+            "E036"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "GENERATED_ANSWER",
+          "evidence": [
+            "E036"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://spacemedia.ro › servicii › geo",
+          "evidence": [
+            "E037"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E048"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E053"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E083"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E083"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E083"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E092"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-003",
+      "key": "grai",
+      "name": "gr.AI",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-006",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "cells": 13,
+      "observations": 18,
+      "recommendedOn": [
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://gr-ai.ro › ...",
+          "evidence": [
+            "E002"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "6",
+          "evidence": [
+            "E010",
+            "E011"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "1",
+          "url": "https://gr-ai.ro › ai",
+          "evidence": [
+            "E036"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E048"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E048"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "gr-ai.ro",
+          "evidence": [
+            "E056"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "gr-ai.ro",
+          "evidence": [
+            "E063"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "gr-ai.ro",
+          "evidence": [
+            "E068"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E083"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E107"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E107"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-004",
+      "key": "trifu-media",
+      "name": "Trifu Media",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "cells": 2,
+      "observations": 6,
+      "recommendedOn": [
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "22",
+          "url": "https://trifumedia.com › Servicii",
+          "evidence": [
+            "E006"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E018"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E048"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E094"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-005",
+      "key": "klain",
+      "name": "Klain",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "cells": 6,
+      "observations": 14,
+      "recommendedOn": [
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "4",
+          "url": "https://klain.ro › ai",
+          "evidence": [
+            "E029",
+            "E030"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E055"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E055"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E084"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E084"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E088"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E087"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E089"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E089",
+            "E091"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-006",
+      "key": "mda-digital",
+      "name": "MDA Digital",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GEMINI"
+      ],
+      "cells": 2,
+      "observations": 5,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "6",
+          "url": "https://mda-digital.com › servicii › optimizare-geo",
+          "evidence": [
+            "E002",
+            "E003"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E083"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E083"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-007",
+      "key": "limitless",
+      "name": "Limitless Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 7,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E005"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E007"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E088"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-008",
+      "key": "suportremote",
+      "name": "SuportRemote",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E001"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E001"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-009",
+      "key": "servicii-seo-bucuresti",
+      "name": "Servicii SEO Bucuresti",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [
+        "GAIMODE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "12",
+          "url": "https://serviciiseobucuresti.ro › optimizare-pentru-ai",
+          "evidence": [
+            "E004"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E049"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-010",
+      "key": "iagency",
+      "name": "iAgency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "14",
+          "url": "https://www.iagency.ro › optimizare-pentru-ai-geo",
+          "evidence": [
+            "E004"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-011",
+      "key": "ai-engine-optim",
+      "name": "AI Engine Optim",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "cells": 4,
+      "observations": 6,
+      "recommendedOn": [
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "16",
+          "evidence": [
+            "E004",
+            "E005"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E018"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://aiengineoptim.ro › servicii-geo",
+          "evidence": [
+            "E037"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://aiengineoptim.ro › home-of-geo",
+          "evidence": [
+            "E037"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E048"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-012",
+      "key": "danco-vision",
+      "name": "Danco Vision",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E101"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E101"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-013",
+      "key": "seoexpert-bg",
+      "name": "SEOexpert.bg",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "18",
+          "url": "https://seoexpert.bg › blogs › ai-tech-news › генеративн...",
+          "evidence": [
+            "E005"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-014",
+      "key": "gregoire",
+      "name": "GRÉGOIRE",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "20",
+          "url": "https://gregoire.ro › pages › agentie-geo-generative-eng...",
+          "evidence": [
+            "E006"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-015",
+      "key": "seo-ai",
+      "name": "SEO AI",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "21",
+          "url": "https://seo-ai.ro",
+          "evidence": [
+            "E006"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-016",
+      "key": "qognition",
+      "name": "Qognition Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "23",
+          "url": "https://www.qognitionagency.com › ...",
+          "evidence": [
+            "E006"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-017",
+      "key": "seozilla",
+      "name": "seozilla.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "25",
+          "url": "https://seozilla.ro › Servicii SEO",
+          "evidence": [
+            "E006"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-018",
+      "key": "vivinet",
+      "name": "VIVINET",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "BSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "cells": 6,
+      "observations": 12,
+      "recommendedOn": [
+        "GAIMODE",
+        "CHATGPT",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "26",
+          "url": "https://vivinet.ro › geo-aeo",
+          "evidence": [
+            "E006",
+            "E007"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "7",
+          "url": "https://vivinet.ro › geo-aeo",
+          "evidence": [
+            "E044"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E058"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E058"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E099"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-019",
+      "key": "lineagrafica",
+      "name": "Línea Gráfica",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "27",
+          "url": "https://www.lineagrafica.es › pages › agentie-geo",
+          "evidence": [
+            "E007"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-020",
+      "key": "advolve",
+      "name": "Advolve Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "CHATGPT"
+      ],
+      "cells": 2,
+      "observations": 4,
+      "recommendedOn": [
+        "GAIMODE",
+        "CHATGPT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "28",
+          "url": "https://advolve.ro › Servicii",
+          "evidence": [
+            "E007"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E058"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E058"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-021",
+      "key": "groway",
+      "name": "Groway",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "BSEARCH",
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 4,
+      "observations": 8,
+      "recommendedOn": [
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "29",
+          "url": "https://www.groway.ro › Toate serviciile",
+          "evidence": [
+            "E007"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "10",
+          "url": "https://www.groway.ro › servicii › geo",
+          "evidence": [
+            "E038",
+            "E039"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E053"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E088"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E088"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E093"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E093"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-022",
+      "key": "logicon",
+      "name": "Logicon",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 4,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E008",
+            "E009"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://www.logicon.ro › Prețuri",
+          "evidence": [
+            "E010"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "10",
+          "url": "https://www.logicon.ro › Prețuri",
+          "evidence": [
+            "E012"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-023",
+      "key": "marketing-lab",
+      "name": "Marketing Lab",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "CLAUDE",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "CLAUDE",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "cells": 6,
+      "observations": 10,
+      "recommendedOn": [
+        "GAIMODE",
+        "CLAUDE",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E008",
+            "E009"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E053"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E076"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E082"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E082"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-024",
+      "key": "seo-cherry",
+      "name": "SEO Cherry",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-025",
+      "key": "neogenio",
+      "name": "Neogenio",
+      "type": "ORGANIZATION",
+      "class": "MIXED",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "cells": 0,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "seo.neogenio.ai › optimizare-seo › ai",
+          "evidence": [
+            "E036"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-026",
+      "key": "aiventure",
+      "name": "AiVenture",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E008"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-028",
+      "key": "nicoleta-ion",
+      "name": "Nicoleta Ion",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 4,
+      "observations": 5,
+      "recommendedOn": [
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E017"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E052"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E067"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E087"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-029",
+      "key": "aientity",
+      "name": "aientity.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "GAIMODE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E017"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E053"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-030",
+      "key": "marketos",
+      "name": "Marketos",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E017"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-031",
+      "key": "mindgrid",
+      "name": "Mindgrid",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E017"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-032",
+      "key": "smarters",
+      "name": "SMARTERS",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "cells": 2,
+      "observations": 4,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E018"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://smarters.ro › Servicii",
+          "evidence": [
+            "E020",
+            "E021"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "1",
+          "url": "https://smarters.ro › servicii › vizibilitate-ai",
+          "evidence": [
+            "E043"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "6",
+          "url": "https://smarters.ro › servicii › vizibilitate-ai › audit",
+          "evidence": [
+            "E044"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-033",
+      "key": "plum-media",
+      "name": "Plum Media",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "CLAUDE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "CLAUDE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 9,
+      "observations": 15,
+      "recommendedOn": [
+        "GAIMODE",
+        "CLAUDE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E018"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "3",
+          "evidence": [
+            "E019"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "11",
+          "evidence": [
+            "E022"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "21",
+          "url": "https://www.plummedia.ro › vizibilitate-ai",
+          "evidence": [
+            "E025"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "1",
+          "evidence": [
+            "E029"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "3",
+          "evidence": [
+            "E043"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "4",
+          "evidence": [
+            "E044"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "8",
+          "evidence": [
+            "E044"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E053"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E055"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E081"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-034",
+      "key": "clinica-de-marketing",
+      "name": "Clinica de Marketing",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E018"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-035",
+      "key": "allsoft",
+      "name": "ALLSoft Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E018"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-037",
+      "key": "raul-lazar",
+      "name": "Raul Lazăr",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "BSEARCH",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "cells": 4,
+      "observations": 8,
+      "recommendedOn": [
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "23",
+          "url": "https://www.raullazar.ro › servicii-ai-search",
+          "evidence": [
+            "E025"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "6",
+          "url": "https://www.raullazar.ro › servicii-geo",
+          "evidence": [
+            "E037"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E087"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E087",
+            "E088"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E097"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-038",
+      "key": "aipromovareseo",
+      "name": "aipromovareseo.ro",
+      "type": "ORGANIZATION",
+      "class": "UNCLEAR",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "25",
+          "url": "https://aipromovareseo.ro › Servicii SEO",
+          "evidence": [
+            "E025"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-039",
+      "key": "geoflux",
+      "name": "GEOflux",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "CLAUDE",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "CLAUDE",
+        "PERPLEXITY"
+      ],
+      "cells": 6,
+      "observations": 7,
+      "recommendedOn": [
+        "GAIMODE",
+        "CLAUDE",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": "REL-05 PARTNER_OF → CE-050",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "5",
+          "evidence": [
+            "E030",
+            "E031"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://www.geoflux.ai › ro",
+          "evidence": [
+            "E046"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E054"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E079"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E081"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-040",
+      "key": "brandscan",
+      "name": "BrandScan",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "CLAUDE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "CLAUDE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 6,
+      "observations": 11,
+      "recommendedOn": [
+        "GAIMODE",
+        "CHATGPT",
+        "CLAUDE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": "REL-01 DEVELOPS ← CE-041",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://www.brandscan.ro",
+          "evidence": [
+            "E029"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "3",
+          "evidence": [
+            "E029"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "15",
+          "url": "https://www.brandscan.ro",
+          "evidence": [
+            "E032"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E054"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "brandscan.ro",
+          "evidence": [
+            "E072"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E072"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "brandscan.ro",
+          "evidence": [
+            "E081"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E081"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-041",
+      "key": "nextchapter",
+      "name": "NextChapter",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 3,
+      "observations": 6,
+      "recommendedOn": [
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": "REL-01 DEVELOPS → CE-040",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E054"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E099"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-042",
+      "key": "x-house",
+      "name": "X-HOUSE",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E028",
+            "E029"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-043",
+      "key": "snsys",
+      "name": "SNSYS",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E028",
+            "E029"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-045",
+      "key": "devoratorii",
+      "name": "Devoratorii de Marketing",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "8",
+          "url": "https://devoratoriidemarketing.ro › servicii-marketing",
+          "evidence": [
+            "E030",
+            "E031"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-046",
+      "key": "united-media-services",
+      "name": "United Media Services",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "11",
+          "evidence": [
+            "E032"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-050",
+      "key": "privatebrands",
+      "name": "Private Brands",
+      "type": "ORGANIZATION",
+      "class": "UNCLEAR",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": "REL-05 PARTNER_OF ← CE-039",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "26",
+          "url": "https://www.privatebrands.ro",
+          "evidence": [
+            "E035"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-052",
+      "key": "webbase",
+      "name": "WebBase",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "BSEARCH",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "BSEARCH",
+        "COPILOT"
+      ],
+      "cells": 3,
+      "observations": 5,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "7",
+          "url": "https://webbase.ro › optimizare-geo",
+          "evidence": [
+            "E038"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E101"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E101",
+            "E102"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-053",
+      "key": "seo-365",
+      "name": "SEO 365",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "BSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "BSEARCH",
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "cells": 7,
+      "observations": 12,
+      "recommendedOn": [
+        "GAIMODE",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "9",
+          "url": "https://seo365.ro › servicii › geo-aeo",
+          "evidence": [
+            "E038",
+            "E039"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E058"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E088"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E088"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E099"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E101"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E101"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-054",
+      "key": "bluedot",
+      "name": "BlueDot Fusion",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "BSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "GENERATED_ANSWER",
+          "recommended": true,
+          "evidence": [
+            "E040"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-055",
+      "key": "360-business-tour",
+      "name": "360 Business Tour",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "BSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "GENERATED_ANSWER",
+          "recommended": true,
+          "evidence": [
+            "E040"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-056",
+      "key": "wikiforai",
+      "name": "WikiForAI",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://wikiforai.ro",
+          "evidence": [
+            "E041"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-057",
+      "key": "rekomai",
+      "name": "rekomai.ro",
+      "type": "ORGANIZATION",
+      "class": "UNCLEAR",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "7",
+          "url": "https://rekomai.ro › studii",
+          "evidence": [
+            "E041"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-058",
+      "key": "citabil",
+      "name": "Citabil",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "BSEARCH",
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "BSEARCH",
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "cells": 6,
+      "observations": 11,
+      "recommendedOn": [
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "GENERATED_ANSWER",
+          "recommended": true,
+          "evidence": [
+            "E043"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "GENERATED_ANSWER",
+          "evidence": [
+            "E043"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://citabil.ro › servicii",
+          "evidence": [
+            "E043"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "9",
+          "url": "https://citabil.ro › despre",
+          "evidence": [
+            "E045"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://citabil.ro › servicii",
+          "evidence": [
+            "E046"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E052"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E099"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E099"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-059",
+      "key": "melead",
+      "name": "melead.ai",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://melead.ai",
+          "evidence": [
+            "E044"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-062",
+      "key": "mario-grigorescu",
+      "name": "Mario Grigorescu",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "cells": 2,
+      "observations": 3,
+      "recommendedOn": [
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": "REL-02 FOUNDER_OF → CE-063",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E052"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E052",
+            "E053"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-063",
+      "key": "agent-promovator",
+      "name": "Agent Promovator",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GAIMODE",
+        "COPILOT"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": "REL-02 FOUNDER_OF ← CE-062",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E052"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-064",
+      "key": "blind-spot",
+      "name": "Blind Spot",
+      "type": "PRODUCT",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GAIMODE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "GAIMODE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E054"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-065",
+      "key": "outglow",
+      "name": "Outglow",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "CHATGPT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E057"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E057"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-066",
+      "key": "targetweb",
+      "name": "TargetWeb",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 4,
+      "observations": 6,
+      "recommendedOn": [
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E057"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E057"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "targetweb.ro",
+          "evidence": [
+            "E068"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E089"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E092"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-067",
+      "key": "websem",
+      "name": "WebSEM",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-006",
+        "Q-DISC-009",
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CHATGPT",
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CHATGPT",
+        "CLAUDE"
+      ],
+      "cells": 5,
+      "observations": 10,
+      "recommendedOn": [
+        "CHATGPT",
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E057"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E057"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "websem.ro",
+          "evidence": [
+            "E063"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E063"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "websem.ro",
+          "evidence": [
+            "E068"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E068"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "websem.ro/servicii/aeo",
+          "evidence": [
+            "E072"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E072"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E081"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E081"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-068",
+      "key": "meltwater",
+      "name": "Meltwater",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_IMAGE_TEXT",
+          "evidence": [
+            "E063"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-069",
+      "key": "fujix",
+      "name": "Fujix Optimization",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006",
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT"
+      ],
+      "cells": 2,
+      "observations": 3,
+      "recommendedOn": [
+        "CHATGPT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "fujix-optimization.com",
+          "evidence": [
+            "E064"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E064"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "fujix-optimization.com",
+          "evidence": [
+            "E068"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-070",
+      "key": "simplifyweb",
+      "name": "SimplifyWeb",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "CHATGPT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "simplifyweb.ro",
+          "evidence": [
+            "E064"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E064"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-071",
+      "key": "razvan-c",
+      "name": "Răzvan C.",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "CHATGPT"
+      ],
+      "identityFlags": "IDENTITY_INCOMPLETE",
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E068"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-072",
+      "key": "peec",
+      "name": "Peec AI",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CHATGPT",
+        "CLAUDE",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT",
+        "CLAUDE",
+        "COPILOT"
+      ],
+      "cells": 3,
+      "observations": 3,
+      "recommendedOn": [
+        "CHATGPT",
+        "CLAUDE",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "peec.ai",
+          "evidence": [
+            "E072"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E082"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-073",
+      "key": "otterly",
+      "name": "Otterly.AI",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "otterly.ai",
+          "evidence": [
+            "E073"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-074",
+      "key": "profound",
+      "name": "Profound",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "tryprofound.com",
+          "evidence": [
+            "E073"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-075",
+      "key": "ahrefs-brand-radar",
+      "name": "Ahrefs Brand Radar",
+      "type": "PRODUCT",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CHATGPT",
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CHATGPT",
+        "CLAUDE"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [
+        "CHATGPT",
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "ahrefs.com/brand-radar",
+          "evidence": [
+            "E073"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E082"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-076",
+      "key": "promptwatch",
+      "name": "Promptwatch",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT",
+        "COPILOT"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E072",
+            "E073"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-077",
+      "key": "pronet-design",
+      "name": "Pronet Design",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001",
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 2,
+      "observations": 3,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "url": "pronetdesign.ro",
+          "evidence": [
+            "E076"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CLAUDE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E076"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E079"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-078",
+      "key": "devcommx",
+      "name": "DevCommX",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E076"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "CLAUDE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E076"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-079",
+      "key": "marius-calugaru",
+      "name": "Marius Ovidiu Călugăru",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": "REL-03 FOUNDER_OF → CE-080",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E079"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "CLAUDE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E079"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-080",
+      "key": "perspektive-vision",
+      "name": "Perspektive Vision",
+      "type": "ORGANIZATION",
+      "class": "UNCLEAR",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": "REL-03 FOUNDER_OF ← CE-079",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E079"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-081",
+      "key": "mangools",
+      "name": "Mangools",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E082"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-082",
+      "key": "spyfu",
+      "name": "SpyFu",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E082"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-083",
+      "key": "xfunnel",
+      "name": "xfunnel.ai",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E082"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-084",
+      "key": "am-i-on-ai",
+      "name": "Am I On AI?",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E082"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-085",
+      "key": "the-moon-agency",
+      "name": "The Moon Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E084"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E084"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-086",
+      "key": "alin-manea",
+      "name": "Alin Manea",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E087"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-087",
+      "key": "george-hadambu",
+      "name": "George Hădâmbu",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E087"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-088",
+      "key": "dwf",
+      "name": "DWF",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E088"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E088"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-089",
+      "key": "kadd",
+      "name": "KADD",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E089",
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E089",
+            "E090"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-090",
+      "key": "brandmentions",
+      "name": "BrandMentions",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GEMINI",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "GEMINI",
+        "COPILOT"
+      ],
+      "cells": 2,
+      "observations": 4,
+      "recommendedOn": [
+        "GEMINI",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E108",
+            "E109"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-091",
+      "key": "getmentions",
+      "name": "GetMentions AI",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E090"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E090"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-092",
+      "key": "govisible",
+      "name": "GoVisible.ai",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "GEMINI"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "GEMINI",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E090"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-093",
+      "key": "agentiegeo",
+      "name": "agentiegeo.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": "REL-04 POSSIBLE_SAME_AS ← CE-099",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E092"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E092"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-094",
+      "key": "fiber-it",
+      "name": "Fiber IT",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E094",
+            "E095"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-095",
+      "key": "vicentra",
+      "name": "Vicentra",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E094"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-096",
+      "key": "amplify",
+      "name": "Amplify",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-006"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E094"
+          ]
+        },
+        {
+          "query": "Q-DISC-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E094"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-097",
+      "key": "daniel-stanica",
+      "name": "Daniel Stănică",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "cells": 2,
+      "observations": 4,
+      "recommendedOn": [
+        "PERPLEXITY",
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E097",
+            "E098"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        },
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-098",
+      "key": "cristian-cochintu",
+      "name": "Cristian Cochintu",
+      "type": "PERSON",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E097"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-099",
+      "key": "geo-agency",
+      "name": "GEO Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": "REL-04 POSSIBLE_SAME_AS → CE-093",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E101"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E101"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-100",
+      "key": "aysa",
+      "name": "AYSA",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E101"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E101"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-101",
+      "key": "seomoz",
+      "name": "SEOMOZ",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E101"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E101"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-102",
+      "key": "ra-studio",
+      "name": "RA Studio",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-001"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E101"
+          ]
+        },
+        {
+          "query": "Q-DISC-001",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E101"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-103",
+      "key": "tuya-digital",
+      "name": "TUYA Digital",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-104",
+      "key": "ewdigital",
+      "name": "EWdigital",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-105",
+      "key": "the-markers",
+      "name": "The Markers",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-106",
+      "key": "weryon",
+      "name": "Weryon",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-107",
+      "key": "mixtazure",
+      "name": "Mixtazure",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-009"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-009",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-108",
+      "key": "seochatgpt",
+      "name": "seochatgpt.ro",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E107"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E107",
+            "E109"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-109",
+      "key": "omniflux",
+      "name": "Omniflux",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        },
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-110",
+      "key": "cloro",
+      "name": "Cloro",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-111",
+      "key": "cognizo",
+      "name": "Cognizo",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-DISC-011"
+      ],
+      "surfaces": [
+        "COPILOT"
+      ],
+      "surfacesExtended": [
+        "COPILOT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "COPILOT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-DISC-011",
+          "surface": "COPILOT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E108"
+          ]
+        }
+      ]
+    }
+  ],
+  "evidenceSha": {
+    "E001": "9381139b5c2f8f0dc7539222cf1d36a59cbc68347d3e65c760ab32dcdd84d455",
+    "E002": "ef86f11c52f01dcb7624fa44c050e0fad1e4b3d2f91444e6873c5a22b99ccacb",
+    "E003": "715c636e24845a1f520cd3d843d715d7bcf34b72bc8f31235563598f8ac7f186",
+    "E004": "e6b0145c89fbe33489e4ee178d827acf3839f0d803024448c7e118187d334c6d",
+    "E005": "7cc8f76089b38b11aa031772b464709de58a4ffb704b9b8fd6afda6f7e09dcb3",
+    "E006": "164031e718d4df2c9daf34b60c33264e8d64c2855715f166fbe786f2d85cc3cd",
+    "E007": "0c40f0be2db0e4ac5578e3394886356841461f4eb0f86f71e4ead39b37028964",
+    "E008": "277740e61aae2c341eb6b80d0b5085a20c32d4d4f30bb4ab52d2c4f4750e8f54",
+    "E009": "66d42f83a51676d3a17d87c1091278f9bbf9961843a81bacf0053877e4591db1",
+    "E010": "c35e207c623cf5304b5aeaa33f41d62024eea2104fd187da525abf5bef539ce9",
+    "E011": "830e61cd950284b4914f43a374bd8b0f8e489c8db6212f2c32b9352db440484e",
+    "E012": "4edd3661dddd76a3f793b4381f6c46cbf867cad9c6fd5b98000599ef95b9f7e9",
+    "E013": "8a8249623e5d2a0ff2ccc8637b7a4f2a8893529d837049cac7cbb660763bf42f",
+    "E014": "968fa0d3c73693ddede36abc3be1660acc4024f302f86e42c81824f16a563d59",
+    "E015": "9517353211802b83da7db43cbbefd905ee7b756483b4eee8c8d569657f37c6b7",
+    "E016": "65342f23242337101c52d4a6ac61add0dde705f8c1f88f8707fe555f0cf0c776",
+    "E017": "f9dd394c74210287ad6f61f1be8c2a26a8f1edfd6fb3d7731485d7548c63ff16",
+    "E018": "9147140beb7fddafeb9d3b37b1e247c70a966449ef2e3ec6d94625f4066856a1",
+    "E019": "70b45475e8beeae458fcd842b5b9de36c6dc9c98ae9900b8c9791669329b6923",
+    "E020": "d4cb4dfe67b46d22cbfb473c548241fd996317c13ad607745cc38502249ac400",
+    "E021": "8f3abcc70d0af8043dc87b1980276b8d867a3e268866794fe69674411a6bd402",
+    "E022": "52eb8d55ea2b9b3c5622381a947ea919f99ed175b1a6aad41ae88420ecf8b6f8",
+    "E023": "602e9449e0867d2081e26fcc6f48bce1fea2d948ddb5030f6e796f8d707c12db",
+    "E024": "f3f46664613241760dce84f4abbf33b31a57e9f75ee6c3d0d523b90559164781",
+    "E025": "cfe75c1c203b780958b5d30855a7e42d9658d10a331dce12fe44a75c77ccf24c",
+    "E026": "d93ba6e77147ddef298dca5fcd5e4c91b8a21e2b07607929ef3af46ddbe2854d",
+    "E027": "765d0806a351843896de15446b79e547f90ecdca0a130f0f802af862480182dd",
+    "E028": "61cf1ac9864da8ae667e1701c0d3d7be9e5b0ee887f1ad485eaa03077195503e",
+    "E029": "f3ae93a9d579332cc882bcbc8488d9ee72b9ae4a5386337438d8e3e5bc5d8ca1",
+    "E030": "0557ef2573ad24952380386ebca18c2a304773087d5ba9c22cc15c1aa8a595ba",
+    "E031": "a1076302bccbdb24920eec89ccfb17f08d1791e9fa39449e8677e7c93727bb1e",
+    "E032": "38d0d8eb4a6bd9e318a09e5057b725d64224edcc1f4c3d6e5571eeb0a98afcb3",
+    "E033": "9bd08a341bcc3e3a5a9e09de6d93d3cb152762d28a704bb638801cff62496cbf",
+    "E034": "6a1199799c71efc4858587bc8aeb93590f31894b3aa3fdb87984774e359e9cb0",
+    "E035": "0956eb2f32d508dfae46c327e099486ccb241bab6503de7bc195d6e8ff70c280",
+    "E036": "6f806eadf5264e4b1c3c65a3bdd131c3a1ad74b41b4ae7c3c3fe89ceeca7d8f8",
+    "E037": "7e88660260966b2321ff3fb3becbd00a4bf29e3ee81d07c7029c5d976f93badd",
+    "E038": "1a580886c8f30fd371a32494b241f24bc35df108a12997d2a2f5aaa8060f211d",
+    "E039": "11e5a6f434b7d8f11b8ed4e1a400d30cd462fddb1f65ee3aeeaacc5f08247a88",
+    "E040": "9d4b1df236830c209fced372323a702d8595fe68436a27a3dc0188372757915c",
+    "E041": "4d11980669018da00de2b8a58f3468bceef1c09d5997912ef9d53d72c00ca57b",
+    "E042": "3165e1867daff091e7665b2fa1270e3cfe895245c764e3cea765f62037d11619",
+    "E043": "33eaa46ea10b61bb4eb9638f04a6e32dd088f8a53d6ccfea057b3e049e66da8f",
+    "E044": "d1eefb538e656caac62d4e1ddc3068566df805069b7bfedd16f56a9fd6cdc316",
+    "E045": "affff45625beaa7b48b82b8a031c2625d7b2154c7b2e67c0c6ed0235dfe77369",
+    "E046": "ac0473f9e1fb0fb3c40d30b6add4ed59c84a9f0a28dafc23058448be72d7bdda",
+    "E047": "72a997f46b7ed1904f9a9116d80cdf64da0738c640d8550ff5375d8d04fc1049",
+    "E048": "2f952168aa37cd62defab009e57d5c51674638a128147756e8a709f3eeabdb4d",
+    "E049": "6b563d0a7d308064d5903a5e703a3f0a8a08b306a1c0ca46740f83f2dcd4226b",
+    "E050": "826b950168f80d7d6e7a647c4832b1963768a3d4e025a7670c43f9205cf5e74b",
+    "E051": "cfd4fb9c3645c8f170dbfe35a8f97532288fc4488850a813702ed22e494894ba",
+    "E052": "b905854173a52fc7679f1f9f53b562946a947c72abf53f7e887097357a161666",
+    "E053": "22e558ba2afbffacce6c2b8469b61fbf5697ce58663df94d5f8e3e740265dcff",
+    "E054": "32c79f5485cffc7b53d1ae9ba529cfe8b9603c7b719d74ef2347497ac8087b27",
+    "E055": "99519c02ef8f0c95e9ca4fd0ec50ef31c787e69e73b1fe850b8cfd652efa0d2b",
+    "E056": "7426a509987ec03bea93e0cc9ce95a5595938f618f7e324bfdda40a6a0f9a733",
+    "E057": "9743092777bf564a3ecaea469b57aa08962dcc291020d6058f62204ac7959ffa",
+    "E058": "a4f19bbc2a7f33c6a09e0f5d0e9792092c7dba38b169628c61bc16ea277d0752",
+    "E059": "cf4ee3502573336d20c321f4d6d00445c6d6880b662159080a64bc7259d9ac19",
+    "E060": "fa996f652ab16bd7b3a982ff8809804493290f29f196bdbb0bdbb32d54e7a32f",
+    "E061": "a8ec015ed882ed3d824d10d85460d85f4e9c1eb6eee9dabb4034b59d921132c5",
+    "E062": "7c9901d7e6b764a3f6ea4208fdd7d740cbb3dc8904f1b627a748fa243b8660c9",
+    "E063": "14e79c69fa0f2285422890962cf7a0235d8f0aafd106a50dd0c4f347be4d912a",
+    "E064": "5c13955db955b17f2b120e3c8740a071fbf7d6e14085b0aa2ded1a0929a906ef",
+    "E065": "8b89238fee6242bec7bc003462ca56ed679b52deb8ffb91c82520e5f69e9ae42",
+    "E066": "3236edfde183480b89d4582e2a697bdc1c6b0897c2d22c50d1acbf41eb9e25e0",
+    "E067": "0f5637a2d9e87e7abaecadfa84843e2f709ee1d7bba6a4943adaae2e42a34b52",
+    "E068": "ad29ca45dc7843dfda5a3b6b357d2cac58422df47a4239f07621dde2b57c4cd1",
+    "E069": "c365d38e6ec6ed3d146d6faddf3ff461f43c9cdb088ea9d0f1bf75cee7a85285",
+    "E070": "c2d11fe349cb72d8f7031d9d176ea7207405cd03d14eedf620d1a29f4ae11d57",
+    "E071": "794f802e3f7338cdd1a37e1f85d058ad96cabcc988664c2612e7e624b9c4ae0a",
+    "E072": "84726529ccca611f21157876ea42a4cec9d9a144bc39d9e4ae4c83d619da4923",
+    "E073": "9b4583372ad2c96b1cd84311044e638957e4489515434d3a663532d2ff2acf5c",
+    "E074": "2eb695e174c527238b33b26b644b9a7113316d3e384634bc15e53a7bda68804f",
+    "E075": "8fb6a313ebc74dabb30654ab46826b777976b99ee375f5065547f67bf85a5194",
+    "E076": "9ab2f04dc5c1b408af147d2f13d7c08edeacd32dbab7fe3781a2797194439868",
+    "E077": "3591024b4a1e113db0f579153058e9af84e95b3744a36cd879a800f06e3a1a31",
+    "E078": "a648f52d99b9e5a05faf4ba6b5ef2950c6d82c560ed7d93b1c576e01c155d4f5",
+    "E079": "427e8f81a1a525c2a403a86a644396310abba6bba542e4e678ca3f96613f73a6",
+    "E080": "bea2a897397e6a2f92e1fcb7d8360ea8a8ebf8c91384f4dc9148dcb2d3d927a1",
+    "E081": "4c5b64128f8982f6584b3ce588e803c8f14762dd2bc260fe62ae3b614faf3402",
+    "E082": "a41ba142fdfd218198b49abb580c5524ce4ebe30df71912eae27fd093a16db51",
+    "E083": "9323c2e05262245ebab142105cabc92d198b69580c58fe36539f96664280d686",
+    "E084": "f5e5df48759772b288cc8566617d084b4c7e0ea689431df7f6284019cb31436d",
+    "E085": "c8600e4f95f4a0d52c6f869ad47137cf2ce4e52c14a91d77f92f524b06742679",
+    "E086": "d51270633894aecf5dd2d47166af645b696d4265c0e36b88299f614236905fe4",
+    "E087": "2246c3f549f0a32285976d841a3ca2dfe362c65e7c59f826cb36e89391fc6fba",
+    "E088": "d6c5432dc5bfc2ac5372b43e89c0cf52352dd628d72d9181dc738bcaad300b20",
+    "E089": "16871a5bde75bbfcd27fc892a4b55f1e82d8b8fe4cecd93b55d78653180350c9",
+    "E090": "4081d931a16b1e3a105effdcf37e0a5fa982ed9138aee6805408e9010d1dff88",
+    "E091": "ef8fc8f400ad58e64e614d07e73969c62e4260b89f2209273b4374bd10ac97bf",
+    "E092": "e9b7572f513b25d4740a3d04e4cd4d6ad354e4dabd03ea512e1ff540ceca83fa",
+    "E093": "3656132fbb028c2bd9329fc3abb9e7d46090e9ebd06766b21074b3fbb6178738",
+    "E094": "90b35a8a94fc3bc59ea18d9311137a5cca686e924e14800e162b63aa86c2b11d",
+    "E095": "be0ef83976b32eaec244dea0ddac9fb4cdb59034666c627a6e77ee2cf6d33d31",
+    "E096": "13383df77750239ae1145a8778d1447482c33f51428a993cec12716d88a28c89",
+    "E097": "66c5201df7c498cd23eb99507e512894d16682c3b4d1320456a32ebc764472bc",
+    "E098": "6f451a620a0046270f155d39dd7eaa9483f5419275b1b3d06296554391f808d4",
+    "E099": "21cb1efc040e7eb9c0dd99c488da65ec0e05bf3b00d62718281ff02175d2ab24",
+    "E100": "2a60cf24df6d345666dfdf0ec7a87941cd77e3b2a197290cfc0b5b84ab7b973b",
+    "E101": "e2f01050f1c0bcafc9abf386ee7073c162e46f005e6877e751046d84c779cf9c",
+    "E102": "decff03417a93ecab27b14350371bedf4a801f81e176c9fe2c964f7a794e38a6",
+    "E103": "11f16348c43a547c0ac0e48944c56874c19dc12f7b5f77784c33f2fdffe0c9be",
+    "E104": "fb8cceca821d1d91dd374663a38025155ad3914665baf54ecd7e63d2007e1ea1",
+    "E105": "86124451d1320d96c037289395755c75a21ec3552d3e8fed1b7f9929eafbf245",
+    "E106": "d16ad0f661c4da4266bfa67e2c1a7c7190f82913627dcb99ce43110a2b3cce95",
+    "E107": "d56644ef770c2caa721753e55e3e0af82a3e4cb47d0d7f68c2b4e85ede7eab09",
+    "E108": "47cb9afb42dfe0af5d42d41bc1d8c46bead558f0d59cedd8b6f03c4892937b98",
+    "E109": "413e584e062e4d66c6c33bb4737066553299ba117b9696c25b8519930a88f70b"
+  }
+}
