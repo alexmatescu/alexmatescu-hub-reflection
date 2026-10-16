@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "2026q4-pilot-1",
+    "instanceId": "MKT-RO-AIV-2026Q4-PILOT",
+    "sessionDates": [
+      "2026-10-09"
+    ]
+  },
+  {
+    "slug": "2026q4-pilot-2",
+    "instanceId": "MKT-RO-AIV-2026Q4-PILOT-2",
+    "sessionDates": []
+  },
+  {
+    "slug": "2026q4-pilot-3",
+    "instanceId": "MKT-RO-AIV-2026Q4-PILOT-3",
+    "sessionDates": [
+      "2026-10-13",
+      "2026-10-14"
+    ]
+  }
+]

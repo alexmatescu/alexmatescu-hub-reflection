@@ -107,6 +107,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://delamatescu.ro/lab/market-discovery</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/market-discovery/2026q4-pilot-1</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/market-discovery/2026q4-pilot-2</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/market-discovery/2026q4-pilot-3</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://delamatescu.ro/lab/studii-de-caz</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

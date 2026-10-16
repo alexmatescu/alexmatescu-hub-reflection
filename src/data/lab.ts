@@ -97,6 +97,28 @@ export const labNav: LabPage[] = [
     ],
   },
   {
+    to: "/lab/market-discovery",
+    label: "Market Discovery",
+    lead: "Seria MKT-RO-AIV: aceleași întrebări despre servicii de GEO, AEO și AI Visibility puse pe 8 suprafețe de căutare și AI, cu fiecare nume afișat capturat, clasificat și numărat.",
+    children: [
+      {
+        to: "/lab/market-discovery/2026q4-pilot-3",
+        label: "Pilotul 3 — 2026Q4",
+        lead: "Cele 8 întrebări nerulate anterior, pe 8 suprafețe: 64 de execuții, 174 de entități candidate în bază.",
+      },
+      {
+        to: "/lab/market-discovery/2026q4-pilot-2",
+        label: "Pilotul 2 — 2026Q4",
+        lead: "Aceleași 4 întrebări ca pilotul 1, rulate din România: 32 de execuții, 84 de entități candidate în bază.",
+      },
+      {
+        to: "/lab/market-discovery/2026q4-pilot-1",
+        label: "Pilotul 1 — 2026Q4",
+        lead: "Primul test al procedurii, rulat din Italia: 32 de execuții, 91 de entități candidate în bază.",
+      },
+    ],
+  },
+  {
     to: "/lab/articole",
     label: "Articole",
     seoTitle: "Articole GEO, AEO și AI Visibility Lab",

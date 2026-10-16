@@ -1,0 +1,29 @@
+{
+  "updatedFrom": "mkt-ro-aiv-2026q4-pilot-3",
+  "queriesCovered": [
+    "Q-DISC-001",
+    "Q-DISC-002",
+    "Q-DISC-003",
+    "Q-DISC-004",
+    "Q-DISC-005",
+    "Q-DISC-006",
+    "Q-DISC-007",
+    "Q-DISC-008",
+    "Q-DISC-009",
+    "Q-DISC-010",
+    "Q-DISC-011",
+    "Q-DISC-012"
+  ],
+  "cumulative": {
+    "unionBase": 241,
+    "unionExtended": 256,
+    "newInLast": 114,
+    "seenBefore": 60,
+    "inAllPilots": 35
+  },
+  "runs": [
+    "2026q4-pilot-1",
+    "2026q4-pilot-2",
+    "2026q4-pilot-3"
+  ]
+}

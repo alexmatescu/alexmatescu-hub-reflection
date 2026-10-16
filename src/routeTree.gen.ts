@@ -28,6 +28,8 @@ import { Route as SiteProiecteIndexRouteImport } from './routes/_site/proiecte/i
 import { Route as SiteProiecteSlugRouteImport } from './routes/_site/proiecte/$slug'
 import { Route as SiteProiecteGeoAiVisibilityRouteImport } from './routes/_site/proiecte/geo-ai-visibility'
 import { Route as SiteLabParentSlugRouteImport } from './routes/_site/lab/$parent.$slug'
+import { Route as SiteLabMarketDiscoveryIndexRouteImport } from './routes/_site/lab/market-discovery.index'
+import { Route as SiteLabMarketDiscoveryRunRouteImport } from './routes/_site/lab/market-discovery.$run'
 import { Route as SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRouteImport } from './routes/_site/lab/studii-de-caz.tabula-rasa-identitate-search-ai-search'
 
 const SiteRoute = SiteRouteImport.update({
@@ -125,6 +127,18 @@ const SiteLabParentSlugRoute = SiteLabParentSlugRouteImport.update({
   path: '/lab/$parent/$slug',
   getParentRoute: () => SiteRoute,
 } as any)
+const SiteLabMarketDiscoveryIndexRoute =
+  SiteLabMarketDiscoveryIndexRouteImport.update({
+    id: '/lab/market-discovery/',
+    path: '/lab/market-discovery/',
+    getParentRoute: () => SiteRoute,
+  } as any)
+const SiteLabMarketDiscoveryRunRoute =
+  SiteLabMarketDiscoveryRunRouteImport.update({
+    id: '/lab/market-discovery/$run',
+    path: '/lab/market-discovery/$run',
+    getParentRoute: () => SiteRoute,
+  } as any)
 const SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute =
   SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRouteImport.update({
     id: '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search',
@@ -151,7 +165,9 @@ export interface FileRoutesByFullPath {
   '/lab/': typeof SiteLabIndexRoute
   '/proiecte/': typeof SiteProiecteIndexRoute
   '/lab/$parent/$slug': typeof SiteLabParentSlugRoute
+  '/lab/market-discovery/$run': typeof SiteLabMarketDiscoveryRunRoute
   '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
+  '/lab/market-discovery/': typeof SiteLabMarketDiscoveryIndexRoute
 }
 export interface FileRoutesByTo {
   '/ai-visibility': typeof SiteAiVisibilityRoute
@@ -172,7 +188,9 @@ export interface FileRoutesByTo {
   '/lab': typeof SiteLabIndexRoute
   '/proiecte': typeof SiteProiecteIndexRoute
   '/lab/$parent/$slug': typeof SiteLabParentSlugRoute
+  '/lab/market-discovery/$run': typeof SiteLabMarketDiscoveryRunRoute
   '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
+  '/lab/market-discovery': typeof SiteLabMarketDiscoveryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -195,7 +213,9 @@ export interface FileRoutesById {
   '/_site/lab/': typeof SiteLabIndexRoute
   '/_site/proiecte/': typeof SiteProiecteIndexRoute
   '/_site/lab/$parent/$slug': typeof SiteLabParentSlugRoute
+  '/_site/lab/market-discovery/$run': typeof SiteLabMarketDiscoveryRunRoute
   '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
+  '/_site/lab/market-discovery/': typeof SiteLabMarketDiscoveryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -218,7 +238,9 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/proiecte/'
     | '/lab/$parent/$slug'
+    | '/lab/market-discovery/$run'
     | '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
+    | '/lab/market-discovery/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/ai-visibility'
@@ -239,7 +261,9 @@ export interface FileRouteTypes {
     | '/lab'
     | '/proiecte'
     | '/lab/$parent/$slug'
+    | '/lab/market-discovery/$run'
     | '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
+    | '/lab/market-discovery'
   id:
     | '__root__'
     | '/_site'
@@ -261,7 +285,9 @@ export interface FileRouteTypes {
     | '/_site/lab/'
     | '/_site/proiecte/'
     | '/_site/lab/$parent/$slug'
+    | '/_site/lab/market-discovery/$run'
     | '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
+    | '/_site/lab/market-discovery/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -403,6 +429,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SiteLabParentSlugRouteImport
       parentRoute: typeof SiteRoute
     }
+    '/_site/lab/market-discovery/': {
+      id: '/_site/lab/market-discovery/'
+      path: '/lab/market-discovery'
+      fullPath: '/lab/market-discovery/'
+      preLoaderRoute: typeof SiteLabMarketDiscoveryIndexRouteImport
+      parentRoute: typeof SiteRoute
+    }
+    '/_site/lab/market-discovery/$run': {
+      id: '/_site/lab/market-discovery/$run'
+      path: '/lab/market-discovery/$run'
+      fullPath: '/lab/market-discovery/$run'
+      preLoaderRoute: typeof SiteLabMarketDiscoveryRunRouteImport
+      parentRoute: typeof SiteRoute
+    }
     '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search': {
       id: '/_site/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
       path: '/lab/studii-de-caz/tabula-rasa-identitate-search-ai-search'
@@ -432,7 +472,9 @@ interface SiteRouteChildren {
   SiteLabIndexRoute: typeof SiteLabIndexRoute
   SiteProiecteIndexRoute: typeof SiteProiecteIndexRoute
   SiteLabParentSlugRoute: typeof SiteLabParentSlugRoute
+  SiteLabMarketDiscoveryRunRoute: typeof SiteLabMarketDiscoveryRunRoute
   SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute: typeof SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute
+  SiteLabMarketDiscoveryIndexRoute: typeof SiteLabMarketDiscoveryIndexRoute
 }
 
 const SiteRouteChildren: SiteRouteChildren = {
@@ -454,8 +496,10 @@ const SiteRouteChildren: SiteRouteChildren = {
   SiteLabIndexRoute: SiteLabIndexRoute,
   SiteProiecteIndexRoute: SiteProiecteIndexRoute,
   SiteLabParentSlugRoute: SiteLabParentSlugRoute,
+  SiteLabMarketDiscoveryRunRoute: SiteLabMarketDiscoveryRunRoute,
   SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute:
     SiteLabStudiiDeCazTabulaRasaIdentitateSearchAiSearchRoute,
+  SiteLabMarketDiscoveryIndexRoute: SiteLabMarketDiscoveryIndexRoute,
 }
 
 const SiteRouteWithChildren = SiteRoute._addFileChildren(SiteRouteChildren)
