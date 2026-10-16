@@ -136,11 +136,17 @@ const Chip = ({
 
 // ───────────────────────────── vizualizări ─────────────────────────────
 
+/** Numeral + „de” când româna îl cere (20–99, 100, 120…): „91 de entități”. */
+const withDe = (n: number) =>
+  n % 100 >= 20 || (n > 0 && n % 100 === 0) ? `${n} de` : `${n}`;
+
 /** Matrice întrebare × suprafață: entități distincte în bază, intensitate pe o singură nuanță. */
 const QuerySurfaceMatrix = ({ run }: { run: MdRun }) => {
   const max = Math.max(1, ...run.matrix.flatMap((r) => Object.values(r.cells)));
   const surfaceUnion = new Map(run.bySurface.map((s) => [s.group, s.entities]));
   const queryText = new Map(run.queries.map((q) => [q.id, q.text]));
+  const queryUnionSum = run.matrix.reduce((a, r) => a + r.union, 0);
+  const surfaceUnionSum = run.bySurface.reduce((a, s) => a + s.entities, 0);
   return (
     <div className="mt-8">
       <div className="overflow-x-auto -mx-6 md:mx-0">
@@ -247,6 +253,17 @@ const QuerySurfaceMatrix = ({ run }: { run: MdRun }) => {
         Celulele goale (0) sunt execuții complete în care nu a fost numit niciun
         candidat. Textul exact al fiecărei întrebări e în lista de mai jos.
       </p>
+      <p className="mt-2 text-xs text-muted-foreground">
+        <strong className="text-foreground font-medium">
+          Reuniunile nu sunt sume.
+        </strong>{" "}
+        O entitate numită pe mai multe suprafețe sau la mai multe întrebări e
+        numărată o singură dată în reuniune. De aceea suma unui rând sau a unei
+        coloane poate fi mai mare decât reuniunea lui, iar cele{" "}
+        {withDe(run.totals.entitiesBase)} entități distincte ale rulării sunt
+        mai puține decât suma reuniunilor pe întrebări ({queryUnionSum}) sau pe
+        suprafețe ({surfaceUnionSum}).
+      </p>
     </div>
   );
 };
@@ -329,7 +346,10 @@ const ExclusivityBars = ({
       </ul>
       <p className="mt-3 text-xs text-muted-foreground">
         Exclusiv = apare doar în acest grup, în nicio altă întrebare sau
-        suprafață din rulare. Reuniunea rulării: {total} entități.
+        suprafață din rulare. Reuniunea rulării: {withDe(total)} entități, nu
+        suma barelor ({rows.reduce((a, r) => a + r.entities, 0)}): o entitate
+        găsită în mai multe grupuri apare în fiecare bară, dar e numărată o
+        singură dată în reuniune.
       </p>
     </div>
   );
@@ -1245,6 +1265,12 @@ export const MarketDiscoveryHub = () => {
                 },
               ]}
             />
+            <p className="mt-4 text-xs text-muted-foreground max-w-3xl">
+              Cele {withDe(c.unionBase)} entități sunt reuniunea piloților, nu
+              suma lor ({mdRuns.map((r) => r.totals.entitiesBase).join(" + ")} ={" "}
+              {mdRuns.reduce((a, r) => a + r.totals.entitiesBase, 0)}): o
+              entitate găsită în mai mulți piloți e numărată o singură dată.
+            </p>
           </div>
         </div>
       </section>
