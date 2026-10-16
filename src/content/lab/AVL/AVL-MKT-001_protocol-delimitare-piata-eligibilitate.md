@@ -3,15 +3,15 @@ document_id: "AVL-MKT-001"
 title: "AVL-MKT-001 — Market Scope & Eligibility Protocol"
 subtitle: "Protocolul de delimitare a pieței și de eligibilitate a furnizorilor"
 level: "C — Methodology"
-version: "0.9.2"
+version: "0.10.0"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-09-30"
 date_published: "2026-10-02T07:41:45+03:00"
-date_modified: "2026-10-13"
-last_reviewed: "2026-10-02"
+date_modified: "2026-10-16"
+last_reviewed: "2026-10-16"
 canonical: "https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate"
 normative_dependencies:
   - "AVL-001 — AI Visibility Lab Foundation"
@@ -51,12 +51,12 @@ keywords:
 | Nivel | C — Methodology |
 | Familie | Market Measurement — `AVL-MKT-*` |
 | Rol | protocol normativ de familie |
-| Versiune | 0.9.2 |
+| Versiune | 0.10.0 |
 | Statut | Draft pentru revizuire |
 | Autor | [Alex Matescu](/despre) |
 | Organizație | [AI Visibility Lab](/lab) |
 | Data publicării | 2 octombrie 2026 |
-| Ultima verificare | 2 octombrie 2026 |
+| Ultima verificare | 16 octombrie 2026 |
 | Limbă | română |
 | URL canonic | https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate |
 | Documente normative superioare | [AVL-001 — AI Visibility Lab Foundation](/lab/introducere), [AVL-202 — Cadrul metodologic AI Visibility Lab](/lab/metodologie) |
@@ -65,10 +65,10 @@ keywords:
 
 AVL-MKT-001 este primul document al familiei **Market Measurement** (`AVL-MKT-*`), o familie funcțională în interiorul Nivelului C — Methodology. Arhitectura familiei este descrisă în [AVL-202, secțiunea 14](/lab/metodologie); namespace-ul și identificatorii sunt definiți în [AVL-001](/lab/introducere).
 
-Versiunea curentă, **0.9.2**, este un **draft public pentru revizuire**. Documentul nu este activ. Publicarea draftului are rolul unei pre-înregistrări publice: criteriile devin vizibile și datate înainte ca populația pieței să fie cunoscută. La data acestei versiuni:
+Versiunea curentă, **0.10.0**, este un **draft public pentru revizuire**. Documentul nu este activ. Publicarea draftului are rolul unei pre-înregistrări publice: criteriile devin vizibile și datate înainte ca populația pieței să fie cunoscută. La data acestei versiuni:
 
 - pilotul intern pe cazuri-limită nu a fost executat;
-- au fost rulate două piloturi de Market Discovery (`MKT-RO-AIV-2026Q4-PILOT` și `MKT-RO-AIV-2026Q4-PILOT-2`); ele testează descoperirea și nu înlocuiesc pilotul intern;
+- au fost rulate trei piloturi de Market Discovery (`MKT-RO-AIV-2026Q4-PILOT`, `MKT-RO-AIV-2026Q4-PILOT-2` și `MKT-RO-AIV-2026Q4-PILOT-3`); ele testează descoperirea și nu înlocuiesc pilotul intern;
 - nu a fost creată nicio instanță `MKT-*`;
 - nu a fost constituit niciun Market Reference Set;
 - AVL-MKT-002 — Market Query Panel este planificat și nepublicat.
@@ -111,7 +111,8 @@ AVL-MKT-001 definește, pentru orice instanță Market Measurement:
 6. Market Cutoff Date și înghețarea Market Reference Set;
 7. controalele împotriva selection bias;
 8. tratamentul conflictului de interese;
-9. cerințele de dovezi specifice eligibilității, ca aplicare a AVL-200.
+9. cerințele de dovezi specifice eligibilității, ca aplicare a AVL-200;
+10. publicarea rezultatelor Market Discovery și Market Verification și relația registrelor cu Market Reference Set.
 
 Un raport despre o piață nu este reproductibil dacă populația măsurată este construită din aceleași răspunsuri AI pe care raportul încearcă ulterior să le evalueze. De aceea, Market Reference Set este o referință construită independent de rezultatele AI care urmează să fie măsurate.
 
@@ -454,14 +455,97 @@ AVL-MKT-001 v1.0.0 / Activ
         ↓
 declararea instanței (ex. MKT-RO-AIV-2026Q4)
         ↓
-Market Discovery
+Market Discovery — registrul public al candidaților
         ↓
-Market Verification
+Market Verification — registrul public al entităților verificate
         ↓
 Market Reference Set — freeze
         ↓
 AVL-MKT-002 — Market Query Panel → execuție AI → măsurare
 ```
+
+# 21. Publicarea rezultatelor Market Discovery și Market Verification
+
+Market Discovery și Market Verification produc două registre publice distincte. Publicarea lor face verificabilă trecerea de la observație la eligibilitate și nu schimbă natura etapelor: Discovery identifică, Verification evaluează (secțiunea 8). Formatul identificatorilor celor două registre rămâne o decizie deschisă (decizia 2).
+
+## 21.1. Registrul Market Discovery
+
+Market Discovery produce un registru public al entităților candidate identificate prin execuțiile documentate ale setului de interogări declarat de instanță. Fiecare entitate este publicată inițial cu statutul `UNVERIFIED`, împreună cu proveniența observației (rularea, interogarea, suprafața și captura în care a apărut) și cu dovezile disponibile. În acest registru, `UNVERIFIED` înseamnă că entitatea a fost identificată, dar nu a trecut încă prin Market Verification.
+
+Includerea în registrul Market Discovery nu confirmă existența, activitatea comercială, eligibilitatea sau calitatea serviciilor unei entități. Identitățile ambigue și mențiunile fără corespondent confirmat sunt semnalate distinct. Semnalarea lor nu este un status de eligibilitate: statusul `AMBIGUOUS` se atribuie numai în Market Verification.
+
+> **AVLMKT001-REQ-024 — Fiecare entitate din registrul Market Discovery TREBUIE publicată cu statutul `UNVERIFIED`, cu proveniența observației și cu dovezile disponibile.**
+
+> **AVLMKT001-REQ-025 — Includerea în registrul Market Discovery NU TREBUIE prezentată drept confirmare a existenței, a activității comerciale, a eligibilității sau a calității serviciilor unei entități.**
+
+> **AVLMKT001-REQ-026 — Identitățile ambigue și mențiunile fără corespondent confirmat TREBUIE semnalate distinct în registrul Market Discovery.**
+
+## 21.2. Registrul Market Verification
+
+Market Verification este o etapă metodologică separată, în care entitățile candidate sunt evaluate conform criteriilor publice de eligibilitate (secțiunile 7 și 9). Rezultatul ei este **registrul Market Verification**, registrul entităților verificate. Fiecare intrare primește unul dintre statusurile din secțiunea 9:
+
+| Status | Ce înseamnă în registru |
+| --- | --- |
+| `ELIGIBLE` | Entitatea îndeplinește criteriile aplicabile (AVLMKT001-REQ-003 – AVLMKT001-REQ-007). |
+| `INELIGIBLE` | Dovezile permit concluzia că entitatea nu îndeplinește domeniul instanței. |
+| `UNVERIFIED` | Entitatea a fost evaluată, dar dovezile nu permit confirmarea. Nu este echivalent cu `INELIGIBLE` (AVLMKT001-REQ-012). |
+| `AMBIGUOUS` | Există dovezi contradictorii sau probleme de entity resolution nerezolvate. |
+| `OUT OF SCOPE` | Entitatea este reală, dar nu aparține pieței definite. |
+| `HISTORICAL` | Serviciul a existat anterior, fără dovadă suficientă de activitate la Market Cutoff Date. |
+
+**Registrul furnizorilor eligibili** este partea registrului Market Verification care cuprinde exclusiv intrările `ELIGIBLE`. Intrările cu celelalte statusuri se publică și ele, pentru că rezultatele negative, ambiguitățile și contradicțiile se păstrează (AVLMKT001-REQ-018).
+
+Pentru fiecare intrare se indică sursa Market Discovery (rularea și observația din care provine candidatul), data verificării, versiunea AVL-MKT-001 aplicată și dovezile relevante, conform fișei furnizorului (secțiunea 10). Forma dovezilor pentru statusurile incerte rămâne o decizie deschisă (decizia 3).
+
+Publicarea eligibilității nu constituie certificare, recomandare comercială sau clasament al calității serviciilor.
+
+> **AVLMKT001-REQ-027 — Fiecare intrare din registrul Market Verification TREBUIE să indice statusul din secțiunea 9, sursa Market Discovery, data verificării, versiunea AVL-MKT-001 aplicată și dovezile relevante.**
+
+> **AVLMKT001-REQ-028 — Registrul furnizorilor eligibili TREBUIE să cuprindă exclusiv intrări cu statusul `ELIGIBLE`.**
+
+> **AVLMKT001-REQ-029 — Publicarea eligibilității NU TREBUIE prezentată drept certificare, recomandare comercială sau clasament al calității serviciilor.**
+
+## 21.3. Relația cu Market Reference Set
+
+Cele două registre și Market Reference Set sunt artefacte de instanță distincte:
+
+```text
+Registrul Market Discovery
+  = toți candidații identificați, cu statutul UNVERIFIED
+        ↓ Market Verification
+Registrul Market Verification
+  = toți candidații evaluați, fiecare cu un status din secțiunea 9
+        ↓ Market Cutoff Date + freeze (secțiunea 12)
+Market Reference Set
+  = intrările ELIGIBLE la Market Cutoff Date, înghețate
+```
+
+Market Reference Set se constituie din intrările `ELIGIBLE` ale registrului Market Verification la Market Cutoff Date și se îngheață conform secțiunii 12. Registrul Market Verification se îngheață odată cu el, astfel încât intrările cu celelalte statusuri rămân păstrate în aceeași stare. Un furnizor identificat după cutoff nu este introdus retrospectiv (secțiunea 11); o rectificare care afectează Market Reference Set se tratează conform secțiunii 19.
+
+Market Reference Set este constituit independent, de AI Visibility Lab, în scopul cercetării laboratorului. Nu este validat de nicio autoritate publică, organism profesional sau autoritate de reglementare și nu are statut oficial. De aceea are rezerve explicite:
+
+- nu este lista exhaustivă a furnizorilor existenți (secțiunea 18);
+- nu este o statistică oficială de piață și nici un registru profesional;
+- reflectă criteriile și dovezile acestui protocol, în versiunea aplicată, la Market Cutoff Date;
+- poate conține erori, corectate conform secțiunilor 19 și 21.5.
+
+> **AVLMKT001-REQ-030 — Market Reference Set TREBUIE publicat împreună cu mențiunea că este constituit independent, în scopul cercetării AI Visibility Lab, și că nu este validat de o autoritate relevantă.**
+
+## 21.4. Informarea entităților și neutralitatea statutului
+
+Entitățile eligibile POT fi informate individual prin canalele oficiale adecvate, exclusiv în scopul transparenței cercetării și al facilitării rectificării eventualelor erori, cu respectarea cerințelor legale aplicabile.
+
+Răspunsul, lipsa răspunsului sau relația comercială cu operatorul cercetării — autorul și AI Visibility Lab (secțiunea 14) — nu influențează statutul de eligibilitate.
+
+> **AVLMKT001-REQ-031 — Informarea individuală a unei entități, atunci când are loc, TREBUIE limitată la transparența cercetării și la facilitarea rectificării erorilor.**
+
+> **AVLMKT001-REQ-032 — Răspunsul, lipsa răspunsului sau relația comercială a unei entități cu operatorul cercetării NU TREBUIE să influențeze statutul ei de eligibilitate.**
+
+## 21.5. Rectificări
+
+Rectificările ulterioare se documentează și se publică prin versiuni noi ale registrului afectat, păstrând trasabilitatea observațiilor istorice. O versiune nouă nu șterge intrarea anterioară: păstrează valoarea anterioară, valoarea corectată, data, motivul și sursa (secțiunea 19).
+
+> **AVLMKT001-REQ-033 — Rectificările TREBUIE documentate și publicate prin versiuni noi ale registrului afectat; observațiile istorice NU TREBUIE șterse.**
 
 ---
 
@@ -476,6 +560,7 @@ AVL-MKT-002 — Market Query Panel → execuție AI → măsurare
 
 - Google Search Central — *Optimizing your website for generative AI features on Google Search* (actualizat 10 iulie 2026): https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 - OpenAI Help Center — *Publishers and Developers FAQ*: https://help.openai.com/en/articles/12627856-publishers-and-developers-faq
+- OpenAI — *Overview of OpenAI Crawlers*: https://developers.openai.com/api/docs/bots
 - Claude Help Center — *Does Anthropic crawl data from the web, and how can site owners block the crawler?*: https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler
 - Bing Webmaster Blog — *Introducing AI Performance in Bing Webmaster Tools Public Preview* (10 februarie 2026): https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/
 - Bing Search Blog — *New AI Visibility Insights in Bing Webmaster Tools: Intents, Topics, Citation Share, Compare* (16 iunie 2026): https://blogs.bing.com/search/2026/6/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare/
@@ -496,11 +581,16 @@ Documentația oficială descrie comportamentele și controalele pe care furnizor
 - [ ] Absențele din AI nu au eliminat furnizori; schimbările de criterii și de comparabilitate sunt versionate; rezultatele negative sunt păstrate (REQ-016 – REQ-019).
 - [ ] Relațiile materiale sunt declarate, iar entitatea afiliată a fost tratată identic (REQ-020, REQ-021).
 - [ ] Afirmațiile despre sistemele AI sunt susținute de documentație oficială și nu sunt transformate în mecanisme interne (REQ-022, REQ-023).
+- [ ] Registrul Market Discovery publică fiecare candidat cu statutul `UNVERIFIED` și cu proveniența observației, fără a prezenta includerea drept confirmare; identitățile ambigue sunt semnalate distinct (REQ-024 – REQ-026).
+- [ ] Registrul Market Verification indică statusul, sursa Market Discovery, data verificării, versiunea protocolului și dovezile; registrul furnizorilor eligibili cuprinde doar `ELIGIBLE`; eligibilitatea nu este prezentată drept certificare, recomandare sau clasament (REQ-027 – REQ-029).
+- [ ] Market Reference Set este publicat cu mențiunea constituirii independente și a lipsei validării de către o autoritate relevantă (REQ-030).
+- [ ] Informarea entităților este limitată la scopul declarat; răspunsul sau relația comercială nu influențează statutul; rectificările sunt versionate fără ștergerea istoricului (REQ-031 – REQ-033).
 
 ## Istoricul versiunilor
 
 | Versiune | Dată | Statut | Modificări |
 | --- | --- | --- | --- |
+| 0.10.0 | 16 octombrie 2026 | Draft pentru revizuire | MINOR, cu schimbare de politică de publicare: secțiunea 21 nouă, „Publicarea rezultatelor Market Discovery și Market Verification”, cu cerințele AVLMKT001-REQ-024 – AVLMKT001-REQ-033. Market Discovery produce un registru public al candidaților, toți cu statutul `UNVERIFIED`; Market Verification produce registrul entităților verificate, cu statusurile din secțiunea 9; registrul furnizorilor eligibili cuprinde exclusiv intrările `ELIGIBLE`. Se definesc relația celor două registre cu Market Reference Set și rezervele acestuia (constituit independent, în scopul cercetării laboratorului, nevalidat de o autoritate relevantă), informarea entităților, neutralitatea statutului față de răspunsul sau relația comercială cu operatorul cercetării și rectificările prin versiuni noi. Regula se aplică la nivel de protocol; documentele de instanță care prevedeau nepublicarea numelor furnizorilor se aliniază prin versiuni noi, fără editarea versiunilor citate în pachetele de dovezi. Actualizate: secțiunea 1 (punctul 10), secțiunea 20, starea pilotărilor (trei piloturi Market Discovery), checklist-ul de conformitate și deciziile deschise 2 și 3. Afirmațiile din secțiunea 16 au fost reverificate la 16 octombrie 2026; pagina OpenAI Help Center nu a putut fi accesată (HTTP 403), iar afirmațiile despre `OAI-SearchBot` au fost confirmate în documentația OpenAI despre crawlere, adăugată la surse. Criteriile de eligibilitate, statusurile din secțiunea 9 și cerințele AVLMKT001-REQ-001 – AVLMKT001-REQ-023 nu se schimbă. |
 | 0.9.2 | 13 octombrie 2026 | Draft pentru revizuire | PATCH: decizia deschisă 5 („Convenția T0 / F1 … Fn în corpus”) este închisă și pentru restul corpusului: convenția și etapele denumite sunt definite în AVL-200 §7 (v1.1.0), iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate la 13 octombrie 2026. Fără modificări ale cerințelor sau ale regulilor Market Discovery. |
 | 0.9.1 | 12 octombrie 2026 | Draft pentru revizuire | Secțiunea 3.2 rescrisă: rulările Market Discovery se identifică prin `FULL` (rularea trimestrială completă) și `M{lună}` (rulările lunare); convenția T0 / F1 … Fn nu se folosește în Market Discovery și rămâne cea din AVL-200 §7 și Tabula Rasa (AVL-201); schema rulărilor de măsurare AI rămâne în AVL-MKT-002. Modificarea rezultă din două piloturi de Market Discovery (9 și 11 octombrie 2026): repetarea acelorași interogări la câteva zile distanță nu este o strategie longitudinală adecvată. Decizia deschisă 5 actualizată. Criteriile de eligibilitate, statusurile și cerințele `AVLMKT001-REQ-*` nu se schimbă. |
 | 0.9.0 | 2 octombrie 2026 | Draft pentru revizuire | Prima versiune publică, ca pre-înregistrare a criteriilor înainte de pilotul intern. Față de draftul intern din 30 septembrie 2026: cerințele unificate într-o singură serie `AVLMKT001-REQ-001 … 023` (înlocuiesc seriile interne `MKT-REQ` și `E-REQ`); clasele geografice generalizate (`{CC}-DOMESTIC` etc.), cu România păstrată ca exemplu de primă aplicare; separate perioada instanței (Q) și axa rulărilor (T0 / F1 … Fn); dovezile de eligibilitate legate de AVL-200; declarație explicită de conflict de interese și cerințele REQ-020 – REQ-021; adăugate REQ-002, REQ-010 și REQ-015; procedura pilotului preluată din AVL-202; regulile editoriale generale înlocuite cu trimitere la AVL-001; afirmațiile despre furnizorii AI reverificate și restrânse la documentația oficială. |
@@ -508,11 +598,11 @@ Documentația oficială descrie comportamentele și controalele pe care furnizor
 ## Decizii deschise înainte de 1.0.0
 
 1. **Pilotul intern.** Neexecutat. Rezultatele lui pot modifica criteriile, statusurile sau clasele.
-2. **Identificatorii artefactelor din instanță.** Formatul identificatorilor pentru registrul de discovery, registrul de verification și Market Reference Set nu este încă stabilit (AVL-001 îl lasă documentelor `AVL-MKT-*` și AVL-200).
-3. **Dovezile pentru statusurile incerte.** Dacă și în ce formă trebuie conservate dovezi pentru `UNVERIFIED` și `AMBIGUOUS`.
+2. **Identificatorii artefactelor din instanță.** Formatul identificatorilor pentru registrul de discovery, registrul de verification și Market Reference Set nu este încă stabilit (AVL-001 îl lasă documentelor `AVL-MKT-*` și AVL-200). Secțiunea 21 definește conținutul celor două registre și relația lor cu Market Reference Set; formatul identificatorilor rămâne deschis.
+3. **Dovezile pentru statusurile incerte.** Dacă și în ce formă trebuie conservate dovezi pentru `UNVERIFIED` și `AMBIGUOUS`. Secțiunea 21 cere publicarea dovezilor disponibile pentru fiecare intrare; forma conservării lor pentru statusurile incerte rămâne deschisă.
 4. **Verificarea de către o terță parte** a deciziilor privind entitatea afiliată: control opțional sau cerință pentru instanțele viitoare.
 5. **Convenția T0 / F1 … Fn în corpus.** Închisă. Pentru Market Discovery, în versiunea 0.9.1: rulările se identifică prin `FULL` și `M{lună}` (secțiunea 3.2). Pentru restul corpusului, la 13 octombrie 2026: convenția și etapele denumite sunt definite în [AVL-200 §7](/lab/metodologie/standard-dovezi-masurare-trasabilitate) (v1.1.0), iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate. Schema rulărilor de măsurare AI rămâne în AVL-MKT-002.
 
 ---
 
-*AVL-MKT-001 este un document normativ al AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Versiunea 0.9.2 este un draft public pentru revizuire, nu un protocol activ. Ultima verificare factuală și a surselor: 2 octombrie 2026.*
+*AVL-MKT-001 este un document normativ al AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Versiunea 0.10.0 este un draft public pentru revizuire, nu un protocol activ. Ultima verificare factuală și a surselor: 16 octombrie 2026.*

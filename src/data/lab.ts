@@ -74,7 +74,7 @@ export const labNav: LabPage[] = [
       {
         to: "/lab/metodologie/protocol-delimitare-piata-eligibilitate",
         label: "AVL-MKT-001 — Market Scope & Eligibility Protocol",
-        lead: "Draft pentru revizuire, v0.9.2. Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification și regulile de constituire a Market Reference Set.",
+        lead: "Draft pentru revizuire, v0.10.0. Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification, publicarea registrelor și regulile de constituire a Market Reference Set.",
       },
     ],
   },
