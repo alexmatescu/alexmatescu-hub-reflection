@@ -281,7 +281,7 @@
     },
     {
       "id": "LAB-12",
-      "titlu": "407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026",
+      "titlu": "AI aleargă, adopția merge pe jos: decalajul din 2026",
       "suprafata": "lab/articole",
       "ruta": "/lab/articole/decalaj-viteza-ai-adoptie-2026",
       "slug": "decalaj-viteza-ai-adoptie-2026",
@@ -292,8 +292,8 @@
       "versiune": null,
       "dataCreare": "2026-08-14",
       "dataPublicare": "2026-08-19",
-      "dataModificare": "2026-08-19",
-      "ultimaVerificare": "2026-08-19",
+      "dataModificare": "2026-10-16",
+      "ultimaVerificare": "2026-10-16",
       "fisierMd": "src/content/lab/articles/12.decalaj-viteza-ai-adoptie-2026.md",
       "fisierTs": "src/data/lab-content/12. decalaj-viteza-ai-adoptie-2026.ts",
       "wiring": {
@@ -302,11 +302,11 @@
         "nav": true,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-08-19",
+      "sitemapLastmod": "2026-10-16",
       "imagine": null,
       "jsonLd": "@graph",
-      "nrCitari": 10,
-      "zileDeLaVerificare": 58,
+      "nrCitari": 20,
+      "zileDeLaVerificare": 0,
       "anomalii": []
     },
     {

@@ -468,6 +468,27 @@ Calea e relativă la fișierul `.md` sursă (§0.5), nu la rădăcina proiectulu
 9. Dacă în folderul `images/` există fișiere **care nu sunt referențiate** în `.md`, nu le copia și nu le publica automat — listează-le explicit în raportul final (§14) ca fișiere neutilizate; decizia de a le folosi sau șterge rămâne a userului.
 10. După build (Faza 10), verifică efectiv — pe disc, și runtime dacă mediul permite (§10.1) — că fiecare `src` de imagine folosit în articol corespunde unui fișier existent în `public/images/lab/{slug}/`. Nu presupune că o copiere reușită mai devreme e încă validă.
 
+### 6.4 — Istoricul versiunilor (la orice actualizare a textului)
+
+Un articol publicat care primește o modificare reală a textului (rescriere majoră, extindere sau update minor cu efect pe conținut — §0.2) capătă sau își completează secțiunea vizibilă **„Istoricul versiunilor”**. Secțiunea stă după „Surse și metodologie” și după „Notă de volatilitate”, imediat înaintea footerului standardizat, care rămâne ultimul element (§6.1, Faza 7).
+
+```html
+<h2>Istoricul versiunilor</h2>
+<table>
+  <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
+  <tbody>
+    <tr><td>1.0</td><td>{date_published, doar data}</td><td>Publicare inițială.</td></tr>
+    <tr><td>{versiune}</td><td>{date_modified}</td><td>{ce s-a schimbat, concret}</td></tr>
+  </tbody>
+</table>
+```
+
+- Prima actualizare adaugă și rândul `1.0 — Publicare inițială`, cu `date_published`. Un articol nou, încă neactualizat, nu are secțiunea.
+- Versiunea crește cu o unitate majoră (`2.0`) la rescriere majoră și cu o unitate minoră (`1.1`, `1.2`) la extindere sau update minor. Rândurile vechi nu se rescriu și nu se șterg.
+- Rândul descrie concret ce s-a schimbat: titlu vechi → titlu nou, secțiuni adăugate, cifre actualizate (valoare veche → valoare nouă, cu sursa), afirmații eliminate. Nu „îmbunătățiri editoriale” generice.
+- Data rândului e `date_modified`. O simplă reverificare (doar `last_reviewed`, §6.2) **nu** adaugă rând.
+- Secțiunea există identic în `.md` și în `.ts`. Nu are echivalent în JSON-LD — e informație editorială, ca `last_reviewed`.
+
 ---
 
 ## Faza 7 — Surse și metodologie
@@ -595,6 +616,8 @@ Scalează cu scopul din §0.2. Pentru **articol nou/rescriere majoră**, raportu
 
 Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doar afirmațiile modificate din claim ledger, rezultatele tehnice.
 
+Pentru orice actualizare a unui articol publicat, raportul citează și rândul adăugat în „Istoricul versiunilor” (§6.4).
+
 ---
 
 ## Checklist final obligatoriu
@@ -621,6 +644,7 @@ Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doa
 - [ ] Nu se pretinde că `llms.txt`/schema/FAQ/metadata garantează citarea AI (§11.1).
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Claim ledger inclus în raport.
+- [ ] La o actualizare a textului: „Istoricul versiunilor” are rândul nou (versiune, `date_modified`, modificări concrete), rândurile vechi sunt intacte, iar secțiunea e identică în `.md` și `.ts` și stă înaintea footerului (§6.4).
 - [ ] Byline: `Alex Matescu` → `/despre` cu `rel="author"`; rol vizibil „Fondator și coordonator”; `AI Visibility Lab` → `/lab` (§6.1).
 - [ ] Toate cele trei date din byline au text vizibil în română, doar data, fără oră; `datetime` e `YYYY-MM-DD` pentru `date_modified`/`last_reviewed`, și ISO complet cu oră/offset pentru `date_published` al unui articol nou (§6.1).
 - [ ] Byline-ul apare imediat sub titlu/lead, înaintea corpului articolului; footerul standardizat apare integral, nemodificat, la coadă — ambele prezente, niciunul nu-l înlocuiește pe celălalt (§6.1).

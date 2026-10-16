@@ -193,9 +193,8 @@ export const labNav: LabPage[] = [
       },
       {
         to: "/lab/articole/decalaj-viteza-ai-adoptie-2026",
-        label:
-          "407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026",
-        lead: "Analiză verificată a ritmului lansărilor AI și a adopției în 2026: 407 lansări urmărite editorial, 17,8% utilizare GenAI globală în Q1 2026, diferențe de metodologie între Microsoft, Eurostat, OECD, McKinsey și PwC, plus date pentru România.",
+        label: "AI aleargă, adopția merge pe jos: decalajul din 2026",
+        lead: "Ritmul lansărilor AI față de adopția reală în 2026: 557 de lansări urmărite editorial în ianuarie–septembrie, noile generații GPT-6, Claude 5.5 și Gemini 3.8/4, 18,8% utilizare GenAI globală în Q2 2026, metodologii Microsoft, Eurostat, OECD, McKinsey și PwC, plus date pentru România.",
       },
       {
         to: "/lab/articole/eticheta-abonat-relatia-prezentare-ai-search",
