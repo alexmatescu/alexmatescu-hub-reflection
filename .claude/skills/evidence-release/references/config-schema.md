@@ -12,7 +12,7 @@ anywhere in `evidence-release` — every concrete value below is an example.
 | `entity_code` | string | Short code for Evidence IDs, e.g. `AM`. Chosen once by the user — never derived automatically from the name in a way that could silently change between runs. |
 | `study_name` | string | e.g. `"Tabula Rasa"`. |
 | `measurement_point` | string | `T0` (baseline), `F1`, `F2` … (re-measurements, AVL-200 §7) or `window-YYYY-MM-DD_YYYY-MM-DD`. |
-| `archive.path` | string | Path to the raw archive (`.zip`). |
+| `archive.path` | string | Path to the PNG input archive (`.zip`). STEP 1b converts it; the converted WebP archive is the evidence (AVL200-REQ-041). For a legacy package (`webp_conversion.enabled: false`) it is the evidence archive itself. |
 | `archive.version` | string | e.g. `"1.0"`. |
 | `metadata_version` | string | e.g. `"1.0"`. Independent of `archive.version` — see `release-policy.md`. |
 
@@ -31,6 +31,7 @@ anywhere in `evidence-release` — every concrete value below is an example.
 | `github.repository` | string | current repo's `origin` | `owner/repo`. |
 | `github.draft` | boolean | `true` | Must stay `true` — `evidence-release` never creates a non-draft release. |
 | `extra_columns` | list of strings | `[]` | Extra CLASSIFICATION columns appended to the schema, e.g. `[logged_in, incognito, memory_state, model]`. |
+| `webp_conversion.enabled` | boolean | `true` | PNG → WebP q80 before hashing (AVL200-REQ-041). Set `false` only for packages sealed before AVL-200 2.0.0, which keep their original form (AVL200-REQ-013). Quality and the PSNR threshold are not configurable. |
 
 ## Example
 

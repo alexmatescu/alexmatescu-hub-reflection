@@ -15,6 +15,11 @@ Examples:
 - `alex-matescu_t0_evidence-index_v1.1.csv`
 - `alex-matescu_t0_readme_v1.1.md`
 - `alex-matescu_t0_sha256sums_v1.1.txt`
+- `alex-matescu_t0_webp-conversion_v1.0.csv` (PNG → WebP conversion manifest, one per archive version; AVL200-REQ-041)
+
+For packages built after AVL-200 2.0.0 the `evidence-archive` asset is the
+converted WebP archive built at STEP 1b; inside it, folder structure and
+filenames are those of the PNG input, with `.png` replaced by `.webp`.
 
 `<entity-slug>`: lowercase kebab-case, matches `^[a-z0-9]+(-[a-z0-9]+)*$`.
 

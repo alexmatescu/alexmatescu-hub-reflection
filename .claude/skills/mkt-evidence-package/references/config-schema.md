@@ -12,7 +12,7 @@ de mai jos sunt cele ale pilotului, ca exemplu.
 | `instance_slug` | string | kebab-case, ex. `mkt-ro-aiv-2026q4-pilot`. Folosit în căi și nume de fișiere. |
 | `instance_type` | enum | `PILOT`, `FULL`, `M<luna>` (luna din calendar, două cifre, ex. `M11`). `FULL` = rularea trimestrială completă (`<instanță>-FULL`); `M<luna>` = rularea lunară (`<instanță>-M11`), cu luna în trimestrul instanței. T0 / F1…Fn nu se folosesc în Market Discovery (setul v0.2.0 §2). |
 | `quarter` | string | `^\d{4}Q[1-4]$`, ex. `2026Q4`. |
-| `capture_folder.path` | string | Folderul nearhivat cu capturile. Nu se scrie niciodată în el. Subfolderele și numele fișierelor le determină agentul (`naming-convention.md` §2, §6). Documentele operatorului din rădăcină se sigilează separat (§3.1). Folderul unei instanțe nu trebuie să conțină folderul altei instanțe: fiecare rulare are folderul ei, `evidence/incoming/MKT-Evidence/<instance_slug>/`. |
+| `capture_folder.path` | string | Folderul nearhivat cu capturile PNG. Nu se scrie niciodată în el. STEP 1b îl convertește în WebP q80, iar folderul convertit se sigilează (AVL200-REQ-041). Subfolderele și numele fișierelor le determină agentul (`naming-convention.md` §2, §6). Documentele operatorului din rădăcină se sigilează separat (§3.1). Folderul unei instanțe nu trebuie să conțină folderul altei instanțe: fiecare rulare are folderul ei, `evidence/incoming/MKT-Evidence/<instance_slug>/`. |
 | `archive.version` | string | ex. `"1.0"`. |
 | `metadata_version` | string | ex. `"1.0"`. Independent de `archive.version`. |
 | `query_set.source_path` | string | Fișierul `.md` sursă al setului. |
@@ -34,6 +34,7 @@ de mai jos sunt cele ale pilotului, ca exemplu.
 | `release.github.enabled` | `false` | Dacă e `false`, pipeline-ul se oprește la STEP 16. |
 | `release.github.repository` | `origin` al repo-ului | `owner/repo`. |
 | `release.github.tag` | derivat | `naming-convention.md` §5. |
+| `webp_conversion.enabled` | `true` | Conversia PNG → WebP q80 înainte de sigilare (AVL200-REQ-041). `false` doar pentru rulări sigilate înainte de AVL-200 2.0.0, care rămân în forma originală (AVL200-REQ-013). Calitatea și pragul PSNR nu se configurează. |
 | `notes` | — | Text liber preluat verbatim în README. |
 
 ## Ce determină agentul singur, fără să întrebe

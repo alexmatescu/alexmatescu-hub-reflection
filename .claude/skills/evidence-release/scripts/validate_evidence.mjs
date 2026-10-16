@@ -29,6 +29,7 @@ import {
   SLUG_RE,
   MEASUREMENT_POINT_RE,
   artifactFileName,
+  evidenceArchivePath,
 } from "./lib/common.mjs";
 
 const results = []; // { level: 'PASS'|'WARNING'|'FAIL', check, detail }
@@ -65,7 +66,7 @@ async function main() {
   }
 
   // --- Archive ---
-  const archivePath = archive?.path ? path.resolve(archive.path) : null;
+  const archivePath = archive?.path ? evidenceArchivePath(config) : null;
   if (!archivePath || !(await pathExists(archivePath))) {
     record(
       "FAIL",

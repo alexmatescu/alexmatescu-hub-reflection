@@ -30,6 +30,8 @@ import {
   toCsv,
   parseCsv,
   sha256File,
+  evidenceArchivePath,
+  webpConversionEnabled,
 } from "./lib/common.mjs";
 import {
   CLASSIFICATION_COLUMNS,
@@ -77,12 +79,18 @@ async function main() {
     process.exit(1);
   }
 
-  const archivePath = path.resolve(archive.path);
+  // After CONVERT (STEP 1b) this is the converted WebP archive, not the PNG input.
+  const archivePath = evidenceArchivePath(config);
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
   const logPath = path.join(workDir, "processing-log.jsonl");
 
   if (!(await pathExists(archivePath))) {
-    console.error(`FAIL: archive not found at ${archivePath}`);
+    console.error(
+      `FAIL: archive not found at ${archivePath}` +
+        (webpConversionEnabled(config)
+          ? " — run convert_to_webp.mjs (STEP 1b) first; it builds this WebP archive from archive.path."
+          : ""),
+    );
     await appendLog(logPath, {
       operation: "inventory_evidence",
       status: "FAIL",

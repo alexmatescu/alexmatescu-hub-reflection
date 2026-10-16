@@ -601,3 +601,104 @@ export async function appendLog(logPath, entry) {
   });
   await fs.appendFile(logPath, line + "\n", "utf8");
 }
+
+// ---------------------------------------------------------------------------
+// WebP conversion (AVL-200 §8.1, AVL200-REQ-041). The PNG input archive is
+// read once; every PNG becomes a lossy WebP at a fixed quality, verified per
+// file, and the converted archive is the evidence the rest of the pipeline
+// hashes, indexes and releases. Quality and the fidelity threshold are fixed
+// here, not in config, because the requirement fixes them.
+// ---------------------------------------------------------------------------
+
+export const WEBP_QUALITY = 80;
+/** Minimum RGB PSNR (dB) between the decoded WebP and its source PNG. */
+export const WEBP_MIN_PSNR_DB = 40;
+
+/** On unless the config explicitly sets `webp_conversion.enabled: false`
+ * (allowed only for packages sealed before AVL-200 2.0.0, AVL200-REQ-013). */
+export function webpConversionEnabled(config) {
+  return config.webp_conversion?.enabled !== false;
+}
+
+export function webpPaths(config) {
+  const { entity_slug, measurement_point, archive } = config;
+  const dir = path.resolve(
+    "evidence/work",
+    entity_slug,
+    measurement_point,
+    "webp",
+  );
+  return {
+    dir,
+    sourceDir: path.join(dir, "source"),
+    convertedDir: path.join(dir, "converted"),
+    manifestCsv: path.join(dir, "webp-conversion.csv"),
+    summaryJson: path.join(dir, "webp-conversion.json"),
+    archive: path.join(
+      dir,
+      artifactFileName(
+        entity_slug,
+        measurement_point,
+        "evidence-archive",
+        archive.version,
+        "zip",
+      ),
+    ),
+  };
+}
+
+/** The archive every step after CONVERT reads: the converted WebP archive,
+ * or `archive.path` itself when conversion is disabled (legacy packages). */
+export function evidenceArchivePath(config) {
+  return webpConversionEnabled(config)
+    ? webpPaths(config).archive
+    : path.resolve(config.archive.path);
+}
+
+/** Release-asset name of the per-file conversion manifest (one per archive version). */
+export function webpManifestFileName(config) {
+  return artifactFileName(
+    config.entity_slug,
+    config.measurement_point,
+    "webp-conversion",
+    config.archive.version,
+    "csv",
+  );
+}
+
+/**
+ * Copy the conversion manifest from work/ into the output directory, byte-
+ * identical, unless it is already there with the same bytes. Fails when the
+ * conversion summary is missing or not PASS — a package is never frozen on
+ * top of an unverified conversion.
+ */
+export async function stageWebpManifest(config, outputDir) {
+  const W = webpPaths(config);
+  if (!(await pathExists(W.summaryJson))) {
+    throw new Error(
+      `conversion summary not found at ${W.summaryJson} — run convert_to_webp.mjs (STEP 1b) first.`,
+    );
+  }
+  const summary = await readJson(W.summaryJson);
+  if (summary.status !== "PASS") {
+    throw new Error(
+      `conversion status is ${summary.status}, not PASS (${W.summaryJson}).`,
+    );
+  }
+  const dest = path.join(outputDir, webpManifestFileName(config));
+  const srcSha = await sha256File(W.manifestCsv);
+  if (await pathExists(dest)) {
+    if ((await sha256File(dest)) !== srcSha) {
+      throw new Error(`${dest} exists and differs from ${W.manifestCsv}.`);
+    }
+    return dest;
+  }
+  await fs.mkdir(outputDir, { recursive: true });
+  await fs.copyFile(W.manifestCsv, dest);
+  if ((await sha256File(dest)) !== srcSha) {
+    throw new Error(
+      `copy of the conversion manifest is not byte-identical: ${dest}`,
+    );
+  }
+  return dest;
+}

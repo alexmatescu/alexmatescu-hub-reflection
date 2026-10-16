@@ -265,6 +265,17 @@ async function main() {
     `Folderul de capturi a fost sigilat la ${manifest.sealed_at}. Fiecare captură a primit un Evidence ID la sigilare, legat de calea relativă și de SHA-256-ul ei.`,
     "",
   );
+  if (F.webpConversion) {
+    // CONVERT (STEP 1b, AVL200-REQ-041): fapte din rezumatul conversiei.
+    const conv = await readJson(P.webpSummaryPath);
+    const pct = conv.bytes.png_source
+      ? Math.round((100 * conv.bytes.webp_target) / conv.bytes.png_source)
+      : 0;
+    L.push(
+      `Înainte de sigilare, fiecare captură PNG a fost convertită în WebP la calitate ${conv.quality} (AVL-200 §8.1, AVL200-REQ-041), ca să scadă dimensiunea fișierelor și timpul de încărcare pe GitHub și în browser. Capturile WebP sunt dovezile pachetului: pe ele s-au calculat SHA-256-urile, Evidence ID-urile și arhiva. Structura folderelor și numele se păstrează; doar extensia \`.png\` devine \`.webp\`. Fiecare conversie a fost verificată (decodare completă, dimensiuni identice în pixeli, PSNR ≥ ${conv.min_psnr_db} dB; observat ${conv.psnr_db?.min ?? "-"}–${conv.psnr_db?.max ?? "-"} dB), iar celelalte fișiere au fost copiate byte cu byte. ${conv.counts.converted} capturi convertite cu ${conv.encoder.tool} ${conv.encoder.version} (\`${conv.encoder.args}\`); WebP = ${pct}% din dimensiunea PNG. \`${F.webpConversion}\` leagă, pe fișier, SHA-256-ul PNG-ului sursă de SHA-256-ul WebP-ului. Capturile PNG nu se publică.`,
+      "",
+    );
+  }
   L.push(
     table(
       ["Element", "Valoare"],
@@ -461,6 +472,8 @@ async function main() {
     archive: "Arhiva capturilor (sigilată)",
     manifest:
       "Manifestul de sigilare: Evidence ID, cale, SHA-256, timestamp din numele fișierului",
+    webpConversion:
+      "Manifestul conversiei PNG → WebP: SHA-256 sursă și țintă, dimensiuni, PSNR, pe fișier",
     querySet: "Setul de query-uri derivat din documentul sursă",
     runSheet: "Fișa rulării (declarațiile operatorului)",
     sessionContext: "Contextul de sesiune observat, pe captură",

@@ -30,6 +30,11 @@ import {
   appendLog,
   ensureCanonicalArchiveLink,
   artifactFileName,
+  readJson,
+  evidenceArchivePath,
+  webpConversionEnabled,
+  webpManifestFileName,
+  webpPaths,
 } from "./lib/common.mjs";
 
 async function main() {
@@ -100,7 +105,7 @@ async function main() {
   }
 
   const archiveLinkPath = await ensureCanonicalArchiveLink(
-    path.resolve(archive.path),
+    evidenceArchivePath(config),
     outputDir,
     archiveCanonicalName,
   );
@@ -110,6 +115,24 @@ async function main() {
     { name: indexFile, path: indexPath },
     { name: readmeFile, path: readmePath },
   ];
+  if (webpConversionEnabled(config)) {
+    const name = webpManifestFileName(config);
+    const p = path.join(outputDir, name);
+    if (!(await pathExists(p)) || !(await isFrozen(p))) {
+      console.error(
+        `FAIL: ${name} is missing or not frozen in ${outputDir}. Run freeze_artifacts.mjs (STEP 9) first.`,
+      );
+      process.exit(1);
+    }
+    const summary = await readJson(webpPaths(config).summaryJson);
+    if ((await sha256File(archiveLinkPath)) !== summary.archive?.sha256) {
+      console.error(
+        "FAIL: the archive differs from the one verified at CONVERT (STEP 1b). Do not checksum it.",
+      );
+      process.exit(1);
+    }
+    entries.push({ name, path: p });
+  }
 
   const lines = [];
   for (const entry of entries) {

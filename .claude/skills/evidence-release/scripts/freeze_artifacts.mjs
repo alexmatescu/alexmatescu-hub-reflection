@@ -28,6 +28,8 @@ import {
   unfreezeFile,
   appendLog,
   artifactFileName,
+  webpConversionEnabled,
+  stageWebpManifest,
 } from "./lib/common.mjs";
 
 async function main() {
@@ -67,6 +69,16 @@ async function main() {
     path.join(outputDir, indexFile),
     path.join(outputDir, readmeFile),
   ];
+  // The per-file conversion manifest (STEP 1b) ships with the package and is
+  // frozen with it, so it enters the checksum manifest like the index.
+  if (webpConversionEnabled(config) && !unfreeze) {
+    try {
+      targets.push(await stageWebpManifest(config, outputDir));
+    } catch (err) {
+      console.error(`FAIL: ${err.message}`);
+      process.exit(1);
+    }
+  }
 
   for (const t of targets) {
     if (!(await pathExists(t))) {

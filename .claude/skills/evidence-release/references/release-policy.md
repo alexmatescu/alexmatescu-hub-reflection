@@ -50,10 +50,34 @@ never checksummed/uploaded anywhere. If checksums were already built (STEP
 10) — let alone uploaded — the correct fix is always a new
 `metadata_version`, not unfreezing this one.
 
-## Raw evidence is immutable
+## WebP conversion before hashing (AVL-200 2.0.0, AVL200-REQ-041)
 
-The archive the user provides is the historical source. `evidence-release`
-never:
+The archive the user provides (`archive.path`, PNG captures) is the **input**.
+STEP 1b (`convert_to_webp.mjs`) reads it once, converts every PNG to WebP at
+quality 80, verifies each file (full decode, identical pixel dimensions,
+PSNR ≥ 40 dB; non-PNG files copied byte-identical), and builds the
+**converted archive** under `evidence/work/<slug>/<mp>/webp/`. From that
+point the converted archive *is* the evidence: inventory, per-file SHA-256,
+the Evidence Index, the archive checksum and the GitHub release all use it.
+
+- The PNG input archive is never written to, never uploaded and never
+  checksummed into the package. Its SHA-256 and every source PNG's SHA-256
+  are recorded in the conversion manifest
+  (`<slug>_<mp>_webp-conversion_v<archive-version>.csv`), which ships with
+  the release and enters the checksum manifest.
+- Quality (80) and the PSNR threshold (40 dB) are fixed in
+  `lib/common.mjs`, not in config, because the requirement fixes them.
+- A failed verification on any file stops the step; no converted archive is
+  produced and the pipeline cannot continue.
+- Packages sealed before AVL-200 2.0.0 keep their original PNG form
+  (AVL200-REQ-013): their config sets `webp_conversion.enabled: false`, and
+  `convert_to_webp.mjs` refuses to convert a package whose inventory already
+  points at the unconverted archive.
+
+## The evidence archive is immutable
+
+Once built (by STEP 1b, or supplied directly for a legacy package), the
+evidence archive is the historical source. `evidence-release` never:
 
 - modifies the ZIP;
 - renames files inside it;
@@ -68,14 +92,16 @@ Any anomaly is documented in the Evidence Index (`Archive anomaly` column),
 never fixed in place. `scripts/inventory_evidence.mjs` only ever *reads* the
 archive (`unzip -t` to validate, `unzip -o -q -d <work>/extracted` to produce
 a disposable, read-only-treated inspection copy under `evidence/work/`) — the
-original file passed as `archive.path` is never opened for writing.
+file passed as `archive.path` is never opened for writing, and neither is the
+converted archive after STEP 1b.
 
 ## Raw archive version vs. metadata version
 
 These are independent counters:
 
 - **Archive version** (`archive.version` in config) — bumps only when the
-  raw archive itself changes (a different ZIP, different bytes).
+  evidence archive itself changes (a different input ZIP, or a different
+  converted archive, i.e. different bytes).
 - **Metadata version** (`metadata_version` in config) — bumps when the
   Evidence Index / README / checksums are revised, *without* touching the raw
   archive (corrected classification, a fixed typo in the README, a

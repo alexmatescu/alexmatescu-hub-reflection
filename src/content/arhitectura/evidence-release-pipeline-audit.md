@@ -26,11 +26,12 @@ Nu e un skill editorial. Nu decide dacă un rezultat e HIT sau COLIZIUNE. Nu scr
 Secvența completă a pipeline-ului — identică, cuvânt cu cuvânt, cu descrierea din frontmatter-ul `SKILL.md` și cu numerotarea STEP-urilor din §4 mai jos:
 
 ```
-RAW EVIDENCE → INVENTORY → CLASSIFICATION → REVIEW → EVIDENCE INDEX → README
-  → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → GITHUB DRAFT RELEASE
+RAW EVIDENCE → WEBP CONVERSION → INVENTORY → CLASSIFICATION → REVIEW
+  → EVIDENCE INDEX → README → VALIDATION → FREEZE → CHECKSUMS
+  → VERIFICATION → GITHUB DRAFT RELEASE
 ```
 
-Corespondența cu STEP-urile detaliate în §4: RAW EVIDENCE = `archive.path`, dat ca input la STEP 1 (nu e un pas propriu-zis, e ce primești tu); INVENTORY = STEP 2–3; CLASSIFICATION = STEP 4; REVIEW = STEP 5–6; EVIDENCE INDEX + README = STEP 7; VALIDATION = STEP 8; FREEZE = STEP 9; CHECKSUMS = STEP 10; VERIFICATION = STEP 11; GITHUB DRAFT RELEASE = STEP 12–15 (sumar, confirmare, upload, URL).
+Corespondența cu STEP-urile detaliate în §4: RAW EVIDENCE = `archive.path` (capturile PNG), dat ca input la STEP 1 (nu e un pas propriu-zis, e ce primești tu); WEBP CONVERSION = STEP 1b; INVENTORY = STEP 2–3; CLASSIFICATION = STEP 4; REVIEW = STEP 5–6; EVIDENCE INDEX + README = STEP 7; VALIDATION = STEP 8; FREEZE = STEP 9; CHECKSUMS = STEP 10; VERIFICATION = STEP 11; GITHUB DRAFT RELEASE = STEP 12–15 (sumar, confirmare, upload, URL).
 
 ---
 
@@ -51,6 +52,7 @@ Tot ce vezi mai jos e citit efectiv de Claude când rulează skill-ul — nu e o
 │   ├── lib/
 │   │   ├── common.mjs                ← toate utilitarele deterministe (hash, YAML, CSV, freeze, gh)
 │   │   └── schema.mjs                ← lista de coloane, sursă unică de adevăr pentru CSV
+│   ├── convert_to_webp.mjs           ← STEP 1b (folosit și de mkt-evidence-package)
 │   ├── inventory_evidence.mjs        ← STEP 2
 │   ├── hash_evidence.mjs             ← STEP 3
 │   ├── build_index.mjs               ← STEP 5 și STEP 7 (index)
@@ -150,7 +152,15 @@ Nu există niciun cod care rulează încă. Claude citește `evidence-package.ya
 
 Config-ul e parsat efectiv de `lib/common.mjs::parseSimpleYaml` — **nu** e un parser YAML general, e un parser scris special pentru forma exactă de care are nevoie acest fișier (chei simple, o singură imbricare, liste simple). Motivul: proiectul nu are nicio librărie YAML în `package.json`, și agentul nu are voie să adauge o dependență nouă fără aprobare. Dacă un config folosește o formă YAML mai complexă (ancore, scalari multi-linie), parserul **eșuează explicit** — nu-l interpretează greșit în silențiu.
 
-### STEP 2 — Validare + inventariere arhivă brută (`inventory_evidence.mjs`)
+### STEP 1b — Conversia PNG → WebP (`convert_to_webp.mjs`)
+
+```
+node .claude/skills/evidence-release/scripts/convert_to_webp.mjs <config>
+```
+
+Din AVL-200 2.0.0 (AVL200-REQ-041), arhiva PNG primită la `archive.path` e doar intrarea. Scriptul o testează (`unzip -t`), îi calculează SHA-256, o extrage și convertește fiecare PNG în WebP la calitate 80 (`cwebp -q 80 -metadata icc`, single-thread, deci același rezultat byte cu byte pentru aceeași versiune `cwebp`). Pe fiecare fișier verifică decodarea completă (`dwebp`), dimensiunile identice în pixeli și un PSNR de cel puțin 40 dB față de PNG; celelalte fișiere se copiază byte cu byte. O singură abatere oprește pasul și nu se produce nicio arhivă. La succes rezultă `webp/webp-conversion.csv` (SHA-256 PNG ↔ SHA-256 WebP pe fișier), `webp/webp-conversion.json` și arhiva convertită, re-verificată intrare cu intrare. Toți pașii de mai jos lucrează pe această arhivă; arhiva PNG nu se publică. Un pachet început înainte de 2.0.0 nu se convertește retroactiv (`webp_conversion.enabled: false`, AVL200-REQ-013).
+
+### STEP 2 — Validare + inventariere arhivă de dovezi (`inventory_evidence.mjs`)
 
 ```
 node .claude/skills/evidence-release/scripts/inventory_evidence.mjs <config>

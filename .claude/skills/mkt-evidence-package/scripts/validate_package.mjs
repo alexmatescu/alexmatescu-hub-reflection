@@ -44,6 +44,7 @@ async function main() {
   // 1. Fișiere prezente.
   for (const k of [
     "manifest",
+    "webpConversion",
     "querySet",
     "runSheet",
     "sessionContext",

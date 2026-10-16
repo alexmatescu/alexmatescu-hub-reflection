@@ -84,7 +84,7 @@ export function detectSurface(folderName, surfaceMapOverride) {
 // Timestamp din numele fișierelor (naming-convention.md §6.1)
 // ---------------------------------------------------------------------------
 
-const EXT = String.raw`\.(?:png|jpg|jpeg)$`;
+const EXT = String.raw`\.(?:png|jpg|jpeg|webp)$`;
 export const FILENAME_PATTERNS = [
   {
     id: "MACOS_RO",
@@ -242,11 +242,30 @@ export function instancePaths(config) {
     sessionReviewPath: path.join(workDir, "session-context-review.csv"),
     sessionSummaryPath: path.join(workDir, "session-context-summary.json"),
     captureClassificationPath: path.join(workDir, "capture-classification.csv"),
+    // CONVERT (STEP 1b, AVL200-REQ-041): PNG folder → WebP folder sealed at STEP 2.
+    webpDir: path.join(workDir, "webp"),
+    convertedDir: path.join(workDir, "webp", "converted"),
+    webpManifestPath: path.join(workDir, "webp", "webp-conversion.csv"),
+    webpSummaryPath: path.join(workDir, "webp", "webp-conversion.json"),
     archivePath: path.resolve(
       "evidence/incoming/mkt",
       `${slug}_capture-archive_v${config.archive.version}.zip`,
     ),
   };
+}
+
+/** On unless the config sets `webp_conversion.enabled: false` — allowed only
+ * for runs sealed before AVL-200 2.0.0 (AVL200-REQ-013). */
+export function webpConversionEnabled(config) {
+  return config.webp_conversion?.enabled !== false;
+}
+
+/** The folder STEP 2 seals: the converted WebP folder, or the capture folder
+ * itself when conversion is disabled. */
+export function sealedFolderPath(config) {
+  return webpConversionEnabled(config)
+    ? instancePaths(config).convertedDir
+    : path.resolve(config.capture_folder.path);
 }
 
 export function artifactName(slug, artifact, version, ext) {
@@ -330,6 +349,9 @@ export function packageFiles(config) {
   const files = {
     archive: `${slug}_capture-archive_v${av}.zip`,
     manifest: `${slug}_capture-manifest_v${av}.json`,
+    webpConversion: webpConversionEnabled(config)
+      ? `${slug}_webp-conversion_v${av}.csv`
+      : null,
     querySet: `${slug}_query-set_${config.query_set.query_set_id}.csv`,
     runSheet: config.run_sheet?.path ? `${slug}_run-sheet_v${mv}.yaml` : null,
     sessionContext: artifactName(slug, "session-context", mv, "csv"),
@@ -345,6 +367,7 @@ export function packageFiles(config) {
 export function frozenArtifactKeys(config) {
   return [
     "manifest",
+    "webpConversion",
     "querySet",
     "runSheet",
     "sessionContext",

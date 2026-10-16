@@ -36,6 +36,8 @@ import {
   isSystemFile,
   isOperatorDocument,
   isCaptureFile,
+  webpConversionEnabled,
+  sealedFolderPath,
 } from "./lib/mkt.mjs";
 
 const SCRIPT = "seal_capture_folder.mjs";
@@ -58,7 +60,19 @@ async function main() {
   }
   const config = await loadConfig(configPath);
   const P = instancePaths(config);
-  const folder = path.resolve(config.capture_folder.path);
+  // Cu conversia activă se sigilează folderul WebP produs la STEP 1b, nu capture_folder.path.
+  const folder = sealedFolderPath(config);
+  if (webpConversionEnabled(config)) {
+    const summary = (await pathExists(P.webpSummaryPath))
+      ? await readJson(P.webpSummaryPath)
+      : null;
+    if (summary?.status !== "PASS") {
+      console.error(
+        "FAIL: conversia WebP nu e făcută sau nu e PASS — rulează convert_capture_folder.mjs (STEP 1b) înainte de SEAL.",
+      );
+      process.exit(1);
+    }
+  }
   if (!(await pathExists(folder))) {
     console.error(`FAIL: folderul de capturi nu există: ${folder}`);
     process.exit(1);

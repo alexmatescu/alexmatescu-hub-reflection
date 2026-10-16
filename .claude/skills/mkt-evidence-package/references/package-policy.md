@@ -5,7 +5,9 @@ adaptată pentru un folder nearhivat și pentru registrul de observații.
 
 ## 1. Folderul sursă și arhiva
 
-- Folderul de capturi este doar citit. Agentul nu redenumește, nu mută, nu șterge, nu re-encodează și nu „curăță” nimic.
+- Folderul de capturi este doar citit. Agentul nu redenumește, nu mută, nu șterge și nu „curăță” nimic în el.
+- Conversia PNG → WebP q80 (STEP 1b, AVL-200 §8.1, AVL200-REQ-041) scrie într-un folder separat, `work/.../webp/converted/`, verificat pe fiecare fișier (decodare completă, dimensiuni identice, PSNR ≥ 40 dB). Acest folder se sigilează, iar capturile WebP sunt dovezile pachetului. Capturile PNG nu intră în arhivă și nu se publică; SHA-256-ul fiecăreia rămâne în manifestul conversiei, care intră în pachet și în manifestul de checksum-uri.
+- O rulare sigilată înainte de AVL-200 2.0.0 rămâne în forma originală (`webp_conversion.enabled: false`, AVL200-REQ-013).
 - Arhiva e creată o singură dată, la SEAL, și verificată în trei feluri: (a) `unzip -t`; (b) fiecare intrare din zip are același SHA-256 ca în manifest; (c) folderul are încă același conținut ca manifestul, la finalul sigilării.
 - După sigilare, sursa de adevăr este arhiva. Copia din `work/.../extracted/` servește doar la inspecție.
 - Dacă folderul se schimbă după sigilare, de exemplu cu o captură adăugată, se face o arhivă nouă cu `archive.version` nouă. Arhiva veche nu se suprascrie.
@@ -18,7 +20,7 @@ generate → validate → freeze → checksums → verify → (opțional) releas
 
 Tot ce intră în manifestul de checksum-uri devine read-only (`0o444`) înainte
 de calculul checksum-urilor: capture index, observation register, README,
-query set, run sheet (dacă există), session context și capture manifest. Arhiva intră în manifest printr-un
+query set, run sheet (dacă există), session context, capture manifest și manifestul conversiei WebP. Arhiva intră în manifest printr-un
 link simbolic canonic. Un script care ar rescrie un artefact înghețat se
 oprește cu eroare.
 

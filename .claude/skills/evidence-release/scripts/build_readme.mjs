@@ -22,6 +22,9 @@ import {
   appendLog,
   artifactFileName,
   assertNotFrozen,
+  webpConversionEnabled,
+  webpPaths,
+  webpManifestFileName,
 } from "./lib/common.mjs";
 
 const SENTINELS = new Set([
@@ -88,6 +91,11 @@ async function main() {
     metadata_version,
     "txt",
   );
+  // CONVERT (STEP 1b, AVL200-REQ-041): facts come from the conversion summary.
+  const conv = webpConversionEnabled(config)
+    ? await readJson(webpPaths(config).summaryJson)
+    : null;
+  const convFile = conv ? webpManifestFileName(config) : null;
   const archiveFile = artifactFileName(
     entity_slug,
     measurement_point,
@@ -189,9 +197,18 @@ async function main() {
 
   lines.push("## 4. Raw evidence and provenance");
   lines.push("");
-  lines.push(
-    "Original files, filenames, and archive paths are preserved unchanged from the raw evidence archive. All derived metadata (classification, grouping, checksums) is recorded separately in the Evidence Index — it does not alter the raw files in any way. Every row's SHA-256 is computed on the original bytes, with no re-encoding.",
-  );
+  if (conv) {
+    const pct = conv.bytes.png_source
+      ? Math.round((100 * conv.bytes.webp_target) / conv.bytes.png_source)
+      : 0;
+    lines.push(
+      `Before hashing, every PNG capture was converted to WebP at quality ${conv.quality} (AVL-200 §8.1, AVL200-REQ-041) to reduce file size and loading time on GitHub and in the browser. The converted files are the evidence of this package: the archive, the Evidence Index SHA-256 values and every later step use them. Folder structure and filenames are preserved; only the \`.png\` extension became \`.webp\`. Each conversion was verified (full decode, identical pixel dimensions, PSNR ≥ ${conv.min_psnr_db} dB; observed ${conv.psnr_db?.min ?? "-"}–${conv.psnr_db?.max ?? "-"} dB) and non-PNG files were copied byte-identical. ${conv.counts.converted} files were converted with ${conv.encoder.tool} ${conv.encoder.version} (\`${conv.encoder.args}\`); the WebP files total ${pct}% of the PNG bytes. \`${convFile}\` lists, per file, the source PNG SHA-256 and the WebP SHA-256. The PNG input archive (SHA-256 \`${conv.input.sha256 ?? "folder input"}\`) is not published.`,
+    );
+  } else {
+    lines.push(
+      "Original files, filenames, and archive paths are preserved unchanged from the raw evidence archive. All derived metadata (classification, grouping, checksums) is recorded separately in the Evidence Index — it does not alter the raw files in any way. Every row's SHA-256 is computed on the original bytes, with no re-encoding.",
+    );
+  }
   lines.push("");
 
   lines.push("## 5. Evidence Index");
@@ -308,7 +325,7 @@ async function main() {
   lines.push("## 11. Evidence integrity");
   lines.push("");
   lines.push(
-    `Every artifact in this package (raw archive, evidence index, README) has a SHA-256 checksum recorded in \`${shaFile}\`, verifiable with \`shasum -a 256 -c ${shaFile}\` once all files are in the same directory. Each row of the Evidence Index also carries the SHA-256 of its individual source file, computed on the original archive bytes.`,
+    `Every artifact in this package (raw archive, evidence index, README) has a SHA-256 checksum recorded in \`${shaFile}\`, verifiable with \`shasum -a 256 -c ${shaFile}\` once all files are in the same directory. Each row of the Evidence Index also carries the SHA-256 of its individual source file, computed on the ${conv ? "converted (WebP) archive" : "original archive"} bytes.${conv ? ` The conversion manifest \`${convFile}\` is part of the checksum manifest.` : ""}`,
   );
   lines.push("");
 
@@ -370,7 +387,11 @@ async function main() {
 
   lines.push("## 16. Files");
   lines.push("");
-  lines.push(`- \`${archiveFile}\` (raw evidence archive, immutable)`);
+  lines.push(
+    `- \`${archiveFile}\` (${conv ? "evidence archive, WebP q" + conv.quality + ", immutable" : "raw evidence archive, immutable"})`,
+  );
+  if (convFile)
+    lines.push(`- \`${convFile}\` (PNG → WebP conversion manifest)`);
   lines.push(`- \`${indexFile}\``);
   lines.push(`- \`${readmeFile}\` (this file)`);
   lines.push(`- \`${shaFile}\``);

@@ -8,13 +8,13 @@ export const avl200StandardDovaziMasurareTrasabilitateHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-200</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.1.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>2.0.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
-        <tr><th scope="row">Ultima verificare</th><td>14 septembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>16 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima verificare</th><td>16 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie/standard-dovezi-masurare-trasabilitate">https://delamatescu.ro/lab/metodologie/standard-dovezi-masurare-trasabilitate</a></td></tr>
         <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a></td></tr>
@@ -37,7 +37,7 @@ export const avl200StandardDovaziMasurareTrasabilitateHtml = `
 
       <p>AVL-200 este un document normativ de nivel C — Methodology în corpusul AI Visibility Lab Documentation.</p>
 
-      <p>Versiunea curentă, <strong>1.0.0</strong>, este activă. AVL-200 este standardul activ al laboratorului pentru evidence, măsurare și trasabilitate, aplicabil transversal conform domeniului de aplicare din §2.</p>
+      <p>Versiunea curentă, <strong>2.0.0</strong>, este activă. AVL-200 este standardul activ al laboratorului pentru evidence, măsurare și trasabilitate, aplicabil transversal conform domeniului de aplicare din §2.</p>
 
       <p>Un set limitat de decizii pur operaționale (politica finală asupra unor artefacte ale Evidence Package, validarea end-to-end a implementării de referință pe un pachet real, auditul complet al schemei Evidence Index față de cerințele <code>AVL200-REQ</code>) rămân deschise și sunt documentate explicit, ca excepții acceptate, în §38. Ele nu afectează aplicabilitatea normativă a cerințelor din acest document.</p>
 
@@ -129,6 +129,8 @@ export const avl200StandardDovaziMasurareTrasabilitateHtml = `
         <li>registru de rulare;</li>
         <li>fișier generat de instrumentul de măsurare.</li>
       </ul>
+
+      <p>Pentru capturile de ecran PNG, forma conservată care intră în lanțul de audit este copia WebP produsă și verificată conform §8.1.1 (AVL200-REQ-041).</p>
 
       <p>Raw Evidence descrie <strong>ce a fost conservat</strong>, nu ce înseamnă acel artefact.</p>
 
@@ -419,11 +421,46 @@ Etapa de re-măsurare / F3</code></pre>
 
       <p>După înregistrarea sa într-o rundă de măsurare, Raw Evidence NU TREBUIE modificat in-place pentru a îmbunătăți lizibilitatea, denumirea, ordinea, rezultatul sau conformitatea aparentă.</p>
 
-      <p>Operații precum conversia de format, redimensionarea, OCR-ul, redactarea sau adnotarea produc <strong>artefacte derivate</strong>, nu înlocuitori ai originalului.</p>
+      <p>Operații precum redimensionarea, OCR-ul, redactarea sau adnotarea produc <strong>artefacte derivate</strong>, nu înlocuitori ai originalului. Conversia de format este o excepție doar pentru capturile de ecran PNG și doar în condițiile din §8.1.1: se face înainte de înregistrarea hash-ului, iar rezultatul ei devine forma conservată.</p>
 
-      <blockquote><strong>AVL200-REQ-014 — Raw Evidence original TREBUIE păstrat separat de orice copie procesată sau derivată.</strong></blockquote>
+      <blockquote>
+        <p><strong>AVL200-REQ-014 — Retrasă în versiunea 2.0.0.</strong> Text anterior: „<del>Raw Evidence original TREBUIE păstrat separat de orice copie procesată sau derivată.</del>”</p>
+        <p>Cerința a fost retrasă pe 16 octombrie 2026, prin decizia lui Alex Matescu, și este înlocuită pentru capturile PNG de AVL200-REQ-041. Textul rămâne aici ca evidență a evoluției metodologiei. Identificatorul nu se reutilizează. Pachetele de dovezi sigilate înainte de 2.0.0 rămân în forma în care au fost sigilate și publicate (AVL200-REQ-013).</p>
+      </blockquote>
 
       <blockquote><strong>AVL200-REQ-015 — O modificare a bytes-ilor Raw Evidence după înregistrarea hash-ului invalidează asocierea cu acel hash și TREBUIE tratată ca o versiune nouă sau ca incident.</strong></blockquote>
+
+      <h4>8.1.1. Conversia capturilor PNG în WebP</h4>
+
+      <p><strong>De ce.</strong> Capturile de ecran PNG ale unei rulări sunt mari: un pachet de câteva sute de capturi ajunge la sute de megaocteți. Fișierele mari fac release-urile de pe GitHub greu de descărcat și încarcă lent capturile în browser, când sunt deschise pentru verificare sau afișate pe site. Pe 16 capturi reale din arhivele laboratorului, conversia în WebP la calitate 80 a redus dimensiunea la aproximativ 20% din cea a PNG-ului (−80%). Diferența medie dintre imagini, măsurată prin PSNR, a fost de circa 49 dB. Textul, structura paginii și pozițiile rezultatelor rămân la fel de lizibile.</p>
+
+      <p><strong>Fluxul.</strong></p>
+      <ol>
+        <li>Arhiva sau folderul cu capturile PNG primite de la operator este doar intrarea procesului și nu se modifică.</li>
+        <li>Fiecare captură PNG se convertește în WebP la calitate 80. Fișierele care nu sunt PNG se copiază byte cu byte.</li>
+        <li>Fiecare conversie se verifică după criteriile de mai jos.</li>
+        <li>Se calculează SHA-256 pe fiecare fișier convertit.</li>
+        <li>Se construiește arhiva cu fișierele convertite și se calculează SHA-256 al arhivei.</li>
+        <li>Fișierele convertite, hash-urile lor și arhiva convertită sunt dovezile folosite în tot procesul: Evidence Index, Evidence Package și GitHub Release. Pe GitHub se încarcă arhiva convertită, fără arhiva PNG inițială.</li>
+      </ol>
+
+      <p><strong>Criterii de verificare, pentru fiecare fișier:</strong></p>
+      <ul>
+        <li>fișierul WebP se decodează complet;</li>
+        <li>dimensiunile în pixeli sunt identice cu ale PNG-ului;</li>
+        <li>PSNR-ul dintre WebP-ul decodat și PNG este de cel puțin 40 dB;</li>
+        <li>fișierele care nu sunt PNG au același SHA-256 înainte și după copiere;</li>
+        <li>encoderul rulează cu parametri ficși, pe un singur fir de execuție, iar versiunea lui se înregistrează, deci aceeași intrare produce aceeași ieșire, byte cu byte;</li>
+        <li>un manifest de conversie, publicat în Evidence Package și protejat de manifestul de checksum-uri, leagă pentru fiecare fișier SHA-256-ul PNG-ului sursă de SHA-256-ul WebP-ului.</li>
+      </ul>
+
+      <p>Dacă un singur fișier nu îndeplinește criteriile, conversia se oprește și nu se produce nicio arhivă. O conversie care le îndeplinește pe toate este considerată de încredere: conținutul capturii rămâne neschimbat la nivelul la care e folosit în clasificare, observare și măsurare, iar nicio verificare nu indică o corupere a dovezii.</p>
+
+      <p>Conversia la calitate 80 este cu pierderi. Pixelii WebP-ului nu sunt identici cu cei ai PNG-ului, iar hash-ul WebP atestă integritatea capturii convertite, nu a PNG-ului (§10.1, §10.3). Legătura cu PNG-ul este documentată prin manifestul de conversie.</p>
+
+      <blockquote><strong>AVL200-REQ-041 — Capturile de ecran PNG TREBUIE convertite în WebP la calitate 80 înainte de calculul hash-ului, iar fiecare conversie TREBUIE verificată conform §8.1.1. Fișierele WebP verificate, hash-urile lor și arhiva construită din ele sunt dovezile folosite în proces. Arhiva PNG inițială, folosită doar ca intrare, NU TREBUIE publicată.</strong></blockquote>
+
+      <p>Cerința se aplică pachetelor de dovezi sigilate începând cu versiunea 2.0.0. Pachetele sigilate anterior nu se convertesc retroactiv (AVL200-REQ-013).</p>
 
       <h3>8.2. Dovezi acceptabile</h3>
 
@@ -1004,7 +1041,8 @@ RELEASED / PUBLISHED</code></pre>
 
       <ul>
         <li>citește config-ul pachetului;</li>
-        <li>verifică și inventariază arhiva;</li>
+        <li>convertește capturile PNG în WebP la calitate 80 și verifică fiecare conversie (§8.1.1, AVL200-REQ-041);</li>
+        <li>verifică și inventariază arhiva convertită;</li>
         <li>calculează hash-uri și metadata tehnică;</li>
         <li>permite clasificare vizuală controlată;</li>
         <li>generează staging index;</li>
@@ -1081,7 +1119,7 @@ RELEASED / PUBLISHED</code></pre>
         <li>separă Raw Evidence, Indexed Evidence, Observation, Measurement și Interpretation;</li>
         <li>păstrează proveniența materială;</li>
         <li>utilizează semantica explicită a necunoscutelor;</li>
-        <li>păstrează Raw Evidence original;</li>
+        <li>păstrează Raw Evidence în forma conservată definită în §8.1 (pentru capturile PNG, copia WebP verificată conform AVL200-REQ-041);</li>
         <li>permite trasabilitatea evidence-to-claim;</li>
         <li>documentează contaminările și abaterile;</li>
         <li>aplică versionare;</li>
@@ -1229,7 +1267,8 @@ Case study / experiment / report</code></pre>
       <h3>Evidence</h3>
 
       <ul>
-        <li>☐ Raw Evidence original este păstrat.</li>
+        <li>☐ Raw Evidence este păstrat în forma conservată definită în §8.1.</li>
+        <li>☐ Capturile PNG sunt convertite în WebP la calitate 80 și verificate înainte de hash; manifestul de conversie face parte din pachet, iar arhiva PNG nu este publicată (AVL200-REQ-041).</li>
         <li>☐ Evidence-ul poate fi identificat prin ID stabil.</li>
         <li>☐ Hash-urile sunt calculate determinist.</li>
         <li>☐ Provenance este documentat fără valori inventate.</li>
@@ -1327,6 +1366,12 @@ Case study / experiment / report</code></pre>
             <td>13 octombrie 2026</td>
             <td>Activ</td>
             <td>MINOR: §7 aliniat la convenția de etichetare AI Visibility Lab (decizie Alex Matescu, 1 octombrie 2026): T0 este baseline-ul, F1 primul punct de măsurare după baseline, F2 … Fn re-măsurările ulterioare. Etapele metodologice se identifică doar prin nume — etapa de baseline, etapa sursei canonice, etapa prezenței distribuite, etapa de re-măsurare — fără coduri; definiții noi pentru sursa canonică și prezența distribuită. §7.4 nou: corespondența cu convențiile anterioare (F0–F3 ca faze, T0/T1/T2 ca puncte), sursa unică pentru celelalte documente; §31 aliniat. Cerință nouă: AVL200-REQ-040 (codurile T0 și F1 … Fn se folosesc exclusiv pentru punctele de măsurare), adăugată și în checklist-ul de conformitate (§36). Cerințele AVL200-REQ-012 și AVL200-REQ-013 nu se schimbă. Fișierul sursă .md, care conținea o variantă nepublicată și contradictorie a §7 (modificată fără versiune nouă), a fost aliniat cu textul publicat.</td>
+          </tr>
+          <tr>
+            <td>2.0.0</td>
+            <td>16 octombrie 2026</td>
+            <td>Activ</td>
+            <td>MAJOR (decizie Alex Matescu, 16 octombrie 2026): AVL200-REQ-014 este retrasă — textul rămâne în §8.1 ca evidență a evoluției metodologiei, iar identificatorul nu se reutilizează. Cerință nouă AVL200-REQ-041: capturile de ecran PNG se convertesc în WebP la calitate 80 înainte de calculul hash-ului, cu verificare pe fiecare fișier (decodare completă, dimensiuni identice, PSNR ≥ 40 dB, copie byte-identică pentru celelalte fișiere, encoder determinist cu versiunea înregistrată, manifest de conversie în pachet). Fișierele convertite, hash-urile lor și arhiva convertită sunt dovezile din proces; arhiva PNG inițială este doar intrare și nu se publică. Motivul: dimensiunea fișierelor și viteza de încărcare pe GitHub și în browser (−80% pe 16 capturi măsurate, PSNR ~49 dB). §8.1 rescris și §8.1.1 nou; §3.1, §27, §30 și checklist-ul din §36 aliniate. Pachetele sigilate înainte de 2.0.0 rămân neschimbate (AVL200-REQ-013). Implementarea: pasul de conversie din <code>evidence-release</code> și <code>mkt-evidence-package</code>. Paragraful „Controlul documentului” indica încă versiunea 1.0.0 și a fost corectat.</td>
           </tr>
         </tbody>
       </table>

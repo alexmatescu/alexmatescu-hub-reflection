@@ -678,11 +678,11 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.1.0",
+      "versiune": "2.0.0",
       "dataCreare": "2026-09-13",
       "dataPublicare": "2026-09-14",
-      "dataModificare": "2026-10-13",
-      "ultimaVerificare": "2026-09-14",
+      "dataModificare": "2026-10-16",
+      "ultimaVerificare": "2026-10-16",
       "fisierMd": "src/content/lab/AVL/AVL-200_Standard_dovezi_masurare_trasabilitate.md",
       "fisierTs": "src/data/lab-content/avl-200.ts",
       "wiring": {
@@ -693,7 +693,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 32,
+      "zileDeLaVerificare": 0,
       "anomalii": []
     },
     {

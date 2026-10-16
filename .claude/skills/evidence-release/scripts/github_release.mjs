@@ -34,6 +34,8 @@ import {
   appendLog,
   verifyChecksumManifest,
   artifactFileName,
+  webpConversionEnabled,
+  webpManifestFileName,
 } from "./lib/common.mjs";
 
 function buildReleaseNotes(config, stats) {
@@ -165,6 +167,10 @@ async function main() {
     { name: readmeFile, path: path.join(outputDir, readmeFile) },
     { name: shaFile, path: path.join(outputDir, shaFile) },
   ];
+  if (webpConversionEnabled(config)) {
+    const name = webpManifestFileName(config);
+    assets.splice(3, 0, { name, path: path.join(outputDir, name) });
+  }
   for (const a of assets) {
     if (!(await pathExists(a.path))) {
       console.error(

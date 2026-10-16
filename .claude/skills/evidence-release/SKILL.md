@@ -1,6 +1,6 @@
 ---
 name: evidence-release
-description: Transformă o arhivă brută de capturi/screenshots într-un Evidence Package documentat, verificabil și pregătit ca GitHub Release (draft) — pentru orice entitate, studiu, măsurare longitudinală (T0/F1/F2/...) sau fereastră experimentală din AI Visibility Lab. Pipeline determinist RAW EVIDENCE → INVENTORY → CLASSIFICATION → REVIEW → EVIDENCE INDEX → README → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → GITHUB DRAFT RELEASE. NU scrie studiul de caz, NU interpretează rezultatele editorial, NU modifică metodologia experimentului, NU publică concluzii, NU modifică raw evidence, NU publică automat (se oprește la draft release). Invocă atunci când userul cere procesarea/publicarea unui pachet de dovezi (evidence package/archive), pregătirea unui GitHub Release cu dovezi, sau cere „un agent care procesează evidence/screenshots pentru studii de caz".
+description: Transformă o arhivă brută de capturi/screenshots într-un Evidence Package documentat, verificabil și pregătit ca GitHub Release (draft) — pentru orice entitate, studiu, măsurare longitudinală (T0/F1/F2/...) sau fereastră experimentală din AI Visibility Lab. Pipeline determinist RAW EVIDENCE → WEBP CONVERSION → INVENTORY → CLASSIFICATION → REVIEW → EVIDENCE INDEX → README → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → GITHUB DRAFT RELEASE. NU scrie studiul de caz, NU interpretează rezultatele editorial, NU modifică metodologia experimentului, NU publică concluzii, NU modifică arhiva de intrare (o citește și o convertește PNG → WebP q80 înainte de hash, AVL200-REQ-041), NU publică automat (se oprește la draft release). Invocă atunci când userul cere procesarea/publicarea unui pachet de dovezi (evidence package/archive), pregătirea unui GitHub Release cu dovezi, sau cere „un agent care procesează evidence/screenshots pentru studii de caz".
 ---
 
 # evidence-release — Evidence Package pipeline
@@ -16,8 +16,9 @@ altuia, nu modifică celălalt skill în timpul rulării acestuia.
 fluxul de mai jos și în `src/content/arhitectura/evidence-release-pipeline-audit.md`):
 
 ```
-RAW EVIDENCE → INVENTORY → CLASSIFICATION → REVIEW → EVIDENCE INDEX → README
-  → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → GITHUB DRAFT RELEASE
+RAW EVIDENCE → WEBP CONVERSION → INVENTORY → CLASSIFICATION → REVIEW
+  → EVIDENCE INDEX → README → VALIDATION → FREEZE → CHECKSUMS
+  → VERIFICATION → GITHUB DRAFT RELEASE
 ```
 
 ## 0. Ce NU face acest agent (recapitulare obligatorie)
@@ -26,7 +27,7 @@ RAW EVIDENCE → INVENTORY → CLASSIFICATION → REVIEW → EVIDENCE INDEX → 
 - Nu interpretează rezultatele în scop editorial (niciun HIT/COLIZIUNE/verdict — acelea aparțin studiului de caz care citează acest pachet).
 - Nu modifică metodologia experimentului.
 - Nu publică concluzii.
-- Nu modifică raw evidence (arhiva, fișierele din interior, denumirile) — vezi `references/release-policy.md`.
+- Nu scrie în arhiva de intrare (`archive.path`) și nu modifică arhiva de dovezi după ce a fost construită. Singura transformare este conversia PNG → WebP q80 de la STEP 1b, verificată pe fiecare fișier (AVL-200 §8.1, AVL200-REQ-041) — vezi `references/release-policy.md`.
 - Nu publică automat release-ul — se oprește mereu la DRAFT (STEP 14).
 - Nu inventează timestamp-uri, hash-uri, dimensiuni, filenames sau alte fapte deterministe — acelea vin exclusiv din scripturi (§1 principiu de arhitectură).
 - Nu automatizează necontrolat clasificările incerte — vezi human-in-the-loop, STEP 6.
@@ -105,7 +106,8 @@ e ilustrativ.
 ## 3. Fluxul complet (STEP 1–15)
 
 Corespondența cu secvența RAW EVIDENCE → ... → GITHUB DRAFT RELEASE de mai
-sus: RAW EVIDENCE = `archive.path`, dat ca input la STEP 1; INVENTORY =
+sus: RAW EVIDENCE = `archive.path` (capturile PNG), dat ca input la STEP 1;
+WEBP CONVERSION = STEP 1b; INVENTORY =
 STEP 2–3; CLASSIFICATION = STEP 4; REVIEW = STEP 5–6; EVIDENCE INDEX +
 README = STEP 7; VALIDATION = STEP 8; FREEZE = STEP 9; CHECKSUMS = STEP 10;
 VERIFICATION = STEP 11; GITHUB DRAFT RELEASE = STEP 12–15.
@@ -115,12 +117,39 @@ Citește și validează structural `evidence-package.yaml` (vezi
 `references/config-schema.md`). Dacă un câmp obligatoriu lipsește, întreabă
 userul.
 
-### STEP 2 — Validate + Inventory raw archive
+### STEP 1b — WebP conversion (AVL-200 §8.1, AVL200-REQ-041)
+```
+node .claude/skills/evidence-release/scripts/convert_to_webp.mjs <config>
+```
+Citește arhiva PNG de la `archive.path` fără să scrie în ea (`unzip -t`,
+SHA-256, extragere în `evidence/work/<slug>/<mp>/webp/source/`) și
+convertește fiecare PNG în WebP la calitate 80 (`cwebp -q 80 -metadata icc`,
+single-thread, deci determinist pentru aceeași versiune `cwebp`). Pe fiecare
+fișier verifică: decodare completă (`dwebp`), dimensiuni identice în pixeli,
+PSNR ≥ 40 dB față de PNG. Fișierele care nu sunt PNG se copiază byte cu byte
+(SHA-256 identic), iar fișierele de sistem (`__MACOSX/`, `._*`, `.DS_Store`)
+se exclud. Orice abatere → FAIL, nicio arhivă convertită. La PASS scrie
+`webp/webp-conversion.csv` (SHA-256 PNG sursă ↔ SHA-256 WebP, dimensiuni,
+PSNR, pe fișier), `webp/webp-conversion.json` (versiunea `cwebp`, totaluri,
+SHA-256 al arhivei de intrare) și arhiva convertită
+`webp/<slug>_<mp>_evidence-archive_v<archive.version>.zip`, re-verificată
+intrare cu intrare. **De aici încolo, arhiva convertită este dovada**: toți
+pașii următori o citesc (`evidenceArchivePath` din `lib/common.mjs`), iar
+arhiva PNG nu se publică. Re-rularea pe o conversie terminată e no-op
+verificat; o conversie care nu mai corespunde manifestului oprește totul.
+
+Un pachet început înainte de AVL-200 2.0.0 (inventarul existent indică
+arhiva neconvertită) nu se convertește retroactiv: scriptul se oprește, iar
+config-ul trebuie să conțină `webp_conversion.enabled: false`
+(AVL200-REQ-013). Necesită `cwebp`/`dwebp` (`brew install webp`).
+
+### STEP 2 — Validate + Inventory evidence archive
 ```
 node .claude/skills/evidence-release/scripts/inventory_evidence.mjs <config>
 ```
-Validează integritatea ZIP (`unzip -t`), calculează **SHA-256 al arhivei
-întregi** (`archive_sha256` în `inventory.json`, alături de
+Lucrează pe arhiva convertită de la STEP 1b (sau pe `archive.path` pentru un
+pachet vechi). Validează integritatea ZIP (`unzip -t`), calculează **SHA-256
+al arhivei întregi** (`archive_sha256` în `inventory.json`, alături de
 `archive_hashed_at`) — acesta e hash-ul „botez" al dovezilor pe care STEP 8
 îl va recalcula și compara, ca să garanteze că artifactele generate descriu
 byte-cu-byte fișierul efectiv inventariat, nu o versiune ulterior
@@ -235,17 +264,20 @@ node .claude/skills/evidence-release/scripts/freeze_artifacts.mjs <config>
 Doar după ce STEP 8 confirmă `CONTENT_VALID` (sau `HUMAN_REVIEW_REQUIRED`
 confirmat explicit). Face `chmod 0o444` pe Evidence Index și README
 finalizate — de aici încolo, orice corecție necesită o `metadata_version`
-nouă, nu editare în loc (§1.1). Arhiva brută nu e atinsă (nu e niciodată
-deschisă pentru scriere oriunde în acest pipeline).
+nouă, nu editare în loc (§1.1). Tot aici, manifestul conversiei WebP e
+copiat byte-identic din `work/.../webp/` în directorul de output și înghețat.
+Arhiva de intrare și arhiva convertită nu sunt atinse (nu sunt deschise
+pentru scriere după STEP 1b).
 
 ### STEP 10 — Checksums (build)
 ```
 node .claude/skills/evidence-release/scripts/build_checksums.mjs <config>
 ```
 Refuză să ruleze dacă Evidence Index-ul sau README-ul nu sunt încă
-înghețate. SHA-256 pentru arhivă (prin link simbolic canonic, plasat direct
+înghețate. SHA-256 pentru arhiva de dovezi (prin link simbolic canonic, plasat direct
 în directorul de output — fără a copia/redenumi originalul, vezi
-`naming-convention.md` §1/§7) + index + README. Nu se include pe sine.
+`naming-convention.md` §1/§7) + index + README + manifestul conversiei WebP
+(înghețat la STEP 9). Refuză dacă arhiva diferă de cea verificată la STEP 1b. Nu se include pe sine.
 Directorul `evidence/output/<slug>/<mp>/<metadata_version>/` devine astfel
 auto-conținut, verificabil direct cu `shasum -a 256 -c`.
 
@@ -316,7 +348,8 @@ verificabile.
 
 ## 7. Checklist final obligatoriu
 
-- [ ] Arhiva brută neatinsă (nicio scriere pe `archive.path`) și SHA-256-ul ei confirmat identic între STEP 2 și STEP 8.
+- [ ] Arhiva de intrare neatinsă (nicio scriere pe `archive.path`); conversia WebP (STEP 1b) PASS pe toate fișierele; SHA-256-ul arhivei de dovezi confirmat identic între STEP 1b, STEP 2, STEP 8 și STEP 10.
+- [ ] Arhiva PNG de intrare nu e printre asset-urile release-ului; manifestul conversiei este.
 - [ ] Nicio valoare determinist-calculabilă nu a fost introdusă manual/ghicită de Claude.
 - [ ] Toate celulele de clasificare sunt completate cu valoare reală sau sentinel explicit (`UNKNOWN`/`NOT_APPLICABLE`), nu `UNCLASSIFIED` rămas.
 - [ ] `evidence-review.csv` a fost prezentat userului (STEP 6), iar elementele critice au fost confirmate explicit înainte de STEP 7.
@@ -326,7 +359,7 @@ verificabile.
 - [ ] Niciun `PRIVACY_REVIEW_REQUIRED` neconfirmat de user înainte de upload.
 - [ ] Confirmarea explicită a userului obținută înainte de `github_release.mjs --execute` (STEP 13).
 - [ ] Release-ul rămâne DRAFT — niciun apel de publicare.
-- [ ] Niciun `git add`/`commit`/`push` pe arhiva brută sau pe `evidence/` fără cerere explicită a userului.
+- [ ] Niciun `git add`/`commit`/`push` pe arhive sau pe `evidence/` fără cerere explicită a userului.
 
 ## Utilizare
 

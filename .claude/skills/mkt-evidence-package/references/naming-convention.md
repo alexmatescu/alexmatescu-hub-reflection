@@ -128,6 +128,7 @@ execuție: e cheia deciziilor de review.
 ```
 <instance-slug>_capture-archive_v<archive.version>.zip
 <instance-slug>_capture-manifest_v<archive.version>.json
+<instance-slug>_webp-conversion_v<archive.version>.csv      # manifestul conversiei PNG → WebP (AVL200-REQ-041)
 <instance-slug>_query-set_<query_set_id>.csv
 <instance-slug>_run-sheet_v<metadata_version>.yaml          # doar dacă există
 <instance-slug>_session-context_v<metadata_version>.csv
@@ -161,9 +162,9 @@ Acoperirea (fișiere potrivite din total) apare în `detection-report.json`.
 
 | ID | Tipar (după NFC) | Exemplu |
 |---|---|---|
-| `MACOS_RO` | `^Captură de ecran din (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) la (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?: \(\d+\))?\.(png|jpg|jpeg)$` | `Captură de ecran din 2026-10-09 la 17.25.51.png` |
-| `MACOS_EN` | `^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) at (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?:[\s\u202f](?<ampm>AM|PM))?(?: \(\d+\))?\.(png|jpg|jpeg)$` | `Screenshot 2026-10-09 at 5.25.51 PM.png` |
-| `WINDOWS_SNIP` | `^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) (?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\.(png|jpg|jpeg)$` | `Screenshot 2026-10-09 172551.png` |
+| `MACOS_RO` | `^Captură de ecran din (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) la (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?: \(\d+\))?\.(png|jpg|jpeg|webp)$` | `Captură de ecran din 2026-10-09 la 17.25.51.png` |
+| `MACOS_EN` | `^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) at (?<hour>\d{1,2})\.(?<minute>\d{2})\.(?<second>\d{2})(?:[\s\u202f](?<ampm>AM|PM))?(?: \(\d+\))?\.(png|jpg|jpeg|webp)$` | `Screenshot 2026-10-09 at 5.25.51 PM.png` |
+| `WINDOWS_SNIP` | `^Screenshot (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) (?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\.(png|jpg|jpeg|webp)$` | `Screenshot 2026-10-09 172551.png` |
 
 Timestamp-ul extras din nume reprezintă ora locală a dispozitivului.
 Fusul orar se ia din fișa rulării. Când în același folder există două

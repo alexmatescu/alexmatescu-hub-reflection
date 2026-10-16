@@ -1,6 +1,6 @@
 ---
 name: mkt-evidence-package
-description: Transformă un folder brut de capturi de Market Discovery (seria MKT-RO-AIV — SERP-uri Google/Bing și răspunsuri AI, organizate pe suprafețe) într-un pachet de dovezi sigilat, documentat și verificabil, plus un registru de observații (fiecare rezultat/furnizor numit în fiecare execuție, cu poziție, URL acolo unde e vizibil, proveniență și calificarea relevanței față de query). Pipeline determinist SEAL → INVENTORY → QUERY SET → SESSION CONTEXT (analiza vizuală a contextului de sesiune: incognito, logat/nelogat, locație, chat temporar/existent, contaminare) → REVIEW → CAPTURE CLASSIFICATION → REVIEW → OBSERVATION EXTRACTION → REVIEW → ARTIFACTS → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → (opțional) GITHUB DRAFT RELEASE. NU face Verification/eligibilitate, NU deduplică entități în Candidate Set, NU interpretează rezultatele, NU modifică setul de query-uri sau capturile brute, NU publică. Distinct de `evidence-release` (rezervat studiilor pe entitatea Alex Matescu). Invocă atunci când userul cere procesarea capturilor unei rulări Discovery (pilot, rulare trimestrială FULL sau lunară M<luna>) din Market Measurement, sau „pachetul de dovezi pentru Discovery".
+description: Transformă un folder brut de capturi de Market Discovery (seria MKT-RO-AIV — SERP-uri Google/Bing și răspunsuri AI, organizate pe suprafețe) într-un pachet de dovezi sigilat, documentat și verificabil, plus un registru de observații (fiecare rezultat/furnizor numit în fiecare execuție, cu poziție, URL acolo unde e vizibil, proveniență și calificarea relevanței față de query). Pipeline determinist WEBP CONVERSION (PNG → WebP q80 înainte de hash, AVL200-REQ-041) → SEAL → INVENTORY → QUERY SET → SESSION CONTEXT (analiza vizuală a contextului de sesiune: incognito, logat/nelogat, locație, chat temporar/existent, contaminare) → REVIEW → CAPTURE CLASSIFICATION → REVIEW → OBSERVATION EXTRACTION → REVIEW → ARTIFACTS → VALIDATION → FREEZE → CHECKSUMS → VERIFICATION → (opțional) GITHUB DRAFT RELEASE. NU face Verification/eligibilitate, NU deduplică entități în Candidate Set, NU interpretează rezultatele, NU modifică setul de query-uri sau capturile brute, NU publică. Distinct de `evidence-release` (rezervat studiilor pe entitatea Alex Matescu). Invocă atunci când userul cere procesarea capturilor unei rulări Discovery (pilot, rulare trimestrială FULL sau lunară M<luna>) din Market Measurement, sau „pachetul de dovezi pentru Discovery".
 ---
 
 # mkt-evidence-package — pachet de dovezi + registru de observații pentru Market Discovery
@@ -14,7 +14,7 @@ de **piață**, nu de entitate. Cele două skill-uri sunt independente: nu se
 importă cod unul din altul, nu se modifică unul pe altul.
 
 ```
-SEAL → INVENTORY → QUERY SET → SESSION CONTEXT → REVIEW (0) → CAPTURE CLASSIFICATION → REVIEW (1)
+WEBP CONVERSION → SEAL → INVENTORY → QUERY SET → SESSION CONTEXT → REVIEW (0) → CAPTURE CLASSIFICATION → REVIEW (1)
   → OBSERVATION EXTRACTION → REVIEW (2) → ARTIFACTS → VALIDATION → FREEZE
   → CHECKSUMS → VERIFICATION → [GITHUB DRAFT RELEASE — opțional, dezactivat implicit]
 ```
@@ -26,7 +26,7 @@ Bază metodologică: setul de query-uri declarat în config (pentru piloții 1�
 
 ## 0. Ce NU face acest agent
 
-- Nu modifică folderul de capturi, fișierele din el sau denumirile lor; nu modifică arhiva după sigilare.
+- Nu scrie în folderul de capturi, nu redenumește și nu mută nimic din el; nu modifică arhiva după sigilare. Singura transformare este conversia PNG → WebP q80 de la STEP 1b, într-un folder separat din `work/`, verificată pe fiecare fișier (AVL-200 §8.1, AVL200-REQ-041).
 - Nu deschide paginile din rezultate și nu extrage nume din surse neafișate — principiul **as-returned** (§2).
 - Nu face Verification (identitate, serviciu, relevanță pentru România, eligibilitate). Calificarea `IRRELEVANT` din registru privește **legătura cu query-ul**, nu eligibilitatea furnizorului (§2.2).
 - Nu deduplică entități și nu construiește Candidate Set-ul — registrul păstrează fiecare observație brută; deduplicarea e etapa următoare.
@@ -140,11 +140,17 @@ Nimic nu se completează „probabil".
 ### STEP 1 — Read config
 Validează structural config-ul (`instance_id`, `instance_type`, căi, query set, versiuni). Maparea suprafețelor nu se cere în config; o determină STEP 2.
 
+### STEP 1b — WEBP CONVERSION (AVL-200 §8.1, AVL200-REQ-041)
+```
+node .claude/skills/mkt-evidence-package/scripts/convert_capture_folder.mjs <config>
+```
+Citește `capture_folder.path` fără să scrie în el și convertește fiecare PNG în WebP la calitate 80 în `evidence/work/mkt/<instance-slug>/webp/converted/`, cu scriptul comun `evidence-release/scripts/convert_to_webp.mjs` (aceleași verificări pe fiecare fișier: decodare completă, dimensiuni identice în pixeli, PSNR ≥ 40 dB; documentele operatorului se copiază byte cu byte; fișierele de sistem se exclud). Orice abatere → FAIL. Rezultă `webp/webp-conversion.csv` (SHA-256 PNG ↔ SHA-256 WebP pe fișier) și `webp/webp-conversion.json`. Structura subfolderelor și numele se păstrează, doar extensia `.png` devine `.webp`, deci detecția suprafețelor și a timestamp-ului din nume funcționează la fel. **Folderul convertit este cel care se sigilează la STEP 2**; capturile PNG nu intră în arhivă și nu se publică. O rulare sigilată înainte de AVL-200 2.0.0 nu se convertește retroactiv (`webp_conversion.enabled: false`, AVL200-REQ-013). Necesită `cwebp`/`dwebp` (`brew install webp`).
+
 ### STEP 2 — SEAL (sigilarea folderului și crearea arhivei)
 ```
 node .claude/skills/mkt-evidence-package/scripts/seal_capture_folder.mjs <config>
 ```
-1. **Detecție.** Parcurge folderul fără să scrie în el. Detectează subfolderele, le mapează la suprafețe (§2.1), alege tiparul de timestamp din nume (§6.1) și scrie `detection-report.json`. Documentele operatorului din rădăcină (de exemplu notițele rulării în `.docx`) se sigilează și intră în zip, cu Document ID în loc de Evidence ID (`naming-convention.md` §3.1). Orice alt fișier din rădăcină sau un fișier care nu e captură într-un subfolder oprește sigilarea (cod 3). Căile se păstrează cu bytes-ii exacți de pe disc (macOS folosește NFD), iar pentru sortare se folosește forma NFC. Fișierele de sistem (`.DS_Store`) apar în manifest ca `SYSTEM_FILE_EXCLUDED`: nu primesc Evidence ID și nu intră în zip.
+1. **Detecție.** Parcurge folderul convertit de la STEP 1b (sau `capture_folder.path`, pentru o rulare veche) fără să scrie în el. SEAL refuză dacă conversia lipsește sau nu e PASS. Detectează subfolderele, le mapează la suprafețe (§2.1), alege tiparul de timestamp din nume (§6.1) și scrie `detection-report.json`. Documentele operatorului din rădăcină (de exemplu notițele rulării în `.docx`) se sigilează și intră în zip, cu Document ID în loc de Evidence ID (`naming-convention.md` §3.1). Orice alt fișier din rădăcină sau un fișier care nu e captură într-un subfolder oprește sigilarea (cod 3). Căile se păstrează cu bytes-ii exacți de pe disc (macOS folosește NFD), iar pentru sortare se folosește forma NFC. Fișierele de sistem (`.DS_Store`) apar în manifest ca `SYSTEM_FILE_EXCLUDED`: nu primesc Evidence ID și nu intră în zip.
 2. Calculează SHA-256 pe fiecare fișier și atribuie Evidence ID în această ordine (`references/naming-convention.md` §3). Ordinea e doar de identificare, nu cronologică.
 3. Scrie `capture-manifest.json` (cale, nume, dimensiune, SHA-256, Evidence ID, subfolder, `filename_timestamp_raw`).
 4. Creează zip-ul cu fișierele în ordinea manifestului (`zip -X`, fără atribute extinse), în `evidence/incoming/mkt/`.
@@ -250,7 +256,7 @@ node .../build_register.mjs <config> --finalize
 node .../copy_supporting_artifacts.mjs <config>
 node .../build_readme.mjs <config>
 ```
-Generează capture index-ul și registrul (`--finalize` eșuează la orice `UNCLASSIFIED` sau problemă blocantă), copiază byte-identic în output manifestul de sigilare, `query-set.csv`, fișa rulării și contextul de sesiune, apoi scrie README-ul (`references/readme-template.md`, umplut mecanic din artefactele finalizate).
+Generează capture index-ul și registrul (`--finalize` eșuează la orice `UNCLASSIFIED` sau problemă blocantă), copiază byte-identic în output manifestul de sigilare, manifestul conversiei WebP, `query-set.csv`, fișa rulării și contextul de sesiune, apoi scrie README-ul (`references/readme-template.md`, umplut mecanic din artefactele finalizate).
 
 ### STEP 12 — VALIDATION
 `validate_package.mjs` — schemă, enum-uri, Evidence ID-uri unice și prezente în manifest, fiecare observație legată de o execuție și de cel puțin o captură existentă, `query_id` ∈ query set, `relevance_basis` prezent unde e cerut, `SERP_SNIPPET` cu părinte valid, poziții organice fără goluri/dubluri neexplicate pe execuție, recalcularea `archive_sha256` vs sigilare, consistența versiunilor. Status: `CONTENT_VALID` / `HUMAN_REVIEW_REQUIRED` / `VALIDATION_FAILED`.
@@ -296,11 +302,14 @@ Fiecare script scrie în `evidence/work/mkt/<instance-slug>/processing-log.jsonl
 
 - **2026-10-12** — după pilotul din 2026-10-11 (raportul intern v0.1, RV-05, RV-06): AI Overview are Evidence ID de bloc `<Evidence ID>-AIO` (coloanele `ai_overview_evidence_id`, `ai_overview_part`), rândurile lui citează doar aceste ID-uri și sunt `PRIMARY`; adâncimea Google ~30 / 3 pagini pentru setul v0.2.0.
 
+- **2026-10-16** — AVL-200 2.0.0 (AVL200-REQ-041): STEP 1b nou, conversia PNG → WebP q80 înainte de sigilare (`convert_capture_folder.mjs`, care folosește `evidence-release/scripts/convert_to_webp.mjs`). Se sigilează folderul convertit; manifestul conversiei intră în pachet. Tiparele de timestamp din nume acceptă `.webp`. Rulările deja sigilate rămân pe PNG (`webp_conversion.enabled: false`).
+
 - **2026-10-14** — după pilotul 3 (MKT-RO-AIV-2026Q4-PILOT-3): numerotarea secțiunilor README e consecutivă (`build_readme.mjs`). Înainte, secțiunea opțională „Incidente și anomalii” omisă lăsa un gol (§9 → §11). În `build_register.mjs`, regula 4 de includere: `entity_kind_observed = UNCERTAIN` devine `EXCLUDE_UNCERTAIN` după decizia userului, ca la regula 2.
 
 ## 8. Checklist final
 
-- [ ] Folderul sursă neatins; manifestul folder = manifestul zip = SHA-urile din index.
+- [ ] Folderul sursă neatins; conversia WebP (STEP 1b) PASS pe toate fișierele; manifestul folderului convertit = manifestul zip = SHA-urile din index.
+- [ ] Capturile PNG nu sunt în arhivă și nici printre asset-uri; manifestul conversiei e în pachet.
 - [ ] `archive_sha256` identic între STEP 2 și STEP 12.
 - [ ] Fiecare captură are exact un Evidence ID, atribuit la sigilare. Capturile Google cu AI Overview au și ID-ul blocului (`-AIO`), citat de rândurile AI Overview.
 - [ ] Setul de query-uri verificat prin SHA-256; toate `query_id`-urile din index ∈ set.

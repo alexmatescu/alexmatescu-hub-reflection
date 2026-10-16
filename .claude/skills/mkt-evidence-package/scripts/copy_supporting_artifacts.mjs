@@ -50,6 +50,7 @@ async function main() {
 
   const pairs = [
     [P.manifestPath, F.manifest],
+    ...(F.webpConversion ? [[P.webpManifestPath, F.webpConversion]] : []),
     [P.querySetPath, F.querySet],
     [P.sessionContextPath, F.sessionContext],
   ];
