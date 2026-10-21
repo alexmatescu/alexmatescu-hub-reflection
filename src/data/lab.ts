@@ -238,6 +238,12 @@ export const labNav: LabPage[] = [
           "Social media devine strat informațional pentru AI: când postările, comentariile și comunitățile intră în răspunsuri",
         lead: "Cum intră conținutul din Facebook, Instagram, Threads, X, Reddit și LinkedIn în ecosistemele AI? Separăm training, retrieval, native platform context, citation și recommendation și propunem un cadru verificabil pentru Social Source Accessibility în AI Visibility Lab.",
       },
+      {
+        to: "/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida",
+        label:
+          "Pilotul 4 Market Discovery: de ce rularea din Bologna nu intră în reuniunea de candidați",
+        lead: "Rularea MKT-RO-AIV-2026Q4-PILOT-4, făcută la 10 octombrie 2026 din aeroportul din Bologna cu 4 expresii scurte, a fost procesată și publicată ca pachet de dovezi, dar exclusă din reuniunea de candidați: expresiile scurte, fără ancoră geografică, au produs din Italia răspunsuri orientate spre piața italiană, iar rularea nu atinge pragul minim al condițiilor de rulare. Ce s-a rulat, ce lipsește și ce se poate folosi din ea.",
+      },
     ],
   },
   {

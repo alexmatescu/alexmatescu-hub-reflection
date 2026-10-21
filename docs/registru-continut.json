@@ -1,10 +1,40 @@
 {
-  "generat": "2026-10-16",
+  "generat": "2026-10-21",
   "pragReverificareZile": 180,
-  "totalIntrari": 172,
+  "totalIntrari": 173,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
+    {
+      "id": "LAB-20",
+      "titlu": "Pilotul 4 Market Discovery: de ce rularea din Bologna nu intră în reuniunea de candidați",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida",
+      "slug": "market-discovery-pilot-4-bologna-rulare-invalida",
+      "categorie": "Search & Retrieval",
+      "tip": "Analiză de caz",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-21T13:19:00+03:00",
+      "dataModificare": "2026-10-21",
+      "ultimaVerificare": "2026-10-21",
+      "fisierMd": "src/content/lab/articles/20.market-discovery-pilot-4-bologna-rulare-invalida.md",
+      "fisierTs": "src/data/lab-content/20. market-discovery-pilot-4-bologna-rulare-invalida.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-21",
+      "imagine": null,
+      "jsonLd": "@graph",
+      "nrCitari": 4,
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
     {
       "id": "LAB-16",
       "titlu": "Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit",
@@ -32,7 +62,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 15,
+      "zileDeLaVerificare": 20,
       "anomalii": []
     },
     {
@@ -62,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 15,
+      "zileDeLaVerificare": 20,
       "anomalii": []
     },
     {
@@ -92,7 +122,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 15,
+      "zileDeLaVerificare": 20,
       "anomalii": []
     },
     {
@@ -122,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 14,
+      "zileDeLaVerificare": 19,
       "anomalii": []
     },
     {
@@ -152,7 +182,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 16,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -182,7 +212,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 16,
+      "zileDeLaVerificare": 21,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -214,7 +244,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 50,
+      "zileDeLaVerificare": 55,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -246,7 +276,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 58,
+      "zileDeLaVerificare": 63,
       "anomalii": []
     },
     {
@@ -276,7 +306,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 58,
+      "zileDeLaVerificare": 63,
       "anomalii": []
     },
     {
@@ -306,7 +336,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 20,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 5,
       "anomalii": []
     },
     {
@@ -336,7 +366,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 58,
+      "zileDeLaVerificare": 63,
       "anomalii": []
     },
     {
@@ -366,7 +396,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 58,
+      "zileDeLaVerificare": 63,
       "anomalii": []
     },
     {
@@ -396,7 +426,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 60,
+      "zileDeLaVerificare": 65,
       "anomalii": []
     },
     {
@@ -426,7 +456,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 59,
+      "zileDeLaVerificare": 64,
       "anomalii": []
     },
     {
@@ -576,7 +606,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 14,
+      "zileDeLaVerificare": 19,
       "anomalii": []
     },
     {
@@ -606,7 +636,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 0,
-      "zileDeLaVerificare": 28,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -635,7 +665,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 15,
+      "zileDeLaVerificare": 20,
       "anomalii": []
     },
     {
@@ -664,7 +694,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 5,
       "anomalii": []
     },
     {
@@ -693,7 +723,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 5,
       "anomalii": []
     },
     {
@@ -722,7 +752,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 14,
+      "zileDeLaVerificare": 19,
       "anomalii": []
     },
     {
