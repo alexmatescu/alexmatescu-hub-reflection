@@ -13,9 +13,13 @@ import { sha256File, writeText, appendLog, toCsv } from "./lib/common.mjs";
 import { loadConfig, instancePaths } from "./lib/mkt.mjs";
 
 const SCRIPT = "build_query_set.mjs";
-const ID_RE = /^Q-(DISC-(?:\d{3}|X\d{2})|USER-(?:CONV|SHORT)-\d{3})$/;
+// Q-USER-NNN: ID-urile locale din USER v0.1.0 (întrebări complete) și v0.2.0
+// (expresii scurte). Același ID desemnează texte diferite în cele două versiuni,
+// deci subgrupul se ia din antetul coloanei de text, nu din ID.
+const ID_RE = /^Q-(DISC-(?:\d{3}|X\d{2})|USER-(?:(?:CONV|SHORT)-)?\d{3})$/;
 const QUERY_HEADER_RE = /^(interogare exactă|prompt complet|expresia exactă)/i;
 const CLASS_HEADER_RE = /^(clasă principală|intenție)$/i;
+const LEGACY_USER_RE = /^Q-USER-\d{3}$/;
 
 function cells(line) {
   return line
@@ -26,10 +30,14 @@ function cells(line) {
     .map((c) => c.trim());
 }
 
-function subgroupOf(id) {
+function subgroupOf(id, queryHeader) {
   if (id.startsWith("Q-DISC-")) return "DISCOVERY";
   if (id.startsWith("Q-USER-CONV-")) return "USER-CONV";
   if (id.startsWith("Q-USER-SHORT-")) return "USER-SHORT";
+  if (LEGACY_USER_RE.test(id)) {
+    if (/^prompt complet/i.test(queryHeader)) return "USER-CONV";
+    if (/^expresia exactă/i.test(queryHeader)) return "USER-SHORT";
+  }
   return "UNKNOWN";
 }
 
@@ -81,7 +89,7 @@ async function main() {
       query_set_id: config.query_set.query_set_id,
       query_id: id,
       query_exact: c[qIdx],
-      subgroup: subgroupOf(id),
+      subgroup: subgroupOf(id, header[qIdx]),
       class: cIdx >= 0 ? c[cIdx] : "NOT_APPLICABLE",
       layer: layerOf(id),
       source_path: config.query_set.source_path,

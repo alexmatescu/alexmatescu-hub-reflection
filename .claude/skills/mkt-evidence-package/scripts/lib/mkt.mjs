@@ -158,8 +158,21 @@ export function detectFilenamePattern(filenames, overridePattern) {
 // ---------------------------------------------------------------------------
 
 export const INSTANCE_ID_RE = /^[A-Z0-9]+(-[A-Z0-9]+)*$/;
-export const INSTANCE_TYPE_RE = /^(PILOT|T0|F[1-9]\d*)$/;
+// config-schema.md: PILOT / FULL / M<luna> (două cifre), luna în trimestrul instanței
+export const INSTANCE_TYPE_RE = /^(PILOT|FULL|M(0[1-9]|1[0-2]))$/;
 export const QUARTER_RE = /^\d{4}Q[1-4]$/;
+
+/** Problema de `instance_type` față de `quarter`, sau null dacă e valid. */
+export function instanceTypeProblem(instanceType, quarter) {
+  if (!INSTANCE_TYPE_RE.test(instanceType))
+    return "instance_type invalid (PILOT / FULL / M<luna>)";
+  if (instanceType.startsWith("M") && QUARTER_RE.test(quarter ?? "")) {
+    const month = Number(instanceType.slice(1));
+    if (Math.ceil(month / 3) !== Number(quarter.slice(-1)))
+      return `instance_type ${instanceType} nu e o lună din ${quarter}`;
+  }
+  return null;
+}
 
 const REQUIRED = [
   "series_id",
@@ -201,8 +214,10 @@ export async function loadConfig(configPath) {
     problems.push("instance_id invalid");
   if (config.instance_slug && !SLUG_RE.test(config.instance_slug))
     problems.push("instance_slug invalid (kebab-case)");
-  if (config.instance_type && !INSTANCE_TYPE_RE.test(config.instance_type))
-    problems.push("instance_type invalid (PILOT / T0 / F<n>)");
+  if (config.instance_type) {
+    const problem = instanceTypeProblem(config.instance_type, config.quarter);
+    if (problem) problems.push(problem);
+  }
   if (config.quarter && !QUARTER_RE.test(config.quarter))
     problems.push("quarter invalid (YYYYQn)");
   if (

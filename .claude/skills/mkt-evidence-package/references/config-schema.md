@@ -17,7 +17,7 @@ de mai jos sunt cele ale pilotului, ca exemplu.
 | `metadata_version` | string | ex. `"1.0"`. Independent de `archive.version`. |
 | `query_set.source_path` | string | Fișierul `.md` sursă al setului. |
 | `query_set.source_sha256` | string | SHA-256 așteptat. Nepotrivire → STOP. |
-| `query_set.query_set_id` | string | ex. `MKT-RO-AIV-DISCOVERY-v0.1.0`. |
+| `query_set.query_set_id` | string | ex. `MKT-RO-AIV-DISCOVERY-v0.1.0`, `USER-RO-v0.2.0`. Setul în vigoare la data execuției. |
 | `queries_executed` | list | ID-urile rulate efectiv, subset al setului. |
 
 ## Câmpuri opționale

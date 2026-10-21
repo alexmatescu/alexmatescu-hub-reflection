@@ -115,6 +115,17 @@ se stabilește întâi din capturi și abia apoi din declarații. Reguli:
 - Contaminarea înseamnă orice context anterior vizibil care poate influența răspunsul. Exemple: mesaje anterioare în același fir, referințe la utilizator, firma lui sau conversații trecute, memorie actualizată, instrucțiuni sau fișiere atașate, istoric sau sugestii personalizate în caseta de căutare. Contaminarea se marchează. Nu elimină execuția.
 - Datele de cont (email, nume) nu se transcriu niciodată. Se notează doar că sunt vizibile, iar captura primește `PRIVACY_REVIEW_REQUIRED`.
 
+### 2.5 Fără captură, execuția nu există
+
+O execuție există în pachet doar dacă are cel puțin o captură. O execuție rulată, dar necapturată (capturi nesalvate sau pierdute), se tratează ca **nerulată**: nu primește Execution ID, nu are rând în capture index și nu are rezultat. Afirmația operatorului că a rulat-o nu ține loc de dovadă.
+
+Fiecare execuție lipsă față de `queries_executed × suprafețe` se declară în fișa rulării, ca abatere (`deviations`), cu suprafața, query-ul și motivul:
+
+- `NOT_RUN` — nu a fost rulată;
+- `RUN_NOT_CAPTURED` — rulată, dar fără captură; declarația operatorului se păstrează doar ca informație de context.
+
+O suprafață nerulată în întregime se declară o singură dată, pentru toate query-urile ei. Execuțiile lipsă se raportează în README și nu se tratează niciodată ca execuții fără furnizori. Decizia operatorului, 2026-10-19, pilotul din Bologna (`MKT-RO-AIV-2026Q4-PILOT-4`).
+
 ## 3. Input
 
 ```
@@ -164,6 +175,8 @@ Re-rularea pe un folder deja sigilat: dacă manifestul existent coincide → no-
 
 ### STEP 4 — QUERY SET
 `build_query_set.mjs` — verifică SHA-256 al fișierului `.md` declarat, extrage tabelele de query-uri în `query-set.csv` (`query_set_id`, `query_id`, `query_exact`, `subgroup`, `class`, `layer`, `source_sha256`). Textul nu se normalizează. Lista `queries_executed` din config trebuie să fie un subset al setului.
+
+ID-uri acceptate: `Q-DISC-NNN`, `Q-DISC-XNN`, `Q-USER-CONV-NNN`, `Q-USER-SHORT-NNN` și ID-urile locale `Q-USER-NNN` din USER v0.1.0 și v0.2.0. Același `Q-USER-NNN` desemnează texte diferite în cele două versiuni, deci subgrupul lor se ia din antetul coloanei de text („Prompt complet” → `USER-CONV`, „Expresia exactă” → `USER-SHORT`). O rulare se declară cu setul în vigoare la data execuției, cu ID-urile acelui set. Rezultatele nu se reetichetează retroactiv cu ID-urile unei versiuni ulterioare (USER v0.3.0 §3).
 
 ### STEP 5 — SESSION CONTEXT (Claude, pas preliminar)
 Înainte de orice analiză pe query sau pe rezultate, Claude deschide fiecare

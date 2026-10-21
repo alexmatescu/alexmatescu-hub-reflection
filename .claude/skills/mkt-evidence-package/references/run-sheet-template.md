@@ -155,6 +155,19 @@ toate câmpurile goale se ignoră.
 Abaterile DEV-01…DEV-04 sunt cele cunoscute pentru primul pilot, la 2026-10-11.
 Câmpul `reason` îl completează operatorul.
 
+**Execuțiile lipsă** se declară tot ca abateri (`SKILL.md` §2.5). O execuție rulată, dar necapturată, contează ca nerulată. Exemplu:
+
+```yaml
+  DEV-05:
+    rule: "Execuții așteptate: queries_executed × suprafețe"
+    actual: "BSEARCH nerulat pentru niciun query (NOT_RUN)"
+    reason: "Declarația operatorului"
+  DEV-06:
+    rule: "Execuții așteptate: queries_executed × suprafețe"
+    actual: "GAIMODE și CHATGPT, Q-USER-001: rulate, dar necapturate (RUN_NOT_CAPTURED); tratate ca nerulate"
+    reason: "Capturile nu au fost salvate"
+```
+
 **Notițele operatorului într-un document.** Dacă operatorul pune în rădăcina
 folderului de capturi un document (de exemplu `Draft pilot 2 Romania.docx`),
 documentul se sigilează (Document ID, `naming-convention.md` §3.1), iar

@@ -18,7 +18,7 @@ eligibilitate. Aceeași entitate apare de câte ori a fost afișată.
 | 4 | `surface` | DERIVAT | cod | Preluat din execuție. |
 | 5 | `query_id` | DERIVAT | | Preluat din execuție. |
 | 6 | `query_set_id` | DETERMINISTIC | | |
-| 7 | `query_layer` | DERIVAT | `CORE-CANDIDATE` / `EXPLORATORY` | Preluat din `query-set.csv`. |
+| 7 | `query_layer` | DERIVAT | `CORE-CANDIDATE` / `EXPLORATORY` / `STANDARD` (USER) | Preluat din `query-set.csv`. |
 | 8 | `evidence_ids` | CLASIFICARE → validat | listă de Evidence ID separate prin `;` | Capturile în care se vede observația. Cel puțin una. Rândurile `AI_OVERVIEW` citează doar ID-urile blocului (`<Evidence ID>-AIO`, `naming-convention.md` §3.2); celelalte rânduri nu le citează. |
 | 9 | `provenance` | CLASIFICARE | `SERP_RESULT` / `SERP_SNIPPET` / `AI_RESPONSE` / `AI_CITATION` / `AI_IMAGE_TEXT` | Vezi §Proveniență și blocuri. |
 | 10 | `serp_block` | CLASIFICARE | `ORGANIC` / `ADS` / `LOCAL` / `PAA` / `AI_OVERVIEW` / `GENERATED_ANSWER` / `OTHER` / `NOT_APPLICABLE` | `NOT_APPLICABLE` pe suprafețele AI și numai acolo. |
