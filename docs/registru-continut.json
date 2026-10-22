@@ -1,10 +1,40 @@
 {
-  "generat": "2026-10-21",
+  "generat": "2026-10-22",
   "pragReverificareZile": 180,
-  "totalIntrari": 173,
+  "totalIntrari": 174,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
+    {
+      "id": "LAB-21",
+      "titlu": "Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte",
+      "slug": "market-discovery-pilot-5-sibiu-expresii-scurte",
+      "categorie": "Search & Retrieval",
+      "tip": "Analiză de caz",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-22T07:16:00+03:00",
+      "dataModificare": "2026-10-22",
+      "ultimaVerificare": "2026-10-22",
+      "fisierMd": "src/content/lab/articles/21.market-discovery-pilot-5-sibiu-expresii-scurte.md",
+      "fisierTs": "src/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-22",
+      "imagine": null,
+      "jsonLd": "@graph",
+      "nrCitari": 5,
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
     {
       "id": "LAB-20",
       "titlu": "Pilotul 4 Market Discovery: de ce rularea din Bologna nu intră în reuniunea de candidați",
@@ -16,7 +46,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-21",
       "dataPublicare": "2026-10-21T13:19:00+03:00",
       "dataModificare": "2026-10-21",
       "ultimaVerificare": "2026-10-21",
@@ -32,7 +62,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 1,
       "anomalii": []
     },
     {
@@ -62,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -92,7 +122,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -122,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -152,7 +182,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 19,
+      "zileDeLaVerificare": 20,
       "anomalii": []
     },
     {
@@ -182,7 +212,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 22,
       "anomalii": []
     },
     {
@@ -212,7 +242,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 22,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -244,7 +274,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 55,
+      "zileDeLaVerificare": 56,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -276,7 +306,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 63,
+      "zileDeLaVerificare": 64,
       "anomalii": []
     },
     {
@@ -306,7 +336,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 63,
+      "zileDeLaVerificare": 64,
       "anomalii": []
     },
     {
@@ -336,7 +366,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 20,
-      "zileDeLaVerificare": 5,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -366,7 +396,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 63,
+      "zileDeLaVerificare": 64,
       "anomalii": []
     },
     {
@@ -396,7 +426,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 63,
+      "zileDeLaVerificare": 64,
       "anomalii": []
     },
     {
@@ -426,7 +456,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 65,
+      "zileDeLaVerificare": 66,
       "anomalii": []
     },
     {
@@ -456,7 +486,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 64,
+      "zileDeLaVerificare": 65,
       "anomalii": []
     },
     {
@@ -606,7 +636,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 19,
+      "zileDeLaVerificare": 20,
       "anomalii": []
     },
     {
@@ -636,7 +666,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 0,
-      "zileDeLaVerificare": 33,
+      "zileDeLaVerificare": 34,
       "anomalii": []
     },
     {
@@ -665,7 +695,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -694,7 +724,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 5,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -723,7 +753,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 5,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -752,7 +782,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 19,
+      "zileDeLaVerificare": 20,
       "anomalii": []
     },
     {

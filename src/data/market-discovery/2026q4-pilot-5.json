@@ -1,0 +1,6691 @@
+{
+  "slug": "2026q4-pilot-5",
+  "packageSlug": "mkt-ro-aiv-2026q4-pilot-5",
+  "instanceId": "MKT-RO-AIV-2026Q4-PILOT-5",
+  "label": "Pilotul 5",
+  "querySetId": "MKT-RO-AIV-DISCOVERY-v0.2.0",
+  "packageVersion": "1.0",
+  "reportVersion": "0.1",
+  "release": {
+    "tag": "mkt-evidence-mkt-ro-aiv-2026q4-pilot-5-v1.0",
+    "published": true
+  },
+  "integrity": {
+    "mkt-ro-aiv-2026q4-pilot-5_capture-index_v1.0.csv": "572ce3b4494da9b2fb0f8a72d420171a083233675d80085da0dd46de51b0fa06",
+    "mkt-ro-aiv-2026q4-pilot-5_observation-register_v1.0.csv": "5d865a9dbcefa6a44c9bee6229766642188d51db09f784d9cdaa2ada93c6f922",
+    "mkt-ro-aiv-2026q4-pilot-5_query-set_MKT-RO-AIV-DISCOVERY-v0.2.0.csv": "db234111e2846fbbb4dafe8b8d6306df6a84d2dfcbb82a84d8dd7dec30a22dcd",
+    "mkt-ro-aiv-2026q4-pilot-5_run-sheet_v1.0.yaml": "1b2331c8af82bb70a2d9b255d15c0b758c6238165b0260791ec136980b06a556",
+    "mkt-ro-aiv-2026q4-pilot-5_session-context_v1.0.csv": "3bbdd5e19a532de451e664f82170e3d032a7f5bf238549771ae821fbd9860fd9",
+    "mkt-ro-aiv-2026q4-pilot-5_capture-archive_v1.0.zip": "14ca71ef7521bf60c25b6c76260108b8bea26c190fbad5d901fc4681853579cc"
+  },
+  "sessions": [
+    {
+      "id": "WS1",
+      "date": "2026-10-15",
+      "start": "06:34",
+      "end": "07:26",
+      "location": "România, Sibiu",
+      "reportedLocation": "Brașov (subsolul Google: „România · Brașov - Din adresa IP”; la Q-USER-SHORT-011 „Județul Brașov”)",
+      "network": "Ruter Vodafone"
+    },
+    {
+      "id": "WS2",
+      "date": "2026-10-16",
+      "start": "06:35",
+      "end": "07:14",
+      "location": "România, Sibiu",
+      "reportedLocation": null,
+      "network": "Ruter Vodafone"
+    },
+    {
+      "id": "WS3",
+      "date": "2026-10-18",
+      "start": "15:34",
+      "end": "19:52",
+      "location": "România, Sibiu",
+      "reportedLocation": "Constanta, Romania (afișată de Gemini, pe baza adresei IP)",
+      "network": "Ruter Vodafone"
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q-USER-SHORT-002",
+      "text": "recomandare ChatGPT",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-003",
+      "text": "promovare ChatGPT",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-004",
+      "text": "firma mea pe ChatGPT",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-005",
+      "text": "apariție în ChatGPT",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-006",
+      "text": "vizibilitate AI",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-007",
+      "text": "promovare firmă AI",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-008",
+      "text": "optimizare site ChatGPT",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-009",
+      "text": "marketing AI",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-010",
+      "text": "agenție AI România",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-011",
+      "text": "specialist ChatGPT",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-012",
+      "text": "servicii promovare AI",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    },
+    {
+      "id": "Q-USER-SHORT-013",
+      "text": "consultanță AI",
+      "class": "NOT_APPLICABLE",
+      "layer": "STANDARD"
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "GSEARCH",
+      "captures": 137,
+      "date": "2026-10-15",
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [
+        "România · Brașov - Din adresa IP",
+        "Brașov - Din adresa IP",
+        "România",
+        "Județul Brașov - Din adresa IP"
+      ],
+      "sessionConflicts": 11
+    },
+    {
+      "id": "BSEARCH",
+      "captures": 121,
+      "date": "2026-10-15",
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "GAIMODE",
+      "captures": 30,
+      "date": "2026-10-16",
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "CHATGPT",
+      "captures": 22,
+      "date": "2026-10-16",
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [
+        "București"
+      ],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "CLAUDE",
+      "captures": 17,
+      "date": "2026-10-16",
+      "accountState": "LOGGED_IN",
+      "privateWindow": "YES",
+      "newConversationPerQuery": "YES",
+      "locationDisplayed": [],
+      "sessionConflicts": 2
+    },
+    {
+      "id": "GEMINI",
+      "captures": 32,
+      "date": "2026-10-18",
+      "accountState": "LOGGED_OUT",
+      "privateWindow": "YES",
+      "newConversationPerQuery": null,
+      "locationDisplayed": [
+        "Constanta, Romania"
+      ],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "PERPLEXITY",
+      "captures": 31,
+      "date": "2026-10-18",
+      "accountState": "LOGGED_IN",
+      "privateWindow": "YES",
+      "newConversationPerQuery": "YES",
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    },
+    {
+      "id": "COPILOT",
+      "captures": 23,
+      "date": "2026-10-18",
+      "accountState": "LOGGED_IN",
+      "privateWindow": "YES",
+      "newConversationPerQuery": "YES",
+      "locationDisplayed": [],
+      "sessionConflicts": 0
+    }
+  ],
+  "totals": {
+    "captures": 413,
+    "executions": 98,
+    "observations": 1238,
+    "include": 169,
+    "entitiesBase": 69,
+    "entitiesExtended": 74,
+    "entitiesUncertainOnly": 132,
+    "executionsWithoutCandidates": 67,
+    "sessionConflicts": 13,
+    "contamination": {
+      "NONE_OBSERVED": 408,
+      "SUSPECTED": 5
+    }
+  },
+  "summary": [
+    "**Execuțiile.** Toate cele 98 sunt complete: 79 cu răspuns, 19 încheiate cu o cerere de clarificare. Doar 31 au candidați. 36 au observații fără niciun candidat, iar 31 nu numesc nicio entitate.",
+    "**Entitățile candidate.** Cele 169 de rânduri INCLUDE se reduc la **69 de entități în bază**: Google până la poziția 30, Bing organic și cele 6 suprafețe AI. Cu reclamele și AI Overview sunt 74. Cu relațiile nerezolvate comasate, limita inferioară e 68.",
+    "**Trei expresii aduc aproape tot.** „vizibilitate AI” (29 de entități), „optimizare site ChatGPT” (21) și „promovare ChatGPT” (13) acoperă 60 din cele 69 de entități.",
+    "**Patru expresii nu aduc nimic.** „recomandare ChatGPT”, „marketing AI”, „specialist ChatGPT” și „consultanță AI” nu au niciun candidat în bază. Suprafețele le-au înțeles ca alt serviciu sau alt subiect. „marketing AI” a primit răspunsuri în engleză pe 7 din 8 suprafețe, „specialist ChatGPT” la toți cei 5 asistenți AI.",
+    "**Căutarea clasică aduce mai mult decât asistenții AI.** Google și Bing organic au 48 de entități, dintre care 36 apar doar acolo. Suprafețele AI au 33, dintre care 21 doar acolo. Copilot nu numește nicio entitate în bază.",
+    "**Jumătate e deja cunoscută.** 32 din cele 69 de entități (46%) apăruseră în bază în piloții 1–3, iar 37 sunt noi. Reuniunea cumulată a piloților 1, 2, 3 și 5 are acum **278 de entități în bază** și 295 în setul extins. 10 entități sunt în bază în toți cei patru piloți.",
+    "**„consultant AI” a fost retrasă prea devreme.** Expresia a fost scoasă din set la 12 octombrie 2026 pentru că e identică în engleză, după o singură execuție capturată. „marketing AI” și „specialist ChatGPT” au aceeași proprietate și au rămas în set. Observația intră în evaluarea finală a setului USER-SHORT."
+  ],
+  "errata": [],
+  "matrix": [
+    {
+      "query": "Q-USER-SHORT-002",
+      "cells": {
+        "GSEARCH": 0,
+        "BSEARCH": 0,
+        "GAIMODE": 0,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 0,
+        "COPILOT": 0
+      },
+      "union": 0
+    },
+    {
+      "query": "Q-USER-SHORT-003",
+      "cells": {
+        "GSEARCH": 9,
+        "BSEARCH": 2,
+        "GAIMODE": 4,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 4,
+        "PERPLEXITY": 1,
+        "COPILOT": 0
+      },
+      "union": 13
+    },
+    {
+      "query": "Q-USER-SHORT-004",
+      "cells": {
+        "GSEARCH": 1,
+        "BSEARCH": 0,
+        "GAIMODE": 1,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 3,
+        "COPILOT": 0
+      },
+      "union": 5
+    },
+    {
+      "query": "Q-USER-SHORT-005",
+      "cells": {
+        "GSEARCH": 0,
+        "BSEARCH": 1,
+        "GAIMODE": 1,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 0,
+        "COPILOT": 0
+      },
+      "union": 1
+    },
+    {
+      "query": "Q-USER-SHORT-006",
+      "cells": {
+        "GSEARCH": 13,
+        "BSEARCH": 11,
+        "GAIMODE": 5,
+        "CHATGPT": 0,
+        "CLAUDE": 3,
+        "GEMINI": 2,
+        "PERPLEXITY": 2,
+        "COPILOT": 0
+      },
+      "union": 29
+    },
+    {
+      "query": "Q-USER-SHORT-007",
+      "cells": {
+        "GSEARCH": 3,
+        "BSEARCH": 1,
+        "GAIMODE": 0,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 1,
+        "COPILOT": 0
+      },
+      "union": 3
+    },
+    {
+      "query": "Q-USER-SHORT-008",
+      "cells": {
+        "GSEARCH": 10,
+        "BSEARCH": 7,
+        "GAIMODE": 4,
+        "CHATGPT": 0,
+        "CLAUDE": 2,
+        "GEMINI": 2,
+        "PERPLEXITY": 0,
+        "COPILOT": 0
+      },
+      "union": 21
+    },
+    {
+      "query": "Q-USER-SHORT-009",
+      "cells": {
+        "GSEARCH": 0,
+        "BSEARCH": 0,
+        "GAIMODE": 0,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 0,
+        "COPILOT": 0
+      },
+      "union": 0
+    },
+    {
+      "query": "Q-USER-SHORT-010",
+      "cells": {
+        "GSEARCH": 0,
+        "BSEARCH": 0,
+        "GAIMODE": 0,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 1,
+        "COPILOT": 0
+      },
+      "union": 1
+    },
+    {
+      "query": "Q-USER-SHORT-011",
+      "cells": {
+        "GSEARCH": 0,
+        "BSEARCH": 0,
+        "GAIMODE": 0,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 0,
+        "COPILOT": 0
+      },
+      "union": 0
+    },
+    {
+      "query": "Q-USER-SHORT-012",
+      "cells": {
+        "GSEARCH": 6,
+        "BSEARCH": 0,
+        "GAIMODE": 2,
+        "CHATGPT": 3,
+        "CLAUDE": 0,
+        "GEMINI": 1,
+        "PERPLEXITY": 2,
+        "COPILOT": 0
+      },
+      "union": 10
+    },
+    {
+      "query": "Q-USER-SHORT-013",
+      "cells": {
+        "GSEARCH": 0,
+        "BSEARCH": 0,
+        "GAIMODE": 0,
+        "CHATGPT": 0,
+        "CLAUDE": 0,
+        "GEMINI": 0,
+        "PERPLEXITY": 0,
+        "COPILOT": 0
+      },
+      "union": 0
+    }
+  ],
+  "byQuery": [
+    {
+      "group": "Q-USER-SHORT-002",
+      "entities": 0,
+      "exclusive": 0,
+      "entitiesExtended": 0,
+      "exclusiveExtended": 0
+    },
+    {
+      "group": "Q-USER-SHORT-003",
+      "entities": 13,
+      "exclusive": 10,
+      "entitiesExtended": 14,
+      "exclusiveExtended": 11
+    },
+    {
+      "group": "Q-USER-SHORT-004",
+      "entities": 5,
+      "exclusive": 4,
+      "entitiesExtended": 5,
+      "exclusiveExtended": 4
+    },
+    {
+      "group": "Q-USER-SHORT-005",
+      "entities": 1,
+      "exclusive": 0,
+      "entitiesExtended": 1,
+      "exclusiveExtended": 0
+    },
+    {
+      "group": "Q-USER-SHORT-006",
+      "entities": 29,
+      "exclusive": 24,
+      "entitiesExtended": 30,
+      "exclusiveExtended": 25
+    },
+    {
+      "group": "Q-USER-SHORT-007",
+      "entities": 3,
+      "exclusive": 0,
+      "entitiesExtended": 4,
+      "exclusiveExtended": 0
+    },
+    {
+      "group": "Q-USER-SHORT-008",
+      "entities": 21,
+      "exclusive": 17,
+      "entitiesExtended": 22,
+      "exclusiveExtended": 18
+    },
+    {
+      "group": "Q-USER-SHORT-009",
+      "entities": 0,
+      "exclusive": 0,
+      "entitiesExtended": 0,
+      "exclusiveExtended": 0
+    },
+    {
+      "group": "Q-USER-SHORT-010",
+      "entities": 1,
+      "exclusive": 1,
+      "entitiesExtended": 1,
+      "exclusiveExtended": 1
+    },
+    {
+      "group": "Q-USER-SHORT-011",
+      "entities": 0,
+      "exclusive": 0,
+      "entitiesExtended": 0,
+      "exclusiveExtended": 0
+    },
+    {
+      "group": "Q-USER-SHORT-012",
+      "entities": 10,
+      "exclusive": 4,
+      "entitiesExtended": 13,
+      "exclusiveExtended": 6
+    },
+    {
+      "group": "Q-USER-SHORT-013",
+      "entities": 0,
+      "exclusive": 0,
+      "entitiesExtended": 1,
+      "exclusiveExtended": 0
+    }
+  ],
+  "bySurface": [
+    {
+      "group": "GSEARCH",
+      "entities": 34,
+      "exclusive": 21,
+      "entitiesExtended": 37,
+      "exclusiveExtended": 23
+    },
+    {
+      "group": "BSEARCH",
+      "entities": 20,
+      "exclusive": 13,
+      "entitiesExtended": 24,
+      "exclusiveExtended": 15
+    },
+    {
+      "group": "GAIMODE",
+      "entities": 16,
+      "exclusive": 4,
+      "entitiesExtended": 16,
+      "exclusiveExtended": 4
+    },
+    {
+      "group": "CHATGPT",
+      "entities": 3,
+      "exclusive": 2,
+      "entitiesExtended": 3,
+      "exclusiveExtended": 2
+    },
+    {
+      "group": "CLAUDE",
+      "entities": 5,
+      "exclusive": 3,
+      "entitiesExtended": 5,
+      "exclusiveExtended": 3
+    },
+    {
+      "group": "GEMINI",
+      "entities": 9,
+      "exclusive": 3,
+      "entitiesExtended": 9,
+      "exclusiveExtended": 3
+    },
+    {
+      "group": "PERPLEXITY",
+      "entities": 10,
+      "exclusive": 5,
+      "entitiesExtended": 10,
+      "exclusiveExtended": 5
+    },
+    {
+      "group": "COPILOT",
+      "entities": 0,
+      "exclusive": 0,
+      "entitiesExtended": 0,
+      "exclusiveExtended": 0
+    }
+  ],
+  "byFamily": [
+    {
+      "group": "SEARCH_ORGANIC",
+      "entities": 48,
+      "exclusive": 36,
+      "entitiesExtended": 53,
+      "exclusiveExtended": 41
+    },
+    {
+      "group": "AI_SURFACES",
+      "entities": 33,
+      "exclusive": 21,
+      "entitiesExtended": 33,
+      "exclusiveExtended": 21
+    }
+  ],
+  "breadth": [
+    {
+      "dimension": "surfaces",
+      "n": 1,
+      "entities": 51
+    },
+    {
+      "dimension": "surfaces",
+      "n": 2,
+      "entities": 10
+    },
+    {
+      "dimension": "surfaces",
+      "n": 3,
+      "entities": 6
+    },
+    {
+      "dimension": "surfaces",
+      "n": 4,
+      "entities": 2
+    },
+    {
+      "dimension": "surfaces",
+      "n": 5,
+      "entities": 0
+    },
+    {
+      "dimension": "surfaces",
+      "n": 6,
+      "entities": 0
+    },
+    {
+      "dimension": "surfaces",
+      "n": 7,
+      "entities": 0
+    },
+    {
+      "dimension": "surfaces",
+      "n": 8,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 1,
+      "entities": 60
+    },
+    {
+      "dimension": "queries",
+      "n": 2,
+      "entities": 5
+    },
+    {
+      "dimension": "queries",
+      "n": 3,
+      "entities": 3
+    },
+    {
+      "dimension": "queries",
+      "n": 4,
+      "entities": 1
+    },
+    {
+      "dimension": "queries",
+      "n": 5,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 6,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 7,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 8,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 9,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 10,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 11,
+      "entities": 0
+    },
+    {
+      "dimension": "queries",
+      "n": 12,
+      "entities": 0
+    }
+  ],
+  "executions": [
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-002",
+      "captures": 10,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 37,
+      "include": 0,
+      "excludeIrrelevant": 31,
+      "excludeNotProvider": 5,
+      "excludeUncertain": 1,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-003",
+      "captures": 10,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 40,
+      "include": 18,
+      "excludeIrrelevant": 14,
+      "excludeNotProvider": 8,
+      "excludeUncertain": 0,
+      "entitiesBase": 9,
+      "entitiesExtended": 10,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-004",
+      "captures": 11,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 33,
+      "include": 1,
+      "excludeIrrelevant": 21,
+      "excludeNotProvider": 11,
+      "excludeUncertain": 0,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-005",
+      "captures": 10,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 34,
+      "include": 0,
+      "excludeIrrelevant": 23,
+      "excludeNotProvider": 9,
+      "excludeUncertain": 2,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-006",
+      "captures": 8,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 37,
+      "include": 20,
+      "excludeIrrelevant": 4,
+      "excludeNotProvider": 11,
+      "excludeUncertain": 2,
+      "entitiesBase": 13,
+      "entitiesExtended": 13,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-007",
+      "captures": 14,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 64,
+      "include": 5,
+      "excludeIrrelevant": 57,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 2,
+      "entitiesBase": 3,
+      "entitiesExtended": 4,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-008",
+      "captures": 10,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 36,
+      "include": 13,
+      "excludeIrrelevant": 6,
+      "excludeNotProvider": 13,
+      "excludeUncertain": 4,
+      "entitiesBase": 10,
+      "entitiesExtended": 11,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-009",
+      "captures": 15,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 64,
+      "include": 0,
+      "excludeIrrelevant": 64,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-010",
+      "captures": 11,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 43,
+      "include": 0,
+      "excludeIrrelevant": 23,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 19,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 11,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-011",
+      "captures": 14,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 52,
+      "include": 0,
+      "excludeIrrelevant": 40,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 12,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-012",
+      "captures": 12,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 52,
+      "include": 20,
+      "excludeIrrelevant": 2,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 30,
+      "entitiesBase": 6,
+      "entitiesExtended": 9,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "GSEARCH",
+      "query": "Q-USER-SHORT-013",
+      "captures": 12,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 53,
+      "include": 2,
+      "excludeIrrelevant": 8,
+      "excludeNotProvider": 8,
+      "excludeUncertain": 35,
+      "entitiesBase": 0,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": true
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-002",
+      "captures": 10,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 31,
+      "include": 0,
+      "excludeIrrelevant": 27,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 1,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-003",
+      "captures": 13,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 34,
+      "include": 9,
+      "excludeIrrelevant": 19,
+      "excludeNotProvider": 5,
+      "excludeUncertain": 1,
+      "entitiesBase": 2,
+      "entitiesExtended": 4,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-004",
+      "captures": 8,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 34,
+      "include": 0,
+      "excludeIrrelevant": 27,
+      "excludeNotProvider": 5,
+      "excludeUncertain": 2,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-005",
+      "captures": 10,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 31,
+      "include": 2,
+      "excludeIrrelevant": 29,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-006",
+      "captures": 7,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 36,
+      "include": 13,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 22,
+      "excludeUncertain": 1,
+      "entitiesBase": 11,
+      "entitiesExtended": 12,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-007",
+      "captures": 11,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 27,
+      "include": 1,
+      "excludeIrrelevant": 24,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 2,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-008",
+      "captures": 10,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 35,
+      "include": 10,
+      "excludeIrrelevant": 15,
+      "excludeNotProvider": 9,
+      "excludeUncertain": 1,
+      "entitiesBase": 7,
+      "entitiesExtended": 8,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-009",
+      "captures": 16,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 38,
+      "include": 0,
+      "excludeIrrelevant": 38,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-010",
+      "captures": 8,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 31,
+      "include": 0,
+      "excludeIrrelevant": 11,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 18,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-011",
+      "captures": 11,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 38,
+      "include": 0,
+      "excludeIrrelevant": 35,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 3,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-012",
+      "captures": 9,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 26,
+      "include": 0,
+      "excludeIrrelevant": 25,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 1,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "BSEARCH",
+      "query": "Q-USER-SHORT-013",
+      "captures": 8,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 29,
+      "include": 0,
+      "excludeIrrelevant": 17,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 12,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-002",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 7,
+      "include": 0,
+      "excludeIrrelevant": 7,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-003",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 8,
+      "include": 7,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 1,
+      "entitiesBase": 4,
+      "entitiesExtended": 4,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-004",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 6,
+      "include": 2,
+      "excludeIrrelevant": 2,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 0,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-005",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 8,
+      "include": 1,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 7,
+      "excludeUncertain": 0,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-006",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 11,
+      "include": 8,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 1,
+      "entitiesBase": 5,
+      "entitiesExtended": 5,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-007",
+      "captures": 4,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 3,
+      "include": 0,
+      "excludeIrrelevant": 3,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-008",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 11,
+      "include": 4,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 4,
+      "excludeUncertain": 3,
+      "entitiesBase": 4,
+      "entitiesExtended": 4,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-009",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 10,
+      "include": 0,
+      "excludeIrrelevant": 10,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-010",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 15,
+      "include": 0,
+      "excludeIrrelevant": 5,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 10,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-011",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 8,
+      "include": 0,
+      "excludeIrrelevant": 5,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 3,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-012",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 7,
+      "include": 4,
+      "excludeIrrelevant": 2,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 1,
+      "entitiesBase": 2,
+      "entitiesExtended": 2,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GAIMODE",
+      "query": "Q-USER-SHORT-013",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 10,
+      "include": 0,
+      "excludeIrrelevant": 1,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 9,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-002",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-003",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 1,
+      "include": 0,
+      "excludeIrrelevant": 1,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-004",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-005",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-006",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-007",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "SUSPECTED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-008",
+      "captures": 2,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-009",
+      "captures": 2,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-010",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 12,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 12,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-011",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-012",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 9,
+      "include": 5,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 4,
+      "entitiesBase": 3,
+      "entitiesExtended": 3,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CHATGPT",
+      "query": "Q-USER-SHORT-013",
+      "captures": 3,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 2,
+      "include": 0,
+      "excludeIrrelevant": 2,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-002",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-003",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-004",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-005",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-006",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 6,
+      "include": 3,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 3,
+      "entitiesExtended": 3,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 2,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-007",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-008",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 2,
+      "include": 2,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 2,
+      "entitiesExtended": 2,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-010",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 10,
+      "include": 0,
+      "excludeIrrelevant": 6,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 4,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-011",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-012",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "CLAUDE",
+      "query": "Q-USER-SHORT-013",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-002",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-003",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-004",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-005",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-006",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-007",
+      "captures": 5,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-008",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 4,
+      "include": 0,
+      "excludeIrrelevant": 4,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-010",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 10,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 10,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-011",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-012",
+      "captures": 4,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "COPILOT",
+      "query": "Q-USER-SHORT-013",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 1,
+      "include": 0,
+      "excludeIrrelevant": 1,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "SUSPECTED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-002",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 4,
+      "include": 0,
+      "excludeIrrelevant": 4,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-003",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 5,
+      "include": 4,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 0,
+      "entitiesBase": 4,
+      "entitiesExtended": 4,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-004",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-004",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-005",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-005",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-006",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 3,
+      "include": 2,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 1,
+      "entitiesBase": 2,
+      "entitiesExtended": 2,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-007",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 1,
+      "include": 0,
+      "excludeIrrelevant": 1,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-008",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 5,
+      "include": 2,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 1,
+      "entitiesBase": 2,
+      "entitiesExtended": 2,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-009",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 13,
+      "include": 0,
+      "excludeIrrelevant": 13,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-010",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 15,
+      "include": 0,
+      "excludeIrrelevant": 3,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 12,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-011",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 5,
+      "include": 0,
+      "excludeIrrelevant": 5,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-012",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 14,
+      "include": 1,
+      "excludeIrrelevant": 13,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "GEMINI",
+      "query": "Q-USER-SHORT-013",
+      "captures": 1,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 0,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_NAMED_ENTITIES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-002",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 3,
+      "include": 0,
+      "excludeIrrelevant": 3,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-003",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 7,
+      "include": 1,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 5,
+      "excludeUncertain": 1,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-004",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 6,
+      "include": 3,
+      "excludeIrrelevant": 1,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 1,
+      "entitiesBase": 3,
+      "entitiesExtended": 3,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-005",
+      "captures": 1,
+      "status": "CLARIFICATION_REQUESTED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 1,
+      "include": 0,
+      "excludeIrrelevant": 1,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-006",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 5,
+      "include": 2,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 3,
+      "excludeUncertain": 0,
+      "entitiesBase": 2,
+      "entitiesExtended": 2,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-007",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 5,
+      "include": 1,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 2,
+      "excludeUncertain": 2,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-008",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "RELEVANT",
+      "observations": 7,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 6,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-009",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 7,
+      "include": 0,
+      "excludeIrrelevant": 7,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-010",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 16,
+      "include": 1,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 14,
+      "entitiesBase": 1,
+      "entitiesExtended": 1,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-011",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "IRRELEVANT",
+      "observations": 4,
+      "include": 0,
+      "excludeIrrelevant": 4,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 0,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-012",
+      "captures": 3,
+      "status": "COMPLETED",
+      "relevance": "PARTIALLY_RELEVANT",
+      "observations": 11,
+      "include": 2,
+      "excludeIrrelevant": 6,
+      "excludeNotProvider": 1,
+      "excludeUncertain": 2,
+      "entitiesBase": 2,
+      "entitiesExtended": 2,
+      "analysis": "COMPLETED_WITH_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    },
+    {
+      "surface": "PERPLEXITY",
+      "query": "Q-USER-SHORT-013",
+      "captures": 2,
+      "status": "COMPLETED",
+      "relevance": "UNCERTAIN",
+      "observations": 5,
+      "include": 0,
+      "excludeIrrelevant": 0,
+      "excludeNotProvider": 0,
+      "excludeUncertain": 5,
+      "entitiesBase": 0,
+      "entitiesExtended": 0,
+      "analysis": "COMPLETED_NO_UNION_CANDIDATES",
+      "sessionConflicts": 0,
+      "contamination": [
+        "NONE_OBSERVED"
+      ],
+      "aiOverview": false
+    }
+  ],
+  "entities": [
+    {
+      "id": "CE-002",
+      "key": "am-i-cited",
+      "name": "Am I Cited",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E363"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-004",
+      "key": "contrast-design",
+      "name": "Contrast Design",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 3,
+      "observations": 5,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E011-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://www.contrast-design.ro › chatgpt-ads",
+          "evidence": [
+            "E012"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "GENERATED_ANSWER",
+          "evidence": [
+            "E149"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E354",
+            "E355"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E385"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-005",
+      "key": "limitless",
+      "name": "Limitless Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003",
+        "Q-USER-SHORT-006",
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 4,
+      "observations": 19,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E011-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://limitless.ro › Servicii",
+          "evidence": [
+            "E012"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E012",
+            "E013"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E016",
+            "E017"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E020"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "27",
+          "url": "https://limitless.ro › Servicii",
+          "evidence": [
+            "E049"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-007",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E052"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-007",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E059"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E069",
+            "E070"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E072",
+            "E073"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E115"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E119"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E125"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-013",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E126"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-013",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.limitless.ro",
+          "evidence": [
+            "E137"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "16",
+          "url": "https://limitless.ro › servicii › geo-optimizare-chatgpt-llm-ai",
+          "evidence": [
+            "E203"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GAIMODE",
+          "provenance": "AI_IMAGE_TEXT",
+          "evidence": [
+            "E261"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E261",
+            "E262",
+            "E263"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E261",
+            "E262",
+            "E263"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-006",
+      "key": "devrika",
+      "name": "Devrika",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003",
+        "Q-USER-SHORT-007",
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "cells": 5,
+      "observations": 8,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E011-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "6",
+          "url": "https://devrika.ro › promovare-chatgpt-ads",
+          "evidence": [
+            "E013",
+            "E014"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-007",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "23",
+          "url": "https://devrika.ro › promovare-online",
+          "evidence": [
+            "E061",
+            "E062"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E114-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E114-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "4",
+          "url": "https://devrika.ro › promovare-online",
+          "evidence": [
+            "E116"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E261",
+            "E262",
+            "E263"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E354",
+            "E355"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-007",
+      "key": "discoverdesign",
+      "name": "discoverdesign.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 2,
+      "observations": 3,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "4",
+          "url": "https://discoverdesign.ro › promovare-chatgpt-ads",
+          "evidence": [
+            "E012"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E261"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E261",
+            "E262",
+            "E263"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-008",
+      "key": "marketiu",
+      "name": "Marketiu",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "cells": 0,
+      "observations": 9,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E012"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E017"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E019",
+            "E020"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E148"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E150",
+            "E151",
+            "E152"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E153"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E155",
+            "E156"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E157",
+            "E158"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "marketiu.ro › chatgpt › ads",
+          "evidence": [
+            "E159",
+            "E160"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-009",
+      "key": "searchads",
+      "name": "searchads.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "8",
+          "url": "https://searchads.ro › servicii-chatgpt-ads",
+          "evidence": [
+            "E013",
+            "E014"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-010",
+      "key": "logicon",
+      "name": "Logicon",
+      "type": "ORGANIZATION",
+      "class": "MIXED",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003",
+        "Q-USER-SHORT-004",
+        "Q-USER-SHORT-007"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "PERPLEXITY"
+      ],
+      "cells": 5,
+      "observations": 5,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "9",
+          "url": "https://www.logicon.ro › Prețuri",
+          "evidence": [
+            "E013",
+            "E014"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-004",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "19",
+          "url": "https://www.logicon.ro › Prețuri",
+          "evidence": [
+            "E027",
+            "E028"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-007",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "20",
+          "url": "https://www.logicon.ro › Prețuri",
+          "evidence": [
+            "E061"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-007",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "1",
+          "url": "https://www.logicon.ro › promovare-ai.html",
+          "evidence": [
+            "E187"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-007",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "url": "https://www.logicon.ro/promovare-ai.html",
+          "evidence": [
+            "E395"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-011",
+      "key": "epic-agency",
+      "name": "Epic Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "13",
+          "url": "https://epicagency.ro › promovare-chatgpt-ads",
+          "evidence": [
+            "E015"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-012",
+      "key": "promovaresiteuri",
+      "name": "promovaresiteuri.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "15",
+          "url": "https://promovaresiteuri.ro › Servicii",
+          "evidence": [
+            "E015",
+            "E016"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-013",
+      "key": "klain",
+      "name": "Klain",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-004"
+      ],
+      "surfaces": [
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GAIMODE"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-004",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E264"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-004",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E264",
+            "E265"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-014",
+      "key": "newads",
+      "name": "newads.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "22",
+          "url": "https://www.newads.ro › blog › cum-iti-poti-promova-...",
+          "evidence": [
+            "E018"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-016",
+      "key": "alex-design",
+      "name": "alex-design.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://alex-design.ro › promovare-chatgpt-ads",
+          "evidence": [
+            "E154"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-017",
+      "key": "marincea",
+      "name": "marincea.com",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "22",
+          "url": "https://marincea.com › vizibilitate-ai",
+          "evidence": [
+            "E048"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-018",
+      "key": "marketing-lab",
+      "name": "Marketing Lab",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006",
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 2,
+      "observations": 3,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://marketinglab.ro › vizibilitate-in-ai",
+          "evidence": [
+            "E180"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://marketinglab.ro › optimizare-chatgpt",
+          "evidence": [
+            "E199"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "11",
+          "url": "https://marketinglab.ro › optimizare-chatgpt",
+          "evidence": [
+            "E201"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-021",
+      "key": "diagnoseo",
+      "name": "DiagnoSEO",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 2,
+      "observations": 3,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": "REL-01 DEVELOPS → CE-148",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E042-AIO",
+            "E043-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://app.diagnoseo.com › Acasă › Unelte",
+          "evidence": [
+            "E044"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E269"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-022",
+      "key": "plum-media",
+      "name": "Plum Media",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "cells": 4,
+      "observations": 9,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E042-AIO",
+            "E043-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://www.plummedia.ro › vizibilitate-ai",
+          "evidence": [
+            "E044"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "8",
+          "evidence": [
+            "E045"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "10",
+          "evidence": [
+            "E046"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "1",
+          "url": "https://www.plummedia.ro › vizibilitate-ai",
+          "evidence": [
+            "E179"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "13",
+          "evidence": [
+            "E182"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E268"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E268",
+            "E269"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E363",
+            "E364",
+            "E365"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-023",
+      "key": "smarters",
+      "name": "SMARTERS",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 2,
+      "observations": 5,
+      "recommendedOn": [
+        "GAIMODE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E042-AIO",
+            "E043-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://smarters.ro › Servicii",
+          "evidence": [
+            "E044",
+            "E045"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E268",
+            "E269"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E268",
+            "E269"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E269"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-024",
+      "key": "infora",
+      "name": "infora.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 3,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E042-AIO",
+            "E043-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "9",
+          "url": "https://infora.ro › Servicii",
+          "evidence": [
+            "E045"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "16",
+          "url": "https://infora.ro › Servicii",
+          "evidence": [
+            "E047"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-025",
+      "key": "aipromovareseo",
+      "name": "aipromovareseo.ro",
+      "type": "ORGANIZATION",
+      "class": "UNCLEAR",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006",
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "cells": 3,
+      "observations": 3,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": "REL-03 POSSIBLY_SAME ← CE-162",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "7",
+          "url": "https://aipromovareseo.ro › test-vizibilitate-ai",
+          "evidence": [
+            "E044",
+            "E045"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "14",
+          "url": "https://aipromovareseo.ro",
+          "evidence": [
+            "E120"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "23",
+          "url": "https://aipromovareseo.ro › test-vizibilitate-ai",
+          "evidence": [
+            "E184"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-027",
+      "key": "endtoend",
+      "name": "endtoend.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "13",
+          "url": "https://endtoend.ro › Servicii › Vizibilitate AI",
+          "evidence": [
+            "E046"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-028",
+      "key": "bro-web",
+      "name": "BRO WEB",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "14",
+          "url": "https://bro-web.com › Servicii",
+          "evidence": [
+            "E046"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-029",
+      "key": "viral-marketing",
+      "name": "Viral Marketing",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006",
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 2,
+      "observations": 4,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "18",
+          "url": "https://viralmarketing.ro › Servicii",
+          "evidence": [
+            "E047"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "AI_RESPONSE",
+          "block": "AI_OVERVIEW",
+          "recommended": true,
+          "evidence": [
+            "E114-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E114-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://viralmarketing.ro › servicii",
+          "evidence": [
+            "E116"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-031",
+      "key": "web-future",
+      "name": "Web Future",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "23",
+          "url": "https://www.webfuture.ro › audit-vizibilitate-digitala-ai",
+          "evidence": [
+            "E048"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-033",
+      "key": "writesonic",
+      "name": "Writesonic",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "25",
+          "evidence": [
+            "E048",
+            "E049"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-034",
+      "key": "marketos",
+      "name": "Marketos",
+      "type": "ORGANIZATION",
+      "class": "UNCLEAR",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "28",
+          "url": "https://marketos.ro › vizibilitate-in-ai",
+          "evidence": [
+            "E049"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-040",
+      "key": "ai-engine-optim",
+      "name": "AI Engine Optim",
+      "type": "ORGANIZATION",
+      "class": "MIXED",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-005",
+        "Q-USER-SHORT-007",
+        "Q-USER-SHORT-008",
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 6,
+      "observations": 10,
+      "recommendedOn": [
+        "GAIMODE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-007",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "19",
+          "url": "https://aiengineoptim.ro › promovare-online",
+          "evidence": [
+            "E061"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E114-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "1",
+          "url": "https://aiengineoptim.ro › promovare-online",
+          "evidence": [
+            "E115",
+            "E116"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "19",
+          "url": "https://aiengineoptim.ro › promovare-online",
+          "evidence": [
+            "E121"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-005",
+          "surface": "BSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "GENERATED_ANSWER",
+          "evidence": [
+            "E169"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-005",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://aiengineoptim.ro › aparitie-in-raspunsurile-chatgpt",
+          "evidence": [
+            "E170"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "7",
+          "url": "https://aiengineoptim.ro › servicii-optimizare-ai",
+          "evidence": [
+            "E199"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-005",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E266",
+            "E267"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E284",
+            "E285",
+            "E286"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E285",
+            "E286"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-041",
+      "key": "fgd",
+      "name": "fgd.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "2",
+          "url": "https://www.fgd.ro › optimizare-site-chatgpt-ai",
+          "evidence": [
+            "E198"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-042",
+      "key": "bsr-exclusive",
+      "name": "BSR Exclusive",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E064-AIO",
+            "E065-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "9",
+          "url": "https://bsr-exclusive.ro › optimizare-geo-aeo",
+          "evidence": [
+            "E067"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-044",
+      "key": "ewdigital",
+      "name": "EWdigital",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "cells": 3,
+      "observations": 3,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "8",
+          "url": "https://ewdigital.ro › optimizare-pentru-ai-search",
+          "evidence": [
+            "E067"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E274",
+            "E275",
+            "E276"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E369"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-045",
+      "key": "seo-vision-agency",
+      "name": "SEO Vision Agency",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "10",
+          "url": "https://seovision.ro › optimizare-pentru-ai",
+          "evidence": [
+            "E068"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-046",
+      "key": "novaweb",
+      "name": "novaweb.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "BSEARCH"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "15",
+          "url": "https://novaweb.ro › Servicii",
+          "evidence": [
+            "E068",
+            "E069"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://novaweb.ro › servicii › optimizare-site-ai",
+          "evidence": [
+            "E198"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-047",
+      "key": "flowmatic",
+      "name": "flowmatic.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "16",
+          "url": "https://flowmatic.ro › servicii › websites-seo",
+          "evidence": [
+            "E069"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-048",
+      "key": "gun-media",
+      "name": "GUN Media",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "18",
+          "url": "https://gun.ro › optimizare-seo-ai",
+          "evidence": [
+            "E069",
+            "E070"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-049",
+      "key": "goai",
+      "name": "goai.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "23",
+          "url": "https://www.goai.ro › optimizare-asistenti-ai",
+          "evidence": [
+            "E071"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-050",
+      "key": "firmaweb",
+      "name": "Firmaweb",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "24",
+          "url": "https://firmaweb.ro › Servicii",
+          "evidence": [
+            "E071"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-051",
+      "key": "websitexpo",
+      "name": "WebsitExpo",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "26",
+          "url": "https://www.websitexpo.com › Home › Alte Servicii",
+          "evidence": [
+            "E072"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-052",
+      "key": "seo-ai",
+      "name": "SEO AI",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "29",
+          "url": "https://seo-ai.ro",
+          "evidence": [
+            "E072",
+            "E073"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-070",
+      "key": "netlogiq",
+      "name": "Netlogiq",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GSEARCH",
+        "GAIMODE"
+      ],
+      "cells": 2,
+      "observations": 4,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "AI_CITATION",
+          "block": "AI_OVERVIEW",
+          "evidence": [
+            "E114-AIO"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "5",
+          "url": "https://www.netlogiq.ro › promovare-online",
+          "evidence": [
+            "E116"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E284",
+            "E285",
+            "E286"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E285",
+            "E286"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-071",
+      "key": "netreach",
+      "name": "Netreach",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 3,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.netreach.ro › marketing › complet",
+          "evidence": [
+            "E115"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.netreach.ro › marketing › complet",
+          "evidence": [
+            "E119"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.netreach.ro › marketing › complet",
+          "evidence": [
+            "E124",
+            "E125"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-082",
+      "key": "todays",
+      "name": "todays.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "https://www.todays.ro",
+          "evidence": [
+            "E121",
+            "E122"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-084",
+      "key": "ro-marketing",
+      "name": "ro.marketing",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "GSEARCH"
+      ],
+      "surfacesExtended": [
+        "GSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "21",
+          "url": "https://ro.marketing › servicii-marketing-online",
+          "evidence": [
+            "E123"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-112",
+      "key": "canopy",
+      "name": "Canopy",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "BSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "14",
+          "evidence": [
+            "E159"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-114",
+      "key": "demoanaf",
+      "name": "demoanaf.ro",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "3",
+          "url": "https://demoanaf.ro › vizibilitate-ai",
+          "evidence": [
+            "E179",
+            "E180"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-115",
+      "key": "brandscan",
+      "name": "BrandScan",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": "REL-02 DEVELOPS ← CE-177",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "4",
+          "url": "https://www.brandscan.ro",
+          "evidence": [
+            "E180"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-116",
+      "key": "aisignal",
+      "name": "aisignal.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "6",
+          "url": "https://aisignal.ro › get-started",
+          "evidence": [
+            "E180"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-117",
+      "key": "seoconcret",
+      "name": "seoconcret.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "8",
+          "url": "https://seoconcret.ro › servicii-seo › vizibilitate-in-ai",
+          "evidence": [
+            "E180"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-118",
+      "key": "vivinet",
+      "name": "VIVINET",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006",
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "BSEARCH",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "BSEARCH",
+        "CHATGPT",
+        "GEMINI",
+        "PERPLEXITY"
+      ],
+      "cells": 4,
+      "observations": 5,
+      "recommendedOn": [
+        "CHATGPT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "9",
+          "url": "https://vivinet.ro › geo-aeo",
+          "evidence": [
+            "E181"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "Servicii AI Marketing",
+          "evidence": [
+            "E305"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E305"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E379",
+            "E380",
+            "E381"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E409"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-119",
+      "key": "weryon",
+      "name": "Weryon",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 0,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "OTHER",
+          "evidence": [
+            "E181"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-121",
+      "key": "blind-spot",
+      "name": "Blind Spot",
+      "type": "PRODUCT",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_SNIPPET",
+          "block": "ORGANIC",
+          "position": "21",
+          "evidence": [
+            "E184"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-122",
+      "key": "seedagency",
+      "name": "seedagency.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "22",
+          "url": "https://seedagency.ro › servicii › vizibilitate-in-google-si-ai",
+          "evidence": [
+            "E184"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-123",
+      "key": "gptvision",
+      "name": "gptvision.ro",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "26",
+          "url": "https://gptvision.ro › get-started",
+          "evidence": [
+            "E185"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-126",
+      "key": "freeline-design",
+      "name": "freeline-design.ro",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "1",
+          "url": "https://freeline-design.ro › optimizare-site-pentru-ai",
+          "evidence": [
+            "E198"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-127",
+      "key": "fujix",
+      "name": "Fujix Optimization",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "BSEARCH"
+      ],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ORGANIC",
+          "position": "6",
+          "url": "https://fujix-optimization.com › optimizare-chatgpt-ai",
+          "evidence": [
+            "E199"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-128",
+      "key": "neogenio",
+      "name": "neogenio.ai",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": false,
+      "queries": [],
+      "surfaces": [],
+      "surfacesExtended": [
+        "BSEARCH"
+      ],
+      "cells": 0,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "seo.neogenio.ai › optimizare-seo › ai",
+          "evidence": [
+            "E203"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "BSEARCH",
+          "provenance": "SERP_RESULT",
+          "block": "ADS",
+          "url": "seo.neogenio.ai › optimizare-seo › ai",
+          "evidence": [
+            "E205",
+            "E206"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-147",
+      "key": "netseo",
+      "name": "netSEO",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GAIMODE",
+        "GEMINI"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E262",
+            "E263"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E354"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-148",
+      "key": "diagnoseo-ai-visibility-checker",
+      "name": "DiagnoSEO AI Visibility Checker",
+      "type": "PRODUCT",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GAIMODE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "GAIMODE"
+      ],
+      "identityFlags": null,
+      "relations": "REL-01 DEVELOPS ← CE-021",
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E269"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-149",
+      "key": "etalon",
+      "name": "Etalon",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GAIMODE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "GAIMODE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E269"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-150",
+      "key": "webfx",
+      "name": "WebFX",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008",
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "GAIMODE",
+        "PERPLEXITY"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E274"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E410",
+            "E411"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-152",
+      "key": "seolympic",
+      "name": "SEOlympic",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GAIMODE"
+      ],
+      "surfacesExtended": [
+        "GAIMODE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GAIMODE",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E274",
+            "E275",
+            "E276"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-154",
+      "key": "bing-webmaster-tools",
+      "name": "Bing Webmaster Tools",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GAIMODE",
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "GAIMODE",
+        "CLAUDE"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GAIMODE",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E275",
+            "E276"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E318",
+            "E319"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-164",
+      "key": "dwf",
+      "name": "DWF",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT"
+      ],
+      "cells": 1,
+      "observations": 2,
+      "recommendedOn": [
+        "CHATGPT"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "CHATGPT",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "url": "Site oficial",
+          "evidence": [
+            "E305"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "CHATGPT",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E305"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-165",
+      "key": "vivnetworks",
+      "name": "VIVnetworks.com",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-012"
+      ],
+      "surfaces": [
+        "CHATGPT"
+      ],
+      "surfacesExtended": [
+        "CHATGPT"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-012",
+          "surface": "CHATGPT",
+          "provenance": "AI_IMAGE_TEXT",
+          "evidence": [
+            "E305"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-167",
+      "key": "profound",
+      "name": "Profound",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E316"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-168",
+      "key": "otterly",
+      "name": "Otterly.AI",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E316"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-169",
+      "key": "semrush",
+      "name": "Semrush",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "CLAUDE",
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "CLAUDE",
+        "PERPLEXITY"
+      ],
+      "cells": 2,
+      "observations": 2,
+      "recommendedOn": [
+        "CLAUDE"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E316"
+          ]
+        },
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E392",
+            "E393",
+            "E394"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-170",
+      "key": "google-search-console",
+      "name": "Google Search Console",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "CLAUDE"
+      ],
+      "surfacesExtended": [
+        "CLAUDE"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "CLAUDE",
+          "provenance": "AI_RESPONSE",
+          "evidence": [
+            "E318",
+            "E319"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-174",
+      "key": "webage",
+      "name": "Webage",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-003"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-003",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E355"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-176",
+      "key": "theyas",
+      "name": "THEYAS",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-008"
+      ],
+      "surfaces": [
+        "GEMINI"
+      ],
+      "surfacesExtended": [
+        "GEMINI"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-008",
+          "surface": "GEMINI",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E370",
+            "E371"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-186",
+      "key": "mpowebstudio",
+      "name": "mpowebstudio",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-004"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-004",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E388",
+            "E389",
+            "E390"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-187",
+      "key": "trifu-media",
+      "name": "Trifu Media",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-004"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-004",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E388",
+            "E389"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-188",
+      "key": "okseo",
+      "name": "okseo",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-004"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-004",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E389"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-189",
+      "key": "ahrefs",
+      "name": "Ahrefs",
+      "type": "ORGANIZATION",
+      "class": "SOFTWARE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-006"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-006",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_CITATION",
+          "evidence": [
+            "E393",
+            "E394"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CE-197",
+      "key": "grai",
+      "name": "gr.AI",
+      "type": "ORGANIZATION",
+      "class": "SERVICE",
+      "base": true,
+      "queries": [
+        "Q-USER-SHORT-010"
+      ],
+      "surfaces": [
+        "PERPLEXITY"
+      ],
+      "surfacesExtended": [
+        "PERPLEXITY"
+      ],
+      "cells": 1,
+      "observations": 1,
+      "recommendedOn": [
+        "PERPLEXITY"
+      ],
+      "identityFlags": null,
+      "relations": null,
+      "status": "UNVERIFIED",
+      "provenance": [
+        {
+          "query": "Q-USER-SHORT-010",
+          "surface": "PERPLEXITY",
+          "provenance": "AI_RESPONSE",
+          "recommended": true,
+          "evidence": [
+            "E404",
+            "E405",
+            "E406"
+          ]
+        }
+      ]
+    }
+  ],
+  "evidenceSha": {
+    "E001": "7c85b83c299042276245de48cee6b3320ffd7e7c642bfd120dbae7d74d8b68d0",
+    "E002": "572c5dee00ba6b9eb2e5397c92797e2987c78324d006ff00136d5fc1d5d186ee",
+    "E003": "2d6bb065cc8fe1e0e7e9ececf1eaf89b8d258771269a79f673a09dc977048416",
+    "E004": "d17d3b54691226f47fafc3bb3d96ac798e6aab23892f51baf7983eff8cc1d89b",
+    "E005": "414103c8507229dc16d018042333096303373b91d75ca4842df606e7229c1999",
+    "E006": "9b33f1993543a382639b07461c7458e84411e6d786b0afde3fb6678d42badb81",
+    "E007": "d2b366e58e24d9994c17f77639e3c89c7afa77b7afe604dbdcb714a3f1a84cbd",
+    "E008": "445895535bb2799d0a196ca94f9dcdabdca7672038e4659b51bf620b1981b018",
+    "E009": "f40a086b6ca034b1a794b7ec211e48ca0fd32c47b245fe955c7f3b46df384c62",
+    "E010": "413b9ad8fe20737847563e471ff58bd8c47061ee4485c100f7dfb8a7b6fe24a5",
+    "E011": "c41cb2fea52e786d7f46b518a2fe37ac19f6ec26ba803dbe6b297792b8c74427",
+    "E012": "25e0ddbd4cb81491559c77baa7ca539e0b25a7878d7a99a789435b3f120fd26a",
+    "E013": "dfd74d2cd066f2a97146fb595295aced66328199263a3cf6ed341297a6294799",
+    "E014": "027cc1db7963b0fff918f116f65d3409070c06c65d0467701d2361b5f840ec9c",
+    "E015": "283c6cd1363fe23d06487ca32415e98a7e0c12f1527511d1378ea4fb86768ea6",
+    "E016": "7406f1bb2a930ddf776bb47d63f6704e4f5167fb28da8387b80663c324675136",
+    "E017": "61a9b264075b2b80c1c6e678b20cec5681e553374cd7802cd5ca4ea4f41aa558",
+    "E018": "73e42f4d3a7b2c2aa7f7d5d6644e3b1a4656ee935882abad34f827424acd2619",
+    "E019": "0317e9cd37d9dc4ff724a06440680af652c7d777f1b6dbdfa556fcb0350292b9",
+    "E020": "947db2d08087053962fc8b390c44d8b941f9fd55cdec41d0f272d2ed273b0fc4",
+    "E021": "e96a5b564405015022f9b22be0a363126f1cda01fa2ce778ec51f4304208cdc6",
+    "E022": "0555f5f4e80747e22ed2cc00cefc6e85c296644bfd287e720c522f404c862e00",
+    "E023": "f29b11ee43482f86dbb85ba13a6c21b9d9c44eb62f52d5554bc698832ff49513",
+    "E024": "c2348f08e62c54e1e8668dd498c6a45b1dba0ab03d6a116fed5ab7b0b7b92570",
+    "E025": "dbca79bb3241600c20e85aa2c5ccf469216fcbb89e0ec0230fca8f625e8bdd31",
+    "E026": "432b6b40539aeeca2a05479c2110fa6d21ecdcc8c24f55504e59afc0c4e94534",
+    "E027": "a661291ebbd1821472cfec57702fb99a16048187d68eea09a464c4a1c7526287",
+    "E028": "dab286bbc9c6fd0e3440b17d48569df2118eb7c8b891792df04ed522a4709383",
+    "E029": "3043f366eafe11c2ab36415cff466c11fd8db1bfa38073e0df0866cde1b83499",
+    "E030": "6113ff7436ed0372f695d3672e04fbdbda5b2522e064e3fddaed04e38259b14b",
+    "E031": "70f40f714ebf30c485965a849e6454c668d93b8bcfcfb63f03cb6cdcff074d81",
+    "E032": "8413cb5d0f6cac90dd0d33bbad0150f0e3524aa45693a209c0e5dbadf3a68cf2",
+    "E033": "a5fc1b2ae8c4c267a622e03eea0ef71b39bc4f11b1864b6654116716cd745cc0",
+    "E034": "c2c9578daf644bad94c71467c5ae76feb47752c99708bba70ea0012305ab6634",
+    "E035": "2f40b707a4e71f6976967228c632a8a73c423d9a111fbf0e5a82a124be89b4e3",
+    "E036": "724c7f9ff857f384366251f6a47899d9f2664b196afc7377deb8e59a744d9798",
+    "E037": "e690067702cd729f58ac178b04632a7795f32811e7b069f532bf3f47633ddc30",
+    "E038": "e45e4d3966ffef10e35092e520bac64f8aa5018da62036bfcd677fe9e23f51d5",
+    "E039": "1d233ad9b49be6f506144e2143eb8e788e5662a5ad4eee49c2278ab92fc60a59",
+    "E040": "136276d30c18bbebe0ef9cb1da9f3bfaf3084c4009e16bf4d160132f13014098",
+    "E041": "d1ff1db63f34343b4b413ceb05ecb34ddeed4f210a3cac0d4c3e229fde4134b6",
+    "E042": "64265caad9fa862e5252e3f06d9c473ceaafc69f29b2b67128bcdf1401b35213",
+    "E043": "5634591e2e2c2285fdd2ec4f4e9016842967d65d97b548ad4168e07968d4350f",
+    "E044": "e59fe4c4f9527fc4dc4ebf59d84ce2183b0af9b61ebc58f68f5a181f306bc8b8",
+    "E045": "8aa5425905eb75966ecc6e88c2ea679170893f865ef3ed593be059a85becda9f",
+    "E046": "db9873e6bd5745c4f0aeb0b75433d221e4a73d172ee28a840ace128c9d8f487c",
+    "E047": "1f776bac2b3179cb98f8b0ee455f7bc5527d1aa7d2e5c6fba29fded941b628ce",
+    "E048": "b71d0b9b84177666c290404cae17413909c16f32906f6d191d79b187d48b4874",
+    "E049": "c93486ffd9420308b185a2150848d269d2df0760f3281020fbeea19dffe54de6",
+    "E050": "8fedb08f6b23ee25f982d4e4d607c9723558cb68340939fc566d9c8237e6aaab",
+    "E051": "257870058e72a7a24179211163bd4049bfe7b0480d150ed47563ded15c3efbe5",
+    "E052": "536049a9165b3ea4c38fe7c31d934d4fc6700d9ae9a5fbb2e3ed362ea7954b0f",
+    "E053": "ebd45b751a9f05a4c48858debff4e7551fa869b03da14d6a152058ff2d77f537",
+    "E054": "72824fb1417bfbe38bd0b49cd70cc81ee0a451140453e311bc1167ca2152ad31",
+    "E055": "e1c60d95dad2477328dc84f161c2e1f28c2185ca1c0c0a45ecca1dfc8e4feee4",
+    "E056": "50dfa6dc0bc424f42c3e351d76399069d834d23c680ff3e5a1d00b52cee18839",
+    "E057": "0b11a396934a8ff6ba87e17e91bb39e3a81f95f51aacca77a2d9d520d7c2c53f",
+    "E058": "d0c6e2e1f2c908122bf9b35c60526f9471d642284a793ad207b8a9a2c524a157",
+    "E059": "af4d7bac4f998caf0da79ff6568fe0f8b339faf3570ada9c86a477864d1aa0b8",
+    "E060": "8f730f23032db79a7c91c2deb89753022b8632962bcc108f0393d27e9bebc191",
+    "E061": "91f628d654e3d97975ae89adc7da96a76db7bea23127996242fb7a8514307b0f",
+    "E062": "5bfba31dcb8dfe12cece021ffe080a5582413d171fb613d806f04f2e21abd1fe",
+    "E063": "853e2f7e7370832a6d717b2341b87eaec2dc5189c88fd47eecd1cff5e48069a4",
+    "E064": "d847a570e41761cf9fbed05143a7fc0ab55c17d9e82854249e33a42b97780969",
+    "E065": "9549a355ccfdf61a6b54d733148cdd9b7d9c6324c07bb256f16f517f398ff9ef",
+    "E066": "70247dbd9c358b48b02efaad71f21ee5ac05a5a77f7a6bc12660d6fd4f0613c4",
+    "E067": "a067620f1001fee201601268ac8bf3fab1784314809481129962cbcb97a6ed85",
+    "E068": "5a9e818a0235e537b7dc968ef0a91a00433d388f7a12b245e55c53f81199d05b",
+    "E069": "08eb6b7255e9531fe93bab0182b7f8d5074368317e82986279713b899e5639a4",
+    "E070": "abf4fb8707fe9887303e347435f90aeca8b2b3c48a02dbd67787a90b7ea92b2b",
+    "E071": "5a88b2b56331b5597ef4bcfec865623341ba916cd5d0b9f6a9e13239234b8a9a",
+    "E072": "ca45b1c64f5c03b7deb88bc9b741045ada658991f94a36380d1fba43db88fa01",
+    "E073": "833c1adee24d8c1b313948291cea6d48ccf40260d7dd7b49485adb34777575fa",
+    "E074": "0e68c78f1789cc78a1016e40d7e0e5d98057d019325bfb28dd809fc86760b3ff",
+    "E075": "499c727c670670fcb8d2457a1743c9c127c03f4a9915286ed8199aec1e85a6ef",
+    "E076": "1d795884f66a80b68a0f5d5a9608c0c8c1987916097af24893f47783512180c8",
+    "E077": "af43ae86957c7d66092a8fcccff56c4edb5b20cc810d2ced204d781bbe6b30ad",
+    "E078": "e4e9e8b8cd0097466485783b1a246c88114c0fa1ed5a9b521492d270836c0d7a",
+    "E079": "91497933f596652aa33402e34c3d3ad3683557fc259e950642a3c0b06a0c7ef3",
+    "E080": "b77036b640e58acf5f3e56c80e68a22278e9fa455603f006ed8f092a55ae8b1b",
+    "E081": "d8b0fca9a5037ccab6d9f0897830f52dab79babbf0a7fec2211836297312e2e6",
+    "E082": "845a9703059cd4c6b40c5b0a19bda69f75ed7a1e3783f496033f5a0d4f4d4def",
+    "E083": "44aaecd7a5ff6819e1cb35a75ad80d355ecef6c2bc8b02cacdf0fa36f05688ea",
+    "E084": "dcd879350ab12e5ac43f3993df55ccfedf67fb694233d8266b3eb0ee17d68c5b",
+    "E085": "1f83348b1abf5d62f6ee718b39dc1907636165a39699aba95c85e1fc4741d569",
+    "E086": "6a39340c85a6d9ce9e54e25f2d9fc78b2b8e2c947ec87ea0d188868805f3e100",
+    "E087": "18c2d5cd9ed92956b4b01164f9f7be81e5cfe653d8b5b538bd3e69abd5a2496d",
+    "E088": "63cac9895405482cbc76849f224ea220c3be774aefc7c4a6d806ee6c2708774b",
+    "E089": "7eb841372c51221bfa68d28343ec590ee22a6127f6b57e785f0de1702c1937e9",
+    "E090": "38691c5b4abf3e6fbe463c420c348048c9ebb55c9942cd1bc43dd89edc7a02c0",
+    "E091": "afbf1308085324b990edcd491cf68ee805c9aea10822e4b9ed99ce7cc28ccb30",
+    "E092": "82afeefc6c2a7dbe43e5cb3ecf21eaf996477ea4b87608c0fd53a87522275e44",
+    "E093": "8a75a83922c526cff03e1ab80c66d97d804b3ddc973d3e1a961877dc9159b25b",
+    "E094": "71cc4c0b83d943c0219039606e773c87bcfb9748a6b9d2c16a48ecad590cbe3b",
+    "E095": "11d3746b2550e20222e6718e36b70b631e00b4cb3ecc2718eba60f1fe3279ac8",
+    "E096": "f25c778bcffea736b0f8e2343ebb9512bdcadefefa9eec1f1429a5961265dfb9",
+    "E097": "1ace80664907ae382f228d3ac89d8b8772865d63d54613b8398d0284fd609afe",
+    "E098": "f6e2c1a08808cbf3683324d5c2576c29cf5f47aa8728bc87e70dcef0b3093f58",
+    "E099": "16e267142056e78ba15c2eadb840a544b4672fce88095acc9e8c20483835a75b",
+    "E100": "c1f938b331225777521adcd1c20bd31e49610fda248871a6fec43dfddec85119",
+    "E101": "357c18064f28a097cf94ac90365bfef9db3a968eaf69456e4b7cf16055e22e77",
+    "E102": "46bffd675c1f92d354f2bcbe78df01da95fd2e70e6a110935bf394c1e00ca351",
+    "E103": "0ca45a3cb77cac010ceb5a7475dd6e04d5981122edfc034cf3aff2f590f0af20",
+    "E104": "22e4cf5df20a8ac4bbcb94e3d15a226c181640047077b7596fe78f9fdedff7d4",
+    "E105": "f27479ada97160e5f9d6519ea7f34e6b9a8884b576509a99418386bcedc9b571",
+    "E106": "17875905f2221abcb9222450e08b03e0ac5d40bbf39d7c644ccbee122a301c6c",
+    "E107": "27a880de9577deb289581c83716b8666e0edb14749c13907df7ba96d4257a7d8",
+    "E108": "df9ab7a197ce1831845220e3efa4fe32b359536bbeb92a5a900425849ca346be",
+    "E109": "1e5fbf0d8b5ace825c18ed89281c6461f57878017cb36106a9d5a10d7ae24652",
+    "E110": "9ac467543487b071bf12785fc2f1083f5cce106e03d65b5ab8c165af0a34510c",
+    "E111": "1e4ac1ae13190ea1f817da676213256faa3cdf25ce51d1e06c2cf0e6de88ad4a",
+    "E112": "ca997a95532f66f72bb3aedfcc46995020198b0d5392045132045d3b16d35fe0",
+    "E113": "f3999cd0afc8a435278f390266963578e94fed3a7ac5d12280d838a633a02bb1",
+    "E114": "75192fdfe260a36048b761594dba5a929451b2e4d1cb6cb2fc421e899c96b7a1",
+    "E115": "15d49ef3665c805585cddf29cfc6118ca04b38500dca682aa368d4e4b6d179fb",
+    "E116": "44baed578f9067574c553f83f870ae6d28ecc46f7d5801e36b4ad7a0612d9dda",
+    "E117": "a0a8980fa1b1b9996ffc65a86ccd84715f1cfe331e8afeeb0ddd8ecf751700c0",
+    "E118": "e1974e986b12d061a42b0d0d477945674c7b481fc0525563031c492de58b6773",
+    "E119": "ff4fc750a7a60232ca2ef7ad66ca6b4efa99ff2bfe84ea23716ad8d2bc29e097",
+    "E120": "1864f8a8648c2151d4320fcf8264739a9241e51df179200d19c51e4602461a2f",
+    "E121": "627b453956d619c4545c09b5566a45fda0716f3feb50ae86e3bc2304298cdc5d",
+    "E122": "aed9a63e7b17c3cb418de705ba72c0d1c45c27ea13913eccb0334380e830588e",
+    "E123": "9ed22b8b8e6871f5fcf07b17600d1babf66763428c671b18bcd179f9dac244c8",
+    "E124": "cb69a9cee5404a0a93a3238b94613c9bfc370c9606e72ab18cab2957cdcf3bf3",
+    "E125": "0422ee67628e0182466b28cb56156706d81d7c0fae1f3240dc0e140d4e38f576",
+    "E126": "5635e0a7bf9c65d02f6f00769ba27d090f3b4dd404f30115b5693b046e6d8f0f",
+    "E127": "77713827614845f6729656938eef5e99d892136567641b9dc7d9cdec5689cabb",
+    "E128": "88870decc705f49056054fecdec0ac731671e9d5a60296faf356c0922a4f6e96",
+    "E129": "be09d97d55017c7fa61832b9148a55ffe138fd9d7b09288ce036729f94b79009",
+    "E130": "581b0234147d9431eb53a8e6a9719c9ba63145d9b6ce904eb5589878c9cc49ef",
+    "E131": "0e9a1020ab1d27f864508fc6104b68e568c07d9748559351be80858177755888",
+    "E132": "6599eace0d41f23ff11f437acba4ef0b56773f790971ed4ecebb47eb3ec99155",
+    "E133": "9103d08fadc46c786c8c0d776d8644d745521cd201ee923014be120e9056a02d",
+    "E134": "05048d2bf1204c3c2bc6aacc5751abb0cb86fbddf6478337df1e475cd547d8f1",
+    "E135": "621f8b4a9eb56c152230a029fb5040ba62768d5069fb88d03a1b6fd503792b72",
+    "E136": "a92368eaa3e11781acdf196936c537e80e29dc169d255a12242234efd86cd4f0",
+    "E137": "491f0b62c5f5700877a47c37bcf20e0a4c0cff2060b570a8af2553698b1436d3",
+    "E138": "43000fc5d04080c2c47dd6b9c570ebfde15d5f57859510d91e0ed04e4a2890b4",
+    "E139": "ec242c33c0b8ca8c1a32d55a96c359267287777b01c28ff00dd11c26fcef154f",
+    "E140": "768c8a7587c4d18524f0b9ba4a9e2ee6b92e1de1552ebd8ec517d81bc0973d2f",
+    "E141": "6280ce990b41f2ac49807b4bbb6ac8a7067f15c6266d4b32964850272e55be11",
+    "E142": "6f23017e236064df0d7d2f45b16a50cd89ba113da5133574d5057d22813242e6",
+    "E143": "b37804249d762153bdf10a2ce58f85bf5807e59b34ac2246ac7d7c81858d29c9",
+    "E144": "505f88fae3acd7fdbd87f3fc1de84cdab0edeb9c14d797d44a22b40395173ee4",
+    "E145": "028cab5a140660c021210add93bb01e0b2e8cee9464d46aa072301185fedb53c",
+    "E146": "580452a5d8aa641996614e1991480747a79b8c76ff8ec61ccc01c72e23619cc6",
+    "E147": "40c6aeb9634345d88203e38906a30243911c81e794b6ebd5fe1f60ba1e1725f0",
+    "E148": "8762d724b904f7817be31865f720bb25c0f01994ccb0f4788f77283fad4d6f84",
+    "E149": "a11193ca5eac8d70dfc280bff350ae09a69d99e2b8ea82bf61f2228baf19118d",
+    "E150": "ce574488edb2b7740e5c2a1869c4de2e32921d7db2e99ae409c174b3b2ec8b40",
+    "E151": "8f455a5b44b652bdc446240782a4dd2cfb6260e9b567ef1ad261850be36d5320",
+    "E152": "dbbc71d2a3a28a3904e5e7e0bf84d4c7019485ab7886fe8d779139b214da6cb1",
+    "E153": "235ff28df6bd2ccb7ba3e9ed3dda40022e3ed8f48de4c8cd7378eb24bd0f4e5a",
+    "E154": "58b618095b933ba1c10cd04c347ea59c24d4fe73333628042685ebd2404a4dbd",
+    "E155": "60c738009d336c8304d1734d508acd6313ad5b5767c169bcc902954995c5cade",
+    "E156": "3bf07278177c5cd3af1399f119bdb33e1ac2be64dc4c08934c60d27dbb7277ba",
+    "E157": "c501215b29cbe719b6ae0f85b11da33a78d03f71003a3e19abfba2673e66e679",
+    "E158": "1373dbec80dc68fdecadd182dbf097e5e96ddab64cc69254bcd65d61e642a2c7",
+    "E159": "7d42a3b12bfcb221085c290e11068a70c4a18d9df28c0e51f6a2ecb956b1e6a6",
+    "E160": "a55aad82dece4c7997aaaf0ce1c4f1a3a05bfca83e651dcf8d08599ec68fc327",
+    "E161": "8a59071185631c364e94fdb1650e1bbb7ebdfcb8aff4085cf985e14db018d461",
+    "E162": "b179f04cfb8b62951a32390f1c077a5324737f23daf5e0bdf126546a5b142b5d",
+    "E163": "4d758510ea7b0e316a14b42a1b0160b0679501a9d402c317bc3567d721101d01",
+    "E164": "6c272eee5cf4fcade45018d0489eaced2056532d63ae1f25c8eb954c4c39b845",
+    "E165": "c49a08e935b2ccc301b83c404bdf96c99206f533e15b5eba3d205dcf79ef754c",
+    "E166": "9bd35e8022b997beb6a156610bd07ab87bf45189aa0eb745da46bd5401ed0502",
+    "E167": "d1c78140e4d751350f1140e4e80916e91ec9d3e0d8fd03254d1f295a090f0734",
+    "E168": "2c3587fe6d34fb0bfd9c48ca6d75eca6b11af3d74f3e8ffc340bf5afdd86370f",
+    "E169": "e05a2b7087741c98d433b3e583f757aa237000955c49f8c6fc6fc76162ad13f9",
+    "E170": "010b5e06f5054d94bb040cd5950f978ca34ce988e5c80622c9125d526e5e370c",
+    "E171": "aa367944c213948035df1bd6320e9bbf0beb9edc16c8bfeeb96ce257dcd08c25",
+    "E172": "3cb7d0ef74066492e5bf58512e0263bb75d218234e3b20be04272c355a8c2a30",
+    "E173": "e1e14a6cbf0a632e7a928beea28095cbf93763d9fe57773e70929d2a54b195de",
+    "E174": "2436cb0fd262bff7747d91912e911682849d4475aaeb3fd760c05c15e456de56",
+    "E175": "954194fa6fec44349f2a279917a4626bdfee1976e8e4c5db2ccf604b6b0739f2",
+    "E176": "8cc8b9555ba4845c7587ac3f387d632047cfecb7a40ae7c71a9f8b30c4ec23e7",
+    "E177": "8f0bf20d44537dcc3a3f8e2195e05782866192bbb4d0b9426c5e4fb67fef42c8",
+    "E178": "380b4bcec20cebb3dd8c9d74bc36a6d852573edff27e1fda8a5f89037c2d8322",
+    "E179": "73fde4854e0f495fcdba2ebc515ac9bac468743f9dc6b183ae0e9cba6edf31ca",
+    "E180": "f12366d53f788e76022ca45dc33e08f5fa3851e9a089829ec25615b5b5b640dd",
+    "E181": "8bf3c7111c9404f66103edbfdb1c4be649f5673d5c4946e50b1e858919dfe32a",
+    "E182": "3eba2b633ed88175aadcfcb8bce8a9dac4b94d484422a7b9786a2cc3c4cad9a9",
+    "E183": "c40d76817a60c4ac186b5122554f0ae42b1414fa33255f7b1a1b3c107a2cf4ce",
+    "E184": "db804d5aea9ca126b817ad2542070b823025d1d4f143e06d0c19f5d04fdb2822",
+    "E185": "b4789baff93420148070e47fc133857a4766ac049b7ab04ca662c91324a2ede8",
+    "E186": "4ba259fd585e484f5391e3c7722799f62990aa8957c75d468e62edbff14c8b72",
+    "E187": "cfff06deca65f4c1a7ffdd69e2bc65787539a00af72b83489b85f72f7db9aa0d",
+    "E188": "f4ef35fa4044653b86b35cb1e985a409975b12b420f3b2488216658b41e9b1c5",
+    "E189": "7e60ab384d8ff8a5309e2d8adc12b8963d3625e3b8306cdf32622ad7c364f3d4",
+    "E190": "1e794083297b42481e8080ad3843c50187c83caa8a32e83fca7adee4fcd453ba",
+    "E191": "9d90911020d7fb37d72d91bda8adf3d4df046a9bb506bbf2c1b2d85a6bf1136d",
+    "E192": "e305c59032672d72b609502bd9787dbe124be694a2dbbbd91734a6aa7721e098",
+    "E193": "982e7969a6801a680641866fd4c72dba3b6701d84e4857d4782b9f12c980108a",
+    "E194": "a7d8b839b9c2636c98e3db01ce476eaedc73acfbbfffbc7964551d555ce8dd99",
+    "E195": "5e284d79ccbf8f923eab2d2598ec9f7f717ddeecb443ea55fb3ee8dfa0e7fbb1",
+    "E196": "e8aedd51756e525144f7539845dbfa9c1c08af9cc188f954ac2b17ded5fca68c",
+    "E197": "36e1e60fcf60229c3b2dd55fb1746ceafd6e040c91a7ae4544837fba2eafa6d0",
+    "E198": "058fa1d261c61f1cfd80872ed5387f1eef4208653aa656df57cc218ac151b589",
+    "E199": "19b402d0b74bdffa3ee567b10c0246d6ae3097eccb069cc40f9075092ba873cf",
+    "E200": "fa1ae42315aec4195ac79f3635634ff603cf35bcd32c98a6fdc1bddc23813a38",
+    "E201": "66c26de18a64ee1ef6b0be45ae91fbcd0dac1ddbfa5985e7025671d1d0d4b27a",
+    "E202": "e7697ebd227de4cf0ba2e99f7e8d33bca38a467a0c078ca5a3be4ec61a3a8605",
+    "E203": "b720cb02055ceff063b5396f3f4220a23d0858f6036eba33e2d8a9e74d881467",
+    "E204": "a9a35dcd262d853b00f96a242f8a9d9fed532947b605989e84e5d92f96b78200",
+    "E205": "35d980ea115a594c63fe2e8d4e6feffcdcda99be23ff78ede661da0614a2bf45",
+    "E206": "4b2636fb20eb1f9a7993a4d4b87c2d6337ee1e9092bf711e0b5b08d48301b521",
+    "E207": "e16c08409280b91b6266a5735813c39b506429aecf1b0a5e87d40335c5e27bed",
+    "E208": "60cbc238e515b55c08b5406ba0231f5ab085bbaeec45b30ef058bae7565f32be",
+    "E209": "2c2206dad7d87e1ed1670974935367b9e7dfcb212c331796dcdf9b094a86ce26",
+    "E210": "b0eec6f443ae27f668420503f974ebd8e7fc86bf1e7fa1348ea86a2fd9d65dda",
+    "E211": "00a40dec105fab61d97a38b47631b10348036b0ecbe569c946f20daa46d6e43a",
+    "E212": "c743d68caeb6cf0e2f56cd4935934345bc39873abf46a387334d623ad75fe999",
+    "E213": "e46be286d1f6f70466a65e6e2f5735de402f92889c051b97a058c76f13213084",
+    "E214": "58027181b4abf12ba1aa69ce94b4599e24c5d76e98503c66068b36df6d7caeba",
+    "E215": "0e0d060b14b701e557351aafe96f2f2020c8c2360242f058d953b2c01bc6a965",
+    "E216": "df77598c0057b42daeef771615dbf42b72d7469ce23d9d947ee50413022b9d9d",
+    "E217": "c9d0207c8eec69e54f18736a68180cc37c9ec0cfe0fe8aa3630bd9db55a18ff8",
+    "E218": "f61d159b797b6bd6b3ad717e38c5dd1b9509e8b4b12b3f388cae26a654479e93",
+    "E219": "d16b5cad54e9dde011902a2194549690ffa86fc79f5a5f4599977de1c0f2f620",
+    "E220": "991f4dbad649c43b8dad9e00d5a635ca6af528fd68102015aecdb2e8678aefc7",
+    "E221": "c6b6047c9942c3b779ac1dd6d1ffb4d67b3c7f6c240c2754f71069feb0b778ef",
+    "E222": "dece251a9e4d71b49dabac0395dd2293dc581067ceb1bd78cb8e1877d2459d1f",
+    "E223": "f21f31d384c79d5837ffece1634cdf9f764c0c6094632469b0420ec1c02f3ce6",
+    "E224": "1f9554fff0b66ee842b233a66021f986fc8b92f1892bafcec27ef301bea6863f",
+    "E225": "81737221a73c1f5062e6a55cd54b2d0cb2b429b75c045fec9dd13a8501b5f923",
+    "E226": "e266578d6244eeeb4455a75c07394b8f1c246c66c5c0149aac9c0f70e1de238d",
+    "E227": "44e0663f96940bd7ab114df53e3bdbd86f15fa2b3999ebf314a633836dad2be7",
+    "E228": "50028476970e52ca0a704814c8425687f7cb83bb81665716508145e2d69e26a9",
+    "E229": "c179963db6704ad8b2928a2f02fc5bdb4d53a9f026fbb8d50327ef1c1ad9f01e",
+    "E230": "a78d3318ea60dcd7e759578c1841e2f6661d171f951841f6311d10fb8981d4c8",
+    "E231": "b55f2389a208ecc1eb71f780d03cc8fc5a21752e8335771a69ef1d99660f7f28",
+    "E232": "8ce6fbd28e6819b258048fbb041ae1253bb73cbc9ebff7b2de4a8ec2648a769a",
+    "E233": "fa8379a052ad22f2c5aa17646a81c1385082d3137bf0adacfc51d3a81b27be69",
+    "E234": "41ed33191aea8faf9fae78eff676861db245a38d61d12b9bf1adebac2df35377",
+    "E235": "19f4997e026837204d80c236e0c4cdc9f713f35eeebf90a0c6e738ac4c7f16c6",
+    "E236": "6180868f94ef3b8ae97774d62069d6ca536a6cb433fa25dd3026103a44796353",
+    "E237": "9c659ba7684c2123210f9b627f95dd079e607bfe0ed1ffe2505f2dd74d97096b",
+    "E238": "cedbfaa5fd47f17bcddd720a62752e2d21599d5fb98d909cd93ffe3b3a0b3fa7",
+    "E239": "4573caa79bc53df964e40f7d89e512e1840a7580e47bd9b6ac9fc33274868e3f",
+    "E240": "4575e86a6dad62c660cec1fb465b22e736e5020a12204ab20a11ed47d817fa1c",
+    "E241": "c17bf29069ff0b49b4b68c3d13a9aa0b4108122d4825e673635d2ff0424d3c8d",
+    "E242": "4d6fd7705f21310d6262bc528990f43d593d264706b3c0e03226f7809435b832",
+    "E243": "e6c1a37a8bfbfb2de89df153714beef6b52145227fa36bfc118a0ab5a9d8bcfe",
+    "E244": "132d7f71c80e4961c8235ec574c24a1f475106eeea755b5628cbdf12ff00c765",
+    "E245": "35aaa7f179a6e38068d45b97e499e23bc67bbde1f14d2670667bbda8e36f18d6",
+    "E246": "0cfc26e2b25327ac7cc6d62baa097a20e006e5fa22f39e9610ceb2fe52d0ee51",
+    "E247": "4767a9541f307a4cb4b81e44545e7b84d5d292c16f6f80b1ad6487a238ce650f",
+    "E248": "2928067fd43f64177010e76e551db5d2359ffb27a8b2290a452a6e0e87d743fc",
+    "E249": "e56568ce34eaa6d4881058a51db40b345d58fdbe60424c9a82d9f069a3d55e65",
+    "E250": "04a81a5bc59c2f2c87b5ae976a0fff2aa4f2e5edabc925474d9340de49a0de33",
+    "E251": "e44ee6d7e8955c5e5a18082dc9b07b3efea00bf018ea01908dc4d3fa824d3e64",
+    "E252": "7115105c8c54a65cc96f31b2b2d5be9d082fad6050a33df7270f02a58e03b2fb",
+    "E253": "2c54c1792076ee12dec9e8f779559ce20b9f7328d89665db30e929484d6d06ea",
+    "E254": "07d016910f99b92ea8a1d18c27f2516ce5948a98826779f1a4186a92ac265255",
+    "E255": "f729832a0ea123bb671424547b5d5986392bd9a07a889baf0c618420495eb004",
+    "E256": "9e17dba40402a898763c3826a5a7acbb662995dabe7d43e2aef67f41f21a30bb",
+    "E257": "6884dfa11a398d40100e6a01aa4262bb714c9bb77ade6d79c3358c107d646e52",
+    "E258": "d5ed8195a43e42a682206fac337682d909ad6cb83f095f196e87a191289859fe",
+    "E259": "644713eb26f8ed60e1a162f520dafe190d49538e6cbd5670e25913def3e35fa9",
+    "E260": "780ba04bcbfabf59872972cc2165cdfd5dfd55c935e88ddc2db2c997ab924b42",
+    "E261": "effd010ee0678f02a9e615357281c1e7627c95828ee5d71c47b4d87128aef7cd",
+    "E262": "241d8719ce7bf13349f3c35921e2b4134eb53e0bb3a52bbba0f6e7af44fb5031",
+    "E263": "8eb4e1afd6a4c95745e48cf3e66c7b1d45252e9c7b201ff01f1ef52ac7230599",
+    "E264": "de21c24ef03e85ede2e9c3d8c9d5851f5c383ca8e986d5a1fbb6752df284e98b",
+    "E265": "f2472f5f2d8505f01b4a623c6dd9a6e6a436c6ad406dc354eb6fcc49c0df579a",
+    "E266": "f78d28eddee4484a944b9007beacddca60c489e6943080eb123f3ffe3cfeb99d",
+    "E267": "b27689a29723d05703a9c01fd760fa80109dcfc248c8033d902ef42be93b0248",
+    "E268": "ee3611d69af6950d9ac25dfb0480eefa7a75272a73e7c534860289fbb2049833",
+    "E269": "46585cab57dd4afe97270c3985e6c27a548e137343e3231066c11397019bfc05",
+    "E270": "fa09d0d6ddca6d3916cbc1b76b62722e5cf65e03240bdb8513f0e35f50ef2b55",
+    "E271": "1a383ef5900cbf8948571c0ef0d613a066eb54f062b2964a8abc5b8385a6232d",
+    "E272": "ddb7037c636a1ca52c243532d307e7c57ef6aa67c6534f7d83a085af076a48cf",
+    "E273": "c92cab0298701987eda0c38ef221b5ff17dd04d4d7778d1190685b45b593560b",
+    "E274": "b80ed642d1c35a3eb00ef8a8d89db3ebacd77248d86949cee5bb8f58773cf82d",
+    "E275": "6f1b1f0a2e4637e11e3bf1a49c62cb6172264be535374657b3fc799ae34e63a2",
+    "E276": "813b56e29dfd204a2657c8002eef8255cd6dcefe19504901b07ed8bbb2a9b607",
+    "E277": "91e2de86c38e0af8de5253be01efba2239a8e2bb2d30b37700708150be680afa",
+    "E278": "1287d9b4f86e1dcd45d567dd44cc01c621536f7cb4b2be2f3e37dbebbcb94cd9",
+    "E279": "468965beeb7e6fa62a3c60df3088b92e56ac4f30966090ada44393d277fbc39d",
+    "E280": "17950c008ec5fe997feb86c3b879377b0d041e37fdc624d3f1fc57b93e36be52",
+    "E281": "a9c5cd737ca17a9ab043ae963aebcbf24631b16e6cb1e803c1bf9ea112946b8e",
+    "E282": "3519cfbfb58f67e45fefc49bbc4991b0b21fd8e724126cf4000f31a4660f16ce",
+    "E283": "8b9e47005097d20b454d0ce9c6056006f537a2560e25f86dc3b71b0322e79af7",
+    "E284": "9657f4ff0b9edf5b9e24a373c3f4a03bc39eb72b45a1646a0669032ad4f14f46",
+    "E285": "b0f557d22f7a3cadce6be0c36fb3fa282ae0b3134a6248acae28f8486d0b6d11",
+    "E286": "b916931aeae87ac15a1783a76ed40663b006ce242ca3aa23bcd14b57ac981fd6",
+    "E287": "68046a7f270e3c3978bca8b4c01d158d5c6d2f34fdaadfcad3892993c909157b",
+    "E288": "4f5a88abe73251b94040706dd912c6774821341c77114dc2c34856dad7a0f2d3",
+    "E289": "37c442e0a2a71bcb4f583dc014ff07b4f0c74414224a051524add48b8449eeaa",
+    "E290": "a52c2e7fe09ec7fb2369a7e2da948db88f7d04fa8c3e212e7691e5d2f704881f",
+    "E291": "7c148a3abd9db047f3a48bb537a98b04a10e4fba3c25db338bb14f167716bee7",
+    "E292": "6ae6c8673f8e3a6971f2609d1530d12a30c969b8df1195a92805671dd04fb379",
+    "E293": "42007f98c9343d34a6175143dc04d05dbae1bc62ca56d8ef2ff4660c049a2fd0",
+    "E294": "2f2877b8f4c49df75d46c2bb37ad4d2757cd66cb33b081d7e3f5658fa6fd1c76",
+    "E295": "64a9006493ff3aac20003a36b66069b61f8c9bbf7de1ad038d4153fcb6ed5216",
+    "E296": "16269ebb1983e6f251627c201ab6901169f86986cd948364633de916ed48cd6e",
+    "E297": "b7de233221d890ac258027145ab44d8e59b814f2499173e31eaa4c6ce2722c88",
+    "E298": "96ab033d7603f6ceef9d82eb35b231de537e3a19538c1407d447ffaf5de3c732",
+    "E299": "ee0ac121181a04cf8a1f146c3a886db1a46e1d264efbd655ce523739544e3e9f",
+    "E300": "0a598bd318f06ae46e6d41631bbf4da9bd6622d9fa1cbf4034a9f207200aa47b",
+    "E301": "fd6320965f2db661ed7e93436c3bfd4adda6bb441e36cae610dcd783994952ed",
+    "E302": "2e95dacf88098a54189ec0d71ba8b72397f5f939a2ca699685937b6b0a1aa4b7",
+    "E303": "f08f58ab5880f9788b04f383035b18fae3e7820cfb44e8899fbfb05c73033f3b",
+    "E304": "df7cf22fbff394f6317d4e544d84ddfdb4cd67e4a48804649774f9848ba8317e",
+    "E305": "15369478f54adf717bae2cc2fdaf6202bb41cfe9d7c95c2084fb2ce0bde839ae",
+    "E306": "49b9616e48b6c73bd6bcad7ac09f4e39591fd8761be93f6f70d08e942896d8c0",
+    "E307": "ec1e8fddb01c2af48b37d446d895b72270e64fc0d8421e9ed3ea0e7a67e3d62d",
+    "E308": "0deebebc4a42382ffff83dc4d5fed1f7cb9b8d13e53f9234c0984b93ac92f7ec",
+    "E309": "04b8b06cefe092a43982581b468b037f3010ed49a2577e45e8d112727b9072a7",
+    "E310": "bbfaf82db98ca776feef31fb4a7f8ba143abf1a44b6ddb79c67410157285dc78",
+    "E311": "2b6d48a0f918e5294e6b4a14d5d8ed45d4985e7c9f56535f19e9f7d7decda789",
+    "E312": "53f6fea13cf5f3814c517ca92c04980fdb9f23926bc6e0adf0fa80d6e5d9e0b4",
+    "E313": "2ddc4fb4ea8036a1607884b63ea1c086a8fd5f3438d6d5b31984164f1a9431eb",
+    "E314": "03563bb29d2a3c18eafbed74c637577b4432027a745510773a4d8b43e8ab94b9",
+    "E315": "689db01391617fcd8bb77e39a3473b0dce37f61f5242b41f6e5e19bdb35ff085",
+    "E316": "b7450c3c0acd2816db65e6ccc292cd389962cd6b1c3f45ae830a5ec014e04cd4",
+    "E317": "9273e8bebff692988c474a68e45e6f8239d4cbcb2dd802ac873de10cf782acc3",
+    "E318": "28a1aeed9068c11890909390c2cd6070811083557fd1ac9e6803a1c8b795f2d7",
+    "E319": "47c9d8961fd15fb73126fbdc3d1c251784bd0f07c881791101b4f5ef444776c9",
+    "E320": "4e9262af16f50bfd259f0c94bb07f879a3b83afd511fe45452e953df655ba3d9",
+    "E321": "bb2945b1c028851269817a49df7e4d241c33e62914db7be59bdb7351c4f758cc",
+    "E322": "62e466874d604f4b2636d6844fbaecdbc84bf6cdaf1057125d07324ad0dbcf04",
+    "E323": "24c5f3231e76e3ce712338945daed43ca7aa432724f63fc89e01844d1d75523c",
+    "E324": "8e6a925f6a12c25a5991fd14dad857a3c0fe4edd3ba6052a401f424b91bb84d1",
+    "E325": "b1b00c411391481b1e1287b108861578945843c0a88a58e63e4859a88de7ec82",
+    "E326": "4e36cd217294b7a390f39fd06f57ed714f74fbf89d157169bcecfe333ef809d2",
+    "E327": "4a5619978f2d05222995b678c8069ab926bbaacc60825d41ec5fdd8c4c5ffe06",
+    "E328": "982a6c1d2154593ba35fee2e9820b8b2da3389c6762e48211ff1bdff4fb3d72a",
+    "E329": "5d97fa85be0fc67869bc53b741f6d83edf90e46b057bacd9b48218ebc644e216",
+    "E330": "e78c5f0bc8dd82805fb88a89558ec50e9d9d13fd0ebc9cb699a8934096c01f3e",
+    "E331": "21851e28e4a26dc8d684ad72861a8e12fb5adfa6aed8811fcb78b93b4520b496",
+    "E332": "6191566c4ffd6daffb0d5ad6c842acc4e824950033c5dea0421e88acf349c8c3",
+    "E333": "00c5e464a592ffa621321b682acc39229387fddc068e302c3497ab021b18d891",
+    "E334": "7ad08c1e4e2d75bd493cab08166cee1111340660cd7e984a73fe92c4023db9a4",
+    "E335": "b70a06aa10eae499bc8af980b736142fda56e63b6f4fcfc8191c5b492e03772a",
+    "E336": "78b973a8c58f7b2a25f89df5e2087c4c99d370718aa9584acff6b23585a785d6",
+    "E337": "5fd87dc3a02fde7a9ae8a47bb92706aed15ee89b38ed35b13f6a92c536eec8ab",
+    "E338": "0b2d396606c590a8c4cf1def208da07cd32de84f23d65ed3580752ed63368f9d",
+    "E339": "b828237f8f95e0cce317d0a34265425a40d8adeea5d861cd6631bd92f14f54a7",
+    "E340": "837b7316bbf8bd8531f3e065a881a0ff850232872e95507ee641b93bcd406323",
+    "E341": "853afc7ea5e522cb335ab4d3d4323ceab8fe96f7c16ec72e044f39ac7fdc2f31",
+    "E342": "6d88271726d8eaa36b071aa0c76405715d81df75f3f4c56837cb762db194a7e7",
+    "E343": "ce193af9bcf6ce9951bb34cc0aabc4551f1dc5989a5d542b4ec710848fcd36e6",
+    "E344": "c9896e3220796785f2a965914dd820374d7b0e7f0a61826c11b0054e6143a61a",
+    "E345": "7462157b86e69f5fc14e1a78bc2fd361cc43cd25300e08c3e0f316755d03b4a7",
+    "E346": "da01d73beffdc3ffdd31d2bc4423daef9ba63ad0e9716217cd6d7bc5e1e85319",
+    "E347": "a0e1a7ce97a9fa9f55663875d068f64c29c18f87f171198876ae07fb9b135bbd",
+    "E348": "9bc96823de2f2ea0bb57572d4d1df947f6a3c12d55c32662a0cbfa94756d82c7",
+    "E349": "cfadfda5ece754695b04766bf022ba5ed20f9e3788d0889d042ac220f7fc39fa",
+    "E350": "d7c1b934c323fa9a4aa6091abe6f281a8d5330b6effa7ff730ffd537ef63ea3b",
+    "E351": "e4aef1656223cebdf65112a19636fe55a69311529a7aaaa6eb9f55a431b5286f",
+    "E352": "ab3f1f5ee8ec221e058fb32a743438474bec0886ed752357f7dd7f3ff7ec5e60",
+    "E353": "4826ca290013a0b11449f89455a4a57f87c63e1f5e048ea078d595d289267bd4",
+    "E354": "9c3524b877292f06e590217690afe9c12a49e98c7dc94c4c002f661cdc524a8c",
+    "E355": "133974b75e8f755e1dabccc3072ca26f9f885a3b92634b0e23269513d6bf36b9",
+    "E356": "a6c0dc7cfb6157983212f51107843dd804efaebdbf61240abdbbe28765f2ded1",
+    "E357": "932b44a40db0d106a6763c586bfaab14abe51aa22b2e46578b174773613111ea",
+    "E358": "1de530bd414dfc5b490d14e97634774af99ec65f61e08f9db225435eac6fded4",
+    "E359": "e65718169d3070dd9e53eba7af3165dc722b46d744e363ddec66e59395e3ce64",
+    "E360": "47694f1a8356ae124e6c74e915518f11d9427b08adf0ded84edc05785d53fea9",
+    "E361": "42ed558bab2b229598ed418ecbada53a5b0d325b00d37e105568160ba9cc50bc",
+    "E362": "1013ea9b71c2c8c3e3b16432ad594136e903ee6859bc4036d2e4baa5d15560f3",
+    "E363": "4cb7a0605b487d3aa376b790cdfa7765a7b886efcb2e242fefd96928f6447626",
+    "E364": "dc9ba44f1b5ba2c60f31679b9f84af360a0e5df68d3d73bb07a60fff17e3293a",
+    "E365": "a40edf62d0d11b23e7ae51ebb43ac5c7febc032716618053ac21fbf63f434a21",
+    "E366": "55a2f205db7895d9102739643acf4b685524fb4bcd15ab2bc6109b99a272f1d7",
+    "E367": "25a5d63486f813328ef99f0d75320739535e9cb1d07bc57035eaa6fa2a8234f7",
+    "E368": "6aea6f333535fbd93bfbffdb64f33ae220a93cbddd14d12d1f69a99958ceda9e",
+    "E369": "7d53bc10192a1fff68fd882440d1ec1177a6c4bae7a550cb011bbee8ad21e1a1",
+    "E370": "df090ce02f335a466da1e8f8552e14f631d967b8142143d1466ce48e47d683b6",
+    "E371": "b2493ef197445bb45e44636d562996bb253496ecf28514682ce0eb09dd8318b7",
+    "E372": "41c99bf766ebcf058324aa69607712a3500ed32c705bdf079ae4d73bdbc29c5f",
+    "E373": "8c2134534e8ced09ce34b676e321b196ab9f45236ad72edf9fa6fd3031bc6d2f",
+    "E374": "2eb6ee4250f26a05aaa247701dba47be252a85d231a7ea239cf0529148f4e68e",
+    "E375": "a21104e5d1838028cd8a7ad3256ceb2a3bd0882dd425335ccb4261af7b68a13a",
+    "E376": "b764fd5ea9f88783fc95ce660077c04ace991a6bbb394093c5d7f3d7e9ddd928",
+    "E377": "979496b90d7cfb6c72ca6431078712477c934ca5633c571c257cc3cf6e5baa3d",
+    "E378": "c84fadae967a76ad84293dc9e9878865134a972c137c61488cdbd0725cf60902",
+    "E379": "5156fb5979b6039fe31c4726d0721dd6f1933d0464445763a9537828ad7b04a1",
+    "E380": "3ace63ff3628a38042ffe8eebc19ecf66e0140b6d471c55766dea5ce070d4bb9",
+    "E381": "9d1e8681b665e53d8402a880c74bbc8e44ae17168ddaa8e413404e5c7f46b800",
+    "E382": "a42047da4820b988250ccdbe4a4318836c0e335b36164b88ee4f4e7cee06bbe6",
+    "E383": "9d0de17d2efa428aa242a332b95f73ad3203a5ef0e46921580343507d632a3aa",
+    "E384": "74ac8a320f962197b33aeb67f6f2f20a703ea7f7769ff787c6ca2562edecebf0",
+    "E385": "2ebf7fed5dca8807438e2fdc58c6356ccfa948f2c4ad555ad0e13ff2d5688f79",
+    "E386": "54c944f3629c8e4ba6a312b24007666110f2914ea8bada2befc5b0b36d843850",
+    "E387": "fc1f0621f05b986242fd9c55457b10e7afafbdc3697b5f469477889c5a02b282",
+    "E388": "b5d3f35be1140e0a127189cee083bf705d2e1d2fcc353296d88749cf8b054976",
+    "E389": "a7924b46bdd33f7a4b207fe4cada3b1e0f41021419e769a8228a66d443c9f6d8",
+    "E390": "57ccc5e49ddd8060a9a4472a95019abaa66927d9ddb565c0bf08bebfa0d5ca24",
+    "E391": "68c13972a153a5d7ae2ecc0063a3bb1b9dbab1c807d34bf199b8c7862aeaf35d",
+    "E392": "54fc3769db328346a9394303043ef756940505683be6a9a93529d0ba4e7ddbfa",
+    "E393": "39f5742bb414122920902dee69426103f7c79c585fad0754f346fcff4f5bcd89",
+    "E394": "61e4c281a78197bdfb4eed1acff4255e4119e18fc8ac6121949e2de8b727b5d5",
+    "E395": "9774d1c485f4593ed567870696165edd7e13a6ba2dfe9c4634703eac93f1592a",
+    "E396": "7a40622d7a742075d0465e849480184775446f546224e36f82039d87e67d367a",
+    "E397": "987976bed26c49e7ba3566988d58ed05ebe2e85010098cece3412ad179c1262a",
+    "E398": "24ff40f42f28438520a33f3d290d24a9c38d8a89a03be95526f2477960ad1e0b",
+    "E399": "1413de80f3cd332742cc8b005cdd4ba221722ad33768843181870709c92e36df",
+    "E400": "b921dd80f508a85f163c6bbc3d8bd1c720dc8a247b29f91b20dbd98971f04f3a",
+    "E401": "ef498ecf9064216d3a301c9f09bf364ea1e4ae14cdbf8a88ebbbe872957409d2",
+    "E402": "49a4722e2b051547d9b534e8cfe3a501335362d9373abe157f6fae81e7887daa",
+    "E403": "78eb1749a753869a69793d1b12669ca6625a6279f730ba1f420c1e96b8beeb92",
+    "E404": "11b2dcca1223e516b8fdd71b003243fe3254a56e2ca2361eae692921823d15c7",
+    "E405": "ce1d00e69b8b1e86750a6a03ace7c2b69987c5af107f8a82c1a2daab4de94a50",
+    "E406": "3c0999ed48c221f70d90eb7c0cb9b964cb87e838f39923cd7f517001e87cad46",
+    "E407": "f3a39ae183fec618ae37dc25bd58efc25bd183291b22f8025505c6dc16c29187",
+    "E408": "75c9d554a4dab20cd1abc65c0bff6f9f914b3cae8d7a3695f8e2712e51515195",
+    "E409": "96bf0ad08bb7db7da5558c245e9230aa806ddc7f6fc6422f5b045e68957a178d",
+    "E410": "08c44704cc904b70396d2a01a6b505c93bb50bc55dc720691994426ec54fec85",
+    "E411": "4336c59c49b1487f5489a25811d35bb51d40266a92f8a70648a09698cac9130b",
+    "E412": "edefd76128acf175a8307e52a091f563433f5b3957ccc5937cedf143b3d1446e",
+    "E413": "41f8bd6b2ea3a156551c6b99a497e30624e9840f14b878f42d8f00f22dce42cc"
+  }
+}

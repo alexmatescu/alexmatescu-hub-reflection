@@ -186,7 +186,7 @@ Pentru un material care apare în registru cu status `publicat`, poți verifica 
 - `date_published`/`date_modified` din JSON-LD-ul paginii live corespund cu registrul;
 - intrarea există în `https://delamatescu.ro/sitemap.xml`.
 
-**Interpretarea corectă a unei diferențe local ↔ live**: acest skill se oprește înainte de `git push` și deploy, deci site-ul live reflectă ultimul deploy, nu working tree-ul. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
+**Interpretarea corectă a unei diferențe local ↔ live**: deploy-ul îl face userul, manual, deci site-ul live reflectă ultimul deploy, nu working tree-ul și nici ultimul push. Agentul nu rulează deploy și nu generează comenzi sau pași de deploy de rulat manual (din VS Code sau din terminal); verificarea live se face numai după ce userul spune că a făcut deploy. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
 
 Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev server + build) — o completează. Dacă `delamatescu.ro` nu răspunde sau blochează cererea, notează-o ca neverificată; nu trata un fetch eșuat drept dovadă că pagina nu există.
 
@@ -269,7 +269,7 @@ keywords:
 ---
 ```
 
-Regulile de date, publication-time și capitalizare sunt **identice** cu `publica-articol-lab` §0.3/§0.4/§6.2 — nu le reinventa: `date_published` e momentul primei publicări publice reale (niciodată ora creării draftului, a research-ului sau a rulării agentului), ISO complet cu oră/offset pentru orice caz nou; `date_modified` se schimbă doar la modificare editorială reală (adăugarea unei faze noi **este** o modificare reală); `last_reviewed` e data ultimei verificări factuale reale, nu completată automat.
+Regulile de date, publication-time și capitalizare sunt **identice** cu `publica-articol-lab` §0.3/§0.4/§6.2 — nu le reinventa: `date_published` e momentul primei publicări publice reale (niciodată ora creării draftului, a research-ului sau a rulării agentului), ISO complet cu oră/offset pentru orice caz nou. **Ora publicării = ora commitului și push-ului** (decizia autorului, 22 octombrie 2026, regula din `publica-articol-lab` §0.4): până la commit valoarea e provizorie și se declară ca atare; când userul cere commit și push, agentul ia momentul curent în `Europe/Bucharest`, îl scrie peste tot (frontmatter, Meta `.ts`, byline, plus `date_modified`/`lastmod` dacă s-a schimbat ziua) imediat înainte de commit, fără confirmare separată. La o fază nouă peste un caz existent, `date_published` nu se schimbă; `date_modified` se schimbă doar la modificare editorială reală (adăugarea unei faze noi **este** o modificare reală); `last_reviewed` e data ultimei verificări factuale reale, nu completată automat.
 
 `category` — obligatoriu, EXACT una dintre cele patru valori din `LabArticleCategory` (`Search & Retrieval`, `Technical Visibility`, `Entities & Citations`, `AI Ecosystem`, `src/data/lab-seo.ts`). Alege pe conținut, nu presupune că un studiu de entity resolution e automat „Entities & Citations” dacă subiectul diferă. Determină `articleSection` în JSON-LD (§7.2). Dacă nu se potrivește rezonabil, semnalează în raport, nu extinde taxonomia unilateral.
 

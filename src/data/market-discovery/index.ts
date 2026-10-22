@@ -13,6 +13,7 @@
 import pilot1 from "./2026q4-pilot-1.json";
 import pilot2 from "./2026q4-pilot-2.json";
 import pilot3 from "./2026q4-pilot-3.json";
+import pilot5 from "./2026q4-pilot-5.json";
 import seriesData from "./series.json";
 import {
   MD_GITHUB_REPO,
@@ -153,7 +154,7 @@ const toRun = (data: MdRunData): MdRun => {
 };
 
 /** Rulările, în ordine cronologică. */
-export const mdRuns: MdRun[] = [pilot1, pilot2, pilot3].map((d) =>
+export const mdRuns: MdRun[] = [pilot1, pilot2, pilot3, pilot5].map((d) =>
   toRun(d as unknown as MdRunData),
 );
 

@@ -121,7 +121,7 @@ Pentru un material care apare în registru cu status `publicat`, poți verifica 
 - `date_published`/`date_modified` din JSON-LD-ul paginii live corespund cu registrul;
 - intrarea există în `https://delamatescu.ro/sitemap.xml`.
 
-**Interpretarea corectă a unei diferențe local ↔ live**: acest skill se oprește înainte de `git push` și deploy, deci site-ul live reflectă ultimul deploy, nu working tree-ul. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
+**Interpretarea corectă a unei diferențe local ↔ live**: deploy-ul îl face userul, manual, deci site-ul live reflectă ultimul deploy, nu working tree-ul și nici ultimul push. Agentul nu rulează deploy și nu generează comenzi sau pași de deploy de rulat manual (din VS Code sau din terminal); verificarea live se face numai după ce userul spune că a făcut deploy. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
 
 Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev server + build) — o completează. Dacă `delamatescu.ro` nu răspunde sau blochează cererea, notează-o ca neverificată; nu trata un fetch eșuat drept dovadă că pagina nu există.
 
@@ -199,7 +199,7 @@ keywords: []
 
 Nu adăuga un câmp `slug` separat — canonicalul rămâne sursa unică (identic cu `publica-articol-lab` §0.3).
 
-`date_published`/`date_modified`/`last_reviewed` urmează regulile din `publica-articol-lab` §0.4/§6.2 (publication time real, nu ora draftului/agentului; `date_modified` nu se schimbă fără modificare editorială reală) — nu le reinventa.
+`date_published`/`date_modified`/`last_reviewed` urmează regulile din `publica-articol-lab` §0.4/§6.2 (publication time real, nu ora draftului/agentului; `date_modified` nu se schimbă fără modificare editorială reală) — nu le reinventa. **Ora publicării = ora commitului și push-ului** (decizia autorului, 22 octombrie 2026, regula din `publica-articol-lab` §0.4): până la commit valoarea e provizorie și se declară ca atare; când userul cere commit și push, agentul ia momentul curent în `Europe/Bucharest`, îl scrie peste tot (frontmatter, Meta `.ts`, byline, plus `date_modified`/`lastmod` dacă s-a schimbat ziua) imediat înainte de commit, fără confirmare separată. Un document deja publicat își păstrează `date_published` prin toate versiunile ulterioare.
 
 ### 0.2 — Scop: document nou / activare draft→Activ / update pe document Activ
 
@@ -233,7 +233,7 @@ Aplică-l ori de câte ori scopul (§0.2) implică trecerea unui document de la 
 2. Pentru fiecare punct: verifică dacă a fost efectiv închis (dovadă verificabilă — un fișier, o secțiune, un commit, o confirmare explicită a userului), sau rămâne deschis.
 3. Dacă rămân puncte deschise, **nu activa documentul** fără confirmare explicită a userului pentru fiecare punct rămas — folosește o întrebare directă, nu presupune că „probabil e ok”. Documentează în raportul final (§10) exact ce a fost confirmat ca excepție acceptată și de cine.
 4. Dacă documentul nu are o astfel de secțiune dar e totuși un draft incomplet (secțiuni lipsă, cerințe needeterminate, TODO-uri interne), tratează-l identic — nu activa un document incomplet doar pentru că lipsește explicit o listă de decizii deschise.
-5. Abia după ce toate punctele sunt închise sau explicit acceptate ca excepție: `status: "Activ"`, `version` la prima variantă majoră stabilă (de regulă `1.0.0`), `date_published` completat cu momentul real al publicării (§0.1), `canonical_proposed` → `canonical`.
+5. Abia după ce toate punctele sunt închise sau explicit acceptate ca excepție: `status: "Activ"`, `version` la prima variantă majoră stabilă (de regulă `1.0.0`), `date_published` completat cu ora commitului și push-ului care publică documentul (regula de mai sus), `canonical_proposed` → `canonical`.
 
 ---
 

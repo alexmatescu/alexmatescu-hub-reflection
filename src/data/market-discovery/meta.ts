@@ -38,6 +38,8 @@ export type RunMeta = {
   scope: string;
   /** Datele rulării, afișate (run-sheet-ul pilotului 2 nu le are declarate). */
   runDates: string;
+  /** Articolul Lab care interpretează rularea, dacă există. */
+  article?: { path: string; title: string };
 };
 
 export const runMeta: Record<string, RunMeta> = {
@@ -73,6 +75,22 @@ export const runMeta: Record<string, RunMeta> = {
     runDates: "13–14 octombrie 2026",
     scope:
       "Completarea setului de întrebări v0.2.0, rulată la 13–14 octombrie 2026 din Sibiu, cu Google citit până la ~30 de poziții.",
+  },
+  "2026q4-pilot-5": {
+    title:
+      "Pilotul 5 Market Discovery: cele 12 expresii scurte, pe 8 suprafețe",
+    seoTitle: "Market Discovery 2026Q4 — Pilotul 5",
+    description:
+      "Al cincilea pilot Market Discovery din seria MKT-RO-AIV: cele 12 expresii scurte USER-SHORT, rulate din Sibiu pe 8 suprafețe. 413 capturi, 98 de execuții, 69 de entități candidate în bază, 278 cumulat cu piloții 1–3.",
+    datePublished: "2026-10-22",
+    runDates: "15–18 octombrie 2026",
+    article: {
+      path: "/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte",
+      title:
+        "Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”",
+    },
+    scope:
+      "Prima rulare completă a expresiilor scurte, scrise cum le-ar scrie cineva fără cunoștințe de specialitate, fără „România” în text. Rulată din Sibiu în 15, 16 și 18 octombrie 2026. Pilotul 4, rulat din Bologna, nu are pagină: a fost exclus din reuniune.",
   },
 };
 

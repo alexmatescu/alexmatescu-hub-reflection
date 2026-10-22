@@ -102,6 +102,11 @@ export const labNav: LabPage[] = [
     lead: "Seria MKT-RO-AIV: aceleași întrebări despre servicii de GEO, AEO și AI Visibility puse pe 8 suprafețe de căutare și AI, cu fiecare nume afișat capturat, clasificat și numărat.",
     children: [
       {
+        to: "/lab/market-discovery/2026q4-pilot-5",
+        label: "Pilotul 5 — 2026Q4",
+        lead: "Cele 12 expresii scurte USER-SHORT, pe 8 suprafețe: 98 de execuții, 69 de entități candidate în bază.",
+      },
+      {
         to: "/lab/market-discovery/2026q4-pilot-3",
         label: "Pilotul 3 — 2026Q4",
         lead: "Cele 8 întrebări nerulate anterior, pe 8 suprafețe: 64 de execuții, 174 de entități candidate în bază.",
@@ -243,6 +248,12 @@ export const labNav: LabPage[] = [
         label:
           "Pilotul 4 Market Discovery: de ce rularea din Bologna nu intră în reuniunea de candidați",
         lead: "Rularea MKT-RO-AIV-2026Q4-PILOT-4, făcută la 10 octombrie 2026 din aeroportul din Bologna cu 4 expresii scurte, a fost procesată și publicată ca pachet de dovezi, dar exclusă din reuniunea de candidați: expresiile scurte, fără ancoră geografică, au produs din Italia răspunsuri orientate spre piața italiană, iar rularea nu atinge pragul minim al condițiilor de rulare. Ce s-a rulat, ce lipsește și ce se poate folosi din ea.",
+      },
+      {
+        to: "/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte",
+        label:
+          "Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”",
+        lead: "Rularea MKT-RO-AIV-2026Q4-PILOT-5, făcută din Sibiu între 15 și 18 octombrie 2026, este prima rulare completă a celor 12 expresii scurte USER-SHORT pe 8 suprafețe. A adus 69 de entități candidate, dintre care 37 noi, și ridică reuniunea de candidați la 278. Analiza pe expresii arată că doar câteva funcționează ca interogări de piață și că retragerea expresiei „consultant AI”, decisă după o singură rulare parțială, a fost o eroare de metodă: „marketing AI” și „specialist ChatGPT” au aceeași slăbiciune lingvistică și au rămas în set.",
       },
     ],
   },

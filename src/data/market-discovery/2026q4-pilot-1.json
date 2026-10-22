@@ -8,7 +8,7 @@
   "reportVersion": "0.1",
   "release": {
     "tag": "mkt-evidence-mkt-ro-aiv-2026q4-pilot-v1.0",
-    "published": false
+    "published": true
   },
   "integrity": {
     "mkt-ro-aiv-2026q4-pilot_capture-index_v1.0.csv": "c8aae4a2be31c2a160e82e78e19d47a403b8fc2bf7759853f348a333d48e6701",

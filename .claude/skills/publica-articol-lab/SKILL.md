@@ -23,6 +23,8 @@ O cifră fără definiția exactă a ce măsoară (ex. „17,8% folosesc AI”) 
 
 **Nu inventa mecanisme algoritmice.** Separă permanent ceea ce providerul documentează / ceea ce observăm / ceea ce inferăm / ceea ce ipotetizăm. Nu transforma corelația în cauzalitate, observația în mecanism, recomandarea editorială în ranking factor, structured data într-un „factor GEO”, sau un studiu comercial în lege generală.
 
+**Identificatorii vin din definiția lor, nu din formularea userului.** ID-urile de interogări (`Q-DISC-NNN`, `Q-USER-SHORT-NNN` etc.), de execuții, de rulări, de documente sau de cerințe se scriu în articol exact cum sunt definite în sursa lor (setul de interogări, pachetul de dovezi, documentul normativ). Nu le renumerota după cum le numește userul în conversație (de exemplu numărul folderului de capturi în locul ID-ului din set). Când formularea userului nu corespunde clar unui identificator definit (numărul nu se potrivește cu textul, două lecturi sunt posibile, eticheta poate fi ID sau număr de folder), **întreabă userul înainte de a scrie**, citând ambele variante. Nu alege tacit o interpretare.
+
 ---
 
 ## Pasul 0 — Registrul de conținut
@@ -110,7 +112,7 @@ Pentru un material care apare în registru cu status `publicat`, poți verifica 
 - `date_published`/`date_modified` din JSON-LD-ul paginii live corespund cu registrul;
 - intrarea există în `https://delamatescu.ro/sitemap.xml`.
 
-**Interpretarea corectă a unei diferențe local ↔ live**: acest skill se oprește înainte de `git push` și deploy, deci site-ul live reflectă ultimul deploy, nu working tree-ul. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
+**Interpretarea corectă a unei diferențe local ↔ live**: deploy-ul îl face userul, manual (secțiunea „Deploy”, la final), deci site-ul live reflectă ultimul deploy, nu working tree-ul și nici ultimul push. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
 
 Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev server + build) — o completează. Dacă `delamatescu.ro` nu răspunde sau blochează cererea, notează-o ca neverificată; nu trata un fetch eșuat drept dovadă că pagina nu există.
 
@@ -206,11 +208,13 @@ image_alt: ""
 
 `date_published` înseamnă strict **momentul primei publicări publice**. NU: momentul creării draftului, momentul în care a început research-ul, ultima modificare, ultima verificare factuală, ora rulării agentului sau a unui commit Git, ora la care a fost creat fișierul. Un commit Git nu devine automat publication timestamp doar pentru că a introdus articolul — poate fi folosit ca timestamp de publicare **numai** dacă poți demonstra că acel commit/deploy reprezintă efectiv prima publicare publică (nu doar presupune asta).
 
-Pentru orice articol nou:
+Pentru orice articol nou (decizia autorului, 22 octombrie 2026):
 
-1. Dacă userul furnizează data și ora publicării, folosește exact acea informație.
-2. Dacă agentul publică efectiv articolul în task-ul curent, determină momentul real de publicare în timezone `Europe/Bucharest` și folosește-l, cu offset explicit (`+02:00`/`+03:00` după sezon).
-3. Nu inventa niciodată o valoare — nu `00:00`, nu `09:00`, nu ora commitului, nu ora rulării agentului "ca să fie completă".
+1. **Ora publicării este ora la care agentul face commit și push**, la cererea userului. Nu se cere confirmare separată pentru ea.
+2. Până la commit, `date_published` are o valoare **provizorie** (momentul curent, în `Europe/Bucharest`, cu offset explicit `+02:00`/`+03:00` după sezon), necesară pentru build și pentru verificarea indexului. Raportul final o declară ca provizorie.
+3. Când userul cere commit și push, **imediat înainte de commit**: determină momentul curent în `Europe/Bucharest` (`TZ=Europe/Bucharest date '+%Y-%m-%dT%H:%M:00%z'`, cu offset scris `+03:00`), apoi actualizează-l peste tot, în aceeași trecere: `date_published` din `.md`; `datePublished` din Meta `.ts`; `datetime` și textul vizibil al datei „Publicat:” din byline. Dacă ziua calendaristică s-a schimbat față de valoarea provizorie, actualizează și `date_modified`/`dateModified`, `<lastmod>` din sitemap și, numai dacă verificarea factuală a fost refăcută, `last_reviewed`. Regenerează registrul și rulează `npx tsc --noEmit`, apoi commit și push.
+4. Dacă userul furnizează explicit altă dată și oră, folosește exact acea informație.
+5. Nu inventa niciodată o valoare — nu `00:00`, nu `09:00`, nu ora rulării agentului „ca să fie completă”.
 
 Pentru articolele **legacy** (publicate înainte de acest contract, cu `date_published` doar `YYYY-MM-DD`): dacă ora reală a publicării nu poate fi verificată dintr-o sursă first-party clară (nu doar un commit timestamp — vezi mai sus), păstrează data existentă, fără oră. Sortarea/indexul (§8) sunt backward-compatible cu acest format.
 
@@ -655,7 +659,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 
 - [ ] `category` e una dintre cele patru valori permise (§5.5).
 - [ ] `articleType` e una dintre valorile permise (§5.5).
-- [ ] `datePublished` reprezintă prima publicare publică reală (§0.4), nu creare draft/research/ultima modificare/ora agentului/commit Git.
+- [ ] `datePublished` e ora commitului și push-ului făcute la cererea userului (§0.4); până atunci e declarată provizorie în raport.
 - [ ] Un articol nou are `date_published` cu timestamp complet și timezone (`Europe/Bucharest`), nu doar dată.
 - [ ] Ora publicării nu a fost inventată — dacă nu poate fi demonstrată (articol legacy), a rămas `YYYY-MM-DD` fără oră (§0.4).
 - [ ] Ora publicării nu e afișată nicăieri vizibil (nici în byline, nici în index) — doar data, în `Europe/Bucharest`.
@@ -689,4 +693,10 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 /publica-articol-lab src/content/lab/articles/14.titlu-nou-articol.md
 ```
 
-Nu face commit/push fără cerere explicită.
+Nu face commit/push fără cerere explicită. La commit și push, ora publicării se fixează automat, fără confirmare (§0.4).
+
+---
+
+## Deploy — manual, făcut de user
+
+**Deploy-ul pe `delamatescu.ro` îl face userul, manual.** Agentul nu rulează deploy și nu generează comenzi sau pași de deploy de rulat manual (din VS Code sau din terminal) — nici în raportul final, nici la cerere de push. După push, raportul spune doar că modificările sunt pe `main` și că apar live după deploy-ul userului. Verificarea live (§0.E) se face numai după ce userul spune că a făcut deploy.

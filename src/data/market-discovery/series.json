@@ -1,5 +1,5 @@
 {
-  "updatedFrom": "mkt-ro-aiv-2026q4-pilot-3",
+  "updatedFrom": "mkt-ro-aiv-2026q4-pilot-5",
   "queriesCovered": [
     "Q-DISC-001",
     "Q-DISC-002",
@@ -12,18 +12,31 @@
     "Q-DISC-009",
     "Q-DISC-010",
     "Q-DISC-011",
-    "Q-DISC-012"
+    "Q-DISC-012",
+    "Q-USER-SHORT-002",
+    "Q-USER-SHORT-003",
+    "Q-USER-SHORT-004",
+    "Q-USER-SHORT-005",
+    "Q-USER-SHORT-006",
+    "Q-USER-SHORT-007",
+    "Q-USER-SHORT-008",
+    "Q-USER-SHORT-009",
+    "Q-USER-SHORT-010",
+    "Q-USER-SHORT-011",
+    "Q-USER-SHORT-012",
+    "Q-USER-SHORT-013"
   ],
   "cumulative": {
-    "unionBase": 241,
-    "unionExtended": 256,
-    "newInLast": 114,
-    "seenBefore": 60,
-    "inAllPilots": 35
+    "unionBase": 278,
+    "unionExtended": 295,
+    "newInLast": 37,
+    "seenBefore": 32,
+    "inAllPilots": 10
   },
   "runs": [
     "2026q4-pilot-1",
     "2026q4-pilot-2",
-    "2026q4-pilot-3"
+    "2026q4-pilot-3",
+    "2026q4-pilot-5"
   ]
 }

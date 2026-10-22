@@ -199,7 +199,7 @@ Pentru un material care apare în registru cu status `publicat`, poți verifica 
 - `date_published`/`date_modified` din JSON-LD-ul paginii live corespund cu registrul;
 - intrarea există în `https://delamatescu.ro/sitemap.xml`.
 
-**Interpretarea corectă a unei diferențe local ↔ live**: acest skill se oprește înainte de `git push` și deploy, deci site-ul live reflectă ultimul deploy, nu working tree-ul. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
+**Interpretarea corectă a unei diferențe local ↔ live**: deploy-ul îl face userul, manual, deci site-ul live reflectă ultimul deploy, nu working tree-ul și nici ultimul push. Agentul nu rulează deploy și nu generează comenzi sau pași de deploy de rulat manual (din VS Code sau din terminal); verificarea live se face numai după ce userul spune că a făcut deploy. O diferență între local și live **nu e o eroare** — înseamnă modificări locale încă nedeployate. Semnalează-o ca atare în raport; nu „corecta" sursa locală ca să semene cu live-ul și nu declara materialul publicat pe baza a ceea ce vezi local.
 
 Verificările live sunt strict citiri. Nu înlocuiesc verificarea locală (dev server + build) — o completează. Dacă `delamatescu.ro` nu răspunde sau blochează cererea, notează-o ca neverificată; nu trata un fetch eșuat drept dovadă că pagina nu există.
 
@@ -729,7 +729,7 @@ Această verificare de existență este permisă și nu reprezintă comparație 
 
 # 12.6 `date`
 
-Pentru articol nou folosește data reală a pregătirii/publicării conform convenției repository-ului.
+Pentru articol nou, data publicării este data commitului și push-ului (decizia autorului, 22 octombrie 2026). Până atunci, valoarea e provizorie și se declară ca atare în raport. Dacă userul cere explicit commit și push după încheierea skill-ului, agentul fixează data curentă în `Europe/Bucharest` imediat înainte de commit, fără confirmare separată. Deploy-ul îl face userul, manual: agentul nu generează comenzi sau pași de deploy.
 
 Nu backdata fără instrucțiune explicită.
 

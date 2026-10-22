@@ -32,7 +32,8 @@ const OUT_DIR = path.join(ROOT, "src", "data", "market-discovery");
 /**
  * Rulările publicate. Ordinea e cea cronologică. `summaryOverrides` înlocuiește
  * puncte din „Pe scurt” care au fost depășite de decizii ulterioare raportului
- * (index → text nou; `null` elimină punctul).
+ * (index → text nou; `null` elimină punctul). `releasePublished` = release-ul
+ * GitHub al pachetului e public (nu doar draft).
  */
 const RUNS = [
   {
@@ -41,6 +42,7 @@ const RUNS = [
     label: "Pilotul 1",
     packageVersion: "1.0",
     releaseTag: "mkt-evidence-mkt-ro-aiv-2026q4-pilot-v1.0",
+    releasePublished: true,
     errata: [
       {
         id: "ERR-01",
@@ -65,6 +67,7 @@ const RUNS = [
     label: "Pilotul 2",
     packageVersion: "1.0",
     releaseTag: "mkt-evidence-mkt-ro-aiv-2026q4-pilot-2-v1.0",
+    releasePublished: true,
     errata: [],
     summaryOverrides: {},
   },
@@ -74,6 +77,18 @@ const RUNS = [
     label: "Pilotul 3",
     packageVersion: "1.1",
     releaseTag: "mkt-evidence-mkt-ro-aiv-2026q4-pilot-3-v1.1",
+    releasePublished: true,
+    errata: [],
+    summaryOverrides: {},
+  },
+  // PILOT-4 (Bologna) nu are pagină: exclus din reuniune (varianta C, 2026-10-20).
+  {
+    slug: "mkt-ro-aiv-2026q4-pilot-5",
+    pathSlug: "2026q4-pilot-5",
+    label: "Pilotul 5",
+    packageVersion: "1.0",
+    releaseTag: "mkt-evidence-mkt-ro-aiv-2026q4-pilot-5-v1.0",
+    releasePublished: true,
     errata: [],
     summaryOverrides: {},
   },
@@ -450,7 +465,7 @@ function buildRun(cfg) {
     querySetId: querySet[0].query_set_id,
     packageVersion: cfg.packageVersion,
     reportVersion: "0.1",
-    release: { tag: cfg.releaseTag, published: false },
+    release: { tag: cfg.releaseTag, published: cfg.releasePublished === true },
     integrity: hashes,
     sessions,
     queries,
@@ -526,7 +541,10 @@ const series = {
   cumulative: {
     unionBase: int(baseRow.union),
     unionExtended: int(extRow.union),
-    newInLast: int(baseRow.only_pilot_3),
+    // Coloana „doar în ultimul pilot” poartă numărul pilotului (only_pilot_3, only_pilot_5).
+    newInLast: int(
+      baseRow[Object.keys(baseRow).find((k) => /^only_pilot_\d+$/.test(k))],
+    ),
     seenBefore: int(baseRow.both),
     inAllPilots: t12d.length,
   },

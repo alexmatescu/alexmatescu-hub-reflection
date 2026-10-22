@@ -49,7 +49,11 @@ const renderBold = (text: string): ReactNode[] =>
 
 // ───────────────────────────── piese comune ─────────────────────────────
 
-const CandidateNotice = () => (
+const CandidateNotice = ({
+  queryWord = "întrebare",
+}: {
+  queryWord?: string;
+}) => (
   <div className="mt-10 border-l-2 border-foreground/40 bg-surface/50 px-5 py-4 text-sm leading-relaxed text-foreground/80 max-w-3xl">
     <p>
       <strong className="font-semibold text-foreground">
@@ -57,7 +61,7 @@ const CandidateNotice = () => (
         <code className="text-[13px]">UNVERIFIED</code>.
       </strong>{" "}
       „Entitate candidată” înseamnă doar că un nume a fost afișat ca posibil
-      prestator sau instrument pentru o întrebare. Includerea în registru nu
+      prestator sau instrument pentru o {queryWord}. Includerea în registru nu
       confirmă existența, activitatea comercială, eligibilitatea sau calitatea
       serviciilor unei entități și nu e o recomandare a AI Visibility Lab.
       Fiecare nume are proveniența observației și dovezile din pachet;
@@ -137,6 +141,24 @@ const Chip = ({
 // ───────────────────────────── vizualizări ─────────────────────────────
 
 /** Numeral + „de” când româna îl cere (20–99, 100, 120…): „91 de entități”. */
+/** Cum se numesc interogările rulării: întrebări (DISCOVERY) sau expresii (USER-SHORT). */
+const queryTerms = (run: MdRun) =>
+  run.queries.every((q) => q.id.startsWith("Q-USER-SHORT-"))
+    ? {
+        one: "expresie",
+        One: "Expresie",
+        many: "expresii",
+        manyArt: "expresiile",
+        ManyArt: "Expresiile",
+      }
+    : {
+        one: "întrebare",
+        One: "Întrebare",
+        many: "întrebări",
+        manyArt: "întrebările",
+        ManyArt: "Întrebările",
+      };
+
 const withDe = (n: number) =>
   n % 100 >= 20 || (n > 0 && n % 100 === 0) ? `${n} de` : `${n}`;
 
@@ -147,12 +169,13 @@ const QuerySurfaceMatrix = ({ run }: { run: MdRun }) => {
   const queryText = new Map(run.queries.map((q) => [q.id, q.text]));
   const queryUnionSum = run.matrix.reduce((a, r) => a + r.union, 0);
   const surfaceUnionSum = run.bySurface.reduce((a, s) => a + s.entities, 0);
+  const t = queryTerms(run);
   return (
     <div className="mt-8">
       <div className="overflow-x-auto -mx-6 md:mx-0">
         <table className="w-full min-w-[688px] md:min-w-[640px] border-collapse text-sm tabular-nums">
           <caption className="sr-only">
-            Entități candidate distincte în bază, pe întrebare și suprafață
+            Entități candidate distincte în bază, pe {t.one} și suprafață
           </caption>
           <thead>
             <tr>
@@ -160,7 +183,7 @@ const QuerySurfaceMatrix = ({ run }: { run: MdRun }) => {
                 scope="col"
                 className="sticky left-0 z-10 bg-background text-left font-medium text-[11px] uppercase tracking-[0.14em] text-muted-foreground pb-3 pl-6 md:pl-0 pr-3"
               >
-                Întrebare
+                {t.One}
               </th>
               {SURFACE_ORDER.map((s) => (
                 <th
@@ -249,19 +272,19 @@ const QuerySurfaceMatrix = ({ run }: { run: MdRun }) => {
         </table>
       </div>
       <p className="mt-3 text-xs text-muted-foreground">
-        Celulă = entități distincte numite pe acea suprafață la acea întrebare.
+        Celulă = entități distincte numite pe acea suprafață la acea {t.one}.
         Celulele goale (0) sunt execuții complete în care nu a fost numit niciun
-        candidat. Textul exact al fiecărei întrebări e în lista de mai jos.
+        candidat. Textul exact al fiecărei {t.many} e în lista de mai jos.
       </p>
       <p className="mt-2 text-xs text-muted-foreground">
         <strong className="text-foreground font-medium">
           Reuniunile nu sunt sume.
         </strong>{" "}
-        O entitate numită pe mai multe suprafețe sau la mai multe întrebări e
+        O entitate numită pe mai multe suprafețe sau la mai multe {t.many} e
         numărată o singură dată în reuniune. De aceea suma unui rând sau a unei
         coloane poate fi mai mare decât reuniunea lui, iar cele{" "}
         {withDe(run.totals.entitiesBase)} entități distincte ale rulării sunt
-        mai puține decât suma reuniunilor pe întrebări ({queryUnionSum}) sau pe
+        mai puține decât suma reuniunilor pe {t.many} ({queryUnionSum}) sau pe
         suprafețe ({surfaceUnionSum}).
       </p>
     </div>
@@ -273,10 +296,12 @@ const ExclusivityBars = ({
   rows,
   labelFor,
   total,
+  queryWord = "întrebare",
 }: {
   rows: MdExclusivity[];
   labelFor: (g: string) => string;
   total: number;
+  queryWord?: string;
 }) => {
   const max = Math.max(1, ...rows.map((r) => r.entities));
   return (
@@ -345,7 +370,7 @@ const ExclusivityBars = ({
         })}
       </ul>
       <p className="mt-3 text-xs text-muted-foreground">
-        Exclusiv = apare doar în acest grup, în nicio altă întrebare sau
+        Exclusiv = apare doar în acest grup, în nicio altă {queryWord} sau
         suprafață din rulare. Reuniunea rulării: {withDe(total)} entități, nu
         suma barelor ({rows.reduce((a, r) => a + r.entities, 0)}): o entitate
         găsită în mai multe grupuri apare în fiecare bară, dar e numărată o
@@ -466,7 +491,7 @@ const ProvenanceTable = ({ entity, run }: { entity: MdEntity; run: MdRun }) => (
       <thead className="text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
         <tr className="border-b border-foreground/15">
           {[
-            "Întrebare",
+            queryTerms(run).One,
             "Suprafață",
             "Unde",
             "Poz.",
@@ -595,12 +620,12 @@ const EntityExplorer = ({ run }: { run: MdRun }) => {
           ))}
         </select>
         <select
-          aria-label="Întrebare"
+          aria-label={queryTerms(run).One}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className={select}
         >
-          <option value="">Toate întrebările</option>
+          <option value="">Toate {queryTerms(run).manyArt}</option>
           {run.queries.map((qq) => (
             <option key={qq.id} value={qq.id}>
               {qq.id}
@@ -637,7 +662,7 @@ const EntityExplorer = ({ run }: { run: MdRun }) => {
         <p className="flex gap-3">
           Sortează: <SortBtn k="cells">celule</SortBtn>
           <SortBtn k="surfaces">suprafețe</SortBtn>
-          <SortBtn k="queries">întrebări</SortBtn>
+          <SortBtn k="queries">{queryTerms(run).many}</SortBtn>
           <SortBtn k="name">nume</SortBtn>
         </p>
       </div>
@@ -678,8 +703,10 @@ const EntityExplorer = ({ run }: { run: MdRun }) => {
               title={e.queries.join(", ")}
             >
               {e.queries.length}{" "}
-              {e.queries.length === 1 ? "întrebare" : "întrebări"} · {e.cells}{" "}
-              {e.cells === 1 ? "celulă" : "celule"}
+              {e.queries.length === 1
+                ? queryTerms(run).one
+                : queryTerms(run).many}{" "}
+              · {e.cells} {e.cells === 1 ? "celulă" : "celule"}
             </p>
             <ProvenanceDetails entity={e} run={run} />
           </li>
@@ -697,13 +724,13 @@ const EntityExplorer = ({ run }: { run: MdRun }) => {
       <p className="mt-4 text-xs text-muted-foreground max-w-3xl">
         <code>UNVERIFIED</code> = identificată în Market Discovery, fără Market
         Verification. Chenar accentuat = suprafața AI a numit entitatea explicit
-        ca recomandare. Celulă = o combinație întrebare × suprafață. Dovada =
-        Evidence ID-ul capturii din pachet (SHA-256 la trecerea cu mouse-ul și
-        în capture index); <code>-AIO</code> = blocul AI Overview din aceeași
-        captură. Numele sunt etichetele de lucru din registrul pilotului, după
-        deduplicarea pe regulile U0–U3; perechile nerezolvate (aceeași entitate?
-        persoană ↔ firmă? produs ↔ dezvoltator?) rămân separate până la
-        Verification.
+        ca recomandare. Celulă = o combinație {queryTerms(run).one} × suprafață.
+        Dovada = Evidence ID-ul capturii din pachet (SHA-256 la trecerea cu
+        mouse-ul și în capture index); <code>-AIO</code> = blocul AI Overview
+        din aceeași captură. Numele sunt etichetele de lucru din registrul
+        pilotului, după deduplicarea pe regulile U0–U3; perechile nerezolvate
+        (aceeași entitate? persoană ↔ firmă? produs ↔ dezvoltator?) rămân
+        separate până la Verification.
       </p>
     </div>
   );
@@ -721,7 +748,7 @@ const ExecutionsTable = ({ run }: { run: MdRun }) => (
         <thead className="text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
           <tr className="border-b border-foreground/15">
             {[
-              "Întrebare",
+              queryTerms(run).One,
               "Suprafață",
               "Capturi",
               "Observații",
@@ -827,7 +854,7 @@ const RunFacts = ({ run }: { run: MdRun }) => {
     ["Rulare", run.runDates],
     ["Locație", loc || "nedeclarat"],
     [
-      "Set de întrebări",
+      `Set de ${queryTerms(run).many}`,
       <code key="q" className="text-[13px]">
         {run.querySetId}
       </code>,
@@ -924,6 +951,7 @@ export const MarketDiscoveryRun = ({ slug }: { slug: string }) => {
   if (!run) return null;
   const familyAi = run.byFamily.find((f) => f.group === "AI_SURFACES");
   const queryLabel = (id: string) => id;
+  const t = queryTerms(run);
 
   return (
     <div>
@@ -951,8 +979,19 @@ export const MarketDiscoveryRun = ({ slug }: { slug: string }) => {
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-3xl">
             {run.scope}
           </p>
+          {run.article && (
+            <p className="mt-4 text-sm text-muted-foreground max-w-3xl">
+              Interpretarea rezultatelor:{" "}
+              <Link
+                to={run.article.path}
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                {run.article.title}
+              </Link>
+            </p>
+          )}
           <RunFacts run={run} />
-          <CandidateNotice />
+          <CandidateNotice queryWord={t.one} />
         </div>
       </section>
 
@@ -966,7 +1005,7 @@ export const MarketDiscoveryRun = ({ slug }: { slug: string }) => {
                 {
                   value: nf(run.totals.executions),
                   label: "Execuții",
-                  note: `${run.queries.length} întrebări × 8 suprafețe`,
+                  note: `${run.queries.length} ${t.many} × 8 suprafețe`,
                 },
                 {
                   value: nf(run.totals.captures),
@@ -1025,12 +1064,13 @@ export const MarketDiscoveryRun = ({ slug }: { slug: string }) => {
         <div className="container-editorial py-16 md:py-20 max-w-5xl">
           <SectionHead
             eyebrow="02 · Comparația"
-            title="Ce întrebare și ce suprafață aduce ce"
+            title={`Ce ${t.one} și ce suprafață aduce ce`}
           >
             <p>
-              Fiecare întrebare a fost pusă o singură dată pe fiecare suprafață.
-              Diferențele de mai jos descriu această rulare; o singură execuție
-              pe pereche nu separă tendința de variația întâmplătoare.
+              Fiecare {t.one} a fost pusă o singură dată pe fiecare suprafață,
+              cu excepțiile declarate în fișa rulării. Diferențele de mai jos
+              descriu această rulare; o singură execuție pe pereche nu separă
+              tendința de variația întâmplătoare.
             </p>
           </SectionHead>
 
@@ -1043,14 +1083,16 @@ export const MarketDiscoveryRun = ({ slug }: { slug: string }) => {
                 rows={run.bySurface}
                 labelFor={(g) => MD_SURFACE_LABELS[g] ?? g}
                 total={run.totals.entitiesBase}
+                queryWord={t.one}
               />
             </div>
             <div>
-              <h3 className="font-serif text-xl mb-5">Pe întrebare</h3>
+              <h3 className="font-serif text-xl mb-5">Pe {t.one}</h3>
               <ExclusivityBars
                 rows={run.byQuery}
                 labelFor={queryLabel}
                 total={run.totals.entitiesBase}
+                queryWord={t.one}
               />
             </div>
           </div>
@@ -1063,11 +1105,12 @@ export const MarketDiscoveryRun = ({ slug }: { slug: string }) => {
               rows={run.byFamily}
               labelFor={(g) => MD_FAMILY_LABELS[g] ?? g}
               total={run.totals.entitiesBase}
+              queryWord={t.one}
             />
           </div>
 
           <div className="mt-14 max-w-3xl">
-            <h3 className="font-serif text-xl mb-4">Întrebările rulării</h3>
+            <h3 className="font-serif text-xl mb-4">{t.ManyArt} rulării</h3>
             <ol className="space-y-2 text-sm">
               {run.queries.map((qq) => (
                 <li key={qq.id} className="grid grid-cols-[6.5rem_1fr] gap-3">
@@ -1107,11 +1150,11 @@ export const MarketDiscoveryRun = ({ slug }: { slug: string }) => {
             title="Cum a fost rulat și cum se verifică"
           >
             <p>
-              Fiecare întrebare a fost scrisă exact ca în set, într-o sesiune
+              Fiecare {t.one} a fost scrisă exact ca în set, într-o sesiune
               nouă, iar fiecare ecran a fost capturat integral. Capturile au
               fost sigilate înainte de clasificare. Fiecare rezultat numit a
               devenit un rând în registrul de observații, cu poziția,
-              proveniența și relevanța față de întrebare, apoi numele au fost
+              proveniența și relevanța față de {t.one}, apoi numele au fost
               unite pe reguli declarate.
             </p>
             <p>
@@ -1182,6 +1225,12 @@ export const MarketDiscoveryHub = () => {
   const c = mdSeries.cumulative;
   const totalCaptures = mdRuns.reduce((n, r) => n + r.totals.captures, 0);
   const totalExecutions = mdRuns.reduce((n, r) => n + r.totals.executions, 0);
+  const discoveryCovered = mdSeries.queriesCovered.filter((q) =>
+    q.startsWith("Q-DISC-"),
+  ).length;
+  const userShortCovered = mdSeries.queriesCovered.filter((q) =>
+    q.startsWith("Q-USER-SHORT-"),
+  ).length;
   return (
     <div>
       <Seo
@@ -1206,8 +1255,8 @@ export const MarketDiscoveryHub = () => {
             <p>
               Cine îți răspunde când întrebi Google sau un asistent AI cine
               oferă servicii de GEO, AEO sau AI Visibility în România? Market
-              Discovery pune aceleași întrebări pe opt suprafețe, capturează
-              fiecare ecran și numără fiecare nume afișat.
+              Discovery pune aceleași întrebări și expresii pe opt suprafețe,
+              capturează fiecare ecran și numără fiecare nume afișat.
             </p>
             <p>
               Rezultatul nu e un clasament. E lista celor care apar, cu dovada
@@ -1234,10 +1283,22 @@ export const MarketDiscoveryHub = () => {
             title={`${mdRuns.length} piloți, ${c.unionBase} de entități candidate`}
           >
             <p>
-              Cei trei piloți au acoperit împreună toate cele{" "}
-              {mdSeries.queriesCovered.length} întrebări DISCOVERY din set.
-              Piloții 1 și 2 au rulat aceleași 4 întrebări, iar pilotul 3 pe
-              celelalte 8.
+              Piloții 1–3 au acoperit împreună toate cele {discoveryCovered}{" "}
+              întrebări DISCOVERY din set: piloții 1 și 2 aceleași 4 întrebări,
+              pilotul 3 celelalte 8. Pilotul 5 a rulat cele {userShortCovered}{" "}
+              expresii scurte USER-SHORT, scrise cum le-ar căuta cineva fără
+              cunoștințe de specialitate.
+            </p>
+            <p>
+              Pilotul 4, rulat din Bologna cu 4 expresii scurte, nu intră în
+              reuniune și nu are pagină aici.{" "}
+              <Link
+                to="/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida"
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                De ce a fost exclus
+              </Link>
+              .
             </p>
           </SectionHead>
           <div className="mt-8">
@@ -1246,7 +1307,7 @@ export const MarketDiscoveryHub = () => {
                 {
                   value: nf(totalExecutions),
                   label: "Execuții",
-                  note: "în cei 3 piloți",
+                  note: `în cei ${mdRuns.length} piloți`,
                 },
                 {
                   value: nf(totalCaptures),
@@ -1261,7 +1322,7 @@ export const MarketDiscoveryHub = () => {
                 {
                   value: nf(c.inAllPilots),
                   label: "În toți piloții",
-                  note: "nucleul care se repetă",
+                  note: `în bază în toți cei ${mdRuns.length} piloți`,
                 },
               ]}
             />
@@ -1318,9 +1379,10 @@ export const MarketDiscoveryHub = () => {
           >
             <p>
               Fiecare rulare are aceeași structură: o sinteză cu cifrele
-              principale, comparația pe întrebări și suprafețe, lista completă a
-              entităților candidate și, la final, condițiile rulării și
-              checksum-urile pachetului de dovezi din care vin cifrele.
+              principale, comparația pe întrebări sau expresii și suprafețe,
+              lista completă a entităților candidate și, la final, condițiile
+              rulării și checksum-urile pachetului de dovezi din care vin
+              cifrele.
             </p>
             <p>
               <strong className="text-foreground">Statut.</strong> Până la
