@@ -7,7 +7,7 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-10-22 · 174 intrări · **2 anomalii** în 2 intrări
+Generat: 2026-10-22 · 175 intrări · **3 anomalii** în 3 intrări
 
 ## Sinteză
 
@@ -15,14 +15,14 @@ Generat: 2026-10-22 · 174 intrări · **2 anomalii** în 2 intrări
 |---|--:|--:|--:|--:|
 | `lab/articole` | 21 | 0 | 21 | 2 |
 | `lab/studii-de-caz` | 1 | 0 | 1 | 0 |
-| `lab/metodologie` | 5 | 0 | 5 | 0 |
+| `lab/metodologie` | 5 | 1 | 6 | 1 |
 | `lab/foundation` | 1 | 0 | 1 | 0 |
 | `lab/cercetare` | 5 | 0 | 5 | 0 |
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 4 | 0 | 4 | 0 |
 | `blog (arhivă)` | 132 | 0 | 132 | 0 |
 | `nealocat` | 0 | 1 | 1 | 0 |
-| **Total** | **173** | **1** | **174** | **2** |
+| **Total** | **173** | **2** | **175** | **3** |
 
 ## Legendă
 
@@ -39,7 +39,7 @@ Generat: 2026-10-22 · 174 intrări · **2 anomalii** în 2 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `LAB-21` | [Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”](/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte) | Search & Retrieval | Analiză de caz | publicat | — | 2026-10-22 | 2026-10-22 | 2026-10-22 (0z) | `✓✓✓✓` | `src/content/lab/articles/21.market-discovery-pilot-5-sibiu-expresii-scurte.md` | `src/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte.ts` |
+| `LAB-21` | [Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”](/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte) | Search & Retrieval | Analiză de caz | publicat | 2026-10-22 | 2026-10-22 | 2026-10-22 | 2026-10-22 (0z) | `✓✓✓✓` | `src/content/lab/articles/21.market-discovery-pilot-5-sibiu-expresii-scurte.md` | `src/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte.ts` |
 | `LAB-20` | [Pilotul 4 Market Discovery: de ce rularea din Bologna nu intră în reuniunea de candidați](/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida) | Search & Retrieval | Analiză de caz | publicat | 2026-10-21 | 2026-10-21 | 2026-10-21 | 2026-10-21 (1z) | `✓✓✓✓` | `src/content/lab/articles/20.market-discovery-pilot-4-bologna-rulare-invalida.md` | `src/data/lab-content/20. market-discovery-pilot-4-bologna-rulare-invalida.ts` |
 | `LAB-16` | [Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit](/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit) | AI Ecosystem | Analiză | publicat | 2026-10-01 | 2026-10-02 | 2026-10-02 | 2026-10-01 (21z) | `✓✓✓✓` | `src/content/lab/articles/16.public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit.md` | `src/data/lab-content/16. public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit.ts` |
 | `LAB-17` | [Site-ul nu dispare. Își schimbă clientul: cum se pregătește web-ul pentru agenți AI](/lab/articole/site-ul-nu-dispare-isi-schimba-clientul) | AI Ecosystem | Analiză | publicat | 2026-10-01 | 2026-10-02 | 2026-10-02 | 2026-10-01 (21z) | `✓✓✓✓` | `src/content/lab/articles/17.site-ul-nu-dispare-isi-schimba-clientul.md` | `src/data/lab-content/17. site-ul-nu-dispare-isi-schimba-clientul.ts` |
@@ -67,10 +67,11 @@ Generat: 2026-10-22 · 174 intrări · **2 anomalii** în 2 intrări
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `CS-001` | [Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search](/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz) | Entities & Citations | Analiză de caz | publicat | 2026-09-04 | 2026-09-04 | 2026-09-18 | 2026-09-18 (34z) | `✓✓✓✓` | `src/content/studii de caz/01. Alex Matescu/tabula-rasa-entity-resolution-studiu-de-caz.md` | `src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts` |
 
-## `lab/metodologie` — 5 intrări
+## `lab/metodologie` — 6 intrări
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| `AVL-204` | Grila de interpretare a verificării tehnice | C — Methodology | 0.1.0 | Draft pentru revizuire | 2026-10-22 | — | 2026-10-22 | 2026-10-22 | `·✗✗✗` | `src/content/lab/AVL/AVL-204_Grila_interpretare_verificare_tehnica.md` | `—` |
 | `AVL-203` | AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.3.1 | Draft pentru revizuire | 2026-10-01 | 2026-10-02 | 2026-10-13 | 2026-10-01 | `·✓✓✓` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `src/data/lab-content/avl-203.ts` |
 | `AVL-MKT-001` | AVL-MKT-001 — Market Scope & Eligibility Protocol | C — Methodology | 0.10.0 | Draft pentru revizuire | 2026-10-02 | 2026-10-02 | 2026-10-16 | 2026-10-16 | `·✓✓✓` | `src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md` | `src/data/lab-content/avl-mkt-001.ts` |
 | `AVL-200` | AVL-200 — Standardul de dovezi, măsurare și trasabilitate | C — Methodology | 2.0.0 | Activ | 2026-09-13 | 2026-09-14 | 2026-10-16 | 2026-10-16 | `·✓✓✓` | `src/content/lab/AVL/AVL-200_Standard_dovezi_masurare_trasabilitate.md` | `src/data/lab-content/avl-200.ts` |
@@ -267,4 +268,10 @@ Generat: 2026-10-22 · 174 intrări · **2 anomalii** în 2 intrări
 `lab/articole` · /lab/articole/eticheta-abonat-relatia-prezentare-ai-search
 
 - imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`
+
+### `AVL-203` — AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility
+
+`lab/metodologie` · /lab/metodologie/protocol-verificare-tehnica
+
+- `date_modified` diferă între `.md` și `.ts`
 

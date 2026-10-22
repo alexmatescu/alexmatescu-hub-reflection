@@ -1,8 +1,8 @@
 {
   "generat": "2026-10-22",
   "pragReverificareZile": 180,
-  "totalIntrari": 174,
-  "totalAnomalii": 2,
+  "totalIntrari": 175,
+  "totalAnomalii": 3,
   "anomaliiGlobale": [],
   "intrari": [
     {
@@ -16,7 +16,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-22",
       "dataPublicare": "2026-10-22T07:16:00+03:00",
       "dataModificare": "2026-10-22",
       "ultimaVerificare": "2026-10-22",
@@ -670,6 +670,35 @@
       "anomalii": []
     },
     {
+      "id": "AVL-204",
+      "titlu": "Grila de interpretare a verificării tehnice",
+      "suprafata": "lab/metodologie",
+      "nivel": "C — Methodology",
+      "ruta": null,
+      "slug": null,
+      "categorie": "C — Methodology",
+      "tip": "Document normativ",
+      "status": "nepublicat",
+      "statusNormativ": "Draft pentru revizuire",
+      "versiune": "0.1.0",
+      "dataCreare": "2026-10-22",
+      "dataPublicare": null,
+      "dataModificare": "2026-10-22",
+      "ultimaVerificare": "2026-10-22",
+      "fisierMd": "src/content/lab/AVL/AVL-204_Grila_interpretare_verificare_tehnica.md",
+      "fisierTs": null,
+      "wiring": {
+        "registru": null,
+        "pagina": false,
+        "nav": false,
+        "sitemap": false
+      },
+      "sitemapLastmod": null,
+      "imagine": null,
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
+    {
       "id": "AVL-203",
       "titlu": "AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility",
       "suprafata": "lab/metodologie",
@@ -696,7 +725,9 @@
       "sitemapLastmod": null,
       "imagine": null,
       "zileDeLaVerificare": 21,
-      "anomalii": []
+      "anomalii": [
+        "`date_modified` diferă între `.md` și `.ts`"
+      ]
     },
     {
       "id": "AVL-MKT-001",
