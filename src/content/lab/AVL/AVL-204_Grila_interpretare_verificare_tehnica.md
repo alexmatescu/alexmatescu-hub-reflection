@@ -9,10 +9,10 @@ author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-22"
-date_published: null
-date_modified: "2026-10-22"
-last_reviewed: "2026-10-22"
-canonical_proposed: "https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica"
+date_published: "2026-10-23T07:17:00+03:00"
+date_modified: "2026-10-23"
+last_reviewed: "2026-10-23"
+canonical: "https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica"
 normative_dependencies:
   - "AVL-001 — AI Visibility Lab Foundation"
   - "AVL-202 — Cadrul metodologic AI Visibility Lab"
@@ -53,9 +53,9 @@ Identificatorul AVL-204 a fost alocat la 22 octombrie 2026 ca următorul număr 
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
 | Data creării | 22 octombrie 2026 |
-| Ultima verificare | 22 octombrie 2026 |
+| Ultima verificare | 23 octombrie 2026 |
 | Limbă | română |
-| URL canonic propus | https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica |
+| URL canonic | https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica |
 | Dependențe normative | AVL-001; AVL-202; AVL-200; AVL-203 |
 | Tip de versiune în sensul AVL-200 | Measurement Rule Version (AVL-200 §13.1, §19.3) |
 
@@ -175,7 +175,7 @@ Starea unei zone este starea cea mai severă dintre constatările ei, după ordi
 
 ## 6.3. Z2 — Regulile pentru crawlere
 
-Regulile `R-Z2-01` … `R-Z2-03` se aplică numai după determinarea politicii robots.txt conform RFC 9309 (selecția grupului, combinarea grupurilor, potrivirea cea mai specifică), cum cere AVL203-REQ-013. Fără această determinare se aplică `R-Z2-06`.
+Regulile `R-Z2-01` și `R-Z2-05` se aplică numai după determinarea politicii robots.txt conform RFC 9309 (selecția grupului, combinarea grupurilor, potrivirea cea mai specifică), printr-un parser conform sau prin aplicare manuală documentată pas cu pas, cum cere AVL203-REQ-041. Constatarea indică metoda folosită. Fără această determinare se aplică `R-Z2-06`.
 
 | Regulă | Condiție | Stare |
 |---|---|---|
@@ -243,7 +243,7 @@ Problema confirmată de `R-Z5-01` este absența textului din HTML-ul brut. Efect
 
 > **AVL204-REQ-007 — Diagnosticul TREBUIE produs prin regulile din §6, iar fiecare constatare TREBUIE să citeze identificatorul regulii aplicate.**
 
-> **AVL204-REQ-008 — Regulile zonei Z2 care stabilesc o problemă sau absența ei TREBUIE aplicate numai după determinarea politicii robots.txt conform RFC 9309; altfel TREBUIE aplicată regula `R-Z2-06`.**
+> **AVL204-REQ-008 — Regulile zonei Z2 care depind de politica aplicabilă (`R-Z2-01`, `R-Z2-05`) TREBUIE aplicate numai după determinarea politicii robots.txt conform RFC 9309, prin parser conform sau aplicare manuală documentată (AVL203-REQ-041); altfel TREBUIE aplicată regula `R-Z2-06`.**
 
 ---
 
@@ -320,11 +320,13 @@ Rapoartele rămân atribuite versiunii grilei cu care au fost produse. O remăsu
 
 **Completează categoriile obligatorii din AVL-203 §1.1 cu pagini specifice tipului de entitate.**
 
+Pagina de contact sau de date de identitate este obligatorie pentru orice tip de entitate (AVL203-REQ-042) și nu se repetă în tabel.
+
 | Tip de entitate | Categorii suplimentare propuse |
 |---|---|
 | Organizație cu servicii | paginile de servicii principale; o pagină de portofoliu sau studii de caz, dacă există |
 | Magazin online | pagina categoriei principale; o pagină de produs reprezentativă; paginile de livrare și retur |
-| Afacere locală | pagina sau paginile de locație; pagina cu programul și datele de contact |
+| Afacere locală | pagina sau paginile de locație; pagina cu programul de lucru, dacă este distinctă de pagina de contact |
 | Profesionist independent | pagina de profil sau CV; pagina de publicații ori proiecte, dacă există |
 
 Un tip de entitate care nu se încadrează în tabel se declară în plan, împreună cu categoriile alese și motivul lor.
@@ -340,7 +342,7 @@ Un tip de entitate care nu se încadrează în tabel se declară în plan, împr
 - [ ] **AVL204-REQ-005** — Starea zonei TREBUIE să fie cea mai severă; constatările „nu poate fi stabilit” TREBUIE raportate separat.
 - [ ] **AVL204-REQ-006** — „Nicio problemă observată” NU TREBUIE prezentată drept certificare sau garanție.
 - [ ] **AVL204-REQ-007** — Diagnosticul TREBUIE produs prin regulile din §6, cu identificatorul regulii citat.
-- [ ] **AVL204-REQ-008** — Regulile Z2 TREBUIE aplicate numai după determinarea politicii conform RFC 9309; altfel `R-Z2-06`.
+- [ ] **AVL204-REQ-008** — Regulile Z2 care depind de politica aplicabilă TREBUIE aplicate numai după determinarea ei conform RFC 9309 (parser sau aplicare manuală documentată); altfel `R-Z2-06`.
 - [ ] **AVL204-REQ-009** — Fiecare recomandare TREBUIE să primească o clasă de prioritate, cu efortul declarat ca estimare.
 - [ ] **AVL204-REQ-010** — Diagnosticul și recomandările NU TREBUIE să conțină formulările excluse.
 - [ ] **AVL204-REQ-011** — Toate entitățile unei evaluări TREBUIE evaluate cu aceeași versiune a grilei.
@@ -373,18 +375,18 @@ Regulile grilei sunt reguli proprii AI Visibility Lab și nu trebuie prezentate 
 
 | Versiune | Dată | Statut | Modificări |
 |---|---|---|---|
-| 0.1.0 | 22 octombrie 2026 | Draft pentru revizuire | Primul draft. Definește scopul grilei (transparență, consecvență, imparțialitate), stările diagnosticului preluate din AVL-203 §12.1, cele șase zone de diagnostic, regulile `R-VAL-01`, `R-Z1-*` … `R-Z6-*`, prioritizarea P1–P3 după impact potențial, efort, dependențe și verificabilitate, afirmațiile excluse, aplicarea identică și abaterile declarate, versionarea ca Measurement Rule Version și categoriile de pagini pe tip de entitate. Cerințe `AVL204-REQ-001` … `AVL204-REQ-014`. Identificator AVL-204 alocat din registru și confirmat de Alex Matescu. |
+| 0.1.0 | 22 octombrie 2026 | Draft pentru revizuire | Primul draft. Definește scopul grilei (transparență, consecvență, imparțialitate), stările diagnosticului preluate din AVL-203 §12.1, cele șase zone de diagnostic, regulile `R-VAL-01`, `R-Z1-*` … `R-Z6-*`, prioritizarea P1–P3 după impact potențial, efort, dependențe și verificabilitate, afirmațiile excluse, aplicarea identică și abaterile declarate, versionarea ca Measurement Rule Version și categoriile de pagini pe tip de entitate. Cerințe `AVL204-REQ-001` … `AVL204-REQ-014`. Identificator AVL-204 alocat din registru și confirmat de Alex Matescu. Aliniat la deciziile din 23 octombrie 2026 pentru AVL-203 0.4.0: zona Z2 trimite la AVL203-REQ-041 (parser conform sau aplicare manuală documentată a RFC 9309), iar pagina de contact sau de date de identitate este obligatorie în plan (AVL203-REQ-042). AVL-202 1.6.0 include AVL-204 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor. |
 
 ---
 
 # 15. Decizii deschise înainte de 1.0.0
 
 1. **Regulile de diagnostic (§6).** Sunt propuneri de lucru. Rămân de confirmat, în special: încadrarea `R-Z1-05` (lanț cu mai mult de un redirect), `R-Z3-03` (lipsa unui sitemap ca problemă posibilă), `R-Z4-06` (lipsa JSON-LD pe pagina canonică despre entitate) și `R-Z4-07` (lipsa `lang`).
-2. **Determinarea politicii robots.txt.** Depinde de decizia deschisă 8 din AVL-203 §19: parser conform RFC 9309 sau aplicare manuală documentată. Până atunci, zona Z2 rezultă „nu poate fi stabilit” (`R-Z2-06`).
+2. **Determinarea politicii robots.txt.** Închisă la 23 octombrie 2026: AVL203-REQ-041 acceptă parserul conform și aplicarea manuală documentată a RFC 9309; regulile `R-Z2-01` și `R-Z2-05` pot fi aplicate prin oricare dintre ele.
 3. **Prioritizarea (§7).** Pragurile criteriilor și regula claselor P1–P3 se testează pe primele evaluări și se ajustează înainte de 1.0.0.
-4. **Categoriile pe tip de entitate (§11).** Lista tipurilor și a categoriilor suplimentare este provizorie.
+4. **Categoriile pe tip de entitate (§11).** Lista tipurilor și a categoriilor suplimentare este provizorie. Rămâne de stabilit și dacă absența de pe site a unei pagini cu datele de identitate ale entității (AVL203-REQ-042) primește o regulă de diagnostic proprie.
 5. **Formatul politicii de acces declarate.** Trebuie stabilit cum declară entitatea, în plan, politica intenționată pentru fiecare crawler (căutare, antrenare, fetch la cererea utilizatorului).
-6. **Locul în corpus.** AVL-202 trebuie să menționeze AVL-204 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor.
+6. **Locul în corpus.** Închisă la 23 octombrie 2026: AVL-202 1.6.0 menționează AVL-204 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor. La activare rămân de făcut actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001 §17.
 
 Aceste puncte nu trebuie tratate ca închise până la o decizie explicită, documentată în istoricul versiunilor.
 

@@ -8,29 +8,32 @@ export const avl203ProtocolVerificareTehnicaHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-203</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>0.3.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>0.4.0</td></tr>
         <tr><th scope="row">Statut</th><td>Draft pentru revizuire</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data creării</th><td>1 octombrie 2026</td></tr>
         <tr><th scope="row">Data publicării</th><td>2 octombrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>23 octombrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>1 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica">https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica</a></td></tr>
         <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>, <a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a>, <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standardul de dovezi, măsurare și trasabilitate</a></td></tr>
         <tr><th scope="row">Relație cu AVL-201</th><td>componentă reutilizabilă la baseline și remăsurări; nu înlocuiește <a href="/lab/metodologie/tabula-rasa-f0">AVL-201</a></td></tr>
+        <tr><th scope="row">Grilă de interpretare</th><td><a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a> (draft)</td></tr>
         </tbody>
         </table>
       </div>
 
-      <blockquote><strong>Principiu:</strong> documentăm ceea ce livrează un server în condiții declarate; nu confundăm accesibilitatea tehnică cu indexarea, recuperarea informației, citarea, menționarea sau recomandarea de către un sistem AI.</blockquote>
+      <blockquote><strong>Principiu:</strong> documentăm ceea ce livrează un server în condiții declarate; nu confundăm accesibilitatea tehnică cu indexarea, recuperarea informației, citarea, menționarea sau recomandarea de către un sistem AI. Diagnosticul și recomandările se formulează separat, după o grilă publică, și rămân trasabile până la observațiile pe care se sprijină.</blockquote>
 
       <h2>Controlul documentului</h2>
 
       <p>AVL-203 este un document de nivel C — Methodology în corpusul AI Visibility Lab Documentation, propus ca protocol în ramura Core Methodology descrisă de AVL-202.</p>
 
-      <p>Versiunea curentă, <strong>0.3.1</strong>, este un <strong>draft public pentru revizuire</strong> și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate <code>AVL203-REQ-*</code>; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §18.</p>
+      <p>Versiunea curentă, <strong>0.4.0</strong>, este un <strong>draft public pentru revizuire</strong> și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate <code>AVL203-REQ-*</code>; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §19.</p>
+
+      <p>Din versiunea 0.4.0, protocolul acoperă și trecerea de la observații la diagnostic și recomandări (§12), pentru că verificarea tehnică este folosită și în evaluări care livrează un diagnostic, de exemplu auditul AI Visibility. Regulile după care observațiile devin diagnostic sunt publicate separat, în grila AVL-204.</p>
 
       <p>Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr liber din seria documentelor Nivelului C, după scanarea registrului de conținut și a corpusului, și confirmat de Alex Matescu. Eticheta de lucru folosită anterior pentru acest draft, „AVL-TECH-001”, nu este un identificator normativ și nu introduce o familie <code>AVL-TECH-*</code>.</p>
 
@@ -57,6 +60,32 @@ export const avl203ProtocolVerificareTehnicaHtml = `
       <blockquote><strong>AVL203-REQ-002 — Rezultatele negative, erorile, redirecturile neașteptate, datele indisponibile și abaterile TREBUIE conservate și raportate.</strong></blockquote>
 
       <blockquote><strong>AVL203-REQ-003 — Absența unei dovezi NU TREBUIE raportată ca <code>NO</code>; o valoare care nu poate fi stabilită TREBUIE raportată ca <code>UNKNOWN</code>, <code>NOT_APPLICABLE</code> sau eroare, distinct de <code>NO</code>.</strong></blockquote>
+
+      <h3>1.1. Compoziția planului de măsurare</h3>
+
+      <p>Numărul URL-urilor testate depinde de scopul evaluării, de entitate și de activitatea ei; nu este fix. Compoziția eșantionului urmează însă reguli declarate, pentru ca selecția paginilor să nu poată fi ajustată după rezultate.</p>
+
+      <p>Planul declară tipul entității (de exemplu organizație cu servicii, magazin online, afacere locală, profesionist independent) și include, pentru fiecare categorie de pagină de mai jos, URL-ul ales sau motivul pentru care categoria nu se aplică:</p>
+
+      <ul>
+        <li>pagina principală a originului;</li>
+        <li>pagina canonică despre entitate (de exemplu „Despre”, „Despre noi” sau pagina de profil);</li>
+        <li>pagina de contact sau o altă pagină care conține datele de identitate ale entității (categorie obligatorie, vezi mai jos);</li>
+        <li>paginile principale de servicii, produse sau activitate, în număr declarat;</li>
+        <li>paginile pe care entitatea le desemnează drept referință despre ea (de exemplu hub-uri sau pagini-pilon).</li>
+      </ul>
+
+      <p>Categoriile suplimentare pentru fiecare tip de entitate sunt definite în AVL-204. O categorie care nu există pe site se notează <code>NOT_APPLICABLE</code>, cu motiv; nu se omite.</p>
+
+      <p>Pagina de contact sau de date de identitate face excepție: este obligatorie în orice plan și nu se notează <code>NOT_APPLICABLE</code>. Ea arată cine răspunde de site și cum poate fi identificată entitatea, deci este necesară pentru transparența evaluării. Dacă site-ul nu are nicio pagină cu datele de identitate ale entității, planul înregistrează absența ei, iar absența se raportează ca rezultat al evaluării, nu ca limită a eșantionului.</p>
+
+      <p>Planul mai declară, înainte de rulare, textele-cheie căutate de TC-08 pentru fiecare URL (§8.1) și politica de acces pe care entitatea o intenționează pentru crawlere (de exemplu permiterea crawlerelor de căutare și blocarea celor de antrenare), necesară diagnosticului din §12.</p>
+
+      <blockquote><strong>AVL203-REQ-029 — Planul de măsurare TREBUIE să declare tipul entității și să includă, pentru fiecare categorie obligatorie de pagină, fie URL-ul ales, fie motivul pentru care categoria nu se aplică.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-030 — Numărul URL-urilor POATE varia între evaluări, dar compoziția eșantionului, textele-cheie pentru TC-08 și politica de acces intenționată TREBUIE fixate înaintea primului request și NU TREBUIE modificate după observarea rezultatelor; o completare ulterioară a planului TREBUIE tratată ca rulare nouă sau ca abatere documentată.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-042 — Planul de măsurare TREBUIE să includă pagina de contact sau o altă pagină care conține datele de identitate ale entității; această categorie NU TREBUIE notată <code>NOT_APPLICABLE</code>, iar absența ei de pe site TREBUIE înregistrată în plan și raportată.</strong></blockquote>
 
       <h2>2. Unde se situează verificarea tehnică în metodologia AVL?</h2>
 
@@ -90,7 +119,7 @@ Published Claim (unde este cazul)</code></pre>
 
       <h2>3. Ce intră în setul minim de verificări?</h2>
 
-      <p><strong>Nucleul măsoară identitatea rulării, accesibilitatea HTTP, redirecturile, regulile robots, descoperirea sitemap-ului, semnalele documentului, paritatea răspunsurilor declarate pentru User-Agent-uri și integritatea artefactelor.</strong></p>
+      <p><strong>Nucleul măsoară identitatea rulării, accesibilitatea HTTP, redirecturile, regulile robots, descoperirea sitemap-ului, semnalele documentului, paritatea răspunsurilor declarate pentru User-Agent-uri, integritatea artefactelor și prezența conținutului important în HTML-ul brut.</strong></p>
 
       <table>
         <thead>
@@ -105,6 +134,7 @@ Published Claim (unde este cazul)</code></pre>
           <tr><td><code>TC-05</code></td><td>Semnale raw HTML</td><td>HTML + headers</td><td>title, canonical, meta robots, X-Robots-Tag, lang, prezența JSON-LD</td></tr>
           <tr><td><code>TC-06</code></td><td>User-Agent Response Parity</td><td>dublă captură a clientului de referință + capturi per agent</td><td>variabilitatea intrinsecă a răspunsului; diferențe de status, URL, headers, conținut și hash</td></tr>
           <tr><td><code>TC-07</code></td><td>Integritate</td><td>evidence index + checksum manifest</td><td>identificarea și verificarea artefactelor</td></tr>
+          <tr><td><code>TC-08</code></td><td>Conținut important în raw HTML</td><td>HTML-ul răspunsului final + textele-cheie declarate în plan</td><td>prezența fiecărui text-cheie în HTML-ul brut, pe zone, cu locația</td></tr>
         </tbody>
       </table>
 
@@ -169,9 +199,13 @@ curl --silent --show-error --location \
   --dump-header robots.headers --output robots.body \
   "$ORIGIN/robots.txt"</code></pre>
 
-      <p>Se documentează statusul, URL-ul efectiv, redirecturile, corpul și grupurile <code>User-agent</code>, <code>Allow</code>, <code>Disallow</code>, precum și declarațiile <code>Sitemap</code>. Interpretarea unei reguli pentru un URL cere aplicarea corectă a RFC 9309 și a extensiilor furnizorului: selecția grupului specific produsului înaintea grupului <code>*</code>, combinarea grupurilor care corespund aceluiași token și regula celei mai specifice potriviri între <code>Allow</code> și <code>Disallow</code> (RFC 9309 §2.2). <code>grep</code> este doar inspecție preliminară; dacă parserul complet lipsește, rezultatul politicii rămâne <code>NEDETERMINAT</code>, nu <code>ALLOW</code> implicit.</p>
+      <p>Se documentează statusul, URL-ul efectiv, redirecturile, corpul și grupurile <code>User-agent</code>, <code>Allow</code>, <code>Disallow</code>, precum și declarațiile <code>Sitemap</code>. Interpretarea unei reguli pentru un URL cere aplicarea corectă a RFC 9309 și a extensiilor furnizorului: selecția grupului specific produsului înaintea grupului <code>*</code>, combinarea grupurilor care corespund aceluiași token și regula celei mai specifice potriviri între <code>Allow</code> și <code>Disallow</code> (RFC 9309 §2.2). <code>grep</code> este doar inspecție preliminară, nu aplicare a RFC 9309.</p>
 
-      <blockquote><strong>AVL203-REQ-013 — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire); în lipsa unui parser conform, rezultatul TREBUIE raportat <code>NEDETERMINAT</code>.</strong></blockquote>
+      <p>Regulile RFC 9309 se pot aplica în două moduri: cu un parser conform sau manual. Aplicarea manuală se documentează pas cu pas, pentru fiecare pereche URL–crawler: grupurile <code>User-agent</code> care corespund tokenului crawlerului (sau grupul <code>*</code>, dacă niciunul nu corespunde), regulile combinate din aceste grupuri, regula <code>Allow</code> sau <code>Disallow</code> cu potrivirea cea mai specifică și rezultatul. Documentarea face aplicarea verificabilă de altcineva pe baza aceluiași <code>robots.body</code>. Dacă politica nu este determinată în niciunul dintre cele două moduri, rezultatul rămâne <code>NEDETERMINAT</code>, nu <code>ALLOW</code> implicit.</p>
+
+      <blockquote><strong>AVL203-REQ-013 — Retrasă în versiunea 0.4.0.</strong> Text anterior: „<del>Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire); în lipsa unui parser conform, rezultatul TREBUIE raportat <code>NEDETERMINAT</code>.</del>” Înlocuită de AVL203-REQ-041.</blockquote>
+
+      <blockquote><strong>AVL203-REQ-041 — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire), fie printr-un parser conform, fie prin aplicare manuală documentată pas cu pas pentru fiecare pereche URL–crawler; metoda folosită TREBUIE înregistrată în observații, iar o politică nedeterminată prin niciuna dintre cele două metode TREBUIE raportată <code>NEDETERMINAT</code>.</strong></blockquote>
 
       <p>Matricea Core urmărește politica relevantă pentru <code>*</code>, <code>Googlebot</code>, <code>bingbot</code>, <code>OAI-SearchBot</code>, <code>Claude-SearchBot</code> și <code>PerplexityBot</code>. La data verificării acestui draft (1 octombrie 2026), documentația furnizorilor descrie <code>OAI-SearchBot</code>, <code>Claude-SearchBot</code> și <code>PerplexityBot</code> drept crawlere asociate căutării sau afișării surselor, nu antrenării modelelor; rolul lor se reverifică la fiecare versiune a protocolului.</p>
 
@@ -233,6 +267,34 @@ curl --silent --show-error --location \
 
       <blockquote><strong>AVL203-REQ-017 — Un semnal TC-05 a cărui extracție nu este sigură TREBUIE raportat <code>UNKNOWN</code>, cu motiv, și NU TREBUIE raportat <code>ABSENT</code>.</strong></blockquote>
 
+      <h3>8.1. Conținutul important în HTML-ul brut (TC-08)</h3>
+
+      <p><strong>Verificăm dacă textele-cheie declarate în plan pentru fiecare URL se găsesc în HTML-ul brut al răspunsului final, adică fără executarea JavaScript.</strong></p>
+
+      <p>Unele site-uri livrează conținutul principal numai după randarea paginii în browser. Un client care citește doar răspunsul HTTP nu vede acel conținut. TC-08 observă doar ce conțin octeții capturați la TC-01; nu face un request separat, nu randează pagina și nu afirmă ce vede un anumit crawler.</p>
+
+      <p>Textele-cheie se aleg înainte de rulare (§1.1): de regulă numele entității, descrierea activității, serviciile sau produsele principale, localitatea și datele de identificare relevante pentru pagina respectivă. Căutarea folosește reguli de normalizare declarate în manifest (de exemplu decodarea entităților HTML, comprimarea spațiilor, comparația fără diferențe de majuscule) și se face separat pe zone: textul din corpul documentului, în afara scripturilor și a stilurilor; atributele (de exemplu <code>alt</code>, <code>title</code>); blocurile JSON-LD; meta-tagurile. Se păstrează locația fiecărei potriviri (linia din documentul capturat și zona).</p>
+
+      <p>Rezultatul pentru fiecare text-cheie este unul dintre:</p>
+
+      <table>
+        <thead>
+          <tr><th>Status</th><th>Condiție</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>PRESENT_IN_BODY</code></td><td>textul apare în corpul documentului, în afara scripturilor și a stilurilor</td></tr>
+          <tr><td><code>PRESENT_IN_METADATA_ONLY</code></td><td>textul apare numai în JSON-LD, în meta-taguri sau în atribute</td></tr>
+          <tr><td><code>ABSENT_FROM_RAW_HTML</code></td><td>textul nu apare în nicio zonă a HTML-ului brut</td></tr>
+          <tr><td><code>UNKNOWN</code></td><td>răspunsul nu este HTML, corpul lipsește, captura a eșuat sau extracția nu este sigură</td></tr>
+        </tbody>
+      </table>
+
+      <p><code>ABSENT_FROM_RAW_HTML</code> descrie octeții capturați. Nu dovedește că textul lipsește din pagina randată și nici că un motor de căutare sau un sistem AI nu îl poate obține.</p>
+
+      <blockquote><strong>AVL203-REQ-031 — Textele-cheie pentru TC-08 TREBUIE declarate în planul de măsurare înaintea rulării, iar căutarea lor TREBUIE să aplice regulile de normalizare înregistrate în manifestul rulării.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-032 — Rezultatul TC-08 TREBUIE raportat pentru fiecare text-cheie și fiecare zonă, cu locația potrivirii; un rezultat <code>ABSENT_FROM_RAW_HTML</code> NU TREBUIE prezentat drept absența textului din pagina randată sau drept imposibilitatea unui motor ori a unui sistem AI de a-l obține.</strong></blockquote>
+
       <h2>9. Ce înseamnă User-Agent Response Parity?</h2>
 
       <p><strong>Repetăm requestul GET cu același URL și aceiași parametri documentați, schimbând doar identitatea User-Agent declarată, apoi comparăm răspunsurile fără a pretinde că am autentificat crawlerul real.</strong></p>
@@ -255,7 +317,7 @@ curl --silent --show-error --location \
         </tbody>
       </table>
 
-      <p>La înghețarea manifestului v0.1.0 (2 octombrie 2026): OpenAI și Perplexity publică șiruri complete pentru <code>OAI-SearchBot</code> și <code>PerplexityBot</code>; Google publică șirul Googlebot cu placeholder de versiune Chrome; Anthropic descrie <code>Claude-SearchBot</code>, dar nu publică un șir complet; șirul complet <code>bingbot</code> nu a putut fi confirmat din pagina Bing (§18.6). O schimbare a manifestului înseamnă o versiune nouă a lui.</p>
+      <p>La înghețarea manifestului v0.1.0 (2 octombrie 2026): OpenAI și Perplexity publică șiruri complete pentru <code>OAI-SearchBot</code> și <code>PerplexityBot</code>; Google publică șirul Googlebot cu placeholder de versiune Chrome; Anthropic descrie <code>Claude-SearchBot</code>, dar nu publică un șir complet; șirul complet <code>bingbot</code> nu a putut fi confirmat din pagina Bing (§19.6). O schimbare a manifestului înseamnă o versiune nouă a lui.</p>
 
       <blockquote><strong>AVL203-REQ-018 — Șirurile User-Agent folosite la TC-06 TREBUIE luate dintr-un manifest versionat, iar rularea TREBUIE să înregistreze versiunea manifestului aplicat.</strong></blockquote>
 
@@ -299,6 +361,7 @@ curl --silent --show-error --location \
   evidence-index.*
   integrity/sha256sums.txt
   observations.*
+  diagnostic.*          # numai când rularea stă la baza unui diagnostic (§12)
   exceptions.md</code></pre>
 
       <pre><code># Exemplu macOS; lista include manifestul rulării, dar nu și fișierul de checksum însuși.
@@ -334,19 +397,78 @@ shasum -a 256 -c integrity/sha256sums.txt</code></pre>
 
       <blockquote><strong>AVL203-REQ-027 — O schimbare tehnică observată NU TREBUIE prezentată drept cauză a unei schimbări de vizibilitate pe baza succesiunii temporale.</strong></blockquote>
 
-      <h2>12. Ce rămâne în afara protocolului minim?</h2>
+      <h2>12. Cum trecem de la observații la diagnostic și recomandări?</h2>
+
+      <p><strong>Diagnosticul și recomandările formează un strat separat de interpretare, construit peste observațiile <code>TC-*</code> după o grilă publică și versionată. Ele nu modifică observațiile și nu le înlocuiesc.</strong></p>
+
+      <p>Protocolul este folosit și în evaluări care livrează un diagnostic și recomandări, de exemplu auditul AI Visibility. În acest caz, după captură și observație urmează interpretarea: ce problemă indică observațiile, cât de sigură este concluzia și ce poate face entitatea evaluată. Lanțul AVL-200 rămâne intact: interpretarea se sprijină pe observații, iar observațiile pe dovezi conservate (AVL-200 §3, §15).</p>
+
+      <p>Grila care transformă observațiile în diagnostic este <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a>. Ea fixează dinainte, pentru fiecare zonă verificată, regulile de diagnostic, starea care rezultă și criteriile de prioritizare, și se aplică identic oricărei entități evaluate.</p>
+
+      <h3>12.1. Stările diagnosticului</h3>
+
+      <p>Fiecare constatare are una dintre următoarele stări:</p>
+
+      <table>
+        <thead>
+          <tr><th>Stare</th><th>Sens</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Problemă confirmată</strong></td><td>observațiile arată direct problema, în condițiile testate</td></tr>
+          <tr><td><strong>Problemă posibilă</strong></td><td>observațiile sunt compatibile cu o problemă, dar nu o pot confirma singure</td></tr>
+          <tr><td><strong>Nu poate fi stabilit</strong></td><td>datele disponibile nu permit o concluzie</td></tr>
+          <tr><td><strong>Nicio problemă observată</strong></td><td>în condițiile testate, observațiile nu indică o problemă după regulile grilei</td></tr>
+        </tbody>
+      </table>
+
+      <p>„Nicio problemă observată” descrie condițiile testate. Nu certifică site-ul și nu garantează indexarea, citarea, menționarea sau recomandarea într-un răspuns AI.</p>
+
+      <h3>12.2. Recomandările</h3>
+
+      <p>Fiecare recomandare cuprinde patru elemente:</p>
+
+      <ol>
+        <li><strong>observația sau observațiile care o susțin</strong>, prin identificatorii lor din rulare;</li>
+        <li><strong>gradul de certitudine</strong> al diagnosticului (starea din §12.1);</li>
+        <li><strong>elementul asupra căruia poate interveni</strong> entitatea evaluată (de exemplu o regulă din <code>robots.txt</code>, un canonical, un redirect, conținutul livrat în HTML);</li>
+        <li><strong>modul de verificare ulterioară</strong>, adică ce verificare <code>TC-*</code> ar arăta, la o remăsurare (<code>F1</code> … <code>Fn</code>), că intervenția a produs schimbarea tehnică urmărită.</li>
+      </ol>
+
+      <p>Recomandările se prioritizează după criteriile din AVL-204: impact potențial, efort, dependențe și posibilitatea verificării ulterioare. Prioritatea este o judecată de interpretare și se declară ca atare.</p>
+
+      <p>O recomandare tehnică promite cel mult o schimbare tehnică verificabilă la remăsurare, nu un efect asupra vizibilității, citării sau recomandării într-un răspuns AI (§11).</p>
+
+      <blockquote><strong>AVL203-REQ-033 — Diagnosticul și recomandările TREBUIE formulate într-un strat separat de observații, după o grilă de interpretare publicată și versionată, iar versiunea grilei TREBUIE înregistrată în manifestul rulării și în raport.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-034 — Fiecare constatare de diagnostic TREBUIE să aibă una dintre stările din §12.1 și TREBUIE să trimită la observațiile care o susțin.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-035 — Fiecare recomandare TREBUIE să cuprindă observația-suport, gradul de certitudine, elementul asupra căruia se poate interveni și modul de verificare ulterioară.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-036 — Grila de interpretare TREBUIE fixată înaintea rulării și aplicată identic tuturor entităților evaluate; o regulă modificată după observarea rezultatelor TREBUIE să producă o versiune nouă a grilei, iar rezultatele deja raportate NU TREBUIE reinterpretate fără declararea versiunii folosite.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-037 — Diagnosticul și recomandările NU TREBUIE să conțină afirmațiile excluse de AVL203-REQ-012, AVL203-REQ-015, AVL203-REQ-016, AVL203-REQ-021, AVL203-REQ-027 și AVL203-REQ-032 și NU TREBUIE să promită un efect asupra vizibilității, citării sau recomandării într-un răspuns AI.</strong></blockquote>
+
+      <h2>13. Ce rămâne în afara protocolului minim?</h2>
 
       <p><strong>Core exclude implicit investigațiile de infrastructură și semantică profundă care nu sunt necesare fiecărei rulări AVL, dar permite extensii declarate când întrebarea de cercetare le cere.</strong></p>
 
       <p>Exemple de investigații separate: diagnostic DNS/TLS extins, Core Web Vitals și performanță, validare completă a sitemap-ului, crawlingul complet al site-ului și identificarea URL-urilor orfane, rendering JavaScript, validare integrală Schema.org și grafuri de entități, autentificarea efectivă a roboților prin loguri/IP, comportamentul avansat al WAF-urilor și accesibilitatea ARIA. <code>llms.txt</code> poate fi capturat experimental, dar nu este o condiție normativă de vizibilitate AI demonstrată.</p>
 
-      <h2>13. Ce nu poate demonstra protocolul?</h2>
+      <h3>13.1. Extensii declarate</h3>
+
+      <p>Când entitatea evaluată oferă acces autorizat, evaluarea POATE fi completată cu date din afara protocolului minim: rapoarte din instrumente pentru webmasteri (de exemplu Google Search Console sau Bing Webmaster Tools), loguri de server sau configurații ale serviciilor CDN și WAF. Aceste date nu fac parte din Core și nu se compară cu rulări care nu le au.</p>
+
+      <blockquote><strong>AVL203-REQ-038 — O extensie din afara protocolului minim TREBUIE declarată în planul de măsurare înaintea folosirii ei (sursa, perioada acoperită, modul de acces și cine a furnizat datele), iar dovezile ei TREBUIE marcate separat de artefactele <code>TC-*</code> și protejate conform AVL-200 §18 când nu sunt publice.</strong></blockquote>
+
+      <blockquote><strong>AVL203-REQ-039 — O constatare care se sprijină pe o extensie TREBUIE să indice extensia; absența unei extensii dintr-o rulare NU TREBUIE raportată drept absența problemei pe care extensia ar fi putut-o arăta.</strong></blockquote>
+
+      <h2>14. Ce nu poate demonstra protocolul?</h2>
 
       <p><strong>Protocolul nu poate demonstra singur indexarea efectivă, selecția sursei, înțelegerea entității, citarea, menționarea sau recomandarea într-un răspuns AI.</strong></p>
 
       <p>Răspunsul <code>200</code> nu se prezintă drept indexare, iar un <code>403</code> pentru un User-Agent declarat nu se prezintă drept dovadă că întreaga infrastructură a furnizorului este blocată. Îmbunătățirile de vizibilitate nu se atribuie unei intervenții exclusiv pe baza co-ocurenței temporale. AVL-202 și AVL-200 (§15) determină limitele concluziilor, politica dovezilor și transparența incertitudinilor.</p>
 
-      <h2>14. Ce trebuie să livreze o execuție conformă?</h2>
+      <h2>15. Ce trebuie să livreze o execuție conformă?</h2>
 
       <p><strong>O execuție trebuie să livreze dovezi brute, un index de artefacte, un set de observații tehnice verificabile și un manifest care permite repetarea procesului.</strong></p>
 
@@ -354,7 +476,13 @@ shasum -a 256 -c integrity/sha256sums.txt</code></pre>
 
       <blockquote><strong>AVL203-REQ-028 — O execuție conformă TREBUIE să livreze toate livrabilele minime de mai sus.</strong></blockquote>
 
-      <h2>15. Checklist de conformitate</h2>
+      <h3>15.1. Raportul unei evaluări cu diagnostic</h3>
+
+      <p>Când rularea stă la baza unui diagnostic (§12), livrabilele de mai sus se completează cu un raport pentru entitatea evaluată. Raportul cuprinde: rezumatul constatărilor; planul de măsurare (URL-urile, motivul alegerii lor, textele-cheie și politica de acces intenționată); observațiile pe zone; diagnosticul pe zone, cu stările din §12.1; recomandările prioritizate; limitele evaluării (§14); trasabilitatea (run ID, eticheta rulării, versiunea protocolului, a grilei și a scriptului, hash-ul manifestului de checksum). Formatul raportului (document, PDF) nu este normat. Dovezile unei evaluări private nu devin publice prin acest protocol.</p>
+
+      <blockquote><strong>AVL203-REQ-040 — Raportul unei evaluări cu diagnostic TREBUIE să separe vizibil observațiile, diagnosticul și recomandările, să includă limitele din §14 și să permită identificarea rulării, a versiunii protocolului, a versiunii grilei și a manifestului de checksum.</strong></blockquote>
+
+      <h2>16. Checklist de conformitate</h2>
 
       <p>Fiecare rulare declarată conformă verifică explicit cerințele:</p>
 
@@ -371,7 +499,7 @@ shasum -a 256 -c integrity/sha256sums.txt</code></pre>
         <li><strong>AVL203-REQ-010</strong> — Erorile TLS sau DNS NU TREBUIE ascunse prin dezactivarea verificării certificatelor.</li>
         <li><strong>AVL203-REQ-011</strong> — Verificările TC-01, TC-02 și TC-06 TREBUIE făcute cu GET.</li>
         <li><strong>AVL203-REQ-012</strong> — Un răspuns <code>200</code> NU TREBUIE prezentat drept indexare, iar un <code>403</code> pentru un User-Agent declarat NU TREBUIE prezentat drept dovadă că infrastructura furnizorului este blocată.</li>
-        <li><strong>AVL203-REQ-013</strong> — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire).</li>
+        <li><del><strong>AVL203-REQ-013</strong></del> — Retrasă în versiunea 0.4.0; înlocuită de AVL203-REQ-041.</li>
         <li><strong>AVL203-REQ-014</strong> — Statusul TC-04 TREBUIE atribuit după regula din tabelul de mai sus.</li>
         <li><strong>AVL203-REQ-015</strong> — Prezența sau accesibilitatea unui sitemap NU TREBUIE prezentată drept dovadă că întregul site este descoperibil.</li>
         <li><strong>AVL203-REQ-016</strong> — Semnalele TC-05 TREBUIE extrase din raw HTML-ul și headerele răspunsului final, cu locația originală, și NU TREBUIE prezentate drept DOM randat, canonical selectat de un motor sau validare Schema.org.</li>
@@ -387,9 +515,23 @@ shasum -a 256 -c integrity/sha256sums.txt</code></pre>
         <li><strong>AVL203-REQ-026</strong> — O rulare <code>TEST</code> NU TREBUIE comparată cu rulările unei serii de măsurare și NU TREBUIE folosită pentru a susține o concluzie publicată.</li>
         <li><strong>AVL203-REQ-027</strong> — O schimbare tehnică observată NU TREBUIE prezentată drept cauză a unei schimbări de vizibilitate pe baza succesiunii temporale.</li>
         <li><strong>AVL203-REQ-028</strong> — O execuție conformă TREBUIE să livreze toate livrabilele minime de mai sus.</li>
+        <li><strong>AVL203-REQ-029</strong> — Planul de măsurare TREBUIE să declare tipul entității și să includă, pentru fiecare categorie obligatorie de pagină, fie URL-ul ales, fie motivul pentru care categoria nu se aplică.</li>
+        <li><strong>AVL203-REQ-030</strong> — Compoziția eșantionului, textele-cheie pentru TC-08 și politica de acces intenționată TREBUIE fixate înaintea primului request și NU TREBUIE modificate după observarea rezultatelor.</li>
+        <li><strong>AVL203-REQ-031</strong> — Textele-cheie pentru TC-08 TREBUIE declarate în plan înaintea rulării, iar căutarea TREBUIE să aplice regulile de normalizare înregistrate în manifest.</li>
+        <li><strong>AVL203-REQ-032</strong> — Rezultatul TC-08 TREBUIE raportat pe text-cheie și pe zonă, cu locația; <code>ABSENT_FROM_RAW_HTML</code> NU TREBUIE prezentat drept absența din pagina randată sau imposibilitatea de a obține textul.</li>
+        <li><strong>AVL203-REQ-033</strong> — Diagnosticul și recomandările TREBUIE formulate într-un strat separat, după o grilă publicată și versionată, cu versiunea grilei înregistrată.</li>
+        <li><strong>AVL203-REQ-034</strong> — Fiecare constatare de diagnostic TREBUIE să aibă una dintre stările din §12.1 și să trimită la observațiile-suport.</li>
+        <li><strong>AVL203-REQ-035</strong> — Fiecare recomandare TREBUIE să cuprindă observația-suport, gradul de certitudine, elementul de intervenție și modul de verificare ulterioară.</li>
+        <li><strong>AVL203-REQ-036</strong> — Grila TREBUIE fixată înaintea rulării și aplicată identic tuturor entităților; o regulă modificată după rezultate TREBUIE să producă o versiune nouă.</li>
+        <li><strong>AVL203-REQ-037</strong> — Diagnosticul și recomandările NU TREBUIE să conțină afirmațiile excluse de protocol și NU TREBUIE să promită un efect asupra vizibilității AI.</li>
+        <li><strong>AVL203-REQ-038</strong> — O extensie din afara Core TREBUIE declarată în plan înaintea folosirii, cu dovezile marcate separat și protejate conform AVL-200 §18.</li>
+        <li><strong>AVL203-REQ-039</strong> — O constatare bazată pe o extensie TREBUIE să o indice; absența extensiei NU TREBUIE raportată drept absența problemei.</li>
+        <li><strong>AVL203-REQ-040</strong> — Raportul unei evaluări cu diagnostic TREBUIE să separe observațiile, diagnosticul și recomandările, să includă limitele și să permită identificarea rulării și a versiunilor.</li>
+        <li><strong>AVL203-REQ-041</strong> — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309, prin parser conform sau aplicare manuală documentată, cu metoda înregistrată; altfel <code>NEDETERMINAT</code>.</li>
+        <li><strong>AVL203-REQ-042</strong> — Planul TREBUIE să includă pagina de contact sau de date de identitate, fără <code>NOT_APPLICABLE</code>; absența ei de pe site TREBUIE înregistrată și raportată.</li>
       </ul>
 
-      <h2>16. Documente asociate</h2>
+      <h2>17. Documente asociate</h2>
 
       <h3>Normative</h3>
 
@@ -403,6 +545,7 @@ shasum -a 256 -c integrity/sha256sums.txt</code></pre>
 
       <ul>
         <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0: Baseline Measurement Specification</a>.</li>
+        <li><a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a> (draft pentru revizuire).</li>
       </ul>
 
       <h3>Standarde și referințe externe</h3>
@@ -424,7 +567,7 @@ shasum -a 256 -c integrity/sha256sums.txt</code></pre>
 
       <p>Referințele externe susțin terminologia tehnică și descrierea crawlerelor. Regulile protocolului rămân reguli proprii AI Visibility Lab și nu trebuie prezentate drept standard industrial oficial.</p>
 
-      <h2>17. Istoricul versiunilor</h2>
+      <h2>18. Istoricul versiunilor</h2>
 
       <table>
         <thead>
@@ -435,18 +578,21 @@ shasum -a 256 -c integrity/sha256sums.txt</code></pre>
           <tr><td>0.2.0</td><td>2 octombrie 2026</td><td>Draft pentru revizuire</td><td>Revizie după prima implementare candidată și o rulare de test. TC-06: dubla captură a clientului de referință devine obligatorie, iar diferențele de dimensiune/hash nu se atribuie User-Agent-ului când răspunsul variază intrinsec (constatare din rularea de test: corpul paginii a diferit între două requesturi identice). Manifest User-Agent versionat, cu statusuri <code>OFICIAL</code> / <code>OFICIAL_CU_VERSIUNE_ALEASA</code> / <code>DOAR_TOKEN</code> / <code>NECONFIRMAT</code>, înghețat la v0.1.0 cu șiruri verificate la sursă la 2 octombrie 2026. TC-04: căile convenționale (<code>/sitemap.xml</code>, <code>/sitemap_index.xml</code>) și regula de atribuire a statusurilor. TC-05: variantele meta robots pentru <code>googlebot</code>/<code>bingbot</code> și validitatea sintactică JSON a blocurilor JSON-LD ca observații permise. Codul de ieșire <code>curl</code> înregistrat pentru fiecare request. Manifestul rulării inclus în checksum-uri. Eticheta <code>TEST</code> pentru rulări de probă din afara seriilor de măsurare. §18.4 și §18.6 actualizate. Publicat ca draft public la <code>/lab/metodologie/protocol-verificare-tehnica</code>; canonicalul devine definitiv; §17.2 actualizat.</td></tr>
           <tr><td>0.3.0</td><td>2 octombrie 2026</td><td>Draft pentru revizuire</td><td>Cerințele de conformitate formalizate: 28 de cerințe <code>AVL203-REQ-001</code> … <code>AVL203-REQ-028</code>, derivate din intenția normativă a versiunii 0.2.0, fără reguli noi. Declarația RFC 2119 / RFC 8174 din „Controlul documentului” înlocuiește nota despre intenția protocolului. Secțiune nouă „Checklist de conformitate” (§15); secțiunile următoare renumerotate (§16–§18). Decizia deschisă 3 actualizată.</td></tr>
           <tr><td>0.3.1</td><td>13 octombrie 2026</td><td>Draft pentru revizuire</td><td>PATCH: decizia deschisă 1 („Aliniarea corpusului la convenția T0/F1…Fn”) este închisă: AVL-200 §7 (v1.1.0) definește convenția și etapele denumite, iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate la 13 octombrie 2026. Fără modificări ale cerințelor.</td></tr>
+          <tr><td>0.4.0</td><td>23 octombrie 2026</td><td>Draft pentru revizuire</td><td>MINOR: protocolul acoperă și diagnosticul și recomandările, pentru că verificarea tehnică este folosită în evaluări care livrează recomandări. Secțiuni noi: §1.1 „Compoziția planului de măsurare” (număr variabil de URL-uri, categorii obligatorii de pagini, tipul entității, textele-cheie și politica de acces intenționată declarate dinainte); §8.1 verificarea nouă <code>TC-08</code> „Conținut important în HTML-ul brut”; §12 „Cum trecem de la observații la diagnostic și recomandări?” (stările diagnosticului, cele patru elemente ale unei recomandări, trimiterea la grila AVL-204); §13.1 „Extensii declarate” (instrumente pentru webmasteri, loguri, CDN/WAF cu acces autorizat); §15.1 „Raportul unei evaluări cu diagnostic”. Cerințe noi <code>AVL203-REQ-029</code> … <code>AVL203-REQ-040</code>. Decizii Alex Matescu, 23 octombrie 2026: (1) <code>AVL203-REQ-013</code> este retrasă — textul rămâne în §6 ca evidență a evoluției metodologiei, iar identificatorul nu se reutilizează; cerința nouă <code>AVL203-REQ-041</code> acceptă, pe lângă parserul conform, aplicarea manuală a RFC 9309 documentată pas cu pas, cu metoda înregistrată în observații (decizia deschisă 8 închisă); (2) pagina de contact sau o altă pagină cu datele de identitate ale entității devine obligatorie în planul de măsurare, fără <code>NOT_APPLICABLE</code> (<code>AVL203-REQ-042</code>). Celelalte cerințe 001–028 rămân neschimbate. Secțiunile 12–18 devin 13–19.</td></tr>
         </tbody>
       </table>
 
-      <h2>18. Decizii deschise înainte de 1.0.0</h2>
+      <h2>19. Decizii deschise înainte de 1.0.0</h2>
 
       <ol>
         <li><strong>Aliniarea corpusului la convenția T0/F1…Fn.</strong> Închisă la 13 octombrie 2026: convenția din §11 este acum definită normativ în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a> (v1.1.0), iar AVL-001 §17, AVL-202, AVL-101–105 și AVL-201 au fost aliniate.</li>
         <li><strong>Locul în corpus.</strong> De la publicarea ca draft public (2 octombrie 2026), AVL-202 menționează AVL-203 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor, cu statutul „Draft pentru revizuire”. Rămân de făcut la activare: actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001 §17.</li>
         <li><strong>Cerințe identificate.</strong> Formulate în v0.3.0 (2 octombrie 2026): 28 de cerințe <code>AVL203-REQ-001</code> … <code>AVL203-REQ-028</code>, derivate din intenția normativă deja existentă în text, fără reguli noi. Toate sunt la nivel TREBUIE / NU TREBUIE, cu o singură opțiune POATE (REQ-011). Rămâne de confirmat, la activare, setul final și nivelul fiecărei cerințe.</li>
         <li><strong>Implementarea de referință.</strong> Comenzile din document sunt exemple. Există o implementare candidată, versionată (skill-ul <code>verificare-tehnica-avl203</code> din repository, script v0.2.0), rulată la 2 octombrie 2026 într-o rulare <code>TEST</code> pe un singur origin (macOS, curl 8.7.1). Validarea ca implementare de referință cere rulări pe mai multe origini și configurații (redirecturi, erori TLS/DNS, robots.txt indisponibil, răspunsuri non-HTML, protecții anti-bot) și teste ale analizorului. Statut: candidată, nevalidată.</li>
-        <li><strong>Parserul robots.txt.</strong> Trebuie ales sau scris un parser conform RFC 9309 (selecția grupurilor, combinarea lor, cea mai specifică potrivire), altfel <code>TC-03</code> rămâne limitat la <code>NEDETERMINAT</code>.</li>
+        <li><strong>Parserul robots.txt.</strong> De la versiunea 0.4.0, parserul nu mai este condiție pentru determinarea politicii: AVL203-REQ-041 acceptă și aplicarea manuală documentată. Rămâne deschisă alegerea sau scrierea unui parser conform RFC 9309 pentru implementarea de referință, ca aplicarea să fie automată și repetabilă la volum mare.</li>
         <li><strong>Șirurile User-Agent.</strong> Manifestul v0.1.0 a fost înghețat la 2 octombrie 2026 (§9). Rămân deschise: confirmarea șirului complet <code>bingbot</code> dintr-o sursă oficială, tratamentul <code>Claude-SearchBot</code> (doar token, cât timp Anthropic nu publică un șir complet) și regula de alegere a versiunii Chrome din șirul Googlebot.</li>
+        <li><strong>Implementarea TC-08 și a diagnosticului.</strong> Introduse în v0.4.0. Implementarea candidată (script v0.2.0) nu acoperă încă <code>TC-08</code>, compoziția planului din §1.1 sau stratul de diagnostic din §12. Regulile de normalizare pentru <code>TC-08</code> se fixează la implementare și se înregistrează în manifest.</li>
+        <li><strong>Aplicarea RFC 9309 fără parser.</strong> Închisă la 23 octombrie 2026 (decizie Alex Matescu): AVL203-REQ-013 este retrasă, iar AVL203-REQ-041 acceptă aplicarea manuală a RFC 9309, documentată pas cu pas, alături de parserul conform.</li>
       </ol>
 
       <p>Aceste puncte nu trebuie tratate ca închise până la o decizie explicită, documentată în istoricul versiunilor.</p>

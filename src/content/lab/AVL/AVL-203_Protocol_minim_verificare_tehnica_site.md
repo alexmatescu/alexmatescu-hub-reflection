@@ -10,7 +10,7 @@ organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-01"
 date_published: "2026-10-02T16:29:00+03:00"
-date_modified: "2026-10-22"
+date_modified: "2026-10-23"
 last_reviewed: "2026-10-01"
 canonical: "https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica"
 normative_dependencies:
@@ -99,17 +99,21 @@ Planul declară tipul entității (de exemplu organizație cu servicii, magazin 
 
 - pagina principală a originului;
 - pagina canonică despre entitate (de exemplu „Despre”, „Despre noi” sau pagina de profil);
-- pagina de contact sau de date de identificare;
+- pagina de contact sau o altă pagină care conține datele de identitate ale entității (categorie obligatorie, vezi mai jos);
 - paginile principale de servicii, produse sau activitate, în număr declarat;
 - paginile pe care entitatea le desemnează drept referință despre ea (de exemplu hub-uri sau pagini-pilon).
 
 Categoriile suplimentare pentru fiecare tip de entitate sunt definite în AVL-204. O categorie care nu există pe site se notează `NOT_APPLICABLE`, cu motiv; nu se omite.
+
+Pagina de contact sau de date de identitate face excepție: este obligatorie în orice plan și nu se notează `NOT_APPLICABLE`. Ea arată cine răspunde de site și cum poate fi identificată entitatea, deci este necesară pentru transparența evaluării. Dacă site-ul nu are nicio pagină cu datele de identitate ale entității, planul înregistrează absența ei, iar absența se raportează ca rezultat al evaluării, nu ca limită a eșantionului.
 
 Planul mai declară, înainte de rulare, textele-cheie căutate de TC-08 pentru fiecare URL (§8.1) și politica de acces pe care entitatea o intenționează pentru crawlere (de exemplu permiterea crawlerelor de căutare și blocarea celor de antrenare), necesară diagnosticului din §12.
 
 > **AVL203-REQ-029 — Planul de măsurare TREBUIE să declare tipul entității și să includă, pentru fiecare categorie obligatorie de pagină, fie URL-ul ales, fie motivul pentru care categoria nu se aplică.**
 
 > **AVL203-REQ-030 — Numărul URL-urilor POATE varia între evaluări, dar compoziția eșantionului, textele-cheie pentru TC-08 și politica de acces intenționată TREBUIE fixate înaintea primului request și NU TREBUIE modificate după observarea rezultatelor; o completare ulterioară a planului TREBUIE tratată ca rulare nouă sau ca abatere documentată.**
+
+> **AVL203-REQ-042 — Planul de măsurare TREBUIE să includă pagina de contact sau o altă pagină care conține datele de identitate ale entității; această categorie NU TREBUIE notată `NOT_APPLICABLE`, iar absența ei de pe site TREBUIE înregistrată în plan și raportată.**
 
 ---
 
@@ -236,9 +240,13 @@ curl --silent --show-error --location \
   "$ORIGIN/robots.txt"
 ```
 
-Se documentează statusul, URL-ul efectiv, redirecturile, corpul și grupurile `User-agent`, `Allow`, `Disallow`, precum și declarațiile `Sitemap`. Interpretarea unei reguli pentru un URL cere aplicarea corectă a RFC 9309 și a extensiilor furnizorului: selecția grupului specific produsului înaintea grupului `*`, combinarea grupurilor care corespund aceluiași token și regula celei mai specifice potriviri între `Allow` și `Disallow` (RFC 9309 §2.2). `grep` este doar inspecție preliminară; dacă parserul complet lipsește, rezultatul politicii rămâne `NEDETERMINAT`, nu `ALLOW` implicit.
+Se documentează statusul, URL-ul efectiv, redirecturile, corpul și grupurile `User-agent`, `Allow`, `Disallow`, precum și declarațiile `Sitemap`. Interpretarea unei reguli pentru un URL cere aplicarea corectă a RFC 9309 și a extensiilor furnizorului: selecția grupului specific produsului înaintea grupului `*`, combinarea grupurilor care corespund aceluiași token și regula celei mai specifice potriviri între `Allow` și `Disallow` (RFC 9309 §2.2). `grep` este doar inspecție preliminară, nu aplicare a RFC 9309.
 
-> **AVL203-REQ-013 — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire); în lipsa unui parser conform, rezultatul TREBUIE raportat `NEDETERMINAT`.**
+Regulile RFC 9309 se pot aplica în două moduri: cu un parser conform sau manual. Aplicarea manuală se documentează pas cu pas, pentru fiecare pereche URL–crawler: grupurile `User-agent` care corespund tokenului crawlerului (sau grupul `*`, dacă niciunul nu corespunde), regulile combinate din aceste grupuri, regula `Allow` sau `Disallow` cu potrivirea cea mai specifică și rezultatul. Documentarea face aplicarea verificabilă de altcineva pe baza aceluiași `robots.body`. Dacă politica nu este determinată în niciunul dintre cele două moduri, rezultatul rămâne `NEDETERMINAT`, nu `ALLOW` implicit.
+
+> **AVL203-REQ-013 — Retrasă în versiunea 0.4.0.** Text anterior: „Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire); în lipsa unui parser conform, rezultatul TREBUIE raportat `NEDETERMINAT`.” Înlocuită de AVL203-REQ-041.
+
+> **AVL203-REQ-041 — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire), fie printr-un parser conform, fie prin aplicare manuală documentată pas cu pas pentru fiecare pereche URL–crawler; metoda folosită TREBUIE înregistrată în observații, iar o politică nedeterminată prin niciuna dintre cele două metode TREBUIE raportată `NEDETERMINAT`.**
 
 Matricea Core urmărește politica relevantă pentru `*`, `Googlebot`, `bingbot`, `OAI-SearchBot`, `Claude-SearchBot` și `PerplexityBot`. La data verificării acestui draft (1 octombrie 2026), documentația furnizorilor descrie `OAI-SearchBot`, `Claude-SearchBot` și `PerplexityBot` drept crawlere asociate căutării sau afișării surselor, nu antrenării modelelor; rolul lor se reverifică la fiecare versiune a protocolului.
 
@@ -535,7 +543,7 @@ Fiecare rulare declarată conformă verifică explicit cerințele:
 - [ ] **AVL203-REQ-010** — Erorile TLS sau DNS NU TREBUIE ascunse prin dezactivarea verificării certificatelor.
 - [ ] **AVL203-REQ-011** — Verificările TC-01, TC-02 și TC-06 TREBUIE făcute cu GET.
 - [ ] **AVL203-REQ-012** — Un răspuns `200` NU TREBUIE prezentat drept indexare, iar un `403` pentru un User-Agent declarat NU TREBUIE prezentat drept dovadă că infrastructura furnizorului este blocată.
-- [ ] **AVL203-REQ-013** — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309 (selecția grupului, combinarea grupurilor și cea mai specifică potrivire).
+- ~~**AVL203-REQ-013**~~ — Retrasă în versiunea 0.4.0; înlocuită de AVL203-REQ-041.
 - [ ] **AVL203-REQ-014** — Statusul TC-04 TREBUIE atribuit după regula din tabelul de mai sus.
 - [ ] **AVL203-REQ-015** — Prezența sau accesibilitatea unui sitemap NU TREBUIE prezentată drept dovadă că întregul site este descoperibil.
 - [ ] **AVL203-REQ-016** — Semnalele TC-05 TREBUIE extrase din raw HTML-ul și headerele răspunsului final, cu locația originală, și NU TREBUIE prezentate drept DOM randat, canonical selectat de un motor sau validare Schema.org.
@@ -563,6 +571,8 @@ Fiecare rulare declarată conformă verifică explicit cerințele:
 - [ ] **AVL203-REQ-038** — O extensie din afara Core TREBUIE declarată în plan înaintea folosirii, cu dovezile marcate separat și protejate conform AVL-200 §18.
 - [ ] **AVL203-REQ-039** — O constatare bazată pe o extensie TREBUIE să o indice; absența extensiei NU TREBUIE raportată drept absența problemei.
 - [ ] **AVL203-REQ-040** — Raportul unei evaluări cu diagnostic TREBUIE să separe observațiile, diagnosticul și recomandările, să includă limitele și să permită identificarea rulării și a versiunilor.
+- [ ] **AVL203-REQ-041** — Politica robots.txt aplicabilă unui crawler NU TREBUIE declarată fără aplicarea RFC 9309, prin parser conform sau aplicare manuală documentată, cu metoda înregistrată; altfel `NEDETERMINAT`.
+- [ ] **AVL203-REQ-042** — Planul TREBUIE să includă pagina de contact sau de date de identitate, fără `NOT_APPLICABLE`; absența ei de pe site TREBUIE înregistrată și raportată.
 
 ---
 
@@ -606,7 +616,7 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 | 0.2.0 | 2 octombrie 2026 | Draft pentru revizuire | Revizie după prima implementare candidată și o rulare de test. TC-06: dubla captură a clientului de referință devine obligatorie, iar diferențele de dimensiune/hash nu se atribuie User-Agent-ului când răspunsul variază intrinsec (constatare din rularea de test: corpul paginii a diferit între două requesturi identice). Manifest User-Agent versionat, cu statusuri `OFICIAL` / `OFICIAL_CU_VERSIUNE_ALEASA` / `DOAR_TOKEN` / `NECONFIRMAT`, înghețat la v0.1.0 cu șiruri verificate la sursă la 2 octombrie 2026. TC-04: căile convenționale (`/sitemap.xml`, `/sitemap_index.xml`) și regula de atribuire a statusurilor. TC-05: variantele meta robots pentru `googlebot`/`bingbot` și validitatea sintactică JSON a blocurilor JSON-LD ca observații permise. Codul de ieșire `curl` înregistrat pentru fiecare request. Manifestul rulării inclus în checksum-uri. Eticheta `TEST` pentru rulări de probă din afara seriilor de măsurare. §18.4 și §18.6 actualizate. Publicat ca draft public la `/lab/metodologie/protocol-verificare-tehnica`; canonicalul devine definitiv; §17.2 actualizat. |
 | 0.3.0 | 2 octombrie 2026 | Draft pentru revizuire | Cerințele de conformitate formalizate: 28 de cerințe `AVL203-REQ-001` … `AVL203-REQ-028`, derivate din intenția normativă a versiunii 0.2.0, fără reguli noi. Declarația RFC 2119 / RFC 8174 din „Controlul documentului” înlocuiește nota despre intenția protocolului. Secțiune nouă „Checklist de conformitate” (§15); secțiunile următoare renumerotate (§16–§18). Decizia deschisă 3 actualizată. |
 | 0.3.1 | 13 octombrie 2026 | Draft pentru revizuire | PATCH: decizia deschisă 1 („Aliniarea corpusului la convenția T0/F1…Fn”) este închisă: AVL-200 §7 (v1.1.0) definește convenția și etapele denumite, iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate la 13 octombrie 2026. Fără modificări ale cerințelor. |
-| 0.4.0 | 22 octombrie 2026 | Draft pentru revizuire | MINOR: protocolul acoperă și diagnosticul și recomandările, pentru că verificarea tehnică este folosită în evaluări care livrează recomandări. Secțiuni noi: §1.1 „Compoziția planului de măsurare” (număr variabil de URL-uri, categorii obligatorii de pagini, tipul entității, textele-cheie și politica de acces intenționată declarate dinainte); §8.1 verificarea nouă `TC-08` „Conținut important în HTML-ul brut”; §12 „Cum trecem de la observații la diagnostic și recomandări?” (stările diagnosticului, cele patru elemente ale unei recomandări, trimiterea la grila AVL-204); §13.1 „Extensii declarate” (instrumente pentru webmasteri, loguri, CDN/WAF cu acces autorizat); §15.1 „Raportul unei evaluări cu diagnostic”. Cerințe noi `AVL203-REQ-029` … `AVL203-REQ-040`; cerințele 001–028 rămân neschimbate. Secțiunile 12–18 devin 13–19. |
+| 0.4.0 | 23 octombrie 2026 | Draft pentru revizuire | MINOR: protocolul acoperă și diagnosticul și recomandările, pentru că verificarea tehnică este folosită în evaluări care livrează recomandări. Secțiuni noi: §1.1 „Compoziția planului de măsurare” (număr variabil de URL-uri, categorii obligatorii de pagini, tipul entității, textele-cheie și politica de acces intenționată declarate dinainte); §8.1 verificarea nouă `TC-08` „Conținut important în HTML-ul brut”; §12 „Cum trecem de la observații la diagnostic și recomandări?” (stările diagnosticului, cele patru elemente ale unei recomandări, trimiterea la grila AVL-204); §13.1 „Extensii declarate” (instrumente pentru webmasteri, loguri, CDN/WAF cu acces autorizat); §15.1 „Raportul unei evaluări cu diagnostic”. Cerințe noi `AVL203-REQ-029` … `AVL203-REQ-040`. Decizii Alex Matescu, 23 octombrie 2026: (1) `AVL203-REQ-013` este retrasă — textul rămâne în §6 ca evidență a evoluției metodologiei, iar identificatorul nu se reutilizează; cerința nouă `AVL203-REQ-041` acceptă, pe lângă parserul conform, aplicarea manuală a RFC 9309 documentată pas cu pas, cu metoda înregistrată în observații (decizia deschisă 8 închisă); (2) pagina de contact sau o altă pagină cu datele de identitate ale entității devine obligatorie în planul de măsurare, fără `NOT_APPLICABLE` (`AVL203-REQ-042`). Celelalte cerințe 001–028 rămân neschimbate. Secțiunile 12–18 devin 13–19. |
 
 ---
 
@@ -616,10 +626,10 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 2. **Locul în corpus.** De la publicarea ca draft public (2 octombrie 2026), AVL-202 menționează AVL-203 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor, cu statutul „Draft pentru revizuire”. Rămân de făcut la activare: actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001 §17.
 3. **Cerințe identificate.** Formulate în v0.3.0 (2 octombrie 2026): 28 de cerințe `AVL203-REQ-001` … `AVL203-REQ-028`, derivate din intenția normativă deja existentă în text, fără reguli noi. Toate sunt la nivel TREBUIE / NU TREBUIE, cu o singură opțiune POATE (REQ-011). Rămâne de confirmat, la activare, setul final și nivelul fiecărei cerințe.
 4. **Implementarea de referință.** Comenzile din document sunt exemple. Există o implementare candidată, versionată (skill-ul `verificare-tehnica-avl203` din repository, script v0.2.0), rulată la 2 octombrie 2026 într-o rulare `TEST` pe un singur origin (macOS, curl 8.7.1). Validarea ca implementare de referință cere rulări pe mai multe origini și configurații (redirecturi, erori TLS/DNS, robots.txt indisponibil, răspunsuri non-HTML, protecții anti-bot) și teste ale analizorului. Statut: candidată, nevalidată.
-5. **Parserul robots.txt.** Trebuie ales sau scris un parser conform RFC 9309 (selecția grupurilor, combinarea lor, cea mai specifică potrivire), altfel `TC-03` rămâne limitat la `NEDETERMINAT`.
+5. **Parserul robots.txt.** De la versiunea 0.4.0, parserul nu mai este condiție pentru determinarea politicii: AVL203-REQ-041 acceptă și aplicarea manuală documentată. Rămâne deschisă alegerea sau scrierea unui parser conform RFC 9309 pentru implementarea de referință, ca aplicarea să fie automată și repetabilă la volum mare.
 6. **Șirurile User-Agent.** Manifestul v0.1.0 a fost înghețat la 2 octombrie 2026 (§9). Rămân deschise: confirmarea șirului complet `bingbot` dintr-o sursă oficială, tratamentul `Claude-SearchBot` (doar token, cât timp Anthropic nu publică un șir complet) și regula de alegere a versiunii Chrome din șirul Googlebot.
 7. **Implementarea TC-08 și a diagnosticului.** Introduse în v0.4.0. Implementarea candidată (script v0.2.0) nu acoperă încă `TC-08`, compoziția planului din §1.1 sau stratul de diagnostic din §12. Regulile de normalizare pentru `TC-08` se fixează la implementare și se înregistrează în manifest.
-8. **Aplicarea RFC 9309 fără parser.** AVL203-REQ-013 cere `NEDETERMINAT` în lipsa unui parser conform. Rămâne de decis dacă o aplicare manuală a RFC 9309, documentată pas cu pas, poate înlocui parserul pentru diagnosticul din §12; până atunci, zona `robots.txt` din AVL-204 rezultă „nu poate fi stabilit” fără parser conform.
+8. **Aplicarea RFC 9309 fără parser.** Închisă la 23 octombrie 2026 (decizie Alex Matescu): AVL203-REQ-013 este retrasă, iar AVL203-REQ-041 acceptă aplicarea manuală a RFC 9309, documentată pas cu pas, alături de parserul conform.
 
 Aceste puncte nu trebuie tratate ca închise până la o decizie explicită, documentată în istoricul versiunilor.
 
