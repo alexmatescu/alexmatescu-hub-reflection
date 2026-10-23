@@ -138,6 +138,8 @@ the raw evidence hasn't changed, only how it's documented.
 - **Published**: STOP. Publicly published evidence is treated as immutable.
   Tell the user; propose a new version (new archive version and/or new
   metadata version → new tag) instead of touching the existing release.
+  A new metadata version over the same archive uses the
+  `-v<archive-version>-m<metadata-version>` tag (`naming-convention.md` §2).
 
 ## Never auto-publish
 
@@ -156,6 +158,14 @@ large binary archives. `evidence/incoming/`, `evidence/work/`, and
 generated index/README/checksums are small text files the user is free to
 also commit if they want a copy in the repo, but evidence-release does not do
 this on its own.
+
+Two exceptions are tracked in git, by the user's decision (2026-10-23), so
+they have history: every `*.evidence-package.yaml` under `evidence/incoming/`,
+and the published analysis files under `evidence/work/<slug>/<mp>/adjudication/`
+(`*_adjudication_v*.csv`, `*_adjudication-rules_v*.md`, byte-identical to the
+release assets). The negations live in `.gitignore`; working notes in the same
+folders stay untracked. A new published analysis file follows the same naming
+and is picked up automatically.
 
 ## Privacy
 

@@ -11,12 +11,12 @@ Baseline Measurement Specification
 | **Document ID** | AVL-201 |
 |----|----|
 | **Nivel** | C — Methodology |
-| **Versiune** | 1.3.0 |
+| **Versiune** | 1.4.0 |
 | **Statut** | Activ |
 | **Autor** | [Alex Matescu](/despre) |
 | **Organizație** | [AI Visibility Lab](/lab) |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 13 octombrie 2026 |
+| **Ultima actualizare** | 23 octombrie 2026 |
 | **Limbă** | română |
 | **Dependențe normative** | [AVL-001](/lab/introducere), [AVL-104](/lab/cercetare/cum-se-masoara-ai-visibility), [AVL-200](/lab/metodologie/standard-dovezi-masurare-trasabilitate) |
 | **Dependențe informative** | [AVL-101](/lab/cercetare/ce-este-geo-aeo), [AVL-102](/lab/cercetare/cum-aleg-motoarele-ai), [AVL-103](/lab/cercetare/seo-vs-geo), [AVL-105](/lab/cercetare/glosar-geo-aeo) |
@@ -523,6 +523,7 @@ Până la versiunea 1.3.0, acest format recomanda prefixul `F0_`. Dovezile deja 
 | FAPT ÎNVECHIT | Răspunsul folosește o informație care a fost corectă, dar nu mai este actuală. | Se documentează sursa actuală. |
 | NULL | Entitatea lipsește sau sistemul declară că nu are informații suficiente. | Nu este automat o eroare a platformei. |
 | REFUZ / LIMITARE | Platforma refuză, nu poate căuta sau afișează o eroare. | Se raportează separat de NULL. |
+| NEAFIȘAT | Suprafața nu a afișat elementul de răspuns măsurat — de exemplu, Google AI Overviews nu apare pentru interogare. Interogarea a rulat, dar nu există un răspuns de clasificat. | Statut, nu verdict. Se raportează separat de NULL și de REFUZ / LIMITARE. Nu primește punctaj și nu intră la numitorul ratelor. |
 
 # 14. Scorarea
 
@@ -549,6 +550,8 @@ Scorul normalizat recomandat pentru un set de N rulări este:
 **Scor normalizat = 100 × (Σ puncte - minim posibil) / (maxim posibil -
 minim posibil)**
 
+Rulările NEAFIȘAT nu primesc punctaj și nu intră în N.
+
 Pentru schema de mai sus, maximul este 4 × N, iar minimul este -4 × N.
 Raportul trebuie să publice și distribuția categoriilor, deoarece două
 entități pot avea același scor prin combinații foarte diferite.
@@ -570,6 +573,8 @@ entități pot avea același scor prin combinații foarte diferite.
 - Scor normalizat, dacă este folosit.
 
 - Numărul total de rulări și acoperirea pe motoare.
+
+Ratele se calculează pe rulările care au produs un răspuns de clasificat. Rulările NEAFIȘAT nu intră la numitor; numărul lor se raportează separat, pe suprafață.
 
 **F0-REQ-007 —** Niciun scor agregat NU TREBUIE publicat fără numărul de
 rulări, perioada, motoarele și distribuția categoriilor.
@@ -822,6 +827,7 @@ profesional nu stă în secretul pașilor, ci în execuție, disciplină, date
 | 1.1.1 | 14 septembrie 2026 | Activ | PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate ca dependință normativă explicită, ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026). Fișierul sursă a fost resincronizat integral cu versiunea publicată la această dată: linkuri Autor/Organizație/dependențe, precizarea din §3, formularea F0-REQ-001 și o mică diferență de formulare la Pasul 8 (§10.8) — toate aliniate la textul deja live. |
 | 1.2.0 | 13 octombrie 2026 | Activ | MINOR: clarificare în secțiunea 3 — auditul AI Visibility (/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab, nu un serviciu al laboratorului; un audit nu devine automat studiu de caz, experiment public sau rezultat al laboratorului, iar o eventuală publicare respectă regulile AVL-001 privind declararea conflictelor de interese. Nicio cerință F0-REQ nu a fost adăugată sau modificată. |
 | 1.3.0 | 13 octombrie 2026 | Activ | MINOR: terminologie aliniată la AVL-200 §7 (v1.1.0). Trimiterile la fazele F1, F2 și F3 devin etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare, iar comparația longitudinală se exprimă între baseline (T0) și re-măsurări (F1 … Fn); formularea cerinței F0-REQ-008 a fost aliniată fără schimbarea sensului sau a identificatorului. Titlul documentului, identificatorii F0-REQ-* și folosirea „F0” ca nume istoric al etapei de baseline rămân neschimbate până la o revizie separată; corespondența este documentată în AVL-200 §7.4. §12.3: formatul recomandat de denumire a dovezilor folosește ca prefix punctul de măsurare (T0, F1 … Fn; AVL200-REQ-040) în locul prefixului F0_. Dovezile deja arhivate sau publicate își păstrează numele originale — inclusiv F0_baseline_AlexMatescu.docx din pachetul de dovezi T0 pentru Alex Matescu — și nu au fost redenumite sau modificate (AVL200-REQ-013). |
+| 1.4.0 | 23 octombrie 2026 | Activ | MINOR: statutul NEAFIȘAT adăugat în taxonomia rezultatelor (secțiunea 13), pentru cazul în care suprafața nu afișează elementul de răspuns măsurat (de exemplu, Google AI Overviews neafișat). Secțiunea 14: rulările NEAFIȘAT nu primesc punctaj, nu intră în N la scorul normalizat și nu intră la numitorul indicatorilor din 14.2; numărul lor se raportează separat. Nicio cerință F0-REQ-* nouă sau modificată. Decizie Alex Matescu, 23 octombrie 2026, apărută la adjudecarea punctului de măsurare F3 pentru Alex Matescu. |
 
 | **Declarație finală:** Tabula Rasa F0 nu demonstrează că o intervenție viitoare va funcționa. Ea stabilește condițiile minime pentru ca o schimbare ulterioară să poată fi comparată, verificată și discutată onest. |
 |----|

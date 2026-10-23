@@ -1,0 +1,43 @@
+# Evidence package config — Alex Matescu / Tabula Rasa / F3, metadata v1.2
+# Aceeasi arhiva ca v1.0 (archive.version 1.0, aceiasi bytes). Metadata v1.1
+# adauga stratul de observatie: matricea de adjudecare a celor 126 de executii
+# (2026-10-23) si regulile de adjudecare. Release-ul v1.0 e publicat si ramane
+# neatins; v1.1 primeste tag propriu (release_tag), conform deciziei lui Alex
+# din 2026-10-23.
+
+project: AI Visibility Lab
+study_name: Tabula Rasa
+entity_name: Alex Matescu
+entity_slug: alex-matescu
+entity_code: AM
+
+measurement_point: F3
+
+timezone: Europe/Bucharest
+
+archive:
+  path: ./evidence/incoming/Alex-Matescu_F3/alex-matescu_F3_png-archive_v1.0.zip
+  version: "1.0"
+
+metadata_version: "1.2"
+
+query_set:
+  path: ./evidence/incoming/Alex-Matescu_T0_1.0/alex-matescu-t0-query-set.csv
+  required: false
+
+extra_columns:
+  - model
+  - logged_in
+
+analysis_artifacts:
+  adjudication: ./evidence/work/alex-matescu/F3/adjudication/alex-matescu_F3_adjudication_v1.2.csv
+  adjudication-rules: ./evidence/work/alex-matescu/F3/adjudication/alex-matescu_F3_adjudication-rules_v1.2.md
+
+github:
+  repository: alexmatescu/alexmatescu-hub-reflection
+  draft: true
+  release_tag: evidence-alex-matescu-f3-v1.0-m1.2
+  release_title: "Alex Matescu — F3 Evidence Archive v1.0 (metadata v1.2)"
+# v1.2 (2026-10-23): corecteaza coloana de imagini a matricei la ChatGPT Q09 si
+# Perplexity Q11 (fotografiile nu il reprezinta pe subiect, confirmat de Alex).
+# Niciun verdict nu se schimba. Inlocuieste draftul m1.1, nepublicat.

@@ -1,10 +1,40 @@
 {
-  "generat": "2026-10-22",
+  "generat": "2026-10-23",
   "pragReverificareZile": 180,
-  "totalIntrari": 174,
+  "totalIntrari": 175,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
+    {
+      "id": "LAB-22",
+      "titlu": "Când internetul încearcă să afle cine ești: ce arată a patra măsurare Tabula Rasa",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti",
+      "slug": "tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti",
+      "categorie": "Entities & Citations",
+      "tip": "Analiză de caz",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-23T16:17:00+03:00",
+      "dataModificare": "2026-10-23",
+      "ultimaVerificare": "2026-10-23",
+      "fisierMd": "src/content/lab/articles/22.tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti.md",
+      "fisierTs": "src/data/lab-content/22. tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-23",
+      "imagine": null,
+      "jsonLd": "@graph",
+      "nrCitari": 8,
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
     {
       "id": "LAB-21",
       "titlu": "Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”",
@@ -16,7 +46,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-22",
       "dataPublicare": "2026-10-22T07:16:00+03:00",
       "dataModificare": "2026-10-22",
       "ultimaVerificare": "2026-10-22",
@@ -32,7 +62,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 5,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 1,
       "anomalii": []
     },
     {
@@ -62,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 2,
       "anomalii": []
     },
     {
@@ -92,7 +122,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 22,
       "anomalii": []
     },
     {
@@ -122,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 22,
       "anomalii": []
     },
     {
@@ -152,7 +182,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 22,
       "anomalii": []
     },
     {
@@ -182,7 +212,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -212,7 +242,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 22,
+      "zileDeLaVerificare": 23,
       "anomalii": []
     },
     {
@@ -242,7 +272,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 22,
+      "zileDeLaVerificare": 23,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -274,7 +304,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 56,
+      "zileDeLaVerificare": 57,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -292,7 +322,7 @@
       "versiune": null,
       "dataCreare": "2026-08-13",
       "dataPublicare": "2026-08-19",
-      "dataModificare": "2026-08-19",
+      "dataModificare": "2026-10-23",
       "ultimaVerificare": "2026-08-19",
       "fisierMd": "src/content/lab/articles/10.ce-este-entitate-ai-studiu-de-caz.md",
       "fisierTs": "src/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz.ts",
@@ -302,11 +332,11 @@
         "nav": true,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-08-19",
+      "sitemapLastmod": "2026-10-23",
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 64,
+      "zileDeLaVerificare": 65,
       "anomalii": []
     },
     {
@@ -336,7 +366,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 64,
+      "zileDeLaVerificare": 65,
       "anomalii": []
     },
     {
@@ -366,7 +396,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 20,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 7,
       "anomalii": []
     },
     {
@@ -396,7 +426,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 64,
+      "zileDeLaVerificare": 65,
       "anomalii": []
     },
     {
@@ -426,7 +456,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 64,
+      "zileDeLaVerificare": 65,
       "anomalii": []
     },
     {
@@ -456,7 +486,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 66,
+      "zileDeLaVerificare": 67,
       "anomalii": []
     },
     {
@@ -486,7 +516,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 65,
+      "zileDeLaVerificare": 66,
       "anomalii": []
     },
     {
@@ -636,7 +666,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -652,8 +682,8 @@
       "versiune": null,
       "dataCreare": "2026-09-04",
       "dataPublicare": "2026-09-04T09:06:00+03:00",
-      "dataModificare": "2026-09-18",
-      "ultimaVerificare": "2026-09-18",
+      "dataModificare": "2026-10-23",
+      "ultimaVerificare": "2026-10-23",
       "fisierMd": "src/content/studii de caz/01. Alex Matescu/tabula-rasa-entity-resolution-studiu-de-caz.md",
       "fisierTs": "src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts",
       "wiring": {
@@ -662,11 +692,11 @@
         "nav": true,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-09-18",
+      "sitemapLastmod": "2026-10-23",
       "imagine": null,
       "jsonLd": "@graph",
-      "nrCitari": 0,
-      "zileDeLaVerificare": 34,
+      "nrCitari": 7,
+      "zileDeLaVerificare": 0,
       "anomalii": []
     },
     {
@@ -695,7 +725,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 22,
       "anomalii": []
     },
     {
@@ -724,7 +754,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 7,
       "anomalii": []
     },
     {
@@ -753,7 +783,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 7,
       "anomalii": []
     },
     {
@@ -782,7 +812,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -796,10 +826,10 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.3.0",
+      "versiune": "1.4.0",
       "dataCreare": "2026-07-22",
       "dataPublicare": "2026-07",
-      "dataModificare": "2026-10-13",
+      "dataModificare": "2026-10-23",
       "ultimaVerificare": null,
       "fisierMd": "src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md",
       "fisierTs": "src/data/lab-content/avl-201.ts",

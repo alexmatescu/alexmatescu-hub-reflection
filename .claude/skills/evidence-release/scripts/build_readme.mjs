@@ -25,6 +25,7 @@ import {
   webpConversionEnabled,
   webpPaths,
   webpManifestFileName,
+  analysisArtifacts,
 } from "./lib/common.mjs";
 
 const SENTINELS = new Set([
@@ -325,7 +326,13 @@ async function main() {
   lines.push("## 11. Evidence integrity");
   lines.push("");
   lines.push(
-    `Every artifact in this package (raw archive, evidence index, README) has a SHA-256 checksum recorded in \`${shaFile}\`, verifiable with \`shasum -a 256 -c ${shaFile}\` once all files are in the same directory. Each row of the Evidence Index also carries the SHA-256 of its individual source file, computed on the ${conv ? "converted (WebP) archive" : "original archive"} bytes.${conv ? ` The conversion manifest \`${convFile}\` is part of the checksum manifest.` : ""}`,
+    `Every artifact in this package (raw archive, evidence index, README) has a SHA-256 checksum recorded in \`${shaFile}\`, verifiable with \`shasum -a 256 -c ${shaFile}\` once all files are in the same directory. Each row of the Evidence Index also carries the SHA-256 of its individual source file, computed on the ${conv ? "converted (WebP) archive" : "original archive"} bytes.${conv ? ` The conversion manifest \`${convFile}\` is part of the checksum manifest.` : ""}${
+      analysisArtifacts(config).length > 0
+        ? ` The analysis files (${analysisArtifacts(config)
+            .map((a) => "\`" + a.name + "\`")
+            .join(", ")}) are part of the checksum manifest.`
+        : ""
+    }`,
   );
   lines.push("");
 
@@ -373,9 +380,16 @@ async function main() {
   );
   lines.push("```");
   lines.push("");
-  lines.push(
-    "This package covers **Raw Evidence** and **Indexed Evidence** only. Observation, Measurement, and Interpretation belong to the case study that cites this package, not to this package itself.",
-  );
+  const analysis = analysisArtifacts(config);
+  if (analysis.length === 0) {
+    lines.push(
+      "This package covers **Raw Evidence** and **Indexed Evidence** only. Observation, Measurement, and Interpretation belong to the case study that cites this package, not to this package itself.",
+    );
+  } else {
+    lines.push(
+      `This metadata version also ships the **Observation** layer: ${analysis.map((a) => "`" + a.name + "`").join(", ")}. These files record per-execution judgments and the rules they were made with; they reference Evidence IDs from the index and leave the evidence archive unchanged. Measurement and Interpretation belong to the case study that cites this package.`,
+    );
+  }
   lines.push("");
 
   lines.push("## 15. Versioning");
@@ -393,6 +407,7 @@ async function main() {
   if (convFile)
     lines.push(`- \`${convFile}\` (PNG → WebP conversion manifest)`);
   lines.push(`- \`${indexFile}\``);
+  for (const a of analysis) lines.push(`- \`${a.name}\` (analysis: ${a.kind})`);
   lines.push(`- \`${readmeFile}\` (this file)`);
   lines.push(`- \`${shaFile}\``);
   lines.push("");

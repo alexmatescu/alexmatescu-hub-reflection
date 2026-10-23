@@ -1,0 +1,36 @@
+# Evidence package config — Alex Matescu / Tabula Rasa / T0 (arhiva a treia, v3.0)
+# Arhiva noua contine capturi cu conditii experimentale marcate explicit in
+# numele folderelor (model, logged_in, incognito/normal) pentru mai multe
+# platforme si motoare de cautare standard. Arhiva distincta de v1.0 si v2.0
+# (nicio amestecare de fisiere brute).
+# Vezi .claude/skills/evidence-release/references/config-schema.md.
+
+project: AI Visibility Lab
+study_name: Tabula Rasa
+entity_name: Alex Matescu
+entity_slug: alex-matescu
+entity_code: AM
+
+measurement_point: T0
+
+timezone: Europe/Bucharest
+
+archive:
+  path: ./evidence/incoming/Alex-Matescu_T0_3.0/Alex-Matesuc_T0_3.0.zip
+  version: "3.0"
+
+metadata_version: "3.0"
+
+query_set:
+  path: ./evidence/incoming/Alex-Matescu_T0_1.0/alex-matescu-t0-query-set.csv
+  required: false
+
+extra_columns:
+  - model
+  - logged_in
+
+github:
+  repository: alexmatescu/alexmatescu-hub-reflection
+  draft: true
+
+notes: "A treia arhiva de dovezi pentru T0/Tabula Rasa: aceleasi 14 query-uri, cu conditii experimentale explicite pe folder (model AI, logged_in, fereastra incognito/normala) pentru ChatGPT/Claude/Copilot/Gemini/Perplexity/Google AI/Bing/Google Search. Arhiva ramane distincta de v1.0 si v2.0 (nicio amestecare de fisiere brute); Evidence ID-urile continua secventa fara coliziune (AM-T0-E645+)."

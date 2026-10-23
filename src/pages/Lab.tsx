@@ -42,6 +42,7 @@ import { deLaMentionareLaTranzactieAgenticVisibilityHtml } from "@/data/lab-cont
 import { socialMediaStratInformationalPentruAiHtml } from "@/data/lab-content/19. social-media-devine-strat-informational-pentru-ai";
 import { marketDiscoveryPilot4BolognaHtml } from "@/data/lab-content/20. market-discovery-pilot-4-bologna-rulare-invalida";
 import { marketDiscoveryPilot5SibiuHtml } from "@/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte";
+import { tabulaRasaF3Html } from "@/data/lab-content/22. tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -116,6 +117,8 @@ const labPageContent: Record<string, string> = {
     marketDiscoveryPilot4BolognaHtml,
   "/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte":
     marketDiscoveryPilot5SibiuHtml,
+  "/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti":
+    tabulaRasaF3Html,
   "/lab/audit-ai-visibility": auditAiVisibilityHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };

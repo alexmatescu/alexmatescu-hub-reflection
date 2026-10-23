@@ -36,6 +36,7 @@ import {
   artifactFileName,
   webpConversionEnabled,
   webpManifestFileName,
+  analysisArtifacts,
 } from "./lib/common.mjs";
 
 function buildReleaseNotes(config, stats) {
@@ -115,7 +116,9 @@ async function main() {
   const tag =
     config.github?.release_tag ||
     `evidence-${entity_slug}-${measurement_point.toLowerCase()}-v${archive.version}`;
-  const title = `${entity_name} — ${measurement_point} Evidence Archive v${archive.version}`;
+  const title =
+    config.github?.release_title ||
+    `${entity_name} — ${measurement_point} Evidence Archive v${archive.version}`;
 
   const workDir = path.resolve("evidence/work", entity_slug, measurement_point);
   const outputDir = path.resolve(
@@ -171,6 +174,13 @@ async function main() {
     const name = webpManifestFileName(config);
     assets.splice(3, 0, { name, path: path.join(outputDir, name) });
   }
+  // Analysis artifacts go right before the checksum manifest.
+  for (const a of analysisArtifacts(config)) {
+    assets.splice(assets.length - 1, 0, {
+      name: a.name,
+      path: path.join(outputDir, a.name),
+    });
+  }
   for (const a of assets) {
     if (!(await pathExists(a.path))) {
       console.error(
@@ -183,6 +193,7 @@ async function main() {
   for (const [label, file] of [
     ["evidence index", indexFile],
     ["README", readmeFile],
+    ...analysisArtifacts(config).map((a) => [a.kind, a.name]),
   ]) {
     if (!(await isFrozen(path.join(outputDir, file)))) {
       console.error(

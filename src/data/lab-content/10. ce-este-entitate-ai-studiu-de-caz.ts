@@ -14,7 +14,7 @@ export const ceEsteEntitateAiStudiuDeCazMeta: LabArticleMeta = {
   category: "Entities & Citations",
   articleType: "Analiză de caz",
   datePublished: "2026-08-19",
-  dateModified: "2026-08-19",
+  dateModified: "2026-10-23",
   lastReviewed: "2026-08-19",
   about: [
     { name: "Entity resolution" },
@@ -88,7 +88,7 @@ export const ceEsteEntitateAiStudiuDeCazMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const ceEsteEntitateAiStudiuDeCazHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-10-23">23 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
 
       <p><strong>O identitate digitală devine mai ușor de dezambiguizat atunci când aceeași persoană, aceleași variante legitime de nume, aceleași roluri și aceleași surse sunt legate coerent între ele. Structured data, paginile canonice de identitate și sursele independente pot contribui la această coerență, dar niciuna nu garantează singură felul în care Google sau un sistem AI va reprezenta persoana.</strong></p>
 
@@ -664,6 +664,8 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Dar vom avea un studiu longitudinal mai bun decât o fotografie de moment.</p>
 
+      <p><em>Actualizare (23 octombrie 2026):</em> studiul longitudinal a fost făcut. <a href="/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz">Studiul de caz Tabula Rasa</a> urmărește aceeași identitate în patru puncte de măsurare (T0, F1, F2, F3), cu dovezile publicate pentru fiecare. Ce arată a patra măsurare e rezumat în articolul <a href="/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti">Când internetul încearcă să afle cine ești</a>.</p>
+
       <h2>Întrebări frecvente</h2>
 
       <h3>Ce este o entitate în SEO și AI Search?</h3>
@@ -753,6 +755,15 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
       <h3>Notă de volatilitate</h3>
 
       <p>Politicile Wikidata și documentația Google pot fi actualizate. Afirmațiile despre acestea descriu <strong>starea verificată la 19 august 2026</strong>, dată la care sursele de mai sus au fost reverificate live, fără schimbări față de starea consemnată inițial la 11 august 2026. Observația despre propriul nume rămâne o fotografie a rezultatelor văzute în august 2026 și nu a fost repetată pentru această verificare — rezultatele de căutare personalizate se pot schimba de la o rulare la alta.</p>
+
+      <h2>Istoricul versiunilor</h2>
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0</td><td>19 august 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>23 octombrie 2026</td><td>Secțiunea „De ce public studiul”: paragraf nou, cu legătura spre studiul de caz Tabula Rasa și spre articolul despre a patra măsurare (F3). Restul textului nu s-a schimbat.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 19 august 2026.</em></p>
 `;

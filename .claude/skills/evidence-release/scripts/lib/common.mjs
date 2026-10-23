@@ -702,3 +702,77 @@ export async function stageWebpManifest(config, outputDir) {
   }
   return dest;
 }
+
+/**
+ * Analysis artifacts (config `analysis_artifacts: { <kind>: <source path> }`):
+ * files produced after the evidence was indexed — e.g. an adjudication matrix
+ * and the rules it was built with — that ship in a later metadata version of
+ * the same package. Each is published as
+ * `<slug>_<mp>_<kind>_v<metadata_version>.<ext>`, copied byte-identical into
+ * the output directory, frozen and checksummed like the index and README.
+ * Order follows the config.
+ */
+export function analysisArtifacts(config) {
+  const spec = config.analysis_artifacts;
+  if (!spec) return [];
+  if (typeof spec !== "object" || Array.isArray(spec)) {
+    throw new Error(
+      "config.analysis_artifacts must be a mapping of <kind>: <source path>.",
+    );
+  }
+  return Object.entries(spec).map(([kind, src]) => {
+    if (!SLUG_RE.test(kind)) {
+      throw new Error(
+        `analysis_artifacts: kind "${kind}" must be lowercase-kebab-case.`,
+      );
+    }
+    if (typeof src !== "string" || src === "") {
+      throw new Error(`analysis_artifacts.${kind}: source path is required.`);
+    }
+    const ext = path.extname(src).slice(1);
+    if (!ext) {
+      throw new Error(
+        `analysis_artifacts.${kind}: source "${src}" has no file extension.`,
+      );
+    }
+    return {
+      kind,
+      src: path.resolve(src),
+      name: artifactFileName(
+        config.entity_slug,
+        config.measurement_point,
+        kind,
+        config.metadata_version,
+        ext,
+      ),
+    };
+  });
+}
+
+/**
+ * Copy every analysis artifact into the output directory, byte-identical,
+ * unless it is already there with the same bytes. Returns the staged paths.
+ */
+export async function stageAnalysisArtifacts(config, outputDir) {
+  const staged = [];
+  for (const a of analysisArtifacts(config)) {
+    if (!(await pathExists(a.src))) {
+      throw new Error(`analysis artifact source not found: ${a.src}`);
+    }
+    const dest = path.join(outputDir, a.name);
+    const srcSha = await sha256File(a.src);
+    if (await pathExists(dest)) {
+      if ((await sha256File(dest)) !== srcSha) {
+        throw new Error(`${dest} exists and differs from ${a.src}.`);
+      }
+    } else {
+      await fs.mkdir(outputDir, { recursive: true });
+      await fs.copyFile(a.src, dest);
+      if ((await sha256File(dest)) !== srcSha) {
+        throw new Error(`copy of ${a.src} is not byte-identical: ${dest}`);
+      }
+    }
+    staged.push(dest);
+  }
+  return staged;
+}

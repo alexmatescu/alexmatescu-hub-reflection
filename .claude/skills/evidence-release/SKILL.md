@@ -266,6 +266,13 @@ confirmat explicit). Face `chmod 0o444` pe Evidence Index și README
 finalizate — de aici încolo, orice corecție necesită o `metadata_version`
 nouă, nu editare în loc (§1.1). Tot aici, manifestul conversiei WebP e
 copiat byte-identic din `work/.../webp/` în directorul de output și înghețat.
+La fel, fișierele declarate în `analysis_artifacts` (de exemplu matricea de
+adjudecare și regulile ei, livrate într-o versiune de metadate ulterioară)
+sunt copiate byte-identic ca `<slug>_<mp>_<kind>_v<metadata_version>.<ext>`
+și înghețate; intră în manifestul de checksum, în README și în release
+(`references/config-schema.md`). Dacă release-ul arhivei e deja publicat,
+versiunea nouă de metadate primește tag-ul `-v<archive>-m<metadata>`
+(`references/naming-convention.md` §2).
 Arhiva de intrare și arhiva convertită nu sunt atinse (nu sunt deschise
 pentru scriere după STEP 1b).
 

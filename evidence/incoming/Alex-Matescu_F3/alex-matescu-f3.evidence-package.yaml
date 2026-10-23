@@ -1,0 +1,35 @@
+# Evidence package config — Alex Matescu / Tabula Rasa / F3 (a treia re-masurare)
+# Primul pachet al entitatii publicat sub conventia T0/F1…Fn (AVL-200 §7, v1.1.0).
+# Arhiva PNG de intrare: folderul Alex-Matescu_F3 arhivat (fara .DS_Store), cu
+# docx-ul rularii inclus ca log. STEP 1b o converteste in WebP q80 (AVL200-REQ-041).
+# Vezi .claude/skills/evidence-release/references/config-schema.md.
+
+project: AI Visibility Lab
+study_name: Tabula Rasa
+entity_name: Alex Matescu
+entity_slug: alex-matescu
+entity_code: AM
+
+measurement_point: F3
+
+timezone: Europe/Bucharest
+
+archive:
+  path: ./evidence/incoming/Alex-Matescu_F3/alex-matescu_F3_png-archive_v1.0.zip
+  version: "1.0"
+
+metadata_version: "1.0"
+
+query_set:
+  path: ./evidence/incoming/Alex-Matescu_T0_1.0/alex-matescu-t0-query-set.csv
+  required: false
+
+extra_columns:
+  - model
+  - logged_in
+
+github:
+  repository: alexmatescu/alexmatescu-hub-reflection
+  draft: true
+
+notes: "Punctul de masurare F3 pentru Tabula Rasa: aceleasi 14 query-uri (Q01-Q14) pe 9 suprafete (Google Search, Bing Search, Google AI Mode, ChatGPT, Claude, Copilot, Gemini, Perplexity, Google AI Overviews), capturate in perioada 18-21 octombrie 2026, cu conditiile si observatiile rularii documentate in fisierul 'F3. Entitate Alex Matescu.docx' din arhiva. Primul pachet al entitatii publicat sub conventia T0/F1…Fn (AVL-200 §7). Corespondenta cu pachetele anterioare, publicate inainte de formalizarea conventiei si pastrate cu etichetele originale (AVL200-REQ-013): evidence-alex-matescu-t0-v1.0 = T0; evidence-alex-matescu-t0-v2.0 = F1 (capturi 4-6 august 2026); evidence-alex-matescu-t0-v3.0 = F2 (capturi 2-7 septembrie 2026). Evidence ID-urile F3 incep de la AM-F3-E001 si nu continua secventa AM-T0-E### a pachetelor anterioare."

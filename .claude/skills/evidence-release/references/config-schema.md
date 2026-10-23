@@ -27,7 +27,9 @@ anywhere in `evidence-release` — every concrete value below is an example.
 | `query_set.required` | boolean | `false` | If `true`, `validate_evidence.mjs` FAILs when any `Query ID` isn't found in the query set (other than `SUPPLEMENTAL-###`). |
 | `dataset_version` | string | `metadata_version` | Only set if it must diverge from metadata_version. |
 | `notes` | string | — | Free-text carried into README §13/context, not fabricated. |
-| `release_tag` | string | derived (see `naming-convention.md` §2) | Explicit override, e.g. to re-use a tag from an older process. |
+| `github.release_tag` | string | derived (see `naming-convention.md` §2) | Explicit override, e.g. to re-use a tag from an older process, or the `-m<metadata-version>` tag of a later metadata version whose archive release is already published (`naming-convention.md` §2). |
+| `github.release_title` | string | derived (see `naming-convention.md` §2) | Explicit title override; set it together with a `-m<metadata-version>` tag. |
+| `analysis_artifacts` | mapping `<kind>: <source path>` | — | Files produced after indexing (e.g. `adjudication`, `adjudication-rules`) that ship in this metadata version. Each is published as `<slug>_<mp>_<kind>_v<metadata_version>.<ext>`, copied byte-identical into the output directory at STEP 9, frozen, checksummed (STEP 10), listed in the README and uploaded as a release asset. `<kind>` is lowercase-kebab-case. |
 | `github.repository` | string | current repo's `origin` | `owner/repo`. |
 | `github.draft` | boolean | `true` | Must stay `true` — `evidence-release` never creates a non-draft release. |
 | `extra_columns` | list of strings | `[]` | Extra CLASSIFICATION columns appended to the schema, e.g. `[logged_in, incognito, memory_state, model]`. |

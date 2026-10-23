@@ -1,0 +1,36 @@
+# Evidence package config — Alex Matescu / Tabula Rasa / T0 (baseline)
+# Generat pentru primul upload de baseline: evidence/incoming/alex-matescu_t0_evidence-archive_v1.0.zip
+# (mutat din public/baselines/ pe 14.09.2026 — arhiva nu trebuie sa stea sub
+# public/, care e maturat in .output si in git la fiecare build/push; ramane
+# doar ca asset pe GitHub Release, vezi release-policy.md)
+# Vezi .claude/skills/evidence-release/references/config-schema.md pentru schema completa.
+
+project: AI Visibility Lab
+study_name: Tabula Rasa
+entity_name: Alex Matescu
+entity_slug: alex-matescu
+entity_code: AM
+
+measurement_point: T0
+
+timezone: Europe/Bucharest
+
+archive:
+  path: ./evidence/incoming/alex-matescu_t0_evidence-archive_v1.0.zip
+  version: "1.0"
+
+metadata_version: "1.0"
+
+query_set:
+  path: ./evidence/incoming/alex-matescu-t0-query-set.csv
+  required: false
+
+extra_columns:
+  - model
+  - logged_in
+
+github:
+  repository: alexmatescu/alexmatescu-hub-reflection
+  draft: true
+
+notes: "Primul upload de baseline (T0/F0) pentru studiul Tabula Rasa. T0 este baseline-ul real al experimentului, capturat inainte ca protocolul de masurare sa fie complet maturizat (vezi sectiunea 5 si 17 din studiul de caz Tabula Rasa)."
