@@ -5,11 +5,11 @@ Document de lucru intern, sub controlul versiunilor. Ține evidența punctului d
 | Câmp | Valoare |
 | --- | --- |
 | Creat | 23 octombrie 2026 |
-| Ultima actualizare | 23 octombrie 2026 |
+| Ultima actualizare | 25 octombrie 2026 |
 | Branch | `avl-203-0.4.0-avl-204` |
 | Documente vizate | AVL-203 v0.4.0 (draft), AVL-204 v0.1.0 (draft), AVL-202 v1.6.0 (activ) |
 | Implementare existentă | skill `verificare-tehnica-avl203`, script v0.2.0 (candidat, nevalidat) |
-| Stare | Faza 0 încheiată; așteaptă deciziile din §6 înainte de Faza 1 |
+| Stare | Faza 0 încheiată (fără 0.2, amânat la final); Faza 1 încheiată; Fazele 2–4 încheiate (cod v0.3.0, 142 de teste); 5.1, 5.3 și 5.4 făcute; 5.2 (AVL-204 0.2.0) amânat — nicio propunere P-* aprobată; urmează merge și deploy (Alex) |
 
 Regula de actualizare: la fiecare pas încheiat se adaugă o intrare în jurnal (§7), se mută punctul din „de făcut” în „făcut” și se actualizează „Ultima actualizare” și „Stare”. Nu se rescrie istoria: deciziile schimbate se consemnează ca decizii noi.
 
@@ -114,53 +114,53 @@ Fiecare fază se încheie cu un punct de decizie al lui Alex înainte de faza ur
 
 ### Faza 1 — Registrul ambiguităților (document, fără cod)
 
-- [ ] **1.1. Document intern de clasificare a punctelor A–J** (propunere: `docs/avl-203-204-registru-implementare.md`), fiecare punct încadrat ca:
+- [x] **1.1. Document intern de clasificare a punctelor A–J** (`docs/avl-203-204-registru-implementare.md`, 25 octombrie 2026; plus punctele K–M găsite la citire), fiecare punct încadrat ca:
   - **regulă exactă din draft** — se implementează ca atare;
   - **alegere operațională** — fixată de noi, versionată în configurația scriptului, nu schimbă diagnosticul (lista headerelor comparate la TC-06, normalizarea TC-08, timeouts, limita de redirecturi);
   - **propunere normativă** — ar schimba diagnosticul, rămâne neactivă până la decizia lui Alex (tabela completă TC-04, tratamentul 429, `R-Z2-03` pentru redirect permis de RFC, calificarea Z6, `priority=null`).
 
   *Argument:* cel mai mare câștig la cel mai mic cost. Fără el, codul decide tacit ce înseamnă regulile. Produce lista exactă de decizii pentru AVL-204 0.2.0.
-- [ ] **1.2. Verificarea live a surselor externe** invocate în A–J: RFC 9309 (redirect, 4xx/5xx, linii necunoscute), documentația Google despre 429.
+- [x] **1.2. Verificarea live a surselor externe** (25 octombrie 2026; registru §2) invocate în A–J: RFC 9309 (redirect, 4xx/5xx, linii necunoscute), documentația Google despre 429.
   *Argument:* regula research-first a skill-urilor laboratorului; o regulă AVL nu se sprijină pe o afirmație nevalidată despre un furnizor.
 
 ### Faza 2 — Fundația tehnică (cod, fără diagnostic)
 
-- [ ] **2.1. Modelul de date și planul înghețat.** Schema planului (categorii, absențe, texte-cheie, politica intenționată per URL/crawler, versiuni, extensii); `plan validate` și `freeze` cu hash; configurație inițială imuabilă, jurnal de execuție și manifest final distincte.
+- [x] **2.1. Modelul de date și planul înghețat.** (25 octombrie 2026: `scripts/avl203/plan.py`, `config/plan-template.json`) Schema planului (categorii, absențe, texte-cheie, politica intenționată per URL/crawler, versiuni, extensii); `plan validate` și `freeze` cu hash; configurație inițială imuabilă, jurnal de execuție și manifest final distincte.
   *Argument:* REQ-001, REQ-029/030/031 și REQ-042 cer planul fixat înainte de primul request; azi nimic nu garantează asta. Planul face posibilă și regula „restricție intenționată ≠ problemă” (AVL204-REQ-004).
-- [ ] **2.2. Extinderea capturii existente** (`run_avl203.sh`), nu un sistem nou: limite de host pentru redirecturi, cereri auxiliare predeclarate (canonical), dubla captură de referință, stderr, exit code, dimensiunea decomprimată separat de `size_download`.
+- [x] **2.2. Extinderea capturii existente** (25 octombrie 2026: `scripts/avl203/capture.py`, tot cu `curl`; `run_avl203.sh` v0.2 rămâne pentru reproducerea rulărilor vechi), nu un sistem nou: limite de host pentru redirecturi, cereri auxiliare predeclarate (canonical), dubla captură de referință, stderr, exit code, dimensiunea decomprimată separat de `size_download`.
   *Argument:* punctele I și J din prompt, REQ-008 și REQ-019.
-- [ ] **2.3. Integritate și Evidence Index (TC-07):** verificare per artefact, fișiere lipsă sau neacoperite, raport de invaliditate.
+- [x] **2.3. Integritate și Evidence Index (TC-07):** (25 octombrie 2026: `scripts/avl203/integrity.py`) verificare per artefact, fișiere lipsă sau neacoperite, raport de invaliditate.
   *Argument:* AVL204-REQ-001 și R-VAL-01 (punctul A). Fără integritate verificată, grila nu are voie să ruleze; tot restul depinde de acest pas.
-- [ ] **2.4. Fixture-uri HTTP locale și primele teste**, pe localhost, cu permisiune separată de țintele publice.
+- [x] **2.4. Fixture-uri HTTP locale și primele teste** (25 octombrie 2026: `tests/`, 45 de teste `unittest`), pe localhost, cu permisiune separată de țintele publice.
   *Argument:* nu există niciun test; fiecare fază următoare are nevoie de cazuri reproductibile.
 
 ### Faza 3 — Observațiile care lipsesc
 
-- [ ] **3.1. Parser robots.txt conform RFC 9309, cu teste** (grupuri, combinare, fallback `*`, potrivirea cea mai lungă, Allow la egalitate, percent-encoding) și **import pentru aplicarea manuală documentată** (REQ-041).
+- [x] **3.1. Parser robots.txt conform RFC 9309, cu teste** (25 octombrie 2026: `scripts/avl203/robots.py`, `--robots-manual` pentru aplicarea manuală) (grupuri, combinare, fallback `*`, potrivirea cea mai lungă, Allow la egalitate, percent-encoding) și **import pentru aplicarea manuală documentată** (REQ-041).
   *Argument:* singura cale spre o zonă Z2 care nu iese mereu „nu poate fi stabilit”. `urllib.robotparser` din Python nu este conform RFC 9309 (nu aplică potrivirea cea mai lungă), deci parserul trebuie scris și testat.
-- [ ] **3.2. TC-08:** zone, normalizare, maparea la linia originală, tratamentul textului aflat doar în payload de hidratare.
+- [x] **3.2. TC-08:** (25 octombrie 2026: `scripts/avl203/content.py`) zone, normalizare, maparea la linia originală, tratamentul textului aflat doar în payload de hidratare.
   *Argument:* verificarea nouă din 0.4.0 și cea mai utilă pentru clienți (site-uri care afișează conținutul doar prin JavaScript); scriptul v0.2.0 nu o are.
-- [ ] **3.3. TC-05 cu parser HTML robust și TC-04 complet**, cu fiecare sitemap păstrat separat.
+- [x] **3.3. TC-05 cu parser HTML robust și TC-04 complet** (25 octombrie 2026: `signals.py`, `analyze.py`; comanda `analyze`), cu fiecare sitemap păstrat separat.
   *Argument:* extracția actuală e fragilă; punctul C cere să nu se mascheze un sitemap eșuat.
 
 ### Faza 4 — Diagnosticul și raportul
 
-- [ ] **4.1. Motorul de reguli AVL-204:** reguli declarate ca date (`rule_id`, `rule_version`), aplicate determinist, fiecare testată pe trei cazuri (se declanșează / nu se declanșează / date insuficiente). Ambiguitățile primesc varianta conservatoare și abatere declarată (AVL204-REQ-003, REQ-012).
+- [x] **4.1. Motorul de reguli AVL-204:** (25 octombrie 2026: `diagnose.py`; fiecare regulă testată pe cele trei cazuri în `tests/test_diagnose.py`) reguli declarate ca date (`rule_id`, `rule_version`), aplicate determinist, fiecare testată pe trei cazuri (se declanșează / nu se declanșează / date insuficiente). Ambiguitățile primesc varianta conservatoare și abatere declarată (AVL204-REQ-003, REQ-012).
   *Argument:* sensul grilei este reproductibilitatea și imposibilitatea ajustării după rezultat; o interpretare generată la fiecare rulare ar încălca exact asta.
-- [ ] **4.2. Recomandări și raport Markdown în română, cu export JSON.**
+- [x] **4.2. Recomandări și raport Markdown în română, cu export JSON.** (25 octombrie 2026: `recommend.py`, `report.py`)
   *Argument:* livrabilul auditului; din el se construiește PDF-ul pentru client.
-- [ ] **4.3. Matricea de conformitate:** AVL203-REQ-001…042 (013 marcat RETIRED, 41 active), AVL204-REQ-001…014 și cerințele AVL-200 aplicabile, cu status real (acoperit / parțial / manual / neaplicabil justificat / blocat).
+- [x] **4.3. Matricea de conformitate:** (25 octombrie 2026: `.claude/skills/verificare-tehnica-avl203/CONFORMANCE.md`) AVL203-REQ-001…042 (013 marcat RETIRED, 41 active), AVL204-REQ-001…014 și cerințele AVL-200 aplicabile, cu status real (acoperit / parțial / manual / neaplicabil justificat / blocat).
   *Argument:* arată onest ce e acoperit; fără ea, „implementare candidată” e o afirmație neverificabilă.
 
 ### Faza 5 — Prima rulare reală și documentele
 
-- [ ] **5.1. Rulare `TEST` pe delamatescu.ro**, cu plan mic înghețat înainte de captură.
+- [x] **5.1. Rulare `TEST` pe delamatescu.ro** (25 octombrie 2026, `AVL203-delamatescu-ro-TEST-20261025T170200Z`, în `evidence/work/avl203/`, necomisă), cu plan mic înghețat înainte de captură.
   *Argument:* confirmă pipeline-ul cap-coadă pe un server real; rezultatul e intern și nu susține concluzii publicate (REQ-026).
 - [ ] **5.2. AVL-204 0.2.0 (și eventual AVL-203 0.5.0)** cu propunerile aprobate din 1.1, prin `publica-document-metodologic`.
   *Argument:* revizia are dovezi în spate abia după ce codul și rularea TEST arată unde regulile sunt incomplete.
-- [ ] **5.3. Pagina auditului:** trimitere la AVL-204 și statutul de draft al stratului tehnic.
+- [x] **5.3. Pagina auditului:** (25 octombrie 2026: trimiteri la AVL-204 în §1 „Accesibilitatea tehnică”, §6 „Diagnostic” și în lista de surse) trimitere la AVL-204 și statutul de draft al stratului tehnic.
   *Argument:* pagina comercială promite stări de certitudine și recomandări verificabile; trebuie să trimită la grila care le definește.
-- [ ] **5.4. Actualizarea `SKILL.md`** cu comenzile noi și versiunea scriptului.
+- [x] **5.4. Actualizarea `SKILL.md`** (25 octombrie 2026) cu comenzile noi și versiunea scriptului.
 
 ---
 
@@ -180,11 +180,9 @@ Fiecare fază se încheie cu un punct de decizie al lui Alex înainte de faza ur
 
 ## 6. Ce mai e de făcut — decizii care îl așteaptă pe Alex
 
-1. **Merge în `main` și deploy** pentru documentele din Faza 0.
-2. **Faza 1 ca următor pas** (registrul A–J înainte de orice cod) — recomandat.
-3. **Limbajul implementării:** Python, extinzând skill-ul existent (recomandat), sau Node/TypeScript.
-4. **Testele:** `unittest` din biblioteca standard, în skill, fără dependențe noi (recomandat), sau un framework adăugat în proiect.
-5. **Ritmul fazelor 2–4:** una câte una, cu verificare între ele, sau Fazele 2 și 3 împreună.
+1. **Merge în `main` și deploy** pentru documentele din Faza 0 — decizie Alex 25 octombrie 2026: la finalul lucrului.
+2. ~~Faza 1 ca următor pas~~ — decis și făcut la 25 octombrie 2026.
+3. ~~Deciziile D-01…D-08~~ — decizie Alex, 25 octombrie 2026: alegerile tehnice le face Claude, cu variantele recomandate (Python, `unittest`, fazele una câte una, OP-01…OP-12, variantele conservatoare). Întrebările care schimbă metoda (P-01…P-10) se pun după rularea TEST, câte 2–3, pe cazuri concrete.
 
 Decizii normative încă deschise (în documente):
 
@@ -201,6 +199,12 @@ Decizii normative încă deschise (în documente):
 | 22 octombrie 2026 | AVL-203 0.4.0 și AVL-204 0.1.0 scrise ca surse `.md` (commit `c04a738`); trei decizii trimise lui Alex. |
 | 23 octombrie 2026 | Deciziile 1–3 primite și aplicate; conversie `.ts`, wiring AVL-204, AVL-202 1.6.0; tsc, build, registru verificate. |
 | 23 octombrie 2026 | Analiza promptului de implementare; planul de acțiuni din §4; acest document creat. Commit și push pe `avl-203-0.4.0-avl-204`. |
+| 25 octombrie 2026 | Alex: merge și deploy la final; se începe cu Faza 1. Registrul `docs/avl-203-204-registru-implementare.md`: A–J plus K–M, 12 alegeri operaționale (OP-01…12), 10 propuneri normative (P-01…10), 8 decizii (D-01…08). Surse verificate live: RFC 9309; Google robots.txt spec (actualizată 23 oct. 2026) și pagina despre codurile HTTP (4 feb. 2026). Constatări: Google exclude `429` din regula pentru `4xx` fără să descrie tratamentul la robots; scriptul v0.2.0 clasifică greșit ca `UNAVAILABLE` cazurile TC-04 neacoperite de tabel. |
+| 25 octombrie 2026 | Alex: alegerile tehnice le face Claude; întrebările normative vin după rularea TEST, pe cazuri concrete. Faza 2: CLI `scripts/avl203_cli.py` (plan init/validate/freeze, capture, verify), modulele `scripts/avl203/` v0.3.0, configurația `config/operational.v0.1.0.json` (OP-*), șablonul de plan, 45 de teste pe server local (plan, captură, TLS/DNS/timeout, redirect în buclă, cereri auxiliare, integritate). Toate trec; probă CLI cap-coadă pe fixture: VALID. |
+| 25 octombrie 2026 | Faza 3: parser RFC 9309 (grupuri, combinare, fallback `*`, potrivirea cea mai lungă, `allow` la egalitate, `*`/`$`, percent-encoding, stări de fișier §2.3.1) și import pentru aplicarea manuală; TC-05 (toate aparițiile, locația, `<base href>`, `Link` header, `X-Robots-Tag` pe scope); TC-04 după tabel, cazurile neacoperite → `UNKNOWN` + DEV-P04 (abaterea din v0.2 corectată); TC-06 cu variabilitatea referinței și pe status/headere (P-06 conservator); TC-08 pe zone, cu zonele auxiliare → `UNKNOWN` + DEV-P05 și locația în fișierul original. Comanda `analyze` (offline, director derivat nou, poarta de integritate). 103 teste trec. |
+| 25 octombrie 2026 | Faza 4: motorul de reguli (`R-VAL-01`, `R-Z1-*`…`R-Z6-*`, abateri DEV-*), recomandări P1–P3 cu `priority = null` pentru verificările suplimentare, raport `report.md` + `report.json`, verificarea automată a formulărilor excluse, matricea de conformitate. 142 de teste. P-11 nou în registru (pagină non-`2xx` → DEV-N01). |
+| 25 octombrie 2026 | 5.1: rulare TEST pe delamatescu.ro (5 pagini, 48 de requesturi, 0 erori, integritate VALID). Rezultat: Z1–Z5 „nicio problemă observată”; Z6 „nu poate fi stabilit” — fiecare răspuns HTML conține un token semnat, diferit la fiecare request, deci comparația de conținut între User-Agent-i e neevaluabilă (25 din 71 de constatări). Politica de acces și intenția de indexare declarate `NECUNOSCUT` (nedeclarate de entitate). Verificat pe dovezile brute: diferențele dintre cele două capturi de referință, locația TC-08, regulile robots. 5.4: `SKILL.md` rescris pentru v0.3.0. |
+| 25 octombrie 2026 | Alex: Z6 rămâne fără mascare și fără schimbare de regulă (conținutul „nu poate fi stabilit” e rezultatul; sursa variației: `data-context-token` injectat de Lovable); delamatescu.ro permite toate crawlerele și vrea paginile indexate (PERMIS + INDEXAT în planurile următoare). AVL-204 rămâne 0.1.0. 5.3: pagina auditului trimite la AVL-204; tsc, lint și build trec. |
 
 ---
 
