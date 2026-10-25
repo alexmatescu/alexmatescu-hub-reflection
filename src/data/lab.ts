@@ -260,6 +260,12 @@ export const labNav: LabPage[] = [
           "Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”",
         lead: "Rularea MKT-RO-AIV-2026Q4-PILOT-5, făcută din Sibiu între 15 și 18 octombrie 2026, este prima rulare completă a celor 12 expresii scurte USER-SHORT pe 8 suprafețe. A adus 69 de entități candidate, dintre care 37 noi, și ridică reuniunea de candidați la 278. Analiza pe expresii arată că doar câteva funcționează ca interogări de piață și că retragerea expresiei „consultant AI”, decisă după o singură rulare parțială, a fost o eroare de metodă: „marketing AI” și „specialist ChatGPT” au aceeași slăbiciune lingvistică și au rămas în set.",
       },
+      {
+        to: "/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti",
+        label:
+          "Când internetul încearcă să afle cine ești: ce arată a patra măsurare Tabula Rasa",
+        lead: "F3, al patrulea punct de măsurare al studiului longitudinal Tabula Rasa, a rulat aceleași 14 interogări despre Alex Matescu pe 9 suprafețe de căutare și răspuns AI, între 18 și 21 octombrie 2026. Arhiva publică are 293 de capturi, 129 de execuții și jurnalul rulării. Articolul descrie ce s-a măsurat, ce fenomene au apărut și ce arată adjudecarea celor 126 de execuții: căutarea clasică identifică persoana la 11 din 14 interogări, mai mulți asistenți o identifică fără ancoră, iar la interogarea de dezambiguizare patru sisteme declară că subiectul și un avocat cu nume apropiat sunt aceeași persoană.",
+      },
     ],
   },
   {

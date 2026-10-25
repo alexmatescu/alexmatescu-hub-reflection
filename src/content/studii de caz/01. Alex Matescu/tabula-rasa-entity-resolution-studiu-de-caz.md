@@ -1,11 +1,11 @@
 ---
 title: "Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search"
-description: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini, Perplexity, Google Search, Bing și Google AI Mode rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice."
+description: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini, Perplexity, Google Search, Bing și Google AI Mode rezolvă identitatea Alex Matescu în patru puncte de măsurare (T0/F0, F1, F2, F3), cu dovezi publicate, matricea F3 adjudecată pe nouă suprafețe, coliziuni de entitate, Anchor Dependence și limite metodologice."
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 date_published: "2026-09-04T09:06:00+03:00"
-date_modified: "2026-09-18"
-last_reviewed: "2026-09-18"
+date_modified: "2026-10-23"
+last_reviewed: "2026-10-23"
 category: "Entities & Citations"
 article_type: "Studiu de caz"
 language: "ro-RO"
@@ -26,6 +26,7 @@ keywords:
   - "Bing"
   - "Google AI Overviews"
   - "Google AI Mode"
+  - "Microsoft Copilot"
   - "Alex Matescu"
 ---
 
@@ -34,12 +35,28 @@ keywords:
 **Studiu de caz #001 — Alex Matescu**  
 **Experiment:** Tabula Rasa  
 **Status:** în desfășurare  
-**Faze analizate:** T0/F0 → F1  
+**Faze analizate:** T0/F0 → F1 → F2 → F3  
 **Obiect de studiu:** rezoluția unei entități personale în motoare de căutare și sisteme AI  
-**Ultima actualizare:** 18 septembrie 2026
+**Ultima actualizare:** 23 octombrie 2026
 
 > **Evidence-backed case study**  
 > Rezultatele experimentale prezentate în această pagină sunt susținute, acolo unde evidence set-ul permite, prin capturi originale din ferestrele Tabula Rasa. Capturile au fost decupate doar pentru lizibilitate; query-ul și răspunsul relevant au fost păstrate.
+
+## Punctele de măsurare pe scurt
+
+Tabula Rasa are, la 23 octombrie 2026, patru puncte de măsurare. Fiecare este o rulare independentă: aceleași 14 interogări, puse din nou, într-o fereastră proprie, cu propriile condiții de sesiune și cu propriul pachet de dovezi. Tabelul de mai jos se actualizează la fiecare fereastră nouă, înaintea oricărei interpretări.
+
+| | T0 (baseline) | F1 | F2 | F3 |
+|---|---|---|---|---|
+| Fereastra capturilor | 2–17 iulie 2026 | 4–6 august 2026 | 2–7 septembrie 2026 | 18–21 octombrie 2026 |
+| Interogări | 14 (Query Set-ul inițial, protocol încă în formare) | aceleași 14, cu Query Drift la Q09 (secțiunea 12) | aceleași 14 | aceleași 14; abatere de formulare la Q12 pe asistenții AI (secțiunea 28) |
+| Suprafețe capturate | ChatGPT, Claude, Gemini, Perplexity, Google Search, Google AI Mode, Bing, Copilot | aceleași 8 | aceleași 8 | aceleași 8 + Google AI Overviews |
+| Dovezi în pachet | 152 | 492 | 808 | 294 (293 de capturi + jurnalul rulării) |
+| Condiții de sesiune | consemnate parțial; rulări în zile diferite | consemnate pe suprafață (secțiunea 6) | consemnate pe fiecare captură; o parte din capturi, în conturi personale, excluse din baza curată | fereastră incognito nouă pe interogare; conversații temporare la asistenții logați; consemnate pe fiecare captură (secțiunea 28) |
+| Ce a fost adjudecat | descriere calitativă (secțiunea 5) | ChatGPT, Claude, Gemini, Perplexity (secțiunea 14) | Google Search, Bing, Google AI Mode (secțiunile 15–19) | toate cele 9 suprafețe: 126 de execuții (secțiunea 29) |
+| Pachet de dovezi | [`evidence-alex-matescu-t0-v1.0`](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v1.0) | [`evidence-alex-matescu-t0-v2.0`](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v2.0) | [`evidence-alex-matescu-t0-v3.0`](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v3.0) | [`evidence-alex-matescu-f3-v1.0`](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-f3-v1.0) (capturi) și [`evidence-alex-matescu-f3-v1.0-m1.2`](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-f3-v1.0-m1.2) (capturi + matricea de adjudecare) |
+
+Etichetele pachetelor T0, F1 și F2 sunt cele cu care au fost publicate, înainte de convenția T0 / F1 … Fn; corespondența e în [AVL-200 §7.4](/lab/metodologie/standard-dovezi-masurare-trasabilitate). Pentru fiecare fereastră nouă se completează aceleași rânduri: fereastra, interogările și abaterile, suprafețele, numărul de dovezi, condițiile de sesiune, ce s-a adjudecat și pachetul publicat.
 
 ## Rezumat
 
@@ -158,6 +175,8 @@ Pentru fiecare combinație dintre query și sistem am folosit o taxonomie care e
 
 **HIT-C** este un HIT însoțit de citarea explicită a sursei canonice (de regulă delamatescu.ro) de către sistem.
 
+**NEAFIȘAT** nu este un verdict, ci un statut: suprafața nu a afișat elementul de răspuns măsurat, de exemplu un rezumat Google AI Overviews care nu apare pentru interogare. Interogarea a rulat, dar nu există un răspuns de clasificat. Execuția rămâne în tabel, nu primește punctaj și nu intră la numitorul niciunei rate. Statutul a fost introdus la adjudecarea F3 (23 octombrie 2026) și e definit normativ în [AVL-201 §13](/lab/metodologie/tabula-rasa-f0), de la versiunea 1.4.0.
+
 O coliziune (**COLIZIUNE**) nu este un fenomen unic: în unele cazuri sistemul contopește greșit două persoane într-una singură sau alege cu încredere persoana greșită; în altele enumeră separat mai multe persoane reale cu nume apropiate, inclusiv pe cea urmărită, cu informații corecte pentru fiecare, fără să le confunde. A doua situație o marchez explicit ca **coliziune dezambiguizată corect** — nu este echivalentă cu o eroare de rezoluție, dar rămâne o coliziune pentru că mai multe entități ocupă același spațiu de răspuns și cea urmărită nu e singurul rezultat oferit.
 
 ---
@@ -209,6 +228,22 @@ Rezultatele F1 descrise în această secțiune și în secțiunile 7–14 au fos
 Pe 17 septembrie 2026 am publicat acest pachet: 492 de capturi/dovezi, acoperind cele patru sisteme adjudecate integral în matricea din secțiunea 14 (ChatGPT, Claude, Gemini, Perplexity), precum și Google Search, Google AI Mode, Bing și Microsoft Copilot — sistemele lăsate atunci NEADJUDICAT (adjudecate ulterior, pentru Google/Bing/Google AI Mode, în secțiunile 15–19) — însoțite de un Evidence Index, un README și un manifest de checksum-uri SHA-256 pentru fiecare fișier. Pachetul este disponibil ca [GitHub Release — Alex Matescu T0 Evidence Archive v2.0](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v2.0) (arhivă v2.0 / metadate v2.0).
 
 La fel ca la T0, formalizarea nu schimbă niciun verdict deja descris pentru F1 — schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Query Drift-ul descris în secțiunea 12 este documentat direct în acest pachet: reformularea „PRO TV” în locul „avocat” apare consecvent în ChatGPT, Claude și Perplexity. Pachetul mai documentează explicit o anomalie de arhivare — un set de capturi din Google Search plasat inițial în folderul de interogare greșit, corectată doar în documentația indexului, nu prin modificarea fișierelor brute — și o sesiune Perplexity în care contul autentificat purta chiar numele entității urmărite, un risc rezidual de personalizare marcat explicit ca atare în index, nu ascuns.
+
+### Condițiile de sesiune în F1 (adăugat la 23 octombrie 2026)
+
+La publicarea inițială, condițiile de sesiune din F1 nu erau descrise în studiu. Le adaug din indexul pachetului v2.0, fără să schimb verdictele din secțiunile 7–14:
+
+| Suprafață | Data capturilor | Autentificare | Model consemnat |
+|---|---|---|---|
+| ChatGPT | 4 august 2026 | nelogat | neafișat |
+| Claude | 5 august 2026 | nelogat | Claude Opus 4.8 (reasoning: High) |
+| Gemini | 6 august 2026 | logat | Gemini Flash |
+| Perplexity | 6 august 2026 | logat, cu un cont care purta numele entității | neafișat |
+| Copilot | 6 august 2026 | neconsemnată | Copilot Smart |
+| Google Search, Bing | 4 august 2026 | nelogat | nu se aplică |
+| Google AI Mode | 5 august 2026 | nelogat | nu se aplică |
+
+Indexul v2.0 nu consemnează separat fereastra privată sau conversația temporară. Sesiunea Perplexity e marcată în index ca suspectă de personalizare.
 
 ---
 
@@ -423,7 +458,7 @@ Acest tabel nu spune că un model este „mai bun” decât altul, ci descrie nu
 
 Secțiunea anterioară a acestui studiu lăsa patru sisteme drept **NEADJUDICAT**: Google Search, Bing, Google AI Mode și Microsoft Copilot. Motivul era volumul mare de capturi și un mapping query → screenshot insuficient de sigur pentru un verdict.
 
-Pe 16 septembrie 2026 am publicat un al treilea pachet de dovezi, distinct de T0 v1.0 și de F1 v2.0: 808 capturi/dovezi, cu condiții experimentale marcate explicit pe fiecare folder de captură — model, stare de autentificare, fereastră incognito sau normală — acoperind aceleași 14 interogări pe ChatGPT, Claude, Copilot, Gemini, Perplexity, Google AI Mode, Bing și Google Search. Pachetul este disponibil ca [GitHub Release — Alex Matescu T0 Evidence Archive v3.0](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v3.0) (arhivă v3.0 / metadate v3.0). La momentul publicării acestui studiu, eliberarea este încă în starea `draft` pe GitHub — devine public accesibilă abia când o marchez explicit ca atare, separat de actualizarea studiului.
+Pe 16 septembrie 2026 am publicat un al treilea pachet de dovezi, distinct de T0 v1.0 și de F1 v2.0: 808 capturi/dovezi, cu condiții experimentale marcate explicit pe fiecare folder de captură — model, stare de autentificare, fereastră incognito sau normală — acoperind aceleași 14 interogări pe ChatGPT, Claude, Copilot, Gemini, Perplexity, Google AI Mode, Bing și Google Search. Pachetul este disponibil ca [GitHub Release — Alex Matescu T0 Evidence Archive v3.0](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v3.0) (arhivă v3.0 / metadate v3.0). La momentul publicării acestui studiu, eliberarea este încă în starea `draft` pe GitHub — devine public accesibilă abia când o marchez explicit ca atare, separat de actualizarea studiului. *Clarificare (23 octombrie 2026): pachetul v3.0 a fost publicat pe GitHub la 18 septembrie 2026 și e public accesibil. Fraza de mai sus descrie starea de la publicarea acestei secțiuni și rămâne neschimbată.*
 
 Capturile relevante pentru Google Search, Bing și Google AI Mode au fost făcute în perioada 2–7 septembrie 2026, la peste o lună după fereastra F1 din august. Acest decalaj temporal este documentat explicit, nu ascuns: rezultatele de mai jos nu trebuie citite ca fiind din aceeași fereastră de măsurare cu ChatGPT/Claude/Gemini/Perplexity din secțiunile 7–14, ci ca o adjudecare separată, pe un eșantion mai mare și cu condiții experimentale mai bine documentate, a acelorași sisteme lăsate deschise în secțiunea anterioară.
 
@@ -723,6 +758,153 @@ Pentru moment, aceasta rămâne o ipoteză.
 
 ---
 
+# 28. F3 — a patra măsurare, prima adjudecată pe toate suprafețele
+
+F3 a rulat între 18 și 21 octombrie 2026, cu aceleași 14 interogări, pe nouă suprafețe: Google Search, Bing, Google AI Mode, Google AI Overviews, ChatGPT, Claude, Microsoft Copilot, Gemini și Perplexity. Ce s-a rulat, în ce condiții și ce incidente au apărut descriu separat, în articolul [Când internetul încearcă să afle cine ești: ce arată a patra măsurare Tabula Rasa](/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti). Aici rămân rezultatele.
+
+**Protocolul.** Fiecare interogare a pornit într-o fereastră incognito nouă, cu cookie-urile neesențiale refuzate. Google Search, Bing, Google AI Mode, Google AI Overviews și ChatGPT au rulat nelogat. Claude (Claude Sonnet 5.5, Medium), Copilot (Copilot Auto) și Gemini (Gemini Automat) au rulat logat în contul Ichnometria, câte o conversație temporară nouă pe interogare. Perplexity a rulat nelogat la Q01–Q04, Q07 și Q08 și logat în rest, pentru că platforma a cerut autentificarea. Starea de autentificare și modelul afișat sunt consemnate pe fiecare captură.
+
+**Pachetul de dovezi.** Capturile sunt publicate în [`evidence-alex-matescu-f3-v1.0`](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-f3-v1.0). Matricea de adjudecare și regulile ei sunt publicate în versiunea de metadate v1.2 a aceluiași pachet, [`evidence-alex-matescu-f3-v1.0-m1.2`](https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-f3-v1.0-m1.2), cu aceeași arhivă (același SHA-256). Fiecare verdict de mai jos are în matrice identificatorul execuției și Evidence ID-urile capturilor pe care se sprijină.
+
+**Unitatea de analiză.** Cele 293 de capturi corespund la 129 de execuții. Baza curată are 126: 14 interogări pe 9 suprafețe. Celelalte trei sunt încercări afectate de incidente de sesiune (Copilot Q12, primele două încercări Gemini Q01), păstrate în pachet și excluse din analiză.
+
+**Abateri.**
+
+- La Q12, pe ChatGPT, Claude, Copilot, Gemini și Perplexity, interogarea introdusă a fost „http://delamatescu.ro/”, nu „delamatescu.ro”. Le păstrez în analiză, cu abaterea notată, ca la Query Drift-ul din F1.
+- Google a propus forma „Mateescu” la aproape toate interogările. În sesiunea Google Search, operatorul a selectat manual forma originală, așa că verdictele Google Search din F3 se dau pe rezultatele pentru „Matescu”. În F2, verdictele s-au dat pe rezultatele autocorectate (secțiunea 17). Diferența e de protocol, nu doar de comportament al motorului.
+- Bing a refăcut căutarea cu prefixul „+” la Q07 și Q14, după selectarea formei originale.
+
+**Regulile.** Adjudecarea folosește taxonomia din secțiunea 4. Regulile de departajare au fost fixate înainte de citirea capturilor; trei reguli au apărut pe parcurs și au fost aplicate tuturor execuțiilor. Toate sunt publicate în pachet. Două dintre ele contează pentru citirea matricei:
+
+- o identificare corectă cu un atribut biografic greșit (proiecte contopite, o carte în lucru dată drept publicată) e **HIT PARȚIAL**, nu CONFABULARE;
+- o interogare pe o variantă de nume care aparține altor persoane („Alexandru Matescu”, „Alex Mateescu”), cu rezultate doar despre acele persoane, e **NULL**, nu COLIZIUNE.
+
+Faptele biografice neobișnuite din răspunsuri au fost verificate cu mine înainte de verdict, ca să nu repet eroarea „Taste the Corn” din secțiunea 15.
+
+# 29. Matricea F3
+
+| Sistem | HIT | HIT-C | HIT parțial | COLIZIUNE (dezambiguizată corect) | COLIZIUNE | NULL | NEAFIȘAT |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Google Search | 11 | 0 | 1 | 0 | 1 | 1 | 0 |
+| Bing | 11 | 0 | 1 | 0 | 1 | 1 | 0 |
+| Google AI Mode | 0 | 3 | 1 | 2 | 5 | 3 | 0 |
+| Google AI Overviews | 0 | 2 | 0 | 0 | 0 | 0 | 12 |
+| ChatGPT | 2 | 10 | 0 | 0 | 0 | 2 | 0 |
+| Claude | 0 | 2 | 0 | 0 | 0 | 12 | 0 |
+| Copilot | 0 | 8 | 2 | 0 | 1 | 3 | 0 |
+| Gemini | 0 | 10 | 1 | 1 | 1 | 1 | 0 |
+| Perplexity | 0 | 7 | 5 | 0 | 1 | 1 | 0 |
+
+F3 nu are niciun verdict CONFABULARE și niciun NEDETERMINAT. Google AI Overviews a afișat un rezumat doar la Q12 și Q13; celelalte 12 execuții sunt NEAFIȘAT și nu intră în nicio rată. La Google Search și Bing, HIT-C nu se aplică: prezența delamatescu.ro în rezultate este chiar rezultatul căutării.
+
+Ca în secțiunea 14, tabelul descrie o singură entitate, un singur Query Set și o singură fereastră. Nu este un clasament al platformelor.
+
+### Rezultate pe interogare
+
+| Query | Google Search | Bing | AI Mode | AI Overviews | ChatGPT | Claude | Copilot | Gemini | Perplexity |
+|---|---|---|---|---|---|---|---|---|---|
+| Q01 Cine este Alex Matescu? | HIT | HIT | HIT-C | NEAFIȘAT | HIT-C | NULL | HIT-C | HIT-C | HIT-C |
+| Q02 Ce știi despre Alex Matescu? | HIT | HIT | COLIZIUNE | NEAFIȘAT | HIT-C | NULL | HIT-C | COLIZIUNE (dez.) | HIT-C |
+| Q03 Cu ce se ocupă Alex Matescu? | HIT parțial | HIT | COLIZIUNE (dez.) | NEAFIȘAT | HIT-C | NULL | HIT-C | HIT-C | HIT parțial |
+| Q04 Alex Matescu Sibiu | HIT | HIT | COLIZIUNE | NEAFIȘAT | HIT-C | NULL | HIT-C | HIT-C | HIT parțial |
+| Q05 Cine este Alex Matescu din Sibiu? | HIT | HIT | COLIZIUNE (dez.) | NEAFIȘAT | HIT-C | NULL | HIT-C | HIT-C | HIT-C |
+| Q06 Alex Matescu | HIT | HIT | COLIZIUNE | NEAFIȘAT | HIT-C | NULL | HIT-C | HIT-C | HIT-C |
+| Q07 Alexandru Matescu | HIT | HIT parțial | NULL | NEAFIȘAT | HIT-C | NULL | NULL | HIT-C | HIT parțial |
+| Q08 Alex Mateescu | NULL | NULL | NULL | NEAFIȘAT | NULL | NULL | NULL | NULL | NULL |
+| Q09 Alex Matescu vs Alexandru Mateescu avocat | COLIZIUNE | COLIZIUNE | COLIZIUNE | NEAFIȘAT | HIT-C | NULL | COLIZIUNE | COLIZIUNE | COLIZIUNE |
+| Q10 Alex Matescu AUMOVIO | HIT | HIT | NULL | NEAFIȘAT | HIT | NULL | HIT parțial | HIT-C | HIT parțial |
+| Q11 Alex Matescu inginer / engineer | HIT | HIT | COLIZIUNE | NEAFIȘAT | HIT-C | NULL | NULL | HIT-C | HIT-C |
+| Q12 delamatescu.ro | HIT | HIT | HIT-C | HIT-C | NULL | HIT-C | HIT-C | HIT parțial | HIT-C |
+| Q13 Cine este în spatele delamatescu.ro? | HIT | HIT | HIT-C | HIT-C | HIT-C | HIT-C | HIT-C | HIT-C | HIT-C |
+| Q14 Alex Matescu LinkedIn | HIT | HIT | HIT parțial | NEAFIȘAT | HIT | NULL | HIT parțial | HIT-C | HIT parțial |
+
+Câteva verdicte au nevoie de context:
+
+- **ChatGPT Q12 — NULL.** Interogarea introdusă a fost „http://delamatescu.ro/”. ChatGPT a spus că nu a putut verifica conținutul sau proprietarul domeniului.
+- **Gemini Q12 și Perplexity Q03 — HIT parțial.** Gemini prezintă afacerea de familie din 2021 drept „Taste the Corn”; sunt proiecte diferite. Perplexity spune că CRANDIT a fost publicată în 2025; cartea e în lucru.
+- **Google AI Mode Q14 — HIT parțial.** Informațiile sunt corecte, dar AI Mode prezintă inginerul și antreprenorul-scriitor ca două persoane diferite.
+- **Google Search Q03 — HIT parțial.** Pe poziția 1 e un articol de pe blogul delamatescu.ro, fără pagina de identitate; restul paginii nu are legătură cu subiectul.
+- **Claude.** La 5 dintre cele 12 NULL (Q04, Q06, Q07, Q08, Q11), Claude n-a căutat pe web: a tratat numele ca pe o autoprezentare a utilizatorului sau ca pe o cerere de formatare.
+
+# 30. Ce se poate compara cu F1 și F2
+
+Comparația e corectă doar acolo unde condițiile sunt apropiate. Pentru fiecare suprafață, separ ce s-a schimbat în rezultat de ce s-a schimbat în protocol.
+
+**ChatGPT (F1 → F3), cea mai comparabilă pereche: nelogat în ambele ferestre.** F1: 13 HIT și o coliziune. F3: 12 identificări (2 HIT și 10 HIT-C) și 2 NULL. Cele două NULL sunt Q08, unde „Alex Mateescu” aparține altor persoane, și Q12, cu abaterea de formulare. Coliziunea de la Q09 din F1 nu mai apare: în F3, ChatGPT separă corect subiectul de avocat. Numărul de identificări e practic stabil. HIT-C nu exista ca categorie separată în matricea F1, deci creșterea citării sursei canonice nu poate fi măsurată față de F1.
+
+**Gemini (F1 → F3): logat în ambele ferestre, cu alt model și conversație temporară în F3.** F1: 5 HIT, 6 coliziuni, 2 confabulări, 1 NULL. F3: 10 HIT-C, 1 HIT parțial, 1 coliziune dezambiguizată corect, 1 coliziune, 1 NULL. E cea mai mare schimbare din studiu și nu are nicio confabulare. Nu o pot atribui unei cauze anume: s-au schimbat în același timp modelul (Gemini Flash → Gemini Automat), modul de conversație și sursele publice despre entitate.
+
+**Perplexity (F1 → F3): logat cu un cont pe numele entității în F1, stare mixtă în F3.** F1: 12 HIT, 2 coliziuni. F3: 12 identificări, dintre care 7 HIT-C și 5 HIT parțial, o coliziune și un NULL. Numărul de identificări e același, dar mai multe sunt parțiale: Perplexity găsește persoana, fără să confirme ancora din interogare (Sibiu la Q04, AUMOVIO la Q10, profilul LinkedIn la Q14).
+
+**Claude (F1 → F3): necomparabil direct.** F1 a rulat nelogat, cu Claude Opus 4.8; F3 a rulat logat, cu Claude Sonnet 5.5, în chat temporar. F3: 2 HIT-C (doar pe interogările cu domeniul) și 12 NULL, față de 5 HIT, 1 HIT parțial, 2 coliziuni și 6 NULL în F1. Notez rezultatul, dar nu îl pot citi ca regres al entității: modelul și configurația s-au schimbat.
+
+**Google Search (F2 → F3): protocol diferit.** F2: 4 HIT, 1 HIT-C, 2 HIT parțial, 4 coliziuni, 2 NEDETERMINAT, 1 fără dovadă. F3: 11 HIT, 1 HIT parțial, 1 coliziune, 1 NULL. În F2, coliziunile de la Q01 și Q10 au venit explicit din autocorectarea „Matescu” → „Mateescu”, iar la Q04 și Q14 rezultatele erau dominate de omonime. În F3, operatorul a reselectat forma originală, iar la toate patru rezultatele pentru „Matescu” au delamatescu.ro sau profilul LinkedIn pe primele poziții. Schimbarea arată că rezultatele pentru numele corect sunt acum bune; nu arată că Google a renunțat la autocorectare. În sesiunea AI Overviews, unde forma originală nu a fost reselectată, Google a afișat încă rezultate pentru „Mateescu” la 11 din 14 interogări.
+
+**Bing (F2 → F3).** F2: 5 HIT, 4 HIT parțial, 4 NULL, 1 NEDETERMINAT. F3: 11 HIT, 1 HIT parțial, 1 coliziune, 1 NULL. Cea mai clară schimbare e la Q13 („Cine este în spatele delamatescu.ro?”): NULL în F2, iar în F3 Bing afișează o casetă de răspuns cu titlul „Alex Matescu”, extrasă din delamatescu.ro. Q02, Q03, Q06 și Q11 trec de la HIT parțial la HIT. Q09 nu se compară: rezultatele sunt de același tip în ambele ferestre (doar avocatul), dar F2 le-a clasificat NULL, iar regulile F3 le clasifică COLIZIUNE.
+
+![Bing F3 Cine este în spatele delamatescu.ro](./images/fig_f3_bing_caseta_delamatescu.jpg)
+
+*Fig. 9 — Bing, F3, `Cine este în spatele delamatescu.ro?` (AM-F3-E158). Bing afișează o casetă de răspuns cu titlul „Alex Matescu”, extrasă din delamatescu.ro, și site-ul pe prima poziție organică. În F2, aceeași interogare era NULL (Fig. 7). Verdict: HIT.*
+
+**Google AI Mode (F2 → F3): nelogat în ambele ferestre.** F2: 7 identificări (6 HIT, 1 HIT-C), 3 coliziuni dezambiguizate corect, 4 coliziuni. F3: 3 HIT-C, 1 HIT parțial, 2 coliziuni dezambiguizate corect, 5 coliziuni, 3 NULL. E singura suprafață cu un recul clar. Q04 și Q05 (Sibiu), Q10 (AUMOVIO) și Q11 (inginer) erau HIT în F2; în F3 devin coliziuni sau NULL. La Q10, AI Mode afirmă că „nu există nicio legătură publică” între Alex Matescu și AUMOVIO. Observ reculul, nu îl pot explica.
+
+![Google AI Mode F3 Alex Matescu AUMOVIO](./images/fig_f3_ai_mode_aumovio_null.jpg)
+
+*Fig. 10 — Google AI Mode, F3, `Alex Matescu AUMOVIO` (AM-F3-E182). Sistemul răspunde că nu există „nicio legătură publică sau oficială cunoscută” între Alex Matescu și AUMOVIO și cere detalii. În F2, aceeași interogare era HIT. Verdict: NULL.*
+
+**Copilot și Google AI Overviews: primul moment de măsurare.** Copilot a fost NEADJUDICAT în toate ferestrele anterioare. În F3: 8 HIT-C, 2 HIT parțial, 1 coliziune, 3 NULL. Rezultatul lui Copilot nu se compară cu nimic; e punctul de pornire pentru ferestrele următoare. Google AI Overviews: 2 HIT-C, 12 NEAFIȘAT.
+
+# 31. Ce arată F3 în plus
+
+**Anchor Dependence a scăzut la majoritatea asistenților.** La interogările generice (Q01–Q03), ChatGPT și Copilot identifică persoana la toate trei, Perplexity la toate trei (Q03 parțial), Gemini la două, Bing la toate, Google Search la toate (Q03 parțial). În F1, Claude și Gemini aveau nevoie de ancoră. În F3, dependența persistă la Claude, care identifică persoana doar pe interogările cu domeniul, și la Google AI Mode.
+
+**Ancora AUMOVIO a slăbit în unele sisteme.** La Q10, AI Mode răspunde NULL, iar Copilot și Perplexity spun explicit că nu pot confirma legătura cu AUMOVIO. Gemini o deduce din profil, fără sursă. Același sistem identifică însă persoana fără ancoră. O interpretare posibilă: legătura nume → site e mai bine coroborată public decât legătura nume → angajator. E o ipoteză, nu o concluzie.
+
+**Interogarea de dezambiguizare produce o coliziune nouă: fuziunea declarată.** La Q09, Copilot, Gemini, Google AI Mode și Perplexity afirmă că „Alex Matescu” e o formă scurtă sau o greșeală de scriere a numelui avocatului Alexandru Mateescu. Nu e o confuzie implicită, ci o afirmație explicită despre identitate. Doar ChatGPT separă corect cele două persoane.
+
+![Google AI Mode F3 Alex Matescu vs Alexandru Mateescu avocat](./images/fig_f3_ai_mode_fuziune_avocat.jpg)
+
+*Fig. 11 — Google AI Mode, F3, `Alex Matescu vs Alexandru Mateescu avocat` (AM-F3-E180). Sistemul afirmă că cele două nume „se referă la aceeași persoană” și descrie doar avocatul. Copilot, Gemini și Perplexity fac aceeași afirmație la această interogare. Verdict: COLIZIUNE.*
+
+**Varianta „Alex Mateescu” nu mai e contopită cu subiectul.** La Q08, toate cele opt suprafețe care au răspuns dau NULL: descriu alte persoane reale cu acest nume, fără să le amestece cu subiectul. Acesta e rezultatul așteptat pentru un nume care aparține altor oameni.
+
+**Eroarea vizuală persistă.** Perplexity (Q06, Q11) și ChatGPT (Q09) afișează fotografii ale altor persoane lângă un text corect. La ChatGPT Q09, fotografia e pusă chiar lângă numele „Alex Matescu”. Am confirmat că niciuna dintre aceste fotografii nu mă reprezintă. Textul și imaginea rămân adjudecate separat, ca în secțiunea 11.
+
+![Perplexity F3 Alex Matescu imagini](./images/fig_f3_perplexity_imagini_alte_persoane.jpg)
+
+*Fig. 12 — Perplexity, F3, `Alex Matescu` (AM-F3-E261). Textul identifică persoana corect, iar sursa principală e delamatescu.ro. Niciuna dintre fotografiile afișate nu îl reprezintă pe subiect (confirmat de el). Verdict pe text: HIT-C; asocierea vizuală e greșită.*
+
+**Limba răspunsului.** Interogările sunt în română, dar asistenții au răspuns în engleză la o parte dintre ele: Claude la 7 din 14, Perplexity la 6, ChatGPT la 5 (și parțial la încă una), Gemini la 3 (și parțial la încă una), Copilot la 2. Google Search, Bing și Google AI Mode au răspuns în română la toate. Limba nu schimbă verdictul de identificare.
+
+**Interogările pe domeniu sunt cele mai stabile.** Q13 e identificată pe toate cele nouă suprafețe, iar Q12 pe opt (cu ChatGPT ca excepție, la abaterea de formulare). Tot aici a apărut singurul conținut Google AI Overviews din F3.
+
+# 32. Concluzie provizorie după F3
+
+Concluzia din secțiunea 27 descria F1. După F3, datele arată altceva:
+
+- căutarea clasică rezolvă acum persoana la 11 din 14 interogări, atât pe Google (cu forma originală a numelui reselectată), cât și pe Bing;
+- ChatGPT rămâne stabil, iar Gemini trece de la cea mai instabilă suprafață din F1 la una dintre cele mai consecvente;
+- Google AI Mode are un recul față de F2, iar Claude, într-o configurație nouă, aproape nu mai identifică persoana;
+- coliziunile s-au mutat: nu mai apar la variantele de nume, ci la interogarea de dezambiguizare, unde patru sisteme declară că două persoane diferite sunt una singură.
+
+Succesiunea propusă în secțiunea 24 (absent → recuperabil → dependent de ancoră → dezambiguizat → stabil) rămâne o ipoteză. F3 o susține parțial: mai multe sisteme identifică persoana fără ancoră. O și complică: interogarea de dezambiguizare produce acum coliziuni mai puternice, iar o ancoră profesională (AUMOVIO) funcționează mai slab decât numele simplu. Nu pot atribui nicio schimbare unei intervenții anume (secțiunea 20).
+
+**Experimentul continuă.**
+
+# 33. Ce urmărim în F4
+
+Secțiunea 26 a stabilit obiectivele după F1. F3 adaugă cinci obiective noi pentru următoarea fereastră:
+
+- **Fuziunea declarată la Q09.** Dacă Copilot, Gemini, Google AI Mode și Perplexity afirmă în continuare că „Alex Matescu” și avocatul Alexandru Mateescu sunt aceeași persoană.
+- **Ancora AUMOVIO.** Dacă sistemele care au identificat persoana fără ancoră ajung să confirme și legătura cu AUMOVIO (Q10).
+- **Reculul Google AI Mode.** Dacă AI Mode revine la identificările din F2 la Q04, Q05, Q10 și Q11 sau dacă reculul din F3 se menține.
+- **Copilot față de punctul de pornire.** Prima comparație reală pentru Copilot, față de rezultatele din F3 (secțiunea 30).
+- **Q12 cu formularea canonică.** Rularea lui „delamatescu.ro” exact cum e în Query Set, pe toate suprafețele, ca rezultatul ChatGPT de la Q12 să devină comparabil.
+
+Pentru comparabilitate, F4 păstrează condițiile din F3 sau declară explicit fiecare diferență: aceeași stare de autentificare pe fiecare suprafață, o singură regulă pentru reformularea Google și Bing (reselectarea formei originale în toate sesiunile) și aceeași regulă pentru Perplexity pe toate interogările.
+
+---
+
 ## Transparență metodologică
 
 Acest studiu folosește identitatea autorului AI Visibility Lab drept subiect experimental. Autorul controlează delamatescu.ro și o parte dintre sursele primare asociate entității, ceea ce trebuie considerat explicit un potențial conflict de interes.
@@ -739,4 +921,18 @@ Microsoft Copilot rămâne NEADJUDICAT (secțiunea 15) — nu din lipsă de date
 
 Corelația temporală dintre intervențiile digitale și schimbarea răspunsurilor nu este prezentată drept cauzalitate.
 
+F3 (adăugat la 23 octombrie 2026). Copilot, NEADJUDICAT în ferestrele anterioare, este adjudecat în F3 ca prim moment de măsurare (secțiunea 30), fără comparație cu ferestrele anterioare. Condițiile de sesiune diferă între ferestre și între suprafețe (secțiunile 6 și 28); comparațiile din secțiunea 30 le declară pentru fiecare suprafață.
+
+Adjudecarea F3 a fost pregătită cu asistența unui model AI (Claude), pe capturile din pachet, după reguli scrise înainte de citirea capturilor și publicate împreună cu matricea. Claude este și una dintre suprafețele măsurate; regulile au fost aplicate la fel pe toate suprafețele. Faptele biografice neobișnuite și verdictele de graniță le-am confirmat eu, înainte de publicare. O primă versiune a matricei (v1.1, nepublicată) afirma, neconfirmat, că o fotografie afișată de ChatGPT mă reprezintă; după verificare, am corectat-o în v1.2, fără să se schimbe vreun verdict.
+
 **Status: studiu longitudinal în desfășurare.**
+
+## Istoricul versiunilor
+
+| Versiune | Dată | Modificări |
+|---|---|---|
+| 1.0 | 4 septembrie 2026 | Publicare inițială: T0/F0 și F1, cu matricea F1 pentru ChatGPT, Claude, Gemini și Perplexity. |
+| 1.1 | 14 septembrie 2026 | Pachetul de dovezi T0 publicat și descris în secțiunea 5. |
+| 1.2 | 17 septembrie 2026 | Pachetul de dovezi F1 (arhiva v2.0) publicat și descris în secțiunea 6. |
+| 1.3 | 18 septembrie 2026 | Pachetul v3.0 și adjudecarea Google Search, Bing și Google AI Mode (secțiunile 15–19), inclusiv eroarea de verificare „Taste the Corn”. |
+| 1.4 | 23 octombrie 2026 | Sumarul punctelor de măsurare la început; statutul NEAFIȘAT în taxonomie (secțiunea 4); condițiile de sesiune din F1 (secțiunea 6); F3 adjudecat pe 9 suprafețe (secțiunile 28–32), cu figurile 9–12; obiectivele pentru F4 (secțiunea 33); Copilot măsurat prima dată; transparența metodologică completată pentru F3; clarificare datată în secțiunea 15 despre publicarea pachetului v3.0. Secțiunile 1–27 nu au fost rescrise. |

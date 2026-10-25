@@ -35,6 +35,7 @@ import {
   webpConversionEnabled,
   webpManifestFileName,
   webpPaths,
+  analysisArtifacts,
 } from "./lib/common.mjs";
 
 async function main() {
@@ -132,6 +133,16 @@ async function main() {
       process.exit(1);
     }
     entries.push({ name, path: p });
+  }
+  for (const a of analysisArtifacts(config)) {
+    const p = path.join(outputDir, a.name);
+    if (!(await pathExists(p)) || !(await isFrozen(p))) {
+      console.error(
+        `FAIL: ${a.name} is missing or not frozen in ${outputDir}. Run freeze_artifacts.mjs (STEP 9) first.`,
+      );
+      process.exit(1);
+    }
+    entries.push({ name: a.name, path: p });
   }
 
   const lines = [];

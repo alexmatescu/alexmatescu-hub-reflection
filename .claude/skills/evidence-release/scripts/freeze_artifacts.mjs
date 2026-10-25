@@ -30,6 +30,8 @@ import {
   artifactFileName,
   webpConversionEnabled,
   stageWebpManifest,
+  analysisArtifacts,
+  stageAnalysisArtifacts,
 } from "./lib/common.mjs";
 
 async function main() {
@@ -78,6 +80,21 @@ async function main() {
       console.error(`FAIL: ${err.message}`);
       process.exit(1);
     }
+  }
+
+  // Analysis artifacts (config.analysis_artifacts) are copied in and frozen
+  // with the index, so they enter the checksum manifest of this version.
+  try {
+    if (unfreeze) {
+      for (const a of analysisArtifacts(config)) {
+        targets.push(path.join(outputDir, a.name));
+      }
+    } else {
+      targets.push(...(await stageAnalysisArtifacts(config, outputDir)));
+    }
+  } catch (err) {
+    console.error(`FAIL: ${err.message}`);
+    process.exit(1);
   }
 
   for (const t of targets) {

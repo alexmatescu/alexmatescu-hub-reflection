@@ -16,9 +16,19 @@ dist-ssr
 # evidence-release working directories (raw archives + extracted screenshots
 # + generated CSV/README staging — deliverables ship as GitHub Release
 # assets, not as tracked repository files; see .claude/skills/evidence-release)
-evidence/incoming
-evidence/work
+evidence/incoming/**
+evidence/work/**
 evidence/output
+
+# Exceptions, tracked for history (small text files): the package configs and
+# the published adjudication files (matrix + rules, one file per metadata
+# version, byte-identical to the release assets). Working notes in the
+# adjudication folders stay untracked.
+!evidence/incoming/**/
+!evidence/incoming/**/*.evidence-package.yaml
+!evidence/work/**/
+!evidence/work/*/*/adjudication/*_adjudication_v*.csv
+!evidence/work/*/*/adjudication/*_adjudication-rules_v*.md
 
 # safety net: a baseline/evidence zip should never sit under public/ (it gets
 # swept into .output and into git on every build/push) — raw archives belong

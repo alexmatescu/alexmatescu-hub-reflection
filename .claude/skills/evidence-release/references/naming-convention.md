@@ -50,6 +50,22 @@ Title:
 <Entity Name> — <Measurement Point> Evidence Archive v<archive-version>
 ```
 
+**Later metadata version of an already-published archive.** The tag above
+identifies the archive version only. When the release for that archive
+version is already published (immutable, `release-policy.md`) and a new
+metadata version must ship — for example one that adds `analysis_artifacts`
+— the new release gets its own tag and title, set explicitly in config
+(`github.release_tag`, `github.release_title`):
+
+```
+evidence-<entity-slug>-<measurement-point>-v<archive-version>-m<metadata-version>
+<Entity Name> — <Measurement Point> Evidence Archive v<archive-version> (metadata v<metadata-version>)
+```
+
+e.g. `evidence-alex-matescu-f3-v1.0-m1.1`. The archive asset keeps its
+archive-version name and identical bytes; the published release for the
+same archive version is never edited.
+
 ## 3. Evidence ID
 
 ```

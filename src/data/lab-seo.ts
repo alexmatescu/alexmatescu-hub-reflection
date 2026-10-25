@@ -7,6 +7,7 @@ import { deLaMentionareLaTranzactieAgenticVisibilityMeta } from "@/data/lab-cont
 import { socialMediaStratInformationalPentruAiMeta } from "@/data/lab-content/19. social-media-devine-strat-informational-pentru-ai";
 import { marketDiscoveryPilot4BolognaMeta } from "@/data/lab-content/20. market-discovery-pilot-4-bologna-rulare-invalida";
 import { marketDiscoveryPilot5SibiuMeta } from "@/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte";
+import { tabulaRasaF3Meta } from "@/data/lab-content/22. tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti";
 import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -150,6 +151,7 @@ export const labArticleMeta: LabArticleMeta[] = [
   socialMediaStratInformationalPentruAiMeta,
   marketDiscoveryPilot4BolognaMeta,
   marketDiscoveryPilot5SibiuMeta,
+  tabulaRasaF3Meta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>

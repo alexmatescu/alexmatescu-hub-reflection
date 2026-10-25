@@ -1,0 +1,35 @@
+# Evidence package config — Alex Matescu / Tabula Rasa / T0 (arhiva a doua, v2.0)
+# Arhiva noua contine mai multe rezultate din motoarele de cautare standard
+# plus Google AI Mode; e o arhiva distincta de alex-matescu_t0_evidence-archive_v1.0.zip
+# (nu amestecata cu ea) — vezi conversatia pentru decizia explicita a userului.
+# Vezi .claude/skills/evidence-release/references/config-schema.md pentru schema completa.
+
+project: AI Visibility Lab
+study_name: Tabula Rasa
+entity_name: Alex Matescu
+entity_slug: alex-matescu
+entity_code: AM
+
+measurement_point: T0
+
+timezone: Europe/Bucharest
+
+archive:
+  path: ./evidence/incoming/Alex-Matescu_T0_2.0/Alex-Matescu_T0_2.0.zip
+  version: "2.0"
+
+metadata_version: "2.0"
+
+query_set:
+  path: ./evidence/incoming/Alex-Matescu_T0_1.0/alex-matescu-t0-query-set.csv
+  required: false
+
+extra_columns:
+  - model
+  - logged_in
+
+github:
+  repository: alexmatescu/alexmatescu-hub-reflection
+  draft: true
+
+notes: "A doua arhiva de dovezi pentru T0/Tabula Rasa: aceleasi 14 query-uri, cu mai multe rezultate per motor de cautare standard (Google, Bing) plus Google AI Mode, capturate in august 2026. Arhiva ramane distincta de alex-matescu_t0_evidence-archive_v1.0.zip (nicio amestecare de fisiere brute); Evidence ID-urile continua secventa fara coliziune cu v1.0 (AM-T0-E153+)."

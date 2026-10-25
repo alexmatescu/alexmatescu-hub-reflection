@@ -148,7 +148,7 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -213,7 +213,7 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/ce-este-entitate-ai-studiu-de-caz</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -280,6 +280,12 @@
   <url>
     <loc>https://delamatescu.ro/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte</loc>
     <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

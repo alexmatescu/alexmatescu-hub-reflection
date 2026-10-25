@@ -8,12 +8,12 @@ export const avl201TabulaRasaF0Html = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-201</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.3.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.4.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>13 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>23 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>, <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a></td></tr>
         <tr><th scope="row">Dependențe informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105</a></td></tr>
@@ -353,6 +353,7 @@ export const avl201TabulaRasaF0Html = `
           <tr><td>FAPT ÎNVECHIT</td><td>Răspunsul folosește o informație care a fost corectă, dar nu mai este actuală.</td><td>Se documentează sursa actuală.</td></tr>
           <tr><td>NULL</td><td>Entitatea lipsește sau sistemul declară că nu are informații suficiente.</td><td>Nu este automat o eroare a platformei.</td></tr>
           <tr><td>REFUZ / LIMITARE</td><td>Platforma refuză, nu poate căuta sau afișează o eroare.</td><td>Se raportează separat de NULL.</td></tr>
+          <tr><td>NEAFIȘAT</td><td>Suprafața nu a afișat elementul de răspuns măsurat — de exemplu, Google AI Overviews nu apare pentru interogare. Interogarea a rulat, dar nu există un răspuns de clasificat.</td><td>Statut, nu verdict. Se raportează separat de NULL și de REFUZ / LIMITARE. Nu primește punctaj și nu intră la numitorul ratelor.</td></tr>
         </tbody>
       </table>
 
@@ -381,6 +382,7 @@ export const avl201TabulaRasaF0Html = `
 
       <p><strong>Scor normalizat = 100 × (Σ puncte − minim posibil) / (maxim posibil − minim posibil)</strong></p>
 
+      <p>Rulările NEAFIȘAT nu primesc punctaj și nu intră în N.</p>
       <p>Pentru schema de mai sus, maximul este 4 × N, iar minimul este -4 × N. Raportul trebuie să publice și distribuția categoriilor, deoarece două entități pot avea același scor prin combinații foarte diferite.</p>
 
       <h3>14.2. Indicatori obligatorii</h3>
@@ -394,6 +396,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Scor normalizat, dacă este folosit.</li>
         <li>Numărul total de rulări și acoperirea pe motoare.</li>
       </ul>
+      <p>Ratele se calculează pe rulările care au produs un răspuns de clasificat. Rulările NEAFIȘAT nu intră la numitor; numărul lor se raportează separat, pe suprafață.</p>
 
       <blockquote><strong>F0-REQ-007</strong> — Niciun scor agregat NU TREBUIE publicat fără numărul de rulări, perioada, motoarele și distribuția categoriilor.</blockquote>
 
@@ -561,6 +564,7 @@ export const avl201TabulaRasaF0Html = `
           <tr><td>1.1.1</td><td>14 septembrie 2026</td><td>Activ</td><td>PATCH: adăugarea AVL-200 — Standard dovezi, măsurare și trasabilitate ca dependință normativă explicită, ca parte a activării formale a AVL-200 (v1.0.0, 14 septembrie 2026).</td></tr>
           <tr><td>1.2.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: clarificare în secțiunea 3 — auditul AI Visibility (/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab, nu un serviciu al laboratorului; un audit nu devine automat studiu de caz, experiment public sau rezultat al laboratorului, iar o eventuală publicare respectă regulile AVL-001 privind declararea conflictelor de interese. Nicio cerință F0-REQ nu a fost adăugată sau modificată.</td></tr>
           <tr><td>1.3.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: terminologie aliniată la AVL-200 §7 (v1.1.0). Trimiterile la fazele F1, F2 și F3 devin etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare, iar comparația longitudinală se exprimă între baseline (T0) și re-măsurări (F1 … Fn); formularea cerinței F0-REQ-008 a fost aliniată fără schimbarea sensului sau a identificatorului. Titlul documentului, identificatorii F0-REQ-* și folosirea „F0” ca nume istoric al etapei de baseline rămân neschimbate până la o revizie separată; corespondența este documentată în AVL-200 §7.4. §12.3: formatul recomandat de denumire a dovezilor folosește ca prefix punctul de măsurare (T0, F1 … Fn; AVL200-REQ-040) în locul prefixului F0_. Dovezile deja arhivate sau publicate își păstrează numele originale — inclusiv F0_baseline_AlexMatescu.docx din pachetul de dovezi T0 pentru Alex Matescu — și nu au fost redenumite sau modificate (AVL200-REQ-013).</td></tr>
+          <tr><td>1.4.0</td><td>23 octombrie 2026</td><td>Activ</td><td>MINOR: statutul NEAFIȘAT adăugat în taxonomia rezultatelor (secțiunea 13), pentru cazul în care suprafața nu afișează elementul de răspuns măsurat (de exemplu, Google AI Overviews neafișat). Secțiunea 14: rulările NEAFIȘAT nu primesc punctaj, nu intră în N la scorul normalizat și nu intră la numitorul indicatorilor din 14.2; numărul lor se raportează separat. Nicio cerință F0-REQ-* nouă sau modificată. Decizie Alex Matescu, 23 octombrie 2026, apărută la adjudecarea punctului de măsurare F3 pentru Alex Matescu.</td></tr>
         </tbody>
       </table>
 
