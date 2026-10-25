@@ -3,7 +3,7 @@
 Fiecare recomandare are observațiile-suport, gradul de certitudine, elementul de intervenție și
 verificarea ulterioară. Impactul se calculează din plan; efortul și dependențele sunt estimări ale
 redactorului și rămân `null` până la completare (registru, punctul F). Constatările „nu poate fi
-stabilit” primesc o verificare suplimentară cu `priority = null` (DEV-P07).
+stabilit” primesc o verificare suplimentară fără clasă de prioritate (AVL204-REQ-009, v0.2.0).
 """
 from .diagnose import CONFIRMED, CORE, NONE, POSSIBLE, UNDETERMINED
 
@@ -14,9 +14,12 @@ TEMPLATES = {
     "R-Z1-04": ("redirectul URL-ului din plan", "Confirmați dacă redirectul e intenționat; dacă da, declarați-l în plan; dacă nu, corectați adresa sau redirectul.", "TC-01"),
     "R-Z1-05": ("lanțul de redirecturi", "Reduceți lanțul la un singur redirect direct spre URL-ul final.", "TC-01"),
     "R-Z1-06": ("redirectul http → https", "Redirecționați varianta http spre https.", "TC-02"),
+    "R-Z1-09": ("disponibilitatea serverului", "Verificați rezolvarea DNS, conectivitatea și timpul de răspuns al serverului pentru URL-ul semnalat.", "TC-01"),
     "R-Z2-01": ("regula din robots.txt", "Ajustați regula din robots.txt ca să corespundă politicii de acces declarate pentru crawler.", "TC-03"),
     "R-Z2-02": ("disponibilitatea fișierului robots.txt", "Asigurați un răspuns 2xx (sau 404, dacă nu doriți reguli) pentru robots.txt.", "TC-03"),
-    "R-Z2-03": ("fișierul robots.txt", "Verificați redirectul fișierului sau liniile neinterpretabile semnalate.", "TC-03"),
+    "R-Z2-03": ("fișierul robots.txt", "Corectați liniile care par directive scrise greșit.", "TC-03"),
+    "R-Z2-08": ("răspunsul pentru robots.txt", "Faceți ca robots.txt să răspundă 2xx (sau 404, dacă nu doriți reguli), fără limitare de rată.", "TC-03"),
+    "R-Z2-09": ("redirecturile fișierului robots.txt", "Reduceți lanțul de redirecturi al robots.txt la cel mult cinci, ideal la zero.", "TC-03"),
     "R-Z3-01": ("sitemap-ul declarat", "Faceți ca sitemap-ul declarat să răspundă 2xx sau corectați declarația din robots.txt.", "TC-04"),
     "R-Z3-02": ("declarația Sitemap din robots.txt", "Declarați sitemap-ul existent în robots.txt, cu URL complet.", "TC-04"),
     "R-Z3-03": ("sitemap-ul", "Publicați un sitemap și declarați-l în robots.txt.", "TC-04"),
@@ -27,11 +30,14 @@ TEMPLATES = {
     "R-Z4-05": ("canonicalul declarat", "Confirmați canonicalul; dacă e intenționat, declarați-l în plan, altfel aliniați-l la URL-ul final.", "TC-05"),
     "R-Z4-06": ("datele structurate ale paginii despre entitate", "Adăugați un bloc JSON-LD care descrie entitatea.", "TC-05"),
     "R-Z4-07": ("atributul lang", "Declarați limba documentului în <html lang>.", "TC-05"),
+    "R-Z4-10": ("canonicalul declarat", "Faceți canonicalul să trimită direct la URL-ul final, fără redirect.", "TC-05"),
     "R-Z5-01": ("conținutul livrat în HTML", "Livrați textul-cheie în HTML-ul inițial al răspunsului (de exemplu prin randare pe server).", "TC-08"),
     "R-Z5-02": ("conținutul livrat în HTML", "Includeți textul-cheie și în corpul documentului, nu doar în metadate.", "TC-08"),
+    "R-Z5-05": ("conținutul livrat în HTML", "Livrați textul-cheie în corpul HTML-ului inițial, nu doar în scripturi sau în zone neafișate.", "TC-08"),
     "R-Z6-01": ("configurația serverului, a WAF-ului sau a CDN-ului", "Verificați regulile care tratează diferit User-Agent-ul declarat.", "TC-06"),
     "R-Z6-02": ("configurația serverului, a WAF-ului sau a CDN-ului", "Verificați de unde vin headerele diferite pentru User-Agent-ul declarat.", "TC-06"),
     "R-Z6-03": ("configurația serverului sau a aplicației", "Verificați de ce conținutul diferă pentru User-Agent-ul declarat.", "TC-06"),
+    "R-Z6-06": ("configurația serverului, a WAF-ului sau a CDN-ului", "Verificați dacă diferența de răspuns pentru User-Agent-ul declarat este intenționată.", "TC-06"),
 }
 
 
@@ -78,9 +84,7 @@ def build(findings, plan):
             rec = {**g, "kind": "verificare suplimentară", "element": "datele evaluării",
                    "action": "Repetați captura sau completați evaluarea cu o extensie declarată (AVL203-REQ-038) pentru constatările de mai jos.",
                    "follow_up": "aceeași verificare TC-* la o rulare nouă", "priority": None,
-                   "priority_reason": "DEV-P07: constatările „nu poate fi stabilit” nu primesc clasă de prioritate (AVL-204 §7)"}
-            if "DEV-P07" not in rec["deviations"]:
-                rec["deviations"] = rec["deviations"] + ["DEV-P07"]
+                   "priority_reason": "constatările „nu poate fi stabilit” nu primesc clasă de prioritate (AVL204-REQ-009, AVL-204 §7)"}
         else:
             element, action, tc = TEMPLATES[g["rule_id"]]
             cls = _class(g["state"], g["zone"], impact)

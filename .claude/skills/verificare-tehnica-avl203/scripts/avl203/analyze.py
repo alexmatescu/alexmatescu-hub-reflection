@@ -14,7 +14,6 @@ from .httpobs import is_2xx, summarize
 from .util import read_json, sha256_file, utc_now, utc_stamp, write_json_new
 
 MATRIX = ["*", "Googlebot", "bingbot", "OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
-DEV_TC04 = "DEV-P04"
 
 
 class Run:
@@ -81,7 +80,7 @@ def _sniff(raw):
 
 
 def tc04(run, robots_sum, parsed):
-    """Statusul TC-04 după tabelul din AVL-203 §7; cazurile neacoperite → UNKNOWN + DEV-P04."""
+    """Statusul TC-04 după tabelul din AVL-203 §7 (v0.5.0)."""
     declared_lines = parsed["sitemaps"] if parsed else []
     decl = run.last_attempts(tc="TC-04", role="sitemap_declared")
     conv = run.last_attempts(tc="TC-04", role="sitemap_conventional")
@@ -102,30 +101,30 @@ def tc04(run, robots_sum, parsed):
         return i.get("transport_ok") and is_2xx(i.get("final_status"))
 
     rs = robots_sum
-    status, reason, dev = None, None, None
+    status, reason = None, None
     if rs is None or not rs["transport_ok"] or rs["final_status"] is None or not (is_2xx(rs["final_status"]) or 400 <= rs["final_status"] < 500):
         status, reason = "UNKNOWN", "robots.txt nu a putut fi capturat (eroare de transport, 5xx sau status final neidentificat)"
     elif (rs["num_redirects"] or 0) > robots.RFC_REDIRECT_THRESHOLD:
-        status, reason, dev = "UNKNOWN", "robots.txt după mai mult de 5 redirecturi: declarațiile nu pot fi stabilite", DEV_TC04
+        status, reason = "UNKNOWN", "robots.txt după mai mult de cinci redirecturi: declarațiile nu pot fi stabilite"
     elif is_2xx(rs["final_status"]) and declared_lines:
         d = [i for i in items if i["type"] == "declared"]
         if any(ok(i) for i in d):
             status = "DECLARED"
         elif any(i["type"] == "declared_not_captured" for i in items):
-            status, reason, dev = "UNKNOWN", "declarații Sitemap necapturate (în afara limitelor planului) și niciuna capturată cu 2xx", DEV_TC04
+            status, reason = "UNKNOWN", "declarații Sitemap necapturate (în afara limitelor planului) și niciuna capturată cu 2xx"
         else:
             status = "UNAVAILABLE"
     else:
         c = [i for i in items if i["type"] == "conventional"]
-        if any(ok(i) for i in c):
+        if any(ok(i) and i.get("document_type_observed") in ("XML", "GZIP") for i in c):
             status = "FOUND_AT_CONVENTIONAL_PATH"
         elif c and all(i["transport_ok"] and i["final_status"] in (404, 410) for i in c):
             status = "NOT_FOUND"
         elif c and all((not i["transport_ok"]) or (i["final_status"] is not None and 500 <= i["final_status"] < 600) for i in c):
             status = "UNAVAILABLE"
         else:
-            codes = ", ".join(str(i["final_status"] if i["transport_ok"] else f"curl {i['curl_exit']}") for i in c)
-            status, reason, dev = "UNKNOWN", f"combinație neacoperită de tabelul AVL-203 §7 (căi convenționale: {codes})", DEV_TC04
+            codes = ", ".join((f"{i['final_status']} {i.get('document_type_observed') or ''}".strip() if i["transport_ok"] else f"curl {i['curl_exit']}") for i in c)
+            status, reason = "UNKNOWN", f"combinație trecută la UNKNOWN de tabelul AVL-203 §7 (căi convenționale: {codes})"
     notes = []
     if rs is not None and rs["final_status"] is not None and 400 <= rs["final_status"] < 500:
         notes.append(f"robots.txt răspunde {rs['final_status']}: tratat ca fișier capturat fără declarații Sitemap (interpretare declarată)")
@@ -136,7 +135,7 @@ def tc04(run, robots_sum, parsed):
     html_like = [i["url"] for i in items if ok(i) and i.get("document_type_observed") == "HTML"]
     if html_like:
         notes.append(f"răspuns 2xx cu document HTML, nu XML: {', '.join(html_like)} (statusul descrie declarația și răspunsul, nu validitatea)")
-    return {"status": status, "reason": reason, "deviation": dev, "declared_in_robots": declared_lines,
+    return {"status": status, "reason": reason, "declared_in_robots": declared_lines,
             "sitemaps": items, "notes": notes}
 
 

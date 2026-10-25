@@ -16,11 +16,13 @@ Fiecare decizie păstrează pașii aplicării (grupuri, reguli combinate, regula
 din robots.body), în aceeași formă ca aplicarea manuală documentată. `grep` nu decide nimic.
 Comportamentul furnizorilor (de exemplu `429` la Google) nu e modelat: modul este RFC 9309.
 """
+import difflib
 import json
 import re
 from urllib.parse import urlsplit
 
 KNOWN_EXTENSIONS = {"sitemap", "crawl-delay", "host", "clean-param", "request-rate", "visit-time", "noindex"}
+KNOWN_KEYS = ["user-agent", "allow", "disallow", "sitemap"]
 UNRESERVED = set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~")
 RFC_REDIRECT_THRESHOLD = 5
 
@@ -34,7 +36,7 @@ def parse(text):
         if not line:
             continue
         if ":" not in line:
-            out["unparseable"].append({"line": n, "text": raw.strip(), "reason": "fără „:”"})
+            out["unparseable"].append({"line": n, "text": raw.strip(), "reason": "fără „:”", "looks_like": None})
             continue
         k, v = line.split(":", 1)
         key, val = k.strip().lower(), v.strip()
@@ -59,7 +61,10 @@ def parse(text):
         elif key in KNOWN_EXTENSIONS:
             out["other_records"].append({"line": n, "key": key, "value": val})
         else:
-            out["unparseable"].append({"line": n, "text": raw.strip(), "reason": f"cheie necunoscută „{k.strip()}”"})
+            # AVL-204 R-Z2-03 (0.2.0): se semnalează doar cheile care seamănă cu o directivă cunoscută
+            near = difflib.get_close_matches(key, KNOWN_KEYS, n=1, cutoff=0.75)
+            out["unparseable"].append({"line": n, "text": raw.strip(), "reason": f"cheie necunoscută „{k.strip()}”",
+                                       "looks_like": near[0] if near else None})
     return out
 
 
@@ -150,15 +155,16 @@ def file_state(summary, redirect_threshold=RFC_REDIRECT_THRESHOLD):
             return "UNDETERMINED", "lanț de redirecturi peste limita capturii"
         return "UNREACHABLE", f"eroare de transport (curl exit {exit_}) → RFC 9309 §2.3.1.4: interdicție completă"
     if summary["num_redirects"] is not None and summary["num_redirects"] > redirect_threshold:
-        return "UNDETERMINED", f"{summary['num_redirects']} redirecturi (> {redirect_threshold}); RFC 9309 §2.3.1.2 lasă opțional tratamentul"
+        return "REDIRECT_LIMIT", f"{summary['num_redirects']} redirecturi (> {redirect_threshold}); RFC 9309 §2.3.1.2 permite tratarea fișierului ca indisponibil"
     s = summary["final_status"]
     if s is None:
         return "UNDETERMINED", "statusul final nu a putut fi identificat"
     if 200 <= s < 300:
         return "AVAILABLE", "2xx → se aplică regulile parsabile (RFC 9309 §2.3.1.1)"
+    if s == 429:
+        return "TOO_MANY_REQUESTS", "429: un 4xx în sensul RFC 9309, dar Google îl exclude din regula pentru 4xx (AVL-204 R-Z2-08)"
     if 400 <= s < 500:
-        note = " (notă: Google exclude 429 din regula pentru 4xx; comportamentul furnizorilor nu e verificat)" if s == 429 else ""
-        return "UNAVAILABLE_4XX", f"{s} → RFC 9309 §2.3.1.3: crawlerul poate accesa orice resursă{note}"
+        return "UNAVAILABLE_4XX", f"{s} → RFC 9309 §2.3.1.3: crawlerul poate accesa orice resursă"
     if 500 <= s < 600:
         return "UNREACHABLE", f"{s} → RFC 9309 §2.3.1.4: interdicție completă"
     return "UNDETERMINED", f"status final {s} neacoperit de RFC 9309 §2.3.1"

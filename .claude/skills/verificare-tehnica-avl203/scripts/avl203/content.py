@@ -1,9 +1,9 @@
 """TC-08: textele-cheie în HTML-ul brut, pe zone, cu locația din fișierul original (AVL203-REQ-031, REQ-032).
 
-Zonele din AVL-203 §8.1: `body` (corpul, în afara scripturilor și a stilurilor), `attributes`
-(alt, title, aria-label), `json_ld`, `meta`. Zonele auxiliare (registru, punctul D): `title`,
-`script_non_jsonld`, `comment`, `template`, `noscript` — se raportează, iar un text găsit numai
-acolo dă `UNKNOWN` cu abatere (DEV-P05), niciodată `ABSENT_FROM_RAW_HTML`.
+Zonele din AVL-203 §8.1 (v0.5.0): `body` (corpul, în afara scripturilor și a stilurilor);
+metadatele `attributes` (alt, title, aria-label), `json_ld`, `meta` și `title`; zonele care nu sunt
+conținut afișat `script_non_jsonld`, `comment`, `template`, `noscript`. Un text găsit numai în
+acestea din urmă are statusul `PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY`, niciodată `ABSENT_FROM_RAW_HTML`.
 
 Normalizarea (OP-01) se aplică identic textului-cheie și zonelor, iar fiecare caracter normalizat
 păstrează poziția caracterului original (OP-03). Unirea nodurilor (OP-02): separator la granița
@@ -17,14 +17,13 @@ from html.parser import HTMLParser
 
 from .signals import decode_html, is_html
 
-MAIN_ZONES = ("body", "attributes", "json_ld", "meta")
-METADATA_ZONES = ("attributes", "json_ld", "meta")
-AUX_ZONES = ("title", "script_non_jsonld", "comment", "template", "noscript")
+MAIN_ZONES = ("body", "attributes", "json_ld", "meta", "title")
+METADATA_ZONES = ("attributes", "json_ld", "meta", "title")
+AUX_ZONES = ("script_non_jsonld", "comment", "template", "noscript")
 TEXT_ATTRIBUTES = ("alt", "title", "aria-label")
 BLOCK = set("""address article aside blockquote body br caption center dd details dialog dir div dl dt fieldset
 figcaption figure footer form frameset h1 h2 h3 h4 h5 h6 head header hgroup hr html legend li main menu nav ol
 optgroup option p pre section summary table tbody td tfoot th thead tr ul""".split())
-DEV_AUX = "DEV-P05"
 
 
 # ---------------------------------------------------------------- normalizare (OP-01)
@@ -229,14 +228,13 @@ def analyze(summary, raw_body, key_texts):
         elif zones & set(METADATA_ZONES):
             st, reason = "PRESENT_IN_METADATA_ONLY", None
         elif zones & set(AUX_ZONES):
-            st, reason = "UNKNOWN", f"{DEV_AUX}: text găsit numai în zone neacoperite de AVL-203 §8.1 ({', '.join(sorted(zones))})"
+            st, reason = "PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY", f"zone: {', '.join(sorted(zones))}"
         elif needle.replace(" ", "") and needle.replace(" ", "") in flat:
             st, reason = "UNKNOWN", "extracție nesigură: textul apare doar unit fără separatori între noduri"
         else:
             st, reason = "ABSENT_FROM_RAW_HTML", None
         results.append({"kt_id": k["kt_id"], "text": k["text"], "normalized": needle, "status": st, "reason": reason,
-                        "matches": matches,
-                        "deviation": DEV_AUX if reason and reason.startswith(DEV_AUX) else None})
+                        "matches": matches})
     return {**base, "status": "EVALUATED", "key_texts": results,
             "note": "ABSENT_FROM_RAW_HTML descrie octeții capturați; nu dovedește absența din pagina randată (AVL203-REQ-032). "
                     "PRESENT_IN_BODY descrie zona din HTML, nu vizibilitatea în browser."}

@@ -11,9 +11,10 @@ Agent de execuție pentru `src/content/lab/AVL/AVL-203_Protocol_minim_verificare
 
 ## Statutul implementării
 
-- Implementarea curentă este **v0.3.0**, „implementare candidată pentru draftul AVL-203 v0.4.0 / AVL-204 v0.1.0”, **nevalidată** ca implementare de referință (AVL-203 §19.4). Nu declara rezultatele „conforme AVL-203 1.0.0”.
+- Implementarea curentă este **v0.4.0**, „implementare candidată pentru draftul AVL-203 v0.5.0 / AVL-204 v0.2.0”, **nevalidată** ca implementare de referință (AVL-203 §19.4). Nu declara rezultatele „conforme AVL-203 1.0.0”.
 - Ce acoperă codul, prin ce test și ce nu acoperă: `CONFORMANCE.md`.
-- Deciziile de implementare (alegerile operaționale `OP-*`, variantele conservatoare `DEV-*` pentru propunerile normative `P-*`): `docs/avl-203-204-registru-implementare.md`. Planul de lucru: `docs/PLAN-AVL-203-204-VERIFICARE-TEHNICA.md`.
+- Alegerile operaționale `OP-*` și istoricul propunerilor `P-01`…`P-11` (aprobate și preluate în AVL-203 0.5.0 / AVL-204 0.2.0): `docs/avl-203-204-registru-implementare.md`. Planul de lucru: `docs/PLAN-AVL-203-204-VERIFICARE-TEHNICA.md`.
+- **Domeniul (AVL203-REQ-043, AVL204-REQ-015):** verificarea se face numai pentru site-ul unei entități evaluate ca proiect sau client al laboratorului (inclusiv site-urile proprii), cu fișa entității completată de reprezentant. Nu pentru concurenți și nici pentru entitățile din Market Discovery; o verificare din afara domeniului nu se documentează ca rulare.
 - `scripts/run_avl203.sh` și `scripts/analyze_avl203.py` (v0.2.x) rămân doar pentru reproducerea rulărilor vechi. Nu le folosi pentru rulări noi.
 
 ## Fișiere
@@ -34,15 +35,16 @@ AVL203-REQ-001, REQ-029, REQ-030, REQ-031 și REQ-042 cer ca planul să fie fixa
 1. `python3 .claude/skills/verificare-tehnica-avl203/scripts/avl203_cli.py plan init --out evidence/work/avl203/plan-{entitate}-{eticheta}.json`
 2. Completează planul cu userul. Planul cuprinde:
    - entitatea și tipul ei;
+   - **fișa entității** (`entity_sheet`): referința, reprezentantul, data, relația (proiect, client, laborator);
    - originul exact;
    - **paginile pe categorii** (`pagina_principala`, `despre`, `contact_identitate` (obligatorie), `oferta_principala`, `referinta`), fiecare cu motivul alegerii, intenția de indexare și textele-cheie TC-08;
    - categoriile care nu se aplică, cu motiv;
    - variantele de host relevante;
-   - **politica de acces declarată de entitate** pentru fiecare crawler Core;
+   - **politica de acces** pentru fiecare crawler Core, preluată din câmpul „Politica crawlere” al fișei entității (AVL-201 §7, AVL-204 §3.1): `PERMIS` sau `BLOCAT_INTENTIONAT`, cu sursa. Laboratorul recomandă accesul total; dacă reprezentantul nu declară altceva, se trece `PERMIS` cu sursa „recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant”;
    - limitele cererilor auxiliare;
    - extensiile (lista goală dacă nu există).
 
-   Politica și intenția de indexare le declară entitatea. Nu le deduce din robots.txt; dacă nu sunt cunoscute, folosește `NECUNOSCUT`.
+   Politica și intenția de indexare le declară entitatea. Nu le deduce din robots.txt (AVL204-REQ-017). Un răspuns de eroare intenționat al unei pagini se declară cu `intentional_status`.
 3. `plan validate`, apoi `plan freeze`. Planul înghețat nu se mai modifică. O completare ulterioară înseamnă o rulare nouă (REQ-030).
 
 **Eticheta** (AVL-203 §11): `T0` pentru baseline și `F1`, `F2` … `Fn` pentru rulările ulterioare, toate cu `series_id`. `TEST` marchează rulările de probă, care nu se compară cu seriile și nu susțin concluzii publicate.
@@ -72,7 +74,7 @@ La o eroare de rețea, request-ul se repetă o singură dată (OP-09). La final 
 ```bash
 CLI=.claude/skills/verificare-tehnica-avl203/scripts/avl203_cli.py
 python3 $CLI analyze  --run evidence/work/avl203/run_<ID>     # observații TC-00…TC-08
-python3 $CLI diagnose --run evidence/work/avl203/run_<ID> --rules 0.1.0
+python3 $CLI diagnose --run evidence/work/avl203/run_<ID> --rules 0.2.0
 python3 $CLI report   --run evidence/work/avl203/run_<ID>
 ```
 

@@ -89,13 +89,12 @@ class ContentTest(unittest.TestCase):
 
     def test_hydration_payload_only_is_unknown_not_absent(self):
         r = self.run_kt('<body><div id="root"></div><script>window.__DATA__={"t":"Alex Matescu"}</script></body>', "Alex Matescu")[0]
-        self.assertEqual(r["status"], "UNKNOWN")
-        self.assertEqual(r["deviation"], "DEV-P05")
+        self.assertEqual(r["status"], "PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY")
         self.assertEqual(r["matches"][0]["zone"], "script_non_jsonld")
 
     def test_title_only_and_comment_only_unknown(self):
-        self.assertEqual(self.st("<head><title>Alex Matescu</title></head><body>x</body>", "Alex Matescu"), "UNKNOWN")
-        self.assertEqual(self.st("<body><!-- Alex Matescu --></body>", "Alex Matescu"), "UNKNOWN")
+        self.assertEqual(self.st("<head><title>Alex Matescu</title></head><body>x</body>", "Alex Matescu"), "PRESENT_IN_METADATA_ONLY")
+        self.assertEqual(self.st("<body><!-- Alex Matescu --></body>", "Alex Matescu"), "PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY")
 
     def test_style_not_body(self):
         self.assertEqual(self.st("<style>.alex-matescu{}</style><body>x</body>", "alex-matescu"), "ABSENT_FROM_RAW_HTML")
@@ -132,8 +131,8 @@ class ContentTest(unittest.TestCase):
         self.assertEqual(sorted({m["zone"] for m in r["matches"]}), ["attributes", "body", "meta", "title"])
 
     def test_noscript_and_template_aux(self):
-        self.assertEqual(self.st("<body><noscript>Alex Matescu</noscript></body>", "Alex Matescu"), "UNKNOWN")
-        self.assertEqual(self.st("<body><template><p>Alex Matescu</p></template></body>", "Alex Matescu"), "UNKNOWN")
+        self.assertEqual(self.st("<body><noscript>Alex Matescu</noscript></body>", "Alex Matescu"), "PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY")
+        self.assertEqual(self.st("<body><template><p>Alex Matescu</p></template></body>", "Alex Matescu"), "PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY")
 
     def test_unknown_for_non_html_or_bad_bytes(self):
         r = content.analyze(summ(ct="application/json"), b"{}", [{"kt_id": "KT01", "text": "x", "purpose": "p"}])

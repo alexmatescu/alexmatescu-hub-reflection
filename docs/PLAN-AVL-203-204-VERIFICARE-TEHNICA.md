@@ -9,7 +9,7 @@ Document de lucru intern, sub controlul versiunilor. Ține evidența punctului d
 | Branch | `avl-203-0.4.0-avl-204` |
 | Documente vizate | AVL-203 v0.4.0 (draft), AVL-204 v0.1.0 (draft), AVL-202 v1.6.0 (activ) |
 | Implementare existentă | skill `verificare-tehnica-avl203`, script v0.2.0 (candidat, nevalidat) |
-| Stare | Faza 0 încheiată (fără 0.2, amânat la final); Faza 1 încheiată; Fazele 2–4 încheiate (cod v0.3.0, 142 de teste); 5.1, 5.3 și 5.4 făcute; 5.2 (AVL-204 0.2.0) amânat — nicio propunere P-* aprobată; urmează merge și deploy (Alex) |
+| Stare | Faza 0 încheiată (fără 0.2, amânat la final); Faza 1 încheiată; Fazele 2–4 încheiate (cod v0.3.0, 142 de teste); Faza 5 încheiată: AVL-204 0.2.0, AVL-203 0.5.0, AVL-201 1.5.0, AVL-202 1.7.0 și implementarea v0.4.0 (150 de teste); urmează merge și deploy (Alex) |
 
 Regula de actualizare: la fiecare pas încheiat se adaugă o intrare în jurnal (§7), se mută punctul din „de făcut” în „făcut” și se actualizează „Ultima actualizare” și „Stare”. Nu se rescrie istoria: deciziile schimbate se consemnează ca decizii noi.
 
@@ -156,7 +156,7 @@ Fiecare fază se încheie cu un punct de decizie al lui Alex înainte de faza ur
 
 - [x] **5.1. Rulare `TEST` pe delamatescu.ro** (25 octombrie 2026, `AVL203-delamatescu-ro-TEST-20261025T170200Z`, în `evidence/work/avl203/`, necomisă), cu plan mic înghețat înainte de captură.
   *Argument:* confirmă pipeline-ul cap-coadă pe un server real; rezultatul e intern și nu susține concluzii publicate (REQ-026).
-- [ ] **5.2. AVL-204 0.2.0 (și eventual AVL-203 0.5.0)** cu propunerile aprobate din 1.1, prin `publica-document-metodologic`.
+- [x] **5.2. AVL-204 0.2.0 (și eventual AVL-203 0.5.0)** (25 octombrie 2026, plus AVL-201 1.5.0 și AVL-202 1.7.0) cu propunerile aprobate din 1.1, prin `publica-document-metodologic`.
   *Argument:* revizia are dovezi în spate abia după ce codul și rularea TEST arată unde regulile sunt incomplete.
 - [x] **5.3. Pagina auditului:** (25 octombrie 2026: trimiteri la AVL-204 în §1 „Accesibilitatea tehnică”, §6 „Diagnostic” și în lista de surse) trimitere la AVL-204 și statutul de draft al stratului tehnic.
   *Argument:* pagina comercială promite stări de certitudine și recomandări verificabile; trebuie să trimită la grila care le definește.
@@ -205,6 +205,7 @@ Decizii normative încă deschise (în documente):
 | 25 octombrie 2026 | Faza 4: motorul de reguli (`R-VAL-01`, `R-Z1-*`…`R-Z6-*`, abateri DEV-*), recomandări P1–P3 cu `priority = null` pentru verificările suplimentare, raport `report.md` + `report.json`, verificarea automată a formulărilor excluse, matricea de conformitate. 142 de teste. P-11 nou în registru (pagină non-`2xx` → DEV-N01). |
 | 25 octombrie 2026 | 5.1: rulare TEST pe delamatescu.ro (5 pagini, 48 de requesturi, 0 erori, integritate VALID). Rezultat: Z1–Z5 „nicio problemă observată”; Z6 „nu poate fi stabilit” — fiecare răspuns HTML conține un token semnat, diferit la fiecare request, deci comparația de conținut între User-Agent-i e neevaluabilă (25 din 71 de constatări). Politica de acces și intenția de indexare declarate `NECUNOSCUT` (nedeclarate de entitate). Verificat pe dovezile brute: diferențele dintre cele două capturi de referință, locația TC-08, regulile robots. 5.4: `SKILL.md` rescris pentru v0.3.0. |
 | 25 octombrie 2026 | Alex: Z6 rămâne fără mascare și fără schimbare de regulă (conținutul „nu poate fi stabilit” e rezultatul; sursa variației: `data-context-token` injectat de Lovable); delamatescu.ro permite toate crawlerele și vrea paginile indexate (PERMIS + INDEXAT în planurile următoare). AVL-204 rămâne 0.1.0. 5.3: pagina auditului trimite la AVL-204; tsc, lint și build trec. |
+| 25 octombrie 2026 | Alex aprobă P-01…P-11; P-03 modificată (acces total recomandat, „Politica crawlere” în fișa entității, completată de reprezentant); verificarea se aplică doar proiectelor și clienților. Merge `main` în branch (`1cb67bf`, AVL-201 1.4.0 adus pe branch). 5.2: AVL-204 0.2.0 (REQ-015…017, reguli noi și modificate), AVL-203 0.5.0 (REQ-043…045, tabelul TC-04, status TC-08 nou), AVL-201 1.5.0 (fișa entității), AVL-202 1.7.0; `.md` + `.ts`, registrul fără anomalii noi, paginile 200 local. Implementarea v0.4.0: plan cu `entity_sheet` și politică fără `NECUNOSCUT`, reguli 0.2.0, 150 de teste. |
 
 ---
 

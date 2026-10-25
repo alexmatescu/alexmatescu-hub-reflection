@@ -8,12 +8,12 @@ export const avl201TabulaRasaF0Html = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-201</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.4.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.5.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>23 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>25 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>, <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a></td></tr>
         <tr><th scope="row">Dependențe informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105</a></td></tr>
@@ -137,6 +137,7 @@ export const avl201TabulaRasaF0Html = `
       <ul>
         <li>furnizează informațiile oficiale;</li>
         <li>declară profilurile și activele controlate;</li>
+        <li>declară politica crawlere a entității (câmpul „Politica crawlere” din fișa entității);</li>
         <li>evită modificările pe durata F0;</li>
         <li>confirmă sau contestă factual fișa entității.</li>
       </ul>
@@ -146,7 +147,7 @@ export const avl201TabulaRasaF0Html = `
       <table>
         <thead><tr><th>Intrare</th><th>Conținut minim</th></tr></thead>
         <tbody>
-          <tr><td>Fișa entității</td><td>forma canonică, variante, rol, locație, domeniu, URL-uri oficiale, atribute verificabile</td></tr>
+          <tr><td>Fișa entității</td><td>forma canonică, variante, rol, locație, domeniu, URL-uri oficiale, atribute verificabile, politica crawlere</td></tr>
           <tr><td>Harta coliziunilor</td><td>entități omonime sau similare și sursele lor dominante</td></tr>
           <tr><td>Lista activelor oficiale</td><td>site, subdomenii, profiluri, directoare, pagini de autor</td></tr>
           <tr><td>Țara și limba</td><td>contextul geografic și lingvistic al măsurării</td></tr>
@@ -157,6 +158,8 @@ export const avl201TabulaRasaF0Html = `
           <tr><td>Declarația de îngheț</td><td>confirmarea că nu se fac intervenții până la închidere</td></tr>
         </tbody>
       </table>
+
+      <p>„Politica crawlere” descrie accesul pe care entitatea îl vrea pentru crawlerele de căutare, de antrenare și de fetch la cererea utilizatorului. AI Visibility Lab recomandă accesul total pentru toate crawlerele; o politică diferită se documentează pentru fiecare crawler sau categorie de crawlere, cu sursa și data declarării.</p>
 
       <h2>8. Ieșiri și livrabile</h2>
 
@@ -565,6 +568,7 @@ export const avl201TabulaRasaF0Html = `
           <tr><td>1.2.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: clarificare în secțiunea 3 — auditul AI Visibility (/lab/audit-ai-visibility) este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab, nu un serviciu al laboratorului; un audit nu devine automat studiu de caz, experiment public sau rezultat al laboratorului, iar o eventuală publicare respectă regulile AVL-001 privind declararea conflictelor de interese. Nicio cerință F0-REQ nu a fost adăugată sau modificată.</td></tr>
           <tr><td>1.3.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: terminologie aliniată la AVL-200 §7 (v1.1.0). Trimiterile la fazele F1, F2 și F3 devin etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare, iar comparația longitudinală se exprimă între baseline (T0) și re-măsurări (F1 … Fn); formularea cerinței F0-REQ-008 a fost aliniată fără schimbarea sensului sau a identificatorului. Titlul documentului, identificatorii F0-REQ-* și folosirea „F0” ca nume istoric al etapei de baseline rămân neschimbate până la o revizie separată; corespondența este documentată în AVL-200 §7.4. §12.3: formatul recomandat de denumire a dovezilor folosește ca prefix punctul de măsurare (T0, F1 … Fn; AVL200-REQ-040) în locul prefixului F0_. Dovezile deja arhivate sau publicate își păstrează numele originale — inclusiv F0_baseline_AlexMatescu.docx din pachetul de dovezi T0 pentru Alex Matescu — și nu au fost redenumite sau modificate (AVL200-REQ-013).</td></tr>
           <tr><td>1.4.0</td><td>23 octombrie 2026</td><td>Activ</td><td>MINOR: statutul NEAFIȘAT adăugat în taxonomia rezultatelor (secțiunea 13), pentru cazul în care suprafața nu afișează elementul de răspuns măsurat (de exemplu, Google AI Overviews neafișat). Secțiunea 14: rulările NEAFIȘAT nu primesc punctaj, nu intră în N la scorul normalizat și nu intră la numitorul indicatorilor din 14.2; numărul lor se raportează separat. Nicio cerință F0-REQ-* nouă sau modificată. Decizie Alex Matescu, 23 octombrie 2026, apărută la adjudecarea punctului de măsurare F3 pentru Alex Matescu.</td></tr>
+          <tr><td>1.5.0</td><td>25 octombrie 2026</td><td>Activ</td><td>MINOR: fișa entității (secțiunea 7) conține câmpul „Politica crawlere”, completat de subiect sau de reprezentantul clientului (secțiunea 6.4): politica de acces a entității pentru crawlerele de căutare, de antrenare și de fetch la cererea utilizatorului. AI Visibility Lab recomandă accesul total pentru toate crawlerele; o politică diferită se documentează. Câmpul este preluat de verificarea tehnică (AVL-203 §1.1, AVL-204 §3.1). Decizie Alex Matescu, 25 octombrie 2026.</td></tr>
         </tbody>
       </table>
 

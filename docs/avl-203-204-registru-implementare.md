@@ -9,7 +9,7 @@ Document de lucru intern, sub controlul versiunilor. Este pasul 1.1–1.2 din `d
 | Branch | `avl-203-0.4.0-avl-204` |
 | Documente vizate | AVL-203 v0.4.0 (draft), AVL-204 v0.1.0 (draft) |
 | Implementare vizată | skill `verificare-tehnica-avl203`, script v0.2.0 (candidat, nevalidat) |
-| Stare | aplicat în implementarea v0.3.0 (decizia Alex din 25 octombrie 2026, §5) |
+| Stare | P-01…P-11 aprobate de Alex Matescu la 25 octombrie 2026 și preluate în AVL-203 0.5.0, AVL-204 0.2.0 și AVL-201 1.5.0; implementate în v0.4.0 (§6) |
 
 Nimic din acest registru nu modifică AVL-203 sau AVL-204. Propunerile normative (§4) devin reguli numai prin AVL-204 0.2.0 (sau AVL-203 0.5.0), publicate cu `publica-document-metodologic`, după decizia lui Alex Matescu.
 
@@ -371,3 +371,32 @@ Deciziile marcate „pentru Faza 2” sunt necesare înainte de cod. Celelalte p
 | D-06 | Absența paginii de identitate: rămâne în afara grilei până la 0.2.0 (G) | da | poate aștepta |
 | D-07 | Propunerile P-01…P-10: se discută după rularea TEST (Faza 5), cu dovezi | da | Faza 5 |
 | D-08 | Ritmul fazelor 2–4 (plan §6.5) | una câte una | pentru Faza 2 |
+
+---
+
+## 6. Decizia asupra propunerilor (25 octombrie 2026)
+
+Alex Matescu a aprobat propunerile P-01…P-11 așa cum sunt formulate în §3–§4.2, cu o singură modificare la P-03:
+
+- **P-03 (modificată):** metodologia AI Visibility Lab propune acces total pentru toate crawlerele. Dacă politica unei entități e diferită, ea se documentează. „Politica crawlere” devine un câmp al fișei entității (AVL-201 §7), completat de reprezentantul entității.
+- **Domeniul de aplicare (precizare a lui Alex):** verificarea tehnică se aplică numai entităților evaluate ca proiect sau client. Nu se aplică concurenților unui client și nici entităților din Market Discovery. O verificare a unui site din afara acestui domeniu nu se documentează și nu face obiectul protocolului.
+
+Unde au intrat:
+
+| Propunere | Document | Implementare v0.4.0 |
+| --- | --- | --- |
+| P-01 | AVL204-REQ-001, `R-VAL-01` | `integrity.py`, `analyze.py` |
+| P-02 | `R-Z1-01`/`R-Z1-10`, `R-Z6-01`/`02`/`08` | `diagnose.py` (`intentional_status` în plan) |
+| P-03 | AVL-204 §3.1, AVL204-REQ-017; AVL-201 §6.4 și §7; AVL-203 §1.1 | `plan.py` (doar `PERMIS` / `BLOCAT_INTENTIONAT`, implicit acces total) |
+| P-04 | AVL-203 §7 (tabelul TC-04) | `analyze.tc04` |
+| P-05 | AVL-203 §8.1 (`PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY`), `R-Z5-05` | `content.py` |
+| P-06 | `R-Z6-01`/`02` (diferențe nefavorabile), `R-Z6-06`, `R-Z6-07`; AVL203-REQ-045 | `diagnose.py` |
+| P-07 | AVL204-REQ-009 | `recommend.py` |
+| P-08 | `R-Z2-03`, `R-Z2-04`, `R-Z2-07`, `R-Z2-08`, `R-Z2-09` | `robots.py`, `diagnose.py` |
+| P-09 | `R-Z4-02`, `R-Z4-10`, `R-Z4-08` | `diagnose.py` |
+| P-10 | `R-Z1-09`, `R-Z2-02`, AVL204-REQ-016; AVL203-REQ-044 | `capture.py`, `diagnose.py` |
+| P-11 | AVL-204 §6 (Z4/Z5 nu se evaluează pentru 4xx/5xx) | `diagnose.py` |
+| Domeniul | AVL203-REQ-043, AVL204-REQ-015 | `plan.py` (`entity_sheet` obligatoriu) |
+
+Abaterile `DEV-P*` și `DEV-N01` din v0.3.0 nu mai există: cazurile lor sunt acum reguli ale grilei. În v0.4.0 rămân `DEV-G01` (caz neacoperit de grila 0.2.0) și `DEV-G02` (intenția de indexare nedeclarată, pentru `R-Z4-01`).
+

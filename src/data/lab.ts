@@ -69,12 +69,12 @@ export const labNav: LabPage[] = [
       {
         to: "/lab/metodologie/protocol-verificare-tehnica",
         label: "AVL-203 — Protocolul minim de verificare tehnică a unui site",
-        lead: "Draft pentru revizuire, v0.4.0. Setul minim, repetabil, de verificări tehnice (HTTP, redirecturi, robots.txt, sitemap, semnale raw HTML, conținut în HTML-ul brut, paritatea răspunsurilor pe User-Agent, integritatea dovezilor) care documentează ce livrează un server, fără a o confunda cu indexarea sau citarea AI, plus trecerea de la observații la diagnostic și recomandări.",
+        lead: "Draft pentru revizuire, v0.5.0. Setul minim, repetabil, de verificări tehnice (HTTP, redirecturi, robots.txt, sitemap, semnale raw HTML, conținut în HTML-ul brut, paritatea răspunsurilor pe User-Agent, integritatea dovezilor) care documentează ce livrează un server, fără a o confunda cu indexarea sau citarea AI, plus trecerea de la observații la diagnostic și recomandări.",
       },
       {
         to: "/lab/metodologie/grila-interpretare-verificare-tehnica",
         label: "AVL-204 — Grila de interpretare a verificării tehnice",
-        lead: "Draft pentru revizuire, v0.1.0. Regulile publice, fixate înaintea rulării, prin care observațiile AVL-203 devin diagnostic și recomandări: stări, zone, reguli de diagnostic, prioritizare, afirmații excluse și aplicare identică pentru orice entitate evaluată.",
+        lead: "Draft pentru revizuire, v0.2.0. Regulile publice, fixate înaintea rulării, prin care observațiile AVL-203 devin diagnostic și recomandări: stări, zone, reguli de diagnostic, prioritizare, afirmații excluse și aplicare identică pentru orice entitate evaluată.",
       },
       {
         to: "/lab/metodologie/protocol-delimitare-piata-eligibilitate",

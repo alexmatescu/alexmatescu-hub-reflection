@@ -129,7 +129,8 @@ class Tc04Test(unittest.TestCase):
 
     def test_no_declaration_403_and_404_unknown(self):
         t = self.status({"/robots.txt": text("User-agent: *\nAllow: /\n"), "/sitemap.xml": text("no", status=403)})
-        self.assertEqual((t["status"], t["deviation"]), ("UNKNOWN", "DEV-P04"))
+        self.assertEqual(t["status"], "UNKNOWN")
+        self.assertIn("403", t["reason"])
 
     def test_robots_5xx_unknown(self):
         self.assertEqual(self.status({"/robots.txt": text("err", status=500)})["status"], "UNKNOWN")
@@ -144,10 +145,14 @@ class Tc04Test(unittest.TestCase):
                                                      f"Sitemap: http://{r.headers['Host']}/lipsa.xml\n".encode())})
         self.assertEqual(t["status"], "UNAVAILABLE")
 
-    def test_conventional_html_200_found_with_note(self):
+    def test_conventional_html_200_is_unknown(self):
         t = self.status({"/robots.txt": text("User-agent: *\n"), "/sitemap.xml": html("<!doctype html><html>SPA</html>")})
-        self.assertEqual(t["status"], "FOUND_AT_CONVENTIONAL_PATH")
+        self.assertEqual(t["status"], "UNKNOWN")  # AVL-203 0.5.0: FOUND_AT_CONVENTIONAL_PATH cere un document XML
         self.assertTrue(any("HTML" in n for n in t["notes"]))
+
+    def test_conventional_xml_200_found(self):
+        t = self.status({"/robots.txt": text("User-agent: *\n"), "/sitemap.xml": text("<?xml version='1.0'?><urlset/>", ctype="application/xml")})
+        self.assertEqual(t["status"], "FOUND_AT_CONVENTIONAL_PATH")
 
     def test_conventional_5xx_unavailable(self):
         t = self.status({"/robots.txt": text(""), "/sitemap.xml": text("e", status=503), "/sitemap_index.xml": text("e", status=500)})

@@ -78,6 +78,7 @@ class Rfc9309Test(unittest.TestCase):
         t = "User-agent: *\nDissallow: /a\nthis is garbage\nCrawl-delay: 5\nDisallow: /b\nSitemap: https://example.com/s.xml\n"
         p = robots.parse(t)
         self.assertEqual([u["line"] for u in p["unparseable"]], [2, 3])
+        self.assertEqual([u["looks_like"] for u in p["unparseable"]], ["disallow", None])
         self.assertEqual(p["other_records"][0]["key"], "crawl-delay")
         self.assertEqual(p["sitemaps"][0]["url"], "https://example.com/s.xml")
         self.assertEqual(robots.decide(p, "x", U + "/b")[0], "DISALLOW")
@@ -111,11 +112,12 @@ class FileStateTest(unittest.TestCase):
         self.assertEqual(robots.file_state(summ())[0], "AVAILABLE")
         self.assertEqual(robots.file_state(summ(final_status=404))[0], "UNAVAILABLE_4XX")
         s, why = robots.file_state(summ(final_status=429))
-        self.assertEqual(s, "UNAVAILABLE_4XX")
+        self.assertEqual(s, "TOO_MANY_REQUESTS")
         self.assertIn("429", why)
+        self.assertEqual(robots.file_state(summ(final_status=403))[0], "UNAVAILABLE_4XX")
         self.assertEqual(robots.file_state(summ(final_status=503))[0], "UNREACHABLE")
         self.assertEqual(robots.file_state(summ(transport_ok=False, curl_exit=6))[0], "UNREACHABLE")
-        self.assertEqual(robots.file_state(summ(num_redirects=6))[0], "UNDETERMINED")
+        self.assertEqual(robots.file_state(summ(num_redirects=6))[0], "REDIRECT_LIMIT")
         self.assertEqual(robots.file_state(summ(num_redirects=5))[0], "AVAILABLE")
         self.assertEqual(robots.file_state(summ(transport_ok=False, curl_exit=47))[0], "UNDETERMINED")
 

@@ -1,14 +1,14 @@
-# Matricea de conformitate — implementarea v0.3.0
+# Matricea de conformitate — implementarea v0.4.0
 
-Implementare candidată pentru draftul AVL-203 v0.4.0 / AVL-204 v0.1.0, **nevalidată** ca implementare de referință (AVL-203 §19.4). Matricea arată ce acoperă codul, prin ce test și ce rămâne în afara lui. Nu este o declarație de conformitate cu o versiune 1.0.0.
+Implementare candidată pentru draftul AVL-203 v0.5.0 / AVL-204 v0.2.0, **nevalidată** ca implementare de referință (AVL-203 §19.4). Matricea arată ce acoperă codul, prin ce test și ce rămâne în afara lui. Nu este o declarație de conformitate cu o versiune 1.0.0.
 
-Stare la 25 octombrie 2026, după 142 de teste locale (server pe 127.0.0.1). **Nicio rulare pe un site real** nu a fost încă făcută cu v0.3.0 (Faza 5).
+Stare la 25 octombrie 2026, după 150 de teste locale (server pe 127.0.0.1). O rulare `TEST` pe delamatescu.ro a fost făcută cu v0.3.0 (grila 0.1.0); cu v0.4.0 nu s-a făcut încă nicio rulare pe un site real.
 
 Statusuri: **acoperit** (implementat și testat) · **parțial** (implementat incomplet sau netestat pe un caz) · **manual** (depinde de procesul operatorului, nu de cod) · **neaplicabil** (cu motiv) · **blocat** (lipsește o funcție sau o decizie).
 
-Fișierele sunt în `scripts/avl203/`; testele în `tests/`. Abaterile `DEV-*` și alegerile `OP-*` sunt în `docs/avl-203-204-registru-implementare.md`.
+Fișierele sunt în `scripts/avl203/`; testele în `tests/`. Alegerile `OP-*` sunt în `docs/avl-203-204-registru-implementare.md`. Abaterile rămase sunt `DEV-G01` (caz neacoperit de grilă) și `DEV-G02` (intenție de indexare nedeclarată), în `scripts/avl203/diagnose.py`.
 
-## AVL-203 v0.4.0
+## AVL-203 v0.5.0
 
 | Cerință | Implementare | Test | Status |
 |---|---|---|---|
@@ -25,7 +25,7 @@ Fișierele sunt în `scripts/avl203/`; testele în `tests/`. Abaterile `DEV-*` �
 | REQ-011 GET | `curl` fără `--head` | `test_capture` | acoperit |
 | REQ-012 `200` ≠ indexare; `403` ≠ furnizor blocat | `report.FORBIDDEN`, limitele din raport | `test_diagnose.ExcludedClaimsTest` | acoperit |
 | REQ-013 | **RETRASĂ** în 0.4.0, înlocuită de REQ-041 | — | neaplicabil |
-| REQ-014 statusul TC-04 după tabel | `analyze.tc04`; cazuri neacoperite → `UNKNOWN` + DEV-P04 | `test_analyze.Tc04Test` | acoperit |
+| REQ-014 statusul TC-04 după tabel | `analyze.tc04`, după tabelul din v0.5.0 | `test_analyze.Tc04Test` | acoperit |
 | REQ-015 sitemap ≠ tot site-ul descoperibil | note în observații, formulare exclusă | `test_diagnose.ExcludedClaimsTest` | acoperit |
 | REQ-016 TC-05 din raw HTML, cu locație | `signals.extract` | `test_signals_content.SignalsTest` | acoperit |
 | REQ-017 extracție nesigură → `UNKNOWN` | `signals.extract`, `signals.decode_html` | `test_non_html_and_bad_encoding_unknown` | acoperit |
@@ -54,27 +54,33 @@ Fișierele sunt în `scripts/avl203/`; testele în `tests/`. Abaterile `DEV-*` �
 | REQ-040 raport cu straturi separate, limite, identificare | `report.report` | `test_cli.test_pipeline` | acoperit |
 | REQ-041 RFC 9309 prin parser sau manual, metoda înregistrată | `robots.py`, `--robots-manual` | `test_robots` | acoperit |
 | REQ-042 pagina de identitate obligatorie | `plan.validate` (fără `NOT_APPLICABLE`, absență cu proveniență) | `test_plan.test_contact_*` | acoperit |
+| REQ-043 numai proiecte sau clienți, cu fișa entității | câmpul obligatoriu `entity_sheet` (referință, reprezentant, dată, relație proiect/client/laborator) | `test_plan.test_entity_sheet_required_and_relationship` | parțial: codul verifică declarația, nu existența fișei |
+| REQ-044 repetarea unică la erori de rețea, DNS, timeout | `capture.Recorder.fetch` (OP-09) | `test_capture.test_network_error_retried_once_with_declared_pause`, `test_dns_error_retried`, `test_timeout_retried` | acoperit |
+| REQ-045 variabilitatea referinței la status, URL, headere | `analyze.tc06`, `diagnose` (`R-Z6-07`) | `test_analyze.test_variable_reference_status_not_attributed`, `test_diagnose.Z6Test` | acoperit |
 
-41 de identificatori activi (001–042, fără 013).
+44 de identificatori activi (001–045, fără 013).
 
-## AVL-204 v0.1.0
+## AVL-204 v0.2.0
 
 | Cerință | Implementare | Test | Status |
 |---|---|---|---|
-| REQ-001 numai după integritate verificată | `analyze` verifică întâi; `INVALID` → raport de invaliditate; `R-VAL-01` per artefact | `test_analyze.IntegrityGateTest`, `test_diagnose.IntegrityRuleTest` | acoperit |
+| REQ-001 integritatea: `R-VAL-01` per artefact, rulare invalidă pentru manifest, checksum-uri sau plan | `analyze` verifică întâi; `INVALID` → raport de invaliditate; `R-VAL-01` per artefact | `test_analyze.IntegrityGateTest`, `test_diagnose.IntegrityRuleTest` | acoperit |
 | REQ-002 zonă, stare, regulă, observații | `Diagnoser.add` | `test_diagnose.BaselineTest` | acoperit |
-| REQ-003 nesigur → nu „confirmată” | abateri DEV-P03, P06, P10, N01 | `test_diagnose` (Z1–Z6) | acoperit |
-| REQ-004 restricție declarată ≠ problemă | Z2, Z4, Z6 (DEV-P02) | `test_r_z2_01_not_when_block_declared`, `test_declared_block_not_a_problem` | parțial: `R-Z1-01` nu are în plan un câmp pentru restricția intenționată a clientului de referință |
+| REQ-003 nesigur → nu „confirmată” | cazurile neacoperite → „nu poate fi stabilit” + DEV-G01 / DEV-G02 | `test_diagnose` (Z1–Z6) | acoperit |
+| REQ-004 restricție declarată ≠ problemă | `R-Z1-10` (`intentional_status`), `R-Z2-05`, `R-Z4-01`, `R-Z6-08` | `test_r_z1_10_declared_status`, `test_r_z2_01_not_when_block_declared`, `test_declared_block_not_a_problem` | acoperit |
 | REQ-005 zona = cea mai severă; necunoscutele separat | `diagnose.zones` | `test_zone_state_is_most_severe_and_undetermined_listed` | acoperit |
 | REQ-006 „nicio problemă” ≠ certificare | textul din raport | `test_cli.test_pipeline` | acoperit |
 | REQ-007 reguli §6 cu identificator | `diagnose.RULES` | `test_diagnose` | acoperit |
 | REQ-008 Z2 după determinarea RFC 9309 | `Diagnoser.z2` | `test_diagnose.Z2Test` | acoperit |
-| REQ-009 clasă de prioritate; efortul ca estimare | `recommend.build` | `test_diagnose.RecommendTest` | parțial: `priority = null` la verificările suplimentare (DEV-P07); efortul rămâne necompletat |
+| REQ-009 clasă de prioritate pentru probleme; efortul ca estimare | `recommend.build` (verificările suplimentare fără clasă) | `test_diagnose.RecommendTest` | parțial: efortul și dependențele rămân de completat de redactor |
 | REQ-010 formulări excluse | `report.check_excluded` | `test_diagnose.ExcludedClaimsTest` | parțial (ca AVL203-REQ-037) |
-| REQ-011 aceeași versiune pentru toate entitățile | versiunea e înregistrată per rulare | — | manual: evaluările cu mai multe entități nu sunt încă implementate |
+| REQ-011 aplicare identică pentru toate entitățile evaluate cu o versiune | versiunea e înregistrată per rulare; regulile sunt cod determinist | `test_analyze.test_deterministic_reanalysis` | acoperit |
 | REQ-012 abateri declarate | `diagnostic.json` → `deviations`; raport §7 | `test_diagnose` | acoperit |
 | REQ-013 regulă schimbată → versiune nouă | — | — | manual |
 | REQ-014 comparații cu aceeași versiune | — | — | blocat: comparația între rulări nu e implementată |
+| REQ-015 numai proiecte sau clienți | `entity_sheet` obligatoriu în plan | `test_plan.test_entity_sheet_required_and_relationship` | parțial (ca AVL203-REQ-043) |
+| REQ-016 succes doar pe date complete; zonă fără constatări = „neevaluată” | precondiții în `diagnose` (`R-Z1-08`, `R-Z4-09`, `R-Z5-04`, `R-Z6-05`); `diagnose.zones` | `test_diagnose.BaselineTest.test_zone_without_findings_is_not_evaluated`, `test_r_z1_03` | acoperit |
+| REQ-017 politica din fișa entității; implicit acces total | `plan.validate` (doar `PERMIS` / `BLOCAT_INTENTIONAT`, cu sursă); `Diagnoser.policy_for` (implicit `PERMIS`) | `test_plan.test_unknown_policy_rejected`, `test_diagnose.test_r_z2_01_default_policy_is_full_access` | acoperit |
 
 ## AVL-200 (cerințele aplicabile)
 

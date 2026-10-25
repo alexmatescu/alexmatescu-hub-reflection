@@ -69,7 +69,7 @@ class BaselineTest(unittest.TestCase):
         f, d = run(*clean())
         self.assertEqual(set(rules(f)), {"R-Z1-08", "R-Z2-05", "R-Z3-05", "R-Z4-09", "R-Z5-04", "R-Z6-05"})
         self.assertEqual(d, [])
-        self.assertTrue(all(x["rule_version"] == "0.1.0" and x["observation_ids"] and x["evidence_ids"] for x in f))
+        self.assertTrue(all(x["rule_version"] == "0.2.0" and x["observation_ids"] and x["evidence_ids"] for x in f))
 
     def test_zone_without_findings_is_not_evaluated(self):
         p, obs = clean()
@@ -114,7 +114,8 @@ class Z1Test(unittest.TestCase):
         self.assertTrue(all(x["state"] == dg.UNDETERMINED for x in f if x["rule_id"] == "R-Z1-08"))
         f = self.mut(lambda p, o: o["TC-02"].update(convergence="INCOMPLET", incomplete=["http://www.example.com/"]))
         self.assertNotIn("R-Z1-03", rules(f))
-        self.assertTrue(all(x["state"] == dg.UNDETERMINED and x["deviation"] == "DEV-P10" for x in f if x["rule_id"] == "R-Z1-08"))
+        r08 = [x for x in f if x["rule_id"] == "R-Z1-08"]
+        self.assertTrue(r08 and all(x["state"] == dg.UNDETERMINED and x["deviation"] is None for x in r08))  # AVL204-REQ-016
 
     def test_r_z1_04_with_and_without_declared_redirect(self):
         f = self.mut(lambda p, o: o["TC-01"][1].update(url_final=O + "/despre/", num_redirects=1, initial_status=301))
@@ -147,8 +148,16 @@ class Z1Test(unittest.TestCase):
         def twice(p, o):
             o["TC-01"][0].update(transport_ok=False, curl_exit=6, final_status=None, previous_attempts=[{"curl_exit": 6}])
         f = self.mut(twice)
-        r = [x for x in f if x["rule_id"] == "R-Z1-07"][0]
-        self.assertEqual((r["state"], r["deviation"]), (dg.UNDETERMINED, "DEV-P10"))
+        r = [x for x in f if x["rule_id"] == "R-Z1-09"][0]
+        self.assertEqual((r["state"], r["qualification"]), (dg.CONFIRMED, "în condițiile testate"))
+
+    def test_r_z1_10_declared_status(self):
+        def m(p, o):
+            o["TC-01"][2].update(final_status=410)
+            p["pages"][2]["intentional_status"] = 410
+        f = self.mut(m)
+        self.assertIn("R-Z1-10", rules(f, dg.NONE))
+        self.assertNotIn("R-Z1-01", rules(f))
 
 
 class Z2Test(unittest.TestCase):
@@ -174,13 +183,13 @@ class Z2Test(unittest.TestCase):
         self.assertNotIn("R-Z2-01", rules(f))
         self.assertTrue(any(x["rule_id"] == "R-Z2-05" and x["scope"].get("crawler") == "PerplexityBot" and x["scope"]["page_id"] == "P01" for x in f))
 
-    def test_r_z2_01_unknown_policy_possible_with_deviation(self):
+    def test_r_z2_01_default_policy_is_full_access(self):
         def m(p, o):
             self.disallow(o)
-            p["access_policy"][4]["policy"] = "NECUNOSCUT"
+            p["access_policy"] = [x for x in p["access_policy"] if x["crawler"] != "PerplexityBot"]
         f, d = self.mut(m)
         r = [x for x in f if x["rule_id"] == "R-Z2-01"][0]
-        self.assertEqual((r["state"], r["deviation"]), (dg.POSSIBLE, "DEV-P03"))
+        self.assertEqual((r["state"], r["deviation"]), (dg.CONFIRMED, None))  # AVL-204 §3.1: implicit acces total
 
     def test_r_z2_02(self):
         def m(p, o):
@@ -203,25 +212,39 @@ class Z2Test(unittest.TestCase):
         self.assertIn("R-Z2-02", rules(f, dg.CONFIRMED))
 
     def test_r_z2_03(self):
-        f, _ = self.mut(lambda p, o: o["TC-03"]["parsed"]["unparseable"].append({"line": 3}))
+        f, _ = self.mut(lambda p, o: o["TC-03"]["parsed"]["unparseable"].append({"line": 3, "text": "Dissallow: /x", "looks_like": "disallow"}))
         self.assertIn("R-Z2-03", rules(f, dg.POSSIBLE))
         self.assertIn("R-Z2-05", rules(f))  # regulile parsabile rămân valabile
-        f, _ = self.mut(lambda p, o: o["TC-03"]["capture"].update(url_final="https://cdn.example.net/robots.txt"))
-        self.assertIn("R-Z2-03", rules(f, dg.POSSIBLE))
+        f, _ = self.mut(lambda p, o: o["TC-03"]["parsed"]["unparseable"].append({"line": 3, "text": "garbage", "looks_like": None}))
+        self.assertNotIn("R-Z2-03", rules(f))  # doar directivele scrise greșit se semnalează
         self.assertNotIn("R-Z2-03", rules(run(*clean())[0]))
+
+    def test_r_z2_07_cross_host_redirect_not_a_problem(self):
+        f, _ = self.mut(lambda p, o: o["TC-03"]["capture"].update(url_final="https://cdn.example.net/robots.txt", num_redirects=1))
+        self.assertIn("R-Z2-07", rules(f, dg.NONE))
+        self.assertIn("R-Z2-05", rules(f))
+
+    def test_r_z2_08_429(self):
+        f, _ = self.mut(lambda p, o: o["TC-03"].update(file_state="TOO_MANY_REQUESTS", file_state_reason="429"))
+        self.assertEqual([x["rule_id"] for x in f if x["zone"] == "Z2"], ["R-Z2-08"])
 
     def test_r_z2_04(self):
         f, _ = self.mut(lambda p, o: o["TC-03"].update(file_state="UNAVAILABLE_4XX", file_state_reason="404"))
         self.assertEqual(rules(f, dg.NONE).count("R-Z2-04"), 1)
         self.assertNotIn("R-Z2-05", rules(f))
 
-    def test_r_z2_06_undetermined(self):
+    def test_r_z2_09_and_06_redirect_limit(self):
         def m(p, o):
-            o["TC-03"].update(file_state="UNDETERMINED", file_state_reason="7 redirecturi")
+            o["TC-03"].update(file_state="REDIRECT_LIMIT", file_state_reason="7 redirecturi")
             o["TC-03"]["capture"]["num_redirects"] = 7
         f, d = self.mut(m)
-        r = [x for x in f if x["zone"] == "Z2"]
-        self.assertEqual([(x["rule_id"], x["deviation"]) for x in r], [("R-Z2-06", "DEV-P08")])
+        self.assertEqual([(x["rule_id"], x["state"]) for x in f if x["zone"] == "Z2"],
+                         [("R-Z2-09", dg.POSSIBLE), ("R-Z2-06", dg.UNDETERMINED)])
+        self.assertEqual(d, [])
+
+    def test_r_z2_06_undetermined(self):
+        f, _ = self.mut(lambda p, o: o["TC-03"].update(file_state="UNDETERMINED", file_state_reason="status 1xx final"))
+        self.assertEqual([x["rule_id"] for x in f if x["zone"] == "Z2"], ["R-Z2-06"])
 
     def test_star_row_not_diagnosed(self):
         f, _ = run(*clean())
@@ -237,11 +260,12 @@ class Z3Test(unittest.TestCase):
             f, _ = run(p, obs)
             self.assertEqual([(x["rule_id"], x["state"]) for x in f if x["zone"] == "Z3"], [(rule, state)])
 
-    def test_unknown_carries_deviation(self):
+    def test_unknown_is_table_rule_not_deviation(self):
         p, obs = clean()
-        obs["TC-04"].update(status="UNKNOWN", deviation="DEV-P04", reason="403")
-        _, d = run(p, obs)
-        self.assertEqual(d[0]["deviation"], "DEV-P04")
+        obs["TC-04"].update(status="UNKNOWN", reason="403")
+        f, d = run(p, obs)
+        self.assertEqual(d, [])
+        self.assertIn("403", [x for x in f if x["rule_id"] == "R-Z3-04"][0]["detail"])
 
 
 class Z4Test(unittest.TestCase):
@@ -261,7 +285,7 @@ class Z4Test(unittest.TestCase):
         self.assertNotIn("R-Z4-01", [r for r, _ in self.z4(f)])
         f, _ = self.mut(lambda p, o, s: (s["x_robots_tag"].append({"scope": "googlebot", "directives": ["none"]}),
                                          p["pages"][0].update(index_intent="NECUNOSCUT")))
-        self.assertIn(("R-Z4-01", dg.POSSIBLE), self.z4(f))
+        self.assertIn(("R-Z4-01", dg.UNDETERMINED), self.z4(f))  # DEV-G02: intenția de indexare nedeclarată
 
     def test_r_z4_02(self):
         bad = {"kind": "CAPTURED_AUX", "transport_ok": True, "initial_status": 404, "final_status": 404, "curl_exit": 0, "evidence_ids": ["X"], "integrity": OK}
@@ -270,9 +294,10 @@ class Z4Test(unittest.TestCase):
         good = {**bad, "initial_status": 301, "final_status": 200}
         f, d = self.mut(lambda p, o, s: s["canonical"][0].update(resolved=O + "/c", target=good))
         self.assertNotIn("R-Z4-02", [r for r, _ in self.z4(f)])
-        self.assertEqual(d[0]["deviation"], "DEV-P09")
+        self.assertIn(("R-Z4-10", dg.POSSIBLE), self.z4(f))
+        self.assertEqual(d, [])
         f, _ = self.mut(lambda p, o, s: s["canonical"][0].update(resolved="https://alt.example/c", target={"kind": "NOT_CAPTURED", "reason": "limite"}))
-        self.assertIn(("R-Z4-02", dg.UNDETERMINED), self.z4(f))
+        self.assertIn(("R-Z4-08", dg.UNDETERMINED), self.z4(f))
         self.assertNotIn("R-Z4-09", [r for r, _ in self.z4(f)])
 
     def test_r_z4_03_04_06_07(self):
@@ -300,9 +325,11 @@ class Z4Test(unittest.TestCase):
         p, obs = clean()
         obs["TC-01"][0]["final_status"] = 404
         obs["TC-05"][0]["title"] = []
-        f, d = run(p, obs)
-        self.assertEqual(self.z4(f), [("R-Z4-08", dg.UNDETERMINED)])
-        self.assertEqual(d[-1]["deviation"], "DEV-N01")
+        dgn = dg.Diagnoser(obs, p, UAS)
+        f, d = dgn.run()
+        self.assertEqual(self.z4(f), [])  # AVL-204 §6: Z4 nu se evaluează pentru 4xx/5xx
+        self.assertEqual(dgn.not_evaluated["Z4"], ["P01"])
+        self.assertIn("R-Z1-01", rules(f, dg.CONFIRMED))
 
     def test_r_z4_09(self):
         f, _ = run(*clean())
@@ -310,9 +337,9 @@ class Z4Test(unittest.TestCase):
 
 
 class Z5Test(unittest.TestCase):
-    def st(self, *statuses, dev=None):
+    def st(self, *statuses):
         p, obs = clean()
-        obs["TC-08"][0]["key_texts"] = [{"kt_id": f"KT{i}", "text": "x", "status": s, "matches": [], "deviation": dev} for i, s in enumerate(statuses)]
+        obs["TC-08"][0]["key_texts"] = [{"kt_id": f"KT{i}", "text": "x", "status": s, "matches": []} for i, s in enumerate(statuses)]
         f, d = run(p, obs)
         return [(x["rule_id"], x["state"]) for x in f if x["zone"] == "Z5" and x["scope"]["page_id"] == "P01"], d
 
@@ -322,7 +349,8 @@ class Z5Test(unittest.TestCase):
         self.assertEqual(self.st("UNKNOWN")[0], [("R-Z5-03", dg.UNDETERMINED)])
         self.assertEqual(self.st("PRESENT_IN_BODY", "PRESENT_IN_BODY")[0], [("R-Z5-04", dg.NONE)])
         self.assertEqual(self.st("PRESENT_IN_BODY", "UNKNOWN")[0], [("R-Z5-03", dg.UNDETERMINED)])
-        self.assertEqual(self.st("UNKNOWN", dev="DEV-P05")[1][0]["deviation"], "DEV-P05")
+        self.assertEqual(self.st("PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY")[0], [("R-Z5-05", dg.POSSIBLE)])
+        self.assertEqual(self.st("PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY")[1], [])
 
     def test_qualification_kept(self):
         p, obs = clean()
@@ -357,15 +385,27 @@ class Z6Test(unittest.TestCase):
 
     def test_declared_block_not_a_problem(self):
         z, d, _ = self.agent(lambda o, a: a.update(status_url_headers="DIFERIT", differences={"final_status": [200, 403]}), policy="BLOCAT_INTENTIONAT")
-        self.assertIn(("R-Z6-01", dg.NONE, "DEV-P02"), z)
+        self.assertIn(("R-Z6-08", dg.NONE, None), z)
 
     def test_reference_variable_not_attributed(self):
         def m(o, a):
             o["reference_variability"]["status_url_headers"] = "VARIABIL"
             a.update(status_url_headers="NEATRIBUIBIL (referința variază)", differences={"final_status": [200, 403]})
         z, _, _ = self.agent(m)
-        self.assertIn(("R-Z6-01", dg.UNDETERMINED, "DEV-P06"), z)
+        self.assertIn(("R-Z6-07", dg.UNDETERMINED, None), z)
         self.assertNotIn(dg.CONFIRMED, [s for _, s, _ in z])
+        self.assertNotIn("R-Z6-05", [r for r, _, _ in z])
+
+    def test_favorable_difference_only_possible(self):
+        z, _, _ = self.agent(lambda o, a: a.update(status_url_headers="DIFERIT", differences={"final_status": [404, 200]}))
+        self.assertIn(("R-Z6-06", dg.POSSIBLE, None), z)
+        self.assertNotIn("R-Z6-01", [r for r, _, _ in z])
+        z, _, _ = self.agent(lambda o, a: a.update(status_url_headers="DIFERIT",
+                                                   differences={"headers": {"content-type": [["text/html; charset=utf-8"], ["text/html"]]}}))
+        self.assertIn(("R-Z6-06", dg.POSSIBLE, None), z)
+        z, _, _ = self.agent(lambda o, a: a.update(status_url_headers="DIFERIT",
+                                                   differences={"headers": {"content-type": [["text/html"], ["application/json"]]}}))
+        self.assertIn(("R-Z6-02", dg.CONFIRMED, None), z)
 
     def test_r_z6_03_04_05(self):
         z, _, _ = self.agent(lambda o, a: a.update(content="DIFERIT"))
@@ -400,7 +440,7 @@ class RecommendTest(unittest.TestCase):
         self.assertEqual((recs["R-Z2-01"]["priority"], recs["R-Z2-01"]["impact"]), ("P1", "mare"))
         self.assertEqual((recs["R-Z5-02"]["priority"], recs["R-Z5-02"]["impact"]), ("P3", "mic"))
         self.assertIsNone(recs["R-Z3-04"]["priority"])
-        self.assertIn("DEV-P07", recs["R-Z3-04"]["deviations"])
+        self.assertIn("AVL204-REQ-009", recs["R-Z3-04"]["priority_reason"])
         self.assertTrue(all(r["effort"] is None and r["follow_up"] for r in recs.values()))
         order = [r["priority"] for r in recommend.build(f, p)]
         self.assertEqual(order, sorted(order, key=lambda x: {"P1": 1, "P2": 2, "P3": 3, None: 4}[x]))

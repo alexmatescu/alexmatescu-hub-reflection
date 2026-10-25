@@ -23,12 +23,13 @@ def local_plan(host, pages, **over):
     """Plan TEST pentru serverul local; `pages` = [(page_id, categorie, cale, key_texts)]."""
     origin = f"http://{host}"
     p = {
-        "schema": "avl203-plan/0.1.0",
+        "schema": "avl203-plan/0.2.0",
         "plan_id": "PLAN-fixture-TEST",
         "measurement_point": "TEST",
         "series_id": None,
         "allow_local_fixture": True,
         "entity": {"entity_id": "fixture", "name": "Fixture SRL", "type": "organizatie_servicii"},
+        "entity_sheet": {"reference": "fișa fixture", "representative": "test", "date": "2026-10-25", "relationship": "client"},
         "origin": origin,
         "sample_limits": "fixture local de test",
         "pages": [

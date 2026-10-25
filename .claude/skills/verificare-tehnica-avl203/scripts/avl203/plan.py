@@ -1,8 +1,8 @@
 """Planul de măsurare: validare, înghețare și încărcarea planului înghețat.
 
-AVL203-REQ-001, REQ-029, REQ-030, REQ-031, REQ-042: lista URL-urilor, motivele, limitele
-eșantionului, tipul entității, categoriile obligatorii, textele-cheie și politica de acces se
-fixează înaintea primului request. Captura acceptă numai un plan înghețat, cu hash verificat.
+AVL203-REQ-001, REQ-029, REQ-030, REQ-031, REQ-042, REQ-043; AVL204-REQ-015, REQ-017: lista
+URL-urilor, motivele, limitele eșantionului, tipul entității, categoriile obligatorii, textele-cheie,
+fișa entității și politica de acces (preluată din fișă) se fixează înaintea primului request. Captura acceptă numai un plan înghețat, cu hash verificat.
 """
 import copy
 import ipaddress
@@ -25,7 +25,8 @@ EXTRA_BY_TYPE = {
     "profesionist_independent": ["profil_cv", "publicatii_proiecte"],
 }
 CORE_CRAWLERS = ["Googlebot", "bingbot", "OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
-POLICIES = {"PERMIS", "BLOCAT_INTENTIONAT", "NECUNOSCUT"}
+POLICIES = {"PERMIS", "BLOCAT_INTENTIONAT"}
+DEFAULT_POLICY_SOURCE = "recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant"
 INDEX_INTENTS = {"INDEXAT", "NEINDEXAT_INTENTIONAT", "NECUNOSCUT"}
 CRAWLER_KINDS = {"cautare", "antrenare", "fetch_utilizator"}
 AUX_TYPES = {"canonical", "sitemap_declared"}
@@ -103,6 +104,14 @@ def validate(plan):
     need(isinstance(plan.get("sample_limits"), str) and plan["sample_limits"].strip(),
          "sample_limits (limitele eșantionului) lipsește (AVL203-REQ-001)")
 
+    # ---- fișa entității (AVL203-REQ-043, AVL204-REQ-015): entitatea e proiect sau client
+    sheet = plan.get("entity_sheet") or {}
+    for k in ("reference", "representative", "date", "relationship"):
+        need(isinstance(sheet.get(k), str) and sheet[k].strip(),
+             f"entity_sheet.{k} lipsește (fișa entității completată de reprezentant, AVL203-REQ-043)")
+    if sheet.get("relationship") not in (None, "proiect", "client", "laborator"):
+        E.append("entity_sheet.relationship trebuie să fie proiect, client sau laborator (AVL204-REQ-015)")
+
     # ---- pagini
     pages = plan.get("pages")
     if not need(isinstance(pages, list) and pages, "pages trebuie să fie o listă nevidă"):
@@ -130,6 +139,9 @@ def validate(plan):
         need(p.get("index_intent") in INDEX_INTENTS, f"{tag}.index_intent trebuie să fie unul din {sorted(INDEX_INTENTS)}")
         if p.get("intentional_redirect_to") is not None:
             need(_url_ok(p["intentional_redirect_to"]), f"{tag}.intentional_redirect_to invalid")
+        if p.get("intentional_status") is not None:
+            st = p["intentional_status"]
+            need(isinstance(st, int) and 400 <= st < 600, f"{tag}.intentional_status trebuie să fie un cod 4xx/5xx (R-Z1-10)")
         if p.get("intentional_canonical") is not None:
             need(_url_ok(p["intentional_canonical"]), f"{tag}.intentional_canonical invalid")
         kts = p.get("key_texts")
@@ -196,7 +208,7 @@ def validate(plan):
     need(isinstance(schemes, list) and schemes and set(schemes) <= {"http", "https"}, "variants.schemes ⊆ {http, https}")
     need(isinstance(var.get("reason"), str) and var["reason"].strip(), "variants.reason lipsește")
 
-    # ---- politica de acces (AVL203-REQ-030; formatul P-03 provizoriu)
+    # ---- politica de acces din fișa entității (AVL203-REQ-030, AVL204-REQ-017, AVL204 §3.1)
     pol = plan.get("access_policy")
     if need(isinstance(pol, list), "access_policy trebuie să fie o listă"):
         declared = {}
@@ -205,7 +217,7 @@ def validate(plan):
             x = x or {}
             need(isinstance(x.get("crawler"), str) and x["crawler"].strip(), f"{tag}.crawler lipsește")
             need(x.get("kind") in CRAWLER_KINDS, f"{tag}.kind trebuie să fie unul din {sorted(CRAWLER_KINDS)}")
-            need(x.get("policy") in POLICIES, f"{tag}.policy trebuie să fie unul din {sorted(POLICIES)}")
+            need(x.get("policy") in POLICIES, f"{tag}.policy trebuie să fie unul din {sorted(POLICIES)} (din fișa entității; implicit PERMIS)")
             sc = x.get("scope")
             need(sc == "*" or (isinstance(sc, list) and sc and all(s in seen_ids for s in sc)),
                  f"{tag}.scope trebuie să fie „*” sau o listă de page_id din plan")
@@ -214,7 +226,7 @@ def validate(plan):
                  f"{tag}.declared_on trebuie să fie AAAA-LL-ZZ")
             declared.setdefault((x.get("crawler") or "").lower(), []).append(x)
         for c in CORE_CRAWLERS:
-            need(c.lower() in declared, f"access_policy: lipsește crawlerul Core {c} (folosește NECUNOSCUT dacă politica nu e cunoscută)")
+            need(c.lower() in declared, f"access_policy: lipsește crawlerul Core {c} (implicit PERMIS, sursa: {DEFAULT_POLICY_SOURCE})")
 
     # ---- cereri auxiliare (OP-08)
     aux = plan.get("auxiliary_requests")

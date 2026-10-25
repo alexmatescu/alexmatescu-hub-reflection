@@ -70,6 +70,19 @@ class ValidateTest(unittest.TestCase):
         p["measurement_point"], p["series_id"] = "T0", "s"
         self.assertTrue(any("allow_local_fixture" in e for e in self.errors(p)))
 
+    def test_entity_sheet_required_and_relationship(self):
+        p = template()
+        del p["entity_sheet"]
+        self.assertTrue(any("entity_sheet" in e for e in self.errors(p)))
+        p = template()
+        p["entity_sheet"]["relationship"] = "concurent"
+        self.assertTrue(any("relationship" in e for e in self.errors(p)))
+
+    def test_unknown_policy_rejected(self):
+        p = template()
+        p["access_policy"][0]["policy"] = "NECUNOSCUT"
+        self.assertTrue(any("policy" in e for e in self.errors(p)))
+
     def test_core_crawler_policy_required(self):
         p = template()
         p["access_policy"] = [x for x in p["access_policy"] if x["crawler"] != "Claude-SearchBot"]

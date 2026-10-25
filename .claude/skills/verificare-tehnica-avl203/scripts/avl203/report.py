@@ -53,10 +53,11 @@ def diagnose(run, analysis_dir, rules_version):
     d = dg.Diagnoser(obs, plan, cfg["ua_manifest"]["effective"])
     findings, deviations = d.run()
     recs = recommend.build(findings, plan)
+    zs = dg.zones(findings, plan, d.not_evaluated)
     out = {"run_id": obs["run_id"], "grid": {"id": "AVL-204", "version": GRID_VERSION}, "script_version": SCRIPT_VERSION,
            "diagnosis_utc": utc_now(), "observations_sha256": sha256_file(os.path.join(analysis_dir, "observations.json")),
            "rules": {k: {"zone": v[0], "state": v[1], "condition": v[2]} for k, v in dg.RULES.items()},
-           "findings": findings, "zones": dg.zones(findings, plan), "deviations": deviations, "recommendations": recs,
+           "findings": findings, "zones": zs, "deviations": deviations, "recommendations": recs,
            "layer": "interpretare (separată de observații, AVL203-REQ-033)"}
     check_excluded(json.dumps({"f": findings, "r": recs}, ensure_ascii=False))
     write_json_new(os.path.join(analysis_dir, "diagnostic.json"), out)
@@ -184,12 +185,12 @@ def report(run, analysis_dir):
             L.append(f"- Zona {z} nu a fost evaluată: {v['reason']}.")
         if v.get("pages_not_evaluated"):
             L.append(f"- Zona {z}: pagini fără texte-cheie declarate, neevaluate: {', '.join(v['pages_not_evaluated'])}.")
+        if v.get("pages_not_evaluated_non_2xx"):
+            L.append(f"- Zona {z}: pagini cu răspuns final 4xx/5xx, neevaluate (AVL-204 §6): {', '.join(v['pages_not_evaluated_non_2xx'])}.")
     L += ["", "## 7. Abateri de la grilă (AVL204-REQ-012)", ""]
     devs = {}
     for d in diag["deviations"]:
         devs.setdefault(d["deviation"], []).append(d)
-    if any(r["priority"] is None for r in diag["recommendations"]):
-        devs.setdefault("DEV-P07", [])
     for k in sorted(devs):
         L.append(f"- **{k}** — {dg.DEVIATIONS[k]}" + (f": {len(devs[k])} cazuri" if devs[k] else ""))
     if not devs:
