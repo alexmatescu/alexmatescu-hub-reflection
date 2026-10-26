@@ -3,6 +3,8 @@ import { oLumePreaMarePentruUnSingurOmPost } from "@/data/blog-content/o-lume-pr
 import { capcanaPerfectiuniiPost } from "@/data/blog-content/capcana-perfectiunii";
 import { cumConstruimInRomaniaPost } from "@/data/blog-content/cum-construim-in-romania-ceea-ce-admiram-in-strainatate";
 import { douaBlocuriDePiatraPost } from "@/data/blog-content/doua-blocuri-de-piatra";
+import { aiSchimbaLumeaEuCeFacIntreTimpPost } from "@/data/blog-content/ai-schimba-lumea-eu-ce-fac-intre-timp";
+import { imbatranesteSiSufletulOdataCuTrupulPost } from "@/data/blog-content/imbatraneste-si-sufletul-odata-cu-trupul";
 
 /**
  * Structura articolelor de blog — câmpurile de mai jos sunt grupate și ordonate
@@ -123,6 +125,8 @@ const newPosts: Post[] = [
   capcanaPerfectiuniiPost,
   cumConstruimInRomaniaPost,
   douaBlocuriDePiatraPost,
+  aiSchimbaLumeaEuCeFacIntreTimpPost,
+  imbatranesteSiSufletulOdataCuTrupulPost,
 ];
 
 export const posts: Post[] = [...newPosts, ...legacyPosts].sort(

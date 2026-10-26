@@ -1,7 +1,7 @@
 {
-  "generat": "2026-10-23",
+  "generat": "2026-10-26",
   "pragReverificareZile": 180,
-  "totalIntrari": 175,
+  "totalIntrari": 177,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
@@ -16,7 +16,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-23",
       "dataPublicare": "2026-10-23T16:17:00+03:00",
       "dataModificare": "2026-10-23",
       "ultimaVerificare": "2026-10-23",
@@ -32,7 +32,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 3,
       "anomalii": []
     },
     {
@@ -62,7 +62,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 5,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 4,
       "anomalii": []
     },
     {
@@ -92,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 2,
+      "zileDeLaVerificare": 5,
       "anomalii": []
     },
     {
@@ -122,7 +122,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 22,
+      "zileDeLaVerificare": 25,
       "anomalii": []
     },
     {
@@ -152,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 22,
+      "zileDeLaVerificare": 25,
       "anomalii": []
     },
     {
@@ -182,7 +182,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 22,
+      "zileDeLaVerificare": 25,
       "anomalii": []
     },
     {
@@ -212,7 +212,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 24,
       "anomalii": []
     },
     {
@@ -242,7 +242,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 23,
+      "zileDeLaVerificare": 26,
       "anomalii": []
     },
     {
@@ -272,7 +272,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 23,
+      "zileDeLaVerificare": 26,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -304,7 +304,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 57,
+      "zileDeLaVerificare": 60,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -336,7 +336,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 65,
+      "zileDeLaVerificare": 68,
       "anomalii": []
     },
     {
@@ -366,7 +366,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 65,
+      "zileDeLaVerificare": 68,
       "anomalii": []
     },
     {
@@ -396,7 +396,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 20,
-      "zileDeLaVerificare": 7,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -426,7 +426,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 65,
+      "zileDeLaVerificare": 68,
       "anomalii": []
     },
     {
@@ -456,7 +456,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 65,
+      "zileDeLaVerificare": 68,
       "anomalii": []
     },
     {
@@ -486,7 +486,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 67,
+      "zileDeLaVerificare": 70,
       "anomalii": []
     },
     {
@@ -516,7 +516,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 66,
+      "zileDeLaVerificare": 69,
       "anomalii": []
     },
     {
@@ -666,7 +666,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 24,
       "anomalii": []
     },
     {
@@ -696,7 +696,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 3,
       "anomalii": []
     },
     {
@@ -725,7 +725,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 22,
+      "zileDeLaVerificare": 25,
       "anomalii": []
     },
     {
@@ -754,7 +754,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 7,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -783,7 +783,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 7,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -812,7 +812,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 24,
       "anomalii": []
     },
     {
@@ -1136,6 +1136,62 @@
       "sitemapLastmod": null,
       "imagine": null,
       "zileDeLaVerificare": null,
+      "anomalii": []
+    },
+    {
+      "id": "ai-schimba-lumea-eu-ce-fac-intre-timp",
+      "titlu": "AI schimbă lumea. Eu ce fac între timp?",
+      "suprafata": "blog",
+      "ruta": "/blog/ai-schimba-lumea-eu-ce-fac-intre-timp",
+      "slug": "ai-schimba-lumea-eu-ce-fac-intre-timp",
+      "categorie": "Reflecții",
+      "tip": "Eseu",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-26",
+      "dataModificare": "2026-10-26",
+      "ultimaVerificare": "2026-10-26",
+      "fisierMd": "src/content/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.md",
+      "fisierTs": "src/data/blog-content/ai-schimba-lumea-eu-ce-fac-intre-timp.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": null,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-26",
+      "imagine": "/images/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.webp",
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
+    {
+      "id": "imbatraneste-si-sufletul-odata-cu-trupul",
+      "titlu": "Îmbătrânește și sufletul odată cu trupul?",
+      "suprafata": "blog",
+      "ruta": "/blog/imbatraneste-si-sufletul-odata-cu-trupul",
+      "slug": "imbatraneste-si-sufletul-odata-cu-trupul",
+      "categorie": "Reflecții",
+      "tip": "Eseu",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-10-26",
+      "dataModificare": "2026-10-26",
+      "ultimaVerificare": "2026-10-26",
+      "fisierMd": "src/content/blog/imbatraneste-si-sufletul-odata-cu-trupul.md",
+      "fisierTs": "src/data/blog-content/imbatraneste-si-sufletul-odata-cu-trupul.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": null,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-10-26",
+      "imagine": "/images/blog/imbatraneste-si-sufletul-odata-cu-trupul.webp",
+      "zileDeLaVerificare": 0,
       "anomalii": []
     },
     {
