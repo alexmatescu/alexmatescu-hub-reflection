@@ -7,7 +7,7 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-10-26 · 177 intrări · **2 anomalii** în 2 intrări
+Generat: 2026-10-26 · 178 intrări · **2 anomalii** în 2 intrări
 
 ## Sinteză
 
@@ -15,14 +15,14 @@ Generat: 2026-10-26 · 177 intrări · **2 anomalii** în 2 intrări
 |---|--:|--:|--:|--:|
 | `lab/articole` | 22 | 0 | 22 | 2 |
 | `lab/studii-de-caz` | 1 | 0 | 1 | 0 |
-| `lab/metodologie` | 5 | 0 | 5 | 0 |
+| `lab/metodologie` | 6 | 0 | 6 | 0 |
 | `lab/foundation` | 1 | 0 | 1 | 0 |
 | `lab/cercetare` | 5 | 0 | 5 | 0 |
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 6 | 0 | 6 | 0 |
 | `blog (arhivă)` | 132 | 0 | 132 | 0 |
 | `nealocat` | 0 | 1 | 1 | 0 |
-| **Total** | **176** | **1** | **177** | **2** |
+| **Total** | **177** | **1** | **178** | **2** |
 
 ## Legendă
 
@@ -68,15 +68,16 @@ Generat: 2026-10-26 · 177 intrări · **2 anomalii** în 2 intrări
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `CS-001` | [Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search](/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz) | Entities & Citations | Analiză de caz | publicat | 2026-09-04 | 2026-09-04 | 2026-10-23 | 2026-10-23 (3z) | `✓✓✓✓` | `src/content/studii de caz/01. Alex Matescu/tabula-rasa-entity-resolution-studiu-de-caz.md` | `src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts` |
 
-## `lab/metodologie` — 5 intrări
+## `lab/metodologie` — 6 intrări
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `AVL-203` | AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.3.1 | Draft pentru revizuire | 2026-10-01 | 2026-10-02 | 2026-10-13 | 2026-10-01 | `·✓✓✓` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `src/data/lab-content/avl-203.ts` |
+| `AVL-204` | AVL-204 — Grila de interpretare a verificării tehnice | C — Methodology | 0.2.0 | Draft pentru revizuire | — | 2026-10-26 | — | 2026-10-25 | `·✓✓✓` | `src/content/lab/AVL/AVL-204_Grila_interpretare_verificare_tehnica.md` | `src/data/lab-content/avl-204.ts` |
+| `AVL-203` | AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.5.0 | Draft pentru revizuire | 2026-10-01 | 2026-10-02 | 2026-10-25 | 2026-10-01 | `·✓✓✓` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `src/data/lab-content/avl-203.ts` |
 | `AVL-MKT-001` | AVL-MKT-001 — Market Scope & Eligibility Protocol | C — Methodology | 0.10.0 | Draft pentru revizuire | 2026-10-02 | 2026-10-02 | 2026-10-16 | 2026-10-16 | `·✓✓✓` | `src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md` | `src/data/lab-content/avl-mkt-001.ts` |
 | `AVL-200` | AVL-200 — Standardul de dovezi, măsurare și trasabilitate | C — Methodology | 2.0.0 | Activ | 2026-09-13 | 2026-09-14 | 2026-10-16 | 2026-10-16 | `·✓✓✓` | `src/content/lab/AVL/AVL-200_Standard_dovezi_masurare_trasabilitate.md` | `src/data/lab-content/avl-200.ts` |
-| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.5.0 | Activ | 2026-09-14 | 2026-09-14 | 2026-10-16 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
-| `AVL-201` | AVL-201 — Tabula Rasa F0: Baseline Measurement Specification | C — Methodology | 1.4.0 | Activ | 2026-07-22 | 2026-07 | 2026-10-23 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md` | `src/data/lab-content/avl-201.ts` |
+| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.7.0 | Activ | 2026-09-14 | 2026-09-14 | 2026-10-25 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
+| `AVL-201` | AVL-201 — Tabula Rasa F0: Baseline Measurement Specification | C — Methodology | 1.5.0 | Activ | 2026-07-22 | 2026-07 | 2026-10-25 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md` | `src/data/lab-content/avl-201.ts` |
 
 ## `lab/foundation` — 1 intrare
 
@@ -107,8 +108,8 @@ Generat: 2026-10-26 · 177 intrări · **2 anomalii** în 2 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `ai-schimba-lumea-eu-ce-fac-intre-timp` | [AI schimbă lumea. Eu ce fac între timp?](/blog/ai-schimba-lumea-eu-ce-fac-intre-timp) | Reflecții | Eseu | publicat | — | 2026-10-26 | 2026-10-26 | 2026-10-26 (0z) | `✓✓·✓` | `src/content/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.md` | `src/data/blog-content/ai-schimba-lumea-eu-ce-fac-intre-timp.ts` |
-| `imbatraneste-si-sufletul-odata-cu-trupul` | [Îmbătrânește și sufletul odată cu trupul?](/blog/imbatraneste-si-sufletul-odata-cu-trupul) | Reflecții | Eseu | publicat | — | 2026-10-26 | 2026-10-26 | 2026-10-26 (0z) | `✓✓·✓` | `src/content/blog/imbatraneste-si-sufletul-odata-cu-trupul.md` | `src/data/blog-content/imbatraneste-si-sufletul-odata-cu-trupul.ts` |
+| `ai-schimba-lumea-eu-ce-fac-intre-timp` | [AI schimbă lumea. Eu ce fac între timp?](/blog/ai-schimba-lumea-eu-ce-fac-intre-timp) | Reflecții | Eseu | publicat | 2026-10-26 | 2026-10-26 | 2026-10-26 | 2026-10-26 (0z) | `✓✓·✓` | `src/content/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.md` | `src/data/blog-content/ai-schimba-lumea-eu-ce-fac-intre-timp.ts` |
+| `imbatraneste-si-sufletul-odata-cu-trupul` | [Îmbătrânește și sufletul odată cu trupul?](/blog/imbatraneste-si-sufletul-odata-cu-trupul) | Reflecții | Eseu | publicat | 2026-10-26 | 2026-10-26 | 2026-10-26 | 2026-10-26 (0z) | `✓✓·✓` | `src/content/blog/imbatraneste-si-sufletul-odata-cu-trupul.md` | `src/data/blog-content/imbatraneste-si-sufletul-odata-cu-trupul.ts` |
 | `capcana-perfectiunii` | [Capcana perfecțiunii: de ce nu e suficient să fii bun](/blog/capcana-perfectiunii) | Reflecții | Eseu | publicat | 2026-10-12 | 2026-10-12 | 2026-10-12 | — | `✓✓·✓` | `src/content/blog/capcana-perfectiunii.md` | `src/data/blog-content/capcana-perfectiunii.ts` |
 | `cum-construim-in-romania-ceea-ce-admiram-in-strainatate` | [Cum construim în România ceea ce admirăm în străinătate?](/blog/cum-construim-in-romania-ceea-ce-admiram-in-strainatate) | Reflecții | Eseu | publicat | 2026-10-12 | 2026-10-12 | 2026-10-12 | — | `✓✓·✓` | `src/content/blog/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.md` | `src/data/blog-content/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.ts` |
 | `doua-blocuri-de-piatra` | [Două blocuri de piatră](/blog/doua-blocuri-de-piatra) | Leadership | Eseu | publicat | 2026-10-12 | 2026-10-12 | 2026-10-12 | — | `✓✓·✓` | `src/content/blog/doua-blocuri-de-piatra.md` | `src/data/blog-content/doua-blocuri-de-piatra.ts` |

@@ -1,98 +1,118 @@
 ---
 name: verificare-tehnica-avl203
-description: Execută protocolul AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility (Core Technical Web Measurement Protocol) asupra unor URL-uri declarate într-un plan de măsurare. Rulează verificările TC-00…TC-07 (contextul rulării, HTTP GET / URL final, variante http/https și www, robots.txt, sitemap, semnale raw HTML, User-Agent Response Parity, integritate), conservă artefactele brute, construiește evidence index-ul și checksum-urile și raportează doar observațiile permise de protocol, fără interpretare. Invocă atunci când userul cere „verificarea tehnică AVL-203”, „rulează protocolul tehnic”, „baseline tehnic T0 / remăsurare F1 pentru un site”, sau un audit tehnic minim de accesibilitate pentru crawlere AI. NU publică nimic, NU face audit SEO complet, NU interpretează vizibilitatea AI și NU modifică documentul AVL-203.
+description: Execută protocolul AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility (Core Technical Web Measurement Protocol) — asupra unor URL-uri declarate într-un plan de măsurare înghețat, și aplică grila AVL-204 pentru diagnostic. Rulează verificările TC-00…TC-08 (contextul rulării, HTTP GET / URL final, variante http/https și www, robots.txt după RFC 9309, sitemap, semnale raw HTML, User-Agent Response Parity, integritate, textele-cheie în HTML-ul brut), conservă artefactele brute, construiește evidence index-ul și checksum-urile, produce observațiile, diagnosticul pe zone, recomandările prioritizate și raportul în română. Invocă atunci când userul cere „verificarea tehnică AVL-203”, „rulează protocolul tehnic”, „baseline tehnic T0 / remăsurare F1 pentru un site”, stratul tehnic al unui audit AI Visibility sau un audit tehnic minim de accesibilitate pentru crawlere AI. NU publică nimic, NU face audit SEO complet, NU interpretează vizibilitatea AI și NU modifică documentele AVL-203/AVL-204.
 ---
 
-# Verificare tehnică AVL-203
+# Verificare tehnică AVL-203 / AVL-204
 
-Agent de execuție pentru `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md`. Documentul normativ are precedență asupra acestui fișier: dacă AVL-203 se schimbă (versiune nouă), recitește-l și semnalează orice divergență față de implementare înainte de rulare.
+Agent de execuție pentru `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` (protocolul) și `src/content/lab/AVL/AVL-204_Grila_interpretare_verificare_tehnica.md` (grila de diagnostic). Documentele normative au precedență asupra acestui fișier. Dacă versiunea lor se schimbă, recitește-le și semnalează divergențele față de implementare înainte de rulare.
 
 > **Principiu (AVL-203):** documentăm ceea ce livrează un server în condiții declarate; nu confundăm accesibilitatea tehnică cu indexarea, recuperarea informației, citarea, menționarea sau recomandarea de către un sistem AI.
 
-## Statutul acestei implementări
+## Statutul implementării
 
-- AVL-203 este **Draft 0.3.0**, neactivat, cu cerințele de conformitate `AVL203-REQ-001` … `028` (§15 din document conține checklist-ul). Rezultatele unei rulări sunt observații tehnice valide ca dovezi, dar procesul nu este încă „conform AVL-203 1.0.0”.
-- Scriptul este **implementare candidată, NEVALIDATĂ** ca implementare de referință (AVL-203 §17.4). Fiecare rulare declară asta în `manifest/run.json` și `exceptions.md`.
-- Limitări asumate, care decurg din deciziile deschise ale AVL-203 §17:
-  - **TC-03:** politica robots aplicabilă rămâne `NEDETERMINAT` pentru toți agenții — nu există încă parser RFC 9309 validat (§17.5). Agentul inventariază grupurile și regulile declarate, nu decide `ALLOW`/`DISALLOW`.
-  - **TC-06:** șirurile User-Agent sunt înghețate în `config/user-agents.v0.1.0.tsv` cu status per rând (`OFICIAL`, `OFICIAL_CU_VERSIUNE_ALEASA`, `DOAR_TOKEN`, `NECONFIRMAT`) (§17.6). Nu modifica fișierul pentru o rulare; o schimbare înseamnă manifest nou, versionat.
+- Implementarea curentă este **v0.4.0**, „implementare candidată pentru draftul AVL-203 v0.5.0 / AVL-204 v0.2.0”, **nevalidată** ca implementare de referință (AVL-203 §19.4). Nu declara rezultatele „conforme AVL-203 1.0.0”.
+- Ce acoperă codul, prin ce test și ce nu acoperă: `CONFORMANCE.md`.
+- Alegerile operaționale `OP-*` și istoricul propunerilor `P-01`…`P-11` (aprobate și preluate în AVL-203 0.5.0 / AVL-204 0.2.0): `docs/avl-203-204-registru-implementare.md`. Planul de lucru: `docs/PLAN-AVL-203-204-VERIFICARE-TEHNICA.md`.
+- **Domeniul (AVL203-REQ-043, AVL204-REQ-015):** verificarea se face numai pentru site-ul unei entități evaluate ca proiect sau client al laboratorului (inclusiv site-urile proprii), cu fișa entității completată de reprezentant. Nu pentru concurenți și nici pentru entitățile din Market Discovery; o verificare din afara domeniului nu se documentează ca rulare.
+- `scripts/run_avl203.sh` și `scripts/analyze_avl203.py` (v0.2.x) rămân doar pentru reproducerea rulărilor vechi. Nu le folosi pentru rulări noi.
 
 ## Fișiere
 
 | Fișier | Rol |
 |---|---|
-| `scripts/run_avl203.sh` | capturile deterministe cu `curl` (comenzile din AVL-203 §4–§10), apoi analizorul și checksum-urile |
-| `scripts/analyze_avl203.py` | TC-05, inventar robots, clasificare sitemap, comparație TC-06, evidence index, manifest, observații (doar biblioteca standard Python) |
-| `config/user-agents.v0.1.0.tsv` | manifestul User-Agent înghețat la 2026-10-02, cu sursa fiecărui șir |
+| `scripts/avl203_cli.py` | interfața: `plan`, `capture`, `verify`, `analyze`, `diagnose`, `report` |
+| `scripts/avl203/` | modulele (plan, captură, integritate, robots RFC 9309, TC-05, TC-08, analiză, diagnostic, recomandări, raport); doar biblioteca standard Python 3.9+ și `curl` |
+| `config/plan-template.json` | șablonul planului de măsurare |
+| `config/operational.v0.1.0.json` | alegerile operaționale OP-01…OP-12, versionate |
+| `config/user-agents.v0.1.0.tsv` | manifestul User-Agent înghețat la 2026-10-02 |
+| `tests/` | testele `unittest`, pe server local: `python3 -m unittest discover -s .claude/skills/verificare-tehnica-avl203/tests` |
 
 ## Pasul 1 — Planul de măsurare (înainte de orice request)
 
-AVL-203 §1 cere ca lista URL-urilor, motivele alegerii și limitele eșantionului să fie declarate **înaintea rulării**. Dacă userul nu a dat un plan:
+AVL203-REQ-001, REQ-029, REQ-030, REQ-031 și REQ-042 cer ca planul să fie fixat înaintea primului request.
 
-1. cere-i URL-urile exacte, entitatea, eticheta rulării și motivul alegerii fiecărui URL;
-2. scrie planul într-un fișier (ex. `evidence/work/avl203/plan-{entitate}-{eticheta}.md`) și arată-l userului;
-3. abia apoi rulează. Pentru `T0` și `F1`…`Fn`, scriptul refuză rularea fără `--plan` (AVL203-REQ-001); doar `TEST` poate rula fără plan.
+1. `python3 .claude/skills/verificare-tehnica-avl203/scripts/avl203_cli.py plan init --out evidence/work/avl203/plan-{entitate}-{eticheta}.json`
+2. Completează planul cu userul. Planul cuprinde:
+   - entitatea și tipul ei;
+   - **fișa entității** (`entity_sheet`): referința, reprezentantul, data, relația (proiect, client, laborator);
+   - originul exact;
+   - **paginile pe categorii** (`pagina_principala`, `despre`, `contact_identitate` (obligatorie), `oferta_principala`, `referinta`), fiecare cu motivul alegerii, intenția de indexare și textele-cheie TC-08;
+   - categoriile care nu se aplică, cu motiv;
+   - variantele de host relevante;
+   - **politica de acces** pentru fiecare crawler Core, preluată din câmpul „Politica crawlere” al fișei entității (AVL-201 §7, AVL-204 §3.1): `PERMIS` sau `BLOCAT_INTENTIONAT`, cu sursa. Laboratorul recomandă accesul total; dacă reprezentantul nu declară altceva, se trece `PERMIS` cu sursa „recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant”;
+   - limitele cererilor auxiliare;
+   - extensiile (lista goală dacă nu există).
 
-**Eticheta rulării** (AVL-203 §11): `T0` pentru baseline, `F1`, `F2` … `Fn` pentru rulările ulterioare, în ordinea executării; `TEST` pentru rulări de probă care nu intră într-o serie de măsurare. Eticheta se atribuie la înregistrare și nu se schimbă ulterior. Pentru o remăsurare, folosește **aceleași URL-uri** și aceeași versiune a protocolului și a manifestului UA ca la `T0`; orice abatere se declară.
+   Politica și intenția de indexare le declară entitatea. Nu le deduce din robots.txt (AVL204-REQ-017). Un răspuns de eroare intenționat al unei pagini se declară cu `intentional_status`.
+3. `plan validate`, apoi `plan freeze`. Planul înghețat nu se mai modifică. O completare ulterioară înseamnă o rulare nouă (REQ-030).
 
-## Pasul 2 — Rularea
+**Eticheta** (AVL-203 §11): `T0` pentru baseline și `F1`, `F2` … `Fn` pentru rulările ulterioare, toate cu `series_id`. `TEST` marchează rulările de probă, care nu se compară cu seriile și nu susțin concluzii publicate.
+
+## Pasul 2 — Captura
 
 ```bash
-bash .claude/skills/verificare-tehnica-avl203/scripts/run_avl203.sh \
-  --entity "delamatescu.ro" --label T0 \
-  --plan evidence/work/avl203/plan-delamatescu-T0.md \
-  https://delamatescu.ro/ https://delamatescu.ro/lab
+python3 .claude/skills/verificare-tehnica-avl203/scripts/avl203_cli.py capture \
+  --plan evidence/work/avl203/plan-delamatescu-T0.frozen.json --out evidence/work/avl203
 ```
 
-Opțiuni: `--out DIR` (implicit `evidence/work/avl203`, ignorat de git), `--delay SECUNDE` (pauză între requesturi, implicit 1), `--chrome-version` (versiunea Chrome inserată în șirul oficial Googlebot, implicit `131.0.0.0`; se înregistrează în manifest).
+Planul înghețat se verifică după hash înainte de primul request. Captura scrie `manifest/config.json` (configurația inițială), apoi face requesturile, secvențial și cu pauză:
 
-Ce face, în ordine: TC-00 (mediul: `date -u`, `curl --version`, sistemul) → TC-01 (GET per URL) → TC-02 (`http`/`https` × `www`/non-`www` pe fiecare origine) → TC-03 (`robots.txt` per origine) → TC-04 (sitemap-urile declarate în robots, apoi `/sitemap.xml` și `/sitemap_index.xml`) → TC-06 (același GET pentru fiecare User-Agent din manifest; captura TC-01 și captura `client` din TC-06 formează dubla captură obligatorie a clientului de referință, AVL-203 §9) → analizorul (TC-05 + observații) → TC-07 (`sha256sums.txt` peste `manifest/` și artefacte + verificare). Requesturile sunt secvențiale, cu pauză, fără `--insecure`. Ultima linie a outputului este directorul rulării.
+1. TC-01;
+2. TC-02, doar pentru variantele declarate;
+3. TC-03;
+4. TC-04: sitemap-urile declarate, apoi căile convenționale;
+5. TC-06: referință, User-Agent-ii din manifest, referință;
+6. ținta canonicalului, în limitele planului.
 
-**Politețe și siguranță:** rulează doar asupra URL-urilor din plan. Nu rula în buclă, nu crește concurența, nu folosi protocolul pentru crawling complet (în afara Core, AVL-203 §12). Dacă un site răspunde cu `429`/`503` repetat, oprește-te și raportează.
+La o eroare de rețea, request-ul se repetă o singură dată (OP-09). La final se scriu `manifest/run-final.json`, evidence index-ul și `integrity/sha256sums.txt`, iar integritatea se verifică. Fără `--insecure`. Un run ID existent nu se suprascrie.
 
-## Pasul 3 — Verificarea rulării
+**Politețe:** rulează doar pe URL-urile din plan. Nu rula în buclă și nu crește concurența. Dacă un site răspunde repetat cu `429`/`503`, oprește-te și raportează.
 
-Înainte de raport, confirmă din fișiere, nu din memorie:
+## Pasul 3 — Analiză, diagnostic, raport (offline, fără recaptură)
 
-- `integrity/verify.txt` se termină cu `exit=0` și fiecare fișier e `OK`;
-- `manifest/run.json` are `start_utc`, `end_utc`, `curl_version`, `urls_testate`, `user_agents_efective`, `plan_de_masurare` (≠ `NEDECLARAT`, altfel e abatere);
-- `exceptions.md` — erorile de captură (`curl_exit ≠ 0`) sunt listate, nu ascunse;
-- `evidence-index.tsv` — fiecare artefact are `sha256` și e legat de TC, URL și UA.
+```bash
+CLI=.claude/skills/verificare-tehnica-avl203/scripts/avl203_cli.py
+python3 $CLI analyze  --run evidence/work/avl203/run_<ID>     # observații TC-00…TC-08
+python3 $CLI diagnose --run evidence/work/avl203/run_<ID> --rules 0.2.0
+python3 $CLI report   --run evidence/work/avl203/run_<ID>
+```
+
+- `analyze` verifică întâi integritatea. Pentru o rulare `INVALID` produce doar `invalidity.json`. Pentru `PARTIAL`, constatările sprijinite pe artefacte afectate primesc `R-VAL-01`. Fiecare analiză scrie într-un director nou, `derived/analysis-<timp>/`. Dovezile brute nu se ating.
+- Aplicarea manuală documentată a RFC 9309 (REQ-041): `analyze --robots-manual decizii.json`, cu liniile citate din `robots.body`.
+- `report` scrie `report.md` (în română) și `report.json`. Raportul are secțiunile: rezumat, plan, observații, diagnostic, recomandări, necunoscute, abateri, limite, trasabilitate.
 
 ## Pasul 4 — Raportul către user
 
-Raportează **doar observațiile permise** din AVL-203 §3, pornind de la `observations.md`:
+Pornește de la `report.md`. Înainte de a-l prezenta, verifică pe dovezile brute (nu din memorie) constatările care contează, de exemplu un status, o regulă robots sau o locație TC-08.
 
-| TC | Ce poți afirma | Ce NU poți afirma |
-|---|---|---|
-| TC-01 | cod HTTP, URL final, număr redirecturi, tip, dimensiune | că pagina e indexată (`200` ≠ indexare) |
-| TC-02 | convergența/divergența variantelor; erorile TLS/DNS | că domeniul „controlează” ambele hostname-uri |
-| TC-03 | grupurile și regulile **declarate**, declarațiile `Sitemap` | politica aplicabilă unui crawler (rămâne `NEDETERMINAT`) |
-| TC-04 | statusul după regula de mai jos | că tot site-ul e descoperibil |
-| TC-05 | title, canonical declarat, meta robots, X-Robots-Tag, lang, prezența JSON-LD | canonicalul selectat de Google; validitatea Schema.org; utilizarea de către un model |
-| TC-06 | variabilitatea intrinsecă (dubla captură a clientului, obligatorie); diferențe de status, URL, headere; diferențe de dimensiune/hash **doar dacă** variabilitatea intrinsecă e `NU` | cloaking; inaccesibilitate pentru furnizorul real (UA declarat ≠ crawler autentificat); diferențe de conținut atribuite UA-ului când răspunsul variază intrinsec |
-| TC-07 | integritatea octeților după captură | autenticitatea sursei înaintea capturii |
-
-Valorile `UNKNOWN`/`NOT_APPLICABLE`/erorile rămân distincte de `NO` (AVL-200 §6). Orice comparație între `T0` și `Fn` se prezintă ca observație tehnică; succesiunea temporală nu demonstrează cauzalitatea (AVL-203 §11).
-
-### Regula de clasificare TC-04 (AVL-203 §7, v0.2.0)
-
-| Status | Condiție |
+| Poți afirma | NU poți afirma |
 |---|---|
-| `DECLARED` | `robots.txt` declară ≥ 1 `Sitemap:` și cel puțin unul răspunde `2xx` |
-| `UNAVAILABLE` | sitemap declarat, dar niciunul nu răspunde `2xx`; sau, fără declarație, căile convenționale dau erori/`5xx` |
-| `FOUND_AT_CONVENTIONAL_PATH` | nicio declarație, dar `/sitemap.xml` sau `/sitemap_index.xml` răspunde `2xx` |
-| `NOT_FOUND` | nicio declarație și toate căile convenționale răspund `404`/`410` |
-| `UNKNOWN` | `robots.txt` nu a putut fi capturat |
+| status, URL final, redirecturi, tip, dimensiune | că pagina e indexată (`200` ≠ indexare) |
+| convergența variantelor; erorile TLS/DNS | că domeniul „controlează” ambele hostname-uri |
+| politica RFC 9309 pentru o pereche URL–crawler, cu metoda | comportamentul efectiv al unui furnizor |
+| statusul TC-04 | că tot site-ul e descoperibil |
+| title, canonical declarat, meta robots, X-Robots-Tag, lang, JSON valid sintactic | canonicalul ales de Google; validitatea Schema.org |
+| diferențe pentru User-Agent-ii declarați, ținând cont de variabilitatea referinței | cloaking; accesul real al crawlerului furnizorului |
+| prezența textelor-cheie în HTML-ul brut, pe zone | ce vede pagina randată sau un anumit crawler |
+| starea diagnosticului după AVL-204, cu regula și observațiile | o certificare a site-ului sau un efect asupra răspunsurilor AI |
+
+Starea „nicio problemă observată” descrie condițiile testate. Constatările „nu poate fi stabilit” se raportează separat. Abaterile `DEV-*` din raport se menționează.
 
 ## Ce NU face acest agent
 
-- Nu publică rezultatele și nu le comite: `evidence/work/` e ignorat de git, iar repo-ul este public. Dovezile despre site-uri terțe nu ajung pe GitHub. Pentru împachetarea ca Evidence Package folosește skill-ul `evidence-release`, oprit înainte de release dacă datele nu trebuie publicate.
-- Nu modifică AVL-203, manifestul UA sau scripturile în timpul unei rulări.
-- Nu face audit SEO, Core Web Vitals, rendering JavaScript, validare Schema.org, crawling complet sau autentificarea roboților prin loguri (AVL-203 §12).
-- Nu interoghează sisteme AI și nu deduce vizibilitate, citare sau recomandare (AVL-203 §13).
-- Nu rescrie artefacte brute pentru un raport mai lizibil (AVL-200 §8.1).
+- Nu publică rezultatele și nu le comite. `evidence/work/` e ignorat de git, iar repo-ul e public. Corpurile HTML capturate pot conține tokenuri per request, deci dovezile brute nu se publică (AVL203-REQ-007).
+- Nu modifică AVL-203, AVL-204, manifestul UA, configurația operațională sau scripturile în timpul unei rulări.
+- Nu face audit SEO, Core Web Vitals, randare JavaScript, validare Schema.org, crawling complet sau autentificarea roboților prin loguri (AVL-203 §13).
+- Nu interoghează sisteme AI și nu deduce vizibilitate, citare sau recomandare (AVL-203 §14).
 
 ## Când se schimbă implementarea
 
-O modificare a scripturilor, a regulii TC-04 sau a manifestului UA care afectează comparabilitatea cere bump de `SCRIPT_VERSION` / fișier UA nou și menționarea în raportul rulării (AVL-203 §3, AVL-200 §19). Rulările vechi rămân atribuite versiunii cu care au fost făcute.
+O modificare care poate schimba o observație sau un diagnostic cere o versiune nouă:
+
+- `SCRIPT_VERSION` din `scripts/avl203/__init__.py`;
+- un fișier `operational.vX.json` nou;
+- un manifest UA nou;
+- pentru reguli, o versiune nouă a grilei AVL-204.
+
+Actualizează și `CONFORMANCE.md`. Rulările vechi rămân atribuite versiunii cu care au fost făcute.

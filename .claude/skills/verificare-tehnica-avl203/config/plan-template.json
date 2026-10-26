@@ -1,0 +1,158 @@
+{
+  "schema": "avl203-plan/0.2.0",
+  "plan_id": "PLAN-exemplu-TEST-001",
+  "measurement_point": "TEST",
+  "series_id": null,
+  "methodological_phase": null,
+  "entity": {
+    "entity_id": "exemplu-ro",
+    "name": "Exemplu SRL",
+    "type": "organizatie_servicii"
+  },
+  "entity_sheet": {
+    "reference": "fișa entității Exemplu SRL, v1 (AVL-201 §7)",
+    "representative": "Nume Prenume, administrator",
+    "date": "2026-10-25",
+    "relationship": "client"
+  },
+  "origin": "https://example.com",
+  "sample_limits": "Eșantion de N pagini alese după categoriile din AVL-203 §1.1; nu reprezintă întregul domeniu.",
+  "pages": [
+    {
+      "page_id": "P01",
+      "category": "pagina_principala",
+      "url": "https://example.com/",
+      "reason": "pagina principală a originului (AVL-203 §1.1)",
+      "index_intent": "INDEXAT",
+      "key_texts": [
+        {
+          "kt_id": "KT01",
+          "text": "Exemplu SRL",
+          "purpose": "numele entității"
+        }
+      ]
+    },
+    {
+      "page_id": "P02",
+      "category": "despre",
+      "url": "https://example.com/despre",
+      "reason": "pagina canonică despre entitate",
+      "index_intent": "INDEXAT",
+      "key_texts": [
+        {
+          "kt_id": "KT02",
+          "text": "Exemplu SRL",
+          "purpose": "numele entității"
+        },
+        {
+          "kt_id": "KT03",
+          "text": "consultanță",
+          "purpose": "descrierea activității"
+        }
+      ]
+    },
+    {
+      "page_id": "P03",
+      "category": "contact_identitate",
+      "url": "https://example.com/contact",
+      "reason": "pagina cu datele de identitate (obligatorie, AVL203-REQ-042)",
+      "index_intent": "INDEXAT",
+      "key_texts": [
+        {
+          "kt_id": "KT04",
+          "text": "Sibiu",
+          "purpose": "localitatea"
+        }
+      ]
+    },
+    {
+      "page_id": "P04",
+      "category": "oferta_principala",
+      "url": "https://example.com/servicii",
+      "reason": "pagina principală de servicii",
+      "index_intent": "INDEXAT",
+      "key_texts": []
+    }
+  ],
+  "main_offer_count_declared": 1,
+  "categories_not_applicable": [
+    {
+      "category": "referinta",
+      "reason": "entitatea nu desemnează pagini-pilon"
+    }
+  ],
+  "identity_page_absent": null,
+  "variants": {
+    "hosts": [
+      "example.com",
+      "www.example.com"
+    ],
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "reason": "ambele hostname-uri au înregistrări DNS"
+  },
+  "access_policy": [
+    {
+      "crawler": "Googlebot",
+      "kind": "cautare",
+      "policy": "PERMIS",
+      "scope": "*",
+      "source": "recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant",
+      "declared_on": "2026-10-25"
+    },
+    {
+      "crawler": "bingbot",
+      "kind": "cautare",
+      "policy": "PERMIS",
+      "scope": "*",
+      "source": "recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant",
+      "declared_on": "2026-10-25"
+    },
+    {
+      "crawler": "OAI-SearchBot",
+      "kind": "cautare",
+      "policy": "PERMIS",
+      "scope": "*",
+      "source": "recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant",
+      "declared_on": "2026-10-25"
+    },
+    {
+      "crawler": "Claude-SearchBot",
+      "kind": "cautare",
+      "policy": "PERMIS",
+      "scope": "*",
+      "source": "recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant",
+      "declared_on": "2026-10-25"
+    },
+    {
+      "crawler": "PerplexityBot",
+      "kind": "cautare",
+      "policy": "PERMIS",
+      "scope": "*",
+      "source": "recomandarea AI Visibility Lab (acces total), nemodificată de reprezentant",
+      "declared_on": "2026-10-25"
+    },
+    {
+      "crawler": "GPTBot",
+      "kind": "antrenare",
+      "policy": "BLOCAT_INTENTIONAT",
+      "scope": "*",
+      "source": "fișa entității: reprezentantul cere blocarea crawlerului de antrenare",
+      "declared_on": "2026-10-25"
+    }
+  ],
+  "auxiliary_requests": {
+    "types": [
+      "canonical",
+      "sitemap_declared"
+    ],
+    "allowed_hosts": [
+      "example.com",
+      "www.example.com"
+    ],
+    "max_requests": 20
+  },
+  "extensions": []
+}

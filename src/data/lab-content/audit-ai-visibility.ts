@@ -51,7 +51,7 @@ export const auditAiVisibilityHtml = `
 
 <p><strong>Limita verificării:</strong> un răspuns HTTP corect și permisiunea din robots.txt nu demonstrează că o pagină este indexată, recuperată, utilizată sau citată de un sistem AI. Verificările tehnice sunt o condiție de diagnostic, nu un test direct de citare.</p>
 
-<p>Acest strat se inspiră și din <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a>, publicat în prezent ca draft metodologic, nu ca standard activ.</p>
+<p>Acest strat se inspiră și din <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a>, publicat în prezent ca draft metodologic, nu ca standard activ. Observațiile tehnice devin diagnostic după <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a>, publicată tot ca draft.</p>
 
 <h3 id="identitate-digitala">2. Identitatea digitală și coerența surselor</h3>
 
@@ -87,6 +87,8 @@ export const auditAiVisibilityHtml = `
 <h3 id="diagnostic">6. Diagnostic și prioritizarea intervențiilor</h3>
 
 <p>Grupăm constatările după tipul problemei: acces, descoperire, identitate, conținut, sursă, reprezentare incorectă sau lipsă de dovezi. Pentru fiecare recomandare explicăm observația care o susține, gradul de certitudine, elementul asupra căruia poți interveni și modul propus de verificare ulterioară.</p>
+
+<p>Pentru stratul tehnic, stările „problemă confirmată”, „problemă posibilă” și „nu poate fi stabilit”, precum și prioritizarea recomandărilor, urmează regulile publice din <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a>, aplicate la fel oricărei entități evaluate.</p>
 
 <h2 id="cum-decurge">Cum decurge un audit AI Visibility</h2>
 
@@ -198,6 +200,7 @@ export const auditAiVisibilityHtml = `
   <li><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa</a></li>
   <li><a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a></li>
   <li><a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică (draft)</a></li>
+  <li><a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice (draft)</a></li>
   <li><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility (draft)</a></li>
   <li><a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener">Google Search Central — AI features and your website</a></li>
   <li><a href="https://developers.openai.com/api/docs/bots" rel="noopener">OpenAI — Overview of OpenAI Crawlers</a></li>

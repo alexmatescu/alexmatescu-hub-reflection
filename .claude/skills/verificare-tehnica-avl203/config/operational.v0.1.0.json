@@ -1,0 +1,31 @@
+{
+  "schema": "avl203-operational/0.1.0",
+  "version": "0.1.0",
+  "frozen": "2026-10-25",
+  "source": "docs/avl-203-204-registru-implementare.md §4.1 (OP-01…OP-12)",
+  "note": "Alegeri operaționale: nu schimbă diagnosticul. O modificare = versiune nouă a acestui fișier; rularea înregistrează versiunea și hash-ul.",
+  "capture": {
+    "OP-12": {
+      "connect_timeout": 15,
+      "max_time": 45,
+      "delay_seconds": 1,
+      "max_redirects": 10,
+      "allowed_protocols": "=http,https",
+      "compressed": {"TC-01": true, "TC-02": true, "TC-03": false, "TC-04": false, "TC-06": true, "AUX": true}
+    },
+    "OP-06": {"robots_max_redirects": 10, "robots_rfc_redirect_threshold": 5},
+    "OP-09": {"network_retry_count": 1, "network_retry_pause_seconds": 30, "network_error_curl_exits": [5, 6, 7, 28, 52, 55, 56]},
+    "OP-11": {"reference_captures": 2, "reference_positions": ["before_agents", "after_agents"]},
+    "OP-08": {"default_types": ["canonical", "sitemap_declared"], "default_max_requests": 20},
+    "sitemap": {"conventional_paths": ["/sitemap.xml", "/sitemap_index.xml"], "max_declared_per_origin": 10}
+  },
+  "analysis": {
+    "OP-01": ["html_entities_decode", "unicode_nfc", "unicode_spaces_to_space", "collapse_whitespace", "casefold"],
+    "OP-01_keep_diacritics": true,
+    "OP-02": "separator la granița elementelor bloc și la <br>; fără separator la elementele inline",
+    "OP-03": "linie și coloană în fișierul original (hartă de poziții)",
+    "OP-04": ["x-robots-tag", "content-type", "content-language", "link", "location", "vary"],
+    "OP-07": {"robots_size_signal_bytes": 512000},
+    "OP-10": {"Z1": "url", "Z2": "url_x_crawler", "Z3": "origin", "Z4": "url", "Z5": "url", "Z6": "url"}
+  }
+}
