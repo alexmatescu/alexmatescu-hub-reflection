@@ -160,6 +160,93 @@ export const mdRuns: MdRun[] = [pilot1, pilot2, pilot3, pilot5].map((d) =>
 
 export const findMdRun = (slug: string) => mdRuns.find((r) => r.slug === slug);
 
+/** Apariția unei entități din reuniune într-o rulare. */
+export type MdUnionRun = {
+  slug: string;
+  label: string;
+  path: string;
+  /** ID-ul din registrul rulării (ex. CE-012). */
+  id: string;
+  base: boolean;
+};
+
+/**
+ * O entitate din reuniunea piloților. Potrivirea se face pe `key`, cheia de
+ * deduplicare refolosită de la un pilot la altul (U0–U3); nu pe nume.
+ */
+export type MdUnionEntity = {
+  key: string;
+  /** Eticheta din cea mai recentă rulare în care apare. */
+  name: string;
+  type: string;
+  class: string;
+  /** În bază în cel puțin o rulare. */
+  base: boolean;
+  runs: MdUnionRun[];
+  surfaces: string[];
+  surfacesExtended: string[];
+  queries: string[];
+  observations: number;
+  recommendedOn: string[];
+  identityFlags: string[];
+  relations: string[];
+};
+
+/** Reuniunea entităților candidate din toate rulările (seria până acum). */
+export const mdUnion: MdUnionEntity[] = (() => {
+  const byKey = new Map<string, MdUnionEntity>();
+  const add = (list: string[], values: string[]) => {
+    for (const v of values) if (!list.includes(v)) list.push(v);
+  };
+  for (const run of mdRuns) {
+    for (const e of run.entities) {
+      const u = byKey.get(e.key) ?? {
+        key: e.key,
+        name: e.name,
+        type: e.type,
+        class: e.class,
+        base: false,
+        runs: [],
+        surfaces: [],
+        surfacesExtended: [],
+        queries: [],
+        observations: 0,
+        recommendedOn: [],
+        identityFlags: [],
+        relations: [],
+      };
+      // rulările sunt în ordine cronologică: ultima suprascrie eticheta și clasa
+      u.name = e.name;
+      u.type = e.type;
+      u.class = e.class;
+      u.base ||= e.base;
+      u.runs.push({
+        slug: run.slug,
+        label: run.label,
+        path: run.path,
+        id: e.id,
+        base: e.base,
+      });
+      add(u.surfaces, e.surfaces);
+      add(u.surfacesExtended, e.surfacesExtended);
+      add(u.queries, e.queries);
+      add(u.recommendedOn, e.recommendedOn);
+      if (e.identityFlags)
+        add(
+          u.identityFlags,
+          e.identityFlags
+            .split(";")
+            .map((f) => f.trim())
+            .filter(Boolean),
+        );
+      if (e.relations) u.relations.push(`${run.label}: ${e.relations}`);
+      u.observations += e.observations;
+      byKey.set(e.key, u);
+    }
+  }
+  return [...byKey.values()];
+})();
+
 export const mdSeries = seriesData;
 
 export const MD_SURFACE_SHORT: Record<string, string> = {

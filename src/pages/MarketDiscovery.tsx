@@ -22,7 +22,9 @@ import {
   mdLabel,
   mdRuns,
   mdSeries,
+  mdUnion,
   type MdEntity,
+  type MdUnionEntity,
   type MdExclusivity,
   type MdProvenance,
   type MdRun,
@@ -736,6 +738,367 @@ const EntityExplorer = ({ run }: { run: MdRun }) => {
   );
 };
 
+// ───────────────────────────── seria cumulată (hub) ─────────────────────────────
+
+/**
+ * Matricea interogare × suprafață a tuturor rulărilor, una sub alta. Celulele
+ * rămân cele ale rulării: aceeași întrebare rulată în doi piloți apare pe două
+ * rânduri, nu adunată.
+ */
+const SeriesMatrix = () => {
+  const max = Math.max(
+    1,
+    ...mdRuns.flatMap((r) => r.matrix.flatMap((m) => Object.values(m.cells))),
+  );
+  return (
+    <div className="mt-8">
+      <div className="overflow-x-auto -mx-6 md:mx-0">
+        <table className="w-full min-w-[720px] md:min-w-[680px] border-collapse text-sm tabular-nums">
+          <caption className="sr-only">
+            Entități candidate distincte în bază, pe interogare și suprafață, în
+            fiecare pilot
+          </caption>
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                className="sticky left-0 z-10 bg-background text-left font-medium text-[11px] uppercase tracking-[0.14em] text-muted-foreground pb-3 pl-6 md:pl-0 pr-3"
+              >
+                Interogare
+              </th>
+              {SURFACE_ORDER.map((s) => (
+                <th
+                  key={s}
+                  scope="col"
+                  className="font-medium text-[11px] uppercase tracking-[0.08em] text-muted-foreground pb-3 px-1 text-center"
+                >
+                  {shortSurface(s)}
+                </th>
+              ))}
+              <th
+                scope="col"
+                className="font-medium text-[11px] uppercase tracking-[0.14em] text-foreground pb-3 pl-3 pr-6 md:pr-0 text-right"
+              >
+                Reuniune
+              </th>
+            </tr>
+          </thead>
+          {mdRuns.map((run) => {
+            const queryText = new Map(run.queries.map((q) => [q.id, q.text]));
+            return (
+              <tbody key={run.slug}>
+                <tr>
+                  <th
+                    scope="rowgroup"
+                    colSpan={SURFACE_ORDER.length + 2}
+                    className="text-left font-normal pt-6 pb-2 pl-6 md:pl-0"
+                  >
+                    <Link
+                      to={run.path}
+                      className="text-[11px] uppercase tracking-[0.18em] font-medium text-foreground hover:underline underline-offset-4"
+                    >
+                      {run.label}
+                    </Link>
+                    <span className="ml-2 text-xs text-muted-foreground">
+                      {run.runDates} · {run.totals.entitiesBase} entități în
+                      bază
+                    </span>
+                  </th>
+                </tr>
+                {run.matrix.map((row) => (
+                  <tr key={row.query}>
+                    <th
+                      scope="row"
+                      className="sticky left-0 z-10 bg-background text-left font-normal pl-6 md:pl-0 pr-3 py-0.5 whitespace-nowrap"
+                    >
+                      <span
+                        title={queryText.get(row.query)}
+                        className="cursor-help underline decoration-dotted decoration-foreground/30 underline-offset-4"
+                      >
+                        {row.query}
+                      </span>
+                    </th>
+                    {SURFACE_ORDER.map((s) => {
+                      const v = row.cells[s] ?? 0;
+                      const a = v === 0 ? 0 : 0.08 + (v / max) * 0.72;
+                      return (
+                        <td key={s} className="p-[1px]">
+                          <div
+                            title={`${run.label}, ${row.query} × ${MD_SURFACE_LABELS[s] ?? s}: ${v} entități`}
+                            className={`h-8 flex items-center justify-center rounded-[3px] ${
+                              a > 0.5
+                                ? "text-background"
+                                : v === 0
+                                  ? "text-muted-foreground/60"
+                                  : "text-foreground"
+                            }`}
+                            style={{
+                              background:
+                                v === 0
+                                  ? "transparent"
+                                  : `hsl(var(--foreground) / ${a.toFixed(2)})`,
+                              outline:
+                                v === 0
+                                  ? "1px dashed hsl(var(--foreground) / 0.15)"
+                                  : undefined,
+                              outlineOffset: "-1px",
+                            }}
+                          >
+                            {v}
+                          </div>
+                        </td>
+                      );
+                    })}
+                    <td className="pl-3 pr-6 md:pr-0 text-right font-semibold">
+                      {row.union}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            );
+          })}
+        </table>
+      </div>
+      <p className="mt-3 text-xs text-muted-foreground max-w-3xl">
+        Celulă = entități distincte în bază numite pe acea suprafață la acea
+        interogare, în pilotul respectiv. Piloții 1 și 2 au rulat aceleași patru
+        întrebări, din locuri diferite; rândurile lor rămân separate, nu
+        adunate. Textul fiecărei interogări apare la trecerea cu mouse-ul pe ID,
+        iar proveniența fiecărui nume e pe pagina pilotului.
+      </p>
+    </div>
+  );
+};
+
+type UnionSortKey = "runs" | "surfaces" | "queries" | "name";
+
+/** Lista unică a entităților candidate din toți piloții (Candidate Set cumulat). */
+const UnionExplorer = () => {
+  const [q, setQ] = useState("");
+  const [run, setRun] = useState("");
+  const [surface, setSurface] = useState("");
+  const [type, setType] = useState("");
+  const [includeExtended, setIncludeExtended] = useState(false);
+  const [sort, setSort] = useState<UnionSortKey>("runs");
+  const [showAll, setShowAll] = useState(false);
+
+  const rows = useMemo(() => {
+    const needle = q.trim().toLocaleLowerCase("ro-RO");
+    const filtered = mdUnion.filter(
+      (e) =>
+        (includeExtended || e.base) &&
+        (!needle || e.name.toLocaleLowerCase("ro-RO").includes(needle)) &&
+        (!run ||
+          e.runs.some((r) => r.slug === run && (includeExtended || r.base))) &&
+        (!surface ||
+          (includeExtended ? e.surfacesExtended : e.surfaces).includes(
+            surface,
+          )) &&
+        (!type || e.type === type),
+    );
+    const byName = (a: MdUnionEntity, b: MdUnionEntity) =>
+      a.name.localeCompare(b.name, "ro");
+    const by: Record<
+      UnionSortKey,
+      (a: MdUnionEntity, b: MdUnionEntity) => number
+    > = {
+      runs: (a, b) =>
+        b.runs.length - a.runs.length ||
+        b.surfaces.length - a.surfaces.length ||
+        byName(a, b),
+      surfaces: (a, b) => b.surfaces.length - a.surfaces.length || byName(a, b),
+      queries: (a, b) => b.queries.length - a.queries.length || byName(a, b),
+      name: byName,
+    };
+    return [...filtered].sort(by[sort]);
+  }, [q, run, surface, type, includeExtended, sort]);
+
+  const select =
+    "h-9 px-2 text-base md:text-sm bg-background border border-foreground/20 rounded-sm focus:outline-none focus:border-foreground/60";
+  const SortBtn = ({
+    k,
+    children,
+  }: {
+    k: UnionSortKey;
+    children: ReactNode;
+  }) => (
+    <button
+      type="button"
+      onClick={() => setSort(k)}
+      aria-pressed={sort === k}
+      className={`-my-2 py-2 uppercase tracking-[0.12em] ${sort === k ? "text-foreground underline underline-offset-4" : "hover:text-foreground"}`}
+    >
+      {children}
+    </button>
+  );
+
+  return (
+    <div className="mt-8">
+      <div
+        className="flex flex-wrap gap-2 items-center"
+        role="group"
+        aria-label="Filtre entități"
+      >
+        <input
+          type="search"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder="Caută un nume"
+          aria-label="Caută un nume"
+          className={`${select} w-full sm:w-56`}
+        />
+        <select
+          aria-label="Pilot"
+          value={run}
+          onChange={(e) => setRun(e.target.value)}
+          className={select}
+        >
+          <option value="">Toți piloții</option>
+          {mdRuns.map((r) => (
+            <option key={r.slug} value={r.slug}>
+              {r.label}
+            </option>
+          ))}
+        </select>
+        <select
+          aria-label="Suprafață"
+          value={surface}
+          onChange={(e) => setSurface(e.target.value)}
+          className={select}
+        >
+          <option value="">Toate suprafețele</option>
+          {SURFACE_ORDER.map((s) => (
+            <option key={s} value={s}>
+              {MD_SURFACE_LABELS[s]}
+            </option>
+          ))}
+        </select>
+        <select
+          aria-label="Tip"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          className={select}
+        >
+          <option value="">Toate tipurile</option>
+          {Object.entries(MD_ENTITY_TYPE_LABELS).map(([k, v]) => (
+            <option key={k} value={k}>
+              {v}
+            </option>
+          ))}
+        </select>
+        <label className="inline-flex items-center gap-2 text-sm text-muted-foreground ml-1">
+          <input
+            type="checkbox"
+            checked={includeExtended}
+            onChange={(e) => setIncludeExtended(e.target.checked)}
+          />
+          Include modulele SERP
+        </label>
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-baseline justify-between gap-2 text-[11px] text-muted-foreground">
+        <p aria-live="polite">
+          {rows.length} {rows.length === 1 ? "entitate" : "entități"}
+        </p>
+        <p className="flex gap-3">
+          Sortează: <SortBtn k="runs">piloți</SortBtn>
+          <SortBtn k="surfaces">suprafețe</SortBtn>
+          <SortBtn k="queries">interogări</SortBtn>
+          <SortBtn k="name">nume</SortBtn>
+        </p>
+      </div>
+
+      <ul className="mt-3 border-t border-foreground/10">
+        {/* Toate rândurile sunt în HTML (și pentru crawlere); peste 25 sunt doar ascunse. */}
+        {rows.map((e, i) => {
+          const ambiguous = e.identityFlags.some((f) =>
+            MD_AMBIGUOUS_FLAGS.has(f.split(":")[0] ?? ""),
+          );
+          return (
+            <li
+              key={e.key}
+              hidden={!showAll && i >= 25}
+              className="border-b border-foreground/10 py-3 grid grid-cols-[minmax(0,1fr)] gap-x-4 gap-y-1.5 md:grid-cols-[minmax(0,14rem)_1fr_auto] md:items-center"
+            >
+              <div className="min-w-0">
+                <p className="font-medium flex items-center gap-2 min-w-0">
+                  <span className="truncate" title={e.name}>
+                    {e.name}
+                  </span>
+                  <StatusBadge />
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {MD_ENTITY_TYPE_LABELS[e.type] ?? e.type} ·{" "}
+                  {MD_CLASS_LABELS[e.class] ?? e.class}
+                  {!e.base && " · doar module SERP"}
+                  {ambiguous && (
+                    <strong className="font-semibold text-foreground/80">
+                      {" "}
+                      · identitate de verificat
+                    </strong>
+                  )}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {e.runs.map((r, j) => (
+                    <Fragment key={r.slug}>
+                      {j > 0 && " · "}
+                      <Link
+                        to={r.path}
+                        title={`${r.id} în registrul pilotului${r.base ? "" : " (doar în modulele SERP)"}`}
+                        className={`underline underline-offset-4 decoration-foreground/30 hover:text-foreground ${r.base ? "" : "opacity-60"}`}
+                      >
+                        {r.label.replace("Pilotul ", "P")}
+                      </Link>
+                    </Fragment>
+                  ))}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {SURFACE_ORDER.filter(
+                  (s) =>
+                    e.surfaces.includes(s) || e.surfacesExtended.includes(s),
+                ).map((s) => (
+                  <Chip key={s} strong={e.recommendedOn.includes(s)}>
+                    {shortSurface(s)}
+                  </Chip>
+                ))}
+              </div>
+              <p
+                className="text-xs text-muted-foreground tabular-nums md:text-right whitespace-nowrap"
+                title={e.queries.join(", ")}
+              >
+                {e.queries.length}{" "}
+                {e.queries.length === 1 ? "interogare" : "interogări"} ·{" "}
+                {e.observations}{" "}
+                {e.observations === 1 ? "observație" : "observații"}
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+      {rows.length > 25 && (
+        <button
+          type="button"
+          onClick={() => setShowAll((v) => !v)}
+          className="mt-5 link-underline text-sm font-medium"
+        >
+          {showAll ? "Arată primele 25" : `Arată toate cele ${rows.length}`}
+        </button>
+      )}
+      <p className="mt-4 text-xs text-muted-foreground max-w-3xl">
+        Lista unește registrele piloților pe cheia de deduplicare, nu pe nume: o
+        entitate găsită în mai mulți piloți apare o singură dată, cu eticheta
+        din cel mai recent pilot. P1, P2, P3, P5 = piloții în care a fost găsită
+        (estompat = acolo doar în modulele SERP); fiecare duce la pagina
+        pilotului, cu proveniența și dovezile. Chenar accentuat = suprafața AI a
+        numit-o explicit ca recomandare. Perechile nerezolvate (aceeași
+        entitate? persoană ↔ firmă? produs ↔ dezvoltator?) rămân separate până
+        la Market Verification.
+      </p>
+    </div>
+  );
+};
+
 // ───────────────────────────── tabele de context ─────────────────────────────
 
 const ExecutionsTable = ({ run }: { run: MdRun }) => (
@@ -1333,6 +1696,42 @@ export const MarketDiscoveryHub = () => {
               entitate găsită în mai mulți piloți e numărată o singură dată.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-foreground/10">
+        <div className="container-editorial py-16 md:py-20 max-w-5xl">
+          <SectionHead
+            eyebrow="Rezultatele căutărilor"
+            title={`Toate cele ${withDe(mdRuns.reduce((n, r) => n + r.matrix.length, 0))} rânduri interogare × suprafață, pilot cu pilot`}
+          >
+            <p>
+              Fiecare rând e o întrebare sau o expresie rulată pe cele opt
+              suprafețe într-un pilot. Cifra din celulă arată câte entități
+              candidate distincte au fost numite acolo; coloana din dreapta,
+              câte la acea interogare, pe toate suprafețele.
+            </p>
+          </SectionHead>
+          <SeriesMatrix />
+        </div>
+      </section>
+
+      <section className="border-b border-foreground/10">
+        <div className="container-editorial py-16 md:py-20 max-w-5xl">
+          <SectionHead
+            eyebrow="Candidate Set cumulat"
+            title={`Toate cele ${withDe(c.unionBase)} entități candidate pentru Market Verification`}
+          >
+            <p>
+              Lista unică a numelor găsite în piloții{" "}
+              {mdRuns.map((r) => r.label.replace("Pilotul ", "")).join(", ")}.
+              Pe ea se aplică verificarea de eligibilitate: fiecare entitate e
+              verificată individual după criteriile din AVL-MKT-001 §7 și
+              primește un statut din §9. Până atunci, toate rămân{" "}
+              <code className="text-[15px]">UNVERIFIED</code>.
+            </p>
+          </SectionHead>
+          <UnionExplorer />
         </div>
       </section>
 
