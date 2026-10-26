@@ -206,6 +206,18 @@ Aceasta este singura listă urmărită. Textul normativ al fiecărei decizii ră
 | DD-08 | AVL-203 §19.2, AVL-204 §15.6 | Activarea | la activare: statutul în AVL-202 și includerea în lista Nivelului C din AVL-001 §17 |
 | DD-09 | AVL-204 §6 (Z2), AVL-203 §9 | Crawlerii din afara setului Core | planul T0 declară și crawlerii de antrenare și de fetch (GPTBot, ClaudeBot, Google-Extended, CCBot, ChatGPT-User, Claude-User, Perplexity-User), dar grila evaluează în Z2 doar cei 5 crawleri Core de căutare; de decis dacă și ceilalți primesc reguli (constatat la T0, 26 octombrie 2026) |
 
+**Decizii luate, de aplicat în AVL-204 0.3.0 și în cod (după ultima rundă)**
+
+Amânate explicit (26 octombrie 2026): DD-02 până la primele rulări pe clienți, cu recomandări prioritizate; DD-04, DD-05, DD-07, DD-08 și restul DD-06 (bingbot) la activarea 1.0.0.
+
+| ID | Data | Decizia lui Alex Matescu |
+| --- | --- | --- |
+| DD-01 (partea 1) | 26 octombrie 2026 | `R-Z2-08` (`robots.txt` răspunde `429`), `R-Z2-09` (peste cinci redirecturi la `robots.txt`) și `R-Z4-10` (ținta canonicalului face redirect) rămân „problemă posibilă”. Rămân deschise `R-Z1-05`, `R-Z3-03`, `R-Z4-06`, `R-Z4-07`. |
+| DD-01 (partea 2) | 26 octombrie 2026 | `R-Z1-05`: problemă posibilă doar peste 2 redirecturi (1–2 redirecturi = nicio problemă observată, lanțul rămâne în observații). `R-Z4-06`: lipsa JSON-LD pe pagina despre entitate devine doar observație (TC-05), fără stare de problemă și fără recomandare, conform documentației Google pentru funcțiile AI. `R-Z3-03` și `R-Z4-07` rămân problemă posibilă. Cu aceasta, DD-01 e decisă integral. |
+| DD-03 | 26 octombrie 2026 | Categoriile suplimentare pe tip de entitate (AVL-204 §11) se confirmă ca recomandate, nu obligatorii: lipsa lor dă doar un avertisment în plan. Absența de pe site a paginii cu datele de identitate (AVL203-REQ-042) rămâne doar observație, în plan și în raport, fără regulă de diagnostic proprie. |
+| DD-06 (parțial) | 26 octombrie 2026 | Claude-SearchBot rămâne `DOAR_TOKEN`: Anthropic nu publică șiruri User-Agent complete, verificat la 26 octombrie 2026 pe support.claude.com. Șirul complet `bingbot` rămâne `NECONFIRMAT` până la activare, când se face un manifest nou. Regula pentru versiunea Chrome din șirul Googlebot e o alegere tehnică (Claude): ultima versiune stabilă la data înghețării manifestului, înregistrată în manifest. |
+| DD-09 | 26 octombrie 2026 | Varianta B: crawlerii de antrenare declarați în plan (GPTBot, ClaudeBot, Google-Extended, CCBot) primesc regulile `R-Z2-01`/`R-Z2-05`, ca setul Core. Crawlerii de fetch la cererea utilizatorului (ChatGPT-User, Claude-User, Perplexity-User) apar doar ca observație, cu nota că furnizorii lor pot ignora `robots.txt`. |
+
 Închise anterior (pentru trasabilitate): Faza 1 și D-01…D-08 (25 octombrie 2026: alegerile tehnice le face Claude); P-01…P-11 (25 octombrie 2026, P-03 modificată); AVL-204 §15.2 și §15.5; AVL-203 §19.1 și §19.8. Alinierea skill-ului la REQ-041, REQ-042 și TC-08 e făcută în v0.3.0–v0.4.0.
 
 ---
