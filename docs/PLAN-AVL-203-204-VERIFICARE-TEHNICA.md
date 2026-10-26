@@ -2,14 +2,16 @@
 
 Document de lucru intern, sub controlul versiunilor. Ține evidența punctului de plecare, a ce s-a făcut, a ce s-a actualizat, a ce s-a exclus și a ce mai e de făcut pentru stratul tehnic al auditului AI Visibility.
 
+> **Plan încheiat la 26 octombrie 2026.** Toate fazele sunt făcute, iar lucrul a intrat în `main` (merge `1a1852f`). De aici încolo, documentul se folosește doar pentru §6, lista unică a deciziilor deschise până la versiunea 1.0.0, și pentru jurnal. Branch-ul de lucru a fost închis.
+
 | Câmp | Valoare |
 | --- | --- |
 | Creat | 23 octombrie 2026 |
-| Ultima actualizare | 25 octombrie 2026 |
-| Branch | `avl-203-0.4.0-avl-204` |
-| Documente vizate | AVL-203 v0.4.0 (draft), AVL-204 v0.1.0 (draft), AVL-202 v1.6.0 (activ) |
-| Implementare existentă | skill `verificare-tehnica-avl203`, script v0.2.0 (candidat, nevalidat) |
-| Stare | Faza 0 încheiată (fără 0.2, amânat la final); Faza 1 încheiată; Fazele 2–4 încheiate (cod v0.3.0, 142 de teste); Faza 5 încheiată: AVL-204 0.2.0, AVL-203 0.5.0, AVL-201 1.5.0, AVL-202 1.7.0 și implementarea v0.4.0 (150 de teste); urmează merge și deploy (Alex) |
+| Ultima actualizare | 26 octombrie 2026 |
+| Branch | `avl-203-0.4.0-avl-204`, integrat în `main` la 26 octombrie 2026 și închis |
+| Documente vizate | AVL-203 v0.5.0 (draft), AVL-204 v0.2.0 (draft, publicat la 26 octombrie 2026), AVL-202 v1.7.0 (activ), AVL-201 v1.5.0 (activ) |
+| Implementare | skill `verificare-tehnica-avl203`, v0.4.0 (implementare candidată, 150 de teste) |
+| Stare | Fazele 0–5 încheiate; merge în `main` făcut (`1a1852f`), deploy-ul îl face Alex; urmează T0 pe delamatescu.ro și deciziile din §6 |
 
 Regula de actualizare: la fiecare pas încheiat se adaugă o intrare în jurnal (§7), se mută punctul din „de făcut” în „făcut” și se actualizează „Ultima actualizare” și „Stare”. Nu se rescrie istoria: deciziile schimbate se consemnează ca decizii noi.
 
@@ -109,7 +111,7 @@ Fiecare fază se încheie cu un punct de decizie al lui Alex înainte de faza ur
 
 - [x] **0.1. Commit și push pentru AVL-203 0.4.0, AVL-204 0.1.0, AVL-202 1.6.0** pe branch-ul `avl-203-0.4.0-avl-204` (23 octombrie 2026).
   *Argument:* codul trebuie să implementeze o versiune publicată și datată; altfel matricea de conformitate trimite la un text pe care nu îl vede nimeni.
-- [ ] **0.2. Merge în `main` și deploy** (Alex, manual).
+- [x] **0.2. Merge în `main` și deploy** (merge `1a1852f`, 26 octombrie 2026; deploy-ul îl face Alex, manual).
   *Argument:* elimină diferența repo ↔ site semnalată de prompt.
 
 ### Faza 1 — Registrul ambiguităților (document, fără cod)
@@ -178,17 +180,32 @@ Fiecare fază se încheie cu un punct de decizie al lui Alex înainte de faza ur
 
 ---
 
-## 6. Ce mai e de făcut — decizii care îl așteaptă pe Alex
+## 6. Ce mai e de făcut — lista unică a deciziilor deschise
 
-1. **Merge în `main` și deploy** pentru documentele din Faza 0 — decizie Alex 25 octombrie 2026: la finalul lucrului.
-2. ~~Faza 1 ca următor pas~~ — decis și făcut la 25 octombrie 2026.
-3. ~~Deciziile D-01…D-08~~ — decizie Alex, 25 octombrie 2026: alegerile tehnice le face Claude, cu variantele recomandate (Python, `unittest`, fazele una câte una, OP-01…OP-12, variantele conservatoare). Întrebările care schimbă metoda (P-01…P-10) se pun după rularea TEST, câte 2–3, pe cazuri concrete.
+Aceasta este singura listă urmărită. Textul normativ al fiecărei decizii rămâne în documentul ei: AVL-203 §19, AVL-204 §15. Deciziile se iau câte 2–3, pe cazuri reale, după rularea T0 pe delamatescu.ro. Când se închide o decizie, se consemnează în istoricul versiunilor documentului respectiv și se taie din lista de aici.
 
-Decizii normative încă deschise (în documente):
+**Pași următori**
 
-- AVL-203 §19: 2 (locul în corpus la activare), 3 (setul final de cerințe), 4 (implementarea de referință), 5 (parser pentru automatizare), 6 (șirurile User-Agent), 7 (implementarea TC-08 și a diagnosticului).
-- AVL-204 §15: 1 (regulile de diagnostic), 3 (prioritizarea), 4 (categoriile pe tip de entitate și regula pentru absența paginii de identitate), 5 (formatul politicii de acces declarate).
-- Skill-ul `verificare-tehnica-avl203` nu este aliniat la REQ-041, REQ-042 și TC-08.
+| # | Pas | Cine | Stare |
+| --- | --- | --- | --- |
+| 1 | Deploy după merge-ul `1a1852f` | Alex | de făcut |
+| 2 | Rulare T0 pe delamatescu.ro (politica PERMIS + INDEXAT), după deploy | Claude rulează, Alex aprobă momentul | de făcut |
+| 3 | Deciziile de mai jos, pe baza rezultatelor T0 | Alex decide, Claude pregătește variantele | de făcut |
+
+**Decizii deschise înainte de 1.0.0**
+
+| ID | Document | Decizia | Ce rămâne de stabilit |
+| --- | --- | --- | --- |
+| DD-01 | AVL-204 §15.1 | Regulile de diagnostic | încadrarea `R-Z1-05` (lanț cu mai mult de un redirect), `R-Z3-03` (lipsa sitemap-ului), `R-Z4-06` (lipsa JSON-LD pe pagina despre entitate), `R-Z4-07` (lipsa `lang`); stările regulilor noi `R-Z2-08` (`429`), `R-Z2-09` (peste cinci redirecturi), `R-Z4-10` |
+| DD-02 | AVL-204 §15.3 | Prioritizarea P1–P3 | pragurile criteriilor, testate pe primele evaluări |
+| DD-03 | AVL-204 §15.4 | Categoriile pe tip de entitate | lista tipurilor și dacă absența paginii de identitate (AVL203-REQ-042) primește o regulă proprie |
+| DD-04 | AVL-203 §19.3 | Setul final de cerințe | confirmarea cerințelor și a nivelului fiecăreia, la activare |
+| DD-05 | AVL-203 §19.4, §19.5 | Implementarea de referință | validarea implementării candidate v0.4.0, inclusiv a parserului RFC 9309 |
+| DD-06 | AVL-203 §19.6 | Șirurile User-Agent | șirul complet `bingbot` dintr-o sursă oficială, tratamentul `Claude-SearchBot`, regula pentru versiunea Chrome din Googlebot |
+| DD-07 | AVL-203 §19.7 | TC-08 și diagnosticul | setul final al regulilor de normalizare TC-08 și al stratului de diagnostic |
+| DD-08 | AVL-203 §19.2, AVL-204 §15.6 | Activarea | la activare: statutul în AVL-202 și includerea în lista Nivelului C din AVL-001 §17 |
+
+Închise anterior (pentru trasabilitate): Faza 1 și D-01…D-08 (25 octombrie 2026: alegerile tehnice le face Claude); P-01…P-11 (25 octombrie 2026, P-03 modificată); AVL-204 §15.2 și §15.5; AVL-203 §19.1 și §19.8. Alinierea skill-ului la REQ-041, REQ-042 și TC-08 e făcută în v0.3.0–v0.4.0.
 
 ---
 
@@ -206,6 +223,7 @@ Decizii normative încă deschise (în documente):
 | 25 octombrie 2026 | 5.1: rulare TEST pe delamatescu.ro (5 pagini, 48 de requesturi, 0 erori, integritate VALID). Rezultat: Z1–Z5 „nicio problemă observată”; Z6 „nu poate fi stabilit” — fiecare răspuns HTML conține un token semnat, diferit la fiecare request, deci comparația de conținut între User-Agent-i e neevaluabilă (25 din 71 de constatări). Politica de acces și intenția de indexare declarate `NECUNOSCUT` (nedeclarate de entitate). Verificat pe dovezile brute: diferențele dintre cele două capturi de referință, locația TC-08, regulile robots. 5.4: `SKILL.md` rescris pentru v0.3.0. |
 | 25 octombrie 2026 | Alex: Z6 rămâne fără mascare și fără schimbare de regulă (conținutul „nu poate fi stabilit” e rezultatul; sursa variației: `data-context-token` injectat de Lovable); delamatescu.ro permite toate crawlerele și vrea paginile indexate (PERMIS + INDEXAT în planurile următoare). AVL-204 rămâne 0.1.0. 5.3: pagina auditului trimite la AVL-204; tsc, lint și build trec. |
 | 25 octombrie 2026 | Alex aprobă P-01…P-11; P-03 modificată (acces total recomandat, „Politica crawlere” în fișa entității, completată de reprezentant); verificarea se aplică doar proiectelor și clienților. Merge `main` în branch (`1cb67bf`, AVL-201 1.4.0 adus pe branch). 5.2: AVL-204 0.2.0 (REQ-015…017, reguli noi și modificate), AVL-203 0.5.0 (REQ-043…045, tabelul TC-04, status TC-08 nou), AVL-201 1.5.0 (fișa entității), AVL-202 1.7.0; `.md` + `.ts`, registrul fără anomalii noi, paginile 200 local. Implementarea v0.4.0: plan cu `entity_sheet` și politică fără `NECUNOSCUT`, reguli 0.2.0, 150 de teste. |
+| 26 octombrie 2026 | Merge în `main` (`1a1852f`). Conflictele au fost doar la articolele de blog, păstrate din `main` (deja publicate), și la registrul de conținut, regenerat; PNG-urile articolelor de blog nu au intrat. AVL-204 publicat ca draft: `date_published` 26 octombrie 2026, 10:33. Verificări: tsc, lint pe fișierele din merge, teste, build, 150 de teste ale skill-ului, 10 pagini cu 200 local; registrul fără anomalii noi. Planul a fost marcat încheiat, iar §6 a devenit lista unică a deciziilor deschise (DD-01…DD-08). Branch-ul a fost închis. |
 
 ---
 
