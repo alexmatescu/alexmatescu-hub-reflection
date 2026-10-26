@@ -188,8 +188,8 @@ Aceasta este singura listă urmărită. Textul normativ al fiecărei decizii ră
 
 | # | Pas | Cine | Stare |
 | --- | --- | --- | --- |
-| 1 | Deploy după merge-ul `1a1852f` | Alex | de făcut |
-| 2 | Rulare T0 pe delamatescu.ro (politica PERMIS + INDEXAT), după deploy | Claude rulează, Alex aprobă momentul | de făcut |
+| 1 | Deploy după merge-ul `1a1852f` | Alex | făcut (26 octombrie 2026, verificat live) |
+| 2 | Rulare T0 pe delamatescu.ro (politica PERMIS + INDEXAT), după deploy | Claude rulează, Alex aprobă momentul | făcut: `AVL203-delamatescu-ro-T0-20261026T085234Z`, seria `AVL203-delamatescu-ro`, 6 pagini; Z1–Z5 fără probleme observate, Z6 „nu poate fi stabilit” la conținut (30 de constatări, cauza: `data-context-token`) |
 | 3 | Deciziile de mai jos, pe baza rezultatelor T0 | Alex decide, Claude pregătește variantele | de făcut |
 
 **Decizii deschise înainte de 1.0.0**
@@ -204,6 +204,7 @@ Aceasta este singura listă urmărită. Textul normativ al fiecărei decizii ră
 | DD-06 | AVL-203 §19.6 | Șirurile User-Agent | șirul complet `bingbot` dintr-o sursă oficială, tratamentul `Claude-SearchBot`, regula pentru versiunea Chrome din Googlebot |
 | DD-07 | AVL-203 §19.7 | TC-08 și diagnosticul | setul final al regulilor de normalizare TC-08 și al stratului de diagnostic |
 | DD-08 | AVL-203 §19.2, AVL-204 §15.6 | Activarea | la activare: statutul în AVL-202 și includerea în lista Nivelului C din AVL-001 §17 |
+| DD-09 | AVL-204 §6 (Z2), AVL-203 §9 | Crawlerii din afara setului Core | planul T0 declară și crawlerii de antrenare și de fetch (GPTBot, ClaudeBot, Google-Extended, CCBot, ChatGPT-User, Claude-User, Perplexity-User), dar grila evaluează în Z2 doar cei 5 crawleri Core de căutare; de decis dacă și ceilalți primesc reguli (constatat la T0, 26 octombrie 2026) |
 
 Închise anterior (pentru trasabilitate): Faza 1 și D-01…D-08 (25 octombrie 2026: alegerile tehnice le face Claude); P-01…P-11 (25 octombrie 2026, P-03 modificată); AVL-204 §15.2 și §15.5; AVL-203 §19.1 și §19.8. Alinierea skill-ului la REQ-041, REQ-042 și TC-08 e făcută în v0.3.0–v0.4.0.
 
@@ -224,6 +225,7 @@ Aceasta este singura listă urmărită. Textul normativ al fiecărei decizii ră
 | 25 octombrie 2026 | Alex: Z6 rămâne fără mascare și fără schimbare de regulă (conținutul „nu poate fi stabilit” e rezultatul; sursa variației: `data-context-token` injectat de Lovable); delamatescu.ro permite toate crawlerele și vrea paginile indexate (PERMIS + INDEXAT în planurile următoare). AVL-204 rămâne 0.1.0. 5.3: pagina auditului trimite la AVL-204; tsc, lint și build trec. |
 | 25 octombrie 2026 | Alex aprobă P-01…P-11; P-03 modificată (acces total recomandat, „Politica crawlere” în fișa entității, completată de reprezentant); verificarea se aplică doar proiectelor și clienților. Merge `main` în branch (`1cb67bf`, AVL-201 1.4.0 adus pe branch). 5.2: AVL-204 0.2.0 (REQ-015…017, reguli noi și modificate), AVL-203 0.5.0 (REQ-043…045, tabelul TC-04, status TC-08 nou), AVL-201 1.5.0 (fișa entității), AVL-202 1.7.0; `.md` + `.ts`, registrul fără anomalii noi, paginile 200 local. Implementarea v0.4.0: plan cu `entity_sheet` și politică fără `NECUNOSCUT`, reguli 0.2.0, 150 de teste. |
 | 26 octombrie 2026 | Merge în `main` (`1a1852f`). Conflictele au fost doar la articolele de blog, păstrate din `main` (deja publicate), și la registrul de conținut, regenerat; PNG-urile articolelor de blog nu au intrat. AVL-204 publicat ca draft: `date_published` 26 octombrie 2026, 10:33. Verificări: tsc, lint pe fișierele din merge, teste, build, 150 de teste ale skill-ului, 10 pagini cu 200 local; registrul fără anomalii noi. Planul a fost marcat încheiat, iar §6 a devenit lista unică a deciziilor deschise (DD-01…DD-08). Branch-ul e integrat complet; ștergerea o face Alex. |
+| 26 octombrie 2026 | Deploy confirmat live. T0 pe delamatescu.ro (`AVL203-delamatescu-ro-T0-20261026T085234Z`, plan înghețat `f79fb571…`, script v0.4.0, grila 0.2.0): integritate VALID; Z1–Z5 fără probleme observate pe 6 pagini; Z6 „nu poate fi stabilit” la conținut, cu status, URL și headere identice pentru cei 5 User-Agent-i. robots.txt are grupuri `Allow: /` explicite pentru toți cei 12 crawleri din plan. DD-09 adăugat. |
 
 ---
 
