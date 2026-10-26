@@ -344,7 +344,7 @@ export const LabIndex = () => (
           AI Visibility Lab
         </h1>
         <p className="mt-6 text-xs uppercase tracking-[0.28em] text-[#c9b98a]">
-          Fi văzut. Fi înțeles. Fi citat.
+          Fii văzut. Fii înțeles. Fii citat.
         </p>
         <p className="mt-8 text-lg md:text-xl text-[#e8e0cf]/80 leading-relaxed max-w-2xl">
           Un spațiu de lucru dedicat GEO și AEO — cercetare, metodologie,
