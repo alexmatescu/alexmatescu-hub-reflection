@@ -9,8 +9,8 @@ Document de lucru intern, sub controlul versiunilor. Ține evidența punctului d
 | Creat | 23 octombrie 2026 |
 | Ultima actualizare | 26 octombrie 2026 |
 | Branch | `avl-203-0.4.0-avl-204`, integrat complet în `main` la 26 octombrie 2026; de șters |
-| Documente vizate | AVL-203 v0.5.0 (draft), AVL-204 v0.2.0 (draft, publicat la 26 octombrie 2026), AVL-202 v1.7.0 (activ), AVL-201 v1.5.0 (activ) |
-| Implementare | skill `verificare-tehnica-avl203`, v0.4.0 (implementare candidată, 150 de teste) |
+| Documente vizate | AVL-203 v0.6.0 (draft), AVL-204 v0.3.0 (draft, publicat la 26 octombrie 2026), AVL-202 v1.7.1 (activ), AVL-201 v1.5.0 (activ) |
+| Implementare | skill `verificare-tehnica-avl203`, v0.5.0 (implementare candidată, 152 de teste) |
 | Stare | Fazele 0–5 încheiate; merge în `main` făcut (`1a1852f`), deploy-ul îl face Alex; urmează T0 pe delamatescu.ro și deciziile din §6 |
 
 Regula de actualizare: la fiecare pas încheiat se adaugă o intrare în jurnal (§7), se mută punctul din „de făcut” în „făcut” și se actualizează „Ultima actualizare” și „Stare”. Nu se rescrie istoria: deciziile schimbate se consemnează ca decizii noi.
@@ -206,7 +206,7 @@ Aceasta este singura listă urmărită. Textul normativ al fiecărei decizii ră
 | DD-08 | AVL-203 §19.2, AVL-204 §15.6 | Activarea | la activare: statutul în AVL-202 și includerea în lista Nivelului C din AVL-001 §17 |
 | DD-09 | AVL-204 §6 (Z2), AVL-203 §9 | Crawlerii din afara setului Core | planul T0 declară și crawlerii de antrenare și de fetch (GPTBot, ClaudeBot, Google-Extended, CCBot, ChatGPT-User, Claude-User, Perplexity-User), dar grila evaluează în Z2 doar cei 5 crawleri Core de căutare; de decis dacă și ceilalți primesc reguli (constatat la T0, 26 octombrie 2026) |
 
-**Decizii luate, de aplicat în AVL-204 0.3.0 și în cod (după ultima rundă)**
+**Decizii luate (aplicate la 26 octombrie 2026 în AVL-204 0.3.0, AVL-203 0.6.0, AVL-202 1.7.1 și în implementarea v0.5.0)**
 
 Amânate explicit (26 octombrie 2026): DD-02 până la primele rulări pe clienți, cu recomandări prioritizate; DD-04, DD-05, DD-07, DD-08 și restul DD-06 (bingbot) la activarea 1.0.0.
 
@@ -238,6 +238,7 @@ Amânate explicit (26 octombrie 2026): DD-02 până la primele rulări pe clien�
 | 25 octombrie 2026 | Alex aprobă P-01…P-11; P-03 modificată (acces total recomandat, „Politica crawlere” în fișa entității, completată de reprezentant); verificarea se aplică doar proiectelor și clienților. Merge `main` în branch (`1cb67bf`, AVL-201 1.4.0 adus pe branch). 5.2: AVL-204 0.2.0 (REQ-015…017, reguli noi și modificate), AVL-203 0.5.0 (REQ-043…045, tabelul TC-04, status TC-08 nou), AVL-201 1.5.0 (fișa entității), AVL-202 1.7.0; `.md` + `.ts`, registrul fără anomalii noi, paginile 200 local. Implementarea v0.4.0: plan cu `entity_sheet` și politică fără `NECUNOSCUT`, reguli 0.2.0, 150 de teste. |
 | 26 octombrie 2026 | Merge în `main` (`1a1852f`). Conflictele au fost doar la articolele de blog, păstrate din `main` (deja publicate), și la registrul de conținut, regenerat; PNG-urile articolelor de blog nu au intrat. AVL-204 publicat ca draft: `date_published` 26 octombrie 2026, 10:33. Verificări: tsc, lint pe fișierele din merge, teste, build, 150 de teste ale skill-ului, 10 pagini cu 200 local; registrul fără anomalii noi. Planul a fost marcat încheiat, iar §6 a devenit lista unică a deciziilor deschise (DD-01…DD-08). Branch-ul e integrat complet; ștergerea o face Alex. |
 | 26 octombrie 2026 | Deploy confirmat live. T0 pe delamatescu.ro (`AVL203-delamatescu-ro-T0-20261026T085234Z`, plan înghețat `f79fb571…`, script v0.4.0, grila 0.2.0): integritate VALID; Z1–Z5 fără probleme observate pe 6 pagini; Z6 „nu poate fi stabilit” la conținut, cu status, URL și headere identice pentru cei 5 User-Agent-i. robots.txt are grupuri `Allow: /` explicite pentru toți cei 12 crawleri din plan. DD-09 adăugat. |
+| 26 octombrie 2026 | Deciziile DD-01, DD-03, DD-06 (parțial) și DD-09 aplicate: AVL-204 0.3.0 (`R-Z1-05` peste două redirecturi, `R-Z1-08` cu cel mult două, `R-Z4-06` retrasă, Z2 pentru crawlerele de antrenare, `AVL204-REQ-018`, §11, §15), AVL-203 0.6.0 (§6, §19.4, §19.6), AVL-202 1.7.1 (versiunile din listă), implementarea v0.5.0 (152 de teste). T0 reanalizat offline cu v0.5.0 / grila 0.3.0: 109 constatări, aceleași stări pe zone, crawlerele de antrenare în Z2, cele de fetch ca observație. |
 
 ---
 

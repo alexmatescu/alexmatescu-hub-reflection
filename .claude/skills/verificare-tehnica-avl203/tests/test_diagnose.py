@@ -69,7 +69,7 @@ class BaselineTest(unittest.TestCase):
         f, d = run(*clean())
         self.assertEqual(set(rules(f)), {"R-Z1-08", "R-Z2-05", "R-Z3-05", "R-Z4-09", "R-Z5-04", "R-Z6-05"})
         self.assertEqual(d, [])
-        self.assertTrue(all(x["rule_version"] == "0.2.0" and x["observation_ids"] and x["evidence_ids"] for x in f))
+        self.assertTrue(all(x["rule_version"] == "0.3.0" and x["observation_ids"] and x["evidence_ids"] for x in f))
 
     def test_zone_without_findings_is_not_evaluated(self):
         p, obs = clean()
@@ -127,11 +127,13 @@ class Z1Test(unittest.TestCase):
         self.assertNotIn("R-Z1-04", rules(self.mut(declared)))
 
     def test_r_z1_05(self):
-        f = self.mut(lambda p, o: o["TC-01"][1].update(url_final=O + "/x", num_redirects=2))
+        # AVL-204 0.3.0 (DD-01): problemă posibilă numai peste două redirecturi
+        f = self.mut(lambda p, o: o["TC-01"][1].update(url_final=O + "/x", num_redirects=3))
         self.assertIn("R-Z1-05", rules(f, dg.POSSIBLE))
         self.assertNotIn("R-Z1-08", [x["rule_id"] for x in f if x["scope"].get("page_id") == "P02"])
-        f = self.mut(lambda p, o: o["TC-01"][1].update(url_final=O + "/x", num_redirects=1))
+        f = self.mut(lambda p, o: o["TC-01"][1].update(url_final=O + "/x", num_redirects=2))
         self.assertNotIn("R-Z1-05", rules(f))
+        self.assertIn("R-Z1-08", [x["rule_id"] for x in f if x["scope"].get("page_id") == "P02"])
 
     def test_r_z1_06(self):
         f = self.mut(lambda p, o: o["TC-02"]["variants"][1].update(http_direct_2xx=True))
@@ -190,6 +192,30 @@ class Z2Test(unittest.TestCase):
         f, d = self.mut(m)
         r = [x for x in f if x["rule_id"] == "R-Z2-01"][0]
         self.assertEqual((r["state"], r["deviation"]), (dg.CONFIRMED, None))  # AVL-204 §3.1: implicit acces total
+
+    def _with_extra(self, p, o, crawler, kind):
+        p["access_policy"].append({"crawler": crawler, "kind": kind, "policy": "PERMIS", "scope": "*"})
+        for pg in p["pages"]:
+            o["TC-03"]["decisions"].append({"page_id": pg["page_id"], "url": pg["url"], "token": crawler, "policy": "ALLOW",
+                                            "method": "PARSER", "kind": kind, "steps": {"winner": {"line": 1, "directive": "allow", "path": "/"}}})
+
+    def test_r_z2_training_crawler_in_diagnosis(self):
+        # AVL204-REQ-018 (DD-09): crawlerele de antrenare declarate primesc R-Z2-01 / R-Z2-05
+        def m(p, o):
+            self._with_extra(p, o, "GPTBot", "antrenare")
+            self.disallow(o, token="GPTBot")
+        f, _ = self.mut(m)
+        self.assertTrue(any(x["rule_id"] == "R-Z2-01" and x["scope"].get("crawler") == "GPTBot" for x in f))
+        f, _ = self.mut(lambda p, o: self._with_extra(p, o, "GPTBot", "antrenare"))
+        self.assertTrue(any(x["rule_id"] == "R-Z2-05" and x["scope"].get("crawler") == "GPTBot" for x in f))
+
+    def test_r_z2_user_fetch_only_observation(self):
+        # AVL204-REQ-018 (DD-09): agenții de fetch nu primesc stare de diagnostic, nici când sunt blocați
+        def m(p, o):
+            self._with_extra(p, o, "ChatGPT-User", "fetch_utilizator")
+            self.disallow(o, token="ChatGPT-User")
+        f, _ = self.mut(m)
+        self.assertFalse(any(x["scope"].get("crawler") == "ChatGPT-User" for x in f))
 
     def test_r_z2_02(self):
         def m(p, o):
@@ -300,15 +326,16 @@ class Z4Test(unittest.TestCase):
         self.assertIn(("R-Z4-08", dg.UNDETERMINED), self.z4(f))
         self.assertNotIn("R-Z4-09", [r for r, _ in self.z4(f)])
 
-    def test_r_z4_03_04_06_07(self):
+    def test_r_z4_03_04_07_and_06_retired(self):
         f, _ = self.mut(lambda p, o, s: s["json_ld"].append({"json_syntax": "INVALID", "line": 9, "error": "x"}))
         self.assertIn(("R-Z4-03", dg.CONFIRMED), self.z4(f))
         f, _ = self.mut(lambda p, o, s: s.update(title=[{"value": ""}]))
         self.assertIn(("R-Z4-04", dg.CONFIRMED), self.z4(f))
+        # R-Z4-06 retrasă în AVL-204 0.3.0 (DD-01): lipsa JSON-LD rămâne observație TC-05
         f, _ = self.mut(lambda p, o, s: s.update(json_ld=[]), page=1)
-        self.assertIn(("R-Z4-06", dg.POSSIBLE), self.z4(f, "P02"))
-        f, _ = self.mut(lambda p, o, s: s.update(json_ld=[]), page=0)
-        self.assertNotIn("R-Z4-06", [r for r, _ in self.z4(f)])  # doar pagina canonică despre entitate
+        self.assertNotIn("R-Z4-06", [r for r, _ in self.z4(f, "P02")])
+        self.assertIn(("R-Z4-09", dg.NONE), self.z4(f, "P02"))
+        self.assertNotIn("R-Z4-06", dg.RULES)
         f, _ = self.mut(lambda p, o, s: s.update(html_lang=[{"present": False, "value": None}]))
         self.assertIn(("R-Z4-07", dg.POSSIBLE), self.z4(f))
 

@@ -3,14 +3,14 @@ document_id: "AVL-203"
 title: "Protocolul minim de verificare tehnică a unui site pentru AI Visibility"
 subtitle: "Core Technical Web Measurement Protocol"
 level: "C — Methodology"
-version: "0.5.0"
+version: "0.6.0"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-01"
 date_published: "2026-10-02T16:29:00+03:00"
-date_modified: "2026-10-25"
+date_modified: "2026-10-26"
 last_reviewed: "2026-10-01"
 canonical: "https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica"
 normative_dependencies:
@@ -44,7 +44,7 @@ keywords:
 
 AVL-203 este un document de nivel C — Methodology în corpusul AI Visibility Lab Documentation, propus ca protocol în ramura Core Methodology descrisă de AVL-202.
 
-Versiunea curentă, **0.5.0**, este un **draft public pentru revizuire** și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate `AVL203-REQ-*`; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §19.
+Versiunea curentă, **0.6.0**, este un **draft public pentru revizuire** și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate `AVL203-REQ-*`; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §19.
 
 Din versiunea 0.4.0, protocolul acoperă și trecerea de la observații la diagnostic și recomandări (§12), pentru că verificarea tehnică este folosită și în evaluări care livrează un diagnostic, de exemplu auditul AI Visibility. Regulile după care observațiile devin diagnostic sunt publicate separat, în grila AVL-204.
 
@@ -54,7 +54,7 @@ Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr l
 | --- | --- |
 | Document ID | AVL-203 |
 | Nivel | C — Methodology |
-| Versiune | 0.5.0 |
+| Versiune | 0.6.0 |
 | Statut | Draft pentru revizuire |
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
@@ -260,7 +260,7 @@ Regulile RFC 9309 se pot aplica în două moduri: cu un parser conform sau manua
 
 Matricea Core urmărește politica relevantă pentru `*`, `Googlebot`, `bingbot`, `OAI-SearchBot`, `Claude-SearchBot` și `PerplexityBot`. La data verificării acestui draft (1 octombrie 2026), documentația furnizorilor descrie `OAI-SearchBot`, `Claude-SearchBot` și `PerplexityBot` drept crawlere asociate căutării sau afișării surselor, nu antrenării modelelor; rolul lor se reverifică la fiecare versiune a protocolului.
 
-Agenții pentru antrenarea modelelor (de exemplu `GPTBot`, `ClaudeBot`) și cei pentru fetch la cererea utilizatorului (de exemplu `ChatGPT-User`, `Claude-User`, `Perplexity-User`) sunt analize distincte, declanșate de întrebarea cercetării. Pentru agenții de tip user fetch, OpenAI și Perplexity declară că regulile robots.txt pot să nu se aplice sau sunt în general ignorate, iar Anthropic declară că și Claude-User respectă robots.txt; diferențele se documentează per furnizor, nu se generalizează. `Google-Extended` este token de control în robots.txt, nu User-Agent HTTP separat.
+Agenții pentru antrenarea modelelor (de exemplu `GPTBot`, `ClaudeBot`) și cei pentru fetch la cererea utilizatorului (de exemplu `ChatGPT-User`, `Claude-User`, `Perplexity-User`) sunt analize distincte, declanșate de întrebarea cercetării. Pentru agenții de tip user fetch, OpenAI și Perplexity declară că regulile robots.txt pot să nu se aplice sau sunt în general ignorate, iar Anthropic declară că și Claude-User respectă robots.txt; diferențele se documentează per furnizor, nu se generalizează. `Google-Extended` este token de control în robots.txt, nu User-Agent HTTP separat. Când fișa entității declară o politică pentru acești agenți, ei se includ în planul de măsurare: grila [AVL-204](/lab/metodologie/grila-interpretare-verificare-tehnica) aplică regulile zonei Z2 crawlerelor de antrenare declarate și raportează agenții de fetch la cererea utilizatorului numai ca observație (AVL204-REQ-018).
 
 Robots Exclusion Protocol nu este o formă de autorizare a accesului (RFC 9309 §1.3) și nu dovedește indexarea.
 
@@ -638,6 +638,7 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 | 0.3.1 | 13 octombrie 2026 | Draft pentru revizuire | PATCH: decizia deschisă 1 („Aliniarea corpusului la convenția T0/F1…Fn”) este închisă: AVL-200 §7 (v1.1.0) definește convenția și etapele denumite, iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate la 13 octombrie 2026. Fără modificări ale cerințelor. |
 | 0.4.0 | 23 octombrie 2026 | Draft pentru revizuire | MINOR: protocolul acoperă și diagnosticul și recomandările, pentru că verificarea tehnică este folosită în evaluări care livrează recomandări. Secțiuni noi: §1.1 „Compoziția planului de măsurare” (număr variabil de URL-uri, categorii obligatorii de pagini, tipul entității, textele-cheie și politica de acces intenționată declarate dinainte); §8.1 verificarea nouă `TC-08` „Conținut important în HTML-ul brut”; §12 „Cum trecem de la observații la diagnostic și recomandări?” (stările diagnosticului, cele patru elemente ale unei recomandări, trimiterea la grila AVL-204); §13.1 „Extensii declarate” (instrumente pentru webmasteri, loguri, CDN/WAF cu acces autorizat); §15.1 „Raportul unei evaluări cu diagnostic”. Cerințe noi `AVL203-REQ-029` … `AVL203-REQ-040`. Decizii Alex Matescu, 23 octombrie 2026: (1) `AVL203-REQ-013` este retrasă — textul rămâne în §6 ca evidență a evoluției metodologiei, iar identificatorul nu se reutilizează; cerința nouă `AVL203-REQ-041` acceptă, pe lângă parserul conform, aplicarea manuală a RFC 9309 documentată pas cu pas, cu metoda înregistrată în observații (decizia deschisă 8 închisă); (2) pagina de contact sau o altă pagină cu datele de identitate ale entității devine obligatorie în planul de măsurare, fără `NOT_APPLICABLE` (`AVL203-REQ-042`). Celelalte cerințe 001–028 rămân neschimbate. Secțiunile 12–18 devin 13–19. |
 | 0.5.0 | 25 octombrie 2026 | Draft pentru revizuire | MINOR: revizie după prima implementare candidată completă (skill `verificare-tehnica-avl203`, v0.3.0) și o rulare `TEST`, cu propunerile aprobate de Alex Matescu la 25 octombrie 2026. §1: protocolul se aplică numai site-urilor entităților evaluate ca proiect sau client, cu fișa entității completată de reprezentant, nu concurenților și nici entităților din Market Discovery; o verificare din afara acestui domeniu nu se documentează ca rulare (`AVL203-REQ-043`). §1.1: politica de acces se preia din fișa entității („Politica crawlere”, AVL-201 §7), cu recomandarea laboratorului de acces total; planul declară limitele cererilor auxiliare. §5: repetarea unică a capturii la erori de rețea, DNS sau timeout (`AVL203-REQ-044`). §7: tabelul TC-04 completat (cazurile neacoperite trec la `UNKNOWN`; `FOUND_AT_CONVENTIONAL_PATH` cere un document XML; `robots.txt` cu `4xx` = fără declarații; fiecare sitemap raportat separat). §8.1: `<title>` intră la metadate; status nou `PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY` pentru textul aflat numai în scripturi non-JSON-LD, comentarii, `<template>` sau `<noscript>`; `ABSENT_FROM_RAW_HTML` exclude potrivirile din noduri unite. §9: variabilitatea referinței se aplică și statusului, URL-ului final și headerelor (`AVL203-REQ-045`). AVL-201 devine dependență normativă (fișa entității). Celelalte cerințe rămân neschimbate. |
+| 0.6.0 | 26 octombrie 2026 | Draft pentru revizuire | MINOR: deciziile Alex Matescu din 26 octombrie 2026, după prima rulare `T0`. §6: agenții de antrenare și de fetch pentru care fișa entității declară o politică intră în planul de măsurare; grila AVL-204 0.3.0 aplică zona Z2 crawlerelor de antrenare și raportează agenții de fetch numai ca observație (AVL204-REQ-018). §19.4: implementarea candidată v0.5.0 și prima rulare `T0`. §19.6: `Claude-SearchBot` rămâne `DOAR_TOKEN` (Anthropic nu publică șiruri complete, verificat la 26 octombrie 2026), iar regula pentru versiunea Chrome din șirul Googlebot e fixată; rămâne deschis doar șirul `bingbot`. Fără cerințe noi. |
 
 ---
 
@@ -646,9 +647,9 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 1. **Aliniarea corpusului la convenția T0/F1…Fn.** Închisă la 13 octombrie 2026: convenția din §11 este acum definită normativ în [AVL-200 §7](/lab/metodologie/standard-dovezi-masurare-trasabilitate) (v1.1.0), iar AVL-001 §17, AVL-202, AVL-101–105 și AVL-201 au fost aliniate.
 2. **Locul în corpus.** De la publicarea ca draft public (2 octombrie 2026), AVL-202 menționează AVL-203 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor, cu statutul „Draft pentru revizuire”. Rămân de făcut la activare: actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001 §17.
 3. **Cerințe identificate.** Formulate în v0.3.0 (2 octombrie 2026): 28 de cerințe `AVL203-REQ-001` … `AVL203-REQ-028`, derivate din intenția normativă deja existentă în text, fără reguli noi. Toate sunt la nivel TREBUIE / NU TREBUIE, cu o singură opțiune POATE (REQ-011). Rămâne de confirmat, la activare, setul final și nivelul fiecărei cerințe.
-4. **Implementarea de referință.** Comenzile din document sunt exemple. Există o implementare candidată, versionată (skill-ul `verificare-tehnica-avl203` din repository, v0.3.0 din 25 octombrie 2026), cu teste automate pe un server local (redirecturi, erori TLS/DNS/timeout, robots.txt indisponibil, răspunsuri non-HTML, integritate) și o rulare `TEST` pe un singur origin. Validarea ca implementare de referință cere rulări pe mai multe origini și configurații reale, inclusiv protecții anti-bot. Statut: candidată, nevalidată.
+4. **Implementarea de referință.** Comenzile din document sunt exemple. Există o implementare candidată, versionată (skill-ul `verificare-tehnica-avl203` din repository, v0.5.0 din 26 octombrie 2026), cu teste automate pe un server local (redirecturi, erori TLS/DNS/timeout, robots.txt indisponibil, răspunsuri non-HTML, integritate), o rulare `TEST` și o rulare `T0` pe un singur origin. Validarea ca implementare de referință cere rulări pe mai multe origini și configurații reale, inclusiv protecții anti-bot. Statut: candidată, nevalidată.
 5. **Parserul robots.txt.** De la versiunea 0.4.0, parserul nu mai este condiție pentru determinarea politicii: AVL203-REQ-041 acceptă și aplicarea manuală documentată. Implementarea candidată v0.3.0 conține un parser scris după RFC 9309, cu teste; validarea lui face parte din validarea implementării de referință (decizia 4).
-6. **Șirurile User-Agent.** Manifestul v0.1.0 a fost înghețat la 2 octombrie 2026 (§9). Rămân deschise: confirmarea șirului complet `bingbot` dintr-o sursă oficială, tratamentul `Claude-SearchBot` (doar token, cât timp Anthropic nu publică un șir complet) și regula de alegere a versiunii Chrome din șirul Googlebot.
+6. **Șirurile User-Agent.** Manifestul v0.1.0 a fost înghețat la 2 octombrie 2026 (§9). Decizii din 26 octombrie 2026 (Alex Matescu): `Claude-SearchBot` rămâne `DOAR_TOKEN`, pentru că Anthropic nu publică șiruri User-Agent complete pentru crawlerele sale (pagina de suport Anthropic despre crawlere, verificată la 26 octombrie 2026); versiunea Chrome din șirul Googlebot este ultima versiune stabilă la data înghețării manifestului și se înregistrează în manifest. Rămâne deschisă confirmarea șirului complet `bingbot` dintr-o sursă oficială, la următorul manifest, cel târziu la activare.
 7. **Implementarea TC-08 și a diagnosticului.** Introduse în v0.4.0. Implementarea candidată v0.3.0 acoperă `TC-08`, compoziția planului din §1.1 și stratul de diagnostic din §12; regulile de normalizare pentru `TC-08` sunt fixate în configurația ei versionată și se înregistrează în manifest. Rămâne de confirmat, la activare, setul final al regulilor de normalizare.
 8. **Aplicarea RFC 9309 fără parser.** Închisă la 23 octombrie 2026 (decizie Alex Matescu): AVL203-REQ-013 este retrasă, iar AVL203-REQ-041 acceptă aplicarea manuală a RFC 9309, documentată pas cu pas, alături de parserul conform.
 

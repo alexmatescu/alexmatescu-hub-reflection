@@ -130,6 +130,19 @@ def report(run, analysis_dir):
     L += ["", f"### TC-03 — robots.txt: {t3['file_state']}", "", f"{t3['file_state_reason']}. Mod: {t3['mode']}.", ""]
     if t3["parsed"]:
         L.append(f"Grupuri: {len(t3['parsed']['groups'])} · linii neinterpretabile: {len(t3['parsed']['unparseable'])} · declarații Sitemap: {len(t3['parsed']['sitemaps'])}")
+    extra = [d for d in t3["decisions"] if d.get("kind") not in (None, "core")]
+    if extra:
+        # AVL204-REQ-018: crawlerele de antrenare intră în diagnosticul Z2; celelalte rămân observații
+        L += ["", "Crawlerele declarate în plan, din afara matricei Core:", "",
+              "| Crawler | Tip | Pagini | Politica RFC 9309 | Metodă | În diagnostic |", "|---|---|---|---|---|---|"]
+        for tok in dict.fromkeys(d["token"] for d in extra):
+            ds = [d for d in extra if d["token"] == tok]
+            pols = ", ".join(sorted({d["policy"] for d in ds}))
+            meth = ", ".join(sorted({d["method"] or "—" for d in ds}))
+            in_z2 = "da (Z2)" if ds[0]["kind"] == "antrenare" else "nu, doar observație"
+            L.append(f"| {tok} | {ds[0]['kind']} | {len(ds)} | {pols} | {meth} | {in_z2} |")
+        if any(d["kind"] == "fetch_utilizator" for d in extra):
+            L += ["", "Pentru agenții de fetch la cererea utilizatorului, furnizorii declară că regulile robots.txt pot să nu se aplice (AVL-203 §6); politica de mai sus descrie fișierul, nu comportamentul agentului."]
     t4 = obs["TC-04"]
     L += ["", f"### TC-04 — Sitemap: {t4['status']}", ""] + [f"- {s['type']}: `{s['url']}` → {s.get('final_status', s.get('reason'))} {s.get('document_type_observed') or ''}" for s in t4["sitemaps"]]
     L += [f"- Notă: {n}" for n in t4["notes"]]

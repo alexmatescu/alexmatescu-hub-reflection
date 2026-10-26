@@ -1,4 +1,4 @@
-"""Diagnosticul după grila AVL-204 v0.2.0, aplicat determinist pe observații (AVL204-REQ-002, REQ-007).
+"""Diagnosticul după grila AVL-204 v0.3.0, aplicat determinist pe observații (AVL204-REQ-002, REQ-007).
 
 Regulile sunt cele din AVL-204 §6; textul condiției e reprodus în RULES, iar funcțiile de mai jos
 îl aplică literal. Regulile de succes cer date complete (AVL204-REQ-016); o zonă fără constatări
@@ -13,6 +13,9 @@ from . import GRID_VERSION
 CONFIRMED, POSSIBLE, UNDETERMINED, NONE = "problemă confirmată", "problemă posibilă", "nu poate fi stabilit", "nicio problemă observată"
 SEVERITY = {CONFIRMED: 1, POSSIBLE: 2, UNDETERMINED: 3, NONE: 4}
 CORE = ["Googlebot", "bingbot", "OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]
+# AVL204-REQ-018: Z2 se aplică matricei Core și crawlerelor de antrenare declarate în plan;
+# celelalte (fetch la cererea utilizatorului, căutare din afara matricei) rămân doar observații TC-03.
+Z2_KINDS = {"antrenare"}
 TLS_EXITS = {35, 51, 53, 54, 58, 59, 60, 64, 66, 77, 80, 82, 83, 90, 91}
 NETWORK_EXITS = {5, 6, 7, 28, 52, 55, 56}
 
@@ -22,17 +25,17 @@ RULES = {
     "R-Z1-02": ("Z1", CONFIRMED, "captura eșuează cu eroare TLS sau de certificat"),
     "R-Z1-03": ("Z1", CONFIRMED, "variantele http/https și www/fără www relevante ajung la destinații finale diferite"),
     "R-Z1-04": ("Z1", POSSIBLE, "URL-ul final diferă de URL-ul din plan fără ca redirectul să fie declarat intenționat în plan"),
-    "R-Z1-05": ("Z1", POSSIBLE, "lanțul de redirecturi are mai mult de un redirect până la URL-ul final"),
+    "R-Z1-05": ("Z1", POSSIBLE, "lanțul de redirecturi are mai mult de două redirecturi până la URL-ul final"),
     "R-Z1-06": ("Z1", POSSIBLE, "o variantă http răspunde direct 2xx, fără redirect spre https"),
     "R-Z1-07": ("Z1", UNDETERMINED, "captura eșuează cu eroare de rețea sau DNS o singură dată, iar captura repetată reușește"),
-    "R-Z1-08": ("Z1", NONE, "URL-ul răspunde 2xx cu cel mult un redirect, iar toate variantele relevante au fost capturate și converg"),
+    "R-Z1-08": ("Z1", NONE, "URL-ul răspunde 2xx cu cel mult două redirecturi, iar toate variantele relevante au fost capturate și converg"),
     "R-Z1-09": ("Z1", CONFIRMED, "captura eșuează cu eroare de rețea, DNS sau timeout și la captura repetată"),
     "R-Z1-10": ("Z1", NONE, "URL-ul răspunde, după redirecturi, cu 4xx sau 5xx, iar acest răspuns este declarat intenționat în plan"),
-    "R-Z2-01": ("Z2", CONFIRMED, "regula aplicabilă blochează un URL din plan pentru un crawler din matricea Core, contrar politicii de acces declarate"),
+    "R-Z2-01": ("Z2", CONFIRMED, "regula aplicabilă blochează un URL din plan pentru un crawler din matricea Core sau pentru un crawler de antrenare declarat în plan, contrar politicii de acces declarate"),
     "R-Z2-02": ("Z2", CONFIRMED, "robots.txt răspunde 5xx, sau nu poate fi obținut din cauza unei erori de rețea nici la captura repetată"),
     "R-Z2-03": ("Z2", POSSIBLE, "robots.txt conține linii care seamănă cu o directivă cunoscută scrisă greșit"),
     "R-Z2-04": ("Z2", NONE, "robots.txt răspunde 4xx, cu excepția 429"),
-    "R-Z2-05": ("Z2", NONE, "nicio regulă aplicabilă nu blochează URL-urile din plan pentru crawlerele Core, sau blocările corespund politicii declarate"),
+    "R-Z2-05": ("Z2", NONE, "nicio regulă aplicabilă nu blochează URL-urile din plan pentru crawlerele Core și pentru crawlerele de antrenare declarate în plan, sau blocările corespund politicii declarate"),
     "R-Z2-06": ("Z2", UNDETERMINED, "politica aplicabilă nu a putut fi determinată conform RFC 9309"),
     "R-Z2-07": ("Z2", NONE, "robots.txt este redirecționat către alt host și răspunde 2xx după cel mult cinci redirecturi"),
     "R-Z2-08": ("Z2", POSSIBLE, "robots.txt răspunde 429"),
@@ -47,7 +50,6 @@ RULES = {
     "R-Z4-03": ("Z4", CONFIRMED, "un bloc JSON-LD nu este JSON valid sintactic"),
     "R-Z4-04": ("Z4", CONFIRMED, "pagina nu are <title> sau are un <title> gol"),
     "R-Z4-05": ("Z4", POSSIBLE, "canonicalul declarat trimite la alt URL decât URL-ul final, fără ca asta să fie declarat intenționat în plan"),
-    "R-Z4-06": ("Z4", POSSIBLE, "pagina canonică despre entitate nu conține niciun bloc JSON-LD"),
     "R-Z4-07": ("Z4", POSSIBLE, "<html lang> lipsește"),
     "R-Z4-08": ("Z4", UNDETERMINED, "un semnal are valoarea UNKNOWN la extracție, sau ținta canonicalului nu a putut fi capturată în limitele planului"),
     "R-Z4-09": ("Z4", NONE, "niciuna dintre condițiile de mai sus nu se aplică, iar toate semnalele și țintele canonicalului au fost evaluate"),
@@ -76,7 +78,7 @@ QUALIFICATION = {
     "R-Z6-08": "restricție declarată",
 }
 DEVIATIONS = {
-    "DEV-G01": "caz neacoperit de regulile grilei AVL-204 0.2.0: constatarea primește „nu poate fi stabilit” (AVL204-REQ-003, REQ-012)",
+    "DEV-G01": "caz neacoperit de regulile grilei AVL-204 0.3.0: constatarea primește „nu poate fi stabilit” (AVL204-REQ-003, REQ-012)",
     "DEV-G02": "intenția de indexare a URL-ului nu e declarată în plan: R-Z4-01 cere „politica declarată îl vrea indexat” și nu poate fi aplicată sigur",
 }
 NONHTML = ("text/html", "application/xhtml+xml")
@@ -108,6 +110,10 @@ class Diagnoser:
                                     "state": f["state"], "detail": detail})
         self.findings.append(f)
         return f
+
+    def kind_for(self, crawler):
+        """Tipul crawlerului din planul de acces (cautare / antrenare / fetch_utilizator)."""
+        return next((r["kind"] for r in self.plan["access_policy"] if r["crawler"].lower() == crawler.lower()), None)
 
     def policy_for(self, crawler, page_id):
         rows = [r for r in self.plan["access_policy"] if r["crawler"].lower() == crawler.lower()]
@@ -158,9 +164,9 @@ class Diagnoser:
                     self.add("R-Z1-01", scope, ids, ev, f"status final {fs}", integrity=it)
             if o["url_final"] != o["url_requested"] and page.get("intentional_redirect_to") != o["url_final"]:
                 self.add("R-Z1-04", scope, ids, ev, f"{o['url_requested']} → {o['url_final']}", integrity=it)
-            if (o["num_redirects"] or 0) > 1:
+            if (o["num_redirects"] or 0) > 2:
                 self.add("R-Z1-05", scope, ids, ev, f"{o['num_redirects']} redirecturi", integrity=it)
-            if fs is not None and 200 <= fs < 300 and (o["num_redirects"] or 0) <= 1:
+            if fs is not None and 200 <= fs < 300 and (o["num_redirects"] or 0) <= 2:
                 if tc02["convergence"] == "CONVERGENT":
                     self.add("R-Z1-08", scope, ids + ["OBS-TC02"], ev + v_ids, f"{fs}, {o['num_redirects']} redirect(uri), variante convergente",
                              integrity=it + v_int)
@@ -209,6 +215,8 @@ class Diagnoser:
         for d in t["decisions"]:
             if d["token"] == "*":
                 continue
+            if d["token"] not in CORE and self.kind_for(d["token"]) not in Z2_KINDS:
+                continue  # observație TC-03, fără stare de diagnostic (AVL204-REQ-018)
             scope = {"page_id": d["page_id"], "url": d["url"], "crawler": d["token"], "method": d["method"]}
             if d["policy"] == "NEDETERMINAT" or d["method"] is None:
                 self.add("R-Z2-06", scope, ["OBS-TC03"], ev, (d.get("steps") or {}).get("reason", ""), integrity=it)
@@ -286,12 +294,11 @@ class Diagnoser:
             for c in o["canonical"] + o["canonical_http_header"]:
                 if c.get("resolved") and c["resolved"] != tc01["url_final"] and page.get("intentional_canonical") != c["resolved"]:
                     fired.append(self.add("R-Z4-05", scope, ids, ev, f"canonical {c['resolved']} ≠ URL final {tc01['url_final']}", integrity=it))
-            if page["category"] == "despre" and not o["json_ld"]:
-                fired.append(self.add("R-Z4-06", scope, ids, ev, "niciun bloc JSON-LD", integrity=it))
+            # R-Z4-06 retrasă în AVL-204 0.3.0: lipsa JSON-LD rămâne observație TC-05.
             if not any(h["present"] and (h["value"] or "").strip() for h in o["html_lang"]):
                 fired.append(self.add("R-Z4-07", scope, ids, ev, "<html lang> lipsește sau e gol", integrity=it))
             if not fired and not pending:
-                self.add("R-Z4-09", scope, ids, ev, "semnalele extrase nu declanșează R-Z4-01…08, R-Z4-10", integrity=it)
+                self.add("R-Z4-09", scope, ids, ev, "semnalele extrase nu declanșează R-Z4-01…05, R-Z4-07, R-Z4-08, R-Z4-10", integrity=it)
 
     # ---------------------------------------------------------------- Z5
     def z5(self):

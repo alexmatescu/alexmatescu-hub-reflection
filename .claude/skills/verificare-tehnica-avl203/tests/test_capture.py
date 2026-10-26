@@ -70,8 +70,8 @@ class FullCaptureTest(unittest.TestCase):
             cfg = json.load(f)
         first = min(r["start_utc"] for r in self.reqs if not r.get("skipped"))
         self.assertLessEqual(cfg["start_utc"], first)
-        self.assertEqual(cfg["protocol"]["version"], "0.5.0")
-        self.assertEqual(cfg["grid"]["version"], "0.2.0")
+        self.assertEqual(cfg["protocol"]["version"], "0.6.0")
+        self.assertEqual(cfg["grid"]["version"], "0.3.0")
         self.assertEqual(len(cfg["ua_manifest"]["effective"]), 6)
         with open(os.path.join(self.rdir, "http", "P01.try1.metrics")) as f:
             self.assertNotIn("local_ip", f.read())

@@ -235,7 +235,10 @@ def analyze(run_path, robots_manual=None, stamp=None):
     rsum = run.summary(re_[0]) if re_ else None
     body = run.body(re_[0]) if re_ else None
     text = body.decode("utf-8", errors="replace") if body is not None else None
-    pairs = [(p["page_id"], p["url"], t) for p in plan["pages"] for t in MATRIX]
+    # matricea Core plus crawlerele declarate în planul de acces (AVL-203 §6; AVL204-REQ-018)
+    kinds = {r["crawler"]: r["kind"] for r in plan["access_policy"]}
+    tokens = MATRIX + [c for c in kinds if c not in MATRIX]
+    pairs = [(p["page_id"], p["url"], t) for p in plan["pages"] for t in tokens]
     state, why, parsed, decisions = robots.evaluate(rsum, text, pairs)
     manual_errors = []
     if robots_manual:
@@ -243,6 +246,8 @@ def analyze(run_path, robots_manual=None, stamp=None):
         if not manual_errors:
             byk = {(m["page_id"], m["token"]): m for m in manual}
             decisions = [byk.get((d["page_id"], d["token"]), d) for d in decisions]
+    for d in decisions:
+        d["kind"] = "core" if d["token"] in MATRIX else kinds.get(d["token"])
     obs["TC-03"] = {"obs_id": "OBS-TC03", "capture": rsum, "file_state": state, "file_state_reason": why,
                     "size_signal": (rsum["body_bytes_saved"] or 0) > run.operational["analysis"]["OP-07"]["robots_size_signal_bytes"] if rsum else None,
                     "parsed": parsed, "decisions": decisions, "manual_errors": manual_errors,

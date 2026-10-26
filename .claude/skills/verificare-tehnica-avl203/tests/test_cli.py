@@ -27,6 +27,9 @@ class EndToEndTest(unittest.TestCase):
         with srv:
             plan = local_plan(srv.host, PAGES)
             plan["capture"]["network_retry_pause_seconds"] = 0
+            # AVL204-REQ-018: un crawler de antrenare și unul de fetch declarate în plan
+            plan["access_policy"] += [{"crawler": c, "kind": k, "policy": "PERMIS", "scope": "*", "source": "test", "declared_on": "2026-10-26"}
+                                      for c, k in (("GPTBot", "antrenare"), ("ChatGPT-User", "fetch_utilizator"))]
             p = os.path.join(tmp, "plan.json")
             with open(p, "w", encoding="utf-8") as f:
                 json.dump(plan, f)
@@ -38,7 +41,7 @@ class EndToEndTest(unittest.TestCase):
         self.assertEqual(cli("verify", "--run", run)[0], 0)
         self.assertEqual(cli("analyze", "--run", run)[0], 0)
         self.assertEqual(cli("diagnose", "--run", run, "--rules", "9.9.9")[0], 2)
-        code, out, err = cli("diagnose", "--run", run, "--rules", "0.2.0")
+        code, out, err = cli("diagnose", "--run", run, "--rules", "0.3.0")
         self.assertEqual(code, 0, err)
         self.assertIn("Z6: problemă confirmată", out)
         code, out, err = cli("report", "--run", run)
@@ -47,6 +50,9 @@ class EndToEndTest(unittest.TestCase):
             md = f.read()
         for section in ("RULARE TEST", "## 3. Observații", "## 4. Diagnostic", "## 5. Recomandări", "## 7. Abateri", "## 8. Limitele", "## 9. Trasabilitate"):
             self.assertIn(section, md)
+        self.assertIn("din afara matricei Core", md)
+        self.assertIn("| GPTBot | antrenare |", md)
+        self.assertIn("| ChatGPT-User | fetch_utilizator |", md)
         self.assertEqual(cli("report", "--run", run)[0], 2)  # raportul nu se suprascrie
         # reanaliza nu atinge dovezile brute
         self.assertEqual(cli("verify", "--run", run)[0], 0)

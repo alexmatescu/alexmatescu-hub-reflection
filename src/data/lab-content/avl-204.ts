@@ -8,13 +8,13 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-204</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>0.2.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>0.3.0</td></tr>
         <tr><th scope="row">Statut</th><td>Draft pentru revizuire</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data creării</th><td>22 octombrie 2026</td></tr>
         <tr><th scope="row">Data publicării</th><td>26 octombrie 2026</td></tr>
-        <tr><th scope="row">Ultima verificare</th><td>25 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima verificare</th><td>26 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica">https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica</a></td></tr>
         <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>, <a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a>, <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standardul de dovezi, măsurare și trasabilitate</a>, <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</a>, <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a> (fișa entității, §7)</td></tr>
@@ -30,7 +30,7 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
 
       <p>AVL-204 este un document de nivel C — Methodology în corpusul AI Visibility Lab Documentation. Definește regulile prin care observațiile produse de <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203</a> devin diagnostic și recomandări (AVL-203 §12).</p>
 
-      <p>Versiunea curentă, <strong>0.2.0</strong>, este un <strong>draft pentru revizuire</strong> și nu este activă. Regulile de diagnostic din §6 și criteriile de prioritizare din §7 sunt propuneri de lucru, revizuite după prima implementare candidată și o rulare de test; deciziile rămase deschise înainte de activare sunt enumerate în §15.</p>
+      <p>Versiunea curentă, <strong>0.3.0</strong>, este un <strong>draft pentru revizuire</strong> și nu este activă. Regulile de diagnostic din §6 și criteriile de prioritizare din §7 sunt propuneri de lucru, revizuite după prima implementare candidată, o rulare de test și prima rulare T0; deciziile rămase deschise înainte de activare sunt enumerate în §15.</p>
 
       <p>Identificatorul AVL-204 a fost alocat la 22 octombrie 2026 ca următorul număr liber din seria documentelor Nivelului C, după scanarea registrului de conținut, și confirmat de Alex Matescu.</p>
 
@@ -144,7 +144,7 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
 
       <p><code>TC-00</code> (contextul rulării) și <code>TC-07</code> (integritatea) sunt condiții de validitate, nu zone. Constatările care se sprijină pe un artefact care nu trece verificarea checksum-urilor primesc starea „nu poate fi stabilit” (regula <code>R-VAL-01</code>). Dacă lipsesc sau nu trec verificarea manifestul rulării, lista de checksum-uri ori planul înghețat, rularea este invalidă și nu se produce diagnostic, ci un raport de invaliditate (AVL204-REQ-001).</p>
 
-      <p>Granularitatea regulilor: zonele Z1, Z4, Z5 și Z6 se evaluează pentru fiecare URL din plan, zona Z2 pentru fiecare pereche URL–crawler din matricea Core, iar zona Z3 pentru origine.</p>
+      <p>Granularitatea regulilor: zonele Z1, Z4, Z5 și Z6 se evaluează pentru fiecare URL din plan, zona Z2 pentru fiecare pereche URL–crawler din matricea Core și pentru crawlerele de antrenare declarate în plan (§6.3), iar zona Z3 pentru origine.</p>
 
       <h2>6. Regulile de diagnostic</h2>
 
@@ -174,10 +174,10 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
           <tr><td><code>R-Z1-02</code></td><td>captura eșuează cu eroare TLS sau de certificat</td><td>problemă confirmată</td></tr>
           <tr><td><code>R-Z1-03</code></td><td>variantele <code>http</code>/<code>https</code> și <code>www</code>/fără <code>www</code> relevante ajung la destinații finale diferite</td><td>problemă confirmată</td></tr>
           <tr><td><code>R-Z1-04</code></td><td>URL-ul final diferă de URL-ul din plan fără ca redirectul să fie declarat intenționat în plan</td><td>problemă posibilă</td></tr>
-          <tr><td><code>R-Z1-05</code></td><td>lanțul de redirecturi are mai mult de un redirect până la URL-ul final</td><td>problemă posibilă</td></tr>
+          <tr><td><code>R-Z1-05</code></td><td>lanțul de redirecturi are mai mult de două redirecturi până la URL-ul final</td><td>problemă posibilă</td></tr>
           <tr><td><code>R-Z1-06</code></td><td>o variantă <code>http</code> răspunde direct <code>2xx</code>, fără redirect spre <code>https</code></td><td>problemă posibilă</td></tr>
           <tr><td><code>R-Z1-07</code></td><td>captura eșuează cu eroare de rețea sau DNS o singură dată, iar captura repetată reușește</td><td>nu poate fi stabilit</td></tr>
-          <tr><td><code>R-Z1-08</code></td><td>URL-ul răspunde <code>2xx</code> cu cel mult un redirect, iar toate variantele relevante au fost capturate și converg</td><td>nicio problemă observată</td></tr>
+          <tr><td><code>R-Z1-08</code></td><td>URL-ul răspunde <code>2xx</code> cu cel mult două redirecturi, iar toate variantele relevante au fost capturate și converg</td><td>nicio problemă observată</td></tr>
           <tr><td><code>R-Z1-09</code></td><td>captura eșuează cu eroare de rețea, DNS sau timeout și la captura repetată</td><td>problemă confirmată (în condițiile testate)</td></tr>
           <tr><td><code>R-Z1-10</code></td><td>URL-ul răspunde, după redirecturi, cu <code>4xx</code> sau <code>5xx</code>, iar acest răspuns este declarat intenționat în plan</td><td>nicio problemă observată (răspuns declarat)</td></tr>
         </tbody>
@@ -187,16 +187,18 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
 
       <p>Regulile <code>R-Z2-01</code> și <code>R-Z2-05</code> se aplică numai după determinarea politicii robots.txt conform RFC 9309 (selecția grupului, combinarea grupurilor, potrivirea cea mai specifică), printr-un parser conform sau prin aplicare manuală documentată pas cu pas, cum cere AVL203-REQ-041. Constatarea indică metoda folosită. Fără această determinare se aplică <code>R-Z2-06</code>.</p>
 
+      <p>Pe lângă crawlerele din matricea Core, regulile <code>R-Z2-01</code> și <code>R-Z2-05</code> se aplică și crawlerelor de antrenare declarate în planul de măsurare (de exemplu <code>GPTBot</code>, <code>ClaudeBot</code>, <code>Google-Extended</code>, <code>CCBot</code>), cu politica preluată din fișa entității (§3.1). Crawlerele care accesează pagini la cererea unui utilizator (de exemplu <code>ChatGPT-User</code>, <code>Claude-User</code>, <code>Perplexity-User</code>) se raportează numai ca observație: politica RFC 9309 determinată pentru ele apare în raport, fără stare de diagnostic, pentru că furnizorii lor declară că regulile robots.txt pot să nu li se aplice (AVL-203 §6).</p>
+
       <table>
         <thead>
           <tr><th>Regulă</th><th>Condiție</th><th>Stare</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>R-Z2-01</code></td><td>regula aplicabilă blochează un URL din plan pentru un crawler din matricea Core (AVL-203 §6), contrar politicii de acces declarate</td><td>problemă confirmată</td></tr>
+          <tr><td><code>R-Z2-01</code></td><td>regula aplicabilă blochează un URL din plan pentru un crawler din matricea Core (AVL-203 §6) sau pentru un crawler de antrenare declarat în plan, contrar politicii de acces declarate</td><td>problemă confirmată</td></tr>
           <tr><td><code>R-Z2-02</code></td><td><code>robots.txt</code> răspunde <code>5xx</code>, sau nu poate fi obținut din cauza unei erori de rețea nici la captura repetată</td><td>problemă confirmată</td></tr>
           <tr><td><code>R-Z2-03</code></td><td><code>robots.txt</code> conține linii care seamănă cu o directivă cunoscută scrisă greșit (de exemplu <code>Dissallow</code>)</td><td>problemă posibilă</td></tr>
           <tr><td><code>R-Z2-04</code></td><td><code>robots.txt</code> răspunde <code>4xx</code>, cu excepția <code>429</code></td><td>nicio problemă observată</td></tr>
-          <tr><td><code>R-Z2-05</code></td><td>nicio regulă aplicabilă nu blochează URL-urile din plan pentru crawlerele Core, sau blocările corespund politicii declarate</td><td>nicio problemă observată</td></tr>
+          <tr><td><code>R-Z2-05</code></td><td>nicio regulă aplicabilă nu blochează URL-urile din plan pentru crawlerele Core și pentru crawlerele de antrenare declarate în plan, sau blocările corespund politicii declarate</td><td>nicio problemă observată</td></tr>
           <tr><td><code>R-Z2-06</code></td><td>politica aplicabilă nu a putut fi determinată conform RFC 9309</td><td>nu poate fi stabilit</td></tr>
           <tr><td><code>R-Z2-07</code></td><td><code>robots.txt</code> este redirecționat către alt host și răspunde <code>2xx</code> după cel mult cinci redirecturi</td><td>nicio problemă observată</td></tr>
           <tr><td><code>R-Z2-08</code></td><td><code>robots.txt</code> răspunde <code>429</code></td><td>problemă posibilă</td></tr>
@@ -237,7 +239,7 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
           <tr><td><code>R-Z4-03</code></td><td>un bloc JSON-LD nu este JSON valid sintactic</td><td>problemă confirmată</td></tr>
           <tr><td><code>R-Z4-04</code></td><td>pagina nu are <code>&lt;title&gt;</code> sau are un <code>&lt;title&gt;</code> gol</td><td>problemă confirmată</td></tr>
           <tr><td><code>R-Z4-05</code></td><td>canonicalul declarat trimite la alt URL decât URL-ul final, fără ca asta să fie declarat intenționat în plan</td><td>problemă posibilă</td></tr>
-          <tr><td><code>R-Z4-06</code></td><td>pagina canonică despre entitate (AVL-203 §1.1) nu conține niciun bloc JSON-LD</td><td>problemă posibilă</td></tr>
+          <tr><td><code>R-Z4-06</code></td><td>Retrasă în 0.3.0: lipsa oricărui bloc JSON-LD pe pagina canonică despre entitate (AVL-203 §1.1) se raportează numai ca observație TC-05</td><td>—</td></tr>
           <tr><td><code>R-Z4-07</code></td><td><code>&lt;html lang&gt;</code> lipsește</td><td>problemă posibilă</td></tr>
           <tr><td><code>R-Z4-08</code></td><td>un semnal are valoarea <code>UNKNOWN</code> la extracție, sau ținta canonicalului nu a putut fi capturată în limitele planului</td><td>nu poate fi stabilit</td></tr>
           <tr><td><code>R-Z4-09</code></td><td>niciuna dintre condițiile de mai sus nu se aplică, iar toate semnalele și țintele canonicalului au fost evaluate</td><td>nicio problemă observată</td></tr>
@@ -246,6 +248,8 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
       </table>
 
       <p>Aceste reguli descriu semnalele declarate în HTML-ul brut. Ele nu evaluează canonicalul selectat de un motor și nu validează vocabularul Schema.org (AVL203-REQ-016). Ținta canonicalului se capturează ca cerere auxiliară, în limitele declarate în plan (AVL-203 §1.1); statusul inițial și cel final se înregistrează separat.</p>
+
+      <p>Retragerea <code>R-Z4-06</code> (0.3.0): documentația Google pentru funcțiile AI din Search precizează că nu este nevoie de fișiere noi, fișiere text pentru AI sau markup pentru a apărea în aceste funcții și că nu există date structurate schema.org speciale care trebuie adăugate (pagina „AI features and your website”, actualizată la 10 decembrie 2025, verificată la 26 octombrie 2026). Prezența și validitatea sintactică a blocurilor JSON-LD rămân observații TC-05, iar un bloc invalid rămâne <code>R-Z4-03</code>.</p>
 
       <h3>6.6. Z5 — Conținutul livrat în HTML</h3>
 
@@ -289,6 +293,8 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
       <blockquote><strong>AVL204-REQ-007 — Diagnosticul TREBUIE produs prin regulile din §6, iar fiecare constatare TREBUIE să citeze identificatorul regulii aplicate.</strong></blockquote>
 
       <blockquote><strong>AVL204-REQ-008 — Regulile zonei Z2 care depind de politica aplicabilă (<code>R-Z2-01</code>, <code>R-Z2-05</code>) TREBUIE aplicate numai după determinarea politicii robots.txt conform RFC 9309, prin parser conform sau aplicare manuală documentată (AVL203-REQ-041); altfel TREBUIE aplicată regula <code>R-Z2-06</code>.</strong></blockquote>
+
+      <blockquote><strong>AVL204-REQ-018 — Regulile <code>R-Z2-01</code> și <code>R-Z2-05</code> TREBUIE aplicate crawlerelor din matricea Core și crawlerelor de antrenare declarate în plan; crawlerele de fetch la cererea utilizatorului declarate în plan NU TREBUIE să primească stare de diagnostic în zona Z2, iar politica lor determinată conform RFC 9309 TREBUIE raportată ca observație.</strong></blockquote>
 
       <h2>7. Prioritizarea recomandărilor</h2>
 
@@ -371,7 +377,7 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
 
       <table>
         <thead>
-          <tr><th>Tip de entitate</th><th>Categorii suplimentare propuse</th></tr>
+          <tr><th>Tip de entitate</th><th>Categorii suplimentare recomandate</th></tr>
         </thead>
         <tbody>
           <tr><td>Organizație cu servicii</td><td>paginile de servicii principale; o pagină de portofoliu sau studii de caz, dacă există</td></tr>
@@ -382,6 +388,8 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
       </table>
 
       <p>Un tip de entitate care nu se încadrează în tabel se declară în plan, împreună cu categoriile alese și motivul lor.</p>
+
+      <p>Categoriile suplimentare sunt recomandate, nu obligatorii: lipsa lor din plan se semnalează doar ca avertisment la validarea planului. Absența de pe site a paginii cu datele de identitate (AVL203-REQ-042) se înregistrează în plan și se raportează ca observație, fără regulă de diagnostic proprie.</p>
 
       <h2>12. Checklist de conformitate</h2>
 
@@ -403,6 +411,7 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
         <li><strong>AVL204-REQ-015</strong> — Grila TREBUIE aplicată numai entităților evaluate ca proiect sau client, cu fișa entității completată de reprezentant.</li>
         <li><strong>AVL204-REQ-016</strong> — Regulile de succes NU TREBUIE aplicate pe date incomplete; o zonă fără constatări TREBUIE raportată „neevaluată”.</li>
         <li><strong>AVL204-REQ-017</strong> — Politica de acces TREBUIE preluată din fișa entității; implicit, accesul total, cu sursa declarată; nu se deduce din observații.</li>
+        <li><strong>AVL204-REQ-018</strong> — Regulile <code>R-Z2-01</code>/<code>R-Z2-05</code> TREBUIE aplicate crawlerelor Core și crawlerelor de antrenare declarate în plan; crawlerele de fetch la cererea utilizatorului se raportează numai ca observație.</li>
       </ul>
 
       <h2>13. Documente asociate</h2>
@@ -444,18 +453,20 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
         <tbody>
           <tr><td>0.1.0</td><td>22 octombrie 2026</td><td>Draft pentru revizuire</td><td>Primul draft. Definește scopul grilei (transparență, consecvență, imparțialitate), stările diagnosticului preluate din AVL-203 §12.1, cele șase zone de diagnostic, regulile <code>R-VAL-01</code>, <code>R-Z1-*</code> … <code>R-Z6-*</code>, prioritizarea P1–P3 după impact potențial, efort, dependențe și verificabilitate, afirmațiile excluse, aplicarea identică și abaterile declarate, versionarea ca Measurement Rule Version și categoriile de pagini pe tip de entitate. Cerințe <code>AVL204-REQ-001</code> … <code>AVL204-REQ-014</code>. Identificator AVL-204 alocat din registru și confirmat de Alex Matescu. Aliniat la deciziile din 23 octombrie 2026 pentru AVL-203 0.4.0: zona Z2 trimite la AVL203-REQ-041 (parser conform sau aplicare manuală documentată a RFC 9309), iar pagina de contact sau de date de identitate este obligatorie în plan (AVL203-REQ-042). AVL-202 1.6.0 include AVL-204 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor.</td></tr>
           <tr><td>0.2.0</td><td>25 octombrie 2026</td><td>Draft pentru revizuire</td><td>MINOR: revizie după prima implementare candidată (v0.3.0) și o rulare de test, cu propunerile P-01…P-11 aprobate de Alex Matescu la 25 octombrie 2026. Domeniul de aplicare: grila se aplică numai entităților evaluate ca proiect sau client, cu fișa entității completată de reprezentant, nu concurenților și nici entităților din Market Discovery (§2, <code>AVL204-REQ-015</code>); §1 și §9 reformulate în consecință, <code>AVL204-REQ-011</code> reformulată. <code>AVL204-REQ-001</code> precizează granularitatea integrității (artefact → <code>R-VAL-01</code>; manifest, checksum-uri sau plan → rulare invalidă). §3.1 nouă: politica de acces vine din fișa entității („Politica crawlere”), recomandarea laboratorului este accesul total, politica nu se deduce din observații (<code>AVL204-REQ-017</code>; decizia deschisă 5 închisă). Regulile de succes cer date complete, iar o zonă fără constatări e „neevaluată” (<code>AVL204-REQ-016</code>). Zonele Z4 și Z5 nu se evaluează pentru URL-urile cu răspuns final <code>4xx</code>/<code>5xx</code>. Reguli noi sau modificate: <code>R-VAL-01</code>; <code>R-Z1-01</code> (răspuns declarat intenționat), <code>R-Z1-07</code>, <code>R-Z1-08</code>, <code>R-Z1-09</code> (eroare de rețea repetată), <code>R-Z1-10</code>; <code>R-Z2-02</code>, <code>R-Z2-03</code> (doar directive scrise greșit), <code>R-Z2-04</code> (fără <code>429</code>), <code>R-Z2-07</code> (redirect cross-host permis de RFC 9309), <code>R-Z2-08</code> (<code>429</code>), <code>R-Z2-09</code> (peste cinci redirecturi); <code>R-Z3-04</code>; <code>R-Z4-02</code>, <code>R-Z4-08</code>, <code>R-Z4-09</code>, <code>R-Z4-10</code> (canonical cu redirect); <code>R-Z5-05</code> (text doar în scripturi sau zone ascunse, statusul nou din AVL-203 0.5.0); <code>R-Z6-01</code>/<code>R-Z6-02</code> (doar diferențe nefavorabile, contrar politicii declarate), <code>R-Z6-06</code>, <code>R-Z6-07</code> (variabilitatea referinței la status și headere), <code>R-Z6-08</code> (restricție declarată). <code>AVL204-REQ-009</code>: verificările suplimentare nu primesc clasă de prioritate. AVL-201 adăugat ca dependență normativă, AVL-MKT-001 ca dependență informativă. Sursele externe reverificate la 25 octombrie 2026 (RFC 9309; Google, codurile HTTP pentru robots.txt).</td></tr>
+          <tr><td>0.3.0</td><td>26 octombrie 2026</td><td>Draft pentru revizuire</td><td>MINOR: deciziile Alex Matescu din 26 octombrie 2026, după prima rulare T0 pe un site propriu. <code>R-Z1-05</code> devine problemă posibilă numai peste două redirecturi, iar <code>R-Z1-08</code> acceptă cel mult două. <code>R-Z4-06</code> retrasă: lipsa JSON-LD pe pagina despre entitate rămâne observație TC-05, conform documentației Google pentru funcțiile AI. Zona Z2 se aplică și crawlerelor de antrenare declarate în plan; crawlerele de fetch la cererea utilizatorului se raportează numai ca observație (<code>AVL204-REQ-018</code>, nouă). §11: categoriile suplimentare sunt recomandate, iar absența paginii de identitate rămâne observație. <code>R-Z3-03</code>, <code>R-Z4-07</code>, <code>R-Z2-08</code>, <code>R-Z2-09</code> și <code>R-Z4-10</code> confirmate ca „problemă posibilă”. Decizii deschise 1 (parțial), 4 și 7 (nouă) închise. Sursă externă verificată la 26 octombrie 2026: Google, „AI features and your website”.</td></tr>
         </tbody>
       </table>
 
       <h2>15. Decizii deschise înainte de 1.0.0</h2>
 
       <ol>
-        <li><strong>Regulile de diagnostic (§6).</strong> Sunt propuneri de lucru, revizuite în 0.2.0 după prima implementare candidată. Rămân de confirmat, în special: încadrarea <code>R-Z1-05</code> (lanț cu mai mult de un redirect), <code>R-Z3-03</code> (lipsa unui sitemap ca problemă posibilă), <code>R-Z4-06</code> (lipsa JSON-LD pe pagina canonică despre entitate), <code>R-Z4-07</code> (lipsa <code>lang</code>) și stările noilor reguli <code>R-Z2-08</code>, <code>R-Z2-09</code> și <code>R-Z4-10</code>.</li>
+        <li><strong>Regulile de diagnostic (§6).</strong> Încadrările semnalate în 0.2.0 au fost decise la 26 octombrie 2026 (decizie Alex Matescu): <code>R-Z1-05</code> devine problemă posibilă numai peste două redirecturi, iar <code>R-Z1-08</code> acceptă cel mult două; <code>R-Z4-06</code> este retrasă (lipsa JSON-LD rămâne observație); <code>R-Z3-03</code>, <code>R-Z4-07</code>, <code>R-Z2-08</code>, <code>R-Z2-09</code> și <code>R-Z4-10</code> își păstrează starea „problemă posibilă”. Setul complet al regulilor se confirmă la activare, odată cu validarea implementării de referință (AVL-203 §19.4).</li>
         <li><strong>Determinarea politicii robots.txt.</strong> Închisă la 23 octombrie 2026: AVL203-REQ-041 acceptă parserul conform și aplicarea manuală documentată a RFC 9309; regulile <code>R-Z2-01</code> și <code>R-Z2-05</code> pot fi aplicate prin oricare dintre ele.</li>
         <li><strong>Prioritizarea (§7).</strong> Pragurile criteriilor și regula claselor P1–P3 se testează pe primele evaluări și se ajustează înainte de 1.0.0.</li>
-        <li><strong>Categoriile pe tip de entitate (§11).</strong> Lista tipurilor și a categoriilor suplimentare este provizorie. Rămâne de stabilit și dacă absența de pe site a unei pagini cu datele de identitate ale entității (AVL203-REQ-042) primește o regulă de diagnostic proprie.</li>
+        <li><strong>Categoriile pe tip de entitate (§11).</strong> Închisă la 26 octombrie 2026 (decizie Alex Matescu): categoriile suplimentare sunt recomandate, nu obligatorii; absența paginii cu datele de identitate rămâne observație, fără regulă de diagnostic proprie.</li>
         <li><strong>Formatul politicii de acces declarate.</strong> Închisă la 25 octombrie 2026 (decizie Alex Matescu): politica face parte din fișa entității („Politica crawlere”), completată de reprezentant; recomandarea laboratorului este accesul total pentru toate crawlerele; o politică diferită se documentează pentru fiecare crawler sau categorie (§3.1).</li>
         <li><strong>Locul în corpus.</strong> Închisă la 23 octombrie 2026: AVL-202 1.6.0 menționează AVL-204 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor. La activare rămân de făcut actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001 §17.</li>
+        <li><strong>Crawlerele din afara matricei Core.</strong> Închisă la 26 octombrie 2026 (decizie Alex Matescu): crawlerele de antrenare declarate în plan primesc regulile <code>R-Z2-01</code>/<code>R-Z2-05</code>; crawlerele de fetch la cererea utilizatorului se raportează numai ca observație (§6.3, <code>AVL204-REQ-018</code>).</li>
       </ol>
 
       <p>Aceste puncte nu trebuie tratate ca închise până la o decizie explicită, documentată în istoricul versiunilor.</p>

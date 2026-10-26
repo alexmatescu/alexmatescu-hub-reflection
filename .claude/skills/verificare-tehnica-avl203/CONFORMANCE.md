@@ -1,8 +1,10 @@
-# Matricea de conformitate — implementarea v0.4.0
+# Matricea de conformitate — implementarea v0.5.0
 
-Implementare candidată pentru draftul AVL-203 v0.5.0 / AVL-204 v0.2.0, **nevalidată** ca implementare de referință (AVL-203 §19.4). Matricea arată ce acoperă codul, prin ce test și ce rămâne în afara lui. Nu este o declarație de conformitate cu o versiune 1.0.0.
+Implementare candidată pentru draftul AVL-203 v0.6.0 / AVL-204 v0.3.0, **nevalidată** ca implementare de referință (AVL-203 §19.4). Matricea arată ce acoperă codul, prin ce test și ce rămâne în afara lui. Nu este o declarație de conformitate cu o versiune 1.0.0.
 
-Stare la 25 octombrie 2026, după 150 de teste locale (server pe 127.0.0.1). O rulare `TEST` pe delamatescu.ro a fost făcută cu v0.3.0 (grila 0.1.0); cu v0.4.0 nu s-a făcut încă nicio rulare pe un site real.
+Stare la 26 octombrie 2026, după 152 de teste locale (server pe 127.0.0.1). Rulări pe un site real (delamatescu.ro): `TEST` cu v0.3.0 (grila 0.1.0) și `T0` (`AVL203-delamatescu-ro-T0-20261026T085234Z`) cu v0.4.0 (grila 0.2.0); aceeași rulare `T0`, reanalizată offline cu v0.5.0 și grila 0.3.0 în `derived/analysis-20261026T121156Z`.
+
+Modificări v0.5.0 (deciziile din 26 octombrie 2026, AVL-204 0.3.0): `R-Z1-05` peste două redirecturi, `R-Z1-08` cu cel mult două; `R-Z4-06` retrasă (lipsa JSON-LD rămâne observație TC-05); TC-03 determină politica și pentru crawlerele declarate în plan din afara matricei Core, iar Z2 le diagnostichează doar pe cele de antrenare (`AVL204-REQ-018`); raportul listează separat crawlerele din afara matricei Core.
 
 Statusuri: **acoperit** (implementat și testat) · **parțial** (implementat incomplet sau netestat pe un caz) · **manual** (depinde de procesul operatorului, nu de cod) · **neaplicabil** (cu motiv) · **blocat** (lipsește o funcție sau o decizie).
 
@@ -60,7 +62,7 @@ Fișierele sunt în `scripts/avl203/`; testele în `tests/`. Alegerile `OP-*` su
 
 44 de identificatori activi (001–045, fără 013).
 
-## AVL-204 v0.2.0
+## AVL-204 v0.3.0
 
 | Cerință | Implementare | Test | Status |
 |---|---|---|---|
@@ -81,6 +83,7 @@ Fișierele sunt în `scripts/avl203/`; testele în `tests/`. Alegerile `OP-*` su
 | REQ-015 numai proiecte sau clienți | `entity_sheet` obligatoriu în plan | `test_plan.test_entity_sheet_required_and_relationship` | parțial (ca AVL203-REQ-043) |
 | REQ-016 succes doar pe date complete; zonă fără constatări = „neevaluată” | precondiții în `diagnose` (`R-Z1-08`, `R-Z4-09`, `R-Z5-04`, `R-Z6-05`); `diagnose.zones` | `test_diagnose.BaselineTest.test_zone_without_findings_is_not_evaluated`, `test_r_z1_03` | acoperit |
 | REQ-017 politica din fișa entității; implicit acces total | `plan.validate` (doar `PERMIS` / `BLOCAT_INTENTIONAT`, cu sursă); `Diagnoser.policy_for` (implicit `PERMIS`) | `test_plan.test_unknown_policy_rejected`, `test_diagnose.test_r_z2_01_default_policy_is_full_access` | acoperit |
+| REQ-018 Z2 pentru Core și crawlerele de antrenare declarate; fetch la cererea utilizatorului doar observație | `analyze` (perechi URL–crawler pentru toți crawlerii din plan, cu `kind`); `Diagnoser.z2` (`Z2_KINDS`); raportul, tabelul „din afara matricei Core” | `test_diagnose.Z2Test.test_r_z2_training_crawler_in_diagnosis`, `test_r_z2_user_fetch_only_observation`, `test_cli.test_pipeline` | acoperit |
 
 ## AVL-200 (cerințele aplicabile)
 
