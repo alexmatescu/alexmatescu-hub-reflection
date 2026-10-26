@@ -2,13 +2,13 @@
 
 Document de lucru intern, sub controlul versiunilor. Ține evidența punctului de plecare, a ce s-a făcut, a ce s-a actualizat, a ce s-a exclus și a ce mai e de făcut pentru stratul tehnic al auditului AI Visibility.
 
-> **Plan încheiat la 26 octombrie 2026.** Toate fazele sunt făcute, iar lucrul a intrat în `main` (merge `1a1852f`). De aici încolo, documentul se folosește doar pentru §6, lista unică a deciziilor deschise până la versiunea 1.0.0, și pentru jurnal. Branch-ul de lucru a fost închis.
+> **Plan încheiat la 26 octombrie 2026.** Toate fazele sunt făcute, iar lucrul a intrat în `main` (merge `1a1852f`). De aici încolo, documentul se folosește doar pentru §6, lista unică a deciziilor deschise până la versiunea 1.0.0, și pentru jurnal. Branch-ul de lucru e integrat complet și se șterge (de Alex).
 
 | Câmp | Valoare |
 | --- | --- |
 | Creat | 23 octombrie 2026 |
 | Ultima actualizare | 26 octombrie 2026 |
-| Branch | `avl-203-0.4.0-avl-204`, integrat în `main` la 26 octombrie 2026 și închis |
+| Branch | `avl-203-0.4.0-avl-204`, integrat complet în `main` la 26 octombrie 2026; de șters |
 | Documente vizate | AVL-203 v0.5.0 (draft), AVL-204 v0.2.0 (draft, publicat la 26 octombrie 2026), AVL-202 v1.7.0 (activ), AVL-201 v1.5.0 (activ) |
 | Implementare | skill `verificare-tehnica-avl203`, v0.4.0 (implementare candidată, 150 de teste) |
 | Stare | Fazele 0–5 încheiate; merge în `main` făcut (`1a1852f`), deploy-ul îl face Alex; urmează T0 pe delamatescu.ro și deciziile din §6 |
@@ -223,7 +223,7 @@ Aceasta este singura listă urmărită. Textul normativ al fiecărei decizii ră
 | 25 octombrie 2026 | 5.1: rulare TEST pe delamatescu.ro (5 pagini, 48 de requesturi, 0 erori, integritate VALID). Rezultat: Z1–Z5 „nicio problemă observată”; Z6 „nu poate fi stabilit” — fiecare răspuns HTML conține un token semnat, diferit la fiecare request, deci comparația de conținut între User-Agent-i e neevaluabilă (25 din 71 de constatări). Politica de acces și intenția de indexare declarate `NECUNOSCUT` (nedeclarate de entitate). Verificat pe dovezile brute: diferențele dintre cele două capturi de referință, locația TC-08, regulile robots. 5.4: `SKILL.md` rescris pentru v0.3.0. |
 | 25 octombrie 2026 | Alex: Z6 rămâne fără mascare și fără schimbare de regulă (conținutul „nu poate fi stabilit” e rezultatul; sursa variației: `data-context-token` injectat de Lovable); delamatescu.ro permite toate crawlerele și vrea paginile indexate (PERMIS + INDEXAT în planurile următoare). AVL-204 rămâne 0.1.0. 5.3: pagina auditului trimite la AVL-204; tsc, lint și build trec. |
 | 25 octombrie 2026 | Alex aprobă P-01…P-11; P-03 modificată (acces total recomandat, „Politica crawlere” în fișa entității, completată de reprezentant); verificarea se aplică doar proiectelor și clienților. Merge `main` în branch (`1cb67bf`, AVL-201 1.4.0 adus pe branch). 5.2: AVL-204 0.2.0 (REQ-015…017, reguli noi și modificate), AVL-203 0.5.0 (REQ-043…045, tabelul TC-04, status TC-08 nou), AVL-201 1.5.0 (fișa entității), AVL-202 1.7.0; `.md` + `.ts`, registrul fără anomalii noi, paginile 200 local. Implementarea v0.4.0: plan cu `entity_sheet` și politică fără `NECUNOSCUT`, reguli 0.2.0, 150 de teste. |
-| 26 octombrie 2026 | Merge în `main` (`1a1852f`). Conflictele au fost doar la articolele de blog, păstrate din `main` (deja publicate), și la registrul de conținut, regenerat; PNG-urile articolelor de blog nu au intrat. AVL-204 publicat ca draft: `date_published` 26 octombrie 2026, 10:33. Verificări: tsc, lint pe fișierele din merge, teste, build, 150 de teste ale skill-ului, 10 pagini cu 200 local; registrul fără anomalii noi. Planul a fost marcat încheiat, iar §6 a devenit lista unică a deciziilor deschise (DD-01…DD-08). Branch-ul a fost închis. |
+| 26 octombrie 2026 | Merge în `main` (`1a1852f`). Conflictele au fost doar la articolele de blog, păstrate din `main` (deja publicate), și la registrul de conținut, regenerat; PNG-urile articolelor de blog nu au intrat. AVL-204 publicat ca draft: `date_published` 26 octombrie 2026, 10:33. Verificări: tsc, lint pe fișierele din merge, teste, build, 150 de teste ale skill-ului, 10 pagini cu 200 local; registrul fără anomalii noi. Planul a fost marcat încheiat, iar §6 a devenit lista unică a deciziilor deschise (DD-01…DD-08). Branch-ul e integrat complet; ștergerea o face Alex. |
 
 ---
 
