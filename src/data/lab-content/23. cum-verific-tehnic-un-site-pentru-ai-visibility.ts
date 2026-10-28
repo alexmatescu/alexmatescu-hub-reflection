@@ -97,7 +97,7 @@ export const cumVerificTehnicUnSiteHtml = `
       <p>Publicat: <time datetime="2026-10-28T14:23:00+02:00">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-28">28 octombrie 2026</time></p>
 
       <p>Un site nu poate fi evaluat corect pentru vizibilitate în motoare de căutare și sisteme AI doar verificând dacă apare în ChatGPT, Claude, Perplexity, Google sau Bing. Înainte de citare, menționare sau recomandare există un strat tehnic care trebuie măsurat separat: dacă site-ul poate fi accesat, ce livrează serverul, ce reguli impune crawlerelor, cum își declară URL-urile și dacă diferite sisteme primesc același conținut.</p>
-      <p>În AI Visibility Lab folosesc un protocol tehnic minim și repetabil pentru a documenta această stare înainte de interpretarea rezultatelor: <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203</a>.<sup><a href="#fn-1">1</a></sup> Observațiile lui devin diagnostic după o grilă publică separată, <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a>.<sup><a href="#fn-2">2</a></sup></p>
+      <p>În AI Visibility Lab folosesc un protocol tehnic minim și repetabil pentru a documenta această stare înainte de interpretarea rezultatelor: <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203</a>.<sup><a href="#fn-1">1</a></sup> Observațiile lui devin diagnostic după o grilă publică separată, <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a>.<sup><a href="#fn-2">2</a></sup> Amândouă sunt la început: drafturi 0.x, construite din primele rulări pe propriul site și revizuite pe măsură ce apar situații pe care nu le-au prevăzut (secțiunea „În ce stadiu de maturitate este protocolul?”).</p>
       <p>Protocolul nu este un audit SEO complet și nici nu pretinde că poate prezice dacă un sistem AI va cita sau recomanda o sursă.</p>
       <p>Rolul lui este mai precis: <strong>să creeze o evidență tehnică reproductibilă asupra condițiilor în care un site poate fi descoperit, accesat și procesat de sisteme automate.</strong></p>
       <p>Exemplele din acest articol sunt reale. Provin din prima rulare <code>T0</code> a protocolului, pe site-ul meu, delamatescu.ro, la 26 octombrie 2026: 6 pagini, 56 de cereri, 12 crawlere declarate. Rularea e documentată integral în <a href="${CS}">studiul de caz CS-002</a>, iar dovezile brute sunt publicate, cu checksum-uri.<sup><a href="#fn-3">3</a></sup></p>
@@ -254,6 +254,43 @@ answer composition</code></pre>
       <p>În loc să spunem „am optimizat pagina și ChatGPT a început să mă citeze”, putem ajunge la o afirmație mai riguroasă: „între T0 și F3 au fost documentate aceste schimbări; în aceeași perioadă a apărut acest comportament în sistemele măsurate; datele permit sau nu permit atribuirea unei relații între ele”.</p>
       <p>Această diferență este centrală pentru modul în care vreau să tratez GEO și AEO în AI Visibility Lab.</p>
 
+      <h2>În ce stadiu de maturitate este protocolul?</h2>
+      <p><strong>Protocolul și grila sunt într-un stadiu incipient: drafturi 0.x, construite din trei rulări de test și o rulare T0, toate pe delamatescu.ro. Vor fi revizuite pe măsură ce apar situații pe care nu le-au prevăzut, după o procedură scrisă dinainte.</strong></p>
+      <p>Nu e o limită ascunsă, ci una declarată. Versiunile 0.x și lista deciziilor deschise înainte de 1.0.0 sunt publice în <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203</a> și <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a>. Un caz pe care regulile nu îl acoperă nu se interpretează din mers: nu poate primi „problemă confirmată”, e declarat ca abatere în raport și devine propunere pentru versiunea următoare.</p>
+      <p>Secvența, de la draft la pașii care urmează:</p>
+      <pre><code>1. Draft
+   AVL-203 0.1.0 (1 oct.), AVL-204 0.1.0 (22 oct.)
+        ↓
+2. Rulări TEST pe delamatescu.ro (2 și 25 oct.)
+   revizii: AVL-203 0.2.0 și 0.5.0, AVL-204 0.2.0
+        ↓
+3. Rularea T0 pe delamatescu.ro (26 oct.)
+   decizii: AVL-203 0.6.0, AVL-204 0.3.0
+        ↓
+4. Publicare (28 oct.)
+   CS-002, pachetul de dovezi, raportul-exemplu
+        ↓
+──── de aici, pașii prevăzuți de protocol ────
+5. Rulări pe proiecte și clienți
+   (fișa entității completată de reprezentant)
+        ↓
+6. Situație neacoperită de reguli
+   nu devine „problemă confirmată”;
+   se declară ca abatere în raport
+        ↓
+7. Propunere de modificare
+   versiune nouă, cu rând în istoric
+        ↓
+8. Remăsurare F1 … Fn, cu plan nou înghețat
+   versiunile diferite se declară la comparație
+        ↓
+   pașii 5–8 se repetă
+        ↓
+9. Activare 1.0.0, după închiderea
+   deciziilor deschise (AVL-203 §19, AVL-204 §15)</code></pre>
+      <p>Pașii 1–4 s-au întâmplat. Pașii 5–9 sunt cei prevăzuți de reguli, nu un calendar: protocolul se îmbunătățește când apare un caz pe care nu l-a prevăzut, nu la o dată fixă. Rapoartele clienților nu se publică; ce se publică e modificarea regulilor, cu motivul ei, în istoricul versiunilor. Regulile citate sunt <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL204-REQ-003 și AVL204-REQ-012</a> (cazul neacoperit și abaterea declarată), <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL204-REQ-013 și AVL204-REQ-014</a> (versiunea nouă și comparația între versiuni).</p>
+      <p>Declarația privește protocolul tehnic și grila lui. Cadrul metodologic (<a href="/lab/metodologie">AVL-202</a>) și standardul de dovezi (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a>) sunt documente active. Pentru un client, consecința practică e simplă: regulile după care e evaluat site-ul lui sunt publice și versionate, iar raportul spune cu ce versiune a fost produs.</p>
+
       <h2>Poate acest protocol demonstra că un site va fi citat, menționat sau recomandat de AI?</h2>
       <p><strong>Nu; protocolul tehnic poate documenta condițiile tehnice de acces, descoperire și machine-readability, dar nu poate demonstra singur indexarea, retrieval-ul, citarea, menționarea sau recomandarea într-un sistem AI.</strong></p>
       <p>Aceasta este limita metodologică cea mai importantă. Protocolul nu poate demonstra singur:</p>
@@ -336,6 +373,15 @@ connects result with research question</code></pre>
       </ol>
       <h3>Notă de volatilitate</h3>
       <p>Documentația furnizorilor despre crawlere, rolul fiecărui User-Agent și intervalele de IP se schimbă. Afirmațiile despre Google și OpenAI au fost verificate la 28 octombrie 2026. Exemplele descriu delamatescu.ro la 26 octombrie 2026; site-ul s-a schimbat de atunci, iar starea actuală se măsoară la F1.</p>
+
+      <h2>Istoricul versiunilor</h2>
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0</td><td>28 octombrie 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>28 octombrie 2026</td><td>Secțiune nouă „În ce stadiu de maturitate este protocolul?”, cu secvența pașilor de la draft la publicare și pașii următori prevăzuți de protocol; o frază despre stadiul protocolului în introducere. Restul textului nu a fost modificat.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 28 octombrie 2026.</em></p>
 `;

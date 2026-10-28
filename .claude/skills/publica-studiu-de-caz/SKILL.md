@@ -217,6 +217,27 @@ Comanda compară starea actuală cu snapshot-ul de la 0.A și listează ce s-a s
 
 Șterge `.registry-before.json` după verificare.
 
+### Pasul final (2) — actualizarea `public/llms.txt`
+
+`public/llms.txt` e indexul scris de mână al materialelor publice de pe delamatescu.ro: o linie `- [Titlu](URL canonic): descriere` pentru fiecare material al laboratorului. Nu se generează. De la 28 octombrie 2026 (decizia lui Alex), fiecare publicare îl actualizează, ca ultim pas al procesului intern: după conținut, wiring, verificările tehnice și verificarea registrului, înainte de raportul final. Commit, push și deploy rămân de făcut după acest pas.
+
+`llms.txt` nu e un mecanism garantat de citare sau de indexare și nu se prezintă ca atare.
+
+1. **Citește tot `public/llms.txt`** înainte de a scrie: structura pe secțiuni și formatul liniilor sunt cele de acolo.
+2. **Locul liniei:** secțiunea `## Studii de caz și experimente`, după ultima linie de studiu de caz și înaintea liniei „Studii de caz (AVL-350)”. La o fază nouă peste un caz existent nu se adaugă linie: se actualizează descrierea liniei existente, dacă punctele de măsurare sau obiectul studiului din ea nu mai sunt adevărate.
+3. **Formatul liniei:** `- [Titlu scurt](URL canonic): descriere`. Titlul poate fi scurtat (de regulă `seoTitle`, dacă există, sau prima parte a `title`); URL-ul e exact `canonical`; descrierea e o singură propoziție, cu fapte din material, fără promisiuni de citare, indexare sau poziționare și fără formulările excluse de skill.
+4. **La actualizarea unui material care are deja linie**, o modifici numai dacă titlul, URL-ul sau descrierea nu mai sunt adevărate. Nu adăuga o a doua linie. Un update minor care nu schimbă titlul, URL-ul sau subiectul nu atinge `llms.txt`.
+5. **Nu modifica alte linii** decât ale materialului curent. O neconcordanță observată în altă linie se raportează, nu se corectează din acest skill.
+6. **Verifică:**
+
+```bash
+node scripts/check-llms.mjs --require {canonical}
+```
+
+Exit `0` înseamnă că linia există și că toate linkurile din `llms.txt` sunt în `sitemap.xml`. Lista „Materiale publicate … fără linie” e informativă: o completezi doar pentru materialul curent.
+
+7. **În raportul final:** linia adăugată sau modificată, exact cum apare în fișier, ori „`llms.txt` neschimbat”, cu motivul.
+
 ---
 
 ## Faza 0 — Inspecție și ingest
@@ -426,7 +447,7 @@ npm run build
 npm run test   # dacă există teste relevante (proiectul are vitest — verifică ce acoperă)
 ```
 
-(verifică `package.json` înainte să presupui comenzile). **`llms.txt`**: nu-l modifica automat — nu e tratat ca requirement universal GEO, la fel ca la articole. **IndexNow**: proiectul nu are integrare — nu construi una pentru un singur studiu. **`robots.txt`**: nu-l modifica pentru publicarea de rutină — doar confirmă că nu blochează accidental noua rută. Dacă mediul permite, pornește dev server și confirmă pe ruta reală: title, description, canonical, H1, byline, tabelul de identificare, figurile (fără 404), JSON-LD (`@graph`), și că `/lab/studii-de-caz` listează noul caz o singură dată.
+(verifică `package.json` înainte să presupui comenzile). **`llms.txt`**: nu se modifică aici; linia studiului se adaugă sau se actualizează la final, după verificarea registrului („Pasul final (2)” de la Pasul 0). **IndexNow**: proiectul nu are integrare — nu construi una pentru un singur studiu. **`robots.txt`**: nu-l modifica pentru publicarea de rutină — doar confirmă că nu blochează accidental noua rută. Dacă mediul permite, pornește dev server și confirmă pe ruta reală: title, description, canonical, H1, byline, tabelul de identificare, figurile (fără 404), JSON-LD (`@graph`), și că `/lab/studii-de-caz` listează noul caz o singură dată.
 
 **AI crawler accessibility**: verificat deja global (`robots.txt` permite Googlebot, Bingbot, GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot etc.) — confirmă doar că nu s-a schimbat, nu re-auditați infrastructura la fiecare studiu.
 
@@ -464,8 +485,9 @@ Scalează cu scopul din §0.2. Pentru **studiu nou** sau **fază nouă**, raport
 10. Secțiunile obligatorii AVL-350 confirmate prezente: „Ce NU demonstrează acest studiu” (§6.5), „Transparență metodologică” cu conflict de interese dacă aplicabil (§6.6).
 11. Rezultate tehnice: typecheck / lint / build / runtime — fiecare PASS/FAIL/NOT RUN.
 12. Limitări — ce nu a putut fi verificat.
+13. `llms.txt`: linia adăugată sau modificată, exact cum apare în fișier, ori „neschimbat”, cu motivul (Pasul final 2).
 
-Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afirmațiile modificate, rezultatele tehnice.
+Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afirmațiile modificate, rezultatele tehnice, iar pentru `llms.txt` „neschimbat”, dacă titlul, URL-ul și subiectul au rămas aceleași.
 
 Încheie cu formula de stop: „Procesul intern este complet. Nu am executat git add, git commit, git push sau deploy. Studiul de caz este pregătit local. Operațiile Git și publicarea efectivă rămân de executat manual de utilizator.” Nu declara „studiul e publicat” sau „e live”.
 
@@ -515,6 +537,7 @@ Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afir
 **Tehnic**
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Studiul apare o singură dată pe `/lab/studii-de-caz`.
+- [ ] `public/llms.txt` actualizat la final (Pasul final 2): linia studiului adăugată sau corectată, fără alte linii atinse; `node scripts/check-llms.mjs --require {canonical}` a dat exit 0.
 - [ ] Niciun `git add`/`commit`/`push`/deploy executat.
 
 ---
@@ -532,7 +555,7 @@ Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afir
 - Nu atribui un ID `AVL-xxx` unei instanțe de studiu de caz — rezervat documentelor normative.
 - Nu edita `avl-350.ts`, `publica-articol-lab` sau `publica-articol-blog` în timpul publicării unui studiu de caz.
 - Nu redenumi/regenera/altera evidence figures — sunt dovadă, nu ilustrație.
-- Nu modifica `llms.txt`/`robots.txt` și nu construi IndexNow pentru publicarea de rutină.
+- Nu modifica `robots.txt` și nu construi IndexNow pentru publicarea de rutină. `llms.txt` se actualizează doar în „Pasul final (2)”, numai pe linia studiului curent.
 - Nu face `git add`, `git commit`, `git push` sau deploy.
 - Nu declara studiul „publicat” sau „live” — skill-ul se oprește la pregătirea locală completă.
 

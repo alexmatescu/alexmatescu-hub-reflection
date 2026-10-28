@@ -1496,17 +1496,18 @@ Nu schimba politica crawlerelor în cadrul acestui skill.
 
 # 27. LLMS.TXT
 
+`public/llms.txt` e indexul scris de mână al paginilor publice de pe delamatescu.ro. Nu se generează. De la 28 octombrie 2026 (decizia lui Alex), fiecare publicare îl verifică și, dacă e cazul, îl actualizează, ca ultim pas al procesului intern: după integrare, verificările tehnice și build, înainte de raportul final (§53). Commit, push și deploy rămân de făcut după acest pas.
+
 `llms.txt` NU este tratat ca mecanism garantat de citare AI.
 
-Nu îl modifica automat la fiecare articol.
+Blogul apare în `llms.txt` ca o singură linie, „Blog”, în secțiunea `## Pagini personale și proiecte`; articolele de blog nu au linii individuale. Pentru un articol de blog:
 
-Modifică-l numai dacă politica tehnică actuală a repository-ului cere explicit includerea fiecărui articol nou.
-
-Dacă este doar un index de pagini principale:
-
-nu adăuga articolul.
-
-Nu inventa o nouă regulă.
+1. Citește tot `public/llms.txt`.
+2. Nu adăuga o linie pentru articol.
+3. Verifică dacă linia „Blog” rămâne adevărată după publicare: numărul de eseuri („peste N”), anul de început, lista categoriilor. Modific-o numai dacă a devenit falsă, de exemplu când articolul introduce o categorie nouă sau când numărul real trece de următoarea zecime peste pragul declarat. Numărul real vine din registrul de conținut (blog arhivă + blog nou, publicate), nu din estimare.
+4. Nu modifica alte linii. O neconcordanță observată în altă linie se raportează.
+5. Rulează `node scripts/check-llms.mjs`; exit `0` înseamnă că toate linkurile din `llms.txt` sunt în `sitemap.xml`.
+6. În raportul final (§53): linia „Blog” modificată, exact cum apare în fișier, ori „`llms.txt` neschimbat”, cu motivul.
 
 ---
 
@@ -1934,7 +1935,7 @@ NU:
 - migra articole legacy;
 - modifica toate `lastmod`;
 - schimba robots.txt fără motiv;
-- modifica llms.txt mecanic;
+- modifica llms.txt în afara pasului final din §27 sau adăuga linii individuale pentru articole de blog;
 - introduce IndexNow;
 - adăuga dependințe inutile;
 - face refactor global;
@@ -2056,7 +2057,7 @@ NU:
 [ ] sitemap este actualizat/corect.
 [ ] `<loc>` corespunde canonical.
 [ ] lastmod este corect.
-[ ] llms.txt nu a fost modificat inutil.
+[ ] llms.txt verificat la final (§27): linia „Blog” actualizată numai dacă devenise falsă; nicio linie individuală pentru articol; `node scripts/check-llms.mjs` a dat exit 0.
 [ ] nu a fost introdus IndexNow.
 [ ] nu a fost introdus un mecanism nou de indexing.
 
@@ -2194,6 +2195,11 @@ Alte suprafețe: enumeră dacă există
 Confirmă explicit:
 
 Articolul a fost adăugat ca fișier independent în `src/data/blog-content/`, înregistrat în `newPosts` — NU în `blogger-posts.json`.
+
+## LLMS.TXT
+
+Linia „Blog”: neschimbată (cu motivul) / modificată (textul nou)
+check-llms: PASS
 
 ## VERIFICĂRI
 

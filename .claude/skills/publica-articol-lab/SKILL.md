@@ -142,11 +142,32 @@ Comanda compară starea actuală cu snapshot-ul de la 0.A și listează ce s-a s
 
 Șterge `.registry-before.json` după verificare.
 
+### Pasul final (2) — actualizarea `public/llms.txt`
+
+`public/llms.txt` e indexul scris de mână al materialelor publice de pe delamatescu.ro: o linie `- [Titlu](URL canonic): descriere` pentru fiecare material al laboratorului. Nu se generează. De la 28 octombrie 2026 (decizia lui Alex), fiecare publicare îl actualizează, ca ultim pas al procesului intern: după conținut, wiring, verificările tehnice și verificarea registrului, înainte de raportul final. Commit, push și deploy rămân de făcut după acest pas.
+
+`llms.txt` nu e un mecanism garantat de citare sau de indexare și nu se prezintă ca atare.
+
+1. **Citește tot `public/llms.txt`** înainte de a scrie: structura pe secțiuni și formatul liniilor sunt cele de acolo.
+2. **Locul liniei:** secțiunea `## Articole GEO/AEO și AI Search`, imediat după linia „Toate articolele (AVL-401)” (cel mai nou articol primul). Un articol care schimbă slug-ul își mută linia la noul URL, nu primește una nouă.
+3. **Formatul liniei:** `- [Titlu scurt](URL canonic): descriere`. Titlul poate fi scurtat (de regulă `seoTitle`, dacă există, sau prima parte a `title`); URL-ul e exact `canonical`; descrierea e o singură propoziție, cu fapte din material, fără promisiuni de citare, indexare sau poziționare și fără formulările excluse de skill.
+4. **La actualizarea unui material care are deja linie**, o modifici numai dacă titlul, URL-ul sau descrierea nu mai sunt adevărate. Nu adăuga o a doua linie. Un update minor care nu schimbă titlul, URL-ul sau subiectul nu atinge `llms.txt`.
+5. **Nu modifica alte linii** decât ale materialului curent. O neconcordanță observată în altă linie se raportează, nu se corectează din acest skill.
+6. **Verifică:**
+
+```bash
+node scripts/check-llms.mjs --require {canonical}
+```
+
+Exit `0` înseamnă că linia există și că toate linkurile din `llms.txt` sunt în `sitemap.xml`. Lista „Materiale publicate … fără linie” e informativă: o completezi doar pentru materialul curent.
+
+7. **În raportul final:** linia adăugată sau modificată, exact cum apare în fișier, ori „`llms.txt` neschimbat”, cu motivul.
+
 ---
 
 ## Faza 0 — Inspecție și ingest
 
-Citește obligatoriu, înainte de orice modificare: fișierul `.md` sursă; `src/data/lab-seo.ts` (tipuri, `sortedLabArticles`/`latestLabArticle`/`labArticlePathname`/`formatLabArticleDate` și `buildArticleJsonLd` — sursa canonică a indexului `/lab/articole`, vezi Faza 8); `src/pages/Lab.tsx` (`LabArticleIndex`, componenta indexului); `src/data/lab.ts` (`labNav` — navigare/routing, NU sursa ordinii indexului); un articol `.ts` existent ca referință de stil; `src/components/Seo.tsx` (`alexMatescuPerson`, `alexMatescuWebSite`); `public/sitemap.xml`; `public/robots.txt` (context, de regulă nu necesită modificare — vezi §9.1); `public/llms.txt` (doar context, vezi §8.3).
+Citește obligatoriu, înainte de orice modificare: fișierul `.md` sursă; `src/data/lab-seo.ts` (tipuri, `sortedLabArticles`/`latestLabArticle`/`labArticlePathname`/`formatLabArticleDate` și `buildArticleJsonLd` — sursa canonică a indexului `/lab/articole`, vezi Faza 8); `src/pages/Lab.tsx` (`LabArticleIndex`, componenta indexului); `src/data/lab.ts` (`labNav` — navigare/routing, NU sursa ordinii indexului); un articol `.ts` existent ca referință de stil; `src/components/Seo.tsx` (`alexMatescuPerson`, `alexMatescuWebSite`); `public/sitemap.xml`; `public/robots.txt` (context, de regulă nu necesită modificare — vezi §9.1); `public/llms.txt` (se actualizează la final — „Pasul final (2)”, §8.3).
 
 **Nu presupune din acest document structura reală a codului** dacă implementarea proiectului s-a schimbat între timp — verifică mereu fișierele de mai sus, nu memoria acestui SKILL.md.
 
@@ -543,7 +564,7 @@ Proiectul folosește deja consistent `changefreq`/`priority` pe toate intrările
 
 ### 8.3 — llms.txt
 
-Nu adăuga automat o linie per articol — nu tratat ca cerință universală GEO. Modifică-l doar dacă arhitectura o cere sau userul cere explicit.
+Nu se modifică în timpul wiring-ului. Linia articolului se adaugă sau se actualizează la final, după verificările tehnice și ale registrului — „Pasul final (2)” de la Pasul 0.
 
 ### 8.4 — IndexNow
 
@@ -617,6 +638,7 @@ Scalează cu scopul din §0.2. Pentru **articol nou/rescriere majoră**, raportu
 10. Imagini inline (dacă articolul are, §6.3): listă exactă a imaginilor copiate în `public/images/lab/{slug}/`; orice fișier lipsă care a oprit publicarea; orice fișier din `images/` neutilizat în `.md`, raportat dar necopiat.
 11. Rezultate tehnice: `typecheck` / `lint` / `build` / `runtime check` — fiecare PASS/FAIL/NOT RUN.
 12. Limitări — ce nu a putut fi verificat (inclusiv, dacă e cazul, ora reală de publicare nedemonstrabilă pentru un articol legacy — §0.4).
+13. `llms.txt`: linia adăugată sau modificată, exact cum apare în fișier, ori „neschimbat”, cu motivul (Pasul final 2).
 
 Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doar afirmațiile modificate din claim ledger, rezultatele tehnice.
 
@@ -645,6 +667,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 - [ ] FAQ folosit doar dacă e util; FAQ vizibil == FAQ în JSON-LD.
 - [ ] Canonical == rută == sitemap == wiring (`lab.ts`/`Lab.tsx`/`lab-seo.ts`).
 - [ ] `lastmod` din sitemap nu e falsificat.
+- [ ] `public/llms.txt` actualizat la final (Pasul final 2): linia articolului adăugată sau corectată în secțiunea articolelor, fără alte linii atinse; `node scripts/check-llms.mjs --require {canonical}` a dat exit 0.
 - [ ] Nu se pretinde că `llms.txt`/schema/FAQ/metadata garantează citarea AI (§11.1).
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Claim ledger inclus în raport.

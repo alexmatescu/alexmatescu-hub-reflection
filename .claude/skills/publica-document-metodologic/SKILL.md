@@ -153,6 +153,27 @@ Comanda compară starea actuală cu snapshot-ul de la 0.A și listează ce s-a s
 
 Șterge `.registry-before.json` după verificare.
 
+### Pasul final (2) — actualizarea `public/llms.txt`
+
+`public/llms.txt` e indexul scris de mână al materialelor publice de pe delamatescu.ro: o linie `- [Titlu](URL canonic): descriere` pentru fiecare material al laboratorului. Nu se generează. De la 28 octombrie 2026 (decizia lui Alex), fiecare publicare îl actualizează, ca ultim pas al procesului intern: după conținut, wiring, verificările tehnice și verificarea registrului, înainte de raportul final. Commit, push și deploy rămân de făcut după acest pas.
+
+`llms.txt` nu e un mecanism garantat de citare sau de indexare și nu se prezintă ca atare.
+
+1. **Citește tot `public/llms.txt`** înainte de a scrie: structura pe secțiuni și formatul liniilor sunt cele de acolo.
+2. **Locul liniei:** secțiunea `## Metodologii și cercetări fundamentale`, între documentele de Nivel C, în ordinea identificatorilor (`AVL-200`, `AVL-201`, … apoi familiile `AVL-MKT-*`), cu identificatorul în paranteză în titlu. Cât timp documentul e draft, descrierea începe cu „draft pentru revizuire — ”; la activare (Faza 3) prefixul se scoate. Versiunea nu se trece în `llms.txt`, deci o versiune nouă fără schimbare de titlu sau de subiect nu atinge fișierul.
+3. **Formatul liniei:** `- [Titlu scurt](URL canonic): descriere`. Titlul poate fi scurtat (de regulă `seoTitle`, dacă există, sau prima parte a `title`); URL-ul e exact `canonical`; descrierea e o singură propoziție, cu fapte din material, fără promisiuni de citare, indexare sau poziționare și fără formulările excluse de skill.
+4. **La actualizarea unui material care are deja linie**, o modifici numai dacă titlul, URL-ul sau descrierea nu mai sunt adevărate. Nu adăuga o a doua linie. Un update minor care nu schimbă titlul, URL-ul sau subiectul nu atinge `llms.txt`.
+5. **Nu modifica alte linii** decât ale materialului curent. O neconcordanță observată în altă linie se raportează, nu se corectează din acest skill.
+6. **Verifică:**
+
+```bash
+node scripts/check-llms.mjs --require {canonical}
+```
+
+Exit `0` înseamnă că linia există și că toate linkurile din `llms.txt` sunt în `sitemap.xml`. Lista „Materiale publicate … fără linie” e informativă: o completezi doar pentru materialul curent.
+
+7. **În raportul final:** linia adăugată sau modificată, exact cum apare în fișier, ori „`llms.txt` neschimbat”, cu motivul.
+
 ---
 
 ## Faza 0 — Inspecție și ingest
@@ -294,7 +315,7 @@ npm run build
 
 (verifică `package.json` înainte să presupui comenzile). Dacă mediul permite, pornește dev server și confirmă pe ruta reală: title, description, canonical, H1, tabelul de identitate, cerințele randate corect, linkurile interne către alte documente AVL funcționale, și că `/lab/metodologie` listează documentul (dacă indexul e vizibil acolo la data execuției).
 
-`robots.txt`/`llms.txt`/IndexNow — nu le modifica pentru publicarea de rutină, identic cu celelalte skill-uri ale laboratorului.
+`robots.txt`/IndexNow — nu le modifica pentru publicarea de rutină. `llms.txt` se actualizează la final, după verificarea registrului („Pasul final (2)” de la Pasul 0), numai pe linia documentului curent.
 
 ---
 
@@ -321,6 +342,7 @@ Identic cu `publica-articol-lab` Faza 11/11.1, plus specific documentelor normat
 7. Impact asupra documentelor dependente (dacă altul depinde normativ de acesta și trebuie re-verificat).
 8. Rezultate tehnice: typecheck / lint / build / runtime — fiecare PASS/FAIL/NOT RUN.
 9. Limitări — ce nu a putut fi verificat.
+10. `llms.txt`: linia adăugată sau modificată, exact cum apare în fișier, ori „neschimbat”, cu motivul (Pasul final 2).
 
 Încheie cu formula de stop: „Procesul intern este complet. Nu am executat git add, git commit, git push sau deploy. Documentul este pregătit local. Operațiile Git și publicarea efectivă rămân de executat manual de utilizator.” Nu declara documentul „activ” sau „live” dacă gate-ul de activare (Faza 3) nu a fost trecut explicit.
 
@@ -341,6 +363,7 @@ Identic cu `publica-articol-lab` Faza 11/11.1, plus specific documentelor normat
 - [ ] Nod copil adăugat în `labNav` sub `/lab/metodologie` (obligatoriu tehnic pentru routing).
 - [ ] `sitemap.xml` actualizat, urmând formatul real observat.
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
+- [ ] `public/llms.txt` actualizat la final (Pasul final 2): linia documentului adăugată sau corectată (prefixul „draft pentru revizuire — ” corect față de statut), fără alte linii atinse; `node scripts/check-llms.mjs --require {canonical}` a dat exit 0.
 - [ ] Niciun `git add`/`commit`/`push`/deploy executat.
 - [ ] Documentul nu a fost declarat „activ”/„live” fără trecerea prin Faza 3.
 

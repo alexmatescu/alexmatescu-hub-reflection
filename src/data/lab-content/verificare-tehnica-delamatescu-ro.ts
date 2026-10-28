@@ -122,9 +122,27 @@ export const verificareTehnicaDelamatescuRoHtml = `
       </table>
 
       <h2>Rezumat</h2>
-      <p><strong>Pe cele 6 pagini testate pe 26 octombrie 2026, delamatescu.ro nu prezintă probleme tehnice de acces în zonele Z1–Z5 ale grilei AVL-204: paginile răspund direct cu <code>200</code>, variantele adresei converg spre <code>https://delamatescu.ro/</code>, robots.txt permite accesul tuturor celor 9 crawlere evaluate, sitemap-ul e declarat și răspunde, semnalele paginilor sunt prezente, iar textele-cheie se află în HTML-ul livrat de server. Zona Z6 rămâne „nu poate fi stabilit” la comparația de conținut, pentru că pagina se schimbă la fiecare încărcare, chiar pentru același vizitator.</strong></p>
-      <p>Este prima rulare <code>T0</code> a protocolului <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203</a> pe un site real, interpretată după grila <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a>. Studiul arată, pentru fiecare verificare, ce se cere serverului, ce a răspuns el și cum devine răspunsul o constatare. Arată și comenzile instrumentului, cu ieșirea lor reală din terminal, și raportul pe care îl primește un client.</p>
-      <p>Rezultatul nu spune nimic despre indexare, citare sau recomandare în răspunsurile AI. Spune doar că, în condițiile testate, accesul tehnic nu explică eventualele probleme de vizibilitate ale site-ului (secțiunea 18).</p>
+      <p><strong>Pe cele 6 pagini testate pe 26 octombrie 2026, delamatescu.ro nu prezintă probleme tehnice de acces în zonele Z1–Z5 ale grilei AVL-204. Zona Z6 rămâne „nu poate fi stabilit” la comparația de conținut.</strong></p>
+      <p>Ce a arătat rularea T0, pe zone:</p>
+      <ul>
+        <li><strong>Răspunsul site-ului (Z1):</strong> toate paginile răspund direct cu <code>200</code>, iar variantele adresei converg spre <code>https://delamatescu.ro/</code>.</li>
+        <li><strong>Regulile pentru crawlere (Z2):</strong> robots.txt permite accesul tuturor celor 9 crawlere evaluate, pe toate paginile.</li>
+        <li><strong>Sitemap-ul (Z3):</strong> e declarat în robots.txt și răspunde.</li>
+        <li><strong>Semnalele paginilor (Z4):</strong> fiecare pagină are title, canonical spre propria adresă și limba declarată, fără <code>noindex</code>.</li>
+        <li><strong>Conținutul livrat (Z5):</strong> textele-cheie se află în HTML-ul trimis de server.</li>
+        <li><strong>Răspunsurile pentru crawlere (Z6):</strong> statusul, adresa finală și headerele sunt identice pentru toți cei 5 crawleri de căutare; conținutul nu a putut fi comparat, pentru că pagina se schimbă la fiecare încărcare, chiar pentru același vizitator.</li>
+      </ul>
+      <p>Ce conține studiul:</p>
+      <ul>
+        <li>prima rulare <code>T0</code> a protocolului <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203</a> pe un site real, interpretată după grila <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a>;</li>
+        <li>pentru fiecare verificare: ce se cere serverului, ce a răspuns el și cum devine răspunsul o constatare;</li>
+        <li>comenzile instrumentului, cu ieșirea lor reală din terminal;</li>
+        <li>raportul pe care îl primește un client.</li>
+      </ul>
+      <p>Ce nu spune:</p>
+      <ul>
+        <li>nimic despre indexare, citare sau recomandare în răspunsurile AI. Spune doar că, în condițiile testate, accesul tehnic nu explică eventualele probleme de vizibilitate ale site-ului (secțiunea 18).</li>
+      </ul>
 
       <h2>1. Ce verifică protocolul AVL-203?</h2>
       <p><strong>AVL-203 verifică dacă paginile declarate ale unui site pot fi obținute și citite de sistemele automate: răspunsul HTTP, adresa oficială, regulile din robots.txt, sitemap-ul, semnalele din HTML, răspunsurile pentru diferite User-Agent-uri și prezența textelor importante în codul livrat.</strong></p>
@@ -448,6 +466,38 @@ plan INVALID</code></pre>
       <p><strong>O modificare a dovezilor.</strong> Numele mașinii, înlocuit în <code>manifest/env.txt</code> în pachetul public (secțiunea 15).</p>
       <p><strong>Observații din afara grilei.</strong> Tipul redirectului <code>www</code> (secțiunea 8) și comparația cu mascare (secțiunea 13) sunt observații. Nu au schimbat nicio constatare.</p>
       <p>Corelația temporală dintre o schimbare tehnică și o schimbare de vizibilitate nu va fi prezentată drept cauzalitate (AVL-203 §14).</p>
+      <p><strong>Maturitatea protocolului.</strong> AVL-203 și grila AVL-204 sunt la început: drafturi 0.x, construite din situațiile întâlnite până acum, adică trei rulări de test și prima rulare T0, toate pe propriul site. Vor fi revizuite pe măsură ce apar situații pe care nu le-au prevăzut. Un caz pe care regulile nu îl acoperă nu se interpretează din mers: nu poate primi „problemă confirmată”, e declarat ca abatere de la grilă și devine propunere pentru versiunea următoare, cu modificarea trecută în istoricul versiunilor. Cadrul metodologic (<a href="/lab/metodologie">AVL-202</a>) și standardul de dovezi (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a>) sunt active; declarația se referă la protocolul tehnic și la grila lui. Secvența de până acum și pașii următori:</p>
+      <pre><code>1. Draft
+   AVL-203 0.1.0 (1 oct.), AVL-204 0.1.0 (22 oct.)
+        ↓
+2. Rulări TEST pe delamatescu.ro (2 și 25 oct.)
+   revizii: AVL-203 0.2.0 și 0.5.0, AVL-204 0.2.0
+        ↓
+3. Rularea T0 pe delamatescu.ro (26 oct.)
+   decizii: AVL-203 0.6.0, AVL-204 0.3.0
+        ↓
+4. Publicare (28 oct.)
+   CS-002, pachetul de dovezi, raportul-exemplu
+        ↓
+──── de aici, pașii prevăzuți de protocol ────
+5. Rulări pe proiecte și clienți
+   (fișa entității completată de reprezentant)
+        ↓
+6. Situație neacoperită de reguli
+   nu devine „problemă confirmată”;
+   se declară ca abatere în raport
+        ↓
+7. Propunere de modificare
+   versiune nouă, cu rând în istoric
+        ↓
+8. Remăsurare F1 … Fn, cu plan nou înghețat
+   versiunile diferite se declară la comparație
+        ↓
+   pașii 5–8 se repetă
+        ↓
+9. Activare 1.0.0, după închiderea
+   deciziilor deschise (AVL-203 §19, AVL-204 §15)</code></pre>
+      <p>Pașii 1–4 s-au întâmplat. Pașii 5–9 sunt cei prevăzuți de reguli, nu un calendar: protocolul se îmbunătățește când apare un caz pe care nu l-a prevăzut, nu la o dată fixă. Rapoartele clienților nu se publică; ce se publică e modificarea regulilor, cu motivul ei, în istoricul versiunilor. Regulile citate sunt <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL204-REQ-003 și AVL204-REQ-012</a> (cazul neacoperit și abaterea declarată), <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL204-REQ-013 și AVL204-REQ-014</a> (versiunea nouă și comparația între versiuni).</p>
       <p><strong>Status: studiu longitudinal în desfășurare. Următorul punct de măsurare: F1.</strong></p>
 
       <h2>Istoricul versiunilor</h2>
@@ -455,6 +505,8 @@ plan INVALID</code></pre>
         <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
         <tbody>
           <tr><td>1.0</td><td>28 octombrie 2026</td><td>Publicare inițială: punctul T0 (captura din 26 octombrie 2026), verificările TC-00…TC-08 cu exemple din dovezi, ieșirea din terminal a comenzilor, diagnosticul după AVL-204 0.3.0, exemplul de raport pentru client și pachetul de dovezi <code>evidence-avl203-delamatescu-ro-t0-v1.0</code>.</td></tr>
+          <tr><td>1.1</td><td>28 octombrie 2026</td><td>Rezumatul restructurat în liste: rezultatul pe zone, ce conține studiul și ce nu spune. Conținutul nu s-a schimbat.</td></tr>
+          <tr><td>1.2</td><td>28 octombrie 2026</td><td>Transparența metodologică: paragraf nou „Maturitatea protocolului”, cu secvența pașilor de la draft la publicare și pașii următori prevăzuți de protocol. Celelalte secțiuni nu au fost modificate.</td></tr>
         </tbody>
       </table>
 
