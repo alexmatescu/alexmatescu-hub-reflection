@@ -7,13 +7,13 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-10-28 · 179 intrări · **2 anomalii** în 2 intrări
+Generat: 2026-10-28 · 180 intrări · **2 anomalii** în 2 intrări
 
 ## Sinteză
 
 | Suprafață | Publicat | Draft / nepublicat | Total | Anomalii |
 |---|--:|--:|--:|--:|
-| `lab/articole` | 23 | 0 | 23 | 2 |
+| `lab/articole` | 24 | 0 | 24 | 2 |
 | `lab/studii-de-caz` | 2 | 0 | 2 | 0 |
 | `lab/metodologie` | 6 | 0 | 6 | 0 |
 | `lab/foundation` | 1 | 0 | 1 | 0 |
@@ -21,7 +21,7 @@ Generat: 2026-10-28 · 179 intrări · **2 anomalii** în 2 intrări
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 6 | 0 | 6 | 0 |
 | `blog (arhivă)` | 132 | 0 | 132 | 0 |
-| **Total** | **179** | **0** | **179** | **2** |
+| **Total** | **180** | **0** | **180** | **2** |
 
 ## Legendă
 
@@ -34,11 +34,12 @@ Generat: 2026-10-28 · 179 intrări · **2 anomalii** în 2 intrări
 - **Verificat** — `last_reviewed`, cu numărul de zile scurse. Peste
   180 de zile, materialele din Lab intră în lista de reverificare.
 
-## `lab/articole` — 23 intrări
+## `lab/articole` — 24 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `LAB-23` | [Cum verific tehnic un site pentru AI Visibility? Protocolul minim folosit în AI Visibility Lab](/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility) | Technical Visibility | Ghid / Analiză metodologică | publicat | — | 2026-10-28 | 2026-10-28 | 2026-10-28 (0z) | `✓✓✓✓` | `src/content/lab/articles/23.cum-verific-tehnic-un-site-pentru-ai-visibility.md` | `src/data/lab-content/23. cum-verific-tehnic-un-site-pentru-ai-visibility.ts` |
+| `LAB-23` | [Cum verific tehnic un site pentru AI Visibility? Protocolul minim folosit în AI Visibility Lab](/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility) | Technical Visibility | Ghid / Analiză metodologică | publicat | 2026-10-28 | 2026-10-28 | 2026-10-28 | 2026-10-28 (0z) | `✓✓✓✓` | `src/content/lab/articles/23.cum-verific-tehnic-un-site-pentru-ai-visibility.md` | `src/data/lab-content/23. cum-verific-tehnic-un-site-pentru-ai-visibility.ts` |
+| `LAB-24` | [Cât costă, de fapt, inteligența artificială și cine plătește pentru ea?](/lab/articole/costurile-ai-variatii-finantari-plata-la-cine) | AI Ecosystem | Analiză | publicat | — | 2026-10-28 | 2026-10-28 | 2026-10-28 (0z) | `✓✓✓✓` | `src/content/lab/articles/24.costurile-ai-variatii-finantari-plata-la-cine.md` | `src/data/lab-content/24. costurile-ai-variatii-finantari-plata-la-cine.ts` |
 | `LAB-22` | [Când internetul încearcă să afle cine ești: ce arată a patra măsurare Tabula Rasa](/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti) | Entities & Citations | Analiză de caz | publicat | 2026-10-23 | 2026-10-23 | 2026-10-23 | 2026-10-23 (5z) | `✓✓✓✓` | `src/content/lab/articles/22.tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti.md` | `src/data/lab-content/22. tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti.ts` |
 | `LAB-21` | [Pilotul 5 Market Discovery: ce arată expresiile scurte și de ce am retras prea devreme „consultant AI”](/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte) | Search & Retrieval | Analiză de caz | publicat | 2026-10-22 | 2026-10-22 | 2026-10-22 | 2026-10-22 (6z) | `✓✓✓✓` | `src/content/lab/articles/21.market-discovery-pilot-5-sibiu-expresii-scurte.md` | `src/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte.ts` |
 | `LAB-20` | [Pilotul 4 Market Discovery: de ce rularea din Bologna nu intră în reuniunea de candidați](/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida) | Search & Retrieval | Analiză de caz | publicat | 2026-10-21 | 2026-10-21 | 2026-10-21 | 2026-10-21 (7z) | `✓✓✓✓` | `src/content/lab/articles/20.market-discovery-pilot-4-bologna-rulare-invalida.md` | `src/data/lab-content/20. market-discovery-pilot-4-bologna-rulare-invalida.ts` |
@@ -66,7 +67,7 @@ Generat: 2026-10-28 · 179 intrări · **2 anomalii** în 2 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `CS-002` | [Poate fi citit tehnic site-ul meu de crawlerele AI? Verificarea AVL-203 a delamatescu.ro, punctul T0](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro) | Technical Visibility | Analiză de caz | publicat | — | 2026-10-28 | 2026-10-28 | 2026-10-28 (0z) | `✓✓✓✓` | `src/content/studii de caz/02. delamatescu.ro/verificare-tehnica-delamatescu-ro.md` | `src/data/lab-content/verificare-tehnica-delamatescu-ro.ts` |
+| `CS-002` | [Poate fi citit tehnic site-ul meu de crawlerele AI? Verificarea AVL-203 a delamatescu.ro, punctul T0](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro) | Technical Visibility | Analiză de caz | publicat | 2026-10-28 | 2026-10-28 | 2026-10-28 | 2026-10-28 (0z) | `✓✓✓✓` | `src/content/studii de caz/02. delamatescu.ro/verificare-tehnica-delamatescu-ro.md` | `src/data/lab-content/verificare-tehnica-delamatescu-ro.ts` |
 | `CS-001` | [Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search](/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz) | Entities & Citations | Analiză de caz | publicat | 2026-09-04 | 2026-09-04 | 2026-10-23 | 2026-10-23 (5z) | `✓✓✓✓` | `src/content/studii de caz/01. Alex Matescu/tabula-rasa-entity-resolution-studiu-de-caz.md` | `src/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz.ts` |
 
 ## `lab/metodologie` — 6 intrări

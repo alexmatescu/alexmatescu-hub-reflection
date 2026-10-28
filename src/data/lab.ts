@@ -278,6 +278,12 @@ export const labNav: LabPage[] = [
           "Cum verific tehnic un site pentru AI Visibility? Protocolul minim folosit în AI Visibility Lab",
         lead: "Ce verifică protocolul tehnic AVL-203 înainte de orice măsurare a vizibilității în AI, de ce dovada se separă de interpretare, cum devin observațiile diagnostic după grila AVL-204 și ce primește clientul. Cu exemple reale din prima rulare T0 pe delamatescu.ro: 6 pagini, 56 de cereri, 12 crawlere, 109 constatări.",
       },
+      {
+        to: "/lab/articole/costurile-ai-variatii-finantari-plata-la-cine",
+        label:
+          "Cât costă, de fapt, inteligența artificială și cine plătește pentru ea?",
+        lead: "Cât curent consumă AI-ul pentru text, imagini, video și cod, cât au costat modelele, de unde vin investițiile și cine plătește: repere din IEA, Google, cercetări, documentul S-1 al Anthropic și anunțurile OpenAI, cu limitele fiecărei cifre.",
+      },
     ],
   },
   {
