@@ -267,28 +267,50 @@ src/content/studii de caz/{NN}. {Nume subiect}/images/*
 
 ### 0.3 — Contract de frontmatter
 
+Aceeași listă de metadate ca `publica-articol-lab` §0.3 (setul LAB-20…22, actualizat la 28 octombrie 2026), adaptată secțiunii:
+
 ```yaml
 ---
 title: ""
 description: ""
+document_type: "case_study"
+version: "1.0.0"
+status: "Draft"                  # "Publicat" la publicare
 author: "Alex Matescu"
+author_url: "https://delamatescu.ro/despre"
 organization: "AI Visibility Lab"
+organization_url: "https://delamatescu.ro/lab"
 
+date_created: "YYYY-MM-DD"
 date_published: "YYYY-MM-DDTHH:mm:ss±HH:mm"
 date_modified: "YYYY-MM-DD"
 last_reviewed: "YYYY-MM-DD"
 
+language: "ro-RO"
+canonical: "https://delamatescu.ro/lab/studii-de-caz/{slug}"
+
 category: ""
 article_type: "Studiu de caz"
-
-language: "ro-RO"
-
-canonical: "https://delamatescu.ro/lab/studii-de-caz/{slug}"
+purpose: ""
 
 keywords:
   - ""
+related_articles:                # opțional
+  - title: ""
+    url: ""
+evidence_releases:               # obligatoriu dacă există pachete publicate
+  - ""
 ---
 ```
+
+- **`document_type`** — literal `"case_study"`.
+- **`version`** — `MAJOR.MINOR.PATCH`, corespunde ultimului rând din „Istoricul versiunilor” al studiului (`1.4` în tabel = `1.4.0` în frontmatter). O fază nouă e o modificare reală: crește minorul și adaugă rândul. Patch numai pentru corecturi fără efect pe sens, fără rând nou.
+- **`status`** — `"Draft"` până la publicare, `"Publicat"` după; se schimbă în același pas cu `date_published`. Registrul le citește numai cât studiul nu e încă conectat la site (`status` → `draft`, `version` → `versiune`, `date_created` → `dataCreare`); după wiring, `versiune` rămâne goală și `dataCreare` vine din git.
+- **`author_url`/`organization_url`**, **`date_created`**, **`purpose`** — aceleași reguli ca `publica-articol-lab` §0.3. `purpose` spune ce documentează cazul și ce nu pretinde (ex. cauzalitatea între puncte de măsurare).
+- **`evidence_releases`** — lista URL-urilor GitHub Release ale pachetelor de dovezi pe care se sprijină studiul, câte unul pe punct de măsurare/versiune de pachet, în ordine cronologică. Se adaugă la fiecare fază nouă; intrările vechi nu se șterg (un pachet înlocuit rămâne listat, iar textul spune care e cel curent). Plural, pentru că un caz longitudinal are mai multe pachete; articolele Lab folosesc `evidence_release` singular.
+- `CS-NNN` rămâne în corpul studiului, nu în frontmatter (§1).
+- Nu adăuga `schema_types` sau `publishing_checklist` (motivele la `publica-articol-lab` §0.3).
+- Studiile publicate înainte de 28 octombrie 2026 (CS-001, CS-002) nu au câmpurile noi; le primesc la următoarea actualizare reală, cu valori reale (`version` din tabelul de versiuni, `date_created` din git, `evidence_releases` din linkurile deja citate în text).
 
 Regulile de date, publication-time și capitalizare sunt **identice** cu `publica-articol-lab` §0.3/§0.4/§6.2 — nu le reinventa: `date_published` e momentul primei publicări publice reale (niciodată ora creării draftului, a research-ului sau a rulării agentului), ISO complet cu oră/offset pentru orice caz nou. **Ora publicării = ora commitului și push-ului** (decizia autorului, 22 octombrie 2026, regula din `publica-articol-lab` §0.4): până la commit valoarea e provizorie și se declară ca atare; când userul cere commit și push, agentul ia momentul curent în `Europe/Bucharest`, îl scrie peste tot (frontmatter, Meta `.ts`, byline, plus `date_modified`/`lastmod` dacă s-a schimbat ziua) imediat înainte de commit, fără confirmare separată. La o fază nouă peste un caz existent, `date_published` nu se schimbă; `date_modified` se schimbă doar la modificare editorială reală (adăugarea unei faze noi **este** o modificare reală); `last_reviewed` e data ultimei verificări factuale reale, nu completată automat.
 
@@ -417,6 +439,8 @@ Conversie manuală (nu convertor markdown generic), stil identic cu `publica-art
 
 **Evidence figures** — identic cu `publica-articol-lab` §6.3, aplicat aici la capturile experimentale, nu la ilustrații: verifică fizic existența fiecărei imagini referențiate în `.md`; nu regenera/altera/înlocui — sunt dovadă, nu ilustrație; copiază neschimbat, cu numele original, în `public/images/lab/{slug}/` (**namespace comun cu articolele**, nu `public/images/lab/studii-de-caz/{slug}/` — confirmă calea reală înainte de a presupune); convertește în `<figure><img loading="lazy" alt="..."/><figcaption>...</figcaption></figure>`, `alt` exact din Markdown, `figcaption` exact din caption-ul existent (fără inventare); imagine lipsă referențiată în `.md` → **oprește publicarea**, raportează exact fișierul; imagini neutilizate în folderul `images/` → doar raportate, nu copiate.
 
+**Cuprinsul** — identic cu `publica-articol-lab` §6.5 (aceeași poziție, după byline și imaginea principală; aceleași reguli pentru intrări, `id`-uri și markup, clasa `article-toc`). La un studiu de caz, cuprinsul ajută în special la salturile între punctele de măsurare (T0, F1…Fn): o fază nouă adaugă heading-uri, deci cuprinsul se regenerează în același pas, iar `id`-urile secțiunilor vechi nu se schimbă (pot fi citate din alte articole).
+
 Numele fișierelor publicate (`fig_*.jpg` etc.) pot fi descriptive, nu trebuie să respecte convenția strictă de denumire a evidence set-ului brut (§2.2) — aceea guvernează arhiva internă, nu neapărat numele fișierului final din `public/images/lab/{slug}/`.
 
 ---
@@ -478,7 +502,7 @@ Scalează cu scopul din §0.2. Pentru **studiu nou** sau **fază nouă**, raport
 3. Claim ledger (poate fi sintetizat pentru afirmații repetitive).
 4. Verdicte incluse (§2.3) cu dovada corespunzătoare — listă sau tabel.
 5. Afirmații eliminate/reformulate — ce și de ce.
-6. Metadata: `title`, `description`, `canonical`, date, `category`, `articleType` (.md vs .ts — confirmă divergența intenționată, §7.1), `lastReviewed`, `CS-NNN` alocat, keywords.
+6. Metadata: `title`, `description`, `canonical`, date, `category`, `articleType` (.md vs .ts — confirmă divergența intenționată, §7.1), `lastReviewed`, `CS-NNN` alocat, keywords; din frontmatter: `version` (= ultimul rând din „Istoricul versiunilor”), `status`, `date_created`, `purpose`, `evidence_releases`.
 7. Entity/schema: Person, WebSite, Article (`articleSection`), FAQ dacă există, publisher.
 8. Wiring: confirmare pas cu pas a Faza 9 (fișier `.ts`, `labCaseStudyMeta`, `labPageContent`, nod `labNav`, imagini, sitemap).
 9. Evidence figures: listă exactă copiate, orice fișier lipsă care a oprit publicarea, orice fișier neutilizat raportat.
@@ -518,8 +542,10 @@ Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afir
 - [ ] `category` identică `.md`/`.ts`; una dintre cele patru valori permise.
 - [ ] `articleType` = `"Studiu de caz"` în `.md`, `"Analiză de caz"` în `.ts` — divergență intenționată confirmată, nu „corectată”.
 - [ ] `lastReviewed` completat (opt-in `@graph`).
+- [ ] Frontmatter complet conform §0.3: `document_type`, `version` (= ultimul rând din „Istoricul versiunilor”), `status`, `author_url`, `organization_url`, `date_created`, `purpose`, `evidence_releases` (cu pachetul fazei noi, dacă e cazul).
 - [ ] `@id` Person identic peste tot; publisher `labPublisher` consistent.
 - [ ] `CS-NNN` determinat corect (verificat față de `labCaseStudyMeta` existent, nu presupus).
+- [ ] Cuprins conform `publica-articol-lab` §6.5: toate `<h2>`/`<h3>`, ancore unice și valide, `id`-urile secțiunilor existente păstrate la o fază nouă.
 
 **Evidence figures (§8)**
 - [ ] Fiecare imagine referențiată verificată fizic; nicio imagine regenerată/alterată.

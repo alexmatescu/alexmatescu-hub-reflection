@@ -189,32 +189,73 @@ Stabilește scopul înainte de a continua — determină cât din pipeline se ap
 
 ### 0.3 — Contract de frontmatter
 
+Contractul e lista de metadate a articolelor LAB-20…22 (cel mai complet set folosit consecvent în corpus, octombrie 2026), plus câmpurile condiționale din LAB-15…19 care au un sens real. Ordinea câmpurilor e cea de mai jos.
+
 ```yaml
 ---
 title: ""
+subtitle: ""                     # opțional
 description: ""
+document_type: "article"
+version: "1.0.0"
+status: "Draft"                  # "Publicat" la publicare (§0.4)
 author: "Alex Matescu"
+author_url: "https://delamatescu.ro/despre"
 organization: "AI Visibility Lab"
+organization_url: "https://delamatescu.ro/lab"
 
+date_created: "YYYY-MM-DD"
 date_published: "YYYY-MM-DDTHH:mm:ss±HH:mm"
 date_modified: "YYYY-MM-DD"
 last_reviewed: "YYYY-MM-DD"
 
-category: ""
-article_type: ""
-
 language: "ro-RO"
-
 canonical: "https://delamatescu.ro/lab/articole/{slug}"
 
+category: ""
+article_type: ""
+purpose: ""
+
+audience:                        # opțional
+  - ""
 keywords:
   - ""
+related_topics:                  # opțional
+  - ""
+related_articles:                # opțional
+  - title: ""
+    url: "https://delamatescu.ro/lab/articole/{slug}"
+methodology:                     # opțional
+  convention: ""
+  status: ""
+  methodological_note: ""
+evidence_release: ""             # condițional
+version_history:                 # condițional
+  - version: ""
+    date: "YYYY-MM-DD"
+    status: ""
+    change: ""
 
-image: ""
-image_alt: ""
+image: ""                        # opțional
+image_alt: ""                    # opțional
 ---
 ```
 
+Câmpuri obligatorii pentru orice articol nou: toate cele fără marcaj de mai sus. Registrul de conținut le citește numai cât articolul nu e încă conectat la site: `status` (`Draft` → `draft`), `version` (→ `versiune`), `date_created` (→ `dataCreare`). După wiring, `versiune` rămâne goală și `dataCreare` vine din git; frontmatter-ul rămâne sursa de adevăr pentru ele.
+
+- **`document_type`** — literal `"article"` pentru `/lab/articole`.
+- **`version`** — `MAJOR.MINOR.PATCH`. Un articol nou se publică la `1.0.0` (versiunile `0.9.x` sunt drafturi). La actualizare, regula din §6.4: major la rescriere majoră, minor la extindere sau update minor cu efect pe conținut (rând nou în „Istoricul versiunilor”, unde versiunea apare scurt, `1.1`), patch pentru corecturi fără efect pe sens (typo, link mort), fără rând nou.
+- **`status`** — `"Draft"` până la publicare, `"Publicat"` după. Se schimbă în același pas cu `date_published` (§0.4).
+- **`author_url`/`organization_url`** — valorile fixe de mai sus, aceleași ca în entity consistency (§5.1). Nu le adapta per articol.
+- **`date_created`** — ziua în care a început draftul articolului, dacă e cunoscută (din fișierul primit sau din git). Nu se schimbă niciodată și nu are rol în sortare, byline sau JSON-LD. Nu o confunda cu `date_published`.
+- **`purpose`** — una-două fraze despre ce face articolul și ce *nu* pretinde (limita lui). E metadată editorială internă, nu text de pagină și nu înlocuiește `description`.
+- **`subtitle`** — numai dacă articolul are un subtitlu real afișat; nu fabrica unul.
+- **`audience`**, **`related_topics`** — opționale; completează-le numai dacă articolul le justifică, fără liste generice.
+- **`related_articles`** — numai articole publicate, la care textul trimite efectiv; URL-ul complet, canonical.
+- **`methodology`** — pentru articolele care propun sau aplică o metodă (convenție, statut, notă metodologică). Statutul spune explicit dacă metoda e exploratorie sau normativă (AVL-xxx).
+- **`evidence_release`** — obligatoriu când articolul raportează o rulare cu pachet de dovezi publicat: URL-ul GitHub Release al pachetului (ex. LAB-20…22). Altfel lipsește.
+- **`version_history`** — istoricul intern al versiunilor din draft până la publicare, când există (ex. `0.9.0` → `1.0.0`). Distinct de secțiunea vizibilă din §6.4; nu inventa versiuni intermediare care n-au existat.
+- **Nu adăuga `schema_types`**: tipurile Schema.org le decide exclusiv `buildArticleJsonLd` (§5.2), iar o listă în frontmatter care nu corespunde JSON-LD-ului emis (ex. `TechArticle`, neemis) e o declarație falsă. Nici `publishing_checklist`: e instrucțiune de lucru, nu metadată a articolului publicat; dacă vine în fișierul primit, aplică-l și elimină-l.
 - `image`/`image_alt` opționale — dacă nu există imagine, nu inventa URL; semnalează lipsa în raport (§14), nu o completa.
 - `last_reviewed` = ultima verificare factuală reală (poate diferi de `date_modified`).
 - `date_modified` se schimbă doar dacă articolul a fost efectiv modificat; `date_published` nu se resetează la update. Regulile complete ale celor trei date (când se schimbă fiecare, cum apar în byline și în JSON-LD) — §6.2.
@@ -223,7 +264,7 @@ image_alt: ""
 - **`article_type`** — tipul editorial al materialului. Valorile editoriale existente în corpus: `Analiză`, `Analiză de caz`, `Ghid`, `Ghid / Analiză metodologică`. Distinct de `category` (clasificare tematică) și de `keywords` (metadata SEO, fără rol în filtrare). **Nu folosi `Studiu de caz`** — de la introducerea secțiunii `/lab/studii-de-caz` (audit metodologic 2026-09-04), acel substantiv propriu e rezervat exclusiv documentării longitudinale a unei entități reale în acea secțiune; un articol din `/lab/articole` ancorat într-un caz concret, dar fără caracter longitudinal/multi-fază, e `Analiză de caz`.
 - `keywords` reflectă conținutul real, nu keyword stuffing — rol pur SEO/tematic, fără rol în filtrare. Nu adăuga `tags` separat: filtrarea din `/lab/articole` există, dar se bazează exclusiv pe `category` (§5.5); un `tags` separat ar duplica `keywords` fără un consumator real.
 - Nu adăuga `slug` sau `article_section` în frontmatter (vezi Faza 0 și §5.1 — derivate/hardcodate, nu per-articol).
-- Articolele publicate **înainte** de acest contract (frontmatter vechi, fără `last_reviewed`/`category`/`article_type`) rămân valide — nu le migra retroactiv decât dacă li se face oricum un update de conținut. Excepție unică documentată: cele 13 articole publicate până la 27 august 2026 au primit `category`/`article_type` retroactiv, într-o migrare punctuală a arhitecturii indexului (28 august 2026) — nu un precedent pentru migrări retroactive de rutină.
+- Articolele publicate **înainte** de acest contract (frontmatter vechi, fără `last_reviewed`/`category`/`article_type`, sau fără câmpurile adăugate la 28 octombrie 2026: `document_type`, `version`, `status`, `author_url`, `organization_url`, `date_created`, `purpose`) rămân valide — nu le migra retroactiv decât dacă li se face oricum un update de conținut; atunci completează câmpurile lipsă cu valori reale (`date_created` din git, `version` după istoricul real al articolului). Excepție unică documentată: cele 13 articole publicate până la 27 august 2026 au primit `category`/`article_type` retroactiv, într-o migrare punctuală a arhitecturii indexului (28 august 2026) — nu un precedent pentru migrări retroactive de rutină.
 
 ### 0.4 — Regula publication time
 
@@ -233,7 +274,7 @@ Pentru orice articol nou (decizia autorului, 22 octombrie 2026):
 
 1. **Ora publicării este ora la care agentul face commit și push**, la cererea userului. Nu se cere confirmare separată pentru ea.
 2. Până la commit, `date_published` are o valoare **provizorie** (momentul curent, în `Europe/Bucharest`, cu offset explicit `+02:00`/`+03:00` după sezon), necesară pentru build și pentru verificarea indexului. Raportul final o declară ca provizorie.
-3. Când userul cere commit și push, **imediat înainte de commit**: determină momentul curent în `Europe/Bucharest` (`TZ=Europe/Bucharest date '+%Y-%m-%dT%H:%M:00%z'`, cu offset scris `+03:00`), apoi actualizează-l peste tot, în aceeași trecere: `date_published` din `.md`; `datePublished` din Meta `.ts`; `datetime` și textul vizibil al datei „Publicat:” din byline. Dacă ziua calendaristică s-a schimbat față de valoarea provizorie, actualizează și `date_modified`/`dateModified`, `<lastmod>` din sitemap și, numai dacă verificarea factuală a fost refăcută, `last_reviewed`. Regenerează registrul și rulează `npx tsc --noEmit`, apoi commit și push.
+3. Când userul cere commit și push, **imediat înainte de commit**: determină momentul curent în `Europe/Bucharest` (`TZ=Europe/Bucharest date '+%Y-%m-%dT%H:%M:00%z'`, cu offset scris `+03:00`), apoi actualizează-l peste tot, în aceeași trecere: `date_published` din `.md`, împreună cu `status: "Publicat"` (și `version: "1.0.0"`, dacă draftul era încă `0.9.x`); `datePublished` din Meta `.ts`; `datetime` și textul vizibil al datei „Publicat:” din byline. Dacă ziua calendaristică s-a schimbat față de valoarea provizorie, actualizează și `date_modified`/`dateModified`, `<lastmod>` din sitemap și, numai dacă verificarea factuală a fost refăcută, `last_reviewed`. Regenerează registrul și rulează `npx tsc --noEmit`, apoi commit și push.
 4. Dacă userul furnizează explicit altă dată și oră, folosește exact acea informație.
 5. Nu inventa niciodată o valoare — nu `00:00`, nu `09:00`, nu ora rulării agentului „ca să fie completă”.
 
@@ -345,7 +386,7 @@ Dacă primești un draft: păstrează teza și vocea autorului, corectează afir
 
 ## Faza 5 — Meta data (`.ts`)
 
-Referință canonică de stil: `src/data/lab-content/cat-dureaza-indexare-citare-ai.ts`. Tipul `LabArticleMeta` (`src/data/lab-seo.ts`) e:
+Referință canonică de stil: `src/data/lab-content/4. cat-dureaza-indexare-citare-ai.ts`. Tipul `LabArticleMeta` (`src/data/lab-seo.ts`) e:
 
 ```ts
 {
@@ -419,7 +460,7 @@ Conversie manuală (nu convertor markdown generic), respectând stilul existent:
 
 ### 6.1 — Byline
 
-Primul element din corpul `.ts` (imediat sub titlu/lead-ul deja randat de pagină) este blocul de byline, cu structura canonică (standard final, 26 august 2026):
+Primul element din corpul `.ts` (imediat sub titlu/lead-ul deja randat de pagină) este blocul de byline, urmat de imaginea principală, dacă există, și de cuprins (§6.5), cu structura canonică (standard final, 26 august 2026):
 
 ```html
 <p>
@@ -512,7 +553,49 @@ Un articol publicat care primește o modificare reală a textului (rescriere maj
 - Versiunea crește cu o unitate majoră (`2.0`) la rescriere majoră și cu o unitate minoră (`1.1`, `1.2`) la extindere sau update minor. Rândurile vechi nu se rescriu și nu se șterg.
 - Rândul descrie concret ce s-a schimbat: titlu vechi → titlu nou, secțiuni adăugate, cifre actualizate (valoare veche → valoare nouă, cu sursa), afirmații eliminate. Nu „îmbunătățiri editoriale” generice.
 - Data rândului e `date_modified`. O simplă reverificare (doar `last_reviewed`, §6.2) **nu** adaugă rând.
+- `version` din frontmatter crește în același pas, în format complet (`1.1` în tabel = `1.1.0` în frontmatter, §0.3).
 - Secțiunea există identic în `.md` și în `.ts`. Nu are echivalent în JSON-LD — e informație editorială, ca `last_reviewed`.
+
+### 6.5 — Cuprinsul (obligatoriu, la începutul articolului)
+
+Orice articol publicat sau actualizat prin acest skill are la început un cuprins construit din heading-urile lui, cu linkuri care duc direct la secțiune (decizia lui Alex, 28 octombrie 2026). Cititorul alege ce îl interesează fără să deruleze tot articolul.
+
+**Unde stă:** după byline (§6.1) și după imaginea principală, dacă articolul are una; înaintea primului paragraf de conținut (răspunsul sintetic). Nu înaintea byline-ului.
+
+**Ce intră:**
+- toate `<h2>` din corpul articolului, în ordinea din text, inclusiv „Surse și metodologie” și „Istoricul versiunilor”;
+- `<h3>` imbricate sub `<h2>`-ul lor, într-o listă de nivelul doi. `<h4>` nu intră;
+- textul fiecărei intrări e **exact** textul heading-ului: nu se scurtează, nu se reformulează, fără sufixe sau numerotări adăugate;
+- un articol cu mai puțin de două `<h2>` nu primește cuprins (o singură intrare nu ajută pe nimeni); raportul spune asta.
+
+**Ancorele (`id`):**
+- fiecare heading din cuprins primește un `id` derivat din textul lui: litere mici, diacriticele românești transliterate (`ă`/`â` → `a`, `î` → `i`, `ș`/`ş` → `s`, `ț`/`ţ` → `t`), orice altceva decât litere și cifre → `-`, fără `-` la capete sau dublate. Ex.: „Cât curent consumă o întrebare obișnuită?” → `cat-curent-consuma-o-intrebare-obisnuita`;
+- `id`-urile sunt unice în pagină (la coliziune, sufix `-2`, `-3`) și nu se suprapun cu ancorele existente (`fn-N`, `cuprins`);
+- la o actualizare care schimbă textul unui heading, `id`-ul vechi **se păstrează**: e posibil să fie deja folosit în linkuri externe. Numai intrarea din cuprins primește textul nou. Un `id` se schimbă doar dacă secțiunea devine alt subiect.
+
+**Markup-ul** (clasa `article-toc` e stilizată global în `src/styles.css`, inclusiv `scroll-margin-top` pentru header-ul fix — nu adăuga stiluri inline):
+
+```html
+<nav class="article-toc" aria-labelledby="cuprins">
+  <p id="cuprins" class="article-toc-title">Cuprins</p>
+  <ol>
+    <li><a href="#{id-h2}">{text h2}</a>
+      <ol>
+        <li><a href="#{id-h3}">{text h3}</a></li>
+      </ol>
+    </li>
+    <li><a href="#{id-h2}">{text h2}</a></li>
+  </ol>
+</nav>
+```
+
+- Titlul „Cuprins” e paragraf, nu `<h2>`: nu intră în ierarhia de heading-uri și nu se listează pe sine.
+- Linkurile sunt relative la pagină (`#id`), fără `target`.
+- Cuprinsul există **doar în `.ts`** (HTML). Nu se scrie în `.md`: e derivat din heading-urile sursei și se regenerează din ele, deci o a doua copie ar putea diverge.
+- La orice actualizare care adaugă, elimină sau redenumește un heading, cuprinsul se regenerează în același pas.
+- Nu are echivalent în JSON-LD și nu se prezintă ca factor de citare sau de ranking (§11.1).
+
+**Verificare (Faza 9/10):** fiecare `href="#…"` din cuprins are exact un element cu acel `id`; numărul intrărilor = numărul `<h2>` + `<h3>` din corp; în browser, un click pe o intrare duce la heading-ul ei, vizibil sub header-ul fix.
 
 ---
 
@@ -578,6 +661,7 @@ Verificat: proiectul **nu are** integrare IndexNow (niciun fișier de cheie, nic
 **Indexability**: fără `noindex` accidental, canonical corect, rută existentă, fără conflict canonical/sitemap.
 **URL consistency**: identice — canonical, slug, rută, sitemap, `lab.ts`, `Lab.tsx`, `lab-seo.ts`, numele fișierului `.ts`.
 **Index `/lab/articole`**: `category`/`articleType` identice între `.md` și `.ts` (§5.5); articolul apare exact o dată în index, la poziția corectă (sortare descrescătoare după `datePublished`, §8.1); dacă are cel mai recent `datePublished` din corpus, e singurul cu eticheta „CEL MAI NOU”; `articleSection` din JSON-LD graph reflectă `category` (§5.2).
+**Cuprins** (§6.5): fiecare ancoră din cuprins are țintă unică; nicio intrare lipsă sau în plus față de heading-urile din corp.
 **Imagini inline** (dacă articolul are, §6.3): fiecare `src` folosit în `.ts` corespunde unui fișier existent fizic în `public/images/lab/{slug}/`; nicio imagine referențiată în `.md` nu lipsește din output; nicio imagine neutilizată din `images/` n-a fost copiată fără să fie raportată.
 
 ### 9.1 — AI crawler accessibility
@@ -631,9 +715,9 @@ Scalează cu scopul din §0.2. Pentru **articol nou/rescriere majoră**, raportu
 3. Claim ledger (tabel — poate fi sintetizat pentru afirmații repetitive).
 4. Afirmații eliminate/reformulate — ce și de ce.
 5. Surse volatile — ce trebuie reverificat în viitor.
-6. Metadata: title, description, canonical, date (`datePublished` — precizează dacă e timestamp complet sau legacy date-only, și publication time identificat), `category`, `articleType`, `lastReviewed`, slug, keywords, imagine dacă există.
+6. Metadata: title, description, canonical, date (`datePublished` — precizează dacă e timestamp complet sau legacy date-only, și publication time identificat), `category`, `articleType`, `lastReviewed`, slug, keywords, imagine dacă există; din frontmatter: `version`, `status`, `date_created`, `purpose` și câmpurile condiționale completate (`evidence_release`, `related_articles`, `methodology` etc.) sau motivul pentru care lipsesc.
 7. Entity/schema: Person, WebSite (dacă `graph`), Article (inclusiv `articleSection` = `category`), WebPage (dacă `graph`), FAQ dacă există, publisher, citation.
-8. Internal linking adăugat.
+8. Internal linking adăugat; cuprinsul (§6.5): numărul de intrări și `id`-urile generate, ori motivul pentru care lipsește.
 9. Index `/lab/articole`: confirmare că articolul apare automat (poziție + Featured determinate de `datePublished`, fără nicio modificare manuală a indexului) — vezi §8.1.
 10. Imagini inline (dacă articolul are, §6.3): listă exactă a imaginilor copiate în `public/images/lab/{slug}/`; orice fișier lipsă care a oprit publicarea; orice fișier din `images/` neutilizat în `.md`, raportat dar necopiat.
 11. Rezultate tehnice: `typecheck` / `lint` / `build` / `runtime check` — fiecare PASS/FAIL/NOT RUN.
@@ -662,6 +746,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 - [ ] Internal linking relevant evaluat.
 - [ ] `last_reviewed` reflectă data reală a verificării; `date_modified` nu s-a schimbat fără modificare reală (§6.2).
 - [ ] Metadata din `.md`, `.ts` și runtime nu se contrazic.
+- [ ] Frontmatter-ul are toate câmpurile obligatorii din §0.3 (`document_type`, `version`, `status`, `author_url`, `organization_url`, `date_created`, `purpose` incluse); `status` și `version` corespund stării reale; `evidence_release` există dacă articolul raportează o rulare cu pachet publicat; fără `schema_types`/`publishing_checklist`.
 - [ ] `@id`-ul Person e `https://delamatescu.ro/#alex-matescu` peste tot; publisher e `labPublisher` consistent (§5.1).
 - [ ] `citation` (dacă există) conține doar surse efectiv relevante.
 - [ ] FAQ folosit doar dacă e util; FAQ vizibil == FAQ în JSON-LD.
@@ -672,6 +757,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Claim ledger inclus în raport.
 - [ ] La o actualizare a textului: „Istoricul versiunilor” are rândul nou (versiune, `date_modified`, modificări concrete), rândurile vechi sunt intacte, iar secțiunea e identică în `.md` și `.ts` și stă înaintea footerului (§6.4).
+- [ ] Cuprinsul (§6.5) e după byline și imaginea principală, listează toate `<h2>` și `<h3>` cu textul exact; fiecare `href="#…"` are exact un `id` corespunzător; există doar în `.ts`.
 - [ ] Byline: `Alex Matescu` → `/despre` cu `rel="author"`; rol vizibil „Fondator și coordonator”; `AI Visibility Lab` → `/lab` (§6.1).
 - [ ] Toate cele trei date din byline au text vizibil în română, doar data, fără oră; `datetime` e `YYYY-MM-DD` pentru `date_modified`/`last_reviewed`, și ISO complet cu oră/offset pentru `date_published` al unui articol nou (§6.1).
 - [ ] Byline-ul apare imediat sub titlu/lead, înaintea corpului articolului; footerul standardizat apare integral, nemodificat, la coadă — ambele prezente, niciunul nu-l înlocuiește pe celălalt (§6.1).

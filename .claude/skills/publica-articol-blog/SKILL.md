@@ -1557,6 +1557,50 @@ Dacă titlul articolului este randat automat ca H1, nu duplica H1 în conținut.
 
 ---
 
+# 30.1 CUPRINSUL ARTICOLULUI
+
+Fiecare articol publicat sau actualizat prin acest skill începe cu un cuprins construit din heading-urile lui, cu linkuri care duc direct la secțiune (decizia autorului, 28 octombrie 2026). Cititorul merge direct unde îl interesează.
+
+Unde stă: primul element din `html` (titlul, subtitlul și imaginea hero sunt randate de `BlogPost.tsx`, deasupra conținutului), înaintea primului paragraf.
+
+Ce intră:
+
+- toate `<h2>` din `html`, în ordinea din text;
+- `<h3>` imbricate sub `<h2>`-ul lor, ca listă de nivelul doi; `<h4>` nu intră;
+- textul fiecărei intrări este exact textul heading-ului, fără reformulare, scurtare sau numerotare adăugată;
+- un articol cu mai puțin de două `<h2>` nu primește cuprins; raportul final spune asta.
+
+Ancorele:
+
+- fiecare heading listat primește un `id` derivat din text: litere mici, diacriticele românești transliterate (`ă`/`â` → `a`, `î` → `i`, `ș`/`ş` → `s`, `ț`/`ţ` → `t`), orice altceva decât litere și cifre → `-`, fără `-` la capete sau dublate;
+- `id`-urile sunt unice în pagină (sufix `-2`, `-3` la coliziune) și nu se suprapun cu ancorele existente (`fn-N`, `cuprins`);
+- la o actualizare care redenumește un heading, `id`-ul vechi se păstrează, pentru linkurile deja distribuite; se schimbă doar textul intrării din cuprins.
+
+Markup (clasa `article-toc` e stilizată global în `src/styles.css`, cu `scroll-margin-top` pentru header-ul fix; fără stiluri inline):
+
+```html
+<nav class="article-toc" aria-labelledby="cuprins">
+  <p id="cuprins" class="article-toc-title">Cuprins</p>
+  <ol>
+    <li><a href="#{id-h2}">{text h2}</a>
+      <ol>
+        <li><a href="#{id-h3}">{text h3}</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+```
+
+- „Cuprins” este paragraf, nu `<h2>`: nu intră în ierarhia de heading-uri (§30).
+- Linkurile sunt `#id`, fără `target`.
+- Cuprinsul există numai în `html`; nu se scrie în `.md`-ul sursă. Câmpurile de tip `toc` din frontmatter-ul primit de la autor nu sunt consumate de site: cuprinsul publicat se generează din heading-urile reale, nu din acea listă.
+- Se regenerează la orice actualizare care adaugă, elimină sau redenumește un heading.
+- Nu se prezintă ca factor de citare sau de ranking (§31).
+
+Verificare: fiecare `href="#…"` din cuprins are exact un element cu acel `id`; numărul intrărilor = numărul `<h2>` + `<h3>` din `html`; în browser, click-ul pe o intrare duce la heading, vizibil sub header-ul fix.
+
+---
+
 # 31. GEO / AEO
 
 Aplică principii de:
@@ -1953,6 +1997,7 @@ NU:
 Înainte de DONE:
 
 [ ] Teza articolului este clară.
+[ ] cuprinsul (§30.1) e primul element din `html`, listează toate `<h2>`/`<h3>` cu textul exact și fiecare ancoră are o țintă unică
 [ ] Titlul reflectă articolul.
 [ ] Subtitle-ul a fost evaluat.
 [ ] Excerpt-ul este fidel.

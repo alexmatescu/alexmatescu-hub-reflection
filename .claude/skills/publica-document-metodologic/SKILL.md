@@ -290,6 +290,8 @@ Păstrează structura observată în corpusul existent (AVL-200/AVL-202), fără
 
 Manual, nu convertor generic — stil identic cu `avl-001.ts`/`avl-201.ts`: bloc `<div class="avl-doc-card">` cu overline/title/lead + `<table class="avl-meta-table">` pentru identitatea documentului, apoi corpul cu `<h2>`/`<h3>`, `<blockquote>` pentru cerințele `{PREFIX}-REQ-NNN` și pentru citate structurale, `<table>` cu headers explicite pentru taxonomii/comparații, linkuri externe cu `target="_blank" rel="noopener noreferrer"`, linkuri interne către alte documente AVL prin ruta lor publică reală (nu presupusă).
 
+**Cuprinsul** — obligatoriu, după blocul `avl-doc-card` și tabelul `avl-meta-table`, înaintea primei secțiuni. Regulile pentru intrări, `id`-uri și markup sunt cele din `publica-articol-lab` §6.5 (clasa `article-toc`, titlul „Cuprins” ca paragraf, `<h2>` + `<h3>` imbricate, textul exact al heading-ului, inclusiv numerotarea secțiunii dacă heading-ul o are). Specific documentelor normative: `id`-urile secțiunilor sunt **permanente** între versiuni, la fel ca identificatorii `{PREFIX}-REQ-NNN`, pentru că alte documente și articole trimit la ele (ex. „AVL-201 §13”). O secțiune redenumită își păstrează `id`-ul; o secțiune nouă primește unul nou; o secțiune retrasă își lasă `id`-ul nefolosit, nu îl cedează alteia.
+
 ---
 
 ## Faza 8 — Wiring
@@ -350,6 +352,7 @@ Identic cu `publica-articol-lab` Faza 11/11.1, plus specific documentelor normat
 
 ## Checklist final obligatoriu
 
+- [ ] Cuprinsul (Faza 7) e după `avl-doc-card`/`avl-meta-table`, listează toate `<h2>`/`<h3>` cu textul exact, ancorele sunt unice și valide, iar `id`-urile secțiunilor din versiunea anterioară au rămas neschimbate.
 - [ ] Pasul 0 parcurs integral: snapshot la început, `document_id` verificat prin scanarea reală a registrului, comparație de versiune/statut + decizie de actualizare dacă documentul exista deja, sau introducerea lui în evidență dacă nu exista.
 - [ ] `node scripts/build-content-registry.mjs --strict --diff .registry-before.json` a rulat la final; diff-ul arată `document_id`, versiunea și statutul normativ corecte, wiring complet, doar diferențele intenționate și zero anomalii noi. `.registry-before.json` șters.
 - [ ] Domeniul de aplicare confirmat — documentul e efectiv Nivel C — Methodology, nu articol/studiu de caz/alt nivel fără skill propriu (§1).

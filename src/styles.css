@@ -227,6 +227,19 @@
   .prose-editorial hr { @apply my-12 border-foreground/15; }
   .prose-editorial strong { @apply text-foreground font-medium; }
   .prose-editorial em { @apply italic; }
+  /* Ancorele (cuprins, note de subsol) nu ajung sub header-ul sticky (h-16 / md:h-20). */
+  .prose-editorial [id] { scroll-margin-top: 6rem; }
+
+  /* Cuprinsul de la începutul articolelor (skill-urile de publicare, „Cuprinsul”). */
+  .prose-editorial .article-toc {
+    @apply my-10 p-6 md:p-8 border border-foreground/15 rounded-sm bg-surface/40;
+  }
+  .prose-editorial .article-toc .article-toc-title {
+    @apply text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3 mt-0;
+  }
+  .prose-editorial .article-toc ol { @apply my-0 space-y-2 text-base leading-snug; }
+  .prose-editorial .article-toc ol ol { @apply mt-2 pl-5 list-[lower-alpha] text-[0.95rem]; }
+  .prose-editorial .article-toc a { @apply no-underline hover:underline; }
 
   .avl-doc-card {
     @apply mb-10 p-6 md:p-8 border border-foreground/15 rounded-sm bg-surface/40;
