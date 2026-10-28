@@ -21,7 +21,7 @@ Agent de execuție pentru `src/content/lab/AVL/AVL-203_Protocol_minim_verificare
 
 | Fișier | Rol |
 |---|---|
-| `scripts/avl203_cli.py` | interfața: `plan`, `capture`, `verify`, `analyze`, `diagnose`, `report` |
+| `scripts/avl203_cli.py` | interfața: `plan`, `capture`, `verify`, `analyze`, `diagnose`, `report`, `client-report` |
 | `scripts/avl203/` | modulele (plan, captură, integritate, robots RFC 9309, TC-05, TC-08, analiză, diagnostic, recomandări, raport); doar biblioteca standard Python 3.9+ și `curl` |
 | `config/plan-template.json` | șablonul planului de măsurare |
 | `config/operational.v0.1.0.json` | alegerile operaționale OP-01…OP-12, versionate |
@@ -81,6 +81,7 @@ python3 $CLI report   --run evidence/work/avl203/run_<ID>
 - `analyze` verifică întâi integritatea. Pentru o rulare `INVALID` produce doar `invalidity.json`. Pentru `PARTIAL`, constatările sprijinite pe artefacte afectate primesc `R-VAL-01`. Fiecare analiză scrie într-un director nou, `derived/analysis-<timp>/`. Dovezile brute nu se ating.
 - Aplicarea manuală documentată a RFC 9309 (REQ-041): `analyze --robots-manual decizii.json`, cu liniile citate din `robots.body`.
 - `report` scrie `report.md` (în română) și `report.json`. Raportul are secțiunile: rezumat, plan, observații, diagnostic, recomandări, necunoscute, abateri, limite, trasabilitate.
+- `client-report --run …` scrie `client-report.html` și `client-report.pdf` (Chrome headless; `--no-pdf` doar HTML; `--exemplu-public` scrie `client-report-exemplu-public.*`, varianta publicabilă, numai pentru site-urile proprii ale laboratorului). E rezumatul pe zone pentru client: câte o întrebare pe zonă, starea, recomandările cu prioritate, paginile testate și limitele. Clientul primește doar acest PDF, fără anexa tehnică (decizia lui Alex, 28 octombrie 2026); `report.md` rămâne intern.
 
 ## Pasul 4 — Raportul către user
 

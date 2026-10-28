@@ -8,6 +8,7 @@ import { socialMediaStratInformationalPentruAiMeta } from "@/data/lab-content/19
 import { marketDiscoveryPilot4BolognaMeta } from "@/data/lab-content/20. market-discovery-pilot-4-bologna-rulare-invalida";
 import { marketDiscoveryPilot5SibiuMeta } from "@/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte";
 import { tabulaRasaF3Meta } from "@/data/lab-content/22. tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti";
+import { cumVerificTehnicUnSiteMeta } from "@/data/lab-content/23. cum-verific-tehnic-un-site-pentru-ai-visibility";
 import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -22,6 +23,7 @@ import { motoareCautareMeta } from "@/data/lab-content/2. motoare-cautare-compar
 import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/3. social-media-vizibilitate-ai";
 import { tabulaRasaEntityResolutionStudiuDeCazMeta } from "@/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz";
+import { verificareTehnicaDelamatescuRoMeta } from "@/data/lab-content/verificare-tehnica-delamatescu-ro";
 import { findLabPage, type LabPage } from "@/data/lab";
 import { buildSeoHead, fitSeoTitle } from "@/lib/seo-head";
 
@@ -152,6 +154,7 @@ export const labArticleMeta: LabArticleMeta[] = [
   marketDiscoveryPilot4BolognaMeta,
   marketDiscoveryPilot5SibiuMeta,
   tabulaRasaF3Meta,
+  cumVerificTehnicUnSiteMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>
@@ -173,6 +176,7 @@ const findArticleMetaBySlug = (slug: string) =>
  */
 export const labCaseStudyMeta: LabArticleMeta[] = [
   tabulaRasaEntityResolutionStudiuDeCazMeta,
+  verificareTehnicaDelamatescuRoMeta,
 ];
 
 const findCaseStudyMetaBySlug = (slug: string) =>

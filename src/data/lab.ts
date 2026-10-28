@@ -69,12 +69,12 @@ export const labNav: LabPage[] = [
       {
         to: "/lab/metodologie/protocol-verificare-tehnica",
         label: "AVL-203 — Protocolul minim de verificare tehnică a unui site",
-        lead: "Draft pentru revizuire, v0.6.0. Setul minim, repetabil, de verificări tehnice (HTTP, redirecturi, robots.txt, sitemap, semnale raw HTML, conținut în HTML-ul brut, paritatea răspunsurilor pe User-Agent, integritatea dovezilor) care documentează ce livrează un server, fără a o confunda cu indexarea sau citarea AI, plus trecerea de la observații la diagnostic și recomandări.",
+        lead: "Draft pentru revizuire, v0.6.1. Setul minim, repetabil, de verificări tehnice (HTTP, redirecturi, robots.txt, sitemap, semnale raw HTML, conținut în HTML-ul brut, paritatea răspunsurilor pe User-Agent, integritatea dovezilor) care documentează ce livrează un server, fără a o confunda cu indexarea sau citarea AI, plus trecerea de la observații la diagnostic și recomandări.",
       },
       {
         to: "/lab/metodologie/grila-interpretare-verificare-tehnica",
         label: "AVL-204 — Grila de interpretare a verificării tehnice",
-        lead: "Draft pentru revizuire, v0.3.0. Regulile publice, fixate înaintea rulării, prin care observațiile AVL-203 devin diagnostic și recomandări: stări, zone, reguli de diagnostic, prioritizare, afirmații excluse și aplicare identică pentru orice entitate evaluată.",
+        lead: "Draft pentru revizuire, v0.3.1. Regulile publice, fixate înaintea rulării, prin care observațiile AVL-203 devin diagnostic și recomandări: stări, zone, reguli de diagnostic, prioritizare, afirmații excluse și aplicare identică pentru orice entitate evaluată.",
       },
       {
         to: "/lab/metodologie/protocol-delimitare-piata-eligibilitate",
@@ -98,6 +98,12 @@ export const labNav: LabPage[] = [
         label:
           "Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search",
         lead: "Studiu longitudinal Tabula Rasa despre modul în care ChatGPT, Claude, Gemini și Perplexity rezolvă identitatea Alex Matescu între T0/F0 și F1, cu dovezi vizuale, coliziuni de entitate, Anchor Dependence și limite metodologice.",
+      },
+      {
+        to: "/lab/studii-de-caz/verificare-tehnica-delamatescu-ro",
+        label:
+          "Poate fi citit tehnic site-ul meu de crawlerele AI? Verificarea AVL-203 a delamatescu.ro, punctul T0",
+        lead: "Studiu de caz despre prima măsurare T0 a protocolului AVL-203 pe delamatescu.ro: 6 pagini, 56 de cereri, 12 crawlere declarate, verificările TC-00…TC-08 cu exemple din dovezile brute și ieșirile reale din terminal, diagnosticul pe zone după grila AVL-204, raportul pentru client și pachetul de dovezi cu checksum-uri.",
       },
     ],
   },
@@ -265,6 +271,12 @@ export const labNav: LabPage[] = [
         label:
           "Când internetul încearcă să afle cine ești: ce arată a patra măsurare Tabula Rasa",
         lead: "F3, al patrulea punct de măsurare al studiului longitudinal Tabula Rasa, a rulat aceleași 14 interogări despre Alex Matescu pe 9 suprafețe de căutare și răspuns AI, între 18 și 21 octombrie 2026. Arhiva publică are 293 de capturi, 129 de execuții și jurnalul rulării. Articolul descrie ce s-a măsurat, ce fenomene au apărut și ce arată adjudecarea celor 126 de execuții: căutarea clasică identifică persoana la 11 din 14 interogări, mai mulți asistenți o identifică fără ancoră, iar la interogarea de dezambiguizare patru sisteme declară că subiectul și un avocat cu nume apropiat sunt aceeași persoană.",
+      },
+      {
+        to: "/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility",
+        label:
+          "Cum verific tehnic un site pentru AI Visibility? Protocolul minim folosit în AI Visibility Lab",
+        lead: "Ce verifică protocolul tehnic AVL-203 înainte de orice măsurare a vizibilității în AI, de ce dovada se separă de interpretare, cum devin observațiile diagnostic după grila AVL-204 și ce primește clientul. Cu exemple reale din prima rulare T0 pe delamatescu.ro: 6 pagini, 56 de cereri, 12 crawlere, 109 constatări.",
       },
     ],
   },

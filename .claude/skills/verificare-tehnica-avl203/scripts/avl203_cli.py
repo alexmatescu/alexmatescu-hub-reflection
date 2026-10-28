@@ -9,6 +9,7 @@
   avl203_cli.py analyze --run DIR [--robots-manual FIȘIER]
   avl203_cli.py diagnose --run DIR --rules 0.1.0 [--analysis DIR]
   avl203_cli.py report  --run DIR [--analysis DIR]
+  avl203_cli.py client-report --run DIR [--analysis DIR] [--no-pdf] [--exemplu-public]
 
 Coduri de ieșire: 0 succes; 1 integritate PARTIAL; 2 plan invalid / utilizare greșită;
 3 captura nu a putut porni; 4 integritate INVALID.
@@ -23,6 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from avl203 import SCRIPT_VERSION  # noqa: E402
 from avl203 import analyze as analyze_mod  # noqa: E402
 from avl203 import capture as cap_mod  # noqa: E402
+from avl203 import client as client_mod  # noqa: E402
 from avl203 import integrity, plan as plan_mod  # noqa: E402
 from avl203 import report as report_mod  # noqa: E402
 from avl203.util import read_json, utc_stamp  # noqa: E402
@@ -130,6 +132,16 @@ def cmd_report(a):
     return 0
 
 
+def cmd_client_report(a):
+    try:
+        path = client_mod.client_report(a.run, a.analysis or report_mod.latest_analysis(a.run), pdf=not a.no_pdf, public_example=a.public_example)
+    except (FileNotFoundError, FileExistsError, report_mod.ExcludedClaim, client_mod.ClientReportError) as e:
+        print(f"eroare: {e}", file=sys.stderr)
+        return 2
+    print(path)
+    return 0
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="avl203_cli.py", description=f"AVL-203 implementare candidată v{SCRIPT_VERSION}")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -158,9 +170,15 @@ def main(argv=None):
     rp = sub.add_parser("report")
     rp.add_argument("--run", required=True)
     rp.add_argument("--analysis", help="directorul analizei (implicit: cea mai recentă)")
+    cr = sub.add_parser("client-report", help="rezumatul pe zone pentru client (HTML + PDF), fără anexa tehnică")
+    cr.add_argument("--run", required=True)
+    cr.add_argument("--analysis", help="directorul analizei (implicit: cea mai recentă)")
+    cr.add_argument("--no-pdf", action="store_true", help="doar HTML, fără Chrome")
+    cr.add_argument("--exemplu-public", dest="public_example", action="store_true",
+                    help="varianta publicabilă, numai pentru site-urile proprii ale laboratorului")
     a = ap.parse_args(argv)
     return {"plan": cmd_plan, "capture": cmd_capture, "verify": cmd_verify, "analyze": cmd_analyze,
-            "diagnose": cmd_diagnose, "report": cmd_report}[a.cmd](a)
+            "diagnose": cmd_diagnose, "report": cmd_report, "client-report": cmd_client_report}[a.cmd](a)
 
 
 if __name__ == "__main__":

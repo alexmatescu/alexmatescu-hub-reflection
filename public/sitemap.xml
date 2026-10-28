@@ -153,6 +153,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://delamatescu.ro/lab/studii-de-caz/verificare-tehnica-delamatescu-ro</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://delamatescu.ro/lab/articole</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -183,7 +189,7 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/paradoxul-site-ului-terminat</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -195,7 +201,7 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/audit-site-fara-acces-cod</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -255,7 +261,7 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/site-ul-nu-dispare-isi-schimba-clientul</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -286,6 +292,12 @@
   <url>
     <loc>https://delamatescu.ro/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti</loc>
     <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility</loc>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

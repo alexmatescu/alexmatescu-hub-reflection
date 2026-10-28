@@ -53,6 +53,8 @@ export const auditAiVisibilityHtml = `
 
 <p>Acest strat se inspiră și din <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a>, publicat în prezent ca draft metodologic, nu ca standard activ. Observațiile tehnice devin diagnostic după <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a>, publicată tot ca draft.</p>
 
+<p><strong>Un exemplu complet.</strong> Prima verificare tehnică documentată public a fost făcută pe site-ul propriu al laboratorului: <a href="/lab/studii-de-caz/verificare-tehnica-delamatescu-ro">studiul de caz CS-002 — verificarea AVL-203 a delamatescu.ro</a> arată fiecare verificare cu dovezile brute, diagnosticul pe zone și raportul pentru client.</p>
+
 <h3 id="identitate-digitala">2. Identitatea digitală și coerența surselor</h3>
 
 <p>Examinăm cum este descrisă entitatea în propriul site și în surse publice relevante: nume, variante de nume, servicii, profil profesional, zonă geografică, date de contact publice, proiecte, publicații și asocieri cu alte entități. Căutăm contradicții, informații învechite, duplicări și omonimii.</p>
@@ -127,6 +129,8 @@ export const auditAiVisibilityHtml = `
   </tbody>
 </table>
 </div>
+
+<p>Pentru stratul tehnic, livrabilul este un raport pe zone, în limbaj pentru client, fără anexa tehnică. Un exemplu real, pe site-ul propriu al laboratorului: <a href="/files/lab/verificare-tehnica-delamatescu-ro/raport-client-exemplu-delamatescu-ro-T0.pdf">raportul tehnic pentru delamatescu.ro, punctul T0 (PDF, 3 pagini)</a>. Rapoartele clienților nu se publică.</p>
 
 <p><strong>Nu primești un „scor AI” universal.</strong> Platformele, interogările și modurile de răspuns diferă; orice rată sau comparație trebuie să arate clar ce a fost numărat și care este setul de referință. Dovezile complete și datele brute sunt gestionate potrivit scopului, condițiilor de acces și acordurilor proiectului.</p>
 

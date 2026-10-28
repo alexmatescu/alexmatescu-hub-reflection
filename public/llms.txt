@@ -52,6 +52,7 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 - [Standardul de dovezi, măsurare și trasabilitate (AVL-200)](https://delamatescu.ro/lab/metodologie/standard-dovezi-masurare-trasabilitate): cum devin artefactele brute informație măsurabilă, trasabilă până la dovadă
 - [Tabula Rasa F0 (AVL-201)](https://delamatescu.ro/lab/metodologie/tabula-rasa-f0): specificația măsurătorii de baseline pentru o entitate
 - [Protocolul minim de verificare tehnică (AVL-203)](https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica): draft pentru revizuire — HTTP, redirecturi, robots.txt, sitemap, raw HTML și paritate pe User-Agent
+- [Grila de interpretare a verificării tehnice (AVL-204)](https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica): draft pentru revizuire — regulile publice prin care observațiile AVL-203 devin diagnostic pe șase zone și recomandări prioritizate
 - [Market Scope & Eligibility Protocol (AVL-MKT-001)](https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate): draft pentru revizuire — delimitarea pieței, eligibilitate, Market Discovery și Market Verification
 - [Ce este GEO/AEO (AVL-101)](https://delamatescu.ro/lab/cercetare/ce-este-geo-aeo): definiții și diferența dintre a fi indexat și a fi citat
 - [Cum aleg motoarele AI ce citează (AVL-102)](https://delamatescu.ro/lab/cercetare/cum-aleg-motoarele-ai): semnale de încredere, structură și autoritate în selecția surselor
@@ -62,12 +63,14 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 ## Studii de caz și experimente
 
 - [Când internetul nu știe cine ești](https://delamatescu.ro/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz): studiu longitudinal despre cum rezolvă Google, Bing, ChatGPT, Claude, Gemini și Perplexity identitatea Alex Matescu — coliziuni de nume Matescu/Mateescu, Anchor Dependence și limite metodologice
+- [Verificarea AVL-203 a delamatescu.ro, punctul T0](https://delamatescu.ro/lab/studii-de-caz/verificare-tehnica-delamatescu-ro): prima rulare a protocolului tehnic pe un site real — exemple din dovezile brute pentru fiecare verificare, ieșirea din terminal, diagnosticul pe zone și raportul pentru client
 - [Studii de caz (AVL-350)](https://delamatescu.ro/lab/studii-de-caz): aplicări reale ale metodologiei, cu dovezi, limite și rezultate publicate integral
 - [Experimente publice (AVL-301)](https://delamatescu.ro/lab/experimente-publice): ipoteze declarate dinainte, rezultate publicate indiferent dacă le confirmă sau le infirmă
 
 ## Market Discovery (seria MKT-RO-AIV)
 
 - [Market Discovery](https://delamatescu.ro/lab/market-discovery): aceleași întrebări despre servicii de GEO, AEO și AI Visibility în România, puse pe Google, Bing, AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot; entități candidate numărate din capturi, înainte de Market Verification
+- [Pilotul 5 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-5): cele 12 expresii scurte USER-SHORT, pe 8 suprafețe: 98 de execuții, 69 de entități candidate în bază
 - [Pilotul 3 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-3): 8 întrebări × 8 suprafețe, 227 de capturi, 174 de entități candidate în bază, 241 cumulat pe cei trei piloți
 - [Pilotul 2 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-2): 4 întrebări × 8 suprafețe rulate din România, 84 de entități candidate în bază
 - [Pilotul 1 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-1): 4 întrebări × 8 suprafețe rulate din Italia, 91 de entități candidate în bază
@@ -75,6 +78,10 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 ## Articole GEO/AEO și AI Search
 
 - [Toate articolele (AVL-401)](https://delamatescu.ro/lab/articole): indexul analizelor despre GEO, AEO, SEO, AI Search și citarea surselor
+- [Cum verific tehnic un site pentru AI Visibility?](https://delamatescu.ro/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility): protocolul tehnic minim, separarea dovezii de interpretare, diagnosticul și raportul pentru client, cu exemple reale
+- [Tabula Rasa F3: când internetul încearcă să afle cine ești](https://delamatescu.ro/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti): a patra măsurare a identității Alex Matescu pe 9 suprafețe de căutare și AI
+- [Pilotul 5 Market Discovery: expresiile scurte](https://delamatescu.ro/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte): ce arată interogările scurte și de ce „consultant AI” a fost retras prea devreme
+- [Pilotul 4 Market Discovery: rularea din Bologna](https://delamatescu.ro/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida): de ce o rulare invalidă nu intră în reuniunea de candidați
 - [Ce este o entitate pentru AI și motoarele de căutare](https://delamatescu.ro/lab/articole/ce-este-entitate-ai-studiu-de-caz): entity resolution, coliziunea și fragmentarea identității
 - [Metadata și citarea AI](https://delamatescu.ro/lab/articole/metadata-citare-ai-studiu-de-caz): ce poate demonstra o citare identică și unde începe inferența
 - [Harta de citare](https://delamatescu.ro/lab/articole/harta-de-citare-mentiuni-externe-romania): ce surse externe contează pentru vizibilitatea AI în România

@@ -13,7 +13,7 @@ export const auditSiteFaraAccesCodMeta: LabArticleMeta = {
   category: "Technical Visibility",
   articleType: "Ghid",
   datePublished: "2026-08-18",
-  dateModified: "2026-08-18",
+  dateModified: "2026-10-28",
   lastReviewed: "2026-08-18",
   about: [
     { name: "Technical website audit" },
@@ -134,7 +134,7 @@ export const auditSiteFaraAccesCodMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const auditSiteFaraAccesCodHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-18">18 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-18">18 august 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-18">18 august 2026</time> · Actualizat: <time datetime="2026-10-28">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-08-18">18 august 2026</time></p>
 
       <p><strong>Fără acces administrativ poți inspecta o parte importantă din suprafața publică a unui site: răspunsurile HTTP, HTML-ul livrat requestului tău, <code>robots.txt</code>, sitemapurile publice, datele structurate, unele endpointuri publice, DNS și certificate. Nu poți vedea însă configurația internă a serverului, codul privat, baza de date, secretele, regulile complete ale infrastructurii sau setările care nu sunt expuse public. Iar DevTools nu publică modificările pe care le faci local: este un instrument de diagnostic și prototipare, nu un substitut pentru accesul la site.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup></p>
 
@@ -508,6 +508,8 @@ grep -i 'rel="canonical"' /tmp/page.html
 grep -i 'application/ld+json' /tmp/page.html
 curl -sIL "$S/pagina"                   # statusuri și redirecturi observabile</code></pre>
 
+      <p>Comenzile de mai sus sunt o inspecție rapidă. Varianta repetabilă, cu plan înghețat, dovezi cu checksum și reguli publice de interpretare, este protocolul AI Visibility Lab, explicat în articolul <a href="/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility">Cum verific tehnic un site pentru AI Visibility?</a>; o rulare completă, cu ieșirea comenzilor și raportul pentru client, e în <a href="/lab/studii-de-caz/verificare-tehnica-delamatescu-ro">studiul de caz CS-002</a>.</p>
+
       <h3>Ce NU trebuie dedus</h3>
 
       <p>Dimensiunea HTML-ului nu identifică arhitectura site-ului.</p>
@@ -595,6 +597,15 @@ curl -sIL "$S/pagina"                   # statusuri și redirecturi observabile<
       <h3>Notă de volatilitate</h3>
 
       <p>Comportamentul crawlerelor AI, documentația OpenAI/Perplexity, lista participanților IndexNow și poziția providerilor față de <code>llms.txt</code> se pot modifica. Afirmațiile despre aceste produse și protocoale descriu <strong>starea verificată la 18 august 2026</strong> și trebuie reverificate înaintea unei actualizări viitoare.</p>
+
+      <h2>Istoricul versiunilor</h2>
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0</td><td>18 august 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>28 octombrie 2026</td><td>Secțiunea „Verificarea de bază”: paragraf nou cu trimitere la protocolul AVL-203 (articolul „Cum verific tehnic un site pentru AI Visibility?”) și la studiul de caz CS-002. Restul textului nu a fost modificat.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 18 august 2026.</em></p>
 `;

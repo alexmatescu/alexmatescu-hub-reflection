@@ -8,12 +8,12 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.7.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.7.2</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>26 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>28 octombrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>2 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie">https://delamatescu.ro/lab/metodologie</a></td></tr>
@@ -89,8 +89,8 @@ Cadrul metodologic AI Visibility Lab
    ├── Metodologia de bază (Core Methodology)
    │     ├── AVL-200  Standard dovezi, măsurare și trasabilitate
    │     ├── AVL-201  Tabula Rasa F0 — Baseline
-   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.6.0)
-   │     ├── AVL-204  Grila de interpretare a verificării tehnice   (Draft pentru revizuire, v0.3.0)
+   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.6.1)
+   │     ├── AVL-204  Grila de interpretare a verificării tehnice   (Draft pentru revizuire, v0.3.1)
    │     └── viitoare documente metodologice / protocoale
    │
    └── Market Measurement — familia AVL-MKT-*
@@ -711,7 +711,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><em>Core Technical Web Measurement Protocol</em></p>
 
-      <p><strong>Versiune 0.6.0 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.6.1 · Draft pentru revizuire</strong></p>
 
       <p>Setul minim și repetabil de verificări tehnice care documentează ce livrează un server în condiții declarate: accesibilitatea HTTP și redirecturile, variantele de host și protocol, robots.txt, descoperirea sitemap-ului, semnalele raw HTML, conținutul important prezent în HTML-ul brut, paritatea răspunsurilor pentru User-Agent-uri declarate și integritatea dovezilor. Definește și compoziția planului de măsurare și trecerea de la observații la diagnostic și recomandări, după grila AVL-204. Nu confundă accesibilitatea tehnică cu indexarea, citarea sau recomandarea.</p>
 
@@ -725,7 +725,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><em>Technical Diagnostic Interpretation Grid</em></p>
 
-      <p><strong>Versiune 0.3.0 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.3.1 · Draft pentru revizuire</strong></p>
 
       <p>Regulile publice prin care observațiile AVL-203 devin diagnostic și recomandări: stările diagnosticului, zonele verificate, regulile de diagnostic, prioritizarea recomandărilor, afirmațiile excluse și aplicarea identică pentru orice entitate evaluată. Regulile se fixează înaintea rulării, ca diagnosticul să poată fi verificat și să nu poată fi ajustat după rezultat.</p>
 
@@ -809,7 +809,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <h2>Citare recomandată</h2>
 
-      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.7.1, 2026. https://delamatescu.ro/lab/metodologie</p>
+      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.7.2, 2026. https://delamatescu.ro/lab/metodologie</p>
 
       <h2>Istoricul versiunilor</h2>
 
@@ -871,6 +871,12 @@ Market Query Panel + răspunsurile AI</code></pre>
             <td>26 octombrie 2026</td>
             <td>Activ</td>
             <td>PATCH: versiunile documentelor din ramura Core Methodology actualizate după deciziile din 26 octombrie 2026: AVL-203 trece la v0.6.0 și AVL-204 la v0.3.0, ambele draft pentru revizuire. Fără alte modificări.</td>
+          </tr>
+          <tr>
+            <td>1.7.2</td>
+            <td>28 octombrie 2026</td>
+            <td>Activ</td>
+            <td>PATCH: versiunile documentelor din ramura Core Methodology actualizate: AVL-203 trece la v0.6.1 și AVL-204 la v0.3.1 (trimitere la studiul de caz CS-002, primul exemplu aplicat al verificării tehnice), ambele draft pentru revizuire. Fără alte modificări.</td>
           </tr>
         </tbody>
       </table>

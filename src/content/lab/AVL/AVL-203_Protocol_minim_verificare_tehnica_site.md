@@ -3,14 +3,14 @@ document_id: "AVL-203"
 title: "Protocolul minim de verificare tehnică a unui site pentru AI Visibility"
 subtitle: "Core Technical Web Measurement Protocol"
 level: "C — Methodology"
-version: "0.6.0"
+version: "0.6.1"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-01"
 date_published: "2026-10-02T16:29:00+03:00"
-date_modified: "2026-10-26"
+date_modified: "2026-10-28"
 last_reviewed: "2026-10-01"
 canonical: "https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica"
 normative_dependencies:
@@ -44,9 +44,11 @@ keywords:
 
 AVL-203 este un document de nivel C — Methodology în corpusul AI Visibility Lab Documentation, propus ca protocol în ramura Core Methodology descrisă de AVL-202.
 
-Versiunea curentă, **0.6.0**, este un **draft public pentru revizuire** și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate `AVL203-REQ-*`; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §19.
+Versiunea curentă, **0.6.1**, este un **draft public pentru revizuire** și nu este activă. Documentul este publicat pentru transparență, ca regula să fie vizibilă și datată înainte de activare. Cerințele de conformitate sunt formulate ca cerințe identificate `AVL203-REQ-*`; implementarea de referință nu este încă validată. Deciziile rămase deschise înainte de activare sunt enumerate în §19.
 
 Din versiunea 0.4.0, protocolul acoperă și trecerea de la observații la diagnostic și recomandări (§12), pentru că verificarea tehnică este folosită și în evaluări care livrează un diagnostic, de exemplu auditul AI Visibility. Regulile după care observațiile devin diagnostic sunt publicate separat, în grila AVL-204.
+
+> **Exemplu aplicat.** Prima rulare `T0` a protocolului, pe delamatescu.ro, e documentată pas cu pas, cu dovezile brute și ieșirea din terminal, în studiul de caz [CS-002](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro).
 
 Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr liber din seria documentelor Nivelului C, după scanarea registrului de conținut și a corpusului, și confirmat de Alex Matescu. Eticheta de lucru folosită anterior pentru acest draft, „AVL-TECH-001”, nu este un identificator normativ și nu introduce o familie `AVL-TECH-*`.
 
@@ -54,7 +56,7 @@ Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr l
 | --- | --- |
 | Document ID | AVL-203 |
 | Nivel | C — Methodology |
-| Versiune | 0.6.0 |
+| Versiune | 0.6.1 |
 | Statut | Draft pentru revizuire |
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
@@ -609,6 +611,10 @@ Fiecare rulare declarată conformă verifică explicit cerințele:
 
 - AVL-204 — Grila de interpretare a verificării tehnice (draft pentru revizuire).
 
+## Exemplu aplicat
+
+- [CS-002 — Verificarea AVL-203 a delamatescu.ro, punctul T0](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro): prima rulare `T0` pe un site real (26 octombrie 2026), cu exemple din dovezile brute pentru fiecare verificare `TC-00` … `TC-08`, ieșirea din terminal a instrumentului, diagnosticul după AVL-204 0.3.0, raportul pentru client și pachetul de dovezi. Studiul de caz ilustrează aplicarea protocolului; nu face parte din normă și nu modifică cerințele.
+
 ## Standarde și referințe externe
 
 Verificate la 1 octombrie 2026.
@@ -639,6 +645,7 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 | 0.4.0 | 23 octombrie 2026 | Draft pentru revizuire | MINOR: protocolul acoperă și diagnosticul și recomandările, pentru că verificarea tehnică este folosită în evaluări care livrează recomandări. Secțiuni noi: §1.1 „Compoziția planului de măsurare” (număr variabil de URL-uri, categorii obligatorii de pagini, tipul entității, textele-cheie și politica de acces intenționată declarate dinainte); §8.1 verificarea nouă `TC-08` „Conținut important în HTML-ul brut”; §12 „Cum trecem de la observații la diagnostic și recomandări?” (stările diagnosticului, cele patru elemente ale unei recomandări, trimiterea la grila AVL-204); §13.1 „Extensii declarate” (instrumente pentru webmasteri, loguri, CDN/WAF cu acces autorizat); §15.1 „Raportul unei evaluări cu diagnostic”. Cerințe noi `AVL203-REQ-029` … `AVL203-REQ-040`. Decizii Alex Matescu, 23 octombrie 2026: (1) `AVL203-REQ-013` este retrasă — textul rămâne în §6 ca evidență a evoluției metodologiei, iar identificatorul nu se reutilizează; cerința nouă `AVL203-REQ-041` acceptă, pe lângă parserul conform, aplicarea manuală a RFC 9309 documentată pas cu pas, cu metoda înregistrată în observații (decizia deschisă 8 închisă); (2) pagina de contact sau o altă pagină cu datele de identitate ale entității devine obligatorie în planul de măsurare, fără `NOT_APPLICABLE` (`AVL203-REQ-042`). Celelalte cerințe 001–028 rămân neschimbate. Secțiunile 12–18 devin 13–19. |
 | 0.5.0 | 25 octombrie 2026 | Draft pentru revizuire | MINOR: revizie după prima implementare candidată completă (skill `verificare-tehnica-avl203`, v0.3.0) și o rulare `TEST`, cu propunerile aprobate de Alex Matescu la 25 octombrie 2026. §1: protocolul se aplică numai site-urilor entităților evaluate ca proiect sau client, cu fișa entității completată de reprezentant, nu concurenților și nici entităților din Market Discovery; o verificare din afara acestui domeniu nu se documentează ca rulare (`AVL203-REQ-043`). §1.1: politica de acces se preia din fișa entității („Politica crawlere”, AVL-201 §7), cu recomandarea laboratorului de acces total; planul declară limitele cererilor auxiliare. §5: repetarea unică a capturii la erori de rețea, DNS sau timeout (`AVL203-REQ-044`). §7: tabelul TC-04 completat (cazurile neacoperite trec la `UNKNOWN`; `FOUND_AT_CONVENTIONAL_PATH` cere un document XML; `robots.txt` cu `4xx` = fără declarații; fiecare sitemap raportat separat). §8.1: `<title>` intră la metadate; status nou `PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY` pentru textul aflat numai în scripturi non-JSON-LD, comentarii, `<template>` sau `<noscript>`; `ABSENT_FROM_RAW_HTML` exclude potrivirile din noduri unite. §9: variabilitatea referinței se aplică și statusului, URL-ului final și headerelor (`AVL203-REQ-045`). AVL-201 devine dependență normativă (fișa entității). Celelalte cerințe rămân neschimbate. |
 | 0.6.0 | 26 octombrie 2026 | Draft pentru revizuire | MINOR: deciziile Alex Matescu din 26 octombrie 2026, după prima rulare `T0`. §6: agenții de antrenare și de fetch pentru care fișa entității declară o politică intră în planul de măsurare; grila AVL-204 0.3.0 aplică zona Z2 crawlerelor de antrenare și raportează agenții de fetch numai ca observație (AVL204-REQ-018). §19.4: implementarea candidată v0.5.0 și prima rulare `T0`. §19.6: `Claude-SearchBot` rămâne `DOAR_TOKEN` (Anthropic nu publică șiruri complete, verificat la 26 octombrie 2026), iar regula pentru versiunea Chrome din șirul Googlebot e fixată; rămâne deschis doar șirul `bingbot`. Fără cerințe noi. |
+| 0.6.1 | 28 octombrie 2026 | Draft pentru revizuire | PATCH: §17 — subsecțiune nouă „Exemplu aplicat”, cu trimitere la studiul de caz CS-002 (prima rulare `T0`, delamatescu.ro); trimitere la același exemplu în „Controlul documentului”. Fără modificări ale cerințelor. |
 
 ---
 

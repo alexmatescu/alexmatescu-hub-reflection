@@ -54,6 +54,14 @@ class EndToEndTest(unittest.TestCase):
         self.assertIn("| GPTBot | antrenare |", md)
         self.assertIn("| ChatGPT-User | fetch_utilizator |", md)
         self.assertEqual(cli("report", "--run", run)[0], 2)  # raportul nu se suprascrie
+        code, out, err = cli("client-report", "--run", run, "--no-pdf")
+        self.assertEqual(code, 0, err)
+        with open(out.strip(), encoding="utf-8") as f:
+            page = f.read()
+        self.assertIn("RULARE TEST", page)
+        self.assertIn("Problemă confirmată", page)
+        self.assertIn("Rezultatul pe zone", page)
+        self.assertNotIn("R-Z", page)  # fără ID-uri de reguli în raportul pentru client
         # reanaliza nu atinge dovezile brute
         self.assertEqual(cli("verify", "--run", run)[0], 0)
 

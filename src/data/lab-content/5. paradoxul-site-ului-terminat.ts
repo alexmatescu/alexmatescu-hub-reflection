@@ -13,7 +13,7 @@ export const paradoxulSiteuluiTerminatMeta: LabArticleMeta = {
   category: "Technical Visibility",
   articleType: "Analiză de caz",
   datePublished: "2026-08-17",
-  dateModified: "2026-08-17",
+  dateModified: "2026-10-28",
   about: [
     { name: "JavaScript SEO" },
     { name: "Server-side rendering" },
@@ -51,9 +51,13 @@ export const paradoxulSiteuluiTerminatMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const paradoxulSiteuluiTerminatHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-17">17 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-10">10 august 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-17">17 august 2026</time> · Actualizat: <time datetime="2026-10-28">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-08-10">10 august 2026</time></p>
 
       <p><strong>Un site poate părea complet în browser și, în același timp, poate furniza reprezentări diferite în funcție de agentul care îl accesează. În testul documentat aici, un request HTTP generic către două rute ale propriului meu site a primit același shell HTML: metadate în <code>&lt;head&gt;</code>, fără textul principal pe care îl vede utilizatorul după executarea aplicației în browser. Asta nu demonstrează că ChatGPT, Perplexity, Google sau alte crawlere verificate primesc același răspuns. Documentația Lovable verificată la 10 august 2026 spune explicit că proiectele mai vechi React + Vite folosesc pre-randare la cerere pentru crawlere verificate, în timp ce agenții neverificați și scanerele SEO terțe primesc aplicația SPA obișnuită. Studiul de caz arată, prin urmare, altceva: același URL poate avea mai multe reprezentări tehnice, iar un simplu <code>curl</code> nu trebuie confundat cu ceea ce vede un crawler verificat.</strong><sup><a href="#fn-1">1</a></sup></p>
+
+      <blockquote>
+        <p><strong>Clarificare datată, 28 octombrie 2026.</strong> Măsurătoarea din acest articol descrie site-ul la 10 august 2026 și rămâne așa cum a fost făcută. Între timp, site-ul a trecut pe o stivă cu randare pe server. La prima rulare <code>T0</code> a protocolului tehnic AVL-203, pe 26 octombrie 2026, un client <code>curl</code> obișnuit a primit, pe toate cele 6 pagini testate, textele-cheie direct în HTML-ul brut, iar fiecare pagină avea canonical spre propria adresă. Shell-ul descris mai jos nu mai apare în condițiile acelei rulări. Detaliile și dovezile brute sunt în <a href="/lab/studii-de-caz/verificare-tehnica-delamatescu-ro">studiul de caz CS-002</a>. Afirmațiile despre documentația Lovable din acest articol nu au fost reverificate la această dată.</p>
+      </blockquote>
 
       <p>Această distincție schimbă teza articolului.</p>
 
@@ -412,6 +416,15 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
       <p>Infrastructura Lovable și politicile crawlerelor AI se pot schimba rapid. Afirmațiile despre stiva implicită, pre-randare, upgrade-ul TanStack Start, lista crawlerelor verificate, <code>OAI-SearchBot</code> și <code>PerplexityBot</code> descriu <strong>starea documentată la 10 august 2026</strong>.</p>
 
       <p>Dacă acest articol este actualizat ulterior, aceste afirmații trebuie reverificate din sursele primare înainte de republicare.</p>
+
+      <h2>Istoricul versiunilor</h2>
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0</td><td>17 august 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>28 octombrie 2026</td><td>Clarificare datată la început: rezultatul primei rulări T0 a protocolului AVL-203 pe delamatescu.ro (26 octombrie 2026), cu trimitere la studiul de caz CS-002. Măsurătoarea din august și restul textului nu au fost modificate.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 10 august 2026.</em></p>
 `;

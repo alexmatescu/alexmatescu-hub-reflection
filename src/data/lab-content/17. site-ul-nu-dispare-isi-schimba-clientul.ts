@@ -14,7 +14,7 @@ export const siteulNuDispareIsiSchimbaClientulMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-10-02T09:08:00+03:00",
-  dateModified: "2026-10-02",
+  dateModified: "2026-10-28",
   lastReviewed: "2026-10-01",
   about: [
     { name: "Machine Accessibility" },
@@ -91,7 +91,7 @@ export const siteulNuDispareIsiSchimbaClientulMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const siteulNuDispareIsiSchimbaClientulHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-02T09:08:00+03:00">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-02T09:08:00+03:00">2 octombrie 2026</time> · Actualizat: <time datetime="2026-10-28">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
 
       <p><strong>Site-ul nu devine irelevant în era agenților AI. Dimpotrivă, începe să deservească o categorie suplimentară de utilizatori: software care poate descoperi informație, o poate interpreta și, în anumite condiții, poate executa acțiuni în numele unui om.</strong> Problema nu mai este doar dacă o pagină poate fi citită, ci și ce poate face un sistem AI după ce ajunge la ea.</p>
       <p>Pe 30 septembrie 2026, Cloudflare a publicat o analiză cu un titlu care surprinde foarte bine schimbarea: <em>The Internet has a second audience</em>. Compania spune că, în propria rețea, solicitările zilnice provenite de la agenți AI au crescut cu peste 1.700% într-un an și argumentează că agenții reprezintă o categorie distinctă față de oamenii care navighează și față de boții tradiționali.<sup><a href="#fn-1">1</a></sup></p>
@@ -268,6 +268,7 @@ Transaction Readiness</code></pre>
       <p>Lanțul metodologic rămâne cel prezentat în <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">al doilea articol al seriei</a>: <strong>Raw Evidence → Indexed Evidence → Observation → Measurement</strong>, iar dincolo de granița metodologică, <strong>Interpretation</strong>.</p>
       <p>Exemplu:</p>
       <p>Dacă <code>robots.txt</code> permite OAI-SearchBot, aceasta este <strong>o configurație tehnică observabilă</strong>. Nu este dovada că pagina este indexată, citată sau recomandată în ChatGPT.<sup><a href="#fn-2">2</a></sup></p>
+      <p>Un exemplu măsurat: la prima rulare <code>T0</code> a protocolului AVL-203 pe delamatescu.ro, robots.txt permitea accesul tuturor celor 12 crawlere declarate. Diagnosticul a consemnat asta ca „nicio problemă observată” pentru regulile de acces, nu ca indexare (<a href="/lab/studii-de-caz/verificare-tehnica-delamatescu-ro">studiul de caz CS-002</a>).</p>
       <p>Dacă site-ul expune un instrument WebMCP, avem <strong>dovada existenței unei capabilități</strong>. Nu este dovada că fiecare utilizator ChatGPT are acces la site tools, că instrumentul va fi ales automat într-un anumit task sau că alte sisteme AI îl pot folosi.<sup><a href="#fn-3">3</a></sup></p>
       <p>Dacă structured data validează corect, avem <strong>dovada conformității markup-ului cu un set de reguli</strong>. Google precizează chiar pentru propriile rich results că implementarea corectă nu garantează afișarea rezultatului îmbogățit.<sup><a href="#fn-8">8</a></sup></p>
       <p>Această disciplină este importantă deoarece piața „AI optimization” are tendința de a transforma rapid suportul tehnic într-o promisiune de vizibilitate.</p>
@@ -343,6 +344,15 @@ If yes: can the authorized agent execute it safely?</code></pre>
       <p>Expresia <strong>agent-ready</strong> este deja folosită public de Cloudflare și de alte proiecte din ecosistemul agentic; AI Visibility Lab nu revendică originea termenului. Cadrul propriu introdus în acest articol constă în delimitarea operațională a celor trei tipuri de readiness și în integrarea lor în lanțul metodologic <code>Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation</code>.</p>
       <h2>Notă de volatilitate</h2>
       <p>WebMCP este un standard propus, MCP își schimbă specificația periodic, iar disponibilitatea site tools în ChatGPT, categoriile de boți din Cloudflare și criteriile Agent Readiness pot fi diferite la data lecturii. Afirmațiile despre produse și specificații au fost verificate la 1 octombrie 2026.</p>
+
+      <h2>Istoricul versiunilor</h2>
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0</td><td>2 octombrie 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>28 octombrie 2026</td><td>Exemplu măsurat după paragraful despre OAI-SearchBot și robots.txt: rezultatul rulării T0 AVL-203 pe delamatescu.ro, cu trimitere la studiul de caz CS-002. Restul textului nu a fost modificat.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 1 octombrie 2026.</em></p>
 `;

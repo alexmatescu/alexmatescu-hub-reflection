@@ -3,14 +3,14 @@ document_id: "AVL-204"
 title: "Grila de interpretare a verificării tehnice"
 subtitle: "Technical Diagnostic Interpretation Grid"
 level: "C — Methodology"
-version: "0.3.0"
+version: "0.3.1"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-22"
 date_published: "2026-10-26T10:33:00+02:00"
-date_modified: "2026-10-26"
+date_modified: "2026-10-28"
 last_reviewed: "2026-10-26"
 canonical: "https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica"
 normative_dependencies:
@@ -42,7 +42,9 @@ keywords:
 
 AVL-204 este un document de nivel C — Methodology în corpusul AI Visibility Lab Documentation. Definește regulile prin care observațiile produse de [AVL-203](/lab/metodologie/protocol-verificare-tehnica) devin diagnostic și recomandări (AVL-203 §12).
 
-Versiunea curentă, **0.3.0**, este un **draft pentru revizuire** și nu este activă. Regulile de diagnostic din §6 și criteriile de prioritizare din §7 sunt propuneri de lucru, revizuite după prima implementare candidată, o rulare de test și prima rulare T0; deciziile rămase deschise înainte de activare sunt enumerate în §15.
+Versiunea curentă, **0.3.1**, este un **draft pentru revizuire** și nu este activă. Regulile de diagnostic din §6 și criteriile de prioritizare din §7 sunt propuneri de lucru, revizuite după prima implementare candidată, o rulare de test și prima rulare T0; deciziile rămase deschise înainte de activare sunt enumerate în §15.
+
+> **Exemplu aplicat.** Diagnosticul primei rulări `T0`, pe delamatescu.ro, cu fiecare zonă și raportul pentru client, e documentat în studiul de caz [CS-002](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro).
 
 Identificatorul AVL-204 a fost alocat la 22 octombrie 2026 ca următorul număr liber din seria documentelor Nivelului C, după scanarea registrului de conținut, și confirmat de Alex Matescu.
 
@@ -50,7 +52,7 @@ Identificatorul AVL-204 a fost alocat la 22 octombrie 2026 ca următorul număr 
 | --- | --- |
 | Document ID | AVL-204 |
 | Nivel | C — Methodology |
-| Versiune | 0.3.0 |
+| Versiune | 0.3.1 |
 | Statut | Draft pentru revizuire |
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
@@ -412,6 +414,10 @@ Categoriile suplimentare sunt recomandate, nu obligatorii: lipsa lor din plan se
 
 - AVL-MKT-001 — Market Scope & Eligibility Protocol (entitățile din Market Discovery nu intră în domeniul grilei).
 
+## Exemplu aplicat
+
+- [CS-002 — Verificarea AVL-203 a delamatescu.ro, punctul T0](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro): prima aplicare a grilei 0.3.0 pe o rulare `T0` reală (delamatescu.ro, 26 octombrie 2026): 109 constatări pe cele șase zone, recomandarea de tip verificare suplimentară, raportul tehnic și raportul pe zone pentru client. Studiul de caz ilustrează aplicarea grilei; nu face parte din normă și nu modifică regulile.
+
 ## Standarde și referințe externe
 
 Verificate la 25 octombrie 2026.
@@ -431,6 +437,7 @@ Regulile grilei sunt reguli proprii AI Visibility Lab și nu trebuie prezentate 
 | 0.1.0 | 22 octombrie 2026 | Draft pentru revizuire | Primul draft. Definește scopul grilei (transparență, consecvență, imparțialitate), stările diagnosticului preluate din AVL-203 §12.1, cele șase zone de diagnostic, regulile `R-VAL-01`, `R-Z1-*` … `R-Z6-*`, prioritizarea P1–P3 după impact potențial, efort, dependențe și verificabilitate, afirmațiile excluse, aplicarea identică și abaterile declarate, versionarea ca Measurement Rule Version și categoriile de pagini pe tip de entitate. Cerințe `AVL204-REQ-001` … `AVL204-REQ-014`. Identificator AVL-204 alocat din registru și confirmat de Alex Matescu. Aliniat la deciziile din 23 octombrie 2026 pentru AVL-203 0.4.0: zona Z2 trimite la AVL203-REQ-041 (parser conform sau aplicare manuală documentată a RFC 9309), iar pagina de contact sau de date de identitate este obligatorie în plan (AVL203-REQ-042). AVL-202 1.6.0 include AVL-204 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor. |
 | 0.2.0 | 25 octombrie 2026 | Draft pentru revizuire | MINOR: revizie după prima implementare candidată (v0.3.0) și o rulare de test, cu propunerile P-01…P-11 aprobate de Alex Matescu la 25 octombrie 2026. Domeniul de aplicare: grila se aplică numai entităților evaluate ca proiect sau client, cu fișa entității completată de reprezentant, nu concurenților și nici entităților din Market Discovery (§2, `AVL204-REQ-015`); §1 și §9 reformulate în consecință, `AVL204-REQ-011` reformulată. `AVL204-REQ-001` precizează granularitatea integrității (artefact → `R-VAL-01`; manifest, checksum-uri sau plan → rulare invalidă). §3.1 nouă: politica de acces vine din fișa entității („Politica crawlere”), recomandarea laboratorului este accesul total, politica nu se deduce din observații (`AVL204-REQ-017`; decizia deschisă 5 închisă). Regulile de succes cer date complete, iar o zonă fără constatări e „neevaluată” (`AVL204-REQ-016`). Zonele Z4 și Z5 nu se evaluează pentru URL-urile cu răspuns final `4xx`/`5xx`. Reguli noi sau modificate: `R-VAL-01`; `R-Z1-01` (răspuns declarat intenționat), `R-Z1-07`, `R-Z1-08`, `R-Z1-09` (eroare de rețea repetată), `R-Z1-10`; `R-Z2-02`, `R-Z2-03` (doar directive scrise greșit), `R-Z2-04` (fără `429`), `R-Z2-07` (redirect cross-host permis de RFC 9309), `R-Z2-08` (`429`), `R-Z2-09` (peste cinci redirecturi); `R-Z3-04`; `R-Z4-02`, `R-Z4-08`, `R-Z4-09`, `R-Z4-10` (canonical cu redirect); `R-Z5-05` (text doar în scripturi sau zone ascunse, statusul nou din AVL-203 0.5.0); `R-Z6-01`/`R-Z6-02` (doar diferențe nefavorabile, contrar politicii declarate), `R-Z6-06`, `R-Z6-07` (variabilitatea referinței la status și headere), `R-Z6-08` (restricție declarată). `AVL204-REQ-009`: verificările suplimentare nu primesc clasă de prioritate. AVL-201 adăugat ca dependență normativă, AVL-MKT-001 ca dependență informativă. Sursele externe reverificate la 25 octombrie 2026 (RFC 9309; Google, codurile HTTP pentru robots.txt). |
 | 0.3.0 | 26 octombrie 2026 | Draft pentru revizuire | MINOR: deciziile Alex Matescu din 26 octombrie 2026, după prima rulare T0 pe un site propriu. `R-Z1-05` devine problemă posibilă numai peste două redirecturi, iar `R-Z1-08` acceptă cel mult două. `R-Z4-06` retrasă: lipsa JSON-LD pe pagina despre entitate rămâne observație TC-05, conform documentației Google pentru funcțiile AI. Zona Z2 se aplică și crawlerelor de antrenare declarate în plan; crawlerele de fetch la cererea utilizatorului se raportează numai ca observație (`AVL204-REQ-018`, nouă). §11: categoriile suplimentare sunt recomandate, iar absența paginii de identitate rămâne observație. `R-Z3-03`, `R-Z4-07`, `R-Z2-08`, `R-Z2-09` și `R-Z4-10` confirmate ca „problemă posibilă”. Decizii deschise 1 (parțial), 4 și 7 (nouă) închise. Sursă externă verificată la 26 octombrie 2026: Google, „AI features and your website”. |
+| 0.3.1 | 28 octombrie 2026 | Draft pentru revizuire | PATCH: §13 — subsecțiune nouă „Exemplu aplicat”, cu trimitere la studiul de caz CS-002 (prima rulare `T0`, delamatescu.ro); trimitere la același exemplu în „Controlul documentului”. Fără modificări ale regulilor. |
 
 ---
 

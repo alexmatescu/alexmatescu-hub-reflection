@@ -44,6 +44,7 @@ import { socialMediaStratInformationalPentruAiHtml } from "@/data/lab-content/19
 import { marketDiscoveryPilot4BolognaHtml } from "@/data/lab-content/20. market-discovery-pilot-4-bologna-rulare-invalida";
 import { marketDiscoveryPilot5SibiuHtml } from "@/data/lab-content/21. market-discovery-pilot-5-sibiu-expresii-scurte";
 import { tabulaRasaF3Html } from "@/data/lab-content/22. tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti";
+import { cumVerificTehnicUnSiteHtml } from "@/data/lab-content/23. cum-verific-tehnic-un-site-pentru-ai-visibility";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -58,6 +59,7 @@ import { paradoxulSpecificitatiiContinutGenericHtml } from "@/data/lab-content/9
 import { paradoxulSiteuluiTerminatHtml } from "@/data/lab-content/5. paradoxul-site-ului-terminat";
 import { socialMediaVizibilitateAiHtml } from "@/data/lab-content/3. social-media-vizibilitate-ai";
 import { tabulaRasaEntityResolutionStudiuDeCazHtml } from "@/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz";
+import { verificareTehnicaDelamatescuRoHtml } from "@/data/lab-content/verificare-tehnica-delamatescu-ro";
 
 const heroImage = "/images/blog/ai-visibility-hero.webp";
 
@@ -82,6 +84,8 @@ const labPageContent: Record<string, string> = {
   "/lab/studii-de-caz": avl350StudiiDeCazHtml,
   "/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz":
     tabulaRasaEntityResolutionStudiuDeCazHtml,
+  "/lab/studii-de-caz/verificare-tehnica-delamatescu-ro":
+    verificareTehnicaDelamatescuRoHtml,
   "/lab/articole": avl401ArticoleHtml,
   "/lab/articole/istoria-cautarii-internet-evolutia-seo": istoriaCautariiHtml,
   "/lab/articole/motoare-cautare-comparatie-2026": motoareCautareHtml,
@@ -122,6 +126,8 @@ const labPageContent: Record<string, string> = {
     marketDiscoveryPilot5SibiuHtml,
   "/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti":
     tabulaRasaF3Html,
+  "/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility":
+    cumVerificTehnicUnSiteHtml,
   "/lab/audit-ai-visibility": auditAiVisibilityHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };
