@@ -284,6 +284,12 @@ export const labNav: LabPage[] = [
           "Cât costă, de fapt, inteligența artificială și cine plătește pentru ea?",
         lead: "Cât curent consumă AI-ul pentru text, imagini, video și cod, cât au costat modelele, de unde vin investițiile și cine plătește: repere din IEA, Google, cercetări, documentul S-1 al Anthropic și anunțurile OpenAI, cu limitele fiecărei cifre.",
       },
+      {
+        to: "/lab/articole/reclame-chatgpt-google-social-media",
+        label:
+          "Reclame în ChatGPT, Google și social media: unde merită să plătești și când devine prea scump să fii peste tot?",
+        lead: "Ce diferențiază reclamele ChatGPT, Google și social media, cât costă o strategie multicanal și cum alegi în funcție de obiective și etapa afacerii.",
+      },
     ],
   },
   {

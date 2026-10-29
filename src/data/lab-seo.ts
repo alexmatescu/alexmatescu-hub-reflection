@@ -10,6 +10,7 @@ import { marketDiscoveryPilot5SibiuMeta } from "@/data/lab-content/21. market-di
 import { tabulaRasaF3Meta } from "@/data/lab-content/22. tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti";
 import { cumVerificTehnicUnSiteMeta } from "@/data/lab-content/23. cum-verific-tehnic-un-site-pentru-ai-visibility";
 import { costurileAiVariatiiFinantariMeta } from "@/data/lab-content/24. costurile-ai-variatii-finantari-plata-la-cine";
+import { reclameChatgptGoogleSocialMediaMeta } from "@/data/lab-content/25. reclame-chatgpt-google-social-media";
 import { auditSiteFaraAccesCodMeta } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiMeta } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazMeta } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -157,6 +158,7 @@ export const labArticleMeta: LabArticleMeta[] = [
   tabulaRasaF3Meta,
   cumVerificTehnicUnSiteMeta,
   costurileAiVariatiiFinantariMeta,
+  reclameChatgptGoogleSocialMediaMeta,
 ];
 
 const findArticleMetaBySlug = (slug: string) =>

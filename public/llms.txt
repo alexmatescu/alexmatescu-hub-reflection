@@ -78,6 +78,7 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 ## Articole GEO/AEO și AI Search
 
 - [Toate articolele (AVL-401)](https://delamatescu.ro/lab/articole): indexul analizelor despre GEO, AEO, SEO, AI Search și citarea surselor
+- [Reclame în ChatGPT, Google și social media: unde merită?](https://delamatescu.ro/lab/articole/reclame-chatgpt-google-social-media): ce diferențiază reclamele din ChatGPT, Google și platformele sociale, pragurile de buget documentate, repere de cost din SUA și scenarii de cost pentru o strategie multicanal, cu limitele fiecărei cifre
 - [Cât costă AI-ul: energie, investiții și cine plătește](https://delamatescu.ro/lab/articole/costurile-ai-variatii-finantari-plata-la-cine): consumul energetic al sarcinilor AI, costul antrenării modelelor, rundele de finanțare OpenAI și Anthropic și cine plătește, cu limitele fiecărei cifre
 - [Cum verific tehnic un site pentru AI Visibility?](https://delamatescu.ro/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility): protocolul tehnic minim, separarea dovezii de interpretare, diagnosticul și raportul pentru client, cu exemple reale
 - [Tabula Rasa F3: când internetul încearcă să afle cine ești](https://delamatescu.ro/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti): a patra măsurare a identității Alex Matescu pe 9 suprafețe de căutare și AI
