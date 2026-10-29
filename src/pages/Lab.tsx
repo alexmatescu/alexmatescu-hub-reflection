@@ -461,9 +461,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
       />
 
       <section className="border-b border-foreground/10">
-        <div
-          className={`container-editorial py-20 md:py-28 max-w-4xl ${hasTocSidebar ? "xl:max-w-6xl" : ""}`}
-        >
+        <div className="container-editorial py-20 md:py-28 max-w-4xl">
           <Link
             to={parent ? parent.to : "/lab"}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"

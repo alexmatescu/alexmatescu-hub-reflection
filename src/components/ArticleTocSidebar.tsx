@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 export interface TocItem {
   id: string;
@@ -49,12 +50,14 @@ const ACTIVE_OFFSET = 128;
 
 /**
  * Cuprinsul lateral, fix la scroll, afișat doar pe ecrane late (vezi
- * `.has-toc-sidebar` în styles.css). Marchează secțiunea în care se află
- * cititorul cu `aria-current="location"`.
+ * `.has-toc-sidebar` în styles.css). Secțiunea în care se află cititorul e
+ * marcată cu `aria-current="location"` și arătată de o săgeată care se mută
+ * la intrarea activă, la click sau la scroll.
  */
 const ArticleTocSidebar = ({ items }: { items: TocItem[] }) => {
   const [activeId, setActiveId] = useState<string | undefined>(undefined);
   const listRef = useRef<HTMLDivElement>(null);
+  const arrowRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     let frame = 0;
@@ -110,32 +113,69 @@ const ArticleTocSidebar = ({ items }: { items: TocItem[] }) => {
     }
   }, [activeId]);
 
+  // Săgeata se aliniază cu primul rând al intrării active (titlurile lungi
+  // se rup pe mai multe rânduri) și dispare înaintea primei secțiuni.
+  useLayoutEffect(() => {
+    const arrow = arrowRef.current;
+    if (!arrow) return;
+    const place = () => {
+      const link = activeId
+        ? listRef.current?.querySelector<HTMLElement>(`a[href="#${activeId}"]`)
+        : null;
+      if (!link) {
+        arrow.style.opacity = "0";
+        return;
+      }
+      const style = getComputedStyle(link);
+      const lineHeight = parseFloat(style.lineHeight) || 20;
+      const top =
+        link.offsetTop +
+        parseFloat(style.paddingTop) +
+        (lineHeight - arrow.getBoundingClientRect().height) / 2;
+      arrow.style.transform = `translateY(${top}px)`;
+      arrow.style.opacity = "1";
+    };
+    place();
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
+  }, [activeId]);
+
   const activeParent = items.find((item) => item.id === activeId)?.parentId;
 
   return (
     <aside className="article-toc-sidebar" aria-labelledby="cuprins-lateral">
-      <p id="cuprins-lateral" className="article-toc-sidebar-title">
-        Cuprins
-      </p>
-      <div ref={listRef} className="article-toc-sidebar-list">
-        <ol>
-          {items.map((item) => {
-            const isActive = item.id === activeId;
-            const isActiveParent = item.id === activeParent;
-            return (
-              <li key={item.id} data-level={item.level}>
-                <a
-                  href={`#${item.id}`}
-                  aria-current={isActive ? "location" : undefined}
-                  data-active-parent={isActiveParent || undefined}
-                  onClick={() => setActiveId(item.id)}
-                >
-                  {item.text}
-                </a>
-              </li>
-            );
-          })}
-        </ol>
+      <div className="article-toc-sidebar-sticky">
+        <p id="cuprins-lateral" className="article-toc-sidebar-title">
+          Cuprins
+        </p>
+        <div ref={listRef} className="article-toc-sidebar-list">
+          <div className="article-toc-sidebar-track">
+            <ArrowRight
+              ref={arrowRef}
+              className="article-toc-sidebar-arrow"
+              aria-hidden="true"
+              style={{ opacity: 0 }}
+            />
+            <ol>
+              {items.map((item) => {
+                const isActive = item.id === activeId;
+                const isActiveParent = item.id === activeParent;
+                return (
+                  <li key={item.id} data-level={item.level}>
+                    <a
+                      href={`#${item.id}`}
+                      aria-current={isActive ? "location" : undefined}
+                      data-active-parent={isActiveParent || undefined}
+                      onClick={() => setActiveId(item.id)}
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        </div>
       </div>
     </aside>
   );

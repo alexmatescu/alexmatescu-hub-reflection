@@ -241,35 +241,47 @@
   .prose-editorial .article-toc ol ol { @apply mt-2 pl-5 list-[lower-alpha] text-[0.95rem]; }
   .prose-editorial .article-toc a { @apply no-underline hover:underline; }
 
-  /* Cuprins lateral (ArticleTocSidebar): numai de la 1280px. Sub acest prag
-     rămâne doar cuprinsul static din text; peste el, cel static se ascunde,
-     ca să nu apară de două ori. */
+  /* Cuprins lateral (ArticleTocSidebar), în stânga coloanei de text. Textul
+     rămâne pe poziția lui; cuprinsul ocupă spațiul liber din stânga, deci
+     lățimea lui urmează fereastra: 50vw − 31rem = marginea containerului
+     max-w-4xl + padding − 3rem distanță față de text − 2.5rem margine.
+     Între 13rem (de la 1408px) și 22.5rem (de la 1712px). Sub 1408px rămâne
+     doar cuprinsul static din text; peste, cel static se ascunde, ca să nu
+     apară de două ori. */
+  .has-toc-sidebar { @apply relative; }
   .has-toc-sidebar .article-toc-sidebar { @apply hidden; }
-  @media (min-width: 80rem) {
-    .has-toc-sidebar {
-      @apply grid gap-16;
-      grid-template-columns: minmax(0, 42rem) 15rem;
-    }
+  @media (min-width: 88rem) {
     .has-toc-sidebar .prose-editorial .article-toc { @apply hidden; }
     .has-toc-sidebar .article-toc-sidebar {
-      @apply block mt-14 self-start sticky top-24;
+      @apply block absolute top-14 bottom-0;
+      right: calc(100% + 3rem);
+      width: clamp(13rem, 50vw - 31rem, 22.5rem);
     }
   }
+  .article-toc-sidebar-sticky { @apply sticky top-24; }
   .article-toc-sidebar-title {
-    @apply text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4;
+    @apply text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4 pl-6;
   }
   .article-toc-sidebar-list {
-    @apply overflow-y-auto pr-2 border-l border-foreground/10;
+    @apply overflow-y-auto;
     max-height: calc(100vh - 10rem);
+    scrollbar-width: none;
   }
-  .article-toc-sidebar-list ol { @apply space-y-1 text-sm leading-snug; }
-  .article-toc-sidebar-list li[data-level="3"] { @apply pl-4 text-[0.8125rem]; }
-  .article-toc-sidebar-list a {
-    @apply block -ml-px border-l-2 border-transparent pl-3 py-1 text-muted-foreground no-underline transition-colors hover:text-foreground;
+  .article-toc-sidebar-list::-webkit-scrollbar { display: none; }
+  .article-toc-sidebar-track { @apply relative; }
+  .article-toc-sidebar-track ol { @apply space-y-1 text-sm leading-snug; }
+  .article-toc-sidebar-track li[data-level="3"] { @apply pl-4 text-[0.8125rem]; }
+  .article-toc-sidebar-track a {
+    @apply block pl-6 py-1 text-muted-foreground no-underline transition-colors hover:text-foreground;
   }
-  .article-toc-sidebar-list a[data-active-parent] { @apply text-foreground; }
-  .article-toc-sidebar-list a[aria-current="location"] {
-    @apply border-foreground text-foreground font-medium;
+  .article-toc-sidebar-track a[data-active-parent] { @apply text-foreground; }
+  .article-toc-sidebar-track a[aria-current="location"] { @apply text-foreground; }
+  .article-toc-sidebar-arrow {
+    @apply absolute left-0 top-0 h-3.5 w-3.5 text-foreground pointer-events-none;
+    transition: transform 250ms ease, opacity 200ms ease;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .article-toc-sidebar-arrow { transition: none; }
   }
 
   .avl-doc-card {
