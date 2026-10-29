@@ -3,6 +3,9 @@ import { Link, Navigate } from "@/lib/router-compat";
 import { ArrowLeft } from "lucide-react";
 import Seo from "@/components/Seo";
 import ContentLightbox from "@/components/ContentLightbox";
+import ArticleTocSidebar, {
+  parseArticleToc,
+} from "@/components/ArticleTocSidebar";
 import { findLabPage, findLabParent, labNav } from "@/data/lab";
 import {
   buildArticleJsonLd,
@@ -437,6 +440,10 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
   // sub-pagini.
   const articlesFirst = page.to === "/lab/articole";
   const caseStudiesFirst = page.to === "/lab/studii-de-caz";
+  // Paginile cu cuprins static (`nav.article-toc`) primesc pe ecrane late și
+  // cuprinsul lateral, construit din același cuprins; celelalte rămân neschimbate.
+  const tocItems = content ? parseArticleToc(content) : [];
+  const hasTocSidebar = tocItems.length > 0;
 
   return (
     <div>
@@ -454,7 +461,9 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
       />
 
       <section className="border-b border-foreground/10">
-        <div className="container-editorial py-20 md:py-28 max-w-4xl">
+        <div
+          className={`container-editorial py-20 md:py-28 max-w-4xl ${hasTocSidebar ? "xl:max-w-6xl" : ""}`}
+        >
           <Link
             to={parent ? parent.to : "/lab"}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -477,11 +486,21 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
             // Caseta de rezervă apare doar pe paginile fără conținut și fără
             // sub-pagini; o secțiune ca /lab/cercetare are deja lista de mai jos.
             const contentBlock = content ? (
-              <ContentLightbox
-                key="content"
-                html={content}
-                className="prose-editorial mt-14 max-w-2xl"
-              />
+              hasTocSidebar ? (
+                <div key="content" className="has-toc-sidebar">
+                  <ContentLightbox
+                    html={content}
+                    className="prose-editorial mt-14 max-w-2xl"
+                  />
+                  <ArticleTocSidebar items={tocItems} />
+                </div>
+              ) : (
+                <ContentLightbox
+                  key="content"
+                  html={content}
+                  className="prose-editorial mt-14 max-w-2xl"
+                />
+              )
             ) : page.children ? null : (
               <div
                 key="content"
