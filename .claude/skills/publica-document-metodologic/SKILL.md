@@ -174,6 +174,18 @@ Exit `0` înseamnă că linia există și că toate linkurile din `llms.txt` sun
 
 7. **În raportul final:** linia adăugată sau modificată, exact cum apare în fișier, ori „`llms.txt` neschimbat”, cu motivul.
 
+### Pasul final (3) — închiderea draftului de lucru
+
+Odată integrat, documentul are o singură sursă: fișierul din `src/content/lab/AVL/`. Un draft rămas în `docs/drafts/` pare lucru neterminat și poate diverge de sursa canonică. Pasul se aplică oricărui draft din repo de la care a pornit documentul sau versiunea nouă, urmărit în git sau nu. Skill-ul nu rulează `git add`, deci mutările se fac cu `mv -n`, care nu suprascrie un fișier existent, și rămân locale, pentru commitul userului.
+
+1. **Dacă draftul devine chiar sursa canonică:** îl muți în `src/content/lab/AVL/`. Nu rămâne nicio copie.
+2. **Dacă sursa canonică e alt fișier:** compari draftul cu ea. Orice text care există doar în draft și nu e o notă de lucru se semnalează userului înainte de a muta ceva, mai ales o cerință normativă: ori intră în document, ori se renunță la ea, decizia e a lui.
+3. **Apoi muți draftul în `docs/drafts/outdated/`.**
+4. **Excepție:** un fișier din `docs/drafts/` citat prin cale sau prin SHA-256 de un pachet de dovezi sau de un alt document (de exemplu seria `MKT-RO-AIV-*`, vezi `mkt-evidence-package`) nu se mută fără confirmarea userului.
+5. **Nu actualiza draftul după integrare** (fără note „publicat”, fără oglindirea corecturilor) și **nu șterge definitiv** niciun draft.
+6. **Nu atinge fișierele din afara repo-ului** (`Downloads` etc.): nu sunt ale proiectului.
+7. **În raportul final:** calea draftului și unde a ajuns, ori „fără draft în repo”.
+
 ---
 
 ## Faza 0 — Inspecție și ingest
@@ -345,6 +357,7 @@ Identic cu `publica-articol-lab` Faza 11/11.1, plus specific documentelor normat
 8. Rezultate tehnice: typecheck / lint / build / runtime — fiecare PASS/FAIL/NOT RUN.
 9. Limitări — ce nu a putut fi verificat.
 10. `llms.txt`: linia adăugată sau modificată, exact cum apare în fișier, ori „neschimbat”, cu motivul (Pasul final 2).
+11. Draftul de lucru: calea lui și unde a ajuns, ori „fără draft în repo” (Pasul final 3).
 
 Încheie cu formula de stop: „Procesul intern este complet. Nu am executat git add, git commit, git push sau deploy. Documentul este pregătit local. Operațiile Git și publicarea efectivă rămân de executat manual de utilizator.” Nu declara documentul „activ” sau „live” dacă gate-ul de activare (Faza 3) nu a fost trecut explicit.
 
@@ -367,6 +380,7 @@ Identic cu `publica-articol-lab` Faza 11/11.1, plus specific documentelor normat
 - [ ] `sitemap.xml` actualizat, urmând formatul real observat.
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] `public/llms.txt` actualizat la final (Pasul final 2): linia documentului adăugată sau corectată (prefixul „draft pentru revizuire — ” corect față de statut), fără alte linii atinse; `node scripts/check-llms.mjs --require {canonical}` a dat exit 0.
+- [ ] Draftul de lucru e închis (Pasul final 3): nicio copie a documentului în `docs/drafts/`, în afară de `outdated/` și de fișierele citate ca surse (excepția 4); textul existent doar în draft a fost semnalat userului.
 - [ ] Niciun `git add`/`commit`/`push`/deploy executat.
 - [ ] Documentul nu a fost declarat „activ”/„live” fără trecerea prin Faza 3.
 

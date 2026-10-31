@@ -258,6 +258,17 @@
       width: clamp(13rem, 50vw - 31rem, 22.5rem);
     }
   }
+  /* Blogul are textul centrat (container-prose, max-w-2xl): marginea lui e la
+     50vw − 21rem, deci rămâne mai mult loc și cuprinsul lateral apare de la
+     1264px. Sub acest prag, inclusiv pe mobil, rămâne cel static din text. */
+  @media (min-width: 79rem) {
+    .has-toc-sidebar-centered .prose-editorial .article-toc { @apply hidden; }
+    .has-toc-sidebar-centered .article-toc-sidebar {
+      @apply block absolute top-0 bottom-0;
+      right: calc(100% + 3rem);
+      width: clamp(13rem, 50vw - 26.5rem, 22.5rem);
+    }
+  }
   .article-toc-sidebar-sticky { @apply sticky top-24; }
   .article-toc-sidebar-title {
     @apply text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4 pl-6;

@@ -1890,6 +1890,19 @@ Nu împinge modificările în remote.
 
 ---
 
+# 41.1 ÎNCHIDEREA DRAFTULUI DE LUCRU
+
+Odată integrat, articolul are o singură sursă: `src/content/blog/{slug}.md`. Un draft rămas în `docs/drafts/` pare lucru neterminat și poate diverge de sursa canonică. Pasul se aplică oricărui draft din repo de la care a pornit articolul, urmărit în git sau nu. Skill-ul nu rulează `git add`, deci mutările se fac cu `mv -n`, care nu suprascrie un fișier existent, și rămân locale, pentru commitul utilizatorului.
+
+1. Dacă draftul devine chiar sursa canonică, îl muți la locul canonic. Nu rămâne nicio copie.
+2. Dacă sursa canonică e alt fișier, compari draftul cu ea. Orice text care există doar în draft și nu e o notă de lucru se semnalează utilizatorului înainte de a muta ceva: ori intră în articol, ori se renunță la el, decizia e a lui.
+3. Apoi muți draftul în `docs/drafts/outdated/`. Mutarea este o modificare necesară în sensul §42.
+4. Nu actualiza draftul după integrare și nu șterge definitiv niciun draft.
+5. Nu atinge fișierele din afara repo-ului (`Downloads` etc.): nu sunt ale proiectului.
+6. În raportul final (§53): calea draftului și unde a ajuns, ori „fără draft în repo”.
+
+---
+
 # 42. VERIFICAREA FINALĂ A DIFF-ULUI
 
 Înainte de raportul final rulează:
@@ -2160,6 +2173,7 @@ NU:
 [ ] `blogger-posts.json` nu a fost modificat pentru a insera articolul nou
 [ ] nu există refactor global inutil
 [ ] nu există fișiere temporare
+[ ] draftul de lucru e închis (§41.1): nicio copie a articolului în `docs/drafts/`, în afară de `outdated/`; textul existent doar în draft a fost semnalat utilizatorului
 [ ] nu există asseturi nefolosite introduse accidental
 [ ] NU s-a executat git add
 [ ] NU s-a executat git commit
@@ -2245,6 +2259,10 @@ Articolul a fost adăugat ca fișier independent în `src/data/blog-content/`, �
 
 Linia „Blog”: neschimbată (cu motivul) / modificată (textul nou)
 check-llms: PASS
+
+## DRAFT DE LUCRU
+
+Calea draftului și unde a ajuns, ori „fără draft în repo” (§41.1)
 
 ## VERIFICĂRI
 

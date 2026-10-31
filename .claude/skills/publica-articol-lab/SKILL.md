@@ -163,6 +163,18 @@ Exit `0` înseamnă că linia există și că toate linkurile din `llms.txt` sun
 
 7. **În raportul final:** linia adăugată sau modificată, exact cum apare în fișier, ori „`llms.txt` neschimbat”, cu motivul.
 
+### Pasul final (3) — închiderea draftului de lucru
+
+După publicare există o singură sursă a articolului: `src/content/lab/articles/`. Un draft rămas în `docs/drafts/` pare lucru neterminat și poate diverge de sursa canonică. Pasul se aplică oricărui draft din repo de la care a pornit articolul, urmărit în git sau nu, și se face în același pas cu integrarea, deci intră în același commit.
+
+1. **Dacă draftul devine chiar sursa canonică:** îl muți cu `git mv` în `src/content/lab/articles/` (precedent: LAB-23), ca istoricul să rămână legat de el. Nu rămâne nicio copie.
+2. **Dacă sursa canonică e un fișier nou:** compari draftul cu ea. Orice text care există doar în draft și nu e o notă de lucru se semnalează userului înainte de a muta ceva: ori intră în articol, ori se renunță la el, decizia e a lui.
+3. **Apoi muți draftul în `docs/drafts/outdated/`**, cu `git mv` dacă e urmărit și cu `mv -n` dacă nu e, ca să nu suprascrii un fișier existent. Un draft nou mutat acolo se comite odată cu articolul.
+4. **Nu actualiza draftul după publicare** (fără note „publicat”, fără oglindirea corecturilor) și **nu șterge definitiv** niciun draft.
+5. **Nu atinge fișierele din afara repo-ului** (`Downloads` etc.): nu sunt ale proiectului.
+6. **Update-ul unui articol publicat** nu creează draft nou în `docs/drafts/`. Dacă userul a dat unul, se aplică aceiași pași.
+7. **În raportul final:** calea draftului și unde a ajuns, ori „fără draft în repo”.
+
 ---
 
 ## Faza 0 — Inspecție și ingest
@@ -724,6 +736,7 @@ Scalează cu scopul din §0.2. Pentru **articol nou/rescriere majoră**, raportu
 11. Rezultate tehnice: `typecheck` / `lint` / `build` / `runtime check` — fiecare PASS/FAIL/NOT RUN.
 12. Limitări — ce nu a putut fi verificat (inclusiv, dacă e cazul, ora reală de publicare nedemonstrabilă pentru un articol legacy — §0.4).
 13. `llms.txt`: linia adăugată sau modificată, exact cum apare în fișier, ori „neschimbat”, cu motivul (Pasul final 2).
+14. Draftul de lucru: calea lui și unde a ajuns, ori „fără draft în repo” (Pasul final 3).
 
 Pentru **update minor** (§0.2): rezumat de 2-3 rânduri, fișierele atinse, doar afirmațiile modificate din claim ledger, rezultatele tehnice.
 
@@ -754,6 +767,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 - [ ] Canonical == rută == sitemap == wiring (`lab.ts`/`Lab.tsx`/`lab-seo.ts`).
 - [ ] `lastmod` din sitemap nu e falsificat.
 - [ ] `public/llms.txt` actualizat la final (Pasul final 2): linia articolului adăugată sau corectată în secțiunea articolelor, fără alte linii atinse; `node scripts/check-llms.mjs --require {canonical}` a dat exit 0.
+- [ ] Draftul de lucru e închis (Pasul final 3): nicio copie a articolului în `docs/drafts/`, în afară de `outdated/`; textul existent doar în draft a fost semnalat userului.
 - [ ] Nu se pretinde că `llms.txt`/schema/FAQ/metadata garantează citarea AI (§11.1).
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Claim ledger inclus în raport.

@@ -6,6 +6,9 @@ import NewsletterForm from "@/components/NewsletterForm";
 import Seo from "@/components/Seo";
 import { blogSeoTitle } from "@/lib/blog-seo";
 import ContentLightbox, { Lightbox } from "@/components/ContentLightbox";
+import ArticleTocSidebar, {
+  parseArticleToc,
+} from "@/components/ArticleTocSidebar";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("ro-RO", {
@@ -34,6 +37,7 @@ const BlogPost = () => {
   }
 
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const tocItems = post.html ? parseArticleToc(post.html) : [];
 
   return (
     <>
@@ -132,7 +136,14 @@ const BlogPost = () => {
 
         <div className="container-prose py-16">
           {post.html ? (
-            <ContentLightbox html={post.html} className="prose-editorial" />
+            tocItems.length > 0 ? (
+              <div className="has-toc-sidebar has-toc-sidebar-centered">
+                <ContentLightbox html={post.html} className="prose-editorial" />
+                <ArticleTocSidebar items={tocItems} />
+              </div>
+            ) : (
+              <ContentLightbox html={post.html} className="prose-editorial" />
+            )
           ) : (
             <div className="prose-editorial">
               {post.content?.map((para, i) => (

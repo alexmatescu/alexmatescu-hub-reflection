@@ -238,6 +238,17 @@ Exit `0` înseamnă că linia există și că toate linkurile din `llms.txt` sun
 
 7. **În raportul final:** linia adăugată sau modificată, exact cum apare în fișier, ori „`llms.txt` neschimbat”, cu motivul.
 
+### Pasul final (3) — închiderea draftului de lucru
+
+Odată integrat, studiul are o singură sursă: `src/content/studii de caz/{NN}. {Nume subiect}/{slug}.md`. Un draft rămas în `docs/drafts/` pare lucru neterminat și poate diverge de sursa canonică. Pasul se aplică oricărui draft din repo de la care a pornit studiul sau faza nouă, urmărit în git sau nu. Skill-ul nu rulează `git add`, deci mutările se fac cu `mv -n`, care nu suprascrie un fișier existent, și rămân locale, pentru commitul userului.
+
+1. **Dacă draftul devine chiar sursa canonică:** îl muți la locul canonic. Nu rămâne nicio copie.
+2. **Dacă sursa canonică e alt fișier** (studiu nou scris din draft sau fază nouă peste un studiu existent): compari draftul cu ea. Orice text care există doar în draft și nu e o notă de lucru se semnalează userului înainte de a muta ceva: ori intră în studiu, ori se renunță la el, decizia e a lui.
+3. **Apoi muți draftul în `docs/drafts/outdated/`.**
+4. **Nu actualiza draftul după integrare** (fără note „publicat”, fără oglindirea corecturilor) și **nu șterge definitiv** niciun draft.
+5. **Nu atinge fișierele din afara repo-ului** (`Downloads` etc.) și nici dovezile din `evidence/`: nu sunt drafturi.
+6. **În raportul final:** calea draftului și unde a ajuns, ori „fără draft în repo”.
+
 ---
 
 ## Faza 0 — Inspecție și ingest
@@ -510,6 +521,7 @@ Scalează cu scopul din §0.2. Pentru **studiu nou** sau **fază nouă**, raport
 11. Rezultate tehnice: typecheck / lint / build / runtime — fiecare PASS/FAIL/NOT RUN.
 12. Limitări — ce nu a putut fi verificat.
 13. `llms.txt`: linia adăugată sau modificată, exact cum apare în fișier, ori „neschimbat”, cu motivul (Pasul final 2).
+14. Draftul de lucru: calea lui și unde a ajuns, ori „fără draft în repo” (Pasul final 3).
 
 Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afirmațiile modificate, rezultatele tehnice, iar pentru `llms.txt` „neschimbat”, dacă titlul, URL-ul și subiectul au rămas aceleași.
 
@@ -564,6 +576,7 @@ Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afir
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Studiul apare o singură dată pe `/lab/studii-de-caz`.
 - [ ] `public/llms.txt` actualizat la final (Pasul final 2): linia studiului adăugată sau corectată, fără alte linii atinse; `node scripts/check-llms.mjs --require {canonical}` a dat exit 0.
+- [ ] Draftul de lucru e închis (Pasul final 3): nicio copie a studiului în `docs/drafts/`, în afară de `outdated/`; textul existent doar în draft a fost semnalat userului.
 - [ ] Niciun `git add`/`commit`/`push`/deploy executat.
 
 ---

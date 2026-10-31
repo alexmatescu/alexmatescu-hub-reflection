@@ -145,12 +145,64 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 
   // --- Conținut ---
   html: `
-<h2>Pe scurt</h2>
+<nav class="article-toc" aria-labelledby="cuprins">
+  <p id="cuprins" class="article-toc-title">Cuprins</p>
+  <ol>
+    <li><a href="#pe-scurt">Pe scurt</a></li>
+    <li><a href="#nu-mai-avem-unde-sa-punem-toata-informatia">Nu mai avem unde să punem toată informația</a></li>
+    <li><a href="#de-la-o-suta-de-milioane-la-peste-opt-miliarde">De la o sută de milioane la peste opt miliarde</a></li>
+    <li><a href="#sase-miliarde-dintre-noi-ne-putem-intalni-in-acelasi-loc">Șase miliarde dintre noi ne putem întâlni în același loc</a></li>
+    <li><a href="#daca-producem-atat-de-mult-cine-mai-poate-consuma">Dacă producem atât de mult, cine mai poate consuma?</a></li>
+    <li><a href="#orice-isi-poate-gasi-publicul">Orice își poate găsi publicul?</a></li>
+    <li><a href="#nu-putem-verifica-singuri-totul-asa-ca-am-inventat-filtre">Nu putem verifica singuri totul, așa că am inventat filtre</a></li>
+    <li><a href="#checklistul-si-iluzia-autoritatii">Checklistul și iluzia autorității</a></li>
+    <li><a href="#profesionisti-de-trei-dupa-amieze-si-profesionisti-de-zece-ani">Profesioniști de trei după-amieze și profesioniști de zece ani</a></li>
+    <li><a href="#nu-avem-specialisti-iar-cand-ii-avem-nu-sunt-suficient-de-buni">Nu avem specialiști. Iar când îi avem, nu sunt suficient de buni</a></li>
+    <li><a href="#pentru-ca-orice-profesie-este-o-distributie">Pentru că orice profesie este o distribuție</a></li>
+    <li><a href="#cum-sa-dau-atat-pentru-doua-ore">„Cum să dau atât pentru două ore?”</a></li>
+    <li><a href="#ajungem-sa-confundam-semnalul-cu-realitatea">Ajungem să confundăm semnalul cu realitatea</a></li>
+    <li><a href="#autoritatea-este-in-fond-un-mecanism-de-economisire-a-atentiei">Autoritatea este, în fond, un mecanism de economisire a atenției</a></li>
+    <li><a href="#si-apoi-ne-am-inghesuit">Și apoi ne-am înghesuit</a></li>
+    <li><a href="#o-lume-care-se-multiplica-mai-repede-decat-timpul-nostru">O lume care se multiplică mai repede decât timpul nostru</a></li>
+    <li><a href="#mai-poate-cineva-sa-ne-multumeasca">Mai poate cineva să ne mulțumească?</a></li>
+    <li><a href="#si-totusi-lumea-merge-inainte">Și totuși, lumea merge înainte</a></li>
+    <li><a href="#poate-ca-problema-nu-este-abundenta-ci-felul-in-care-o-filtram">Poate că problema nu este abundența, ci felul în care o filtrăm</a></li>
+    <li><a href="#ideile-principale">Ideile principale</a></li>
+    <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+      <ol>
+        <li><a href="#cat-de-mult-a-crescut-populatia-lumii-fata-de-antichitate">Cât de mult a crescut populația lumii față de Antichitate?</a></li>
+        <li><a href="#cati-oameni-folosesc-internetul">Câți oameni folosesc internetul?</a></li>
+        <li><a href="#exista-intr-adevar-prea-multa-informatie-pentru-ca-un-om-sa-o-consume">Există într-adevăr prea multă informație pentru ca un om să o consume?</a></li>
+        <li><a href="#de-ce-avem-nevoie-de-diplome-certificari-si-acreditari">De ce avem nevoie de diplome, certificări și acreditări?</a></li>
+        <li><a href="#o-certificare-dovedeste-ca-cineva-este-expert">O certificare dovedește că cineva este expert?</a></li>
+        <li><a href="#romania-chiar-are-deficit-de-medici-si-ingineri">România chiar are deficit de medici și ingineri?</a></li>
+        <li><a href="#cum-poate-exista-deficit-de-profesionisti-daca-exista-si-profesionisti-fara-loc-de-munca">Cum poate exista deficit de profesioniști dacă există și profesioniști fără loc de muncă?</a></li>
+        <li><a href="#de-ce-un-serviciu-de-doua-ore-poate-costa-mult">De ce un serviciu de două ore poate costa mult?</a></li>
+        <li><a href="#care-este-ideea-principala-a-acestui-articol">Care este ideea principală a acestui articol?</a></li>
+      </ol>
+    </li>
+    <li><a href="#surse-si-referinte">Surse și referințe</a>
+      <ol>
+        <li><a href="#u-s-census-bureau-historical-estimates-of-world-population">U.S. Census Bureau — Historical Estimates of World Population</a></li>
+        <li><a href="#united-nations-world-population-prospects-2024">United Nations — World Population Prospects 2024</a></li>
+        <li><a href="#international-telecommunication-union-facts-and-figures-2025">International Telecommunication Union — Facts and Figures 2025</a></li>
+        <li><a href="#youtube-video-infrastructure">YouTube — Video infrastructure</a></li>
+        <li><a href="#eurostat-digital-skills-among-young-europeans">Eurostat — Digital skills among young Europeans</a></li>
+        <li><a href="#ministerul-educatiei-si-cercetarii-titularizare-2026">Ministerul Educației și Cercetării — Titularizare 2026</a></li>
+        <li><a href="#oecd-economic-surveys-romania-2026">OECD — Economic Surveys: Romania 2026</a></li>
+        <li><a href="#oecd-reviews-of-health-systems-romania-2025">OECD — Reviews of Health Systems: Romania 2025</a></li>
+        <li><a href="#united-nations-world-urbanization-prospects-2025">United Nations — World Urbanization Prospects 2025</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+
+<h2 id="pe-scurt">Pe scurt</h2>
 <p>Trăim într-o lume în care informația, oamenii care o produc, produsele, profesiile, opiniile, certificările și formele de autoritate s-au multiplicat până la un nivel pe care niciun individ nu îl mai poate procesa integral, iar problema noastră nu mai este, așa cum a fost pentru mare parte din istorie, că informația este rară și greu accesibilă, ci că avem prea multă și prea puțin timp pentru a-i verifica valoarea.</p>
 <p>În jurul anului 500 înainte de Hristos, estimările istorice plasează populația lumii undeva în jurul a 100 de milioane de oameni; în 2024, Organizația Națiunilor Unite estima aproximativ 8,2 miliarde. În 2025, aproximativ 6 miliarde dintre noi foloseau internetul. Doar pe YouTube sunt încărcate în medie peste 500 de ore de material video în fiecare minut. Rezultatul este o lume în care aproape orice idee, produs, serviciu, profesie, formă de excelență sau de mediocritate își poate găsi, măcar teoretic, un public suficient de mare pentru a exista.</p>
 <p>Pentru a funcționa în mijlocul acestei abundențe, societatea construiește filtre: diplome, examene, certificări, licențe, reputații, prețuri, branduri, recenzii, instituții, experți, algoritmi și, mai recent, inteligență artificială. Problema apare când uităm că aceste lucruri sunt în mare măsură <strong>proxy-uri</strong>, adică semnale care încearcă să aproximeze competența sau calitatea, fără să fie identice cu ele.</p>
 <p>Într-o lume a deficitului de informație, valoarea o avea adesea cel care știa. Într-o lume a excesului de informație, valoarea începe să o aibă tot mai mult cel în care ceilalți au motive suficiente să aibă încredere că știe.</p>
-<h2>Nu mai avem unde să punem toată informația</h2>
+<h2 id="nu-mai-avem-unde-sa-punem-toata-informatia">Nu mai avem unde să punem toată informația</h2>
 <p>Am tot mai des senzația că trăim într-o perioadă în care informația nu mai încape nicăieri, nici fizic, nici mental și nici măcar cultural, pentru că nu există doar atât de multă încât să nu o putem citi pe toată, ci atât de multă încât nici măcar nu mai putem ști cu adevărat cât din ea există, cine a produs-o, de ce a produs-o, dacă mai este actuală, dacă este adevărată, dacă este relevantă sau dacă omul care vorbește are habar despre ceea ce spune.</p>
 <p>Și, pentru prima dată în istorie, aproape oricine poate produce aproape orice.</p>
 <p>Poți scrie o carte fără să fi publicat vreodată înainte. Poți deschide un canal despre investiții fără să fi administrat vreodată un portofoliu. Poți vorbi despre fitness, relații, educație, psihologie, nutriție, business, leadership, tehnologie sau politică fără ca internetul să îți ceară la intrare o diplomă, o licență, o experiență minimă ori măcar dovada că lucrurile pe care urmează să le spui sunt adevărate.</p>
@@ -158,7 +210,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Dar aceeași ușă prin care poate intra geniul este suficient de largă încât să intre și prostia.</p>
 <p>Internetul nu verifică la poartă.</p>
 <p>Și poate că nici n-ar trebui.</p>
-<h2>De la o sută de milioane la peste opt miliarde</h2>
+<h2 id="de-la-o-suta-de-milioane-la-peste-opt-miliarde">De la o sută de milioane la peste opt miliarde</h2>
 <p>Uneori este greu să înțelegem dimensiunea schimbării pentru că opt miliarde este unul dintre acele numere suficient de mari încât mintea noastră încetează să îl mai reprezinte intuitiv și îl tratează ca pe un decor matematic, așa cum facem cu distanța până la Soare sau cu miliardele din bugetele statelor: știm că numărul este mare, dar nu îl simțim.</p>
 <p>U.S. Census Bureau centralizează mai multe reconstrucții istorice ale populației mondiale și estimează aproximativ 50 de milioane de oameni în jurul anului 1000 î.Hr., aproximativ 100 de milioane în jurul anului 500 î.Hr., între aproximativ 170 și 400 de milioane în jurul anului 1, 425–540 de milioane în jurul anului 1500 și aproximativ 813 milioane–1,125 miliarde în jurul anului 1800. Pentru epocile îndepărtate trebuie spus clar că acestea nu sunt recensăminte, ci estimări demografice construite retrospectiv, iar diferențele dintre cercetători pot fi mari. (<a href="https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html">U.S. Census Bureau</a>)</p>
 <p>În jurul anului 1900 eram aproximativ 1,6 miliarde.</p>
@@ -173,7 +225,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Nu pentru că omenirea s-a stricat.</p>
 <p>Pur și simplu pentru că sunt mai mulți oameni.</p>
 <p>Iar când mărești suficient o populație, mărești inevitabil și cozile distribuției.</p>
-<h2>Șase miliarde dintre noi ne putem întâlni în același loc</h2>
+<h2 id="sase-miliarde-dintre-noi-ne-putem-intalni-in-acelasi-loc">Șase miliarde dintre noi ne putem întâlni în același loc</h2>
 <p>Până aici însă ar fi doar o poveste demografică dacă acești oameni ar continua să trăiască în grupuri relativ izolate, așa cum s-a întâmplat în mare parte din istoria omenirii, pentru că un om din China, unul din Europa și unul din America de Sud ar fi existat simultan fără să aibă aproape nicio șansă reală de a interacționa.</p>
 <p>Internetul a schimbat ecuația într-un mod aproape absurd.</p>
 <p>International Telecommunication Union estimează că în 2025 aproximativ <strong>6 miliarde de oameni</strong>, adică 74% din populația lumii, foloseau internetul. În Europa, rata de utilizare ajungea la aproximativ 92%, iar la nivel global 82% dintre tinerii cu vârste între 15 și 24 de ani erau online. (<a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/">ITU</a>)</p>
@@ -188,7 +240,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Pe internet, aceeași pasiune poate deveni o industrie.</p>
 <p>Aceasta este una dintre marile transformări pe care cred că încă nu le-am digerat complet: <strong>internetul nu a globalizat doar informația, ci a globalizat probabilitatea de a găsi pe cineva care vrea exact ceea ce produci</strong>.</p>
 <p>Și, evident, asta nu funcționează numai pentru lucrurile extraordinare.</p>
-<h2>Dacă producem atât de mult, cine mai poate consuma?</h2>
+<h2 id="daca-producem-atat-de-mult-cine-mai-poate-consuma">Dacă producem atât de mult, cine mai poate consuma?</h2>
 <p>YouTube oferă unul dintre cele mai vizuale exemple. Compania spune că, în medie, pe platformă sunt încărcate <strong>peste 500 de ore de video în fiecare minut</strong>. (<a href="https://blog.youtube/inside-youtube/new-era-video-infrastructure/">YouTube</a>)</p>
 <p>Asta înseamnă aproximativ 30.000 de ore într-o oră și aproximativ 720.000 de ore într-o singură zi.</p>
 <p>Dacă un singur om ar încerca să urmărească doar conținutul publicat pe YouTube într-o zi, fără somn, fără mâncare, fără să meargă la baie și fără să se uite la nimic altceva, ar avea nevoie de aproximativ 82 de ani.</p>
@@ -201,7 +253,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Și nici măcar exemplul acesta nu include TikTok, Instagram, articole științifice, presă, podcasturi, cărți, bloguri, Reddit, Facebook, televiziune, muzică, cursuri, newslettere, cercetare, filme sau conținutul care poate fi generat acum într-un ritm aproape fără cost marginal cu ajutorul inteligenței artificiale.</p>
 <p>Nu mai trăim într-o bibliotecă în care ne întrebăm unde este cartea.</p>
 <p>Trăim într-o bibliotecă infinită în care rafturile se multiplică în timp ce mergem printre ele.</p>
-<h2>Orice își poate găsi publicul?</h2>
+<h2 id="orice-isi-poate-gasi-publicul">Orice își poate găsi publicul?</h2>
 <p>Aș fi tentat să spun că da, dar ar fi o exagerare.</p>
 <p>Nu există o lege statistică potrivit căreia orice lucru produs va găsi inevitabil un consumator.</p>
 <p>Există conținut pe care nu îl vede nimeni, companii care nu au niciun client, cărți care nu se citesc și videoclipuri care mor cu trei vizualizări, dintre care două probabil aparțin autorului.</p>
@@ -212,7 +264,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Chiar și într-o categorie aparent omogenă precum „tinerii europeni”, diferențele sunt foarte mari. Eurostat arăta că în 2025 aproximativ 74,6% dintre europenii cu vârste între 16 și 24 de ani aveau cel puțin competențe digitale de bază, însă proporția varia semnificativ, iar România se afla printre țările cu cele mai reduse valori. (<a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20260715-1">Eurostat</a>)</p>
 <p>Internetul ne pune în aceeași piață a informației, dar nu ne oferă automat aceeași capacitate de a o naviga.</p>
 <p>Și de aici începe adevărata problemă a autorității.</p>
-<h2>Nu putem verifica singuri totul, așa că am inventat filtre</h2>
+<h2 id="nu-putem-verifica-singuri-totul-asa-ca-am-inventat-filtre">Nu putem verifica singuri totul, așa că am inventat filtre</h2>
 <p>Imaginează-ți că de mâine societatea decide că nu mai are încredere în niciun semnal indirect al competenței și că fiecare om trebuie să verifice personal fiecare profesionist înainte să îl folosească.</p>
 <p>Intri într-un cabinet medical și înainte să te consulte medicul îi dai tu un examen de anatomie.</p>
 <p>Îți angajezi avocatul și îi testezi cunoștințele de procedură civilă.</p>
@@ -245,7 +297,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p><strong>Numărul de followers nu este expertiza.</strong></p>
 <p>Uneori sunt corelate.</p>
 <p>Alteori nu.</p>
-<h2>Checklistul și iluzia autorității</h2>
+<h2 id="checklistul-si-iluzia-autoritatii">Checklistul și iluzia autorității</h2>
 <p>Transparența are un avantaj enorm: dacă vrem să devenim ceva, putem afla adesea ce trebuie să facem.</p>
 <p>Vrei o anumită certificare? Există o programă.</p>
 <p>Vrei să treci un examen? Există criterii.</p>
@@ -270,7 +322,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Primul nu devine brusc profesionist desăvârșit, iar al doilea nu devine incompetent.</p>
 <p>Pragul permite sistemului să funcționeze.</p>
 <p>Nu descrie întreaga valoare a omului.</p>
-<h2>Profesioniști de trei după-amieze și profesioniști de zece ani</h2>
+<h2 id="profesionisti-de-trei-dupa-amieze-si-profesionisti-de-zece-ani">Profesioniști de trei după-amieze și profesioniști de zece ani</h2>
 <p>Aici trebuie să facem și o distincție pe care internetul o șterge frecvent.</p>
 <p>Nu toate titulaturile au aceeași greutate instituțională.</p>
 <p>Medic, avocat sau alte profesii reglementate presupun trasee formale, ani de pregătire, examene și autorizări.</p>
@@ -285,7 +337,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Dacă o sută de clienți sunt suficienți pentru ca un business să funcționeze, nu trebuie să convingi șase miliarde.</p>
 <p>Trebuie să găsești o sută.</p>
 <p>Dintr-odată, nișele de autoritate devin economic posibile.</p>
-<h2>Nu avem specialiști. Iar când îi avem, nu sunt suficient de buni</h2>
+<h2 id="nu-avem-specialisti-iar-cand-ii-avem-nu-sunt-suficient-de-buni">Nu avem specialiști. Iar când îi avem, nu sunt suficient de buni</h2>
 <p>România oferă un paradox aproape comic dacă îl privești de la distanță.</p>
 <p>Auzim constant că nu avem medici.</p>
 <p>Nu avem ingineri.</p>
@@ -310,7 +362,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Avem nevoie de omul cu experiența potrivită pentru tehnologia potrivită, într-o regiune potrivită, la salariul pe care compania este dispusă să îl ofere.</p>
 <p>Deficitul și nemulțumirea pot coexista.</p>
 <p>Și probabil vor coexista mereu.</p>
-<h2>Pentru că orice profesie este o distribuție</h2>
+<h2 id="pentru-ca-orice-profesie-este-o-distributie">Pentru că orice profesie este o distribuție</h2>
 <p>Există medici extraordinari.</p>
 <p>Există medici foarte buni.</p>
 <p>Există medici medii.</p>
@@ -327,7 +379,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Nu toți oamenii au aceleași criterii pentru calitate.</p>
 <p>Cerem adesea o ofertă formată exclusiv din profesioniști excepționali, uitând că nici cererea nu este alcătuită exclusiv din consumatori excepțional de educați, raționali, informați și dispuși să plătească prețul excelenței.</p>
 <p>Și aici apare următorul paradox.</p>
-<h2>„Cum să dau atât pentru două ore?”</h2>
+<h2 id="cum-sa-dau-atat-pentru-doua-ore">„Cum să dau atât pentru două ore?”</h2>
 <p>Este una dintre replicile pe care le auzim în atât de multe domenii încât aproape că a devenit o categorie economică.</p>
 <p>„Cum să îți dau 1.000 de lei pentru două ore?”</p>
 <p>Întrebarea pare perfect rezonabilă dacă serviciul este evaluat exclusiv prin timp.</p>
@@ -350,7 +402,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Dacă spunem permanent că vrem calitate, dar alegem sistematic opțiunea cea mai ieftină indiferent de diferența de valoare, piața învață ceva despre noi.</p>
 <p>Învață ce recompensăm.</p>
 <p>Și ceea ce recompensăm tinde să se multiplice.</p>
-<h2>Ajungem să confundăm semnalul cu realitatea</h2>
+<h2 id="ajungem-sa-confundam-semnalul-cu-realitatea">Ajungem să confundăm semnalul cu realitatea</h2>
 <p>Poate că aici se întâlnesc toate firele.</p>
 <p>Într-o lume atât de mare încât nimeni nu o poate verifica în întregime, suntem obligați să folosim semnale simplificate.</p>
 <p>Prețul devine un semnal pentru calitate.</p>
@@ -374,7 +426,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Realitatea devine mai incomodă când renunțăm la extreme.</p>
 <p>Avem nevoie de proxy-uri.</p>
 <p>Dar avem nevoie și de discernământ asupra proxy-urilor.</p>
-<h2>Autoritatea este, în fond, un mecanism de economisire a atenției</h2>
+<h2 id="autoritatea-este-in-fond-un-mecanism-de-economisire-a-atentiei">Autoritatea este, în fond, un mecanism de economisire a atenției</h2>
 <p>Poate că acesta este unul dintre motivele pentru care ideea de autoritate nu dispare nici într-o lume în care „toată informația este disponibilă”.</p>
 <p>Teoretic, poți verifica singur aproape orice.</p>
 <p>Practic, nu ai timp.</p>
@@ -398,7 +450,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Acum și în AI.</p>
 <p><strong>Autoritatea este, printre altele, o tehnologie socială prin care economisim atenție.</strong></p>
 <p>Iar într-o lume a excesului informațional, atenția devine una dintre resursele noastre cele mai limitate.</p>
-<h2>Și apoi ne-am înghesuit</h2>
+<h2 id="si-apoi-ne-am-inghesuit">Și apoi ne-am înghesuit</h2>
 <p>Există încă un lucru aproape suprarealist dacă îl privim de suficient de departe.</p>
 <p>Nu doar că suntem peste opt miliarde.</p>
 <p>Am decis, printr-un amestec de oportunitate economică, infrastructură, istorie, nevoi și preferințe, să ne concentrăm o parte enormă în spații relativ mici.</p>
@@ -429,7 +481,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>În același răspuns AI.</p>
 <p>Poate că lucrul care a devenit cu adevărat suprapopulat nu este planeta.</p>
 <p>Este <strong>atenția noastră</strong>.</p>
-<h2>O lume care se multiplică mai repede decât timpul nostru</h2>
+<h2 id="o-lume-care-se-multiplica-mai-repede-decat-timpul-nostru">O lume care se multiplică mai repede decât timpul nostru</h2>
 <p>Aici cred că este punctul în care toate lucrurile despre care am vorbit se întâlnesc.</p>
 <p>Nu doar informația s-a multiplicat.</p>
 <p>S-au multiplicat oamenii.</p>
@@ -465,7 +517,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Pe ce bază?</p>
 <p>Cu ce al doilea filtru?</p>
 <p>Și cât de des reevaluăm filtrul?</p>
-<h2>Mai poate cineva să ne mulțumească?</h2>
+<h2 id="mai-poate-cineva-sa-ne-multumeasca">Mai poate cineva să ne mulțumească?</h2>
 <p>Poate că nu.</p>
 <p>Sau, mai exact, poate că nici nu este realist să ne așteptăm la asta.</p>
 <p>Într-o lume cu opt miliarde de oameni, nu există serviciu, profesie, instituție, guvern, companie sau produs care să poată satisface simultan toate distribuțiile de așteptări.</p>
@@ -487,7 +539,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Dar pe lângă toate acestea există și ceva mult mai banal:</p>
 <p><strong>există variație.</strong></p>
 <p>Iar într-o populație uriașă, variația produce inevitabil și nemulțumire.</p>
-<h2>Și totuși, lumea merge înainte</h2>
+<h2 id="si-totusi-lumea-merge-inainte">Și totuși, lumea merge înainte</h2>
 <p>Aici ajung la partea care mi se pare, în mod neașteptat, cea mai frumoasă.</p>
 <p>Dacă privești toate lucrurile de mai sus suficient de mult, ai putea ajunge foarte ușor la concluzia că societatea modernă este o eroare gigantică ce se ține în picioare din inerție.</p>
 <p>Suntem peste opt miliarde.</p>
@@ -523,7 +575,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Poate că ceea ce ar trebui să ne surprindă nu este că o lume atât de mare produce zgomot, impostură, mediocritate și contradicții.</p>
 <p>La numerele acestea, ar fi aproape imposibil să nu le producă.</p>
 <p>Poate surprinzător este faptul că, în același timp, produce suficientă competență, cooperare, încredere și ordine încât majoritatea lucrurilor să funcționeze suficient de bine pentru ca noi să ne putem trezi mâine și să continuăm.</p>
-<h2>Poate că problema nu este abundența, ci felul în care o filtrăm</h2>
+<h2 id="poate-ca-problema-nu-este-abundenta-ci-felul-in-care-o-filtram">Poate că problema nu este abundența, ci felul în care o filtrăm</h2>
 <p>Nu cred că soluția este să avem mai puțini oameni care creează.</p>
 <p>Nu cred că ar trebui să existe un minister care să decidă cine are voie să posteze pe internet.</p>
 <p>Nu cred că diploma trebuie să redevină monopol asupra ideilor.</p>
@@ -543,7 +595,7 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <p>Iar când mă uit la dimensiunea planetei noastre, la milioanele de oameni înghesuiți în puncte incredibil de mici, la miliardele conectați prin aceleași câteva platforme, la informația pe care o producem într-un ritm imposibil de consumat și la toate contradicțiile care rezultă de aici, nu pot să nu mă întreb dacă nu cumva adevărata minune nu este cât de haotică a devenit lumea.</p>
 <p>Adevărata minune este că încă funcționează.</p>
 <hr>
-<h2>Ideile principale</h2>
+<h2 id="ideile-principale">Ideile principale</h2>
 <ul>
   <li>Populația planetei a crescut de la aproximativ 100 de milioane de oameni în jurul anului 500 î.Hr., conform unor estimări istorice, la aproximativ 8,2 miliarde în prezent, ceea ce mărește radical atât numărul creatorilor și profesioniștilor, cât și diversitatea consumatorilor, opiniilor și nivelurilor de competență.</li>
   <li>În 2025, aproximativ 6 miliarde de oameni erau conectați la internet, ceea ce transformă inclusiv nișele extrem de mici în piețe potențiale de zeci sau sute de mii de persoane.</li>
@@ -553,44 +605,44 @@ export const oLumePreaMarePentruUnSingurOmPost = {
   <li>Într-o lume suprasaturată de informație, autoritatea devine în mare măsură un mecanism de filtrare a abundenței și de economisire a atenției.</li>
 </ul>
 <hr>
-<h2>Întrebări frecvente</h2>
-<h3>Cât de mult a crescut populația lumii față de Antichitate?</h3>
+<h2 id="intrebari-frecvente">Întrebări frecvente</h2>
+<h3 id="cat-de-mult-a-crescut-populatia-lumii-fata-de-antichitate">Cât de mult a crescut populația lumii față de Antichitate?</h3>
 <p>Estimările istorice compilate de U.S. Census Bureau indică aproximativ 100 de milioane de oameni în jurul anului 500 î.Hr., deși valorile pentru perioadele antice sunt reconstrucții și trebuie tratate cu prudență. ONU estima populația mondială la aproximativ 8,2 miliarde în 2024, ceea ce înseamnă că planeta are astăzi de ordinul a 80 de ori mai mulți locuitori decât în jurul anului 500 î.Hr.</p>
-<h3>Câți oameni folosesc internetul?</h3>
+<h3 id="cati-oameni-folosesc-internetul">Câți oameni folosesc internetul?</h3>
 <p>International Telecommunication Union estima că aproximativ 6 miliarde de oameni, echivalentul a 74% din populația lumii, foloseau internetul în 2025.</p>
-<h3>Există într-adevăr prea multă informație pentru ca un om să o consume?</h3>
+<h3 id="exista-intr-adevar-prea-multa-informatie-pentru-ca-un-om-sa-o-consume">Există într-adevăr prea multă informație pentru ca un om să o consume?</h3>
 <p>Nu există o unitate universală prin care să măsurăm „toată informația”, însă exemple concrete arată disproporția. YouTube afirmă că peste 500 de ore de video sunt încărcate în medie în fiecare minut, echivalentul a aproximativ 720.000 de ore într-o zi, volum pe care un singur om ar avea nevoie de aproximativ 82 de ani să îl urmărească fără întrerupere.</p>
-<h3>De ce avem nevoie de diplome, certificări și acreditări?</h3>
+<h3 id="de-ce-avem-nevoie-de-diplome-certificari-si-acreditari">De ce avem nevoie de diplome, certificări și acreditări?</h3>
 <p>Pentru că într-o societate complexă nu putem verifica personal competența fiecărui profesionist. Aceste mecanisme funcționează drept semnale sau proxy-uri care indică faptul că o persoană ori organizație a îndeplinit anumite criterii. Ele reduc costul verificării, dar nu reprezintă o garanție absolută a excelenței.</p>
-<h3>O certificare dovedește că cineva este expert?</h3>
+<h3 id="o-certificare-dovedeste-ca-cineva-este-expert">O certificare dovedește că cineva este expert?</h3>
 <p>Nu automat. O certificare dovedește, în principiu, că au fost îndeplinite criteriile definite de sistemul respectiv. Calitatea acelor criterii, dificultatea evaluării, experiența practică și performanța ulterioară sunt chestiuni separate.</p>
-<h3>România chiar are deficit de medici și ingineri?</h3>
+<h3 id="romania-chiar-are-deficit-de-medici-si-ingineri">România chiar are deficit de medici și ingineri?</h3>
 <p>Datele OECD indică lipsuri reale de competențe în România, inclusiv pentru profesioniști ICT și ingineri. În sănătate, numărul medicilor s-a apropiat de media OECD, însă distribuția geografică, lipsa personalului medical în anumite zone și migrația continuă să creeze probleme de acces.</p>
-<h3>Cum poate exista deficit de profesioniști dacă există și profesioniști fără loc de muncă?</h3>
+<h3 id="cum-poate-exista-deficit-de-profesionisti-daca-exista-si-profesionisti-fara-loc-de-munca">Cum poate exista deficit de profesioniști dacă există și profesioniști fără loc de muncă?</h3>
 <p>Pentru că piața nu cere pur și simplu „un inginer” sau „un medic”, ci anumite competențe, în anumite locuri, la anumite momente și în anumite condiții. Pot exista simultan deficit agregat și nepotrivire între pregătire, specializare, geografie și cererea concretă.</p>
-<h3>De ce un serviciu de două ore poate costa mult?</h3>
+<h3 id="de-ce-un-serviciu-de-doua-ore-poate-costa-mult">De ce un serviciu de două ore poate costa mult?</h3>
 <p>Pentru că valoarea unui serviciu nu este determinată exclusiv de timpul efectiv petrecut în execuție. În anumite profesii, experiența acumulată în ani de practică permite rezolvarea rapidă a unei probleme pe care un începător ar rezolva-o mult mai greu. Totuși, prețul ridicat nu garantează singur calitatea și trebuie privit ca unul dintre mai multe semnale.</p>
-<h3>Care este ideea principală a acestui articol?</h3>
+<h3 id="care-este-ideea-principala-a-acestui-articol">Care este ideea principală a acestui articol?</h3>
 <p>Ideea principală este că, într-o lume cu miliarde de oameni conectați și cu o producție de informație mai mare decât capacitatea individuală de procesare, problema centrală nu mai este doar accesul la informație, ci filtrarea acesteia. Diplomele, certificările, reputația, brandurile, prețurile și chiar AI-ul funcționează ca mecanisme prin care reducem complexitatea, însă trebuie să păstrăm suficient discernământ încât să nu confundăm aceste semnale cu realitatea pe care încearcă să o reprezinte.</p>
 <hr>
-<h2>Surse și referințe</h2>
-<h3><a href="https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html">U.S. Census Bureau — Historical Estimates of World Population</a></h3>
+<h2 id="surse-si-referinte">Surse și referințe</h2>
+<h3 id="u-s-census-bureau-historical-estimates-of-world-population"><a href="https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html">U.S. Census Bureau — Historical Estimates of World Population</a></h3>
 <p>Serii și reconstrucții ale populației mondiale pentru perioade istorice, inclusiv estimarea de aproximativ 100 de milioane în jurul anului 500 î.Hr.</p>
-<h3><a href="https://www.un.org/development/desa/pd/world-population-prospects-2024">United Nations — World Population Prospects 2024</a></h3>
+<h3 id="united-nations-world-population-prospects-2024"><a href="https://www.un.org/development/desa/pd/world-population-prospects-2024">United Nations — World Population Prospects 2024</a></h3>
 <p>Estimările ONU privind populația mondială contemporană și proiecțiile demografice.</p>
-<h3><a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/">International Telecommunication Union — Facts and Figures 2025</a></h3>
+<h3 id="international-telecommunication-union-facts-and-figures-2025"><a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/">International Telecommunication Union — Facts and Figures 2025</a></h3>
 <p>Date privind numărul persoanelor conectate la internet și diferențele regionale și generaționale.</p>
-<h3><a href="https://blog.youtube/inside-youtube/new-era-video-infrastructure/">YouTube — Video infrastructure</a></h3>
+<h3 id="youtube-video-infrastructure"><a href="https://blog.youtube/inside-youtube/new-era-video-infrastructure/">YouTube — Video infrastructure</a></h3>
 <p>Sursa oficială pentru cifra de peste 500 de ore de material video încărcate în medie în fiecare minut.</p>
-<h3><a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20260715-1">Eurostat — Digital skills among young Europeans</a></h3>
+<h3 id="eurostat-digital-skills-among-young-europeans"><a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20260715-1">Eurostat — Digital skills among young Europeans</a></h3>
 <p>Date privind competențele digitale ale tinerilor din UE.</p>
-<h3><a href="https://www.edu.ro/press_rel_57_26_rezultate_finale_proba_scrisa_titularizare">Ministerul Educației și Cercetării — Titularizare 2026</a></h3>
+<h3 id="ministerul-educatiei-si-cercetarii-titularizare-2026"><a href="https://www.edu.ro/press_rel_57_26_rezultate_finale_proba_scrisa_titularizare">Ministerul Educației și Cercetării — Titularizare 2026</a></h3>
 <p>Pragurile și rezultatele concursului din 2026.</p>
-<h3><a href="https://www.oecd.org/en/publications/oecd-economic-surveys-romania-2026_4844067e-en.html">OECD — Economic Surveys: Romania 2026</a></h3>
+<h3 id="oecd-economic-surveys-romania-2026"><a href="https://www.oecd.org/en/publications/oecd-economic-surveys-romania-2026_4844067e-en.html">OECD — Economic Surveys: Romania 2026</a></h3>
 <p>Date privind deficitul de personal calificat și nepotrivirile dintre educație și piața muncii.</p>
-<h3><a href="https://www.oecd.org/en/publications/oecd-reviews-of-health-systems-romania-2025_f52e4a98-en.html">OECD — Reviews of Health Systems: Romania 2025</a></h3>
+<h3 id="oecd-reviews-of-health-systems-romania-2025"><a href="https://www.oecd.org/en/publications/oecd-reviews-of-health-systems-romania-2025_f52e4a98-en.html">OECD — Reviews of Health Systems: Romania 2025</a></h3>
 <p>Date privind personalul medical, distribuția acestuia și provocările de retenție.</p>
-<h3><a href="https://www.un.org/development/desa/pd/world-urbanization-prospects-2025">United Nations — World Urbanization Prospects 2025</a></h3>
+<h3 id="united-nations-world-urbanization-prospects-2025"><a href="https://www.un.org/development/desa/pd/world-urbanization-prospects-2025">United Nations — World Urbanization Prospects 2025</a></h3>
 <p>Date privind concentrarea populației în orașe și evoluția megacităților.</p>
   `,
 } satisfies Post;
