@@ -98,6 +98,34 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#intrebarile-devin-mai-conversationale">Întrebările devin mai conversaționale</a></li>
+          <li><a href="#specificitate-nu-inseamna-mai-multe-adjective">Specificitate nu înseamnă „mai multe adjective”</a></li>
+          <li><a href="#ce-se-intampla-in-retrieval">Ce se întâmplă în retrieval</a></li>
+          <li><a href="#model-mental-ai-visibility-lab-vecinatatea-semantica">Model mental AI Visibility Lab: vecinătatea semantică</a></li>
+          <li><a href="#extractibil-versus-recuperabil">Extractibil versus recuperabil</a></li>
+          <li><a href="#cele-patru-axe-de-specificitate">Cele patru axe de specificitate</a></li>
+          <li><a href="#1-locatia">1. Locația</a></li>
+          <li><a href="#2-avatarul">2. Avatarul</a></li>
+          <li><a href="#3-subiectul">3. Subiectul</a></li>
+          <li><a href="#4-situatia">4. Situația</a></li>
+          <li><a href="#specificitate-reala-versus-specificitate-falsa">Specificitate reală versus specificitate falsă</a></li>
+          <li><a href="#testul-specificitatii-false">Testul specificității false</a></li>
+          <li><a href="#unde-se-opreste-specificitatea">Unde se oprește specificitatea</a></li>
+          <li><a href="#specificitatea-intr-o-piata-lingvistica-mai-mica">Specificitatea într-o piață lingvistică mai mică</a></li>
+          <li><a href="#cum-gasesti-axele-care-chiar-conteaza">Cum găsești axele care chiar contează</a></li>
+          <li><a href="#trei-teste-practice">Trei teste practice</a></li>
+          <li><a href="#ce-inseamna-asta-pentru-google">Ce înseamnă asta pentru Google</a></li>
+          <li><a href="#long-tail-si-intentie-comerciala">Long-tail și intenție comercială</a></li>
+          <li><a href="#ce-faci-concret">Ce faci concret</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a></li>
+          <li><a href="#metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</a></li>
+          <li><a href="#surse">Surse</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Specificitatea este utilă atunci când adaugă informație care schimbă răspunsul. Devine contraproductivă când doar multiplică pagini sau introduce constrângeri care nu schimbă nimic pentru utilizator.</strong></p>
 
       <p>Aceasta este miza articolului.</p>
@@ -106,17 +134,17 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Problema reală este <strong>relevanța contextuală</strong>: ce detalii din situația utilizatorului schimbă efectiv răspunsul și merită reflectate în conținut?</p>
 
-      <h2>Întrebările devin mai conversaționale</h2>
+      <h2 id="intrebarile-devin-mai-conversationale">Întrebările devin mai conversaționale</h2>
 
       <p>Căutarea tradițională și suprafețele AI nu sunt identice, dar datele recente arată o tendință clară: în suprafețele conversaționale, utilizatorii formulează întrebări mai lungi și cu mai mult context.</p>
 
-      <h3>Google AI Mode</h3>
+      <h3 id="google-ai-mode">Google AI Mode</h3>
 
       <p>Google a publicat pe 19 mai 2026 că interogările din AI Mode au, în medie, <strong>aproximativ de trei ori lungimea</strong> unei interogări tradiționale în Google Search.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Google documentează și folosirea <strong>query fan-out</strong> în AI Mode și AI Overviews: sistemul poate genera mai multe căutări relaționate pentru a obține informații suplimentare înainte de compunerea răspunsului.<sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Semrush</h3>
+      <h3 id="semrush">Semrush</h3>
 
       <p>Într-un studiu comercial despre Google AI Mode, Semrush a raportat în propriul dataset:</p>
 
@@ -127,7 +155,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Aceste valori nu sunt telemetrie oficială Google. Sunt observații Semrush asupra unui eșantion propriu.</p>
 
-      <h3>ChatGPT și bazele de keywords</h3>
+      <h3 id="chatgpt-si-bazele-de-keywords">ChatGPT și bazele de keywords</h3>
 
       <p>Într-o analiză comercială publicată în aprilie 2026, Semrush a raportat că, pentru o mare parte din perioada analizată, între <strong>65% și 85% dintre prompturile ChatGPT</strong> din datasetul lor nu au putut fi potrivite cu niciun keyword din baza Semrush de peste 27 de miliarde de keywords.<sup><a href="#fn-5">5</a></sup></p>
 
@@ -137,7 +165,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <blockquote><p><strong>keyword research-ul tradițional surprinde incomplet formulările conversaționale și situaționale folosite în sistemele AI.</strong></p></blockquote>
 
-      <h2>Specificitate nu înseamnă „mai multe adjective”</h2>
+      <h2 id="specificitate-nu-inseamna-mai-multe-adjective">Specificitate nu înseamnă „mai multe adjective”</h2>
 
       <p>Specificitatea utilă apare doar când contextul schimbă răspunsul.</p>
 
@@ -165,7 +193,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Dacă răspunsul se schimbă material, contextul merită reflectat.</p>
 
-      <h2>Ce se întâmplă în retrieval</h2>
+      <h2 id="ce-se-intampla-in-retrieval">Ce se întâmplă în retrieval</h2>
 
       <p>Versiunea inițială a acestui articol descria specificitatea ca pe un mecanism determinist: fiecare constrângere ar deveni o sub-interogare separată, iar lipsa ei ar elimina documentul din candidate set.</p>
 
@@ -181,7 +209,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Specificitatea poate crește relevanța atunci când pagina conține informație care răspunde acelui context. Nu este însă singurul factor de retrieval, ranking sau citare. Mecanismele de query rewriting și query fan-out sunt tratate pe larg, cu surse separate pentru ChatGPT Search și Google, în <a href="/lab/articole/cuvant-cheie-vs-fraza-tokenizare">cuvânt-cheie vs frază în AI Search</a>.</p>
 
-      <h2>Model mental AI Visibility Lab: vecinătatea semantică</h2>
+      <h2 id="model-mental-ai-visibility-lab-vecinatatea-semantica">Model mental AI Visibility Lab: vecinătatea semantică</h2>
 
       <p>Ca model explicativ, AI Visibility Lab folosește următoarea metaforă:</p>
 
@@ -203,7 +231,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <blockquote><p><strong>specificitatea poate reduce ambiguitatea atunci când problema utilizatorului conține constrângeri care chiar schimbă soluția.</strong></p></blockquote>
 
-      <h2>Extractibil versus recuperabil</h2>
+      <h2 id="extractibil-versus-recuperabil">Extractibil versus recuperabil</h2>
 
       <p>Un text poate fi ușor de procesat și totuși să nu fie cel mai relevant pentru o nevoie concretă.</p>
 
@@ -229,7 +257,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Google documentează explicit utilizarea mai multor sisteme de ranking și a mecanismelor precum neural matching și RankBrain pentru a lega concepte și intenții, inclusiv atunci când nu există exact match lexical.<sup><a href="#fn-7">7</a></sup></p>
 
-      <h2>Cele patru axe de specificitate</h2>
+      <h2 id="cele-patru-axe-de-specificitate">Cele patru axe de specificitate</h2>
 
       <p>AI Visibility Lab folosește patru axe practice pentru a evalua dacă un text este suficient de contextualizat:</p>
 
@@ -242,7 +270,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Acestea sunt o <strong>taxonomie proprie de lucru</strong>, nu o terminologie standardizată în industrie.</p>
 
-      <h2>1. Locația</h2>
+      <h2 id="1-locatia">1. Locația</h2>
 
       <p><strong>Generic:</strong></p>
 
@@ -269,7 +297,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Dacă schimbarea orașului nu schimbă informația oferită, numele orașului nu justifică o pagină separată.</p>
 
-      <h3>Test de audit</h3>
+      <h3 id="test-de-audit">Test de audit</h3>
 
       <p>Întreabă:</p>
 
@@ -277,7 +305,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Dacă nu, localizarea poate fi doar decorativă.</p>
 
-      <h2>2. Avatarul</h2>
+      <h2 id="2-avatarul">2. Avatarul</h2>
 
       <p><strong>Generic:</strong></p>
 
@@ -307,13 +335,13 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
         <li>ce risc încearcă să evite.</li>
       </ul>
 
-      <h3>Test euristic</h3>
+      <h3 id="test-euristic">Test euristic</h3>
 
       <p>Dacă cititorul nu poate înțelege rapid pentru cine este pagina, verifică dacă textul este prea vag.</p>
 
       <p>„Rapid” este aici un criteriu editorial, nu un benchmark algoritmic.</p>
 
-      <h2>3. Subiectul</h2>
+      <h2 id="3-subiectul">3. Subiectul</h2>
 
       <p><strong>Generic:</strong></p>
 
@@ -329,7 +357,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Problema apare când titlul promite o arie atât de largă încât conținutul rămâne superficial.</p>
 
-      <h3>Test de audit</h3>
+      <h3 id="test-de-audit-2">Test de audit</h3>
 
       <p>Întreabă:</p>
 
@@ -337,7 +365,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Dacă răspunsul este neclar, aria poate fi prea largă.</p>
 
-      <h2>4. Situația</h2>
+      <h2 id="4-situatia">4. Situația</h2>
 
       <p>În sistemele conversaționale, utilizatorul poate furniza direct context precum:</p>
 
@@ -364,7 +392,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Subiectul este apropiat. Situația schimbă răspunsul.</p>
 
-      <h2>Specificitate reală versus specificitate falsă</h2>
+      <h2 id="specificitate-reala-versus-specificitate-falsa">Specificitate reală versus specificitate falsă</h2>
 
       <p>Una dintre cele mai frecvente erori este să confunzi specificitatea cu multiplicarea paginilor.</p>
 
@@ -388,7 +416,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Nu există o bază pentru afirmația că aceste pagini produc „un singur semnal slab” sau că Google calculează efectul în această formă.</p>
 
-      <h2>Testul specificității false</h2>
+      <h2 id="testul-specificitatii-false">Testul specificității false</h2>
 
       <p>Întreabă:</p>
 
@@ -398,7 +426,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Ai creat variație superficială.</p>
 
-      <h2>Unde se oprește specificitatea</h2>
+      <h2 id="unde-se-opreste-specificitatea">Unde se oprește specificitatea</h2>
 
       <p>Specificitatea are costuri.</p>
 
@@ -415,7 +443,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>De aceea, specificitatea nu trebuie maximizată.</p>
 
-      <h3>Regula de calibrare AI Visibility Lab</h3>
+      <h3 id="regula-de-calibrare-ai-visibility-lab">Regula de calibrare AI Visibility Lab</h3>
 
       <blockquote><p><strong>specificitatea trebuie să coboare până la nivelul la care diferențele dintre utilizatori schimbă răspunsul — și nu mai jos.</strong></p></blockquote>
 
@@ -442,7 +470,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>se schimbă radical între industrii, atunci industria poate deveni o axă justificată.</p>
 
-      <h2>Specificitatea într-o piață lingvistică mai mică</h2>
+      <h2 id="specificitatea-intr-o-piata-lingvistica-mai-mica">Specificitatea într-o piață lingvistică mai mică</h2>
 
       <p>Este rezonabil să presupunem că hipersegmentarea poate reduce mai repede audiența într-o piață lingvistică mai mică.</p>
 
@@ -454,7 +482,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <blockquote><p><strong>pentru piața românească, gradul optim de specificitate trebuie verificat din datele proprii — impresii, Search Console, CRM, lead-uri și conversații reale — nu dedus doar din mărimea limbii.</strong></p></blockquote>
 
-      <h2>Cum găsești axele care chiar contează</h2>
+      <h2 id="cum-gasesti-axele-care-chiar-conteaza">Cum găsești axele care chiar contează</h2>
 
       <p>Una dintre cele mai utile surse nu este un keyword tool.</p>
 
@@ -486,9 +514,9 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Dacă aceleași constrângeri apar repetat și schimbă recomandarea, ele sunt candidate bune pentru structurarea conținutului.</p>
 
-      <h2>Trei teste practice</h2>
+      <h2 id="trei-teste-practice">Trei teste practice</h2>
 
-      <h3>1. Testul înlocuirii</h3>
+      <h3 id="1-testul-inlocuirii">1. Testul înlocuirii</h3>
 
       <p>Înlocuiește numele firmei tale cu numele unui competitor.</p>
 
@@ -506,7 +534,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Acest test măsoară diferențierea, nu rankingul.</p>
 
-      <h3>2. Testul promptului real</h3>
+      <h3 id="2-testul-promptului-real">2. Testul promptului real</h3>
 
       <p>Formulează întrebarea așa cum ar face-o un client real:</p>
 
@@ -530,7 +558,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
         <li>dacă diferența este factuală sau doar de formulare.</li>
       </ul>
 
-      <h3>3. Testul axei relevante</h3>
+      <h3 id="3-testul-axei-relevante">3. Testul axei relevante</h3>
 
       <p>Pentru fiecare axă:</p>
 
@@ -547,7 +575,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Dacă nu, axa poate fi inutilă pentru pagina respectivă.</p>
 
-      <h2>Ce înseamnă asta pentru Google</h2>
+      <h2 id="ce-inseamna-asta-pentru-google">Ce înseamnă asta pentru Google</h2>
 
       <p>Versiunea veche afirma că interogările generale sunt dominate de „autoritate acumulată în ani” și că un site nou nu poate concura acolo.</p>
 
@@ -563,7 +591,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Specificitatea este un instrument de relevanță, nu o scurtătură în jurul celorlalte sisteme Google.</p>
 
-      <h2>Long-tail și intenție comercială</h2>
+      <h2 id="long-tail-si-intentie-comerciala">Long-tail și intenție comercială</h2>
 
       <p>Interogările mai specifice pot exprima o intenție mai clară.</p>
 
@@ -592,15 +620,15 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <blockquote><p><strong>specificitatea poate crește claritatea intenției, iar valoarea comercială trebuie validată din conversiile proprii.</strong></p></blockquote>
 
-      <h2>Ce faci concret</h2>
+      <h2 id="ce-faci-concret">Ce faci concret</h2>
 
-      <h3>Scrie general când răspunsul este general</h3>
+      <h3 id="scrie-general-cand-raspunsul-este-general">Scrie general când răspunsul este general</h3>
 
       <p>Nu forța segmentarea.</p>
 
       <p>Dacă aceeași explicație este utilă tuturor, o pagină generală poate fi cea mai bună alegere.</p>
 
-      <h3>Segmentează când contextul schimbă informația</h3>
+      <h3 id="segmenteaza-cand-contextul-schimba-informatia">Segmentează când contextul schimbă informația</h3>
 
       <p>Creează pagini sau secțiuni separate când există diferențe reale în:</p>
 
@@ -614,13 +642,13 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
         <li>implementare.</li>
       </ul>
 
-      <h3>Evită paginile-clonă</h3>
+      <h3 id="evita-paginile-clona">Evită paginile-clonă</h3>
 
       <p>Nu crea pagini locale/verticale doar prin schimbarea unui token în titlu și câteva propoziții.</p>
 
       <p>Google documentează explicit doorway abuse și scaled content abuse.<sup><a href="#fn-8">8</a></sup></p>
 
-      <h3>Folosește context real</h3>
+      <h3 id="foloseste-context-real">Folosește context real</h3>
 
       <p>Include:</p>
 
@@ -635,43 +663,43 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Specificitatea bună vine din informație, nu din adjective. Distincția dintre ce rămâne valabil din SEO clasic și ce se schimbă complet în abordarea GEO este tratată separat în <a href="/lab/cercetare/seo-vs-geo">SEO vs GEO</a>.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Conținutul generic nu poate ranka?</h3>
+      <h3 id="continutul-generic-nu-poate-ranka">Conținutul generic nu poate ranka?</h3>
 
       <p>Poate. Un articol general poate fi foarte relevant pentru o interogare generală. Problema apare când pagina este atât de largă încât nu răspunde suficient de bine unei nevoi concrete. Specificitatea poate crește relevanța atunci când adaugă context care schimbă răspunsul.</p>
 
-      <h3>Ce înseamnă „specificitate utilă”?</h3>
+      <h3 id="ce-inseamna-specificitate-utila">Ce înseamnă „specificitate utilă”?</h3>
 
       <p>Înseamnă informație care schimbă efectiv recomandarea: locație, industrie, situație, buget, rol sau altă constrângere relevantă. Dacă detaliul nu schimbă răspunsul, nu justifică neapărat o pagină separată.</p>
 
-      <h3>Trebuie să creez pagini separate pentru fiecare oraș?</h3>
+      <h3 id="trebuie-sa-creez-pagini-separate-pentru-fiecare-oras">Trebuie să creez pagini separate pentru fiecare oraș?</h3>
 
       <p>Nu dacă paginile ar fi aproape identice. Google documentează doorway abuse pentru pagini foarte similare targetate pe variații geografice și scaled content abuse pentru volume de pagini create în principal pentru manipularea rankingului.<sup><a href="#fn-8">8</a></sup></p>
 
-      <h3>Cum știu cât de specific trebuie să fiu?</h3>
+      <h3 id="cum-stiu-cat-de-specific-trebuie-sa-fiu">Cum știu cât de specific trebuie să fiu?</h3>
 
       <p>Folosește regula AI Visibility Lab: coboară până la nivelul la care diferențele dintre utilizatori schimbă răspunsul și oprește-te înainte ca segmentarea să devină decorativă sau redundantă.</p>
 
-      <h3>Prompturile AI sunt mai lungi decât interogările tradiționale?</h3>
+      <h3 id="prompturile-ai-sunt-mai-lungi-decat-interogarile-traditionale">Prompturile AI sunt mai lungi decât interogările tradiționale?</h3>
 
       <p>În anumite suprafețe, da. Google spune că interogările AI Mode sunt în medie aproximativ de trei ori mai lungi decât căutările tradiționale. Semrush a raportat separat 7,22 cuvinte pentru AI Mode versus aproximativ 4 pentru Search în propriul dataset.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>Dacă 65–85% dintre prompturile ChatGPT nu au keyword match, keyword research-ul nu mai este util?</h3>
+      <h3 id="daca-6585-dintre-prompturile-chatgpt-nu-au-keyword-match-keyword-research-ul-nu-mai-este-util">Dacă 65–85% dintre prompturile ChatGPT nu au keyword match, keyword research-ul nu mai este util?</h3>
 
       <p>Nu. În datasetul Semrush, 65–85% dintre prompturi nu au avut exact match în baza lor de keywords. Asta arată că formulările conversaționale depășesc adesea vocabularul stocat în bazele tradiționale, nu că research-ul de keywords devine inutil.<sup><a href="#fn-5">5</a></sup></p>
 
-      <h2>Metodologie și niveluri de certitudine</h2>
+      <h2 id="metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</h2>
 
-      <h3>Surse primare</h3>
+      <h3 id="surse-primare">Surse primare</h3>
 
       <p>Afirmațiile despre produsele și politicile providerilor sunt ancorate în Google Search Central, Google Blog și OpenAI Help Center.</p>
 
-      <h3>Studii comerciale</h3>
+      <h3 id="studii-comerciale">Studii comerciale</h3>
 
       <p>Cifrele privind lungimea interogărilor și keyword matching provin din Semrush. Aceste cifre descriu dataseturile furnizorului și nu sunt tratate drept constante ale produselor.</p>
 
-      <h3>Concepte AI Visibility Lab</h3>
+      <h3 id="concepte-ai-visibility-lab">Concepte AI Visibility Lab</h3>
 
       <p>Următoarele sunt modele proprii de lucru:</p>
 
@@ -685,7 +713,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
 
       <p>Ele nu sunt prezentate ca terminologie oficială Google/OpenAI.</p>
 
-      <h2>Surse</h2>
+      <h2 id="surse">Surse</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">Google — „How people are using AI Mode in the U.S.", publicat 19 mai 2026, verificat la 19 august 2026. Google spune că interogările AI Mode sunt, în medie, aproximativ de trei ori mai lungi decât căutările tradiționale: <a href="https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/" target="_blank" rel="noopener noreferrer">blog.google/…/ai-mode-us-insights</a></li>
@@ -698,7 +726,7 @@ export const paradoxulSpecificitatiiContinutGenericHtml = `
         <li id="fn-8">Google Search Central — „Spam policies for Google web search", verificat la 19 august 2026. Documentează doorway abuse (inclusiv pagini targetate pe regiuni/orașe care conduc utilizatorul către aceeași destinație) și scaled content abuse (volume mari de pagini create în principal pentru manipularea rankingului, generate automat sau manual): <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">developers.google.com/…/spam-policies</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>AI Mode, ChatGPT Search, query fan-out și comportamentele de search se pot modifica. Afirmațiile despre produse descriu <strong>starea documentată la 19 august 2026</strong>, dată la care sursele de mai sus au fost verificate live, inclusiv o corecție: citarea Semrush despre AI Mode se referă la studiul publicat la 30 iulie 2025 (nu 2026, cum indica o versiune anterioară a acestei surse), pe un eșantion din perioada mai–iulie 2025.</p>
 

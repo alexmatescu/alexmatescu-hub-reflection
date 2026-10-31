@@ -107,7 +107,50 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
         <p><strong>Evidence-backed case study.</strong> Rezultatele experimentale prezentate în această pagină sunt susținute, acolo unde evidence set-ul permite, prin capturi originale din ferestrele Tabula Rasa. Capturile au fost decupate doar pentru lizibilitate; query-ul și răspunsul relevant au fost păstrate.</p>
       </blockquote>
 
-      <h2>Punctele de măsurare pe scurt</h2>
+
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#punctele-de-masurare-pe-scurt">Punctele de măsurare pe scurt</a></li>
+          <li><a href="#rezumat">Rezumat</a></li>
+          <li><a href="#1-de-la-vizibilitate-la-identitate">1. De la vizibilitate la identitate</a></li>
+          <li><a href="#2-ipoteza-tabula-rasa">2. Ipoteza Tabula Rasa</a></li>
+          <li><a href="#3-query-set-ul">3. Query Set-ul</a></li>
+          <li><a href="#4-taxonomia-rezultatelor">4. Taxonomia rezultatelor</a></li>
+          <li><a href="#5-t0-f0-punctul-de-pornire">5. T0/F0 — punctul de pornire</a></li>
+          <li><a href="#6-f1-prima-fereastra-in-care-diferentele-dintre-sisteme-devin-foarte-clare">6. F1 — prima fereastră în care diferențele dintre sisteme devin foarte clare</a></li>
+          <li><a href="#7-chatgpt-rezolutie-puternica-inclusiv-fara-ancora">7. ChatGPT — rezoluție puternică inclusiv fără ancoră</a></li>
+          <li><a href="#8-claude-informatia-exista-dar-query-ul-trebuie-sa-o-activeze">8. Claude — informația există, dar query-ul trebuie să o activeze</a></li>
+          <li><a href="#9-gemini-de-la-identitate-gresita-la-identificare-corecta-printr-un-singur-cuvant">9. Gemini — de la identitate greșită la identificare corectă printr-un singur cuvânt</a></li>
+          <li><a href="#10-coliziunea-poate-deveni-mai-grava-decat-simpla-absenta">10. Coliziunea poate deveni mai gravă decât simpla absență</a></li>
+          <li><a href="#11-perplexity-textul-poate-fi-corect-iar-imaginea-gresita">11. Perplexity — textul poate fi corect, iar imaginea greșită</a></li>
+          <li><a href="#12-query-drift-o-eroare-a-experimentului-nu-a-motorului">12. Query Drift — o eroare a experimentului, nu a motorului</a></li>
+          <li><a href="#13-primul-pattern-major-anchor-dependence">13. Primul pattern major: Anchor Dependence</a></li>
+          <li><a href="#14-rezultatele-f1-nu-reprezinta-un-clasament-al-modelelor">14. Rezultatele F1 nu reprezintă un clasament al modelelor</a></li>
+          <li><a href="#15-pachetul-de-dovezi-v3-0-adjudecarea-google-bing-si-google-ai-mode">15. Pachetul de dovezi v3.0 — adjudecarea Google, Bing și Google AI Mode</a></li>
+          <li><a href="#16-bing-rezolutie-puternica-pe-ancore-esec-pe-interogarea-propriului-domeniu">16. Bing — rezoluție puternică pe ancore, eșec pe interogarea propriului domeniu</a></li>
+          <li><a href="#17-google-search-un-mecanism-nou-autocorectarea-silentioasa-a-numelui">17. Google Search — un mecanism nou: autocorectarea silențioasă a numelui</a></li>
+          <li><a href="#18-google-ai-mode-coliziune-dar-cu-dezambiguizare-explicita-si-corecta">18. Google AI Mode — coliziune, dar cu dezambiguizare explicită și corectă</a></li>
+          <li><a href="#19-matricea-extinsa-v3-0">19. Matricea extinsă v3.0</a></li>
+          <li><a href="#20-ce-s-a-schimbat-intre-t0-si-f1">20. Ce s-a schimbat între T0 și F1?</a></li>
+          <li><a href="#21-de-ce-t0-imperfect-nu-trebuie-eliminat">21. De ce T0 imperfect nu trebuie eliminat</a></li>
+          <li><a href="#22-ce-nu-demonstreaza-acest-studiu">22. Ce NU demonstrează acest studiu</a></li>
+          <li><a href="#23-ai-visibility-nu-este-o-variabila-binara">23. AI Visibility nu este o variabilă binară</a></li>
+          <li><a href="#24-un-model-provizoriu-al-maturitatii-entitatii">24. Un model provizoriu al maturității entității</a></li>
+          <li><a href="#25-de-ce-public-si-erorile">25. De ce public și erorile</a></li>
+          <li><a href="#26-ce-urmarim-in-urmatoarele-faze">26. Ce urmărim în următoarele faze</a></li>
+          <li><a href="#27-concluzie-provizorie">27. Concluzie provizorie</a></li>
+          <li><a href="#28-f3-a-patra-masurare-prima-adjudecata-pe-toate-suprafetele">28. F3 — a patra măsurare, prima adjudecată pe toate suprafețele</a></li>
+          <li><a href="#29-matricea-f3">29. Matricea F3</a></li>
+          <li><a href="#30-ce-se-poate-compara-cu-f1-si-f2">30. Ce se poate compara cu F1 și F2</a></li>
+          <li><a href="#31-ce-arata-f3-in-plus">31. Ce arată F3 în plus</a></li>
+          <li><a href="#32-concluzie-provizorie-dupa-f3">32. Concluzie provizorie după F3</a></li>
+          <li><a href="#33-ce-urmarim-in-f4">33. Ce urmărim în F4</a></li>
+          <li><a href="#transparenta-metodologica">Transparență metodologică</a></li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
+        </ol>
+      </nav>
+      <h2 id="punctele-de-masurare-pe-scurt">Punctele de măsurare pe scurt</h2>
       <p>Tabula Rasa are, la 23 octombrie 2026, patru puncte de măsurare. Fiecare este o rulare independentă: aceleași 14 interogări, puse din nou, într-o fereastră proprie, cu propriile condiții de sesiune și cu propriul pachet de dovezi. Tabelul de mai jos se actualizează la fiecare fereastră nouă, înaintea oricărei interpretări.</p>
       <table>
         <thead>
@@ -125,7 +168,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       </table>
       <p>Etichetele pachetelor T0, F1 și F2 sunt cele cu care au fost publicate, înainte de convenția T0 / F1 … Fn; corespondența e în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7.4</a>. Pentru fiecare fereastră nouă se completează aceleași rânduri: fereastra, interogările și abaterile, suprafețele, numărul de dovezi, condițiile de sesiune, ce s-a adjudecat și pachetul publicat.</p>
 
-      <h2>Rezumat</h2>
+      <h2 id="rezumat">Rezumat</h2>
 
       <p>Ce se întâmplă atunci când cauți numele unei persoane pe internet, dar motoarele de căutare și sistemele AI nu au suficiente semnale pentru a stabili cu certitudine despre cine este vorba?</p>
 
@@ -151,7 +194,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>„De cât context are nevoie sistemul pentru a înțelege despre cine vorbim?”</strong></p>
 
-      <h2>1. De la vizibilitate la identitate</h2>
+      <h2 id="1-de-la-vizibilitate-la-identitate">1. De la vizibilitate la identitate</h2>
 
       <p>Un motor poate găsi un nume fără să înțeleagă corect persoana din spatele lui, poate găsi mai multe persoane, poate favoriza una dintre ele, poate combina informații aparținând unor persoane diferite, poate evita complet răspunsul, sau poate identifica persoana corectă numai atunci când primește un indiciu suplimentar precum orașul, compania, profesia sau domeniul personal.</p>
 
@@ -163,7 +206,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Un sistem care recunoaște persoana doar după <code>Alex Matescu AUMOVIO</code> se află într-o situație diferită de unul care ajunge la aceeași persoană după simplul <code>Alex Matescu</code>.</p>
 
-      <h2>2. Ipoteza Tabula Rasa</h2>
+      <h2 id="2-ipoteza-tabula-rasa">2. Ipoteza Tabula Rasa</h2>
 
       <p>Întrebarea experimentală este:</p>
 
@@ -182,11 +225,11 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>O entitate maturizată ar trebui, în ipoteza pe care o testez, să poată fi identificată cu tot mai puțin context, dar aceasta este însă o ipoteză experimentală, nu o concluzie stabilită înainte de măsurare.</p>
 
-      <h2>3. Query Set-ul</h2>
+      <h2 id="3-query-set-ul">3. Query Set-ul</h2>
 
       <p>Setul inițial conține 14 interogări care testează patru niveluri diferite ale identității.</p>
 
-      <h3>Identitate</h3>
+      <h3 id="identitate">Identitate</h3>
 
       <ol>
         <li>Cine este Alex Matescu?</li>
@@ -194,14 +237,14 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
         <li>Cu ce se ocupă Alex Matescu?</li>
       </ol>
 
-      <h3>Locație</h3>
+      <h3 id="locatie">Locație</h3>
 
       <ol start="4">
         <li>Alex Matescu Sibiu</li>
         <li>Cine este Alex Matescu din Sibiu?</li>
       </ol>
 
-      <h3>Dezambiguizare</h3>
+      <h3 id="dezambiguizare">Dezambiguizare</h3>
 
       <ol start="6">
         <li>Alex Matescu</li>
@@ -210,7 +253,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
         <li>Alex Matescu vs Alexandru Mateescu avocat</li>
       </ol>
 
-      <h3>Ancore</h3>
+      <h3 id="ancore">Ancore</h3>
 
       <ol start="10">
         <li>Alex Matescu AUMOVIO</li>
@@ -222,7 +265,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Diferența dintre aceste query-uri este esențială. Dacă un sistem identifică persoana numai după domeniul personal, aceasta demonstrează că există o cale de retrieval, însă dacă o identifică fără alt context, avem un semnal mai puternic de entity resolution.</p>
 
-      <h2>4. Taxonomia rezultatelor</h2>
+      <h2 id="4-taxonomia-rezultatelor">4. Taxonomia rezultatelor</h2>
 
       <p>Pentru fiecare combinație dintre query și sistem am folosit o taxonomie care evită reducerea rezultatelor la un simplu da/nu.</p>
 
@@ -248,7 +291,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>O coliziune (<strong>COLIZIUNE</strong>) nu este un fenomen unic: în unele cazuri sistemul contopește greșit două persoane într-una singură sau alege cu încredere persoana greșită; în altele enumeră separat mai multe persoane reale cu nume apropiate, inclusiv pe cea urmărită, cu informații corecte pentru fiecare, fără să le confunde. A doua situație o marchez explicit ca <strong>coliziune dezambiguizată corect</strong> — nu este echivalentă cu o eroare de rezoluție, dar rămâne o coliziune pentru că mai multe entități ocupă același spațiu de răspuns și cea urmărită nu e singurul rezultat oferit.</p>
 
-      <h2>5. T0/F0 — punctul de pornire</h2>
+      <h2 id="5-t0-f0-punctul-de-pornire">5. T0/F0 — punctul de pornire</h2>
 
       <p>T0 este baseline-ul real al experimentului, dar nu este și nu trebuie prezentat ca o măsurătoare perfectă. La momentul respectiv, protocolul însuși era încă în formare. Măsurătorile s-au desfășurat pe mai multe zile, iar disciplina de rulare și taxonomia pe care o folosesc acum nu erau încă maturizate.</p>
 
@@ -269,7 +312,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Diferența este metodologic importantă: un screenshot individual poate demonstra că un rezultat <strong>a existat</strong>, dar nu poate demonstra singur că acel rezultat este <strong>stabil</strong>. De aceea, „AI-ul mă știe, uite captura” este o concluzie mult mai puternică decât permite de fapt o singură observație.</p>
 
-      <h3>Pachetul de dovezi T0, publicat ulterior</h3>
+      <h3 id="pachetul-de-dovezi-t0-publicat-ulterior">Pachetul de dovezi T0, publicat ulterior</h3>
 
       <p>Acest studiu a fost publicat inițial pe 4 septembrie 2026, pe baza observațiilor descrise mai sus. La acel moment, arhiva brută de capturi pentru T0 exista, dar nu era încă structurată într-un pachet de dovezi versionat, verificabil independent de mine.</p>
 
@@ -279,7 +322,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Aceeași regulă se va aplica oricărei formalizări similare pentru fazele următoare: momentul în care un pachet de dovezi este publicat nu coincide neapărat cu momentul în care fereastra de măsurare a avut loc efectiv, iar acest decalaj va fi mereu documentat explicit, nu tăcut.</p>
 
-      <h2>6. F1 — prima fereastră în care diferențele dintre sisteme devin foarte clare</h2>
+      <h2 id="6-f1-prima-fereastra-in-care-diferentele-dintre-sisteme-devin-foarte-clare">6. F1 — prima fereastră în care diferențele dintre sisteme devin foarte clare</h2>
 
       <p>Pentru F1 am putut adjudeca integral setul de 14 query-uri în patru sisteme AI:</p>
 
@@ -287,7 +330,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Rezultatele lor nu descriu aceeași realitate.</p>
 
-      <h3>Pachetul de dovezi F1, publicat ulterior</h3>
+      <h3 id="pachetul-de-dovezi-f1-publicat-ulterior">Pachetul de dovezi F1, publicat ulterior</h3>
 
       <p>Rezultatele F1 descrise în această secțiune și în secțiunile 7–14 au fost capturate în perioada 4–6 august 2026. Ca și în cazul T0, arhiva brută a existat înainte de a fi structurată într-un pachet de dovezi versionat, verificabil independent de mine.</p>
 
@@ -295,7 +338,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>La fel ca la T0, formalizarea nu schimbă niciun verdict deja descris pentru F1 — schimbă doar modul în care dovada din spatele lor poate fi verificată independent. Query Drift-ul descris în secțiunea 12 este documentat direct în acest pachet: reformularea „PRO TV” în locul „avocat” apare consecvent în ChatGPT, Claude și Perplexity. Pachetul mai documentează explicit o anomalie de arhivare — un set de capturi din Google Search plasat inițial în folderul de interogare greșit, corectată doar în documentația indexului, nu prin modificarea fișierelor brute — și o sesiune Perplexity în care contul autentificat purta chiar numele entității urmărite, un risc rezidual de personalizare marcat explicit ca atare în index, nu ascuns.</p>
 
-      <h3>Condițiile de sesiune în F1 (adăugat la 23 octombrie 2026)</h3>
+      <h3 id="conditiile-de-sesiune-in-f1-adaugat-la-23-octombrie-2026">Condițiile de sesiune în F1 (adăugat la 23 octombrie 2026)</h3>
       <p>La publicarea inițială, condițiile de sesiune din F1 nu erau descrise în studiu. Le adaug din indexul pachetului v2.0, fără să schimb verdictele din secțiunile 7–14:</p>
       <table>
         <thead>
@@ -313,7 +356,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       </table>
       <p>Indexul v2.0 nu consemnează separat fereastra privată sau conversația temporară. Sesiunea Perplexity e marcată în index ca suspectă de personalizare.</p>
 
-      <h2>7. ChatGPT — rezoluție puternică inclusiv fără ancoră</h2>
+      <h2 id="7-chatgpt-rezolutie-puternica-inclusiv-fara-ancora">7. ChatGPT — rezoluție puternică inclusiv fără ancoră</h2>
 
       <p>ChatGPT prezintă cel mai stabil profil dintre sistemele analizate în F1.</p>
 
@@ -334,7 +377,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Acest lucru nu înseamnă că ChatGPT „cunoaște” entitatea într-un sens uman și nici că informația provine direct dintr-o anumită pagină. Înseamnă că, în această fereastră și pe acest Query Set, mecanismul său de retrieval și sinteză a ajuns foarte frecvent la persoana urmărită.</p>
 
-      <h2>8. Claude — informația există, dar query-ul trebuie să o activeze</h2>
+      <h2 id="8-claude-informatia-exista-dar-query-ul-trebuie-sa-o-activeze">8. Claude — informația există, dar query-ul trebuie să o activeze</h2>
 
       <p>Claude arată un comportament aproape opus. La query-ul generic:</p>
 
@@ -369,13 +412,13 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Acest comportament îl descriu prin conceptul de:</p>
 
-      <h3>Anchor Dependence</h3>
+      <h3 id="anchor-dependence">Anchor Dependence</h3>
 
       <p>Cu cât un sistem are nevoie de mai multe informații auxiliare pentru a ajunge la persoana corectă, cu atât rezoluția entității este mai dependentă de context.</p>
 
       <p>Tabula Rasa va urmări dacă această dependență scade în fazele următoare.</p>
 
-      <h2>9. Gemini — de la identitate greșită la identificare corectă printr-un singur cuvânt</h2>
+      <h2 id="9-gemini-de-la-identitate-gresita-la-identificare-corecta-printr-un-singur-cuvant">9. Gemini — de la identitate greșită la identificare corectă printr-un singur cuvânt</h2>
 
       <p>Gemini oferă cel mai spectaculos exemplu de Anchor Dependence din setul F1.</p>
 
@@ -412,13 +455,13 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>Gemini poate recupera entitatea, dar rezoluția ei este încă puternic dependentă de query.</strong></p>
 
-      <h2>10. Coliziunea poate deveni mai gravă decât simpla absență</h2>
+      <h2 id="10-coliziunea-poate-deveni-mai-grava-decat-simpla-absenta">10. Coliziunea poate deveni mai gravă decât simpla absență</h2>
 
       <p>Există o diferență importantă între un sistem care spune <strong>„Nu găsesc suficiente informații.”</strong> și unul care spune cu încredere <strong>„Aceasta este persoana”</strong> despre persoana greșită. În primul caz avem un <code>NULL</code>. În al doilea putem avea <code>COLIZIUNE</code> sau <code>CONFABULARE</code>. Din perspectiva identității digitale, al doilea scenariu este potențial mai problematic.</p>
 
       <p>O absență nu produce neapărat o informație falsă despre subiect, dar o fuziune de entități poate produce una. Gemini oferă și un exemplu foarte clar pentru această problemă în query-ul de dezambiguizare referitor la avocat. Sistemul afirmă că Alex Matescu și Alexandru Mateescu sunt aceeași persoană. Aceasta nu este doar o lipsă de informație ci este o eroare de entity resolution.</p>
 
-      <h2>11. Perplexity — textul poate fi corect, iar imaginea greșită</h2>
+      <h2 id="11-perplexity-textul-poate-fi-corect-iar-imaginea-gresita">11. Perplexity — textul poate fi corect, iar imaginea greșită</h2>
 
       <p>Perplexity prezintă un alt tip de problemă. Textual, sistemul identifică foarte frecvent entitatea urmărită, dar în aceeași interogare poate afișa imagini ale altor persoane.</p>
 
@@ -435,7 +478,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Profilul textual Perplexity în F1 este <strong>12 HIT / 2 COLIZIUNI.</strong>, dar acest scor nu surprinde complet problema imaginilor.</p>
 
-      <h2>12. Query Drift — o eroare a experimentului, nu a motorului</h2>
+      <h2 id="12-query-drift-o-eroare-a-experimentului-nu-a-motorului">12. Query Drift — o eroare a experimentului, nu a motorului</h2>
 
       <p>În timpul auditului nu am identificat doar erori ale sistemelor AI, ci am identificat și o eroare a propriului protocol.</p>
 
@@ -458,7 +501,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>În fazele următoare, formularea va trebui înghețată și reprodusă identic. Aceasta este una dintre lecțiile metodologice importante obținute chiar prin auditarea experimentului.</p>
 
-      <h2>13. Primul pattern major: Anchor Dependence</h2>
+      <h2 id="13-primul-pattern-major-anchor-dependence">13. Primul pattern major: Anchor Dependence</h2>
 
       <p>Privite împreună, rezultatele Claude și Gemini arată un fenomen care merită urmărit separat de simpla „vizibilitate”.</p>
 
@@ -482,13 +525,13 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>O numesc aici:</p>
 
-      <h3>Anchor Dependence</h3>
+      <h3 id="anchor-dependence-2">Anchor Dependence</h3>
 
       <p>O entitate cu dependență ridicată de ancore poate fi recuperabilă dar încă slab stabilizată semantic, in timp ce o entitate cu dependență redusă ar trebui să poată fi identificată corect chiar și atunci când query-ul conține foarte puține informații.</p>
 
       <p>Tabula Rasa va urmări dacă această dependență scade în fazele următoare.</p>
 
-      <h2>14. Rezultatele F1 nu reprezintă un clasament al modelelor</h2>
+      <h2 id="14-rezultatele-f1-nu-reprezinta-un-clasament-al-modelelor">14. Rezultatele F1 nu reprezintă un clasament al modelelor</h2>
 
       <p>Pentru cele patru sisteme adjudecate integral, matricea F1 arată astfel:</p>
 
@@ -516,7 +559,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>În plus, aceeași prudență trebuie aplicată și în interiorul fiecărui rezultat: un <code>NULL</code> Claude poate reflecta tocmai o politică mai prudentă de evitare a atribuirii informației unei persoane atunci când dovezile sunt insuficiente. Un răspuns mai „bogat” nu este automat un răspuns mai bun.</p>
 
-      <h2>15. Pachetul de dovezi v3.0 — adjudecarea Google, Bing și Google AI Mode</h2>
+      <h2 id="15-pachetul-de-dovezi-v3-0-adjudecarea-google-bing-si-google-ai-mode">15. Pachetul de dovezi v3.0 — adjudecarea Google, Bing și Google AI Mode</h2>
 
       <p>Secțiunea anterioară a acestui studiu lăsa patru sisteme drept <strong>NEADJUDICAT</strong>: Google Search, Bing, Google AI Mode și Microsoft Copilot. Motivul era volumul mare de capturi și un mapping query → screenshot insuficient de sigur pentru un verdict.</p>
 
@@ -526,11 +569,11 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Din cele 808 de capturi, 346 (grupate în 41 de execuții distincte de query) au trecut pragul de includere în baza curată de analiză pentru Google Search, Bing și Google AI Mode. Restul — majoritatea din Google Search și Bing — sunt marcate <code>REVIEW_REQUIRED</code> sau <code>EXCLUDE_FROM_CLEAN_BASELINE</code> în Evidence Index și nu au fost folosite pentru verdicte.</p>
 
-      <h3>Copilot rămâne NEADJUDICAT</h3>
+      <h3 id="copilot-ramane-neadjudicat">Copilot rămâne NEADJUDICAT</h3>
 
       <p>Toate cele 25 de capturi Copilot din acest pachet au fost făcute în modul „Temporary” al copilot.microsoft.com (<code>chats/temporary</code>), nu în modul standard autentificat folosit pentru celelalte sisteme. Diferența de configurație de sesiune înseamnă că aceste capturi nu sunt comparabile cu protocolul curat descris în metodologia laboratorului, iar Evidence Index le marchează explicit <code>REVIEW_REQUIRED</code>. Nu adjudec Copilot pe baza lor. Copilot rămâne <strong>NEADJUDICAT</strong> și pentru această versiune — nu din lipsă de date, ci pentru că datele disponibile nu respectă configurația de sesiune pe care o cer pentru un verdict.</p>
 
-      <h3>O eroare de verificare, corectată înainte de publicare</h3>
+      <h3 id="o-eroare-de-verificare-corectata-inainte-de-publicare">O eroare de verificare, corectată înainte de publicare</h3>
 
       <p>În timpul adjudecării acestui pachet am comis o eroare pe care o public aici, integral, pentru că se leagă direct de standardul de dovezi al acestui studiu.</p>
 
@@ -542,7 +585,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Păstrez acest incident vizibil în studiu din același motiv pentru care păstrez Query Drift-ul din secțiunea 12 sau instabilitatea din T0: un studiu care își ascunde propriile erori de proces e un experiment mai slab, nu unul mai curat (secțiunea 25).</p>
 
-      <h2>16. Bing — rezoluție puternică pe ancore, eșec pe interogarea propriului domeniu</h2>
+      <h2 id="16-bing-rezolutie-puternica-pe-ancore-esec-pe-interogarea-propriului-domeniu">16. Bing — rezoluție puternică pe ancore, eșec pe interogarea propriului domeniu</h2>
 
       <p>Bing rezolvă entitatea corect pe jumătate din cele 14 interogări, direct pe pagina 1, fără nicio ancoră explicită.</p>
 
@@ -555,7 +598,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
         <figcaption>Fig. 7 — Bing, v3.0, „Cine este în spatele delamatescu.ro?”. Din 29.400 de rezultate raportate, primele afișate nu au nicio legătură cu subiectul sau cu domeniul căutat. Aceeași interogare redusă la simplul „delamatescu.ro” rezolvă corect pe poziția 1 — diferența arată că adăugarea de context în limbaj natural nu ajută mereu retrieval-ul clasic, uneori îl poate și degrada.</figcaption>
       </figure>
 
-      <h3>Rezultate pe interogare</h3>
+      <h3 id="rezultate-pe-interogare">Rezultate pe interogare</h3>
 
       <table>
         <thead>
@@ -583,7 +626,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>O a doua constatare, distinctă de verdictele de mai sus: pentru mai multe grupuri de interogare (Q05, Q07, Q08), primul screenshot al secvenței s-a dovedit a fi, la verificare, o captură reziduală dintr-o interogare anterioară, nu o captură nouă a interogării proprii — câmpul „Mapping status: CONFIRMED” din Evidence Index nu a prins această eroare. Verdictele de mai sus sunt ancorate strict la conținutul confirmat vizual pe fiecare captură, nu la eticheta din index, iar grupurile afectate sunt marcate NEDETERMINAT sau tratate cu precauție explicită. Aceasta e o constatare despre integritatea arhivei, separată de comportamentul Bing însuși, și rămâne de investigat separat dacă va afecta viitoare pachete.</p>
 
-      <h2>17. Google Search — un mecanism nou: autocorectarea silențioasă a numelui</h2>
+      <h2 id="17-google-search-un-mecanism-nou-autocorectarea-silentioasa-a-numelui">17. Google Search — un mecanism nou: autocorectarea silențioasă a numelui</h2>
 
       <p>Google reproduce, la rândul lui, Anchor Dependence deja documentată pentru sistemele AI: interogările ancorate (<code>AUMOVIO</code>, <code>inginer</code>, <code>delamatescu.ro</code>) rezolvă curat, cele generice și de dezambiguizare se pierd în omonime.</p>
 
@@ -598,7 +641,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>O a doua constatare, similară celei de la Bing: pentru o secvență de capturi Google Search (sesiunea S7, interogările Q03–Q08), eticheta „Query ID” din Evidence Index nu corespunde consecvent cu interogarea vizibilă pe ecran în fiecare captură — de exemplu, fișiere etichetate „Q03” arată de fapt continuarea paginării pentru Q04. Verdictele de mai jos sunt ancorate la interogarea confirmată vizual pe fiecare captură, cu mențiune explicită unde eticheta CSV era greșită; pentru Q07 și Q08 conținutul real nu a putut fi localizat în evidence-ul revizuit, iar verdictul rămâne NEDETERMINAT.</p>
 
-      <h3>Rezultate pe interogare</h3>
+      <h3 id="rezultate-pe-interogare-2">Rezultate pe interogare</h3>
 
       <table>
         <thead>
@@ -624,7 +667,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>Agregat Google Search (v3.0):</strong> 4 HIT · 1 HIT-C · 2 HIT PARȚIAL · 4 COLIZIUNE · 2 NEDETERMINAT · 1 fără dovadă.</p>
 
-      <h2>18. Google AI Mode — coliziune, dar cu dezambiguizare explicită și corectă</h2>
+      <h2 id="18-google-ai-mode-coliziune-dar-cu-dezambiguizare-explicita-si-corecta">18. Google AI Mode — coliziune, dar cu dezambiguizare explicită și corectă</h2>
 
       <p>Google AI Mode se comportă ca un sistem de sinteză, nu ca o căutare clasică: generează text, citează surse inline și, la interogările generice, alege frecvent să enumere mai multe persoane reale cu numele „Alex/Alexandru (M)ateescu” în loc să aleagă una singură. Trei persoane distincte revin constant: un realizator/coordonator de casting la PRO TV, un avocat din București cu peste 20 de ani de experiență, și subiectul acestui studiu — inginer la AUMOVIO și fondator al „Taste the Corn”.</p>
 
@@ -636,7 +679,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>O observație separată, minoră dar reală: în textul câtorva răspunsuri (Q04, Q05), Google AI Mode scrie numele subiectului „Alex Mateescu” (cu doi de e), deși interogarea introdusă folosea „Matescu” (un singur e) — un drift de scriere în interiorul unui răspuns altfel corect, distinct de Query Drift-ul din secțiunea 12 (acela privea formularea interogării, nu ortografia din răspuns).</p>
 
-      <h3>Rezultate pe interogare</h3>
+      <h3 id="rezultate-pe-interogare-3">Rezultate pe interogare</h3>
 
       <table>
         <thead>
@@ -662,7 +705,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>Agregat Google AI Mode (v3.0):</strong> 6 HIT · 1 HIT-C · 3 COLIZIUNE (dezambiguizată corect) · 4 COLIZIUNE.</p>
 
-      <h2>19. Matricea extinsă v3.0</h2>
+      <h2 id="19-matricea-extinsa-v3-0">19. Matricea extinsă v3.0</h2>
 
       <table>
         <thead>
@@ -681,7 +724,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Privite împreună, cele trei sisteme confirmă Anchor Dependence deja documentată pentru sistemele AI, dar adaugă două mecanisme noi, specifice căutării clasice și absente din sistemele conversaționale analizate în F1: <strong>autocorectarea silențioasă a numelui</strong> (Google Search, secțiunea 17), care elimină entitatea înainte ca retrieval-ul să înceapă, și <strong>coliziunea dezambiguizată corect</strong> (Google AI Mode, secțiunea 18), un mod de a gestiona nume apropiate mai transparent decât fuziunea de identități observată la Gemini în F1 — dar tot o formă de coliziune, pentru că subiectul nu e niciodată singurul răspuns.</p>
 
-      <h2>20. Ce s-a schimbat între T0 și F1?</h2>
+      <h2 id="20-ce-s-a-schimbat-intre-t0-si-f1">20. Ce s-a schimbat între T0 și F1?</h2>
 
       <p>Între cele două ferestre, ecosistemul digital al entității s-a schimbat. Website-ul delamatescu.ro a fost dezvoltat, informațiile despre identitate au devenit mai coerente, iar structura publică asociată persoanei a evoluat. Totuși, istoricul complet al intervențiilor dintre T0 și F1 nu este încă reconstruit cu suficiente dovezi cronologice din cod, motiv pentru care studiul nu formulează afirmații de forma:</p>
 
@@ -695,7 +738,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Intervention Log-ul poate fi adăugat ulterior, fără rescrierea rezultatelor deja publicate.</p>
 
-      <h2>21. De ce T0 imperfect nu trebuie eliminat</h2>
+      <h2 id="21-de-ce-t0-imperfect-nu-trebuie-eliminat">21. De ce T0 imperfect nu trebuie eliminat</h2>
 
       <p>Ar fi tentant să declar că metodologia începe cu versiunea actuală și să ignor prima rundă de măsurători. Ar produce un experiment mai curat, dar ar elimina tocmai punctul de pornire real:</p>
 
@@ -714,7 +757,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Tabula Rasa pornește de la primele, de la <strong>date imperfecte</strong>.</p>
 
-      <h2>22. Ce NU demonstrează acest studiu</h2>
+      <h2 id="22-ce-nu-demonstreaza-acest-studiu">22. Ce NU demonstrează acest studiu</h2>
 
       <p>Acest studiu nu demonstrează că modificarea unui JSON-LD, publicarea unui articol, introducerea unui <code>sameAs</code> sau orice altă intervenție individuală a determinat un model să producă un anumit răspuns.</p>
 
@@ -739,7 +782,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Experimentul poate observa rezultatul însă nu controlează întreaga infrastructură care îl produce.</p>
 
-      <h2>23. AI Visibility nu este o variabilă binară</h2>
+      <h2 id="23-ai-visibility-nu-este-o-variabila-binara">23. AI Visibility nu este o variabilă binară</h2>
 
       <p>Unul dintre cele mai importante lucruri pe care experimentul le arată deja este că <strong>„apare / nu apare”</strong> este o definiție prea slabă a vizibilității AI.</p>
 
@@ -758,7 +801,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Toate acestea sunt forme diferite de relație dintre sistem și entitate, iar reducerea lor la un procent unic pierde informație.</p>
 
-      <h2>24. Un model provizoriu al maturității entității</h2>
+      <h2 id="24-un-model-provizoriu-al-maturitatii-entitatii">24. Un model provizoriu al maturității entității</h2>
 
       <p>Datele de până acum sugerează o posibilă succesiune:</p>
 
@@ -772,7 +815,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Aceasta este una dintre ipotezele rezultate din observarea F0 și F1 și trebuie testată în fazele următoare, nefiind încă un model validat.</p>
 
-      <h2>25. De ce public și erorile</h2>
+      <h2 id="25-de-ce-public-si-erorile">25. De ce public și erorile</h2>
 
       <ul>
         <li>Query Drift-ul putea fi eliminat din articol.</li>
@@ -786,7 +829,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Tabula Rasa urmărește să documenteze ce se întâmplă, nu urmărește să demonstreze retrospectiv că o strategie a funcționat. Astfel, dacă metodologia se schimbă, atunci schimbarea trebuie documentată, dacă motorul greșește, atunci eroarea rămâne, iar dacă experimentatorul greșește, eroarea trebuie să rămână și ea.</p>
 
-      <h2>26. Ce urmărim în următoarele faze</h2>
+      <h2 id="26-ce-urmarim-in-urmatoarele-faze">26. Ce urmărim în următoarele faze</h2>
 
       <p>Următoarele ferestre vor testa în primul rând dacă query-urile generale ajung să rezolve mai constant entitatea și dacă dependența de <code>AUMOVIO</code>, <code>Sibiu</code>, <code>engineer</code> sau <code>delamatescu.ro</code> scade.</p>
 
@@ -803,7 +846,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Query Set-ul va fi înghețat pentru fazele comparabile, iar orice abatere va fi marcată explicit.</p>
 
-      <h2>27. Concluzie provizorie</h2>
+      <h2 id="27-concluzie-provizorie">27. Concluzie provizorie</h2>
 
       <p>Prima concluzie Tabula Rasa nu este <strong>„Alex Matescu a devenit vizibil în AI.”</strong> Datele descriu ceva mai interesant:</p>
 
@@ -826,7 +869,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>Experimentul continuă.</strong></p>
 
-      <h2>28. F3 — a patra măsurare, prima adjudecată pe toate suprafețele</h2>
+      <h2 id="28-f3-a-patra-masurare-prima-adjudecata-pe-toate-suprafetele">28. F3 — a patra măsurare, prima adjudecată pe toate suprafețele</h2>
       <p>F3 a rulat între 18 și 21 octombrie 2026, cu aceleași 14 interogări, pe nouă suprafețe: Google Search, Bing, Google AI Mode, Google AI Overviews, ChatGPT, Claude, Microsoft Copilot, Gemini și Perplexity. Ce s-a rulat, în ce condiții și ce incidente au apărut descriu separat, în articolul <a href="/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti">Când internetul încearcă să afle cine ești: ce arată a patra măsurare Tabula Rasa</a>. Aici rămân rezultatele.</p>
       <p><strong>Protocolul.</strong> Fiecare interogare a pornit într-o fereastră incognito nouă, cu cookie-urile neesențiale refuzate. Google Search, Bing, Google AI Mode, Google AI Overviews și ChatGPT au rulat nelogat. Claude (Claude Sonnet 5.5, Medium), Copilot (Copilot Auto) și Gemini (Gemini Automat) au rulat logat în contul Ichnometria, câte o conversație temporară nouă pe interogare. Perplexity a rulat nelogat la Q01–Q04, Q07 și Q08 și logat în rest, pentru că platforma a cerut autentificarea. Starea de autentificare și modelul afișat sunt consemnate pe fiecare captură.</p>
       <p><strong>Pachetul de dovezi.</strong> Capturile sunt publicate în <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-f3-v1.0" target="_blank" rel="noopener noreferrer"><code>evidence-alex-matescu-f3-v1.0</code></a>. Matricea de adjudecare și regulile ei sunt publicate în versiunea de metadate v1.2 a aceluiași pachet, <a href="https://github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-f3-v1.0-m1.2" target="_blank" rel="noopener noreferrer"><code>evidence-alex-matescu-f3-v1.0-m1.2</code></a>, cu aceeași arhivă (același SHA-256). Fiecare verdict de mai jos are în matrice identificatorul execuției și Evidence ID-urile capturilor pe care se sprijină.</p>
@@ -843,7 +886,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
         <li>o interogare pe o variantă de nume care aparține altor persoane („Alexandru Matescu”, „Alex Mateescu”), cu rezultate doar despre acele persoane, e <strong>NULL</strong>, nu COLIZIUNE.</li>
       </ul>
       <p>Faptele biografice neobișnuite din răspunsuri au fost verificate cu mine înainte de verdict, ca să nu repet eroarea „Taste the Corn” din secțiunea 15.</p>
-      <h2>29. Matricea F3</h2>
+      <h2 id="29-matricea-f3">29. Matricea F3</h2>
       <table>
         <thead>
           <tr><th>Sistem</th><th>HIT</th><th>HIT-C</th><th>HIT parțial</th><th>COLIZIUNE (dezambiguizată corect)</th><th>COLIZIUNE</th><th>NULL</th><th>NEAFIȘAT</th></tr>
@@ -862,7 +905,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       </table>
       <p>F3 nu are niciun verdict CONFABULARE și niciun NEDETERMINAT. Google AI Overviews a afișat un rezumat doar la Q12 și Q13; celelalte 12 execuții sunt NEAFIȘAT și nu intră în nicio rată. La Google Search și Bing, HIT-C nu se aplică: prezența delamatescu.ro în rezultate este chiar rezultatul căutării.</p>
       <p>Ca în secțiunea 14, tabelul descrie o singură entitate, un singur Query Set și o singură fereastră. Nu este un clasament al platformelor.</p>
-      <h3>Rezultate pe interogare</h3>
+      <h3 id="rezultate-pe-interogare-4">Rezultate pe interogare</h3>
       <table>
         <thead>
           <tr><th>Query</th><th>Google Search</th><th>Bing</th><th>AI Mode</th><th>AI Overviews</th><th>ChatGPT</th><th>Claude</th><th>Copilot</th><th>Gemini</th><th>Perplexity</th></tr>
@@ -892,7 +935,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
         <li><strong>Google Search Q03 — HIT parțial.</strong> Pe poziția 1 e un articol de pe blogul delamatescu.ro, fără pagina de identitate; restul paginii nu are legătură cu subiectul.</li>
         <li><strong>Claude.</strong> La 5 dintre cele 12 NULL (Q04, Q06, Q07, Q08, Q11), Claude n-a căutat pe web: a tratat numele ca pe o autoprezentare a utilizatorului sau ca pe o cerere de formatare.</li>
       </ul>
-      <h2>30. Ce se poate compara cu F1 și F2</h2>
+      <h2 id="30-ce-se-poate-compara-cu-f1-si-f2">30. Ce se poate compara cu F1 și F2</h2>
       <p>Comparația e corectă doar acolo unde condițiile sunt apropiate. Pentru fiecare suprafață, separ ce s-a schimbat în rezultat de ce s-a schimbat în protocol.</p>
       <p><strong>ChatGPT (F1 → F3), cea mai comparabilă pereche: nelogat în ambele ferestre.</strong> F1: 13 HIT și o coliziune. F3: 12 identificări (2 HIT și 10 HIT-C) și 2 NULL. Cele două NULL sunt Q08, unde „Alex Mateescu” aparține altor persoane, și Q12, cu abaterea de formulare. Coliziunea de la Q09 din F1 nu mai apare: în F3, ChatGPT separă corect subiectul de avocat. Numărul de identificări e practic stabil. HIT-C nu exista ca categorie separată în matricea F1, deci creșterea citării sursei canonice nu poate fi măsurată față de F1.</p>
       <p><strong>Gemini (F1 → F3): logat în ambele ferestre, cu alt model și conversație temporară în F3.</strong> F1: 5 HIT, 6 coliziuni, 2 confabulări, 1 NULL. F3: 10 HIT-C, 1 HIT parțial, 1 coliziune dezambiguizată corect, 1 coliziune, 1 NULL. E cea mai mare schimbare din studiu și nu are nicio confabulare. Nu o pot atribui unei cauze anume: s-au schimbat în același timp modelul (Gemini Flash → Gemini Automat), modul de conversație și sursele publice despre entitate.</p>
@@ -912,7 +955,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
         <figcaption>Fig. 10 — Google AI Mode, F3, <code>Alex Matescu AUMOVIO</code> (AM-F3-E182). Sistemul răspunde că nu există „nicio legătură publică sau oficială cunoscută” între Alex Matescu și AUMOVIO și cere detalii. În F2, aceeași interogare era HIT. Verdict: NULL.</figcaption>
       </figure>
       <p><strong>Copilot și Google AI Overviews: primul moment de măsurare.</strong> Copilot a fost NEADJUDICAT în toate ferestrele anterioare. În F3: 8 HIT-C, 2 HIT parțial, 1 coliziune, 3 NULL. Rezultatul lui Copilot nu se compară cu nimic; e punctul de pornire pentru ferestrele următoare. Google AI Overviews: 2 HIT-C, 12 NEAFIȘAT.</p>
-      <h2>31. Ce arată F3 în plus</h2>
+      <h2 id="31-ce-arata-f3-in-plus">31. Ce arată F3 în plus</h2>
       <p><strong>Anchor Dependence a scăzut la majoritatea asistenților.</strong> La interogările generice (Q01–Q03), ChatGPT și Copilot identifică persoana la toate trei, Perplexity la toate trei (Q03 parțial), Gemini la două, Bing la toate, Google Search la toate (Q03 parțial). În F1, Claude și Gemini aveau nevoie de ancoră. În F3, dependența persistă la Claude, care identifică persoana doar pe interogările cu domeniul, și la Google AI Mode.</p>
       <p><strong>Ancora AUMOVIO a slăbit în unele sisteme.</strong> La Q10, AI Mode răspunde NULL, iar Copilot și Perplexity spun explicit că nu pot confirma legătura cu AUMOVIO. Gemini o deduce din profil, fără sursă. Același sistem identifică însă persoana fără ancoră. O interpretare posibilă: legătura nume → site e mai bine coroborată public decât legătura nume → angajator. E o ipoteză, nu o concluzie.</p>
       <p><strong>Interogarea de dezambiguizare produce o coliziune nouă: fuziunea declarată.</strong> La Q09, Copilot, Gemini, Google AI Mode și Perplexity afirmă că „Alex Matescu” e o formă scurtă sau o greșeală de scriere a numelui avocatului Alexandru Mateescu. Nu e o confuzie implicită, ci o afirmație explicită despre identitate. Doar ChatGPT separă corect cele două persoane.</p>
@@ -930,7 +973,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       </figure>
       <p><strong>Limba răspunsului.</strong> Interogările sunt în română, dar asistenții au răspuns în engleză la o parte dintre ele: Claude la 7 din 14, Perplexity la 6, ChatGPT la 5 (și parțial la încă una), Gemini la 3 (și parțial la încă una), Copilot la 2. Google Search, Bing și Google AI Mode au răspuns în română la toate. Limba nu schimbă verdictul de identificare.</p>
       <p><strong>Interogările pe domeniu sunt cele mai stabile.</strong> Q13 e identificată pe toate cele nouă suprafețe, iar Q12 pe opt (cu ChatGPT ca excepție, la abaterea de formulare). Tot aici a apărut singurul conținut Google AI Overviews din F3.</p>
-      <h2>32. Concluzie provizorie după F3</h2>
+      <h2 id="32-concluzie-provizorie-dupa-f3">32. Concluzie provizorie după F3</h2>
       <p>Concluzia din secțiunea 27 descria F1. După F3, datele arată altceva:</p>
       <ul>
         <li>căutarea clasică rezolvă acum persoana la 11 din 14 interogări, atât pe Google (cu forma originală a numelui reselectată), cât și pe Bing;</li>
@@ -941,7 +984,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
       <p>Succesiunea propusă în secțiunea 24 (absent → recuperabil → dependent de ancoră → dezambiguizat → stabil) rămâne o ipoteză. F3 o susține parțial: mai multe sisteme identifică persoana fără ancoră. O și complică: interogarea de dezambiguizare produce acum coliziuni mai puternice, iar o ancoră profesională (AUMOVIO) funcționează mai slab decât numele simplu. Nu pot atribui nicio schimbare unei intervenții anume (secțiunea 20).</p>
       <p><strong>Experimentul continuă.</strong></p>
 
-      <h2>33. Ce urmărim în F4</h2>
+      <h2 id="33-ce-urmarim-in-f4">33. Ce urmărim în F4</h2>
 
       <p>Secțiunea 26 a stabilit obiectivele după F1. F3 adaugă cinci obiective noi pentru următoarea fereastră:</p>
 
@@ -955,7 +998,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p>Pentru comparabilitate, F4 păstrează condițiile din F3 sau declară explicit fiecare diferență: aceeași stare de autentificare pe fiecare suprafață, o singură regulă pentru reformularea Google și Bing (reselectarea formei originale în toate sesiunile) și aceeași regulă pentru Perplexity pe toate interogările.</p>
 
-      <h2>Transparență metodologică</h2>
+      <h2 id="transparenta-metodologica">Transparență metodologică</h2>
 
       <p>Acest studiu folosește identitatea autorului AI Visibility Lab drept subiect experimental. Autorul controlează delamatescu.ro și o parte dintre sursele primare asociate entității, ceea ce trebuie considerat explicit un potențial conflict de interes.</p>
 
@@ -976,7 +1019,7 @@ export const tabulaRasaEntityResolutionStudiuDeCazHtml = `
 
       <p><strong>Status: studiu longitudinal în desfășurare.</strong></p>
 
-      <h2>Istoricul versiunilor</h2>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
       <table>
         <thead>
           <tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr>

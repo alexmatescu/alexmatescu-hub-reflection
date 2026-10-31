@@ -58,13 +58,68 @@ export const catDureazaIndexareCitareAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-17">17 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-10">10 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#patru-ceasuri-nu-unul">Patru ceasuri, nu unul</a></li>
+          <li><a href="#criteriul-1-motorul-si-suprafata">Criteriul 1: Motorul și suprafața</a>
+            <ol>
+              <li><a href="#ce-poate-fi-concluzionat">Ce poate fi concluzionat</a></li>
+            </ol>
+          </li>
+          <li><a href="#criteriul-2-domeniul-si-capacitatea-de-crawl">Criteriul 2: Domeniul și capacitatea de crawl</a>
+            <ol>
+              <li><a href="#ce-inseamna-pentru-ai-search">Ce înseamnă pentru AI Search</a></li>
+            </ol>
+          </li>
+          <li><a href="#criteriul-3-tipul-de-continut">Criteriul 3: Tipul de conținut</a></li>
+          <li><a href="#criteriul-4-infrastructura-de-notificare-si-acces">Criteriul 4: Infrastructura de notificare și acces</a>
+            <ol>
+              <li><a href="#indexnow">IndexNow</a></li>
+              <li><a href="#google-search">Google Search</a></li>
+              <li><a href="#google-indexing-api">Google Indexing API</a></li>
+              <li><a href="#javascript-si-rendering">JavaScript și rendering</a></li>
+            </ol>
+          </li>
+          <li><a href="#criteriul-5-prospetimea">Criteriul 5: Prospețimea</a>
+            <ol>
+              <li><a href="#ce-se-poate-recomanda-fara-extrapolare">Ce se poate recomanda fără extrapolare</a></li>
+            </ol>
+          </li>
+          <li><a href="#nu-exista-o-fereastra-de-60-de-zile-demonstrata">Nu există o „fereastră de 60 de zile” demonstrată</a>
+            <ol>
+              <li><a href="#ce-poti-face-in-loc">Ce poți face în loc</a></li>
+            </ol>
+          </li>
+          <li><a href="#ce-inseamna-pentru-un-calendar-de-publicare">Ce înseamnă pentru un calendar de publicare</a></li>
+          <li><a href="#cum-trebuie-citite-cifrele-despre-indexare-si-citare">Cum trebuie citite cifrele despre indexare și citare</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+            <ol>
+              <li><a href="#cat-dureaza-pana-google-indexeaza-o-pagina-noua">Cât durează până Google indexează o pagină nouă?</a></li>
+              <li><a href="#cat-dureaza-pana-chatgpt-citeaza-un-articol-nou">Cât durează până ChatGPT citează un articol nou?</a></li>
+              <li><a href="#cat-dureaza-pana-perplexity-citeaza-o-pagina">Cât durează până Perplexity citează o pagină?</a></li>
+              <li><a href="#google-ai-overviews-necesita-un-anumit-ranking-organic">Google AI Overviews necesită un anumit ranking organic?</a></li>
+              <li><a href="#google-sustine-indexnow">Google susține IndexNow?</a></li>
+              <li><a href="#indexnow-garanteaza-indexarea-imediata">IndexNow garantează indexarea imediată?</a></li>
+              <li><a href="#este-necesara-randarea-pe-server-pentru-ai">Este necesară randarea pe server pentru AI?</a></li>
+              <li><a href="#daca-nu-am-fost-citat-dupa-doua-luni-inseamna-ca-pagina-nu-va-fi-citata">Dacă nu am fost citat după două luni, înseamnă că pagina nu va fi citată?</a></li>
+            </ol>
+          </li>
+          <li><a href="#surse-si-metodologie">Surse și metodologie</a>
+            <ol>
+              <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+            </ol>
+          </li>
+        </ol>
+      </nav>
+
       <p><strong>Nu există un termen universal și verificabil care să spună după câte zile o pagină nouă va fi indexată de Google sau citată de ChatGPT, Perplexity, Copilot ori funcțiile AI din Google Search. Google spune oficial că recrawl-ul poate dura de la câteva zile la câteva săptămâni și că solicitarea de crawl nu garantează indexarea. OpenAI și Perplexity documentează condițiile tehnice prin care un site poate fi accesat de sistemele lor de căutare, dar nu publică un SLA pentru timpul de la publicare la prima citare. IndexNow notifică instant motoarele participante că un URL s-a schimbat, dar nici protocolul nu garantează că pagina va fi indexată sau afișată imediat.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
       <p>Aceasta este limita factuală de la care trebuie pornit.</p>
 
       <p>Orice cifră mai precisă de tipul „Google indexează în X zile”, „ChatGPT citează în Y zile” sau „după Z zile pagina nu va mai fi citată” descrie cel mult un anumit experiment sau dataset. Nu poate fi tratată ca termen general al platformei fără o confirmare oficială sau un studiu suficient de robust și replicat.</p>
 
-      <h2>Patru ceasuri, nu unul</h2>
+      <h2 id="patru-ceasuri-nu-unul">Patru ceasuri, nu unul</h2>
 
       <p>În practică există cel puțin patru procese diferite, iar confundarea lor produce aproape toate afirmațiile exagerate despre „cât durează”.</p>
 
@@ -80,7 +135,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Această separare este importantă pentru AEO/GEO: <strong>descoperirea rapidă nu este sinonimă cu indexarea rapidă, iar indexarea nu este sinonimă cu citarea.</strong></p>
 
-      <h2>Criteriul 1: Motorul și suprafața</h2>
+      <h2 id="criteriul-1-motorul-si-suprafata">Criteriul 1: Motorul și suprafața</h2>
 
       <p>Motoarele și suprafețele AI nu publică un termen comun de la publicare la vizibilitate.</p>
 
@@ -105,13 +160,13 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Surse oficiale: Google Search Central, OpenAI Help Center, Perplexity Docs, Microsoft Learn și IndexNow.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-5">5</a></sup><sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup><sup><a href="#fn-6">6</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>Ce poate fi concluzionat</h3>
+      <h3 id="ce-poate-fi-concluzionat">Ce poate fi concluzionat</h3>
 
       <p>Un publisher poate controla dacă pagina este <strong>tehnic accesibilă și descoperibilă</strong>, dar nu poate controla sau prezice cu precizie când o platformă o va selecta pentru un răspuns.</p>
 
       <p>De aceea, orice strategie serioasă trebuie să măsoare separat fiecare suprafață. Un URL poate apărea în Google Search și să nu fie citat de ChatGPT; poate fi citat de Perplexity și să nu apară într-un AI Overview; sau poate fi cunoscut de Bing fără să fie folosit într-un anumit răspuns Copilot.</p>
 
-      <h2>Criteriul 2: Domeniul și capacitatea de crawl</h2>
+      <h2 id="criteriul-2-domeniul-si-capacitatea-de-crawl">Criteriul 2: Domeniul și capacitatea de crawl</h2>
 
       <p>Nu există o formulă oficială de tipul „un domeniu nou durează de X ori mai mult”.</p>
 
@@ -133,7 +188,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>pot influența descoperirea, crawl-ul și indexarea, dar <strong>nu pot fi convertiți responsabil într-un multiplicator universal de timp</strong>.</p>
 
-      <h3>Ce înseamnă pentru AI Search</h3>
+      <h3 id="ce-inseamna-pentru-ai-search">Ce înseamnă pentru AI Search</h3>
 
       <p>OpenAI spune că pentru includerea completă a conținutului în ChatGPT Search este important ca OAI-SearchBot să poată accesa site-ul și ca hostul/CDN-ul să permită IP-urile publicate de OpenAI.<sup><a href="#fn-2">2</a></sup></p>
 
@@ -141,7 +196,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p><strong>Concluzie operațională:</strong> înainte să fie discutată „autoritatea domeniului”, trebuie verificat dacă sistemul poate accesa efectiv pagina. Accesul este o condiție tehnică observabilă; timpul până la citare nu este.</p>
 
-      <h2>Criteriul 3: Tipul de conținut</h2>
+      <h2 id="criteriul-3-tipul-de-continut">Criteriul 3: Tipul de conținut</h2>
 
       <p>Nu există, în documentația oficială Google, o medie universală de indexare separată pentru articol, pagină de serviciu și pagină de produs.</p>
 
@@ -157,11 +212,11 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Pentru AEO/GEO, forma conținutului rămâne importantă din alt motiv: informația clară, explicită și ușor de extras reduce ambiguitatea pentru cititori și sisteme. Dar nu există un număr oficial care să spună că o definiție, un tabel sau o pagină de produs va fi citată într-un anumit interval.</p>
 
-      <h2>Criteriul 4: Infrastructura de notificare și acces</h2>
+      <h2 id="criteriul-4-infrastructura-de-notificare-si-acces">Criteriul 4: Infrastructura de notificare și acces</h2>
 
       <p>Aceasta este zona în care există cele mai clare acțiuni tehnice controlabile.</p>
 
-      <h3>IndexNow</h3>
+      <h3 id="indexnow">IndexNow</h3>
 
       <p>IndexNow permite proprietarilor de site-uri să <strong>notifice imediat</strong> motoarele participante că un URL a fost adăugat, modificat sau șters. La data verificării, <strong>10 august 2026</strong>, pagina oficială IndexNow listează suport din partea Microsoft Bing, Naver, Seznam.cz, Yandex și Yep.<sup><a href="#fn-4">4</a></sup></p>
 
@@ -173,7 +228,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Această informație este <strong>volatilă</strong>: lista motoarelor participante poate fi modificată în timp și trebuie reverificată înaintea fiecărei actualizări majore a articolului.</p>
 
-      <h3>Google Search</h3>
+      <h3 id="google-search">Google Search</h3>
 
       <p>Google nu este listat, la data verificării din 10 august 2026, între motoarele participante oficial IndexNow.<sup><a href="#fn-4">4</a></sup></p>
 
@@ -186,7 +241,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Google precizează că repetarea cererilor pentru același URL nu îl face să fie crawlat mai repede.</p>
 
-      <h3>Google Indexing API</h3>
+      <h3 id="google-indexing-api">Google Indexing API</h3>
 
       <p>Indexing API nu este un API general pentru orice pagină.</p>
 
@@ -194,7 +249,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Aceasta este o cifră oficială și exactă, nu o estimare.</p>
 
-      <h3>JavaScript și rendering</h3>
+      <h3 id="javascript-si-rendering">JavaScript și rendering</h3>
 
       <p>Afirmația „crawlerele AI nu execută JavaScript” nu poate fi susținută ca regulă generală.</p>
 
@@ -208,7 +263,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Nu există însă un „timp infinit de indexare” demonstrat pentru paginile client-side rendered.</p>
 
-      <h2>Criteriul 5: Prospețimea</h2>
+      <h2 id="criteriul-5-prospetimea">Criteriul 5: Prospețimea</h2>
 
       <p>Prospețimea poate conta pentru relevanță, dar nu există un benchmark oficial universal de tipul „conținutul actualizat în ultimele 30 de zile primește X% mai multe citări”.</p>
 
@@ -216,7 +271,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Pentru Google, structured data și datele afișate trebuie să fie corecte și coerente, însă simpla modificare artificială a <code>dateModified</code> nu transformă un conținut vechi într-unul nou și nu garantează recrawl, indexare sau vizibilitate.</p>
 
-      <h3>Ce se poate recomanda fără extrapolare</h3>
+      <h3 id="ce-se-poate-recomanda-fara-extrapolare">Ce se poate recomanda fără extrapolare</h3>
 
       <p>Actualizează un articol atunci când:</p>
 
@@ -232,7 +287,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p><strong>Interpretare AI Visibility Lab:</strong> pentru conținutul despre AI, search, platforme și produse software, revizuirea periodică este în primul rând o măsură de acuratețe și E-E-A-T, nu o „tactică de ranking”.</p>
 
-      <h2>Nu există o „fereastră de 60 de zile” demonstrată</h2>
+      <h2 id="nu-exista-o-fereastra-de-60-de-zile-demonstrata">Nu există o „fereastră de 60 de zile” demonstrată</h2>
 
       <p>Nu există o sursă oficială Google, OpenAI, Perplexity sau Microsoft care să stabilească o fereastră universală după care o pagină necitată devine improbabil de citat.</p>
 
@@ -247,7 +302,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>Aceste praguri pot apărea în dataseturi comerciale, dar nu există bază suficientă pentru a le transforma în cronometru editorial universal.</p>
 
-      <h3>Ce poți face în loc</h3>
+      <h3 id="ce-poti-face-in-loc">Ce poți face în loc</h3>
 
       <p>Stabilește propriul benchmark.</p>
 
@@ -266,7 +321,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>În acest fel, după suficiente articole și suficiente rulări, vei avea un benchmark al propriului site, nu o medie importată dintr-un experiment cu altă nișă, alt domeniu și alt set de prompturi.</p>
 
-      <h2>Ce înseamnă pentru un calendar de publicare</h2>
+      <h2 id="ce-inseamna-pentru-un-calendar-de-publicare">Ce înseamnă pentru un calendar de publicare</h2>
 
       <p>Un calendar GEO/AEO nu ar trebui construit pe presupunerea că „la ziua 7 vine prima citare” sau „la ziua 60 trebuie intervenit”.</p>
 
@@ -285,7 +340,7 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p><strong>Recomandare AI Visibility Lab:</strong> folosește un set fix de interogări și aceeași metodologie de testare, păstrează istoricul și compară modificările în timp. Nu transforma o singură apariție sau absență într-o concluzie despre „ranking”.</p>
 
-      <h2>Cum trebuie citite cifrele despre indexare și citare</h2>
+      <h2 id="cum-trebuie-citite-cifrele-despre-indexare-si-citare">Cum trebuie citite cifrele despre indexare și citare</h2>
 
       <p>Există trei niveluri de dovezi care nu trebuie amestecate.</p>
 
@@ -297,41 +352,41 @@ export const catDureazaIndexareCitareAiHtml = `
 
       <p>În versiunea actuală a acestui articol nu sunt folosite benchmarkuri numerice comerciale drept „termene reale” generale. Au fost păstrate numai cifre care apar explicit în documentație oficială și care descriu exact ceea ce afirmă sursa.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Cât durează până Google indexează o pagină nouă?</h3>
+      <h3 id="cat-dureaza-pana-google-indexeaza-o-pagina-noua">Cât durează până Google indexează o pagină nouă?</h3>
 
       <p>Google nu publică o medie universală de indexare. Pentru recrawl, documentația oficială spune că procesul poate dura de la câteva zile la câteva săptămâni și că solicitarea nu garantează indexarea sau apariția în rezultate.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Cât durează până ChatGPT citează un articol nou?</h3>
+      <h3 id="cat-dureaza-pana-chatgpt-citeaza-un-articol-nou">Cât durează până ChatGPT citează un articol nou?</h3>
 
       <p>OpenAI nu publică un termen sau SLA de la publicare la prima citare. Pentru includerea completă în ChatGPT Search, site-ul trebuie să permită accesul OAI-SearchBot și traficul din IP-urile publicate de OpenAI. Faptul că pagina este accesibilă nu garantează că va fi selectată ca sursă pentru o anumită interogare.<sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>Cât durează până Perplexity citează o pagină?</h3>
+      <h3 id="cat-dureaza-pana-perplexity-citeaza-o-pagina">Cât durează până Perplexity citează o pagină?</h3>
 
       <p>Perplexity nu publică un SLA de la publicare la prima citare. Documentația sa spune că <code>PerplexityBot</code> este folosit pentru a descoperi și indexa informații pentru rezultatele Perplexity și recomandă permiterea crawlerului și a IP-urilor publicate.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Google AI Overviews necesită un anumit ranking organic?</h3>
+      <h3 id="google-ai-overviews-necesita-un-anumit-ranking-organic">Google AI Overviews necesită un anumit ranking organic?</h3>
 
       <p>Google nu publică o cerință de tip „top 10” sau „top 30”. Pentru eligibilitate ca supporting link în AI Overviews sau AI Mode, pagina trebuie să fie indexată și eligibilă să apară în Google Search cu un snippet. Îndeplinirea condițiilor nu garantează afișarea.<sup><a href="#fn-5">5</a></sup></p>
 
-      <h3>Google susține IndexNow?</h3>
+      <h3 id="google-sustine-indexnow">Google susține IndexNow?</h3>
 
       <p>La data verificării din <strong>10 august 2026</strong>, Google nu apare în lista oficială a motoarelor participante IndexNow. Lista oficială poate fi modificată în timp și trebuie reverificată.<sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>IndexNow garantează indexarea imediată?</h3>
+      <h3 id="indexnow-garanteaza-indexarea-imediata">IndexNow garantează indexarea imediată?</h3>
 
       <p>Nu. Protocolul notifică imediat motoarele participante că un URL a fost modificat și le permite să prioritizeze crawl-ul. Indexarea și afișarea rămân decizii ale fiecărui motor.<sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>Este necesară randarea pe server pentru AI?</h3>
+      <h3 id="este-necesara-randarea-pe-server-pentru-ai">Este necesară randarea pe server pentru AI?</h3>
 
       <p>Nu există o regulă universală că toate sistemele AI necesită SSR. Google execută JavaScript, iar capabilitățile altor roboți diferă. Totuși, furnizarea conținutului esențial direct în HTML reduce dependența de rendering și este o alegere mai robustă pentru interoperabilitate.<sup><a href="#fn-9">9</a></sup><sup><a href="#fn-10">10</a></sup></p>
 
-      <h3>Dacă nu am fost citat după două luni, înseamnă că pagina nu va fi citată?</h3>
+      <h3 id="daca-nu-am-fost-citat-dupa-doua-luni-inseamna-ca-pagina-nu-va-fi-citata">Dacă nu am fost citat după două luni, înseamnă că pagina nu va fi citată?</h3>
 
       <p>Nu. Nu există un prag oficial de 60, 90 sau 180 de zile după care o pagină devine neeligibilă sau improbabilă pentru citare în toate sistemele AI. Absența citării este un motiv de diagnosticare, nu dovada că fereastra s-a închis.</p>
 
-      <h2>Surse și metodologie</h2>
+      <h2 id="surse-si-metodologie">Surse și metodologie</h2>
 
       <p>Sursele principale sunt documentații oficiale, verificate la <strong>10 august 2026</strong>. Afirmațiile despre produse și politici sunt volatile și descriu starea documentată la această dată.</p>
 
@@ -348,7 +403,7 @@ export const catDureazaIndexareCitareAiHtml = `
         <li id="fn-10">Google Search Central — „Dynamic Rendering as a workaround”. Google recomandă server-side rendering, static rendering sau hydration ca soluții robuste și notează că alte motoare pot alege să nu execute JavaScript: <a href="https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering" target="_blank" rel="noopener noreferrer">developers.google.com/…/dynamic-rendering</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Comportamentul crawlerelor, condițiile de eligibilitate, motoarele participante la IndexNow, limitele API și mecanismele de search/grounding se pot modifica. Toate afirmațiile de tip „platforma X suportă Y” din acest articol trebuie interpretate ca <strong>stare verificată la 10 august 2026</strong>, nu ca proprietăți permanente.</p>
 

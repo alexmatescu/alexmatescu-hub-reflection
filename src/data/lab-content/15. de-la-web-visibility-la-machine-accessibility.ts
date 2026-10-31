@@ -100,6 +100,43 @@ export const deLaWebVisibilityLaMachineAccessibilityHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-09-30T20:59:00+03:00">30 septembrie 2026</time> · Actualizat: <time datetime="2026-10-02">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-30">30 septembrie 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#1-ce-inseamna-machine-accessibility">1. Ce înseamnă machine accessibility?</a></li>
+          <li><a href="#2-de-ce-meta-enterprise-platform-este-un-semnal-important">2. De ce Meta Enterprise Platform este un semnal important?</a></li>
+          <li><a href="#3-de-ce-un-website-public-nu-este-automat-accesibil-tuturor-sistemelor-ai">3. De ce un website public nu este automat accesibil tuturor sistemelor AI?</a></li>
+          <li><a href="#4-de-ce-conectorii-si-api-urile-devin-la-fel-de-importante-ca-paginile-web">4. De ce conectorii și API-urile devin la fel de importante ca paginile web?</a></li>
+          <li><a href="#5-ce-schimba-agentic-commerce">5. Ce schimbă agentic commerce?</a></li>
+          <li><a href="#6-cum-poate-fi-masurata-aceasta-schimbare">6. Cum poate fi măsurată această schimbare?</a>
+            <ol>
+              <li><a href="#1-presence">1. Presence</a></li>
+              <li><a href="#2-discoverability">2. Discoverability</a></li>
+              <li><a href="#3-accessibility">3. Accessibility</a></li>
+              <li><a href="#4-understanding">4. Understanding</a></li>
+              <li><a href="#5-verifiability">5. Verifiability</a></li>
+              <li><a href="#6-recommendability">6. Recommendability</a></li>
+              <li><a href="#7-actionability">7. Actionability</a></li>
+            </ol>
+          </li>
+          <li><a href="#7-ce-inseamna-asta-pentru-geo-aeo-si-ai-visibility">7. Ce înseamnă asta pentru GEO, AEO și AI Visibility?</a></li>
+          <li><a href="#concluzie">Concluzie</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+            <ol>
+              <li><a href="#este-machine-accessibility-un-standard-sau-un-termen-consacrat">Este machine accessibility un standard sau un termen consacrat?</a></li>
+              <li><a href="#daca-activez-in-cloudflare-optiunea-de-a-refuza-ai-training-dispar-din-rezultatele-de-cautare">Dacă activez în Cloudflare opțiunea de a refuza AI training, dispar din rezultatele de căutare?</a></li>
+              <li><a href="#inlocuieste-machine-accessibility-seo-geo-sau-aeo">Înlocuiește machine accessibility SEO, GEO sau AEO?</a></li>
+            </ol>
+          </li>
+          <li><a href="#seria-machine-accessibility-si-agentic-web">Seria „Machine accessibility și agentic web”</a></li>
+          <li><a href="#surse-si-metodologie">Surse și metodologie</a>
+            <ol>
+              <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+            </ol>
+          </li>
+        </ol>
+      </nav>
+
       <p><strong>Vizibilitatea în AI începe să însemne mai mult decât să fii găsit, citat sau recomandat. Pe măsură ce agenții AI capătă acces la aplicații, date, instrumente și acțiuni, devine relevant dacă un sistem poate descoperi o entitate, accesa informația potrivită, o înțelege, o verifică și apoi poate face ceva util cu ea.</strong></p>
       <p>În ultimii ani, discuția despre vizibilitate digitală a fost dominată de o întrebare familiară: poate un motor de căutare să găsească și să indexeze pagina mea?</p>
       <p>Odată cu apariția sistemelor generative, întrebarea s-a schimbat: poate un model AI să găsească informația despre mine, să o înțeleagă și să mă includă într-un răspuns?</p>
@@ -108,7 +145,7 @@ export const deLaWebVisibilityLaMachineAccessibilityHtml = `
       <p>Această schimbare este importantă deoarece mută problema de la <strong>web visibility</strong> la ceea ce voi numi în acest articol <strong>machine accessibility</strong>. Termenul este folosit aici ca etichetă descriptivă a AI Visibility Lab, nu ca standard consacrat al industriei.</p>
       <p>Nu este vorba despre înlocuirea SEO, GEO sau AEO. Este vorba despre extinderea problemei pe care acestea încearcă să o rezolve.</p>
       <hr />
-      <h2>1. Ce înseamnă machine accessibility?</h2>
+      <h2 id="1-ce-inseamna-machine-accessibility">1. Ce înseamnă machine accessibility?</h2>
       <p><strong>Machine accessibility descrie măsura în care un sistem AI poate descoperi, accesa, interpreta, verifica și utiliza informația despre o entitate pentru a răspunde sau a executa o acțiune.</strong></p>
       <p>În modelul web clasic, traseul era relativ simplu:</p>
       <pre><code>Business
@@ -147,7 +184,7 @@ Human</code></pre>
       <p>Nu trebuie doar să găsească o firmă. Poate avea nevoie să îi contacteze sistemul de programări, să completeze un formular sau să inițieze o tranzacție.</p>
       <p>În aceste situații, simpla existență a informației pe web nu mai este suficientă.</p>
       <hr />
-      <h2>2. De ce Meta Enterprise Platform este un semnal important?</h2>
+      <h2 id="2-de-ce-meta-enterprise-platform-este-un-semnal-important">2. De ce Meta Enterprise Platform este un semnal important?</h2>
       <p><strong>Meta arată explicit că agenții AI sunt gândiți nu doar ca interfețe conversaționale, ci ca infrastructură pentru operațiuni de business.</strong></p>
       <p>Pe 28 septembrie 2026, Meta a anunțat <strong>Meta Enterprise Platform</strong>, prezentată ca un nou pilon major al business-ului companiei. Potrivit Meta, platforma se adresează companiilor și dezvoltatorilor și va include inițial agentul Muse, Meta Business Agent, Muse API și Muse Code, alături de alte instrumente.<sup><a href="#fn-1">1</a></sup></p>
       <p>Cu trei săptămâni înainte, pe 8 septembrie, Meta lansase <strong>Muse</strong>, un agent personal care rulează într-o mașină virtuală dedicată și poate lucra în numele utilizatorului printr-un browser integrat și prin aplicațiile conectate. Meta descrie Muse ca pe un sistem care nu doar răspunde la întrebări, ci poate executa sarcini precum trimiterea unui email sau rezervarea unei călătorii, cerând aprobarea utilizatorului înaintea unor acțiuni precum trimiterea de emailuri sau achizițiile. La lansare, Muse era disponibil în SUA.<sup><a href="#fn-2">2</a></sup></p>
@@ -159,7 +196,7 @@ Human</code></pre>
 AI action</code></pre>
       <p>Un business nu mai trebuie doar să fie reprezentat corect în răspunsul unui model. Trebuie să devină și <strong>interoperabil</strong> cu sistemele care acționează în numele clienților sau al propriilor angajați.</p>
       <hr />
-      <h2>3. De ce un website public nu este automat accesibil tuturor sistemelor AI?</h2>
+      <h2 id="3-de-ce-un-website-public-nu-este-automat-accesibil-tuturor-sistemelor-ai">3. De ce un website public nu este automat accesibil tuturor sistemelor AI?</h2>
       <p><strong>Pentru că „public”, „crawlable”, „retrievable”, „authorized” și „actionable” sunt proprietăți diferite.</strong></p>
       <p>În web-ul tradițional, era tentant să tratăm publicarea unei pagini și accesibilitatea ei ca fiind aproape același lucru.</p>
       <p>În ecosistemul AI, această presupunere devine tot mai fragilă.</p>
@@ -177,7 +214,7 @@ Actionable              = NU</code></pre>
       <p>Această diferență va deveni tot mai importantă pe măsură ce agenții vor opera pe web în numele utilizatorilor.</p>
       <p>Diferențele dintre aceste trasee — crawling, căutare, antrenare, acces nativ și conectori — sunt analizate în al doilea articol al seriei: <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a>.</p>
       <hr />
-      <h2>4. De ce conectorii și API-urile devin la fel de importante ca paginile web?</h2>
+      <h2 id="4-de-ce-conectorii-si-api-urile-devin-la-fel-de-importante-ca-paginile-web">4. De ce conectorii și API-urile devin la fel de importante ca paginile web?</h2>
       <p><strong>Pentru că un sistem AI poate primi informația printr-un canal direct și structurat, fără să depindă exclusiv de crawling-ul web.</strong></p>
       <p>Pe 23 septembrie 2026, Anthropic a lansat <strong>Claude Marketplace</strong>, cu peste 2.000 de plugins și connectors disponibile, inclusiv de la Atlassian, Google, Microsoft, Notion și Salesforce. Anthropic dă ca exemplu conectorul Atlassian, care aduce în Claude contextul din Confluence, Jira și alte aplicații ale echipei.<sup><a href="#fn-7">7</a></sup></p>
       <p>Din punct de vedere informațional, acest lucru este semnificativ.</p>
@@ -195,7 +232,7 @@ Internal system → AI</code></pre>
       <p>Din perspectiva AI Visibility, această schimbare înseamnă că trebuie măsurată nu doar <strong>prezența informației</strong>, ci și <strong>calea prin care un sistem o poate accesa</strong>.</p>
       <p>Ce înseamnă această schimbare pentru site-ul propriu, inclusiv WebMCP, MCP și API-urile puse la dispoziția agenților, este tema celui de-al treilea articol: <a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">Site-ul nu dispare. Își schimbă clientul</a>.</p>
       <hr />
-      <h2>5. Ce schimbă agentic commerce?</h2>
+      <h2 id="5-ce-schimba-agentic-commerce">5. Ce schimbă agentic commerce?</h2>
       <p><strong>Transformă recomandarea într-un posibil punct intermediar, nu într-un rezultat final.</strong></p>
       <p>Într-un motor de căutare clasic, obiectivul unei companii putea fi obținerea clickului.</p>
       <p>Într-un răspuns AI, obiectivul poate deveni menționarea, citarea sau recomandarea.</p>
@@ -218,22 +255,22 @@ Transact with me</code></pre>
       <p>Ele țin de capacitatea entității de a fi <strong>accesată operațional</strong> de un sistem AI.</p>
       <p>Traseul complet, de la menționare și recomandare până la tranzacție, este analizat în al patrulea articol: <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business</a>.</p>
       <hr />
-      <h2>6. Cum poate fi măsurată această schimbare?</h2>
+      <h2 id="6-cum-poate-fi-masurata-aceasta-schimbare">6. Cum poate fi măsurată această schimbare?</h2>
       <p><strong>Machine accessibility poate fi transformată din concept într-un set de teste observabile.</strong></p>
       <p>Pentru AI Visibility Lab, o primă schemă de lucru poate fi următoarea. Este un cadru propus de laborator, încă nevalidat experimental, nu un standard al industriei:</p>
-      <h3>1. Presence</h3>
+      <h3 id="1-presence">1. Presence</h3>
       <p>Există o urmă digitală clară a entității?</p>
-      <h3>2. Discoverability</h3>
+      <h3 id="2-discoverability">2. Discoverability</h3>
       <p>Poate sistemul să găsească entitatea și sursele relevante?</p>
-      <h3>3. Accessibility</h3>
+      <h3 id="3-accessibility">3. Accessibility</h3>
       <p>Poate accesa efectiv informația prin web, API, connector, plugin sau alt mecanism autorizat?</p>
-      <h3>4. Understanding</h3>
+      <h3 id="4-understanding">4. Understanding</h3>
       <p>Poate identifica corect entitatea, ofertele, relațiile și atributele ei?</p>
-      <h3>5. Verifiability</h3>
+      <h3 id="5-verifiability">5. Verifiability</h3>
       <p>Poate valida informația prin surse actuale și suficient de autoritative?</p>
-      <h3>6. Recommendability</h3>
+      <h3 id="6-recommendability">6. Recommendability</h3>
       <p>Poate include entitatea într-un răspuns de comparație sau recomandare relevant?</p>
-      <h3>7. Actionability</h3>
+      <h3 id="7-actionability">7. Actionability</h3>
       <p>Poate executa următorul pas: contact, programare, comandă, rezervare, achiziție sau altă acțiune permisă?</p>
       <p>Rezumatul poate fi exprimat astfel:</p>
       <pre><code>Presence
@@ -256,7 +293,7 @@ Actionability</code></pre>
       <p>Primele niveluri sunt deja teme ale laboratorului: diferența dintre ce vede un om și ce vede un crawler la același URL (analizată în <a href="/lab/articole/paradoxul-site-ului-terminat">Paradoxul site-ului terminat</a>), identificarea corectă a unei entități (<a href="/lab/articole/ce-este-entitate-ai-studiu-de-caz">Ce este o entitate pentru AI</a>) și măsurarea longitudinală a felului în care Search și AI Search rezolvă o identitate (<a href="/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz">studiul de caz Tabula Rasa</a>). Nivelurile Accessibility prin canale autorizate și Actionability nu au fost încă măsurate în AI Visibility Lab.</p>
       <p>Important este că vizibilitatea nu mai poate fi tratată ca o proprietate binară.</p>
       <hr />
-      <h2>7. Ce înseamnă asta pentru GEO, AEO și AI Visibility?</h2>
+      <h2 id="7-ce-inseamna-asta-pentru-geo-aeo-si-ai-visibility">7. Ce înseamnă asta pentru GEO, AEO și AI Visibility?</h2>
       <p><strong>Înseamnă că problema se extinde de la „poate AI-ul să vorbească despre mine?” la „poate AI-ul să lucreze corect cu informația și sistemele mele?”</strong></p>
       <p>SEO a optimizat relația dintre website și motorul de căutare.</p>
       <p>AEO a pus accent pe capacitatea conținutului de a răspunde direct unei întrebări.</p>
@@ -288,7 +325,7 @@ Actionability</code></pre>
       <p>Ci:</p>
       <blockquote><p><strong>Pentru ce sistem este accesibilă, prin ce mecanism și ce poate face acel sistem cu ea?</strong></p></blockquote>
       <hr />
-      <h2>Concluzie</h2>
+      <h2 id="concluzie">Concluzie</h2>
       <p>Internetul nu încetează să fie format din website-uri, documentație, baze de date, platforme sociale și aplicații.</p>
       <p>Platformele sociale au propriile trasee prin care conținutul lor ajunge la sistemele AI, analizate în ultimul articol al seriei: <a href="/lab/articole/social-media-devine-strat-informational-pentru-ai">Social media devine strat informațional pentru AI</a>.</p>
       <p>Ceea ce se schimbă este <strong>interfața prin care aceste resurse sunt descoperite și utilizate</strong>.</p>
@@ -304,17 +341,17 @@ Actionability</code></pre>
       <p>Iar acesta este motivul pentru care următoarea întrebare pentru un business nu va fi doar „mă găsește AI-ul?”, ci:</p>
       <blockquote><p><strong>Cât de accesibil sunt pentru sistemele care caută, interpretează, recomandă și acționează în numele oamenilor?</strong></p></blockquote>
       <hr />
-      <h2>Întrebări frecvente</h2>
-      <h3>Este machine accessibility un standard sau un termen consacrat?</h3>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
+      <h3 id="este-machine-accessibility-un-standard-sau-un-termen-consacrat">Este machine accessibility un standard sau un termen consacrat?</h3>
       <p>Nu. În acest articol, machine accessibility este o etichetă descriptivă folosită de AI Visibility Lab pentru a numi traseul dintre informația despre o entitate și acțiunea pe care un sistem AI o poate face cu ea. Nu este un standard al industriei și nici un termen definit de Meta, Anthropic, OpenAI sau Cloudflare.</p>
-      <h3>Dacă activez în Cloudflare opțiunea de a refuza AI training, dispar din rezultatele de căutare?</h3>
+      <h3 id="daca-activez-in-cloudflare-optiunea-de-a-refuza-ai-training-dispar-din-rezultatele-de-cautare">Dacă activez în Cloudflare opțiunea de a refuza AI training, dispar din rezultatele de căutare?</h3>
       <p>Nu ar trebui, potrivit Cloudflare. Setarea „Disallow AI Training” a fost gândită tocmai pentru a separa search-ul de training la crawlerele cu utilizare mixtă, iar Cloudflare afirmă că Apple, Google și Microsoft s-au angajat să o respecte fără efect asupra ranking-ului în search. Pentru operatorii care nu și-au asumat acest angajament, comportamentul trebuie verificat separat.</p>
-      <h3>Înlocuiește machine accessibility SEO, GEO sau AEO?</h3>
+      <h3 id="inlocuieste-machine-accessibility-seo-geo-sau-aeo">Înlocuiește machine accessibility SEO, GEO sau AEO?</h3>
       <p>Nu. Articolul susține că problema se extinde, nu că disciplinele existente devin inutile. Indexarea, înțelegerea conținutului și prezența în răspunsurile generative rămân condiții ale traseului; machine accessibility adaugă întrebările despre acces autorizat, verificare și acțiune.</p>
 
       <hr />
 
-      <h2>Seria „Machine accessibility și agentic web”</h2>
+      <h2 id="seria-machine-accessibility-si-agentic-web">Seria „Machine accessibility și agentic web”</h2>
       <ol>
         <li><strong>De la web visibility la machine accessibility</strong> (acest articol)</li>
         <li><a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a></li>
@@ -325,7 +362,7 @@ Actionability</code></pre>
 
       <hr />
 
-      <h2>Surse și metodologie</h2>
+      <h2 id="surse-si-metodologie">Surse și metodologie</h2>
 
       <p>Acest articol tratează anunțurile și documentațiile citate ca <strong>evidence inputs</strong>, nu ca validare independentă a afirmațiilor comerciale ale furnizorilor. Cifrele (peste un milion de business-uri, peste 2.000 de plugins și connectors) sunt raportate de companii. Pe 30 septembrie 2026 au fost reverificate existența și data fiecărei surse, formularea capabilităților descrise și disponibilitatea anunțată (de exemplu, Muse lansat în SUA). Cele două pagini OpenAI blochează accesul automat și au fost confirmate prin indexul de căutare, nu prin citire directă. Termenul „machine accessibility” și modelul în șapte niveluri sunt propuneri ale AI Visibility Lab, nu standarde ale industriei, iar ultimele niveluri ale modelului nu au fost încă testate empiric.</p>
 
@@ -341,7 +378,7 @@ Actionability</code></pre>
         <li id="fn-9">OpenAI Help Center, <strong>Using shopping research in ChatGPT</strong>, consultat prin indexul de căutare la 30 septembrie 2026 (pagina blochează accesul automat). <a href="https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt" target="_blank" rel="noopener noreferrer">help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Produsele agentice, conectorii, protocoalele de commerce și politicile de acces pentru crawlere se schimbă rapid. Disponibilitatea regională, lista integrărilor și angajamentele operatorilor pot fi diferite la data lecturii. Afirmațiile despre produse au fost verificate la 30 septembrie 2026.</p>
 

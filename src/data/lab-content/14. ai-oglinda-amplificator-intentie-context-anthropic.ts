@@ -85,6 +85,53 @@ export const aiOglindaAmplificatorHtml = `
         <figcaption>Ilustrație conceptuală: aceleași capabilități AI pot reflecta și amplifica intenții foarte diferite — de la curiozitatea și progresul uman la cele șapte arii de risc documentate de raportul Anthropic din septembrie 2026.</figcaption>
       </figure>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#raspunsul-scurt-ai-ul-amplifica-intentia-utilizatorului">Răspunsul scurt: AI-ul amplifică intenția utilizatorului?</a></li>
+          <li><a href="#partea-i-ce-vrei-ai-ul-ca-oglinda-imperfecta">Partea I. Ce vrei: AI-ul ca oglindă imperfectă</a>
+            <ol>
+              <li><a href="#cazul-lakana-360-intentia-exista-inaintea-instrumentului">Cazul Lakana 360: intenția exista înaintea instrumentului</a></li>
+              <li><a href="#de-ce-ai-ul-nu-este-o-oglinda-perfecta">De ce AI-ul nu este o oglindă perfectă</a></li>
+            </ol>
+          </li>
+          <li><a href="#amplificatorul-ce-s-a-schimbat-in-economia-executiei">Amplificatorul: ce s-a schimbat în economia execuției</a></li>
+          <li><a href="#partea-a-ii-a-cat-ceri-de-ce-contextul-si-iteratia-conteaza">Partea a II-a. Cât ceri: de ce contextul și iterația contează</a>
+            <ol>
+              <li><a href="#nu-exista-dovada-ca-majoritatea-oamenilor-se-opresc-la-primul-raspuns">Nu există dovadă că „majoritatea oamenilor se opresc la primul răspuns”</a></li>
+              <li><a href="#catelul-pe-care-nu-il-dresezi-si-limita-metaforei">Cățelul pe care nu îl dresezi — și limita metaforei</a></li>
+              <li><a href="#un-exemplu-simplu-problema-bateriei">Un exemplu simplu: problema bateriei</a></li>
+            </ol>
+          </li>
+          <li><a href="#context-engineering-nu-lungimea-promptului-ci-informatia-relevanta">Context engineering: nu lungimea promptului, ci informația relevantă</a></li>
+          <li><a href="#alegerea-instrumentului-ai-ul-de-familie-nu-este-specialist-universal">Alegerea instrumentului: „AI-ul de familie” nu este specialist universal</a></li>
+          <li><a href="#ce-arata-concret-raportul-anthropic-din-septembrie-2026">Ce arată concret raportul Anthropic din septembrie 2026</a></li>
+          <li><a href="#ce-nu-demonstreaza-raportul">Ce nu demonstrează raportul</a></li>
+          <li><a href="#ce-ramane-din-metafora-oglinzii-si-amplificatorului">Ce rămâne din metafora oglinzii și amplificatorului</a></li>
+          <li><a href="#trei-intrebari-inaintea-unei-conversatii-importante-cu-ai">Trei întrebări înaintea unei conversații importante cu AI</a>
+            <ol>
+              <li><a href="#1-ce-incerc-de-fapt-sa-obtin">1. Ce încerc de fapt să obțin?</a></li>
+              <li><a href="#2-ce-context-si-ce-dovezi-ii-lipsesc-modelului">2. Ce context și ce dovezi îi lipsesc modelului?</a></li>
+              <li><a href="#3-ce-parte-din-rezultat-ramane-responsabilitatea-mea">3. Ce parte din rezultat rămâne responsabilitatea mea?</a></li>
+            </ol>
+          </li>
+          <li><a href="#concluzie">Concluzie</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+            <ol>
+              <li><a href="#raportul-anthropic-demonstreaza-ca-ai-ul-amplifica-personalitatea-utilizatorului">Raportul Anthropic demonstrează că AI-ul amplifică personalitatea utilizatorului?</a></li>
+              <li><a href="#prompturile-mai-detaliate-produc-intotdeauna-raspunsuri-mai-bune">Prompturile mai detaliate produc întotdeauna răspunsuri mai bune?</a></li>
+              <li><a href="#invata-modelul-permanent-din-corectiile-mele">Învață modelul permanent din corecțiile mele?</a></li>
+              <li><a href="#daca-anthropic-blocheaza-un-cont-dispare-si-sistemul-construit-cu-ajutorul-claude">Dacă Anthropic blochează un cont, dispare și sistemul construit cu ajutorul Claude?</a></li>
+            </ol>
+          </li>
+          <li><a href="#surse-si-metodologie">Surse și metodologie</a>
+            <ol>
+              <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+            </ol>
+          </li>
+        </ol>
+      </nav>
+
       <p><strong>Raportul Anthropic din septembrie 2026 nu demonstrează că AI-ul este literalmente o „oglindă” a utilizatorului. Arată însă ceva mai precis și mai util: aceleași capabilități generale pot fi integrate în scopuri foarte diferite, iar modelele pot reduce costul, timpul și volumul de muncă necesare pentru executarea unei intenții deja stabilite de om. În utilizarea legitimă, documentația Anthropic și OpenAI susține o a doua idee: instrucțiunile clare, contextul relevant și rafinarea iterativă pot îmbunătăți rezultatele, fără să le garanteze.</strong></p>
 
       <p>Pe 10 septembrie 2026, Anthropic a publicat raportul <strong>„Detecting and countering misuse of AI: September 2026”</strong>, bazat pe activități pe care echipa sa de Threat Intelligence spune că le-a identificat și întrerupt între decembrie 2025 și august 2026.<sup><a href="#fn-1">1</a></sup> Raportul acoperă șapte arii de risc: operațiuni cibernetice, operațiuni de influență, supraveghere, escrocherii și fraude, abuz biologic, dezvoltarea de arme convenționale și distilare ilicită. Anthropic precizează că exemplele publicate nu reprezintă utilizarea tipică a Claude, ci unele dintre cele mai notabile și noi cazuri de abuz observate de companie.<sup><a href="#fn-1">1</a></sup></p>
@@ -95,15 +142,15 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Răspunsul meu este o metaforă, nu o concluzie a raportului: AI-ul poate funcționa ca <strong>oglindă și amplificator</strong>. Oglindă, pentru că instrucțiunile și contextul utilizatorului influențează direcția rezultatului. Amplificator, pentru că anumite sarcini pot fi executate mai repede, la scară mai mare sau cu mai puțină muncă umană. Metafora are însă limite importante: modelul nu reflectă pasiv orice cerere, nu este omnipotent și nu transformă automat intenția în rezultat.</p>
 
-      <h2>Răspunsul scurt: AI-ul amplifică intenția utilizatorului?</h2>
+      <h2 id="raspunsul-scurt-ai-ul-amplifica-intentia-utilizatorului">Răspunsul scurt: AI-ul amplifică intenția utilizatorului?</h2>
 
       <p><strong>În anumite condiții, da — dar „amplifică” este o interpretare, nu un mecanism universal demonstrat.</strong> Raportul Anthropic documentează cazuri în care Claude a redus necesarul de muncă, a accelerat dezvoltarea de instrumente sau a permis unor operatori să gestioneze activități care ar fi cerut anterior mai multe resurse. Anthropic descrie explicit această schimbare prin viteză, scară și profunzime și afirmă, în contextul operațiunilor cibernetice analizate, că diferența dintre actori bine finanțați și actori mai mici nu mai poate fi dedusă la fel de ușor din sofisticarea tehnică.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Asta nu înseamnă că modelul adaugă pur și simplu putere oricărei intenții. Rezultatul depinde de capabilitățile modelului, calitatea informației de intrare, instrumentele disponibile, verificarea umană, restricțiile produsului și măsurile de siguranță. În mai multe cazuri din raport, Claude a refuzat sau a limitat cereri, iar Anthropic a detectat și a blocat conturi implicate în abuz.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h2>Partea I. Ce vrei: AI-ul ca oglindă imperfectă</h2>
+      <h2 id="partea-i-ce-vrei-ai-ul-ca-oglinda-imperfecta">Partea I. Ce vrei: AI-ul ca oglindă imperfectă</h2>
 
-      <h3>Cazul Lakana 360: intenția exista înaintea instrumentului</h3>
+      <h3 id="cazul-lakana-360-intentia-exista-inaintea-instrumentului">Cazul Lakana 360: intenția exista înaintea instrumentului</h3>
 
       <p>Unul dintre cele mai clare exemple din raport este <strong>GTG-50027</strong>. Anthropic spune că un singur abonat Claude, evaluat de companie drept probabil consultant independent din Bamako care lucra cu serviciul de informații al statului Mali, ANSE, a folosit Claude drept principală forță de inginerie pentru un sistem numit „Lakana 360”. Platforma era concepută pentru supraveghere internă la scară națională și viza aproximativ 25 de milioane de cartele SIM de la cei trei operatori mobili naționali.<sup><a href="#fn-1">1</a></sup></p>
 
@@ -113,7 +160,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Dar metafora devine falsă dacă o ducem prea departe.</p>
 
-      <h3>De ce AI-ul nu este o oglindă perfectă</h3>
+      <h3 id="de-ce-ai-ul-nu-este-o-oglinda-perfecta">De ce AI-ul nu este o oglindă perfectă</h3>
 
       <p>O oglindă reflectă orice fără să intervină. Un model comercial nu funcționează așa. Are antrenament, politici, instrucțiuni de sistem, filtre, monitorizare și alte mecanisme care îi pot modifica sau opri comportamentul.</p>
 
@@ -127,7 +174,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Nu este la fel de memorabil ca „AI-ul este o oglindă”. Este însă mai aproape de ceea ce dovezile permit să spunem.</p>
 
-      <h2>Amplificatorul: ce s-a schimbat în economia execuției</h2>
+      <h2 id="amplificatorul-ce-s-a-schimbat-in-economia-executiei">Amplificatorul: ce s-a schimbat în economia execuției</h2>
 
       <p>Una dintre concluziile cele mai puternice ale raportului Anthropic privește economia operațiunilor cibernetice. Compania notează că tehnicile de bază observate — credențiale furate, sisteme neactualizate, servicii expuse, SQL injection sau phishing — nu sunt complet noi. Schimbarea este în costul și viteza execuției.<sup><a href="#fn-1">1</a></sup></p>
 
@@ -139,9 +186,9 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Aceeași proprietate este valoroasă și în utilizări legitime: un om poate folosi un model pentru a structura informații, a genera variante, a analiza documente, a scrie cod sau a itera asupra unei probleme. Raportul de threat intelligence nu măsoară aceste beneficii și nu trebuie folosit ca dovadă pentru ele. Pentru partea legitimă a argumentului, sursele potrivite sunt documentațiile despre prompting și context, nu cazurile de abuz.</p>
 
-      <h2>Partea a II-a. Cât ceri: de ce contextul și iterația contează</h2>
+      <h2 id="partea-a-ii-a-cat-ceri-de-ce-contextul-si-iteratia-conteaza">Partea a II-a. Cât ceri: de ce contextul și iterația contează</h2>
 
-      <h3>Nu există dovadă că „majoritatea oamenilor se opresc la primul răspuns”</h3>
+      <h3 id="nu-exista-dovada-ca-majoritatea-oamenilor-se-opresc-la-primul-raspuns">Nu există dovadă că „majoritatea oamenilor se opresc la primul răspuns”</h3>
 
       <p>O formulare tentantă ar fi că oamenii obțin rezultate mediocre pentru că se mulțumesc cu primul răspuns. Nu am găsit în sursele folosite aici date care să susțină o asemenea generalizare.</p>
 
@@ -151,7 +198,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Așadar, diferența dintre un prompt vag și unul bine contextualizat nu este o regulă magică de tipul „mai multe cuvinte = răspuns mai bun”. Este o problemă de <strong>semnal relevant</strong>.</p>
 
-      <h3>Cățelul pe care nu îl dresezi — și limita metaforei</h3>
+      <h3 id="catelul-pe-care-nu-il-dresezi-si-limita-metaforei">Cățelul pe care nu îl dresezi — și limita metaforei</h3>
 
       <p>Îmi place o comparație: iei un pui de câine și vrei să-l dresezi. Rezultatul depinde mult de consecvența cu care lucrezi cu el. Dacă renunți repede, nu ai testat limita animalului; ai testat limita procesului tău.</p>
 
@@ -161,7 +208,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Prin urmare, nu „dresezi” pur și simplu modelul. <strong>Construiești contextul în care modelul lucrează și, în același timp, îți rafinezi propria capacitate de a formula problema.</strong></p>
 
-      <h3>Un exemplu simplu: problema bateriei</h3>
+      <h3 id="un-exemplu-simplu-problema-bateriei">Un exemplu simplu: problema bateriei</h3>
 
       <p>Întrebarea:</p>
 
@@ -177,7 +224,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>A doua formulare nu garantează un răspuns corect. Poți oferi un an greșit, o motorizare greșită sau un simptom interpretat greșit și să obții un răspuns foarte specific construit pe premise false. <strong>Specificitatea crește utilitatea doar dacă informația de intrare este suficient de corectă și dacă rezultatul este verificat acolo unde miza o cere.</strong></p>
 
-      <h2>Context engineering: nu lungimea promptului, ci informația relevantă</h2>
+      <h2 id="context-engineering-nu-lungimea-promptului-ci-informatia-relevanta">Context engineering: nu lungimea promptului, ci informația relevantă</h2>
 
       <p>Pe măsură ce sistemele au devenit mai capabile și mai agentice, discuția s-a mutat parțial de la „prompt engineering” la „context engineering”. Anthropic definește problema ca alegerea și organizarea contextului care crește probabilitatea comportamentului dorit al modelului.<sup><a href="#fn-4">4</a></sup></p>
 
@@ -187,7 +234,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p><strong>I-am dat modelului informația, constrângerile, criteriile și instrumentele de care are nevoie pentru sarcina aceasta?</strong></p>
 
-      <h2>Alegerea instrumentului: „AI-ul de familie” nu este specialist universal</h2>
+      <h2 id="alegerea-instrumentului-ai-ul-de-familie-nu-este-specialist-universal">Alegerea instrumentului: „AI-ul de familie” nu este specialist universal</h2>
 
       <p>Mai există o formă de disciplină care nu ține de prompt: alegerea instrumentului.</p>
 
@@ -197,7 +244,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>A ști când să schimbi modelul, să activezi căutarea, să verifici sursa sau să mergi la un specialist face parte din competența de utilizare a AI.</p>
 
-      <h2>Ce arată concret raportul Anthropic din septembrie 2026</h2>
+      <h2 id="ce-arata-concret-raportul-anthropic-din-septembrie-2026">Ce arată concret raportul Anthropic din septembrie 2026</h2>
 
       <p>Raportul conține suficiente cazuri încât detalierea fiecăruia ar transforma această analiză într-un rezumat al documentului original. Pentru teza articolului sunt mai importante tiparele decât inventarul complet.</p>
 
@@ -245,7 +292,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Sursa primară pentru toate aceste descrieri este raportul Anthropic.<sup><a href="#fn-1">1</a></sup> Cifrele și atribuirea actorilor trebuie citite ca rezultate ale investigației companiei, nu ca statistici independente despre întregul ecosistem AI.</p>
 
-      <h2>Ce nu demonstrează raportul</h2>
+      <h2 id="ce-nu-demonstreaza-raportul">Ce nu demonstrează raportul</h2>
 
       <p>Raportul <strong>nu demonstrează</strong> că AI-ul face oamenii mai buni sau mai răi. Nu demonstrează că orice utilizator poate obține „munca unei echipe de zece experți”. Nu demonstrează că un prompt mai lung produce automat un rezultat mai bun. Nu demonstrează că utilizatorii perseverenți obțin întotdeauna rezultate remarcabile și nici că utilizatorii cu așteptări mici obțin inevitabil rezultate mediocre.</p>
 
@@ -253,7 +300,7 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Această separare dintre <strong>fapt documentat</strong> și <strong>interpretare</strong> este esențială.</p>
 
-      <h2>Ce rămâne din metafora oglinzii și amplificatorului</h2>
+      <h2 id="ce-ramane-din-metafora-oglinzii-si-amplificatorului">Ce rămâne din metafora oglinzii și amplificatorului</h2>
 
       <p>După toate corecțiile, ideea centrală rămâne — doar că devine mai precisă.</p>
 
@@ -265,23 +312,23 @@ export const aiOglindaAmplificatorHtml = `
 
       <p>Aici este partea care mă interesează cel mai mult. Nu ideea că AI-ul ne va transforma inevitabil, ci faptul că ne obligă să fim mai expliciți cu ceea ce vrem.</p>
 
-      <h2>Trei întrebări înaintea unei conversații importante cu AI</h2>
+      <h2 id="trei-intrebari-inaintea-unei-conversatii-importante-cu-ai">Trei întrebări înaintea unei conversații importante cu AI</h2>
 
-      <h3>1. Ce încerc de fapt să obțin?</h3>
+      <h3 id="1-ce-incerc-de-fapt-sa-obtin">1. Ce încerc de fapt să obțin?</h3>
 
       <p>Nu „ce prompt să scriu?”, ci care este rezultatul real pe care îl urmăresc și după ce criterii îl voi considera bun.</p>
 
-      <h3>2. Ce context și ce dovezi îi lipsesc modelului?</h3>
+      <h3 id="2-ce-context-si-ce-dovezi-ii-lipsesc-modelului">2. Ce context și ce dovezi îi lipsesc modelului?</h3>
 
       <p>Ce știe din conversație? Ce trebuie să-i ofer? Are nevoie de surse actuale, documente, date, instrumente sau exemple? Ce premise trebuie verificate?</p>
 
-      <h3>3. Ce parte din rezultat rămâne responsabilitatea mea?</h3>
+      <h3 id="3-ce-parte-din-rezultat-ramane-responsabilitatea-mea">3. Ce parte din rezultat rămâne responsabilitatea mea?</h3>
 
       <p>Unde trebuie să verific? Ce decizie nu ar trebui delegată? Ce consecințe apar dacă răspunsul este greșit?</p>
 
       <p>Aceste trei întrebări sunt mai puțin spectaculoase decât promisiunea unei „echipe de experți într-o fereastră de chat”. Sunt însă mai utile.</p>
 
-      <h2>Concluzie</h2>
+      <h2 id="concluzie">Concluzie</h2>
 
       <p>Raportul Anthropic din septembrie 2026 documentează ceva important: în unele operațiuni investigate, AI-ul a redus barierele de muncă, timp și expertiză necesare pentru activități pe care oamenii intenționau deja să le execute.<sup><a href="#fn-1">1</a></sup> În același timp, raportul documentează refuzuri ale modelului, detectarea abuzului și limite ale intervenției furnizorului — inclusiv cazul Lakana 360, unde blocarea contului a oprit accesul actorului la Claude, dar nu și platforma deja instalată local.<sup><a href="#fn-1">1</a></sup></p>
 
@@ -293,27 +340,27 @@ export const aiOglindaAmplificatorHtml = `
 
       <p><strong>Ce alegi să amplifici?</strong></p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Raportul Anthropic demonstrează că AI-ul amplifică personalitatea utilizatorului?</h3>
+      <h3 id="raportul-anthropic-demonstreaza-ca-ai-ul-amplifica-personalitatea-utilizatorului">Raportul Anthropic demonstrează că AI-ul amplifică personalitatea utilizatorului?</h3>
 
       <p>Nu. Raportul documentează cazuri de abuz și efecte asupra vitezei, scalei și capabilității operaționale. „Oglinda” și „amplificatorul” sunt metafore editoriale folosite pentru interpretarea acestor observații, nu concluzii științifice formulate de Anthropic.</p>
 
-      <h3>Prompturile mai detaliate produc întotdeauna răspunsuri mai bune?</h3>
+      <h3 id="prompturile-mai-detaliate-produc-intotdeauna-raspunsuri-mai-bune">Prompturile mai detaliate produc întotdeauna răspunsuri mai bune?</h3>
 
       <p>Nu. Anthropic și OpenAI recomandă claritate, specificitate, context relevant și iterație, dar asta nu înseamnă că lungimea promptului este un factor universal de calitate. Un context scurt și relevant poate fi mai bun decât unul lung și zgomotos.<sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>Învață modelul permanent din corecțiile mele?</h3>
+      <h3 id="invata-modelul-permanent-din-corectiile-mele">Învață modelul permanent din corecțiile mele?</h3>
 
       <p>Nu trebuie presupus acest lucru. Continuitatea depinde de produs și configurație. Un sistem poate folosi contextul conversației, memorie de produs sau fișiere persistente, iar agenții pot fi proiectați să păstreze stare între sesiuni. Aceste mecanisme sunt diferite de afirmația simplificată că modelul de bază „se antrenează” permanent din fiecare corecție a utilizatorului.<sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>Dacă Anthropic blochează un cont, dispare și sistemul construit cu ajutorul Claude?</h3>
+      <h3 id="daca-anthropic-blocheaza-un-cont-dispare-si-sistemul-construit-cu-ajutorul-claude">Dacă Anthropic blochează un cont, dispare și sistemul construit cu ajutorul Claude?</h3>
 
       <p>Nu neapărat. În cazul Lakana 360, Anthropic afirmă că platforma fusese instalată local și folosea modele locale; blocarea contului a întrerupt activitatea de proiectare și software desfășurată prin Claude, nu și produsul deja implementat.<sup><a href="#fn-1">1</a></sup></p>
 
       <hr />
 
-      <h2>Surse și metodologie</h2>
+      <h2 id="surse-si-metodologie">Surse și metodologie</h2>
 
       <p>Acest articol pornește de la raportul primar Anthropic și verifică separat afirmațiile despre prompting și context prin documentația oficială Anthropic și OpenAI. Cazurile GTG, cifrele și atribuirea actorilor sunt prezentate ca afirmații ale investigației Anthropic. Metaforele „oglindă” și „amplificator”, precum și concluziile despre responsabilitatea utilizatorului, sunt interpretări editoriale ale autorului, nu concluzii atribuite furnizorilor.</p>
 
@@ -324,7 +371,7 @@ export const aiOglindaAmplificatorHtml = `
         <li id="fn-4">Anthropic — „Effective context engineering for AI agents”. Definește context engineering ca selecția și organizarea contextului pentru a maximiza probabilitatea comportamentului dorit al modelului și documentează mecanisme de context persistent (memory tool, structured note-taking) în sisteme agentice: <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener noreferrer">anthropic.com/engineering/effective-context-engineering-for-ai-agents</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Documentația produselor AI, capabilitățile modelelor și mecanismele de memorie, context și siguranță se pot modifica. Afirmațiile despre produsele curente au fost verificate la <strong>30 septembrie 2026</strong>.</p>
 

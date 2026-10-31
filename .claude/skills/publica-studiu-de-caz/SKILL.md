@@ -545,7 +545,7 @@ Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afir
 - [ ] Frontmatter complet conform §0.3: `document_type`, `version` (= ultimul rând din „Istoricul versiunilor”), `status`, `author_url`, `organization_url`, `date_created`, `purpose`, `evidence_releases` (cu pachetul fazei noi, dacă e cazul).
 - [ ] `@id` Person identic peste tot; publisher `labPublisher` consistent.
 - [ ] `CS-NNN` determinat corect (verificat față de `labCaseStudyMeta` existent, nu presupus).
-- [ ] Cuprins conform `publica-articol-lab` §6.5: toate `<h2>`/`<h3>`, ancore unice și valide, `id`-urile secțiunilor existente păstrate la o fază nouă.
+- [ ] Cuprins conform `publica-articol-lab` §6.5: toate `<h2>`/`<h3>` (doar `<h2>` peste 40 de titluri), ancore unice și valide, `id`-urile secțiunilor existente păstrate la o fază nouă.
 
 **Evidence figures (§8)**
 - [ ] Fiecare imagine referențiată verificată fizic; nicio imagine regenerată/alterată.

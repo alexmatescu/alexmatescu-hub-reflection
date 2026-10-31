@@ -124,45 +124,71 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
         <figcaption>Exemplu publicat de Google în mai 2026: linkurile provenite din abonamentele utilizatorului sunt marcate cu eticheta „Subscribed” în AI Search. Sursa imaginii: <a href="https://blog.google/products-and-platforms/products/search/explore-web-generative-ai-search/" target="_blank" rel="noopener noreferrer">Google</a>. Google and the Google logo are trademarks of Google LLC.</figcaption>
       </figure>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#ce-a-anuntat-google-pe-6-mai-2026">Ce a anunțat Google pe 6 mai 2026</a></li>
+          <li><a href="#eticheta-de-prezentare-nu-dovada-de-ranking-factor">Etichetă de prezentare, nu dovadă de „ranking factor”</a></li>
+          <li><a href="#ce-s-a-schimbat-in-documentatia-google-dupa-anuntul-din-mai">Ce s-a schimbat în documentația Google după anunțul din mai</a></li>
+          <li><a href="#cum-functioneaza-subscription-linking-tehnic">Cum funcționează Subscription Linking, tehnic</a></li>
+          <li><a href="#poti-masura-efectul-subscription-linking">Poți măsura efectul Subscription Linking</a></li>
+          <li><a href="#context-traficul-de-search-catre-publisheri-este-in-scadere">Context: traficul de search către publisheri este în scădere</a></li>
+          <li><a href="#de-ce-conteaza-relatia-cu-publicul-dincolo-de-presa">De ce contează relația cu publicul dincolo de presă</a></li>
+          <li><a href="#framework-ai-visibility-lab-public-descoperit-versus-public-legat-direct">Framework AI Visibility Lab: public descoperit versus public legat direct</a></li>
+          <li><a href="#ce-putem-deduce-si-ce-nu-putem-deduce">Ce putem deduce și ce nu putem deduce</a></li>
+          <li><a href="#actualizarile-google-nu-imping-toate-catre-acelasi-tip-de-sursa">Actualizările Google nu împing toate către același tip de sursă</a></li>
+          <li><a href="#social-media-nu-dispare-totul-cand-te-opresti-din-postat">Social media: nu dispare totul când te oprești din postat</a></li>
+          <li><a href="#ce-inseamna-pentru-creatori">Ce înseamnă pentru creatori</a></li>
+          <li><a href="#ce-inseamna-pentru-firme">Ce înseamnă pentru firme</a></li>
+          <li><a href="#linkurile-inline-nu-demonstreaza-granular-ranking">Linkurile inline nu demonstrează „granular ranking”</a></li>
+          <li><a href="#query-fan-out-ce-este-confirmat">Query fan-out: ce este confirmat</a></li>
+          <li><a href="#titlul-paginii-si-identitatea-sursei-conteaza-pentru-click-dar-fara-formula">Titlul paginii și identitatea sursei contează pentru click — dar fără formulă</a></li>
+          <li><a href="#ce-este-rezonabil-sa-faci-ordonat-dupa-certitudine">Ce este rezonabil să faci, ordonat după certitudine</a></li>
+          <li><a href="#un-context-util-institutii-si-creatori">Un context util: instituții și creatori</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a></li>
+          <li><a href="#metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Pe 6 mai 2026, Google a anunțat că AI Mode și AI Overviews pot evidenția linkurile provenite din publicațiile la care utilizatorul are un abonament legat de contul Google. În testele timpurii ale companiei, oamenii au fost „semnificativ mai predispuși” să dea clic pe linkurile marcate drept abonamente. Funcția este importantă pentru că introduce în mod vizibil relația preexistentă dintre utilizator și sursă în prezentarea răspunsului. Nu demonstrează însă că „abonamentul” este un nou factor general de ranking și nici că orice newsletter, comunitate sau listă de e-mail produce un semnal pentru AI Search.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup></p>
 
       <p>Aceasta este distincția centrală:</p>
 
       <blockquote><p><strong>Google documentează o relație utilizator–publisher care poate modifica vizibilitatea și prezentarea unor linkuri pentru acel utilizator. Nu documentează un multiplicator general de ranking aplicat sursei.</strong></p></blockquote>
 
-      <h2>Ce a anunțat Google pe 6 mai 2026</h2>
+      <h2 id="ce-a-anuntat-google-pe-6-mai-2026">Ce a anunțat Google pe 6 mai 2026</h2>
 
       <p>Anunțul a fost publicat de Hema Budaraju, Vice President, Product Management, Search, sub titlul „5 new ways to explore the web with generative AI in Search”.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>1. Sugestii pentru explorare suplimentară</h3>
+      <h3 id="1-sugestii-pentru-explorare-suplimentara">1. Sugestii pentru explorare suplimentară</h3>
 
       <p>La finalul unor răspunsuri apar recomandări către articole sau analize care tratează alte fațete ale subiectului. Titlul și conținutul secțiunii sunt dinamice, în funcție de query și răspuns.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>2. Evidențierea abonamentelor</h3>
+      <h3 id="2-evidentierea-abonamentelor">2. Evidențierea abonamentelor</h3>
 
       <p>Google spune că evidențiază linkurile din <strong>news subscriptions</strong> ale utilizatorului în AI Mode și AI Overviews. În testele timpurii, compania afirmă că oamenii au fost <strong>„significantly more likely to click”</strong> linkurile marcate ca provenind din abonamentele lor.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Google nu publică în acel anunț procentul creșterii, dimensiunea eșantionului, metodologia sau un studiu independent. Afirmația trebuie tratată ca <strong>rezultat intern raportat de Google</strong>, nu ca benchmark universal de CTR.</p>
 
-      <h3>3. Perspective din discuții publice și surse de primă mână</h3>
+      <h3 id="3-perspective-din-discutii-publice-si-surse-de-prima-mana">3. Perspective din discuții publice și surse de primă mână</h3>
 
       <p>AI responses pot include previzualizări din discuții publice, social media, comunități și alte surse firsthand, cu informații precum numele creatorului, handle-ul sau comunitatea.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Aceasta este o schimbare de prezentare și explorare, nu dovada că toate tipurile de UGC primesc aceeași greutate algoritmică.</p>
 
-      <h3>4. Mai multe linkuri lângă textul relevant</h3>
+      <h3 id="4-mai-multe-linkuri-langa-textul-relevant">4. Mai multe linkuri lângă textul relevant</h3>
 
       <p>Google spune că afișează mai multe linkuri direct lângă pasajele din AI response pe care le susțin.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Asta face atribuirea mai vizibilă pentru utilizator, dar nu demonstrează că fiecare paragraf al unei pagini este o unitate independentă de ranking sau citare.</p>
 
-      <h3>5. Preview pentru linkuri pe desktop</h3>
+      <h3 id="5-preview-pentru-linkuri-pe-desktop">5. Preview pentru linkuri pe desktop</h3>
 
       <p>La hover, un link poate afișa numele site-ului sau titlul paginii. Google explică faptul că utilizatorii pot ezita să dea clic dacă nu știu unde ajung.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Concluzia editorială sănătoasă este: <strong>folosește titluri descriptive și o identitate de sursă clară</strong>. Nu avem însă o formulă publică pentru efectul titlului asupra CTR.</p>
 
-      <h2>Etichetă de prezentare, nu dovadă de „ranking factor”</h2>
+      <h2 id="eticheta-de-prezentare-nu-dovada-de-ranking-factor">Etichetă de prezentare, nu dovadă de „ranking factor”</h2>
 
       <p>Titlul inițial al articolului vorbea despre relație ca despre un <strong>„semnal de clasare”</strong>. Formularea este prea puternică.</p>
 
@@ -187,7 +213,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Documentația de troubleshooting precizează că există factori de ranking atunci când Google afișează funcția „From Your Subscriptions”, dar asta nu transformă relația de abonament într-un factor general al rankingului web.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h2>Ce s-a schimbat în documentația Google după anunțul din mai</h2>
+      <h2 id="ce-s-a-schimbat-in-documentatia-google-dupa-anuntul-din-mai">Ce s-a schimbat în documentația Google după anunțul din mai</h2>
 
       <p>Pe 6 mai, comunicarea de produs vorbea despre <strong>news subscriptions</strong>.<sup><a href="#fn-1">1</a></sup></p>
 
@@ -197,13 +223,13 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Prin urmare, propoziția „funcția este destinată exclusiv publicațiilor de presă” nu mai este corectă conform documentației actuale.</p>
 
-      <h3>Ce NU înseamnă această extindere</h3>
+      <h3 id="ce-nu-inseamna-aceasta-extindere">Ce NU înseamnă această extindere</h3>
 
       <p>Nu înseamnă că orice newsletter gratuit este eligibil, că o listă de e-mail produce automat un semnal, că followerii devin subscriptions pentru Google sau că relația este folosită în toate sistemele de ranking.</p>
 
       <p>Mecanismul documentat este legat de <strong>abonamente sau contribuții plătite și entitlements</strong>.</p>
 
-      <h2>Cum funcționează Subscription Linking, tehnic</h2>
+      <h2 id="cum-functioneaza-subscription-linking-tehnic">Cum funcționează Subscription Linking, tehnic</h2>
 
       <p>Google documentează un proces mai concret decât simpla existență a unei adrese de e-mail.<sup><a href="#fn-4">4</a></sup><sup><a href="#fn-5">5</a></sup></p>
 
@@ -222,7 +248,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Asta schimbă interpretarea: nu discutăm despre „Google vede că cineva îmi urmărește newsletterul”, ci despre <strong>o relație explicită și tehnic legată între un cititor plătitor, publisher și contul Google</strong>.</p>
 
-      <h2>Poți măsura efectul Subscription Linking</h2>
+      <h2 id="poti-masura-efectul-subscription-linking">Poți măsura efectul Subscription Linking</h2>
 
       <p>Google spune că performanța poate fi urmărită în Search Console prin search appearance-ul <strong>Subscribed Content</strong>, inclusiv:</p>
 
@@ -234,7 +260,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Asta permite publisherului să măsoare performanța propriei implementări în loc să extrapoleze din afirmația generală a Google.</p>
 
-      <h2>Context: traficul de search către publisheri este în scădere</h2>
+      <h2 id="context-traficul-de-search-catre-publisheri-este-in-scadere">Context: traficul de search către publisheri este în scădere</h2>
 
       <p>Nieman Journalism Lab a analizat anunțul Google în contextul presiunii crescute asupra traficului de referral către publisheri.<sup><a href="#fn-7">7</a></sup></p>
 
@@ -251,7 +277,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Aceste cifre nu demonstrează că AI Overviews au cauzat singure declinul. Ele arată că publisherii operează într-un mediu în care dependența exclusivă de search referral devine mai riscantă.</p>
 
-      <h2>De ce contează relația cu publicul dincolo de presă</h2>
+      <h2 id="de-ce-conteaza-relatia-cu-publicul-dincolo-de-presa">De ce contează relația cu publicul dincolo de presă</h2>
 
       <p>Anunțul Google oferă un exemplu clar în care relația dintre utilizator și publisher este cunoscută de produs și schimbă felul în care conținutul este prezentat.</p>
 
@@ -261,11 +287,11 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Dar trebuie păstrată o diferență importantă. Pentru cine vrea să măsoare empiric, nu doar să presupună, ce surse externe contează deja pentru propria nișă, am descris metoda în <a href="/lab/articole/harta-de-citare-mentiuni-externe-romania">harta de citare</a> — un exercițiu diferit de Subscription Linking, dar cu aceeași miză: relația reală cu publicul, măsurată, nu presupusă.</p>
 
-      <h3>Relație directă cu valoare comercială</h3>
+      <h3 id="relatie-directa-cu-valoare-comerciala">Relație directă cu valoare comercială</h3>
 
       <p>Poate include newsletter, CRM, abonament, comunitate proprie, cont de client sau membership. Acestea pot fi utile pentru retenție, revenire, comunicare și venit, în limitele consimțământului și legislației aplicabile.</p>
 
-      <h3>Relație vizibilă tehnic pentru Google Subscription Linking</h3>
+      <h3 id="relatie-vizibila-tehnic-pentru-google-subscription-linking">Relație vizibilă tehnic pentru Google Subscription Linking</h3>
 
       <p>În documentația actuală, aceasta este mult mai restrânsă:</p>
 
@@ -273,23 +299,23 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Cele două categorii se suprapun doar parțial.</p>
 
-      <h2>Framework AI Visibility Lab: public descoperit versus public legat direct</h2>
+      <h2 id="framework-ai-visibility-lab-public-descoperit-versus-public-legat-direct">Framework AI Visibility Lab: public descoperit versus public legat direct</h2>
 
       <p>Ca model de lucru, AI Visibility Lab separă două stări ale relației cu publicul. Aceasta este o taxonomie proprie, nu terminologie Google.</p>
 
-      <h3>Public descoperit</h3>
+      <h3 id="public-descoperit">Public descoperit</h3>
 
       <p>Persoana ajunge prin Google Search, AI Mode, ChatGPT, Perplexity, social media, recomandare sau un link extern. Relația poate fi de moment.</p>
 
-      <h3>Public legat direct</h3>
+      <h3 id="public-legat-direct">Public legat direct</h3>
 
       <p>Persoana a făcut un pas suplimentar: s-a înscris, a creat cont, s-a abonat, a cumpărat, a cerut contact sau revine direct.</p>
 
       <p>Această relație poate fi mai ușor de menținut în timp. Dar nu toate formele de „public legat direct” sunt vizibile pentru Google. Subscription Linking este doar <strong>un caz tehnic specific</strong>.</p>
 
-      <h2>Ce putem deduce și ce nu putem deduce</h2>
+      <h2 id="ce-putem-deduce-si-ce-nu-putem-deduce">Ce putem deduce și ce nu putem deduce</h2>
 
-      <h3>Putem deduce</h3>
+      <h3 id="putem-deduce">Putem deduce</h3>
 
       <p>Google consideră suficient de valoroasă relația de subscription încât să o folosească pentru evidențiere personalizată în propriile produse.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup></p>
 
@@ -297,7 +323,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Publisherii eligibili pot măsura în Search Console performanța conținutului de tip Subscribed Content.<sup><a href="#fn-6">6</a></sup></p>
 
-      <h3>Nu putem deduce</h3>
+      <h3 id="nu-putem-deduce">Nu putem deduce</h3>
 
       <p>Nu putem spune că:</p>
 
@@ -312,15 +338,15 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Acestea ar fi ipoteze.</p>
 
-      <h2>Actualizările Google nu împing toate către același tip de sursă</h2>
+      <h2 id="actualizarile-google-nu-imping-toate-catre-acelasi-tip-de-sursa">Actualizările Google nu împing toate către același tip de sursă</h2>
 
       <p>Anunțul din mai este interesant pentru că Google evidențiază simultan două forme diferite de relație cu informația.</p>
 
-      <h3>Relația cu publisherul</h3>
+      <h3 id="relatia-cu-publisherul">Relația cu publisherul</h3>
 
       <p>Subscription highlighting favorizează sursele pentru care utilizatorul are deja un abonament legat.</p>
 
-      <h3>Experiența first-hand din comunități</h3>
+      <h3 id="experienta-first-hand-din-comunitati">Experiența first-hand din comunități</h3>
 
       <p>Secțiunile cu perspective publice evidențiază creatori, comunități, discuții și experiențe personale.<sup><a href="#fn-1">1</a></sup></p>
 
@@ -328,7 +354,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Aceasta este interpretarea AI Visibility Lab, nu poziția oficială Google.</p>
 
-      <h2>Social media: nu dispare totul când te oprești din postat</h2>
+      <h2 id="social-media-nu-dispare-totul-cand-te-opresti-din-postat">Social media: nu dispare totul când te oprești din postat</h2>
 
       <p>Versiunea inițială a articolului spunea că o postare „produce câteva zile de atenție și dispare” și că followerii „nu produc niciun semnal în afara platformei”.</p>
 
@@ -344,7 +370,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>De aceea este rezonabil să construiești și canale directe. Dar nu este corect să spui că social media are „zero acumulare” sau „zero semnal”.</p>
 
-      <h2>Ce înseamnă pentru creatori</h2>
+      <h2 id="ce-inseamna-pentru-creatori">Ce înseamnă pentru creatori</h2>
 
       <p>Recomandarea sănătoasă nu este „renunță la social și construiește newsletter”.</p>
 
@@ -356,7 +382,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Dacă există o ofertă plătită și publisherul îndeplinește cerințele Google, Subscription Linking devine o opțiune tehnică separată.</p>
 
-      <h2>Ce înseamnă pentru firme</h2>
+      <h2 id="ce-inseamna-pentru-firme">Ce înseamnă pentru firme</h2>
 
       <p>Pentru o firmă, AI visibility poate produce discovery. Dar discovery și retenția sunt două probleme diferite.</p>
 
@@ -368,7 +394,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Afirmația inițială „o recomandare AI transferă atenție, nu încredere” poate rămâne ca metaforă strategică, dar nu ca regulă comportamentală universală.</p>
 
-      <h2>Linkurile inline nu demonstrează „granular ranking”</h2>
+      <h2 id="linkurile-inline-nu-demonstreaza-granular-ranking">Linkurile inline nu demonstrează „granular ranking”</h2>
 
       <p>Google spune că adaugă mai multe linkuri lângă textul relevant din AI responses.<sup><a href="#fn-1">1</a></sup></p>
 
@@ -378,7 +404,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <blockquote><p><strong>structurează conținutul clar pentru utilizator și pentru înțelegerea paginii; nu pretinde că fiecare paragraf creează un „citation slot”.</strong></p></blockquote>
 
-      <h2>Query fan-out: ce este confirmat</h2>
+      <h2 id="query-fan-out-ce-este-confirmat">Query fan-out: ce este confirmat</h2>
 
       <p>Google confirmă explicit query fan-out.</p>
 
@@ -386,87 +412,87 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Ce nu putem spune este că fiecare constrângere din prompt devine automat un query separat. Providerul nu documentează această regulă — am detaliat mecanismele de rescriere a interogărilor și query fan-out, inclusiv diferențele dintre limbi, în <a href="/lab/articole/cuvant-cheie-vs-fraza-tokenizare">analiza despre cuvânt-cheie vs frază în AI Search</a>.</p>
 
-      <h2>Titlul paginii și identitatea sursei contează pentru click — dar fără formulă</h2>
+      <h2 id="titlul-paginii-si-identitatea-sursei-conteaza-pentru-click-dar-fara-formula">Titlul paginii și identitatea sursei contează pentru click — dar fără formulă</h2>
 
       <p>Google spune că preview-ul linkului poate arăta website name și page title și explică faptul că utilizatorii pot ezita să dea clic atunci când nu știu destinația.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Asta justifică un nume de site coerent, un titlu descriptiv și branding recognoscibil. Nu justifică afirmația că titlul descriptiv este un nou ranking signal în AI Mode.</p>
 
-      <h2>Ce este rezonabil să faci, ordonat după certitudine</h2>
+      <h2 id="ce-este-rezonabil-sa-faci-ordonat-dupa-certitudine">Ce este rezonabil să faci, ordonat după certitudine</h2>
 
-      <h3>Nivel 1 — util indiferent de funcția Google</h3>
+      <h3 id="nivel-1-util-indiferent-de-functia-google">Nivel 1 — util indiferent de funcția Google</h3>
 
       <p>Construiește o relație directă cu publicul prin canale pe care le poți administra: site, newsletter, CRM, conturi de client, memberships și contact direct.</p>
 
-      <h3>Nivel 2 — confirmat pentru Search și AI Search</h3>
+      <h3 id="nivel-2-confirmat-pentru-search-si-ai-search">Nivel 2 — confirmat pentru Search și AI Search</h3>
 
       <p>Menține pagini publice și crawlable, titluri descriptive, conținut original, structură clară, information hierarchy bună și experiență firsthand acolo unde este relevantă.</p>
 
       <p>Google spune explicit că aceleași principii SEO de bază rămân valabile pentru AI Overviews și AI Mode.<sup><a href="#fn-9">9</a></sup></p>
 
-      <h3>Nivel 3 — relevant pentru publisherii cu paying readers</h3>
+      <h3 id="nivel-3-relevant-pentru-publisherii-cu-paying-readers">Nivel 3 — relevant pentru publisherii cu paying readers</h3>
 
       <p>Dacă ai conținut plătit, user accounts, subscribers/contributors, Publisher Center și Search Console, evaluează Subscription Linking.</p>
 
-      <h3>Nivel 4 — măsoară în loc să presupui</h3>
+      <h3 id="nivel-4-masoara-in-loc-sa-presupui">Nivel 4 — măsoară în loc să presupui</h3>
 
       <p>Dacă implementezi Subscription Linking, folosește Search Console și filtrul <strong>Subscribed Content</strong> pentru a compara impressions, clicks și CTR.<sup><a href="#fn-6">6</a></sup></p>
 
-      <h3>Nivel 5 — ipoteză, nu recomandare actuală</h3>
+      <h3 id="nivel-5-ipoteza-nu-recomandare-actuala">Nivel 5 — ipoteză, nu recomandare actuală</h3>
 
       <p>Nu construi strategie pe presupunerea că un newsletter gratuit va deveni ranking signal, că followerii vor fi importați în AI ranking sau că Google va extinde exact același mecanism la alte tipuri de relație.</p>
 
-      <h2>Un context util: instituții și creatori</h2>
+      <h2 id="un-context-util-institutii-si-creatori">Un context util: instituții și creatori</h2>
 
       <p>În august 2026, Nieman Lab a documentat programul The Athletic cu creatori sportivi. După aproape un an, The Athletic raporta aproximativ 50 de milioane de video views și 100.000 de followers noi pe platformele sale.<sup><a href="#fn-10">10</a></sup></p>
 
       <p>Acest exemplu nu demonstrează nimic despre rankingul AI. Este însă relevant strategic: publisherii instituționali încearcă să combine infrastructura editorială proprie cu distribuția și relația creatorilor.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Ce este eticheta „Abonat” din AI Overviews și AI Mode?</h3>
+      <h3 id="ce-este-eticheta-abonat-din-ai-overviews-si-ai-mode">Ce este eticheta „Abonat” din AI Overviews și AI Mode?</h3>
 
       <p>Este o etichetă prin care Google evidențiază linkurile provenite din abonamentele utilizatorului legate de contul Google. Google a anunțat funcția pe 6 mai 2026 și spune că, în testele sale timpurii, oamenii au fost semnificativ mai predispuși să dea clic pe aceste linkuri.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Este abonamentul un factor de ranking pentru AI Search?</h3>
+      <h3 id="este-abonamentul-un-factor-de-ranking-pentru-ai-search">Este abonamentul un factor de ranking pentru AI Search?</h3>
 
       <p>Google nu a documentat abonamentul ca factor general de ranking. Documentația susține că relația poate produce highlighted content și vizibilitate personalizată pentru cititorii conectați. Asta este diferit de a afirma că subscription count crește rankingul general al unui domeniu.<sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>Subscription Linking este doar pentru publicațiile de știri?</h3>
+      <h3 id="subscription-linking-este-doar-pentru-publicatiile-de-stiri">Subscription Linking este doar pentru publicațiile de știri?</h3>
 
       <p>Nu conform documentației actuale. Google spune că este disponibil publisherilor news sau non-news, dacă au paying readers sau contributions care oferă entitlement la conținut.<sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>Se aplică unui newsletter gratuit?</h3>
+      <h3 id="se-aplica-unui-newsletter-gratuit">Se aplică unui newsletter gratuit?</h3>
 
       <p>Nu automat. Subscription Linking este documentat pentru relații cu paying readers/contributors și presupune integrarea entitlement-urilor. O simplă adresă dintr-o listă gratuită de e-mail nu este echivalentă cu mecanismul documentat.<sup><a href="#fn-2">2</a></sup><sup><a href="#fn-5">5</a></sup></p>
 
-      <h3>Ce poate măsura un publisher după implementare?</h3>
+      <h3 id="ce-poate-masura-un-publisher-dupa-implementare">Ce poate măsura un publisher după implementare?</h3>
 
       <p>Google spune că Search Console poate fi folosit pentru a urmări clicks, impressions și CTR prin search appearance-ul <strong>Subscribed Content</strong>.<sup><a href="#fn-6">6</a></sup></p>
 
-      <h3>Social media devine mai puțin importantă?</h3>
+      <h3 id="social-media-devine-mai-putin-importanta">Social media devine mai puțin importantă?</h3>
 
       <p>Nu rezultă asta din anunț. Google evidențiază simultan abonamentele legate și perspective din social media, forumuri și alte surse de primă mână. Rolurile canalelor sunt diferite.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Ce este query fan-out?</h3>
+      <h3 id="ce-este-query-fan-out">Ce este query fan-out?</h3>
 
       <p>Google îl definește ca un set de interogări concurente și relaționate generate de model pentru a recupera informații suplimentare și rezultate relevante. Nu există o regulă publică potrivit căreia fiecare constrângere din prompt devine automat o sub-interogare.<sup><a href="#fn-9">9</a></sup></p>
 
-      <h2>Metodologie și niveluri de certitudine</h2>
+      <h2 id="metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</h2>
 
-      <h3>Surse primare</h3>
+      <h3 id="surse-primare">Surse primare</h3>
 
       <p>Afirmațiile despre funcțiile Google sunt bazate în primul rând pe Google Blog, Google Search Central și documentația Google Subscription Linking.</p>
 
-      <h3>Surse secundare</h3>
+      <h3 id="surse-secundare">Surse secundare</h3>
 
       <p>Nieman Journalism Lab este folosit pentru contextul jurnalistic și pentru exemplul The Athletic.</p>
 
-      <h3>Date comerciale / first-party analytics</h3>
+      <h3 id="date-comerciale-first-party-analytics">Date comerciale / first-party analytics</h3>
 
       <p>Chartbeat este folosit numai pentru propriul dataset privind evoluția referral traffic. Cifrele nu sunt extrapolate la întregul web.</p>
 
-      <h3>Analiză AI Visibility Lab</h3>
+      <h3 id="analiza-ai-visibility-lab">Analiză AI Visibility Lab</h3>
 
       <p>Următoarele sunt interpretări proprii:</p>
 
@@ -479,7 +505,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p>Ele nu sunt prezentate drept mecanisme oficiale Google.</p>
 
-      <h3>Surse și metodologie</h3>
+      <h3 id="surse-si-metodologie">Surse și metodologie</h3>
 
       <table>
         <thead>
@@ -501,7 +527,7 @@ export const etichetaAbonatRelatiaPrezentareAiSearchHtml = `
 
       <p><strong>Data ultimei verificări a linkurilor și afirmațiilor: 27 august 2026</strong> (verificare inițială la redactare: 26 august 2026). Toate citatele exacte din documentația Google și cifrele Chartbeat au fost reverificate live la data reviziei, fără nicio schimbare față de starea consemnată inițial.</p>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Subscription Linking, AI Mode, AI Overviews și documentația Reader Revenue Manager se pot modifica rapid. Afirmațiile despre produsele Google descriu <strong>starea documentată și reverificată la 27 august 2026</strong>.</p>
 

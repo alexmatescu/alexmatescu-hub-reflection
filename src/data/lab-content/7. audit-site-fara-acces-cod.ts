@@ -136,11 +136,32 @@ export const auditSiteFaraAccesCodHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-18">18 august 2026</time> · Actualizat: <time datetime="2026-10-28">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-08-18">18 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#corectarea-unei-premise-frecvente">Corectarea unei premise frecvente</a></li>
+          <li><a href="#suprafata-publica-pe-care-merita-sa-o-verifici">Suprafața publică pe care merită să o verifici</a></li>
+          <li><a href="#llms-txt-ce-se-poate-afirma-in-august-2026"><code>llms.txt</code>: ce se poate afirma în august 2026</a></li>
+          <li><a href="#antetele-http-configuratie-observabila-in-raspuns">Antetele HTTP: configurație observabilă în răspuns</a></li>
+          <li><a href="#html-primit-versus-dom-randat">HTML primit versus DOM randat</a></li>
+          <li><a href="#instrumente-externe-care-nu-necesita-acces-la-repository">Instrumente externe care nu necesită acces la repository</a></li>
+          <li><a href="#ce-poti-schimba-efectiv-fara-acces-la-repository">Ce poți schimba efectiv fără acces la repository</a></li>
+          <li><a href="#devtools-folosit-corect">DevTools folosit corect</a></li>
+          <li><a href="#livrabilul-unui-audit-extern-specificatia">Livrabilul unui audit extern: specificația</a></li>
+          <li><a href="#limite-profesionale-de-autorizare-si-securitate">Limite profesionale, de autorizare și securitate</a></li>
+          <li><a href="#verificarea-de-baza">Verificarea de bază</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a></li>
+          <li><a href="#metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</a></li>
+          <li><a href="#surse">Surse</a></li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Fără acces administrativ poți inspecta o parte importantă din suprafața publică a unui site: răspunsurile HTTP, HTML-ul livrat requestului tău, <code>robots.txt</code>, sitemapurile publice, datele structurate, unele endpointuri publice, DNS și certificate. Nu poți vedea însă configurația internă a serverului, codul privat, baza de date, secretele, regulile complete ale infrastructurii sau setările care nu sunt expuse public. Iar DevTools nu publică modificările pe care le faci local: este un instrument de diagnostic și prototipare, nu un substitut pentru accesul la site.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup></p>
 
       <p>Această distincție este esențială într-un audit tehnic: trebuie separat <strong>ce ai observat</strong> de <strong>ce ai dedus</strong> și, mai ales, de <strong>ce poți modifica efectiv</strong>.</p>
 
-      <h2>Corectarea unei premise frecvente</h2>
+      <h2 id="corectarea-unei-premise-frecvente">Corectarea unei premise frecvente</h2>
 
       <p>DevTools nu modifică în mod public site-ul.</p>
 
@@ -152,7 +173,7 @@ export const auditSiteFaraAccesCodHtml = `
 
       <p>Asta nu face DevTools inutil. Îl poziționează corect: îl poți folosi pentru diagnostic, testarea unei ipoteze și prototiparea unei reparații înainte ca modificarea să fie implementată pe site.</p>
 
-      <h2>Suprafața publică pe care merită să o verifici</h2>
+      <h2 id="suprafata-publica-pe-care-merita-sa-o-verifici">Suprafața publică pe care merită să o verifici</h2>
 
       <p>Nu există un „inventar universal” de fișiere pe care orice site este obligat să le publice. Unele resurse sunt standardizate, altele sunt opționale, iar altele există numai pe anumite platforme.</p>
 
@@ -182,7 +203,7 @@ export const auditSiteFaraAccesCodHtml = `
 
       <p>WordPress documentează oficial endpointurile <code>GET /wp/v2/posts</code> și <code>GET /wp/v2/users</code>; faptul că ele există în API nu înseamnă că fiecare instalare le va expune identic.<sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
-      <h3><code>robots.txt</code>: util pentru audit, inutil ca mecanism de secretizare</h3>
+      <h3 id="robots-txt-util-pentru-audit-inutil-ca-mecanism-de-secretizare"><code>robots.txt</code>: util pentru audit, inutil ca mecanism de secretizare</h3>
 
       <p><code>robots.txt</code> descrie politici de crawling. Nu protejează resurse private și nu trebuie tratat ca un control de acces.</p>
 
@@ -190,13 +211,13 @@ export const auditSiteFaraAccesCodHtml = `
 
       <p>Directivele <code>Disallow</code> pot oferi indicii despre structura site-ului, dar o cale listată acolo nu trebuie interpretată ca resursă „secretă” și nici ca autorizație pentru testare suplimentară.</p>
 
-      <h3>RSS și REST API</h3>
+      <h3 id="rss-si-rest-api">RSS și REST API</h3>
 
       <p>Feedurile RSS/Atom pot fi foarte utile într-un audit editorial deoarece oferă o reprezentare structurată a conținutului public. Conținutul exact depinde însă de configurația site-ului: unele feeduri publică text integral, altele doar rezumate.</p>
 
       <p>Pe WordPress, REST API poate oferi o reprezentare JSON a conținutului public. Din nou, acesta este un endpoint documentat, nu o „breșă”.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h2><code>llms.txt</code>: ce se poate afirma în august 2026</h2>
+      <h2 id="llms-txt-ce-se-poate-afirma-in-august-2026"><code>llms.txt</code>: ce se poate afirma în august 2026</h2>
 
       <p><code>llms.txt</code> este o propunere, nu un standard universal adoptat de principalele motoare AI.</p>
 
@@ -210,13 +231,13 @@ export const auditSiteFaraAccesCodHtml = `
 
       <p>Acestea sunt <strong>studii comerciale/industriale</strong>, nu specificații ale motoarelor. Rezultatele descriu dataseturile lor și nu trebuie transformate în reguli universale.</p>
 
-      <h3>Ce spune Google</h3>
+      <h3 id="ce-spune-google">Ce spune Google</h3>
 
       <p>La data verificării din <strong>18 august 2026</strong>, Google Search Central spune explicit că Google Search <strong>nu folosește <code>llms.txt</code></strong> pentru vizibilitate sau ranking, inclusiv în funcțiile sale generative; menținerea fișierului pentru alte servicii nu ajută și nu afectează Google Search.<sup><a href="#fn-9">9</a></sup></p>
 
       <p>Aceasta este o afirmație despre Google Search, nu despre toate sistemele AI.</p>
 
-      <h3>Concluzia de audit</h3>
+      <h3 id="concluzia-de-audit">Concluzia de audit</h3>
 
       <p>Formularea defensabilă este:</p>
 
@@ -224,13 +245,13 @@ export const auditSiteFaraAccesCodHtml = `
 
       <p>Această concluzie trebuie reverificată pe măsură ce providerii își schimbă documentația.</p>
 
-      <h2>Antetele HTTP: configurație observabilă în răspuns</h2>
+      <h2 id="antetele-http-configuratie-observabila-in-raspuns">Antetele HTTP: configurație observabilă în răspuns</h2>
 
       <p>O parte importantă a auditului nu se află într-un fișier separat, ci în răspunsul HTTP.</p>
 
       <pre><code>curl -sI https://exemplu.ro</code></pre>
 
-      <h3><code>X-Robots-Tag</code></h3>
+      <h3 id="x-robots-tag"><code>X-Robots-Tag</code></h3>
 
       <p>Google documentează <code>X-Robots-Tag</code> ca modalitate de a transmite prin header aceleași tipuri de reguli care pot apărea în robots meta tag, inclusiv <code>noindex</code> și <code>nosnippet</code>.<sup><a href="#fn-10">10</a></sup></p>
 
@@ -244,25 +265,25 @@ export const auditSiteFaraAccesCodHtml = `
 
       <p><code>X-Robots-Tag: noindex</code> este una dintre cauzele tehnice care merită verificate când o resursă nu apare în index; nu există bază pentru a o numi „cea mai frecventă cauză”.</p>
 
-      <h3><code>Link: rel="canonical"</code></h3>
+      <h3 id="link-rel-canonical"><code>Link: rel="canonical"</code></h3>
 
       <p>Google permite declararea canonicalului atât prin element HTML, cât și prin header HTTP <code>Link</code>. Documentația recomandă evitarea semnalelor contradictorii între metode.<sup><a href="#fn-11">11</a></sup></p>
 
       <p>Dacă HTML-ul indică un canonical iar headerul indică altul, ai o configurație inconsistentă care trebuie investigată. Metadatele care pot ajunge într-un răspuns AI — inclusiv canonicalul — sunt tratate separat, cu un studiu de caz complet, în <a href="/lab/articole/metadata-citare-ai-studiu-de-caz">metadata și citarea AI</a>.</p>
 
-      <h3><code>Content-Type</code> și <code>charset</code></h3>
+      <h3 id="content-type-si-charset"><code>Content-Type</code> și <code>charset</code></h3>
 
       <p>Un tip MIME sau un charset incorect poate determina interpretarea greșită a răspunsului. Consecința exactă depinde de client și de conținut; nu trebuie presupus automat un anumit efect asupra indexării.</p>
 
-      <h3>Cache</h3>
+      <h3 id="cache">Cache</h3>
 
       <p><code>Cache-Control</code>, <code>Age</code>, <code>ETag</code>, <code>Last-Modified</code> sau headeruri specifice unui CDN pot ajuta la explicarea faptului că vezi o versiune cached în locul celei recent publicate.</p>
 
-      <h3><code>Server</code> și <code>X-Powered-By</code></h3>
+      <h3 id="server-si-x-powered-by"><code>Server</code> și <code>X-Powered-By</code></h3>
 
       <p>Pot oferi indicii despre server sau runtime, dar pot lipsi, pot fi eliminate de CDN sau pot fi configurate arbitrar. Nu sunt o metodă sigură de identificare a stivei.</p>
 
-      <h3>Codul de stare și redirecturile</h3>
+      <h3 id="codul-de-stare-si-redirecturile">Codul de stare și redirecturile</h3>
 
       <p>Pentru lanțul observabil de redirecționări:</p>
 
@@ -270,7 +291,7 @@ export const auditSiteFaraAccesCodHtml = `
 
       <p>Rezultatul arată statusurile și locațiile comunicate acelui request. El trebuie interpretat în contextul URL-ului și al agentului folosit.</p>
 
-      <h2>HTML primit versus DOM randat</h2>
+      <h2 id="html-primit-versus-dom-randat">HTML primit versus DOM randat</h2>
 
       <p>Această distincție rămâne una dintre cele mai utile într-un audit extern.</p>
 
@@ -301,21 +322,21 @@ diff a.html b.html</code></pre>
 
       <p>Această interpretare este în concordanță cu studiul AI Visibility Lab despre <a href="/lab/articole/paradoxul-site-ului-terminat">paradoxul site-ului terminat</a>: un request generic nu trebuie confundat cu reprezentarea servită unui crawler verificat.</p>
 
-      <h2>Instrumente externe care nu necesită acces la repository</h2>
+      <h2 id="instrumente-externe-care-nu-necesita-acces-la-repository">Instrumente externe care nu necesită acces la repository</h2>
 
-      <h3>Wayback Machine</h3>
+      <h3 id="wayback-machine">Wayback Machine</h3>
 
       <p>Poate ajuta la compararea versiunilor istorice ale unei pagini sau ale unor fișiere publice. Arhiva este incompletă: lipsa unei capturi nu dovedește că resursa nu exista.</p>
 
-      <h3>Certificate Transparency</h3>
+      <h3 id="certificate-transparency">Certificate Transparency</h3>
 
       <p>Registrele de certificate pot indica hostname-uri pentru care au fost emise certificate TLS. Ele nu garantează că un subdomeniu este activ în prezent și nu constituie autorizație pentru testarea lui.</p>
 
-      <h3>DNS</h3>
+      <h3 id="dns">DNS</h3>
 
       <p><code>dig</code> și alte instrumente DNS permit citirea înregistrărilor publice. Ele pot oferi indicii despre mail, verificări de servicii, CDN sau infrastructură, dar nu identifică întotdeauna furnizorul real aflat în spatele unui reverse proxy/CDN.</p>
 
-      <h3>Validatoare publice</h3>
+      <h3 id="validatoare-publice">Validatoare publice</h3>
 
       <p>Google Rich Results Test și validatorul Schema.org sunt utile pentru verificarea markupului.</p>
 
@@ -323,19 +344,19 @@ diff a.html b.html</code></pre>
 
       <p>Acest lucru nu trebuie extrapolat la toate crawlerele sau sistemele AI. Suportul de rendering trebuie verificat per provider și, când este posibil, pe outputul real.</p>
 
-      <h2>Ce poți schimba efectiv fără acces la repository</h2>
+      <h2 id="ce-poti-schimba-efectiv-fara-acces-la-repository">Ce poți schimba efectiv fără acces la repository</h2>
 
       <p>„Fără acces la cod” nu înseamnă neapărat „fără niciun acces”. Pârghiile depind de permisiunile pe care le ai în alte straturi.</p>
 
-      <h3>CMS sau platformă</h3>
+      <h3 id="cms-sau-platforma">CMS sau platformă</h3>
 
       <p>Dacă ai cont cu drepturi suficiente într-un CMS/site builder, poți modifica titluri, descrieri, conținut și uneori structured data sau setări SEO fără a modifica repository-ul.</p>
 
-      <h3>Google Search Console</h3>
+      <h3 id="google-search-console">Google Search Console</h3>
 
       <p>Search Console poate fi folosit pentru submission de sitemap, URL Inspection, request indexing și temporary removals. Aceste acțiuni trimit informații sau cereri către Google; nu garantează indexarea, canonicalizarea sau rankingul.</p>
 
-      <h3>Bing Webmaster Tools și IndexNow</h3>
+      <h3 id="bing-webmaster-tools-si-indexnow">Bing Webmaster Tools și IndexNow</h3>
 
       <p>IndexNow este un protocol de <strong>notificare</strong>: un site poate informa motoarele participante că un URL a fost adăugat, modificat sau șters. Documentația protocolului confirmă că URL-urile primite de un motor participant sunt partajate cu ceilalți participanți.<sup><a href="#fn-13">13</a></sup><sup><a href="#fn-14">14</a></sup></p>
 
@@ -345,11 +366,11 @@ diff a.html b.html</code></pre>
 
       <p>Afirmațiile despre participanți și comportament sunt volatile și trebuie reverificate. Termenele de descoperire, crawl, indexare și citare — și de ce nu există un SLA universal pentru niciunul dintre ele — sunt tratate separat în <a href="/lab/articole/cat-dureaza-indexare-citare-ai">cât durează până apari în Google și cât până te citează AI-ul</a>.</p>
 
-      <h3>Google Business Profile</h3>
+      <h3 id="google-business-profile">Google Business Profile</h3>
 
       <p>Dacă ai drepturi asupra profilului, poți actualiza informațiile business fără acces la site. Aceasta este o suprafață separată de repository.</p>
 
-      <h3>Google Tag Manager</h3>
+      <h3 id="google-tag-manager">Google Tag Manager</h3>
 
       <p>Google documentează explicit folosirea GTM pentru generarea dinamică de JSON-LD.<sup><a href="#fn-12">12</a></sup></p>
 
@@ -359,7 +380,7 @@ diff a.html b.html</code></pre>
 
       <p>GTM nu trebuie prezentat ca înlocuitor universal pentru structured data disponibilă direct în HTML.</p>
 
-      <h3>CDN, edge layer sau reverse proxy</h3>
+      <h3 id="cdn-edge-layer-sau-reverse-proxy">CDN, edge layer sau reverse proxy</h3>
 
       <p>Dacă ai acces la infrastructura de edge/CDN, unele produse permit:</p>
 
@@ -373,15 +394,15 @@ diff a.html b.html</code></pre>
 
       <p>Aceasta poate fi <strong>una dintre puținele pârghii</strong> prin care poți schimba răspunsul public fără a modifica repository-ul. Nu este singura: hostingul, CMS-ul, middleware-ul, reverse proxy-ul sau funcțiile native ale platformei pot permite intervenții similare.</p>
 
-      <h3>Surse externe</h3>
+      <h3 id="surse-externe">Surse externe</h3>
 
       <p>Wikidata, profilurile profesionale, directoarele și publicațiile terțe sunt suprafețe externe site-ului. Pentru corroborarea unei entități, sursele independente pot furniza informații pe care site-ul propriu nu le poate furniza singur.</p>
 
       <p>Nu există însă un multiplicator universal care să permită afirmația că „off-site cântărește mai mult decât on-site”.</p>
 
-      <h2>DevTools folosit corect</h2>
+      <h2 id="devtools-folosit-corect">DevTools folosit corect</h2>
 
-      <h3>Disable JavaScript</h3>
+      <h3 id="disable-javascript">Disable JavaScript</h3>
 
       <p>Chrome DevTools permite dezactivarea JavaScriptului pentru a vedea cum arată și cum se comportă pagina fără execuție JS.<sup><a href="#fn-15">15</a></sup></p>
 
@@ -389,17 +410,17 @@ diff a.html b.html</code></pre>
 
       <p>Dacă pagina devine goală cu JavaScript dezactivat, ai demonstrat că browserul are nevoie de JavaScript pentru reprezentarea pe care o vezi în mod normal. Nu ai demonstrat ce primește un anumit crawler, deoarece unele platforme pot servi HTML pre-randat sau alte reprezentări agenților verificați.</p>
 
-      <h3>Network</h3>
+      <h3 id="network">Network</h3>
 
       <p>Panoul Network arată requesturile efectuate de browser, ordinea lor, statusurile și răspunsurile primite. Este util pentru a vedea dacă textul sau datele sunt livrate în documentul inițial sau într-un request ulterior.</p>
 
-      <h3>Local Overrides</h3>
+      <h3 id="local-overrides">Local Overrides</h3>
 
       <p>Chrome documentează Local Overrides ca funcție pentru înlocuirea locală a conținutului sau a headerurilor și păstrarea modificărilor între page loads.<sup><a href="#fn-2">2</a></sup></p>
 
       <p>Este potrivit pentru prototipare și validarea unei propuneri, nu pentru publicare.</p>
 
-      <h3>User-Agent override</h3>
+      <h3 id="user-agent-override">User-Agent override</h3>
 
       <p>Schimbarea user-agentului este utilă pentru a vedea dacă serverul reacționează la acel header, dar nu garantează că reproduci identitatea crawlerului real.</p>
 
@@ -411,11 +432,11 @@ diff a.html b.html</code></pre>
 
       <p>Nu există bază pentru o regulă universală conform căreia toate platformele folosesc „IP + reverse DNS”.</p>
 
-      <h2>Livrabilul unui audit extern: specificația</h2>
+      <h2 id="livrabilul-unui-audit-extern-specificatia">Livrabilul unui audit extern: specificația</h2>
 
       <p>Un audit fără acces de implementare se termină cu o specificație verificabilă.</p>
 
-      <h3>1. Constatarea</h3>
+      <h3 id="1-constatarea">1. Constatarea</h3>
 
       <p>Include:</p>
 
@@ -428,7 +449,7 @@ diff a.html b.html</code></pre>
         <li>condițiile testului.</li>
       </ul>
 
-      <h3>2. Impactul</h3>
+      <h3 id="2-impactul">2. Impactul</h3>
 
       <p>Explică mecanismul, nu doar eticheta.</p>
 
@@ -440,7 +461,7 @@ diff a.html b.html</code></pre>
 
       <blockquote><p>„răspunsul conține <code>X-Robots-Tag: noindex</code>, ceea ce Google documentează ca directivă de excludere din rezultatele Search.”</p></blockquote>
 
-      <h3>3. Reparația</h3>
+      <h3 id="3-reparatia">3. Reparația</h3>
 
       <p>Descrie schimbarea la nivelul stratului asupra căruia trebuie intervenit:</p>
 
@@ -455,11 +476,11 @@ diff a.html b.html</code></pre>
         <li>canonicalizare etc.</li>
       </ul>
 
-      <h3>4. Testul de acceptanță</h3>
+      <h3 id="4-testul-de-acceptanta">4. Testul de acceptanță</h3>
 
       <p>Definește exact ce trebuie să returneze sistemul după implementare.</p>
 
-      <h3>5. Prioritatea</h3>
+      <h3 id="5-prioritatea">5. Prioritatea</h3>
 
       <p>Prioritizează după:</p>
 
@@ -473,7 +494,7 @@ diff a.html b.html</code></pre>
 
       <p>Un audit cu dovezi și teste de acceptanță poate fi implementat și reverificat. Un audit fără ele rămâne o listă de opinii.</p>
 
-      <h2>Limite profesionale, de autorizare și securitate</h2>
+      <h2 id="limite-profesionale-de-autorizare-si-securitate">Limite profesionale, de autorizare și securitate</h2>
 
       <p>Această secțiune nu este consultanță juridică.</p>
 
@@ -493,7 +514,7 @@ diff a.html b.html</code></pre>
 
       <p>Dacă, în timpul unei verificări pasive și autorizate, întâlnești accidental informații sensibile expuse, abordarea profesională este să limitezi accesul la minimum necesar, să nu redistribui datele și să raportezi privat proprietarului prin canalul său de securitate, dacă există.</p>
 
-      <h2>Verificarea de bază</h2>
+      <h2 id="verificarea-de-baza">Verificarea de bază</h2>
 
       <p>Următoarele comenzi sunt exemple de verificări pasive asupra unor resurse publice și trebuie folosite numai pe site-uri pe care ai dreptul să le auditezi:</p>
 
@@ -510,7 +531,7 @@ curl -sIL "$S/pagina"                   # statusuri și redirecturi observabile<
 
       <p>Comenzile de mai sus sunt o inspecție rapidă. Varianta repetabilă, cu plan înghețat, dovezi cu checksum și reguli publice de interpretare, este protocolul AI Visibility Lab, explicat în articolul <a href="/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility">Cum verific tehnic un site pentru AI Visibility?</a>; o rulare completă, cu ieșirea comenzilor și raportul pentru client, e în <a href="/lab/studii-de-caz/verificare-tehnica-delamatescu-ro">studiul de caz CS-002</a>.</p>
 
-      <h3>Ce NU trebuie dedus</h3>
+      <h3 id="ce-nu-trebuie-dedus">Ce NU trebuie dedus</h3>
 
       <p>Dimensiunea HTML-ului nu identifică arhitectura site-ului.</p>
 
@@ -520,47 +541,47 @@ curl -sIL "$S/pagina"                   # statusuri și redirecturi observabile<
 
       <p>La fel, un canonical identic pe rute distincte indică o <strong>posibilă problemă de canonicalizare sau metadata per rută</strong>, nu demonstrează o problemă de routing.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Pot modifica un site din DevTools?</h3>
+      <h3 id="pot-modifica-un-site-din-devtools">Pot modifica un site din DevTools?</h3>
 
       <p>Nu în mod public. Modificările obișnuite din DevTools sunt locale. Local Overrides poate păstra o versiune modificată între reload-uri, dar aceasta rămâne în mediul local al browserului și nu schimbă resursa publicată pe server.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>Ce resurse pot inspecta fără acces la repository?</h3>
+      <h3 id="ce-resurse-pot-inspecta-fara-acces-la-repository">Ce resurse pot inspecta fără acces la repository?</h3>
 
       <p>Poți inspecta resursele pe care serverul le expune public: HTML, headere, <code>robots.txt</code>, sitemapuri, feeduri, unele fișiere <code>/.well-known</code>, manifesturi sau endpointuri API, dacă există. Existența și conținutul lor variază de la site la site.</p>
 
-      <h3>Merită să adaug <code>llms.txt</code>?</h3>
+      <h3 id="merita-sa-adaug-llms-txt">Merită să adaug <code>llms.txt</code>?</h3>
 
       <p>În august 2026, nu există dovezi solide că simpla sa prezență crește citările organice în principalele motoare AI. Studiile SE Ranking, Limy și Search Engine Land descrise mai sus nu susțin un efect general de citare. Fișierul poate avea utilitate în fluxuri în care un agent sau un utilizator îl solicită explicit, dar nu trebuie tratat ca un factor GEO demonstrat.<sup><a href="#fn-6">6</a></sup><sup><a href="#fn-7">7</a></sup><sup><a href="#fn-8">8</a></sup></p>
 
-      <h3>Cum verific dependența unei pagini de JavaScript?</h3>
+      <h3 id="cum-verific-dependenta-unei-pagini-de-javascript">Cum verific dependența unei pagini de JavaScript?</h3>
 
       <p>Compară HTML-ul primit de un request simplu cu DOM-ul randat și poți folosi Disable JavaScript în Chrome DevTools pentru a vedea cum se comportă pagina fără JavaScript. Acest lucru testează dependența de JS, nu simulează fidel un crawler AI.<sup><a href="#fn-15">15</a></sup></p>
 
-      <h3>Pot adăuga structured data prin Google Tag Manager?</h3>
+      <h3 id="pot-adauga-structured-data-prin-google-tag-manager">Pot adăuga structured data prin Google Tag Manager?</h3>
 
       <p>Da. Google documentează explicit generarea dinamică de JSON-LD prin Google Tag Manager. Pentru alte crawlere și sisteme AI, suportul pentru JavaScript/rendering trebuie verificat separat.<sup><a href="#fn-12">12</a></sup></p>
 
-      <h3>IndexNow garantează indexarea rapidă?</h3>
+      <h3 id="indexnow-garanteaza-indexarea-rapida">IndexNow garantează indexarea rapidă?</h3>
 
       <p>Nu. IndexNow notifică motoarele participante despre URL-uri adăugate, schimbate sau șterse. Fiecare motor decide independent dacă și când procesează URL-ul pentru crawling și indexare.<sup><a href="#fn-13">13</a></sup></p>
 
-      <h2>Metodologie și niveluri de certitudine</h2>
+      <h2 id="metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</h2>
 
-      <h3>Observații proprii</h3>
+      <h3 id="observatii-proprii">Observații proprii</h3>
 
       <p>Comenzile din articol sunt exemple de verificări reproductibile asupra răspunsului public primit de un request. Rezultatul lor descrie numai requestul respectiv și momentul în care a fost efectuat.</p>
 
-      <h3>Surse primare</h3>
+      <h3 id="surse-primare">Surse primare</h3>
 
       <p>Afirmațiile tehnice despre platforme sunt ancorate, când există, în documentații primare: Chrome DevTools, Google Search Central, WordPress Developer Resources, IndexNow, OpenAI, Perplexity, Portalul Legislativ din România.</p>
 
-      <h3>Studii comerciale</h3>
+      <h3 id="studii-comerciale">Studii comerciale</h3>
 
       <p>Cifrele despre <code>llms.txt</code> provin din SE Ranking, Limy și Search Engine Land. Sunt marcate explicit ca rezultate ale dataseturilor lor și nu sunt tratate ca reguli generale.</p>
 
-      <h3>Regula de interpretare</h3>
+      <h3 id="regula-de-interpretare">Regula de interpretare</h3>
 
       <p>În acest articol:</p>
 
@@ -571,7 +592,7 @@ curl -sIL "$S/pagina"                   # statusuri și redirecturi observabile<
         <li><strong>recomandare</strong> = practică propusă pentru audit, nu mecanism algoritmic.</li>
       </ul>
 
-      <h2>Surse</h2>
+      <h2 id="surse">Surse</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">Chrome for Developers — „Changes: Track your HTML, CSS, and JavaScript changes", documentație oficială DevTools. Panoul Changes arată doar modificările făcute în DevTools; la reload dispar dacă nu sunt păstrate prin Local Overrides sau Workspaces: <a href="https://developer.chrome.com/docs/devtools/changes/" target="_blank" rel="noopener noreferrer">developer.chrome.com/docs/devtools/changes</a></li>
@@ -594,11 +615,11 @@ curl -sIL "$S/pagina"                   # statusuri și redirecturi observabile<
         <li id="fn-18">Portal Legislativ — „Codul penal, art. 360 – Accesul ilegal la un sistem informatic". Alin. (1): accesul, fără drept, la un sistem informatic se pedepsește cu închisoare de la 3 luni la 3 ani sau cu amendă: <a href="https://legislatie.just.ro/Public/FormaPrintabila/00000G03EG7Y4L5928N2UO7QQFID3V0X" target="_blank" rel="noopener noreferrer">legislatie.just.ro</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Comportamentul crawlerelor AI, documentația OpenAI/Perplexity, lista participanților IndexNow și poziția providerilor față de <code>llms.txt</code> se pot modifica. Afirmațiile despre aceste produse și protocoale descriu <strong>starea verificată la 18 august 2026</strong> și trebuie reverificate înaintea unei actualizări viitoare.</p>
 
-      <h2>Istoricul versiunilor</h2>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
       <table>
         <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
         <tbody>

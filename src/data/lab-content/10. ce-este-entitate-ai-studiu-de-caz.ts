@@ -90,6 +90,38 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-10-23">23 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#testul-pe-propriul-meu-nume">Testul pe propriul meu nume</a></li>
+          <li><a href="#de-la-strings-la-things">De la „strings” la „things”</a></li>
+          <li><a href="#entity-resolution-entity-linking-si-entity-disambiguation">Entity resolution, entity linking și entity disambiguation</a></li>
+          <li><a href="#framework-ai-visibility-lab-trei-tipuri-de-esec">Framework AI Visibility Lab: trei tipuri de eșec</a></li>
+          <li><a href="#1-coliziunea">1. Coliziunea</a></li>
+          <li><a href="#2-fragmentarea">2. Fragmentarea</a></li>
+          <li><a href="#3-contaminarea">3. Contaminarea</a></li>
+          <li><a href="#de-ce-episodul-cu-porumbul-apare-atat-de-clar">De ce episodul cu porumbul apare atât de clar</a></li>
+          <li><a href="#co-aparitia-utila-ca-semnal-editorial-nu-ca-formula">Co-apariția: utilă ca semnal editorial, nu ca formulă</a></li>
+          <li><a href="#sistemele-sintetizeaza-dar-nu-dupa-o-formula-publica">Sistemele sintetizează — dar nu după o formulă publică</a></li>
+          <li><a href="#ce-poti-controla">Ce poți controla</a></li>
+          <li><a href="#1-defineste-o-descriere-principala-pentru-comunicare">1. Definește o descriere principală pentru comunicare</a></li>
+          <li><a href="#2-foloseste-o-forma-canonica-a-numelui">2. Folosește o formă canonică a numelui</a></li>
+          <li><a href="#3-construieste-o-pagina-canonica-de-identitate">3. Construiește o pagină canonică de identitate</a></li>
+          <li><a href="#4-foloseste-structured-data-person-corect">4. Folosește structured data <code>Person</code> corect</a></li>
+          <li><a href="#5-foloseste-sameas-numai-pentru-identitati-neechivoce">5. Folosește <code>sameAs</code> numai pentru identități neechivoce</a></li>
+          <li><a href="#6-sursele-externe-pot-corobora-fara-garantii">6. Sursele externe pot corobora — fără garanții</a></li>
+          <li><a href="#7-wikidata-identificator-suplimentar-nu-buton-magic">7. Wikidata: identificator suplimentar, nu buton magic</a></li>
+          <li><a href="#8-masoara-in-timp">8. Măsoară în timp</a></li>
+          <li><a href="#ce-nu-functioneaza-ca-strategie">Ce nu funcționează ca strategie</a></li>
+          <li><a href="#ce-schimb-in-propriul-caz">Ce schimb în propriul caz</a></li>
+          <li><a href="#de-ce-public-studiul">De ce public studiul</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a></li>
+          <li><a href="#metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</a></li>
+          <li><a href="#surse">Surse</a></li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
+        </ol>
+      </nav>
+
       <p><strong>O identitate digitală devine mai ușor de dezambiguizat atunci când aceeași persoană, aceleași variante legitime de nume, aceleași roluri și aceleași surse sunt legate coerent între ele. Structured data, paginile canonice de identitate și sursele independente pot contribui la această coerență, dar niciuna nu garantează singură felul în care Google sau un sistem AI va reprezenta persoana.</strong></p>
 
       <p>Aceasta este miza corectă a studiului.</p>
@@ -98,7 +130,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Această diferență dintre <strong>observație</strong> și <strong>mecanism presupus</strong> este esențială pentru orice analiză serioasă de entity visibility.</p>
 
-      <h2>Testul pe propriul meu nume</h2>
+      <h2 id="testul-pe-propriul-meu-nume">Testul pe propriul meu nume</h2>
 
       <p>În august 2026 am căutat propriul nume împreună cu localitatea, pentru a vedea ce informație publică domină rezultatele observabile.</p>
 
@@ -121,11 +153,11 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
         <li>GEO/AEO.</li>
       </ul>
 
-      <h3>Ce demonstrează această observație</h3>
+      <h3 id="ce-demonstreaza-aceasta-observatie">Ce demonstrează această observație</h3>
 
       <p>Demonstrează că, pentru query-ul și momentul respectiv, episodul antreprenorial era <strong>mai bine reprezentat în rezultatele publice observabile</strong> decât alte părți ale identității mele.</p>
 
-      <h3>Ce NU demonstrează</h3>
+      <h3 id="ce-nu-demonstreaza">Ce NU demonstrează</h3>
 
       <p>Nu demonstrează că:</p>
 
@@ -139,7 +171,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>SERP ranking, entity resolution și generarea unui răspuns AI sunt procese diferite și nu trebuie confundate.</p>
 
-      <h2>De la „strings” la „things”</h2>
+      <h2 id="de-la-strings-la-things">De la „strings” la „things”</h2>
 
       <p>În 2012, Google a descris Knowledge Graph prin formula devenită celebră <strong>„things, not strings”</strong>.</p>
 
@@ -147,13 +179,13 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Aici se află diferența esențială.</p>
 
-      <h3>String</h3>
+      <h3 id="string">String</h3>
 
       <p>Un string este text:</p>
 
       <blockquote><p>Alex Matescu</p></blockquote>
 
-      <h3>Entitate</h3>
+      <h3 id="entitate">Entitate</h3>
 
       <p>Entitatea este persoana reală la care acel text se referă.</p>
 
@@ -170,7 +202,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Un matching lexical simplu nu este suficient pentru a decide întotdeauna la care persoană se referă o mențiune ambiguă. Entity-aware systems folosesc context, relații, surse și alte semnale pentru dezambiguizare.</p>
 
-      <h2>Entity resolution, entity linking și entity disambiguation</h2>
+      <h2 id="entity-resolution-entity-linking-si-entity-disambiguation">Entity resolution, entity linking și entity disambiguation</h2>
 
       <p>În literatura tehnică apar mai mulți termeni apropiați:</p>
 
@@ -187,7 +219,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Nu presupun că Google sau OpenAI folosesc exact această taxonomie internă. Definițiile termenilor de bază — entitate, sursă de încredere, citare — sunt reunite și în <a href="/lab/cercetare/glosar-geo-aeo">glosarul GEO/AEO</a>.</p>
 
-      <h2>Framework AI Visibility Lab: trei tipuri de eșec</h2>
+      <h2 id="framework-ai-visibility-lab-trei-tipuri-de-esec">Framework AI Visibility Lab: trei tipuri de eșec</h2>
 
       <p>AI Visibility Lab folosește trei categorii practice pentru auditarea unei identități digitale:</p>
 
@@ -199,7 +231,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Aceasta este o taxonomie proprie de lucru, nu terminologie oficială Google sau OpenAI.</p>
 
-      <h2>1. Coliziunea</h2>
+      <h2 id="1-coliziunea">1. Coliziunea</h2>
 
       <p>Coliziunea apare atunci când aceeași mențiune sau mențiuni foarte apropiate pot indica mai multe persoane reale.</p>
 
@@ -215,11 +247,11 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>În cazul meu, rezultatele observate includeau persoane cu nume apropiate și rezultate nerelevante.</p>
 
-      <h3>Ce putem spune</h3>
+      <h3 id="ce-putem-spune">Ce putem spune</h3>
 
       <p>Există ambiguitate în spațiul public al numelui.</p>
 
-      <h3>Ce nu putem spune</h3>
+      <h3 id="ce-nu-putem-spune">Ce nu putem spune</h3>
 
       <p>Nu putem afirma că sistemul:</p>
 
@@ -231,7 +263,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Sistemele pot păstra mai multe candidate, pot folosi contextul query-ului și pot ajunge la rezultate diferite în suprafețe diferite.</p>
 
-      <h3>Obiectivul practic</h3>
+      <h3 id="obiectivul-practic">Obiectivul practic</h3>
 
       <p>Nu poți elimina existența omonimilor.</p>
 
@@ -246,7 +278,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
         <li>surse externe care identifică neechivoc persoana.</li>
       </ul>
 
-      <h2>2. Fragmentarea</h2>
+      <h2 id="2-fragmentarea">2. Fragmentarea</h2>
 
       <p>Fragmentarea este cazul în care informațiile despre aceeași persoană există, dar relațiile dintre ele sunt insuficient de clare.</p>
 
@@ -266,7 +298,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Problema apare atunci când paginile și profilurile nu oferă suficiente legături pentru a arăta că toate descriu <strong>aceeași persoană</strong>.</p>
 
-      <h3>Formulare corectă</h3>
+      <h3 id="formulare-corecta">Formulare corectă</h3>
 
       <blockquote><p><strong>Dacă sursele prezintă roluri diferite fără legături suficiente între ele, unui sistem îi poate fi mai greu să stabilească faptul că toate mențiunile descriu aceeași persoană.</strong></p></blockquote>
 
@@ -276,7 +308,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Acea formulare ar inventa o unitate de „entity authority” care nu este documentată.</p>
 
-      <h2>3. Contaminarea</h2>
+      <h2 id="3-contaminarea">3. Contaminarea</h2>
 
       <p>Contaminarea este situația în care un sistem atribuie unei persoane o informație aparținând altei persoane.</p>
 
@@ -290,7 +322,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <blockquote><p><strong>contaminarea este un rezultat observabil; mecanismul exact care a produs-o nu poate fi dedus automat din răspuns.</strong></p></blockquote>
 
-      <h2>De ce episodul cu porumbul apare atât de clar</h2>
+      <h2 id="de-ce-episodul-cu-porumbul-apare-atat-de-clar">De ce episodul cu porumbul apare atât de clar</h2>
 
       <p>În cazul observat, numele meu era asociat cu episodul antreprenorial în mai multe articole publice.</p>
 
@@ -306,7 +338,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Nu există o astfel de regulă publică.</p>
 
-      <h3>Ce aduce totuși o sursă independentă</h3>
+      <h3 id="ce-aduce-totusi-o-sursa-independenta">Ce aduce totuși o sursă independentă</h3>
 
       <p>O sursă independentă are o proprietate importantă:</p>
 
@@ -324,7 +356,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Nu înseamnă că putem calcula un multiplicator algoritmic.</p>
 
-      <h2>Co-apariția: utilă ca semnal editorial, nu ca formulă</h2>
+      <h2 id="co-aparitia-utila-ca-semnal-editorial-nu-ca-formula">Co-apariția: utilă ca semnal editorial, nu ca formulă</h2>
 
       <p>Co-apariția dintre:</p>
 
@@ -352,7 +384,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Co-apariția trebuie tratată ca <strong>clarificare semantică</strong>, nu ca hack algoritmic.</p>
 
-      <h2>Sistemele sintetizează — dar nu după o formulă publică</h2>
+      <h2 id="sistemele-sintetizeaza-dar-nu-dupa-o-formula-publica">Sistemele sintetizează — dar nu după o formulă publică</h2>
 
       <p>Când întrebi:</p>
 
@@ -377,13 +409,13 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>De aceea consistența identității publice contează. Semnalele mai largi care influențează ce surse selectează sistemele generative — dincolo de identitatea unei persoane — sunt tratate separat în <a href="/lab/cercetare/cum-aleg-motoarele-ai">cum aleg motoarele AI ce citează</a>.</p>
 
-      <h2>Ce poți controla</h2>
+      <h2 id="ce-poti-controla">Ce poți controla</h2>
 
       <p>Nu poți controla complet reprezentarea pe care un motor extern o construiește despre tine.</p>
 
       <p>Poți controla însă o parte din dovezile publice.</p>
 
-      <h2>1. Definește o descriere principală pentru comunicare</h2>
+      <h2 id="1-defineste-o-descriere-principala-pentru-comunicare">1. Definește o descriere principală pentru comunicare</h2>
 
       <p>Aceasta este o decizie de branding, nu o cerință a entity resolution.</p>
 
@@ -397,7 +429,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Nu este nevoie să ștergi trecutul sau să ascunzi roluri reale.</p>
 
-      <h2>2. Folosește o formă canonică a numelui</h2>
+      <h2 id="2-foloseste-o-forma-canonica-a-numelui">2. Folosește o formă canonică a numelui</h2>
 
       <p>Alege forma principală folosită public și păstreaz-o consecvent.</p>
 
@@ -416,7 +448,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p><code>alternateName</code> trebuie folosit numai pentru variante reale ale identității, nu pentru grafii inventate în scop SEO.</p>
 
-      <h2>3. Construiește o pagină canonică de identitate</h2>
+      <h2 id="3-construieste-o-pagina-canonica-de-identitate">3. Construiește o pagină canonică de identitate</h2>
 
       <p>În loc de „pagină de dezambiguizare”, termenul mai potrivit pentru site-ul propriu este:</p>
 
@@ -440,7 +472,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Dar oferă o sursă centrală, coerentă și crawlabilă care explică explicit relațiile dintre informațiile de pe propriul domeniu.</p>
 
-      <h2>4. Folosește structured data <code>Person</code> corect</h2>
+      <h2 id="4-foloseste-structured-data-person-corect">4. Folosește structured data <code>Person</code> corect</h2>
 
       <p>Google spune că structured data oferă indicii explicite despre semnificația conținutului și că datele trebuie să descrie ceea ce este efectiv prezent pe pagină.<sup><a href="#fn-2">2</a></sup></p>
 
@@ -456,7 +488,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Google spune explicit că poate înțelege atât <code>url</code>, cât și <code>sameAs</code> pentru dezambiguizarea autorilor.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Ce NU face structured data</h3>
+      <h3 id="ce-nu-face-structured-data">Ce NU face structured data</h3>
 
       <p>Nu:</p>
 
@@ -469,7 +501,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Google cere ca structured data să descrie conținutul real al paginii și nu garantează apariția unui rezultat special chiar dacă markupul este valid.<sup><a href="#fn-2">2</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
-      <h2>5. Folosește <code>sameAs</code> numai pentru identități neechivoce</h2>
+      <h2 id="5-foloseste-sameas-numai-pentru-identitati-neechivoce">5. Folosește <code>sameAs</code> numai pentru identități neechivoce</h2>
 
       <p><code>sameAs</code> nu este o listă de linkuri promoționale.</p>
 
@@ -487,7 +519,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
         <li>alte pagini care identifică neechivoc persoana.</li>
       </ul>
 
-      <h2>6. Sursele externe pot corobora — fără garanții</h2>
+      <h2 id="6-sursele-externe-pot-corobora-fara-garantii">6. Sursele externe pot corobora — fără garanții</h2>
 
       <p>Interviurile, articolele, paginile de speaker, profilele profesionale și mențiunile legitime pot face identitatea mai ușor de verificat din mai multe surse.</p>
 
@@ -499,7 +531,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>O sursă externă valoroasă spune adevărul despre persoană în propriul context editorial.</p>
 
-      <h2>7. Wikidata: identificator suplimentar, nu buton magic</h2>
+      <h2 id="7-wikidata-identificator-suplimentar-nu-buton-magic">7. Wikidata: identificator suplimentar, nu buton magic</h2>
 
       <p>Wikidata este un knowledge graph public.</p>
 
@@ -520,7 +552,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Google nu a documentat o astfel de dependență. La lansarea Knowledge Graph, Google menționa mai multe surse, inclusiv Freebase, Wikipedia, CIA World Factbook și informații găsite pe web.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Notabilitatea Wikidata</h3>
+      <h3 id="notabilitatea-wikidata">Notabilitatea Wikidata</h3>
 
       <p>Politica Wikidata nu se reduce la:</p>
 
@@ -534,7 +566,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Chiar și atunci când există un item valid, el oferă o sursă suplimentară de identificare. Nu garantează ce va face Google, OpenAI sau alt sistem cu informația.</p>
 
-      <h2>8. Măsoară în timp</h2>
+      <h2 id="8-masoara-in-timp">8. Măsoară în timp</h2>
 
       <p>Definește un set fix de întrebări:</p>
 
@@ -565,9 +597,9 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Scopul este să vezi dacă reprezentarea observabilă se schimbă.</p>
 
-      <h2>Ce nu funcționează ca strategie</h2>
+      <h2 id="ce-nu-functioneaza-ca-strategie">Ce nu funcționează ca strategie</h2>
 
-      <h3>Ștergerea trecutului</h3>
+      <h3 id="stergerea-trecutului">Ștergerea trecutului</h3>
 
       <p>Dacă informația este reală și legitim publicată, încercarea de a rescrie identitatea prin negarea ei nu construiește coerență.</p>
 
@@ -581,7 +613,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <blockquote><p>identitatea principală.</p></blockquote>
 
-      <h3>Volumul fără accesibilitate</h3>
+      <h3 id="volumul-fara-accesibilitate">Volumul fără accesibilitate</h3>
 
       <p>O sută de postări nu au aceeași valoare dacă sistemul analizat nu poate accesa sau recupera conținutul respectiv.</p>
 
@@ -602,7 +634,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Trebuie verificat per platformă și per crawler.</p>
 
-      <h3>Auto-declarația fără consistență</h3>
+      <h3 id="auto-declaratia-fara-consistenta">Auto-declarația fără consistență</h3>
 
       <p>Poți declara pe propriul site un rol.</p>
 
@@ -620,7 +652,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Sursele externe pot adăuga coroborare, dar nu există o formulă publică de weighting.</p>
 
-      <h2>Ce schimb în propriul caz</h2>
+      <h2 id="ce-schimb-in-propriul-caz">Ce schimb în propriul caz</h2>
 
       <p>Pentru studiul de caz, intervenția coerentă este:</p>
 
@@ -639,7 +671,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Este însă o strategie coerentă de reducere a ambiguității. Un exemplu concret de măsurare periodică — după ce metadata unei pagini a fost actualizată — este documentat în <a href="/lab/articole/metadata-citare-ai-studiu-de-caz">metadata și citarea AI: studiu de caz</a>.</p>
 
-      <h2>De ce public studiul</h2>
+      <h2 id="de-ce-public-studiul">De ce public studiul</h2>
 
       <p>Partea interesantă a cazului nu este că un sistem „m-a înțeles greșit”.</p>
 
@@ -666,35 +698,35 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p><em>Actualizare (23 octombrie 2026):</em> studiul longitudinal a fost făcut. <a href="/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz">Studiul de caz Tabula Rasa</a> urmărește aceeași identitate în patru puncte de măsurare (T0, F1, F2, F3), cu dovezile publicate pentru fiecare. Ce arată a patra măsurare e rezumat în articolul <a href="/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti">Când internetul încearcă să afle cine ești</a>.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Ce este o entitate în SEO și AI Search?</h3>
+      <h3 id="ce-este-o-entitate-in-seo-si-ai-search">Ce este o entitate în SEO și AI Search?</h3>
 
       <p>Este un lucru identificabil din lumea reală — de exemplu o persoană, o organizație sau un loc — distinct de textul folosit pentru a-l menționa. Google a descris Knowledge Graph ca un model al entităților reale și al relațiilor dintre ele, sub formula „things, not strings”.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>De ce apar alte persoane când îmi caut numele?</h3>
+      <h3 id="de-ce-apar-alte-persoane-cand-imi-caut-numele">De ce apar alte persoane când îmi caut numele?</h3>
 
       <p>Pentru că același nume sau nume apropiate pot indica mai multe persoane, iar rezultatele depind de context și de informațiile disponibile. AI Visibility Lab numește această situație „coliziune”. Nu există o regulă publică prin care sistemul alege automat persoana cu cele mai multe mențiuni.</p>
 
-      <h3>Ce este fragmentarea identității?</h3>
+      <h3 id="ce-este-fragmentarea-identitatii">Ce este fragmentarea identității?</h3>
 
       <p>Este situația în care informațiile despre aceeași persoană există în mai multe roluri, grafii sau surse, dar relațiile dintre ele nu sunt suficient de clare. Este un model practic AI Visibility Lab, nu o metrică oficială Google.</p>
 
-      <h3>Structured data <code>Person</code> rezolvă problema?</h3>
+      <h3 id="structured-data-person-rezolva-problema">Structured data <code>Person</code> rezolvă problema?</h3>
 
       <p>Nu singură. Structured data oferă informație machine-readable și Google recomandă <code>url</code> sau <code>sameAs</code> pentru a ajuta la înțelegerea autorilor, dar markupul trebuie să reflecte conținutul real și nu garantează reprezentarea finală în Search.<sup><a href="#fn-3">3</a></sup><sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>Contează sursele independente?</h3>
+      <h3 id="conteaza-sursele-independente">Contează sursele independente?</h3>
 
       <p>Pot conta ca surse suplimentare de coroborare, pentru că nu sunt controlate de persoana descrisă. Nu există însă un raport public de tipul „un articol de presă valorează cât N postări proprii”.</p>
 
-      <h3>Wikidata rezolvă entity resolution?</h3>
+      <h3 id="wikidata-rezolva-entity-resolution">Wikidata rezolvă entity resolution?</h3>
 
       <p>Nu automat. Un item Wikidata poate oferi un identificator public și relații structurate dacă subiectul îndeplinește politica platformei. Nu există dovadă că Wikidata este sursa primară pentru toate motoarele sau că un item garantează dezambiguizarea externă.<sup><a href="#fn-5">5</a></sup></p>
 
-      <h2>Metodologie și niveluri de certitudine</h2>
+      <h2 id="metodologie-si-niveluri-de-certitudine">Metodologie și niveluri de certitudine</h2>
 
-      <h3>Observație proprie</h3>
+      <h3 id="observatie-proprie">Observație proprie</h3>
 
       <p>Cazul cu rezultatele despre standul de porumb este o observație efectuată în august 2026 asupra propriului nume.</p>
 
@@ -716,7 +748,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
         <li>mecanismul unui LLM.</li>
       </ul>
 
-      <h3>Surse primare</h3>
+      <h3 id="surse-primare">Surse primare</h3>
 
       <p>Pentru afirmațiile generale au fost folosite:</p>
 
@@ -727,7 +759,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
         <li>politica oficială Wikidata.</li>
       </ul>
 
-      <h3>Framework propriu</h3>
+      <h3 id="framework-propriu">Framework propriu</h3>
 
       <p>Termenii:</p>
 
@@ -741,7 +773,7 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
 
       <p>Nu sunt prezentați drept taxonomie Google, OpenAI sau Wikidata.</p>
 
-      <h2>Surse</h2>
+      <h2 id="surse">Surse</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">Google, Amit Singhal — „Introducing the Knowledge Graph: things, not strings", 16 mai 2012, verificat la 19 august 2026. Google descrie Knowledge Graph ca un model care înțelege entități din lumea reală și relațiile dintre ele, cu surse inițiale precum Freebase, Wikipedia și CIA World Factbook: <a href="https://blog.google/products-and-platforms/products/search/introducing-knowledge-graph-things-not/" target="_blank" rel="noopener noreferrer">blog.google/…/introducing-knowledge-graph-things-not</a></li>
@@ -752,11 +784,11 @@ export const ceEsteEntitateAiStudiuDeCazHtml = `
         <li id="fn-6">Wikidata — „Requests for comment/Notability policy reform", 2026, verificat la 19 august 2026. Documentează o discuție activă a comunității (comentarii recente din iulie 2026) privind reformarea criteriilor de notabilitate, formulate inițial în 2013: <a href="https://www.wikidata.org/wiki/Wikidata:Requests_for_comment/Notability_policy_reform" target="_blank" rel="noopener noreferrer">wikidata.org/wiki/…/Notability_policy_reform</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Politicile Wikidata și documentația Google pot fi actualizate. Afirmațiile despre acestea descriu <strong>starea verificată la 19 august 2026</strong>, dată la care sursele de mai sus au fost reverificate live, fără schimbări față de starea consemnată inițial la 11 august 2026. Observația despre propriul nume rămâne o fotografie a rezultatelor văzute în august 2026 și nu a fost repetată pentru această verificare — rezultatele de căutare personalizate se pot schimba de la o rulare la alta.</p>
 
-      <h2>Istoricul versiunilor</h2>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
       <table>
         <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
         <tbody>

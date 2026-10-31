@@ -102,6 +102,43 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#mai-intai-mentiune-citare-si-sursa-externa-nu-sunt-acelasi-lucru">Mai întâi: mențiune, citare și sursă externă nu sunt același lucru</a></li>
+          <li><a href="#ce-arata-muck-rack">Ce arată Muck Rack</a></li>
+          <li><a href="#ce-arata-airops">Ce arată AirOps</a></li>
+          <li><a href="#ce-arata-ahrefs">Ce arată Ahrefs</a></li>
+          <li><a href="#ce-rezulta-din-cele-trei-studii">Ce rezultă din cele trei studii</a></li>
+          <li><a href="#harta-de-citare">Harta de citare</a></li>
+          <li><a href="#citation-map-si-mention-map">Citation Map și Mention Map</a></li>
+          <li><a href="#presence-gap">Presence Gap</a></li>
+          <li><a href="#cum-construiesti-harta">Cum construiești harta</a></li>
+          <li><a href="#pasul-1-defineste-tipurile-de-intrebari">Pasul 1 — Definește tipurile de întrebări</a></li>
+          <li><a href="#pasul-2-alege-sistemele-relevante">Pasul 2 — Alege sistemele relevante</a></li>
+          <li><a href="#pasul-3-repeta">Pasul 3 — Repetă</a></li>
+          <li><a href="#pasul-4-separa-mentiunea-de-citare">Pasul 4 — Separă mențiunea de citare</a></li>
+          <li><a href="#pasul-5-construieste-matricea">Pasul 5 — Construiește matricea</a></li>
+          <li><a href="#pasul-6-calculeaza-frecventele">Pasul 6 — Calculează frecvențele</a></li>
+          <li><a href="#pasul-7-interpreteaza-nu-doar-numara">Pasul 7 — Interpretează, nu doar număra</a></li>
+          <li><a href="#romania-ce-stim-si-ce-nu-stim">România: ce știm și ce nu știm</a></li>
+          <li><a href="#ce-fel-de-pagini-merita-urmarite">Ce fel de pagini merită urmărite</a></li>
+          <li><a href="#cat-de-stabila-este-harta">Cât de stabilă este harta</a></li>
+          <li><a href="#prospetimea">Prospețimea</a></li>
+          <li><a href="#crawlability-si-accesul">Crawlability și accesul</a></li>
+          <li><a href="#social-media-rol-diferit-nu-zero-valoare">Social media: rol diferit, nu „zero valoare”</a></li>
+          <li><a href="#followers-si-engagement">Followers și engagement</a></li>
+          <li><a href="#owned-content-versus-third-party-content">Owned content versus third-party content</a></li>
+          <li><a href="#paid-si-advertorial">Paid și advertorial</a></li>
+          <li><a href="#ce-nu-spun-aceste-studii">Ce nu spun aceste studii</a></li>
+          <li><a href="#eeat-cum-tratezi-sursele-externe-fara-sa-transformi-geo-in-pr-mecanic">EEAT: cum tratezi sursele externe fără să transformi GEO în PR mecanic</a></li>
+          <li><a href="#metoda-ai-visibility-lab-un-scor-descriptiv-nu-algoritmic">Metoda AI Visibility Lab: un scor descriptiv, nu algoritmic</a></li>
+          <li><a href="#precautie-metodologica">Precauție metodologică</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a></li>
+          <li><a href="#metodologie-si-surse">Metodologie și surse</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Sursele externe apar frecvent în citările și mențiunile observate în studiile comerciale de AI visibility, dar nu există un multiplicator universal între earned media și conținutul propriu. Metoda robustă este să măsori direct ce domenii apar pentru întrebările relevante nișei tale și să construiești o hartă de citare actualizabilă.</strong></p>
 
       <p>Aceasta este teza articolului.</p>
@@ -114,11 +151,11 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Răspunsul poate fi măsurat.</p>
 
-      <h2>Mai întâi: mențiune, citare și sursă externă nu sunt același lucru</h2>
+      <h2 id="mai-intai-mentiune-citare-si-sursa-externa-nu-sunt-acelasi-lucru">Mai întâi: mențiune, citare și sursă externă nu sunt același lucru</h2>
 
       <p>În discuțiile despre AI visibility, trei concepte sunt amestecate frecvent.</p>
 
-      <h3>Mențiune</h3>
+      <h3 id="mentiune">Mențiune</h3>
 
       <p>Brandul apare în textul răspunsului.</p>
 
@@ -128,7 +165,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Brandul este menționat chiar dacă propriul lui site nu este citat.</p>
 
-      <h3>Citare</h3>
+      <h3 id="citare">Citare</h3>
 
       <p>Răspunsul atribuie o informație unui URL sau unei surse.</p>
 
@@ -141,7 +178,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>absent din text, deși o pagină a lui este utilizată ca sursă pentru altă afirmație.</li>
       </ul>
 
-      <h3>Sursă externă</h3>
+      <h3 id="sursa-externa">Sursă externă</h3>
 
       <p>Un domeniu pe care brandul nu îl controlează.</p>
 
@@ -164,7 +201,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Această diferență este esențială pentru interpretarea studiilor.</p>
 
-      <h2>Ce arată Muck Rack</h2>
+      <h2 id="ce-arata-muck-rack">Ce arată Muck Rack</h2>
 
       <p>Muck Rack a publicat în mai 2026 a treia ediție a studiului comercial <strong>What Is AI Reading?</strong>.</p>
 
@@ -180,11 +217,11 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Muck Rack spune că ponderea earned media s-a menținut între aproximativ <strong>82% și 89%</strong> în cele trei ediții ale studiului, începând din iulie 2025.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Ce putem spune</h3>
+      <h3 id="ce-putem-spune">Ce putem spune</h3>
 
       <p>În datasetul și taxonomia Muck Rack, sursele clasificate drept earned media domină puternic linkurile citate.</p>
 
-      <h3>Ce nu putem spune</h3>
+      <h3 id="ce-nu-putem-spune">Ce nu putem spune</h3>
 
       <p>Nu putem transforma rezultatul în:</p>
 
@@ -207,7 +244,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Nu ca regulă universală.</p>
 
-      <h2>Ce arată AirOps</h2>
+      <h2 id="ce-arata-airops">Ce arată AirOps</h2>
 
       <p>Raportul comercial AirOps <strong>The 2026 State of AI Search</strong> analizează mai multe tipuri de vizibilitate în AI search.<sup><a href="#fn-3">3</a></sup></p>
 
@@ -221,7 +258,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>first-party mentions apăreau în aproximativ <strong>25%</strong> dintre generated answers, în special mai târziu în journey, la verification.<sup><a href="#fn-3">3</a></sup></li>
       </ul>
 
-      <h3>Limita importantă</h3>
+      <h3 id="limita-importanta">Limita importantă</h3>
 
       <p>Aceste cifre descriu <strong>early commercial discovery</strong> în datasetul AirOps.</p>
 
@@ -242,7 +279,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Asta este mai util decât formula simplistă „third-party bate owned”.</p>
 
-      <h2>Ce arată Ahrefs</h2>
+      <h2 id="ce-arata-ahrefs">Ce arată Ahrefs</h2>
 
       <p>Ahrefs a analizat aproximativ <strong>75.000 de branduri</strong> pentru a vedea ce factori se corelează cu apariția brandurilor în Google AI Overviews.<sup><a href="#fn-4">4</a></sup></p>
 
@@ -269,11 +306,11 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <blockquote><p><strong>correlation ≠ causation.</strong><sup><a href="#fn-4">4</a></sup></p></blockquote>
 
-      <h3>Ce putem spune</h3>
+      <h3 id="ce-putem-spune-2">Ce putem spune</h3>
 
       <p>În datasetul Ahrefs, branded web mentions au avut cea mai puternică corelație observată dintre factorii analizați.</p>
 
-      <h3>Ce nu putem spune</h3>
+      <h3 id="ce-nu-putem-spune-2">Ce nu putem spune</h3>
 
       <p>Nu putem calcula:</p>
 
@@ -289,7 +326,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <blockquote><p><strong>În analiza Ahrefs, web mentions au avut o corelație considerabil mai puternică cu AI Overview brand visibility decât backlinks, dar studiul nu demonstrează că mențiunile cauzează vizibilitatea și nu oferă un raport de impact între cele două.</strong></p></blockquote>
 
-      <h2>Ce rezultă din cele trei studii</h2>
+      <h2 id="ce-rezulta-din-cele-trei-studii">Ce rezultă din cele trei studii</h2>
 
       <p>Muck Rack, AirOps și Ahrefs folosesc:</p>
 
@@ -316,7 +353,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Aceasta este observația defensabilă.</p>
 
-      <h2>Harta de citare</h2>
+      <h2 id="harta-de-citare">Harta de citare</h2>
 
       <p>De aici vine instrumentul util.</p>
 
@@ -336,15 +373,15 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Aceasta este o metodă proprie AI Visibility Lab, nu un standard oficial.</p>
 
-      <h2>Citation Map și Mention Map</h2>
+      <h2 id="citation-map-si-mention-map">Citation Map și Mention Map</h2>
 
       <p>Pentru un audit mai bun, merită separate două hărți.</p>
 
-      <h3>Citation Map</h3>
+      <h3 id="citation-map">Citation Map</h3>
 
       <p>Domeniile și URL-urile efectiv citate de sistem.</p>
 
-      <h3>Mention Map</h3>
+      <h3 id="mention-map">Mention Map</h3>
 
       <p>Sursele și paginile pe care apar brandurile recomandate, indiferent dacă propriul lor domeniu este citat.</p>
 
@@ -367,7 +404,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Această distincție arată <strong>unde trebuie să existe brandul</strong> și <strong>de unde sistemul își justifică răspunsul</strong>.</p>
 
-      <h2>Presence Gap</h2>
+      <h2 id="presence-gap">Presence Gap</h2>
 
       <p>AI Visibility Lab definește și un al treilea instrument:</p>
 
@@ -395,41 +432,41 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>informație proprie insuficientă.</li>
       </ul>
 
-      <h2>Cum construiești harta</h2>
+      <h2 id="cum-construiesti-harta">Cum construiești harta</h2>
 
       <p>Nu există un număr magic de prompts, motoare sau repetări.</p>
 
       <p>Important este ca protocolul să fie stabil și documentat.</p>
 
-      <h2>Pasul 1 — Definește tipurile de întrebări</h2>
+      <h2 id="pasul-1-defineste-tipurile-de-intrebari">Pasul 1 — Definește tipurile de întrebări</h2>
 
       <p>Nu folosi doar variante ale aceleiași întrebări.</p>
 
       <p>Acoperă cel puțin câteva intenții diferite:</p>
 
-      <h3>Discovery</h3>
+      <h3 id="discovery">Discovery</h3>
 
       <blockquote><p>Ce firme din România oferă X?</p></blockquote>
 
-      <h3>Comparison</h3>
+      <h3 id="comparison">Comparison</h3>
 
       <blockquote><p>Care sunt diferențele dintre furnizorii X și Y?</p></blockquote>
 
-      <h3>Problem solving</h3>
+      <h3 id="problem-solving">Problem solving</h3>
 
       <blockquote><p>Ce soluție este potrivită pentru situația Z?</p></blockquote>
 
-      <h3>Verification</h3>
+      <h3 id="verification">Verification</h3>
 
       <blockquote><p>Compania X oferă serviciul Y?</p></blockquote>
 
-      <h3>Local</h3>
+      <h3 id="local">Local</h3>
 
       <blockquote><p>Cine oferă X în Sibiu/Transilvania?</p></blockquote>
 
       <p>doar dacă locația schimbă răspunsul.</p>
 
-      <h3>Branded și unbranded</h3>
+      <h3 id="branded-si-unbranded">Branded și unbranded</h3>
 
       <p>Separă întrebările care:</p>
 
@@ -440,7 +477,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Acestea testează două lucruri diferite.</p>
 
-      <h2>Pasul 2 — Alege sistemele relevante</h2>
+      <h2 id="pasul-2-alege-sistemele-relevante">Pasul 2 — Alege sistemele relevante</h2>
 
       <p>Poți include, în funcție de piață și acces:</p>
 
@@ -457,7 +494,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Alege suprafețele pe care publicul tău le folosește și documentează versiunea/modul activ.</p>
 
-      <h2>Pasul 3 — Repetă</h2>
+      <h2 id="pasul-3-repeta">Pasul 3 — Repetă</h2>
 
       <p>Sistemele generative pot returna rezultate diferite între rulări.</p>
 
@@ -477,7 +514,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>eventual locația dacă influențează răspunsul.</li>
       </ul>
 
-      <h2>Pasul 4 — Separă mențiunea de citare</h2>
+      <h2 id="pasul-4-separa-mentiunea-de-citare">Pasul 4 — Separă mențiunea de citare</h2>
 
       <p>Pentru fiecare brand și sursă, notează separat:</p>
 
@@ -489,7 +526,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>ce afirmație susține citarea?</li>
       </ul>
 
-      <h2>Pasul 5 — Construiește matricea</h2>
+      <h2 id="pasul-5-construieste-matricea">Pasul 5 — Construiește matricea</h2>
 
       <p>Un format util:</p>
 
@@ -523,23 +560,23 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>commercial / editorial / community / government / academic.</li>
       </ul>
 
-      <h2>Pasul 6 — Calculează frecvențele</h2>
+      <h2 id="pasul-6-calculeaza-frecventele">Pasul 6 — Calculează frecvențele</h2>
 
       <p>Poți măsura:</p>
 
-      <h3>Citation frequency</h3>
+      <h3 id="citation-frequency">Citation frequency</h3>
 
       <p>De câte ori este citat un domeniu.</p>
 
-      <h3>Cross-system presence</h3>
+      <h3 id="cross-system-presence">Cross-system presence</h3>
 
       <p>Pe câte sisteme diferite apare.</p>
 
-      <h3>Query coverage</h3>
+      <h3 id="query-coverage">Query coverage</h3>
 
       <p>Pentru câte tipuri de întrebări apare.</p>
 
-      <h3>Source-type distribution</h3>
+      <h3 id="source-type-distribution">Source-type distribution</h3>
 
       <p>Cât din hartă este:</p>
 
@@ -553,11 +590,11 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>owned.</li>
       </ul>
 
-      <h3>Competitor coverage</h3>
+      <h3 id="competitor-coverage">Competitor coverage</h3>
 
       <p>Pe ce surse apar competitorii și tu nu.</p>
 
-      <h2>Pasul 7 — Interpretează, nu doar număra</h2>
+      <h2 id="pasul-7-interpreteaza-nu-doar-numara">Pasul 7 — Interpretează, nu doar număra</h2>
 
       <p>Un domeniu care apare de 20 de ori poate fi:</p>
 
@@ -570,7 +607,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Frecvența fără context poate induce în eroare.</p>
 
-      <h2>România: ce știm și ce nu știm</h2>
+      <h2 id="romania-ce-stim-si-ce-nu-stim">România: ce știm și ce nu știm</h2>
 
       <p>Nu am identificat un studiu reprezentativ care să măsoare sistematic harta surselor citate pentru piața românească B2B.</p>
 
@@ -584,7 +621,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Acestea trebuie măsurate.</p>
 
-      <h3>Observație exploratorie AI Visibility Lab</h3>
+      <h3 id="observatie-exploratorie-ai-visibility-lab">Observație exploratorie AI Visibility Lab</h3>
 
       <p>În rulări limitate pe anumite întrebări românești, pot apărea:</p>
 
@@ -603,7 +640,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <blockquote><p><strong>Dacă harta de citare pentru nișa ta arată că lipsesc surse locale verticale sau comparative de calitate, acesta poate fi un content gap real. Validarea se face prin query set și date, nu prin presupunerea că piața românească este goală.</strong></p></blockquote>
 
-      <h2>Ce fel de pagini merită urmărite</h2>
+      <h2 id="ce-fel-de-pagini-merita-urmarite">Ce fel de pagini merită urmărite</h2>
 
       <p>Raportul AirOps spune că, în analiza lor asupra early commercial discovery:</p>
 
@@ -622,7 +659,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Harta proprie trebuie să confirme dacă aceeași structură apare în nișa ta.</p>
 
-      <h2>Cât de stabilă este harta</h2>
+      <h2 id="cat-de-stabila-este-harta">Cât de stabilă este harta</h2>
 
       <p>Nu trebuie presupus că harta este permanentă.</p>
 
@@ -640,7 +677,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Muck Rack arată, de asemenea, că tipul întrebării schimbă frecvența cu care apar anumite tipuri de surse: press release-urile apar în aproximativ 1% dintre răspunsurile la întrebări de tip industry-trend, de aproximativ 3,5 ori mai des decât în răspunsurile de tip best-of.<sup><a href="#fn-6">6</a></sup></p>
 
-      <h3>Cadență</h3>
+      <h3 id="cadenta">Cadență</h3>
 
       <p>AI Visibility Lab recomandă ca punct de pornire:</p>
 
@@ -652,7 +689,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Aceasta este o <strong>recomandare metodologică</strong>, nu o regulă algoritmică.</p>
 
-      <h2>Prospețimea</h2>
+      <h2 id="prospetimea">Prospețimea</h2>
 
       <p>Muck Rack raportează că, în datasetul lor, journalism citations sunt orientate semnificativ către conținut recent, cu o concentrație mai mare în prima lună de la publicare, un declin până în luna a șasea și apoi un long tail.<sup><a href="#fn-6">6</a></sup></p>
 
@@ -669,7 +706,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Nu avem o unitate publică de „greutate”.</p>
 
-      <h2>Crawlability și accesul</h2>
+      <h2 id="crawlability-si-accesul">Crawlability și accesul</h2>
 
       <p>Pentru ChatGPT Search, OpenAI spune explicit că orice site public poate apărea în search și că, pentru ca textul să fie inclus în summaries/snippets, publisherul trebuie să permită <code>OAI-SearchBot</code>.<sup><a href="#fn-7">7</a></sup></p>
 
@@ -679,7 +716,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <blockquote><p><strong>blocarea crawlerului poate limita accesul direct și utilizarea conținutului, dar nu justifică regula universală „blocat = dispare din orice rezultat AI”.</strong></p></blockquote>
 
-      <h2>Social media: rol diferit, nu „zero valoare”</h2>
+      <h2 id="social-media-rol-diferit-nu-zero-valoare">Social media: rol diferit, nu „zero valoare”</h2>
 
       <p>Titlul „de ce social media nu produce venit” este prea categoric.</p>
 
@@ -702,7 +739,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>De multe ori, nu. Diferența dintre vizibilitatea umană și vizibilitatea AI pe platformele sociale este tratată separat, cu reguli operaționale proprii, în articolul AI Visibility Lab despre <a href="/lab/articole/social-media-vizibilitate-ai">de ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI</a>.</p>
 
-      <h3>Platformele sunt diferite</h3>
+      <h3 id="platformele-sunt-diferite">Platformele sunt diferite</h3>
 
       <p>Nu trebuie puse în aceeași categorie:</p>
 
@@ -725,7 +762,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <blockquote><p><strong>social media nu este invizibilă prin definiție. Crawlability, persistența URL-ului și citation behavior trebuie măsurate per platformă.</strong></p></blockquote>
 
-      <h2>Followers și engagement</h2>
+      <h2 id="followers-si-engagement">Followers și engagement</h2>
 
       <p>Nu există o documentație publică care să permită afirmația:</p>
 
@@ -745,7 +782,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>De aceea nu trebuie inventat un efect zero.</p>
 
-      <h2>Owned content versus third-party content</h2>
+      <h2 id="owned-content-versus-third-party-content">Owned content versus third-party content</h2>
 
       <p>OpenAI spune clar că <strong>orice site public poate apărea în ChatGPT Search</strong>.<sup><a href="#fn-7">7</a></sup></p>
 
@@ -764,7 +801,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>monitorizare.</li>
       </ul>
 
-      <h2>Paid și advertorial</h2>
+      <h2 id="paid-si-advertorial">Paid și advertorial</h2>
 
       <p>Muck Rack raportează aproximativ <strong>0,3%</strong> paid/advertorial în linkurile analizate.<sup><a href="#fn-1">1</a></sup></p>
 
@@ -789,7 +826,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Separat, orice strategie de link acquisition trebuie să respecte politicile Google privind paid links și spam.</p>
 
-      <h2>Ce nu spun aceste studii</h2>
+      <h2 id="ce-nu-spun-aceste-studii">Ce nu spun aceste studii</h2>
 
       <p>Nu spun:</p>
 
@@ -806,7 +843,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Spun doar că, în mai multe dataseturi comerciale diferite, <strong>prezența externă este asociată frecvent cu vizibilitatea observată în AI search</strong>.</p>
 
-      <h2>EEAT: cum tratezi sursele externe fără să transformi GEO în PR mecanic</h2>
+      <h2 id="eeat-cum-tratezi-sursele-externe-fara-sa-transformi-geo-in-pr-mecanic">EEAT: cum tratezi sursele externe fără să transformi GEO în PR mecanic</h2>
 
       <p>O strategie de mențiuni externe poate deveni rapid artificială dacă obiectivul este doar:</p>
 
@@ -814,19 +851,19 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Pentru E-E-A-T, o prezență externă este mai valoroasă când: (regulile de mai jos completează observațiile despre dezambiguizarea unei entități din studiul de caz AI Visibility Lab <a href="/lab/articole/ce-este-entitate-ai-studiu-de-caz">ce este o entitate pentru AI și motoarele de căutare</a>.)</p>
 
-      <h3>Este relevantă</h3>
+      <h3 id="este-relevanta">Este relevantă</h3>
 
       <p>Sursa are legătură reală cu domeniul.</p>
 
-      <h3>Este verificabilă</h3>
+      <h3 id="este-verificabila">Este verificabilă</h3>
 
       <p>Afirmațiile pot fi controlate și susținute.</p>
 
-      <h3>Este independentă</h3>
+      <h3 id="este-independenta">Este independentă</h3>
 
       <p>Publisherul are propria responsabilitate editorială.</p>
 
-      <h3>Este specifică</h3>
+      <h3 id="este-specifica">Este specifică</h3>
 
       <p>Mențiunea spune ceva real despre:</p>
 
@@ -838,15 +875,15 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>rezultate.</li>
       </ul>
 
-      <h3>Este coerentă cu owned content</h3>
+      <h3 id="este-coerenta-cu-owned-content">Este coerentă cu owned content</h3>
 
       <p>Dacă publicația spune că brandul oferă serviciul X, site-ul propriu trebuie să confirme clar acest lucru. Coerența dintre ce spun sursele externe și ce spune site-ul propriu este exact tipul de consistență analizat, pentru o singură entitate, în studiul de caz AI Visibility Lab despre <a href="/lab/articole/metadata-citare-ai-studiu-de-caz">metadata și citarea AI</a>.</p>
 
-      <h3>Nu este fabricată pentru ranking</h3>
+      <h3 id="nu-este-fabricata-pentru-ranking">Nu este fabricată pentru ranking</h3>
 
       <p>Mențiunile cumpărate, paginile clonă și articolele create doar pentru a simula consensul pot produce risc reputațional și SEO.</p>
 
-      <h2>Metoda AI Visibility Lab: un scor descriptiv, nu algoritmic</h2>
+      <h2 id="metoda-ai-visibility-lab-un-scor-descriptiv-nu-algoritmic">Metoda AI Visibility Lab: un scor descriptiv, nu algoritmic</h2>
 
       <p>Pentru a prioritiza sursele, poți construi un scor intern.</p>
 
@@ -870,7 +907,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <blockquote><p><strong>acesta este un instrument intern de prioritizare, nu o estimare a scoringului Google/OpenAI.</strong></p></blockquote>
 
-      <h2>Precauție metodologică</h2>
+      <h2 id="precautie-metodologica">Precauție metodologică</h2>
 
       <p>Majoritatea cifrelor din acest articol provin de la companii cu interes comercial direct:</p>
 
@@ -892,11 +929,11 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>cifrele nu sunt replicări academice independente.</li>
       </ul>
 
-      <h3>Ce este relativ robust</h3>
+      <h3 id="ce-este-relativ-robust">Ce este relativ robust</h3>
 
       <p>Trei furnizori diferiți raportează, prin metodologii diferite, o asociere între external/web presence și AI visibility.</p>
 
-      <h3>Ce nu este robust</h3>
+      <h3 id="ce-nu-este-robust">Ce nu este robust</h3>
 
       <p>Un multiplicator universal de tip:</p>
 
@@ -908,43 +945,43 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
 
       <p>Articolul nu folosește astfel de formule.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Ce este o hartă de citare?</h3>
+      <h3 id="ce-este-o-harta-de-citare">Ce este o hartă de citare?</h3>
 
       <p>Este inventarul domeniilor și URL-urilor citate repetat de sistemele AI pentru un set definit de întrebări relevante unei nișe, într-un interval de timp documentat. Este un instrument metodologic AI Visibility Lab.</p>
 
-      <h3>Ce procent din citările AI vine din earned media?</h3>
+      <h3 id="ce-procent-din-citarile-ai-vine-din-earned-media">Ce procent din citările AI vine din earned media?</h3>
 
       <p>Nu există un procent universal. În studiul comercial Muck Rack din mai 2026, 84% dintre linkurile analizate au fost clasificate drept earned media, în propriul lor query set și sistem de clasificare.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Mențiunile contează mai mult decât backlinkurile?</h3>
+      <h3 id="mentiunile-conteaza-mai-mult-decat-backlinkurile">Mențiunile contează mai mult decât backlinkurile?</h3>
 
       <p>Ahrefs a găsit o corelație mai puternică între branded web mentions și AI Overview brand visibility decât între backlinks și aceeași metrică. Corelația nu este însă cauzalitate și valorile nu pot fi interpretate ca raport de impact.<sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>Cum aflu unde ar trebui să fie prezent brandul meu?</h3>
+      <h3 id="cum-aflu-unde-ar-trebui-sa-fie-prezent-brandul-meu">Cum aflu unde ar trebui să fie prezent brandul meu?</h3>
 
       <p>Construiește un query set relevant, rulează-l repetat pe sistemele importante pentru audiența ta, colectează citation domains și brand mentions, apoi compară acea hartă cu prezența actuală a brandului.</p>
 
-      <h3>Trebuie să apar în listicles și comparative?</h3>
+      <h3 id="trebuie-sa-apar-in-listicles-si-comparative">Trebuie să apar în listicles și comparative?</h3>
 
       <p>Nu automat. AirOps raportează că listicles, comparison pages și review roundups au reprezentat aproape 90% dintre third-party mentions în analiza lor asupra early commercial discovery. Verifică dacă același pattern apare în harta propriei nișe.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Social media este inutilă pentru AI visibility?</h3>
+      <h3 id="social-media-este-inutila-pentru-ai-visibility">Social media este inutilă pentru AI visibility?</h3>
 
       <p>Nu. Platformele diferă mult în crawlability și citation behavior. Social media poate contribui la distribuție, comunitate, branded search și external mentions. Nu trebuie însă presupus că un feed social este echivalent cu un corpus web persistent și controlat.</p>
 
-      <h3>Poate propriul meu site să fie citat de ChatGPT?</h3>
+      <h3 id="poate-propriul-meu-site-sa-fie-citat-de-chatgpt">Poate propriul meu site să fie citat de ChatGPT?</h3>
 
       <p>Da. OpenAI spune că orice site public poate apărea în ChatGPT Search; pentru includerea conținutului în summaries/snippets, OAI-SearchBot nu trebuie blocat.<sup><a href="#fn-7">7</a></sup></p>
 
-      <h3>Paid media produce citări AI?</h3>
+      <h3 id="paid-media-produce-citari-ai">Paid media produce citări AI?</h3>
 
       <p>Nu există o concluzie cauzală. În datasetul Muck Rack din mai 2026, paid/advertorial a reprezentat aproximativ 0,3% dintre linkurile citate, dar această distribuție nu demonstrează efectul unei investiții paid asupra AI visibility.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h2>Metodologie și surse</h2>
+      <h2 id="metodologie-si-surse">Metodologie și surse</h2>
 
-      <h3>Surse comerciale</h3>
+      <h3 id="surse-comerciale">Surse comerciale</h3>
 
       <p>Cifrele principale provin din:</p>
 
@@ -963,11 +1000,11 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li>precizarea explicită că sunt studii comerciale.</li>
       </ul>
 
-      <h3>Surse primare de provider</h3>
+      <h3 id="surse-primare-de-provider">Surse primare de provider</h3>
 
       <p>Pentru comportamentul ChatGPT Search este folosită documentația oficială OpenAI.</p>
 
-      <h3>Observații România</h3>
+      <h3 id="observatii-romania">Observații România</h3>
 
       <p>Afirmațiile despre România sunt prezentate doar ca:</p>
 
@@ -989,7 +1026,7 @@ export const hartaDeCitareMentiuniExterneRomaniaHtml = `
         <li id="fn-7">OpenAI Help Center — „Publishers and Developers – FAQ", verificare inițială 11 august 2026, reverificat la 19 august 2026. OpenAI spune că orice site public poate apărea în ChatGPT Search, iar pentru includerea conținutului în summaries/snippets OAI-SearchBot nu trebuie blocat; documentează și situația unui URL blocat care poate fi totuși cunoscut printr-un furnizor terț de search sau prin crawlingul altor pagini, caz în care poate fi afișat doar ca link/titlu: <a href="https://help.openai.com/en/articles/12627856-publishers-and-developers-faq" target="_blank" rel="noopener noreferrer">help.openai.com/en/articles/12627856-publishers-and-developers-faq</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Citation behavior, modelele, search providers și documentațiile se schimbă rapid. Toate sursele de mai sus au fost reverificate live la <strong>19 august 2026</strong>, fără schimbări față de starea consemnată inițial la 11 august 2026. Afirmațiile despre produse și studiile de piață descriu starea verificată la această dată.</p>
 

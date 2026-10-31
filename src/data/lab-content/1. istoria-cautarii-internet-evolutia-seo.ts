@@ -48,11 +48,60 @@ export const istoriaCautariiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-14">14 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#teza-arbitrajul-punctului-orb">Teza: arbitrajul punctului orb</a></li>
+          <li><a href="#etapa-0-inainte-de-web-1989-1993">Etapa 0: înainte de web (1989-1993)</a></li>
+          <li><a href="#era-1-directoare-autodescriere-si-curatoriat-uman-1993-1998">Era 1: directoare, autodescriere și curatoriat uman (1993-1998)</a></li>
+          <li><a href="#era-2-textul-paginii-si-nasterea-optimizarii-pentru-motoare-1994-1998">Era 2: textul paginii și nașterea optimizării pentru motoare (1994-1998)</a>
+            <ol>
+              <li><a href="#prima-deturnare-campul-pe-care-il-controlezi-singur">Prima deturnare: câmpul pe care îl controlezi singur</a></li>
+            </ol>
+          </li>
+          <li><a href="#originea-disputata-a-termenului-seo">Originea disputată a termenului SEO</a></li>
+          <li><a href="#era-3-graful-de-linkuri-si-autoritatea-externa-1998-2011">Era 3: graful de linkuri și autoritatea externă (1998-2011)</a>
+            <ol>
+              <li><a href="#a-doua-deturnare-cautarea-devine-si-piata-publicitara">A doua deturnare: căutarea devine și piață publicitară</a></li>
+            </ol>
+          </li>
+          <li><a href="#era-4-calitate-spam-si-intelegerea-entitatilor-2011-2015">Era 4: calitate, spam și înțelegerea entităților (2011-2015)</a></li>
+          <li><a href="#era-5-machine-learning-context-si-intentie-2015-2022">Era 5: machine learning, context și intenție (2015-2022)</a>
+            <ol>
+              <li><a href="#a-treia-deturnare-motorul-incepe-sa-raspunda-nu-doar-sa-trimita">A treia deturnare: motorul începe să răspundă, nu doar să trimită</a></li>
+            </ol>
+          </li>
+          <li><a href="#era-6-cautarea-generativa-2022-prezent">Era 6: căutarea generativă (2022-prezent)</a>
+            <ol>
+              <li><a href="#ce-putem-spune-in-mod-verificabil-despre-semnalul-erei-generative">Ce putem spune, în mod verificabil, despre „semnalul” erei generative</a></li>
+              <li><a href="#ipoteza-ai-visibility-lab-coroborarea-ca-unul-dintre-semnalele-posibile-ale-credibilitatii">Ipoteza AI Visibility Lab: coroborarea ca unul dintre semnalele posibile ale credibilității</a></li>
+            </ol>
+          </li>
+          <li><a href="#ce-urmeaza-daca-tiparul-se-repeta">Ce urmează, dacă tiparul se repetă</a></li>
+          <li><a href="#ce-nu-s-a-schimbat">Ce nu s-a schimbat</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+            <ol>
+              <li><a href="#care-a-fost-primul-motor-de-cautare-de-pe-internet">Care a fost primul motor de căutare de pe internet?</a></li>
+              <li><a href="#care-a-fost-primul-crawler-al-webului">Care a fost primul crawler al webului?</a></li>
+              <li><a href="#cine-a-inventat-termenul-seo">Cine a inventat termenul SEO?</a></li>
+              <li><a href="#ce-a-schimbat-pagerank">Ce a schimbat PageRank?</a></li>
+              <li><a href="#cand-a-devenit-cautarea-o-piata-publicitara">Când a devenit căutarea o piață publicitară?</a></li>
+              <li><a href="#de-ce-nu-mai-conteaza-meta-keywords-pentru-google">De ce nu mai contează meta keywords pentru Google?</a></li>
+              <li><a href="#exista-un-markup-special-pentru-ai-overviews-sau-ai-mode">Există un markup special pentru AI Overviews sau AI Mode?</a></li>
+              <li><a href="#este-coroborarea-factorul-de-ranking-al-geo">Este coroborarea „factorul de ranking” al GEO?</a></li>
+              <li><a href="#ce-ar-putea-urma-dupa-geo">Ce ar putea urma după GEO?</a></li>
+            </ol>
+          </li>
+          <li><a href="#metodologie-si-limite">Metodologie și limite</a></li>
+          <li><a href="#surse-si-note">Surse și note</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Istoria căutării pe internet poate fi citită ca o succesiune de mecanisme prin care motoarele au încercat să aproximeze relevanța, autoritatea și utilitatea. În această analiză împart evoluția căutării web în șase ere, precedate de o etapă pre-web. Teza AI Visibility Lab este că fiecare mecanism de aproximare creează inevitabil o distanță între semnal și realitatea pe care încearcă să o măsoare, iar optimizarea tinde să se mute exact în acea distanță. Uneori o reduce legitim, alteori o exploatează. Când semnalul devine prea ușor de manipulat, sistemele de căutare îl devalorizează, îl combină cu altele sau îl înlocuiesc.</strong></p>
 
       <p>Aceasta este o <strong>interpretare a istoriei</strong>, nu o descriere oficială a modului în care funcționează fiecare motor de căutare și nici afirmația că există un singur „indicator” dominant în fiecare perioadă. Motoarele de căutare au folosit întotdeauna mai multe semnale simultan, iar mecanismele exacte de ranking sunt în mare parte proprietare. Modelul de mai jos este o lentilă analitică: simplifică istoria pentru a face vizibil un tipar.</p>
 
-      <h2>Teza: arbitrajul punctului orb</h2>
+      <h2 id="teza-arbitrajul-punctului-orb">Teza: arbitrajul punctului orb</h2>
 
       <p>Un motor de căutare vrea să răspundă la întrebări pe care nu le poate măsura direct: <strong>cât de relevantă este o pagină pentru o interogare, câtă autoritate are sursa, cât de util este răspunsul și câtă încredere merită</strong>.</p>
 
@@ -66,7 +115,7 @@ export const istoriaCautariiHtml = `
 
       <p>Utilitatea acestui model nu este doar istorică. El oferă o întrebare practică pentru orice epocă: <strong>ce încearcă sistemul să aproximeze, prin ce semnale o face și cât de ușor pot fi acele semnale produse artificial?</strong></p>
 
-      <h2>Etapa 0: înainte de web (1989-1993)</h2>
+      <h2 id="etapa-0-inainte-de-web-1989-1993">Etapa 0: înainte de web (1989-1993)</h2>
 
       <p><strong>1989.</strong> Alan Emtage, student și administrator de sistem la Universitatea McGill din Montreal, creează <strong>Archie</strong>, considerat în mod obișnuit primul motor de căutare de pe internet. Archie indexa liste de fișiere disponibile pe servere FTP, nu conținutul paginilor web, pentru că World Wide Web-ul încă nu devenise mediul dominant pe care îl cunoaștem astăzi. Unele relatări istorice plasează dezvoltarea/publicarea sa în 1990, dar McGill datează creația inițială în 1989.<sup><a href="#fn-3">3</a></sup></p>
 
@@ -78,7 +127,7 @@ export const istoriaCautariiHtml = `
 
       <p><strong>Ipoteza acestei analize:</strong> spamul de căutare devine o problemă structurală atunci când vizibilitatea dobândește suficientă valoare economică încât merită fabricată.</p>
 
-      <h2>Era 1: directoare, autodescriere și curatoriat uman (1993-1998)</h2>
+      <h2 id="era-1-directoare-autodescriere-si-curatoriat-uman-1993-1998">Era 1: directoare, autodescriere și curatoriat uman (1993-1998)</h2>
 
       <p><strong>1994.</strong> Jerry Yang și David Filo transformă ceea ce începuse ca o listă de site-uri favorite într-un director cunoscut drept <strong>Yahoo!</strong>, organizat pe categorii și întreținut editorial. În primele sale forme, descoperirea site-urilor depindea mult mai mult de clasificare și curatoriat uman decât de rankingul algoritmic modern.</p>
 
@@ -94,7 +143,7 @@ export const istoriaCautariiHtml = `
 
       <p><strong>Cum s-a schimbat sistemul:</strong> motoarele au trecut progresiv spre crawling și indexare automată, pentru că webul a crescut mai repede decât putea fi catalogat manual.</p>
 
-      <h2>Era 2: textul paginii și nașterea optimizării pentru motoare (1994-1998)</h2>
+      <h2 id="era-2-textul-paginii-si-nasterea-optimizarii-pentru-motoare-1994-1998">Era 2: textul paginii și nașterea optimizării pentru motoare (1994-1998)</h2>
 
       <p><strong>1994.</strong> Brian Pinkerton lansează <strong>WebCrawler</strong>, unul dintre primele motoare web capabile să caute în textul integral al paginilor, nu doar în titluri sau liste de URL-uri. În același an apare și <strong>Lycos</strong>.<sup><a href="#fn-9">9</a></sup></p>
 
@@ -110,13 +159,13 @@ export const istoriaCautariiHtml = `
 
       <p>Aici apar tactici devenite clasice: <strong>keyword stuffing</strong>, text ascuns, liste de termeni fără valoare pentru cititor și folosirea abuzivă a metadatelor.</p>
 
-      <h3>Prima deturnare: câmpul pe care îl controlezi singur</h3>
+      <h3 id="prima-deturnare-campul-pe-care-il-controlezi-singur">Prima deturnare: câmpul pe care îl controlezi singur</h3>
 
       <p>Tag-ul <code>meta keywords</code> este unul dintre cele mai cunoscute exemple ale problemei autodescrierii: proprietarul paginii poate declara ce cuvinte consideră relevante fără ca acea declarație să fie, prin ea însăși, o dovadă.</p>
 
       <p>Google spune explicit că <strong>nu folosește meta keywords în rankingul Google Search</strong>.<sup><a href="#fn-11">11</a></sup> Din acest episod nu rezultă că orice informație declarată de proprietarul site-ului este inutilă; structured data, de exemplu, poate ajuta motoarele să înțeleagă conținutul și să activeze anumite funcții de afișare. Lecția mai precisă este alta: <strong>un semnal controlat integral de sursă devine vulnerabil dacă sistemul nu îl poate valida prin context sau prin alte semnale.</strong></p>
 
-      <h2>Originea disputată a termenului SEO</h2>
+      <h2 id="originea-disputata-a-termenului-seo">Originea disputată a termenului SEO</h2>
 
       <p>Originea expresiei <strong>„search engine optimization”</strong> este mai puțin clară decât sugerează multe istorii retrospective.</p>
 
@@ -132,7 +181,7 @@ export const istoriaCautariiHtml = `
 
       <p><strong>Concluzia defensabilă:</strong> termenul SEO nu are un „inventator” unic demonstrat. Avem mai multe revendicări timpurii, apariții independente și dovezi documentare fragmentare.</p>
 
-      <h2>Era 3: graful de linkuri și autoritatea externă (1998-2011)</h2>
+      <h2 id="era-3-graful-de-linkuri-si-autoritatea-externa-1998-2011">Era 3: graful de linkuri și autoritatea externă (1998-2011)</h2>
 
       <p><strong>1998.</strong> Sergey Brin și Larry Page publică lucrarea <em>The Anatomy of a Large-Scale Hypertextual Web Search Engine</em>, care descrie arhitectura timpurie Google și rolul analizei structurii de linkuri. În același an este fondată compania Google.<sup><a href="#fn-13">13</a></sup></p>
 
@@ -148,7 +197,7 @@ export const istoriaCautariiHtml = `
 
       <p><strong>2005.</strong> Google și alte motoare importante introduc <code>rel="nofollow"</code> în contextul luptei împotriva spamului din comentarii. Google confirmă retrospectiv că atributul a fost introdus în 2005 pentru a ajuta la combaterea comment spamului și a evoluat ulterior spre un mecanism mai general de caracterizare a relației dintre pagini.<sup><a href="#fn-14">14</a></sup></p>
 
-      <h3>A doua deturnare: căutarea devine și piață publicitară</h3>
+      <h3 id="a-doua-deturnare-cautarea-devine-si-piata-publicitara">A doua deturnare: căutarea devine și piață publicitară</h3>
 
       <p>La sfârșitul anilor 1990, <strong>GoTo.com</strong> — companie care va deveni ulterior Overture — popularizează modelul de paid search bazat pe licitație și plată pentru trafic. Nu a fost prima tentativă de monetizare a căutării, iar forme de paid placement existaseră anterior; importanța GoTo a fost transformarea licitației PPC într-un model comercial scalabil.</p>
 
@@ -158,7 +207,7 @@ export const istoriaCautariiHtml = `
 
       <p>Din acel moment, pagina de rezultate este tot mai clar două sisteme în același spațiu: rezultate organice și rezultate plătite. Este importantă însă distincția pe care Google o făcea explicit încă din 2002: plata pentru reclame nu cumpăra poziții în rezultatele organice.<sup><a href="#fn-16">16</a></sup></p>
 
-      <h2>Era 4: calitate, spam și înțelegerea entităților (2011-2015)</h2>
+      <h2 id="era-4-calitate-spam-si-intelegerea-entitatilor-2011-2015">Era 4: calitate, spam și înțelegerea entităților (2011-2015)</h2>
 
       <p>În această perioadă, Google își intensifică eforturile împotriva unor tipare de conținut și linkuri care produceau rezultate slabe în ciuda faptului că bifau semnale utile algoritmilor mai vechi.</p>
 
@@ -180,7 +229,7 @@ export const istoriaCautariiHtml = `
 
       <p>În acest context apare o versiune mai sofisticată a conținutului produs pentru algoritm: pagini construite să arate complet, cu multe subtitluri, liste și variații de cuvinte-cheie, dar fără o diferență reală de valoare față de ceea ce exista deja.</p>
 
-      <h2>Era 5: machine learning, context și intenție (2015-2022)</h2>
+      <h2 id="era-5-machine-learning-context-si-intentie-2015-2022">Era 5: machine learning, context și intenție (2015-2022)</h2>
 
       <p><strong>2015 — RankBrain.</strong> Google introduce RankBrain, un sistem de machine learning folosit pentru a ajuta Search să înțeleagă mai bine relația dintre cuvinte, concepte și interogări.</p>
 
@@ -196,7 +245,7 @@ export const istoriaCautariiHtml = `
 
       <p><strong>Punctul orb:</strong> un sistem poate învăța ce seamănă cu un răspuns util fără ca „util” să fie identic cu „adevărat”. Corectitudinea factuală, satisfacția utilizatorului, autoritatea și relevanța sunt dimensiuni care se suprapun doar parțial.</p>
 
-      <h3>A treia deturnare: motorul începe să răspundă, nu doar să trimită</h3>
+      <h3 id="a-treia-deturnare-motorul-incepe-sa-raspunda-nu-doar-sa-trimita">A treia deturnare: motorul începe să răspundă, nu doar să trimită</h3>
 
       <p>Transformarea nu începe cu AI generativ.</p>
 
@@ -206,7 +255,7 @@ export const istoriaCautariiHtml = `
 
       <p>Acest fenomen este unul dintre antecedentele directe ale tensiunii actuale dintre vizibilitate și trafic în căutarea generativă.</p>
 
-      <h2>Era 6: căutarea generativă (2022-prezent)</h2>
+      <h2 id="era-6-cautarea-generativa-2022-prezent">Era 6: căutarea generativă (2022-prezent)</h2>
 
       <p><strong>30 noiembrie 2022.</strong> OpenAI lansează public ChatGPT.</p>
 
@@ -228,7 +277,7 @@ export const istoriaCautariiHtml = `
 
       <p><strong>3 iunie 2026.</strong> Google anunță rapoarte dedicate de performanță pentru funcțiile generative în Search Console, cu date precum impresii, pagini, țări, dispozitive și evoluție în timp.<sup><a href="#fn-24">24</a></sup></p>
 
-      <h3>Ce putem spune, în mod verificabil, despre „semnalul” erei generative</h3>
+      <h3 id="ce-putem-spune-in-mod-verificabil-despre-semnalul-erei-generative">Ce putem spune, în mod verificabil, despre „semnalul” erei generative</h3>
 
       <p>Aici este nevoie de mai multă prudență decât în istoria SEO clasic.</p>
 
@@ -238,7 +287,7 @@ export const istoriaCautariiHtml = `
 
       <p>Prin urmare, afirmația <strong>„coroborarea este indicatorul actual al motoarelor generative”</strong> ar fi prea puternică. Nu există bază publică suficientă pentru a o trata ca fapt.</p>
 
-      <h3>Ipoteza AI Visibility Lab: coroborarea ca unul dintre semnalele posibile ale credibilității</h3>
+      <h3 id="ipoteza-ai-visibility-lab-coroborarea-ca-unul-dintre-semnalele-posibile-ale-credibilitatii">Ipoteza AI Visibility Lab: coroborarea ca unul dintre semnalele posibile ale credibilității</h3>
 
       <p>Ipoteza pe care o propun este mai îngustă:</p>
 
@@ -252,7 +301,7 @@ export const istoriaCautariiHtml = `
 
       <p>Asta nu demonstrează că există un algoritm anti-mențiuni echivalent cu Penguin și nici că o penalizare viitoare este inevitabilă. Demonstrează doar că Google spune public, în 2026, că această tactică nu reprezintă o cale recomandată spre vizibilitate.</p>
 
-      <h2>Ce urmează, dacă tiparul se repetă</h2>
+      <h2 id="ce-urmeaza-daca-tiparul-se-repeta">Ce urmează, dacă tiparul se repetă</h2>
 
       <p>De aici înainte intrăm deliberat în <strong>predicție</strong>, nu în fapt verificat.</p>
 
@@ -266,7 +315,7 @@ export const istoriaCautariiHtml = `
 
       <p>Putem spune însă ceva mai modest și mai solid: <strong>pe măsură ce o tactică devine ușor de fabricat, valoarea ei ca semnal tinde să scadă.</strong></p>
 
-      <h2>Ce nu s-a schimbat</h2>
+      <h2 id="ce-nu-s-a-schimbat">Ce nu s-a schimbat</h2>
 
       <p>Din toate aceste perioade se pot extrage trei observații care rezistă mai bine decât orice listă de tactici.</p>
 
@@ -278,36 +327,36 @@ export const istoriaCautariiHtml = `
 
       <p>Asta este partea durabilă a SEO și GEO. Nu „trucul” unei epoci, ci disciplina de a înțelege cum circulă informația între creator, sistem și utilizator.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Care a fost primul motor de căutare de pe internet?</h3>
+      <h3 id="care-a-fost-primul-motor-de-cautare-de-pe-internet">Care a fost primul motor de căutare de pe internet?</h3>
       <p><strong>Archie</strong> este considerat în mod obișnuit primul motor de căutare de pe internet. Alan Emtage l-a creat la McGill; universitatea datează creația în <strong>1989</strong>, deși unele istorii folosesc 1990 pentru etapele ulterioare ale dezvoltării și răspândirii. Archie indexa liste de fișiere de pe servere FTP, nu pagini web.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Care a fost primul crawler al webului?</h3>
+      <h3 id="care-a-fost-primul-crawler-al-webului">Care a fost primul crawler al webului?</h3>
       <p>Matthew Gray descrie <strong>World Wide Web Wanderer</strong>, dezvoltat în 1993, drept primul agent autonom al webului, iar resursele MIT îl descriu drept primul web spider. Era folosit inițial pentru măsurarea dimensiunii webului.<sup><a href="#fn-5">5</a></sup></p>
 
-      <h3>Cine a inventat termenul SEO?</h3>
+      <h3 id="cine-a-inventat-termenul-seo">Cine a inventat termenul SEO?</h3>
       <p>Nu există un inventator unic demonstrat. Istoria disponibilă indică mai multe persoane care au folosit sau revendicat independent formulări apropiate în perioada 1995-1997. O investigație Search Engine Land din 2025 discută cinci nume: Bruce Clay, John Audette, Bob Heyman, Leland Harden și Viktor Grant. Danny Sullivan a avut un rol important în popularizarea și documentarea terminologiei.<sup><a href="#fn-12">12</a></sup></p>
 
-      <h3>Ce a schimbat PageRank?</h3>
+      <h3 id="ce-a-schimbat-pagerank">Ce a schimbat PageRank?</h3>
       <p>PageRank a făcut din structura de linkuri a webului un semnal important pentru evaluarea paginilor. În loc să se bazeze doar pe ce declara documentul despre el însuși, motorul putea analiza și relațiile dintre documente.<sup><a href="#fn-13">13</a></sup></p>
 
-      <h3>Când a devenit căutarea o piață publicitară?</h3>
+      <h3 id="cand-a-devenit-cautarea-o-piata-publicitara">Când a devenit căutarea o piață publicitară?</h3>
       <p>Monetizarea căutării a evoluat în mai multe etape. GoTo.com a popularizat licitațiile PPC la sfârșitul anilor 1990. Google a lansat AdWords self-service în octombrie 2000, inițial cu tarifare CPM, iar în februarie 2002 a lansat AdWords Select, cu CPC și ordonare bazată pe combinația dintre bid și performanța anunțului.<sup><a href="#fn-15">15</a></sup><sup><a href="#fn-16">16</a></sup></p>
 
-      <h3>De ce nu mai contează meta keywords pentru Google?</h3>
+      <h3 id="de-ce-nu-mai-conteaza-meta-keywords-pentru-google">De ce nu mai contează meta keywords pentru Google?</h3>
       <p>Google spune explicit că <strong>meta keywords nu este folosit pentru ranking în Google Search</strong>. Motivul practic pentru care astfel de semnale sunt slabe este evident: proprietarul paginii le poate completa fără ca ele să demonstreze relevanța reală a conținutului.<sup><a href="#fn-11">11</a></sup></p>
 
-      <h3>Există un markup special pentru AI Overviews sau AI Mode?</h3>
+      <h3 id="exista-un-markup-special-pentru-ai-overviews-sau-ai-mode">Există un markup special pentru AI Overviews sau AI Mode?</h3>
       <p>Nu. Ghidul Google din 2026 spune explicit că nu este necesar un markup special, un fișier AI precum <code>llms.txt</code> sau alt format separat pentru a apărea în funcțiile generative Google Search. Fundamentele SEO existente rămân baza recomandată.<sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>Este coroborarea „factorul de ranking” al GEO?</h3>
+      <h3 id="este-coroborarea-factorul-de-ranking-al-geo">Este coroborarea „factorul de ranking” al GEO?</h3>
       <p>Nu există dovezi publice suficiente pentru o asemenea afirmație. Coroborarea între surse este o <strong>ipoteză relevantă</strong> pentru credibilitate și sinteză, dar motoarele generative folosesc pipeline-uri complexe, iar factorii și ponderile exacte nu sunt publice. În acest articol, coroborarea este tratată ca ipoteză de cercetare, nu ca fapt algoritmic demonstrat.</p>
 
-      <h3>Ce ar putea urma după GEO?</h3>
+      <h3 id="ce-ar-putea-urma-dupa-geo">Ce ar putea urma după GEO?</h3>
       <p>Predicția AI Visibility Lab este că, dacă mențiunile și referințele externe devin o zonă importantă de optimizare, sistemele vor avea nevoie de metode mai bune pentru a distinge semnalele autentice de cele fabricate. Este o extrapolare din istoria SEO, nu o schimbare algoritmică anunțată.</p>
 
-      <h2>Metodologie și limite</h2>
+      <h2 id="metodologie-si-limite">Metodologie și limite</h2>
 
       <p>Acest articol combină două categorii de afirmații:</p>
 
@@ -320,7 +369,7 @@ export const istoriaCautariiHtml = `
 
       <p>Cronologiile foarte timpurii ale internetului conțin uneori date diferite în funcție de momentul considerat „creare”, „anunț”, „lansare” sau „distribuire publică”. Acolo unde există asemenea diferențe, articolul evită să transforme o dată disputată într-o certitudine falsă.</p>
 
-      <h2>Surse și note</h2>
+      <h2 id="surse-si-note">Surse și note</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">Google Search, informații despre sistemele de ranking și modul în care Google combină sisteme și semnale: <a href="https://www.google.com/search/howsearchworks/how-search-works/ranking-results/" target="_blank" rel="noopener noreferrer">google.com/search/howsearchworks</a></li>

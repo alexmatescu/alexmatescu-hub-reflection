@@ -124,17 +124,83 @@ export const socialMediaVizibilitateAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-10-02">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-02">2 octombrie 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#distinctia-care-conteaza-artefact-sau-flux">Distincția care contează: artefact sau flux</a>
+            <ol>
+              <li><a href="#legea-artefactului-principiu-operational-ai-visibility-lab">Legea artefactului — principiu operațional AI Visibility Lab</a></li>
+            </ol>
+          </li>
+          <li><a href="#ce-spun-datele-despre-platforme">Ce spun datele despre platforme</a>
+            <ol>
+              <li><a href="#acordurile-de-acces-nu-demonstreaza-singure-cauzalitatea-citarii">Acordurile de acces nu demonstrează singure cauzalitatea citării</a></li>
+            </ol>
+          </li>
+          <li><a href="#atentie-la-cum-sunt-citite-cifrele">Atenție la cum sunt citite cifrele</a>
+            <ol>
+              <li><a href="#corelatie-nu-inseamna-cauzalitate">Corelație nu înseamnă cauzalitate</a></li>
+              <li><a href="#owned-content-versus-third-party-content">Owned content versus third-party content</a></li>
+            </ol>
+          </li>
+          <li><a href="#ce-inseamna-concret-sa-fii-slab-reprezentat-in-retrieval">Ce înseamnă concret să fii slab reprezentat în retrieval</a></li>
+          <li><a href="#solutiile-in-ordinea-raportului-efect-efort">Soluțiile, în ordinea raportului efect/efort</a>
+            <ol>
+              <li><a href="#1-publica-si-arhiveaza-pe-domeniul-propriu">1. Publică și arhivează pe domeniul propriu</a></li>
+              <li><a href="#2-trateaza-profilul-public-ca-pe-o-pagina-de-destinatie">2. Tratează profilul public ca pe o pagină de destinație</a></li>
+              <li><a href="#3-construieste-artefacte-deschise-si-extractibile">3. Construiește artefacte deschise și extractibile</a></li>
+              <li><a href="#4-investeste-in-mentiuni-terte-fara-a-le-trata-ca-factor-de-ranking">4. Investește în mențiuni terțe, fără a le trata ca „factor de ranking”</a></li>
+              <li><a href="#5-dezambiguizeaza-entitatea">5. Dezambiguizează entitatea</a></li>
+            </ol>
+          </li>
+          <li><a href="#verificarea-in-cinci-minute">Verificarea în cinci minute</a></li>
+          <li><a href="#ce-inseamna-asta-pentru-piata-din-romania">Ce înseamnă asta pentru piața din România</a>
+            <ol>
+              <li><a href="#cifrele-cu-avertisment-metodologic">Cifrele, cu avertisment metodologic</a></li>
+              <li><a href="#prioritizarea-motoarelor-in-romania-recomandare-nu-fapt">Prioritizarea motoarelor în România — recomandare, nu fapt</a></li>
+              <li><a href="#avantajul-unei-limbi-mai-putin-acoperite-ipoteza-ai-visibility-lab">Avantajul unei limbi mai puțin acoperite — ipoteză AI Visibility Lab</a></li>
+              <li><a href="#problema-diacriticelor-consistenta-nu-fragmentare-automata">Problema diacriticelor — consistență, nu fragmentare automată</a></li>
+              <li><a href="#unde-merita-sa-fii-prezent-concret">Unde merită să fii prezent, concret</a></li>
+              <li><a href="#facebook-instagram-si-threads-diferentiaza-ai-extern-de-meta-ai">Facebook, Instagram și Threads: diferențiază AI extern de Meta AI</a></li>
+              <li><a href="#x-si-tiktok-evita-verdictele-permanente">X și TikTok: evită verdictele permanente</a></li>
+              <li><a href="#ce-faci-singur-si-pentru-ce-ai-nevoie-de-ajutor">Ce faci singur și pentru ce ai nevoie de ajutor</a></li>
+            </ol>
+          </li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+            <ol>
+              <li><a href="#ai-ul-poate-citi-postarile-mele-de-pe-linkedin">AI-ul poate citi postările mele de pe LinkedIn?</a></li>
+              <li><a href="#ce-platforma-sociala-produce-cea-mai-multa-vizibilitate-ai">Ce platformă socială produce cea mai multă vizibilitate AI?</a></li>
+              <li><a href="#de-ce-reddit-este-citat-frecvent-in-unele-sisteme">De ce Reddit este citat frecvent în unele sisteme?</a></li>
+              <li><a href="#merita-sa-mai-postez-pe-linkedin">Merită să mai postez pe LinkedIn?</a></li>
+              <li><a href="#conteaza-numarul-de-urmaritori-pentru-citarea-ai">Contează numărul de urmăritori pentru citarea AI?</a></li>
+              <li><a href="#un-cont-de-x-ajuta-la-vizibilitatea-ai">Un cont de X ajută la vizibilitatea AI?</a></li>
+              <li><a href="#pe-ce-platforme-merita-sa-fii-prezent-in-romania">Pe ce platforme merită să fii prezent în România?</a></li>
+              <li><a href="#conteaza-diacriticele-pentru-vizibilitatea-ai-in-romana">Contează diacriticele pentru vizibilitatea AI în română?</a></li>
+              <li><a href="#ce-procent-dintre-romani-folosesc-ai">Ce procent dintre români folosesc AI?</a></li>
+              <li><a href="#cum-aleg-un-consultant-geo-aeo">Cum aleg un consultant GEO/AEO?</a></li>
+            </ol>
+          </li>
+          <li><a href="#metodologie-surse-si-limite">Metodologie, surse și limite</a>
+            <ol>
+              <li><a href="#niveluri-epistemice-folosite-in-articol">Niveluri epistemice folosite în articol</a></li>
+              <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+            </ol>
+          </li>
+          <li><a href="#surse-si-note">Surse și note</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Vizibilitatea socială și vizibilitatea AI nu sunt același lucru. Numărul de urmăritori, reach-ul și engagementul unei platforme nu garantează că ideile publicate acolo pot fi recuperate, interpretate sau citate de un sistem AI. Pentru retrieval și citare contează în special dacă informația lasă în urmă un artefact persistent, adresabil, accesibil și ușor de extras. Platforma contează, dar accesul diferă între motoare și se schimbă în timp.</strong></p>
 
       <p>Acest articol separă explicit patru niveluri de certitudine: <strong>fapte documentate</strong>, <strong>rezultate ale unor studii comerciale specifice</strong>, <strong>interpretări AI Visibility Lab</strong> și <strong>ipoteze de lucru</strong>. Comportamentul motoarelor AI, politicile platformelor sociale și ponderile surselor citate se schimbă frecvent; afirmațiile despre starea actuală sunt datate și nu trebuie tratate ca adevăruri permanente.</p>
 
-      <h2>Distincția care contează: artefact sau flux</h2>
+      <h2 id="distinctia-care-conteaza-artefact-sau-flux">Distincția care contează: artefact sau flux</h2>
 
       <p>Reflexul comun este să întrebi „ce platformă contează pentru AI?”. Întrebarea mai utilă este: <strong>ce rămâne în urmă după ce publici și prin ce mecanism poate fi recuperat?</strong></p>
 
       <p>Sistemele AI pot obține informații prin mecanisme diferite: crawling public, indexuri proprii, motoare de căutare, API-uri, browsere automatizate, integrări contractuale sau alte surse de date. De aceea, nu este corect să presupunem că toate sistemele „văd webul” în același fel sau că un URL public este singura cale prin care conținutul poate ajunge într-un răspuns. De ce fiecare sistem AI poate ajunge la surse diferite, pe căi diferite, este explicat în <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a>.</p>
 
-      <h3>Legea artefactului — principiu operațional AI Visibility Lab</h3>
+      <h3 id="legea-artefactului-principiu-operational-ai-visibility-lab">Legea artefactului — principiu operațional AI Visibility Lab</h3>
 
       <p><strong>Cu cât un conținut lasă în urmă un artefact persistent, adresabil, accesibil și ușor de extras, cu atât cresc șansele ca el să poată fi regăsit, interpretat și citat de sisteme AI care folosesc retrieval.</strong></p>
 
@@ -146,7 +212,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Consecința practică este simplă: <strong>efortul de creație și valoarea de arhivă nu sunt același lucru</strong>. O idee poate performa foarte bine social și poate rămâne slab reprezentată în stratul de retrieval al unui anumit motor AI.</p>
 
-      <h2>Ce spun datele despre platforme</h2>
+      <h2 id="ce-spun-datele-despre-platforme">Ce spun datele despre platforme</h2>
 
       <p>Nu există, la data ultimei verificări (2 octombrie 2026), o ierarhie universală și stabilă a platformelor sociale pentru toate motoarele AI. Rezultatul depinde de motor, tipul de interogare, țară, perioadă, setul de prompturi și definiția metricii.</p>
 
@@ -172,7 +238,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Alte studii comerciale pot găsi ponderi diferite pentru Reddit, YouTube sau alte domenii. Această variație nu este un defect al pieței de date; este un semnal că <strong>metodologia trebuie citită înaintea procentului</strong>.</p>
 
-      <h3>Acordurile de acces nu demonstrează singure cauzalitatea citării</h3>
+      <h3 id="acordurile-de-acces-nu-demonstreaza-singure-cauzalitatea-citarii">Acordurile de acces nu demonstrează singure cauzalitatea citării</h3>
 
       <p>Google și Reddit au anunțat în 2024 o colaborare care oferă Google acces mai structurat la conținutul Reddit.<sup><a href="#fn-3">3</a></sup> OpenAI și Reddit au anunțat separat un parteneriat în 2024.<sup><a href="#fn-4">4</a></sup></p>
 
@@ -183,7 +249,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Aceste acorduri pot facilita accesul la conținut, dar <strong>nu demonstrează că existența lor este cauza dominantă a frecvenței citării Reddit</strong>. Relevanța, retrieval-ul, forma întrebării, calitatea răspunsului, popularitatea și arhitectura fiecărui motor pot contribui separat.</p>
 
-      <h2>Atenție la cum sunt citite cifrele</h2>
+      <h2 id="atentie-la-cum-sunt-citite-cifrele">Atenție la cum sunt citite cifrele</h2>
 
       <p>Cele mai multe confuzii din GEO apar când metrici diferite primesc aceeași etichetă.</p>
 
@@ -207,7 +273,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <blockquote><strong>studii comerciale care analizează separat sute de milioane de prompturi, răspunsuri și citări AI, cu metodologii diferite.</strong></blockquote>
 
-      <h3>Corelație nu înseamnă cauzalitate</h3>
+      <h3 id="corelatie-nu-inseamna-cauzalitate">Corelație nu înseamnă cauzalitate</h3>
 
       <p>Dacă un studiu observă că brandurile cu mai multe mențiuni Reddit apar mai des în ChatGPT, rezultatul trebuie descris ca <strong>asociere observată în datasetul respectiv</strong>, nu ca „multiplicator” și nu ca dovadă că mențiunile Reddit cauzează citările.</p>
 
@@ -224,13 +290,13 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>În versiunea actualizată a articolului au fost eliminate cifrele pentru care aceste condiții nu au putut fi validate robust.</p>
 
-      <h3>Owned content versus third-party content</h3>
+      <h3 id="owned-content-versus-third-party-content">Owned content versus third-party content</h3>
 
       <p>Raportul Lantern din februarie 2026 indică, <strong>în propriul său dataset</strong>, că o mare parte din citările asociate brandurilor proveneau din conținut extern și o parte mai mică din conținut deținut de brand.<sup><a href="#fn-2">2</a></sup> Acesta este un rezultat util pentru ideea de distribuție terță, dar trebuie păstrat legat de datasetul Lantern, nu transformat în regulă universală despre toate sistemele AI.</p>
 
       <p>Concluzia defensabilă este: <strong>sursele terțe pot contribui semnificativ la vizibilitatea unui brand, dar ponderea exactă diferă între motoare, industrii și metodologii.</strong></p>
 
-      <h2>Ce înseamnă concret să fii slab reprezentat în retrieval</h2>
+      <h2 id="ce-inseamna-concret-sa-fii-slab-reprezentat-in-retrieval">Ce înseamnă concret să fii slab reprezentat în retrieval</h2>
 
       <p>Ai 10.000 de urmăritori pe LinkedIn și trei ani de postări. Cineva întreabă un asistent AI „cine sunt specialiștii în domeniul X din România?”. Numărul de urmăritori, singur, nu garantează că sistemul va recupera sau cita ideile publicate în feed.</p>
 
@@ -242,23 +308,23 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Nu este un argument împotriva LinkedIn. Este un argument împotriva <strong>oricărei platforme sociale folosite ca singură arhivă a ideilor importante</strong>.</p>
 
-      <h2>Soluțiile, în ordinea raportului efect/efort</h2>
+      <h2 id="solutiile-in-ordinea-raportului-efect-efort">Soluțiile, în ordinea raportului efect/efort</h2>
 
       <p>Ordinea de mai jos este o <strong>prioritizare orientativă AI Visibility Lab, verificată la 10 august 2026</strong>, nu o ierarhie universală. Ea trebuie revizuită dacă politicile platformelor sau comportamentul motoarelor se schimbă.</p>
 
-      <h3>1. Publică și arhivează pe domeniul propriu</h3>
+      <h3 id="1-publica-si-arhiveaza-pe-domeniul-propriu">1. Publică și arhivează pe domeniul propriu</h3>
 
       <p>Orice text profesional important merită să existe și pe un domeniu controlat direct, cu URL stabil, dată vizibilă, HTML accesibil și metadate coerente.</p>
 
       <p>Publicarea inițială pe domeniul propriu oferă control asupra versiunii canonice și asupra arhivei. Dacă un text a apărut întâi pe LinkedIn sau în altă parte, publicarea lui ulterioară pe site <strong>nu implică automat o penalizare pentru conținut duplicat</strong>; canonicalizarea și rankingul sunt mai complexe decât simpla ordine cronologică.</p>
 
-      <h3>2. Tratează profilul public ca pe o pagină de destinație</h3>
+      <h3 id="2-trateaza-profilul-public-ca-pe-o-pagina-de-destinatie">2. Tratează profilul public ca pe o pagină de destinație</h3>
 
       <p>LinkedIn documentează posibilitatea ca profilurile publice să apară în motoare de căutare.<sup><a href="#fn-1">1</a></sup> Secțiunile publice trebuie scrise în propoziții declarative, cu termeni profesionali clari și verificabili.</p>
 
       <p>O descriere precum „consultant GEO/AEO pentru companii B2B din România” transmite mai mult context decât o formulare abstractă de tip „transform provocări în oportunități”.</p>
 
-      <h3>3. Construiește artefacte deschise și extractibile</h3>
+      <h3 id="3-construieste-artefacte-deschise-si-extractibile">3. Construiește artefacte deschise și extractibile</h3>
 
       <p>YouTube și Reddit pot fi utile, dar în moduri diferite.</p>
 
@@ -268,7 +334,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Pentru profesioniștii tehnici pot conta, în funcție de domeniu, și platforme precum GitHub, Stack Exchange, Substack, Medium sau forumuri specializate. Relevanța lor trebuie măsurată pe interogările reale ale nișei, nu presupusă.</p>
 
-      <h3>4. Investește în mențiuni terțe, fără a le trata ca „factor de ranking”</h3>
+      <h3 id="4-investeste-in-mentiuni-terte-fara-a-le-trata-ca-factor-de-ranking">4. Investește în mențiuni terțe, fără a le trata ca „factor de ranking”</h3>
 
       <p>Interviurile, materialele invitate, aparițiile în presă, podcasturile cu transcript, studiile de caz și citările pe domenii independente pot crea dovezi externe despre identitatea și expertiza unei persoane.</p>
 
@@ -276,7 +342,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Un podcast fără transcript public sau articol însoțitor oferă mai puțin text persistent și ușor de citat decât unul care publică asemenea artefacte, chiar dacă unele sisteme multimodale pot procesa audio/video.</p>
 
-      <h3>5. Dezambiguizează entitatea</h3>
+      <h3 id="5-dezambiguizeaza-entitatea">5. Dezambiguizează entitatea</h3>
 
       <p>Folosește o formă canonică stabilă a numelui, aceeași descriere profesională de bază și date structurate <code>Person</code> pe site-ul propriu.</p>
 
@@ -284,7 +350,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Wikidata și Wikipedia pot contribui la entity resolution și knowledge graphs în multe sisteme, dar nu există dovezi că toate motoarele AI le tratează drept „surse primare”. Wikipedia trebuie folosită numai când criteriile independente de notabilitate sunt îndeplinite.</p>
 
-      <h2>Verificarea în cinci minute</h2>
+      <h2 id="verificarea-in-cinci-minute">Verificarea în cinci minute</h2>
 
       <p>Testul manual poate fi util, dar trebuie tratat ca diagnostic orientativ.</p>
 
@@ -298,9 +364,9 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Nu trage concluzii dintr-o singură rulare. Sistemele sunt probabilistice, rezultatele și sursele se pot schimba, iar funcțiile de search diferă între produse și planuri. Pentru măsurare mai serioasă, păstrează un set fix de prompturi, repetă testul periodic și notează data, motorul, răspunsul și sursele.</p>
 
-      <h2>Ce înseamnă asta pentru piața din România</h2>
+      <h2 id="ce-inseamna-asta-pentru-piata-din-romania">Ce înseamnă asta pentru piața din România</h2>
 
-      <h3>Cifrele, cu avertisment metodologic</h3>
+      <h3 id="cifrele-cu-avertisment-metodologic">Cifrele, cu avertisment metodologic</h3>
 
       <p>Datele oficiale și sondajele comerciale nu trebuie comparate fără a defini populația și metoda.</p>
 
@@ -314,7 +380,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Cifra de <strong>15% pentru Copilot</strong> și valorile de tip „92% la 25–34 ani” sau „10% peste 65 ani” au fost eliminate din această versiune deoarece nu au fost validate în sursa Reveal folosită aici.</p>
 
-      <h3>Prioritizarea motoarelor în România — recomandare, nu fapt</h3>
+      <h3 id="prioritizarea-motoarelor-in-romania-recomandare-nu-fapt">Prioritizarea motoarelor în România — recomandare, nu fapt</h3>
 
       <p>În eșantionul Reveal, ChatGPT este de departe platforma AI cel mai des menționată. Pentru un proiect cu resurse limitate, acest lucru <strong>poate justifica</strong> începerea măsurării vizibilității cu ChatGPT.</p>
 
@@ -322,7 +388,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Gemini beneficiază de integrarea profundă în ecosistemul Android, dar statutul de default, choice screens și distribuția diferă între regiuni și pot fi afectate de reglementări. Această afirmație trebuie reverificată periodic.</p>
 
-      <h3>Avantajul unei limbi mai puțin acoperite — ipoteză AI Visibility Lab</h3>
+      <h3 id="avantajul-unei-limbi-mai-putin-acoperite-ipoteza-ai-visibility-lab">Avantajul unei limbi mai puțin acoperite — ipoteză AI Visibility Lab</h3>
 
       <p><strong>Ipoteza de lucru:</strong> nișele profesionale cu puține surse românești bine structurate pot avea concurență informațională mai redusă decât echivalentele lor în engleză.</p>
 
@@ -330,7 +396,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Formularea defensabilă este: <strong>publicarea timpurie și bine documentată într-o nișă slab acoperită poate crește șansele de a deveni o sursă relevantă, dar avantajul trebuie măsurat pe fiecare set de interogări și nu poate fi presupus la nivelul întregii piețe românești.</strong></p>
 
-      <h3>Problema diacriticelor — consistență, nu fragmentare automată</h3>
+      <h3 id="problema-diacriticelor-consistenta-nu-fragmentare-automata">Problema diacriticelor — consistență, nu fragmentare automată</h3>
 
       <p>„Ștefan” și „Stefan” sunt șiruri de caractere diferite, dar sistemele moderne de entity resolution pot folosi context, aliasuri, normalizare, embeddings și knowledge graphs. Nu există bază pentru a afirma că variantele cu și fără diacritice sunt tratate automat ca persoane diferite.</p>
 
@@ -338,7 +404,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Afirmația numerică potrivit căreia „15 mențiuni împărțite între două grafii valorează mai puțin decât 10 mențiuni consecvente” a fost eliminată deoarece nu există o bază verificată pentru acel raport.</p>
 
-      <h3>Unde merită să fii prezent, concret</h3>
+      <h3 id="unde-merita-sa-fii-prezent-concret">Unde merită să fii prezent, concret</h3>
 
       <p>Lista următoare este o <strong>prioritizare orientativă AI Visibility Lab, valabilă la 10 august 2026</strong>, nu o ierarhie universală.</p>
 
@@ -362,7 +428,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Presa economică, publicațiile de industrie, podcasturile cu transcript și interviurile pot crea artefacte externe utile. Exemplele de publicații trebuie evaluate în funcție de subiect, public și politica editorială actuală; prezența într-o publicație nu garantează citarea AI.</p>
 
-      <h3>Facebook, Instagram și Threads: diferențiază AI extern de Meta AI</h3>
+      <h3 id="facebook-instagram-si-threads-diferentiaza-ai-extern-de-meta-ai">Facebook, Instagram și Threads: diferențiază AI extern de Meta AI</h3>
 
       <p>Nu mai este corect să afirmăm că Facebook și Instagram „nu contribuie la vizibilitatea AI”.</p>
 
@@ -377,13 +443,13 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Această stare este foarte volatilă și trebuie reverificată la fiecare actualizare majoră Meta.</p>
 
-      <h3>X și TikTok: evită verdictele permanente</h3>
+      <h3 id="x-si-tiktok-evita-verdictele-permanente">X și TikTok: evită verdictele permanente</h3>
 
       <p>Pentru X, formularea corectă este că <strong>gradul de acces extern este mai restrictiv decât pe platforme complet deschise și poate diferi între produse, perioade și tipuri de acces</strong>. Nu trebuie folosită afirmația „acces exclusiv xAI” fără dovadă actuală.</p>
 
       <p>Pentru TikTok, lipsa unui transcript textual persistent poate reduce extractibilitatea în anumite pipeline-uri, dar sistemele multimodale pot procesa video și audio. Nu există bază pentru verdictul universal „TikTok este marginal pentru AI”.</p>
 
-      <h3>Ce faci singur și pentru ce ai nevoie de ajutor</h3>
+      <h3 id="ce-faci-singur-si-pentru-ce-ai-nevoie-de-ajutor">Ce faci singur și pentru ce ai nevoie de ajutor</h3>
 
       <p><strong>Realizabil fără specialist:</strong> alegerea formei canonice a numelui; rescrierea profilelor publice; verificarea datelor companiei; publicarea de articole substanțiale pe domeniul propriu; testarea periodică a vizibilității cu un set fix de prompturi.</p>
 
@@ -402,49 +468,49 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Piața GEO/AEO din România poate fi descrisă mai sigur ca <strong>emergentă și fără standarde profesionale consolidate</strong>, nu ca „neocupată”. Vizibilitatea propriului consultant în sistemele AI poate fi un indiciu suplimentar, dar nu este un test definitiv al competenței. Criteriile după care AI Visibility Lab va delimita și va măsura această piață sunt publicate în <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a>, ca draft pentru revizuire.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>AI-ul poate citi postările mele de pe LinkedIn?</h3>
+      <h3 id="ai-ul-poate-citi-postarile-mele-de-pe-linkedin">AI-ul poate citi postările mele de pe LinkedIn?</h3>
 
       <p>Unele postări LinkedIn au URL public, dar accesul și indexarea externă sunt mai puțin predictibile decât în cazul unui domeniu propriu. LinkedIn documentează explicit indexabilitatea profilurilor publice. Situația postărilor și a crawlerelor trebuie reverificată dacă platforma își schimbă politicile.<sup><a href="#fn-1">1</a></sup> Separat de indexare, din 3 noiembrie 2025 LinkedIn poate folosi, în anumite regiuni (UE, SEE, Elveția, Regatul Unit, Canada, Hong Kong), detalii de profil și conținut public pentru antrenarea propriilor modele generative, cu opțiune de opt-out — ceea ce nu înseamnă că o postare va fi recuperată sau citată de un sistem AI extern.<sup><a href="#fn-13">13</a></sup></p>
 
-      <h3>Ce platformă socială produce cea mai multă vizibilitate AI?</h3>
+      <h3 id="ce-platforma-sociala-produce-cea-mai-multa-vizibilitate-ai">Ce platformă socială produce cea mai multă vizibilitate AI?</h3>
 
       <p>Nu există un răspuns universal. În raportul Lantern din februarie 2026, YouTube este domeniul social cel mai bine plasat în datasetul analizat, în timp ce alte studii comerciale pot găsi ponderi diferite pentru Reddit sau alte platforme. Rezultatul depinde de motor, prompturi și metodologie.<sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>De ce Reddit este citat frecvent în unele sisteme?</h3>
+      <h3 id="de-ce-reddit-este-citat-frecvent-in-unele-sisteme">De ce Reddit este citat frecvent în unele sisteme?</h3>
 
       <p>Reddit produce pagini publice cu discuții în limbaj natural și a anunțat în 2024 acorduri de acces/licențiere cu Google și OpenAI; la 2 octombrie 2026, reînnoirea acordului cu Google nu era confirmată public. Aceste acorduri pot facilita accesul, dar nu demonstrează că ele sunt cauza unică sau dominantă a citărilor.<sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup></p>
 
-      <h3>Merită să mai postez pe LinkedIn?</h3>
+      <h3 id="merita-sa-mai-postez-pe-linkedin">Merită să mai postez pe LinkedIn?</h3>
 
       <p>Da, pentru distribuție către oameni, networking și reputație profesională. Pentru ideile importante este prudent să existe și o versiune persistentă pe un domeniu controlat direct, fără a presupune că LinkedIn este „invizibil” pentru AI.</p>
 
-      <h3>Contează numărul de urmăritori pentru citarea AI?</h3>
+      <h3 id="conteaza-numarul-de-urmaritori-pentru-citarea-ai">Contează numărul de urmăritori pentru citarea AI?</h3>
 
       <p>Numărul de urmăritori nu este un factor public demonstrat de citare AI. Unele platforme sau sisteme pot avea acces la semnale de popularitate, însă efectul lor exact nu este public. Follower count-ul nu trebuie folosit ca substitut pentru măsurarea retrieval-ului sau citării.</p>
 
-      <h3>Un cont de X ajută la vizibilitatea AI?</h3>
+      <h3 id="un-cont-de-x-ajuta-la-vizibilitatea-ai">Un cont de X ajută la vizibilitatea AI?</h3>
 
       <p>Depinde de motor și de forma accesului. X poate fi mai restrictiv pentru acces extern decât platformele complet deschise, iar situația se poate schimba. Nu există bază pentru un verdict permanent de tip „ajută” sau „nu ajută”.</p>
 
-      <h3>Pe ce platforme merită să fii prezent în România?</h3>
+      <h3 id="pe-ce-platforme-merita-sa-fii-prezent-in-romania">Pe ce platforme merită să fii prezent în România?</h3>
 
       <p>Ca orientare la 10 august 2026: domeniu propriu și identitate coerentă în primul rând; apoi platformele și sursele unde publicul relevant există efectiv — de exemplu YouTube, comunități Reddit, publicații de industrie, podcasturi cu transcript și profile publice bine structurate. Facebook, Instagram și Threads trebuie evaluate separat pentru web retrieval extern și pentru ecosistemul Meta AI.</p>
 
-      <h3>Contează diacriticele pentru vizibilitatea AI în română?</h3>
+      <h3 id="conteaza-diacriticele-pentru-vizibilitatea-ai-in-romana">Contează diacriticele pentru vizibilitatea AI în română?</h3>
 
       <p>Consistența ajută, dar nu există dovadă că variantele cu și fără diacritice sunt tratate automat ca entități diferite. Folosirea unei forme canonice și declararea aliasurilor relevante prin <code>alternateName</code> poate clarifica identitatea, fără a garanta un efect de ranking sau citare.</p>
 
-      <h3>Ce procent dintre români folosesc AI?</h3>
+      <h3 id="ce-procent-dintre-romani-folosesc-ai">Ce procent dintre români folosesc AI?</h3>
 
       <p>Depinde de metodologie. Eurostat raportează <strong>17,8% pentru România în 2025</strong> în rândul persoanelor 16–74 ani care folosiseră instrumente AI generative în ultimele trei luni.<sup><a href="#fn-7">7</a></sup> Reveal raportează <strong>68% în studiul său din 2026</strong>, pe baza unei metodologii diferite.<sup><a href="#fn-8">8</a></sup> Cele două cifre nu trebuie comparate ca și cum ar măsura aceeași populație în același mod.</p>
 
-      <h3>Cum aleg un consultant GEO/AEO?</h3>
+      <h3 id="cum-aleg-un-consultant-geo-aeo">Cum aleg un consultant GEO/AEO?</h3>
 
       <p>Cere metodologia de măsurare, baseline-ul, lista de motoare și prompturi, ordinea verificărilor tehnice și limitele serviciului. Orice promisiune de apariție organică garantată într-un anumit răspuns AI trebuie tratată cu scepticism. Vizibilitatea consultantului însuși poate fi un indiciu, nu o dovadă suficientă de competență.</p>
 
-      <h2>Metodologie, surse și limite</h2>
+      <h2 id="metodologie-surse-si-limite">Metodologie, surse și limite</h2>
 
       <p>Pentru această versiune au fost preferate, unde au fost disponibile, surse oficiale și documentație primară. Studiile comerciale sunt păstrate numai atunci când rezultatul poate fi legat explicit de furnizor și dataset și sunt descrise ca rezultate ale acelui studiu, nu ca reguli universale.</p>
 
@@ -460,7 +526,7 @@ export const socialMediaVizibilitateAiHtml = `
         <li>dacă rezultatul a fost replicat independent.</li>
       </ul>
 
-      <h3>Niveluri epistemice folosite în articol</h3>
+      <h3 id="niveluri-epistemice-folosite-in-articol">Niveluri epistemice folosite în articol</h3>
 
       <p><strong>Fapt documentat:</strong> informație susținută de o sursă oficială sau primară.</p>
 
@@ -470,11 +536,11 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p><strong>Ipoteză:</strong> idee de testat, nu afirmație despre funcționarea certă a motoarelor.</p>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p><strong>Ultima verificare factuală și a surselor: 2 octombrie 2026.</strong> Comportamentul motoarelor AI, politicile platformelor sociale, accesul crawlerelor, acordurile comerciale, produsele AI și ponderile surselor citate se pot modifica frecvent. Afirmațiile despre accesibilitate, frecvența citării și prioritizarea platformelor descriu starea observabilă la această dată și trebuie reverificate periodic.</p>
 
-      <h2>Surse și note</h2>
+      <h2 id="surse-si-note">Surse și note</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">LinkedIn Help — documentația privind vizibilitatea profilului public în motoarele de căutare: <a href="https://www.linkedin.com/help/linkedin/answer/a543660/profile-does-or-doesn-t-appear-after-name-search-on-web" target="_blank" rel="noopener noreferrer">linkedin.com/help/…/a543660</a></li>

@@ -114,6 +114,29 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-19">19 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#cuvant-cheie-fraza-si-sens">Cuvânt-cheie, frază și sens</a></li>
+          <li><a href="#ce-face-chatgpt-search-cu-interogarea">Ce face ChatGPT Search cu interogarea</a></li>
+          <li><a href="#ce-face-google-query-fan-out">Ce face Google: query fan-out</a></li>
+          <li><a href="#un-model-conceptual-al-traseului">Un model conceptual al traseului</a></li>
+          <li><a href="#promptul-utilizatorului-si-query-ul-de-search-nu-au-o-lungime-fixa">Promptul utilizatorului și query-ul de search nu au o lungime fixă</a></li>
+          <li><a href="#concluzia-pentru-continut-nu-optimiza-pentru-un-query-intern-pe-care-nu-il-vezi">Concluzia pentru conținut: nu optimiza pentru un query intern pe care nu îl vezi</a></li>
+          <li><a href="#ce-este-un-token">Ce este un token</a></li>
+          <li><a href="#experimentul-de-tokenizare-metoda-corecta">Experimentul de tokenizare: metoda corectă</a></li>
+          <li><a href="#ce-putem-spune-deja-despre-tokenizarea-multilingva">Ce putem spune deja despre tokenizarea multilingvă</a></li>
+          <li><a href="#octetii-utf-8-si-diacriticele">Octeții UTF-8 și diacriticele</a></li>
+          <li><a href="#s-versus-s-problema-reala-este-consistenta-unicode">Ș versus ş: problema reală este consistența Unicode</a></li>
+          <li><a href="#flexiunea-romaneasca">Flexiunea românească</a></li>
+          <li><a href="#exemple-practice">Exemple practice</a></li>
+          <li><a href="#ce-faci-concret">Ce faci concret</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a></li>
+          <li><a href="#surse-si-metodologie">Surse și metodologie</a></li>
+          <li><a href="#surse">Surse</a></li>
+        </ol>
+      </nav>
+
       <p><strong>În AI Search, formularea tastată de utilizator nu este neapărat interogarea trimisă mai departe către un motor de căutare. OpenAI documentează că ChatGPT Search poate rescrie promptul într-una sau mai multe interogări țintite, iar Google documentează pentru AI Overviews și AI Mode tehnica de query fan-out, prin care modelul poate genera mai multe căutări conexe. Asta nu înseamnă însă că există o nouă regulă de tip „optimizează pentru query-ul intern". Din perspectiva publisherului, strategia robustă rămâne să acoperi intenția utilizatorului, să folosești terminologia clară și canonică atunci când este relevantă și să construiești conținut suficient de explicit pentru a putea fi regăsit prin mai multe formulări.</strong><sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup></p>
 
       <p>Acest articol separă trei lucruri care sunt ușor de confundat:</p>
@@ -126,7 +149,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Sunt mecanisme diferite și nu trebuie folosite unul ca dovadă pentru altul.</p>
 
-      <h2>Cuvânt-cheie, frază și sens</h2>
+      <h2 id="cuvant-cheie-fraza-si-sens">Cuvânt-cheie, frază și sens</h2>
 
       <p>Un index inversat este un mecanism fundamental al regăsirii lexicale: pentru termeni sau unități indexate, sistemul poate identifica documentele în care apar.</p>
 
@@ -144,7 +167,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Această distincție dintre ce rămâne valabil din SEO clasic și ce se schimbă complet este tratată separat, în detaliu, în <a href="/lab/cercetare/seo-vs-geo">SEO vs GEO</a>.</p>
 
-      <h3>Când contează termenul exact</h3>
+      <h3 id="cand-conteaza-termenul-exact">Când contează termenul exact</h3>
 
       <p>Termenii exacți sunt deosebit de utili pentru:</p>
 
@@ -159,7 +182,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Dar „termen exact util" nu înseamnă „termen exact obligatoriu pentru ranking".</p>
 
-      <h2>Ce face ChatGPT Search cu interogarea</h2>
+      <h2 id="ce-face-chatgpt-search-cu-interogarea">Ce face ChatGPT Search cu interogarea</h2>
 
       <p>OpenAI publică astăzi o informație care înainte trebuia doar presupusă.</p>
 
@@ -177,7 +200,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
         <li>există o formulă stabilă după care ChatGPT rescrie orice prompt.</li>
       </ul>
 
-      <h2>Ce face Google: query fan-out</h2>
+      <h2 id="ce-face-google-query-fan-out">Ce face Google: query fan-out</h2>
 
       <p>Google documentează explicit pentru AI Overviews și AI Mode o tehnică numită <strong>query fan-out</strong>.</p>
 
@@ -189,41 +212,41 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Prin urmare, afirmații precum „AI Mode generează între 8 și 16 subqueries" nu trebuie tratate drept specificație Google dacă nu există o sursă oficială pentru interval.</p>
 
-      <h2>Un model conceptual al traseului</h2>
+      <h2 id="un-model-conceptual-al-traseului">Un model conceptual al traseului</h2>
 
       <p>Pentru a înțelege fenomenul, putem folosi un model conceptual, fără a pretinde că descrie codul intern al tuturor providerilor.</p>
 
-      <h3>1. Cererea utilizatorului</h3>
+      <h3 id="1-cererea-utilizatorului">1. Cererea utilizatorului</h3>
 
       <p>Utilizatorul formulează o problemă în limbaj natural.</p>
 
-      <h3>2. Interpretarea</h3>
+      <h3 id="2-interpretarea">2. Interpretarea</h3>
 
       <p>Sistemul identifică intenția, constrângerile și contextul relevant.</p>
 
-      <h3>3. Query rewriting / fan-out, dacă este necesar</h3>
+      <h3 id="3-query-rewriting-fan-out-daca-este-necesar">3. Query rewriting / fan-out, dacă este necesar</h3>
 
       <p>În produsele care folosesc search, sistemul poate genera una sau mai multe interogări auxiliare.</p>
 
-      <h3>4. Retrieval</h3>
+      <h3 id="4-retrieval">4. Retrieval</h3>
 
       <p>Sunt recuperate documente sau fragmente candidate.</p>
 
-      <h3>5. Selecție și ranking/reranking</h3>
+      <h3 id="5-selectie-si-ranking-reranking">5. Selecție și ranking/reranking</h3>
 
       <p>Sistemul poate ordona și filtra candidații folosind mecanisme proprii. Semnalele de încredere, structură și autoritate care influențează această selecție sunt tratate separat în <a href="/lab/cercetare/cum-aleg-motoarele-ai">cum aleg motoarele AI ce citează</a>.</p>
 
-      <h3>6. Generare</h3>
+      <h3 id="6-generare">6. Generare</h3>
 
       <p>Modelul compune răspunsul pe baza contextului disponibil și, în suprafețele care oferă citări, poate afișa sursele relevante.</p>
 
       <p><strong>Important:</strong> pașii de mai sus sunt o schemă explicativă. Implementările exacte ale ChatGPT Search, Google AI Mode, Perplexity, Claude sau Gemini nu sunt publicate integral.</p>
 
-      <h2>Promptul utilizatorului și query-ul de search nu au o lungime fixă</h2>
+      <h2 id="promptul-utilizatorului-si-query-ul-de-search-nu-au-o-lungime-fixa">Promptul utilizatorului și query-ul de search nu au o lungime fixă</h2>
 
       <p>Două studii comerciale sunt utile pentru a arăta că există diferențe între tipurile de interacțiune, dar cifrele lor nu trebuie transformate în constante ale produsului.</p>
 
-      <h3>Semrush — clickstream, 2025</h3>
+      <h3 id="semrush-clickstream-2025">Semrush — clickstream, 2025</h3>
 
       <p>Semrush a publicat în februarie 2025 o analiză bazată pe peste <strong>80 de milioane de înregistrări clickstream</strong> din a doua jumătate a lui 2024.<sup><a href="#fn-8">8</a></sup></p>
 
@@ -240,7 +263,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Asta arată de ce nu trebuie construită o regulă GEO pe o medie dintr-un singur moment.</p>
 
-      <h3>Nectiv — queries observate, 2025</h3>
+      <h3 id="nectiv-queries-observate-2025">Nectiv — queries observate, 2025</h3>
 
       <p>Nectiv a publicat un studiu comercial pe peste <strong>8.500 de prompturi</strong> din nouă industrii.<sup><a href="#fn-10">10</a></sup></p>
 
@@ -255,7 +278,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Aceste cifre sunt utile ca observație industrială, nu ca documentație oficială a arhitecturii ChatGPT.</p>
 
-      <h2>Concluzia pentru conținut: nu optimiza pentru un query intern pe care nu îl vezi</h2>
+      <h2 id="concluzia-pentru-continut-nu-optimiza-pentru-un-query-intern-pe-care-nu-il-vezi">Concluzia pentru conținut: nu optimiza pentru un query intern pe care nu îl vezi</h2>
 
       <p>Versiunea inițială a acestui articol spunea:</p>
 
@@ -271,7 +294,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Astfel, documentul are șanse să rămână relevant indiferent dacă retrieval-ul pornește de la query-ul original, de la o rescriere sau de la mai multe fan-out queries.</p>
 
-      <h2>Ce este un token</h2>
+      <h2 id="ce-este-un-token">Ce este un token</h2>
 
       <p>Un token nu este sinonim cu „un cuvânt" și nici cu „un caracter".</p>
 
@@ -288,7 +311,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>În repository-ul oficial <code>tiktoken</code>, OpenAI mapează în prezent <code>gpt-5</code>, <code>gpt-4.1</code>, <code>gpt-4o</code>, <code>o1</code>, <code>o3</code> și alte familii moderne la <code>o200k_base</code>, în timp ce modele GPT-4/GPT-3.5 mai vechi folosesc <code>cl100k_base</code>.<sup><a href="#fn-7">7</a></sup></p>
 
-      <h2>Experimentul de tokenizare: metoda corectă</h2>
+      <h2 id="experimentul-de-tokenizare-metoda-corecta">Experimentul de tokenizare: metoda corectă</h2>
 
       <p>Versiunea inițială a articolului folosea octeții UTF-8 drept proxy pentru costul în tokeni și concluziona că româna ar „costa" aproximativ 19% mai mult decât engleza.</p>
 
@@ -296,7 +319,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p><strong>Numărul de bytes nu este numărul de tokeni și nu reprezintă o limită inferioară a numărului de tokeni.</strong> BPE poate combina mai mulți bytes într-un singur token. OpenAI oferă tocmai <code>tiktoken</code> pentru numărarea efectivă a tokenilor.<sup><a href="#fn-6">6</a></sup><sup><a href="#fn-5">5</a></sup></p>
 
-      <h3>Corpusul de test</h3>
+      <h3 id="corpusul-de-test">Corpusul de test</h3>
 
       <p>Pentru ca experimentul să fie reproductibil, trebuie publicate textele efective, nu doar rezultatul agregat.</p>
 
@@ -334,7 +357,7 @@ export const cuvantCheieVsFrazaTokenizareHtml = `
 
       <p>Traducerile sunt <strong>semantic echivalente</strong>, nu identice ca structură. Asta este o limită inevitabilă a comparației între limbi.</p>
 
-      <h3>Scriptul reproductibil</h3>
+      <h3 id="scriptul-reproductibil">Scriptul reproductibil</h3>
 
       <pre><code>import tiktoken
 
@@ -358,7 +381,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
             "bytes=", len(text.encode("utf-8"))
         )</code></pre>
 
-      <h3>De ce nu public aici o cifră neverificată</h3>
+      <h3 id="de-ce-nu-public-aici-o-cifra-neverificata">De ce nu public aici o cifră neverificată</h3>
 
       <p>În mediul în care a fost făcută această revizie nu a fost disponibil local pachetul <code>tiktoken</code> împreună cu assetul <code>o200k_base</code>, iar accesul de rețea necesar descărcării lui nu a fost disponibil.</p>
 
@@ -368,7 +391,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Pentru publicarea unei versiuni cu rezultate numerice, scriptul de mai sus trebuie rulat cu versiunea <code>tiktoken</code> notată în metodologie, iar outputul brut trebuie păstrat alături de articol.</p>
 
-      <h2>Ce putem spune deja despre tokenizarea multilingvă</h2>
+      <h2 id="ce-putem-spune-deja-despre-tokenizarea-multilingva">Ce putem spune deja despre tokenizarea multilingvă</h2>
 
       <p>Fără să inventăm o cifră pentru română în <code>o200k_base</code>, există câteva concluzii mai generale bine susținute.</p>
 
@@ -382,7 +405,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <blockquote><p><strong>dacă vrei să afli dacă româna folosește mai mulți tokeni decât engleza într-un anumit model, măsoară texte paralele cu tokenizerul exact al acelui model.</strong></p></blockquote>
 
-      <h2>Octeții UTF-8 și diacriticele</h2>
+      <h2 id="octetii-utf-8-si-diacriticele">Octeții UTF-8 și diacriticele</h2>
 
       <p>Măsurarea octeților poate fi păstrată doar ca observație despre encodingul UTF-8.</p>
 
@@ -398,7 +421,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Prin urmare, formulările „diacriticele adaugă X% cost" sau „româna are X% cost suplimentar" nu trebuie folosite fără măsurătoare directă de tokens și, dacă discutăm bani, fără pricingul efectiv al modelului.</p>
 
-      <h2>Ș versus ş: problema reală este consistența Unicode</h2>
+      <h2 id="s-versus-s-problema-reala-este-consistenta-unicode">Ș versus ş: problema reală este consistența Unicode</h2>
 
       <p>În româna modernă, forma corectă este:</p>
 
@@ -422,7 +445,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Mai mult, Unicode recomandă ca implementările care procesează date românești să trateze variantele legacy și moderne ca echivalente în contextul procesării limbii române.<sup><a href="#fn-12">12</a></sup></p>
 
-      <h3>Recomandarea practică</h3>
+      <h3 id="recomandarea-practica">Recomandarea practică</h3>
 
       <p>Normalizează conținutul către:</p>
 
@@ -444,7 +467,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Nu pentru că există o penalizare Google documentată pentru sedilă.</p>
 
-      <h2>Flexiunea românească</h2>
+      <h2 id="flexiunea-romaneasca">Flexiunea românească</h2>
 
       <p>Româna are mai multe forme de suprafață pentru același lexem:</p>
 
@@ -469,9 +492,9 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Nu există în acest articol o bază pentru afirmația că lematizarea Google este „mai slabă în română decât în engleză", așa că această afirmație a fost eliminată.</p>
 
-      <h2>Exemple practice</h2>
+      <h2 id="exemple-practice">Exemple practice</h2>
 
-      <h3>Service auto</h3>
+      <h3 id="service-auto">Service auto</h3>
 
       <p>Query scurt:</p>
 
@@ -493,7 +516,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Nu știm însă din exterior exact ce query va genera pentru fiecare execuție.</p>
 
-      <h3>Contabilitate</h3>
+      <h3 id="contabilitate">Contabilitate</h3>
 
       <p>Query scurt:</p>
 
@@ -503,7 +526,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <blockquote><p>Am un SRL cu angajați și vreau să înțeleg ce obligații fiscale se schimbă anul acesta și când am nevoie de ajutorul unui contabil.</p></blockquote>
 
-      <h3>Consultanță B2B</h3>
+      <h3 id="consultanta-b2b">Consultanță B2B</h3>
 
       <p>Query scurt:</p>
 
@@ -521,15 +544,15 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Un document bun poate acoperi ambele fără să creeze câte o pagină pentru fiecare posibil fan-out query.</p>
 
-      <h2>Ce faci concret</h2>
+      <h2 id="ce-faci-concret">Ce faci concret</h2>
 
-      <h3>Folosește terminologia canonică atunci când este relevantă</h3>
+      <h3 id="foloseste-terminologia-canonica-atunci-cand-este-relevanta">Folosește terminologia canonică atunci când este relevantă</h3>
 
       <p>Dacă explici un concept cu un nume consacrat, folosește numele explicit.</p>
 
       <p>Nu pentru că exact match-ul este obligatoriu, ci pentru claritate și dezambiguizare.</p>
 
-      <h3>Explică situațiile în care conceptul devine relevant</h3>
+      <h3 id="explica-situatiile-in-care-conceptul-devine-relevant">Explică situațiile în care conceptul devine relevant</h3>
 
       <p>Un articol despre „canonical URL" poate conține și întrebarea reală:</p>
 
@@ -537,11 +560,11 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Asta leagă termenul tehnic de problema utilizatorului.</p>
 
-      <h3>Nu construi pagini pentru fiecare query imaginabil</h3>
+      <h3 id="nu-construi-pagini-pentru-fiecare-query-imaginabil">Nu construi pagini pentru fiecare query imaginabil</h3>
 
       <p>Google recomandă people-first content și avertizează împotriva producerii de volume de pagini pentru variații de query sau fan-out doar pentru manipularea rankingului.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Folosește heading-uri descriptive</h3>
+      <h3 id="foloseste-heading-uri-descriptive">Folosește heading-uri descriptive</h3>
 
       <p>Un heading bun spune ce problemă rezolvă secțiunea.</p>
 
@@ -557,11 +580,11 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>Nu garantează citarea AI.</p>
 
-      <h3>Normalizează Unicode</h3>
+      <h3 id="normalizeaza-unicode">Normalizează Unicode</h3>
 
       <p>Folosește formele românești moderne <code>ș</code> și <code>ț</code> în conținut și în datele pe care le controlezi.</p>
 
-      <h3>Măsoară tokenii cu tokenizerul exact</h3>
+      <h3 id="masoara-tokenii-cu-tokenizerul-exact">Măsoară tokenii cu tokenizerul exact</h3>
 
       <p>Nu folosi:</p>
 
@@ -573,35 +596,35 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p>ca substitut pentru token count atunci când costul sau context window-ul depind de tokeni. Termenii folosiți în acest articol (query rewriting, query fan-out, tokenizare, entitate) sunt explicați și în <a href="/lab/cercetare/glosar-geo-aeo">glosarul GEO/AEO</a>.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>ChatGPT Search caută exact promptul pe care îl scriu?</h3>
+      <h3 id="chatgpt-search-cauta-exact-promptul-pe-care-il-scriu">ChatGPT Search caută exact promptul pe care îl scriu?</h3>
 
       <p>Nu neapărat. OpenAI spune că ChatGPT Search poate rescrie promptul într-una sau mai multe interogări țintite atunci când lucrează cu furnizori de search.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Google AI Mode folosește mai multe căutări pentru aceeași întrebare?</h3>
+      <h3 id="google-ai-mode-foloseste-mai-multe-cautari-pentru-aceeasi-intrebare">Google AI Mode folosește mai multe căutări pentru aceeași întrebare?</h3>
 
       <p>Poate. Google documentează query fan-out pentru AI Mode și AI Overviews: modelul poate genera multiple interogări relaționate pentru a recupera informații suplimentare.<sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Trebuie să optimizez pagina pentru query-urile generate intern?</h3>
+      <h3 id="trebuie-sa-optimizez-pagina-pentru-query-urile-generate-intern">Trebuie să optimizez pagina pentru query-urile generate intern?</h3>
 
       <p>Nu ca listă de keywords sau pagini separate. Google recomandă conținut util și people-first și avertizează împotriva producerii de pagini pentru fiecare variație posibilă de query fan-out.<sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Româna folosește mai mulți tokeni decât engleza?</h3>
+      <h3 id="romana-foloseste-mai-multi-tokeni-decat-engleza">Româna folosește mai mulți tokeni decât engleza?</h3>
 
       <p>Nu există o cifră universală. Rezultatul depinde de tokenizer, model, text și traducere. Pentru OpenAI, comparația trebuie măsurată cu encodingul relevant, de exemplu <code>o200k_base</code> pentru familiile mapate oficial la el.<sup><a href="#fn-7">7</a></sup></p>
 
-      <h3>Mai mulți bytes în UTF-8 înseamnă mai mulți tokeni?</h3>
+      <h3 id="mai-multi-bytes-in-utf-8-inseamna-mai-multi-tokeni">Mai mulți bytes în UTF-8 înseamnă mai mulți tokeni?</h3>
 
       <p>Nu. Tokenizarea BPE combină secvențe de bytes în tokeni. Byte count și token count sunt măsuri diferite.<sup><a href="#fn-6">6</a></sup></p>
 
-      <h3>Este greșit să folosesc ş și ţ în loc de ș și ț?</h3>
+      <h3 id="este-gresit-sa-folosesc-s-si-t-in-loc-de-s-si-t">Este greșit să folosesc ş și ţ în loc de ș și ț?</h3>
 
       <p>Pentru româna modernă, Unicode preferă <code>ș</code> și <code>ț</code>, cu virgulă dedesubt. Formele cu sedilă apar în date legacy și sunt codepoint-uri distincte, dar Unicode recomandă echivalarea lor în procesarea datelor românești.<sup><a href="#fn-12">12</a></sup></p>
 
-      <h2>Surse și metodologie</h2>
+      <h2 id="surse-si-metodologie">Surse și metodologie</h2>
 
-      <h3>Surse primare</h3>
+      <h3 id="surse-primare">Surse primare</h3>
 
       <p>Pentru mecanismele produselor au fost folosite cu prioritate:</p>
 
@@ -613,13 +636,13 @@ for encoding_name in ("o200k_base", "cl100k_base"):
         <li>Unicode Standard pentru caracterele românești.</li>
       </ul>
 
-      <h3>Studii comerciale</h3>
+      <h3 id="studii-comerciale">Studii comerciale</h3>
 
       <p>Semrush și Nectiv sunt folosite numai pentru observații asupra propriilor dataseturi.</p>
 
       <p>Cifrele lor nu sunt prezentate drept specificații OpenAI.</p>
 
-      <h3>Experimentul de tokenizare</h3>
+      <h3 id="experimentul-de-tokenizare">Experimentul de tokenizare</h3>
 
       <p>Versiunea veche bazată pe UTF-8 bytes este retrasă ca măsurătoare de cost în tokeni.</p>
 
@@ -636,7 +659,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
 
       <p><strong>În această revizie nu sunt publicate token counts neexecutate.</strong> Mediul de revizie nu a avut disponibil local assetul <code>o200k_base</code> necesar pentru rularea <code>tiktoken</code>, iar accesul necesar descărcării lui a fost indisponibil. Scriptul de reproducere este inclus tocmai pentru ca rezultatul numeric să poată fi adăugat numai după o rulare reală, nu estimat.</p>
 
-      <h2>Surse</h2>
+      <h2 id="surse">Surse</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">OpenAI Help Center — „ChatGPT Search", verificat la 19 august 2026. OpenAI documentează că, atunci când folosește furnizori de search, ChatGPT Search rescrie de regulă promptul în una sau mai multe interogări țintite și poate trimite queries suplimentare: <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener noreferrer">help.openai.com/…/chatgpt-search</a></li>
@@ -653,7 +676,7 @@ for encoding_name in ("o200k_base", "cl100k_base"):
         <li id="fn-12">Unicode Standard, Chapter 7 — „European Alphabetic Scripts", verificat la 19 august 2026. Documentează U+0219/U+021B pentru română, formele legacy U+015F/U+0163 și recomandarea de a le trata echivalent la procesarea datelor românești: <a href="https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-7/" target="_blank" rel="noopener noreferrer">unicode.org/…/chapter-7</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Query rewriting, query fan-out, mappingul modelelor către encodings și comportamentul produselor AI se pot modifica. Afirmațiile despre OpenAI și Google descriu <strong>starea documentată la 19 august 2026</strong> — dată la care sursele de mai sus au fost reverificate live, fără schimbări față de starea consemnată inițial la 11 august 2026.</p>
 

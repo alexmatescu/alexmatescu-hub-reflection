@@ -94,6 +94,38 @@ export const deLaMentionareLaTranzactieAgenticVisibilityHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-10-02T09:09:00+03:00">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#articolul-in-7-idei">Articolul în 7 idei</a></li>
+          <li><a href="#1-ce-este-agentic-visibility">1. Ce este Agentic Visibility?</a></li>
+          <li><a href="#2-de-ce-citarea-si-mentionarea-nu-mai-sunt-capatul-traseului">2. De ce citarea și menționarea nu mai sunt capătul traseului?</a></li>
+          <li><a href="#3-cum-se-trece-de-la-recomandare-la-actiune">3. Cum se trece de la recomandare la acțiune?</a>
+            <ol>
+              <li><a href="#feed-uri-si-cataloage">Feed-uri și cataloage</a></li>
+              <li><a href="#api-uri-si-tool-uri">API-uri și tool-uri</a></li>
+              <li><a href="#identitate-si-autorizare">Identitate și autorizare</a></li>
+              <li><a href="#plati">Plăți</a></li>
+            </ol>
+          </li>
+          <li><a href="#4-ce-inseamna-agentic-commerce-in-practica">4. Ce înseamnă agentic commerce în practică?</a></li>
+          <li><a href="#5-trebuie-toate-business-urile-sa-devina-tranzactionabile-pentru-agenti">5. Trebuie toate business-urile să devină tranzacționabile pentru agenți?</a></li>
+          <li><a href="#6-cum-masuram-agentic-visibility-etapa-cu-etapa">6. Cum măsurăm Agentic Visibility etapă cu etapă?</a>
+            <ol>
+              <li><a href="#un-posibil-traseu-de-masurare-avl">Un posibil traseu de măsurare AVL</a></li>
+            </ol>
+          </li>
+          <li><a href="#7-ce-ar-trebui-sa-faca-un-business-acum">7. Ce ar trebui să facă un business acum?</a></li>
+          <li><a href="#de-la-seo-la-ai-visibility-si-mai-departe-ce-se-schimba-si-ce-ramane">De la SEO la AI Visibility și mai departe: ce se schimbă și ce rămâne</a></li>
+          <li><a href="#ce-schimba-aceasta-perspectiva-pentru-ai-visibility-lab">Ce schimbă această perspectivă pentru AI Visibility Lab?</a></li>
+          <li><a href="#concluzie-vizibilitatea-nu-se-termina-cand-business-ul-apare-in-raspuns">Concluzie: vizibilitatea nu se termină când business-ul apare în răspuns</a></li>
+          <li><a href="#seria-machine-accessibility-si-agentic-web">Seria „Machine accessibility și agentic web”</a></li>
+          <li><a href="#surse-si-metodologie">Surse și metodologie</a></li>
+          <li><a href="#nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</a></li>
+          <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Într-un sistem AI clasic, vizibilitatea poate însemna că un business este găsit, menționat, citat sau recomandat într-un răspuns. Într-un sistem agentic, traseul poate continua: agentul poate compara oferta, verifica prețul sau disponibilitatea, folosi un instrument oferit de business și, în anumite condiții, poate iniția sau finaliza o acțiune în numele utilizatorului.</strong></p>
       <p>Această extensie nu anulează SEO, GEO sau AEO. Le adaugă o problemă nouă: ce se întâmplă după ce sistemul AI a găsit și a înțeles entitatea?</p>
       <p>În <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol al seriei</a> am introdus ideea de <em>machine accessibility</em>. În <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">al doilea</a> am separat informația publică de informația efectiv accesibilă unui anumit sistem. În <a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">al treilea</a> am analizat site-ul ca infrastructură pentru oameni, crawlere și agenți.</p>
@@ -102,7 +134,7 @@ export const deLaMentionareLaTranzactieAgenticVisibilityHtml = `
       <p>În acest articol folosesc termenul <strong>Agentic Visibility</strong> ca un cadru exploratoriu AI Visibility Lab. Nu îl prezint ca standard industrial, metrică universală sau termen cu definiție unanim acceptată. Îl folosesc pentru a separa o realitate tehnică tot mai vizibilă: descoperirea, recomandarea, interacțiunea și tranzacția nu mai sunt neapărat etape administrate exclusiv de om.</p>
       <p>Agentic Visibility nu este un concept concurent cu <em>machine accessibility</em>. Machine accessibility, așa cum a fost definită în primul articol, descrie întregul traseu, de la prezența informației până la acțiune. Agentic Visibility numește perspectiva unui business asupra porțiunii finale a acestui traseu: recomandarea și acțiunea.</p>
       <p><strong>Unde se încadrează în serie:</strong> din modelul în șapte niveluri propus în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a> (Presence → Discoverability → Accessibility → Understanding → Verifiability → Recommendability → Actionability), acest articol tratează ultimele două niveluri, <strong>Recommendability</strong> și <strong>Actionability</strong>, din perspectiva unui business: ce se întâmplă după ce un sistem AI a găsit, accesat și înțeles entitatea.</p>
-      <h2>Articolul în 7 idei</h2>
+      <h2 id="articolul-in-7-idei">Articolul în 7 idei</h2>
       <ol>
         <li><strong>Ce este Agentic Visibility?</strong> Capacitatea unei entități deja descoperite și înțelese de a fi recomandată și, acolo unde este permis, accesată operațional de un sistem AI care acționează pentru un utilizator.</li>
         <li><strong>De ce citarea nu mai este capătul traseului?</strong> Pentru că produse precum ChatGPT, Google AI surfaces și Meta Business Agent conectează deja conversația cu cataloage, sisteme și acțiuni comerciale.</li>
@@ -112,7 +144,7 @@ export const deLaMentionareLaTranzactieAgenticVisibilityHtml = `
         <li><strong>Cum măsurăm Agentic Visibility etapă cu etapă?</strong> Separând etapele și dovezile: presence, accessibility, retrieval, understanding, recommendability, interaction și transaction.</li>
         <li><strong>Ce ar trebui să facă un business acum?</strong> Să inventarieze traseul dintre informație și acțiune și să testeze mecanismele care au relevanță reală pentru propriul model operațional.</li>
       </ol>
-      <h2>1. Ce este Agentic Visibility?</h2>
+      <h2 id="1-ce-este-agentic-visibility">1. Ce este Agentic Visibility?</h2>
       <p><strong>Agentic Visibility descrie, în cadrul exploratoriu propus aici, măsura în care o entitate, odată descoperită și reprezentată corect, poate fi recomandată și accesată operațional de un sistem AI care nu doar formulează un răspuns, ci poate folosi instrumente sau executa acțiuni autorizate în numele unui utilizator.</strong></p>
       <p>În web-ul clasic, obiectivul unui business era adesea clickul și vizita pe site. Într-un answer engine, traseul se comprimă până la menționare, citare sau recomandare, iar decizia rămâne la om. Ambele trasee au fost descrise în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol al seriei</a>.</p>
       <p>Într-un sistem agentic, răspunsul poate deveni doar o etapă intermediară:</p>
@@ -134,7 +166,7 @@ Human outcome</code></pre>
       <p>Prin urmare:</p>
       <blockquote><strong>Visibility nu este același lucru cu accessibility, iar accessibility nu este același lucru cu actionability.</strong></blockquote>
       <p>Aceasta este delimitarea centrală a articolului.</p>
-      <h2>2. De ce citarea și menționarea nu mai sunt capătul traseului?</h2>
+      <h2 id="2-de-ce-citarea-si-mentionarea-nu-mai-sunt-capatul-traseului">2. De ce citarea și menționarea nu mai sunt capătul traseului?</h2>
       <p><strong>Pentru că infrastructura AI începe să conecteze descoperirea informației cu date structurate și acțiuni comerciale.</strong> Această schimbare este documentată în mai multe ecosisteme, nu doar într-un singur produs.</p>
       <p>OpenAI descrie <strong>Agentic Commerce Protocol (ACP)</strong> drept infrastructura dintre comercianți și utilizatorii ChatGPT. Documentația precizează că ACP permite ChatGPT să primească date structurate de catalog, să înțeleagă inventarul comercianților și să afișeze produse relevante în context.<sup><a href="#fn-1">1</a></sup></p>
       <p>În martie 2026, OpenAI a extins ACP pentru <strong>product discovery</strong>, astfel încât comercianții să poată furniza informații mai complete și mai actualizate pentru experiențele de shopping din ChatGPT.<sup><a href="#fn-2">2</a></sup> Documentația actuală pentru onboarding spune că feed-urile pot transmite titluri, descrieri, imagini, preț și disponibilitate și că onboarding-ul este, la data consultării, disponibil pentru parteneri aprobați.<sup><a href="#fn-3">3</a></sup></p>
@@ -143,7 +175,7 @@ Human outcome</code></pre>
       <p>Aceste exemple nu demonstrează că orice utilizator, orice comerciant și orice agent pot executa deja orice tranzacție. Unele funcții au acces limitat, onboarding, waitlist sau cerințe specifice.</p>
       <p>Dar demonstrează ceva suficient de important pentru metodologia AI Visibility:</p>
       <blockquote><strong>Relația dintre business și sistemul AI începe să includă o infrastructură operațională, nu doar una informațională.</strong></blockquote>
-      <h2>3. Cum se trece de la recomandare la acțiune?</h2>
+      <h2 id="3-cum-se-trece-de-la-recomandare-la-actiune">3. Cum se trece de la recomandare la acțiune?</h2>
       <p><strong>Nu printr-un singur semnal SEO sau GEO, ci printr-un lanț de mecanisme care trebuie să funcționeze împreună.</strong></p>
       <p>Pentru un produs fizic, de exemplu, traseul poate presupune:</p>
       <pre><code>Entity identified
@@ -164,18 +196,18 @@ Payment
       ↓
 Order confirmation</code></pre>
       <p>Fiecare etapă poate folosi infrastructură diferită.</p>
-      <h3>Feed-uri și cataloage</h3>
+      <h3 id="feed-uri-si-cataloage">Feed-uri și cataloage</h3>
       <p>OpenAI permite comercianților eligibili să transmită date structurate prin feed-uri. Documentația feed-urilor recomandă publicarea unui snapshot complet al catalogului, tratat ca sursă de adevăr, cel puțin o dată pe zi.<sup><a href="#fn-3">3</a></sup><sup><a href="#fn-6">6</a></sup></p>
       <p>Google folosește de asemenea Merchant Center și UCP pentru experiențe de agentic shopping, iar documentația UCP spune că integrarea poate folosi feed-urile comerciale existente pentru discovery și apoi operații suplimentare pentru checkout sau alte acțiuni.<sup><a href="#fn-4">4</a></sup></p>
-      <h3>API-uri și tool-uri</h3>
+      <h3 id="api-uri-si-tool-uri">API-uri și tool-uri</h3>
       <p>Un agent nu trebuie să extragă totul din HTML. API-urile, MCP, WebMCP și alte mecanisme pot oferi acces structurat la date și funcții. Acest lucru a fost analizat în <a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">articolul precedent al seriei</a>.</p>
-      <h3>Identitate și autorizare</h3>
+      <h3 id="identitate-si-autorizare">Identitate și autorizare</h3>
       <p>Când agentul trebuie să facă ceva cu efect real, apare întrebarea: <strong>cine este agentul și în numele cui acționează?</strong></p>
       <p>Cloudflare a anunțat în august 2026 instrumente pentru identitatea și portofelele agenților, cu obiectivul de a permite business-urilor să distingă agenți legitimi și de a permite agenților să efectueze plăți în limite stabilite de utilizator.<sup><a href="#fn-7">7</a></sup></p>
-      <h3>Plăți</h3>
+      <h3 id="plati">Plăți</h3>
       <p>Stripe și Tempo au lansat în martie 2026 <strong>Machine Payments Protocol (MPP)</strong>, descris drept un standard deschis pentru plăți internet-native între agenți și servicii.<sup><a href="#fn-8">8</a></sup> Cloudflare documentează la rândul său suport pentru plăți agentice prin protocoale bazate pe HTTP <code>402 Payment Required</code>, inclusiv x402 și MPP.<sup><a href="#fn-9">9</a></sup></p>
       <p>Important: existența acestor mecanisme nu înseamnă că ele sunt universal adoptate sau interoperabile în toate combinațiile de platforme. Ele sunt dovezi ale unei direcții de infrastructură, nu dovada că „web-ul agentic” este deja un sistem unificat.</p>
-      <h2>4. Ce înseamnă agentic commerce în practică?</h2>
+      <h2 id="4-ce-inseamna-agentic-commerce-in-practica">4. Ce înseamnă agentic commerce în practică?</h2>
       <p><strong>Agentic commerce descrie situații în care un sistem AI participă activ la traseul comercial al utilizatorului — de la descoperire și comparație până la cumpărare, rezervare sau post-purchase — folosind date și funcții oferite de comercianți și platforme.</strong></p>
       <p>Pentru un utilizator, experiența poate arăta simplu:</p>
       <blockquote>„Găsește-mi un laptop de 14 inci, sub 6.000 lei, bun pentru programare și cu autonomie mare.”</blockquote>
@@ -197,7 +229,7 @@ Order confirmation</code></pre>
       <p>și</p>
       <pre><code>User → Business Agent</code></pre>
       <p>Într-un ecosistem mai matur, pot apărea și interacțiuni agent-to-agent. Dar acestea trebuie demonstrate concret pentru fiecare implementare; nu trebuie presupus că toate produsele enumerate aici comunică direct între ele.</p>
-      <h2>5. Trebuie toate business-urile să devină tranzacționabile pentru agenți?</h2>
+      <h2 id="5-trebuie-toate-business-urile-sa-devina-tranzactionabile-pentru-agenti">5. Trebuie toate business-urile să devină tranzacționabile pentru agenți?</h2>
       <p><strong>Nu. Agentic Visibility nu trebuie transformată într-un maturity ladder în care „mai multă automatizare” înseamnă automat „mai bine”.</strong></p>
       <p>Un publisher poate avea nevoie să fie:</p>
       <ul>
@@ -234,7 +266,7 @@ Book meeting</code></pre>
       <p>Pentru AI Visibility Lab, un principiu util este:</p>
       <blockquote><strong>Nu optimizăm pentru cea mai mare autonomie posibilă. Optimizăm pentru nivelul de acces și acțiune pe care business-ul îl poate susține corect, sigur și măsurabil.</strong></blockquote>
       <p>Această delimitare este importantă și pentru E-E-A-T. Un sistem care poate executa acțiuni pe baza unor date incorecte amplifică problema, nu o rezolvă. Prețurile, stocurile, disponibilitatea, condițiile comerciale și politicile trebuie să aibă surse actuale și responsabile.</p>
-      <h2>6. Cum măsurăm Agentic Visibility etapă cu etapă?</h2>
+      <h2 id="6-cum-masuram-agentic-visibility-etapa-cu-etapa">6. Cum măsurăm Agentic Visibility etapă cu etapă?</h2>
       <p><strong>Separând etapele și măsurând fiecare etapă prin dovezi observabile.</strong> Nu este nevoie de un „Agentic Visibility Score” opac pentru a începe analiza.</p>
       <p>Un cadru exploratoriu poate arăta astfel:</p>
       <table>
@@ -261,7 +293,7 @@ Low transaction accessibility</code></pre>
 Low open-web visibility
 High platform-native transaction capability</code></pre>
       <p>Niciunul dintre aceste profile nu poate fi interpretat corect fără context.</p>
-      <h3>Un posibil traseu de măsurare AVL</h3>
+      <h3 id="un-posibil-traseu-de-masurare-avl">Un posibil traseu de măsurare AVL</h3>
       <p>Fără a-l transforma încă într-un protocol validat, AI Visibility Lab poate documenta experimental folosind lanțul prezentat în <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">al doilea articol al seriei</a>: <strong>Raw Evidence → Indexed Evidence → Observation → Measurement</strong>, iar dincolo de granița metodologică, <strong>Interpretation</strong>.</p>
       <p>Exemplu ipotetic (cifrele sunt ilustrative, nu rezultate măsurate de AI Visibility Lab):</p>
       <ul>
@@ -274,7 +306,7 @@ High platform-native transaction capability</code></pre>
       <p>Interpretarea nu trebuie să devină:</p>
       <blockquote>„ACP garantează recomandarea produsului.”</blockquote>
       <p>Aceasta ar depăși dovezile.</p>
-      <h2>7. Ce ar trebui să facă un business acum?</h2>
+      <h2 id="7-ce-ar-trebui-sa-faca-un-business-acum">7. Ce ar trebui să facă un business acum?</h2>
       <p><strong>Să cartografieze drumul dintre informație și acțiune înainte să implementeze infrastructură nouă.</strong></p>
       <p>Un audit practic poate începe cu șapte întrebări:</p>
       <ol>
@@ -291,11 +323,11 @@ High platform-native transaction capability</code></pre>
       <p>Pentru un furnizor B2B, poate fi documentația tehnică și traseul către request-for-quote.</p>
       <p>Pentru un business local, poate fi mult mai importantă consistența numelui, adresei, programului, serviciilor și sistemului de programări decât implementarea imediată a unui protocol de agentic commerce.</p>
       <p><strong>Agentic Visibility începe cu acuratețea informației, nu cu tranzacția.</strong></p>
-      <h2>De la SEO la AI Visibility și mai departe: ce se schimbă și ce rămâne</h2>
+      <h2 id="de-la-seo-la-ai-visibility-si-mai-departe-ce-se-schimba-si-ce-ramane">De la SEO la AI Visibility și mai departe: ce se schimbă și ce rămâne</h2>
       <p>Un protocol nou nu îl înlocuiește pe cel precedent. Relația dintre SEO, AEO, GEO și machine accessibility a fost descrisă în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol al seriei</a>. Machine accessibility cuprinde întregul traseu, de la accesul sistemului țintă la informație până la acțiune. Agentic Visibility se concentrează pe capătul acestui traseu: <strong>poate sistemul să facă următorul pas?</strong></p>
       <p>Pe acest traseu, recomandarea trebuie tratată cu atenție deosebită. Un business nu poate controla legitim dacă un sistem AI îl recomandă într-o situație concretă. Poate însă îmbunătăți calitatea, consistența, accesibilitatea și actualitatea informației pe care sistemele o pot utiliza, poate furniza date structurate acolo unde există mecanisme documentate și poate măsura rezultatele fără a atribui cauzalitate acolo unde nu există dovadă.</p>
       <p>Această disciplină este una dintre diferențele importante dintre optimizarea verificabilă și promisiunile de marketing.</p>
-      <h2>Ce schimbă această perspectivă pentru AI Visibility Lab?</h2>
+      <h2 id="ce-schimba-aceasta-perspectiva-pentru-ai-visibility-lab">Ce schimbă această perspectivă pentru AI Visibility Lab?</h2>
       <p>Până acum, un audit de vizibilitate AI se poate concentra firesc asupra întrebărilor:</p>
       <ul>
         <li>apare entitatea?</li>
@@ -318,7 +350,7 @@ High platform-native transaction capability</code></pre>
       <p><strong>Citation visibility</strong> și <strong>transaction capability</strong> nu trebuie amestecate în aceeași metrică doar pentru că ambele implică AI.</p>
       <p>Un business poate fi bine reprezentat informațional și deloc tranzacționabil prin agenți. Altul poate avea integrare comercială excelentă într-o platformă, dar vizibilitate slabă în open web.</p>
       <p>AI Visibility Lab trebuie să poată descrie ambele situații fără să le reducă la un singur scor.</p>
-      <h2>Concluzie: vizibilitatea nu se termină când business-ul apare în răspuns</h2>
+      <h2 id="concluzie-vizibilitatea-nu-se-termina-cand-business-ul-apare-in-raspuns">Concluzie: vizibilitatea nu se termină când business-ul apare în răspuns</h2>
       <p>În web-ul clasic, drumul către conversie era în mare parte parcurs de om. Motorul de căutare îl ajuta să găsească pagina, dar comparația, selectarea, formularul, coșul și plata îi reveneau de regulă utilizatorului.</p>
       <p>Agenții AI comprimă acest traseu.</p>
       <p>OpenAI construiește infrastructură pentru product discovery și commerce prin ACP.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup> Google dezvoltă UCP pentru discovery, checkout și alte operații pe suprafețe AI.<sup><a href="#fn-4">4</a></sup> Meta Business Agent conectează conversațiile cu acțiuni ale business-ului.<sup><a href="#fn-5">5</a></sup> Stripe și Cloudflare construiesc mecanisme pentru identitatea și plățile agenților.<sup><a href="#fn-7">7</a></sup><sup><a href="#fn-8">8</a></sup><sup><a href="#fn-9">9</a></sup></p>
@@ -339,7 +371,7 @@ Can an authorized AI agent complete the relevant action?</code></pre>
       <p>Pentru AI Visibility Lab, acesta este sensul util al termenului <em>Agentic Visibility</em>: nu promisiunea că un business va fi „ales de AI”, ci capacitatea de a măsura cât din porțiunea finală a traseului, de la recomandare la acțiune, este realmente accesibilă, corectă și verificabilă pentru sistemele relevante.</p>
       <p>În ultimul articol al seriei vom privi un strat informațional pe care business-ul nu îl controlează direct: <strong><a href="/lab/articole/social-media-devine-strat-informational-pentru-ai">„Social media devine strat informațional pentru AI.”</a></strong></p>
       <hr />
-      <h2>Seria „Machine accessibility și agentic web”</h2>
+      <h2 id="seria-machine-accessibility-si-agentic-web">Seria „Machine accessibility și agentic web”</h2>
       <ol>
         <li><a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">De la web visibility la machine accessibility</a></li>
         <li><a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a></li>
@@ -348,7 +380,7 @@ Can an authorized AI agent complete the relevant action?</code></pre>
         <li><a href="/lab/articole/social-media-devine-strat-informational-pentru-ai">Social media devine strat informațional pentru AI</a></li>
       </ol>
       <hr />
-      <h2>Surse și metodologie</h2>
+      <h2 id="surse-si-metodologie">Surse și metodologie</h2>
       <ol class="avl-footnotes">
         <li id="fn-1">OpenAI Developers, <strong>Agentic Commerce Protocol</strong>, documentație oficială, consultată la 1 octombrie 2026 (descrierea ACP confirmată prin indexul de căutare; pagina își încarcă dinamic o parte din conținut). OpenAI descrie ACP drept stratul de conexiune dintre comercianți și utilizatorii ChatGPT, pentru ingestia datelor structurate de catalog și afișarea produselor relevante. <a href="https://developers.openai.com/commerce" target="_blank" rel="noopener noreferrer">developers.openai.com/commerce</a></li>
         <li id="fn-2">OpenAI, <strong>Powering Product Discovery in ChatGPT</strong>, 24 martie 2026 (pagina blochează accesul automat; conținutul a fost confirmat la 1 octombrie 2026 prin indexul de căutare și relatări de presă). Articolul anunță extinderea ACP pentru product discovery și experiențe de shopping mai bogate în ChatGPT. <a href="https://openai.com/index/powering-product-discovery-in-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/powering-product-discovery-in-chatgpt/</a></li>
@@ -362,7 +394,7 @@ Can an authorized AI agent complete the relevant action?</code></pre>
         <li id="fn-10">OpenAI Help Center, <strong>Using shopping research in ChatGPT</strong>, documentație oficială, consultată prin indexul de căutare la 1 octombrie 2026 (pagina blochează accesul automat). Pagina precizează că shopping research poate utiliza merchant product data furnizată prin ACP, informații publice despre produse și alte surse retail relevante. <a href="https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt" target="_blank" rel="noopener noreferrer">help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt</a></li>
       </ol>
       <hr />
-      <h2>Notă metodologică AI Visibility Lab</h2>
+      <h2 id="nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</h2>
       <p>Acest articol separă <strong>descoperirea</strong>, <strong>recuperarea</strong>, <strong>reprezentarea</strong>, <strong>recomandarea</strong>, <strong>interacțiunea</strong> și <strong>tranzacția</strong>. Niciuna dintre etape nu este tratată ca dovadă automată pentru următoarea.</p>
       <p>Termenul <strong>Agentic Visibility</strong> este utilizat ca un cadru exploratoriu AI Visibility Lab. Articolul nu afirmă că termenul este un standard oficial, o disciplină matură sau o metrică recunoscută de industrie. Definiția propusă aici este operațională și trebuie validată prin măsurători și studii de caz.</p>
       <p>Existența unui product feed, API, ACP integration, UCP integration, MCP server, business agent sau protocol de plată nu este prezentată ca garanție de:</p>
@@ -377,7 +409,7 @@ Can an authorized AI agent complete the relevant action?</code></pre>
         <li>succes tranzacțional.</li>
       </ul>
       <p>Afirmațiile furnizorilor despre propriile produse sunt atribuite explicit și nu sunt tratate ca validări independente. Unde o funcție este limitată la parteneri aprobați, waitlist, anumite suprafețe sau configurații, această limitare trebuie păstrată.</p>
-      <h2>Notă de volatilitate</h2>
+      <h2 id="nota-de-volatilitate">Notă de volatilitate</h2>
       <p>Protocoalele de agentic commerce (ACP, UCP, MPP, x402), condițiile de acces pentru comercianți (parteneri aprobați, waitlist) și disponibilitatea funcțiilor pe suprafețele OpenAI, Google, Meta și Cloudflare se schimbă rapid și pot fi diferite la data lecturii. Afirmațiile despre produse și protocoale au fost verificate la 1 octombrie 2026.</p>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 1 octombrie 2026.</em></p>

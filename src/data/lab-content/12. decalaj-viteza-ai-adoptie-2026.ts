@@ -156,11 +156,69 @@ export const decalajVitezaAiAdoptie2026Html = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-10-16">16 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-16">16 octombrie 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#viteza-laboratorului-ce-inseamna-de-fapt-557-de-lansari">Viteza laboratorului: ce înseamnă, de fapt, „557 de lansări"</a></li>
+          <li><a href="#ce-s-a-lansat-recent-noile-generatii-de-modele-din-septembrieoctombrie-2026">Ce s-a lansat recent: noile generații de modele din septembrie–octombrie 2026</a></li>
+          <li><a href="#viteza-utilizarii-18-8-nu-inseamna-18-8-folosesc-ai-regulat">Viteza utilizării: 18,8% nu înseamnă „18,8% folosesc AI regulat"</a></li>
+          <li><a href="#firmele-aproximativ-20-in-statisticile-oficiale-aproape-90-intr-un-sondaj-global">Firmele: aproximativ 20% în statisticile oficiale, aproape 90% într-un sondaj global</a></li>
+          <li><a href="#de-ce-aproape-90-20-si-18-8-pot-fi-toate-corecte">De ce aproape 90%, 20% și 18,8% pot fi toate corecte</a></li>
+          <li><a href="#bariera-de-competente-cifra-corecta-are-un-denominator-foarte-important">Bariera de competențe: cifra corectă are un denominator foarte important</a></li>
+          <li><a href="#rezultatul-financiar-56-nu-inseamna-roi-zero">Rezultatul financiar: 56% nu înseamnă „ROI zero"</a></li>
+          <li><a href="#harta-globala-a-utilizarii-genai">Harta globală a utilizării GenAI</a>
+            <ol>
+              <li><a href="#cine-creste-cel-mai-repede">Cine crește cel mai repede</a></li>
+            </ol>
+          </li>
+          <li><a href="#europa-diferentele-dintre-firme-sunt-foarte-mari">Europa: diferențele dintre firme sunt foarte mari</a></li>
+          <li><a href="#fracturile-sociale-varsta-are-cel-mai-mare-ecart-in-datele-oecd">Fracturile sociale: vârsta are cel mai mare ecart în datele OECD</a></li>
+          <li><a href="#pe-sectoare-si-profesii-adoptia-ridicata-nu-inseamna-automat-incredere-ridicata">Pe sectoare și profesii: adopția ridicată nu înseamnă automat încredere ridicată</a></li>
+          <li><a href="#de-ce-decalajul-nu-trebuie-citit-simplist-ca-esec-al-ai">De ce decalajul nu trebuie citit simplist ca „eșec al AI"</a>
+            <ol>
+              <li><a href="#1-competentele-sunt-o-limitare-raportata-explicit">1. Competențele sunt o limitare raportată explicit</a></li>
+              <li><a href="#2-utilizarea-intr-o-functie-nu-este-acelasi-lucru-cu-scalarea-organizationala">2. Utilizarea într-o funcție nu este același lucru cu scalarea organizațională</a></li>
+              <li><a href="#3-reglementarea-si-guvernanta-adauga-un-strat-institutional-real">3. Reglementarea și guvernanța adaugă un strat instituțional real</a></li>
+            </ol>
+          </li>
+          <li><a href="#cum-se-citeste-situatia-din-romania">Cum se citește situația din România</a>
+            <ol>
+              <li><a href="#ce-inseamna-practic-pentru-comunicare">Ce înseamnă practic pentru comunicare</a></li>
+            </ol>
+          </li>
+          <li><a href="#ce-putem-afirma-cu-incredere-si-ce-nu">Ce putem afirma cu încredere — și ce nu</a>
+            <ol>
+              <li><a href="#afirmatii-sustinute-de-sursele-verificate">Afirmații susținute de sursele verificate</a></li>
+              <li><a href="#afirmatii-pe-care-datele-nu-le-sustin-suficient">Afirmații pe care datele nu le susțin suficient</a></li>
+            </ol>
+          </li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+            <ol>
+              <li><a href="#cate-modele-ai-au-fost-lansate-in-2026">Câte modele AI au fost lansate în 2026?</a></li>
+              <li><a href="#ce-modele-ai-noi-au-fost-lansate-in-septembrieoctombrie-2026">Ce modele AI noi au fost lansate în septembrie–octombrie 2026?</a></li>
+              <li><a href="#ce-procent-din-populatia-globala-foloseste-ai-generativ">Ce procent din populația globală folosește AI generativ?</a></li>
+              <li><a href="#de-ce-statisticile-despre-adoptia-ai-difera-atat-de-mult">De ce statisticile despre adopția AI diferă atât de mult?</a></li>
+              <li><a href="#care-tara-are-cea-mai-mare-rata-de-utilizare-genai-in-raportul-microsoft-q2-2026">Care țară are cea mai mare rată de utilizare GenAI în raportul Microsoft Q2 2026?</a></li>
+              <li><a href="#care-este-cel-mai-mare-decalaj-social-raportat-de-oecd-pentru-utilizarea-genai">Care este cel mai mare decalaj social raportat de OECD pentru utilizarea GenAI?</a></li>
+              <li><a href="#cat-de-mult-folosesc-firmele-din-romania-ai">Cât de mult folosesc firmele din România AI?</a></li>
+              <li><a href="#de-ce-multe-companii-nu-raporteaza-inca-beneficii-financiare-din-ai">De ce multe companii nu raportează încă beneficii financiare din AI?</a></li>
+            </ol>
+          </li>
+          <li><a href="#surse-primare-si-metodologie">Surse primare și metodologie</a>
+            <ol>
+              <li><a href="#cum-au-fost-tratate-sursele">Cum au fost tratate sursele</a></li>
+              <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+            </ol>
+          </li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Între ianuarie și septembrie 2026, trackerul editorial ThursdAI a catalogat 557 de lansări și actualizări relevante din ecosistemul AI, adică aproximativ două intrări pe zi. Numai în septembrie, OpenAI, Anthropic și Google au lansat fiecare o nouă generație de modele. În același timp, Microsoft estimează că 18,8% din populația globală cu vârste între 15 și 64 de ani a folosit un produs de AI generativ în al doilea trimestru din 2026, cu doar un punct procentual mai mult decât în primul trimestru. Iar în sondajul global PwC publicat în ianuarie 2026, 56% dintre CEO au spus că organizațiile lor nu au obținut în ultimele 12 luni nici creșteri de venit, nici reduceri de cost atribuite AI. Cifrele descriu lucruri diferite, dar puse una lângă alta arată un fapt important: viteza cu care apar capabilități noi este mult mai mare decât viteza cu care utilizarea, procesele și rezultatele economice se răspândesc.</strong></p>
 
       <blockquote><p><strong>Notă metodologică:</strong> cele trei cifre din introducere nu provin din aceeași populație, aceeași perioadă sau aceeași metodă. Ele nu trebuie comparate ca și cum ar fi trei măsurători ale aceleiași variabile. Articolul le folosește pentru a analiza diferența dintre ritmul ofertei tehnologice și ritmul difuziei.</p></blockquote>
 
-      <h2>Viteza laboratorului: ce înseamnă, de fapt, „557 de lansări"</h2>
+      <h2 id="viteza-laboratorului-ce-inseamna-de-fapt-557-de-lansari">Viteza laboratorului: ce înseamnă, de fapt, „557 de lansări"</h2>
 
       <p>Pentru ritmul lansărilor folosesc trackerul public <a href="https://thursdai.news/releases" target="_blank" rel="noopener noreferrer">ThursdAI</a>, care publică recapitulări lunare cu modele, produse, funcționalități, API-uri, instrumente pentru dezvoltatori și materiale de cercetare considerate relevante editorial. Asta înseamnă că <strong>557 nu este numărul universal al „modelelor AI lansate în 2026"</strong> și nu trebuie citat ca atare. Este numărul intrărilor urmărite de o singură sursă, după propriul criteriu de selecție.</p>
 
@@ -190,7 +248,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Cifra este utilă ca <strong>indicator de ritm</strong>, nu ca inventar exhaustiv al industriei. Nu există o taxonomie universală care să decidă dacă o versiune de model, un API nou, un produs construit peste un model existent sau o actualizare majoră trebuie numărate separat.</p>
 
-      <h2>Ce s-a lansat recent: noile generații de modele din septembrie–octombrie 2026</h2>
+      <h2 id="ce-s-a-lansat-recent-noile-generatii-de-modele-din-septembrieoctombrie-2026">Ce s-a lansat recent: noile generații de modele din septembrie–octombrie 2026</h2>
 
       <p>Cifrele lunare devin concrete când te uiți la ce au lansat cei trei mari dezvoltatori de modele într-o singură lună. Tabelul folosește datele din anunțurile oficiale ale companiilor.</p>
 
@@ -220,7 +278,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Trei lucruri reies din tabel. Primul: cele trei companii au trecut la o nouă generație în același interval de patru săptămâni. Al doilea: o parte importantă a lansărilor nu aduce doar capabilități noi, ci prețuri mai mici pentru capabilități apropiate (Opus 5.5, GPT-6 Sol și Luna, GPT-6.1 Sol). Al treilea: „lansat" nu înseamnă automat „disponibil pentru toți". Gemini 4 Argon și Claude Mythos 5.1 au fost anunțate, dar accesul la ele e restrâns la parteneri selectați. Oferta tehnologică accelerează și se ieftinește. Utilizarea măsurată în populație a crescut, în același trimestru, cu aproximativ un punct procentual.</p>
 
-      <h2>Viteza utilizării: 18,8% nu înseamnă „18,8% folosesc AI regulat"</h2>
+      <h2 id="viteza-utilizarii-18-8-nu-inseamna-18-8-folosesc-ai-regulat">Viteza utilizării: 18,8% nu înseamnă „18,8% folosesc AI regulat"</h2>
 
       <p>Cea mai solidă cifră globală recentă pe care am găsit-o pentru utilizarea individuală vine din raportul <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/Microsoft-AI-Diffusion-Report-2026-Q2.pdf" target="_blank" rel="noopener noreferrer">Microsoft AI Economy Institute — Global AI Diffusion Q2 2026</a>, publicat pe <a href="https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/" target="_blank" rel="noopener noreferrer">21 septembrie 2026</a>.</p>
 
@@ -237,7 +295,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Așadar, formularea defensabilă este că <strong>Microsoft estimează o rată de utilizare GenAI de 18,8% în populația 15–64 ani în Q2 2026</strong>, în creștere cu aproximativ un punct procentual față de Q1. Nu rezultă de aici că 18,8% folosesc AI „regulat", „zilnic" sau „la muncă", iar complementul de 81,2% nu poate fi descris ca populație care „nu a deschis niciodată" un instrument AI.</p>
 
-      <h2>Firmele: aproximativ 20% în statisticile oficiale, aproape 90% într-un sondaj global</h2>
+      <h2 id="firmele-aproximativ-20-in-statisticile-oficiale-aproape-90-intr-un-sondaj-global">Firmele: aproximativ 20% în statisticile oficiale, aproape 90% într-un sondaj global</h2>
 
       <p>Datele despre companii arată de ce expresia generică „adopția AI" poate deveni înșelătoare.</p>
 
@@ -249,7 +307,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Aceste valori nu sunt estimări concurente ale aceleiași mărimi. Ele au <strong>denominatori, întrebări, selecții de respondenți și praguri de „utilizare" diferite</strong>.</p>
 
-      <h2>De ce aproape 90%, 20% și 18,8% pot fi toate corecte</h2>
+      <h2 id="de-ce-aproape-90-20-si-18-8-pot-fi-toate-corecte">De ce aproape 90%, 20% și 18,8% pot fi toate corecte</h2>
 
       <table>
         <thead>
@@ -275,7 +333,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Diferențele nu trebuie „rezolvate" alegând cifra care susține mai bine o teză. Trebuie păstrate, pentru că ele descriu straturi diferite ale fenomenului. Aceeași precauție metodologică — nu compara cifre cu denominatori diferiți — este tratată din unghiul măsurării vizibilității AI în articolul AI Visibility Lab despre <a href="/lab/articole/motoare-cautare-comparatie-2026">motoarele de căutare comparate în 2026 și cifrele care se contrazic</a>.</p>
 
-      <h2>Bariera de competențe: cifra corectă are un denominator foarte important</h2>
+      <h2 id="bariera-de-competente-cifra-corecta-are-un-denominator-foarte-important">Bariera de competențe: cifra corectă are un denominator foarte important</h2>
 
       <p>Eurostat arată că, în 2025, dintre întreprinderile din UE care <strong>nu foloseau AI, dar luaseră în calcul utilizarea lui</strong>, <strong>70,89% au indicat lipsa competențelor relevante</strong> ca motiv pentru neadopție. Alte bariere importante au fost lipsa clarității privind consecințele juridice, 52,52%, și preocupările privind protecția datelor și viața privată, 48,83%.</p>
 
@@ -283,7 +341,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Tocmai această precizare face cifra mai utilă. În grupul firmelor suficient de interesate încât să fi evaluat deja AI, competențele sunt o barieră raportată foarte frecvent. Sursa este <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises" target="_blank" rel="noopener noreferrer">Eurostat — Use of artificial intelligence in enterprises</a>.</p>
 
-      <h2>Rezultatul financiar: 56% nu înseamnă „ROI zero"</h2>
+      <h2 id="rezultatul-financiar-56-nu-inseamna-roi-zero">Rezultatul financiar: 56% nu înseamnă „ROI zero"</h2>
 
       <p>În <a href="https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-global-ceo-survey.html" target="_blank" rel="noopener noreferrer">PwC 2026 Global CEO Survey</a>, publicat la 19 ianuarie 2026, <strong>56% dintre CEO au spus că organizațiile lor nu au realizat în ultimele 12 luni nici creșteri de venit, nici reduceri de cost ca rezultat al AI</strong>. În același sondaj, 30% au raportat creșteri de venit, 26% reduceri de cost, iar 12% ambele tipuri de beneficii.</p>
 
@@ -291,7 +349,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Mai corect este: <strong>majoritatea CEO din sondajul PwC nu raportau încă beneficii de venit sau cost atribuibile AI</strong>, în timp ce o minoritate raporta deja efecte măsurabile.</p>
 
-      <h2>Harta globală a utilizării GenAI</h2>
+      <h2 id="harta-globala-a-utilizarii-genai">Harta globală a utilizării GenAI</h2>
 
       <p>În măsurătoarea Microsoft pentru Q2 2026, distribuția geografică rămâne puternic inegală.</p>
 
@@ -309,13 +367,13 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Poziția Statelor Unite este o nuanță utilă: o economie poate avea un rol central în dezvoltarea industriei AI fără să ocupe automat primele poziții la difuzia măsurată în populație. Afirmații mai largi despre „cine construiește majoritatea AI-ului" ar necesita însă un alt set de date și nu trebuie deduse din clasamentul Microsoft.</p>
 
-      <h3>Cine crește cel mai repede</h3>
+      <h3 id="cine-creste-cel-mai-repede">Cine crește cel mai repede</h3>
 
       <p>În Q2 2026, <strong>Coreea de Sud</strong> a avut cea mai mare creștere absolută dintre economiile din top 25: plus 3,5 puncte procentuale, de la 37,1% la 40,6%, urcând de pe locul 16 pe locul 12. Microsoft notează că este a treia perioadă de raportare consecutivă în care Coreea de Sud are cea mai mare creștere dintre economiile mari, cu aproape 15 puncte câștigate în 12 luni. <strong>Japonia</strong> a avut cea mai mare creștere relativă, aproximativ 10% (de la 22,5% la 24,7%), iar <strong>Arabia Saudită</strong> a urcat cel mai mult în clasament, de pe locul 30 pe locul 25.</p>
 
       <p>Raportul separă și „Global North" de „Global South": în Q2 2026 ratele estimate erau de <strong>28,8% versus 16,2%</strong>, față de 27,5% și 15,4% în Q1. Decalajul dintre cele două a crescut de la 12,1 la 12,6 puncte procentuale. Microsoft leagă diferența de factori structurali precum accesul la electricitate, conectivitatea la internet și competențele digitale. Asta este mai bine susținut decât o afirmație generică potrivit căreia anumite continente „nu sunt interesate" de AI.</p>
 
-      <h2>Europa: diferențele dintre firme sunt foarte mari</h2>
+      <h2 id="europa-diferentele-dintre-firme-sunt-foarte-mari">Europa: diferențele dintre firme sunt foarte mari</h2>
 
       <p>Eurostat arată că în 2025 ponderea întreprinderilor care foloseau cel puțin o tehnologie AI varia între <strong>5,21% și 42,03%</strong> în UE.</p>
 
@@ -337,7 +395,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Diferența dintre firmele mari și cele mici este astfel de <strong>38,03 puncte procentuale</strong>. Aceasta este una dintre cele mai clare fracturi din datele oficiale europene și nu trebuie confundată cu o diferență între indivizi sau profesii.</p>
 
-      <h2>Fracturile sociale: vârsta are cel mai mare ecart în datele OECD</h2>
+      <h2 id="fracturile-sociale-varsta-are-cel-mai-mare-ecart-in-datele-oecd">Fracturile sociale: vârsta are cel mai mare ecart în datele OECD</h2>
 
       <p><a href="https://www.oecd.org/en/about/news/announcements/2026/01/ai-use-by-individuals-surges-across-the-oecd-as-adoption-by-firms-continues-to-expand.html" target="_blank" rel="noopener noreferrer">OECD</a> raportează pentru utilizarea individuală a instrumentelor GenAI în 2025 următoarele ecarturi:</p>
 
@@ -362,7 +420,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Faptul că ratele raportate pentru angajați și șomeri sunt relativ apropiate <strong>sugerează</strong>, dar nu dovedește, că utilizarea individuală nu depinde exclusiv de accesul oferit de angajator.</p>
 
-      <h2>Pe sectoare și profesii: adopția ridicată nu înseamnă automat încredere ridicată</h2>
+      <h2 id="pe-sectoare-si-profesii-adoptia-ridicata-nu-inseamna-automat-incredere-ridicata">Pe sectoare și profesii: adopția ridicată nu înseamnă automat încredere ridicată</h2>
 
       <p>În <a href="https://www.salesforce.com/news/stories/state-of-marketing-2026/" target="_blank" rel="noopener noreferrer">Salesforce — State of Marketing 2026</a>, aproximativ <strong>75% dintre marketeri sunt descriși ca având AI adoptat sau folosit pentru a susține activitatea de marketing</strong>, în special personalizarea. Este o rată ridicată, dar nu justifică formularea că marketingul este „aproape de saturație", mai ales când definițiile adopției diferă între studii.</p>
 
@@ -378,25 +436,25 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Diferențele sectoriale sunt deci mari chiar înainte de a compara țări sau grupe de vârstă.</p>
 
-      <h2>De ce decalajul nu trebuie citit simplist ca „eșec al AI"</h2>
+      <h2 id="de-ce-decalajul-nu-trebuie-citit-simplist-ca-esec-al-ai">De ce decalajul nu trebuie citit simplist ca „eșec al AI"</h2>
 
       <p>Datele susțin trei frâne distincte, fără să fie nevoie de afirmația imposibil de demonstrat că „societatea se mișcă întotdeauna în ani".</p>
 
-      <h3>1. Competențele sunt o limitare raportată explicit</h3>
+      <h3 id="1-competentele-sunt-o-limitare-raportata-explicit">1. Competențele sunt o limitare raportată explicit</h3>
 
       <p>Eurostat arată că lipsa expertizei relevante este cea mai frecventă barieră invocată de firmele care au luat în calcul AI, dar nu l-au adoptat. Asta indică o problemă de capacitate organizațională, nu doar de acces la produse.</p>
 
-      <h3>2. Utilizarea într-o funcție nu este același lucru cu scalarea organizațională</h3>
+      <h3 id="2-utilizarea-intr-o-functie-nu-este-acelasi-lucru-cu-scalarea-organizationala">2. Utilizarea într-o funcție nu este același lucru cu scalarea organizațională</h3>
 
       <p>McKinsey raportează pentru 2026 că aproape nouă din zece respondenți folosesc AI în cel puțin o funcție, dar doar 44% spun că AI se extinde la nivelul întregii organizații. Diferența dintre cele două cifre arată că un instrument poate fi prezent într-o organizație fără să fie încă integrat pe scară largă.</p>
 
-      <h3>3. Reglementarea și guvernanța adaugă un strat instituțional real</h3>
+      <h3 id="3-reglementarea-si-guvernanta-adauga-un-strat-institutional-real">3. Reglementarea și guvernanța adaugă un strat instituțional real</h3>
 
       <p>În Uniunea Europeană, ritmul tehnologic coexistă cu implementarea graduală a AI Act. <a href="https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence" target="_blank" rel="noopener noreferrer">Comisia Europeană</a> arată că, din <strong>2 august 2026</strong>, AI Office și autoritățile naționale au început aplicarea regulilor relevante ale AI Act. <a href="https://digital-strategy.ec.europa.eu/en/policies/ai-office" target="_blank" rel="noopener noreferrer">European AI Office</a> are un rol central în guvernanța și aplicarea obligațiilor pentru modelele de AI de uz general, în timp ce autoritățile naționale competente supraveghează și aplică regulile pentru sistemele AI în domeniile lor. Tot Comisia arată că modificările țintite ale AI Act propuse în noiembrie 2025 (pachetul „AI omnibus") au fost adoptate în iunie 2026 și au intrat în vigoare pe 27 iulie 2026, deci regulile s-au schimbat chiar înainte de începerea aplicării.</p>
 
       <p>Acesta este un exemplu concret de ce „poate fi lansat tehnic" și „poate fi adoptat, guvernat și scalat într-o organizație" sunt probleme diferite.</p>
 
-      <h2>Cum se citește situația din România</h2>
+      <h2 id="cum-se-citeste-situatia-din-romania">Cum se citește situația din România</h2>
 
       <p>Pentru România, două cifre verificabile spun povești diferite și nu trebuie combinate într-un singur procent de „adopție AI".</p>
 
@@ -408,7 +466,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Nu am găsit o bază primară suficient de solidă pentru afirmația că utilizarea individuală din România ar fi „mult mai concentrată pe ChatGPT decât în piețele occidentale", așa că această afirmație nu este folosită aici. La fel, datele OECD despre diferențele de vârstă nu trebuie proiectate automat asupra României fără un set local comparabil. Aceeași disciplină — a măsura harta reală în loc de a presupune piața românească, goală sau plină — este aplicată direct vizibilității AI în articolul AI Visibility Lab despre <a href="/lab/articole/harta-de-citare-mentiuni-externe-romania">harta de citare pentru piața românească</a>.</p>
 
-      <h3>Ce înseamnă practic pentru comunicare</h3>
+      <h3 id="ce-inseamna-practic-pentru-comunicare">Ce înseamnă practic pentru comunicare</h3>
 
       <p>Dacă publici sau vinzi produse și servicii legate de AI în România, este riscant să presupui fie că „toată lumea folosește deja AI", fie că „aproape nimeni nu îl folosește". Datele arată simultan o <strong>utilizare individuală măsurabilă</strong> și o <strong>integrare redusă în întreprinderi</strong>.</p>
 
@@ -423,9 +481,9 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p>Asta este mai defensabil decât construirea mesajului pe o singură cifră de adopție.</p>
 
-      <h2>Ce putem afirma cu încredere — și ce nu</h2>
+      <h2 id="ce-putem-afirma-cu-incredere-si-ce-nu">Ce putem afirma cu încredere — și ce nu</h2>
 
-      <h3>Afirmații susținute de sursele verificate</h3>
+      <h3 id="afirmatii-sustinute-de-sursele-verificate">Afirmații susținute de sursele verificate</h3>
 
       <ul>
         <li>Trackerul ThursdAI are <strong>557 de intrări</strong> pentru ianuarie–septembrie 2026, cu un vârf de 86 în aprilie și 84 în august.</li>
@@ -440,7 +498,7 @@ export const decalajVitezaAiAdoptie2026Html = `
         <li>Eurostat raportează <strong>70,89%</strong> lipsă de expertiză relevantă în grupul firmelor care au luat în calcul AI, dar nu l-au adoptat.</li>
       </ul>
 
-      <h3>Afirmații pe care datele nu le susțin suficient</h3>
+      <h3 id="afirmatii-pe-care-datele-nu-le-sustin-suficient">Afirmații pe care datele nu le susțin suficient</h3>
 
       <ul>
         <li>„557 de modele AI au fost lansate în nouă luni." Trackerul include mai multe tipuri de lansări.</li>
@@ -454,41 +512,41 @@ export const decalajVitezaAiAdoptie2026Html = `
         <li>„România folosește ChatGPT mult mai concentrat decât piețele occidentale." Nu am identificat o sursă primară comparabilă suficientă pentru această afirmație.</li>
       </ul>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>Câte modele AI au fost lansate în 2026?</h3>
+      <h3 id="cate-modele-ai-au-fost-lansate-in-2026">Câte modele AI au fost lansate în 2026?</h3>
 
       <p>Nu există o cifră universală și verificabilă pentru toate modelele AI lansate. Trackerul ThursdAI a înregistrat 557 de lansări și actualizări relevante între ianuarie și septembrie 2026, dar include modele, produse, funcționalități, instrumente și cercetare. Cifra nu trebuie prezentată ca 557 de modele noi.</p>
 
-      <h3>Ce modele AI noi au fost lansate în septembrie–octombrie 2026?</h3>
+      <h3 id="ce-modele-ai-noi-au-fost-lansate-in-septembrieoctombrie-2026">Ce modele AI noi au fost lansate în septembrie–octombrie 2026?</h3>
 
       <p>OpenAI a lansat GPT-6 Astra (3 septembrie), GPT-6 Sol și GPT-6 Luna (22 septembrie) și GPT-6.1 Sol (29 septembrie). Anthropic a lansat Claude Fable 5.1 (1 septembrie), Claude Opus 5.5 (22 septembrie), Claude Sonnet 5.5 (28 septembrie) și Claude Haiku 5.5 (7 octombrie). Google a lansat Gemini 3.8 Flash (2 septembrie) și a anunțat Gemini 4 Argon (30 septembrie), deocamdată disponibil doar partenerilor din programul de securitate cibernetică Fairwind.</p>
 
-      <h3>Ce procent din populația globală folosește AI generativ?</h3>
+      <h3 id="ce-procent-din-populatia-globala-foloseste-ai-generativ">Ce procent din populația globală folosește AI generativ?</h3>
 
       <p>Microsoft estimează că 18,8% din populația globală cu vârste între 15 și 64 de ani a folosit un produs GenAI în Q2 2026 (măsurat în iunie), față de 17,8% în Q1 2026. Indicatorul este bazat pe telemetrie agregată și ajustată și nu înseamnă utilizare zilnică sau regulată.</p>
 
-      <h3>De ce statisticile despre adopția AI diferă atât de mult?</h3>
+      <h3 id="de-ce-statisticile-despre-adoptia-ai-difera-atat-de-mult">De ce statisticile despre adopția AI diferă atât de mult?</h3>
 
       <p>Pentru că măsoară populații și comportamente diferite. McKinsey raportează utilizarea AI în cel puțin o funcție în organizațiile respondenților, Eurostat și OECD măsoară întreprinderi sau firme conform unor definiții statistice, iar Microsoft estimează utilizarea individuală a produselor GenAI în populația 15–64 ani.</p>
 
-      <h3>Care țară are cea mai mare rată de utilizare GenAI în raportul Microsoft Q2 2026?</h3>
+      <h3 id="care-tara-are-cea-mai-mare-rata-de-utilizare-genai-in-raportul-microsoft-q2-2026">Care țară are cea mai mare rată de utilizare GenAI în raportul Microsoft Q2 2026?</h3>
 
       <p>Emiratele Arabe Unite, cu 73,3%, urmate de Singapore cu 64,3%. Statele Unite sunt la 33,0%, pe locul 21 în clasamentul Microsoft pentru Q2 2026.</p>
 
-      <h3>Care este cel mai mare decalaj social raportat de OECD pentru utilizarea GenAI?</h3>
+      <h3 id="care-este-cel-mai-mare-decalaj-social-raportat-de-oecd-pentru-utilizarea-genai">Care este cel mai mare decalaj social raportat de OECD pentru utilizarea GenAI?</h3>
 
       <p>În setul de date OECD, cel mai mare ecart raportat este cel de vârstă, 53,6 puncte procentuale. Ecarturile pentru educație și venit sunt de aproximativ 21 de puncte, iar cel pentru gen este de 4,2 puncte.</p>
 
-      <h3>Cât de mult folosesc firmele din România AI?</h3>
+      <h3 id="cat-de-mult-folosesc-firmele-din-romania-ai">Cât de mult folosesc firmele din România AI?</h3>
 
       <p>Eurostat raportează că 5,21% dintre întreprinderile românești eligibile foloseau cel puțin o tehnologie AI în 2025. Această cifră nu trebuie confundată cu utilizarea individuală: Microsoft estimează 18,0% pentru populația 15–64 ani din România în Q2 2026.</p>
 
-      <h3>De ce multe companii nu raportează încă beneficii financiare din AI?</h3>
+      <h3 id="de-ce-multe-companii-nu-raporteaza-inca-beneficii-financiare-din-ai">De ce multe companii nu raportează încă beneficii financiare din AI?</h3>
 
       <p>PwC arată că 56% dintre CEO nu raportau nici creșteri de venit, nici reduceri de cost din AI în ultimele 12 luni. Eurostat arată că lipsa expertizei, claritatea juridică și protecția datelor sunt bariere frecvente pentru firmele care au evaluat AI, iar McKinsey arată că utilizarea într-o funcție este mult mai răspândită decât scalarea la nivelul întregii organizații. Aceste date indică mai multe posibile frâne, nu o singură cauză demonstrată.</p>
 
-      <h2>Surse primare și metodologie</h2>
+      <h2 id="surse-primare-si-metodologie">Surse primare și metodologie</h2>
 
       <p>Sursele sunt ordonate după rolul lor în articol. Pentru afirmațiile statistice au fost preferate instituții publice, organizații interguvernamentale și paginile primare ale organizațiilor care au produs studiile.</p>
 
@@ -518,7 +576,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <p><strong>Data ultimei verificări a linkurilor și cifrelor: 16 octombrie 2026</strong> (verificări anterioare: 14 și 19 august 2026). La această revizie, valorile lunare ThursdAI pentru ianuarie–iulie s-au confirmat identic. Cifrele Eurostat (anul de referință 2025, următoarea actualizare programată în decembrie 2026), OECD și PwC nu s-au schimbat. Microsoft, McKinsey și Stack Overflow au publicat ediții noi, iar cifrele lor au fost actualizate.</p>
 
-      <h3>Cum au fost tratate sursele</h3>
+      <h3 id="cum-au-fost-tratate-sursele">Cum au fost tratate sursele</h3>
 
       <ol>
         <li>O cifră este folosită numai împreună cu populația și definiția pe care le măsoară.</li>
@@ -529,11 +587,11 @@ export const decalajVitezaAiAdoptie2026Html = `
         <li>Afirmațiile pentru care nu a fost identificată o sursă primară suficientă au fost eliminate sau marcate explicit ca nesusținute.</li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Ritmul lansărilor AI, rapoartele de adopție și calendarul de aplicare al AI Act se schimbă rapid. Trackerul ThursdAI, în special, este o sursă dinamică: numărătoarea unei luni se poate modifica pe măsură ce arhiva este completată retroactiv. Lista modelelor lansate se învechește cel mai repede: noi versiuni apar de la o săptămână la alta. Afirmațiile din acest articol descriu <strong>starea verificată la 16 octombrie 2026</strong>.</p>
 
-      <h2>Istoricul versiunilor</h2>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
 
       <table>
         <thead>

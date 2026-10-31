@@ -53,6 +53,71 @@ export const paradoxulSiteuluiTerminatHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-17">17 august 2026</time> · Actualizat: <time datetime="2026-10-28">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-08-10">10 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#ce-am-masurat">Ce am măsurat</a></li>
+          <li><a href="#descoperirea-importanta-nu-exista-o-singura-versiune-a-paginii">Descoperirea importantă: nu există o singură versiune a paginii</a></li>
+          <li><a href="#canonicalul-problema-reala-dar-nu-comanda-absoluta">Canonicalul: problemă reală, dar nu comandă absolută</a>
+            <ol>
+              <li><a href="#ce-stim-din-testul-meu">Ce știm din testul meu</a></li>
+              <li><a href="#ce-nu-stim-doar-din-acel-test">Ce nu știm doar din acel test</a></li>
+            </ol>
+          </li>
+          <li><a href="#de-ce-se-intampla-in-aplicatiile-client-side">De ce se întâmplă în aplicațiile client-side</a></li>
+          <li><a href="#paradoxul-site-ului-terminat">Paradoxul site-ului terminat</a>
+            <ol>
+              <li><a href="#verificarea-vizuala-nu-verifica-reprezentarea-crawlerului">Verificarea vizuală nu verifică reprezentarea crawlerului</a></li>
+              <li><a href="#faptul-ca-google-poate-randa-javascript-nu-rezolva-automat-tot">Faptul că Google poate randa JavaScript nu rezolvă automat tot</a></li>
+              <li><a href="#nu-toate-crawlerele-trebuie-presupuse-identice">Nu toate crawlerele trebuie presupuse identice</a></li>
+            </ol>
+          </li>
+          <li><a href="#ce-vede-fiecare-tip-de-vizitator-in-cazul-lovable-documentat">Ce vede fiecare tip de vizitator în cazul Lovable documentat</a></li>
+          <li><a href="#nuanta-onesta-despre-lovable">Nuanța onestă despre Lovable</a>
+            <ol>
+              <li><a href="#o-limita-importanta">O limită importantă</a></li>
+            </ol>
+          </li>
+          <li><a href="#cum-verifici-fara-sa-tragi-concluzia-gresita">Cum verifici fără să tragi concluzia greșită</a>
+            <ol>
+              <li><a href="#1-verifica-raspunsul-generic">1. Verifică răspunsul generic</a></li>
+              <li><a href="#2-compara-shell-urile">2. Compară shell-urile</a></li>
+              <li><a href="#3-verifica-canonicalul-din-raspunsul-primit">3. Verifică canonicalul din răspunsul primit</a></li>
+              <li><a href="#4-cauta-textul-paginii-in-html">4. Caută textul paginii în HTML</a></li>
+              <li><a href="#5-verifica-google-separat">5. Verifică Google separat</a></li>
+              <li><a href="#6-pentru-lovable-foloseste-si-review-ul-propriu-al-platformei">6. Pentru Lovable, folosește și review-ul propriu al platformei</a></li>
+            </ol>
+          </li>
+          <li><a href="#ce-se-rezolva-in-ce-ordine">Ce se rezolvă, în ce ordine</a></li>
+          <li><a href="#de-ce-am-publicat-propriul-diagnostic">De ce am publicat propriul diagnostic</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a>
+            <ol>
+              <li><a href="#de-ce-curl-nu-vede-acelasi-lucru-ca-browserul-pe-unele-aplicatii-react">De ce <code>curl</code> nu vede același lucru ca browserul pe unele aplicații React?</a></li>
+              <li><a href="#daca-curl-nu-vede-textul-inseamna-ca-chatgpt-nu-il-vede">Dacă <code>curl</code> nu vede textul, înseamnă că ChatGPT nu îl vede?</a></li>
+              <li><a href="#daca-google-imi-indexeaza-site-ul-inseamna-ca-totul-este-corect">Dacă Google îmi indexează site-ul, înseamnă că totul este corect?</a></li>
+              <li><a href="#ce-inseamna-daca-o-pagina-interioara-are-canonical-catre-homepage">Ce înseamnă dacă o pagină interioară are canonical către homepage?</a></li>
+              <li><a href="#site-urile-facute-cu-lovable-sunt-invizibile-pentru-ai">Site-urile făcute cu Lovable sunt invizibile pentru AI?</a></li>
+              <li><a href="#proiectele-lovable-react-vite-vechi-pot-fi-migrate-la-ssr">Proiectele Lovable React + Vite vechi pot fi migrate la SSR?</a></li>
+              <li><a href="#site-urile-moderne-au-un-risc-mai-mare-de-invizibilitate-ai">Site-urile moderne au un risc mai mare de invizibilitate AI?</a></li>
+              <li><a href="#cum-verific-corect-un-site">Cum verific corect un site?</a></li>
+            </ol>
+          </li>
+          <li><a href="#metodologie-si-limite">Metodologie și limite</a>
+            <ol>
+              <li><a href="#masuratoarea-proprie">Măsurătoarea proprie</a></li>
+              <li><a href="#verificarea-externa">Verificarea externă</a></li>
+              <li><a href="#nivelurile-de-certitudine">Nivelurile de certitudine</a></li>
+            </ol>
+          </li>
+          <li><a href="#surse">Surse</a>
+            <ol>
+              <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+            </ol>
+          </li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Un site poate părea complet în browser și, în același timp, poate furniza reprezentări diferite în funcție de agentul care îl accesează. În testul documentat aici, un request HTTP generic către două rute ale propriului meu site a primit același shell HTML: metadate în <code>&lt;head&gt;</code>, fără textul principal pe care îl vede utilizatorul după executarea aplicației în browser. Asta nu demonstrează că ChatGPT, Perplexity, Google sau alte crawlere verificate primesc același răspuns. Documentația Lovable verificată la 10 august 2026 spune explicit că proiectele mai vechi React + Vite folosesc pre-randare la cerere pentru crawlere verificate, în timp ce agenții neverificați și scanerele SEO terțe primesc aplicația SPA obișnuită. Studiul de caz arată, prin urmare, altceva: același URL poate avea mai multe reprezentări tehnice, iar un simplu <code>curl</code> nu trebuie confundat cu ceea ce vede un crawler verificat.</strong><sup><a href="#fn-1">1</a></sup></p>
 
       <blockquote>
@@ -63,7 +128,7 @@ export const paradoxulSiteuluiTerminatHtml = `
 
       <p>Problema nu este „un site modern nu există pentru AI”. Problema este că <strong>o verificare făcută cu agentul greșit poate descrie o reprezentare diferită de cea servită motorului pe care încerci să-l optimizezi</strong>.</p>
 
-      <h2>Ce am măsurat</h2>
+      <h2 id="ce-am-masurat">Ce am măsurat</h2>
 
       <p>În august 2026 am făcut o extragere HTTP simplă pe două adrese ale propriului site, folosind un agent generic care nu execută aplicația JavaScript în browser.</p>
 
@@ -88,7 +153,7 @@ meta-og:url: /</code></pre>
 
       <p>Această limită trebuie păstrată în centrul studiului.</p>
 
-      <h2>Descoperirea importantă: nu există o singură versiune a paginii</h2>
+      <h2 id="descoperirea-importanta-nu-exista-o-singura-versiune-a-paginii">Descoperirea importantă: nu există o singură versiune a paginii</h2>
 
       <p>La momentul primei măsurători am interpretat shell-ul returnat de <code>curl</code> ca pe ceea ce ar putea primi un crawler AI fără rendering. Documentația Lovable actuală permite o interpretare mai precisă.</p>
 
@@ -107,7 +172,7 @@ meta-og:url: /</code></pre>
 
       <p>Acesta este paradoxul mai interesant: un proprietar poate vedea o pagină completă, un scanner generic poate vedea shell-ul, iar un crawler recunoscut de platformă poate primi HTML pre-randat.</p>
 
-      <h2>Canonicalul: problemă reală, dar nu comandă absolută</h2>
+      <h2 id="canonicalul-problema-reala-dar-nu-comanda-absoluta">Canonicalul: problemă reală, dar nu comandă absolută</h2>
 
       <p>Un <code>rel="canonical"</code> indică motorului ce URL preferă publisherul ca reprezentant pentru pagini duplicate sau foarte similare.</p>
 
@@ -123,11 +188,11 @@ meta-og:url: /</code></pre>
 
       <p>Google avertizează explicit împotriva canonicalurilor incorecte între pagini care nu sunt duplicate și recomandă canonicaluri self-referential pentru paginile care trebuie tratate separat.<sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup></p>
 
-      <h3>Ce știm din testul meu</h3>
+      <h3 id="ce-stim-din-testul-meu">Ce știm din testul meu</h3>
 
       <p>În cele două răspunsuri generice testate, canonicalul era <code>/</code>.</p>
 
-      <h3>Ce nu știm doar din acel test</h3>
+      <h3 id="ce-nu-stim-doar-din-acel-test">Ce nu știm doar din acel test</h3>
 
       <p>Nu știm dacă HTML-ul pre-randat servit fiecărui crawler verificat păstra același canonical sau genera unul specific rutei. În aplicațiile JavaScript, canonicalul poate fi stabilit sau modificat de cod, iar Google recomandă ca semnalul să fie cât mai clar și consecvent între HTML-ul inițial și starea randată.<sup><a href="#fn-4">4</a></sup></p>
 
@@ -135,7 +200,7 @@ meta-og:url: /</code></pre>
 
       <p>Pentru Google, verificarea corectă include URL Inspection în Search Console, unde poate fi văzut inclusiv canonicalul selectat de Google.<sup><a href="#fn-5">5</a></sup></p>
 
-      <h2>De ce se întâmplă în aplicațiile client-side</h2>
+      <h2 id="de-ce-se-intampla-in-aplicatiile-client-side">De ce se întâmplă în aplicațiile client-side</h2>
 
       <p>Multe aplicații client-side folosesc un shell HTML comun și construiesc interfața după ce JavaScript rulează în browser. Aceasta este o arhitectură posibilă pentru un SPA, nu definiția tuturor aplicațiilor moderne.</p>
 
@@ -152,17 +217,17 @@ meta-og:url: /</code></pre>
 
       <p>Prin urmare, riscul nu crește pentru că „stiva este modernă”. Riscul apare atunci când <strong>HTML-ul servit înainte de rularea clientului nu conține informația importantă, iar publisherul nu verifică reprezentarea folosită de crawlerele relevante</strong>.</p>
 
-      <h2>Paradoxul site-ului terminat</h2>
+      <h2 id="paradoxul-site-ului-terminat">Paradoxul site-ului terminat</h2>
 
       <p>Miezul problemei rămâne util, dar trebuie formulat precis.</p>
 
-      <h3>Verificarea vizuală nu verifică reprezentarea crawlerului</h3>
+      <h3 id="verificarea-vizuala-nu-verifica-reprezentarea-crawlerului">Verificarea vizuală nu verifică reprezentarea crawlerului</h3>
 
       <p>Site-ul poate arăta bine, navigarea poate funcționa și conținutul poate fi complet în browser. Aceste lucruri nu arată ce se află în răspunsul HTML inițial și nici dacă platforma servește altă reprezentare crawlerelor.</p>
 
       <p>Un audit vizual și un audit al crawlabilității verifică lucruri diferite.</p>
 
-      <h3>Faptul că Google poate randa JavaScript nu rezolvă automat tot</h3>
+      <h3 id="faptul-ca-google-poate-randa-javascript-nu-rezolva-automat-tot">Faptul că Google poate randa JavaScript nu rezolvă automat tot</h3>
 
       <p>Google Search execută JavaScript și folosește Web Rendering Service. Tot Google documentează însă diferențe și limitări în procesarea aplicațiilor JavaScript și recomandă implementări robuste pentru Search.<sup><a href="#fn-6">6</a></sup><sup><a href="#fn-7">7</a></sup></p>
 
@@ -172,7 +237,7 @@ meta-og:url: /</code></pre>
 
       <blockquote><p><strong>Google poate executa JavaScript și indexa conținut randat client-side, dar rezultatul trebuie verificat, iar existența JavaScriptului funcțional în browser nu garantează singură indexarea corectă.</strong></p></blockquote>
 
-      <h3>Nu toate crawlerele trebuie presupuse identice</h3>
+      <h3 id="nu-toate-crawlerele-trebuie-presupuse-identice">Nu toate crawlerele trebuie presupuse identice</h3>
 
       <p>Nu există o bază solidă pentru afirmația că „majoritatea crawlerelor AI nu execută JavaScript”.</p>
 
@@ -184,7 +249,7 @@ meta-og:url: /</code></pre>
 
       <blockquote><p><strong>capabilitățile de rendering și acces diferă între crawlere și nu sunt documentate integral. HTML-ul care conține direct informația esențială rămâne cea mai interoperabilă bază.</strong></p></blockquote>
 
-      <h2>Ce vede fiecare tip de vizitator în cazul Lovable documentat</h2>
+      <h2 id="ce-vede-fiecare-tip-de-vizitator-in-cazul-lovable-documentat">Ce vede fiecare tip de vizitator în cazul Lovable documentat</h2>
 
       <p>Tabelul de mai jos descrie <strong>comportamentul documentat de Lovable la 10 august 2026</strong>, nu o regulă universală a webului.</p>
 
@@ -209,7 +274,7 @@ meta-og:url: /</code></pre>
 
       <p>Această informație este <strong>volatilă</strong> și trebuie reverificată dacă Lovable își schimbă infrastructura.</p>
 
-      <h2>Nuanța onestă despre Lovable</h2>
+      <h2 id="nuanta-onesta-despre-lovable">Nuanța onestă despre Lovable</h2>
 
       <p>Studiul nu trebuie prezentat ca acuzație la adresa Lovable.</p>
 
@@ -226,13 +291,13 @@ meta-og:url: /</code></pre>
 
       <p>Asta corectează una dintre afirmațiile inițiale ale articolului: nu mai este adevărat, în starea documentată la 10 august 2026, că „niciun instrument obișnuit nu semnalează problema”. Lovable oferă explicit un audit destinat acestor situații.</p>
 
-      <h3>O limită importantă</h3>
+      <h3 id="o-limita-importanta">O limită importantă</h3>
 
       <p>Un <code>curl</code> generic nu reproduce automat răspunsul servit unui crawler pe care Lovable îl consideră verificat.</p>
 
       <p>Documentația publică consultată spune că există crawlerii „verified”, dar pasajul folosit în acest articol nu este suficient pentru a afirma metoda tehnică exactă prin care Lovable îi verifică. De aceea, afirmațiile anterioare despre verificare prin „IP și reverse DNS” au fost eliminate.</p>
 
-      <h2>Cum verifici fără să tragi concluzia greșită</h2>
+      <h2 id="cum-verifici-fara-sa-tragi-concluzia-gresita">Cum verifici fără să tragi concluzia greșită</h2>
 
       <p>Comenzile <code>curl</code> rămân utile, dar răspund unei întrebări precise:</p>
 
@@ -242,12 +307,12 @@ meta-og:url: /</code></pre>
 
       <blockquote><p><strong>Ce HTML primește Googlebot sau ChatGPT?</strong></p></blockquote>
 
-      <h3>1. Verifică răspunsul generic</h3>
+      <h3 id="1-verifica-raspunsul-generic">1. Verifică răspunsul generic</h3>
 
       <pre><code>curl -s https://site-ul-tau.ro &gt; /tmp/home.html
 curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
 
-      <h3>2. Compară shell-urile</h3>
+      <h3 id="2-compara-shell-urile">2. Compară shell-urile</h3>
 
       <pre><code>diff /tmp/home.html /tmp/page.html</code></pre>
 
@@ -257,13 +322,13 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
 
       <p>Nu înseamnă automat că toate crawlerele primesc același răspuns.</p>
 
-      <h3>3. Verifică canonicalul din răspunsul primit</h3>
+      <h3 id="3-verifica-canonicalul-din-raspunsul-primit">3. Verifică canonicalul din răspunsul primit</h3>
 
       <pre><code>curl -s https://site-ul-tau.ro/o-alta-pagina | grep -i canonical</code></pre>
 
       <p>Asta îți spune ce canonical există în <strong>acea reprezentare</strong>.</p>
 
-      <h3>4. Caută textul paginii în HTML</h3>
+      <h3 id="4-cauta-textul-paginii-in-html">4. Caută textul paginii în HTML</h3>
 
       <pre><code>curl -s https://site-ul-tau.ro/o-alta-pagina | grep -F "un text distinct din pagină"</code></pre>
 
@@ -275,7 +340,7 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
 
       <blockquote><p>„textul nu există pentru AI”.</p></blockquote>
 
-      <h3>5. Verifică Google separat</h3>
+      <h3 id="5-verifica-google-separat">5. Verifică Google separat</h3>
 
       <p>Folosește URL Inspection în Google Search Console pentru:</p>
 
@@ -285,13 +350,13 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
         <li>informațiile pe care Google le are despre URL.<sup><a href="#fn-5">5</a></sup></li>
       </ul>
 
-      <h3>6. Pentru Lovable, folosește și review-ul propriu al platformei</h3>
+      <h3 id="6-pentru-lovable-foloseste-si-review-ul-propriu-al-platformei">6. Pentru Lovable, folosește și review-ul propriu al platformei</h3>
 
       <p>Documentația curentă indică <code>More → SEO &amp; AI search</code> și review-ul pentru crawlability, metadata, canonical, indexing și AI Markdown rendering.<sup><a href="#fn-1">1</a></sup></p>
 
       <p>Un test corect combină deci <strong>raw HTTP</strong>, <strong>instrumentul motorului</strong> și <strong>auditul platformei</strong>.</p>
 
-      <h2>Ce se rezolvă, în ce ordine</h2>
+      <h2 id="ce-se-rezolva-in-ce-ordine">Ce se rezolvă, în ce ordine</h2>
 
       <p>Ordinea revizuită este:</p>
 
@@ -307,7 +372,7 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
 
       <p><strong>6. Repetă testele după publicare.</strong><br />Reparația nu se presupune din cod; se verifică în răspunsul public și în instrumentele relevante.</p>
 
-      <h2>De ce am publicat propriul diagnostic</h2>
+      <h2 id="de-ce-am-publicat-propriul-diagnostic">De ce am publicat propriul diagnostic</h2>
 
       <p>Valoarea studiului nu este că „am demonstrat că site-ul meu era invizibil pentru AI”.</p>
 
@@ -329,43 +394,43 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
 
       <p>În vizibilitatea AI, scopul nu este să confirmi ipoteza inițială, ci să separi ceea ce ai măsurat de ceea ce ai presupus.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
-      <h3>De ce <code>curl</code> nu vede același lucru ca browserul pe unele aplicații React?</h3>
+      <h3 id="de-ce-curl-nu-vede-acelasi-lucru-ca-browserul-pe-unele-aplicatii-react">De ce <code>curl</code> nu vede același lucru ca browserul pe unele aplicații React?</h3>
 
       <p>Pentru că o aplicație client-side poate returna un shell HTML și poate construi conținutul după executarea JavaScript. În plus, unele platforme pot servi reprezentări diferite unor categorii diferite de agenți.</p>
 
-      <h3>Dacă <code>curl</code> nu vede textul, înseamnă că ChatGPT nu îl vede?</h3>
+      <h3 id="daca-curl-nu-vede-textul-inseamna-ca-chatgpt-nu-il-vede">Dacă <code>curl</code> nu vede textul, înseamnă că ChatGPT nu îl vede?</h3>
 
       <p>Nu. <code>curl</code> arată răspunsul primit de requestul respectiv. În cazul proiectelor Lovable React + Vite vechi, documentația Lovable spune că agenții neverificați primesc SPA-ul obișnuit, iar crawlerii AI verificați precum ChatGPT și Perplexity primesc HTML pre-randat.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Dacă Google îmi indexează site-ul, înseamnă că totul este corect?</h3>
+      <h3 id="daca-google-imi-indexeaza-site-ul-inseamna-ca-totul-este-corect">Dacă Google îmi indexează site-ul, înseamnă că totul este corect?</h3>
 
       <p>Nu. Google poate executa JavaScript, dar canonicalizarea, metadata, structura și alte probleme pot exista independent. URL Inspection poate fi folosit pentru a verifica inclusiv canonicalul selectat de Google.<sup><a href="#fn-6">6</a></sup><sup><a href="#fn-5">5</a></sup></p>
 
-      <h3>Ce înseamnă dacă o pagină interioară are canonical către homepage?</h3>
+      <h3 id="ce-inseamna-daca-o-pagina-interioara-are-canonical-catre-homepage">Ce înseamnă dacă o pagină interioară are canonical către homepage?</h3>
 
       <p>Înseamnă că pagina trimite un semnal puternic că homepage-ul este URL-ul preferat pentru canonicalizare. Google poate accepta sau poate ignora acel semnal în funcție de celelalte indicii. Pentru pagini distincte care trebuie indexate separat, canonicalul către homepage este de regulă o configurație greșită.<sup><a href="#fn-2">2</a></sup></p>
 
-      <h3>Site-urile făcute cu Lovable sunt invizibile pentru AI?</h3>
+      <h3 id="site-urile-facute-cu-lovable-sunt-invizibile-pentru-ai">Site-urile făcute cu Lovable sunt invizibile pentru AI?</h3>
 
       <p>Nu. Documentația Lovable verificată la 10 august 2026 spune că noile aplicații TanStack Start folosesc SSR, iar aplicațiile React + Vite mai vechi folosesc pre-randare pentru crawlere verificate, inclusiv ChatGPT, Perplexity, Claude și Gemini.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Proiectele Lovable React + Vite vechi pot fi migrate la SSR?</h3>
+      <h3 id="proiectele-lovable-react-vite-vechi-pot-fi-migrate-la-ssr">Proiectele Lovable React + Vite vechi pot fi migrate la SSR?</h3>
 
       <p>Da, conform documentației Lovable verificate la 10 august 2026, proiectele existente pot fi upgradate la TanStack Start. Această capabilitate este specifică produsului și trebuie reverificată dacă documentația se schimbă.<sup><a href="#fn-1">1</a></sup></p>
 
-      <h3>Site-urile moderne au un risc mai mare de invizibilitate AI?</h3>
+      <h3 id="site-urile-moderne-au-un-risc-mai-mare-de-invizibilitate-ai">Site-urile moderne au un risc mai mare de invizibilitate AI?</h3>
 
       <p>Nu există bază pentru această regulă. Multe framework-uri moderne folosesc SSR sau static generation. Riscul relevant este ca informația esențială să nu fie disponibilă în reprezentarea pe care o primește crawlerul relevant.</p>
 
-      <h3>Cum verific corect un site?</h3>
+      <h3 id="cum-verific-corect-un-site">Cum verific corect un site?</h3>
 
       <p>Combină răspunsul HTTP brut cu instrumentele specifice motorului și platformei. <code>curl</code> verifică raw HTML; Search Console verifică perspectiva Google; iar Lovable oferă propriul SEO &amp; AI search review pentru proiectele sale.</p>
 
-      <h2>Metodologie și limite</h2>
+      <h2 id="metodologie-si-limite">Metodologie și limite</h2>
 
-      <h3>Măsurătoarea proprie</h3>
+      <h3 id="masuratoarea-proprie">Măsurătoarea proprie</h3>
 
       <p>Testul inițial a fost efectuat în august 2026 pe două rute ale <code>delamatescu.ro</code>, folosind un request generic care nu a executat aplicația în browser.</p>
 
@@ -373,7 +438,7 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
 
       <p>Nu este folosit în această versiune pentru a deduce direct ce primește un crawler AI verificat.</p>
 
-      <h3>Verificarea externă</h3>
+      <h3 id="verificarea-externa">Verificarea externă</h3>
 
       <p>Pentru revizia din <strong>10 august 2026</strong> au fost folosite cu prioritate surse primare:</p>
 
@@ -386,7 +451,7 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
 
       <p>Afirmațiile despre comportamentul Lovable, OpenAI și Perplexity sunt <strong>volatile</strong> și descriu starea documentației la data verificării. Ele trebuie reverificate periodic.</p>
 
-      <h3>Nivelurile de certitudine</h3>
+      <h3 id="nivelurile-de-certitudine">Nivelurile de certitudine</h3>
 
       <p>În articol sunt separate explicit:</p>
 
@@ -397,7 +462,7 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
         <li><strong>interpretarea AI Visibility Lab</strong> — concluzii de metodă care nu sunt prezentate ca mecanisme algoritmice.</li>
       </ul>
 
-      <h2>Surse</h2>
+      <h2 id="surse">Surse</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">Lovable Documentation — „Optimize your app for SEO and AI search", verificat 10 august 2026. Documentația precizează că aplicațiile noi create după 13 mai 2026 folosesc TanStack Start cu SSR; proiectele React + Vite mai vechi folosesc on-request pre-rendering pentru crawlerii verificați; agenții neverificați primesc SPA-ul normal; proiectele vechi pot fi upgradate la TanStack Start; iar SEO & AI search review verifică inclusiv canonicaluri, metadata și AI Markdown rendering: <a href="https://docs.lovable.dev/features/seo-aeo" target="_blank" rel="noopener noreferrer">docs.lovable.dev/features/seo-aeo</a></li>
@@ -411,13 +476,13 @@ curl -s https://site-ul-tau.ro/o-alta-pagina &gt; /tmp/page.html</code></pre>
         <li id="fn-9">Perplexity Documentation — „Perplexity Crawlers", verificat în august 2026. PerplexityBot este folosit pentru descoperirea și indexarea informațiilor pentru rezultatele Perplexity: <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener noreferrer">docs.perplexity.ai/docs/resources/perplexity-crawlers</a></li>
       </ol>
 
-      <h3>Notă de volatilitate</h3>
+      <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Infrastructura Lovable și politicile crawlerelor AI se pot schimba rapid. Afirmațiile despre stiva implicită, pre-randare, upgrade-ul TanStack Start, lista crawlerelor verificate, <code>OAI-SearchBot</code> și <code>PerplexityBot</code> descriu <strong>starea documentată la 10 august 2026</strong>.</p>
 
       <p>Dacă acest articol este actualizat ulterior, aceste afirmații trebuie reverificate din sursele primare înainte de republicare.</p>
 
-      <h2>Istoricul versiunilor</h2>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
       <table>
         <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
         <tbody>

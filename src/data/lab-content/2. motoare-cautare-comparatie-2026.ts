@@ -44,9 +44,40 @@ export const motoareCautareHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Ultima verificare factuală: <time datetime="2026-08-18">18 august 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#clasamentul-global-iunie-2026">Clasamentul global, iunie 2026</a></li>
+          <li><a href="#de-ce-nu-exista-inca-o-singura-cota-de-piata-pentru-ai-search">De ce nu există încă o singură „cotă de piață” pentru AI Search</a>
+            <ol>
+              <li><a href="#crawlingul-si-referralul-o-masura-diferita-dar-economic-relevanta">Crawlingul și referralul: o măsură diferită, dar economic relevantă</a></li>
+            </ol>
+          </li>
+          <li><a href="#deciziile-care-au-schimbat-clasamentul">Deciziile care au schimbat clasamentul</a>
+            <ol>
+              <li><a href="#1989-1990-alan-emtage-si-archie">1989-1990 — Alan Emtage și Archie</a></li>
+              <li><a href="#1998-altavista-se-transforma-in-portal">1998 — AltaVista se transformă în portal</a></li>
+              <li><a href="#1998-goto-com-comercializeaza-licitatia-ppc">1998 — GoTo.com comercializează licitația PPC</a></li>
+              <li><a href="#1999-excite-refuza-google">1999 — Excite refuză Google</a></li>
+              <li><a href="#2000-yahoo-ii-ofera-google-distributie-la-scara">2000 — Yahoo îi oferă Google distribuție la scară</a></li>
+              <li><a href="#2005-2024-pozitia-implicita-devine-un-activ-strategic">2005-2024 — poziția implicită devine un activ strategic</a></li>
+              <li><a href="#2023-neeva-arata-cat-de-grea-este-schimbarea-obiceiului">2023 — Neeva arată cât de grea este schimbarea obiceiului</a></li>
+              <li><a href="#februarie-martie-2023-microsoft-adauga-ai-generativ-in-bing">Februarie-martie 2023 — Microsoft adaugă AI generativ în Bing</a></li>
+              <li><a href="#aprilie-2025-scaderea-raportata-in-safari">Aprilie 2025 — scăderea raportată în Safari</a></li>
+            </ol>
+          </li>
+          <li><a href="#tiparul-in-forma-vizuala">Tiparul, în formă vizuală</a></li>
+          <li><a href="#nota-tehnica-despre-graficele-din-acest-articol">Notă tehnică despre graficele din acest articol</a></li>
+          <li><a href="#ce-inseamna-pentru-cine-publica-astazi">Ce înseamnă pentru cine publică astăzi</a></li>
+          <li><a href="#intrebari-frecvente">Întrebări frecvente</a></li>
+          <li><a href="#surse-si-avertisment-metodologic">Surse și avertisment metodologic</a></li>
+          <li><a href="#surse-si-note">Surse și note</a></li>
+        </ol>
+      </nav>
+
       <p><strong>În iunie 2026, Google deține 91,27% din piața globală a motoarelor de căutare măsurată de StatCounter, Bing 4,68%, Yahoo 1,28%, Yandex 0,79%, DuckDuckGo 0,67% și Baidu 0,43%. În Statele Unite, Google are 86,67%, iar Bing 8,73%; pe desktop, Bing urcă la 11,64%. În paralel, utilizarea instrumentelor AI nu poate fi redusă la o singură „cotă de piață”: traficul de referință, numărul de utilizatori, volumul de interogări și crawlingul măsoară fenomene diferite. Teza acestui articol este mai îngustă decât formula simplistă „distribuția bate produsul”: în search, calitatea poate crea avantajul, dar distribuția decide cât de repede și cât de departe poate scala acel avantaj.</strong></p>
 
-      <h2>Clasamentul global, iunie 2026</h2>
+      <h2 id="clasamentul-global-iunie-2026">Clasamentul global, iunie 2026</h2>
 
       <div class="my-8 overflow-x-auto">
         <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t1 d1">
@@ -98,7 +129,7 @@ export const motoareCautareHtml = `
 
       <p>Surse: StatCounter Global Stats — global, SUA, Germania și Federația Rusă, iunie 2026.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup><sup><a href="#fn-4">4</a></sup><sup><a href="#fn-5">5</a></sup><sup><a href="#fn-6">6</a></sup></p>
 
-      <h2>De ce nu există încă o singură „cotă de piață” pentru AI Search</h2>
+      <h2 id="de-ce-nu-exista-inca-o-singura-cota-de-piata-pentru-ai-search">De ce nu există încă o singură „cotă de piață” pentru AI Search</h2>
 
       <p>Aici apare una dintre cele mai frecvente erori de interpretare din discuțiile despre AI Search: cifre foarte diferite sunt puse sub aceeași etichetă, deși au <strong>numitori diferiți</strong>.</p>
 
@@ -121,7 +152,7 @@ export const motoareCautareHtml = `
 
       <p><strong>Regula practică:</strong> înainte să citezi o „cotă AI”, întreabă: <strong>cotă din ce?</strong> Din interogări, utilizatori, vizite, referral traffic, crawl requests sau alt univers?</p>
 
-      <h3>Crawlingul și referralul: o măsură diferită, dar economic relevantă</h3>
+      <h3 id="crawlingul-si-referralul-o-masura-diferita-dar-economic-relevanta">Crawlingul și referralul: o măsură diferită, dar economic relevantă</h3>
 
       <p>Cloudflare Radar publică o metrică separată numită <strong>crawl-to-refer ratio</strong>: numărul agregat de solicitări HTML făcute de crawlerii asociați unei platforme raportat la solicitările HTML provenite din referralurile acelei platforme.</p>
 
@@ -149,7 +180,7 @@ export const motoareCautareHtml = `
 
       <p>Pentru cine publică, concluzia utilă nu este „AI ia X% din search”, ci că trebuie urmărite separat cel puțin trei dimensiuni: <strong>vizibilitatea în răspunsuri, traficul de referință și accesarea conținutului de către crawlere</strong>.</p>
 
-      <h2>Deciziile care au schimbat clasamentul</h2>
+      <h2 id="deciziile-care-au-schimbat-clasamentul">Deciziile care au schimbat clasamentul</h2>
 
       <p>Teza acestei secțiuni este deliberat mai precisă decât formula „distribuția bate produsul”:</p>
 
@@ -157,13 +188,13 @@ export const motoareCautareHtml = `
 
       <p>Istoria oferă exemple în ambele direcții. Google a câștigat reputație pentru rezultate bune înainte de a domina distribuția, iar Bing a obținut utilizatori noi după integrarea AI. În același timp, parteneriatele implicite, poziția de motor prestabilit și accesul la platforme au avut un rol enorm în transformarea unui avantaj de produs într-o cotă de piață durabilă. Procesul antitrust american împotriva Google a documentat tocmai importanța acestor canale de distribuție.<sup><a href="#fn-9">9</a></sup></p>
 
-      <h3>1989-1990 — Alan Emtage și Archie</h3>
+      <h3 id="1989-1990-alan-emtage-si-archie">1989-1990 — Alan Emtage și Archie</h3>
 
       <p>Alan Emtage creează Archie la Universitatea McGill. McGill datează creația inițială în 1989, iar unele cronologii folosesc 1990 pentru etapa de dezvoltare și răspândire publică.</p>
 
       <p>Faptul că Archie s-a născut într-un context academic și nu ca produs comercial ilustrează cât de diferită era prima etapă a căutării: distribuția nu era încă o competiție pentru poziția implicită într-un browser sau sistem de operare.</p>
 
-      <h3>1998 — AltaVista se transformă în portal</h3>
+      <h3 id="1998-altavista-se-transforma-in-portal">1998 — AltaVista se transformă în portal</h3>
 
       <p>AltaVista era unul dintre cele mai performante și importante motoare ale epocii, cu index mare, viteză bună și funcții avansate de interogare.</p>
 
@@ -173,7 +204,7 @@ export const motoareCautareHtml = `
 
       <p><strong>Interpretarea AI Visibility Lab:</strong> acesta nu este un caz în care „mai multe funcții” sunt automat greșite, ci un exemplu despre cum modelul de business și distribuția pot schimba direcția unui produs chiar dacă tehnologia de bază rămâne competitivă.</p>
 
-      <h3>1998 — GoTo.com comercializează licitația PPC</h3>
+      <h3 id="1998-goto-com-comercializeaza-licitatia-ppc">1998 — GoTo.com comercializează licitația PPC</h3>
 
       <p>GoTo.com, fondat de Bill Gross, a popularizat și scalat modelul de paid search bazat pe licitație și cost per click. Ar fi prea categoric să spunem că a „inventat publicitatea în căutare”: forme de paid placement existaseră deja. Importanța GoTo/Overture a fost transformarea licitației într-un model comercial viabil la scară.</p>
 
@@ -183,7 +214,7 @@ export const motoareCautareHtml = `
 
       <p>Lecția istorică este mai nuanțată decât „inventatorul pierde”: un model de business poate fi creat sau popularizat de o companie și capturat la scară mai mare de alta care dispune de produs, distribuție și execuție mai bune.</p>
 
-      <h3>1999 — Excite refuză Google</h3>
+      <h3 id="1999-excite-refuza-google">1999 — Excite refuză Google</h3>
 
       <p>Există relatări retrospective potrivit cărora Larry Page și Sergey Brin au discutat vânzarea Google către Excite pentru o sumă de ordinul sutelor de mii de dolari, adesea citată în jurul valorii de 750.000 USD.</p>
 
@@ -191,7 +222,7 @@ export const motoareCautareHtml = `
 
       <p>De aceea, episodul este relevant mai ales ca <strong>exemplu de context strategic</strong>, nu ca dovadă matematică pentru teza distribuției.</p>
 
-      <h3>2000 — Yahoo îi oferă Google distribuție la scară</h3>
+      <h3 id="2000-yahoo-ii-ofera-google-distributie-la-scara">2000 — Yahoo îi oferă Google distribuție la scară</h3>
 
       <p>În iunie 2000, Yahoo a ales Google drept furnizor implicit pentru rezultatele sale de căutare. Pentru Google, parteneriatul însemna acces la una dintre cele mai mari audiențe ale webului de la acel moment.</p>
 
@@ -199,7 +230,7 @@ export const motoareCautareHtml = `
 
       <p>Relatările conform cărora Yahoo ar fi încercat ulterior să cumpere Google pentru aproximativ 3 miliarde USD, în timp ce Google ar fi cerut 5 miliarde USD, sunt răspândite în literatura de business, dar sumele diferă între surse și trebuie tratate ca relatări retrospective, nu ca cifre auditate.</p>
 
-      <h3>2005-2024 — poziția implicită devine un activ strategic</h3>
+      <h3 id="2005-2024-pozitia-implicita-devine-un-activ-strategic">2005-2024 — poziția implicită devine un activ strategic</h3>
 
       <p>Google a încheiat de-a lungul timpului acorduri pentru a fi motorul de căutare implicit pe browsere și dispozitive importante, inclusiv în ecosistemele Mozilla și Apple.</p>
 
@@ -209,7 +240,7 @@ export const motoareCautareHtml = `
 
       <p><strong>Concluzia susținută de dovezi:</strong> poziția implicită are valoare economică și competitivă foarte mare, iar distribuția a fost un mecanism important în menținerea dominației Google.</p>
 
-      <h3>2023 — Neeva arată cât de grea este schimbarea obiceiului</h3>
+      <h3 id="2023-neeva-arata-cat-de-grea-este-schimbarea-obiceiului">2023 — Neeva arată cât de grea este schimbarea obiceiului</h3>
 
       <p>Neeva, fondat de foști executivi Google și poziționat ca motor de căutare fără reclame, pe abonament, și-a închis produsul consumer în 2023, iar compania a fost achiziționată de Snowflake.</p>
 
@@ -217,7 +248,7 @@ export const motoareCautareHtml = `
 
       <p>Neeva rămâne un caz util pentru o idee mai restrânsă: <strong>un produs bun nu garantează accesul la piață.</strong></p>
 
-      <h3>Februarie-martie 2023 — Microsoft adaugă AI generativ în Bing</h3>
+      <h3 id="februarie-martie-2023-microsoft-adauga-ai-generativ-in-bing">Februarie-martie 2023 — Microsoft adaugă AI generativ în Bing</h3>
 
       <p>Pe 7 februarie 2023, Microsoft lansează noul Bing bazat pe o nouă generație de modele OpenAI. Pe 14 martie, după lansarea publică a GPT-4, Microsoft confirmă că noul Bing rulase deja pe o versiune GPT-4 personalizată pentru search.<sup><a href="#fn-12">12</a></sup></p>
 
@@ -225,7 +256,7 @@ export const motoareCautareHtml = `
 
       <p>Totuși, până în iunie 2026, StatCounter plasează Bing la 4,68% global. Asta nu demonstrează un „plafon structural” de 5-6% — nu există bază pentru o asemenea limită — dar arată că o îmbunătățire majoră de produs nu a fost suficientă, singură, pentru a răsturna dominația Google.</p>
 
-      <h3>Aprilie 2025 — scăderea raportată în Safari</h3>
+      <h3 id="aprilie-2025-scaderea-raportata-in-safari">Aprilie 2025 — scăderea raportată în Safari</h3>
 
       <p>În mai 2025, Eddy Cue de la Apple a declarat în instanță că volumul căutărilor efectuate prin Safari scăzuse în luna precedentă pentru prima dată în peste două decenii și a asociat schimbarea cu folosirea serviciilor AI.</p>
 
@@ -235,7 +266,7 @@ export const motoareCautareHtml = `
 
       <p><strong>Aceasta este exact problema numitorului discutată mai sus:</strong> înainte să deduci o schimbare de piață dintr-o cifră, trebuie să știi ce măsoară.</p>
 
-      <h2>Tiparul, în formă vizuală</h2>
+      <h2 id="tiparul-in-forma-vizuala">Tiparul, în formă vizuală</h2>
 
       <div class="my-8 overflow-x-auto">
         <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t2 d2">
@@ -256,7 +287,7 @@ export const motoareCautareHtml = `
         </svg>
       </div>
 
-      <h2>Notă tehnică despre graficele din acest articol</h2>
+      <h2 id="nota-tehnica-despre-graficele-din-acest-articol">Notă tehnică despre graficele din acest articol</h2>
 
       <p>Graficele de mai sus sunt SVG inserat direct în HTML, nu imagini raster.</p>
 
@@ -266,7 +297,7 @@ export const motoareCautareHtml = `
 
       <p>Regula practică pentru AEO/GEO: orice grafic care conține date importante ar trebui însoțit de <strong>tabel HTML sau descriere textuală echivalentă</strong>, cu sursa, perioada și definiția metricii. Graficul servește cititorului uman; tabelul și textul fac datele explicit accesibile și verificabile.</p>
 
-      <h2>Ce înseamnă pentru cine publică astăzi</h2>
+      <h2 id="ce-inseamna-pentru-cine-publica-astazi">Ce înseamnă pentru cine publică astăzi</h2>
 
       <p>Trei concluzii operaționale.</p>
 
@@ -276,7 +307,7 @@ export const motoareCautareHtml = `
 
       <p><strong>Produsul și distribuția trebuie construite împreună, inclusiv la scară mică.</strong> Lecția utilă din cazul Neeva nu este că produsul nu contează, ci că diferențierea fără acces la audiență scalează greu. Pentru un consultant independent, domeniul propriu rămâne baza controlată, iar distribuția prin platforme, recomandări și mențiuni terțe poate extinde descoperirea. Acesta este un argument pentru diversificarea distribuției, nu pentru abandonarea domeniului propriu.</p>
 
-      <h2>Întrebări frecvente</h2>
+      <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 
       <p><strong>Care este cota de piață a Google în 2026?</strong><br />Conform StatCounter, Google avea <strong>91,27% din piața globală a motoarelor de căutare în iunie 2026</strong>. În Statele Unite avea 86,67% pe toate dispozitivele și 83,94% pe desktop. Aceste cifre reprezintă metodologia StatCounter, nu un recensământ al tuturor interogărilor globale.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-2">2</a></sup><sup><a href="#fn-3">3</a></sup></p>
 
@@ -290,7 +321,7 @@ export const motoareCautareHtml = `
 
       <p><strong>Merită să optimizez pentru Bing?</strong><br />Da, dacă efortul este proporțional. Bing are o cotă globală modestă, dar o prezență mai mare în SUA și pe desktop. IndexNow permite notificarea instantanee a motoarelor participante atunci când un URL este adăugat, actualizat sau șters; notificarea nu garantează indexarea imediată. În lista oficială IndexNow din 2026 apar Bing, Naver, Seznam.cz, Yandex și Yep, nu Google.<sup><a href="#fn-13">13</a></sup></p>
 
-      <h2>Surse și avertisment metodologic</h2>
+      <h2 id="surse-si-avertisment-metodologic">Surse și avertisment metodologic</h2>
 
       <p>Sursele au fost alese cu prioritate din documentație primară sau instituțională pentru cifrele și afirmațiile sensibile: StatCounter pentru cotele de piață măsurate în propria rețea, Cloudflare Radar pentru crawl-to-refer ratio, Department of Justice pentru concluziile cazului antitrust, Microsoft pentru confirmarea GPT-4 în Bing și IndexNow pentru funcționarea protocolului.</p>
 
@@ -298,7 +329,7 @@ export const motoareCautareHtml = `
 
       <p>Relatările istorice despre oferte de achiziție, sume negociate și motivele unor decizii vechi sunt marcate în articol ca <strong>relatări retrospective</strong> atunci când nu există documente primare suficiente pentru a le trata drept cifre auditate.</p>
 
-      <h2>Surse și note</h2>
+      <h2 id="surse-si-note">Surse și note</h2>
 
       <ol class="avl-footnotes">
         <li id="fn-1">StatCounter Global Stats — „Search Engine Market Share Worldwide”, iunie 2026: <a href="https://gs.statcounter.com/search-engine-market-share/" target="_blank" rel="noopener noreferrer">gs.statcounter.com/search-engine-market-share</a></li>

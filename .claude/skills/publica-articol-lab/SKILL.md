@@ -565,6 +565,7 @@ Orice articol publicat sau actualizat prin acest skill are la început un cuprin
 **Ce intră:**
 - toate `<h2>` din corpul articolului, în ordinea din text, inclusiv „Surse și metodologie” și „Istoricul versiunilor”;
 - `<h3>` imbricate sub `<h2>`-ul lor, într-o listă de nivelul doi. `<h4>` nu intră;
+- **excepție:** la o pagină cu peste 40 de `<h2>` + `<h3>`, cuprinsul are doar `<h2>` (decizia lui Alex, 31 octombrie 2026). `<h3>` păstrează `id`-ul, ca linkurile directe spre ele să funcționeze;
 - textul fiecărei intrări e **exact** textul heading-ului: nu se scurtează, nu se reformulează, fără sufixe sau numerotări adăugate;
 - un articol cu mai puțin de două `<h2>` nu primește cuprins (o singură intrare nu ajută pe nimeni); raportul spune asta.
 
@@ -595,7 +596,7 @@ Orice articol publicat sau actualizat prin acest skill are la început un cuprin
 - La orice actualizare care adaugă, elimină sau redenumește un heading, cuprinsul se regenerează în același pas.
 - Nu are echivalent în JSON-LD și nu se prezintă ca factor de citare sau de ranking (§11.1).
 
-**Verificare (Faza 9/10):** fiecare `href="#…"` din cuprins are exact un element cu acel `id`; numărul intrărilor = numărul `<h2>` + `<h3>` din corp; în browser, un click pe o intrare duce la heading-ul ei, vizibil sub header-ul fix.
+**Verificare (Faza 9/10):** fiecare `href="#…"` din cuprins are exact un element cu acel `id`; numărul intrărilor = numărul `<h2>` + `<h3>` din corp (doar `<h2>` la excepția de peste 40); în browser, un click pe o intrare duce la heading-ul ei, vizibil sub header-ul fix.
 
 ---
 
@@ -757,7 +758,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 - [ ] Typecheck, lint, build trec; runtime verificat dacă mediul permite.
 - [ ] Claim ledger inclus în raport.
 - [ ] La o actualizare a textului: „Istoricul versiunilor” are rândul nou (versiune, `date_modified`, modificări concrete), rândurile vechi sunt intacte, iar secțiunea e identică în `.md` și `.ts` și stă înaintea footerului (§6.4).
-- [ ] Cuprinsul (§6.5) e după byline și imaginea principală, listează toate `<h2>` și `<h3>` cu textul exact; fiecare `href="#…"` are exact un `id` corespunzător; există doar în `.ts`.
+- [ ] Cuprinsul (§6.5) e după byline și imaginea principală, listează toate `<h2>` și `<h3>` (doar `<h2>` peste 40 de titluri) cu textul exact; fiecare `href="#…"` are exact un `id` corespunzător; există doar în `.ts`.
 - [ ] Byline: `Alex Matescu` → `/despre` cu `rel="author"`; rol vizibil „Fondator și coordonator”; `AI Visibility Lab` → `/lab` (§6.1).
 - [ ] Toate cele trei date din byline au text vizibil în română, doar data, fără oră; `datetime` e `YYYY-MM-DD` pentru `date_modified`/`last_reviewed`, și ISO complet cu oră/offset pentru `date_published` al unui articol nou (§6.1).
 - [ ] Byline-ul apare imediat sub titlu/lead, înaintea corpului articolului; footerul standardizat apare integral, nemodificat, la coadă — ambele prezente, niciunul nu-l înlocuiește pe celălalt (§6.1).

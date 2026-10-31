@@ -107,6 +107,47 @@ export const socialMediaStratInformationalPentruAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
       <p>Publicat: <time datetime="2026-10-02T09:10:00+03:00">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-02">2 octombrie 2026</time></p>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#articolul-in-7-idei">Articolul în 7 idei</a></li>
+          <li><a href="#1-social-media-este-sursa-pentru-ai">1. Social media este sursă pentru AI?</a></li>
+          <li><a href="#2-de-ce-training-ul-nu-demonstreaza-citarea-sau-vizibilitatea-intr-un-raspuns">2. De ce training-ul nu demonstrează citarea sau vizibilitatea într-un răspuns?</a></li>
+          <li><a href="#3-exista-acces-in-timp-real-la-continut-social">3. Există acces în timp real la conținut social?</a>
+            <ol>
+              <li><a href="#x-si-grok">X și Grok</a></li>
+              <li><a href="#reddit-openai-si-google">Reddit, OpenAI și Google</a></li>
+            </ol>
+          </li>
+          <li><a href="#4-ce-se-intampla-in-ecosistemul-meta">4. Ce se întâmplă în ecosistemul Meta?</a></li>
+          <li><a href="#5-toate-platformele-sociale-sunt-la-fel-de-accesibile-sistemelor-ai">5. Toate platformele sociale sunt la fel de accesibile sistemelor AI?</a></li>
+          <li><a href="#6-cum-poate-fi-masurata-social-source-accessibility">6. Cum poate fi măsurată Social Source Accessibility?</a>
+            <ol>
+              <li><a href="#social-source-accessibility">Social Source Accessibility</a></li>
+              <li><a href="#exemplu-de-matrice">Exemplu de matrice</a></li>
+              <li><a href="#exemplu-ipotetic">Exemplu ipotetic</a></li>
+            </ol>
+          </li>
+          <li><a href="#7-ce-inseamna-aceasta-schimbare-pentru-un-business">7. Ce înseamnă această schimbare pentru un business?</a>
+            <ol>
+              <li><a href="#pentru-business-uri-rezulta-cinci-obligatii-practice">Pentru business-uri, rezultă cinci obligații practice</a></li>
+            </ol>
+          </li>
+          <li><a href="#reach-authority-si-truth-nu-sunt-acelasi-lucru">Reach, authority și truth nu sunt același lucru</a></li>
+          <li><a href="#social-media-nu-inlocuieste-open-web-ul-il-completeaza-si-il-complica">Social media nu înlocuiește open web-ul. Îl completează și îl complică.</a></li>
+          <li><a href="#de-la-machine-accessibility-la-information-topology">De la machine accessibility la information topology</a>
+            <ol>
+              <li><a href="#information-topology">Information Topology</a></li>
+            </ol>
+          </li>
+          <li><a href="#concluzie-social-media-devine-parte-din-infrastructura-de-raspuns">Concluzie: social media devine parte din infrastructura de răspuns</a></li>
+          <li><a href="#seria-machine-accessibility-si-agentic-web">Seria „Machine accessibility și agentic web”</a></li>
+          <li><a href="#surse-si-metodologie">Surse și metodologie</a></li>
+          <li><a href="#nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</a></li>
+          <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+        </ol>
+      </nav>
+
       <p><strong>Social media nu mai poate fi tratată doar ca un canal prin care informația ajunge la oameni. În anumite ecosisteme, postările, comentariile, profilurile, Reels-urile și conversațiile publice sunt deja folosite pentru antrenarea modelelor, pentru retrieval în timp real, pentru context nativ și pentru răspunsuri generate de AI. Dar aceste mecanisme sunt diferite și nu trebuie confundate.</strong></p>
       <p>Aceasta este problema centrală a ultimului articol din această serie.</p>
       <p>În <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a> am extins discuția de la web visibility la <em>machine accessibility</em>. În <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">al doilea</a> am arătat de ce informația publică nu este automat accesibilă tuturor sistemelor AI. În <a href="/lab/articole/site-ul-nu-dispare-isi-schimba-clientul">al treilea</a> am analizat site-ul ca infrastructură pentru oameni și agenți. În <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">al patrulea</a> am urmărit traseul de la menționare la acțiune și tranzacție.</p>
@@ -116,7 +157,7 @@ export const socialMediaStratInformationalPentruAiHtml = `
       <blockquote><strong>În ce condiții poate conținutul social deveni sursă pentru un sistem AI și ce înseamnă asta pentru reprezentarea digitală a unui business?</strong></blockquote>
       <p>Tema a mai fost abordată în AI Visibility Lab din perspectiva profilului personal: în <a href="/lab/articole/social-media-vizibilitate-ai">De ce 10.000 de urmăritori pe LinkedIn nu te fac automat vizibil pentru AI</a> am comparat platformele sociale și am formulat „legea artefactului”. Acolo întrebarea era ce rămâne în urmă după ce publici. Aici urmărim prin ce mecanisme ajunge acel conținut la un sistem AI și cum poate fi măsurat fiecare traseu.</p>
       <p><strong>Unde se încadrează în serie:</strong> din modelul în șapte niveluri propus în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a> (Presence → Discoverability → Accessibility → Understanding → Verifiability → Recommendability → Actionability), acest articol tratează nivelurile 1–5, de la <strong>Presence</strong> la <strong>Verifiability</strong>, pentru o categorie de surse pe care business-ul nu o controlează complet: conținutul social. Întrebarea nu este doar dacă urma socială există, ci dacă poate fi accesată, atribuită corect și confirmată de o sursă primară.</p>
-      <h2>Articolul în 7 idei</h2>
+      <h2 id="articolul-in-7-idei">Articolul în 7 idei</h2>
       <ol>
         <li><strong>Social media este sursă pentru AI?</strong> Uneori da, dar prin mecanisme diferite: training, retrieval, acces nativ al platformei sau integrare prin API.</li>
         <li><strong>Training înseamnă că o postare va fi citată?</strong> Nu. Folosirea conținutului la antrenare nu dovedește retrieval, citare sau recomandare.</li>
@@ -126,7 +167,7 @@ export const socialMediaStratInformationalPentruAiHtml = `
         <li><strong>Cum poate fi măsurată Social Source Accessibility?</strong> Separând existența conținutului de acces, retrieval, attribution, citation și recommendation.</li>
         <li><strong>Ce înseamnă pentru business-uri?</strong> Prezența socială poate deveni parte din reprezentarea machine-readable a entității, dar numai acolo unde există dovezi că sistemul țintă poate ajunge la acea sursă.</li>
       </ol>
-      <h2>1. Social media este sursă pentru AI?</h2>
+      <h2 id="1-social-media-este-sursa-pentru-ai">1. Social media este sursă pentru AI?</h2>
       <p><strong>Da, în anumite ecosisteme și prin mecanisme documentate. Dar expresia „AI-ul vede social media” este prea vagă pentru a fi utilă metodologic.</strong></p>
       <p>Trebuie să separăm cel puțin cinci mecanisme:</p>
       <pre><code>Social content
@@ -144,7 +185,7 @@ Citation / attribution</code></pre>
       <p>De aceea, pentru AI Visibility este mai utilă următoarea separare:</p>
       <blockquote><strong>Training ≠ Retrieval ≠ Citation ≠ Recommendation.</strong></blockquote>
       <p>Această propoziție este probabil cea mai importantă distincție a întregului articol.</p>
-      <h2>2. De ce training-ul nu demonstrează citarea sau vizibilitatea într-un răspuns?</h2>
+      <h2 id="2-de-ce-training-ul-nu-demonstreaza-citarea-sau-vizibilitatea-intr-un-raspuns">2. De ce training-ul nu demonstrează citarea sau vizibilitatea într-un răspuns?</h2>
       <p><strong>Pentru că training-ul modifică modelul, în timp ce retrieval-ul presupune accesarea unei surse la momentul formulării răspunsului sau într-un proces asociat acelui răspuns.</strong></p>
       <p>Meta spune explicit că, în Uniunea Europeană, folosește conținut public — inclusiv postări și comentarii publice ale adulților — pentru antrenarea modelelor sale generative, cu posibilitatea de opoziție pentru utilizatori. Compania precizează și că mesajele private dintre persoane nu sunt folosite în acest scop decât atunci când un utilizator alege să le distribuie unei funcții AI.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-10">10</a></sup></p>
       <p>LinkedIn spune la rândul său că, din 3 noiembrie 2025, poate folosi în UE, SEE, Elveția, Regatul Unit, Canada și Hong Kong anumite date ale membrilor, inclusiv detalii de profil și conținut public publicat pe LinkedIn, pentru antrenarea modelelor generative folosite pentru funcții de creare de conținut. Platforma oferă și mecanism de opt-out.<sup><a href="#fn-2">2</a></sup><sup><a href="#fn-11">11</a></sup></p>
@@ -164,13 +205,13 @@ Citation / attribution</code></pre>
       <blockquote><strong>acel tip de conținut poate intra în procesul de dezvoltare sau îmbunătățire a modelului, conform condițiilor declarate de platformă.</strong></blockquote>
       <p>Nu putem transforma automat această propoziție în:</p>
       <blockquote>„postarea mea va apărea în ChatGPT / Meta AI / Copilot.”</blockquote>
-      <h2>3. Există acces în timp real la conținut social?</h2>
+      <h2 id="3-exista-acces-in-timp-real-la-continut-social">3. Există acces în timp real la conținut social?</h2>
       <p><strong>Da. Există exemple documentate în care un sistem AI poate căuta sau primi conținut social actual prin acces nativ ori prin API.</strong></p>
-      <h3>X și Grok</h3>
+      <h3 id="x-si-grok">X și Grok</h3>
       <p>X documentează explicit că Grok poate decide să caute postări publice de pe X și să facă web search în timp real atunci când răspunde unui utilizator. Help Center-ul X spune că accesul la postări publice în timp real îi permite lui Grok să răspundă cu informații actuale.<sup><a href="#fn-3">3</a></sup></p>
       <p>Separat, xAI a anunțat în august 2026 o integrare Grok Bot cu X prin care agentul poate, după conectarea contului, să caute postări, să citească timeline-ul, să verifice mentions și să urmărească trenduri.<sup><a href="#fn-4">4</a></sup></p>
       <p>Acesta este un caz clar de <strong>platform-native retrieval</strong>.</p>
-      <h3>Reddit, OpenAI și Google</h3>
+      <h3 id="reddit-openai-si-google">Reddit, OpenAI și Google</h3>
       <p>În mai 2024, OpenAI și Reddit au anunțat un parteneriat prin care OpenAI primește acces la Reddit Data API, descris de companii ca furnizând conținut Reddit structurat și în timp real. Scopul declarat este ca produsele OpenAI să poată înțelege și afișa mai bine conținut Reddit, în special pentru subiecte recente.<sup><a href="#fn-5">5</a></sup></p>
       <p>Reddit are o relație similară cu Google. În februarie 2024, Google a anunțat extinderea parteneriatului cu Reddit: acces la Reddit Data API, descris ca furnizând conținut structurat și în timp real, folosit inclusiv pentru afișarea conținutului Reddit în produsele Google și pentru antrenarea modelelor.<sup><a href="#fn-6">6</a></sup></p>
       <p>Acordul nu este însă static. În iulie 2026, presa a raportat dificultăți în negocierile de reînnoire, Reddit discutând inclusiv oprirea accesului Google la conținutul său pentru utilizări AI.<sup><a href="#fn-12">12</a></sup> La 1 octombrie 2026, Reddit a anunțat că retrage feed-urile RSS (13 noiembrie 2026) și elimină treptat accesul public la vechiul Data API (închidere completă în martie 2027), invocând scraping-ul la scară largă; potrivit relatărilor, acordurile existente de conținut cu Google și OpenAI nu sunt afectate de aceste schimbări.<sup><a href="#fn-13">13</a></sup> La ultima verificare AI Visibility Lab (2 octombrie 2026), reînnoirea acordului cu Google nu era confirmată public; statutul lui trebuie tratat ca fluid, nu ca fapt stabilit.</p>
@@ -186,7 +227,7 @@ authorized / licensed API
    ↓
 AI system</code></pre>
       <p>În al doilea caz, accesul poate fi mai structurat, mai proaspăt și poate conține contexte pe care un crawler web obișnuit nu le vede în același mod.</p>
-      <h2>4. Ce se întâmplă în ecosistemul Meta?</h2>
+      <h2 id="4-ce-se-intampla-in-ecosistemul-meta">4. Ce se întâmplă în ecosistemul Meta?</h2>
       <p><strong>Meta oferă unul dintre cele mai clare exemple de convergență dintre social platform și answer engine, pentru că aceeași companie controlează platformele sociale, modelele și suprafețele AI.</strong></p>
       <p>În aprilie 2026, Meta a anunțat Muse Spark și a spus că modelul va alimenta o versiune Meta AI care, în timp, va debloca funcții ce citează recomandări și conținut distribuit în Instagram, Facebook și Threads.<sup><a href="#fn-7">7</a></sup> În același anunț, Meta descrie un Meta AI care:</p>
       <ul>
@@ -211,7 +252,7 @@ AI system</code></pre>
         <li>apariția într-un răspuns poate fi garantată prin optimizare.</li>
       </ul>
       <p>Dar demonstrează că, în ecosistemul Meta, social content poate deveni parte directă din infrastructura răspunsurilor AI.</p>
-      <h2>5. Toate platformele sociale sunt la fel de accesibile sistemelor AI?</h2>
+      <h2 id="5-toate-platformele-sociale-sunt-la-fel-de-accesibile-sistemelor-ai">5. Toate platformele sociale sunt la fel de accesibile sistemelor AI?</h2>
       <p><strong>Nu. Tocmai diferențele dintre platforme fac necesară o măsurare separată, provider cu provider și sursă cu sursă.</strong></p>
       <p>Putem avea cel puțin patru situații:</p>
       <table>
@@ -232,10 +273,10 @@ AI system</code></pre>
       <p>nu doar:</p>
       <p><strong>Yes / No</strong></p>
       <p>Aceasta este o diferență între documentarea infrastructurii și marketingul construit pe impresii.</p>
-      <h2>6. Cum poate fi măsurată Social Source Accessibility?</h2>
+      <h2 id="6-cum-poate-fi-masurata-social-source-accessibility">6. Cum poate fi măsurată Social Source Accessibility?</h2>
       <p><strong>Prin separarea etapelor de la existența unei postări până la utilizarea ei observabilă într-un răspuns AI.</strong></p>
       <p>În cadrul exploratoriu AI Visibility Lab, putem folosi termenul:</p>
-      <h3>Social Source Accessibility</h3>
+      <h3 id="social-source-accessibility">Social Source Accessibility</h3>
       <p>pentru a descrie <strong>măsura în care conținutul publicat pe o platformă socială poate fi accesat, recuperat, atribuit sau folosit de un sistem AI țintă, în condiții documentate și reproductibile</strong>.</p>
       <p>Nu este un standard oficial și nu trebuie transformat încă într-un scor unic.</p>
       <p>Un model mai util ar fi:</p>
@@ -254,7 +295,7 @@ Citable
 Recommendation-relevant</code></pre>
       <p>Fiecare treaptă trebuie demonstrată separat.</p>
       <p>Treptele <em>Machine-accessible</em> și <em>Retrievable</em> operaționalizează „legea artefactului” din <a href="/lab/articole/social-media-vizibilitate-ai">articolul despre urmăritori și vizibilitate AI</a>: un conținut persistent, adresabil, accesibil și ușor de extras are mai multe șanse să treacă de ele, dar trecerea trebuie demonstrată pentru fiecare sistem țintă, nu presupusă.</p>
-      <h3>Exemplu de matrice</h3>
+      <h3 id="exemplu-de-matrice">Exemplu de matrice</h3>
       <table>
         <thead>
           <tr><th>Nivel</th><th>Întrebare</th><th>Dovadă posibilă</th><th>Ce NU demonstrează</th></tr>
@@ -271,7 +312,7 @@ Recommendation-relevant</code></pre>
       </table>
       <p>Treptele descriu conținutul social, nu entitatea, de aceea au denumiri proprii. Ele alimentează nivelurile modelului propus în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a>: Published și Platform-visible susțin Presence, Machine-accessible și Retrievable susțin Accessibility, Attributable susține Understanding, iar Citable susține Verifiability. Ultima treaptă, Recommendation-relevant, atinge nivelul Recommendability doar ca limită a măsurării: arată dacă un conținut contribuie observabil la un răspuns, nu dacă entitatea este recomandabilă.</p>
       <p>Această structură respectă convenția AVL prezentată în <a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">al doilea articol al seriei</a>: <strong>Raw Evidence → Indexed Evidence → Observation → Measurement</strong>, iar dincolo de granița metodologică, <strong>Interpretation</strong>.</p>
-      <h3>Exemplu ipotetic</h3>
+      <h3 id="exemplu-ipotetic">Exemplu ipotetic</h3>
       <p>Să presupunem că un restaurant publică pe Instagram:</p>
       <blockquote>„Începând de astăzi avem brunch sâmbăta și duminica între 10:00 și 14:00.”</blockquote>
       <p>Putem documenta (cifrele sunt ilustrative, nu rezultate măsurate de AI Visibility Lab):</p>
@@ -285,7 +326,7 @@ Recommendation-relevant</code></pre>
       <p>Nu putem concluziona automat:</p>
       <blockquote>„Dacă postezi pe Instagram, Meta AI te va recomanda.”</blockquote>
       <p>Aceasta ar fi o extrapolare nejustificată.</p>
-      <h2>7. Ce înseamnă această schimbare pentru un business?</h2>
+      <h2 id="7-ce-inseamna-aceasta-schimbare-pentru-un-business">7. Ce înseamnă această schimbare pentru un business?</h2>
       <p><strong>Înseamnă că social media poate deveni parte din infrastructura informațională a entității, nu doar infrastructură de reach.</strong></p>
       <p>Până acum, o companie putea privi canalele astfel:</p>
       <pre><code>Website
@@ -317,7 +358,7 @@ Social media
       <p>Problema nu mai este doar „să existe conținut”.</p>
       <p>Problema devine:</p>
       <blockquote><strong>care sursă este actuală, autoritativă și relevantă pentru întrebarea utilizatorului?</strong></blockquote>
-      <h3>Pentru business-uri, rezultă cinci obligații practice</h3>
+      <h3 id="pentru-business-uri-rezulta-cinci-obligatii-practice">Pentru business-uri, rezultă cinci obligații practice</h3>
       <ol>
         <li><strong>Păstrează o sursă primară clară.</strong><br />Informațiile structurale despre companie — identitate, servicii, politici, locații, date de contact — trebuie să aibă o sursă oficială controlată.</li>
         <li><strong>Folosește social media pentru informație temporală fără a crea contradicții.</strong><br />O ofertă sau modificare temporară trebuie marcată clar ca temporară și sincronizată cu sursele relevante.</li>
@@ -325,7 +366,7 @@ Social media
         <li><strong>Testează provider cu provider.</strong><br />Nu presupune că vizibilitatea în Meta AI implică vizibilitate în ChatGPT, Claude, Gemini sau Grok.</li>
         <li><strong>Arhivează dovezile.</strong><br />Social content se modifică, dispare și se schimbă rapid. Pentru măsurare sunt necesare timestamp-uri, URL-uri, capturi și context.</li>
       </ol>
-      <h2>Reach, authority și truth nu sunt același lucru</h2>
+      <h2 id="reach-authority-si-truth-nu-sunt-acelasi-lucru">Reach, authority și truth nu sunt același lucru</h2>
       <blockquote><strong>Reach ≠ Authority ≠ Truth.</strong></blockquote>
       <p>Că reach-ul și numărul de urmăritori nu produc automat vizibilitate AI am argumentat deja în <a href="/lab/articole/social-media-vizibilitate-ai">articolul despre urmăritori și vizibilitate AI</a>. Aici contează a doua parte a formulei: o postare cu milioane de vizualizări poate conține o afirmație imprecisă, iar un document oficial cu câteva sute de accesări poate fi sursa primară. Un sistem AI le poate recupera pe amândouă și trebuie să decidă — prin mecanisme pe care nu le controlăm complet — ce folosește în răspuns.</p>
       <p>Pentru AI Visibility Lab, aici apare o direcție importantă: nu este suficient să măsurăm dacă o entitate „apare”.</p>
@@ -339,7 +380,7 @@ Social media
         <li><strong>dacă aceeași informație este consistentă între platforme.</strong></li>
       </ul>
       <p>Acesta este punctul în care social media intră natural în metodologia AI Visibility fără să fie confundată cu SEO și fără să fie tratată ca o lume separată de web.</p>
-      <h2>Social media nu înlocuiește open web-ul. Îl completează și îl complică.</h2>
+      <h2 id="social-media-nu-inlocuieste-open-web-ul-il-completeaza-si-il-complica">Social media nu înlocuiește open web-ul. Îl completează și îl complică.</h2>
       <p>Este tentant să vedem fenomenul ca pe o tranziție simplă:</p>
       <pre><code>Google → TikTok → AI</code></pre>
       <p>Realitatea este mai puțin liniară.</p>
@@ -372,7 +413,7 @@ Platform-native data
 Operational data</code></pre>
       <p>Nu toate sistemele au acces la toate aceste straturi.</p>
       <p>Aceasta este exact problema pe care seria de cinci articole a încercat să o definească.</p>
-      <h2>De la machine accessibility la information topology</h2>
+      <h2 id="de-la-machine-accessibility-la-information-topology">De la machine accessibility la information topology</h2>
       <p>Dacă punem împreună cele cinci articole, traseul urmează modelul în șapte niveluri propus în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a>, iar fiecare articol al seriei a privit o parte a lui:</p>
       <table>
         <thead>
@@ -399,11 +440,11 @@ Operational data</code></pre>
         <li>informație distribuită în afara site-ului oficial.</li>
       </ul>
       <p>Aici apare o idee care merită explorată ulterior în AI Visibility Lab:</p>
-      <h3>Information Topology</h3>
+      <h3 id="information-topology">Information Topology</h3>
       <p>Nu ca protocol validat, ci ca întrebare metodologică:</p>
       <blockquote><strong>Cum este distribuită informația despre o entitate între surse, platforme și mecanisme de acces diferite și ce trasee poate folosi fiecare sistem AI pentru a o reconstrui?</strong></blockquote>
       <p>Această perspectivă mută analiza de la „optimizarea unei pagini” la <strong>cartografierea unui ecosistem informațional</strong>.</p>
-      <h2>Concluzie: social media devine parte din infrastructura de răspuns</h2>
+      <h2 id="concluzie-social-media-devine-parte-din-infrastructura-de-raspuns">Concluzie: social media devine parte din infrastructura de răspuns</h2>
       <p>Meta documentează folosirea conținutului public pentru training și integrarea postărilor, Reels-urilor și recomandărilor comunităților în experiențele Meta AI.<sup><a href="#fn-1">1</a></sup><sup><a href="#fn-7">7</a></sup><sup><a href="#fn-8">8</a></sup><sup><a href="#fn-9">9</a></sup> X documentează accesul Grok la postări publice în timp real.<sup><a href="#fn-3">3</a></sup> OpenAI și Google au anunțat în 2024 acces programatic la Reddit prin parteneriate oficiale, iar continuitatea acordului cu Google era incertă în iulie 2026.<sup><a href="#fn-5">5</a></sup><sup><a href="#fn-6">6</a></sup><sup><a href="#fn-12">12</a></sup> LinkedIn folosește anumite categorii de conținut public pentru propriile modele generative, conform setărilor și regiunilor aplicabile.<sup><a href="#fn-2">2</a></sup></p>
       <p>Aceste exemple nu permit concluzia că:</p>
       <blockquote>„toate sistemele AI citesc toate rețelele sociale.”</blockquote>
@@ -417,7 +458,7 @@ Operational data</code></pre>
       <p>Ci cu o concluzie mai utilă pentru AI Visibility:</p>
       <p><strong>o entitate nu mai este reprezentată digital într-un singur loc, iar fiecare sistem AI poate reconstrui o versiune diferită a aceleiași realități în funcție de sursele la care are acces.</strong></p>
       <hr />
-      <h2>Seria „Machine accessibility și agentic web”</h2>
+      <h2 id="seria-machine-accessibility-si-agentic-web">Seria „Machine accessibility și agentic web”</h2>
       <ol>
         <li><a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">De la web visibility la machine accessibility</a></li>
         <li><a href="/lab/articole/public-nu-inseamna-accesibil-de-ce-fiecare-ai-vede-un-internet-diferit">Public nu mai înseamnă accesibil: de ce fiecare sistem AI vede un internet diferit</a></li>
@@ -426,7 +467,7 @@ Operational data</code></pre>
         <li><strong>Social media devine strat informațional pentru AI</strong> (acest articol)</li>
       </ol>
       <hr />
-      <h2>Surse și metodologie</h2>
+      <h2 id="surse-si-metodologie">Surse și metodologie</h2>
       <ol class="avl-footnotes">
         <li id="fn-1">Meta, <strong>Making AI Work Harder for Europeans</strong>, publicat 14 aprilie 2025 și actualizat 27 martie 2026. Meta spune că în UE folosește interacțiunile cu Meta AI și conținutul public distribuit de adulți pe produsele Meta pentru training, oferind mecanism de opoziție. <a href="https://about.fb.com/news/2025/04/making-ai-work-harder-for-europeans/" target="_blank" rel="noopener noreferrer">about.fb.com/news/2025/04/making-ai-work-harder-for-europeans/</a></li>
         <li id="fn-2">LinkedIn Help, <strong>Update to our Terms and data use</strong>, consultat la 1 octombrie 2026. LinkedIn precizează că, în UE, SEE, Elveția, Regatul Unit, Canada și Hong Kong, poate utiliza detalii de profil și conținut public pentru antrenarea modelelor generative de creare de conținut, cu posibilitate de opt-out. <a href="https://www.linkedin.com/help/linkedin/answer/a8059228" target="_blank" rel="noopener noreferrer">linkedin.com/help/linkedin/answer/a8059228</a></li>
@@ -443,7 +484,7 @@ Operational data</code></pre>
         <li id="fn-13">MediaPost, <strong>Reddit Ending Data-Scraping, Will Keep Existing Agreements</strong>, 1 octombrie 2026. Relatează anunțurile Reddit din r/modnews: retragerea feed-urilor RSS la 13 noiembrie 2026, eliminarea treptată a accesului public la vechiul Data API până în martie 2027 și faptul că acordurile existente cu Google și OpenAI nu sunt afectate. Publicație secundară; anunțul primar Reddit nu a putut fi accesat direct. <a href="https://www.mediapost.com/publications/article/418430/reddit-ending-data-scraping-will-keep-existing-ag.html" target="_blank" rel="noopener noreferrer">mediapost.com/publications/article/418430/reddit-ending-data-scraping-will-keep-existing-ag.html</a></li>
       </ol>
       <hr />
-      <h2>Notă metodologică AI Visibility Lab</h2>
+      <h2 id="nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</h2>
       <p>Acest articol separă explicit următoarele concepte:</p>
       <ul>
         <li><strong>training data</strong> — conținut folosit în dezvoltarea sau îmbunătățirea unui model;</li>
@@ -467,7 +508,7 @@ Operational data</code></pre>
         <li>o citare observată într-o rulare nu demonstrează consistență, ranking stabil sau recomandare;</li>
         <li>o postare cu engagement ridicat nu este automat mai autoritativă factual decât o sursă primară.</li>
       </ul>
-      <h2>Notă de volatilitate</h2>
+      <h2 id="nota-de-volatilitate">Notă de volatilitate</h2>
       <p>Politicile platformelor sociale privind antrenarea modelelor, funcțiile Meta AI și Facebook AI Mode, accesul Grok la X, acordurile Reddit cu Google și OpenAI și accesul public la API-ul Reddit se schimbă rapid și pot diferi în funcție de regiune. Afirmațiile despre produse, politici și acorduri au fost verificate la 2 octombrie 2026.</p>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 2 octombrie 2026.</em></p>
