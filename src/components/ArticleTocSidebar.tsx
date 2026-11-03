@@ -60,6 +60,11 @@ export const useActiveTocId = (items: TocItem[]) => {
     let frame = 0;
     const update = () => {
       frame = 0;
+      // Cât e deschis panoul cuprinsului de pe mobil, vaul fixează pagina pe
+      // iOS (`position: fixed` pe body): scrollY devine 0, iar pagina pare
+      // derulată până la capăt. Secțiunea curentă rămâne cea de dinainte;
+      // scroll-ul restaurat la închidere declanșează din nou actualizarea.
+      if (getComputedStyle(document.body).position === "fixed") return;
       // Titlurile se caută la fiecare actualizare, nu o singură dată:
       // ContentLightbox poate reface HTML-ul articolului după montare, iar
       // referințele vechi ar rămâne detașate din pagină.
