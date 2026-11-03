@@ -269,6 +269,65 @@
       width: clamp(13rem, 50vw - 26.5rem, 22.5rem);
     }
   }
+  /* Cuprinsul de pe ecranele fără cuprins lateral (ArticleTocMobile): buton
+     fix în dreapta jos și panou din partea de jos. Se ascunde exact unde
+     apare cuprinsul lateral (pragurile de mai sus). */
+  .article-toc-mobile {
+    @apply fixed right-4 z-40 inline-flex min-h-11 items-center gap-2 rounded-sm border border-foreground/15 bg-background/95 px-3.5 text-xs uppercase tracking-[0.22em] text-foreground shadow-sm backdrop-blur-sm;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    opacity: 0;
+    transform: translateY(0.5rem);
+    pointer-events: none;
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .article-toc-mobile[data-visible] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  .article-toc-mobile-count { @apply text-muted-foreground tracking-[0.12em]; }
+  @media (min-width: 88rem) {
+    .has-toc-sidebar .article-toc-mobile { @apply hidden; }
+  }
+  @media (min-width: 79rem) {
+    .has-toc-sidebar-centered .article-toc-mobile { @apply hidden; }
+  }
+  .article-toc-mobile-overlay { @apply fixed inset-0 z-50 bg-foreground/30; }
+  .article-toc-mobile-panel {
+    @apply fixed inset-x-0 bottom-0 z-50 mx-auto flex max-w-2xl flex-col rounded-t-sm border border-b-0 border-foreground/15 bg-background outline-none;
+    max-height: 70dvh;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .article-toc-mobile-handle {
+    @apply mx-auto mt-3 h-1 w-10 shrink-0 rounded-full bg-foreground/15;
+  }
+  .article-toc-mobile-header {
+    @apply flex shrink-0 items-start justify-between gap-4 border-b border-foreground/10 px-6 pt-4 pb-4;
+  }
+  .article-toc-mobile-title {
+    @apply text-xs font-normal uppercase tracking-[0.22em] text-muted-foreground;
+  }
+  .article-toc-mobile-current {
+    @apply mt-2 text-sm leading-snug text-foreground line-clamp-2;
+  }
+  .article-toc-mobile-close {
+    @apply -mr-2 -mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:text-foreground;
+  }
+  .article-toc-mobile-list {
+    @apply overflow-y-auto overscroll-contain px-6 py-3;
+  }
+  .article-toc-mobile-list li[data-level="3"] { @apply pl-4; }
+  .article-toc-mobile-list a {
+    @apply relative block py-2.5 pl-6 text-[0.95rem] leading-snug text-muted-foreground no-underline;
+  }
+  .article-toc-mobile-list li[data-level="3"] a { @apply text-sm; }
+  .article-toc-mobile-list a[data-active-parent],
+  .article-toc-mobile-list a[aria-current="location"] { @apply text-foreground; }
+  .article-toc-mobile-arrow {
+    @apply absolute left-0 h-3.5 w-3.5 text-foreground;
+    top: calc(0.625rem + 0.1em);
+  }
+
   .article-toc-sidebar-sticky { @apply sticky top-24; }
   .article-toc-sidebar-title {
     @apply text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4 pl-6;

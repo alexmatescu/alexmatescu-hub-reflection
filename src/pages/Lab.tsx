@@ -6,6 +6,7 @@ import ContentLightbox from "@/components/ContentLightbox";
 import ArticleTocSidebar, {
   parseArticleToc,
 } from "@/components/ArticleTocSidebar";
+import ArticleTocMobile from "@/components/ArticleTocMobile";
 import { findLabPage, findLabParent, labNav } from "@/data/lab";
 import {
   buildArticleJsonLd,
@@ -494,6 +495,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
                     className="prose-editorial mt-14 max-w-2xl"
                   />
                   <ArticleTocSidebar items={tocItems} />
+                  <ArticleTocMobile items={tocItems} />
                 </div>
               ) : (
                 <ContentLightbox

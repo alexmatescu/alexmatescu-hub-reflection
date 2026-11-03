@@ -49,15 +49,12 @@ export const parseArticleToc = (html: string): TocItem[] => {
 const ACTIVE_OFFSET = 128;
 
 /**
- * Cuprinsul lateral, fix la scroll, afișat doar pe ecrane late (vezi
- * `.has-toc-sidebar` în styles.css). Secțiunea în care se află cititorul e
- * marcată cu `aria-current="location"` și arătată de o săgeată care se mută
- * la intrarea activă, la click sau la scroll.
+ * Secțiunea în care se află cititorul, după poziția titlurilor din cuprins.
+ * Folosită de cuprinsul lateral și de cel de pe mobil (ArticleTocMobile), ca
+ * amândouă să marcheze aceeași secțiune.
  */
-const ArticleTocSidebar = ({ items }: { items: TocItem[] }) => {
+export const useActiveTocId = (items: TocItem[]) => {
   const [activeId, setActiveId] = useState<string | undefined>(undefined);
-  const listRef = useRef<HTMLDivElement>(null);
-  const arrowRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     let frame = 0;
@@ -96,6 +93,20 @@ const ArticleTocSidebar = ({ items }: { items: TocItem[] }) => {
       if (frame) cancelAnimationFrame(frame);
     };
   }, [items]);
+
+  return [activeId, setActiveId] as const;
+};
+
+/**
+ * Cuprinsul lateral, fix la scroll, afișat doar pe ecrane late (vezi
+ * `.has-toc-sidebar` în styles.css). Secțiunea în care se află cititorul e
+ * marcată cu `aria-current="location"` și arătată de o săgeată care se mută
+ * la intrarea activă, la click sau la scroll.
+ */
+const ArticleTocSidebar = ({ items }: { items: TocItem[] }) => {
+  const [activeId, setActiveId] = useActiveTocId(items);
+  const listRef = useRef<HTMLDivElement>(null);
+  const arrowRef = useRef<SVGSVGElement>(null);
 
   // Ține intrarea activă vizibilă în cuprinsul lateral, fără să miște pagina.
   useEffect(() => {

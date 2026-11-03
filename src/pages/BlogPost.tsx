@@ -9,6 +9,7 @@ import ContentLightbox, { Lightbox } from "@/components/ContentLightbox";
 import ArticleTocSidebar, {
   parseArticleToc,
 } from "@/components/ArticleTocSidebar";
+import ArticleTocMobile from "@/components/ArticleTocMobile";
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("ro-RO", {
@@ -140,6 +141,7 @@ const BlogPost = () => {
               <div className="has-toc-sidebar has-toc-sidebar-centered">
                 <ContentLightbox html={post.html} className="prose-editorial" />
                 <ArticleTocSidebar items={tocItems} />
+                <ArticleTocMobile items={tocItems} />
               </div>
             ) : (
               <ContentLightbox html={post.html} className="prose-editorial" />
