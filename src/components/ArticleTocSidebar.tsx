@@ -1,4 +1,10 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { ArrowRight } from "lucide-react";
 
 export interface TocItem {
@@ -49,47 +55,62 @@ export const parseArticleToc = (html: string): TocItem[] => {
 const ACTIVE_OFFSET = 128;
 
 /**
- * Secțiunea în care se află cititorul, după poziția titlurilor din cuprins.
+ * Calculează secțiunea în care se află cititorul, din poziția titlurilor.
+ * Întoarce `null` când poziția nu poate fi citită corect în acel moment.
+ */
+const readActiveTocId = (items: TocItem[]): string | undefined | null => {
+  // Cât e deschis panoul cuprinsului de pe mobil, vaul fixează pagina pe
+  // iOS (`position: fixed` pe body): scrollY devine 0, iar pagina pare
+  // derulată până la capăt. Secțiunea curentă rămâne cea de dinainte;
+  // scroll-ul restaurat la închidere declanșează din nou actualizarea.
+  if (getComputedStyle(document.body).position === "fixed") return null;
+  // Titlurile se caută la fiecare actualizare, nu o singură dată:
+  // ContentLightbox poate reface HTML-ul articolului după montare, iar
+  // referințele vechi ar rămâne detașate din pagină.
+  const headings = items
+    .map((item) => document.getElementById(item.id))
+    .filter((el): el is HTMLElement => el !== null);
+  if (headings.length === 0) return null;
+  let current: string | undefined;
+  for (const heading of headings) {
+    if (heading.getBoundingClientRect().top <= ACTIVE_OFFSET)
+      current = heading.id;
+    else break;
+  }
+  // La finalul paginii, ultima secțiune poate fi prea scurtă ca să urce
+  // până la prag; o marcăm explicit ca să nu rămână activă cea dinainte.
+  const atBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 2;
+  return atBottom ? headings.at(-1)?.id : current;
+};
+
+/**
+ * Secțiunea în care se află cititorul, actualizată continuu la scroll.
  * Folosită de cuprinsul lateral și de cel de pe mobil (ArticleTocMobile), ca
- * amândouă să marcheze aceeași secțiune.
+ * amândouă să marcheze aceeași secțiune. `refresh` recitește poziția pe loc
+ * (de exemplu, chiar înainte de deschiderea cuprinsului de pe mobil), ca să
+ * nu depindă de ultimul eveniment de scroll primit.
  */
 export const useActiveTocId = (items: TocItem[]) => {
   const [activeId, setActiveId] = useState<string | undefined>(undefined);
 
+  const refresh = useCallback(() => {
+    const next = readActiveTocId(items);
+    if (next !== null) setActiveId(next);
+  }, [items]);
+
   useEffect(() => {
     let frame = 0;
-    const update = () => {
-      frame = 0;
-      // Cât e deschis panoul cuprinsului de pe mobil, vaul fixează pagina pe
-      // iOS (`position: fixed` pe body): scrollY devine 0, iar pagina pare
-      // derulată până la capăt. Secțiunea curentă rămâne cea de dinainte;
-      // scroll-ul restaurat la închidere declanșează din nou actualizarea.
-      if (getComputedStyle(document.body).position === "fixed") return;
-      // Titlurile se caută la fiecare actualizare, nu o singură dată:
-      // ContentLightbox poate reface HTML-ul articolului după montare, iar
-      // referințele vechi ar rămâne detașate din pagină.
-      const headings = items
-        .map((item) => document.getElementById(item.id))
-        .filter((el): el is HTMLElement => el !== null);
-      if (headings.length === 0) return;
-      let current: string | undefined;
-      for (const heading of headings) {
-        if (heading.getBoundingClientRect().top <= ACTIVE_OFFSET)
-          current = heading.id;
-        else break;
-      }
-      // La finalul paginii, ultima secțiune poate fi prea scurtă ca să urce
-      // până la prag; o marcăm explicit ca să nu rămână activă cea dinainte.
-      const atBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 2;
-      setActiveId(atBottom ? headings.at(-1)?.id : current);
-    };
     const onScroll = () => {
-      if (!frame) frame = requestAnimationFrame(update);
+      if (!frame)
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          refresh();
+        });
     };
 
-    update();
+    refresh();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
@@ -97,9 +118,9 @@ export const useActiveTocId = (items: TocItem[]) => {
       window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, [items]);
+  }, [refresh]);
 
-  return [activeId, setActiveId] as const;
+  return [activeId, setActiveId, refresh] as const;
 };
 
 /**

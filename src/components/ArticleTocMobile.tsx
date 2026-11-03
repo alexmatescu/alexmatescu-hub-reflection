@@ -15,7 +15,7 @@ import { type TocItem, useActiveTocId } from "@/components/ArticleTocSidebar";
  * lateral, deci nu poate diverge de el.
  */
 const ArticleTocMobile = ({ items }: { items: TocItem[] }) => {
-  const [activeId, setActiveId] = useActiveTocId(items);
+  const [activeId, setActiveId, refreshActiveId] = useActiveTocId(items);
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -49,17 +49,19 @@ const ArticleTocMobile = ({ items }: { items: TocItem[] }) => {
     };
   }, []);
 
-  // La deschidere, lista se derulează până la secțiunea curentă.
-  const listRef = useCallback(
-    (list: HTMLOListElement | null) => {
-      if (!list || !activeId) return;
-      const link = list.querySelector<HTMLElement>(`a[href="#${activeId}"]`);
-      if (link) list.scrollTop = link.offsetTop - list.clientHeight / 3;
-    },
-    // Doar la montarea listei (deschiderea panoului), nu la fiecare scroll.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
+  // La deschidere, lista se derulează până la secțiunea curentă. Secțiunea
+  // se citește dintr-un ref, ca să fie cea de acum, nu cea de la prima
+  // randare; callback-ul rulează doar la montarea listei (deschiderea
+  // panoului), nu la fiecare scroll.
+  const activeIdRef = useRef(activeId);
+  activeIdRef.current = activeId;
+  const listRef = useCallback((list: HTMLOListElement | null) => {
+    const id = activeIdRef.current;
+    if (!list || !id) return;
+    const link = list.querySelector<HTMLElement>(`a[href="#${id}"]`);
+    if (link)
+      list.scrollTop = link.offsetTop - list.offsetTop - list.clientHeight / 3;
+  }, []);
 
   // Pagina se derulează abia după ce panoul s-a închis de tot (Radix mută
   // atunci focusul înapoi): cât e deschis, scroll-ul paginii e blocat.
@@ -89,6 +91,10 @@ const ArticleTocMobile = ({ items }: { items: TocItem[] }) => {
           ref={buttonRef}
           type="button"
           className="article-toc-mobile"
+          // Poziția se recitește chiar înainte de deschidere, cât pagina încă
+          // se poate derula (vaul o fixează pe iOS după deschidere).
+          onPointerDown={refreshActiveId}
+          onClick={refreshActiveId}
           data-visible={visible || open || undefined}
           aria-hidden={!visible && !open ? true : undefined}
           tabIndex={visible || open ? undefined : -1}
