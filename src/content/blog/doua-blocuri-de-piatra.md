@@ -8,7 +8,7 @@ metaDescription: "Două blocuri identice de piatră, două moduri de a lucra asu
 canonical: "https://delamatescu.ro/blog/doua-blocuri-de-piatra"
 canonicalPath: "/blog/doua-blocuri-de-piatra"
 date_published: "2026-10-12"
-date_modified: "2026-10-12"
+date_modified: "2026-11-03"
 category: "Leadership"
 article_type: "Eseu"
 focusKeyword: "arhitectura deciziilor"
@@ -23,7 +23,7 @@ about:
   - "Diferența dintre acces și arhitectură în construcția unui rezultat"
   - "Competența individuală și coerența întregului"
   - "Sistemele prin care resursele devin rezultate"
-readingTime: "11 min"
+readingTime: "12 min"
 author:
   name: "Alex Matescu"
   slug: "alex-matescu"
@@ -41,6 +41,10 @@ Nu sunt ascunse într-un atelier. Nu sunt protejate de ziduri. Nu sunt ținute d
 Sunt în mijlocul orașului.
 
 În fiecare zi trec pe lângă ele mii de oameni. Oameni grăbiți spre muncă. Turiști. Copii. Pensionari. Profesioniști. Studenți. Oameni care au timp. Oameni care nu au. Oameni curioși. Oameni indiferenți. Oameni care observă. Oameni care nici măcar nu ridică privirea.
+
+**Pe scurt:** două blocuri identice de piatră pot ajunge la rezultate opuse. Diferența nu stă în piatră, nici doar în cât muncesc oamenii sau cât de buni sunt, ci în sistemul prin care lucrează: cine are voie să intervină, când, după ce imagine comună și cine vede întregul. Accesul nu e același lucru cu arhitectura, iar competența locală nu produce automat coerență globală.
+
+## Ce se întâmplă când oricine poate lovi piatra?
 
 Cele două blocuri pornesc, pentru scopul experimentului nostru, din același punct.
 
@@ -144,6 +148,8 @@ Dar excelența locală nu garantează coerența întregului.
 
 Poți avea fragmente reușite într-un rezultat eșuat.
 
+## Cum se lucrează la blocul pe care nu-l poate atinge oricine?
+
 La câțiva metri distanță se află al doilea bloc.
 
 Este la fel de vizibil.
@@ -220,7 +226,9 @@ Unii verifică.
 
 Unii se opresc.
 
-Uneori, ore întregi, nu se întâmplă nimic spectaculos.
+## De ce poate părea primul bloc mai productiv?
+
+Uneori, la al doilea bloc, ore întregi nu se întâmplă nimic spectaculos.
 
 Poate chiar primul bloc pare mai viu.
 
@@ -263,6 +271,8 @@ După suficient timp, diferența începe să devină vizibilă.
 Primul bloc poartă urmele tuturor.
 
 Al doilea începe să capete formă.
+
+## Ce se schimbă dacă la primul bloc lucrează doar specialiști?
 
 Și aici experimentul devine interesant.
 
@@ -314,7 +324,9 @@ Poate fiecare, lucrând singur de la început până la sfârșit, ar fi produs 
 
 Dar lucrează pe aceeași piatră fără aceeași imagine.
 
-Și tocmai aici apare una dintre cele mai importante diferențe dintre competență și construcție.
+## De ce competența locală nu produce automat coerență globală?
+
+Experimentul acesta arată una dintre cele mai importante diferențe dintre competență și construcție.
 
 **Competența locală nu produce automat coerență globală.**
 
@@ -347,6 +359,8 @@ Nu orice intervenție adaugă valoare.
 Nu orice om competent îmbunătățește automat întregul.
 
 Și nu orice lucru deschis tuturor devine mai bun prin simplul fapt că participă mai mulți oameni.
+
+## De ce intervențiile nu sunt neutre?
 
 Există ceva aproape seducător în ideea contribuției permanente.
 
@@ -402,7 +416,9 @@ Nu pentru că nu sunt inteligenți.
 
 Ci pentru că fiecare lovitură de daltă este evaluată local, fără o imagine comună a pietrei finale.
 
-Și aici există o lecție greu de acceptat, mai ales în culturile care glorifică acțiunea:
+## Cine contribuie fără să lovească încă piatra?
+
+Din experimentul cu piatra rămâne o lecție greu de acceptat, mai ales în culturile care glorifică acțiunea:
 
 uneori, omul care nu lovește încă piatra contribuie mai mult decât omul care lovește.
 
@@ -423,6 +439,8 @@ Din exterior, toate acestea pot arăta ca lipsă de productivitate.
 Dar capodoperele nu sunt construite prin maximizarea numărului de lovituri.
 
 Sunt construite prin selectarea loviturilor potrivite.
+
+## Care e diferența dintre acces și arhitectură?
 
 De fapt, diferența dintre cele două blocuri nu este doar diferența dintre haos și competență.
 
@@ -476,6 +494,8 @@ Este imposibil să construiești ceva important complet izolat.
 
 Dar este la fel de imposibil să construiești ceva coerent dacă fiecare voce schimbă direcția daltei.
 
+## Ce se află între resurse și rezultat?
+
 Cele două blocuri de piatră sunt, în fond, două modele de a transforma resursele.
 
 În ambele există materie.
@@ -526,7 +546,9 @@ Cine poate spune că o idee bună, aplicată acum, ar fi o decizie proastă?
 
 Cine păstrează imaginea finală atunci când fiecare specialist vede doar bucata lui?
 
-Aici se formează diferențele uriașe dintre rezultate care, la început, păreau să pornească din aproape același loc.
+## De ce aceleași instrumente, inclusiv AI, nu produc aceleași rezultate?
+
+În sistemul de transformare se formează diferențele uriașe dintre rezultate care, la început, păreau să pornească din aproape același loc.
 
 Două companii pot avea bugete similare.
 
@@ -569,6 +591,8 @@ Nici măcar:
 Ci:
 
 **„Ce construim împreună și cum știm că fiecare intervenție ne apropie de acel lucru?”**
+
+## Ce rămâne pe cele două blocuri la final?
 
 La finalul experimentului, cele două blocuri vor purta urme.
 

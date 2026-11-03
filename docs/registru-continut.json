@@ -16,7 +16,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-11-03",
       "dataPublicare": "2026-11-03T09:20:00+02:00",
       "dataModificare": "2026-11-03",
       "ultimaVerificare": "2026-11-03",
@@ -1386,7 +1386,7 @@
       "versiune": null,
       "dataCreare": "2026-10-12",
       "dataPublicare": "2026-10-12",
-      "dataModificare": "2026-10-12",
+      "dataModificare": "2026-11-03",
       "ultimaVerificare": null,
       "fisierMd": "src/content/blog/capcana-perfectiunii.md",
       "fisierTs": "src/data/blog-content/capcana-perfectiunii.ts",
@@ -1396,7 +1396,7 @@
         "nav": null,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-10-12",
+      "sitemapLastmod": "2026-11-03",
       "imagine": "/images/blog/capcana-perfectiunii.webp",
       "zileDeLaVerificare": null,
       "anomalii": []
@@ -1414,7 +1414,7 @@
       "versiune": null,
       "dataCreare": "2026-10-12",
       "dataPublicare": "2026-10-12",
-      "dataModificare": "2026-10-12",
+      "dataModificare": "2026-11-03",
       "ultimaVerificare": null,
       "fisierMd": "src/content/blog/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.md",
       "fisierTs": "src/data/blog-content/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.ts",
@@ -1424,7 +1424,7 @@
         "nav": null,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-10-12",
+      "sitemapLastmod": "2026-11-03",
       "imagine": "/images/blog/cum-construim-in-romania-ceea-ce-admiram-in-strainatate.webp",
       "zileDeLaVerificare": null,
       "anomalii": []
@@ -1442,7 +1442,7 @@
       "versiune": null,
       "dataCreare": "2026-10-12",
       "dataPublicare": "2026-10-12",
-      "dataModificare": "2026-10-12",
+      "dataModificare": "2026-11-03",
       "ultimaVerificare": null,
       "fisierMd": "src/content/blog/doua-blocuri-de-piatra.md",
       "fisierTs": "src/data/blog-content/doua-blocuri-de-piatra.ts",
@@ -1452,7 +1452,7 @@
         "nav": null,
         "sitemap": true
       },
-      "sitemapLastmod": "2026-10-12",
+      "sitemapLastmod": "2026-11-03",
       "imagine": "/images/blog/doua-blocuri-de-piatra.webp",
       "zileDeLaVerificare": null,
       "anomalii": []

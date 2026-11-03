@@ -20,7 +20,7 @@ export const douaBlocuriDePiatraPost = {
 
   // --- Date ---
   date: "2026-10-12",
-  dateModified: "2026-10-12",
+  dateModified: "2026-11-03",
 
   // --- Clasificare editorială ---
   category: "Leadership",
@@ -51,16 +51,34 @@ export const douaBlocuriDePiatraPost = {
   },
 
   // --- Prezentare & autor ---
-  readingTime: "11 min",
+  readingTime: "12 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
   // --- Conținut ---
   html: `
+<nav class="article-toc" aria-labelledby="cuprins">
+  <p id="cuprins" class="article-toc-title">Cuprins</p>
+  <ol>
+    <li><a href="#ce-se-intampla-cand-oricine-poate-lovi-piatra">Ce se întâmplă când oricine poate lovi piatra?</a></li>
+    <li><a href="#cum-se-lucreaza-la-blocul-pe-care-nu-l-poate-atinge-oricine">Cum se lucrează la blocul pe care nu-l poate atinge oricine?</a></li>
+    <li><a href="#de-ce-poate-parea-primul-bloc-mai-productiv">De ce poate părea primul bloc mai productiv?</a></li>
+    <li><a href="#ce-se-schimba-daca-la-primul-bloc-lucreaza-doar-specialisti">Ce se schimbă dacă la primul bloc lucrează doar specialiști?</a></li>
+    <li><a href="#de-ce-competenta-locala-nu-produce-automat-coerenta-globala">De ce competența locală nu produce automat coerență globală?</a></li>
+    <li><a href="#de-ce-interventiile-nu-sunt-neutre">De ce intervențiile nu sunt neutre?</a></li>
+    <li><a href="#cine-contribuie-fara-sa-loveasca-inca-piatra">Cine contribuie fără să lovească încă piatra?</a></li>
+    <li><a href="#care-e-diferenta-dintre-acces-si-arhitectura">Care e diferența dintre acces și arhitectură?</a></li>
+    <li><a href="#ce-se-afla-intre-resurse-si-rezultat">Ce se află între resurse și rezultat?</a></li>
+    <li><a href="#de-ce-aceleasi-instrumente-inclusiv-ai-nu-produc-aceleasi-rezultate">De ce aceleași instrumente, inclusiv AI, nu produc aceleași rezultate?</a></li>
+    <li><a href="#ce-ramane-pe-cele-doua-blocuri-la-final">Ce rămâne pe cele două blocuri la final?</a></li>
+  </ol>
+</nav>
 <p>Imaginează-ți două blocuri uriașe de piatră, aproape identice, așezate unul lângă celălalt într-o piață foarte circulată.</p>
 <p>Nu sunt ascunse într-un atelier. Nu sunt protejate de ziduri. Nu sunt ținute departe de priviri.</p>
 <p>Sunt în mijlocul orașului.</p>
 <p>În fiecare zi trec pe lângă ele mii de oameni. Oameni grăbiți spre muncă. Turiști. Copii. Pensionari. Profesioniști. Studenți. Oameni care au timp. Oameni care nu au. Oameni curioși. Oameni indiferenți. Oameni care observă. Oameni care nici măcar nu ridică privirea.</p>
+<p><strong>Pe scurt:</strong> două blocuri identice de piatră pot ajunge la rezultate opuse. Diferența nu stă în piatră, nici doar în cât muncesc oamenii sau cât de buni sunt, ci în sistemul prin care lucrează: cine are voie să intervină, când, după ce imagine comună și cine vede întregul. Accesul nu e același lucru cu arhitectura, iar competența locală nu produce automat coerență globală.</p>
+<h2 id="ce-se-intampla-cand-oricine-poate-lovi-piatra">Ce se întâmplă când oricine poate lovi piatra?</h2>
 <p>Cele două blocuri pornesc, pentru scopul experimentului nostru, din același punct.</p>
 <p>Aceeași piatră.</p>
 <p>Aceeași dimensiune.</p>
@@ -112,6 +130,7 @@ export const douaBlocuriDePiatraPost = {
 <p>Poate anumite intervenții individuale vor fi excelente.</p>
 <p>Dar excelența locală nu garantează coerența întregului.</p>
 <p>Poți avea fragmente reușite într-un rezultat eșuat.</p>
+<h2 id="cum-se-lucreaza-la-blocul-pe-care-nu-l-poate-atinge-oricine">Cum se lucrează la blocul pe care nu-l poate atinge oricine?</h2>
 <p>La câțiva metri distanță se află al doilea bloc.</p>
 <p>Este la fel de vizibil.</p>
 <p>Oamenii îl văd în fiecare zi.</p>
@@ -150,7 +169,8 @@ export const douaBlocuriDePiatraPost = {
 <p>Unii taie.</p>
 <p>Unii verifică.</p>
 <p>Unii se opresc.</p>
-<p>Uneori, ore întregi, nu se întâmplă nimic spectaculos.</p>
+<h2 id="de-ce-poate-parea-primul-bloc-mai-productiv">De ce poate părea primul bloc mai productiv?</h2>
+<p>Uneori, la al doilea bloc, ore întregi nu se întâmplă nimic spectaculos.</p>
 <p>Poate chiar primul bloc pare mai viu.</p>
 <p>Acolo se aud lovituri permanent.</p>
 <p>Acolo se ridică praf.</p>
@@ -172,6 +192,7 @@ export const douaBlocuriDePiatraPost = {
 <p>După suficient timp, diferența începe să devină vizibilă.</p>
 <p>Primul bloc poartă urmele tuturor.</p>
 <p>Al doilea începe să capete formă.</p>
+<h2 id="ce-se-schimba-daca-la-primul-bloc-lucreaza-doar-specialisti">Ce se schimbă dacă la primul bloc lucrează doar specialiști?</h2>
 <p>Și aici experimentul devine interesant.</p>
 <p>Pentru că explicația comodă ar fi să spunem că primul rezultat este slab fiindcă au lucrat oameni nepricepuți, iar al doilea este bun fiindcă au lucrat specialiști.</p>
 <p>Dar asta este doar jumătate din problemă.</p>
@@ -197,7 +218,8 @@ export const douaBlocuriDePiatraPost = {
 <p>Toți pot argumenta ceea ce fac.</p>
 <p>Poate fiecare, lucrând singur de la început până la sfârșit, ar fi produs ceva extraordinar.</p>
 <p>Dar lucrează pe aceeași piatră fără aceeași imagine.</p>
-<p>Și tocmai aici apare una dintre cele mai importante diferențe dintre competență și construcție.</p>
+<h2 id="de-ce-competenta-locala-nu-produce-automat-coerenta-globala">De ce competența locală nu produce automat coerență globală?</h2>
+<p>Experimentul acesta arată una dintre cele mai importante diferențe dintre competență și construcție.</p>
 <p><strong>Competența locală nu produce automat coerență globală.</strong></p>
 <p>Poți aduna foarte multă inteligență într-un singur loc și să obții haos.</p>
 <p>Poți aduna oameni extraordinari și să construiești mediocritate.</p>
@@ -214,6 +236,7 @@ export const douaBlocuriDePiatraPost = {
 <p>Nu orice intervenție adaugă valoare.</p>
 <p>Nu orice om competent îmbunătățește automat întregul.</p>
 <p>Și nu orice lucru deschis tuturor devine mai bun prin simplul fapt că participă mai mulți oameni.</p>
+<h2 id="de-ce-interventiile-nu-sunt-neutre">De ce intervențiile nu sunt neutre?</h2>
 <p>Există ceva aproape seducător în ideea contribuției permanente.</p>
 <p>Mai mulți oameni.</p>
 <p>Mai multe idei.</p>
@@ -241,7 +264,8 @@ export const douaBlocuriDePiatraPost = {
 <p>Nu pentru că oamenii sunt leneși.</p>
 <p>Nu pentru că nu sunt inteligenți.</p>
 <p>Ci pentru că fiecare lovitură de daltă este evaluată local, fără o imagine comună a pietrei finale.</p>
-<p>Și aici există o lecție greu de acceptat, mai ales în culturile care glorifică acțiunea:</p>
+<h2 id="cine-contribuie-fara-sa-loveasca-inca-piatra">Cine contribuie fără să lovească încă piatra?</h2>
+<p>Din experimentul cu piatra rămâne o lecție greu de acceptat, mai ales în culturile care glorifică acțiunea:</p>
 <p>uneori, omul care nu lovește încă piatra contribuie mai mult decât omul care lovește.</p>
 <p>Cel care măsoară.</p>
 <p>Cel care întreabă.</p>
@@ -252,6 +276,7 @@ export const douaBlocuriDePiatraPost = {
 <p>Din exterior, toate acestea pot arăta ca lipsă de productivitate.</p>
 <p>Dar capodoperele nu sunt construite prin maximizarea numărului de lovituri.</p>
 <p>Sunt construite prin selectarea loviturilor potrivite.</p>
+<h2 id="care-e-diferenta-dintre-acces-si-arhitectura">Care e diferența dintre acces și arhitectură?</h2>
 <p>De fapt, diferența dintre cele două blocuri nu este doar diferența dintre haos și competență.</p>
 <p>Este diferența dintre <strong>acces</strong> și <strong>arhitectură</strong>.</p>
 <p>Primul bloc are acces aproape nelimitat.</p>
@@ -278,6 +303,7 @@ export const douaBlocuriDePiatraPost = {
 <p>Este rezultatul filtrării lor.</p>
 <p>Este imposibil să construiești ceva important complet izolat.</p>
 <p>Dar este la fel de imposibil să construiești ceva coerent dacă fiecare voce schimbă direcția daltei.</p>
+<h2 id="ce-se-afla-intre-resurse-si-rezultat">Ce se află între resurse și rezultat?</h2>
 <p>Cele două blocuri de piatră sunt, în fond, două modele de a transforma resursele.</p>
 <p>În ambele există materie.</p>
 <p>În ambele există oameni.</p>
@@ -303,7 +329,8 @@ export const douaBlocuriDePiatraPost = {
 <p>Cine poate opri procesul?</p>
 <p>Cine poate spune că o idee bună, aplicată acum, ar fi o decizie proastă?</p>
 <p>Cine păstrează imaginea finală atunci când fiecare specialist vede doar bucata lui?</p>
-<p>Aici se formează diferențele uriașe dintre rezultate care, la început, păreau să pornească din aproape același loc.</p>
+<h2 id="de-ce-aceleasi-instrumente-inclusiv-ai-nu-produc-aceleasi-rezultate">De ce aceleași instrumente, inclusiv AI, nu produc aceleași rezultate?</h2>
+<p>În sistemul de transformare se formează diferențele uriașe dintre rezultate care, la început, păreau să pornească din aproape același loc.</p>
 <p>Două companii pot avea bugete similare.</p>
 <p>Două echipe pot avea oameni la fel de buni.</p>
 <p>Doi oameni pot avea acces la aceleași instrumente.</p>
@@ -325,6 +352,7 @@ export const douaBlocuriDePiatraPost = {
 <p>„Cât de buni sunt oamenii?”</p>
 <p>Ci:</p>
 <p><strong>„Ce construim împreună și cum știm că fiecare intervenție ne apropie de acel lucru?”</strong></p>
+<h2 id="ce-ramane-pe-cele-doua-blocuri-la-final">Ce rămâne pe cele două blocuri la final?</h2>
 <p>La finalul experimentului, cele două blocuri vor purta urme.</p>
 <p>Ambele vor fi fost atinse de oameni.</p>
 <p>Ambele vor fi trecut prin timp.</p>
