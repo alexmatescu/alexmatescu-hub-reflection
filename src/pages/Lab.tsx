@@ -50,6 +50,7 @@ import { tabulaRasaF3Html } from "@/data/lab-content/22. tabula-rasa-f3-cand-int
 import { cumVerificTehnicUnSiteHtml } from "@/data/lab-content/23. cum-verific-tehnic-un-site-pentru-ai-visibility";
 import { costurileAiVariatiiFinantariHtml } from "@/data/lab-content/24. costurile-ai-variatii-finantari-plata-la-cine";
 import { reclameChatgptGoogleSocialMediaHtml } from "@/data/lab-content/25. reclame-chatgpt-google-social-media";
+import { cumAlegiFurnizorulDeServiciiHtml } from "@/data/lab-content/26. cum-alegi-furnizorul-de-servicii-seo-geo-aeo";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -137,6 +138,8 @@ const labPageContent: Record<string, string> = {
     costurileAiVariatiiFinantariHtml,
   "/lab/articole/reclame-chatgpt-google-social-media":
     reclameChatgptGoogleSocialMediaHtml,
+  "/lab/articole/cum-alegi-furnizorul-de-servicii-seo-geo-aeo":
+    cumAlegiFurnizorulDeServiciiHtml,
   "/lab/audit-ai-visibility": auditAiVisibilityHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };

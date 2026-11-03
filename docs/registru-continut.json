@@ -1,10 +1,40 @@
 {
-  "generat": "2026-10-29",
+  "generat": "2026-11-03",
   "pragReverificareZile": 180,
-  "totalIntrari": 181,
+  "totalIntrari": 182,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
+    {
+      "id": "LAB-26",
+      "titlu": "Dacă furnizorul nu face pentru el, cum face pentru alții?",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/cum-alegi-furnizorul-de-servicii-seo-geo-aeo",
+      "slug": "cum-alegi-furnizorul-de-servicii-seo-geo-aeo",
+      "categorie": "AI Ecosystem",
+      "tip": "Ghid",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-11-03T09:20:00+02:00",
+      "dataModificare": "2026-11-03",
+      "ultimaVerificare": "2026-11-03",
+      "fisierMd": "src/content/lab/articles/26.cum-alegi-furnizorul-de-servicii-seo-geo-aeo.md",
+      "fisierTs": "src/data/lab-content/26. cum-alegi-furnizorul-de-servicii-seo-geo-aeo.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-11-03",
+      "imagine": "https://delamatescu.ro/images/lab/cum-aleg-furnizorul-de-servicii.webp",
+      "jsonLd": "@graph",
+      "nrCitari": 3,
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
     {
       "id": "LAB-25",
       "titlu": "Reclame în ChatGPT, Google și social media: unde merită să plătești și când devine prea scump să fii peste tot?",
@@ -16,7 +46,7 @@
       "status": "publicat",
       "statusNormativ": null,
       "versiune": null,
-      "dataCreare": null,
+      "dataCreare": "2026-10-29",
       "dataPublicare": "2026-10-29T13:15:00+02:00",
       "dataModificare": "2026-10-29",
       "ultimaVerificare": "2026-10-29",
@@ -32,7 +62,7 @@
       "imagine": "https://delamatescu.ro/images/lab/reclame-chatgpt-google-social-media.webp",
       "jsonLd": "@graph",
       "nrCitari": 24,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 5,
       "anomalii": []
     },
     {
@@ -62,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -92,7 +122,7 @@
       "imagine": "https://delamatescu.ro/images/lab/costurile-ai-variatii-finantari-plata-la-cine.webp",
       "jsonLd": "@graph",
       "nrCitari": 16,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -122,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -152,7 +182,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 5,
-      "zileDeLaVerificare": 7,
+      "zileDeLaVerificare": 12,
       "anomalii": []
     },
     {
@@ -182,7 +212,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 8,
+      "zileDeLaVerificare": 13,
       "anomalii": []
     },
     {
@@ -212,7 +242,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 28,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -242,7 +272,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 28,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -272,7 +302,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 28,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -302,7 +332,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 27,
+      "zileDeLaVerificare": 32,
       "anomalii": []
     },
     {
@@ -332,7 +362,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 29,
+      "zileDeLaVerificare": 34,
       "anomalii": []
     },
     {
@@ -362,7 +392,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 29,
+      "zileDeLaVerificare": 34,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -394,7 +424,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 63,
+      "zileDeLaVerificare": 68,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -426,7 +456,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 71,
+      "zileDeLaVerificare": 76,
       "anomalii": []
     },
     {
@@ -456,7 +486,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 71,
+      "zileDeLaVerificare": 76,
       "anomalii": []
     },
     {
@@ -486,7 +516,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 20,
-      "zileDeLaVerificare": 13,
+      "zileDeLaVerificare": 18,
       "anomalii": []
     },
     {
@@ -516,7 +546,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 71,
+      "zileDeLaVerificare": 76,
       "anomalii": []
     },
     {
@@ -546,7 +576,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 71,
+      "zileDeLaVerificare": 76,
       "anomalii": []
     },
     {
@@ -576,7 +606,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 73,
+      "zileDeLaVerificare": 78,
       "anomalii": []
     },
     {
@@ -606,7 +636,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 72,
+      "zileDeLaVerificare": 77,
       "anomalii": []
     },
     {
@@ -756,7 +786,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 27,
+      "zileDeLaVerificare": 32,
       "anomalii": []
     },
     {
@@ -786,7 +816,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 5,
-      "zileDeLaVerificare": 1,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -816,7 +846,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 11,
       "anomalii": []
     },
     {
@@ -845,7 +875,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 3,
+      "zileDeLaVerificare": 8,
       "anomalii": []
     },
     {
@@ -874,7 +904,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 28,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -903,7 +933,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 13,
+      "zileDeLaVerificare": 18,
       "anomalii": []
     },
     {
@@ -932,7 +962,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 13,
+      "zileDeLaVerificare": 18,
       "anomalii": []
     },
     {
@@ -961,7 +991,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 27,
+      "zileDeLaVerificare": 32,
       "anomalii": []
     },
     {
@@ -1312,7 +1342,7 @@
       },
       "sitemapLastmod": "2026-10-26",
       "imagine": "/images/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.webp",
-      "zileDeLaVerificare": 3,
+      "zileDeLaVerificare": 8,
       "anomalii": []
     },
     {
@@ -1340,7 +1370,7 @@
       },
       "sitemapLastmod": "2026-10-26",
       "imagine": "/images/blog/imbatraneste-si-sufletul-odata-cu-trupul.webp",
-      "zileDeLaVerificare": 3,
+      "zileDeLaVerificare": 8,
       "anomalii": []
     },
     {

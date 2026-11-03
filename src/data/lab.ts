@@ -290,6 +290,11 @@ export const labNav: LabPage[] = [
           "Reclame în ChatGPT, Google și social media: unde merită să plătești și când devine prea scump să fii peste tot?",
         lead: "Ce diferențiază reclamele ChatGPT, Google și social media, cât costă o strategie multicanal și cum alegi în funcție de obiective și etapa afacerii.",
       },
+      {
+        to: "/lab/articole/cum-alegi-furnizorul-de-servicii-seo-geo-aeo",
+        label: "Dacă furnizorul nu face pentru el, cum face pentru alții?",
+        lead: "Cum alegi un furnizor de SEO, GEO sau AI Visibility în România. Ce verifici pe site, ce întrebi în întâlnire și ce ceri în ofertă înainte să semnezi.",
+      },
     ],
   },
   {
