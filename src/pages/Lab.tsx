@@ -477,7 +477,7 @@ export const LabDetail = ({ pathname }: { pathname: string }) => {
           <p className="eyebrow mb-6">
             AI Visibility Lab{parent ? ` · ${parent.label}` : ""}
           </p>
-          <h1 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-balance">
+          <h1 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-pretty">
             {page.pageTitle ?? page.label}
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">

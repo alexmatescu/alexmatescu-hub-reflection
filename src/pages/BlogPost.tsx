@@ -79,13 +79,13 @@ const BlogPost = () => {
           >
             <ArrowLeft className="h-4 w-4" /> Toate articolele
           </Link>
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-[0.22em] text-muted-foreground mb-8">
               <span>{post.category}</span>
               <span>{formatDate(post.date)}</span>
               <span>{post.readingTime} citire</span>
             </div>
-            <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-balance">
+            <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-pretty">
               {post.title}
             </h1>
             <p className="mt-6 font-serif italic text-xl md:text-2xl text-muted-foreground leading-snug text-balance">
