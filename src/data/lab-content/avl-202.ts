@@ -8,7 +8,7 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.8.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.8.1</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
@@ -120,9 +120,9 @@ Cadrul metodologic AI Visibility Lab
    ├── Metodologia de bază (Core Methodology)
    │     ├── AVL-200  Standard dovezi, măsurare și trasabilitate
    │     ├── AVL-201  Tabula Rasa F0 — Baseline
-   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.6.1)
-   │     ├── AVL-204  Grila de interpretare a verificării tehnice   (Draft pentru revizuire, v0.3.1)
-   │     ├── AVL-205  Fișa entității   (Draft pentru revizuire, v0.1.1)
+   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.6.2)
+   │     ├── AVL-204  Grila de interpretare a verificării tehnice   (Draft pentru revizuire, v0.3.2)
+   │     ├── AVL-205  Fișa entității   (Draft pentru revizuire, v0.2.0)
    │     └── viitoare documente metodologice / protocoale
    │
    └── Market Measurement — familia AVL-MKT-*
@@ -930,6 +930,12 @@ Market Query Panel + răspunsurile AI</code></pre>
             <td>4 noiembrie 2026</td>
             <td>Activ</td>
             <td>MINOR: AVL-205 — Fișa entității este inclus în corpus ca draft pentru revizuire (v0.1.1): identificatori, ordinea de înregistrare, ordinea conceptuală de lectură (împreună cu AVL-201), arborele arhitecturii (ramura Core Methodology), ordinea din hub (după AVL-201), documentele normative asociate, secțiunea 3 și lista documentelor metodologiei. AVL-205 nu este activ; statutul lui se actualizează aici la activare. Nicio altă schimbare de principiu.</td>
+          </tr>
+          <tr>
+            <td>1.8.1</td>
+            <td>4 noiembrie 2026</td>
+            <td>Activ</td>
+            <td>PATCH: versiunile documentelor din ramura Core Methodology actualizate: AVL-203 trece la v0.6.2, AVL-204 la v0.3.2 (trimiteri directe la AVL-205) și AVL-205 la v0.2.0 (după prima fișă completă), toate draft pentru revizuire. Fără alte modificări.</td>
           </tr>
         </tbody>
       </table>

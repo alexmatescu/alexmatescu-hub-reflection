@@ -76,12 +76,12 @@ Generat: 2026-11-04 · 183 intrări · **2 anomalii** în 2 intrări
 
 | ID | Titlu | Nivel | Ver. | Statut | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `AVL-205` | AVL-205 — Fișa entității | C — Methodology | 0.1.1 | Draft pentru revizuire | — | 2026-11-04 | — | 2026-11-04 | `·✓✓✓` | `src/content/lab/AVL/AVL-205_Fisa_entitatii.md` | `src/data/lab-content/avl-205.ts` |
-| `AVL-204` | AVL-204 — Grila de interpretare a verificării tehnice | C — Methodology | 0.3.1 | Draft pentru revizuire | 2026-10-22 | 2026-10-26 | — | 2026-10-26 | `·✓✓✓` | `src/content/lab/AVL/AVL-204_Grila_interpretare_verificare_tehnica.md` | `src/data/lab-content/avl-204.ts` |
-| `AVL-203` | AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.6.1 | Draft pentru revizuire | 2026-10-01 | 2026-10-02 | 2026-10-28 | 2026-10-01 | `·✓✓✓` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `src/data/lab-content/avl-203.ts` |
+| `AVL-205` | AVL-205 — Fișa entității | C — Methodology | 0.2.0 | Draft pentru revizuire | 2026-11-04 | 2026-11-04 | — | 2026-11-04 | `·✓✓✓` | `src/content/lab/AVL/AVL-205_Fisa_entitatii.md` | `src/data/lab-content/avl-205.ts` |
+| `AVL-204` | AVL-204 — Grila de interpretare a verificării tehnice | C — Methodology | 0.3.2 | Draft pentru revizuire | 2026-10-22 | 2026-10-26 | — | 2026-10-26 | `·✓✓✓` | `src/content/lab/AVL/AVL-204_Grila_interpretare_verificare_tehnica.md` | `src/data/lab-content/avl-204.ts` |
+| `AVL-203` | AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility | C — Methodology | 0.6.2 | Draft pentru revizuire | 2026-10-01 | 2026-10-02 | 2026-11-04 | 2026-10-01 | `·✓✓✓` | `src/content/lab/AVL/AVL-203_Protocol_minim_verificare_tehnica_site.md` | `src/data/lab-content/avl-203.ts` |
 | `AVL-MKT-001` | AVL-MKT-001 — Market Scope & Eligibility Protocol | C — Methodology | 0.10.0 | Draft pentru revizuire | 2026-10-02 | 2026-10-02 | 2026-10-16 | 2026-10-16 | `·✓✓✓` | `src/content/lab/AVL/AVL-MKT-001_protocol-delimitare-piata-eligibilitate.md` | `src/data/lab-content/avl-mkt-001.ts` |
 | `AVL-200` | AVL-200 — Standardul de dovezi, măsurare și trasabilitate | C — Methodology | 2.0.0 | Activ | 2026-09-13 | 2026-09-14 | 2026-10-16 | 2026-10-16 | `·✓✓✓` | `src/content/lab/AVL/AVL-200_Standard_dovezi_masurare_trasabilitate.md` | `src/data/lab-content/avl-200.ts` |
-| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.8.0 | Activ | 2026-09-14 | 2026-09-14 | 2026-11-04 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
+| `AVL-202` | AVL-202 — Cadrul metodologic AI Visibility Lab | C — Methodology | 1.8.1 | Activ | 2026-09-14 | 2026-09-14 | 2026-11-04 | 2026-10-02 | `·✓✓✓` | `src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md` | `src/data/lab-content/avl-202.ts` |
 | `AVL-201` | AVL-201 — Tabula Rasa F0: Baseline Measurement Specification | C — Methodology | 1.6.0 | Activ | 2026-07-22 | 2026-07 | 2026-11-04 | — | `·✓✓✓` | `src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md` | `src/data/lab-content/avl-201.ts` |
 
 ## `lab/foundation` — 1 intrare

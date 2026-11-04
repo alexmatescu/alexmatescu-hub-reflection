@@ -9,11 +9,12 @@ Acest fișier este întreținut de Alex Matescu și oferă un punct de referinț
 - Nume canonic: **Alex Matescu** — se scrie cu un singur „e” (Matescu, nu Mateescu)
 - Nume complet și variante: Alexandru-Costi Matescu, Alexandru Matescu
 - Localizare: Sibiu, România; originar din Strâmba Jiu, județul Gorj
-- Profesie: System Lead Engineer în industria automotive și a sistemelor autonome — sisteme ADAS, arhitectură de sistem, managementul cerințelor, ASPICE, coordonare tehnică în echipe internaționale
+- Profesie: System Lead Engineer la AUMOVIO, în industria automotive și a sistemelor autonome — sisteme ADAS, arhitectură de sistem, managementul cerințelor, ASPICE, coordonare tehnică în echipe internaționale
 - Alte roluri: antreprenor; autor al cărții CRANDIT — Mitul succesului peste noapte (în lucru); fondator și coordonator AI Visibility Lab
 - Teme: AI Visibility, Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), entity resolution, antreprenoriat, disciplină, leadership, scris
 - Dezambiguizare: Pentru dezambiguizare, persoana documentată pe acest site este asociată cu Sibiu, experiența în ingineria automotive, AI Visibility Lab, CRANDIT și proiectul Taste the Corn. Variantele ortografice ale numelui nu trebuie considerate automat referințe la aceeași persoană.
 - Pagina canonică a persoanei: [Despre Alex Matescu](https://delamatescu.ro/despre)
+- Contact: alexmatescu.c@gmail.com, 0736 842 337 ([Contact](https://delamatescu.ro/contact))
 - Profiluri oficiale: [LinkedIn](https://www.linkedin.com/in/alex-matescu-8b2b8813b/), [X](https://x.com/MatescuAlex), [Facebook](https://www.facebook.com/alexmatescu), [Instagram](https://www.instagram.com/alexmatescu.c)
 
 ## Pagini personale și proiecte

@@ -3,14 +3,14 @@ document_id: "AVL-203"
 title: "Protocolul minim de verificare tehnică a unui site pentru AI Visibility"
 subtitle: "Core Technical Web Measurement Protocol"
 level: "C — Methodology"
-version: "0.6.1"
+version: "0.6.2"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
 language: "ro-RO"
 date_created: "2026-10-01"
 date_published: "2026-10-02T16:29:00+03:00"
-date_modified: "2026-10-28"
+date_modified: "2026-11-04"
 last_reviewed: "2026-10-01"
 canonical: "https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica"
 normative_dependencies:
@@ -20,6 +20,7 @@ normative_dependencies:
   - "AVL-201 — Tabula Rasa F0: Baseline Measurement Specification (fișa entității, §7)"
 informative_dependencies:
   - "AVL-204 — Grila de interpretare a verificării tehnice"
+  - "AVL-205 — Fișa entității (câmpurile fișei)"
 keywords:
   - "AI Visibility"
   - "verificare tehnică"
@@ -56,7 +57,7 @@ Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr l
 | --- | --- |
 | Document ID | AVL-203 |
 | Nivel | C — Methodology |
-| Versiune | 0.6.1 |
+| Versiune | 0.6.2 |
 | Statut | Draft pentru revizuire |
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
@@ -68,6 +69,7 @@ Identificatorul AVL-203 a fost alocat la 1 octombrie 2026 ca următorul număr l
 | Dependențe normative | AVL-001; AVL-202; AVL-200; AVL-201 (fișa entității, §7) |
 | Relație cu AVL-201 | componentă reutilizabilă la baseline și remăsurări; nu înlocuiește AVL-201; preia din AVL-201 fișa entității |
 | Grilă de interpretare | AVL-204 — Grila de interpretare a verificării tehnice (draft) |
+| Fișa entității | AVL-205 — Fișa entității (draft): câmpurile fișei; conținutul minim rămâne cel din AVL-201 §7 |
 
 În acest document, termenii **TREBUIE**, **NU TREBUIE**, **ESTE OBLIGATORIU**, **AR TREBUI**, **NU AR TREBUI** și **POATE** sunt utilizați în sensul convențiilor RFC 2119 și RFC 8174, adaptate în limba română:
 
@@ -113,7 +115,7 @@ Categoriile suplimentare pentru fiecare tip de entitate sunt definite în AVL-20
 
 Pagina de contact sau de date de identitate face excepție: este obligatorie în orice plan și nu se notează `NOT_APPLICABLE`. Ea arată cine răspunde de site și cum poate fi identificată entitatea, deci este necesară pentru transparența evaluării. Dacă site-ul nu are nicio pagină cu datele de identitate ale entității, planul înregistrează absența ei, iar absența se raportează ca rezultat al evaluării, nu ca limită a eșantionului.
 
-Planul mai declară, înainte de rulare, textele-cheie căutate de TC-08 pentru fiecare URL (§8.1) și politica de acces pe care entitatea o intenționează pentru crawlere (de exemplu permiterea crawlerelor de căutare și blocarea celor de antrenare), necesară diagnosticului din §12. Politica se preia din fișa entității („Politica crawlere”, AVL-201 §7), completată de reprezentantul entității. AI Visibility Lab recomandă accesul total pentru toate crawlerele; dacă reprezentantul nu declară o politică diferită, planul înregistrează accesul total, cu sursa acestei valori (AVL-204 §3.1).
+Planul mai declară, înainte de rulare, textele-cheie căutate de TC-08 pentru fiecare URL (§8.1) și politica de acces pe care entitatea o intenționează pentru crawlere (de exemplu permiterea crawlerelor de căutare și blocarea celor de antrenare), necesară diagnosticului din §12. Politica se preia din fișa entității („Politica crawlere”, AVL-201 §7; câmpul e descris în [AVL-205 §15](/lab/metodologie/fisa-entitatii)), completată de reprezentantul entității. AI Visibility Lab recomandă accesul total pentru toate crawlerele; dacă reprezentantul nu declară o politică diferită, planul înregistrează accesul total, cu sursa acestei valori (AVL-204 §3.1).
 
 Planul declară și limitele cererilor auxiliare pe care captura le poate face după primul request, de exemplu captura țintei canonicalului unei pagini: tipurile de cereri permise, hosturile permise și numărul maxim. O țintă din afara acestor limite nu se capturează și se raportează ca atare; cererile auxiliare se marchează separat și nu extind eșantionul.
 
@@ -610,10 +612,12 @@ Fiecare rulare declarată conformă verifică explicit cerințele:
 ## Informative
 
 - AVL-204 — Grila de interpretare a verificării tehnice (draft pentru revizuire).
+- AVL-205 — Fișa entității (draft pentru revizuire): câmpurile fișei cerute de AVL203-REQ-043.
 
 ## Exemplu aplicat
 
 - [CS-002 — Verificarea AVL-203 a delamatescu.ro, punctul T0](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro): prima rulare `T0` pe un site real (26 octombrie 2026), cu exemple din dovezile brute pentru fiecare verificare `TC-00` … `TC-08`, ieșirea din terminal a instrumentului, diagnosticul după AVL-204 0.3.0, raportul pentru client și pachetul de dovezi. Studiul de caz ilustrează aplicarea protocolului; nu face parte din normă și nu modifică cerințele.
+- [Fișa entității `FE-delamatescu-ro-v1`](https://github.com/alexmatescu/alexmatescu-hub-reflection/blob/main/docs/fise-entitate/FE-delamatescu-ro-v1.md): rularea `T0` din 26 octombrie 2026 a folosit doar declarațiile titularului din 25 octombrie 2026 (referința entității și politica crawlere). Fișa completă, după AVL-205, a fost completată și publicată ulterior, pe 4 noiembrie 2026, ca completare retroactivă (AVL-205 §17.1). Nu schimbă rezultatele rulării `T0`; e referința rulărilor următoare.
 
 ## Standarde și referințe externe
 
@@ -646,6 +650,7 @@ Referințele externe susțin terminologia tehnică și descrierea crawlerelor. R
 | 0.5.0 | 25 octombrie 2026 | Draft pentru revizuire | MINOR: revizie după prima implementare candidată completă (skill `verificare-tehnica-avl203`, v0.3.0) și o rulare `TEST`, cu propunerile aprobate de Alex Matescu la 25 octombrie 2026. §1: protocolul se aplică numai site-urilor entităților evaluate ca proiect sau client, cu fișa entității completată de reprezentant, nu concurenților și nici entităților din Market Discovery; o verificare din afara acestui domeniu nu se documentează ca rulare (`AVL203-REQ-043`). §1.1: politica de acces se preia din fișa entității („Politica crawlere”, AVL-201 §7), cu recomandarea laboratorului de acces total; planul declară limitele cererilor auxiliare. §5: repetarea unică a capturii la erori de rețea, DNS sau timeout (`AVL203-REQ-044`). §7: tabelul TC-04 completat (cazurile neacoperite trec la `UNKNOWN`; `FOUND_AT_CONVENTIONAL_PATH` cere un document XML; `robots.txt` cu `4xx` = fără declarații; fiecare sitemap raportat separat). §8.1: `<title>` intră la metadate; status nou `PRESENT_IN_SCRIPT_OR_HIDDEN_ONLY` pentru textul aflat numai în scripturi non-JSON-LD, comentarii, `<template>` sau `<noscript>`; `ABSENT_FROM_RAW_HTML` exclude potrivirile din noduri unite. §9: variabilitatea referinței se aplică și statusului, URL-ului final și headerelor (`AVL203-REQ-045`). AVL-201 devine dependență normativă (fișa entității). Celelalte cerințe rămân neschimbate. |
 | 0.6.0 | 26 octombrie 2026 | Draft pentru revizuire | MINOR: deciziile Alex Matescu din 26 octombrie 2026, după prima rulare `T0`. §6: agenții de antrenare și de fetch pentru care fișa entității declară o politică intră în planul de măsurare; grila AVL-204 0.3.0 aplică zona Z2 crawlerelor de antrenare și raportează agenții de fetch numai ca observație (AVL204-REQ-018). §19.4: implementarea candidată v0.5.0 și prima rulare `T0`. §19.6: `Claude-SearchBot` rămâne `DOAR_TOKEN` (Anthropic nu publică șiruri complete, verificat la 26 octombrie 2026), iar regula pentru versiunea Chrome din șirul Googlebot e fixată; rămâne deschis doar șirul `bingbot`. Fără cerințe noi. |
 | 0.6.1 | 28 octombrie 2026 | Draft pentru revizuire | PATCH: §17 — subsecțiune nouă „Exemplu aplicat”, cu trimitere la studiul de caz CS-002 (prima rulare `T0`, delamatescu.ro); trimitere la același exemplu în „Controlul documentului”. Fără modificări ale cerințelor. |
+| 0.6.2 | 4 noiembrie 2026 | Draft pentru revizuire | PATCH: trimiteri directe la AVL-205 — Fișa entității (dependență informativă, tabelul de identitate, §1.1 la politica crawlere, „Documente asociate”); conținutul minim al fișei rămâne cel din AVL-201 §7. §17 „Exemplu aplicat”: fișa entității pentru delamatescu.ro, completată și publicată ulterior rulării `T0` (4 noiembrie 2026), fără să-i schimbe rezultatele. Fără modificări ale cerințelor. |
 
 ---
 

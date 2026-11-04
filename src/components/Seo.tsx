@@ -27,6 +27,12 @@ export const alexMatescuPerson = {
   alternateName: ["Alexandru Matescu", "Alexandru-Costi Matescu"],
   url: "https://delamatescu.ro/despre",
   jobTitle: "Fondator și coordonator AI Visibility Lab",
+  worksFor: {
+    "@type": "Organization",
+    name: "AUMOVIO",
+  },
+  email: "alexmatescu.c@gmail.com",
+  telephone: "+40736842337",
   description:
     "Alex Matescu este inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
   homeLocation: {

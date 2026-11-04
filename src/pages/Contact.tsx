@@ -4,6 +4,7 @@ import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Mail,
+  Phone,
   Linkedin,
   Twitter,
   Facebook,
@@ -183,6 +184,12 @@ const Contact = () => {
             <p className="mt-3 text-sm text-muted-foreground">
               Pentru orice subiect care merită un răspuns scris.
             </p>
+            <a
+              href="tel:+40736842337"
+              className="mt-6 inline-flex items-center gap-3 font-serif text-2xl link-underline"
+            >
+              <Phone className="h-5 w-5" /> 0736 842 337
+            </a>
           </div>
 
           <div>

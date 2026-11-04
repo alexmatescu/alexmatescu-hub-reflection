@@ -3,7 +3,7 @@ document_id: "AVL-205"
 title: "Fișa entității"
 subtitle: "Entity Sheet"
 level: "C — Methodology"
-version: "0.1.1"
+version: "0.2.0"
 status: "Draft pentru revizuire"
 author: "Alex Matescu"
 organization: "AI Visibility Lab"
@@ -51,7 +51,7 @@ Conținutul minim al fișei este stabilit de [AVL-201 §7](/lab/metodologie/tabu
 
 Din versiunea 1.6.0 (4 noiembrie 2026), AVL-201 trimite la AVL-205 din §7, unde definește fișa entității, și din §10.1, unde cere fișa completă. Tot de la această dată, [AVL-202](/lab/metodologie) (1.8.0) include AVL-205 în arhitectura metodologiei, în ordinea de lectură și în lista documentelor.
 
-Versiunea curentă, **0.1.1**, este un **draft pentru revizuire** și nu este activă. Deciziile rămase deschise înainte de activare sunt enumerate în §25.
+Versiunea curentă, **0.2.0**, este un **draft pentru revizuire** și nu este activă. Deciziile rămase deschise înainte de activare sunt enumerate în §25.
 
 Identificatorul AVL-205 a fost alocat la 4 noiembrie 2026 ca următorul număr liber din seria documentelor Nivelului C, după scanarea registrului de conținut, și confirmat de Alex Matescu.
 
@@ -59,7 +59,7 @@ Identificatorul AVL-205 a fost alocat la 4 noiembrie 2026 ca următorul număr l
 | --- | --- |
 | Document ID | AVL-205 |
 | Nivel | C — Methodology |
-| Versiune | 0.1.1 |
+| Versiune | 0.2.0 |
 | Statut | Draft pentru revizuire |
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
@@ -111,7 +111,7 @@ Nimic din fișă nu se publică înainte ca informațiile să fie revizuite și 
 | Marcaj | Cine completează |
 | --- | --- |
 | **C** | clientul sau reprezentantul entității |
-| **Î** | împreună: clientul declară, Alex Matescu formulează și verifică |
+| **Î** | împreună: clientul declară, Alex Matescu formulează și verifică formularea, nu adevărul declarației |
 | **L** | Alex Matescu (laboratorul), după verificare |
 
 ### Conținutul minim
@@ -129,15 +129,21 @@ Fișa cuprinde și **harta coliziunilor** (§13) și **lista activelor oficiale*
 | Stare la `T0` | ce arată sursele publice la verificare (§4) |
 | Evidence ID | identificatorul capturii care documentează starea, dacă există ([AVL-200 §11](/lab/metodologie/standard-dovezi-masurare-trasabilitate)) |
 
+### Ce își asumă reprezentantul
+
+**Ce declară reprezentantul în fișă este asumat de el și considerat corect.** Laboratorul nu verifică veridicitatea declarațiilor, de exemplu angajatorul, studiile sau certificările: verificarea lor nu face parte din măsurare. Alex Matescu verifică formularea, adică dacă informația e clară, completă și scrisă la fel în toată fișa, nu adevărul ei.
+
+Fișa rămâne referința măsurării. Când o sursă publică afirmă altceva decât fișa, starea descrie sursa (§4), nu entitatea. Excepția este entitatea ambiguă sau suspectă (§4.1).
+
 ### Ce nu se trece în fișă
 
 Parolele, token-urile, cheile API, cookie-urile și alte secrete de acces nu se trec niciodată în fișă (AVL-200 §18.3, AVL200-REQ-028). Un acces autorizat, de exemplu la Search Console sau la logurile serverului, se notează doar ca existent, cu canalul prin care a fost acordat (§11.4).
 
 ---
 
-## 4. Cum se verifică fișa în `T0`?
+## 4. Cum se verifică reprezentarea fișei în surse?
 
-**Pentru fiecare informație declarată, verificarea `T0` notează ce afirmă sursele publice despre ea, cu sursa și data verificării.**
+**Pentru fiecare informație declarată, verificarea `T0` notează ce afirmă sursele publice despre ea, cu sursa și data verificării. Se verifică reprezentarea informației în surse, nu adevărul ei (§3, „Ce își asumă reprezentantul”).**
 
 Stările preiau categoriile din AVL-201 §10.6 („atribute corecte, lipsă, vechi sau false”) și semantica valorilor necunoscute din AVL-200 §6.
 
@@ -151,6 +157,22 @@ Stările preiau categoriile din AVL-201 §10.6 („atribute corecte, lipsă, vec
 | `NEVERIFICAT` | informația nu a fost încă verificată |
 
 `LIPSĂ` descrie sursa, nu entitatea: faptul că o informație nu apare online nu o face falsă (AVL-200 §6, AVL200-REQ-010). Starea se notează pe sursă: aceeași informație poate fi `CORECT` pe site și `VECHI` pe un profil.
+
+### 4.1. Entitate ambiguă sau suspectă
+
+**AI Visibility Lab nu lucrează cu entități a căror asociere poate afecta imaginea laboratorului sau a lui Alex Matescu.** O entitate este considerată ambiguă sau suspectă (cele două denumiri formează un singur statut) când, în mediul digital, apare cel puțin una dintre situațiile următoare:
+
+1. mai multe surse independente contrazic sistematic fișa;
+2. apar dovezi care pun la îndoială entitatea (persoana sau organizația) ori serviciul ei;
+3. entității îi sunt aduse public acuzații.
+
+Statutul poate apărea la completarea fișei, în `T0` sau în orice etapă ulterioară. Când este constatat:
+
+- colaborarea se închide;
+- faptul se documentează intern, cu sursele și dovezile care l-au motivat ([AVL-200 §11](/lab/metodologie/standard-dovezi-masurare-trasabilitate)); documentarea nu se publică (AVL-001 §21);
+- clientului i se comunică închiderea colaborării și statutul „entitate ambiguă sau suspectă”.
+
+Diferențele obișnuite dintre fișă și surse, de exemplu o informație veche pe un profil, un atribut lipsă sau o coliziune de nume (§13), nu fac o entitate ambiguă sau suspectă. Ele sunt chiar obiectul măsurării.
 
 ---
 
@@ -182,6 +204,8 @@ Stările preiau categoriile din AVL-201 §10.6 („atribute corecte, lipsă, vec
 | Tipul de entitate | categoria din AVL-201 §3: persoană, companie, organizație, instituție, marcă, produs, serviciu, proiect, publicație, site | persoană | Î |
 | Tipul pentru verificarea tehnică | categoria din AVL-203 §1.1 și AVL-204 §11: organizație cu servicii, magazin online, afacere locală, profesionist independent sau alt tip, cu motiv | profesionist independent | L |
 | Entități legate care se tratează separat | persoana și firma ei, o marcă și compania care o deține sunt entități distincte; fiecare primește fișa ei sau se trece ca relație în §12 | persoana X și firma X SRL | Î |
+
+Un profesionist independent care lucrează sub numele propriu și are un site propriu primește o singură fișă, a persoanei. Site-ul se trece ca activ oficial (§11.1), nu ca entitate separată, iar ID-ul entității poate fi format din domeniul site-ului, ca în seria AVL-203 (exemplu: `delamatescu-ro` pentru Alex Matescu și delamatescu.ro).
 
 ---
 
@@ -305,6 +329,17 @@ Forma canonică nu este același lucru cu sursa canonică. Forma canonică este 
 | Pagini de autor | paginile de autor din publicații sau platforme pe care entitatea le administrează | pagina de autor dintr-o revistă | C |
 | Directoare și registre cu profil creat de entitate | profiluri pe care entitatea și le-a creat sau le întreține | un director profesional | C |
 | Alte platforme | orice alt profil administrat de entitate | — | C |
+
+Pentru fiecare profil se notează:
+
+| Coloană | Ce înseamnă |
+| --- | --- |
+| URL | adresa exactă a profilului |
+| Nume afișat | numele sub care apare profilul, exact cum e scris; de comparat cu forma canonică (§7) |
+| Descrierea (bio) | textul de prezentare al profilului; de comparat cu descrierea principală (§8) |
+| Trimite la site? | dacă profilul are link către site-ul entității |
+| Cine îl administrează | entitatea, o agenție sau altă persoană |
+| Stare la `T0` | ce arată profilul la verificare (§4) |
 
 ### 11.3. Imagini oficiale
 
@@ -442,6 +477,11 @@ Crawlerele de fetch la cererea utilizatorului se raportează numai ca observați
 | Declarația de îngheț | entitatea nu modifică site-ul, profilurile, datele structurate sau prezența externă de la începutul `T0` până la închiderea lui (F0-REQ-001; AVL-201 §7) | confirmat, cu data | C |
 | Anunțarea schimbărilor neplanificate | orice schimbare care apare totuși se anunță, ca să fie consemnată ca incident (F0-REQ-002) | confirmat | C |
 | Schimbări deja programate | modificări care nu pot fi amânate, cu data lor | lansarea unui produs pe 15 noiembrie | C |
+| Forma înghețului între punctele de măsurare | după închiderea `T0` și până la punctul următor, entitatea poate declara fie îngheț complet, fie îngheț al identității: numele, rolul, locația, profilurile, datele structurate și paginile de identitate rămân neschimbate, iar conținutul nou (articole, documentație) se poate publica. În timpul `T0` se aplică integral F0-REQ-001. | îngheț al identității, conținut nou permis | C |
+
+### 17.1. Completarea retroactivă
+
+**Când fișa se completează după un `T0` deja făcut, de exemplu pentru o serie începută înaintea AVL-205, ea devine referința punctelor următoare (`F1` … `Fn`).** Completarea retroactivă nu schimbă rezultatele `T0` și nici referința folosită atunci (AVL200-REQ-013). Fișa notează că a fost completată după `T0` și data completării. Exemplu: fișa pentru delamatescu.ro și Alex Matescu (§25, decizia 1).
 
 ---
 
@@ -525,6 +565,7 @@ Proprietățile și tipurile cărora li se aplică au fost verificate pe schema.
 | Secțiune | Sursa în corpus |
 | --- | --- |
 | Conținutul minim [min] | AVL-201 §7 |
+| §3 „Ce își asumă reprezentantul”, §4.1 Entitate ambiguă sau suspectă | operațional; decizii Alex Matescu, 4 noiembrie 2026; AVL-001 §21; AVL-200 §11 |
 | §5 Identificarea fișei | AVL-201 §6.1–6.4; AVL-203 §1, AVL203-REQ-043; AVL-204 AVL204-REQ-015; AVL-001 §21; AVL-202 „Independență și conflict de interese” |
 | §6 Tipul entității | AVL-201 §3, §5; AVL-203 §1.1; AVL-204 §11 |
 | §7 Forma canonică și variantele | AVL-201 §5, §10.1; AVL-102; articolul „Ce este o entitate pentru AI” |
@@ -537,7 +578,7 @@ Proprietățile și tipurile cărora li se aplică au fost verificate pe schema.
 | §14 Prezența distribuită | AVL-200 §7.1; AVL-201 §10.8, §10.9; AVL-202 §7 |
 | §15 Politica crawlere | AVL-201 §6.4, §7; AVL-203 §1.1, §6; AVL-204 §3.1, §6.2, §6.3, §6.5, AVL204-REQ-017, AVL204-REQ-018; CS-002 |
 | §16 Ce vrea entitatea să i se recunoască | AVL-201 §7, §10.2, F0-REQ-008; AVL-104; pagina Auditul AI Visibility |
-| §17 Angajamente pentru `T0` | AVL-201 §6.4, §7, F0-REQ-001, F0-REQ-002 |
+| §17 Angajamente pentru `T0` | AVL-201 §6.4, §7, F0-REQ-001, F0-REQ-002; forma înghețului între puncte și §17.1: operațional, decizii Alex Matescu, 4 noiembrie 2026; AVL200-REQ-013 |
 | §18 Informații pentru website | operațional; AVL-200 §7.1; AVL-202 §7; articolul „Ce este o entitate pentru AI”; schema.org |
 | §19 Revizuire și aprobare | AVL-201 §3; AVL-001 §21; pagina Auditul AI Visibility |
 | §20 Confirmarea reprezentantului | AVL-201 §6.4 |
@@ -564,6 +605,7 @@ Proprietățile și tipurile cărora li se aplică au fost verificate pe schema.
 - [AVL-104 — Cum se măsoară AI Visibility](/lab/cercetare/cum-se-masoara-ai-visibility)
 - [Ce este o entitate pentru AI și motoarele de căutare](/lab/articole/ce-este-entitate-ai-studiu-de-caz)
 - [Studiul de caz Tabula Rasa — identitatea Alex Matescu](/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz)
+- [FE-delamatescu-ro-v1 — fișa entității pentru delamatescu.ro și Alex Matescu](https://github.com/alexmatescu/alexmatescu-hub-reflection/blob/main/docs/fise-entitate/FE-delamatescu-ro-v1.md) (exemplu aplicat, completat retroactiv)
 - [CS-002 — Verificarea tehnică AVL-203 a delamatescu.ro](/lab/studii-de-caz/verificare-tehnica-delamatescu-ro)
 - [Auditul AI Visibility](/lab/audit-ai-visibility)
 
@@ -580,14 +622,15 @@ Proprietățile și tipurile cărora li se aplică au fost verificate pe schema.
 | --- | --- | --- | --- |
 | 0.1.0 | 4 noiembrie 2026 | Draft pentru revizuire | Primul draft. Descrie fișa entității cerută de AVL-201 §7: rolul ei, ce nu este, cum se completează, stările verificării `T0` și definițiile tuturor câmpurilor, în 17 secțiuni (§5–§21), cu proveniența fiecărei secțiuni. Precizează că „domeniu” din AVL-201 §7 înseamnă domeniul de activitate al serviciilor (decizie Alex Matescu, 4 noiembrie 2026). Nu introduce cerințe proprii. |
 | 0.1.1 | 4 noiembrie 2026 | Draft pentru revizuire | PATCH: trimiteri la AVL-201 1.6.0, care trimite la AVL-205 din §7 și §10.1 și folosește formularea „domeniul de activitate”, și la AVL-202 1.8.0, care include AVL-205 în corpus. Deciziile deschise 2 (închisă), 3 și 6 (parțial închise) sunt actualizate. Fără schimbări ale câmpurilor fișei. |
+| 0.2.0 | 4 noiembrie 2026 | Draft pentru revizuire | MINOR, decizii Alex Matescu din 4 noiembrie 2026, după prima fișă completă. §3: marcajul „Î” precizează că Alex Matescu verifică formularea, nu adevărul declarației; subsecțiune nouă „Ce își asumă reprezentantul”: declarațiile reprezentantului sunt asumate de el și considerate corecte. §4 se numește „Cum se verifică reprezentarea fișei în surse?”. Subsecțiune nouă §4.1 „Entitate ambiguă sau suspectă”: criteriile, închiderea colaborării, documentarea internă și comunicarea către client. §6: o singură fișă pentru profesionistul independent cu site propriu. §11.2: ce se notează pentru fiecare profil, cu numele afișat. §17: forma înghețului între punctele de măsurare; subsecțiune nouă §17.1 „Completarea retroactivă”. Deciziile deschise 1 (parțial) și 3 (integral) sunt închise; trimitere la fișa FE-delamatescu-ro-v1. Nu introduce cerințe proprii. |
 
 ---
 
 ## 25. Decizii deschise înainte de 1.0.0
 
-1. **Primul test pe o entitate reală.** Fișa se completează integral pentru delamatescu.ro și Alex Matescu, entitatea primei rulări AVL-203. Până acum există doar referința și politica crawlere din planul acelei rulări. Câmpurile care nu funcționează în practică se corectează înainte de activare.
+1. **Primul test pe o entitate reală.** Fișa se completează integral pentru delamatescu.ro și Alex Matescu, entitatea primei rulări AVL-203. Parțial închisă la 4 noiembrie 2026: prima fișă completă, [`FE-delamatescu-ro-v1`](https://github.com/alexmatescu/alexmatescu-hub-reflection/blob/main/docs/fise-entitate/FE-delamatescu-ro-v1.md), a fost confirmată de reprezentant și publicată, completată retroactiv (§17.1). Din observațiile completării, versiunea 0.2.0 a preluat coloanele profilurilor (§11.2), fișa unică pentru profesionistul independent (§6), forma înghețului între puncte și completarea retroactivă (§17). Rămân de discutat înainte de activare rolul principal diferit între surse și ancorele folosite de motoare, dar absente din sursa canonică.
 2. **Precizarea „domeniu” în AVL-201.** Închisă la 4 noiembrie 2026 (decizie Alex Matescu): AVL-201 1.6.0 folosește „domeniul de activitate” la §6.1 și §7, cu același sens ca AVL-205 §3.
-3. **Trimiterea din AVL-201, AVL-203 și AVL-204.** Parțial închisă la 4 noiembrie 2026: AVL-201 1.6.0 trimite la AVL-205 din §7 și §10.1. AVL-203 și AVL-204 trimit în continuare la fișa entității prin AVL-201 §7; rămâne de decis dacă trimit direct și la AVL-205.
+3. **Trimiterea din AVL-201, AVL-203 și AVL-204.** Închisă la 4 noiembrie 2026 (decizie Alex Matescu): AVL-201 1.6.0 trimite la AVL-205 din §7 și §10.1, iar AVL-203 0.6.2 și AVL-204 0.3.2 trimit direct la AVL-205, ca dependență informativă; conținutul minim rămâne cel din AVL-201 §7.
 4. **Stările verificării `T0` (§4).** Vocabularul `CORECT`, `VECHI`, `FALS`, `LIPSĂ`, `UNKNOWN`, `NEVERIFICAT` se testează la primul `T0` cu fișă completă.
 5. **Cerințe proprii.** Rămâne de decis dacă AVL-205 primește cerințe `AVL205-REQ-*`, de exemplu pentru conținutul minim sau pentru versionarea fișei, sau rămâne un document descriptiv.
 6. **Locul în corpus.** Parțial închisă la 4 noiembrie 2026: AVL-202 1.8.0 menționează AVL-205 în arhitectura metodologiei, în ordinea de lectură, în ordinea din hub și în lista documentelor. La activare rămân de făcut actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001.

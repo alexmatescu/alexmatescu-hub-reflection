@@ -186,8 +186,8 @@ const About = () => {
               Profesie
             </p>
             <p className="font-serif text-xl">
-              System Lead Engineer în industria sistemelor autonome și
-              automotive.
+              System Lead Engineer la AUMOVIO, în industria sistemelor autonome
+              și automotive.
             </p>
           </div>
           <div className="bg-background p-8">

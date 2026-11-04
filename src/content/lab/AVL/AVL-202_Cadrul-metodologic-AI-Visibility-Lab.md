@@ -11,7 +11,7 @@ canonical: "https://delamatescu.ro/lab/metodologie"
 document_id: "AVL-202"
 document_level: "C — Methodology"
 document_role: "methodological-framework"
-version: "1.8.0"
+version: "1.8.1"
 status: "Activ"
 depends_on:
   - "AVL-001"
@@ -58,7 +58,7 @@ Documentul-cadru care organizează metodologia AI Visibility Lab și declară re
 | --- | --- |
 | Document ID | AVL-202 |
 | Nivel | C — Methodology |
-| Versiune | 1.8.0 |
+| Versiune | 1.8.1 |
 | Statut | Activ |
 | Autor | [Alex Matescu](/despre) |
 | Organizație | [AI Visibility Lab](/lab) |
@@ -135,9 +135,9 @@ Cadrul metodologic AI Visibility Lab
    ├── Metodologia de bază (Core Methodology)
    │     ├── AVL-200  Standard dovezi, măsurare și trasabilitate
    │     ├── AVL-201  Tabula Rasa F0 — Baseline
-   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.6.1)
-   │     ├── AVL-204  Grila de interpretare a verificării tehnice   (Draft pentru revizuire, v0.3.1)
-   │     ├── AVL-205  Fișa entității   (Draft pentru revizuire, v0.1.1)
+   │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.6.2)
+   │     ├── AVL-204  Grila de interpretare a verificării tehnice   (Draft pentru revizuire, v0.3.2)
+   │     ├── AVL-205  Fișa entității   (Draft pentru revizuire, v0.2.0)
    │     └── viitoare documente metodologice / protocoale
    │
    └── Market Measurement — familia AVL-MKT-*
@@ -919,6 +919,7 @@ Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. *AI Visibility Lab Do
 | 1.7.1 | 26 octombrie 2026 | Activ | PATCH: versiunile documentelor din ramura Core Methodology actualizate după deciziile din 26 octombrie 2026: AVL-203 trece la v0.6.0 și AVL-204 la v0.3.0, ambele draft pentru revizuire. Fără alte modificări. |
 | 1.7.2 | 28 octombrie 2026 | Activ | PATCH: versiunile documentelor din ramura Core Methodology actualizate: AVL-203 trece la v0.6.1 și AVL-204 la v0.3.1 (trimitere la studiul de caz CS-002, primul exemplu aplicat al verificării tehnice), ambele draft pentru revizuire. Fără alte modificări. |
 | 1.8.0 | 4 noiembrie 2026 | Activ | MINOR: AVL-205 — Fișa entității este inclus în corpus ca draft pentru revizuire (v0.1.1): identificatori, ordinea de înregistrare, ordinea conceptuală de lectură (împreună cu AVL-201), arborele arhitecturii (ramura Core Methodology), ordinea din hub (după AVL-201), documentele normative asociate, secțiunea 3 și lista documentelor metodologiei. AVL-205 nu este activ; statutul lui se actualizează aici la activare. Nicio altă schimbare de principiu. |
+| 1.8.1 | 4 noiembrie 2026 | Activ | PATCH: versiunile documentelor din ramura Core Methodology actualizate: AVL-203 trece la v0.6.2, AVL-204 la v0.3.2 (trimiteri directe la AVL-205) și AVL-205 la v0.2.0 (după prima fișă completă), toate draft pentru revizuire. Fără alte modificări. |
 
 ---
 
