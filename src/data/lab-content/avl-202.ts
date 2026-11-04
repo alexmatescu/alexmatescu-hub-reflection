@@ -8,26 +8,56 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.7.2</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.8.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>28 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>4 noiembrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>2 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie">https://delamatescu.ro/lab/metodologie</a></td></tr>
         <tr><th scope="row">Dependență</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a></td></tr>
         <tr><th scope="row">Documente informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO vs GEO</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></td></tr>
-        <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire); <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a> (Draft pentru revizuire)</td></tr>
+        <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire); <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a> (Draft pentru revizuire); <a href="/lab/metodologie/fisa-entitatii">AVL-205 — Fișa entității</a> (Draft pentru revizuire)</td></tr>
         <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code>: <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.10.0); AVL-MKT-002 — Market Query Panel (planificat)</td></tr>
         </tbody>
         </table>
       </div>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#identitatea-documentului">Identitatea documentului</a></li>
+          <li><a href="#cum-se-citesc-identificatorii-avl">Cum se citesc identificatorii AVL</a></li>
+          <li><a href="#arhitectura-metodologiei">Arhitectura metodologiei</a></li>
+          <li><a href="#raspunsul-scurt">Răspunsul scurt</a></li>
+          <li><a href="#1-ce-incercam-sa-masuram">1. Ce încercăm să măsurăm</a></li>
+          <li><a href="#2-ciclul-metodologic">2. Ciclul metodologic</a></li>
+          <li><a href="#3-etapa-de-baseline-stabilirea-liniei-de-baza">3. Etapa de baseline — stabilirea liniei de bază</a></li>
+          <li><a href="#4-query-set-ul">4. Query set-ul</a></li>
+          <li><a href="#5-standardul-de-dovezi">5. Standardul de dovezi</a></li>
+          <li><a href="#6-taxonomia-rezultatelor">6. Taxonomia rezultatelor</a></li>
+          <li><a href="#7-nu-masuram-doar-raspunsul-ai">7. Nu măsurăm doar răspunsul AI</a></li>
+          <li><a href="#8-interventia">8. Intervenția</a></li>
+          <li><a href="#9-asteptarea-si-remasurarea">9. Așteptarea și remăsurarea</a></li>
+          <li><a href="#10-comparatia">10. Comparația</a></li>
+          <li><a href="#11-cum-clasificam-afirmatiile">11. Cum clasificăm afirmațiile</a></li>
+          <li><a href="#12-metodologie-experiment-si-studiu-de-caz-nu-sunt-acelasi-lucru">12. Metodologie, experiment și studiu de caz nu sunt același lucru</a></li>
+          <li><a href="#13-principiile-metodologiei">13. Principiile metodologiei</a></li>
+          <li><a href="#14-market-measurement-masurarea-reprezentarii-unei-piete">14. Market Measurement — măsurarea reprezentării unei piețe</a></li>
+          <li><a href="#documentele-metodologiei">Documentele metodologiei</a></li>
+          <li><a href="#vezi-metodologia-aplicata">Vezi metodologia aplicată</a></li>
+          <li><a href="#ce-nu-demonstreaza-aceasta-metodologie">Ce nu demonstrează această metodologie</a></li>
+          <li><a href="#independenta-si-conflict-de-interese">Independență și conflict de interese</a></li>
+          <li><a href="#citare-recomandata">Citare recomandată</a></li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
+        </ol>
+      </nav>
+
       <blockquote><strong>Principiul de bază:</strong> înainte de a optimiza, măsurăm. Înainte de a atribui un rezultat unei intervenții, documentăm ce era înainte și ce s-a schimbat după.</blockquote>
 
-      <h2>Identitatea documentului</h2>
+      <h2 id="identitatea-documentului">Identitatea documentului</h2>
 
       <p>Documentul-cadru care organizează metodologia AI Visibility Lab și declară relațiile dintre principiile Foundation, standardul de dovezi, specificația de baseline și viitoarele protocoale metodologice.</p>
 
@@ -39,7 +69,7 @@ export const avl202CadruMetodologicHtml = `
 
       <p>Nu încercăm să deducem algoritmii interni ai platformelor dintr-o singură observație. Stabilim mai întâi starea inițială, păstrăm dovezile, declarăm intervențiile și repetăm măsurarea în condiții cât mai comparabile.</p>
 
-      <h2>Cum se citesc identificatorii AVL</h2>
+      <h2 id="cum-se-citesc-identificatorii-avl">Cum se citesc identificatorii AVL</h2>
 
       <p>Identificatorii AVL sunt <strong>permanenți</strong> și reflectă <strong>ordinea de înregistrare a documentelor</strong>, nu o ierarhie de precedență și nici ordinea recomandată de lectură.</p>
 
@@ -52,30 +82,31 @@ export const avl202CadruMetodologicHtml = `
         <li><strong>AVL-201</strong> rămâne identificatorul permanent pentru <strong>Tabula Rasa F0</strong> (titlu istoric, vezi <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7.4</a>);</li>
         <li><strong>AVL-202</strong> este identificatorul permanent pentru <strong>Cadrul metodologic AI Visibility Lab</strong>;</li>
         <li><strong>AVL-203</strong> este identificatorul permanent pentru <strong>Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong>;</li>
-        <li><strong>AVL-204</strong> este identificatorul permanent pentru <strong>Grila de interpretare a verificării tehnice</strong>.</li>
+        <li><strong>AVL-204</strong> este identificatorul permanent pentru <strong>Grila de interpretare a verificării tehnice</strong>;</li>
+        <li><strong>AVL-205</strong> este identificatorul permanent pentru <strong>Fișa entității</strong>.</li>
       </ul>
 
       <p>Aceste ID-uri nu se renumerotează retrospectiv doar pentru a produce o succesiune numerică mai elegantă.</p>
 
-      <h3>Identificatorii de familie: <code>AVL-MKT-*</code></h3>
+      <h3 id="identificatorii-de-familie-avl-mkt">Identificatorii de familie: <code>AVL-MKT-*</code></h3>
 
       <p>Pe lângă seria numerică <code>AVL-NNN</code>, Nivelul C poate conține familii metodologice cu namespace propriu. Prima familie de acest tip este <strong>Market Measurement</strong>, cu identificatori de forma <code>AVL-MKT-NNN</code>. Definiția completă a namespace-ului este stabilită în <a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>, §17.</p>
 
       <p>Într-un identificator <code>AVL-MKT-NNN</code>, <code>AVL</code> indică apartenența la corpusul normativ AI Visibility Lab, <code>MKT</code> indică familia Market Measurement, iar <code>NNN</code> identifică permanent documentul în interiorul familiei. Numerotarea familiei începe cu <code>001</code>, este independentă de seria <code>AVL-NNN</code> și reflectă ordinea de înregistrare în familie, nu ordinea de lectură. <strong>AVL-MKT-001</strong> și <strong>AVL-001</strong> sunt documente diferite: numărul comun nu exprimă nicio relație între ele.</p>
 
-      <h3>Ordinea de înregistrare</h3>
+      <h3 id="ordinea-de-inregistrare">Ordinea de înregistrare</h3>
 
-      <p><strong>AVL-200 → AVL-201 → AVL-202 → AVL-203 → AVL-204</strong></p>
+      <p><strong>AVL-200 → AVL-201 → AVL-202 → AVL-203 → AVL-204 → AVL-205</strong></p>
 
       <p>Familia <code>AVL-MKT-*</code> are propria ordine de înregistrare, care începe cu AVL-MKT-001.</p>
 
-      <h3>Ordinea conceptuală recomandată de lectură</h3>
+      <h3 id="ordinea-conceptuala-recomandata-de-lectura">Ordinea conceptuală recomandată de lectură</h3>
 
       <p><strong>AVL-001 → AVL-202 → AVL-200 / AVL-201 / AVL-203 → documentele familiei AVL-MKT</strong></p>
 
-      <p>AVL-001 stabilește principiile Foundation. AVL-202 descrie cadrul metodologic general. AVL-200, AVL-201 și AVL-203 (draft pentru revizuire) formalizează componente specifice ale acelui cadru. AVL-204 (draft pentru revizuire) se citește după AVL-203, ale cărui observații le interpretează. Documentele <code>AVL-MKT-*</code> formalizează măsurarea reprezentării unei piețe și se citesc după AVL-202.</p>
+      <p>AVL-001 stabilește principiile Foundation. AVL-202 descrie cadrul metodologic general. AVL-200, AVL-201 și AVL-203 (draft pentru revizuire) formalizează componente specifice ale acelui cadru. AVL-204 (draft pentru revizuire) se citește după AVL-203, ale cărui observații le interpretează. AVL-205 (draft pentru revizuire) se citește împreună cu AVL-201: descrie câmp cu câmp fișa entității, intrarea obligatorie a baseline-ului. Documentele <code>AVL-MKT-*</code> formalizează măsurarea reprezentării unei piețe și se citesc după AVL-202.</p>
 
-      <h2>Arhitectura metodologiei</h2>
+      <h2 id="arhitectura-metodologiei">Arhitectura metodologiei</h2>
 
       <p>Relația dintre documentele existente și cele planificate este:</p>
 
@@ -91,6 +122,7 @@ Cadrul metodologic AI Visibility Lab
    │     ├── AVL-201  Tabula Rasa F0 — Baseline
    │     ├── AVL-203  Protocolul minim de verificare tehnică   (Draft pentru revizuire, v0.6.1)
    │     ├── AVL-204  Grila de interpretare a verificării tehnice   (Draft pentru revizuire, v0.3.1)
+   │     ├── AVL-205  Fișa entității   (Draft pentru revizuire, v0.1.1)
    │     └── viitoare documente metodologice / protocoale
    │
    └── Market Measurement — familia AVL-MKT-*
@@ -102,7 +134,7 @@ Cadrul metodologic AI Visibility Lab
 
       <p><strong>AVL-MKT este o familie funcțională în interiorul Nivelului C — Methodology și nu reprezintă un nivel normativ separat.</strong> Documentele familiei sunt guvernate de AVL-001 și de AVL-202 la fel ca oricare alt document de Nivel C.</p>
 
-      <h3>Precedența normativă</h3>
+      <h3 id="precedenta-normativa">Precedența normativă</h3>
 
       <pre><code>AVL-001
    ↓
@@ -116,7 +148,7 @@ măsurare</code></pre>
 
       <p>Un protocol de familie poate detalia, dar nu poate contrazice AVL-202 sau AVL-001. O instanță aplică protocolul; nu îl modifică.</p>
 
-      <h3>Rolul paginii /lab/metodologie</h3>
+      <h3 id="rolul-paginii-lab-metodologie">Rolul paginii /lab/metodologie</h3>
 
       <p>Pagina publică <a href="/lab/metodologie">/lab/metodologie</a> este hub-ul metodologic al AI Visibility Lab. Ea are patru funcții:</p>
 
@@ -133,6 +165,7 @@ măsurare</code></pre>
         <li><strong>AVL-202 — Cadrul metodologic AI Visibility Lab</strong></li>
         <li><strong>AVL-200 — Standard dovezi, măsurare și trasabilitate</strong></li>
         <li><strong>AVL-201 — Tabula Rasa F0</strong></li>
+        <li><strong>AVL-205 — Fișa entității</strong> (draft pentru revizuire);</li>
         <li><strong>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong> (draft pentru revizuire);</li>
         <li><strong>AVL-204 — Grila de interpretare a verificării tehnice</strong> (draft pentru revizuire);</li>
         <li>documentele familiei Market Measurement (<code>AVL-MKT-*</code>), începând cu AVL-MKT-001;</li>
@@ -141,7 +174,7 @@ măsurare</code></pre>
 
       <p>Documentele planificate, dar nepublicate, sunt menționate în text fără link. Hub-ul nu conține pagini placeholder pentru documente care nu există încă.</p>
 
-      <h2>Răspunsul scurt</h2>
+      <h2 id="raspunsul-scurt">Răspunsul scurt</h2>
 
       <p>Metodologia AI Visibility Lab urmărește un ciclu simplu:</p>
 
@@ -153,7 +186,7 @@ măsurare</code></pre>
 
       <p>Metodologia nu promite răspunsuri identice la rulări repetate și nu pretinde control asupra indexării, retrievalului, modelelor sau celorlalte componente interne ale furnizorilor. Scopul metodologiei este <strong>auditabilitatea procesului</strong>: să putem arăta ce a fost măsurat, în ce condiții, cu ce dovezi, ce s-a schimbat și cât de puternică poate fi concluzia rezultată.</p>
 
-      <h2>1. Ce încercăm să măsurăm</h2>
+      <h2 id="1-ce-incercam-sa-masuram">1. Ce încercăm să măsurăm</h2>
 
       <p>AI Visibility nu este tratată ca simpla apariție a unui nume într-un răspuns.</p>
 
@@ -172,9 +205,9 @@ măsurare</code></pre>
 
       <p>Această separare derivă din modelul de cercetare al laboratorului, care tratează accesul, recuperarea, sinteza și selecția citării ca etape distincte și consideră reprezentarea entității un strat transversal.</p>
 
-      <h2>2. Ciclul metodologic</h2>
+      <h2 id="2-ciclul-metodologic">2. Ciclul metodologic</h2>
 
-      <h3>2.1. Definirea întrebării</h3>
+      <h3 id="2-1-definirea-intrebarii">2.1. Definirea întrebării</h3>
 
       <p>Orice cercetare începe cu o întrebare suficient de precisă încât rezultatul să poată fi verificat.</p>
 
@@ -188,7 +221,7 @@ măsurare</code></pre>
 
       <p>Întrebarea trebuie să permită observarea unui rezultat și să delimiteze ceea ce poate fi măsurat de ceea ce rămâne necunoscut.</p>
 
-      <h3>2.2. Documentarea stării cunoscute</h3>
+      <h3 id="2-2-documentarea-starii-cunoscute">2.2. Documentarea stării cunoscute</h3>
 
       <p>Înainte de experiment sunt verificate:</p>
 
@@ -202,7 +235,7 @@ măsurare</code></pre>
 
       <p>Documentația oficială are prioritate pentru afirmațiile despre propriile produse ale furnizorilor. Lipsa unei afirmații oficiale nu este tratată automat drept dovadă că un mecanism nu există.</p>
 
-      <h3>2.3. Formularea ipotezei</h3>
+      <h3 id="2-3-formularea-ipotezei">2.3. Formularea ipotezei</h3>
 
       <p>Ipoteza este formulată <strong>înaintea intervenției</strong> și trebuie să poată fi infirmată.</p>
 
@@ -210,37 +243,37 @@ măsurare</code></pre>
 
       <p>Un rezultat negativ, parțial sau neconcludent rămâne rezultat și trebuie păstrat.</p>
 
-      <h3>2.4. Stabilirea baseline-ului</h3>
+      <h3 id="2-4-stabilirea-baseline-ului">2.4. Stabilirea baseline-ului</h3>
 
       <p>Starea inițială este documentată înaintea intervențiilor analizate.</p>
 
       <p>Baseline-ul trebuie să permită comparația ulterioară și să reducă riscul de a atribui unei intervenții un rezultat care exista deja.</p>
 
-      <h3>2.5. Înghețarea elementelor de comparație</h3>
+      <h3 id="2-5-inghetarea-elementelor-de-comparatie">2.5. Înghețarea elementelor de comparație</h3>
 
       <p>Setul de interogări, taxonomia, entitățile, platformele și condițiile relevante sunt păstrate pe cât posibil între măsurări.</p>
 
       <p>Orice schimbare care poate afecta comparabilitatea este declarată.</p>
 
-      <h3>2.6. Aplicarea intervenției</h3>
+      <h3 id="2-6-aplicarea-interventiei">2.6. Aplicarea intervenției</h3>
 
       <p>Modificările sunt documentate individual, datate și delimitate de schimbările necontrolate atunci când acest lucru este posibil.</p>
 
-      <h3>2.7. Perioada de așteptare</h3>
+      <h3 id="2-7-perioada-de-asteptare">2.7. Perioada de așteptare</h3>
 
       <p>Este acordat timp pentru ca ecosistemele externe să poată reflecta schimbările: recrawl, indexare, actualizarea surselor sau alte procese asupra cărora experimentul nu are control direct.</p>
 
-      <h3>2.8. Remăsurarea</h3>
+      <h3 id="2-8-remasurarea">2.8. Remăsurarea</h3>
 
       <p>Setul comparabil este rulat din nou în condiții cât mai apropiate de baseline.</p>
 
-      <h3>2.9. Comparația și interpretarea</h3>
+      <h3 id="2-9-comparatia-si-interpretarea">2.9. Comparația și interpretarea</h3>
 
       <p>Diferențele sunt calculate și descrise înainte de formularea interpretării.</p>
 
       <p>O schimbare temporală este o observație. Explicația acelei schimbări poate fi o inferență sau o ipoteză și trebuie prezentată ca atare.</p>
 
-      <h2>3. Etapa de baseline — stabilirea liniei de bază</h2>
+      <h2 id="3-etapa-de-baseline-stabilirea-liniei-de-baza">3. Etapa de baseline — stabilirea liniei de bază</h2>
 
       <p><a href="/lab/metodologie/tabula-rasa-f0">Tabula Rasa F0</a> documentează starea unei entități înainte de intervenții.</p>
 
@@ -257,13 +290,13 @@ măsurare</code></pre>
         <li>ce dovezi susțin fiecare observație.</li>
       </ul>
 
-      <p>AVL-201 tratează baseline-ul ca pe un livrabil independent, nu ca pe o etapă informală înaintea „adevăratului” experiment.</p>
+      <p>AVL-201 tratează baseline-ul ca pe un livrabil independent, nu ca pe o etapă informală înaintea „adevăratului” experiment. Intrările baseline-ului includ fișa entității, descrisă câmp cu câmp în <a href="/lab/metodologie/fisa-entitatii">AVL-205</a>.</p>
 
       <blockquote><strong>Notă de nomenclatură:</strong> etapele metodologice se identifică doar prin nume — etapa de baseline, etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare —, iar codurile se folosesc doar pentru punctele de măsurare: <code>T0</code> este baseline-ul, <code>F1</code> primul punct de măsurare după baseline, <code>F2</code> … <code>Fn</code> re-măsurările ulterioare. Definițiile și corespondența cu convențiile anterioare (<code>F0</code>–<code>F3</code> ca faze, <code>T0</code>/<code>T1</code>/<code>T2</code> ca puncte de măsurare) sunt în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>. Atunci când un studiu istoric folosește o convenție mai veche, aceasta nu este rescrisă retroactiv.</blockquote>
 
       <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește AVL-201 — Tabula Rasa F0</a></strong></p>
 
-      <h2>4. Query set-ul</h2>
+      <h2 id="4-query-set-ul">4. Query set-ul</h2>
 
       <p>Măsurarea unei entități nu se bazează pe o singură întrebare.</p>
 
@@ -287,7 +320,7 @@ măsurare</code></pre>
 
       <p>Un query set este un eșantion documentat, nu recensământul tuturor întrebărilor posibile despre o entitate.</p>
 
-      <h2>5. Standardul de dovezi</h2>
+      <h2 id="5-standardul-de-dovezi">5. Standardul de dovezi</h2>
 
       <p>Această secțiune rezumă principiile necesare pentru a înțelege cadrul general. Cerințele detaliate privind dovezile, măsurarea și trasabilitatea sunt formalizate separat în <strong>AVL-200 — Standard dovezi, măsurare și trasabilitate</strong>.</p>
 
@@ -313,7 +346,7 @@ măsurare</code></pre>
 
       <p>Unde este folosit un manifest de integritate, checksum-urile trebuie să descrie forma finală a artefactelor publicate. Validarea structurală a setului precede generarea checksum-urilor, iar orice modificare ulterioară a unui fișier acoperit de manifest impune regenerarea checksum-ului corespunzător.</p>
 
-      <h2>6. Taxonomia rezultatelor</h2>
+      <h2 id="6-taxonomia-rezultatelor">6. Taxonomia rezultatelor</h2>
 
       <p>Răspunsurile nu sunt reduse la „apare / nu apare”.</p>
 
@@ -343,39 +376,39 @@ măsurare</code></pre>
 
       <p>Taxonomia există pentru diagnostic. Două entități care obțin același scor agregat pot avea probleme complet diferite.</p>
 
-      <h2>7. Nu măsurăm doar răspunsul AI</h2>
+      <h2 id="7-nu-masuram-doar-raspunsul-ai">7. Nu măsurăm doar răspunsul AI</h2>
 
       <p>Tabula Rasa F0 tratează baseline-ul ca pe o fotografie mai largă a entității.</p>
 
       <p>În funcție de proiect pot fi auditate mai multe straturi.</p>
 
-      <h3>Accesul tehnic</h3>
+      <h3 id="accesul-tehnic">Accesul tehnic</h3>
 
       <p><code>robots.txt</code>, crawlere, răspunsuri HTTP, CDN/WAF și posibilitatea reală de recuperare a conținutului.</p>
 
-      <h3>Datele structurate</h3>
+      <h3 id="datele-structurate">Datele structurate</h3>
 
       <p>Noduri JSON-LD, <code>@id</code>, tipuri, relații și concordanța dintre markup și textul vizibil.</p>
 
       <p>Datele structurate sunt tratate ca instrument de clarificare semantică, nu ca garanție a indexării, menționării sau citării.</p>
 
-      <h3>Search</h3>
+      <h3 id="search">Search</h3>
 
       <p>Rezultatele organice și alte suprafețe de căutare relevante sunt analizate separat de răspunsurile generative atunci când obiectul studiului cere acest lucru.</p>
 
-      <h3>Răspunsurile AI</h3>
+      <h3 id="raspunsurile-ai">Răspunsurile AI</h3>
 
       <p>Cum răspund platformele pe query set-ul stabilit, ce informații atribuie entității și ce surse afișează.</p>
 
-      <h3>Înțelegerea entității</h3>
+      <h3 id="intelegerea-entitatii">Înțelegerea entității</h3>
 
       <p>Rol, locație, experiență, organizații asociate, cronologie, actualitate, coliziuni și eventuale informații false sau lipsă.</p>
 
-      <h3>Ecosistemul extern</h3>
+      <h3 id="ecosistemul-extern">Ecosistemul extern</h3>
 
       <p>Profiluri, publicații, directoare, registre, mențiuni și alte surse care confirmă, completează sau contrazic identitatea publică.</p>
 
-      <h2>8. Intervenția</h2>
+      <h2 id="8-interventia">8. Intervenția</h2>
 
       <p>După închiderea baseline-ului pot fi introduse modificări.</p>
 
@@ -395,7 +428,7 @@ măsurare</code></pre>
 
       <p>Dacă mai multe intervenții au loc între două puncte de măsurare, rezultatul ulterior nu este atribuit automat uneia singure dintre ele.</p>
 
-      <h2>9. Așteptarea și remăsurarea</h2>
+      <h2 id="9-asteptarea-si-remasurarea">9. Așteptarea și remăsurarea</h2>
 
       <p>Sistemele externe nu se actualizează instantaneu și nu sunt controlate de experiment.</p>
 
@@ -415,7 +448,7 @@ măsurare</code></pre>
 
       <p>Orice schimbare de motor, model, interfață, limbă, țară, stare a contului sau metodă de captură trebuie declarată atunci când poate afecta comparabilitatea.</p>
 
-      <h2>10. Comparația</h2>
+      <h2 id="10-comparatia">10. Comparația</h2>
 
       <p>Diferența dintre două ferestre nu este redusă la un singur scor.</p>
 
@@ -442,7 +475,7 @@ măsurare</code></pre>
 
       <p>Un scor fără distribuția din spate poate ascunde moduri de eșec fundamental diferite.</p>
 
-      <h2>11. Cum clasificăm afirmațiile</h2>
+      <h2 id="11-cum-clasificam-afirmatiile">11. Cum clasificăm afirmațiile</h2>
 
       <p>Rezultatele metodologiei sunt interpretate prin clasificarea epistemică a AI Visibility Lab.</p>
 
@@ -460,9 +493,9 @@ măsurare</code></pre>
 
       <p>Dacă explicația unui rezultat nu este cunoscută, metodologia păstrează explicit necunoscutul în loc să îl transforme într-o certitudine aparentă.</p>
 
-      <h2>12. Metodologie, experiment și studiu de caz nu sunt același lucru</h2>
+      <h2 id="12-metodologie-experiment-si-studiu-de-caz-nu-sunt-acelasi-lucru">12. Metodologie, experiment și studiu de caz nu sunt același lucru</h2>
 
-      <h3>Metodologia</h3>
+      <h3 id="metodologia">Metodologia</h3>
 
       <p>Definește <strong>cum trebuie măsurat</strong> și care sunt regulile prin care o observație poate deveni rezultat publicabil.</p>
 
@@ -470,7 +503,7 @@ măsurare</code></pre>
 
       <p><strong><a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a></strong></p>
 
-      <h3>Experimentul public</h3>
+      <h3 id="experimentul-public">Experimentul public</h3>
 
       <p>Pornește de la o <strong>ipoteză declarată înainte</strong> și testează o intervenție sau un fenomen în condiții documentate.</p>
 
@@ -478,7 +511,7 @@ măsurare</code></pre>
 
       <p><strong>→ <a href="/lab/experimente-publice">Vezi experimentele publice</a></strong></p>
 
-      <h3>Studiul de caz</h3>
+      <h3 id="studiul-de-caz">Studiul de caz</h3>
 
       <p>Aplică metodologia asupra unei <strong>entități reale</strong> și documentează evoluția acesteia de-a lungul mai multor ferestre de măsurare.</p>
 
@@ -488,7 +521,7 @@ măsurare</code></pre>
 
       <p>Aceeași metodologie poate susține mai multe experimente și mai multe studii de caz.</p>
 
-      <h2>13. Principiile metodologiei</h2>
+      <h2 id="13-principiile-metodologiei">13. Principiile metodologiei</h2>
 
       <p>Metodologia AI Visibility Lab respectă câteva reguli constante:</p>
 
@@ -508,7 +541,7 @@ măsurare</code></pre>
         <li>corelația temporală nu este prezentată automat drept cauzalitate.</li>
       </ul>
 
-      <h2>14. Market Measurement — măsurarea reprezentării unei piețe</h2>
+      <h2 id="14-market-measurement-masurarea-reprezentarii-unei-piete">14. Market Measurement — măsurarea reprezentării unei piețe</h2>
 
       <p>Market Measurement este ramura Nivelului C care se ocupă de măsurarea modului în care sistemele AI reprezintă o piață — o populație de furnizori — nu o singură entitate. Ramura este formalizată prin familia normativă <code>AVL-MKT-*</code> și rămâne subordonată AVL-001 și AVL-202.</p>
 
@@ -516,7 +549,7 @@ măsurare</code></pre>
 
       <p>Această secțiune descrie arhitectura ramurii. Nu conține criteriile de eligibilitate, regulile de construire a panelului de interogări sau alte cerințe operaționale. Regulile operaționale de delimitare a pieței și de eligibilitate sunt definite exclusiv în <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a>; regulile panelului de interogări vor fi definite de AVL-MKT-002 — Market Query Panel (planificat).</p>
 
-      <h3>14.1. Protocol normativ și instanță a protocolului</h3>
+      <h3 id="14-1-protocol-normativ-si-instanta-a-protocolului">14.1. Protocol normativ și instanță a protocolului</h3>
 
       <p>Ramura Market Measurement separă strict <strong>regula</strong> de <strong>rezultatul aplicării regulii</strong>:</p>
 
@@ -535,7 +568,7 @@ Market Reference Set</code></pre>
 
       <p>Market Reference Set se constituie din intrările <code>ELIGIBLE</code> ale registrului Market Verification la Market Cutoff Date. Este constituit independent, de AI Visibility Lab, în scopul cercetării laboratorului; nu este validat de nicio autoritate publică, organism profesional sau autoritate de reglementare și nu are statut oficial. Nu este lista exhaustivă a furnizorilor existenți și nici o statistică oficială de piață. Regulile de constituire, de publicare și rezervele lui sunt definite în AVL-MKT-001, §12 și §21.</p>
 
-      <h3>14.2. Fluxul Market Measurement</h3>
+      <h3 id="14-2-fluxul-market-measurement">14.2. Fluxul Market Measurement</h3>
 
       <pre><code>AVL-MKT-001
 Market Scope &amp; Eligibility Protocol
@@ -582,7 +615,7 @@ Quarterly Market Report</code></pre>
 
       <p>Market Discovery și Market Verification produc registre publice distincte. Registrul Market Discovery cuprinde toți candidații identificați, fiecare cu statutul <code>UNVERIFIED</code> și cu proveniența observației; includerea în el nu confirmă existența, activitatea, eligibilitatea sau calitatea unei entități. Registrul Market Verification cuprinde toți candidații evaluați, fiecare cu unul dintre statusurile de eligibilitate; registrul furnizorilor eligibili este partea lui care cuprinde exclusiv intrările <code>ELIGIBLE</code>. Publicarea eligibilității nu constituie certificare, recomandare comercială sau clasament. Regulile de publicare sunt definite în AVL-MKT-001, §21.</p>
 
-      <h3>14.3. Ordinea temporală și protecția împotriva selection bias</h3>
+      <h3 id="14-3-ordinea-temporala-si-protectia-impotriva-selection-bias">14.3. Ordinea temporală și protecția împotriva selection bias</h3>
 
       <p>Criteriile de eligibilitate trebuie fixate înainte ca populația pieței să fie cunoscută. Altfel, criteriile pot fi ajustate, conștient sau nu, pentru a include sau exclude furnizori deja observați. Ordinea planificată este:</p>
 
@@ -610,7 +643,7 @@ măsurarea AI</code></pre>
 
       <p>Scopul acestei ordini este ca fiecare raport de piață să poată afirma verificabil că <strong>criteriile de eligibilitate au fost definite și publicate înainte de constituirea Market Reference Set și înainte de măsurarea reprezentării furnizorilor în sistemele AI</strong>.</p>
 
-      <h3>14.4. Stratul de referință și stratul de reprezentare AI</h3>
+      <h3 id="14-4-stratul-de-referinta-si-stratul-de-reprezentare-ai">14.4. Stratul de referință și stratul de reprezentare AI</h3>
 
       <p>Market Measurement compară două straturi care nu trebuie confundate:</p>
 
@@ -632,7 +665,7 @@ Răspunsurile sistemelor AI
 
       <p>Această separare face măsurabilă diferența dintre <strong>piața documentată</strong> și <strong>piața reprezentată de AI</strong>.</p>
 
-      <h3>14.5. Instanțele Market Measurement (<code>MKT-*</code>)</h3>
+      <h3 id="14-5-instantele-market-measurement-mkt">14.5. Instanțele Market Measurement (<code>MKT-*</code>)</h3>
 
       <p>Documentele normative și instanțele concrete folosesc identificatori diferiți:</p>
 
@@ -643,7 +676,7 @@ Răspunsurile sistemelor AI
 
       <p>Formatul instanțelor și regulile lui sunt definite în AVL-001, §17. Aceeași piață poate fi măsurată longitudinal (<code>MKT-RO-AIV-2026Q4</code>, <code>MKT-RO-AIV-2027Q1</code>, <code>MKT-RO-AIV-2027Q2</code> …) fără modificarea protocoalelor normative. Exemplul este ilustrativ; nicio instanță <code>MKT-*</code> nu a fost creată la data acestei versiuni. În interiorul unei instanțe, rulările Market Discovery se identifică prin sufixele <code>FULL</code> (rularea trimestrială completă) și <code>M{lună}</code> (rulările lunare), iar rulările pilot prin <code>PILOT</code> și <code>PILOT-{n}</code>; un pilot nu este o rulare a instanței (AVL-MKT-001, §3.2). Convenția T0 / F1 … Fn nu se folosește în Market Discovery și rămâne convenția punctelor de măsurare din AVL-200 §7. Schema rulărilor de măsurare AI aparține AVL-MKT-002.</p>
 
-      <h3>Principiul ramurii</h3>
+      <h3 id="principiul-ramurii">Principiul ramurii</h3>
 
       <pre><code>REGULA
 AVL-MKT-001
@@ -656,11 +689,11 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p>Mai întâi este definită regula. Apoi este construită independent referința despre piață. Abia după aceea este măsurat modul în care sistemele AI reprezintă acea piață.</p>
 
-      <h2>Documentele metodologiei</h2>
+      <h2 id="documentele-metodologiei">Documentele metodologiei</h2>
 
       <p>Documentele de nivel C nu sunt ordonate semantic prin numărul lor. Pentru orientare, această pagină le afișează în ordinea recomandată de lectură.</p>
 
-      <h3>AVL-202 — Cadrul metodologic AI Visibility Lab</h3>
+      <h3 id="avl-202-cadrul-metodologic-ai-visibility-lab">AVL-202 — Cadrul metodologic AI Visibility Lab</h3>
 
       <p><em>Methodological Framework</em></p>
 
@@ -670,9 +703,9 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><strong>Depinde de:</strong> AVL-001 — AI Visibility Lab Foundation.</p>
 
-      <p><strong>Leagă și contextualizează:</strong> AVL-200, AVL-201, AVL-203, AVL-204, familia Market Measurement (<code>AVL-MKT-*</code>) și viitoarele documente metodologice.</p>
+      <p><strong>Leagă și contextualizează:</strong> AVL-200, AVL-201, AVL-203, AVL-204, AVL-205, familia Market Measurement (<code>AVL-MKT-*</code>) și viitoarele documente metodologice.</p>
 
-      <h3>AVL-200 — Standard dovezi, măsurare și trasabilitate</h3>
+      <h3 id="avl-200-standard-dovezi-masurare-si-trasabilitate">AVL-200 — Standard dovezi, măsurare și trasabilitate</h3>
 
       <p><em>Evidence, Measurement &amp; Traceability Standard</em></p>
 
@@ -680,7 +713,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p>În raport cu AVL-202, rolul lui este să detalieze stratul de <strong>evidence integrity și traceability</strong>, fără ca AVL-202 să dubleze toate cerințele sale operaționale.</p>
 
-      <h3>AVL-201 — Tabula Rasa F0</h3>
+      <h3 id="avl-201-tabula-rasa-f0">AVL-201 — Tabula Rasa F0</h3>
 
       <p><em>Baseline Measurement Specification</em></p>
 
@@ -707,7 +740,21 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><strong>→ <a href="/lab/metodologie/tabula-rasa-f0">Citește Tabula Rasa F0</a></strong></p>
 
-      <h3>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</h3>
+      <h3 id="avl-205-fisa-entitatii">AVL-205 — Fișa entității</h3>
+
+      <p><em>Entity Sheet</em></p>
+
+      <p><strong>Versiune 0.1.1 · Draft pentru revizuire</strong></p>
+
+      <p>Descrie fișa entității, intrarea obligatorie a baseline-ului (AVL-201 §7): rolul ei, cum se completează și cine o completează, stările verificării în etapa de baseline și definiția fiecărui câmp — forma canonică și variantele, rolul și domeniul de activitate, locația, atributele verificabile, activele oficiale, relațiile, harta coliziunilor, prezența distribuită și politica crawlere. Nu introduce cerințe proprii și nu modifică conținutul minim stabilit de AVL-201.</p>
+
+      <p><strong>Rol:</strong> instrument al etapei de baseline în ramura Core Methodology; detaliază AVL-201 §7, fără a-l înlocui.</p>
+
+      <p><strong>Depinde de:</strong> AVL-001, AVL-202, AVL-200 și AVL-201.</p>
+
+      <p><strong>→ <a href="/lab/metodologie/fisa-entitatii">Citește AVL-205</a></strong></p>
+
+      <h3 id="avl-203-protocolul-minim-de-verificare-tehnica-a-unui-site-pentru-ai-visibility">AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</h3>
 
       <p><em>Core Technical Web Measurement Protocol</em></p>
 
@@ -721,7 +768,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><strong>→ <a href="/lab/metodologie/protocol-verificare-tehnica">Citește AVL-203</a></strong></p>
 
-      <h3>AVL-204 — Grila de interpretare a verificării tehnice</h3>
+      <h3 id="avl-204-grila-de-interpretare-a-verificarii-tehnice">AVL-204 — Grila de interpretare a verificării tehnice</h3>
 
       <p><em>Technical Diagnostic Interpretation Grid</em></p>
 
@@ -735,7 +782,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><strong>→ <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">Citește AVL-204</a></strong></p>
 
-      <h3>Familia Market Measurement (<code>AVL-MKT-*</code>)</h3>
+      <h3 id="familia-market-measurement-avl-mkt">Familia Market Measurement (<code>AVL-MKT-*</code>)</h3>
 
       <p><em>Market Measurement</em></p>
 
@@ -759,7 +806,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><strong>Depind de:</strong> AVL-001 și AVL-202. Dependențele normative suplimentare vor fi declarate de fiecare document la publicare.</p>
 
-      <h3>Metodologia evoluează odată cu cercetarea</h3>
+      <h3 id="metodologia-evolueaza-odata-cu-cercetarea">Metodologia evoluează odată cu cercetarea</h3>
 
       <p>AI Visibility Lab tratează metodologia ca pe un sistem versionat, nu ca pe un set definitiv de reguli.</p>
 
@@ -771,7 +818,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p>O metodologie nouă nu rescrie retrospectiv măsurătorile istorice. Atunci când protocolul se maturizează, diferența dintre versiuni este documentată.</p>
 
-      <h2>Vezi metodologia aplicată</h2>
+      <h2 id="vezi-metodologia-aplicata">Vezi metodologia aplicată</h2>
 
       <p><strong><a href="/lab/studii-de-caz">Studii de caz →</a></strong><br />Aplicarea metodologiei asupra unor entități reale, cu baseline, intervenții, dovezi și evoluție în timp.</p>
 
@@ -783,7 +830,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><strong><a href="/lab/introducere">AI Visibility Lab Foundation →</a></strong><br />Regulile epistemice și editoriale prin care trebuie citite toate documentele laboratorului.</p>
 
-      <h2>Ce nu demonstrează această metodologie</h2>
+      <h2 id="ce-nu-demonstreaza-aceasta-metodologie">Ce nu demonstrează această metodologie</h2>
 
       <p>AI Visibility Lab măsoară ceea ce poate fi observat din exterior.</p>
 
@@ -799,7 +846,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p>Aceste limite nu anulează măsurarea. Ele delimitează ce poate fi susținut onest pe baza ei.</p>
 
-      <h2>Independență și conflict de interese</h2>
+      <h2 id="independenta-si-conflict-de-interese">Independență și conflict de interese</h2>
 
       <p>Atunci când autorul măsoară propria persoană, propriul site, o entitate asupra căreia are control editorial sau o metodologie pe care a construit-o, situația trebuie declarată în studiul sau experimentul respectiv.</p>
 
@@ -807,11 +854,11 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p>Transparența nu elimină conflictul. Îl face vizibil și auditabil.</p>
 
-      <h2>Citare recomandată</h2>
+      <h2 id="citare-recomandata">Citare recomandată</h2>
 
-      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.7.2, 2026. https://delamatescu.ro/lab/metodologie</p>
+      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.8.0, 2026. https://delamatescu.ro/lab/metodologie</p>
 
-      <h2>Istoricul versiunilor</h2>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
 
       <table>
         <thead>
@@ -878,10 +925,16 @@ Market Query Panel + răspunsurile AI</code></pre>
             <td>Activ</td>
             <td>PATCH: versiunile documentelor din ramura Core Methodology actualizate: AVL-203 trece la v0.6.1 și AVL-204 la v0.3.1 (trimitere la studiul de caz CS-002, primul exemplu aplicat al verificării tehnice), ambele draft pentru revizuire. Fără alte modificări.</td>
           </tr>
+          <tr>
+            <td>1.8.0</td>
+            <td>4 noiembrie 2026</td>
+            <td>Activ</td>
+            <td>MINOR: AVL-205 — Fișa entității este inclus în corpus ca draft pentru revizuire (v0.1.1): identificatori, ordinea de înregistrare, ordinea conceptuală de lectură (împreună cu AVL-201), arborele arhitecturii (ramura Core Methodology), ordinea din hub (după AVL-201), documentele normative asociate, secțiunea 3 și lista documentelor metodologiei. AVL-205 nu este activ; statutul lui se actualizează aici la activare. Nicio altă schimbare de principiu.</td>
+          </tr>
         </tbody>
       </table>
 
-      <h3>Nota metodologică</h3>
+      <h3 id="nota-metodologica">Nota metodologică</h3>
 
       <p>AI Visibility Lab măsoară ceea ce poate fi observat din exterior. Metodologia nu oferă acces la mecanisme interne nepublice și nu transformă corelațiile sau schimbările temporale în dovezi automate de cauzalitate.</p>
 

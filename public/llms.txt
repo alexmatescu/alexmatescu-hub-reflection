@@ -53,6 +53,7 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 - [Tabula Rasa F0 (AVL-201)](https://delamatescu.ro/lab/metodologie/tabula-rasa-f0): specificația măsurătorii de baseline pentru o entitate
 - [Protocolul minim de verificare tehnică (AVL-203)](https://delamatescu.ro/lab/metodologie/protocol-verificare-tehnica): draft pentru revizuire — HTTP, redirecturi, robots.txt, sitemap, raw HTML și paritate pe User-Agent
 - [Grila de interpretare a verificării tehnice (AVL-204)](https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica): draft pentru revizuire — regulile publice prin care observațiile AVL-203 devin diagnostic pe șase zone și recomandări prioritizate
+- [Fișa entității (AVL-205)](https://delamatescu.ro/lab/metodologie/fisa-entitatii): draft pentru revizuire — câmpurile fișei prin care entitatea evaluată își declară informațiile oficiale înaintea baseline-ului T0, cu definiția fiecărui câmp și cine îl completează
 - [Market Scope & Eligibility Protocol (AVL-MKT-001)](https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate): draft pentru revizuire — delimitarea pieței, eligibilitate, Market Discovery și Market Verification
 - [Ce este GEO/AEO (AVL-101)](https://delamatescu.ro/lab/cercetare/ce-este-geo-aeo): definiții și diferența dintre a fi indexat și a fi citat
 - [Cum aleg motoarele AI ce citează (AVL-102)](https://delamatescu.ro/lab/cercetare/cum-aleg-motoarele-ai): semnale de încredere, structură și autoritate în selecția surselor

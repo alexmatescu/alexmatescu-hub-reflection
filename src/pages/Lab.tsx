@@ -33,6 +33,7 @@ import { avl201TabulaRasaF0Html } from "@/data/lab-content/avl-201";
 import { avl202CadruMetodologicHtml } from "@/data/lab-content/avl-202";
 import { avl203ProtocolVerificareTehnicaHtml } from "@/data/lab-content/avl-203";
 import { avl204GrilaInterpretareVerificareTehnicaHtml } from "@/data/lab-content/avl-204";
+import { avl205FisaEntitatiiHtml } from "@/data/lab-content/avl-205";
 import { avlMkt001MarketScopeEligibilityHtml } from "@/data/lab-content/avl-mkt-001";
 import { avl301ExperimentePubliceHtml } from "@/data/lab-content/avl-301";
 import { avl350StudiiDeCazHtml } from "@/data/lab-content/avl-350";
@@ -85,6 +86,7 @@ const labPageContent: Record<string, string> = {
     avl203ProtocolVerificareTehnicaHtml,
   "/lab/metodologie/grila-interpretare-verificare-tehnica":
     avl204GrilaInterpretareVerificareTehnicaHtml,
+  "/lab/metodologie/fisa-entitatii": avl205FisaEntitatiiHtml,
   "/lab/metodologie/protocol-delimitare-piata-eligibilitate":
     avlMkt001MarketScopeEligibilityHtml,
   "/lab/experimente-publice": avl301ExperimentePubliceHtml,

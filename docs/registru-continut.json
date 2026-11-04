@@ -1,7 +1,7 @@
 {
-  "generat": "2026-11-03",
+  "generat": "2026-11-04",
   "pragReverificareZile": 180,
-  "totalIntrari": 182,
+  "totalIntrari": 183,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
@@ -32,7 +32,7 @@
       "imagine": "https://delamatescu.ro/images/lab/cum-aleg-furnizorul-de-servicii.webp",
       "jsonLd": "@graph",
       "nrCitari": 3,
-      "zileDeLaVerificare": 0,
+      "zileDeLaVerificare": 1,
       "anomalii": []
     },
     {
@@ -62,7 +62,7 @@
       "imagine": "https://delamatescu.ro/images/lab/reclame-chatgpt-google-social-media.webp",
       "jsonLd": "@graph",
       "nrCitari": 24,
-      "zileDeLaVerificare": 5,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -92,7 +92,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 7,
       "anomalii": []
     },
     {
@@ -122,7 +122,7 @@
       "imagine": "https://delamatescu.ro/images/lab/costurile-ai-variatii-finantari-plata-la-cine.webp",
       "jsonLd": "@graph",
       "nrCitari": 16,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 7,
       "anomalii": []
     },
     {
@@ -152,7 +152,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 11,
+      "zileDeLaVerificare": 12,
       "anomalii": []
     },
     {
@@ -182,7 +182,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 5,
-      "zileDeLaVerificare": 12,
+      "zileDeLaVerificare": 13,
       "anomalii": []
     },
     {
@@ -212,7 +212,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 13,
+      "zileDeLaVerificare": 14,
       "anomalii": []
     },
     {
@@ -242,7 +242,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 33,
+      "zileDeLaVerificare": 34,
       "anomalii": []
     },
     {
@@ -272,7 +272,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 33,
+      "zileDeLaVerificare": 34,
       "anomalii": []
     },
     {
@@ -302,7 +302,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 33,
+      "zileDeLaVerificare": 34,
       "anomalii": []
     },
     {
@@ -332,7 +332,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 32,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -362,7 +362,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 9,
-      "zileDeLaVerificare": 34,
+      "zileDeLaVerificare": 35,
       "anomalii": []
     },
     {
@@ -392,7 +392,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 34,
+      "zileDeLaVerificare": 35,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -424,7 +424,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 68,
+      "zileDeLaVerificare": 69,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -456,7 +456,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 76,
+      "zileDeLaVerificare": 77,
       "anomalii": []
     },
     {
@@ -486,7 +486,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 76,
+      "zileDeLaVerificare": 77,
       "anomalii": []
     },
     {
@@ -516,7 +516,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 20,
-      "zileDeLaVerificare": 18,
+      "zileDeLaVerificare": 19,
       "anomalii": []
     },
     {
@@ -546,7 +546,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 76,
+      "zileDeLaVerificare": 77,
       "anomalii": []
     },
     {
@@ -576,7 +576,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 76,
+      "zileDeLaVerificare": 77,
       "anomalii": []
     },
     {
@@ -606,7 +606,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 78,
+      "zileDeLaVerificare": 79,
       "anomalii": []
     },
     {
@@ -636,7 +636,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 77,
+      "zileDeLaVerificare": 78,
       "anomalii": []
     },
     {
@@ -786,7 +786,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 32,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -816,7 +816,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 5,
-      "zileDeLaVerificare": 6,
+      "zileDeLaVerificare": 7,
       "anomalii": []
     },
     {
@@ -846,7 +846,36 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 11,
+      "zileDeLaVerificare": 12,
+      "anomalii": []
+    },
+    {
+      "id": "AVL-205",
+      "titlu": "AVL-205 — Fișa entității",
+      "suprafata": "lab/metodologie",
+      "nivel": "C — Methodology",
+      "ruta": "/lab/metodologie/fisa-entitatii",
+      "slug": "fisa-entitatii",
+      "categorie": "C — Methodology",
+      "tip": "Document normativ",
+      "status": "publicat",
+      "statusNormativ": "Draft pentru revizuire",
+      "versiune": "0.1.1",
+      "dataCreare": null,
+      "dataPublicare": "2026-11-04",
+      "dataModificare": null,
+      "ultimaVerificare": "2026-11-04",
+      "fisierMd": "src/content/lab/AVL/AVL-205_Fisa_entitatii.md",
+      "fisierTs": "src/data/lab-content/avl-205.ts",
+      "wiring": {
+        "registru": null,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": null,
+      "imagine": null,
+      "zileDeLaVerificare": 0,
       "anomalii": []
     },
     {
@@ -875,7 +904,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 8,
+      "zileDeLaVerificare": 9,
       "anomalii": []
     },
     {
@@ -904,7 +933,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 33,
+      "zileDeLaVerificare": 34,
       "anomalii": []
     },
     {
@@ -933,7 +962,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 18,
+      "zileDeLaVerificare": 19,
       "anomalii": []
     },
     {
@@ -962,7 +991,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 18,
+      "zileDeLaVerificare": 19,
       "anomalii": []
     },
     {
@@ -976,10 +1005,10 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.7.2",
+      "versiune": "1.8.0",
       "dataCreare": "2026-09-14",
       "dataPublicare": "2026-09-14",
-      "dataModificare": "2026-10-28",
+      "dataModificare": "2026-11-04",
       "ultimaVerificare": "2026-10-02",
       "fisierMd": "src/content/lab/AVL/AVL-202_Cadrul-metodologic-AI-Visibility-Lab.md",
       "fisierTs": "src/data/lab-content/avl-202.ts",
@@ -991,7 +1020,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 32,
+      "zileDeLaVerificare": 33,
       "anomalii": []
     },
     {
@@ -1005,10 +1034,10 @@
       "tip": "Document normativ",
       "status": "publicat",
       "statusNormativ": "Activ",
-      "versiune": "1.5.0",
+      "versiune": "1.6.0",
       "dataCreare": "2026-07-22",
       "dataPublicare": "2026-07",
-      "dataModificare": "2026-10-25",
+      "dataModificare": "2026-11-04",
       "ultimaVerificare": null,
       "fisierMd": "src/content/lab/AVL/AVL-201_Tabula_Rasa_F0_Baseline_Measurement_Specification.md",
       "fisierTs": "src/data/lab-content/avl-201.ts",
@@ -1342,7 +1371,7 @@
       },
       "sitemapLastmod": "2026-10-26",
       "imagine": "/images/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.webp",
-      "zileDeLaVerificare": 8,
+      "zileDeLaVerificare": 9,
       "anomalii": []
     },
     {
@@ -1370,7 +1399,7 @@
       },
       "sitemapLastmod": "2026-10-26",
       "imagine": "/images/blog/imbatraneste-si-sufletul-odata-cu-trupul.webp",
-      "zileDeLaVerificare": 8,
+      "zileDeLaVerificare": 9,
       "anomalii": []
     },
     {

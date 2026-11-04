@@ -8,34 +8,66 @@ export const avl201TabulaRasaF0Html = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-201</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.5.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.6.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>iulie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>25 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>4 noiembrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">Dependențe normative</th><td><a href="/lab/introducere">AVL-001</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a>, <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a></td></tr>
-        <tr><th scope="row">Dependențe informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105</a></td></tr>
+        <tr><th scope="row">Dependențe informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105</a>, <a href="/lab/metodologie/fisa-entitatii">AVL-205</a></td></tr>
         </tbody>
         </table>
       </div>
 
+      <nav class="article-toc" aria-labelledby="cuprins">
+        <p id="cuprins" class="article-toc-title">Cuprins</p>
+        <ol>
+          <li><a href="#controlul-documentului">Controlul documentului</a></li>
+          <li><a href="#rezumat-executiv">Rezumat executiv</a></li>
+          <li><a href="#1-scop">1. Scop</a></li>
+          <li><a href="#2-obiective">2. Obiective</a></li>
+          <li><a href="#3-domeniu-de-aplicare">3. Domeniu de aplicare</a></li>
+          <li><a href="#4-in-afara-domeniului">4. În afara domeniului</a></li>
+          <li><a href="#5-terminologie-si-definitii-operationale">5. Terminologie și definiții operaționale</a></li>
+          <li><a href="#6-roluri-si-responsabilitati">6. Roluri și responsabilități</a></li>
+          <li><a href="#7-intrari-obligatorii">7. Intrări obligatorii</a></li>
+          <li><a href="#8-iesiri-si-livrabile">8. Ieșiri și livrabile</a></li>
+          <li><a href="#9-instrumente-si-conditii-minime">9. Instrumente și condiții minime</a></li>
+          <li><a href="#10-protocolul-de-masurare-in-zece-pasi">10. Protocolul de măsurare în zece pași</a></li>
+          <li><a href="#11-protocolul-sesiunii-curate">11. Protocolul sesiunii curate</a></li>
+          <li><a href="#12-standardul-de-dovezi">12. Standardul de dovezi</a></li>
+          <li><a href="#13-taxonomia-rezultatelor">13. Taxonomia rezultatelor</a></li>
+          <li><a href="#14-scorarea">14. Scorarea</a></li>
+          <li><a href="#15-controlul-calitatii-si-revizuirea">15. Controlul calității și revizuirea</a></li>
+          <li><a href="#16-repetabilitate-si-comparatie-intre-baseline-si-re-masurari">16. Repetabilitate și comparație între baseline și re-măsurări</a></li>
+          <li><a href="#17-limitari">17. Limitări</a></li>
+          <li><a href="#18-reguli-de-interpretare">18. Reguli de interpretare</a></li>
+          <li><a href="#19-criterii-de-conformitate">19. Criterii de conformitate</a></li>
+          <li><a href="#20-structura-raportului-final">20. Structura raportului final</a></li>
+          <li><a href="#21-sabloane-minime">21. Șabloane minime</a></li>
+          <li><a href="#22-intrebari-frecvente">22. Întrebări frecvente</a></li>
+          <li><a href="#23-referinte-si-documente-asociate">23. Referințe și documente asociate</a></li>
+          <li><a href="#24-istoricul-versiunilor">24. Istoricul versiunilor</a></li>
+        </ol>
+      </nav>
+
       <blockquote>„Iată ce era înainte. Iată ce este acum. Iată diferența.”</blockquote>
 
-      <h2>Controlul documentului</h2>
+      <h2 id="controlul-documentului">Controlul documentului</h2>
 
       <p>AVL-201 este primul document normativ al metodologiei AI Visibility Lab. El descrie condițiile minime, pașii obligatorii, dovezile acceptate, taxonomia, regulile de scorare și livrabilele necesare pentru ca o măsurare să poată fi declarată conformă cu Tabula Rasa F0.</p>
 
       <p>În acest document, termenii normativi „TREBUIE”, „NU TREBUIE”, „ESTE OBLIGATORIU”, „AR TREBUI”, „NU AR TREBUI” și „POATE” sunt utilizați în sensul convenției RFC 2119, adaptată în limba română. „TREBUIE” exprimă o condiție obligatorie pentru conformitate; „AR TREBUI” exprimă o recomandare puternică ce poate fi încălcată numai cu justificare documentată; „POATE” indică o opțiune permisă. În afara propozițiilor normative și a cerințelor identificate F0-REQ, acești termeni nu trebuie interpretați automat ca cerințe de conformitate.</p>
 
-      <h2>Rezumat executiv</h2>
+      <h2 id="rezumat-executiv">Rezumat executiv</h2>
 
       <p>Tabula Rasa F0 este faza de documentare completă a stării unei entități în ecosistemul AI înainte de orice intervenție. F0 nu optimizează, nu repară și nu promite rezultate. Măsoară. Faza produce un instantaneu verificabil al identității entității, accesibilității tehnice, datelor structurate, percepției motoarelor AI, surselor citate, prezenței distribuite și corpusului de conținut.</p>
 
       <p>O implementare conformă AVL-201 trebuie să permită unui terț competent să răspundă la patru întrebări: ce s-a măsurat, în ce condiții, cu ce dovezi și prin ce reguli au fost obținute concluziile. Fără aceste răspunsuri, rezultatul poate fi util ca observație, dar nu poate fi revendicat drept baseline Tabula Rasa conform AVL-201.</p>
 
-      <h2>1. Scop</h2>
+      <h2 id="1-scop">1. Scop</h2>
 
       <p>Scopul AVL-201 este să definească o specificație publică, repetabilă și auditabilă pentru măsurarea stării inițiale a unei entități în sistemele de căutare și răspuns bazate pe inteligență artificială. Documentul stabilește ce trebuie făcut înaintea oricărei intervenții GEO/AEO, cum trebuie păstrate dovezile și cum trebuie delimitate observațiile de interpretări.</p>
 
@@ -43,7 +75,7 @@ export const avl201TabulaRasaF0Html = `
 
       <blockquote><strong>F0-REQ-002</strong> — Orice abatere accidentală de la starea inițială TREBUIE consemnată ca incident de contaminare și evaluată înainte ca rezultatul să fie declarat valid.</blockquote>
 
-      <h2>2. Obiective</h2>
+      <h2 id="2-obiective">2. Obiective</h2>
 
       <ul>
         <li>Crearea unui baseline complet și datat pentru entitatea analizată.</li>
@@ -55,7 +87,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Protejarea clientului sau subiectului împotriva atribuirii nefondate a unor rezultate.</li>
       </ul>
 
-      <h2>3. Domeniu de aplicare</h2>
+      <h2 id="3-domeniu-de-aplicare">3. Domeniu de aplicare</h2>
 
       <p>AVL-201 se poate aplica unei persoane, companii, organizații, instituții, mărci, produse, servicii, proiecte, publicații sau unui site, cu condiția ca obiectul măsurării să fie definit drept entitate și să poată fi diferențiat de alte entități.</p>
 
@@ -63,7 +95,7 @@ export const avl201TabulaRasaF0Html = `
 
       <p>Faptul că metodologia poate fi aplicată în audituri comerciale descrie o capacitate a protocolului, nu o ofertă de servicii comerciale a AI Visibility Lab. <a href="/lab/audit-ai-visibility">Auditul AI Visibility</a> este un serviciu oferit de Alex Matescu pe baza metodologiei publice a AI Visibility Lab; nu este un serviciu al laboratorului. Un audit realizat în acest cadru nu devine automat studiu de caz, experiment public sau rezultat al laboratorului; o eventuală publicare respectă regulile <a href="/lab/introducere">AVL-001</a> privind declararea conflictelor de interese.</p>
 
-      <h2>4. În afara domeniului</h2>
+      <h2 id="4-in-afara-domeniului">4. În afara domeniului</h2>
 
       <p>F0 nu este, prin el însuși, o măsurare completă a performanței comerciale sau SEO. El nu măsoară direct:</p>
 
@@ -81,7 +113,7 @@ export const avl201TabulaRasaF0Html = `
 
       <blockquote><strong>Clarificare:</strong> Aceste date pot fi corelate ulterior cu rezultatele F0, dar nu fac parte din conformitatea minimă AVL-201.</blockquote>
 
-      <h2>5. Terminologie și definiții operaționale</h2>
+      <h2 id="5-terminologie-si-definitii-operationale">5. Terminologie și definiții operaționale</h2>
 
       <p><strong>Entitate:</strong> Obiectul distinct al măsurării: persoană, organizație, marcă, produs, serviciu, proiect sau instituție.</p>
       <p><strong>Formă canonică:</strong> Numele și identificarea oficială stabilite pentru entitate și folosite ca referință în analiză.</p>
@@ -105,18 +137,18 @@ export const avl201TabulaRasaF0Html = `
       <p><strong>Contaminare:</strong> Orice schimbare sau influență care compromite comparabilitatea stării inițiale.</p>
       <p><strong>Conformitate AVL-201:</strong> Îndeplinirea cerințelor obligatorii din această specificație, cu abaterile documentate.</p>
 
-      <h2>6. Roluri și responsabilități</h2>
+      <h2 id="6-roluri-si-responsabilitati">6. Roluri și responsabilități</h2>
 
-      <h3>6.1. Responsabilul de metodologie</h3>
+      <h3 id="6-1-responsabilul-de-metodologie">6.1. Responsabilul de metodologie</h3>
       <ul>
         <li>aprobă planul F0;</li>
-        <li>confirmă forma canonică și domeniul;</li>
+        <li>confirmă forma canonică și domeniul de activitate;</li>
         <li>controlează schimbările;</li>
         <li>decide dacă incidentele invalidează baseline-ul;</li>
         <li>aprobă închiderea fazei.</li>
       </ul>
 
-      <h3>6.2. Operatorul de măsurare</h3>
+      <h3 id="6-2-operatorul-de-masurare">6.2. Operatorul de măsurare</h3>
       <ul>
         <li>execută rulările;</li>
         <li>păstrează configurația declarată;</li>
@@ -125,7 +157,7 @@ export const avl201TabulaRasaF0Html = `
         <li>raportează imediat abaterile.</li>
       </ul>
 
-      <h3>6.3. Revizorul</h3>
+      <h3 id="6-3-revizorul">6.3. Revizorul</h3>
       <ul>
         <li>verifică un eșantion sau întregul pachet;</li>
         <li>recalculează scorurile;</li>
@@ -133,7 +165,7 @@ export const avl201TabulaRasaF0Html = `
         <li>documentează dezacordurile.</li>
       </ul>
 
-      <h3>6.4. Subiectul sau clientul</h3>
+      <h3 id="6-4-subiectul-sau-clientul">6.4. Subiectul sau clientul</h3>
       <ul>
         <li>furnizează informațiile oficiale;</li>
         <li>declară profilurile și activele controlate;</li>
@@ -142,12 +174,12 @@ export const avl201TabulaRasaF0Html = `
         <li>confirmă sau contestă factual fișa entității.</li>
       </ul>
 
-      <h2>7. Intrări obligatorii</h2>
+      <h2 id="7-intrari-obligatorii">7. Intrări obligatorii</h2>
 
       <table>
         <thead><tr><th>Intrare</th><th>Conținut minim</th></tr></thead>
         <tbody>
-          <tr><td>Fișa entității</td><td>forma canonică, variante, rol, locație, domeniu, URL-uri oficiale, atribute verificabile, politica crawlere</td></tr>
+          <tr><td>Fișa entității</td><td>forma canonică, variante, rol, locație, domeniul de activitate, URL-uri oficiale, atribute verificabile, politica crawlere</td></tr>
           <tr><td>Harta coliziunilor</td><td>entități omonime sau similare și sursele lor dominante</td></tr>
           <tr><td>Lista activelor oficiale</td><td>site, subdomenii, profiluri, directoare, pagini de autor</td></tr>
           <tr><td>Țara și limba</td><td>contextul geografic și lingvistic al măsurării</td></tr>
@@ -161,7 +193,9 @@ export const avl201TabulaRasaF0Html = `
 
       <p>„Politica crawlere” descrie accesul pe care entitatea îl vrea pentru crawlerele de căutare, de antrenare și de fetch la cererea utilizatorului. AI Visibility Lab recomandă accesul total pentru toate crawlerele; o politică diferită se documentează pentru fiecare crawler sau categorie de crawlere, cu sursa și data declarării.</p>
 
-      <h2>8. Ieșiri și livrabile</h2>
+      <p>Câmpurile fișei entității, cu definiția fiecăruia, cine îl completează și cum se verifică în etapa de baseline, sunt descrise în <a href="/lab/metodologie/fisa-entitatii">AVL-205 — Fișa entității</a>. „Domeniul de activitate” este domeniul în care entitatea oferă servicii sau produse, nu domeniul web; site-ul intră la URL-urile oficiale. AVL-205 detaliază fișa, dar nu modifică conținutul ei minim, stabilit de tabelul de mai sus.</p>
+
+      <h2 id="8-iesiri-si-livrabile">8. Ieșiri și livrabile</h2>
 
       <ul>
         <li>Raportul Tabula Rasa F0</li>
@@ -182,7 +216,7 @@ export const avl201TabulaRasaF0Html = `
 
       <blockquote><strong>F0-REQ-003</strong> — Un raport fără arhivă de dovezi NU TREBUIE prezentat drept implementare completă AVL-201.</blockquote>
 
-      <h2>9. Instrumente și condiții minime</h2>
+      <h2 id="9-instrumente-si-conditii-minime">9. Instrumente și condiții minime</h2>
 
       <p>AVL-201 nu impune un furnizor unic de instrumente. Implementarea trebuie însă să permită reproducerea și auditul.</p>
 
@@ -198,19 +232,19 @@ export const avl201TabulaRasaF0Html = `
         <li>instrument de generare a checksum-urilor, recomandat pentru pachetele publice.</li>
       </ul>
 
-      <h2>10. Protocolul de măsurare în zece pași</h2>
+      <h2 id="10-protocolul-de-masurare-in-zece-pasi">10. Protocolul de măsurare în zece pași</h2>
 
-      <h3>10.1. Pasul 1 — Definirea entității</h3>
+      <h3 id="10-1-pasul-1-definirea-entitatii">10.1. Pasul 1 — Definirea entității</h3>
       <p>Se stabilește forma canonică a numelui, variantele legitime, atributele de identitate și candidații de coliziune. Forma canonică trebuie să fie suficient de precisă încât un revizor să poată decide dacă un răspuns se referă la entitatea corectă.</p>
       <h4>Cerințe minime</h4>
       <ul>
-        <li>Fișă completă a entității.</li>
+        <li>Fișă completă a entității (<a href="/lab/metodologie/fisa-entitatii">AVL-205</a>).</li>
         <li>Listă de variante și aliasuri.</li>
         <li>Hartă a coliziunilor.</li>
         <li>Surse oficiale pentru atributele de identitate.</li>
       </ul>
 
-      <h3>10.2. Pasul 2 — Construcția setului de interogări</h3>
+      <h3 id="10-2-pasul-2-constructia-setului-de-interogari">10.2. Pasul 2 — Construcția setului de interogări</h3>
       <p>Interogările se construiesc înainte de examinarea sistematică a rezultatelor și se împart pe intenții: identitate, rol/expertiză, informație factuală, comparație și recomandare. Pentru proiectele inițiale, domeniul poate fi restrâns, dar restricția trebuie declarată.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -221,7 +255,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Versiune și dată de înghețare.</li>
       </ul>
 
-      <h3>10.3. Pasul 3 — Verificarea accesului crawlerelor</h3>
+      <h3 id="10-3-pasul-3-verificarea-accesului-crawlerelor">10.3. Pasul 3 — Verificarea accesului crawlerelor</h3>
       <p>Se verifică robots.txt, răspunsurile HTTP, regulile CDN/WAF și logurile disponibile pentru agenții relevanți. Controlul accesului pentru căutare, utilizator și antrenare trebuie tratat separat atunci când furnizorul face această distincție.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -232,7 +266,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Nivel de certitudine.</li>
       </ul>
 
-      <h3>10.4. Pasul 4 — Auditul datelor structurate</h3>
+      <h3 id="10-4-pasul-4-auditul-datelor-structurate">10.4. Pasul 4 — Auditul datelor structurate</h3>
       <p>Se inventariază JSON-LD și alte marcaje, se verifică entitățile declarate, @id-urile, tipurile, relațiile și concordanța cu textul vizibil. Auditul urmărește claritatea și consistența, nu presupune că schema garantează citarea.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -242,7 +276,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Diferențe între markup și conținut.</li>
       </ul>
 
-      <h3>10.5. Pasul 5 — Linia de bază a răspunsurilor și citărilor</h3>
+      <h3 id="10-5-pasul-5-linia-de-baza-a-raspunsurilor-si-citarilor">10.5. Pasul 5 — Linia de bază a răspunsurilor și citărilor</h3>
       <p>Setul înghețat se rulează pe motoarele selectate, în condiții cât mai comparabile și documentate. Fiecare răspuns se păstrează integral și se clasifică. Nu este permisă păstrarea exclusivă a celei mai favorabile rulări.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -253,7 +287,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Metadate complete.</li>
       </ul>
 
-      <h3>10.6. Pasul 6 — Linia de bază a înțelegerii entității</h3>
+      <h3 id="10-6-pasul-6-linia-de-baza-a-intelegerii-entitatii">10.6. Pasul 6 — Linia de bază a înțelegerii entității</h3>
       <p>Se analizează descrierea produsă de fiecare motor: rol, locație, experiență, organizații asociate, cronologie, ton și actualitate. Scopul este identificarea diferenței dintre simpla apariție și reprezentarea corectă.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -262,7 +296,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Surse care susțin fiecare atribut important.</li>
       </ul>
 
-      <h3>10.7. Pasul 7 — Analiza surselor citate</h3>
+      <h3 id="10-7-pasul-7-analiza-surselor-citate">10.7. Pasul 7 — Analiza surselor citate</h3>
       <p>Pentru interogările relevante se inventariază sursele pe care motoarele le afișează, inclusiv atunci când entitatea analizată nu apare. Se separă sursa citată de sursa presupus folosită.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -272,7 +306,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Relevanță pentru etapa prezenței distribuite.</li>
       </ul>
 
-      <h3>10.8. Pasul 8 — Auditul prezenței distribuite</h3>
+      <h3 id="10-8-pasul-8-auditul-prezentei-distribuite">10.8. Pasul 8 — Auditul prezenței distribuite</h3>
       <p>Se inventariază profilurile, directoarele, publicațiile, registrele și mențiunile externe. Se urmăresc numele, descrierea, actualitatea, legătura către sursa canonică și contradicțiile.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -281,7 +315,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Inconsecvențe și riscuri de bifurcare.</li>
       </ul>
 
-      <h3>10.9. Pasul 9 — Auditul corpusului de conținut</h3>
+      <h3 id="10-9-pasul-9-auditul-corpusului-de-continut">10.9. Pasul 9 — Auditul corpusului de conținut</h3>
       <p>Se inventariază conținutul sursei canonice și se evaluează relevanța, calitatea, actualitatea și valoarea de coroborare. În F0 se documentează deciziile propuse, dar nu se execută.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -291,7 +325,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Decizie propusă pentru etapa sursei canonice.</li>
       </ul>
 
-      <h3>10.10. Pasul 10 — Instantaneul reproductibil</h3>
+      <h3 id="10-10-pasul-10-instantaneul-reproductibil">10.10. Pasul 10 — Instantaneul reproductibil</h3>
       <p>Toate artefactele sunt înghețate într-un pachet datat și neschimbabil. Pachetul trebuie să includă un manifest al fișierelor și registrul versiunilor. Pentru proiectele cu cerință ridicată de audit se recomandă checksum-uri.</p>
       <h4>Cerințe minime</h4>
       <ul>
@@ -302,7 +336,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Lista abaterilor.</li>
       </ul>
 
-      <h2>11. Protocolul sesiunii curate</h2>
+      <h2 id="11-protocolul-sesiunii-curate">11. Protocolul sesiunii curate</h2>
 
       <blockquote><strong>F0-REQ-004</strong> — Configurația sesiunii TREBUIE stabilită înainte de prima rulare și folosită consecvent în interiorul aceleiași serii.</blockquote>
 
@@ -312,9 +346,9 @@ export const avl201TabulaRasaF0Html = `
 
       <p>Configurația recomandată include: fereastră privată sau profil dedicat, conversație nouă pentru fiecare interogare, memorie dezactivată unde este posibil, limbă explicită, locație reală fără VPN, fără introducerea prealabilă a numelui entității în aceeași sesiune și fără reformulări iterative înaintea capturării rezultatului principal.</p>
 
-      <h2>12. Standardul de dovezi</h2>
+      <h2 id="12-standardul-de-dovezi">12. Standardul de dovezi</h2>
 
-      <h3>12.1. Dovezi acceptate</h3>
+      <h3 id="12-1-dovezi-acceptate">12.1. Dovezi acceptate</h3>
       <ul>
         <li>captură integrală care include interogarea și răspunsul;</li>
         <li>export HTML, PDF sau text brut al conversației;</li>
@@ -326,7 +360,7 @@ export const avl201TabulaRasaF0Html = `
         <li>registrul de rulare cu timestamp și configurație.</li>
       </ul>
 
-      <h3>12.2. Dovezi insuficiente singure</h3>
+      <h3 id="12-2-dovezi-insuficiente-singure">12.2. Dovezi insuficiente singure</h3>
       <ul>
         <li>relatarea verbală „mi-a apărut”;</li>
         <li>captura decupată fără interogare;</li>
@@ -336,12 +370,12 @@ export const avl201TabulaRasaF0Html = `
         <li>un singur rezultat selectat dintr-o serie nedeclarată.</li>
       </ul>
 
-      <h3>12.3. Convenția de denumire</h3>
+      <h3 id="12-3-conventia-de-denumire">12.3. Convenția de denumire</h3>
       <p>Format recomandat: <code>[punct de măsurare]_[entitate]_[motor]_[queryID]_[run]_[YYYYMMDD-HHMM]_[limbă].ext</code>, unde punctul de măsurare este <code>T0</code> pentru baseline și <code>F1</code> … <code>Fn</code> pentru re-măsurări (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a>, AVL200-REQ-040).</p>
       <p>Exemplu: <code>T0_AlexMatescu_ChatGPT_QID03_R02_20260721-0935_RO.png</code></p>
       <p>Până la versiunea 1.3.0, acest format recomanda prefixul <code>F0_</code>. Dovezile deja arhivate sau publicate își păstrează numele originale — de exemplu, <code>F0_baseline_AlexMatescu.docx</code> din pachetul de dovezi T0 pentru Alex Matescu — și nu se redenumesc retroactiv (AVL200-REQ-013).</p>
 
-      <h2>13. Taxonomia rezultatelor</h2>
+      <h2 id="13-taxonomia-rezultatelor">13. Taxonomia rezultatelor</h2>
 
       <table>
         <thead><tr><th>Cod</th><th>Definiție</th><th>Regulă de utilizare</th></tr></thead>
@@ -360,11 +394,11 @@ export const avl201TabulaRasaF0Html = `
         </tbody>
       </table>
 
-      <h2>14. Scorarea</h2>
+      <h2 id="14-scorarea">14. Scorarea</h2>
 
       <p>Scorarea transformă observațiile într-un rezumat comparabil. Ea nu trebuie să înlocuiască răspunsurile brute și nu trebuie interpretată drept probabilitate internă a platformei.</p>
 
-      <h3>14.1. Scor de rezultat recomandat</h3>
+      <h3 id="14-1-scor-de-rezultat-recomandat">14.1. Scor de rezultat recomandat</h3>
 
       <table>
         <thead><tr><th>Rezultat</th><th>Punctaj</th></tr></thead>
@@ -388,7 +422,7 @@ export const avl201TabulaRasaF0Html = `
       <p>Rulările NEAFIȘAT nu primesc punctaj și nu intră în N.</p>
       <p>Pentru schema de mai sus, maximul este 4 × N, iar minimul este -4 × N. Raportul trebuie să publice și distribuția categoriilor, deoarece două entități pot avea același scor prin combinații foarte diferite.</p>
 
-      <h3>14.2. Indicatori obligatorii</h3>
+      <h3 id="14-2-indicatori-obligatorii">14.2. Indicatori obligatorii</h3>
       <ul>
         <li>Rata HIT totală.</li>
         <li>Rata HIT-C.</li>
@@ -403,7 +437,7 @@ export const avl201TabulaRasaF0Html = `
 
       <blockquote><strong>F0-REQ-007</strong> — Niciun scor agregat NU TREBUIE publicat fără numărul de rulări, perioada, motoarele și distribuția categoriilor.</blockquote>
 
-      <h2>15. Controlul calității și revizuirea</h2>
+      <h2 id="15-controlul-calitatii-si-revizuirea">15. Controlul calității și revizuirea</h2>
       <ul>
         <li>Cel puțin 10% din rulări AR TREBUI reclasificate de un al doilea evaluator pentru proiectele comerciale.</li>
         <li>Divergențele de clasificare TREBUIE rezolvate printr-o regulă explicită și păstrate în registru.</li>
@@ -412,7 +446,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Raportul final TREBUIE să conțină limitările și incidentele.</li>
       </ul>
 
-      <h2>16. Repetabilitate și comparație între baseline și re-măsurări</h2>
+      <h2 id="16-repetabilitate-si-comparatie-intre-baseline-si-re-masurari">16. Repetabilitate și comparație între baseline și re-măsurări</h2>
 
       <p>Re-măsurările (F1 … Fn) trebuie să reutilizeze același set înghețat, aceleași criterii și, pe cât posibil, aceeași configurație. Schimbările inevitabile ale platformelor se documentează ca variabile externe.</p>
 
@@ -422,7 +456,7 @@ export const avl201TabulaRasaF0Html = `
 
       <p>Intervalul dintre baseline (T0) și prima re-măsurare (F1) nu este universal. El trebuie să permită crawl, indexare și propagarea schimbărilor, fără a fi atât de lung încât efectul intervențiilor să fie inseparabil de deriva naturală a sistemelor.</p>
 
-      <h2>17. Limitări</h2>
+      <h2 id="17-limitari">17. Limitări</h2>
       <ul>
         <li>Sistemele sunt stocastice și pot produce răspunsuri diferite la aceeași interogare.</li>
         <li>Indexurile și modelele se modifică fără notificare completă.</li>
@@ -434,7 +468,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Motoarele pot avea politici și arhitecturi diferite; rezultatele nu se generalizează automat între ele.</li>
       </ul>
 
-      <h2>18. Reguli de interpretare</h2>
+      <h2 id="18-reguli-de-interpretare">18. Reguli de interpretare</h2>
 
       <p>Interpretarea trebuie să pornească de la modul de eșec dominant, nu de la scorul total.</p>
 
@@ -453,7 +487,7 @@ export const avl201TabulaRasaF0Html = `
 
       <blockquote><strong>Regulă:</strong> Diagnosticul trebuie să poată concluziona și că nu este necesară o intervenție amplă. F0 nu este o justificare automată pentru vânzarea fazelor următoare.</blockquote>
 
-      <h2>19. Criterii de conformitate</h2>
+      <h2 id="19-criterii-de-conformitate">19. Criterii de conformitate</h2>
 
       <p>O implementare poate fi declarată „conformă AVL-201” numai dacă îndeplinește toate cerințele obligatorii și include:</p>
 
@@ -478,7 +512,7 @@ export const avl201TabulaRasaF0Html = `
         <li>Inspirat de AVL-201 — metodologia este folosită orientativ, fără revendicarea conformității.</li>
       </ul>
 
-      <h2>20. Structura raportului final</h2>
+      <h2 id="20-structura-raportului-final">20. Structura raportului final</h2>
 
       <ol>
         <li>Rezumat executiv.</li>
@@ -500,9 +534,9 @@ export const avl201TabulaRasaF0Html = `
         <li>Anexe și manifestul dovezilor.</li>
       </ol>
 
-      <h2>21. Șabloane minime</h2>
+      <h2 id="21-sabloane-minime">21. Șabloane minime</h2>
 
-      <h3>21.1. Registrul rulărilor</h3>
+      <h3 id="21-1-registrul-rularilor">21.1. Registrul rulărilor</h3>
       <table>
         <thead><tr><th>Run ID</th><th>Query ID</th><th>Motor</th><th>Data/ora</th><th>Configurație</th><th>Clasificare</th><th>Citare canonică</th><th>Evidence ID</th><th>Observații</th></tr></thead>
         <tbody>
@@ -510,7 +544,7 @@ export const avl201TabulaRasaF0Html = `
         </tbody>
       </table>
 
-      <h3>21.2. Registrul incidentelor</h3>
+      <h3 id="21-2-registrul-incidentelor">21.2. Registrul incidentelor</h3>
       <table>
         <thead><tr><th>Incident ID</th><th>Dată</th><th>Descriere</th><th>Artefacte afectate</th><th>Impact</th><th>Decizie</th><th>Aprobare</th></tr></thead>
         <tbody>
@@ -518,7 +552,7 @@ export const avl201TabulaRasaF0Html = `
         </tbody>
       </table>
 
-      <h3>21.3. Manifestul snapshot-ului</h3>
+      <h3 id="21-3-manifestul-snapshot-ului">21.3. Manifestul snapshot-ului</h3>
       <table>
         <thead><tr><th>Evidence ID</th><th>Nume fișier</th><th>Tip</th><th>Sursă</th><th>Timestamp</th><th>Checksum</th><th>Note</th></tr></thead>
         <tbody>
@@ -526,7 +560,7 @@ export const avl201TabulaRasaF0Html = `
         </tbody>
       </table>
 
-      <h2>22. Întrebări frecvente</h2>
+      <h2 id="22-intrebari-frecvente">22. Întrebări frecvente</h2>
 
       <p><strong>De ce nu începem direct optimizarea?</strong> Pentru că fără baseline nu putem separa efectul intervenției de starea preexistentă și de variația naturală a platformelor.</p>
 
@@ -540,7 +574,7 @@ export const avl201TabulaRasaF0Html = `
 
       <p><strong>De ce publicați metodologia?</strong> Pentru că transparența face rezultatele verificabile. Avantajul profesional nu stă în secretul pașilor, ci în execuție, disciplină, date și interpretare.</p>
 
-      <h2>23. Referințe și documente asociate</h2>
+      <h2 id="23-referinte-si-documente-asociate">23. Referințe și documente asociate</h2>
 
       <ul>
         <li><strong><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>:</strong> Document fondator și standard epistemic.</li>
@@ -548,6 +582,7 @@ export const avl201TabulaRasaF0Html = `
         <li><strong><a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>:</strong> Modelul celor patru filtre.</li>
         <li><strong><a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>:</strong> Fundamentele taxonomiei și măsurării.</li>
         <li><strong><a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a>:</strong> Terminologie extinsă.</li>
+        <li><strong><a href="/lab/metodologie/fisa-entitatii">AVL-205 — Fișa entității</a>:</strong> câmpurile fișei entității, cu definiții, reguli de completare și verificarea în etapa de baseline.</li>
         <li><a href="https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec" target="_blank" rel="noopener noreferrer">Google — robots.txt specification</a></li>
         <li><a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer">OpenAI — Overview of OpenAI Crawlers</a></li>
         <li><a href="https://support.anthropic.com/en/articles/8896518" target="_blank" rel="noopener noreferrer">Anthropic — Web crawling documentation</a></li>
@@ -556,7 +591,7 @@ export const avl201TabulaRasaF0Html = `
         <li><a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">Aggarwal et al. — GEO: Generative Engine Optimization</a></li>
       </ul>
 
-      <h2>24. Istoricul versiunilor</h2>
+      <h2 id="24-istoricul-versiunilor">24. Istoricul versiunilor</h2>
 
       <table>
         <thead><tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr></thead>
@@ -569,6 +604,7 @@ export const avl201TabulaRasaF0Html = `
           <tr><td>1.3.0</td><td>13 octombrie 2026</td><td>Activ</td><td>MINOR: terminologie aliniată la AVL-200 §7 (v1.1.0). Trimiterile la fazele F1, F2 și F3 devin etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare, iar comparația longitudinală se exprimă între baseline (T0) și re-măsurări (F1 … Fn); formularea cerinței F0-REQ-008 a fost aliniată fără schimbarea sensului sau a identificatorului. Titlul documentului, identificatorii F0-REQ-* și folosirea „F0” ca nume istoric al etapei de baseline rămân neschimbate până la o revizie separată; corespondența este documentată în AVL-200 §7.4. §12.3: formatul recomandat de denumire a dovezilor folosește ca prefix punctul de măsurare (T0, F1 … Fn; AVL200-REQ-040) în locul prefixului F0_. Dovezile deja arhivate sau publicate își păstrează numele originale — inclusiv F0_baseline_AlexMatescu.docx din pachetul de dovezi T0 pentru Alex Matescu — și nu au fost redenumite sau modificate (AVL200-REQ-013).</td></tr>
           <tr><td>1.4.0</td><td>23 octombrie 2026</td><td>Activ</td><td>MINOR: statutul NEAFIȘAT adăugat în taxonomia rezultatelor (secțiunea 13), pentru cazul în care suprafața nu afișează elementul de răspuns măsurat (de exemplu, Google AI Overviews neafișat). Secțiunea 14: rulările NEAFIȘAT nu primesc punctaj, nu intră în N la scorul normalizat și nu intră la numitorul indicatorilor din 14.2; numărul lor se raportează separat. Nicio cerință F0-REQ-* nouă sau modificată. Decizie Alex Matescu, 23 octombrie 2026, apărută la adjudecarea punctului de măsurare F3 pentru Alex Matescu.</td></tr>
           <tr><td>1.5.0</td><td>25 octombrie 2026</td><td>Activ</td><td>MINOR: fișa entității (secțiunea 7) conține câmpul „Politica crawlere”, completat de subiect sau de reprezentantul clientului (secțiunea 6.4): politica de acces a entității pentru crawlerele de căutare, de antrenare și de fetch la cererea utilizatorului. AI Visibility Lab recomandă accesul total pentru toate crawlerele; o politică diferită se documentează. Câmpul este preluat de verificarea tehnică (AVL-203 §1.1, AVL-204 §3.1). Decizie Alex Matescu, 25 octombrie 2026.</td></tr>
+          <tr><td>1.6.0</td><td>4 noiembrie 2026</td><td>Activ</td><td>MINOR: secțiunile 6.1 și 7 precizează că „domeniul” din fișa entității este domeniul de activitate al serviciilor entității, nu domeniul web (decizie Alex Matescu, 4 noiembrie 2026). Secțiunea 7 trimite la AVL-205 — Fișa entității, publicat ca draft pentru revizuire, care descrie fiecare câmp al fișei; trimitere și în secțiunea 10.1. AVL-205 este adăugat la dependențele informative și la documentele asociate (secțiunea 23). Conținutul minim al fișei nu se schimbă. Nicio cerință F0-REQ nouă sau modificată.</td></tr>
         </tbody>
       </table>
 

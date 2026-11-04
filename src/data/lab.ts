@@ -67,6 +67,11 @@ export const labNav: LabPage[] = [
         lead: "Punctul de plecare al metodologiei: un site sau brand pornit de la zero, fără istoric, folosit ca teren de experimentare controlată.",
       },
       {
+        to: "/lab/metodologie/fisa-entitatii",
+        label: "AVL-205 — Fișa entității",
+        lead: "Draft pentru revizuire, v0.1.1. Fișa prin care entitatea evaluată declară, înaintea baseline-ului T0, informațiile oficiale despre ea: forma canonică, rolul, locația, activele oficiale, relațiile, harta coliziunilor și politica crawlere, cu definiția fiecărui câmp, cine îl completează și cum se verifică în T0.",
+      },
+      {
         to: "/lab/metodologie/protocol-verificare-tehnica",
         label: "AVL-203 — Protocolul minim de verificare tehnică a unui site",
         lead: "Draft pentru revizuire, v0.6.1. Setul minim, repetabil, de verificări tehnice (HTTP, redirecturi, robots.txt, sitemap, semnale raw HTML, conținut în HTML-ul brut, paritatea răspunsurilor pe User-Agent, integritatea dovezilor) care documentează ce livrează un server, fără a o confunda cu indexarea sau citarea AI, plus trecerea de la observații la diagnostic și recomandări.",

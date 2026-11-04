@@ -11,15 +11,15 @@ Baseline Measurement Specification
 | **Document ID** | AVL-201 |
 |----|----|
 | **Nivel** | C — Methodology |
-| **Versiune** | 1.5.0 |
+| **Versiune** | 1.6.0 |
 | **Statut** | Activ |
 | **Autor** | [Alex Matescu](/despre) |
 | **Organizație** | [AI Visibility Lab](/lab) |
 | **Data publicării** | iulie 2026 |
-| **Ultima actualizare** | 25 octombrie 2026 |
+| **Ultima actualizare** | 4 noiembrie 2026 |
 | **Limbă** | română |
 | **Dependențe normative** | [AVL-001](/lab/introducere), [AVL-104](/lab/cercetare/cum-se-masoara-ai-visibility), [AVL-200](/lab/metodologie/standard-dovezi-masurare-trasabilitate) |
-| **Dependențe informative** | [AVL-101](/lab/cercetare/ce-este-geo-aeo), [AVL-102](/lab/cercetare/cum-aleg-motoarele-ai), [AVL-103](/lab/cercetare/seo-vs-geo), [AVL-105](/lab/cercetare/glosar-geo-aeo) |
+| **Dependențe informative** | [AVL-101](/lab/cercetare/ce-este-geo-aeo), [AVL-102](/lab/cercetare/cum-aleg-motoarele-ai), [AVL-103](/lab/cercetare/seo-vs-geo), [AVL-105](/lab/cercetare/glosar-geo-aeo), [AVL-205](/lab/metodologie/fisa-entitatii) |
 | **URL canonic propus** | https://delamatescu.ro/lab/metodologie/tabula-rasa-f0 — de confirmat la publicare |
 
 ***„Iată ce era înainte. Iată ce este acum. Iată diferența.”***
@@ -163,7 +163,7 @@ Tabula Rasa F0 nu este, prin el însuși, o măsurare completă a performanței 
 
 - aprobă planul F0;
 
-- confirmă forma canonică și domeniul;
+- confirmă forma canonică și domeniul de activitate;
 
 - controlează schimbările;
 
@@ -209,7 +209,7 @@ Tabula Rasa F0 nu este, prin el însuși, o măsurare completă a performanței 
 
 | **Intrare** | **Conținut minim** |
 |----|----|
-| Fișa entității | forma canonică, variante, rol, locație, domeniu, URL-uri oficiale, atribute verificabile, politica crawlere |
+| Fișa entității | forma canonică, variante, rol, locație, domeniul de activitate, URL-uri oficiale, atribute verificabile, politica crawlere |
 | Harta coliziunilor | entități omonime sau similare și sursele lor dominante |
 | Lista activelor oficiale | site, subdomenii, profiluri, directoare, pagini de autor |
 | Țara și limba | contextul geografic și lingvistic al măsurării |
@@ -220,6 +220,8 @@ Tabula Rasa F0 nu este, prin el însuși, o măsurare completă a performanței 
 | Declarația de îngheț | confirmarea că nu se fac intervenții până la închidere |
 
 „Politica crawlere” descrie accesul pe care entitatea îl vrea pentru crawlerele de căutare, de antrenare și de fetch la cererea utilizatorului. AI Visibility Lab recomandă accesul total pentru toate crawlerele; o politică diferită se documentează pentru fiecare crawler sau categorie de crawlere, cu sursa și data declarării.
+
+Câmpurile fișei entității, cu definiția fiecăruia, cine îl completează și cum se verifică în etapa de baseline, sunt descrise în [AVL-205 — Fișa entității](/lab/metodologie/fisa-entitatii). „Domeniul de activitate” este domeniul în care entitatea oferă servicii sau produse, nu domeniul web; site-ul intră la URL-urile oficiale. AVL-205 detaliază fișa, dar nu modifică conținutul ei minim, stabilit de tabelul de mai sus.
 
 # 8. Ieșiri și livrabile
 
@@ -284,7 +286,7 @@ Se stabilește forma canonică a numelui, variantele legitime, atributele de ide
 
 ### Cerințe minime
 
-- Fișă completă a entității.
+- Fișă completă a entității ([AVL-205](/lab/metodologie/fisa-entitatii)).
 
 - Listă de variante și aliasuri.
 
@@ -803,6 +805,8 @@ profesional nu stă în secretul pașilor, ci în execuție, disciplină, date
 
 - **AVL-105 — Glosar GEO/AEO și AI Visibility:** Terminologie extinsă.
 
+- **AVL-205 — Fișa entității:** câmpurile fișei entității, cu definiții, reguli de completare și verificarea în etapa de baseline.
+
 - **Google — robots.txt specification:**
   [<u>https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec</u>](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec)
 
@@ -833,6 +837,7 @@ profesional nu stă în secretul pașilor, ci în execuție, disciplină, date
 | 1.3.0 | 13 octombrie 2026 | Activ | MINOR: terminologie aliniată la AVL-200 §7 (v1.1.0). Trimiterile la fazele F1, F2 și F3 devin etapa sursei canonice, etapa prezenței distribuite și etapa de re-măsurare, iar comparația longitudinală se exprimă între baseline (T0) și re-măsurări (F1 … Fn); formularea cerinței F0-REQ-008 a fost aliniată fără schimbarea sensului sau a identificatorului. Titlul documentului, identificatorii F0-REQ-* și folosirea „F0” ca nume istoric al etapei de baseline rămân neschimbate până la o revizie separată; corespondența este documentată în AVL-200 §7.4. §12.3: formatul recomandat de denumire a dovezilor folosește ca prefix punctul de măsurare (T0, F1 … Fn; AVL200-REQ-040) în locul prefixului F0_. Dovezile deja arhivate sau publicate își păstrează numele originale — inclusiv F0_baseline_AlexMatescu.docx din pachetul de dovezi T0 pentru Alex Matescu — și nu au fost redenumite sau modificate (AVL200-REQ-013). |
 | 1.4.0 | 23 octombrie 2026 | Activ | MINOR: statutul NEAFIȘAT adăugat în taxonomia rezultatelor (secțiunea 13), pentru cazul în care suprafața nu afișează elementul de răspuns măsurat (de exemplu, Google AI Overviews neafișat). Secțiunea 14: rulările NEAFIȘAT nu primesc punctaj, nu intră în N la scorul normalizat și nu intră la numitorul indicatorilor din 14.2; numărul lor se raportează separat. Nicio cerință F0-REQ-* nouă sau modificată. Decizie Alex Matescu, 23 octombrie 2026, apărută la adjudecarea punctului de măsurare F3 pentru Alex Matescu. |
 | 1.5.0 | 25 octombrie 2026 | Activ | MINOR: fișa entității (secțiunea 7) conține câmpul „Politica crawlere”, completat de subiect sau de reprezentantul clientului (secțiunea 6.4): politica de acces a entității pentru crawlerele de căutare, de antrenare și de fetch la cererea utilizatorului. AI Visibility Lab recomandă accesul total pentru toate crawlerele; o politică diferită se documentează. Câmpul este preluat de verificarea tehnică (AVL-203 §1.1, AVL-204 §3.1). Decizie Alex Matescu, 25 octombrie 2026. |
+| 1.6.0 | 4 noiembrie 2026 | Activ | MINOR: secțiunile 6.1 și 7 precizează că „domeniul” din fișa entității este domeniul de activitate al serviciilor entității, nu domeniul web (decizie Alex Matescu, 4 noiembrie 2026). Secțiunea 7 trimite la AVL-205 — Fișa entității, publicat ca draft pentru revizuire, care descrie fiecare câmp al fișei; trimitere și în secțiunea 10.1. AVL-205 este adăugat la dependențele informative și la documentele asociate (secțiunea 23). Conținutul minim al fișei nu se schimbă. Nicio cerință F0-REQ nouă sau modificată. |
 
 | **Declarație finală:** Tabula Rasa F0 nu demonstrează că o intervenție viitoare va funcționa. Ea stabilește condițiile minime pentru ca o schimbare ulterioară să poată fi comparată, verificată și discutată onest. |
 |----|
