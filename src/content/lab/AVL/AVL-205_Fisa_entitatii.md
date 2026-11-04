@@ -158,6 +158,8 @@ Stările preiau categoriile din AVL-201 §10.6 („atribute corecte, lipsă, vec
 
 `LIPSĂ` descrie sursa, nu entitatea: faptul că o informație nu apare online nu o face falsă (AVL-200 §6, AVL200-REQ-010). Starea se notează pe sursă: aceeași informație poate fi `CORECT` pe site și `VECHI` pe un profil.
 
+**La punctele următoare (`F1` … `Fn`), verificarea se repetă pe aceleași surse și cu aceleași stări, față de fișa valabilă la acel punct.** Schimbările de stare dintre puncte se notează pe sursă, cu Evidence ID-ul fiecărui punct. Pentru o fișă completată retroactiv (§17.1), prima verificare pe surse se face la primul punct de măsurare de după completare și devine referința stărilor pentru punctele următoare; starea de la `T0` nu se reconstituie. Coloana „Stare la `T0`” se citește atunci ca stare la punctul verificării, cu punctul notat (de exemplu, `F4`).
+
 ### 4.1. Entitate ambiguă sau suspectă
 
 **AI Visibility Lab nu lucrează cu entități a căror asociere poate afecta imaginea laboratorului sau a lui Alex Matescu.** O entitate este considerată ambiguă sau suspectă (cele două denumiri formează un singur statut) când, în mediul digital, apare cel puțin una dintre situațiile următoare:
@@ -481,7 +483,7 @@ Crawlerele de fetch la cererea utilizatorului se raportează numai ca observați
 
 ### 17.1. Completarea retroactivă
 
-**Când fișa se completează după un `T0` deja făcut, de exemplu pentru o serie începută înaintea AVL-205, ea devine referința punctelor următoare (`F1` … `Fn`).** Completarea retroactivă nu schimbă rezultatele `T0` și nici referința folosită atunci (AVL200-REQ-013). Fișa notează că a fost completată după `T0` și data completării. Exemplu: fișa pentru delamatescu.ro și Alex Matescu (§25, decizia 1).
+**Când fișa se completează după un `T0` deja făcut, de exemplu pentru o serie începută înaintea AVL-205, ea devine referința punctelor următoare (`F1` … `Fn`).** Completarea retroactivă nu schimbă rezultatele `T0` și nici referința folosită atunci (AVL200-REQ-013). Fișa notează că a fost completată după `T0` și data completării. Prima verificare pe surse a unei fișe completate retroactiv se face la punctul următor (§4). Exemplu: fișa pentru delamatescu.ro și Alex Matescu (§25, deciziile 1 și 4), verificată pe surse la `F4` Tabula Rasa.
 
 ---
 
@@ -566,6 +568,7 @@ Proprietățile și tipurile cărora li se aplică au fost verificate pe schema.
 | --- | --- |
 | Conținutul minim [min] | AVL-201 §7 |
 | §3 „Ce își asumă reprezentantul”, §4.1 Entitate ambiguă sau suspectă | operațional; decizii Alex Matescu, 4 noiembrie 2026; AVL-001 §21; AVL-200 §11 |
+| §4 Verificarea la `F1` … `Fn` și a fișei completate retroactiv | operațional; decizie Alex Matescu, 4 noiembrie 2026; AVL-200 §7, AVL200-REQ-013 |
 | §5 Identificarea fișei | AVL-201 §6.1–6.4; AVL-203 §1, AVL203-REQ-043; AVL-204 AVL204-REQ-015; AVL-001 §21; AVL-202 „Independență și conflict de interese” |
 | §6 Tipul entității | AVL-201 §3, §5; AVL-203 §1.1; AVL-204 §11 |
 | §7 Forma canonică și variantele | AVL-201 §5, §10.1; AVL-102; articolul „Ce este o entitate pentru AI” |
@@ -622,7 +625,7 @@ Proprietățile și tipurile cărora li se aplică au fost verificate pe schema.
 | --- | --- | --- | --- |
 | 0.1.0 | 4 noiembrie 2026 | Draft pentru revizuire | Primul draft. Descrie fișa entității cerută de AVL-201 §7: rolul ei, ce nu este, cum se completează, stările verificării `T0` și definițiile tuturor câmpurilor, în 17 secțiuni (§5–§21), cu proveniența fiecărei secțiuni. Precizează că „domeniu” din AVL-201 §7 înseamnă domeniul de activitate al serviciilor (decizie Alex Matescu, 4 noiembrie 2026). Nu introduce cerințe proprii. |
 | 0.1.1 | 4 noiembrie 2026 | Draft pentru revizuire | PATCH: trimiteri la AVL-201 1.6.0, care trimite la AVL-205 din §7 și §10.1 și folosește formularea „domeniul de activitate”, și la AVL-202 1.8.0, care include AVL-205 în corpus. Deciziile deschise 2 (închisă), 3 și 6 (parțial închise) sunt actualizate. Fără schimbări ale câmpurilor fișei. |
-| 0.2.0 | 4 noiembrie 2026 | Draft pentru revizuire | MINOR, decizii Alex Matescu din 4 noiembrie 2026, după prima fișă completă. §3: marcajul „Î” precizează că Alex Matescu verifică formularea, nu adevărul declarației; subsecțiune nouă „Ce își asumă reprezentantul”: declarațiile reprezentantului sunt asumate de el și considerate corecte. §4 se numește „Cum se verifică reprezentarea fișei în surse?”. Subsecțiune nouă §4.1 „Entitate ambiguă sau suspectă”: criteriile, închiderea colaborării, documentarea internă și comunicarea către client. §6: o singură fișă pentru profesionistul independent cu site propriu. §11.2: ce se notează pentru fiecare profil, cu numele afișat. §17: forma înghețului între punctele de măsurare; subsecțiune nouă §17.1 „Completarea retroactivă”. Deciziile deschise 1 (parțial) și 3 (integral) sunt închise; trimitere la fișa FE-delamatescu-ro-v1. Nu introduce cerințe proprii. |
+| 0.2.0 | 4 noiembrie 2026 | Draft pentru revizuire | MINOR, decizii Alex Matescu din 4 noiembrie 2026, după prima fișă completă. §3: marcajul „Î” precizează că Alex Matescu verifică formularea, nu adevărul declarației; subsecțiune nouă „Ce își asumă reprezentantul”: declarațiile reprezentantului sunt asumate de el și considerate corecte. §4 se numește „Cum se verifică reprezentarea fișei în surse?”. Subsecțiune nouă §4.1 „Entitate ambiguă sau suspectă”: criteriile, închiderea colaborării, documentarea internă și comunicarea către client. §6: o singură fișă pentru profesionistul independent cu site propriu. §11.2: ce se notează pentru fiecare profil, cu numele afișat. §17: forma înghețului între punctele de măsurare; subsecțiune nouă §17.1 „Completarea retroactivă”. §4: verificarea pe surse la punctele `F1` … `Fn` și prima verificare a unei fișe completate retroactiv. Deciziile deschise 1 (parțial) și 3 (integral) sunt închise; decizia 4: testul stărilor se face la `F4` Tabula Rasa; trimitere la fișa FE-delamatescu-ro-v1. Nu introduce cerințe proprii. |
 
 ---
 
@@ -631,7 +634,7 @@ Proprietățile și tipurile cărora li se aplică au fost verificate pe schema.
 1. **Primul test pe o entitate reală.** Fișa se completează integral pentru delamatescu.ro și Alex Matescu, entitatea primei rulări AVL-203. Parțial închisă la 4 noiembrie 2026: prima fișă completă, [`FE-delamatescu-ro-v1`](https://github.com/alexmatescu/alexmatescu-hub-reflection/blob/main/docs/fise-entitate/FE-delamatescu-ro-v1.md), a fost confirmată de reprezentant și publicată, completată retroactiv (§17.1). Din observațiile completării, versiunea 0.2.0 a preluat coloanele profilurilor (§11.2), fișa unică pentru profesionistul independent (§6), forma înghețului între puncte și completarea retroactivă (§17). Rămân de discutat înainte de activare rolul principal diferit între surse și ancorele folosite de motoare, dar absente din sursa canonică.
 2. **Precizarea „domeniu” în AVL-201.** Închisă la 4 noiembrie 2026 (decizie Alex Matescu): AVL-201 1.6.0 folosește „domeniul de activitate” la §6.1 și §7, cu același sens ca AVL-205 §3.
 3. **Trimiterea din AVL-201, AVL-203 și AVL-204.** Închisă la 4 noiembrie 2026 (decizie Alex Matescu): AVL-201 1.6.0 trimite la AVL-205 din §7 și §10.1, iar AVL-203 0.6.2 și AVL-204 0.3.2 trimit direct la AVL-205, ca dependență informativă; conținutul minim rămâne cel din AVL-201 §7.
-4. **Stările verificării `T0` (§4).** Vocabularul `CORECT`, `VECHI`, `FALS`, `LIPSĂ`, `UNKNOWN`, `NEVERIFICAT` se testează la primul `T0` cu fișă completă.
+4. **Stările verificării (§4).** Vocabularul `CORECT`, `VECHI`, `FALS`, `LIPSĂ`, `UNKNOWN`, `NEVERIFICAT` se testează pe o fișă completă reală. Decizie Alex Matescu, 4 noiembrie 2026: primul test se face pe seria Tabula Rasa (`T0` din 2 iulie 2026), la `F4`, pe fișa [`FE-delamatescu-ro-v1`](https://github.com/alexmatescu/alexmatescu-hub-reflection/blob/main/docs/fise-entitate/FE-delamatescu-ro-v1.md). Verificarea pe surse face parte din măsurarea `F4`, iar dovezile ei intră în pachetul `F4`. Decizia se închide după `F4`, cu observațiile testului.
 5. **Cerințe proprii.** Rămâne de decis dacă AVL-205 primește cerințe `AVL205-REQ-*`, de exemplu pentru conținutul minim sau pentru versionarea fișei, sau rămâne un document descriptiv.
 6. **Locul în corpus.** Parțial închisă la 4 noiembrie 2026: AVL-202 1.8.0 menționează AVL-205 în arhitectura metodologiei, în ordinea de lectură, în ordinea din hub și în lista documentelor. La activare rămân de făcut actualizarea statutului în AVL-202 și includerea în lista Nivelului C din AVL-001.
 
