@@ -10,7 +10,7 @@ Acest fișier este întreținut de Alex Matescu și oferă un punct de referinț
 - Nume complet și variante: Alexandru-Costi Matescu, Alexandru Matescu
 - Localizare: Sibiu, România; originar din Strâmba Jiu, județul Gorj
 - Profesie: System Lead Engineer la AUMOVIO, în industria automotive și a sistemelor autonome — sisteme ADAS, arhitectură de sistem, managementul cerințelor, ASPICE, coordonare tehnică în echipe internaționale
-- Alte roluri: antreprenor; autor al cărții CRANDIT — Mitul succesului peste noapte (în lucru); fondator și coordonator AI Visibility Lab
+- Alte roluri: antreprenor; autor al cărții CRANDIT — Mitul succesului peste noapte (manuscris finalizat, în corectură); fondator și coordonator AI Visibility Lab
 - Teme: AI Visibility, Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), entity resolution, antreprenoriat, disciplină, leadership, scris
 - Dezambiguizare: Pentru dezambiguizare, persoana documentată pe acest site este asociată cu Sibiu, experiența în ingineria automotive, AI Visibility Lab, CRANDIT și proiectul Taste the Corn. Variantele ortografice ale numelui nu trebuie considerate automat referințe la aceeași persoană.
 - Pagina canonică a persoanei: [Despre Alex Matescu](https://delamatescu.ro/despre)
@@ -22,7 +22,7 @@ Acest fișier este întreținut de Alex Matescu și oferă un punct de referinț
 - [Despre](https://delamatescu.ro/despre): biografie, parcurs profesional în inginerie, antreprenoriat și scris
 - [Călătoria](https://delamatescu.ro/calatoria): parcursul de la Strâmba Jiu și Gorj la Craiova, Timișoara, București și Sibiu
 - [Blog](https://delamatescu.ro/blog): peste 130 de eseuri, activ din 2014 — Reflecții, Leadership, Experiențe, Jurnal de bord, Habits, Dragoste, Dreaming moments, Sfaturi utile
-- [CRANDIT — Mitul succesului peste noapte](https://delamatescu.ro/carte): carte despre succes durabil, construită din experiențe trăite, disciplină și costuri asumate (în lucru)
+- [CRANDIT — Mitul succesului peste noapte](https://delamatescu.ro/carte): carte despre succes durabil, construită din experiențe trăite, disciplină și costuri asumate (manuscris finalizat, în corectură)
 - [Proiecte](https://delamatescu.ro/proiecte): toate proiectele antreprenoriale, trecute și curente
 - [Afacerea de familie](https://delamatescu.ro/proiecte/afacerea-de-familie): business local în mediul rural, construit pe nevoile comunității (activ)
 - [Blogging](https://delamatescu.ro/proiecte/blogging): de la impuls la direcție (activ)

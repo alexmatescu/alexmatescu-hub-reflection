@@ -349,7 +349,7 @@ const Book = () => {
       <section className="bg-[#151515] text-[#c9a86c]">
         <div className="container-editorial pt-20 md:pt-32 pb-20 md:pb-28 flex flex-col items-center text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-[#c9a86c] mb-8 font-sans">
-            Carte · În lucru · 2026
+            Carte · Manuscris finalizat · În corectură · 2026
           </p>
           <h1 className="font-trajan text-3xl md:text-5xl text-[#c9a86c] text-balance leading-tight mb-10">
             CRANDIT — Mitul succesului peste noapte

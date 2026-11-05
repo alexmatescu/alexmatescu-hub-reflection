@@ -26,7 +26,7 @@ const values = [
 const mainProjects = [
   {
     name: "CRANDIT",
-    desc: "Carte în lucru — Mitul succesului peste noapte (2026)",
+    desc: "Carte în corectură — Mitul succesului peste noapte (2026)",
     to: "/carte",
   },
   {
@@ -528,7 +528,7 @@ const About = () => {
           </p>
           <ul>
             <li>
-              finalizarea manuscrisului și construirea comunității în jurul
+              corectura manuscrisului și construirea comunității în jurul
               cărții CRANDIT;
             </li>
             <li>

@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "Disciplina de a scrie zilnic contează mai mult decât inspirația.",
     ],
     currentStatus:
-      "Manuscris în lucru. Lista de așteptare deschisă pentru primii cititori.",
+      "Manuscris finalizat, acum în corectură. Lista de așteptare deschisă pentru primii cititori.",
     related: ["mitul-succesului-peste-noapte", "disciplina-ca-mecanism"],
   },
   {
