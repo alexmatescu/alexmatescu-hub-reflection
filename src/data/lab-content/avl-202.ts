@@ -8,18 +8,18 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.8.1</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.9.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>4 noiembrie 2026</td></tr>
-        <tr><th scope="row">Ultima verificare</th><td>2 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>5 noiembrie 2026</td></tr>
+        <tr><th scope="row">Ultima verificare</th><td>5 noiembrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie">https://delamatescu.ro/lab/metodologie</a></td></tr>
         <tr><th scope="row">Dependență</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a></td></tr>
         <tr><th scope="row">Documente informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO vs GEO</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></td></tr>
-        <tr><th scope="row">Documente normative asociate</th><td>AVL-200 — Standard dovezi, măsurare și trasabilitate; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire); <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a> (Draft pentru revizuire); <a href="/lab/metodologie/fisa-entitatii">AVL-205 — Fișa entității</a> (Draft pentru revizuire)</td></tr>
+        <tr><th scope="row">Documente normative asociate</th><td><a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standard dovezi, măsurare și trasabilitate</a>; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire); <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a> (Draft pentru revizuire); <a href="/lab/metodologie/fisa-entitatii">AVL-205 — Fișa entității</a> (Draft pentru revizuire)</td></tr>
         <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code>: <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.10.0); AVL-MKT-002 — Market Query Panel (planificat)</td></tr>
         </tbody>
         </table>
@@ -31,6 +31,7 @@ export const avl202CadruMetodologicHtml = `
           <li><a href="#identitatea-documentului">Identitatea documentului</a></li>
           <li><a href="#cum-se-citesc-identificatorii-avl">Cum se citesc identificatorii AVL</a></li>
           <li><a href="#arhitectura-metodologiei">Arhitectura metodologiei</a></li>
+          <li><a href="#harta-sistemului-metodologic">Harta sistemului metodologic</a></li>
           <li><a href="#raspunsul-scurt">Răspunsul scurt</a></li>
           <li><a href="#1-ce-incercam-sa-masuram">1. Ce încercăm să măsurăm</a></li>
           <li><a href="#2-ciclul-metodologic">2. Ciclul metodologic</a></li>
@@ -102,7 +103,7 @@ export const avl202CadruMetodologicHtml = `
 
       <h3 id="ordinea-conceptuala-recomandata-de-lectura">Ordinea conceptuală recomandată de lectură</h3>
 
-      <p><strong>AVL-001 → AVL-202 → AVL-200 / AVL-201 / AVL-203 → documentele familiei AVL-MKT</strong></p>
+      <p><strong>AVL-001 → AVL-202 → AVL-200 / AVL-201 + AVL-205 / AVL-203 → AVL-204 → documentele familiei AVL-MKT</strong></p>
 
       <p>AVL-001 stabilește principiile Foundation. AVL-202 descrie cadrul metodologic general. AVL-200, AVL-201 și AVL-203 (draft pentru revizuire) formalizează componente specifice ale acelui cadru. AVL-204 (draft pentru revizuire) se citește după AVL-203, ale cărui observații le interpretează. AVL-205 (draft pentru revizuire) se citește împreună cu AVL-201: descrie câmp cu câmp fișa entității, intrarea obligatorie a baseline-ului. Documentele <code>AVL-MKT-*</code> formalizează măsurarea reprezentării unei piețe și se citesc după AVL-202.</p>
 
@@ -156,7 +157,7 @@ măsurare</code></pre>
         <li>prezintă cadrul metodologic general;</li>
         <li>explică ciclul metodologic și principiile comune;</li>
         <li>oferă punctul de intrare către documentele normative;</li>
-        <li>arată relațiile dintre standarde, baseline-uri, familiile metodologice și protocoalele viitoare.</li>
+        <li>arată relațiile dintre standarde, baseline-uri, familiile metodologice și protocoalele viitoare, inclusiv <a href="#harta-sistemului-metodologic">harta sistemului metodologic</a>: ce document guvernează fiecare strat, de la întrebarea de cercetare la afirmația publicată.</li>
       </ol>
 
       <p>În acest hub, ordinea de afișare trebuie să urmărească <strong>ordinea logică de lectură</strong>, nu ordinea numerică a ID-urilor:</p>
@@ -173,6 +174,51 @@ măsurare</code></pre>
       </ol>
 
       <p>Documentele planificate, dar nepublicate, sunt menționate în text fără link. Hub-ul nu conține pagini placeholder pentru documente care nu există încă.</p>
+
+      <h2 id="harta-sistemului-metodologic">Harta sistemului metodologic</h2>
+
+      <p>Pagina <a href="/lab/metodologie">/lab/metodologie</a> funcționează ca hartă publică a sistemului metodologic, nu ca duplicat al documentelor normative (<a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a> §32). Harta urmărește drumul de la întrebarea de cercetare la materialul publicat și arată, pentru fiecare strat, documentul care îl guvernează. Regulile fiecărui strat se află în documentul indicat, nu aici.</p>
+
+      <pre><code>Întrebarea de cercetare (Research question)
+      ↓
+Designul protocolului (Protocol design)
+      ↓
+Execuția măsurării (Measurement execution)
+      ↓
+Raw Evidence
+      ↓
+Indexed Evidence
+      ↓
+Observation
+      ↓
+Measurement
+      ↓
+Interpretation
+      ↓
+Afirmația publicată (Published claim)
+      ↓
+Studiu de caz / experiment / raport</code></pre>
+
+      <table>
+        <thead>
+          <tr><th>Strat</th><th>Ce conține</th><th>Documentul care îl guvernează</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Întrebarea de cercetare</td><td>întrebarea verificabilă, starea cunoscută și ipoteza formulată înaintea intervenției</td><td>AVL-202 §2.1–2.3; <a href="/lab/introducere">AVL-001</a> §12</td></tr>
+          <tr><td>Designul protocolului</td><td>entitatea și fișa ei, query set-ul, platformele, planul de măsurare și regulile fixate înaintea rulării</td><td><a href="/lab/metodologie/tabula-rasa-f0">AVL-201</a> (baseline și query set); <a href="/lab/metodologie/fisa-entitatii">AVL-205</a> (fișa entității); <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203</a> (planul de măsurare tehnic); <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001</a> (delimitarea pieței); AVL-202 §2.5 și §4</td></tr>
+          <tr><td>Execuția măsurării</td><td>rularea protocolului în condiții declarate</td><td>protocolul aplicabil: AVL-201, AVL-203 sau AVL-MKT-001; <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104</a> — fundamentul măsurării AI Visibility</td></tr>
+          <tr><td>Raw Evidence</td><td>artefactele brute, conservate neschimbate</td><td><a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200</a> §3.1, §8–10</td></tr>
+          <tr><td>Indexed Evidence</td><td>evidence index-ul, identificatorii și metadatele dovezilor</td><td>AVL-200 §3.2, §11</td></tr>
+          <tr><td>Observation</td><td>ce se vede direct într-o dovadă</td><td>AVL-200 §3.3, §12</td></tr>
+          <tr><td>Measurement</td><td>clasificarea și valorile derivate după o regulă versionată</td><td>AVL-200 §3.4, §13–14; <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204</a> pentru verificarea tehnică; taxonomia din AVL-201 și AVL-202 §6</td></tr>
+          <tr><td>Interpretation</td><td>explicația propusă, separată de observație</td><td>AVL-200 §3.5, §15; AVL-202 §10</td></tr>
+          <tr><td>Afirmația publicată</td><td>afirmația, cu nivelul ei de certitudine și trasabilă până la dovezi</td><td>AVL-200 §4; AVL-001 §9; AVL-202 §11</td></tr>
+          <tr><td>Studiu de caz / experiment / raport</td><td>aplicarea concretă a metodologiei</td><td><a href="/lab/studii-de-caz">studiile de caz</a>; <a href="/lab/experimente-publice">experimentele publice</a>; registrele și rapoartele Market Measurement (<a href="/lab/market-discovery">Market Discovery</a>); AVL-202 §12</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Intervențiile și remăsurările</strong> nu formează un strat separat: ele repetă lanțul. Baseline-ul T0 parcurge straturile o dată, conform AVL-201. Intervențiile dintre puncte sunt declarate și datate (secțiunea 8), iar fiecare punct de remăsurare F1 … Fn parcurge din nou lanțul, de la execuția măsurării la afirmația publicată, cu aceleași reguli (secțiunea 9; AVL-200 §7). Un document metodologic dedicat intervențiilor și remăsurărilor nu este încă publicat; până atunci, ele sunt guvernate de secțiunile 8–10 ale acestui document.</p>
+
 
       <h2 id="raspunsul-scurt">Răspunsul scurt</h2>
 
@@ -713,6 +759,8 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p>În raport cu AVL-202, rolul lui este să detalieze stratul de <strong>evidence integrity și traceability</strong>, fără ca AVL-202 să dubleze toate cerințele sale operaționale.</p>
 
+      <p><strong>→ <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">Citește AVL-200</a></strong></p>
+
       <h3 id="avl-201-tabula-rasa-f0">AVL-201 — Tabula Rasa F0</h3>
 
       <p><em>Baseline Measurement Specification</em></p>
@@ -744,7 +792,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><em>Entity Sheet</em></p>
 
-      <p><strong>Versiune 0.1.1 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.2.0 · Draft pentru revizuire</strong></p>
 
       <p>Descrie fișa entității, intrarea obligatorie a baseline-ului (AVL-201 §7): rolul ei, cum se completează și cine o completează, stările verificării în etapa de baseline și definiția fiecărui câmp — forma canonică și variantele, rolul și domeniul de activitate, locația, atributele verificabile, activele oficiale, relațiile, harta coliziunilor, prezența distribuită și politica crawlere. Nu introduce cerințe proprii și nu modifică conținutul minim stabilit de AVL-201.</p>
 
@@ -758,7 +806,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><em>Core Technical Web Measurement Protocol</em></p>
 
-      <p><strong>Versiune 0.6.1 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.6.2 · Draft pentru revizuire</strong></p>
 
       <p>Setul minim și repetabil de verificări tehnice care documentează ce livrează un server în condiții declarate: accesibilitatea HTTP și redirecturile, variantele de host și protocol, robots.txt, descoperirea sitemap-ului, semnalele raw HTML, conținutul important prezent în HTML-ul brut, paritatea răspunsurilor pentru User-Agent-uri declarate și integritatea dovezilor. Definește și compoziția planului de măsurare și trecerea de la observații la diagnostic și recomandări, după grila AVL-204. Nu confundă accesibilitatea tehnică cu indexarea, citarea sau recomandarea.</p>
 
@@ -772,7 +820,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <p><em>Technical Diagnostic Interpretation Grid</em></p>
 
-      <p><strong>Versiune 0.3.1 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.3.2 · Draft pentru revizuire</strong></p>
 
       <p>Regulile publice prin care observațiile AVL-203 devin diagnostic și recomandări: stările diagnosticului, zonele verificate, regulile de diagnostic, prioritizarea recomandărilor, afirmațiile excluse și aplicarea identică pentru orice entitate evaluată. Regulile se fixează înaintea rulării, ca diagnosticul să poată fi verificat și să nu poată fi ajustat după rezultat.</p>
 
@@ -856,7 +904,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <h2 id="citare-recomandata">Citare recomandată</h2>
 
-      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.8.0, 2026. https://delamatescu.ro/lab/metodologie</p>
+      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.9.0, 2026. https://delamatescu.ro/lab/metodologie</p>
 
       <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
 
@@ -936,6 +984,12 @@ Market Query Panel + răspunsurile AI</code></pre>
             <td>4 noiembrie 2026</td>
             <td>Activ</td>
             <td>PATCH: versiunile documentelor din ramura Core Methodology actualizate: AVL-203 trece la v0.6.2, AVL-204 la v0.3.2 (trimiteri directe la AVL-205) și AVL-205 la v0.2.0 (după prima fișă completă), toate draft pentru revizuire. Fără alte modificări.</td>
+          </tr>
+          <tr>
+            <td>1.9.0</td>
+            <td>5 noiembrie 2026</td>
+            <td>Activ</td>
+            <td>MINOR: secțiune nouă, „Harta sistemului metodologic”, care aplică AVL-200 §32: lanțul de la întrebarea de cercetare la studiul de caz, experiment sau raport, cu documentul care guvernează fiecare strat și locul intervențiilor și remăsurărilor. Rolul paginii <code>/lab/metodologie</code> (funcția 4) trimite la hartă. Corecturi: versiunile din cardurile AVL-205 (v0.2.0), AVL-203 (v0.6.2) și AVL-204 (v0.3.2), rămase în urmă la 1.8.1; ordinea conceptuală de lectură include AVL-205 și AVL-204, descrise deja în textul de sub ea; AVL-200 primește link în tabelul de identitate și în cardul lui; citarea recomandată trimite la versiunea curentă. Nicio schimbare de principiu și nicio cerință nouă.</td>
           </tr>
         </tbody>
       </table>

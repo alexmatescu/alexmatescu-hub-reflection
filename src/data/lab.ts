@@ -58,13 +58,17 @@ export const labNav: LabPage[] = [
     children: [
       {
         to: "/lab/metodologie/standard-dovezi-masurare-trasabilitate",
-        label: "Standard dovezi, măsurare și trasabilitate",
+        label: "AVL-200 — Standard dovezi, măsurare și trasabilitate",
+        seoTitle: "Standard dovezi, măsurare și trasabilitate",
+        pageTitle: "Standard dovezi, măsurare și trasabilitate",
         lead: "AVL-200: standardul transversal prin care AI Visibility Lab transformă artefacte brute de cercetare în informație măsurabilă și interpretări trasabile până la dovezile care le susțin.",
       },
       {
         to: "/lab/metodologie/tabula-rasa-f0",
-        label: "Tabula Rasa F0",
-        lead: "Punctul de plecare al metodologiei: un site sau brand pornit de la zero, fără istoric, folosit ca teren de experimentare controlată.",
+        label: "AVL-201 — Tabula Rasa F0",
+        seoTitle: "Tabula Rasa F0",
+        pageTitle: "Tabula Rasa F0",
+        lead: "AVL-201: specificația normativă a măsurării de baseline (T0) — condițiile minime, intrările obligatorii, query set-ul, dovezile, taxonomia și scorarea prin care starea inițială a unei entități se documentează înaintea intervențiilor și rămâne comparabilă la remăsurări.",
       },
       {
         to: "/lab/metodologie/fisa-entitatii",
