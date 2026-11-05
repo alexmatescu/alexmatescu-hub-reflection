@@ -64,6 +64,8 @@ Identificatorul AVL-205 a fost alocat la 4 noiembrie 2026 ca următorul număr l
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
 | Data creării | 3 noiembrie 2026 |
+| Data publicării | 4 noiembrie 2026 |
+| Ultima actualizare | 4 noiembrie 2026 |
 | Ultima verificare | 4 noiembrie 2026 |
 | Limbă | română |
 | URL canonic | https://delamatescu.ro/lab/metodologie/fisa-entitatii |

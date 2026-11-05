@@ -14,6 +14,7 @@ export const avl204GrilaInterpretareVerificareTehnicaHtml = `
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data creării</th><td>22 octombrie 2026</td></tr>
         <tr><th scope="row">Data publicării</th><td>26 octombrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>4 noiembrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>26 octombrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica">https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica</a></td></tr>

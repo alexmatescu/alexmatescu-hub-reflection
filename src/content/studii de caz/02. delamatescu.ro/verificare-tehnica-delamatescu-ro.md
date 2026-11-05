@@ -6,6 +6,7 @@ organization: "AI Visibility Lab"
 
 date_published: "2026-10-28T14:23:00+02:00"
 date_modified: "2026-10-28"
+version: "1.2.0"
 last_reviewed: "2026-10-28"
 
 category: "Technical Visibility"

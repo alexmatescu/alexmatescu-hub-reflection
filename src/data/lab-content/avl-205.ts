@@ -14,6 +14,7 @@ export const avl205FisaEntitatiiHtml = `
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data creării</th><td>3 noiembrie 2026</td></tr>
         <tr><th scope="row">Data publicării</th><td>4 noiembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>4 noiembrie 2026</td></tr>
         <tr><th scope="row">Ultima verificare</th><td>4 noiembrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie/fisa-entitatii">https://delamatescu.ro/lab/metodologie/fisa-entitatii</a></td></tr>

@@ -58,6 +58,8 @@ Identificatorul AVL-204 a fost alocat la 22 octombrie 2026 ca următorul număr 
 | Autor | Alex Matescu |
 | Organizație | AI Visibility Lab |
 | Data creării | 22 octombrie 2026 |
+| Data publicării | 26 octombrie 2026 |
+| Ultima actualizare | 4 noiembrie 2026 |
 | Ultima verificare | 26 octombrie 2026 |
 | Limbă | română |
 | URL canonic | https://delamatescu.ro/lab/metodologie/grila-interpretare-verificare-tehnica |

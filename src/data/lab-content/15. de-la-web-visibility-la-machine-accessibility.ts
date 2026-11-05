@@ -132,8 +132,10 @@ export const deLaWebVisibilityLaMachineAccessibilityHtml = `
           <li><a href="#surse-si-metodologie">Surse și metodologie</a>
             <ol>
               <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
-            </ol>
+              <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
+        </ol>
           </li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
         </ol>
       </nav>
 
@@ -381,6 +383,15 @@ Actionability</code></pre>
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
       <p>Produsele agentice, conectorii, protocoalele de commerce și politicile de acces pentru crawlere se schimbă rapid. Disponibilitatea regională, lista integrărilor și angajamentele operatorilor pot fi diferite la data lecturii. Afirmațiile despre produse au fost verificate la 30 septembrie 2026.</p>
+
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
+      <table>
+        <thead><tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr></thead>
+        <tbody>
+          <tr><td>1.0</td><td>30 septembrie 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>2 octombrie 2026</td><td>Blocul de navigare al seriei „Machine accessibility și agentic web” și convenția metodologică aliniată la lanțul AVL (Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation). Corpul analizei nu a fost modificat.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 30 septembrie 2026.</em></p>
 `;
