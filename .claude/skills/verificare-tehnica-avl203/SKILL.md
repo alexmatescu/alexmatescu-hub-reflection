@@ -11,7 +11,7 @@ Agent de execuție pentru `src/content/lab/AVL/AVL-203_Protocol_minim_verificare
 
 ## Statutul implementării
 
-- Implementarea curentă este **v0.5.0**, „implementare candidată pentru draftul AVL-203 v0.6.0 / AVL-204 v0.3.0”, **nevalidată** ca implementare de referință (AVL-203 §19.4). Nu declara rezultatele „conforme AVL-203 1.0.0”.
+- Implementarea curentă este **v0.5.1**, „implementare candidată pentru draftul AVL-203 v0.6.2 / AVL-204 v0.3.2”, **nevalidată** ca implementare de referință (AVL-203 §19.4). Nu declara rezultatele „conforme AVL-203 1.0.0”.
 - Ce acoperă codul, prin ce test și ce nu acoperă: `CONFORMANCE.md`.
 - Alegerile operaționale `OP-*` și istoricul propunerilor `P-01`…`P-11` (aprobate și preluate în AVL-203 0.5.0 / AVL-204 0.2.0): `docs/avl-203-204-registru-implementare.md`. Planul de lucru și deciziile DD-01…DD-09 (26 octombrie 2026, preluate în AVL-203 0.6.0 / AVL-204 0.3.0): `docs/PLAN-AVL-203-204-VERIFICARE-TEHNICA.md` §6.
 - **Domeniul (AVL203-REQ-043, AVL204-REQ-015):** verificarea se face numai pentru site-ul unei entități evaluate ca proiect sau client al laboratorului (inclusiv site-urile proprii), cu fișa entității completată de reprezentant. Nu pentru concurenți și nici pentru entitățile din Market Discovery; o verificare din afara domeniului nu se documentează ca rulare.
@@ -74,7 +74,7 @@ La o eroare de rețea, request-ul se repetă o singură dată (OP-09). La final 
 ```bash
 CLI=.claude/skills/verificare-tehnica-avl203/scripts/avl203_cli.py
 python3 $CLI analyze  --run evidence/work/avl203/run_<ID>     # observații TC-00…TC-08
-python3 $CLI diagnose --run evidence/work/avl203/run_<ID> --rules 0.3.0
+python3 $CLI diagnose --run evidence/work/avl203/run_<ID> --rules 0.3.2
 python3 $CLI report   --run evidence/work/avl203/run_<ID>
 ```
 

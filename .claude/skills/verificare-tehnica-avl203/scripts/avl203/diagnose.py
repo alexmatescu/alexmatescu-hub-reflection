@@ -1,4 +1,4 @@
-"""Diagnosticul după grila AVL-204 v0.3.0, aplicat determinist pe observații (AVL204-REQ-002, REQ-007).
+"""Diagnosticul după grila AVL-204 v0.3.2 (regulile neschimbate de la v0.3.0), aplicat determinist pe observații (AVL204-REQ-002, REQ-007).
 
 Regulile sunt cele din AVL-204 §6; textul condiției e reprodus în RULES, iar funcțiile de mai jos
 îl aplică literal. Regulile de succes cer date complete (AVL204-REQ-016); o zonă fără constatări
@@ -78,7 +78,7 @@ QUALIFICATION = {
     "R-Z6-08": "restricție declarată",
 }
 DEVIATIONS = {
-    "DEV-G01": "caz neacoperit de regulile grilei AVL-204 0.3.0: constatarea primește „nu poate fi stabilit” (AVL204-REQ-003, REQ-012)",
+    "DEV-G01": f"caz neacoperit de regulile grilei AVL-204 {GRID_VERSION}: constatarea primește „nu poate fi stabilit” (AVL204-REQ-003, REQ-012)",
     "DEV-G02": "intenția de indexare a URL-ului nu e declarată în plan: R-Z4-01 cere „politica declarată îl vrea indexat” și nu poate fi aplicată sigur",
 }
 NONHTML = ("text/html", "application/xhtml+xml")

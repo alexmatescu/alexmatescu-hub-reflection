@@ -69,7 +69,7 @@ class BaselineTest(unittest.TestCase):
         f, d = run(*clean())
         self.assertEqual(set(rules(f)), {"R-Z1-08", "R-Z2-05", "R-Z3-05", "R-Z4-09", "R-Z5-04", "R-Z6-05"})
         self.assertEqual(d, [])
-        self.assertTrue(all(x["rule_version"] == "0.3.0" and x["observation_ids"] and x["evidence_ids"] for x in f))
+        self.assertTrue(all(x["rule_version"] == "0.3.2" and x["observation_ids"] and x["evidence_ids"] for x in f))
 
     def test_zone_without_findings_is_not_evaluated(self):
         p, obs = clean()

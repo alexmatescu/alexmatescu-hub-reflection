@@ -1,8 +1,10 @@
-# Matricea de conformitate — implementarea v0.5.0
+# Matricea de conformitate — implementarea v0.5.1
 
-Implementare candidată pentru draftul AVL-203 v0.6.0 / AVL-204 v0.3.0, **nevalidată** ca implementare de referință (AVL-203 §19.4). Matricea arată ce acoperă codul, prin ce test și ce rămâne în afara lui. Nu este o declarație de conformitate cu o versiune 1.0.0.
+Implementare candidată pentru draftul AVL-203 v0.6.2 / AVL-204 v0.3.2, **nevalidată** ca implementare de referință (AVL-203 §19.4). Matricea arată ce acoperă codul, prin ce test și ce rămâne în afara lui. Nu este o declarație de conformitate cu o versiune 1.0.0.
 
 Stare la 26 octombrie 2026, după 152 de teste locale (server pe 127.0.0.1). Rulări pe un site real (delamatescu.ro): `TEST` cu v0.3.0 (grila 0.1.0) și `T0` (`AVL203-delamatescu-ro-T0-20261026T085234Z`) cu v0.4.0 (grila 0.2.0); aceeași rulare `T0`, reanalizată offline cu v0.5.0 și grila 0.3.0 în `derived/analysis-20261026T121156Z`.
+
+Modificări v0.5.1 (5 noiembrie 2026): versiunile înregistrate în plan, rulare, diagnostic și raport trec la AVL-203 0.6.2 și AVL-204 0.3.2. Între 0.6.0/0.3.0 și 0.6.2/0.3.2 nu s-a schimbat nicio cerință sau regulă (patch-uri pentru CS-002 și AVL-205), deci comportamentul codului e identic. Planurile înghețate sub 0.6.0/0.3.0 se reîngheață. Rularea `T0` rămâne cu versiunile ei.
 
 Modificări v0.5.0 (deciziile din 26 octombrie 2026, AVL-204 0.3.0): `R-Z1-05` peste două redirecturi, `R-Z1-08` cu cel mult două; `R-Z4-06` retrasă (lipsa JSON-LD rămâne observație TC-05); TC-03 determină politica și pentru crawlerele declarate în plan din afara matricei Core, iar Z2 le diagnostichează doar pe cele de antrenare (`AVL204-REQ-018`); raportul listează separat crawlerele din afara matricei Core.
 

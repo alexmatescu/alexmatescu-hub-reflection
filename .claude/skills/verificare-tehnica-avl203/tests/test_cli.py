@@ -41,7 +41,7 @@ class EndToEndTest(unittest.TestCase):
         self.assertEqual(cli("verify", "--run", run)[0], 0)
         self.assertEqual(cli("analyze", "--run", run)[0], 0)
         self.assertEqual(cli("diagnose", "--run", run, "--rules", "9.9.9")[0], 2)
-        code, out, err = cli("diagnose", "--run", run, "--rules", "0.3.0")
+        code, out, err = cli("diagnose", "--run", run, "--rules", "0.3.2")
         self.assertEqual(code, 0, err)
         self.assertIn("Z6: problemă confirmată", out)
         code, out, err = cli("report", "--run", run)

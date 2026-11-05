@@ -7,7 +7,7 @@
   avl203_cli.py capture --plan PLAN.frozen.json [--out DIR]
   avl203_cli.py verify  --run DIR [--write]
   avl203_cli.py analyze --run DIR [--robots-manual FIȘIER]
-  avl203_cli.py diagnose --run DIR --rules 0.1.0 [--analysis DIR]
+  avl203_cli.py diagnose --run DIR --rules 0.3.2 [--analysis DIR]
   avl203_cli.py report  --run DIR [--analysis DIR]
   avl203_cli.py client-report --run DIR [--analysis DIR] [--no-pdf] [--exemplu-public]
 
@@ -165,7 +165,7 @@ def main(argv=None):
     an.add_argument("--robots-manual", help="aplicarea manuală documentată a RFC 9309 (JSON), AVL203-REQ-041")
     dg = sub.add_parser("diagnose")
     dg.add_argument("--run", required=True)
-    dg.add_argument("--rules", required=True, help="versiunea grilei AVL-204 (0.1.0)")
+    dg.add_argument("--rules", required=True, help="versiunea grilei AVL-204 (ex. 0.3.2)")
     dg.add_argument("--analysis", help="directorul analizei (implicit: cea mai recentă)")
     rp = sub.add_parser("report")
     rp.add_argument("--run", required=True)
