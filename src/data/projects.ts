@@ -249,7 +249,7 @@ export const projects: Project[] = [
     problem:
       "Cum optimizezi prezența unui brand sau autor într-un ecosistem în care răspunsul nu mai este o listă de linkuri?",
     story:
-      "Pornește de la observații din propriul proces de scris și publicare. Va deveni un serviciu și un set de materiale publice.",
+      "Pornește de la observații din propriul proces de scris și publicare. Din iulie 2026 publică metodologie, măsurători, studii de caz și articole, iar auditul AI Visibility aplică metodologia pe site-urile altor entități.",
     lessons: [
       "Conținutul structurat și citabil bate conținutul scris pentru click.",
       "Autoritatea de domeniu se redefinește în jurul faptelor verificabile.",

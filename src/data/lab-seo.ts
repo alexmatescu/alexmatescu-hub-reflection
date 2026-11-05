@@ -308,6 +308,25 @@ const labPublisher = {
   founder: { "@id": alexMatescuPerson["@id"] },
 };
 
+/** Descrierea canonică a laboratorului — aceeași în meta-ul /lab și în nodul Organization. */
+export const LAB_DESCRIPTION =
+  "AI Visibility Lab este laboratorul independent de cercetare aplicată fondat de Alex Matescu: metodologie, măsurători, studii de caz și audit pentru vizibilitatea în ChatGPT, Gemini, Google AI Overviews și alte sisteme AI.";
+
+/**
+ * Entitatea unică AI Visibility Lab, cu `@id` stabil. O folosesc pagina /lab și,
+ * ca publisher, articolele și studiile de caz cu JSON-LD `@graph`. Autorul
+ * rămâne Person (`alexMatescuPerson`, „Fondator și coordonator AI Visibility Lab”).
+ * Builder-ul legacy păstrează `labPublisher`, fără `@id`, ca să nu-și schimbe output-ul.
+ */
+export const labOrganization = {
+  "@type": "Organization",
+  "@id": "https://delamatescu.ro/lab#organization",
+  name: "AI Visibility Lab",
+  url: "https://delamatescu.ro/lab",
+  description: LAB_DESCRIPTION,
+  founder: { "@id": alexMatescuPerson["@id"] },
+};
+
 /**
  * JSON-LD "legacy" — Article + FAQPage ca obiecte separate în array, fără @graph
  * și fără @id proprii. NU modifica acest builder: e folosit de articolele publicate
@@ -360,6 +379,7 @@ const buildGraphArticleJsonLd = (meta: LabArticleMeta) => {
   const graph: object[] = [
     alexMatescuPerson,
     alexMatescuWebSite,
+    labOrganization,
     {
       "@type": "WebPage",
       "@id": webpageId,
@@ -385,7 +405,7 @@ const buildGraphArticleJsonLd = (meta: LabArticleMeta) => {
       // `labArticleMeta` îl are garantat; nu e nevoie de un fallback runtime.
       articleSection: meta.category,
       author: { "@id": alexMatescuPerson["@id"] },
-      publisher: labPublisher,
+      publisher: { "@id": labOrganization["@id"] },
       ...(meta.keywords ? { keywords: meta.keywords.join(", ") } : {}),
       ...(meta.citations
         ? {

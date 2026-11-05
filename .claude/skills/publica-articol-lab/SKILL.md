@@ -429,7 +429,7 @@ Nu inventa un URL pentru `image` dacă nu există unul real.
   ```
   Dacă `buildArticleJsonLd` produce deja acest pattern (verifică output-ul real, nu presupune), nu-l duplica altfel.
 - **WebSite**: `alexMatescuWebSite` din `@/components/Seo`, `@id: https://delamatescu.ro/#website`. Randat doar pe `/` (client-side, prin `Seo jsonLd`) — **nu** e global. Un articol care îl referențiază trebuie să-l embed-uiască complet (nu doar `{"@id": ...}`), altfel pagina lui nu e self-contained pentru unelte care citesc o singură pagină.
-- **Publisher**: `Organization`, `name: "AI Visibility Lab"`, `url: "https://delamatescu.ro/lab"` (constanta `labPublisher` din `lab-seo.ts`) — identic pe toate articolele, legacy și noi. AI Visibility Lab nu e modelat ca persoană juridică independentă — e reprezentat ca brand editorial (publisher Organization), nu altfel. `articleSection` (format graph) descrie acum clasificarea tematică a articolului (`meta.category`), nu brandul — vezi §5.2.
+- **Publisher**: `Organization` „AI Visibility Lab”. În formatul `@graph`, publisher-ul e referința `{ "@id": "https://delamatescu.ro/lab#organization" }` la nodul unic `labOrganization` din `lab-seo.ts` (inclus în graph, același nod ca pe pagina `/lab`, cu `founder` = Alex Matescu). În formatul legacy rămâne constanta `labPublisher`, fără `@id`, ca output-ul articolelor vechi să nu se schimbe. Autorul rămâne întotdeauna Person (`alexMatescuPerson`, „Fondator și coordonator AI Visibility Lab”), iar byline-ul vizibil nu se schimbă. AI Visibility Lab nu e modelat ca persoană juridică independentă — e reprezentat ca brand editorial (publisher Organization), nu altfel. `articleSection` (format graph) descrie acum clasificarea tematică a articolului (`meta.category`), nu brandul — vezi §5.2.
 
 Nu inventa link-uri `sameAs` noi — reutilizează cele deja din `alexMatescuPerson.sameAs`.
 
@@ -761,7 +761,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 - [ ] `last_reviewed` reflectă data reală a verificării; `date_modified` nu s-a schimbat fără modificare reală (§6.2).
 - [ ] Metadata din `.md`, `.ts` și runtime nu se contrazic.
 - [ ] Frontmatter-ul are toate câmpurile obligatorii din §0.3 (`document_type`, `version`, `status`, `author_url`, `organization_url`, `date_created`, `purpose` incluse); `status` și `version` corespund stării reale; `evidence_release` există dacă articolul raportează o rulare cu pachet publicat; fără `schema_types`/`publishing_checklist`.
-- [ ] `@id`-ul Person e `https://delamatescu.ro/#alex-matescu` peste tot; publisher e `labPublisher` consistent (§5.1).
+- [ ] `@id`-ul Person e `https://delamatescu.ro/#alex-matescu` peste tot; publisher e `labOrganization` prin `@id` în formatul graph și `labPublisher` în legacy (§5.1).
 - [ ] `citation` (dacă există) conține doar surse efectiv relevante.
 - [ ] FAQ folosit doar dacă e util; FAQ vizibil == FAQ în JSON-LD.
 - [ ] Canonical == rută == sitemap == wiring (`lab.ts`/`Lab.tsx`/`lab-seo.ts`).

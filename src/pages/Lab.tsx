@@ -21,6 +21,7 @@ import {
   sortedLabArticles,
   sortedLabCaseStudies,
   type LabArticleCategory,
+  LAB_DESCRIPTION,
 } from "@/data/lab-seo";
 import { avl001IntroductionHtml } from "@/data/lab-content/avl-001";
 import { avl101GeoAeoHtml } from "@/data/lab-content/avl-101";
@@ -349,7 +350,7 @@ export const LabIndex = () => (
   <div>
     <Seo
       title="AI Visibility Lab — GEO și AEO pentru branduri | Alex Matescu"
-      description="AI Visibility Lab este proiectul lui Alex Matescu despre GEO, AEO și vizibilitatea brandurilor în ChatGPT, Google AI Overviews și motoarele de căutare generative."
+      description={LAB_DESCRIPTION}
       // JSON-LD e deja randat server-side de head()-ul rutei (@/routes/_site/lab/index.tsx),
       // ca să fie vizibil și pentru crawlere fără JS — nu-l mai duplicăm aici.
     />
