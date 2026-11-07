@@ -432,7 +432,7 @@ Nu inventa un URL pentru `image` dacă nu există unul real la nivel de articol 
 
 ### 7.2 — JSON-LD
 
-`buildArticleJsonLd` (din `lab-seo.ts`) e reutilizat identic — nu duplica logica. Cu `lastReviewed` prezent, produce automat formatul `@graph` (`Person` + `WebSite` embed complet, `WebPage`, `Article` cu `articleSection: meta.category`, `FAQPage` doar dacă există FAQ). Head-ul SSR e deja produs de `buildLabCaseStudyHead` (`lab-seo.ts`), apelat din `_site/lab/$parent.$slug.tsx` — verifică-l, nu-l reimplementa.
+`buildArticleJsonLd` (din `lab-seo.ts`) e reutilizat identic — nu duplica logica. Cu `lastReviewed` prezent, produce automat formatul `@graph` (`Person` + `WebSite` + `labOrganization` embed complet, `WebPage` cu `isPartOf` → WebSite, `publisher` → `labOrganization` și `breadcrumb`, `BreadcrumbList` AI Visibility Lab › Studii de caz › titlul, `Article` cu `articleSection: meta.category`, `FAQPage` doar dacă există FAQ). Head-ul SSR e deja produs de `buildLabCaseStudyHead` (`lab-seo.ts`), apelat din `_site/lab/$parent.$slug.tsx` — verifică-l, nu-l reimplementa.
 
 ### 7.3 — Entity consistency
 

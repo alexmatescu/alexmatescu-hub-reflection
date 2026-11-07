@@ -1,6 +1,11 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { MarketDiscoveryRun } from "@/pages/MarketDiscovery";
-import { alexMatescuPerson } from "@/components/Seo";
+import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
+import {
+  labBreadcrumbList,
+  labBreadcrumbTrail,
+  labOrganization,
+} from "@/data/lab-seo";
 import { buildSeoHead } from "@/lib/seo-head";
 import { findMdRunHead, MD_SURFACE_LABELS } from "@/data/market-discovery/meta";
 
@@ -24,35 +29,58 @@ export const Route = createFileRoute("/_site/lab/market-discovery/$run")({
       canonical: url,
       jsonLd: {
         "@context": "https://schema.org",
-        "@type": "Dataset",
-        name: run.title,
-        alternateName: run.instanceId,
-        description: run.description,
-        url,
-        inLanguage: "ro-RO",
-        datePublished: run.datePublished,
-        ...(dates.length
-          ? {
-              temporalCoverage:
-                dates.length > 1 ? `${dates[0]}/${dates.at(-1)}` : dates[0],
-            }
-          : {}),
-        spatialCoverage: { "@type": "Place", name: "România" },
-        creator: alexMatescuPerson,
-        isAccessibleForFree: true,
-        isPartOf: {
-          "@type": "CollectionPage",
-          name: "Market Discovery — seria MKT-RO-AIV",
-          url: `${BASE}/lab/market-discovery`,
-        },
-        measurementTechnique:
-          "Capturi integrale ale rezultatelor pentru un set fix de întrebări, pe Google Search, Bing Search, Google AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot; registru de observații și deduplicare pe reguli declarate (AVL-MKT-001).",
-        variableMeasured: [
-          "Entități candidate distincte pe întrebare și suprafață",
-          "Entități exclusive pe întrebare și suprafață",
-          ...Object.values(MD_SURFACE_LABELS).map(
-            (s) => `Entități numite de ${s}`,
-          ),
+        "@graph": [
+          alexMatescuPerson,
+          alexMatescuWebSite,
+          labOrganization,
+          {
+            "@type": "WebPage",
+            "@id": `${url}#webpage`,
+            url,
+            name: run.title,
+            inLanguage: "ro-RO",
+            isPartOf: { "@id": alexMatescuWebSite["@id"] },
+            publisher: { "@id": labOrganization["@id"] },
+            mainEntity: { "@id": `${url}#dataset` },
+            breadcrumb: { "@id": `${url}#breadcrumb` },
+          },
+          {
+            "@type": "Dataset",
+            "@id": `${url}#dataset`,
+            mainEntityOfPage: { "@id": `${url}#webpage` },
+            name: run.title,
+            alternateName: run.instanceId,
+            description: run.description,
+            url,
+            inLanguage: "ro-RO",
+            datePublished: run.datePublished,
+            ...(dates.length
+              ? {
+                  temporalCoverage:
+                    dates.length > 1 ? `${dates[0]}/${dates.at(-1)}` : dates[0],
+                }
+              : {}),
+            spatialCoverage: { "@type": "Place", name: "România" },
+            creator: { "@id": alexMatescuPerson["@id"] },
+            publisher: { "@id": labOrganization["@id"] },
+            isAccessibleForFree: true,
+            isPartOf: {
+              "@type": "CollectionPage",
+              "@id": `${BASE}/lab/market-discovery#webpage`,
+              name: "Market Discovery — seria MKT-RO-AIV",
+              url: `${BASE}/lab/market-discovery`,
+            },
+            measurementTechnique:
+              "Capturi integrale ale rezultatelor pentru un set fix de întrebări, pe Google Search, Bing Search, Google AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot; registru de observații și deduplicare pe reguli declarate (AVL-MKT-001).",
+            variableMeasured: [
+              "Entități candidate distincte pe întrebare și suprafață",
+              "Entități exclusive pe întrebare și suprafață",
+              ...Object.values(MD_SURFACE_LABELS).map(
+                (s) => `Entități numite de ${s}`,
+              ),
+            ],
+          },
+          labBreadcrumbList(url, labBreadcrumbTrail(run.path, run.title)),
         ],
       },
     });

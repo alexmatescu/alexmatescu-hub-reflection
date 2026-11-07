@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MarketDiscoveryHub } from "@/pages/MarketDiscovery";
-import { alexMatescuPerson } from "@/components/Seo";
+import { alexMatescuPerson, alexMatescuWebSite } from "@/components/Seo";
+import {
+  labBreadcrumbList,
+  labBreadcrumbTrail,
+  labOrganization,
+} from "@/data/lab-seo";
 import { buildSeoHead } from "@/lib/seo-head";
 import {
   mdRunHeads,
@@ -9,6 +14,7 @@ import {
 } from "@/data/market-discovery/meta";
 
 const BASE = "https://delamatescu.ro";
+const HUB = `${BASE}/lab/market-discovery`;
 
 // Rută statică: are prioritate peste `$slug.tsx`, deci /lab/market-discovery
 // nu trece prin LabDetail (pagina are layout propriu, cu date).
@@ -18,25 +24,36 @@ export const Route = createFileRoute("/_site/lab/market-discovery/")({
     buildSeoHead({
       title: "Market Discovery — seria MKT-RO-AIV | AI Visibility Lab",
       description: MD_HUB_DESCRIPTION,
-      canonical: `${BASE}/lab/market-discovery`,
+      canonical: HUB,
       jsonLd: {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        name: MD_HUB_TITLE,
-        description: MD_HUB_DESCRIPTION,
-        url: `${BASE}/lab/market-discovery`,
-        inLanguage: "ro-RO",
-        isPartOf: {
-          "@type": "WebSite",
-          url: `${BASE}/lab`,
-          name: "AI Visibility Lab",
-        },
-        creator: alexMatescuPerson,
-        hasPart: mdRunHeads.map((r) => ({
-          "@type": "Dataset",
-          name: r.title,
-          url: `${BASE}${r.path}`,
-        })),
+        "@graph": [
+          alexMatescuPerson,
+          alexMatescuWebSite,
+          labOrganization,
+          {
+            "@type": "CollectionPage",
+            "@id": `${HUB}#webpage`,
+            name: MD_HUB_TITLE,
+            description: MD_HUB_DESCRIPTION,
+            url: HUB,
+            inLanguage: "ro-RO",
+            isPartOf: { "@id": alexMatescuWebSite["@id"] },
+            publisher: { "@id": labOrganization["@id"] },
+            creator: { "@id": alexMatescuPerson["@id"] },
+            breadcrumb: { "@id": `${HUB}#breadcrumb` },
+            hasPart: mdRunHeads.map((r) => ({
+              "@type": "Dataset",
+              "@id": `${BASE}${r.path}#dataset`,
+              name: r.title,
+              url: `${BASE}${r.path}`,
+            })),
+          },
+          labBreadcrumbList(
+            HUB,
+            labBreadcrumbTrail("/lab/market-discovery", "Market Discovery"),
+          ),
+        ],
       },
     }),
 });

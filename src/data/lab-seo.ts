@@ -28,7 +28,7 @@ import { paradoxulSiteuluiTerminatMeta } from "@/data/lab-content/5. paradoxul-s
 import { socialMediaVizibilitateAiMeta } from "@/data/lab-content/3. social-media-vizibilitate-ai";
 import { tabulaRasaEntityResolutionStudiuDeCazMeta } from "@/data/lab-content/tabula-rasa-entity-resolution-studiu-de-caz";
 import { verificareTehnicaDelamatescuRoMeta } from "@/data/lab-content/verificare-tehnica-delamatescu-ro";
-import { findLabPage, type LabPage } from "@/data/lab";
+import { findLabPage, findLabParent, type LabPage } from "@/data/lab";
 import { buildSeoHead, fitSeoTitle } from "@/lib/seo-head";
 
 const BASE = "https://delamatescu.ro";
@@ -329,6 +329,42 @@ export const labOrganization = {
   founder: { "@id": alexMatescuPerson["@id"] },
 };
 
+type LabCrumb = { name: string; url: string };
+
+/**
+ * Traseul de breadcrumb al unei pagini Lab: AI Visibility Lab → secțiunea-părinte
+ * din `labNav` (dacă există) → pagina curentă. Numele vin din `labNav`, adică din
+ * aceleași etichete pe care le vede cititorul în meniu.
+ */
+export const labBreadcrumbTrail = (
+  pathname: string,
+  currentName: string,
+): LabCrumb[] => {
+  const clean = pathname.replace(/\/+$/, "");
+  const trail: LabCrumb[] = [{ name: "AI Visibility Lab", url: `${BASE}/lab` }];
+  if (clean === "/lab") return trail;
+  const parent =
+    findLabParent(clean) ??
+    (clean.split("/").length > 3
+      ? findLabPage(clean.split("/").slice(0, 3).join("/"))
+      : undefined);
+  if (parent) trail.push({ name: parent.label, url: `${BASE}${parent.to}` });
+  trail.push({ name: currentName, url: `${BASE}${clean}` });
+  return trail;
+};
+
+/** Nodul `BreadcrumbList` (`@id: {canonical}#breadcrumb`) pentru un traseu Lab. */
+export const labBreadcrumbList = (canonical: string, trail: LabCrumb[]) => ({
+  "@type": "BreadcrumbList",
+  "@id": `${canonical}#breadcrumb`,
+  itemListElement: trail.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: c.name,
+    item: c.url,
+  })),
+});
+
 /**
  * JSON-LD "legacy" — Article + FAQPage ca obiecte separate în array, fără @graph
  * și fără @id proprii. NU modifica acest builder: e folosit de articolele publicate
@@ -389,6 +425,8 @@ const buildGraphArticleJsonLd = (meta: LabArticleMeta) => {
       name: meta.title,
       inLanguage: "ro-RO",
       isPartOf: { "@id": alexMatescuWebSite["@id"] },
+      publisher: { "@id": labOrganization["@id"] },
+      breadcrumb: { "@id": `${meta.canonical}#breadcrumb` },
       ...(meta.about
         ? { about: meta.about.map((a) => ({ "@type": "Thing", name: a.name })) }
         : {}),
@@ -429,6 +467,13 @@ const buildGraphArticleJsonLd = (meta: LabArticleMeta) => {
         : {}),
     },
   ];
+
+  graph.push(
+    labBreadcrumbList(
+      meta.canonical,
+      labBreadcrumbTrail(new URL(meta.canonical).pathname, meta.title),
+    ),
+  );
 
   if (meta.faq.length > 0) {
     graph.push({
@@ -556,6 +601,7 @@ const buildAuditServiceJsonLd = (page: LabPage, canonical: string) => {
     "@graph": [
       alexMatescuPerson,
       alexMatescuWebSite,
+      labOrganization,
       {
         "@type": "WebPage",
         "@id": `${canonical}#webpage`,
@@ -565,6 +611,7 @@ const buildAuditServiceJsonLd = (page: LabPage, canonical: string) => {
           "Evaluare a identificării, menționării, citării și recomandării unei entități în Search și AI Search, bazată pe dovezi și un set declarat de interogări.",
         inLanguage: "ro-RO",
         isPartOf: { "@id": alexMatescuWebSite["@id"] },
+        publisher: { "@id": labOrganization["@id"] },
         mainEntity: { "@id": `${canonical}#service` },
         breadcrumb: { "@id": `${canonical}#breadcrumb` },
       },
@@ -577,25 +624,53 @@ const buildAuditServiceJsonLd = (page: LabPage, canonical: string) => {
         description:
           "Audit documentat al accesibilității informației, identității digitale, menționărilor, citărilor și recomandărilor observate în răspunsuri AI.",
         provider: { "@id": alexMatescuPerson["@id"] },
+        brand: { "@id": labOrganization["@id"] },
+      },
+      labBreadcrumbList(canonical, labBreadcrumbTrail(page.to, page.label)),
+    ],
+  };
+};
+
+/**
+ * JSON-LD generic pentru paginile /lab din `labNav` care nu sunt articole, studii
+ * de caz sau pagini cu builder dedicat (documentele AVL, /lab/cercetare/*, hub-urile).
+ * `@graph` self-contained: Person + WebSite + `labOrganization` embed-uite complet,
+ * WebPage (`isPartOf` → WebSite, `breadcrumb`) și CreativeWork-ul propriu-zis
+ * (`publisher` → `labOrganization`), plus BreadcrumbList. Laboratorul apare o
+ * singură dată, ca `Organization` cu `@id` stabil, ca pe /lab și în articole.
+ */
+const buildLabCreativeWorkJsonLd = (page: LabPage, canonical: string) => {
+  const name = page.pageTitle ?? page.label;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      alexMatescuPerson,
+      alexMatescuWebSite,
+      labOrganization,
+      {
+        "@type": "WebPage",
+        "@id": `${canonical}#webpage`,
+        url: canonical,
+        name,
+        inLanguage: "ro-RO",
+        isPartOf: { "@id": alexMatescuWebSite["@id"] },
+        publisher: { "@id": labOrganization["@id"] },
+        mainEntity: { "@id": `${canonical}#creativework` },
+        breadcrumb: { "@id": `${canonical}#breadcrumb` },
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": `${canonical}#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "AI Visibility Lab",
-            item: `${BASE}/lab`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: page.label,
-            item: canonical,
-          },
-        ],
+        "@type": "CreativeWork",
+        "@id": `${canonical}#creativework`,
+        name,
+        description: page.lead,
+        url: canonical,
+        inLanguage: "ro-RO",
+        mainEntityOfPage: { "@id": `${canonical}#webpage` },
+        creator: { "@id": alexMatescuPerson["@id"] },
+        author: { "@id": alexMatescuPerson["@id"] },
+        publisher: { "@id": labOrganization["@id"] },
       },
+      labBreadcrumbList(canonical, labBreadcrumbTrail(page.to, page.label)),
     ],
   };
 };
@@ -628,19 +703,8 @@ export const buildLabPageHead = (pathname: string) => {
     title: labSeoTitle(page.seoTitle ?? page.label),
     description: page.seoDescription ?? page.lead,
     canonical,
-    jsonLd: labPageJsonLdBuilders[page.to]?.(page, canonical) ?? {
-      "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      name: page.pageTitle ?? page.label,
-      description: page.lead,
-      url: canonical,
-      isPartOf: {
-        "@type": "CreativeWork",
-        name: "AI Visibility Lab",
-        url: `${BASE}/lab`,
-      },
-      creator: alexMatescuPerson,
-      author: alexMatescuPerson,
-    },
+    jsonLd:
+      labPageJsonLdBuilders[page.to]?.(page, canonical) ??
+      buildLabCreativeWorkJsonLd(page, canonical),
   });
 };
