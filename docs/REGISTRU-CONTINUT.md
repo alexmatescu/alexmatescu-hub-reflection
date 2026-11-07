@@ -7,13 +7,13 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-11-07 · 184 intrări · **2 anomalii** în 2 intrări
+Generat: 2026-11-07 · 185 intrări · **2 anomalii** în 2 intrări
 
 ## Sinteză
 
 | Suprafață | Publicat | Draft / nepublicat | Total | Anomalii |
 |---|--:|--:|--:|--:|
-| `lab/articole` | 26 | 0 | 26 | 2 |
+| `lab/articole` | 27 | 0 | 27 | 2 |
 | `lab/studii-de-caz` | 2 | 0 | 2 | 0 |
 | `lab/metodologie` | 7 | 0 | 7 | 0 |
 | `lab/foundation` | 1 | 0 | 1 | 0 |
@@ -21,7 +21,7 @@ Generat: 2026-11-07 · 184 intrări · **2 anomalii** în 2 intrări
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 7 | 0 | 7 | 0 |
 | `blog (arhivă)` | 132 | 0 | 132 | 0 |
-| **Total** | **184** | **0** | **184** | **2** |
+| **Total** | **185** | **0** | **185** | **2** |
 
 ## Legendă
 
@@ -34,10 +34,11 @@ Generat: 2026-11-07 · 184 intrări · **2 anomalii** în 2 intrări
 - **Verificat** — `last_reviewed`, cu numărul de zile scurse. Peste
   180 de zile, materialele din Lab intră în lista de reverificare.
 
-## `lab/articole` — 26 intrări
+## `lab/articole` — 27 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| `LAB-27` | [De unde își iau informațiile sistemele AI? Ce citează ChatGPT, Gemini, Perplexity, Claude și Copilot — și ce arată datele din România](/lab/articole/de-unde-isi-iau-informatiile-ai-surse-citari-romania) | Search & Retrieval | Analiză | publicat | — | 2026-11-07 | 2026-11-07 | 2026-11-07 (0z) | `✓✓✓✓` | `src/content/lab/articles/27.de-unde-isi-iau-informatiile-ai-surse-citari-romania.md` | `src/data/lab-content/27. de-unde-isi-iau-informatiile-ai-surse-citari-romania.ts` |
 | `LAB-26` | [Dacă furnizorul nu face pentru el, cum face pentru alții?](/lab/articole/cum-alegi-furnizorul-de-servicii-seo-geo-aeo) | AI Ecosystem | Ghid | publicat | 2026-11-03 | 2026-11-03 | 2026-11-03 | 2026-11-03 (4z) | `✓✓✓✓` | `src/content/lab/articles/26.cum-alegi-furnizorul-de-servicii-seo-geo-aeo.md` | `src/data/lab-content/26. cum-alegi-furnizorul-de-servicii-seo-geo-aeo.ts` |
 | `LAB-25` | [Reclame în ChatGPT, Google și social media: unde merită să plătești și când devine prea scump să fii peste tot?](/lab/articole/reclame-chatgpt-google-social-media) | AI Ecosystem | Analiză | publicat | 2026-10-29 | 2026-10-29 | 2026-10-29 | 2026-10-29 (9z) | `✓✓✓✓` | `src/content/lab/articles/25.reclame-chatgpt-google-social-media.md` | `src/data/lab-content/25. reclame-chatgpt-google-social-media.ts` |
 | `LAB-23` | [Cum verific tehnic un site pentru AI Visibility? Protocolul minim folosit în AI Visibility Lab](/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility) | Technical Visibility | Ghid / Analiză metodologică | publicat | 2026-10-28 | 2026-10-28 | 2026-10-28 | 2026-10-28 (10z) | `✓✓✓✓` | `src/content/lab/articles/23.cum-verific-tehnic-un-site-pentru-ai-visibility.md` | `src/data/lab-content/23. cum-verific-tehnic-un-site-pentru-ai-visibility.ts` |
@@ -113,7 +114,7 @@ Generat: 2026-11-07 · 184 intrări · **2 anomalii** în 2 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `am-crezut-ca-lucrurile-au-un-singur-sens` | [Am crezut că lucrurile au un singur sens](/blog/am-crezut-ca-lucrurile-au-un-singur-sens) | Reflecții | Eseu | publicat | — | 2026-11-07 | 2026-11-07 | 2026-11-07 (0z) | `✓✓·✓` | `src/content/blog/am-crezut-ca-lucrurile-au-un-singur-sens.md` | `src/data/blog-content/am-crezut-ca-lucrurile-au-un-singur-sens.ts` |
+| `am-crezut-ca-lucrurile-au-un-singur-sens` | [Am crezut că lucrurile au un singur sens](/blog/am-crezut-ca-lucrurile-au-un-singur-sens) | Reflecții | Eseu | publicat | 2026-11-07 | 2026-11-07 | 2026-11-07 | 2026-11-07 (0z) | `✓✓·✓` | `src/content/blog/am-crezut-ca-lucrurile-au-un-singur-sens.md` | `src/data/blog-content/am-crezut-ca-lucrurile-au-un-singur-sens.ts` |
 | `ai-schimba-lumea-eu-ce-fac-intre-timp` | [AI schimbă lumea. Eu ce fac între timp?](/blog/ai-schimba-lumea-eu-ce-fac-intre-timp) | Reflecții | Eseu | publicat | 2026-10-25 | 2026-10-26 | 2026-10-26 | 2026-10-26 (12z) | `✓✓·✓` | `src/content/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.md` | `src/data/blog-content/ai-schimba-lumea-eu-ce-fac-intre-timp.ts` |
 | `imbatraneste-si-sufletul-odata-cu-trupul` | [Îmbătrânește și sufletul odată cu trupul?](/blog/imbatraneste-si-sufletul-odata-cu-trupul) | Reflecții | Eseu | publicat | 2026-10-25 | 2026-10-26 | 2026-10-26 | 2026-10-26 (12z) | `✓✓·✓` | `src/content/blog/imbatraneste-si-sufletul-odata-cu-trupul.md` | `src/data/blog-content/imbatraneste-si-sufletul-odata-cu-trupul.ts` |
 | `capcana-perfectiunii` | [Capcana perfecțiunii: de ce nu e suficient să fii bun](/blog/capcana-perfectiunii) | Reflecții | Eseu | publicat | 2026-10-12 | 2026-10-12 | 2026-11-03 | — | `✓✓·✓` | `src/content/blog/capcana-perfectiunii.md` | `src/data/blog-content/capcana-perfectiunii.ts` |

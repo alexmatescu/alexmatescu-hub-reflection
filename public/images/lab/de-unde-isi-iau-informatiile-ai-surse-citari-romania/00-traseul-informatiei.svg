@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, &#x27;Segoe UI&#x27;, Helvetica, Arial, sans-serif">
+<title id="t">Traseul simplificat al unei informații într-un răspuns AI</title><desc id="d">Diagramă: întrebarea utilizatorului duce la decizia dacă e necesară căutarea externă. Fără căutare, răspunsul se bazează pe contextul și parametrii modelului; cu căutare, pe web, index, API, fișiere sau conectori, din care rezultă rezultate recuperate și selectate. Ambele ramuri duc la sinteza răspunsului, din care rezultă răspunsul afișat, eventuale citări și eventuale mențiuni sau recomandări.</desc>
+<rect x="0.5" y="0.5" width="959" height="649" rx="8" fill="#fcfcfb" stroke="#e4e2dc"/>
+<text x="32" y="44" font-size="22" font-weight="600" fill="#0b0b0b">Traseul simplificat al unei informații într-un răspuns AI</text>
+<text x="32" y="72" font-size="15" fill="#52514e">Schemă conceptuală, nu arhitectura internă a vreunui furnizor</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+<rect x="320.0" y="100" width="320" height="46" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5"/><text x="480.0" y="129.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Întrebarea utilizatorului</text>
+<line x1="480.0" y1="146" x2="480.0" y2="176" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="280.0" y="178" width="400" height="46" rx="8" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.5"/><text x="480.0" y="207.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Este necesară căutarea externă?</text>
+<line x1="360.0" y1="224" x2="250" y2="270" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/><text x="313.0" y="251.0" font-size="13" fill="#52514e">Nu / indisponibilă</text>
+<line x1="600.0" y1="224" x2="710" y2="270" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/><text x="663.0" y="251.0" font-size="13" fill="#52514e">Da</text>
+<rect x="90" y="272" width="320" height="56" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5"/><text x="250.0" y="296.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Contextul și parametrii</text><text x="250.0" y="316.0" font-size="15" text-anchor="middle" fill="#0b0b0b">modelului</text>
+<rect x="550" y="272" width="320" height="56" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5"/><text x="710.0" y="296.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Web, index, API,</text><text x="710.0" y="316.0" font-size="15" text-anchor="middle" fill="#0b0b0b">fișiere sau conectori</text>
+<line x1="710" y1="328" x2="710" y2="358" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="550" y="360" width="320" height="56" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5"/><text x="710.0" y="384.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Rezultate recuperate</text><text x="710.0" y="404.0" font-size="15" text-anchor="middle" fill="#0b0b0b">și selectate</text>
+<line x1="250" y1="328" x2="420.0" y2="446" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<line x1="710" y1="416" x2="540.0" y2="446" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="320.0" y="448" width="320" height="46" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5"/><text x="480.0" y="477.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Sinteza răspunsului</text>
+<line x1="400.0" y1="494" x2="230" y2="530" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<line x1="480.0" y1="494" x2="480.0" y2="530" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<line x1="560.0" y1="494" x2="730" y2="530" stroke="#52514e" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="110" y="532" width="240" height="52" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5"/><text x="230.0" y="564.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Răspuns afișat</text>
+<rect x="360.0" y="532" width="240" height="52" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5" stroke-dasharray="5 4"/><text x="480.0" y="564.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Eventuale citări</text>
+<rect x="610" y="532" width="240" height="52" rx="8" fill="#fcfcfb" stroke="#52514e" stroke-width="1.5" stroke-dasharray="5 4"/><text x="730.0" y="554.0" font-size="15" text-anchor="middle" fill="#0b0b0b">Eventuale mențiuni</text><text x="730.0" y="574.0" font-size="15" text-anchor="middle" fill="#0b0b0b">sau recomandări</text>
+<text x="32" y="626" font-size="13" fill="#77756f">Schemă AI Visibility Lab; filtrele de acces, recuperare, sinteză și citare sunt detaliate în AVL-102.</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="348" viewBox="0 0 960 348" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, &#x27;Segoe UI&#x27;, Helvetica, Arial, sans-serif">
+<title id="t">Linkuri-sursă afișate în medie pe răspuns, România</title><desc id="d">Grafic cu bare orizontale: în raportul GEOflux pentru România, consultat la 7 noiembrie 2026, Perplexity a afișat în medie 11,7 linkuri-sursă pe răspuns, ChatGPT 7,0 și Gemini 4,7.</desc>
+<rect x="0.5" y="0.5" width="959" height="347" rx="8" fill="#fcfcfb" stroke="#e4e2dc"/>
+<text x="32" y="44" font-size="22" font-weight="600" fill="#0b0b0b">Linkuri-sursă afișate în medie pe răspuns, România</text>
+<text x="32" y="72" font-size="15" fill="#52514e">GEOflux, ultimele 30 de zile de răspunsuri: bănci, asigurări, modă, e-commerce, turism</text>
+<text x="238" y="132.0" font-size="16" text-anchor="end" fill="#0b0b0b">Perplexity</text>
+<path d="M252,112 h608.3 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-608.3 z" fill="#2a78d6"/>
+<text x="874.3" y="132.0" font-size="16" font-weight="600" fill="#0b0b0b">11,7</text>
+<text x="238" y="180.0" font-size="16" text-anchor="end" fill="#0b0b0b">ChatGPT</text>
+<path d="M252,160 h362.3333333333333 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-362.3333333333333 z" fill="#2a78d6"/>
+<text x="628.3333333333333" y="180.0" font-size="16" font-weight="600" fill="#0b0b0b">7,0</text>
+<text x="238" y="228.0" font-size="16" text-anchor="end" fill="#0b0b0b">Gemini</text>
+<path d="M252,208 h241.96666666666667 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-241.96666666666667 z" fill="#2a78d6"/>
+<text x="507.9666666666667" y="228.0" font-size="16" font-weight="600" fill="#0b0b0b">4,7</text>
+<line x1="252" y1="104" x2="252" y2="246" stroke="#52514e" stroke-width="1"/>
+<text x="32" y="278" font-size="14" fill="#52514e">Fereastră mobilă de 30 de zile: valorile se schimbă la fiecare actualizare a raportului.</text>
+<text x="32" y="324" font-size="13" fill="#77756f">Sursa: GEOflux, „State of AI Search — România”, consultat la 7 nov. 2026 — geoflux.ai/ro/state-of-ai</text>
+</svg>

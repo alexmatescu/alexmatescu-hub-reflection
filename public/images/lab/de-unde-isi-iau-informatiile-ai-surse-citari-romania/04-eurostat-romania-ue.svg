@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, &#x27;Segoe UI&#x27;, Helvetica, Arial, sans-serif">
+<title id="t">Utilizarea AI în România și în UE, 2025</title><desc id="d">Grafic cu bare grupate, Eurostat 2025: AI generativ 16–74 ani România 17,8%, UE 32,7%; AI generativ 16–24 ani România 44,1%, UE 63,8%; întreprinderi care folosesc AI România 5,2%, UE 20,0%.</desc>
+<rect x="0.5" y="0.5" width="959" height="459" rx="8" fill="#fcfcfb" stroke="#e4e2dc"/>
+<text x="32" y="44" font-size="22" font-weight="600" fill="#0b0b0b">Utilizarea AI în România și în UE, 2025</text>
+<text x="32" y="72" font-size="15" fill="#52514e">Trei indicatori Eurostat, procent din populația măsurată</text>
+<rect x="32" y="96" width="14" height="14" rx="3" fill="#2a78d6"/><text x="54" y="108" font-size="15" fill="#0b0b0b">România</text>
+<rect x="150" y="96" width="14" height="14" rx="3" fill="#eb6834"/><text x="172" y="108" font-size="15" fill="#0b0b0b">Uniunea Europeană</text>
+<text x="268" y="179" font-size="16" text-anchor="end" fill="#0b0b0b">AI generativ, 16–74 ani</text>
+<path d="M282,150 h148.89028213166145 a4,4 0 0 1 4,4 v16 a4,4 0 0 1 -4,4 h-148.89028213166145 z" fill="#2a78d6"/>
+<text x="444.8902821316615" y="168" font-size="15" font-weight="600" fill="#0b0b0b">RO 17,8%</text>
+<path d="M282,176 h276.871473354232 a4,4 0 0 1 4,4 v16 a4,4 0 0 1 -4,4 h-276.871473354232 z" fill="#eb6834"/>
+<text x="572.871473354232" y="194" font-size="15" font-weight="600" fill="#0b0b0b">UE 32,7%</text>
+<text x="268" y="259" font-size="16" text-anchor="end" fill="#0b0b0b">AI generativ, 16–24 ani</text>
+<path d="M282,230 h374.78996865203766 a4,4 0 0 1 4,4 v16 a4,4 0 0 1 -4,4 h-374.78996865203766 z" fill="#2a78d6"/>
+<text x="670.7899686520377" y="248" font-size="15" font-weight="600" fill="#0b0b0b">RO 44,1%</text>
+<path d="M282,256 h544.0 a4,4 0 0 1 4,4 v16 a4,4 0 0 1 -4,4 h-544.0 z" fill="#eb6834"/>
+<text x="840.0" y="274" font-size="15" font-weight="600" fill="#0b0b0b">UE 63,8%</text>
+<text x="268" y="339" font-size="16" text-anchor="end" fill="#0b0b0b">Întreprinderi care folosesc AI</text>
+<path d="M282,310 h40.66457680250784 a4,4 0 0 1 4,4 v16 a4,4 0 0 1 -4,4 h-40.66457680250784 z" fill="#2a78d6"/>
+<text x="336.66457680250784" y="328" font-size="15" font-weight="600" fill="#0b0b0b">RO 5,2%</text>
+<path d="M282,336 h167.7868338557994 a4,4 0 0 1 4,4 v16 a4,4 0 0 1 -4,4 h-167.7868338557994 z" fill="#eb6834"/>
+<text x="463.7868338557994" y="354" font-size="15" font-weight="600" fill="#0b0b0b">UE 20,0%</text>
+<line x1="282" y1="142" x2="282" y2="368" stroke="#52514e"/>
+<text x="32" y="402" font-size="14" fill="#52514e">Persoane: utilizare în cele 3 luni dinaintea anchetei. Întreprinderi: minimum 10 angajați. Universuri diferite.</text>
+<text x="32" y="436" font-size="13" fill="#77756f">Surse: Eurostat, știrile din 16 dec. 2025 și 10 feb. 2026 (isoc_ai_iaiu); Statistics Explained, AI în întreprinderi (2025)</text>
+</svg>

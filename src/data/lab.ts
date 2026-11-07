@@ -304,6 +304,12 @@ export const labNav: LabPage[] = [
         label: "Dacă furnizorul nu face pentru el, cum face pentru alții?",
         lead: "Cum alegi un furnizor de SEO, GEO sau AI Visibility în România. Ce verifici pe site, ce întrebi în întâlnire și ce ceri în ofertă înainte să semnezi.",
       },
+      {
+        to: "/lab/articole/de-unde-isi-iau-informatiile-ai-surse-citari-romania",
+        label:
+          "De unde își iau informațiile sistemele AI? Ce citează ChatGPT, Gemini, Perplexity, Claude și Copilot — și ce arată datele din România",
+        lead: "Analiză AI Visibility Lab despre antrenare, căutare și citare în sistemele AI: studii internaționale 2025–2026, statistici despre România, limite metodologice și implicații pentru vizibilitatea companiilor.",
+      },
     ],
   },
   {

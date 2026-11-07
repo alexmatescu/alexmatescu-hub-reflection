@@ -54,6 +54,7 @@ import { cumVerificTehnicUnSiteHtml } from "@/data/lab-content/23. cum-verific-t
 import { costurileAiVariatiiFinantariHtml } from "@/data/lab-content/24. costurile-ai-variatii-finantari-plata-la-cine";
 import { reclameChatgptGoogleSocialMediaHtml } from "@/data/lab-content/25. reclame-chatgpt-google-social-media";
 import { cumAlegiFurnizorulDeServiciiHtml } from "@/data/lab-content/26. cum-alegi-furnizorul-de-servicii-seo-geo-aeo";
+import { deUndeIsiIauInformatiileAiHtml } from "@/data/lab-content/27. de-unde-isi-iau-informatiile-ai-surse-citari-romania";
 import { auditSiteFaraAccesCodHtml } from "@/data/lab-content/7. audit-site-fara-acces-cod";
 import { catDureazaIndexareCitareAiHtml } from "@/data/lab-content/4. cat-dureaza-indexare-citare-ai";
 import { ceEsteEntitateAiStudiuDeCazHtml } from "@/data/lab-content/10. ce-este-entitate-ai-studiu-de-caz";
@@ -144,6 +145,8 @@ const labPageContent: Record<string, string> = {
     reclameChatgptGoogleSocialMediaHtml,
   "/lab/articole/cum-alegi-furnizorul-de-servicii-seo-geo-aeo":
     cumAlegiFurnizorulDeServiciiHtml,
+  "/lab/articole/de-unde-isi-iau-informatiile-ai-surse-citari-romania":
+    deUndeIsiIauInformatiileAiHtml,
   "/lab/audit-ai-visibility": auditAiVisibilityHtml,
   "/lab/despre-laborator": avl501DespreLaboratorHtml,
 };

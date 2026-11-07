@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="396" viewBox="0 0 960 396" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, &#x27;Segoe UI&#x27;, Helvetica, Arial, sans-serif">
+<title id="t">Media surselor citate pe răspuns, studiul Prefer</title><desc id="d">Grafic cu bare orizontale: Perplexity 19,48 surse citate în medie pe răspuns, Gemini 8,64, Claude 4,58, ChatGPT 3,05, în studiul Prefer din septembrie 2026.</desc>
+<rect x="0.5" y="0.5" width="959" height="395" rx="8" fill="#fcfcfb" stroke="#e4e2dc"/>
+<text x="32" y="44" font-size="22" font-weight="600" fill="#0b0b0b">Media surselor citate pe răspuns, studiul Prefer</text>
+<text x="32" y="72" font-size="15" fill="#52514e">960 de răspunsuri: 80 de întrebări despre AI Search, GEO și AEO × 3 rulări × 4 sisteme, prin API (13 sept. 2026)</text>
+<text x="238" y="132.0" font-size="16" text-anchor="end" fill="#0b0b0b">Perplexity</text>
+<path d="M252,112 h597.932 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-597.932 z" fill="#2a78d6"/>
+<text x="863.932" y="132.0" font-size="16" font-weight="600" fill="#0b0b0b">19,48</text>
+<text x="238" y="180.0" font-size="16" text-anchor="end" fill="#0b0b0b">Gemini</text>
+<path d="M252,160 h262.976 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-262.976 z" fill="#2a78d6"/>
+<text x="528.976" y="180.0" font-size="16" font-weight="600" fill="#0b0b0b">8,64</text>
+<text x="238" y="228.0" font-size="16" text-anchor="end" fill="#0b0b0b">Claude</text>
+<path d="M252,208 h137.522 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-137.522 z" fill="#2a78d6"/>
+<text x="403.522" y="228.0" font-size="16" font-weight="600" fill="#0b0b0b">4,58</text>
+<text x="238" y="276.0" font-size="16" text-anchor="end" fill="#0b0b0b">ChatGPT</text>
+<path d="M252,256 h90.24499999999999 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-90.24499999999999 z" fill="#2a78d6"/>
+<text x="356.245" y="276.0" font-size="16" font-weight="600" fill="#0b0b0b">3,05</text>
+<line x1="252" y1="104" x2="252" y2="294" stroke="#52514e" stroke-width="1"/>
+<text x="32" y="326" font-size="14" fill="#52514e">Numărul de surse descrie forma răspunsului, nu acuratețea lui.</text>
+<text x="32" y="372" font-size="13" fill="#77756f">Sursa: Prefer, „How AI engines search and cite: 960 answers measured”, 19 sept. 2026 — tryprefer.com/data/ai-answer-study</text>
+</svg>
