@@ -353,7 +353,7 @@ export const projects: Project[] = [
       {
         eyebrow: "Status",
         content:
-          "Ichnometria este activă: site-ul ichnometria.ro este online, cu metoda, serviciile și prețurile publicate, iar serviciile se adresează afacerilor din toată România, pornind din Sibiu.\n\nSite-ul este încă într-o etapă demonstrativă: formularul de contact nu trimite date, programarea discuțiilor nu este activată, iar plățile și comenzile online nu sunt încă deschise. Auditul tehnic, articolul individual și studiul de industrie sunt marcate „în pregătire”. Registrul public Ichnometria Fieldwork nu conține încă proiecte aprobate pentru publicare.",
+          "Ichnometria este activă: site-ul ichnometria.ro este online, cu metoda, serviciile și prețurile publicate, iar serviciile se adresează afacerilor din toată România, pornind din Sibiu.\n\nFormularul de contact și calendarul pentru programarea discuțiilor funcționează. Au mai rămas de finalizat plățile și comenzile online; până atunci, colaborările sunt deschise prin metode mai puțin digitale: comanda și plata se stabilesc direct, după discuția inițială. Auditul tehnic, articolul individual și studiul de industrie sunt marcate „în pregătire”. Registrul public Ichnometria Fieldwork nu conține încă proiecte aprobate pentru publicare.",
       },
     ],
     faq: [
@@ -376,7 +376,7 @@ export const projects: Project[] = [
       {
         question: "Cum iau legătura cu Ichnometria?",
         answer:
-          "Pagina de contact a Ichnometria este ichnometria.ro/contact. Cât timp formularul și programarea de acolo nu sunt activate, Alex Matescu poate fi contactat prin pagina de contact de pe delamatescu.ro.",
+          "Prin pagina ichnometria.ro/contact: formularul de contact și calendarul pentru programarea unei discuții funcționează. Plățile și comenzile online nu sunt încă deschise, așa că, după discuție, comanda și plata se stabilesc direct.",
       },
     ],
     related: [],
