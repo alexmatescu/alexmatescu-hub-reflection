@@ -15,7 +15,7 @@ export const tabulaRasaF3Meta: LabArticleMeta = {
   category: "Entities & Citations",
   articleType: "Analiză de caz",
   datePublished: "2026-10-23T16:17:00+03:00",
-  dateModified: "2026-10-23",
+  dateModified: "2026-11-09",
   lastReviewed: "2026-10-23",
   about: [
     { name: "Tabula Rasa" },
@@ -86,7 +86,7 @@ const RELEASE_URL = `${RELEASE_BASE}/evidence-alex-matescu-f3-v1.0`;
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const tabulaRasaF3Html = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-23T16:17:00+03:00">23 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-23">23 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-23T16:17:00+03:00">23 octombrie 2026</time> · Actualizat: <time datetime="2026-11-09">9 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-23">23 octombrie 2026</time></p>
 
       <p><strong>Tabula Rasa · Studiul de caz #001 · Alex Matescu · F3 — 18–21 octombrie 2026</strong></p>
       <p><em>Un experiment longitudinal despre identitate digitală, căutare și inteligență artificială. De la primele confuzii de identitate la un protocol de măsurare mai riguros, care documentează nu numai răspunsurile platformelor, ci și condițiile în care acestea au fost obținute.</em></p>
@@ -363,7 +363,7 @@ export const tabulaRasaF3Html = `
         <li id="fn-4">AI Visibility Lab, <strong>Alex Matescu — T0 Evidence Archive v3.0</strong> (F2), release GitHub. <a href="${RELEASE_BASE}/evidence-alex-matescu-t0-v3.0" target="_blank" rel="noopener noreferrer">github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-t0-v3.0</a></li>
         <li id="fn-5">AI Visibility Lab, <strong>Când internetul nu știe cine ești: un studiu longitudinal despre identitate în Search și AI Search</strong>, studiul de caz #001. <a href="/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz">/lab/studii-de-caz/tabula-rasa-entity-resolution-studiu-de-caz</a></li>
         <li id="fn-6">AI Visibility Lab, <strong>AVL-200 — Standardul de dovezi, măsurare și trasabilitate</strong>, v2.0.0. <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">/lab/metodologie/standard-dovezi-masurare-trasabilitate</a></li>
-        <li id="fn-7">AI Visibility Lab, <strong>AVL-201 — Tabula Rasa F0: Baseline Measurement Specification</strong>, v1.4.0. <a href="/lab/metodologie/tabula-rasa-f0">/lab/metodologie/tabula-rasa-f0</a></li>
+        <li id="fn-7">AI Visibility Lab, <strong>AVL-201 — Tabula Rasa F0: Baseline Measurement Specification</strong>, v1.6.0 (la publicarea articolului: v1.4.0). <a href="/lab/metodologie/tabula-rasa-f0">/lab/metodologie/tabula-rasa-f0</a></li>
         <li id="fn-8">AI Visibility Lab, <strong>Alex Matescu — F3 Evidence Archive v1.0 (metadata v1.2)</strong>, release GitHub cu matricea de adjudecare. <a href="${RELEASE_BASE}/evidence-alex-matescu-f3-v1.0-m1.2" target="_blank" rel="noopener noreferrer">github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-alex-matescu-f3-v1.0-m1.2</a></li>
       </ol>
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>

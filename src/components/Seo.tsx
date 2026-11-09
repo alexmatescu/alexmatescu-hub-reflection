@@ -26,7 +26,10 @@ export const alexMatescuPerson = {
   name: "Alex Matescu",
   alternateName: ["Alexandru Matescu", "Alexandru-Costi Matescu"],
   url: "https://delamatescu.ro/despre",
-  jobTitle: "Fondator și coordonator AI Visibility Lab",
+  jobTitle: [
+    "System Lead Engineer",
+    "Fondator și coordonator AI Visibility Lab",
+  ],
   worksFor: {
     "@type": "Organization",
     name: "AUMOVIO",

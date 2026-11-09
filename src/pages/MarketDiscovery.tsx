@@ -2,6 +2,7 @@ import { Fragment, useMemo, useState, type ReactNode } from "react";
 import { Link } from "@/lib/router-compat";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Seo from "@/components/Seo";
+import { Chip, SectionHead, StatTiles } from "@/pages/mkt-shared";
 import {
   findMdRun,
   formatMdDate,
@@ -30,6 +31,14 @@ import {
   type MdRun,
 } from "@/data/market-discovery";
 import { MD_HUB_DESCRIPTION, MD_HUB_TITLE } from "@/data/market-discovery/meta";
+import { MV_PILOT_LABEL, MV_PILOT_PATH } from "@/data/market-verification/meta";
+import mvUnionStatusData from "@/data/market-verification/union-status.json";
+
+/** Cheia de deduplicare → rezultatul pilotului de Market Verification (doar entitățile din bază). */
+const mvUnionStatus = mvUnionStatusData as Record<
+  string,
+  { id: string; status: string }
+>;
 
 const SURFACE_ORDER = Object.keys(MD_SURFACE_LABELS);
 const shortSurface = (s: string) => MD_SURFACE_SHORT[s] ?? s;
@@ -72,72 +81,17 @@ const CandidateNotice = ({
       <Link to={MD_PROTOCOL_PATH} className="underline underline-offset-4">
         AVL-MKT-001
       </Link>{" "}
-      v0.10.0, §21, REQ-024 – REQ-026). Numele sunt redate așa cum au apărut în
+      v0.11.0, §21, REQ-024 – REQ-026). Numele sunt redate așa cum au apărut în
       capturi.
     </p>
+    <p className="mt-3">
+      Rezultatul verificării e publicat separat, în{" "}
+      <Link to={MV_PILOT_PATH} className="underline underline-offset-4">
+        pilotul de Market Verification
+      </Link>
+      : statusul fiecărei entități, cu justificarea și dovada.
+    </p>
   </div>
-);
-
-const StatTiles = ({
-  items,
-}: {
-  items: { value: string; label: string; note?: string }[];
-}) => (
-  <dl className="grid grid-cols-2 md:grid-cols-4 gap-px bg-foreground/10 border border-foreground/10">
-    {items.map((it) => (
-      <div key={it.label} className="bg-background p-5 md:p-6">
-        <dt className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          {it.label}
-        </dt>
-        <dd className="mt-2 font-serif text-3xl md:text-4xl tracking-tight tabular-nums">
-          {it.value}
-        </dd>
-        {it.note && (
-          <p className="mt-1 text-xs text-muted-foreground">{it.note}</p>
-        )}
-      </div>
-    ))}
-  </dl>
-);
-
-const SectionHead = ({
-  eyebrow,
-  title,
-  children,
-}: {
-  eyebrow: string;
-  title: string;
-  children?: ReactNode;
-}) => (
-  <div className="max-w-3xl">
-    <p className="eyebrow mb-4">{eyebrow}</p>
-    <h2 className="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-balance">
-      {title}
-    </h2>
-    {children && (
-      <div className="mt-4 text-base text-muted-foreground leading-relaxed space-y-3">
-        {children}
-      </div>
-    )}
-  </div>
-);
-
-const Chip = ({
-  children,
-  strong = false,
-}: {
-  children: ReactNode;
-  strong?: boolean;
-}) => (
-  <span
-    className={`inline-block px-1.5 py-0.5 text-[11px] leading-none rounded-sm border ${
-      strong
-        ? "border-foreground/50 text-foreground"
-        : "border-foreground/15 text-muted-foreground"
-    }`}
-  >
-    {children}
-  </span>
 );
 
 // ───────────────────────────── vizualizări ─────────────────────────────
@@ -1014,6 +968,7 @@ const UnionExplorer = () => {
           const ambiguous = e.identityFlags.some((f) =>
             MD_AMBIGUOUS_FLAGS.has(f.split(":")[0] ?? ""),
           );
+          const mv = mvUnionStatus[e.key];
           return (
             <li
               key={e.key}
@@ -1026,6 +981,15 @@ const UnionExplorer = () => {
                     {e.name}
                   </span>
                   <StatusBadge />
+                  {mv && (
+                    <Link
+                      to={`${MV_PILOT_PATH}#${mv.id.toLowerCase()}`}
+                      title={`Pilotul de Market Verification: ${mv.id}, ${mv.status}`}
+                      className="shrink-0 inline-block px-1.5 py-0.5 text-[10px] leading-none rounded-sm border border-foreground/40 text-foreground/80 hover:text-foreground tracking-wide"
+                    >
+                      Pilot MV: {mv.status}
+                    </Link>
+                  )}
                 </p>
                 <p className="text-xs text-muted-foreground">
                   {MD_ENTITY_TYPE_LABELS[e.type] ?? e.type} ·{" "}
@@ -1092,8 +1056,10 @@ const UnionExplorer = () => {
         (estompat = acolo doar în modulele SERP); fiecare duce la pagina
         pilotului, cu proveniența și dovezile. Chenar accentuat = suprafața AI a
         numit-o explicit ca recomandare. Perechile nerezolvate (aceeași
-        entitate? persoană ↔ firmă? produs ↔ dezvoltator?) rămân separate până
-        la Market Verification.
+        entitate? persoană ↔ firmă? produs ↔ dezvoltator?) rămân separate în
+        registrul Discovery; pilotul de Market Verification le-a rezolvat, unind
+        18 rânduri în intrarea canonică. „Pilot MV” = statusul din pilotul de
+        Market Verification.
       </p>
     </div>
   );
@@ -1294,14 +1260,17 @@ const RunNav = ({ run }: { run: MdRun }) => {
           <span className="block mt-2 font-serif text-lg">{next.label}</span>
         </Link>
       ) : (
-        <div className="bg-background p-6 sm:text-right">
-          <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-            Urmează
+        <Link
+          to={MV_PILOT_PATH}
+          className="bg-background p-6 hover:bg-surface/60 transition-colors sm:text-right"
+        >
+          <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground inline-flex items-center gap-1.5">
+            Etapa următoare <ArrowRight className="h-3 w-3" />
           </span>
-          <span className="block mt-2 font-serif text-lg text-muted-foreground">
-            Pilotul de Verification, apoi prima rulare oficială
+          <span className="block mt-2 font-serif text-lg">
+            {MV_PILOT_LABEL}
           </span>
-        </div>
+        </Link>
       )}
     </nav>
   );
@@ -1632,6 +1601,14 @@ export const MarketDiscoveryHub = () => {
               >
                 AVL-MKT-001
               </Link>
+              . Pilotul de Market Verification a verificat deja toate cele 278
+              de entități candidate din bază:{" "}
+              <Link
+                to={MV_PILOT_PATH}
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                154 sunt eligibile
+              </Link>
               .
             </p>
           </div>
@@ -1719,16 +1696,49 @@ export const MarketDiscoveryHub = () => {
       <section className="border-b border-foreground/10">
         <div className="container-editorial py-16 md:py-20 max-w-5xl">
           <SectionHead
+            eyebrow="Market Verification · pilot"
+            title="Cei 278 de candidați, verificați pe rând: 154 eligibili"
+          >
+            <p>
+              Între 27 octombrie și 8 noiembrie 2026, fiecare entitate candidată
+              din bază a fost verificată pe site-ul ei, după criteriile din
+              AVL-MKT-001: oferă serviciul și e orientată către România? După
+              unirea rândurilor care desemnau același operator au rămas 260 de
+              entități: 154 <code className="text-[15px]">ELIGIBLE</code>, 75{" "}
+              <code className="text-[15px]">OUT OF SCOPE</code>, 19{" "}
+              <code className="text-[15px]">INELIGIBLE</code>, 7{" "}
+              <code className="text-[15px]">UNVERIFIED</code> și 5{" "}
+              <code className="text-[15px]">AMBIGUOUS</code>.
+            </p>
+            <p>
+              E un pilot: setul eligibil nu e încă Market Reference Set-ul
+              pieței și nu e un clasament.
+            </p>
+          </SectionHead>
+          <Link
+            to={MV_PILOT_PATH}
+            className="link-underline mt-6 inline-block text-sm font-medium"
+          >
+            {MV_PILOT_LABEL}: registrul, justificările și dovezile →
+          </Link>
+        </div>
+      </section>
+
+      <section className="border-b border-foreground/10">
+        <div className="container-editorial py-16 md:py-20 max-w-5xl">
+          <SectionHead
             eyebrow="Candidate Set cumulat"
             title={`Toate cele ${withDe(c.unionBase)} entități candidate pentru Market Verification`}
           >
             <p>
               Lista unică a numelor găsite în piloții{" "}
               {mdRuns.map((r) => r.label.replace("Pilotul ", "")).join(", ")}.
-              Pe ea se aplică verificarea de eligibilitate: fiecare entitate e
-              verificată individual după criteriile din AVL-MKT-001 §7 și
-              primește un statut din §9. Până atunci, toate rămân{" "}
-              <code className="text-[15px]">UNVERIFIED</code>.
+              Pe ea s-a aplicat verificarea de eligibilitate: fiecare entitate a
+              fost verificată individual după criteriile din AVL-MKT-001 §7 și a
+              primit un statut din §9. În registrul Discovery, toate rămân{" "}
+              <code className="text-[15px]">UNVERIFIED</code> (REQ-024);
+              rezultatul pilotului de Market Verification e afișat lângă fiecare
+              nume și duce la intrarea din registrul pilotului.
             </p>
           </SectionHead>
           <UnionExplorer />
@@ -1785,10 +1795,18 @@ export const MarketDiscoveryHub = () => {
             </p>
             <p>
               <strong className="text-foreground">Statut.</strong> Până la
-              activarea AVL-MKT-001 v1.0.0, orice rulare se declară pilot. Prima
-              rulare oficială urmează după pilotul de Market Verification. Seria
-              e gândită ca măsurare repetată: o rulare completă pe trimestru și
-              un subset lunar, fiecare cu pagina ei aici. Ultima actualizare:{" "}
+              activarea AVL-MKT-001 v1.0.0, orice rulare se declară pilot.{" "}
+              <Link
+                to={MV_PILOT_PATH}
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                Pilotul de Market Verification
+              </Link>{" "}
+              a fost publicat pe 9 noiembrie 2026. Prima rulare oficială (Market
+              Discovery completă și Market Verification) urmează după activarea
+              AVL-MKT-001 v1.0.0. Seria e gândită ca măsurare repetată: o rulare
+              completă pe trimestru și un subset lunar, fiecare cu pagina ei
+              aici. Ultima actualizare:{" "}
               {formatMdDate(mdRuns.at(-1)?.datePublished ?? null)}.
             </p>
           </SectionHead>

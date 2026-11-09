@@ -15,7 +15,7 @@ export const marketDiscoveryPilot5SibiuMeta: LabArticleMeta = {
   category: "Search & Retrieval",
   articleType: "Analiză de caz",
   datePublished: "2026-10-22T07:16:00+03:00",
-  dateModified: "2026-10-22",
+  dateModified: "2026-11-09",
   lastReviewed: "2026-10-22",
   about: [
     { name: "Market Discovery" },
@@ -56,6 +56,10 @@ export const marketDiscoveryPilot5SibiuMeta: LabArticleMeta = {
       url: "https://delamatescu.ro/lab/market-discovery/2026q4-pilot-5",
     },
     {
+      name: "AI Visibility Lab — Pilotul de Market Verification 2026Q4 (MKT-RO-AIV-2026Q4-PILOT-MVR)",
+      url: "https://delamatescu.ro/lab/market-discovery/verificare-pilot-2026q4",
+    },
+    {
       name: "AI Visibility Lab — AVL-MKT-001, Market Scope & Eligibility Protocol",
       url: "https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate",
     },
@@ -69,7 +73,7 @@ const RELEASE_URL =
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const marketDiscoveryPilot5SibiuHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-22T07:16:00+03:00">22 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-22">22 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-22T07:16:00+03:00">22 octombrie 2026</time> · Actualizat: <time datetime="2026-11-09">9 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-22">22 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -223,10 +227,11 @@ export const marketDiscoveryPilot5SibiuHtml = `
         <li><strong>Cifrele nu măsoară performanța setului.</strong> Seturile diferă în lungime, vocabular, intenție și geografie. Un număr mai mic de candidați la expresiile scurte nu înseamnă că setul e mai slab: arată cum răspund suprafețele la felul în care caută un utilizator obișnuit.</li>
       </ul>
       <p>„Entitate candidată” înseamnă doar că un nume a fost afișat ca posibil furnizor sau instrument. Niciuna dintre cele 278 de entități nu a trecut încă prin verificare. Toate au statutul <code>UNVERIFIED</code>, iar includerea nu confirmă existența, activitatea comercială sau eligibilitatea. Nu publicăm aici nume de furnizori. Lista completă a entităților, cu proveniența fiecărei apariții, e pe <a href="/lab/market-discovery/2026q4-pilot-5">pagina Pilotului 5</a> din secțiunea Market Discovery, iar dovezile sunt în pachet.<sup><a href="#fn-5">5</a></sup></p>
+      <p><em>Actualizare (9 noiembrie 2026):</em> pilotul de Market Verification a verificat între timp toate cele 278 de entități. După unirea rândurilor care desemnau același operator au rămas 260 de entități, dintre care 154 <code>ELIGIBLE</code>. Statusul, justificarea și dovada fiecăreia sunt pe pagina <a href="/lab/market-discovery/verificare-pilot-2026q4">pilotului de Market Verification</a>. E un pilot: setul eligibil nu este încă Market Reference Set-ul pieței.</p>
 
       <h2 id="ce-urmeaza">Ce urmează</h2>
       <ol>
-        <li><strong>Verification.</strong> Reuniunea de 278 de entități este Candidate Set-ul pentru verificare, conform AVL-MKT-001. Înainte de verificarea completă, protocolul cere un pilot intern pe cazuri-limită.</li>
+        <li><strong>Verification.</strong> Reuniunea de 278 de entități este Candidate Set-ul pentru verificare, conform AVL-MKT-001. Înainte de verificarea completă, protocolul cere un pilot intern pe cazuri-limită. <em>Actualizare (9 noiembrie 2026):</em> verificarea a fost făcută ca <a href="/lab/market-discovery/verificare-pilot-2026q4">pilot de Market Verification</a>.</li>
         <li><strong>Versiunea următoare a documentului de instanță Market Discovery.</strong> Va prelua regulile apărute în piloții 4 și 5: execuția fără captură se tratează ca nerulată, regula intermediară pentru firmele generale de AI, criteriile de excludere a unei rulări și observația despre expresiile fără ancoră de limbă.</li>
         <li><strong>Evaluarea finală a expresiilor.</strong> După încheierea Market Discovery, cu același criteriu pentru toate expresiile, inclusiv pentru „consultant AI”.</li>
       </ol>
@@ -243,7 +248,7 @@ export const marketDiscoveryPilot5SibiuHtml = `
         <li id="fn-1">AI Visibility Lab, <strong>MKT-RO-AIV-2026Q4-PILOT-5 — Discovery Evidence Package v1.0</strong>, release GitHub, publicat la 21 octombrie 2026. <a href="${RELEASE_URL}" target="_blank" rel="noopener noreferrer">github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/mkt-evidence-mkt-ro-aiv-2026q4-pilot-5-v1.0</a></li>
         <li id="fn-2">AI Visibility Lab, <strong>Pilotul 4 Market Discovery: de ce rularea din Bologna nu intră în reuniunea de candidați</strong>, 21 octombrie 2026. <a href="/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida">/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida</a></li>
         <li id="fn-3">AI Visibility Lab, <strong>Pilotul 3 Market Discovery</strong>, pagina rulării. <a href="/lab/market-discovery/2026q4-pilot-3">/lab/market-discovery/2026q4-pilot-3</a></li>
-        <li id="fn-4">AI Visibility Lab, <strong>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</strong>, draft v0.10.0. <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">/lab/metodologie/protocol-delimitare-piata-eligibilitate</a></li>
+        <li id="fn-4">AI Visibility Lab, <strong>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</strong>, draft v0.11.0 (la publicarea articolului: v0.10.0). <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">/lab/metodologie/protocol-delimitare-piata-eligibilitate</a></li>
         <li id="fn-5">AI Visibility Lab, <strong>Pilotul 5 Market Discovery</strong>, pagina rulării. <a href="/lab/market-discovery/2026q4-pilot-5">/lab/market-discovery/2026q4-pilot-5</a></li>
       </ol>
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>

@@ -24,6 +24,7 @@ Acest fișier este întreținut de Alex Matescu și oferă un punct de referinț
 - [Blog](https://delamatescu.ro/blog): peste 130 de eseuri, activ din 2014 — Reflecții, Leadership, Experiențe, Jurnal de bord, Habits, Dragoste, Dreaming moments, Sfaturi utile
 - [CRANDIT — Mitul succesului peste noapte](https://delamatescu.ro/carte): carte despre succes durabil, construită din experiențe trăite, disciplină și costuri asumate (manuscris finalizat, în corectură)
 - [Proiecte](https://delamatescu.ro/proiecte): toate proiectele antreprenoriale, trecute și curente
+- [CRANDIT (proiect)](https://delamatescu.ro/proiecte/crandit): proiectul cărții CRANDIT — Mitul succesului peste noapte, despre succes, disciplină și identitate (în lucru: manuscris finalizat, în corectură)
 - [Afacerea de familie](https://delamatescu.ro/proiecte/afacerea-de-familie): business local în mediul rural, construit pe nevoile comunității (activ)
 - [Blogging](https://delamatescu.ro/proiecte/blogging): de la impuls la direcție (activ)
 - [Taste the Corn](https://delamatescu.ro/proiecte/taste-the-corn): concept de retail alimentar la Shopping City Sibiu, lansat, operat și închis în 2025
@@ -71,7 +72,8 @@ AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat d
 
 ## Market Discovery (seria MKT-RO-AIV)
 
-- [Market Discovery](https://delamatescu.ro/lab/market-discovery): aceleași întrebări despre servicii de GEO, AEO și AI Visibility în România, puse pe Google, Bing, AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot; entități candidate numărate din capturi, înainte de Market Verification
+- [Market Discovery](https://delamatescu.ro/lab/market-discovery): aceleași întrebări despre servicii de GEO, AEO și AI Visibility în România, puse pe Google, Bing, AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot; entități candidate numărate din capturi și verificate apoi în pilotul de Market Verification
+- [Pilotul de Market Verification — 2026Q4](https://delamatescu.ro/lab/market-discovery/verificare-pilot-2026q4): cei 278 de candidați din piloturile Market Discovery, verificați după AVL-MKT-001: 260 de entități, 154 ELIGIBLE, cu justificarea și dovada HTML brută a fiecăreia
 - [Pilotul 5 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-5): cele 12 expresii scurte USER-SHORT, pe 8 suprafețe: 98 de execuții, 69 de entități candidate în bază
 - [Pilotul 3 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-3): 8 întrebări × 8 suprafețe, 227 de capturi, 174 de entități candidate în bază, 241 cumulat pe cei trei piloți
 - [Pilotul 2 — 2026Q4](https://delamatescu.ro/lab/market-discovery/2026q4-pilot-2): 4 întrebări × 8 suprafețe rulate din România, 84 de entități candidate în bază

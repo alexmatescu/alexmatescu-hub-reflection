@@ -15,7 +15,7 @@ export const cumVerificTehnicUnSiteMeta: LabArticleMeta = {
   category: "Technical Visibility",
   articleType: "Ghid / Analiză metodologică",
   datePublished: "2026-10-28T14:23:00+02:00",
-  dateModified: "2026-10-28",
+  dateModified: "2026-11-09",
   lastReviewed: "2026-10-28",
   about: [
     { name: "AI Visibility" },
@@ -94,7 +94,7 @@ const CS = "/lab/studii-de-caz/verificare-tehnica-delamatescu-ro";
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const cumVerificTehnicUnSiteHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-28T14:23:00+02:00">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-28">28 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-28T14:23:00+02:00">28 octombrie 2026</time> · Actualizat: <time datetime="2026-11-09">9 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-28">28 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -386,8 +386,8 @@ connects result with research question</code></pre>
       <h2 id="surse-si-metodologie">Surse și metodologie</h2>
       <p>Exemplele provin din rularea <code>AVL203-delamatescu-ro-T0-20261026T085234Z</code>, verificată pe dovezile brute la 28 octombrie 2026. Documentația externă a fost verificată live la aceeași dată.</p>
       <ol class="avl-footnotes">
-        <li id="fn-1">AI Visibility Lab, <strong>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong>, v0.6.1, draft pentru revizuire. <a href="/lab/metodologie/protocol-verificare-tehnica">/lab/metodologie/protocol-verificare-tehnica</a></li>
-        <li id="fn-2">AI Visibility Lab, <strong>AVL-204 — Grila de interpretare a verificării tehnice</strong>, v0.3.1, draft pentru revizuire. <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">/lab/metodologie/grila-interpretare-verificare-tehnica</a></li>
+        <li id="fn-1">AI Visibility Lab, <strong>AVL-203 — Protocolul minim de verificare tehnică a unui site pentru AI Visibility</strong>, v0.6.2, draft pentru revizuire (la publicarea articolului: v0.6.1). <a href="/lab/metodologie/protocol-verificare-tehnica">/lab/metodologie/protocol-verificare-tehnica</a></li>
+        <li id="fn-2">AI Visibility Lab, <strong>AVL-204 — Grila de interpretare a verificării tehnice</strong>, v0.3.2, draft pentru revizuire (la publicarea articolului: v0.3.1). <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">/lab/metodologie/grila-interpretare-verificare-tehnica</a></li>
         <li id="fn-3">AI Visibility Lab, <strong>Poate fi citit tehnic site-ul meu de crawlerele AI? Verificarea AVL-203 a delamatescu.ro, punctul T0</strong>, studiul de caz CS-002. <a href="${CS}">${CS}</a></li>
         <li id="fn-4">AI Visibility Lab, <strong>AVL203-delamatescu-ro — T0 Technical Evidence Package v1.0</strong>, release GitHub. <a href="${RELEASE_URL}" target="_blank" rel="noopener noreferrer">github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/evidence-avl203-delamatescu-ro-t0-v1.0</a></li>
         <li id="fn-5">IETF, <strong>RFC 9309 — Robots Exclusion Protocol</strong> (§1, §2.2.1, §2.2.2). <a href="https://www.rfc-editor.org/rfc/rfc9309" target="_blank" rel="noopener noreferrer">rfc-editor.org/rfc/rfc9309</a></li>

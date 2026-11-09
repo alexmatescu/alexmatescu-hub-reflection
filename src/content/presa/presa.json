@@ -11,7 +11,7 @@
       "author": "Redacția",
       "url": "https://economedia.ro/un-tanar-inginer-din-sibiu-a-investit-10-000-de-euro-intr-o-afacere-in-care-vinde-porumb-cu-toppings-ne-am-dorit-sa-fie-ceva-sanatos-usor-de-consumat-si-rapid-de-preparat.html",
       "date": "2025-07-04",
-      "context": "Interviu despre lansarea Taste The Corn: investiția inițială, decizia de a găti porumbul la abur în loc de fiert, și logica din spatele conceptului.",
+      "context": "Interviu despre lansarea Taste the Corn: investiția inițială, decizia de a găti porumbul la abur în loc de fiert, și logica din spatele conceptului.",
       "subject": "taste-the-corn",
       "language": "ro",
       "featured": true
@@ -56,7 +56,7 @@
       "author": "Alexandru",
       "url": "https://sabotorii.ro/articol/a-dat-lovitura-cu-o-afacere-in-care-a-investit-doa_29370.html",
       "date": "2025-07-05",
-      "context": "Preluare a poveștii de lansare Taste The Corn.",
+      "context": "Preluare a poveștii de lansare Taste the Corn.",
       "subject": "taste-the-corn",
       "language": "ro",
       "featured": false
@@ -64,9 +64,9 @@
   ],
   "stories": {
     "lansare-taste-the-corn": {
-      "label": "Lansarea Taste The Corn",
+      "label": "Lansarea Taste the Corn",
       "date": "2025-07-04",
-      "summary": "Lansarea standului Taste The Corn la Shopping City Sibiu, cu o investiție de 10.000 de euro. Preluată de patru publicații în aceeași săptămână."
+      "summary": "Lansarea standului Taste the Corn la Shopping City Sibiu, cu o investiție de 10.000 de euro. Preluată de patru publicații în aceeași săptămână."
     }
   }
 }

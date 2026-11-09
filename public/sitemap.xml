@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/market-discovery</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -143,6 +143,12 @@
   <url>
     <loc>https://delamatescu.ro/lab/market-discovery/2026q4-pilot-5</loc>
     <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://delamatescu.ro/lab/market-discovery/verificare-pilot-2026q4</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -284,25 +290,25 @@
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/market-discovery-pilot-4-bologna-rulare-invalida</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/market-discovery-pilot-5-sibiu-expresii-scurte</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/tabula-rasa-f3-cand-internetul-incearca-sa-afle-cine-esti</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://delamatescu.ro/lab/articole/cum-verific-tehnic-un-site-pentru-ai-visibility</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

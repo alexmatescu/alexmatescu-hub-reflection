@@ -1,5 +1,6 @@
 import presaData from "@/content/presa/presa.json";
 import { alexMatescuPerson } from "@/components/Seo";
+import { tasteTheCornOrganization } from "@/lib/entities";
 
 const BASE = "https://delamatescu.ro";
 
@@ -92,19 +93,11 @@ export const getPresaGroupedByStory = (): {
 // e slug-ul din /proiecte (`subject` din presa.json). Se adaugă o intrare nouă
 // aici doar când un proiect chiar are o apariție (nu se inventează în avans).
 // ---------------------------------------------------------------------------
+/** Entitățile proiectelor citate în presă (sursa unică: `@/lib/entities`). */
 const projectOrgNodes: Record<
   string,
-  { "@type": "Organization"; "@id": string; [key: string]: unknown }
-> = {
-  "taste-the-corn": {
-    "@type": "Organization",
-    "@id": `${BASE}/proiecte#taste-the-corn`,
-    name: "Taste The Corn",
-    foundingDate: "2025-07",
-    founder: { "@id": alexMatescuPerson["@id"] },
-    location: "Shopping City Sibiu",
-  },
-};
+  { "@id": string; [key: string]: unknown }
+> = { "taste-the-corn": tasteTheCornOrganization };
 
 const subjectAboutRefs = (entry: PresaEntry): { "@id": string }[] => {
   const org = projectOrgNodes[entry.subject];

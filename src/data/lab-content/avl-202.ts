@@ -8,19 +8,19 @@ export const avl202CadruMetodologicHtml = `
         <tbody>
         <tr><th scope="row">Document ID</th><td>AVL-202</td></tr>
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
-        <tr><th scope="row">Versiune</th><td>1.9.0</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.10.0</td></tr>
         <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>14 septembrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>5 noiembrie 2026</td></tr>
-        <tr><th scope="row">Ultima verificare</th><td>5 noiembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>9 noiembrie 2026</td></tr>
+        <tr><th scope="row">Ultima verificare</th><td>9 noiembrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie">https://delamatescu.ro/lab/metodologie</a></td></tr>
         <tr><th scope="row">Dependență</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a></td></tr>
         <tr><th scope="row">Documente informative</th><td><a href="/lab/cercetare/ce-este-geo-aeo">AVL-101 — Ce este GEO/AEO și AI Visibility</a>, <a href="/lab/cercetare/cum-aleg-motoarele-ai">AVL-102 — Cum aleg sistemele AI sursele și citările</a>, <a href="/lab/cercetare/seo-vs-geo">AVL-103 — SEO vs GEO</a>, <a href="/lab/cercetare/cum-se-masoara-ai-visibility">AVL-104 — Cum se măsoară AI Visibility</a>, <a href="/lab/cercetare/glosar-geo-aeo">AVL-105 — Glosar GEO/AEO și AI Visibility</a></td></tr>
         <tr><th scope="row">Documente normative asociate</th><td><a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 — Standard dovezi, măsurare și trasabilitate</a>; <a href="/lab/metodologie/tabula-rasa-f0">AVL-201 — Tabula Rasa F0</a>; <a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică</a> (Draft pentru revizuire); <a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice</a> (Draft pentru revizuire); <a href="/lab/metodologie/fisa-entitatii">AVL-205 — Fișa entității</a> (Draft pentru revizuire)</td></tr>
-        <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code>: <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.10.0); AVL-MKT-002 — Market Query Panel (planificat)</td></tr>
+        <tr><th scope="row">Familii metodologice</th><td>Market Measurement — <code>AVL-MKT-*</code>: <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a> (Draft pentru revizuire, v0.11.0); AVL-MKT-002 — Market Query Panel (planificat)</td></tr>
         </tbody>
         </table>
       </div>
@@ -127,7 +127,7 @@ Cadrul metodologic AI Visibility Lab
    │     └── viitoare documente metodologice / protocoale
    │
    └── Market Measurement — familia AVL-MKT-*
-         ├── AVL-MKT-001  Market Scope &amp; Eligibility Protocol   (Draft pentru revizuire, v0.10.0)
+         ├── AVL-MKT-001  Market Scope &amp; Eligibility Protocol   (Draft pentru revizuire, v0.11.0)
          ├── AVL-MKT-002  Market Query Panel                    (planificat)
          └── viitoare protocoale ale familiei (AVL-MKT-003 …)</code></pre>
 
@@ -608,7 +608,7 @@ Market Scope &amp; Eligibility Protocol
 STRAT DE INSTANȚĂ / DOVADĂ
 Market Reference Set</code></pre>
 
-      <p><strong><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a></strong> (Draft pentru revizuire, v0.10.0) definește regulile după care o piață este delimitată și verificată înainte de orice măsurare. Criteriile, dovezile acceptate, statusurile și procedura completă se află numai în AVL-MKT-001.</p>
+      <p><strong><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a></strong> (Draft pentru revizuire, v0.11.0) definește regulile după care o piață este delimitată și verificată înainte de orice măsurare. Criteriile, dovezile acceptate, statusurile și procedura completă se află numai în AVL-MKT-001.</p>
 
       <p><strong>Market Reference Set</strong> este rezultatul aplicării protocolului asupra unei piețe concrete, la un moment determinat. Market Reference Set nu este document normativ și nu primește identificator <code>AVL-MKT-*</code>. El aparține unei instanțe de măsurare.</p>
 
@@ -683,7 +683,7 @@ Market Query Panel
         ↓
 măsurarea AI</code></pre>
 
-      <p>Până la activarea AVL-MKT-001 v1.0.0, orice rulare Market Discovery se declară pilot și nu este Discovery oficial. La 16 octombrie 2026 au fost rulați trei piloți Market Discovery (<code>MKT-RO-AIV-2026Q4-PILOT</code>, <code>-PILOT-2</code> și <code>-PILOT-3</code>), care au acoperit o dată toate cele 12 întrebări ale setului DISCOVERY; pilotul intern de Verification nu a fost executat. Piloții testează descoperirea și nu modifică ordinea de mai sus.</p>
+      <p>Până la activarea AVL-MKT-001 v1.0.0, orice rulare Market Discovery se declară pilot și nu este Discovery oficial. La 9 noiembrie 2026 au fost rulați cinci piloți Market Discovery (<code>MKT-RO-AIV-2026Q4-PILOT</code>, <code>-PILOT-2</code>, <code>-PILOT-3</code>, <code>-PILOT-4</code> și <code>-PILOT-5</code>; <code>-PILOT-4</code> a fost declarat invalid). Pilotul de Market Verification a verificat cei 278 de candidați ai reuniunii piloților; registrul lui, <code>MKT-RO-AIV-2026Q4-PILOT-MVR</code>, a fost înghețat la 8 noiembrie 2026 și <a href="/lab/market-discovery/verificare-pilot-2026q4">publicat</a>. Setul lui eligibil nu este Market Reference Set (AVL-MKT-001, §13.2). Pilotul intern pe cazuri-limită nu a fost executat ca etapă separată. Piloții testează procedura și nu modifică ordinea de mai sus.</p>
 
       <p>Procedura pilotului intern, regulile de versionare a criteriilor și controalele operaționale împotriva selection bias sunt definite în <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a>.</p>
 
@@ -720,7 +720,7 @@ Răspunsurile sistemelor AI
         <li><code>MKT-{țară}-{domeniu}-{an}Q{trimestru}</code> — instanță concretă de măsurare a unei piețe (de exemplu, <code>MKT-RO-AIV-2026Q4</code>).</li>
       </ul>
 
-      <p>Formatul instanțelor și regulile lui sunt definite în AVL-001, §17. Aceeași piață poate fi măsurată longitudinal (<code>MKT-RO-AIV-2026Q4</code>, <code>MKT-RO-AIV-2027Q1</code>, <code>MKT-RO-AIV-2027Q2</code> …) fără modificarea protocoalelor normative. Exemplul este ilustrativ; nicio instanță <code>MKT-*</code> nu a fost creată la data acestei versiuni. În interiorul unei instanțe, rulările Market Discovery se identifică prin sufixele <code>FULL</code> (rularea trimestrială completă) și <code>M{lună}</code> (rulările lunare), iar rulările pilot prin <code>PILOT</code> și <code>PILOT-{n}</code>; un pilot nu este o rulare a instanței (AVL-MKT-001, §3.2). Convenția T0 / F1 … Fn nu se folosește în Market Discovery și rămâne convenția punctelor de măsurare din AVL-200 §7. Schema rulărilor de măsurare AI aparține AVL-MKT-002.</p>
+      <p>Formatul instanțelor și regulile lui sunt definite în AVL-001, §17. Aceeași piață poate fi măsurată longitudinal (<code>MKT-RO-AIV-2026Q4</code>, <code>MKT-RO-AIV-2027Q1</code>, <code>MKT-RO-AIV-2027Q2</code> …) fără modificarea protocoalelor normative. Exemplul este ilustrativ; nicio instanță <code>MKT-*</code> nu a fost creată la data acestei versiuni. În interiorul unei instanțe, rulările Market Discovery se identifică prin sufixele <code>FULL</code> (rularea trimestrială completă) și <code>M{lună}</code> (rulările lunare), iar rulările pilot prin <code>PILOT</code> și <code>PILOT-{n}</code>; un pilot nu este o rulare a instanței (AVL-MKT-001, §3.2). Convenția T0 / F1 … Fn nu se folosește în Market Discovery și rămâne convenția punctelor de măsurare din AVL-200 §7. Identificatorii artefactelor din interiorul unei instanțe (registrul Market Verification, Market Reference Set, intrările registrului) și sufixul <code>-PILOT</code> al artefactelor unui pilot sunt definiți în AVL-MKT-001, §21.6. Schema rulărilor de măsurare AI aparține AVL-MKT-002.</p>
 
       <h3 id="principiul-ramurii">Principiul ramurii</h3>
 
@@ -838,7 +838,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <h4>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</h4>
 
-      <p><strong>Versiune 0.10.0 · Draft pentru revizuire</strong></p>
+      <p><strong>Versiune 0.11.0 · Draft pentru revizuire</strong></p>
 
       <p>Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification, publicarea registrelor și regulile de constituire a Market Reference Set.</p>
 
@@ -904,7 +904,7 @@ Market Query Panel + răspunsurile AI</code></pre>
 
       <h2 id="citare-recomandata">Citare recomandată</h2>
 
-      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.9.0, 2026. https://delamatescu.ro/lab/metodologie</p>
+      <p>Matescu, Alex. „Cadrul metodologic AI Visibility Lab”. <em>AI Visibility Lab Documentation</em>, AVL-202, versiunea 1.10.0, 2026. https://delamatescu.ro/lab/metodologie</p>
 
       <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
 
@@ -990,6 +990,12 @@ Market Query Panel + răspunsurile AI</code></pre>
             <td>5 noiembrie 2026</td>
             <td>Activ</td>
             <td>MINOR: secțiune nouă, „Harta sistemului metodologic”, care aplică AVL-200 §32: lanțul de la întrebarea de cercetare la studiul de caz, experiment sau raport, cu documentul care guvernează fiecare strat și locul intervențiilor și remăsurărilor. Rolul paginii <code>/lab/metodologie</code> (funcția 4) trimite la hartă. Corecturi: versiunile din cardurile AVL-205 (v0.2.0), AVL-203 (v0.6.2) și AVL-204 (v0.3.2), rămase în urmă la 1.8.1; ordinea conceptuală de lectură include AVL-205 și AVL-204, descrise deja în textul de sub ea; AVL-200 primește link în tabelul de identitate și în cardul lui; citarea recomandată trimite la versiunea curentă. Nicio schimbare de principiu și nicio cerință nouă.</td>
+          </tr>
+          <tr>
+            <td>1.10.0</td>
+            <td>9 noiembrie 2026</td>
+            <td>Activ</td>
+            <td>MINOR: aliniere la AVL-MKT-001 v0.11.0 și la pilotul de Market Verification. §14.3 consemnează starea piloților la 9 noiembrie 2026: cinci piloți Market Discovery (<code>-PILOT-4</code> declarat invalid) și pilotul de Market Verification pe cei 278 de candidați ai reuniunii, al cărui set eligibil nu este Market Reference Set; pilotul intern pe cazuri-limită nu a fost executat ca etapă separată. §14.5 trimite la AVL-MKT-001 §21.6 pentru identificatorii artefactelor din interiorul unei instanțe. Versiunea AVL-MKT-001 din tabelul de identitate, din arborele documentelor și din cardul ei, actualizată la v0.11.0; citarea recomandată trimite la versiunea curentă. Ordinea temporală din §14.3 rămâne neschimbată. Nicio schimbare de principiu și nicio cerință nouă.</td>
           </tr>
         </tbody>
       </table>

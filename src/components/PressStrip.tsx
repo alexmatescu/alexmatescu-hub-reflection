@@ -8,7 +8,7 @@ import {
 /**
  * Bandă compactă de apariții în presă — gata de folosit, dar NU montată nicăieri
  * încă (nici pe homepage). Motiv: singurele apariții de până acum sunt despre
- * Taste The Corn (stand de porumb), iar sub un hero despre claritate/disciplină/
+ * Taste the Corn (stand de porumb), iar sub un hero despre claritate/disciplină/
  * muncă/sens ar crea o dizarmonie tematică. Se activează pe homepage când există
  * cel puțin o apariție despre scris, AI sau consultanță (subject "person"/"crandit"/"lab").
  *

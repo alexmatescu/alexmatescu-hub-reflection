@@ -88,7 +88,7 @@ export const labNav: LabPage[] = [
       {
         to: "/lab/metodologie/protocol-delimitare-piata-eligibilitate",
         label: "AVL-MKT-001 — Market Scope & Eligibility Protocol",
-        lead: "Draft pentru revizuire, v0.10.0. Definește obiectul pieței, criteriile de eligibilitate, dovezile necesare, Market Discovery, Market Verification, publicarea registrelor și regulile de constituire a Market Reference Set.",
+        lead: "Draft pentru revizuire, v0.11.0. Definește obiectul pieței, criteriile de eligibilitate, forma dovezilor, Market Discovery, Market Verification, publicarea registrelor, identificatorii lor și regulile de constituire a Market Reference Set.",
       },
     ],
   },
@@ -121,6 +121,11 @@ export const labNav: LabPage[] = [
     label: "Market Discovery",
     lead: "Seria MKT-RO-AIV: aceleași întrebări despre servicii de GEO, AEO și AI Visibility puse pe 8 suprafețe de căutare și AI, cu fiecare nume afișat capturat, clasificat și numărat.",
     children: [
+      {
+        to: "/lab/market-discovery/verificare-pilot-2026q4",
+        label: "Pilotul de Market Verification — 2026Q4",
+        lead: "Cei 278 de candidați din piloturile Discovery, verificați pe rând după AVL-MKT-001: 260 de entități, 154 ELIGIBLE, fiecare cu justificarea și dovada salvată.",
+      },
       {
         to: "/lab/market-discovery/2026q4-pilot-5",
         label: "Pilotul 5 — 2026Q4",
