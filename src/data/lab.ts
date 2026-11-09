@@ -119,7 +119,7 @@ export const labNav: LabPage[] = [
   {
     to: "/lab/market-discovery",
     label: "Market Discovery",
-    lead: "Seria MKT-RO-AIV: aceleași întrebări despre servicii de GEO, AEO și AI Visibility puse pe 8 suprafețe de căutare și AI, cu fiecare nume afișat capturat, clasificat și numărat.",
+    lead: "Seria MKT-RO-AIV: aceleași întrebări despre servicii de GEO, AEO și AI Visibility puse pe 8 suprafețe de căutare și AI, cu fiecare nume afișat capturat și numărat, apoi verificat: 278 de candidați, 154 eligibili în pilotul de Market Verification.",
     children: [
       {
         to: "/lab/market-discovery/verificare-pilot-2026q4",

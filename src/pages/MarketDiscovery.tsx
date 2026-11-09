@@ -31,7 +31,13 @@ import {
   type MdRun,
 } from "@/data/market-discovery";
 import { MD_HUB_DESCRIPTION, MD_HUB_TITLE } from "@/data/market-discovery/meta";
-import { MV_PILOT_LABEL, MV_PILOT_PATH } from "@/data/market-verification/meta";
+import {
+  MV_PILOT_DATE_PUBLISHED,
+  MV_PILOT_LABEL,
+  MV_PILOT_PATH,
+  MV_PILOT_REGISTER_ID,
+  MV_PILOT_TITLE,
+} from "@/data/market-verification/meta";
 import mvUnionStatusData from "@/data/market-verification/union-status.json";
 
 /** Cheia de deduplicare → rezultatul pilotului de Market Verification (doar entitățile din bază). */
@@ -1579,7 +1585,9 @@ export const MarketDiscoveryHub = () => {
             <ArrowLeft className="h-3.5 w-3.5" />
             AI Visibility Lab
           </Link>
-          <p className="eyebrow mb-6">AI Visibility Lab · Market Discovery</p>
+          <p className="eyebrow mb-6">
+            AI Visibility Lab · Market Discovery · Market Verification
+          </p>
           <h1 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-balance max-w-4xl">
             {MD_HUB_TITLE}
           </h1>
@@ -1601,18 +1609,122 @@ export const MarketDiscoveryHub = () => {
               >
                 AVL-MKT-001
               </Link>
-              . Pilotul de Market Verification a verificat deja toate cele 278
-              de entități candidate din bază:{" "}
-              <Link
-                to={MV_PILOT_PATH}
-                className="underline underline-offset-4 hover:text-foreground"
-              >
-                154 sunt eligibile
-              </Link>
               .
             </p>
           </div>
+
+          {/* Stadiul seriei: Discovery încheiat (piloți), Verification încheiat (pilot). */}
+          <div className="mt-10 border border-foreground/15 bg-surface/50 p-6 md:p-8 max-w-4xl">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+              Stadiul seriei · actualizat la{" "}
+              {formatMdDate(MV_PILOT_DATE_PUBLISHED)}
+            </p>
+            <p className="mt-3 font-serif text-xl md:text-2xl leading-snug text-balance">
+              Verificarea de eligibilitate s-a încheiat: din cei{" "}
+              {nf(c.unionBase)} de candidați găsiți în Market Discovery, 154
+              sunt eligibili.
+            </p>
+            <ol className="mt-6 grid sm:grid-cols-3 gap-px bg-foreground/10 border border-foreground/10 text-sm">
+              <li className="bg-background p-4">
+                <span className="block text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  1 · Market Discovery
+                </span>
+                <span className="block mt-1 font-serif text-2xl tabular-nums">
+                  {nf(c.unionBase)}
+                </span>
+                <span className="text-muted-foreground">
+                  candidați, din {mdRuns.length} piloți
+                </span>
+              </li>
+              <li className="bg-background p-4">
+                <span className="block text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  2 · Market Verification
+                </span>
+                <span className="block mt-1 font-serif text-2xl tabular-nums">
+                  260
+                </span>
+                <span className="text-muted-foreground">
+                  entități verificate, 27.10–8.11.2026
+                </span>
+              </li>
+              <li className="bg-background p-4">
+                <span className="block text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Rezultat · pilot
+                </span>
+                <span className="block mt-1 font-serif text-2xl tabular-nums">
+                  154
+                </span>
+                <span className="text-muted-foreground">
+                  <code className="text-[13px]">ELIGIBLE</code>, cu dovadă
+                </span>
+              </li>
+            </ol>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <Link
+                to={MV_PILOT_PATH}
+                className="inline-flex items-center gap-2 h-11 px-5 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary/90 transition-colors"
+              >
+                Vezi rezultatul verificării <ArrowRight className="h-4 w-4" />
+              </Link>
+              <p className="text-xs text-muted-foreground max-w-md">
+                E un pilot: setul eligibil nu e încă Market Reference Set-ul
+                pieței și nu e un clasament. Prima rulare oficială urmează după
+                AVL-MKT-001 v1.0.0.
+              </p>
+            </div>
+          </div>
+
           <CandidateNotice />
+        </div>
+      </section>
+
+      <section className="border-b border-foreground/10">
+        <div className="container-editorial py-16 md:py-20 max-w-5xl">
+          <SectionHead
+            eyebrow="Market Verification · pilot"
+            title="Cei 278 de candidați, verificați pe rând: 154 eligibili"
+          >
+            <p>
+              Între 27 octombrie și 8 noiembrie 2026, fiecare entitate candidată
+              din bază a fost verificată pe site-ul ei, după criteriile din
+              AVL-MKT-001: oferă serviciul și e orientată către România? După
+              unirea rândurilor care desemnau același operator au rămas 260 de
+              entități, fiecare cu statusul, justificarea și pagina salvată ca
+              dovadă.
+            </p>
+          </SectionHead>
+          <div className="mt-8">
+            <StatTiles
+              items={[
+                {
+                  value: "154",
+                  label: "ELIGIBLE",
+                  note: "setul eligibil al pilotului",
+                },
+                {
+                  value: "75",
+                  label: "OUT OF SCOPE",
+                  note: "neorientați către România",
+                },
+                {
+                  value: "19",
+                  label: "INELIGIBLE",
+                  note: "în România, fără serviciu",
+                },
+                {
+                  value: "12",
+                  label: "Incerte",
+                  note: "7 UNVERIFIED · 5 AMBIGUOUS",
+                },
+              ]}
+            />
+          </div>
+          <Link
+            to={MV_PILOT_PATH}
+            className="link-underline mt-6 inline-block text-sm font-medium"
+          >
+            {MV_PILOT_LABEL}: registrul, justificările și dovezile →
+          </Link>
         </div>
       </section>
 
@@ -1696,39 +1808,8 @@ export const MarketDiscoveryHub = () => {
       <section className="border-b border-foreground/10">
         <div className="container-editorial py-16 md:py-20 max-w-5xl">
           <SectionHead
-            eyebrow="Market Verification · pilot"
-            title="Cei 278 de candidați, verificați pe rând: 154 eligibili"
-          >
-            <p>
-              Între 27 octombrie și 8 noiembrie 2026, fiecare entitate candidată
-              din bază a fost verificată pe site-ul ei, după criteriile din
-              AVL-MKT-001: oferă serviciul și e orientată către România? După
-              unirea rândurilor care desemnau același operator au rămas 260 de
-              entități: 154 <code className="text-[15px]">ELIGIBLE</code>, 75{" "}
-              <code className="text-[15px]">OUT OF SCOPE</code>, 19{" "}
-              <code className="text-[15px]">INELIGIBLE</code>, 7{" "}
-              <code className="text-[15px]">UNVERIFIED</code> și 5{" "}
-              <code className="text-[15px]">AMBIGUOUS</code>.
-            </p>
-            <p>
-              E un pilot: setul eligibil nu e încă Market Reference Set-ul
-              pieței și nu e un clasament.
-            </p>
-          </SectionHead>
-          <Link
-            to={MV_PILOT_PATH}
-            className="link-underline mt-6 inline-block text-sm font-medium"
-          >
-            {MV_PILOT_LABEL}: registrul, justificările și dovezile →
-          </Link>
-        </div>
-      </section>
-
-      <section className="border-b border-foreground/10">
-        <div className="container-editorial py-16 md:py-20 max-w-5xl">
-          <SectionHead
             eyebrow="Candidate Set cumulat"
-            title={`Toate cele ${withDe(c.unionBase)} entități candidate pentru Market Verification`}
+            title={`Toate cele ${withDe(c.unionBase)} entități candidate, cu rezultatul verificării`}
           >
             <p>
               Lista unică a numelor găsite în piloții{" "}
@@ -1747,8 +1828,34 @@ export const MarketDiscoveryHub = () => {
 
       <section className="border-b border-foreground/10">
         <div className="container-editorial py-16 md:py-20 max-w-5xl">
-          <p className="eyebrow mb-6">Rulările</p>
+          <p className="eyebrow mb-6">Rulările și etapele</p>
           <ul className="border-t border-foreground/10">
+            <li className="border-b border-foreground/10">
+              <Link to={MV_PILOT_PATH} className="group block py-8 md:py-10">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
+                    Market Verification · pilot · {MV_PILOT_REGISTER_ID}
+                  </p>
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground/80">
+                    27 octombrie – 8 noiembrie 2026
+                  </p>
+                </div>
+                <h2 className="font-serif text-xl md:text-2xl leading-tight tracking-tight text-balance mt-3">
+                  {MV_PILOT_TITLE}
+                </h2>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                  Verificarea de eligibilitate a tuturor candidaților din
+                  piloții 1, 2, 3 și 5, după AVL-MKT-001, cu o dovadă HTML
+                  salvată pentru fiecare entitate.
+                </p>
+                <p className="mt-4 text-sm tabular-nums text-foreground/80">
+                  278 de candidați · 260 de entități · 154 ELIGIBLE
+                </p>
+                <span className="link-underline mt-4 inline-block text-sm font-medium">
+                  Vezi registrul →
+                </span>
+              </Link>
+            </li>
             {[...mdRuns].reverse().map((r) => (
               <li key={r.slug} className="border-b border-foreground/10">
                 <Link to={r.path} className="group block py-8 md:py-10">
@@ -1806,8 +1913,7 @@ export const MarketDiscoveryHub = () => {
               Discovery completă și Market Verification) urmează după activarea
               AVL-MKT-001 v1.0.0. Seria e gândită ca măsurare repetată: o rulare
               completă pe trimestru și un subset lunar, fiecare cu pagina ei
-              aici. Ultima actualizare:{" "}
-              {formatMdDate(mdRuns.at(-1)?.datePublished ?? null)}.
+              aici. Ultima actualizare: {formatMdDate(MV_PILOT_DATE_PUBLISHED)}.
             </p>
           </SectionHead>
         </div>

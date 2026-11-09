@@ -25,7 +25,7 @@ export const MD_SURFACE_LABELS: Record<string, string> = {
 export const MD_HUB_TITLE =
   "Market Discovery: cine apare când cauți servicii de AI Visibility în România";
 export const MD_HUB_DESCRIPTION =
-  "Seria MKT-RO-AIV a AI Visibility Lab: aceleași întrebări puse lui Google, Bing, AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot, cu fiecare rezultat capturat, clasificat și numărat. Piloții 2026Q4, cu date și dovezi trasabile.";
+  "Seria MKT-RO-AIV a AI Visibility Lab: aceleași întrebări puse lui Google, Bing, AI Mode, ChatGPT, Claude, Gemini, Perplexity și Copilot, cu fiecare rezultat capturat și numărat. 278 de candidați din piloții 2026Q4, verificați apoi în pilotul de Market Verification: 154 eligibili.";
 
 /** Textul editorial al fiecărei rulări; restul vine din JSON. */
 export type RunMeta = {

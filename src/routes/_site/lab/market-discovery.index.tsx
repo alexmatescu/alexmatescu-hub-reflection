@@ -12,6 +12,11 @@ import {
   MD_HUB_DESCRIPTION,
   MD_HUB_TITLE,
 } from "@/data/market-discovery/meta";
+import {
+  MV_PILOT_DATE_PUBLISHED,
+  MV_PILOT_PATH,
+  MV_PILOT_TITLE,
+} from "@/data/market-verification/meta";
 
 const BASE = "https://delamatescu.ro";
 const HUB = `${BASE}/lab/market-discovery`;
@@ -42,12 +47,21 @@ export const Route = createFileRoute("/_site/lab/market-discovery/")({
             publisher: { "@id": labOrganization["@id"] },
             creator: { "@id": alexMatescuPerson["@id"] },
             breadcrumb: { "@id": `${HUB}#breadcrumb` },
-            hasPart: mdRunHeads.map((r) => ({
-              "@type": "Dataset",
-              "@id": `${BASE}${r.path}#dataset`,
-              name: r.title,
-              url: `${BASE}${r.path}`,
-            })),
+            hasPart: [
+              {
+                "@type": "Dataset",
+                "@id": `${BASE}${MV_PILOT_PATH}#dataset`,
+                name: MV_PILOT_TITLE,
+                url: `${BASE}${MV_PILOT_PATH}`,
+              },
+              ...mdRunHeads.map((r) => ({
+                "@type": "Dataset",
+                "@id": `${BASE}${r.path}#dataset`,
+                name: r.title,
+                url: `${BASE}${r.path}`,
+              })),
+            ],
+            dateModified: MV_PILOT_DATE_PUBLISHED,
           },
           labBreadcrumbList(
             HUB,
