@@ -450,6 +450,21 @@ Un articol nou capătă automat formatul `graph` din momentul în care are `last
 
 Dacă articolul are imagine principală: păstrează URL + alt text în `image`/`imageAlt`, alt text descriptiv și accesibil, nu keyword stuffing. Dacă nu există imagine: nu inventa URL, semnalează opțional lipsa în raport.
 
+### 5.3.1 — Conversia imaginilor în WebP și ștergerea originalului
+
+Imaginile publicate pe site (imaginea principală, ilustrații, logo-uri, imagini de proiect) se folosesc în format WebP. Când o imagine primită ca PNG sau JPG/JPEG e convertită în WebP, originalul convertit nu rămâne în repo:
+
+1. Convertește cu pipeline-ul proiectului, dacă există; altfel cu `cwebp -q 80` (redimensionare doar dacă imaginea e mult mai mare decât afișarea, de exemplu lățime maximă 1200–1600 px). Fișierul WebP intră direct în folderul final de sub `public/images/…`, cu nume în kebab-case, fără spații și fără diacritice.
+2. Verifică WebP-ul: se decodează (`dwebp`), are dimensiunile așteptate și se afișează corect pe pagină (dev server, §10).
+3. Actualizează toate referințele la fișierul WebP: `src`, `image`/`heroImage`, `og:image`, JSON-LD. Caută apoi în repo numele originalului (`grep -rn "<nume-original>" src public`) ca să nu rămână nicio referință.
+4. **Abia apoi șterge originalul convertit**, de exemplu PNG-ul pus în `public/images/` sau în folderul articolului. Dacă originalul e urmărit în git, ștergerea intră în același commit (`git rm`); dacă nu e urmărit, se șterge de pe disc.
+5. **Nu șterge originalul** dacă:
+   - conversia sau verificarea a eșuat;
+   - numele lui mai apare într-o referință;
+   - fișierul e în afara repo-ului (`Downloads` etc.): nu e al proiectului;
+   - e o captură-dovadă: evidence figures (§6.3) se copiază neschimbate și nu se convertesc, iar capturile din pachetele de dovezi urmează AVL-200 §8.1.1 și skill-urile `evidence-release` / `mkt-evidence-package`, unde intrarea PNG nu se modifică.
+6. În raportul final: fișierul WebP creat, dimensiunea înainte și după, și originalul șters (calea lui).
+
 ### 5.4 — FAQ
 
 Opțional. Nu crea FAQ doar pentru schema markup — doar dacă există întrebări reale care completează articolul sau clarifică ambiguități. FAQ vizibil == FAQ în structured data (nu inventa răspunsuri suplimentare doar pentru JSON-LD). Fără FAQ util, `faq` poate fi un array gol. Nu pretinde că FAQPage garantează rich results.
@@ -749,6 +764,7 @@ Pentru orice actualizare a unui articol publicat, raportul citează și rândul 
 - [ ] Pasul 0 parcurs integral: snapshot la început, căutarea articolului în registru, comparație + decizie de actualizare dacă exista deja, sau introducerea lui în evidență dacă nu exista.
 - [ ] `node scripts/build-content-registry.mjs --strict --diff .registry-before.json` a rulat la final; diff-ul arată intrarea cu datele corecte, wiring `✓✓✓✓`, doar diferențele intenționate și zero anomalii noi. `.registry-before.json` șters.
 - [ ] Toate afirmațiile materiale au fost verificate live, în sesiunea curentă.
+- [ ] Imaginile convertite în WebP (§5.3.1) au fost verificate, toate referințele trimit la WebP, iar originalele PNG/JPG convertite au fost șterse din repo (evidence figures neatinse).
 - [ ] `<title>` randat are cel mult 60 de caractere; `seoTitle` există numai dacă `title` depășește 60 și scurtează titlul fără să-l înlocuiască (Faza 4).
 - [ ] Cifrele au denominator, perioadă și definiție corecte (§1.4).
 - [ ] Afirmațiile volatile au fost reverificate live, nu copiate dintr-un articol anterior.

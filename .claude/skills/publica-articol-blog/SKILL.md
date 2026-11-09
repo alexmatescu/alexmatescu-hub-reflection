@@ -1374,6 +1374,10 @@ Dacă hero image este obligatorie tehnic și nu există:
 
 oprește pipeline-ul și raportează blocajul.
 
+## 23.1 Conversia în WebP și originalul
+
+Imaginile articolului (hero, inline, Open Graph) se publică în WebP. Când o imagine primită ca PNG sau JPG/JPEG e convertită în WebP, se aplică regula din `publica-articol-lab` §5.3.1: conversie (`cwebp -q 80` sau pipeline-ul proiectului), direct în folderul final de sub `public/images/blog/`, cu nume în kebab-case, fără spații; verificarea WebP-ului; actualizarea tuturor referințelor (`heroImage`, `og:image`, JSON-LD, `html`) și căutarea numelui originalului în repo; **apoi ștergerea originalului convertit** (`git rm` dacă era urmărit, altfel de pe disc). Originalul nu se șterge dacă verificarea a eșuat, dacă mai e referențiat sau dacă e în afara repo-ului. Raportul final arată fișierul WebP, dimensiunea înainte și după și originalul șters.
+
 ---
 
 # 24. ACTUALIZAREA TUTUROR SUPRAFEȚELOR INTERNE AFECTATE
@@ -2010,6 +2014,7 @@ NU:
 Înainte de DONE:
 
 [ ] Teza articolului este clară.
+[ ] imaginile convertite în WebP (§23.1) au fost verificate și referențiate, iar originalele PNG/JPG convertite au fost șterse din repo.
 [ ] cuprinsul (§30.1) e primul element din `html`, listează toate `<h2>`/`<h3>` cu textul exact și fiecare ancoră are o țintă unică
 [ ] Titlul reflectă articolul.
 [ ] Subtitle-ul a fost evaluat.

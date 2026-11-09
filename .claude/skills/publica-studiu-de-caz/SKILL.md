@@ -450,6 +450,8 @@ Conversie manuală (nu convertor markdown generic), stil identic cu `publica-art
 
 **Evidence figures** — identic cu `publica-articol-lab` §6.3, aplicat aici la capturile experimentale, nu la ilustrații: verifică fizic existența fiecărei imagini referențiate în `.md`; nu regenera/altera/înlocui — sunt dovadă, nu ilustrație; copiază neschimbat, cu numele original, în `public/images/lab/{slug}/` (**namespace comun cu articolele**, nu `public/images/lab/studii-de-caz/{slug}/` — confirmă calea reală înainte de a presupune); convertește în `<figure><img loading="lazy" alt="..."/><figcaption>...</figcaption></figure>`, `alt` exact din Markdown, `figcaption` exact din caption-ul existent (fără inventare); imagine lipsă referențiată în `.md` → **oprește publicarea**, raportează exact fișierul; imagini neutilizate în folderul `images/` → doar raportate, nu copiate.
 
+**Imagini convertite în WebP** — identic cu `publica-articol-lab` §5.3.1: imaginea principală și orice ilustrație primită ca PNG/JPG se publică în WebP, iar după conversia verificată și actualizarea tuturor referințelor originalul convertit se șterge din repo. Nu se aplică evidence figures (paragraful anterior): capturile experimentale se copiază neschimbate și nu se convertesc.
+
 **Cuprinsul** — identic cu `publica-articol-lab` §6.5 (aceeași poziție, după byline și imaginea principală; aceleași reguli pentru intrări, `id`-uri și markup, clasa `article-toc`). La un studiu de caz, cuprinsul ajută în special la salturile între punctele de măsurare (T0, F1…Fn): o fază nouă adaugă heading-uri, deci cuprinsul se regenerează în același pas, iar `id`-urile secțiunilor vechi nu se schimbă (pot fi citate din alte articole).
 
 Numele fișierelor publicate (`fig_*.jpg` etc.) pot fi descriptive, nu trebuie să respecte convenția strictă de denumire a evidence set-ului brut (§2.2) — aceea guvernează arhiva internă, nu neapărat numele fișierului final din `public/images/lab/{slug}/`.
@@ -564,6 +566,7 @@ Pentru **update minor**: rezumat de 2–3 rânduri, fișierele atinse, doar afir
 - [ ] Copiate neschimbate în `public/images/lab/{slug}/`, nume original.
 - [ ] `<figure>`/`alt`/`figcaption` exacte din sursă, fără inventare.
 - [ ] Imagine lipsă → publicare oprită și raportată, nu placeholder.
+- [ ] Imaginile convertite în WebP au fost verificate și referențiate, iar originalele PNG/JPG convertite au fost șterse din repo; evidence figures copiate neschimbate.
 
 **Wiring (§9)**
 - [ ] `labCaseStudyMeta` actualizat (nu amestecat cu `labArticleMeta`).

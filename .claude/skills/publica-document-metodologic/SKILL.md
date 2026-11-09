@@ -319,6 +319,10 @@ Actualizează exact (confirmă fiecare cale la Faza 0, nu presupune):
 
 ---
 
+**Imagini.** Dacă documentul folosește imagini (diagrame, ilustrații) primite ca PNG/JPG și convertite în WebP, se aplică `publica-articol-lab` §5.3.1: după conversia verificată și actualizarea referințelor, originalul convertit se șterge din repo. Capturile-dovadă nu se convertesc (AVL-200 §8.1.1).
+
+---
+
 ## Faza 9 — Technical audit, build și validare
 
 ```bash
@@ -382,6 +386,7 @@ Identic cu `publica-articol-lab` Faza 11/11.1, plus specific documentelor normat
 - [ ] `public/llms.txt` actualizat la final (Pasul final 2): linia documentului adăugată sau corectată (prefixul „draft pentru revizuire — ” corect față de statut), fără alte linii atinse; `node scripts/check-llms.mjs --require {canonical}` a dat exit 0.
 - [ ] Draftul de lucru e închis (Pasul final 3): nicio copie a documentului în `docs/drafts/`, în afară de `outdated/` și de fișierele citate ca surse (excepția 4); textul existent doar în draft a fost semnalat userului.
 - [ ] Niciun `git add`/`commit`/`push`/deploy executat.
+- [ ] Dacă documentul are imagini convertite în WebP: referințele trimit la WebP, iar originalele PNG/JPG convertite au fost șterse din repo.
 - [ ] Documentul nu a fost declarat „activ”/„live” fără trecerea prin Faza 3.
 
 ---
