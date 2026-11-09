@@ -315,6 +315,11 @@ export const labNav: LabPage[] = [
           "De unde își iau informațiile sistemele AI? Ce citează ChatGPT, Gemini, Perplexity, Claude și Copilot — și ce arată datele din România",
         lead: "Analiză AI Visibility Lab despre antrenare, căutare și citare în sistemele AI: studii internaționale 2025–2026, statistici despre România, limite metodologice și implicații pentru vizibilitatea companiilor.",
       },
+      {
+        to: "/lab/articole/de-departe-totul-pare-perfect-de-aproape-incepe-realitatea",
+        label: "De departe, totul pare perfect. De aproape, începe realitatea.",
+        lead: "De ce nu este suficient să ai servicii excelente pentru a fi recomandat de AI? Un eseu despre percepție, informație, vizibilitate digitală și rolul AEO și GEO în descoperirea afacerilor.",
+      },
     ],
   },
   {

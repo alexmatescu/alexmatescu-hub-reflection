@@ -7,13 +7,13 @@
 > `public/sitemap.xml`. O modificare făcută aici se pierde la următoarea rulare;
 > corectează sursa, nu registrul.
 
-Generat: 2026-11-09 · 185 intrări · **2 anomalii** în 2 intrări
+Generat: 2026-11-09 · 186 intrări · **2 anomalii** în 2 intrări
 
 ## Sinteză
 
 | Suprafață | Publicat | Draft / nepublicat | Total | Anomalii |
 |---|--:|--:|--:|--:|
-| `lab/articole` | 27 | 0 | 27 | 2 |
+| `lab/articole` | 28 | 0 | 28 | 2 |
 | `lab/studii-de-caz` | 2 | 0 | 2 | 0 |
 | `lab/metodologie` | 7 | 0 | 7 | 0 |
 | `lab/foundation` | 1 | 0 | 1 | 0 |
@@ -21,7 +21,7 @@ Generat: 2026-11-09 · 185 intrări · **2 anomalii** în 2 intrări
 | `lab/secțiuni` | 4 | 0 | 4 | 0 |
 | `blog` | 7 | 0 | 7 | 0 |
 | `blog (arhivă)` | 132 | 0 | 132 | 0 |
-| **Total** | **185** | **0** | **185** | **2** |
+| **Total** | **186** | **0** | **186** | **2** |
 
 ## Legendă
 
@@ -34,10 +34,11 @@ Generat: 2026-11-09 · 185 intrări · **2 anomalii** în 2 intrări
 - **Verificat** — `last_reviewed`, cu numărul de zile scurse. Peste
   180 de zile, materialele din Lab intră în lista de reverificare.
 
-## `lab/articole` — 27 intrări
+## `lab/articole` — 28 intrări
 
 | ID | Titlu | Categorie | Tip | Status | Creat | Publicat | Modificat | Verificat | Wiring | Sursă `.md` | Wiring `.ts` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| `LAB-28` | [De departe, totul pare perfect. De aproape, începe realitatea.](/lab/articole/de-departe-totul-pare-perfect-de-aproape-incepe-realitatea) | Entities & Citations | Analiză | publicat | — | 2026-11-09 | 2026-11-09 | 2026-11-09 (0z) | `✓✓✓✓` | `src/content/lab/articles/28.de-departe-totul-pare-perfect-de-aproape-incepe-realitatea.md` | `src/data/lab-content/28. de-departe-totul-pare-perfect-de-aproape-incepe-realitatea.ts` |
 | `LAB-27` | [De unde își iau informațiile sistemele AI? Ce citează ChatGPT, Gemini, Perplexity, Claude și Copilot — și ce arată datele din România](/lab/articole/de-unde-isi-iau-informatiile-ai-surse-citari-romania) | Search & Retrieval | Analiză | publicat | 2026-11-07 | 2026-11-07 | 2026-11-07 | 2026-11-07 (2z) | `✓✓✓✓` | `src/content/lab/articles/27.de-unde-isi-iau-informatiile-ai-surse-citari-romania.md` | `src/data/lab-content/27. de-unde-isi-iau-informatiile-ai-surse-citari-romania.ts` |
 | `LAB-26` | [Dacă furnizorul nu face pentru el, cum face pentru alții?](/lab/articole/cum-alegi-furnizorul-de-servicii-seo-geo-aeo) | AI Ecosystem | Ghid | publicat | 2026-11-03 | 2026-11-03 | 2026-11-09 | 2026-11-03 (6z) | `✓✓✓✓` | `src/content/lab/articles/26.cum-alegi-furnizorul-de-servicii-seo-geo-aeo.md` | `src/data/lab-content/26. cum-alegi-furnizorul-de-servicii-seo-geo-aeo.ts` |
 | `LAB-25` | [Reclame în ChatGPT, Google și social media: unde merită să plătești și când devine prea scump să fii peste tot?](/lab/articole/reclame-chatgpt-google-social-media) | AI Ecosystem | Analiză | publicat | 2026-10-29 | 2026-10-29 | 2026-10-29 | 2026-10-29 (11z) | `✓✓✓✓` | `src/content/lab/articles/25.reclame-chatgpt-google-social-media.md` | `src/data/lab-content/25. reclame-chatgpt-google-social-media.ts` |

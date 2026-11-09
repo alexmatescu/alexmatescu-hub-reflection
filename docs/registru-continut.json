@@ -1,10 +1,40 @@
 {
   "generat": "2026-11-09",
   "pragReverificareZile": 180,
-  "totalIntrari": 185,
+  "totalIntrari": 186,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
+    {
+      "id": "LAB-28",
+      "titlu": "De departe, totul pare perfect. De aproape, începe realitatea.",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/de-departe-totul-pare-perfect-de-aproape-incepe-realitatea",
+      "slug": "de-departe-totul-pare-perfect-de-aproape-incepe-realitatea",
+      "categorie": "Entities & Citations",
+      "tip": "Analiză",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-11-09T13:07:00+02:00",
+      "dataModificare": "2026-11-09",
+      "ultimaVerificare": "2026-11-09",
+      "fisierMd": "src/content/lab/articles/28.de-departe-totul-pare-perfect-de-aproape-incepe-realitatea.md",
+      "fisierTs": "src/data/lab-content/28. de-departe-totul-pare-perfect-de-aproape-incepe-realitatea.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-11-09",
+      "imagine": "https://delamatescu.ro/images/lab/de-departe-totul-pare-perfect-de-aproape-incepe-realitatea.webp",
+      "jsonLd": "@graph",
+      "nrCitari": 4,
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
     {
       "id": "LAB-27",
       "titlu": "De unde își iau informațiile sistemele AI? Ce citează ChatGPT, Gemini, Perplexity, Claude și Copilot — și ce arată datele din România",
