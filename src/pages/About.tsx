@@ -80,6 +80,8 @@ const appliedDomains = [
 ];
 
 const studyDomains = [
+  "GEO / AEO / AI Visibility",
+  "Inteligență artificială (AI)",
   "Leadership",
   "Sisteme autonome și tehnologie automotive",
   "Productivitate",
