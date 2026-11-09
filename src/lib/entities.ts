@@ -33,6 +33,34 @@ export const tasteTheCornOrganization = {
 } as const;
 
 /**
+ * Ichnometria — servicii GEO, AEO și AI Visibility, fondată de Alex Matescu.
+ * Folosește `@id`-ul declarat chiar pe ichnometria.ro, ca cele două site-uri să
+ * descrie aceeași entitate. Relația cu AI Visibility Lab: laboratorul e mediul
+ * de cercetare, Ichnometria e metodologia aplicată și sistemul comercial;
+ * sunt entități distincte (ichnometria.ro, secțiunea „Proveniența cercetării”).
+ */
+export const ichnometriaOrganization = {
+  "@type": "ProfessionalService",
+  "@id": "https://ichnometria.ro/#organization",
+  name: "Ichnometria",
+  url: "https://ichnometria.ro/",
+  logo: `${BASE}/images/proiecte/ichnometria-logo.webp`,
+  description:
+    "Furnizor de servicii GEO (Generative Engine Optimization), AEO (Answer Engine Optimization) și AI Visibility din Sibiu, România. Măsurare, cartografiere, intervenții bazate pe dovezi și monitorizare informațională.",
+  founder: { "@id": alexMatescuPerson["@id"] },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Sibiu",
+    addressCountry: "RO",
+  },
+  areaServed: [
+    { "@type": "City", name: "Sibiu" },
+    { "@type": "Country", name: "România" },
+  ],
+  sameAs: ["https://ichnometria.ro/"],
+} as const;
+
+/**
  * Proiect (slug din `@/data/projects`) → entitatea lui, dacă are una proprie.
  * Proiectele fără entitate (experiențe profesionale, blogging) nu primesc nod.
  */
@@ -43,4 +71,5 @@ export const projectEntities: Record<
   crandit: cranditBook,
   "taste-the-corn": tasteTheCornOrganization,
   "geo-ai-visibility": labOrganization,
+  ichnometria: ichnometriaOrganization,
 };

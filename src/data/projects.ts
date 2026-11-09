@@ -1,5 +1,7 @@
 const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
 const ovbLogo = "/images/blog/ovb-logo.webp";
+const ichnometriaLogo = "/images/proiecte/ichnometria-logo.webp";
+const ichnometriaStraturi = "/images/proiecte/ichnometria-straturi.webp";
 
 export type ProjectStatus =
   "activ" | "în lucru" | "închis" | "finalizat" | "concept";
@@ -8,6 +10,7 @@ export type ProjectSection = {
   eyebrow: string;
   content?: string;
   items?: string[];
+  image?: { src: string; alt: string };
 };
 
 export type ProjectFAQ = {
@@ -38,6 +41,8 @@ export type Project = {
   sections?: ProjectSection[];
   faq?: ProjectFAQ[];
   logo?: string;
+  /** Site-ul oficial al proiectului, dacă are unul separat de delamatescu.ro. */
+  website?: { url: string; label: string };
   related: string[]; // post slugs
 };
 
@@ -255,8 +260,126 @@ export const projects: Project[] = [
       "Autoritatea de domeniu se redefinește în jurul faptelor verificabile.",
     ],
     currentStatus:
-      "Activ: cercetare, metodologie și articole publicate constant în AI Visibility Lab (/lab).",
+      "Activ: cercetare, metodologie și articole publicate constant în AI Visibility Lab (/lab). Aplicarea comercială a metodologiei se face separat, prin Ichnometria (ichnometria.ro): laboratorul rămâne mediul de cercetare, Ichnometria e metodologia aplicată și sistemul comercial.",
     related: ["munca-in-era-inteligentei-artificiale"],
+  },
+  {
+    slug: "ichnometria",
+    title: "Ichnometria",
+    tagline: "Servicii GEO, AEO și AI Visibility pentru răspunsurile AI",
+    status: "activ",
+    description:
+      "Ichnometria este un furnizor de servicii de Generative Engine Optimization (GEO), Answer Engine Optimization (AEO) și AI Visibility din Sibiu, România. Măsoară și dezvoltă prezența informațională a afacerilor pentru sisteme precum ChatGPT, Gemini, Perplexity și alte motoare de răspuns bazate pe AI.",
+    logo: ichnometriaLogo,
+    website: { url: "https://ichnometria.ro/", label: "ichnometria.ro" },
+    metadata: {
+      perioada: "Din 2026",
+      categorie: "Servicii GEO · AEO · AI Visibility",
+      locatie: "Sibiu, România · servicii la nivel național",
+    },
+    sections: [
+      {
+        eyebrow: "Ce face Ichnometria",
+        content:
+          "Ichnometria măsoară cum este reprezentată o afacere în Search și în sistemele AI, identifică problemele din website, surse și relațiile informaționale, propune intervenții bazate pe dovezi și remăsoară rezultatele în timp.\n\nCartografiază vizibilitatea în inteligența artificială: de la urmă la măsură, de la măsură la intervenție și de la intervenție la remăsurare. Nicio intervenție nu garantează apariția, citarea sau recomandarea într-un sistem AI proprietar; Ichnometria măsoară și modifică factorii public observabili asupra cărora se poate interveni.",
+        items: [
+          "GEO & AI Visibility — măsurarea și dezvoltarea prezenței în răspunsurile AI.",
+          "Audit tehnic — verificarea accesibilității și a structurii tehnice a website-ului.",
+          "AEO & Content — structurarea informației pentru răspunsuri clare și recuperabile.",
+          "Monitoring — măsurare longitudinală a entităților și industriilor.",
+          "Websites & Information — construirea sursei canonice și a urmelor informaționale necesare.",
+        ],
+      },
+      {
+        eyebrow: "Trei entități, același fondator",
+        content:
+          "Alex Matescu este fondatorul și coordonatorul AI Visibility Lab și al Ichnometria. Cele trei entități de mai jos sunt distincte și au roluri diferite. Părți ale metodologiei Ichnometria au fost dezvoltate și testate prin AI Visibility Lab, dar Ichnometria nu este un rebrand al laboratorului și nu îl înlocuiește.",
+        items: [
+          "delamatescu.ro — site-ul personal al lui Alex Matescu: biografie, scris, cartea CRANDIT, proiecte. Găzduiește AI Visibility Lab la delamatescu.ro/lab și este distinct de Ichnometria.",
+          "AI Visibility Lab — mediul de cercetare: metodologie publică (documentele AVL), măsurători, experimente, studii de caz și dovezi verificabile.",
+          "Ichnometria — metodologia aplicată și sistemul comercial: servicii GEO, AEO și AI Visibility pentru afaceri, oferite prin ichnometria.ro.",
+        ],
+      },
+      {
+        eyebrow: "Metoda: de la urmă la remăsurare",
+        content:
+          "Șase etape leagă contextul real, dovezile, harta informațională și intervențiile. Aceeași disciplină a măsurării se păstrează la fiecare revenire în teritoriu.",
+        items: [
+          "Orient — stabilim cadrul de referință.",
+          "Delimit — definim teritoriul de măsurare.",
+          "Measure — măsurăm urma.",
+          "Map — transformăm măsurătorile în hartă.",
+          "Intervene — schimbăm terenul, nu măsurarea.",
+          "Remeasure — măsurăm din nou și comparăm ce s-a schimbat.",
+        ],
+      },
+      {
+        eyebrow: "Ichnometria Stack: cinci straturi, aceeași entitate",
+        content:
+          "De la realitate la inteligență, Ichnometria investighează unde se formează și unde se întrerupe reprezentarea unei entități. Trace Lineage păstrează proveniența afirmațiilor, fără un scor general inventat.",
+        image: {
+          src: ichnometriaStraturi,
+          alt: "Straturile Ichnometria, de la pământ la mâine: relief, hartă, cosmos, rețea de relații și orașul viitorului, străbătute de aceeași axă",
+        },
+        items: [
+          "Reality — ce este adevărat în realitate?",
+          "Record — ce a fost documentat public?",
+          "Information — ce pot sistemele să acceseze, să parseze și să regăsească?",
+          "Relations — cum este conectată entitatea la afirmații, atribute, surse și alte entități?",
+          "Intelligence — cum este reprezentată entitatea în ieșirile AI observabile?",
+        ],
+      },
+      {
+        eyebrow: "Servicii și prețuri",
+        content:
+          "Serviciile și prețurile publicate pe ichnometria.ro (9 noiembrie 2026). Detaliile complete, condițiile de participare și disponibilitatea locurilor sunt pe ichnometria.ro/servicii.",
+        items: [
+          "Program 6 luni — Ambasador: programul complet de vizibilitate AI (audit inițial, intervenții și măsurare lunară pe aceleași întrebări), 10 locuri — 199 € / 6 luni.",
+          "Program 6 luni — Lansare Early Bid: același program, 20 de locuri — 299 € / 6 luni.",
+          "Program 6 luni — Lansare Late Bid: același program, 20 de locuri, după ocuparea Early Bid — 399 € / 6 luni.",
+          "Servicii strategice Defend, Win, Grow și Explore — protejarea, câștigarea, extinderea și testarea vizibilității în AI — 49 € fiecare.",
+          "Creare website — website de prezentare cu 5 pagini și suport pentru Profilul de afacere Google — 99 €.",
+          "Audit tehnic AI Visibility — verificare tehnică după protocoalele documentate (AVL-203, AVL-204), cu raport și recomandări; inclus în programele complete — 29 € (în pregătire).",
+          "Articol individual — 800–1200 de cuvinte pentru un website existent — 19 € / articol (în pregătire).",
+          "Studiu și monitorizare de industrie — baseline, 6 măsurători lunare și studiu final — 999 € / 6 luni (în pregătire).",
+          "Ghidare pentru înființarea formei juridice — orientare PFA / SRL, coduri CAEN, checklisturi; nu înlocuiește consultanța juridică sau fiscală — 99 € / plată unică.",
+        ],
+      },
+      {
+        eyebrow: "Numele",
+        content:
+          "Ichnometria pornește de la două rădăcini: ichnos (urmă, traseu, amprentă) și metron (măsură). Forma contemporană a brandului adaugă un al treilea sens, intenționat: IA, inteligența artificială. Semnul I—χ—A rezumă metoda: urmă → măsurare → inteligență artificială.\n\nNumele are și o tradiție reală: în secolul al XVIII-lea, matematicianul și cartograful Johann Jakob Marinoni scria despre măsurarea și reprezentarea terenului. Ichnometria contemporană pune aceeași întrebare — cum transformăm realitatea într-o reprezentare măsurabilă? — pentru urmele informaționale ale entităților.",
+      },
+      {
+        eyebrow: "Status",
+        content:
+          "Ichnometria este activă: site-ul ichnometria.ro este online, cu metoda, serviciile și prețurile publicate, iar serviciile se adresează afacerilor din toată România, pornind din Sibiu.\n\nSite-ul este încă într-o etapă demonstrativă: formularul de contact nu trimite date, programarea discuțiilor nu este activată, iar plățile și comenzile online nu sunt încă deschise. Auditul tehnic, articolul individual și studiul de industrie sunt marcate „în pregătire”. Registrul public Ichnometria Fieldwork nu conține încă proiecte aprobate pentru publicare.",
+      },
+    ],
+    faq: [
+      {
+        question: "Care e diferența dintre Ichnometria și AI Visibility Lab?",
+        answer:
+          "AI Visibility Lab este mediul de cercetare: publică metodologia, măsurătorile, studiile de caz și dovezile, pe delamatescu.ro/lab. Ichnometria este metodologia aplicată și sistemul comercial: oferă servicii GEO, AEO și AI Visibility pentru afaceri, pe ichnometria.ro. Sunt entități distincte, fondate și coordonate amândouă de Alex Matescu.",
+      },
+      {
+        question:
+          "Garantează Ichnometria apariția în ChatGPT, Gemini sau Google?",
+        answer:
+          "Nu. Nicio intervenție nu garantează apariția, citarea sau recomandarea într-un sistem AI proprietar. Ichnometria măsoară și modifică factorii public observabili asupra cărora se poate interveni și remăsoară rezultatul pe aceleași întrebări.",
+      },
+      {
+        question: "Unde lucrează Ichnometria?",
+        answer:
+          "Primele proiecte se dezvoltă în Sibiu, iar serviciile de audit, GEO, AEO, AI Visibility, monitorizare și cercetare sunt disponibile pentru colaborări la nivel național.",
+      },
+      {
+        question: "Cum iau legătura cu Ichnometria?",
+        answer:
+          "Pagina de contact a Ichnometria este ichnometria.ro/contact. Cât timp formularul și programarea de acolo nu sunt activate, Alex Matescu poate fi contactat prin pagina de contact de pe delamatescu.ro.",
+      },
+    ],
+    related: [],
   },
   {
     slug: "ovb",

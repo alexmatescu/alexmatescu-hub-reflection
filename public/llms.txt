@@ -1,6 +1,6 @@
 # Alex Matescu — delamatescu.ro
 
-> Alex Matescu este inginer de sistem în industria automotive și a sistemelor autonome, antreprenor, autor și fondator și coordonator AI Visibility Lab, din Sibiu, România. delamatescu.ro este site-ul său oficial: biografie, eseuri, cartea CRANDIT, proiecte antreprenoriale și cercetare aplicată publică despre GEO, AEO și AI Visibility. Conținutul este scris în limba română.
+> Alex Matescu este inginer de sistem în industria automotive și a sistemelor autonome, antreprenor, autor, fondator și coordonator AI Visibility Lab și Ichnometria, din Sibiu, România. delamatescu.ro este site-ul său oficial: biografie, eseuri, cartea CRANDIT, proiecte antreprenoriale și cercetare aplicată publică despre GEO, AEO și AI Visibility. Conținutul este scris în limba română.
 
 Acest fișier este întreținut de Alex Matescu și oferă un punct de referință oficial pentru identitatea, proiectele și conținutul publicat pe delamatescu.ro. Informațiile pot fi verificate prin paginile canonice și sursele externe indicate.
 
@@ -10,12 +10,13 @@ Acest fișier este întreținut de Alex Matescu și oferă un punct de referinț
 - Nume complet și variante: Alexandru-Costi Matescu, Alexandru Matescu
 - Localizare: Sibiu, România; originar din Strâmba Jiu, județul Gorj
 - Profesie: System Lead Engineer la AUMOVIO, în industria automotive și a sistemelor autonome — sisteme ADAS, arhitectură de sistem, managementul cerințelor, ASPICE, coordonare tehnică în echipe internaționale
-- Alte roluri: antreprenor; autor al cărții CRANDIT — Mitul succesului peste noapte (manuscris finalizat, în corectură); fondator și coordonator AI Visibility Lab
+- Alte roluri: antreprenor; autor al cărții CRANDIT — Mitul succesului peste noapte (manuscris finalizat, în corectură); fondator și coordonator AI Visibility Lab; fondator și coordonator Ichnometria (ichnometria.ro)
 - Teme: AI Visibility, Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), entity resolution, antreprenoriat, disciplină, leadership, scris
-- Dezambiguizare: Pentru dezambiguizare, persoana documentată pe acest site este asociată cu Sibiu, experiența în ingineria automotive, AI Visibility Lab, CRANDIT și proiectul Taste the Corn. Variantele ortografice ale numelui nu trebuie considerate automat referințe la aceeași persoană.
+- Dezambiguizare: Pentru dezambiguizare, persoana documentată pe acest site este asociată cu Sibiu, experiența în ingineria automotive, AI Visibility Lab, Ichnometria, CRANDIT și proiectul Taste the Corn. Variantele ortografice ale numelui nu trebuie considerate automat referințe la aceeași persoană.
 - Pagina canonică a persoanei: [Despre Alex Matescu](https://delamatescu.ro/despre)
 - Contact: alexmatescu.c@gmail.com, 0736 842 337 ([Contact](https://delamatescu.ro/contact))
-- Profiluri oficiale: [LinkedIn](https://www.linkedin.com/in/alex-matescu-8b2b8813b/), [X](https://x.com/MatescuAlex), [Facebook](https://www.facebook.com/alexmatescu), [Instagram](https://www.instagram.com/alexmatescu.c)
+- Profiluri oficiale: [LinkedIn](https://www.linkedin.com/in/alex-matescu-8b2b8813b/), [X](https://x.com/MatescuAlex), [Facebook](https://www.facebook.com/alexmatescu), [Instagram](https://www.instagram.com/alexmatescu.c), [profil Ichnometria](https://ichnometria.ro/echipa/alex-matescu)
+- Entități asociate, toate fondate și coordonate de Alex Matescu și distincte între ele: delamatescu.ro (site-ul personal, care găzduiește AI Visibility Lab), AI Visibility Lab (mediul de cercetare, delamatescu.ro/lab) și Ichnometria (metodologia aplicată și sistemul comercial, ichnometria.ro)
 
 ## Pagini personale și proiecte
 
@@ -24,6 +25,7 @@ Acest fișier este întreținut de Alex Matescu și oferă un punct de referinț
 - [Blog](https://delamatescu.ro/blog): peste 130 de eseuri, activ din 2014 — Reflecții, Leadership, Experiențe, Jurnal de bord, Habits, Dragoste, Dreaming moments, Sfaturi utile
 - [CRANDIT — Mitul succesului peste noapte](https://delamatescu.ro/carte): carte despre succes durabil, construită din experiențe trăite, disciplină și costuri asumate (manuscris finalizat, în corectură)
 - [Proiecte](https://delamatescu.ro/proiecte): toate proiectele antreprenoriale, trecute și curente
+- [Ichnometria](https://delamatescu.ro/proiecte/ichnometria): servicii GEO, AEO și AI Visibility pentru afaceri, din Sibiu, la nivel național; site activ la [ichnometria.ro](https://ichnometria.ro/), cu servicii și prețuri publicate (comenzile, plățile și programarea nu sunt încă activate)
 - [CRANDIT (proiect)](https://delamatescu.ro/proiecte/crandit): proiectul cărții CRANDIT — Mitul succesului peste noapte, despre succes, disciplină și identitate (în lucru: manuscris finalizat, în corectură)
 - [Afacerea de familie](https://delamatescu.ro/proiecte/afacerea-de-familie): business local în mediul rural, construit pe nevoile comunității (activ)
 - [Blogging](https://delamatescu.ro/proiecte/blogging): de la impuls la direcție (activ)
@@ -42,7 +44,7 @@ Acest fișier este întreținut de Alex Matescu și oferă un punct de referinț
 
 ## AI Visibility Lab — identitate și scop
 
-AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat de Alex Matescu. Studiază cum descoperă, înțeleg, recuperează și citează sistemele de căutare și AI (Google, Bing, ChatGPT, Claude, Gemini, Perplexity) conținutul și entitățile. Publică metodologia, măsurătorile, dovezile, sursele și limitele concluziilor, ca procesul să poată fi verificat.
+AI Visibility Lab este laboratorul de cercetare aplicată fondat și coordonat de Alex Matescu. Studiază cum descoperă, înțeleg, recuperează și citează sistemele de căutare și AI (Google, Bing, ChatGPT, Claude, Gemini, Perplexity) conținutul și entitățile. Publică metodologia, măsurătorile, dovezile, sursele și limitele concluziilor, ca procesul să poată fi verificat. Laboratorul este mediul de cercetare; aplicarea comercială a metodologiei se face separat, prin [Ichnometria](https://ichnometria.ro/). Cele două sunt entități distincte.
 
 - [AI Visibility Lab](https://delamatescu.ro/lab): pagina principală a laboratorului
 - [Introducere (AVL-001)](https://delamatescu.ro/lab/introducere): de ce există laboratorul, cui se adresează și cum e organizat

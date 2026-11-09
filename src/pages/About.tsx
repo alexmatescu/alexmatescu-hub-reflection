@@ -35,6 +35,11 @@ const mainProjects = [
     to: "/lab",
   },
   {
+    name: "Ichnometria",
+    desc: "Servicii GEO, AEO și AI Visibility pentru afaceri, din Sibiu — aplicarea comercială a metodologiei, ichnometria.ro (activ)",
+    to: "/proiecte/ichnometria",
+  },
+  {
     name: "Blogging",
     desc: "delamatescu.ro — scris constant din 2014, relansat în 2025",
     to: "/blog",
@@ -252,6 +257,18 @@ const About = () => {
                   — proiect independent de cercetare aplicată și documentare în
                   AI Visibility, GEO și AEO.
                 </li>
+                <li>
+                  Fondator și coordonator{" "}
+                  <Link
+                    to="/proiecte/ichnometria"
+                    className="link-underline text-foreground"
+                  >
+                    Ichnometria
+                  </Link>{" "}
+                  — servicii GEO, AEO și AI Visibility pentru afaceri, din
+                  Sibiu: metodologia aplicată și sistemul comercial, distinct de
+                  AI Visibility Lab.
+                </li>
               </ul>
             </div>
             <div>
@@ -403,7 +420,9 @@ const About = () => {
           </p>
           <p>
             Printre proiectele dezvoltate se numără Atracțiile României, Taste
-            the Corn și AI Visibility Lab.
+            the Corn, AI Visibility Lab și Ichnometria. Lab-ul este mediul de
+            cercetare; Ichnometria aplică metodologia pentru afaceri, ca sistem
+            comercial separat.
           </p>
           <p>
             În 2026 am trecut de la studiul sistematic al GEO/AEO la aplicarea
@@ -528,12 +547,16 @@ const About = () => {
           </p>
           <ul>
             <li>
-              corectura manuscrisului și construirea comunității în jurul
-              cărții CRANDIT;
+              corectura manuscrisului și construirea comunității în jurul cărții
+              CRANDIT;
             </li>
             <li>
               dezvoltarea AI Visibility Lab prin cercetare aplicată, măsurători,
               optimizări GEO/AEO și publicarea de studii de caz;
+            </li>
+            <li>
+              lansarea Ichnometria, care aplică metodologia GEO, AEO și AI
+              Visibility pentru afaceri din toată România;
             </li>
             <li>
               scrisul constant pe blogul delamatescu.ro, relansat în 2025;

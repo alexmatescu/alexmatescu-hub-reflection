@@ -10,7 +10,7 @@ export const Route = createFileRoute("/_site/proiecte/")({
     buildSeoHead({
       title: "Proiecte — Alex Matescu",
       description:
-        "Portofoliul lui Alex Matescu: CRANDIT, AI Visibility Lab, afaceri de familie și experimente antreprenoriale, active sau închise, construite în timp.",
+        "Portofoliul lui Alex Matescu: CRANDIT, AI Visibility Lab, Ichnometria, afaceri de familie și experimente antreprenoriale, active sau închise, construite în timp.",
       canonical: `${BASE}/proiecte`,
     }),
 });

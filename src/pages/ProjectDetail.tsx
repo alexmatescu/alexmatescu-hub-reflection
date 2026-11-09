@@ -101,6 +101,18 @@ const ProjectDetail = () => {
           {project.description}
         </p>
 
+        {project.website && (
+          <a
+            href={project.website.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 h-12 px-6 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-primary/90 transition-colors"
+          >
+            Vizitează {project.website.label}{" "}
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        )}
+
         {project.metadata && (
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-foreground/10 pt-10">
             {project.metadata.perioada && (
@@ -153,6 +165,16 @@ const ProjectDetail = () => {
                     <div className="whitespace-pre-line leading-relaxed">
                       {section.content}
                     </div>
+                  )}
+                  {section.image && (
+                    <figure className="my-10 not-prose">
+                      <img
+                        src={section.image.src}
+                        alt={section.image.alt}
+                        className="w-full max-w-xl mx-auto"
+                        loading="lazy"
+                      />
+                    </figure>
                   )}
                   {section.items && (
                     <ul className="space-y-4 list-none p-0">

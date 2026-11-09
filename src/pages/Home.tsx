@@ -6,8 +6,6 @@ import { posts } from "@/data/posts";
 import { projects } from "@/data/projects";
 
 const cranditCover = "/images/blog/crandit-cover.webp";
-const tasteTheCornLogo = "/images/blog/taste-the-corn-logo.webp";
-const ovbLogo = "/images/blog/ovb-logo.webp";
 const aiVisibilityHero = "/images/blog/ai-visibility-hero.webp";
 
 const statusTone: Record<string, string> = {
@@ -102,9 +100,10 @@ const Home = () => {
             <p className="font-serif text-2xl md:text-3xl leading-relaxed text-balance">
               Sunt Alex Matescu: inginer prin formație, scriitor prin practică,
               antreprenor prin experiment. Construiesc proiecte personale precum
-              cartea CRANDIT, Taste the Corn, AI Visibility Lab, Atracțiile
-              României, afacerea de familie, afacerea cu haine, și blogging.
-              Scriu despre ce văd la întâlnirea dintre tehnologie, muncă și om.
+              cartea CRANDIT, AI Visibility Lab, Ichnometria, Taste the Corn,
+              Atracțiile României, afacerea de familie, afacerea cu haine și
+              blogging. Scriu despre ce văd la întâlnirea dintre tehnologie,
+              muncă și om.
             </p>
           </div>
         </div>
@@ -201,6 +200,69 @@ const Home = () => {
         </div>
       </section>
 
+      {/* CERCETARE ȘI APLICARE — cele trei entități */}
+      <section className="border-b border-foreground/10">
+        <div className="container-editorial py-20 md:py-28">
+          <div className="mb-12 max-w-3xl">
+            <p className="eyebrow mb-4">Cercetare și aplicare</p>
+            <h2 className="font-serif text-3xl md:text-5xl tracking-tight text-balance">
+              Trei entități, roluri diferite, același fondator.
+            </h2>
+            <p className="mt-4 text-muted-foreground text-[15px] leading-relaxed">
+              Scriu aici, cercetez în AI Visibility Lab și aplic metodologia
+              pentru afaceri prin Ichnometria. Sunt entități distincte: părți
+              din metodologia Ichnometria au fost dezvoltate și testate în
+              laborator, dar Ichnometria nu îl înlocuiește.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-px bg-foreground/10 border border-foreground/10">
+            {[
+              {
+                eyebrow: "Site personal",
+                name: "delamatescu.ro",
+                text: "Biografie, scris, cartea CRANDIT și proiecte. Aici se publică și AI Visibility Lab.",
+                to: "/despre",
+                cta: "Despre mine",
+              },
+              {
+                eyebrow: "Cercetare",
+                name: "AI Visibility Lab",
+                text: "Mediul de cercetare: metodologie publică, măsurători, experimente, studii de caz și dovezi verificabile.",
+                to: "/lab",
+                cta: "Intră în Lab",
+              },
+              {
+                eyebrow: "Aplicare comercială",
+                name: "Ichnometria",
+                text: "Servicii GEO, AEO și AI Visibility pentru afaceri, din Sibiu, la nivel național. Site activ: ichnometria.ro.",
+                to: "/proiecte/ichnometria",
+                cta: "Vezi Ichnometria",
+              },
+            ].map((e) => (
+              <Link
+                key={e.name}
+                to={e.to}
+                className="group bg-background p-8 md:p-10 flex flex-col gap-4 hover:bg-surface transition-colors duration-500"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                  {e.eyebrow}
+                </p>
+                <h3 className="font-serif text-3xl leading-tight group-hover:text-primary transition-colors">
+                  {e.name}
+                </h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed flex-1">
+                  {e.text}
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm">
+                  {e.cta}{" "}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROJECT HIGHLIGHTS */}
       <section className="container-editorial py-20 md:py-28">
         <div className="mb-12 max-w-2xl">
@@ -218,6 +280,7 @@ const Home = () => {
         <div className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10">
           {[
             projects.find((p) => p.slug === "geo-ai-visibility"),
+            projects.find((p) => p.slug === "ichnometria"),
             projects.find((p) => p.slug === "taste-the-corn"),
             projects.find((p) => p.slug === "ovb"),
             projects.find((p) => p.slug === "atractiile-romaniei"),
@@ -256,10 +319,10 @@ const Home = () => {
                     />
                   </div>
                 )}
-                {(p!.slug === "taste-the-corn" || p!.slug === "ovb") && (
+                {p!.logo && (
                   <div className="w-24 h-24 rounded-2xl overflow-hidden border border-foreground/10 shadow-xs bg-white">
                     <img
-                      src={p!.slug === "ovb" ? ovbLogo : tasteTheCornLogo}
+                      src={p!.logo}
                       alt={`Logo ${p!.title}${p!.slug === "taste-the-corn" ? " — N-ai cum să-i spui nu" : ""}`}
                       className="w-full h-full object-contain"
                       loading="lazy"
@@ -296,6 +359,8 @@ const Home = () => {
                 <p className="text-sm text-foreground/80 leading-relaxed border-l-2 border-primary/30 pl-4">
                   {p!.slug === "geo-ai-visibility" &&
                     "Răspuns: cum optimizezi prezența unui brand când răspunsul nu mai este o listă de linkuri."}
+                  {p!.slug === "ichnometria" &&
+                    "Aplicare: de la urmă la măsură, de la măsură la intervenție și de la intervenție la remăsurare."}
                   {p!.slug === "taste-the-corn" &&
                     "Lecție: o idee bună are nevoie de un sistem clar în spate; marketingul și oamenii fac diferența."}
                   {p!.slug === "ovb" &&

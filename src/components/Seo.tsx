@@ -29,6 +29,7 @@ export const alexMatescuPerson = {
   jobTitle: [
     "System Lead Engineer",
     "Fondator și coordonator AI Visibility Lab",
+    "Fondator și coordonator Ichnometria",
   ],
   worksFor: {
     "@type": "Organization",
@@ -37,7 +38,7 @@ export const alexMatescuPerson = {
   email: "alexmatescu.c@gmail.com",
   telephone: "+40736842337",
   description:
-    "Alex Matescu este inginer, antreprenor, fondator și coordonator AI Visibility Lab și autor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
+    "Alex Matescu este inginer, antreprenor, fondator și coordonator AI Visibility Lab și Ichnometria și autor din Sibiu, România. Scrie și construiește proiecte despre muncă, tehnologie, AI Visibility, disciplină, antreprenoriat și sens.",
   homeLocation: {
     "@type": "Place",
     name: "Sibiu, România",
@@ -59,6 +60,7 @@ export const alexMatescuPerson = {
     "https://x.com/MatescuAlex",
     "https://www.facebook.com/alexmatescu",
     "https://www.instagram.com/alexmatescu.c",
+    "https://ichnometria.ro/echipa/alex-matescu",
   ],
 } as const;
 
