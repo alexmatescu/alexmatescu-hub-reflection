@@ -13,7 +13,7 @@ export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
   category: "Entities & Citations",
   articleType: "Analiză",
   datePublished: "2026-08-14",
-  dateModified: "2026-10-02",
+  dateModified: "2026-11-09",
   lastReviewed: "2026-10-02",
   about: [
     { name: "AI visibility" },
@@ -122,7 +122,7 @@ export const socialMediaVizibilitateAiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const socialMediaVizibilitateAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-10-02">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-02">2 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-14">14 august 2026</time> · Actualizat: <time datetime="2026-11-09">9 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-02">2 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -466,7 +466,7 @@ export const socialMediaVizibilitateAiHtml = `
 
       <p>Nu există un mecanism public prin care cineva să poată garanta o anumită apariție organică în ChatGPT, Gemini, Claude sau Perplexity. În prezent, pentru răspunsurile organice ale principalelor sisteme AI, <strong>nu există o „poziție” universală, stabilă și comparabilă cu rankingul clasic SEO</strong>. Această afirmație trebuie reverificată dacă apar produse de placement, ranking explicit sau mecanisme comerciale noi.</p>
 
-      <p>Piața GEO/AEO din România poate fi descrisă mai sigur ca <strong>emergentă și fără standarde profesionale consolidate</strong>, nu ca „neocupată”. Vizibilitatea propriului consultant în sistemele AI poate fi un indiciu suplimentar, dar nu este un test definitiv al competenței. Criteriile după care AI Visibility Lab va delimita și va măsura această piață sunt publicate în <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a>, ca draft pentru revizuire.</p>
+      <p>Piața GEO/AEO din România poate fi descrisă mai sigur ca <strong>emergentă și fără standarde profesionale consolidate</strong>, nu ca „neocupată”. Vizibilitatea propriului consultant în sistemele AI poate fi un indiciu suplimentar, dar nu este un test definitiv al competenței. Criteriile după care AI Visibility Lab va delimita și va măsura această piață sunt publicate în <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a>, activ din 9 noiembrie 2026 (v1.0.0).</p>
 
       <h2 id="intrebari-frecvente">Întrebări frecvente</h2>
 

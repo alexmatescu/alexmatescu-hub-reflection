@@ -8,7 +8,7 @@ documentației
 | **Document ID** | AVL-001 |
 |----|----|
 | **Nivel** | A — Foundation |
-| **Versiune** | 1.5.0 |
+| **Versiune** | 1.6.0 |
 | **Statut** | Activ |
 | **Autor** | Alex Matescu |
 | **Organizație** | AI Visibility Lab |
@@ -743,7 +743,7 @@ suficiente dovezi pentru confirmare.
 
 - familia Market Measurement (`AVL-MKT-*`): [AVL-MKT-001 — Market Scope &
   Eligibility Protocol](/lab/metodologie/protocol-delimitare-piata-eligibilitate)
-  (Draft pentru revizuire, v0.11.0) și AVL-MKT-002 — Market Query Panel
+  (Activ, v1.0.0) și AVL-MKT-002 — Market Query Panel
   (planificat)
 
 - documentele ulterioare dedicate etapelor sursei canonice, prezenței distribuite și re-măsurării
@@ -791,7 +791,7 @@ metodologice. Documentele familiei sunt:
 
 - [AVL-MKT-001 — Market Scope & Eligibility
   Protocol](/lab/metodologie/protocol-delimitare-piata-eligibilitate)
-  (publicat ca Draft pentru revizuire, v0.11.0);
+  (Activ, v1.0.0);
 
 - AVL-MKT-002 — Market Query Panel (planificat, nepublicat).
 
@@ -840,7 +840,7 @@ Tokenul de domeniu `AIV` (AI Visibility) este propus pentru piața
 serviciilor GEO, AEO și AI Visibility, deoarece acoperă întregul
 domeniu, nu doar una dintre practicile lui. Un token precum `GEO` ar
 exclude implicit AEO și, plasat după codul de țară, ar putea fi citit
-ca referință geografică. Exemplele de mai sus sunt ilustrative. La data versiunii 1.5.0 nu a fost creată nicio instanță `MKT-*`. Au fost rulați cinci piloți Market Discovery (`MKT-RO-AIV-2026Q4-PILOT` … `MKT-RO-AIV-2026Q4-PILOT-5`; `-PILOT-4` a fost declarat invalid) și pilotul de Market Verification (`MKT-RO-AIV-2026Q4-PILOT-MVR`), care nu sunt rulări ale instanței.
+ca referință geografică. Exemplele de mai sus sunt ilustrative. La data versiunii 1.6.0 nu a fost creată nicio instanță `MKT-*`; prima, `MKT-RO-AIV-2026Q4`, va fi rulată în decembrie 2026, sub AVL-MKT-001 v1.0.0. Au fost rulați cinci piloți Market Discovery (`MKT-RO-AIV-2026Q4-PILOT` … `MKT-RO-AIV-2026Q4-PILOT-5`; `-PILOT-4` a fost declarat invalid) și pilotul de Market Verification (`MKT-RO-AIV-2026Q4-PILOT-MVR`), acceptat ca pilot intern al protocolului; niciunul nu este rulare a instanței.
 
 ## Nivelul D — Experiments
 
@@ -912,7 +912,7 @@ O observație sau ipoteză nu trebuie citată ca informație confirmată
 oficial.
 
 Citarea recomandată: Matescu, Alex. „AI Visibility Lab Foundation”. AI
-Visibility Lab Documentation, AVL-001, versiunea 1.5.0, 2026.
+Visibility Lab Documentation, AVL-001, versiunea 1.6.0, 2026.
 
 # 19. Versiuni, revizuiri și corecții
 
@@ -1086,10 +1086,14 @@ Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K.
 
 - AVL-202 — Cadrul metodologic AI Visibility Lab
 
-- AVL-MKT-001 — Market Scope & Eligibility Protocol (Draft pentru
-  revizuire, v0.11.0)
+- AVL-MKT-001 — Market Scope & Eligibility Protocol (Activ,
+  v1.0.0)
 
 # 25. Istoricul versiunilor
+
+## Versiunea 1.6.0 — 9 noiembrie 2026
+
+MINOR: §17 aliniat la activarea AVL-MKT-001 v1.0.0 (9 noiembrie 2026): statutul și versiunea protocolului sunt actualizate în listele de documente, iar starea seriei consemnează pilotul de Market Verification acceptat ca pilot intern și prima rulare oficială a instanței `MKT-RO-AIV-2026Q4`, în decembrie 2026. Niciun identificator existent nu a fost modificat.
 
 ## Versiunea 1.5.0 — 9 noiembrie 2026
 

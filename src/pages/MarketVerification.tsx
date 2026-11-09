@@ -35,10 +35,10 @@ const PilotNotice = () => (
       <Link to={MD_PROTOCOL_PATH} className="underline underline-offset-4">
         AVL-MKT-001
       </Link>{" "}
-      e încă draft, iar un pilot nu constituie Market Reference Set (§13.2,
-      §21.6). Cele {mvPilot.totals.byStatus.ELIGIBLE} intrări{" "}
-      <code className="text-[13px]">ELIGIBLE</code> sunt setul eligibil al
-      pilotului, nu populația oficială a pieței.
+      nu consideră un pilot Market Reference Set (§13.2, §21.6), iar pilotul s-a
+      făcut sub versiunea draft 0.10.0. Cele {mvPilot.totals.byStatus.ELIGIBLE}{" "}
+      intrări <code className="text-[13px]">ELIGIBLE</code> sunt setul eligibil
+      al pilotului, nu populația oficială a pieței.
     </p>
     <p>
       Statusul nu e certificare, recomandare comercială sau clasament, iar
@@ -444,8 +444,10 @@ export const MarketVerificationPilot = () => {
             <p>
               Prima trecere prin listă a fost o propunere. Statusurile finale
               le-a stabilit și confirmat Alex Matescu, pentru toate intrările.
-              Regulile se evaluează pentru includerea în protocol înainte de
-              AVL-MKT-001 v1.0.0.
+              AVL-MKT-001 v1.0.0, activ din 9 noiembrie 2026, a preluat regulile
+              2–4. Pentru prima rulare oficială a schimbat regula 1: serviciul
+              trebuie descris pe o pagină în limba română și trebuie să se vadă
+              în HTML-ul brut salvat, altfel entitatea e UNVERIFIED.
             </p>
           </div>
         </div>
@@ -558,12 +560,13 @@ export const MarketVerificationPilot = () => {
           >
             <p>
               <strong className="text-foreground">Deviații.</strong> (1) Pilotul
-              s-a făcut sub AVL-MKT-001 0.10.0, versiune draft; pilotul intern
-              pe cazuri-limită nu a fost executat ca etapă separată. (2)
-              Candidații vin din piloturile Market Discovery, nu dintr-o rulare
-              completă (<code>FULL</code>). (3) Deciziile privind o entitate
-              afiliată autorului nu au fost verificate de o terță parte, pentru
-              că nu există o terță parte care să o poată face (
+              s-a făcut sub AVL-MKT-001 0.10.0, versiune draft; a fost acceptat
+              ulterior ca pilot intern al protocolului, fără cazuri HISTORICAL
+              și fără entitatea afiliată autorului. (2) Candidații vin din
+              piloturile Market Discovery, nu dintr-o rulare completă (
+              <code>FULL</code>). (3) Deciziile privind o entitate afiliată
+              autorului nu au fost verificate de o terță parte, pentru că nu
+              există o terță parte care să o poată face (
               <Link
                 to={PROTOCOL_ANCHOR("14-conflict-de-interese")}
                 className="underline underline-offset-4 hover:text-foreground"
@@ -666,10 +669,11 @@ export const MarketVerificationPilot = () => {
               operatorul nu influențează statusul (REQ-032).
             </p>
             <p>
-              Pilotul a schimbat deja protocolul: AVL-MKT-001 v0.11.0 definește
-              forma dovezii (§7.3) și identificatorii (§21.6). Prima rulare
+              Pilotul a schimbat protocolul: AVL-MKT-001 v0.11.0 a definit forma
+              dovezii (§7.3) și identificatorii (§21.6), iar v1.0.0, activ din 9
+              noiembrie 2026, a preluat regulile pilotului. Prima rulare
               oficială a instanței, Market Discovery completă și Market
-              Verification, urmează după activarea AVL-MKT-001 v1.0.0.
+              Verification, are loc în decembrie 2026.
             </p>
           </SectionHead>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">

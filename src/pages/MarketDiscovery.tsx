@@ -1203,7 +1203,7 @@ const RunFacts = ({ run }: { run: MdRun }) => {
         to={MD_PROTOCOL_PATH}
         className="underline underline-offset-4"
       >
-        AVL-MKT-001 (draft)
+        AVL-MKT-001 (draft la data rulării)
       </Link>,
     ],
     ["Operator", "Alex Matescu"],
@@ -1668,8 +1668,8 @@ export const MarketDiscoveryHub = () => {
               </Link>
               <p className="text-xs text-muted-foreground max-w-md">
                 E un pilot: setul eligibil nu e încă Market Reference Set-ul
-                pieței și nu e un clasament. Prima rulare oficială urmează după
-                AVL-MKT-001 v1.0.0.
+                pieței și nu e un clasament. AVL-MKT-001 v1.0.0 e activ din 9
+                noiembrie 2026; prima rulare oficială are loc în decembrie 2026.
               </p>
             </div>
           </div>
@@ -1901,8 +1901,9 @@ export const MarketDiscoveryHub = () => {
               cifrele.
             </p>
             <p>
-              <strong className="text-foreground">Statut.</strong> Până la
-              activarea AVL-MKT-001 v1.0.0, orice rulare se declară pilot.{" "}
+              <strong className="text-foreground">Statut.</strong> Rulările de
+              până acum s-au făcut înainte de activarea AVL-MKT-001 v1.0.0 (9
+              noiembrie 2026) și sunt piloți.{" "}
               <Link
                 to={MV_PILOT_PATH}
                 className="underline underline-offset-4 hover:text-foreground"
@@ -1910,10 +1911,11 @@ export const MarketDiscoveryHub = () => {
                 Pilotul de Market Verification
               </Link>{" "}
               a fost publicat pe 9 noiembrie 2026. Prima rulare oficială (Market
-              Discovery completă și Market Verification) urmează după activarea
-              AVL-MKT-001 v1.0.0. Seria e gândită ca măsurare repetată: o rulare
-              completă pe trimestru și un subset lunar, fiecare cu pagina ei
-              aici. Ultima actualizare: {formatMdDate(MV_PILOT_DATE_PUBLISHED)}.
+              Discovery completă și Market Verification) are loc în decembrie
+              2026, sub AVL-MKT-001 v1.0.0. Seria e gândită ca măsurare
+              repetată: o rulare completă pe trimestru și un subset lunar,
+              fiecare cu pagina ei aici. Ultima actualizare:{" "}
+              {formatMdDate(MV_PILOT_DATE_PUBLISHED)}.
             </p>
           </SectionHead>
         </div>

@@ -13,7 +13,7 @@ export const cumAlegiFurnizorulDeServiciiMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Ghid",
   datePublished: "2026-11-03T09:20:00+02:00",
-  dateModified: "2026-11-03",
+  dateModified: "2026-11-09",
   lastReviewed: "2026-11-03",
   image: {
     url: "https://delamatescu.ro/images/lab/cum-aleg-furnizorul-de-servicii.webp",
@@ -54,7 +54,7 @@ export const cumAlegiFurnizorulDeServiciiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const cumAlegiFurnizorulDeServiciiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-11-03T09:20:00+02:00">3 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-11-03">3 noiembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-11-03T09:20:00+02:00">3 noiembrie 2026</time> · Actualizat: <time datetime="2026-11-09">9 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-11-03">3 noiembrie 2026</time></p>
 
       <figure>
         <img src="/images/lab/cum-aleg-furnizorul-de-servicii.webp" alt="Într-un birou din Sibiu, o antreprenoare indică sursa unei recomandări AI de pe laptop. Consultantul din fața ei ține palma deschisă, repetând gestul creatorului de pe ecranul YouTube din fundal." width="1672" height="941" loading="lazy" />
@@ -166,7 +166,7 @@ export const cumAlegiFurnizorulDeServiciiHtml = `
 
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
-      <p>Ofertele și precizările de pe site-ul Acquisition.com se pot schimba. AVL-MKT-001 este un draft pentru revizuire, iar criteriile lui pot fi versionate până la 1.0.0. Informațiile au fost verificate la 3 noiembrie 2026.</p>
+      <p>Ofertele și precizările de pe site-ul Acquisition.com se pot schimba. AVL-MKT-001 este activ din 9 noiembrie 2026 (v1.0.0), iar orice schimbare a criteriilor lui se publică într-o versiune nouă. Informațiile au fost verificate la 3 noiembrie 2026.</p>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 3 noiembrie 2026.</em></p>
 `;

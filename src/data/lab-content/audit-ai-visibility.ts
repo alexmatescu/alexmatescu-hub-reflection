@@ -84,7 +84,7 @@ export const auditAiVisibilityHtml = `
 
 <p>Identificăm sursele efectiv afișate la interogările testate și distingem sursa oficială de agregatoare, publicații, directoare sau alte pagini. Atunci când auditul include comparație competitivă, definim separat cine intră în categoria de furnizori relevanți, înainte să interpretăm recomandările AI. <strong>Faptul că un nume apare într-un răspuns AI nu dovedește că este un furnizor real ori eligibil.</strong></p>
 
-<p>Pentru această delimitare folosim principiile publice ale <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001</a>, aflat încă în revizuire; nu prezentăm acest draft ca protocol comercial certificat.</p>
+<p>Pentru această delimitare folosim principiile publice ale <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001</a>, activ din 9 noiembrie 2026 (v1.0.0); nu îl prezentăm ca protocol comercial certificat.</p>
 
 <h3 id="diagnostic">6. Diagnostic și prioritizarea intervențiilor</h3>
 
@@ -205,7 +205,7 @@ export const auditAiVisibilityHtml = `
   <li><a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a></li>
   <li><a href="/lab/metodologie/protocol-verificare-tehnica">AVL-203 — Protocolul minim de verificare tehnică (draft)</a></li>
   <li><a href="/lab/metodologie/grila-interpretare-verificare-tehnica">AVL-204 — Grila de interpretare a verificării tehnice (draft)</a></li>
-  <li><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility (draft)</a></li>
+  <li><a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</a></li>
   <li><a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener">Google Search Central — AI features and your website</a></li>
   <li><a href="https://developers.openai.com/api/docs/bots" rel="noopener">OpenAI — Overview of OpenAI Crawlers</a></li>
   <li><a href="https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/" rel="noopener">Microsoft Bing — AI Performance</a></li>

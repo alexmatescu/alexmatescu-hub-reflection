@@ -228,7 +228,7 @@ export const marketDiscoveryPilot4BolognaHtml = `
       <ol class="avl-footnotes">
         <li id="fn-1">AI Visibility Lab, <strong>MKT-RO-AIV-2026Q4-PILOT-4 — Discovery Evidence Package v1.0</strong>, release GitHub, publicat la 21 octombrie 2026. <a href="${RELEASE_URL}" target="_blank" rel="noopener noreferrer">github.com/alexmatescu/alexmatescu-hub-reflection/releases/tag/mkt-evidence-mkt-ro-aiv-2026q4-pilot-4-v1.0</a></li>
         <li id="fn-2">AI Visibility Lab, <strong>Pilotul 1 Market Discovery</strong>, pagina rulării. <a href="/lab/market-discovery/2026q4-pilot-1">/lab/market-discovery/2026q4-pilot-1</a></li>
-        <li id="fn-3">AI Visibility Lab, <strong>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</strong>, draft v0.11.0 (la publicarea articolului: v0.10.0). <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">/lab/metodologie/protocol-delimitare-piata-eligibilitate</a></li>
+        <li id="fn-3">AI Visibility Lab, <strong>AVL-MKT-001 — Market Scope &amp; Eligibility Protocol</strong>, v1.0.0, activ (la publicarea articolului: draft v0.10.0). <a href="/lab/metodologie/protocol-delimitare-piata-eligibilitate">/lab/metodologie/protocol-delimitare-piata-eligibilitate</a></li>
         <li id="fn-4">AI Visibility Lab, <strong>Pilotul 2 Market Discovery</strong>, pagina rulării. <a href="/lab/market-discovery/2026q4-pilot-2">/lab/market-discovery/2026q4-pilot-2</a></li>
       </ol>
 

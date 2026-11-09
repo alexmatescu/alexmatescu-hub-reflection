@@ -1,6 +1,6 @@
 export const avlMkt001MarketScopeEligibilityHtml = `
       <div class="avl-doc-card">
-        <p class="avl-doc-overline">Document sursă · Draft pentru revizuire</p>
+        <p class="avl-doc-overline">Document sursă · Activ</p>
         <p class="avl-doc-title">AVL-MKT-001 — Market Scope & Eligibility Protocol</p>
         <p class="avl-doc-lead">Protocolul de delimitare a pieței și de eligibilitate a furnizorilor</p>
 
@@ -10,13 +10,13 @@ export const avlMkt001MarketScopeEligibilityHtml = `
         <tr><th scope="row">Nivel</th><td>C — Methodology</td></tr>
         <tr><th scope="row">Familie</th><td>Market Measurement — <code>AVL-MKT-*</code></td></tr>
         <tr><th scope="row">Rol</th><td>protocol normativ de familie</td></tr>
-        <tr><th scope="row">Versiune</th><td>0.11.0</td></tr>
-        <tr><th scope="row">Statut</th><td>Draft pentru revizuire</td></tr>
+        <tr><th scope="row">Versiune</th><td>1.0.0</td></tr>
+        <tr><th scope="row">Statut</th><td>Activ</td></tr>
         <tr><th scope="row">Autor</th><td><a href="/despre">Alex Matescu</a></td></tr>
         <tr><th scope="row">Organizație</th><td><a href="/lab">AI Visibility Lab</a></td></tr>
         <tr><th scope="row">Data publicării</th><td>2 octombrie 2026</td></tr>
-        <tr><th scope="row">Ultima actualizare</th><td>8 noiembrie 2026</td></tr>
-        <tr><th scope="row">Ultima verificare</th><td>8 noiembrie 2026</td></tr>
+        <tr><th scope="row">Ultima actualizare</th><td>9 noiembrie 2026</td></tr>
+        <tr><th scope="row">Ultima verificare</th><td>9 noiembrie 2026</td></tr>
         <tr><th scope="row">Limbă</th><td>română</td></tr>
         <tr><th scope="row">URL canonic</th><td><a href="https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate">https://delamatescu.ro/lab/metodologie/protocol-delimitare-piata-eligibilitate</a></td></tr>
         <tr><th scope="row">Documente normative superioare</th><td><a href="/lab/introducere">AVL-001 — AI Visibility Lab Foundation</a>, <a href="/lab/metodologie">AVL-202 — Cadrul metodologic AI Visibility Lab</a></td></tr>
@@ -40,14 +40,22 @@ export const avlMkt001MarketScopeEligibilityHtml = `
               <li><a href="#3-3-prima-aplicare-planificata-exemplu-nu-regula">3.3. Prima aplicare planificată (exemplu, nu regulă)</a></li>
             </ol>
           </li>
-          <li><a href="#4-unitatea-de-analiza">4. Unitatea de analiză</a></li>
+          <li><a href="#4-unitatea-de-analiza">4. Unitatea de analiză</a>
+            <ol>
+              <li><a href="#4-1-o-entitate-un-operator">4.1. O entitate, un operator</a></li>
+            </ol>
+          </li>
           <li><a href="#5-familia-de-servicii">5. Familia de servicii</a>
             <ol>
               <li><a href="#5-1-echivalenta-functionala">5.1. Echivalența funcțională</a></li>
               <li><a href="#5-2-ce-nu-este-suficient-pentru-includere">5.2. Ce nu este suficient pentru includere</a></li>
             </ol>
           </li>
-          <li><a href="#6-clase-geografice">6. Clase geografice</a></li>
+          <li><a href="#6-clase-geografice">6. Clase geografice</a>
+            <ol>
+              <li><a href="#6-1-limba-pietei">6.1. Limba pieței</a></li>
+            </ol>
+          </li>
           <li><a href="#7-dovezile-de-eligibilitate">7. Dovezile de eligibilitate</a>
             <ol>
               <li><a href="#7-1-niveluri-de-dovezi">7.1. Niveluri de dovezi</a></li>
@@ -96,7 +104,7 @@ export const avlMkt001MarketScopeEligibilityHtml = `
           <li><a href="#surse-oficiale">Surse oficiale</a></li>
           <li><a href="#checklist-de-conformitate">Checklist de conformitate</a></li>
           <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
-          <li><a href="#decizii-deschise-inainte-de-1-0-0">Decizii deschise înainte de 1.0.0</a></li>
+          <li><a href="#decizii-deschise-inainte-de-1-0-0">Decizii închise la activarea 1.0.0</a></li>
         </ol>
       </nav>
 
@@ -108,17 +116,14 @@ export const avlMkt001MarketScopeEligibilityHtml = `
 
       <p>AVL-MKT-001 este primul document al familiei <strong>Market Measurement</strong> (<code>AVL-MKT-*</code>), o familie funcțională în interiorul Nivelului C — Methodology. Arhitectura familiei este descrisă în <a href="/lab/metodologie">AVL-202, secțiunea 14</a>; namespace-ul și identificatorii sunt definiți în <a href="/lab/introducere">AVL-001</a>.</p>
 
-      <p>Versiunea curentă, <strong>0.11.0</strong>, este un <strong>draft public pentru revizuire</strong>. Documentul nu este activ. Publicarea draftului are rolul unei pre-înregistrări publice: criteriile devin vizibile și datate înainte ca populația pieței să fie cunoscută. La data acestei versiuni:</p>
+      <p>Versiunea curentă, <strong>1.0.0</strong>, este <strong>activă</strong> din 9 noiembrie 2026. Draftul a fost publicat la 2 octombrie 2026 ca pre-înregistrare: criteriile au devenit vizibile și datate înainte ca populația pieței să fie cunoscută. Versiunea 1.0.0 preia rezultatele pilotului intern și închide deciziile deschise (secțiunea „Decizii închise la activarea 1.0.0”). La data acestei versiuni:</p>
 
       <ul>
         <li>au fost rulate cinci piloturi de Market Discovery (<code>MKT-RO-AIV-2026Q4-PILOT</code>, <code>-PILOT-2</code>, <code>-PILOT-3</code>, <code>-PILOT-4</code> și <code>-PILOT-5</code>); <code>-PILOT-4</code> a fost declarat invalid;</li>
-        <li>pilotul de Market Verification (27 octombrie – 8 noiembrie 2026) a evaluat cei 278 de candidați din reuniunea piloturilor Market Discovery; registrul lui, <code>MKT-RO-AIV-2026Q4-PILOT-MVR</code>, are 260 de entități și a fost înghețat la 8 noiembrie 2026; intrările lui <code>ELIGIBLE</code> nu constituie Market Reference Set (secțiunea 13.2);</li>
-        <li>pilotul intern pe cazuri-limită nu a fost executat ca etapă separată; pilotul de Market Verification a acoperit o parte dintre cazurile-limită (decizia 1);</li>
-        <li>nu a fost creată nicio instanță <code>MKT-*</code> și nu a fost constituit niciun Market Reference Set;</li>
+        <li>pilotul de Market Verification (27 octombrie – 8 noiembrie 2026), acceptat ca pilot intern, a evaluat cei 278 de candidați din reuniunea piloturilor Market Discovery; registrul lui, <code>MKT-RO-AIV-2026Q4-PILOT-MVR</code>, are 260 de entități și a fost înghețat la 8 noiembrie 2026; intrările lui <code>ELIGIBLE</code> nu constituie Market Reference Set (secțiunea 13.2);</li>
+        <li>prima instanță oficială, <code>MKT-RO-AIV-2026Q4</code>, va fi rulată în decembrie 2026 (secțiunea 3.3); niciun Market Reference Set nu a fost încă constituit;</li>
         <li>AVL-MKT-002 — Market Query Panel este planificat și nepublicat.</li>
       </ul>
-
-      <p>Punctele care trebuie închise înainte de versiunea 1.0.0 sunt listate în secțiunea „Decizii deschise înainte de 1.0.0”.</p>
 
       <p>În acest document, termenii <strong>TREBUIE</strong>, <strong>NU TREBUIE</strong>, <strong>ESTE OBLIGATORIU</strong>, <strong>AR TREBUI</strong>, <strong>NU AR TREBUI</strong> și <strong>POATE</strong> sunt utilizați în sensul convențiilor RFC 2119 și RFC 8174, adaptate în limba română:</p>
 
@@ -128,7 +133,7 @@ export const avlMkt001MarketScopeEligibilityHtml = `
         <li><strong>POATE</strong> — opțiune permisă.</li>
       </ul>
 
-      <p>În afara propozițiilor normative și a cerințelor identificate <code>AVLMKT001-REQ-*</code>, acești termeni nu trebuie interpretați automat ca cerințe de conformitate. Cât timp documentul are statutul „Draft pentru revizuire”, cerințele descriu regula propusă pentru versiunea 1.0.0 și se aplică pilotului intern.</p>
+      <p>În afara propozițiilor normative și a cerințelor identificate <code>AVLMKT001-REQ-*</code>, acești termeni nu trebuie interpretați automat ca cerințe de conformitate.</p>
 
       <h2 id="raspunsul-scurt">Răspunsul scurt</h2>
 
@@ -198,7 +203,7 @@ REFERINȚĂ     Market Reference Set al instanței</code></pre>
 
       <blockquote><strong>AVLMKT001-REQ-001 — Domeniul pieței TREBUIE definit și publicat înaintea constituirii Market Reference Set și înaintea oricărei măsurări AI a instanței.</strong></blockquote>
 
-      <blockquote><strong>AVLMKT001-REQ-002 — Fiecare instanță TREBUIE să declare, înainte de Market Discovery: geografia, familia de servicii, perioada (trimestrul), Market Cutoff Date și versiunea AVL-MKT-001 aplicată.</strong></blockquote>
+      <blockquote><strong>AVLMKT001-REQ-002 — Fiecare instanță TREBUIE să declare, înainte de Market Discovery: geografia, familia de servicii, limba pieței, dacă instanța o folosește drept criteriu (secțiunea 6.1), perioada (trimestrul), Market Cutoff Date și versiunea AVL-MKT-001 aplicată.</strong></blockquote>
 
       <h3 id="3-1-identificatorul-instantei">3.1. Identificatorul instanței</h3>
 
@@ -227,7 +232,7 @@ REFERINȚĂ     Market Reference Set al instanței</code></pre>
 
       <h3 id="3-3-prima-aplicare-planificata-exemplu-nu-regula">3.3. Prima aplicare planificată (exemplu, nu regulă)</h3>
 
-      <p>Prima instanță planificată este <code>MKT-RO-AIV-2026Q4</code>: furnizorii de servicii GEO, AEO, AI Visibility și servicii funcțional echivalente, relevanți pentru clienți din România. Tokenul <code>AIV</code> este cel propus în AVL-001. Instanța nu a fost creată la data acestei versiuni; declarația ei completă va fi publicată conform AVLMKT001-REQ-002.</p>
+      <p>Prima instanță planificată este <code>MKT-RO-AIV-2026Q4</code>: furnizorii de servicii GEO, AEO, AI Visibility și servicii funcțional echivalente, relevanți pentru clienți din România. Tokenul <code>AIV</code> este cel propus în AVL-001. Prima rulare oficială a instanței (Market Discovery <code>FULL</code>, urmată de Market Verification) va avea loc în decembrie 2026. Declarația completă a instanței, cu limba română ca limbă a pieței (secțiunea 6.1), se publică înaintea Market Discovery, conform AVLMKT001-REQ-002.</p>
 
       <h2 id="4-unitatea-de-analiza">4. Unitatea de analiză</h2>
 
@@ -247,6 +252,12 @@ REFERINȚĂ     Market Reference Set al instanței</code></pre>
       </table>
 
       <p>Clasele sunt descriptive, nu scoruri de calitate.</p>
+
+      <h3 id="4-1-o-entitate-un-operator">4.1. O entitate, un operator</h3>
+
+      <p>O entitate din registrul Market Verification corespunde unui singur operator: persoana sau organizația care oferă serviciul. Rândurile Market Discovery care desemnează același operator — de exemplu, o persoană și brandul ei, un alias sau un produs propriu al aceluiași furnizor — se unesc într-o singură intrare canonică, chiar dacă au fost găsite în răspunsuri sau rulări separate. Sursele Discovery ale fiecărui rând unit se păstrează, iar rândurile unite își păstrează identificatorul (secțiunea 21.6).</p>
+
+      <blockquote><strong>AVLMKT001-REQ-040 — Rândurile Market Discovery care desemnează același operator TREBUIE unite într-o singură intrare canonică a registrului Market Verification, păstrând sursele Discovery ale fiecărui rând.</strong></blockquote>
 
       <h2 id="5-familia-de-servicii">5. Familia de servicii</h2>
 
@@ -286,13 +297,21 @@ REFERINȚĂ     Market Reference Set al instanței</code></pre>
 
       <p>„Piața din țara X” nu este sinonimă automat cu „entități înregistrate în țara X”. Clasa <code>GLOBAL</code> poate fi folosită pentru context, fără a fi amestecată automat cu populația principală.</p>
 
+      <h3 id="6-1-limba-pietei">6.1. Limba pieței</h3>
+
+      <p>O instanță POATE declara o limbă a pieței (AVLMKT001-REQ-002). Când o declară, orientarea unei entități către piața instanței se dovedește și printr-o pagină de serviciu în acea limbă: un site în limba pieței sau versiunea în limba pieței a unui site internațional. Clasa <code>INTL-{CC}</code> rămâne posibilă pentru furnizorii internaționali care au o astfel de pagină.</p>
+
+      <p>O entitate fără pagină de serviciu în limba declarată a pieței primește statutul <code>OUT OF SCOPE</code>. Pentru <code>MKT-RO-AIV-2026Q4</code>, limba pieței este româna.</p>
+
+      <blockquote><strong>AVLMKT001-REQ-037 — Când instanța declară o limbă a pieței, dovada de serviciu a unei entități <code>ELIGIBLE</code> TREBUIE să includă o pagină de serviciu în acea limbă; fără ea, entitatea primește statutul <code>OUT OF SCOPE</code>.</strong></blockquote>
+
       <h2 id="7-dovezile-de-eligibilitate">7. Dovezile de eligibilitate</h2>
 
       <h3 id="7-1-niveluri-de-dovezi">7.1. Niveluri de dovezi</h3>
 
       <p><strong>E1 — Sursă oficială directă.</strong> Pagină oficială de servicii, site oficial al furnizorului, ofertă comercială publică sau documentație oficială. E1 este sursa preferată.</p>
 
-      <p><strong>E2 — Declarație oficială atribuibilă.</strong> Anunț oficial, profil profesional controlat de furnizor, interviu, comunicat sau prezentare publică oficială.</p>
+      <p><strong>E2 — Declarație oficială atribuibilă.</strong> O declarație a furnizorului, publicată într-un canal pe care furnizorul îl controlează, dar care nu este site-ul lui oficial: profilul lui pe o platformă profesională sau socială, un anunț sau comunicat oficial, un interviu în care răspunde chiar furnizorul, o prezentare publică oficială. Un text scris de altcineva despre furnizor, de exemplu pagina de autor creată de un angajator sau de o publicație, nu este E2, ci E3.</p>
 
       <p><strong>E3 — Sursă terță independentă.</strong> Publicație, studiu de caz publicat de client, director profesional, analiză independentă sau organizație terță. E3 este utilă pentru discovery și coroborare; fără confirmare directă, cazul poate rămâne <code>UNVERIFIED</code>.</p>
 
@@ -334,7 +353,7 @@ REFERINȚĂ     Market Reference Set al instanței</code></pre>
       <p>Limitele formei:</p>
 
       <ul>
-        <li><strong>Pagini randate în JavaScript.</strong> HTML-ul brut poate să nu conțină textul pe care îl vede un vizitator. Construcția tehnică a site-ului nu este un criteriu de eligibilitate. Când decizia se sprijină pe verificarea operatorului în browser, justificarea o spune explicit.</li>
+        <li><strong>Pagini randate în JavaScript.</strong> HTML-ul brut poate să nu conțină textul pe care îl vede un vizitator. Serviciul pe care se sprijină statutul <code>ELIGIBLE</code> trebuie să se vadă în HTML-ul brut conservat; altfel, entitatea primește <code>UNVERIFIED</code>, cu motivul notat, și rămâne în registru (AVLMKT001-REQ-038). Regula privește verificabilitatea dovezii, nu calitatea furnizorului: dovada trebuie să poată fi reprodusă din fișierul salvat, fără o randare care nu se conservă. Google recomandă randarea pe server sau pre-randarea, pentru că „nu toți roboții pot rula JavaScript”, iar randarea paginilor JavaScript poate fi amânată (<a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank" rel="noopener noreferrer">Google Search Central</a>). Verificarea operatorului în browser nu înlocuiește dovada.</li>
         <li><strong>Protecție anti-bot.</strong> O pagină de verificare anti-bot se conservă ca atare, iar justificarea arată pe ce se sprijină statusul.</li>
         <li><strong>Paginile se schimbă.</strong> Dovada arată pagina la momentul salvării. Toate paginile se salvează din nou la Market Cutoff Date, ca dovezile registrului înghețat să fie din aceeași zi.</li>
       </ul>
@@ -350,6 +369,12 @@ REFERINȚĂ     Market Reference Set al instanței</code></pre>
       <blockquote><strong>AVLMKT001-REQ-034 — Dovada de eligibilitate din Market Verification TREBUIE conservată ca răspunsul HTTP brut al sursei consultate (corpul nerandat, antetele, URL-ul final, codul HTTP, momentul salvării și User-Agent-ul) și indexată cu SHA-256.</strong></blockquote>
 
       <blockquote><strong>AVLMKT001-REQ-035 — Pentru fiecare intrare din registrul Market Verification, indiferent de status, sursa consultată TREBUIE conservată conform AVLMKT001-REQ-034, inclusiv atunci când răspunsul este o eroare; justificarea unei intrări <code>UNVERIFIED</code> TREBUIE să spună ce dovadă lipsește, iar a unei intrări <code>AMBIGUOUS</code>, care este contradicția sau incertitudinea de identitate.</strong></blockquote>
+
+      <blockquote><strong>AVLMKT001-REQ-038 — Statutul <code>ELIGIBLE</code> TREBUIE să se sprijine pe un serviciu vizibil în corpul HTTP brut conservat (AVLMKT001-REQ-034); când serviciul nu apare acolo, entitatea primește statutul <code>UNVERIFIED</code>, iar verificarea operatorului în browser NU TREBUIE folosită în locul dovezii.</strong></blockquote>
+
+      <p>Observațiile despre transparența unei entități — echipa, prețurile, profilurile sociale, aspectul site-ului — pot fi notate separat de justificarea statusului, dar nu îl schimbă. Ele nu se publică drept calificative despre furnizori (secțiunea 17).</p>
+
+      <blockquote><strong>AVLMKT001-REQ-039 — Observațiile despre transparența unei entități NU TREBUIE să schimbe statutul ei de eligibilitate.</strong></blockquote>
 
       <h2 id="8-market-discovery-si-market-verification">8. Market Discovery și Market Verification</h2>
 
@@ -370,12 +395,12 @@ REFERINȚĂ     Market Reference Set al instanței</code></pre>
           <tr><th>Status</th><th>Semnificație</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>ELIGIBLE</code></td><td>Criteriile sunt îndeplinite</td></tr>
-          <tr><td><code>INELIGIBLE</code></td><td>Dovezile permit concluzia că entitatea nu îndeplinește domeniul instanței</td></tr>
-          <tr><td><code>UNVERIFIED</code></td><td>Entitatea a fost identificată, dar dovezile nu permit confirmarea</td></tr>
-          <tr><td><code>AMBIGUOUS</code></td><td>Există dovezi contradictorii sau probleme de entity resolution</td></tr>
-          <tr><td><code>OUT OF SCOPE</code></td><td>Entitatea este reală, dar nu aparține pieței definite</td></tr>
-          <tr><td><code>HISTORICAL</code></td><td>Serviciul a existat anterior, fără dovadă suficientă de activitate la Market Cutoff Date</td></tr>
+          <tr><td><code>ELIGIBLE</code></td><td>Entitatea poate fi identificată fără ambiguitate, oferă un serviciu din familia instanței și este orientată către piața instanței (REQ-003 – REQ-007)</td></tr>
+          <tr><td><code>INELIGIBLE</code></td><td>Entitatea este orientată către piața instanței, dar dovezile arată că nu oferă un serviciu din familia instanței</td></tr>
+          <tr><td><code>UNVERIFIED</code></td><td>Dovezile sunt prea slabe ca să confirme sau să excludă eligibilitatea; de exemplu, pagina de serviciu lipsește sau serviciul nu apare în HTML-ul brut</td></tr>
+          <tr><td><code>AMBIGUOUS</code></td><td>Există dovezi contradictorii sau identitatea entității nu poate fi stabilită</td></tr>
+          <tr><td><code>OUT OF SCOPE</code></td><td>Entitatea este reală, dar nu este orientată către piața instanței: geografia sau, când instanța o declară, limba pieței (de exemplu, furnizori <code>GLOBAL</code>)</td></tr>
+          <tr><td><code>HISTORICAL</code></td><td>Serviciul a existat anterior, fără dovadă suficientă de activitate la Market Cutoff Date. Status păstrat în listă; nefolosit în pilotul de Market Verification</td></tr>
         </tbody>
       </table>
 
@@ -468,19 +493,21 @@ uncertainties:</code></pre>
 
       <h3 id="13-2-pilotul-intern">13.2. Pilotul intern</h3>
 
-      <p>Înainte de versiunea 1.0.0, protocolul este testat printr-un <strong>pilot intern</strong> pe cazuri-limită (de exemplu: echivalență funcțională, furnizori <code>GLOBAL</code>, furnizori <code>HISTORICAL</code>, entitatea afiliată autorului). Pilotul:</p>
+      <p>Înainte de versiunea 1.0.0, protocolul a fost testat printr-un <strong>pilot intern</strong> pe cazuri reale. Rolul lui l-a avut <a href="/lab/market-discovery/verificare-pilot-2026q4">pilotul de Market Verification</a> (27 octombrie – 8 noiembrie 2026), acceptat ca pilot intern la 9 noiembrie 2026 (decizie Alex Matescu). A acoperit echivalența funcțională, furnizorii <code>GLOBAL</code> și <code>INTL-RO</code>, publicitatea plătită în ChatGPT fără serviciu organic și identitățile ambigue. Statutul <code>HISTORICAL</code> nu a fost folosit, iar entitatea afiliată autorului nu a apărut printre candidați; ambele cazuri sunt declarate netestate. Un pilot:</p>
 
       <ul>
         <li>verifică dacă protocolul poate clasifica coerent cazurile-limită;</li>
         <li>nu constituie Market Reference Set oficial;</li>
         <li>nu stabilește populația finală a pieței;</li>
         <li>nu este prezentat ca măsurare trimestrială;</li>
-        <li>poate conduce la modificarea acestui draft înainte de 1.0.0, cu modificările documentate în istoricul versiunilor.</li>
+        <li>poate conduce la modificarea protocolului, cu modificările documentate în istoricul versiunilor; regulile apărute în pilotul de Market Verification au intrat în versiunea 1.0.0 (secțiunile 4.1, 6.1, 7.3 și 9).</li>
       </ul>
 
       <h2 id="14-conflict-de-interese">14. Conflict de interese</h2>
 
       <p><strong>Declarație.</strong> Autorul acestui protocol este Alex Matescu, fondatorul și coordonatorul AI Visibility Lab. În prima aplicare planificată — piața serviciilor GEO, AEO și AI Visibility relevante pentru clienți din România — autorul sau o entitate afiliată lui pot îndeplini criteriile de eligibilitate, iar ceilalți furnizori evaluați pot fi concurenți comerciali ai autorului. Situația este declarată aici, nu tratată ca ipoteză.</p>
+
+      <p><strong>Entitatea afiliată.</strong> Autorul este fondatorul și coordonatorul <a href="https://ichnometria.ro/" target="_blank" rel="noopener noreferrer">Ichnometria</a> (ichnometria.ro), furnizor de servicii GEO, AEO și AI Visibility din Sibiu, care aplică comercial metodologia dezvoltată în AI Visibility Lab. Ichnometria aparține familiei de servicii a primei aplicări și este entitate afiliată autorului și AI Visibility Lab. Dacă apare în Market Discovery, trece prin aceleași filtre ca orice alt candidat, fără tratament preferențial; dacă nu apare, nu este adăugată pentru că este afiliată (secțiunea 13).</p>
 
       <p>Atunci când autorul, AI Visibility Lab sau o entitate afiliată este evaluată:</p>
 
@@ -592,11 +619,11 @@ AVL-MKT-002 — Market Query Panel → execuție AI → măsurare</code></pre>
           <tr><th>Status</th><th>Ce înseamnă în registru</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>ELIGIBLE</code></td><td>Entitatea îndeplinește criteriile aplicabile (AVLMKT001-REQ-003 – AVLMKT001-REQ-007).</td></tr>
-          <tr><td><code>INELIGIBLE</code></td><td>Dovezile permit concluzia că entitatea nu îndeplinește domeniul instanței.</td></tr>
-          <tr><td><code>UNVERIFIED</code></td><td>Entitatea a fost evaluată, dar dovezile nu permit confirmarea. Nu este echivalent cu <code>INELIGIBLE</code> (AVLMKT001-REQ-012).</td></tr>
-          <tr><td><code>AMBIGUOUS</code></td><td>Există dovezi contradictorii sau probleme de entity resolution nerezolvate.</td></tr>
-          <tr><td><code>OUT OF SCOPE</code></td><td>Entitatea este reală, dar nu aparține pieței definite.</td></tr>
+          <tr><td><code>ELIGIBLE</code></td><td>Entitatea îndeplinește criteriile aplicabile (AVLMKT001-REQ-003 – AVLMKT001-REQ-007): identitate clară, serviciu din familia instanței, orientare către piața instanței.</td></tr>
+          <tr><td><code>INELIGIBLE</code></td><td>Entitatea este orientată către piața instanței, dar nu oferă un serviciu din familia instanței.</td></tr>
+          <tr><td><code>UNVERIFIED</code></td><td>Entitatea a fost evaluată, dar dovezile sunt prea slabe ca să confirme sau să excludă eligibilitatea. Nu este echivalent cu <code>INELIGIBLE</code> (AVLMKT001-REQ-012).</td></tr>
+          <tr><td><code>AMBIGUOUS</code></td><td>Există dovezi contradictorii sau identitatea entității nu poate fi stabilită.</td></tr>
+          <tr><td><code>OUT OF SCOPE</code></td><td>Entitatea este reală, dar nu este orientată către piața instanței (geografie sau limba declarată a pieței).</td></tr>
           <tr><td><code>HISTORICAL</code></td><td>Serviciul a existat anterior, fără dovadă suficientă de activitate la Market Cutoff Date.</td></tr>
         </tbody>
       </table>
@@ -699,6 +726,7 @@ Market Reference Set
         <li>Bing Webmaster Blog — <em>Introducing AI Performance in Bing Webmaster Tools Public Preview</em> (10 februarie 2026): <a href="https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/" target="_blank" rel="noopener noreferrer">https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/</a></li>
         <li>Bing Search Blog — <em>New AI Visibility Insights in Bing Webmaster Tools: Intents, Topics, Citation Share, Compare</em> (16 iunie 2026): <a href="https://blogs.bing.com/search/2026/6/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare/" target="_blank" rel="noopener noreferrer">https://blogs.bing.com/search/2026/6/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare/</a></li>
         <li>Perplexity Docs — <em>Perplexity Crawlers</em>: <a href="https://docs.perplexity.ai/guides/bots" target="_blank" rel="noopener noreferrer">https://docs.perplexity.ai/guides/bots</a></li>
+        <li>Google Search Central — <em>Understand the JavaScript SEO basics</em>: <a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank" rel="noopener noreferrer">https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics</a></li>
       </ul>
 
       <p>Documentația oficială descrie comportamentele și controalele pe care furnizorii aleg să le facă publice. Lipsa documentării unui mecanism nu demonstrează inexistența lui. Afirmațiile despre produse externe sunt reverificate la fiecare revizie materială a protocolului.</p>
@@ -723,6 +751,10 @@ Market Reference Set
         <li>Informarea entităților este limitată la scopul declarat; răspunsul sau relația comercială nu influențează statutul; rectificările sunt versionate fără ștergerea istoricului (REQ-031 – REQ-033).</li>
         <li>Dovada fiecărei intrări, indiferent de status, este conservată ca răspuns HTTP brut și indexată cu SHA-256; justificările intrărilor <code>UNVERIFIED</code> și <code>AMBIGUOUS</code> spun ce lipsește sau ce e contradictoriu (REQ-034, REQ-035).</li>
         <li>Identificatorii intrărilor și <code>provider_id</code> sunt stabili și nereutilizați (REQ-036).</li>
+        <li>Când instanța declară o limbă a pieței, fiecare <code>ELIGIBLE</code> are o pagină de serviciu în acea limbă (REQ-037).</li>
+        <li>Fiecare <code>ELIGIBLE</code> se sprijină pe un serviciu vizibil în HTML-ul brut conservat; altfel, entitatea e <code>UNVERIFIED</code> (REQ-038).</li>
+        <li>Observațiile de transparență nu au schimbat niciun status (REQ-039).</li>
+        <li>Rândurile Discovery care desemnează același operator sunt unite în intrarea canonică (REQ-040).</li>
       </ul>
 
       <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
@@ -732,6 +764,7 @@ Market Reference Set
           <tr><th>Versiune</th><th>Dată</th><th>Statut</th><th>Modificări</th></tr>
         </thead>
         <tbody>
+          <tr><td>1.0.0</td><td>9 noiembrie 2026</td><td>Activ</td><td>MAJOR: activarea protocolului (decizii Alex Matescu, 9 noiembrie 2026). Pilotul de Market Verification (27 octombrie – 8 noiembrie 2026) este acceptat ca pilot intern; <code>HISTORICAL</code> rămâne în listă, nefolosit în pilot, iar entitatea afiliată autorului e declarată netestată (secțiunea 13.2, decizia 1). Regulile apărute în pilot devin normative: secțiunea 4.1 nouă, o entitate corespunde unui operator, cu unirea rândurilor (AVLMKT001-REQ-040); secțiunea 6.1 nouă, limba pieței, română pentru <code>MKT-RO-AIV-2026Q4</code> (AVLMKT001-REQ-037, REQ-002 extinsă); în secțiunea 7.3, serviciul trebuie să se vadă în HTML-ul brut, altfel <code>UNVERIFIED</code>, iar verificarea în browser nu înlocuiește dovada (AVLMKT001-REQ-038), justificat prin verificabilitatea dovezii și documentația Google Search Central despre JavaScript, verificată la 9 noiembrie 2026; observațiile de transparență nu schimbă statusul (AVLMKT001-REQ-039). Definițiile statusurilor din secțiunile 9 și 21.2 sunt precizate. Definiția E2 este clarificată: textele scrise de terți despre furnizor sunt E3 (în pilot, MV-057 a fost încadrat E2 după formularea anterioară; statusul lui nu se schimbă). Secțiunea 14 numește Ichnometria (ichnometria.ro) ca entitate afiliată. Secțiunea 3.3: prima instanță oficială, <code>MKT-RO-AIV-2026Q4</code>, rulată în decembrie 2026. Pentru pilot, entitățile <code>ELIGIBLE</code> cu pagini randate în JavaScript (MV-131, MV-196) își păstrează statusul: specificațiile pilotului nu acopereau cazul. Cerințele AVLMKT001-REQ-001 – REQ-036 rămân în vigoare.</td></tr>
           <tr><td>0.11.0</td><td>8 noiembrie 2026</td><td>Draft pentru revizuire</td><td>MINOR, după pilotul de Market Verification (27 octombrie – 8 noiembrie 2026), decizii Alex Matescu din 7 și 8 noiembrie 2026. Secțiunea 7.3 nouă: dovada de eligibilitate este răspunsul HTTP brut al sursei consultate, o pagină pe entitate, fără capturi de ecran (AVLMKT001-REQ-034); aceeași regulă pentru toate statusurile, inclusiv <code>UNVERIFIED</code> și <code>AMBIGUOUS</code>, cu justificarea a ce lipsește sau a contradicției (AVLMKT001-REQ-035). Secțiunea 21.6 nouă: identificatorii <code>{instanță}-MVR</code>, <code>{instanță}-MRS</code>, <code>{instanță}-MV-{NNN}</code>, <code>provider_id</code> pentru serie și sufixul <code>-PILOT</code> pentru artefactele unui pilot (AVLMKT001-REQ-036). Deciziile deschise 2 și 3 sunt închise; decizia 4 este declarată deviație, pentru că nu există o terță parte care să poată face verificarea (secțiunea 14). Secțiunile 7.2, 10, 21 și 21.2, starea documentului, checklist-ul de conformitate și decizia 1 sunt actualizate. Secțiunea 16 a fost reverificată la 8 noiembrie 2026: afirmația că orice site public poate apărea în ChatGPT search a fost scoasă, pentru că nu mai apare în documentația OpenAI accesibilă (OpenAI Help Center răspunde HTTP 403); data de actualizare a ghidului Google nu mai este afișată pe pagină și a fost scoasă din lista surselor. Criteriile de eligibilitate, statusurile din secțiunea 9 și cerințele AVLMKT001-REQ-001 – AVLMKT001-REQ-033 nu se schimbă.</td></tr>
           <tr><td>0.10.0</td><td>16 octombrie 2026</td><td>Draft pentru revizuire</td><td>MINOR, cu schimbare de politică de publicare: secțiunea 21 nouă, „Publicarea rezultatelor Market Discovery și Market Verification”, cu cerințele AVLMKT001-REQ-024 – AVLMKT001-REQ-033. Market Discovery produce un registru public al candidaților, toți cu statutul <code>UNVERIFIED</code>; Market Verification produce registrul entităților verificate, cu statusurile din secțiunea 9; registrul furnizorilor eligibili cuprinde exclusiv intrările <code>ELIGIBLE</code>. Se definesc relația celor două registre cu Market Reference Set și rezervele acestuia (constituit independent, în scopul cercetării laboratorului, nevalidat de o autoritate relevantă), informarea entităților, neutralitatea statutului față de răspunsul sau relația comercială cu operatorul cercetării și rectificările prin versiuni noi. Regula se aplică la nivel de protocol; documentele de instanță care prevedeau nepublicarea numelor furnizorilor se aliniază prin versiuni noi, fără editarea versiunilor citate în pachetele de dovezi. Actualizate: secțiunea 1 (punctul 10), secțiunea 20, starea pilotărilor (trei piloturi Market Discovery), checklist-ul de conformitate și deciziile deschise 2 și 3. Afirmațiile din secțiunea 16 au fost reverificate la 16 octombrie 2026; pagina OpenAI Help Center nu a putut fi accesată (HTTP 403), iar afirmațiile despre <code>OAI-SearchBot</code> au fost confirmate în documentația OpenAI despre crawlere, adăugată la surse. Criteriile de eligibilitate, statusurile din secțiunea 9 și cerințele AVLMKT001-REQ-001 – AVLMKT001-REQ-023 nu se schimbă.</td></tr>
           <tr><td>0.9.2</td><td>13 octombrie 2026</td><td>Draft pentru revizuire</td><td>PATCH: decizia deschisă 5 („Convenția T0 / F1 … Fn în corpus”) este închisă și pentru restul corpusului: convenția și etapele denumite sunt definite în AVL-200 §7 (v1.1.0), iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate la 13 octombrie 2026. Fără modificări ale cerințelor sau ale regulilor Market Discovery.</td></tr>
@@ -740,16 +773,16 @@ Market Reference Set
         </tbody>
       </table>
 
-      <h2 id="decizii-deschise-inainte-de-1-0-0">Decizii deschise înainte de 1.0.0</h2>
+      <h2 id="decizii-deschise-inainte-de-1-0-0">Decizii închise la activarea 1.0.0</h2>
 
       <ol>
-        <li><strong>Pilotul intern.</strong> Neexecutat ca etapă separată. Pilotul de Market Verification (27 octombrie – 8 noiembrie 2026) a aplicat protocolul pe 278 de candidați reali, inclusiv cazuri de echivalență funcțională, furnizori <code>GLOBAL</code> și <code>INTL-RO</code>, publicitate plătită în ChatGPT fără serviciu organic și identități ambigue. Nu au apărut cazuri <code>HISTORICAL</code> și nici entitatea afiliată autorului. Regulile de aplicare stabilite de operator în pilot (limba și construcția tehnică a site-ului nu sunt criterii de eligibilitate; observațiile de transparență nu schimbă statusul; o entitate corespunde unui operator) se evaluează pentru includerea în protocol înainte de 1.0.0. Rezultatele pilotului pot modifica criteriile, statusurile sau clasele.</li>
+        <li><strong>Pilotul intern.</strong> Închisă la 9 noiembrie 2026 (decizie Alex Matescu): pilotul de Market Verification este acceptat ca pilot intern, fără un mini-pilot separat; <code>HISTORICAL</code> și entitatea afiliată autorului sunt declarate netestate (secțiunea 13.2). Regulile pilotului au intrat în versiunea 1.0.0.</li>
         <li><strong>Identificatorii artefactelor din instanță.</strong> Închisă la 8 noiembrie 2026 (decizie Alex Matescu): secțiunea 21.6 și AVLMKT001-REQ-036.</li>
         <li><strong>Dovezile pentru statusurile incerte.</strong> Închisă la 8 noiembrie 2026 (decizie Alex Matescu): secțiunea 7.3 și AVLMKT001-REQ-035.</li>
-        <li><strong>Verificarea de către o terță parte</strong> a deciziilor privind entitatea afiliată. Declarată deviație la 8 noiembrie 2026 (decizie Alex Matescu): nu există deocamdată o terță parte care să poată face verificarea. Fiecare instanță și fiecare pilot declară absența ei (secțiunea 14). Decizia se reia când o terță parte devine disponibilă.</li>
+        <li><strong>Verificarea de către o terță parte</strong> a deciziilor privind entitatea afiliată. Declarată deviație la 8 noiembrie 2026 și acceptată ca excepție la activare (decizie Alex Matescu): nu există deocamdată o terță parte care să poată face verificarea. Fiecare instanță declară absența ei (secțiunea 14). Decizia se reia când o terță parte devine disponibilă.</li>
         <li><strong>Convenția T0 / F1 … Fn în corpus.</strong> Închisă. Pentru Market Discovery, în versiunea 0.9.1: rulările se identifică prin <code>FULL</code> și <code>M{lună}</code> (secțiunea 3.2). Pentru restul corpusului, la 13 octombrie 2026: convenția și etapele denumite sunt definite în <a href="/lab/metodologie/standard-dovezi-masurare-trasabilitate">AVL-200 §7</a> (v1.1.0), iar AVL-001, AVL-202, AVL-101–105 și AVL-201 au fost aliniate. Schema rulărilor de măsurare AI rămâne în AVL-MKT-002.</li>
       </ol>
 
-      <p><em>AVL-MKT-001 este un document normativ al AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Versiunea 0.11.0 este un draft public pentru revizuire, nu un protocol activ. Ultima verificare factuală și a surselor: 8 noiembrie 2026.</em></p>
+      <p><em>AVL-MKT-001 este un document normativ al AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Versiunea 1.0.0 este activă din 9 noiembrie 2026. Ultima verificare factuală și a surselor: 9 noiembrie 2026 (secțiunea 16: 8 noiembrie 2026).</em></p>
 
 `;
