@@ -15,7 +15,7 @@ export const reclameChatgptGoogleSocialMediaMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-10-29T13:15:00+02:00",
-  dateModified: "2026-10-29",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-10-29",
   image: {
     url: "https://delamatescu.ro/images/lab/reclame-chatgpt-google-social-media.webp",
@@ -137,6 +137,18 @@ export const reclameChatgptGoogleSocialMediaMeta: LabArticleMeta = {
       name: "Google Ads Help — About Conversion Lift",
       url: "https://support.google.com/google-ads/answer/12003020?hl=en",
     },
+    {
+      name: "OpenAI — Reimagining advertising with AI",
+      url: "https://openai.com/index/reimagining-advertising-with-ai/",
+    },
+    {
+      name: "OpenAI — Introducing Businesses in ChatGPT",
+      url: "https://openai.com/index/introducing-businesses-chatgpt/",
+    },
+    {
+      name: "OpenAI Help Center — Setting up your business on ChatGPT",
+      url: "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt",
+    },
   ],
   faq: [],
 };
@@ -144,7 +156,7 @@ export const reclameChatgptGoogleSocialMediaMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const reclameChatgptGoogleSocialMediaHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-29T13:15:00+02:00">29 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-29">29 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-29T13:15:00+02:00">29 octombrie 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-29">29 octombrie 2026</time></p>
 
       <p><em>Documentare verificată la 29 octombrie 2026. Analiză pentru companii care vând în România sau folosesc România ca bază pentru alte piețe. Funcționalitățile, disponibilitatea și pragurile platformelor se pot modifica.</em></p>
 
@@ -155,7 +167,11 @@ export const reclameChatgptGoogleSocialMediaHtml = `
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
         <ol>
-          <li><a href="#ce-inseamna-reclamele-din-chatgpt">Ce înseamnă reclamele din ChatGPT?</a></li>
+          <li><a href="#ce-inseamna-reclamele-din-chatgpt">Ce înseamnă reclamele din ChatGPT?</a>
+            <ol>
+              <li><a href="#cand-reclama-duce-la-o-conversatie-sponsored-agents-si-business-agents">Când reclama duce la o conversație: Sponsored Agents și Business Agents</a></li>
+            </ol>
+          </li>
           <li><a href="#prin-ce-difera-chatgpt-de-google-si-de-platformele-sociale">Prin ce diferă ChatGPT de Google și de platformele sociale?</a></li>
           <li><a href="#cum-trebuie-analizat-fiecare-canal-in-parte">Cum trebuie analizat fiecare canal în parte?</a>
             <ol>
@@ -184,6 +200,7 @@ export const reclameChatgptGoogleSocialMediaHtml = `
               <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
             </ol>
           </li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
         </ol>
       </nav>
 
@@ -204,6 +221,14 @@ export const reclameChatgptGoogleSocialMediaHtml = `
       <p>Această apropiere de momentul deliberării justifică un test comercial, dar nu demonstrează o rată de conversie superioară, fiindcă o conversație detaliată poate aparține atât unui cumpărător pregătit, cât și unei persoane care cercetează fără intenția de a plăti. În sursele verificate pentru acest articol nu am identificat un benchmark reprezentativ pentru România care să permită declararea ChatGPT drept canal mai rentabil decât Google, Meta sau LinkedIn. Locul publicității în veniturile OpenAI, alături de abonamente și de segmentul enterprise, e discutat separat în <a href="/lab/articole/costurile-ai-variatii-finantari-plata-la-cine">Cât costă, de fapt, inteligența artificială și cine plătește pentru ea?</a></p>
 
       <p>OpenAI afirmă că advertiserii nu primesc acces la conversațiile, istoricul sau amintirile utilizatorului, ci la informații de performanță; mesajele trimise direct de utilizator advertiserului constituie o situație separată. Documentația precizează și că personalizarea reclamelor este inițial indisponibilă în Spațiul Economic European și Elveția, distincție relevantă pentru România, fără a elimina relevanța contextuală a conversației curente.<sup><a href="#fn-1">1</a></sup></p>
+
+      <h3 id="cand-reclama-duce-la-o-conversatie-sponsored-agents-si-business-agents">Când reclama duce la o conversație: Sponsored Agents și Business Agents</h3>
+
+      <p>O reclamă din ChatGPT poate conduce și către o experiență conversațională. La 16 septembrie 2026, OpenAI a anunțat testarea formatului Sponsored Agents cu advertiseri selectați din SUA: după o reclamă relevantă, utilizatorul poate alege să înceapă o conversație etichetată cu agentul sponsorizat al firmei.<sup><a href="#fn-25">25</a></sup> Lansarea Business Agents, la 10 noiembrie 2026, adaugă posibilitatea ca agentul unei firme să fie folosit ca destinație sponsorizată.<sup><a href="#fn-26">26</a></sup> Conversația comercială și plasarea publicitară trebuie distinse de răspunsul independent al ChatGPT.</p>
+
+      <p>Pentru evaluarea campaniei, conversația începută este un eveniment intermediar. Rezultatul comercial poate fi o solicitare calificată, o programare sau o vânzare, în funcție de serviciu și de măsurarea disponibilă. O scădere a vizitelor pe site nu demonstrează singură nici succes, nici eșec, dacă o parte din interacțiune se desfășoară în platformă.</p>
+
+      <p>Eligibilitatea pentru Ads Manager și eligibilitatea pentru Business Agents se verifică separat. Faptul că România apare pe lista țărilor cu acces la Ads Manager nu înseamnă acces la Business Agents, disponibile inițial firmelor eligibile de comerț electronic și servicii online din SUA.<sup><a href="#fn-27">27</a></sup> Diferența dintre profilul firmei, agentul ei și răspunsul independent al ChatGPT e explicată în <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility#business-hub-si-business-agents-in-chatgpt">articolul despre Agentic Visibility</a>.</p>
 
       <h2 id="prin-ce-difera-chatgpt-de-google-si-de-platformele-sociale">Prin ce diferă ChatGPT de Google și de platformele sociale?</h2>
 
@@ -426,6 +451,9 @@ export const reclameChatgptGoogleSocialMediaHtml = `
         <li id="fn-22">Susie Marino / WordStream, <a href="https://www.wordstream.com/blog/facebook-ads-benchmarks-2026" target="_blank" rel="noopener noreferrer">Facebook Ads Benchmarks 2026</a>: CPC, CPL, obiective, eșantioane și metodologie.</li>
         <li id="fn-23">OpenAI, <a href="https://help.openai.com/en/articles/20001604-troubleshooting-conversion-tracking-for-chatgpt-ads" target="_blank" rel="noopener noreferrer">Troubleshooting conversion tracking for ChatGPT Ads</a>: atribuirea conversiilor și diferențele față de CRM.</li>
         <li id="fn-24">Google, <a href="https://support.google.com/google-ads/answer/12003020?hl=en" target="_blank" rel="noopener noreferrer">About Conversion Lift</a>: grupuri de control și estimarea efectului incremental.</li>
+        <li id="fn-25">OpenAI, <a href="https://openai.com/index/reimagining-advertising-with-ai/" target="_blank" rel="noopener noreferrer">Reimagining advertising with AI</a>, 16 septembrie 2026: testarea Sponsored Agents cu advertiseri selectați din SUA și separarea conversației de răspunsurile independente ale ChatGPT (pagina blochează accesul automat; reconfirmată la 12 noiembrie 2026 prin relatări de presă).</li>
+        <li id="fn-26">OpenAI, <a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">Introducing Businesses in ChatGPT</a>, 10 noiembrie 2026: Business Hub, Business Agents și folosirea agentului firmei ca destinație sponsorizată; consultată la 11 noiembrie 2026.</li>
+        <li id="fn-27">OpenAI Help Center, <a href="https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt" target="_blank" rel="noopener noreferrer">Setting up your business on ChatGPT</a>: eligibilitatea pentru Business Hub și Business Agents; documentație curentă, consultată la 11 noiembrie 2026.</li>
       </ol>
 
       <h3 id="control-editorial-al-afirmatiilor">Control editorial al afirmațiilor</h3>
@@ -442,7 +470,19 @@ export const reclameChatgptGoogleSocialMediaHtml = `
 
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
-      <p>Disponibilitatea ChatGPT Ads pe țări, pragurile de buget, formatele și opțiunile de targetare ale platformelor se schimbă frecvent, iar reperele WordStream/LocaliQ se actualizează anual. Informațiile au fost reverificate la 29 octombrie 2026; înainte de bugetare, verifică documentația din contul de publicitate.</p>
+      <p>Disponibilitatea ChatGPT Ads pe țări, pragurile de buget, formatele și opțiunile de targetare ale platformelor se schimbă frecvent, iar reperele WordStream/LocaliQ se actualizează anual. Informațiile au fost reverificate la 29 octombrie 2026; înainte de bugetare, verifică documentația din contul de publicitate. Subsecțiunea despre Sponsored Agents și Business Agents și sursele 25–27 au fost adăugate la 12 noiembrie 2026; restul informațiilor păstrează verificarea din 29 octombrie 2026.</p>
+
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
+
+      <table>
+        <thead>
+          <tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0</td><td>29 octombrie 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>12 noiembrie 2026</td><td>Subsecțiune nouă, „Când reclama duce la o conversație: Sponsored Agents și Business Agents”: completează anunțul OpenAI din 16 septembrie 2026 despre testarea Sponsored Agents, omis în versiunea 1.0, și lansarea Business Agents din 10 noiembrie 2026 ca posibilă destinație sponsorizată; precizează că eligibilitatea pentru Ads Manager și pentru Business Agents se verifică separat. Sursele 25–27 adăugate.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 29 octombrie 2026.</em></p>
 `;

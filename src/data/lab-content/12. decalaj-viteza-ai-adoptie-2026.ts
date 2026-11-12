@@ -13,7 +13,7 @@ export const decalajVitezaAiAdoptie2026Meta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-08-19",
-  dateModified: "2026-10-16",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-10-16",
   about: [
     { name: "Artificial intelligence adoption" },
@@ -114,6 +114,26 @@ export const decalajVitezaAiAdoptie2026Meta: LabArticleMeta = {
       name: "Google — Gemini 4 Argon: our next era of frontier intelligence",
       url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
     },
+    {
+      name: "Google — Gemini Apps release notes (13 octombrie 2026)",
+      url: "https://gemini.google/release-notes/",
+    },
+    {
+      name: "Meta — Introducing Muse Wonder models",
+      url: "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+    },
+    {
+      name: "OpenAI — Codex and ChatGPT Work updates, 26–30 octombrie 2026 (GPT-6.1 Terra)",
+      url: "https://learn.chatgpt.com/codex/whats-new/october-26-30-2026",
+    },
+    {
+      name: "Anthropic — Claude Duet",
+      url: "https://claude.com/resources/articles/claude-duet",
+    },
+    {
+      name: "Anthropic — Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+      url: "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    },
   ],
   faq: [
     {
@@ -122,7 +142,7 @@ export const decalajVitezaAiAdoptie2026Meta: LabArticleMeta = {
     },
     {
       q: "Ce modele AI noi au fost lansate în septembrie–octombrie 2026?",
-      a: "OpenAI a lansat GPT-6 Astra (3 septembrie), GPT-6 Sol și GPT-6 Luna (22 septembrie) și GPT-6.1 Sol (29 septembrie). Anthropic a lansat Claude Fable 5.1 (1 septembrie), Claude Opus 5.5 (22 septembrie), Claude Sonnet 5.5 (28 septembrie) și Claude Haiku 5.5 (7 octombrie). Google a lansat Gemini 3.8 Flash (2 septembrie) și a anunțat Gemini 4 Argon (30 septembrie), deocamdată disponibil doar partenerilor din programul de securitate cibernetică Fairwind.",
+      a: "OpenAI a lansat GPT-6 Astra (3 septembrie), GPT-6 Sol și GPT-6 Luna (22 septembrie) și GPT-6.1 Sol (29 septembrie). Anthropic a lansat Claude Fable 5.1 (1 septembrie), Claude Opus 5.5 (22 septembrie), Claude Sonnet 5.5 (28 septembrie) și Claude Haiku 5.5 (7 octombrie). Google a lansat Gemini 3.8 Flash (2 septembrie) și a anunțat Gemini 4 Argon (30 septembrie), inițial doar pentru partenerii programului Fairwind; din 13 octombrie, modelul e distribuit global în aplicația Gemini pentru abonații Google AI Pro și Ultra. În octombrie au urmat Meta Muse Wonder (12 octombrie) și GPT-6.1 Terra (26–30 octombrie, în ChatGPT Work și Codex), iar la 9 noiembrie Anthropic a lansat Claude Fable 5.2 și Claude Mythos 5.2.",
     },
     {
       q: "Ce procent din populația globală folosește AI generativ?",
@@ -154,13 +174,17 @@ export const decalajVitezaAiAdoptie2026Meta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const decalajVitezaAiAdoptie2026Html = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-10-16">16 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-16">16 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-08-19">19 august 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-16">16 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
         <ol>
           <li><a href="#viteza-laboratorului-ce-inseamna-de-fapt-557-de-lansari">Viteza laboratorului: ce înseamnă, de fapt, „557 de lansări"</a></li>
-          <li><a href="#ce-s-a-lansat-recent-noile-generatii-de-modele-din-septembrieoctombrie-2026">Ce s-a lansat recent: noile generații de modele din septembrie–octombrie 2026</a></li>
+          <li><a href="#ce-s-a-lansat-recent-noile-generatii-de-modele-din-septembrieoctombrie-2026">Ce s-a lansat recent: noile generații de modele din septembrie–octombrie 2026</a>
+            <ol>
+              <li><a href="#completari-lansari-verificate-pana-la-11-noiembrie-2026">Completări: lansări verificate până la 11 noiembrie 2026</a></li>
+            </ol>
+          </li>
           <li><a href="#viteza-utilizarii-18-8-nu-inseamna-18-8-folosesc-ai-regulat">Viteza utilizării: 18,8% nu înseamnă „18,8% folosesc AI regulat"</a></li>
           <li><a href="#firmele-aproximativ-20-in-statisticile-oficiale-aproape-90-intr-un-sondaj-global">Firmele: aproximativ 20% în statisticile oficiale, aproape 90% într-un sondaj global</a></li>
           <li><a href="#de-ce-aproape-90-20-si-18-8-pot-fi-toate-corecte">De ce aproape 90%, 20% și 18,8% pot fi toate corecte</a></li>
@@ -269,14 +293,38 @@ export const decalajVitezaAiAdoptie2026Html = `
           <tr><td>22 septembrie</td><td>Anthropic</td><td><a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener noreferrer">Claude Opus 5.5</a></td><td>performanță apropiată de Fable 5.1 pe majoritatea sarcinilor, cu costuri de rulare cu 40% mai mici decât Opus 5</td></tr>
           <tr><td>28 septembrie</td><td>Anthropic</td><td><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Claude Sonnet 5.5</a></td><td>succesorul lui Sonnet 5: cu 30% mai rapid și până la 30% mai ieftin</td></tr>
           <tr><td>29 septembrie</td><td>OpenAI</td><td><a href="https://deploymentsafety.openai.com/gpt-6-1-sol" target="_blank" rel="noopener noreferrer">GPT-6.1 Sol</a></td><td>actualizare a lui GPT-6 Sol, cu performanță apropiată de Astra la o cincime din prețul standard al acestuia</td></tr>
-          <tr><td>30 septembrie</td><td>Google</td><td><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener noreferrer">Gemini 4 Argon</a></td><td>modelul de vârf al noii generații Gemini 4; deocamdată disponibil doar partenerilor din programul de securitate cibernetică Fairwind, fără o dată de lansare publică</td></tr>
+          <tr><td>30 septembrie</td><td>Google</td><td><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener noreferrer">Gemini 4 Argon</a></td><td>modelul de vârf al noii generații Gemini 4; anunțat inițial doar pentru partenerii programului de securitate cibernetică Fairwind; din 13 octombrie, distribuit global în aplicația Gemini pentru abonații Google AI Pro și Ultra</td></tr>
           <tr><td>7 octombrie</td><td>Anthropic</td><td><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Claude Haiku 5.5</a></td><td>modelul mic, rapid și ieftin din familia Claude 5.5</td></tr>
         </tbody>
       </table>
 
       <p>Lista nu e completă. În august și septembrie, ThursdAI a consemnat și lansări ale altor dezvoltatori, între care noi versiuni Qwen 3.8 (Alibaba), DeepSeek V4, Grok 4.6 și 4.7 (xAI) și modele din familia Muse (Meta). Tabelul se limitează la cele trei companii ale căror anunțuri oficiale au putut fi verificate direct.</p>
 
-      <p>Trei lucruri reies din tabel. Primul: cele trei companii au trecut la o nouă generație în același interval de patru săptămâni. Al doilea: o parte importantă a lansărilor nu aduce doar capabilități noi, ci prețuri mai mici pentru capabilități apropiate (Opus 5.5, GPT-6 Sol și Luna, GPT-6.1 Sol). Al treilea: „lansat" nu înseamnă automat „disponibil pentru toți". Gemini 4 Argon și Claude Mythos 5.1 au fost anunțate, dar accesul la ele e restrâns la parteneri selectați. Oferta tehnologică accelerează și se ieftinește. Utilizarea măsurată în populație a crescut, în același trimestru, cu aproximativ un punct procentual.</p>
+      <p>Trei lucruri reies din tabel. Primul: cele trei companii au trecut la o nouă generație în același interval de patru săptămâni. Al doilea: o parte importantă a lansărilor nu aduce doar capabilități noi, ci prețuri mai mici pentru capabilități apropiate (Opus 5.5, GPT-6 Sol și Luna, GPT-6.1 Sol). Al treilea: „lansat" nu înseamnă automat „disponibil pentru toți". Claude Mythos 5.1 a fost anunțat cu acces restrâns la organizații verificate, iar Gemini 4 Argon a pornit, la 30 septembrie, numai cu partenerii programului Fairwind. Abia din 13 octombrie a ajuns în aplicația Gemini, și atunci doar pentru abonații Google AI Pro și Ultra. Oferta tehnologică accelerează și se ieftinește. Utilizarea măsurată în populație a crescut, în același trimestru, cu aproximativ un punct procentual.</p>
+
+      <h3 id="completari-lansari-verificate-pana-la-11-noiembrie-2026">Completări: lansări verificate până la 11 noiembrie 2026</h3>
+
+      <p>Tabelul de mai sus descrie starea verificată la 16 octombrie. Lista următoare e un supliment selectiv, verificat la 12 noiembrie 2026, nu un inventar al tuturor modelelor apărute de atunci. Include și o lansare din 12 octombrie, omisă la revizia anterioară, și un produs care nu este model.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Companie</th>
+            <th>Model sau produs</th>
+            <th>Disponibilitate declarată</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>12 octombrie</td><td>Meta</td><td><a href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" target="_blank" rel="noopener noreferrer">Muse Wonder</a></td><td>familie nouă de modele, disponibilă pentru dezvoltatori prin Meta Model API și Muse Code; varianta Muse Wonder Full, pentru abonații Muse Code. În aplicația Muse urmează să ajungă întâi la abonați, deci lansarea în API nu înseamnă acces simultan în toate interfețele Muse</td></tr>
+          <tr><td>13 octombrie</td><td>Google</td><td><a href="https://gemini.google/release-notes/" target="_blank" rel="noopener noreferrer">Gemini 4 Argon în aplicația Gemini</a></td><td>distribuire globală pentru abonații Google AI Pro și Ultra; accesul rămâne condiționat de abonament și de disponibilitatea produsului</td></tr>
+          <tr><td>21 octombrie</td><td>Anthropic</td><td><a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener noreferrer">Claude Duet</a></td><td>produs, nu model: aplicație separată în care Claude lucrează ca agent proactiv, pe Claude Opus 5.5; research preview cu listă de așteptare, începând cu abonații Pro, Max și Ultra din SUA</td></tr>
+          <tr><td>26–30 octombrie</td><td>OpenAI</td><td><a href="https://learn.chatgpt.com/codex/whats-new/october-26-30-2026" target="_blank" rel="noopener noreferrer">GPT-6.1 Terra</a></td><td>disponibil în ChatGPT Work și Codex pentru planurile Plus, Pro, Business, Enterprise și Edu; nu și în conversația standard ChatGPT</td></tr>
+          <tr><td>9 noiembrie</td><td>Anthropic</td><td><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener noreferrer">Claude Fable 5.2 și Claude Mythos 5.2</a></td><td>același model de bază, cu protecții diferite: Fable 5.2 disponibil general pe platformele anunțate, Mythos 5.2 numai pentru organizații verificate prin programele pentru securitate cibernetică și științele vieții</td></tr>
+        </tbody>
+      </table>
+
+      <p>Rândul despre Claude Duet arată de ce modelul, aplicația și agentul trebuie urmărite separat: un agent nou poate rula pe un model lansat cu o lună înainte, iar condițiile lui de acces sunt altele decât ale modelului. Totalul ThursdAI de 557 nu a fost recalculat în această revizie și rămâne valabil doar pentru ianuarie–septembrie; cele 57 de intrări din octombrie sunt o numărătoare parțială, făcută la 16 octombrie.</p>
 
       <h2 id="viteza-utilizarii-18-8-nu-inseamna-18-8-folosesc-ai-regulat">Viteza utilizării: 18,8% nu înseamnă „18,8% folosesc AI regulat"</h2>
 
@@ -502,7 +550,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <ul>
         <li>„557 de modele AI au fost lansate în nouă luni." Trackerul include mai multe tipuri de lansări.</li>
-        <li>„Gemini 4 Argon este disponibil oricui." La 16 octombrie 2026, accesul era limitat la partenerii programului Fairwind.</li>
+        <li>„Gemini 4 Argon este disponibil oricui, gratuit și în aceleași condiții pentru toate conturile." Din 13 octombrie 2026, modelul e distribuit global în aplicația Gemini, dar numai pentru abonații Google AI Pro și Ultra.</li>
         <li>„18,8% folosesc AI regulat." Microsoft măsoară utilizarea în perioada raportată, nu regularitatea.</li>
         <li>„Patru din cinci oameni nu au deschis niciodată AI." Complementul indicatorului Microsoft nu măsoară utilizarea „vreodată".</li>
         <li>„56% au ROI zero." PwC măsoară beneficii de venit și cost, nu ROI complet.</li>
@@ -520,7 +568,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <h3 id="ce-modele-ai-noi-au-fost-lansate-in-septembrieoctombrie-2026">Ce modele AI noi au fost lansate în septembrie–octombrie 2026?</h3>
 
-      <p>OpenAI a lansat GPT-6 Astra (3 septembrie), GPT-6 Sol și GPT-6 Luna (22 septembrie) și GPT-6.1 Sol (29 septembrie). Anthropic a lansat Claude Fable 5.1 (1 septembrie), Claude Opus 5.5 (22 septembrie), Claude Sonnet 5.5 (28 septembrie) și Claude Haiku 5.5 (7 octombrie). Google a lansat Gemini 3.8 Flash (2 septembrie) și a anunțat Gemini 4 Argon (30 septembrie), deocamdată disponibil doar partenerilor din programul de securitate cibernetică Fairwind.</p>
+      <p>OpenAI a lansat GPT-6 Astra (3 septembrie), GPT-6 Sol și GPT-6 Luna (22 septembrie) și GPT-6.1 Sol (29 septembrie). Anthropic a lansat Claude Fable 5.1 (1 septembrie), Claude Opus 5.5 (22 septembrie), Claude Sonnet 5.5 (28 septembrie) și Claude Haiku 5.5 (7 octombrie). Google a lansat Gemini 3.8 Flash (2 septembrie) și a anunțat Gemini 4 Argon (30 septembrie), inițial doar pentru partenerii programului Fairwind; din 13 octombrie, modelul e distribuit global în aplicația Gemini pentru abonații Google AI Pro și Ultra. În octombrie au urmat Meta Muse Wonder (12 octombrie) și GPT-6.1 Terra (26–30 octombrie, în ChatGPT Work și Codex), iar la 9 noiembrie Anthropic a lansat Claude Fable 5.2 și Claude Mythos 5.2.</p>
 
       <h3 id="ce-procent-din-populatia-globala-foloseste-ai-generativ">Ce procent din populația globală folosește AI generativ?</h3>
 
@@ -571,10 +619,11 @@ export const decalajVitezaAiAdoptie2026Html = `
           <tr><td><a href="https://digital-strategy.ec.europa.eu/en/policies/ai-office" target="_blank" rel="noopener noreferrer">European AI Office</a></td><td>autoritate UE</td><td>rolul AI Office în guvernanța AI Act și GPAI</td><td>nu este sursă de statistici de utilizare</td></tr>
           <tr><td><a href="https://thursdai.news/releases" target="_blank" rel="noopener noreferrer">ThursdAI — Releases</a></td><td>tracker editorial</td><td>ritmul lansărilor urmărite lunar</td><td>selecție editorială; nu este registru exhaustiv al modelelor</td></tr>
           <tr><td>Anunțurile oficiale <a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic</a>, OpenAI (<a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener noreferrer">GPT-6 Astra</a>, <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener noreferrer">GPT-6 Sol și Luna</a>, <a href="https://deploymentsafety.openai.com/gpt-6-1-sol" target="_blank" rel="noopener noreferrer">GPT-6.1 Sol</a>) și Google (<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener noreferrer">Gemini 3.8 Flash</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener noreferrer">Gemini 4 Argon</a>)</td><td>documentație oficială a dezvoltatorilor</td><td>datele și caracteristicile lansărilor din septembrie–octombrie 2026</td><td>descrierile de performanță și preț sunt ale companiilor, nu evaluări independente</td></tr>
+          <tr><td><a href="https://gemini.google/release-notes/" target="_blank" rel="noopener noreferrer">Gemini Apps release notes</a> (13 octombrie), <a href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" target="_blank" rel="noopener noreferrer">Meta — Muse Wonder</a>, <a href="https://learn.chatgpt.com/codex/whats-new/october-26-30-2026" target="_blank" rel="noopener noreferrer">OpenAI — GPT-6.1 Terra</a>, <a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener noreferrer">Anthropic — Claude Duet</a>, <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener noreferrer">Anthropic — Claude Fable 5.2 și Mythos 5.2</a></td><td>documentație oficială a dezvoltatorilor</td><td>disponibilitatea Gemini 4 Argon din 13 octombrie și suplimentul de lansări până la 11 noiembrie</td><td>anunțurile descriu condițiile declarate de furnizori, nu accesul observat într-un cont concret</td></tr>
         </tbody>
       </table>
 
-      <p><strong>Data ultimei verificări a linkurilor și cifrelor: 16 octombrie 2026</strong> (verificări anterioare: 14 și 19 august 2026). La această revizie, valorile lunare ThursdAI pentru ianuarie–iulie s-au confirmat identic. Cifrele Eurostat (anul de referință 2025, următoarea actualizare programată în decembrie 2026), OECD și PwC nu s-au schimbat. Microsoft, McKinsey și Stack Overflow au publicat ediții noi, iar cifrele lor au fost actualizate.</p>
+      <p><strong>Data ultimei verificări a linkurilor și cifrelor: 16 octombrie 2026</strong> (verificări anterioare: 14 și 19 august 2026). La această revizie, valorile lunare ThursdAI pentru ianuarie–iulie s-au confirmat identic. Cifrele Eurostat (anul de referință 2025, următoarea actualizare programată în decembrie 2026), OECD și PwC nu s-au schimbat. Microsoft, McKinsey și Stack Overflow au publicat ediții noi, iar cifrele lor au fost actualizate. Revizia din 12 noiembrie 2026 a reverificat numai disponibilitatea Gemini 4 Argon și lansările din suplimentul despre perioada de până la 11 noiembrie; statisticile de adopție nu au fost reevaluate în această rundă.</p>
 
       <h3 id="cum-au-fost-tratate-sursele">Cum au fost tratate sursele</h3>
 
@@ -589,7 +638,7 @@ export const decalajVitezaAiAdoptie2026Html = `
 
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
-      <p>Ritmul lansărilor AI, rapoartele de adopție și calendarul de aplicare al AI Act se schimbă rapid. Trackerul ThursdAI, în special, este o sursă dinamică: numărătoarea unei luni se poate modifica pe măsură ce arhiva este completată retroactiv. Lista modelelor lansate se învechește cel mai repede: noi versiuni apar de la o săptămână la alta. Afirmațiile din acest articol descriu <strong>starea verificată la 16 octombrie 2026</strong>.</p>
+      <p>Ritmul lansărilor AI, rapoartele de adopție și calendarul de aplicare al AI Act se schimbă rapid. Trackerul ThursdAI, în special, este o sursă dinamică: numărătoarea unei luni se poate modifica pe măsură ce arhiva este completată retroactiv. Lista modelelor lansate se învechește cel mai repede: noi versiuni apar de la o săptămână la alta. Afirmațiile din acest articol descriu <strong>starea verificată la 16 octombrie 2026</strong>, cu excepția disponibilității Gemini 4 Argon și a suplimentului de lansări, verificate la 12 noiembrie 2026.</p>
 
       <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
 
@@ -604,6 +653,7 @@ export const decalajVitezaAiAdoptie2026Html = `
         <tbody>
           <tr><td>1.0</td><td>19 august 2026</td><td>Publicare inițială.</td></tr>
           <tr><td>1.1</td><td>16 octombrie 2026</td><td>Titlu nou, mai scurt: „AI aleargă, adopția merge pe jos: decalajul din 2026” (anterior: „407 lansări AI urmărite în șapte luni, 17,8% utilizare: decalajul dintre viteza AI și viteza societății în 2026”). Secțiune nouă despre modelele lansate în septembrie–octombrie 2026 (GPT-6 Astra, Sol, Luna și 6.1 Sol; Claude Fable 5.1, Opus 5.5, Sonnet 5.5 și Haiku 5.5; Gemini 3.8 Flash și Gemini 4 Argon). ThursdAI: august (84) și septembrie (66) adăugate; total 407 → 557, medie 1,92 → 2,04 pe zi. Microsoft Q1 → Q2 2026: global 17,8% → 18,8%, România 17,5% → 18,0%, SUA 31,3% → 33,0%, Global North/South 27,5%/15,4% → 28,8%/16,2%, clasamentul țărilor actualizat. Subsecțiunea „12 din 15 economii din Asia” (raportul Q1) înlocuită cu datele Q2 despre Coreea de Sud, Japonia și Arabia Saudită; afirmația aferentă scoasă din lista celor nesusținute. McKinsey 2025 → 2026: aproape 9 din 10 utilizare, scalare 38% → 44%. Stack Overflow 2026 adăugat. AI Act: intrarea în vigoare a pachetului „AI omnibus” (27 iulie 2026). FAQ: întrebare nouă despre modelele lansate și răspunsuri actualizate. Surse, notă de volatilitate și date de verificare actualizate.</td></tr>
+          <tr><td>1.2</td><td>12 noiembrie 2026</td><td>Corecție: Gemini 4 Argon nu mai e descris ca disponibil doar partenerilor Fairwind; din 13 octombrie 2026 e distribuit global în aplicația Gemini pentru abonații Google AI Pro și Ultra (tabelul de modele, explicația care îl urmează, lista afirmațiilor nesusținute, FAQ și datele structurate). Subsecțiune nouă, „Completări: lansări verificate până la 11 noiembrie 2026”: Meta Muse Wonder, Gemini 4 Argon în aplicația Gemini, Claude Duet (produs, nu model), GPT-6.1 Terra, Claude Fable 5.2 și Mythos 5.2. Totalul de 557 (ianuarie–septembrie) și statisticile de adopție nu au fost recalculate. Afirmațiile adăugate sau corectate au fost verificate la 12 noiembrie 2026; restul articolului păstrează verificarea din 16 octombrie 2026.</td></tr>
         </tbody>
       </table>
 

@@ -14,7 +14,7 @@ export const deLaWebVisibilityLaMachineAccessibilityMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-09-30T20:59:00+03:00",
-  dateModified: "2026-10-02",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-09-30",
   about: [
     { name: "Machine accessibility" },
@@ -36,6 +36,8 @@ export const deLaWebVisibilityLaMachineAccessibilityMeta: LabArticleMeta = {
     "Meta Enterprise Platform",
     "Muse",
     "Claude Marketplace",
+    "Claude Duet",
+    "agenți AI persistenți",
     "Agentic Commerce Protocol",
     "AI crawlers",
     "AI retrieval",
@@ -78,6 +80,50 @@ export const deLaWebVisibilityLaMachineAccessibilityMeta: LabArticleMeta = {
       name: "OpenAI Help Center — Using shopping research in ChatGPT",
       url: "https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt",
     },
+    {
+      name: "Anthropic — Claude Duet",
+      url: "https://claude.com/resources/articles/claude-duet",
+    },
+    {
+      name: "OpenAI — Codex and ChatGPT Work updates: October 26–30, 2026",
+      url: "https://learn.chatgpt.com/codex/whats-new/october-26-30-2026",
+    },
+    {
+      name: "OpenAI — ChatGPT Work updates: November 2–6, 2026",
+      url: "https://learn.chatgpt.com/docs/whats-new/november-2-6-2026",
+    },
+    {
+      name: "OpenAI — Introducing Businesses in ChatGPT",
+      url: "https://openai.com/index/introducing-businesses-chatgpt/",
+    },
+    {
+      name: "Perplexity — Teammates, fully local Computer on Mac, and Voice Mode",
+      url: "https://www.perplexity.ai/en-GB/changelog/teammates-fully-local-computer-on-mac-and-voice-mode",
+    },
+    {
+      name: "Microsoft — What’s New in Microsoft Copilot — October 2026",
+      url: "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528",
+    },
+    {
+      name: "xAI — Grok Bot — Get started",
+      url: "https://docs.x.ai/grok-bot/get-started",
+    },
+    {
+      name: "Google — Gemini Spark now integrates with Chrome",
+      url: "https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-july-2026/",
+    },
+    {
+      name: "Google — Gemini Apps release notes",
+      url: "https://gemini.google/release-notes/",
+    },
+    {
+      name: "Meta — Introducing Muse Wonder models",
+      url: "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+    },
+    {
+      name: "Anthropic — Donating Agent Skills to the Agentic AI Foundation",
+      url: "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+    },
   ],
   faq: [
     {
@@ -98,7 +144,7 @@ export const deLaWebVisibilityLaMachineAccessibilityMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const deLaWebVisibilityLaMachineAccessibilityHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-09-30T20:59:00+03:00">30 septembrie 2026</time> · Actualizat: <time datetime="2026-10-02">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-30">30 septembrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-09-30T20:59:00+03:00">30 septembrie 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-09-30">30 septembrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -108,6 +154,7 @@ export const deLaWebVisibilityLaMachineAccessibilityHtml = `
           <li><a href="#3-de-ce-un-website-public-nu-este-automat-accesibil-tuturor-sistemelor-ai">3. De ce un website public nu este automat accesibil tuturor sistemelor AI?</a></li>
           <li><a href="#4-de-ce-conectorii-si-api-urile-devin-la-fel-de-importante-ca-paginile-web">4. De ce conectorii și API-urile devin la fel de importante ca paginile web?</a></li>
           <li><a href="#5-ce-schimba-agentic-commerce">5. Ce schimbă agentic commerce?</a></li>
+          <li><a href="#in-numele-cui-lucreaza-agentul-actualizare-din-noiembrie-2026">În numele cui lucrează agentul? Actualizare din noiembrie 2026</a></li>
           <li><a href="#6-cum-poate-fi-masurata-aceasta-schimbare">6. Cum poate fi măsurată această schimbare?</a>
             <ol>
               <li><a href="#1-presence">1. Presence</a></li>
@@ -132,8 +179,7 @@ export const deLaWebVisibilityLaMachineAccessibilityHtml = `
           <li><a href="#surse-si-metodologie">Surse și metodologie</a>
             <ol>
               <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
-              <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
-        </ol>
+            </ol>
           </li>
           <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
         </ol>
@@ -219,6 +265,7 @@ Actionable              = NU</code></pre>
       <h2 id="4-de-ce-conectorii-si-api-urile-devin-la-fel-de-importante-ca-paginile-web">4. De ce conectorii și API-urile devin la fel de importante ca paginile web?</h2>
       <p><strong>Pentru că un sistem AI poate primi informația printr-un canal direct și structurat, fără să depindă exclusiv de crawling-ul web.</strong></p>
       <p>Pe 23 septembrie 2026, Anthropic a lansat <strong>Claude Marketplace</strong>, cu peste 2.000 de plugins și connectors disponibile, inclusiv de la Atlassian, Google, Microsoft, Notion și Salesforce. Anthropic dă ca exemplu conectorul Atlassian, care aduce în Claude contextul din Confluence, Jira și alte aplicații ale echipei.<sup><a href="#fn-7">7</a></sup></p>
+      <p>Reperul de 2.000 e datat. La 21 octombrie 2026, anunțul Claude Duet menționa peste 6.000 de conectori și pluginuri în Claude Marketplace.<sup><a href="#fn-10">10</a></sup> Ambele cifre sunt raportate de Anthropic și nu înseamnă că fiecare integrare e disponibilă oricărui cont.</p>
       <p>Din punct de vedere informațional, acest lucru este semnificativ.</p>
       <p>Claude nu mai depinde doar de informația pe care o poate găsi pe web. Prin conectorii configurați de utilizator sau de organizație, poate lucra direct cu date din aplicațiile la care i s-a dat acces.</p>
       <p>Aceeași logică apare în ecosistemul Meta (conectorii Muse descriși mai sus) și, după cum arată secțiunea următoare, la OpenAI:</p>
@@ -256,6 +303,28 @@ Transact with me</code></pre>
       <p>Ultimele două etape nu mai țin doar de vizibilitate în sensul tradițional.</p>
       <p>Ele țin de capacitatea entității de a fi <strong>accesată operațional</strong> de un sistem AI.</p>
       <p>Traseul complet, de la menționare și recomandare până la tranzacție, este analizat în al patrulea articol: <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business</a>.</p>
+      <hr />
+      <h2 id="in-numele-cui-lucreaza-agentul-actualizare-din-noiembrie-2026">În numele cui lucrează agentul? Actualizare din noiembrie 2026</h2>
+      <p>Între sfârșitul lui septembrie și 11 noiembrie 2026, mai mulți furnizori au lansat sau au extins agenți care lucrează continuu, cu un mediu de lucru propriu, context persistent și aplicații conectate. Pentru machine accessibility, întrebarea utilă nu mai este doar ce poate citi un agent, ci <strong>în numele cui lucrează</strong>.</p>
+      <p>Un agent personal poate căuta și compara oferte pentru utilizator. Un agent intern poate organiza informații și executa procese în companie. Un agent al firmei poate răspunde potențialilor clienți din perspectiva ofertei sale. Aceste roluri pot interacționa, dar au obiective, surse și permisiuni diferite.</p>
+      <p>De aceea, machine accessibility trebuie evaluată pentru un traseu concret. Faptul că agentul propriei firme poate citi documentele interne nu demonstrează că un agent independent poate descoperi, verifica sau recomanda acea firmă. Testul trebuie să precizeze sistemul folosit, contextul disponibil și acțiunea pe care încearcă să o îndeplinească.</p>
+      <table>
+        <thead>
+          <tr><th>Produs</th><th>Rolul agentului</th><th>Ce aduce</th><th>Data și limitele de acces</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Anthropic — Claude Duet</td><td>personal</td><td>aplicație separată în care Claude lucrează ca agent proactiv, într-o mașină virtuală cu browser propriu; preia memoria, skill-urile și aplicațiile conectate ale contului; înainte să trimită un mesaj, să plătească, să semneze un document sau să șteargă ceva, arată ce urmează să facă și așteaptă aprobarea</td><td>anunțat la 21 octombrie 2026; research preview cu listă de așteptare, începând cu abonații Pro, Max și Ultra din SUA; nu este disponibilitate generală<sup><a href="#fn-10">10</a></sup></td></tr>
+          <tr><td>OpenAI — dots în ChatGPT Work</td><td>personal, de lucru</td><td>agent personal căruia i se pot da sarcini care continuă între conversații; din 4 noiembrie, GPT-6.1 Terra e unul dintre modelele care îl alimentează</td><td>note din 26–30 octombrie și 2–6 noiembrie; conversația prin iMessage sau RCS e în beta doar pentru abonații ChatGPT Pro din SUA; spațiile de lucru Enterprise, Edu și Healthcare eligibile pot activa dots<sup><a href="#fn-11">11</a></sup><sup><a href="#fn-12">12</a></sup></td></tr>
+          <tr><td>OpenAI — Business Agents</td><td>al firmei</td><td>agentul unei firme, cu care utilizatorul poate alege să discute din profilul acesteia; conversația e etichetată și separată de răspunsul independent al ChatGPT</td><td>beta din 10 noiembrie 2026, inițial pentru firme eligibile de comerț electronic și servicii online din SUA; detalii în <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility#business-hub-si-business-agents-in-chatgpt">al patrulea articol al seriei</a><sup><a href="#fn-13">13</a></sup></td></tr>
+          <tr><td>Perplexity — Teammates și Computer</td><td>personal, de echipă</td><td>agenți pentru activitate continuă și lucru în paralel; Computer poate rula complet local pe Mac</td><td>6 noiembrie 2026: Teammates pentru abonații Max, pe web; modul complet local pentru Pro, Max și Enterprise, pe Mac-uri Apple Silicon compatibile<sup><a href="#fn-14">14</a></sup></td></tr>
+          <tr><td>Microsoft — Copilot Autopilot</td><td>personal, în organizație</td><td>agent permanent în cloud, cu cont, căsuță de e-mail și fișiere proprii și cu un computer la distanță</td><td>anunțat în recapitularea din 30 octombrie 2026; distribuire în noiembrie prin programul Frontier; nu e o funcție generală a Copilot pentru consumatori<sup><a href="#fn-15">15</a></sup></td></tr>
+          <tr><td>xAI — Grok Bot</td><td>personal, de echipă</td><td>agenți („Bots”) care lucrează pe un computer în cloud comun, cu rutine programate și Bots partajați în echipă</td><td>documentație curentă, care confirmă funcțiile, nu data unei lansări; inclus în planurile Premium, Super și Ultra ale X Subscription<sup><a href="#fn-16">16</a></sup></td></tr>
+          <tr><td>Google — Gemini Spark și Antigravity</td><td>personal, programare</td><td>Spark poate folosi, cu permisiunea utilizatorului, conturile și parolele salvate pentru sarcini pe web; Antigravity, agentul de programare, e integrat în aplicația Gemini pentru macOS</td><td>Spark extins la 30 iulie 2026 la abonații Google AI Pro din peste 160 de țări suplimentare, dar integrarea cu Chrome a pornit doar în SUA; Antigravity din 13 octombrie, în engleză, pentru conturi eligibile de peste 18 ani<sup><a href="#fn-17">17</a></sup><sup><a href="#fn-18">18</a></sup></td></tr>
+          <tr><td>Meta — Muse și Muse Wonder</td><td>personal</td><td>Muse, descris în secțiunea 2, e agentul; Muse Wonder, anunțat la 12 octombrie, e o familie nouă de modele</td><td>Muse Wonder e disponibil prin Meta Model API și Muse Code; în aplicația Muse urmează să ajungă întâi la abonați<sup><a href="#fn-19">19</a></sup></td></tr>
+        </tbody>
+      </table>
+      <p>Tabelul e selectiv și datat. Un model nou nu dovedește existența unui agent persistent, iar un conector nou nu garantează că agentul va selecta o anumită firmă. Pentru fiecare produs, disponibilitatea declarată de furnizor trebuie separată de accesul observat într-un cont concret.</p>
+      <p>Tot în această perioadă, la 22 octombrie 2026, Anthropic a transferat standardul deschis Agent Skills către Agentic AI Foundation, sub Linux Foundation. Noutatea privește guvernanța standardului, nu apariția conceptului.<sup><a href="#fn-20">20</a></sup></p>
       <hr />
       <h2 id="6-cum-poate-fi-masurata-aceasta-schimbare">6. Cum poate fi măsurată această schimbare?</h2>
       <p><strong>Machine accessibility poate fi transformată din concept într-un set de teste observabile.</strong></p>
@@ -366,7 +435,7 @@ Actionability</code></pre>
 
       <h2 id="surse-si-metodologie">Surse și metodologie</h2>
 
-      <p>Acest articol tratează anunțurile și documentațiile citate ca <strong>evidence inputs</strong>, nu ca validare independentă a afirmațiilor comerciale ale furnizorilor. Cifrele (peste un milion de business-uri, peste 2.000 de plugins și connectors) sunt raportate de companii. Pe 30 septembrie 2026 au fost reverificate existența și data fiecărei surse, formularea capabilităților descrise și disponibilitatea anunțată (de exemplu, Muse lansat în SUA). Cele două pagini OpenAI blochează accesul automat și au fost confirmate prin indexul de căutare, nu prin citire directă. Termenul „machine accessibility” și modelul în șapte niveluri sunt propuneri ale AI Visibility Lab, nu standarde ale industriei, iar ultimele niveluri ale modelului nu au fost încă testate empiric.</p>
+      <p>Acest articol tratează anunțurile și documentațiile citate ca <strong>evidence inputs</strong>, nu ca validare independentă a afirmațiilor comerciale ale furnizorilor. Cifrele (peste un milion de business-uri, peste 2.000 de plugins și connectors în septembrie, peste 6.000 în octombrie) sunt raportate de companii. Pe 30 septembrie 2026 au fost reverificate existența și data fiecărei surse, formularea capabilităților descrise și disponibilitatea anunțată (de exemplu, Muse lansat în SUA). Cele două pagini OpenAI blochează accesul automat și au fost confirmate prin indexul de căutare, nu prin citire directă. Termenul „machine accessibility” și modelul în șapte niveluri sunt propuneri ale AI Visibility Lab, nu standarde ale industriei, iar ultimele niveluri ale modelului nu au fost încă testate empiric.</p>
 
       <ol class="avl-footnotes">
         <li id="fn-1">Meta, <strong>Launching Meta Enterprise Platform</strong>, 28 septembrie 2026. <a href="https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/" target="_blank" rel="noopener noreferrer">about.fb.com/news/2026/09/launching-meta-enterprise-platform/</a></li>
@@ -378,11 +447,22 @@ Actionability</code></pre>
         <li id="fn-7">Anthropic, <strong>Claude Marketplace: one place to discover plugins, agents, and services from our partners</strong>, 23 septembrie 2026. <a href="https://claude.com/blog/claude-marketplace" target="_blank" rel="noopener noreferrer">claude.com/blog/claude-marketplace</a></li>
         <li id="fn-8">OpenAI, <strong>Powering Product Discovery in ChatGPT</strong>, 24 martie 2026 (pagina blochează accesul automat; conținutul a fost confirmat la 30 septembrie 2026 prin indexul de căutare și prin relatări de presă din ziua anunțului). <a href="https://openai.com/index/powering-product-discovery-in-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/powering-product-discovery-in-chatgpt/</a></li>
         <li id="fn-9">OpenAI Help Center, <strong>Using shopping research in ChatGPT</strong>, consultat prin indexul de căutare la 30 septembrie 2026 (pagina blochează accesul automat). <a href="https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt" target="_blank" rel="noopener noreferrer">help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt</a></li>
+        <li id="fn-10">Anthropic, <strong>Claude Duet</strong>, 21 octombrie 2026, consultat la 12 noiembrie 2026. <a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener noreferrer">claude.com/resources/articles/claude-duet</a></li>
+        <li id="fn-11">OpenAI, <strong>Codex and ChatGPT Work updates: October 26–30, 2026</strong>, note de lansare, consultate la 12 noiembrie 2026. <a href="https://learn.chatgpt.com/codex/whats-new/october-26-30-2026" target="_blank" rel="noopener noreferrer">learn.chatgpt.com/codex/whats-new/october-26-30-2026</a></li>
+        <li id="fn-12">OpenAI, <strong>ChatGPT Work updates: November 2–6, 2026</strong>, note de lansare, consultate la 12 noiembrie 2026. <a href="https://learn.chatgpt.com/docs/whats-new/november-2-6-2026" target="_blank" rel="noopener noreferrer">learn.chatgpt.com/docs/whats-new/november-2-6-2026</a></li>
+        <li id="fn-13">OpenAI, <strong>Introducing Businesses in ChatGPT</strong>, 10 noiembrie 2026, consultat la 11 noiembrie 2026 (la 12 noiembrie pagina a blocat accesul automat; elementele principale au fost reconfirmate prin relatări de presă). <a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/introducing-businesses-chatgpt/</a></li>
+        <li id="fn-14">Perplexity, <strong>Teammates, fully local Computer on Mac, and Voice Mode</strong>, changelog, 6 noiembrie 2026. <a href="https://www.perplexity.ai/en-GB/changelog/teammates-fully-local-computer-on-mac-and-voice-mode" target="_blank" rel="noopener noreferrer">www.perplexity.ai/en-GB/changelog/teammates-fully-local-computer-on-mac-and-voice-mode</a></li>
+        <li id="fn-15">Microsoft, <strong>What’s New in Microsoft Copilot — October 2026</strong>, 30 octombrie 2026 (actualizat la 3 noiembrie 2026). <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528" target="_blank" rel="noopener noreferrer">techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%E2%80%99s-new-in-microsoft-copilot--october-2026/4568528</a></li>
+        <li id="fn-16">xAI, <strong>Grok Bot — Get started</strong>, documentație curentă, consultată la 12 noiembrie 2026. <a href="https://docs.x.ai/grok-bot/get-started" target="_blank" rel="noopener noreferrer">docs.x.ai/grok-bot/get-started</a></li>
+        <li id="fn-17">Google, <strong>Gemini Spark now integrates with Chrome</strong>, 30 iulie 2026. <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-july-2026/" target="_blank" rel="noopener noreferrer">blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-july-2026/</a></li>
+        <li id="fn-18">Google, <strong>Gemini Apps release notes</strong>, intrarea din 13 octombrie 2026, consultată la 12 noiembrie 2026. <a href="https://gemini.google/release-notes/" target="_blank" rel="noopener noreferrer">gemini.google/release-notes/</a></li>
+        <li id="fn-19">Meta, <strong>Introducing Muse Wonder models</strong>, 12 octombrie 2026. <a href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" target="_blank" rel="noopener noreferrer">about.fb.com/news/2026/10/introducing-muse-wonder-models/</a></li>
+        <li id="fn-20">Anthropic, <strong>Donating Agent Skills to the Agentic AI Foundation</strong>, 22 octombrie 2026. <a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener noreferrer">www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation</a></li>
       </ol>
 
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
-      <p>Produsele agentice, conectorii, protocoalele de commerce și politicile de acces pentru crawlere se schimbă rapid. Disponibilitatea regională, lista integrărilor și angajamentele operatorilor pot fi diferite la data lecturii. Afirmațiile despre produse au fost verificate la 30 septembrie 2026.</p>
+      <p>Produsele agentice, conectorii, protocoalele de commerce și politicile de acces pentru crawlere se schimbă rapid. Disponibilitatea regională, lista integrărilor și angajamentele operatorilor pot fi diferite la data lecturii. Afirmațiile despre produse au fost verificate la 30 septembrie 2026. Secțiunea „În numele cui lucrează agentul? Actualizare din noiembrie 2026”, reperul de 6.000 de conectori și notele 10–20 au fost verificate la 11–12 noiembrie 2026; restul articolului nu a fost reverificat în această rundă.</p>
 
       <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
       <table>
@@ -390,6 +470,7 @@ Actionability</code></pre>
         <tbody>
           <tr><td>1.0</td><td>30 septembrie 2026</td><td>Publicare inițială.</td></tr>
           <tr><td>1.1</td><td>2 octombrie 2026</td><td>Blocul de navigare al seriei „Machine accessibility și agentic web” și convenția metodologică aliniată la lanțul AVL (Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation). Corpul analizei nu a fost modificat.</td></tr>
+          <tr><td>1.2</td><td>12 noiembrie 2026</td><td>Secțiune nouă, „În numele cui lucrează agentul? Actualizare din noiembrie 2026”: distincția dintre agentul personal, cel intern și cel al firmei și un tabel datat cu Claude Duet, dots în ChatGPT Work, Business Agents, Perplexity Teammates și Computer, Copilot Autopilot, Grok Bot, Gemini Spark și Antigravity, Muse și Muse Wonder; transferul Agent Skills către Agentic AI Foundation. Reperul de 2.000 de conectori (septembrie) păstrat și completat cu cel de peste 6.000 raportat la 21 octombrie 2026. Notele 10–20 adăugate.</td></tr>
         </tbody>
       </table>
 

@@ -14,7 +14,7 @@ export const publicNuInseamnaAccesibilMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-10-02T09:07:00+03:00",
-  dateModified: "2026-10-02",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-10-01",
   about: [
     { name: "Machine accessibility" },
@@ -80,6 +80,10 @@ export const publicNuInseamnaAccesibilMeta: LabArticleMeta = {
       name: "Microsoft — AI Performance in Bing Webmaster Tools",
       url: "https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c",
     },
+    {
+      name: "OpenAI — Introducing Businesses in ChatGPT",
+      url: "https://openai.com/index/introducing-businesses-chatgpt/",
+    },
   ],
   faq: [],
 };
@@ -87,7 +91,7 @@ export const publicNuInseamnaAccesibilMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const publicNuInseamnaAccesibilHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-02T09:07:00+03:00">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-02T09:07:00+03:00">2 octombrie 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -97,7 +101,11 @@ export const publicNuInseamnaAccesibilHtml = `
           <li><a href="#2-de-ce-sisteme-ai-diferite-pot-recupera-surse-diferite">2. De ce sisteme AI diferite pot recupera surse diferite?</a></li>
           <li><a href="#3-cum-ajung-postarile-sociale-in-ai">3. Cum ajung postările sociale în AI?</a></li>
           <li><a href="#4-cine-decide-daca-un-agent-are-voie-sa-acceseze-informatia">4. Cine decide dacă un agent are voie să acceseze informația?</a></li>
-          <li><a href="#5-de-ce-conteaza-conectorii-si-api-urile">5. De ce contează conectorii și API-urile?</a></li>
+          <li><a href="#5-de-ce-conteaza-conectorii-si-api-urile">5. De ce contează conectorii și API-urile?</a>
+            <ol>
+              <li><a href="#profiluri-si-feeduri-declarate-de-firma-o-cale-de-acces-distincta">Profiluri și feeduri declarate de firmă: o cale de acces distinctă</a></li>
+            </ol>
+          </li>
           <li><a href="#6-cum-masuram-accesibilitatea-unei-surse-fara-sa-inventam-certitudini">6. Cum măsurăm accesibilitatea unei surse fără să inventăm certitudini?</a></li>
           <li><a href="#7-ce-poate-face-concret-un-business">7. Ce poate face concret un business?</a></li>
           <li><a href="#concluzie-nu-exista-un-singur-internet-vazut-de-ai">Concluzie: nu există un singur „internet văzut de AI”</a></li>
@@ -107,6 +115,7 @@ export const publicNuInseamnaAccesibilHtml = `
               <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
             </ol>
           </li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
         </ol>
       </nav>
 
@@ -185,6 +194,9 @@ Possibly cited or used</code></pre>
                                               ├──&gt; Asistent sau agent AI
 Sistem de programări ── API / autorizare ─────┘</code></pre>
       <p>Aceasta nu înseamnă că fiecare companie are nevoie de propriul API sau de un agent. Înseamnă că <strong>evaluarea vizibilității trebuie adaptată obiectivului real</strong>, temă dezvoltată în <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">al patrulea articol al seriei</a>.</p>
+      <h3 id="profiluri-si-feeduri-declarate-de-firma-o-cale-de-acces-distincta">Profiluri și feeduri declarate de firmă: o cale de acces distinctă</h3>
+      <p>Harta accesului trebuie să includă și informațiile declarate de firmă prin profiluri și feeduri administrate direct în platforma AI. Un exemplu documentat este Business Hub, lansat de OpenAI în beta la 10 noiembrie 2026: firmele eligibile își pot revendica profilul, își pot administra informațiile și pot furniza feeduri de produse în ChatGPT.<sup><a href="#fn-11">11</a></sup> Această cale diferă de recuperarea unei pagini web și de accesul autorizat la un document privat. Într-un audit, întrebarea este ce traseu a fost disponibil și ce dovadă avem că informația a fost efectiv folosită.</p>
+      <p>Accesul unui agent la un CRM sau la un dosar intern dovedește acces în acel context autorizat. Pentru vizibilitatea publică a firmei e necesară o observație separată, în condițiile în care un utilizator extern caută o soluție fără să ofere anticipat acele documente. Diferența dintre profil, agentul firmei și răspunsul independent al ChatGPT e analizată în <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility#business-hub-si-business-agents-in-chatgpt">al patrulea articol al seriei</a>.</p>
       <hr />
       <h2 id="6-cum-masuram-accesibilitatea-unei-surse-fara-sa-inventam-certitudini">6. Cum măsurăm accesibilitatea unei surse fără să inventăm certitudini?</h2>
       <p><strong>Separând ceea ce declară documentația, ceea ce reușim să testăm tehnic și ceea ce observăm în răspunsurile generate.</strong> Propunerea exploratorie pe care o numim aici <em>Source Accessibility Mapping</em> urmărește diferența dintre cele trei, fără să pretindă acces la infrastructura internă a furnizorilor AI.</p>
@@ -197,7 +209,7 @@ Sistem de programări ── API / autorizare ─────┘</code></pre>
           <tr><td><code>source_id</code></td><td>Care este sursa exactă?</td><td>URL, identificator API sau document.</td></tr>
           <tr><td><code>source_type</code></td><td>Este site propriu, social, registru, presă sau sistem privat?</td><td>Clasificare documentată.</td></tr>
           <tr><td><code>target_system</code></td><td>Ce produs și configurație testăm?</td><td>Nume, instrumente active, stare autentificare, dată.</td></tr>
-          <tr><td><code>access_path</code></td><td>Prin ce mecanism ar putea ajunge la sursă?</td><td>Crawler, web search, API, conector, acces nativ.</td></tr>
+          <tr><td><code>access_path</code></td><td>Prin ce mecanism ar putea ajunge la sursă?</td><td>Crawler, web search, API, conector, acces nativ, profil sau feed administrat de firmă în platformă.</td></tr>
           <tr><td><code>declared_access</code></td><td>Ce permite sau descrie furnizorul?</td><td>Documentație oficială, arhivată și datată.</td></tr>
           <tr><td><code>technical_observation</code></td><td>Ce putem observa din exterior?</td><td>Răspunsuri HTTP, reguli publice, jurnale proprii, teste autorizate.</td></tr>
           <tr><td><code>answer_observation</code></td><td>A folosit efectiv sursa în răspuns?</td><td>Răspuns complet, citare, extras, timestamp și condițiile testului.</td></tr>
@@ -260,11 +272,23 @@ Interpretation</code></pre>
         <li id="fn-8">Cloudflare, <strong>Have it both ways: stay discoverable in search while disallowing AI training</strong>, 15 septembrie 2026. <a href="https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/" target="_blank" rel="noopener noreferrer">blog.cloudflare.com/accountable-mixed-use-ai-crawlers/</a></li>
         <li id="fn-9">OpenAI, <strong>Introducing apps in ChatGPT and the new Apps SDK</strong>, 6 octombrie 2025 (pagina blochează accesul automat; confirmată la 1 octombrie 2026 prin indexul de căutare și relatări de presă). Pagina descrie lansarea inițială; disponibilitatea actuală a integrărilor se verifică separat. <a href="https://openai.com/index/introducing-apps-in-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/introducing-apps-in-chatgpt/</a></li>
         <li id="fn-10">Microsoft, <strong>AI Performance in Bing Webmaster Tools</strong>, documentație oficială (conținut încărcat dinamic; existența paginii verificată direct, iar formularea limitărilor confirmată prin indexul de căutare la 1 octombrie 2026). <a href="https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c" target="_blank" rel="noopener noreferrer">bing.com/webmasters/help/ai-performance-9f8e7d6c</a></li>
+        <li id="fn-11">OpenAI, <em>Introducing Businesses in ChatGPT</em>, 10 noiembrie 2026, consultat la 11 noiembrie 2026 (la 12 noiembrie pagina a blocat accesul automat; elementele principale au fost reconfirmate prin relatări de presă). <a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/introducing-businesses-chatgpt/</a></li>
       </ol>
 
       <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
 
-      <p>Lista crawlerelor, rolurile lor, controalele de acces oferite de infrastructură, acordurile de date dintre platforme și disponibilitatea conectorilor se schimbă rapid. Numele user-agent-urilor, regulile de respectare a <code>robots.txt</code> și disponibilitatea regională pot fi diferite la data lecturii. Afirmațiile despre produse au fost verificate la 1 octombrie 2026.</p>
+      <p>Lista crawlerelor, rolurile lor, controalele de acces oferite de infrastructură, acordurile de date dintre platforme și disponibilitatea conectorilor se schimbă rapid. Numele user-agent-urilor, regulile de respectare a <code>robots.txt</code> și disponibilitatea regională pot fi diferite la data lecturii. Afirmațiile despre produse au fost verificate la 1 octombrie 2026. Subsecțiunea despre profiluri și feeduri declarate de firmă și nota 11 au fost adăugate la 12 noiembrie 2026; restul articolului nu a fost reverificat în această rundă.</p>
+
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
+      <table>
+        <thead>
+          <tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0</td><td>2 octombrie 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>12 noiembrie 2026</td><td>Subsecțiune nouă în secțiunea 5, „Profiluri și feeduri declarate de firmă: o cale de acces distinctă”, cu Business Hub (OpenAI, 10 noiembrie 2026) ca exemplu și distincția dintre accesul unui agent la date private și vizibilitatea publică a firmei. În tabelul Source Accessibility Mapping, câmpul access_path include profilul sau feedul administrat de firmă. Nota 11 adăugată.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 1 octombrie 2026.</em></p>
 `;

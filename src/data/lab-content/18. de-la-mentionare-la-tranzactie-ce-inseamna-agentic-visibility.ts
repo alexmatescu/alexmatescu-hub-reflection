@@ -8,13 +8,13 @@ export const deLaMentionareLaTranzactieAgenticVisibilityMeta: LabArticleMeta = {
   title:
     "De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business",
   description:
-    "Ce înseamnă Agentic Visibility și cum extinde problema GEO/AEO dincolo de citare și menționare, către descoperire, recomandare, interacțiune și tranzacție. Analizăm OpenAI Agentic Commerce Protocol, Google Universal Commerce Protocol, Meta Business Agent, Cloudflare Agentic Commerce și protocoalele de plăți pentru agenți.",
+    "Ce înseamnă Agentic Visibility și cum extinde problema GEO/AEO dincolo de citare și menționare, către descoperire, recomandare, interacțiune și tranzacție. Analizăm OpenAI Agentic Commerce Protocol, Businesses in ChatGPT (Business Hub și Business Agents), Google Universal Commerce Protocol, Meta Business Agent, Cloudflare Agentic Commerce și protocoalele de plăți pentru agenți.",
   canonical:
     "https://delamatescu.ro/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility",
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-10-02T09:09:00+03:00",
-  dateModified: "2026-10-02",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-10-01",
   about: [
     { name: "Machine Accessibility" },
@@ -36,6 +36,9 @@ export const deLaMentionareLaTranzactieAgenticVisibilityMeta: LabArticleMeta = {
     "Universal Commerce Protocol",
     "UCP",
     "Meta Business Agent",
+    "Businesses in ChatGPT",
+    "Business Hub",
+    "Business Agents",
     "machine accessibility",
     "agent readiness",
     "AI recommendations",
@@ -85,6 +88,18 @@ export const deLaMentionareLaTranzactieAgenticVisibilityMeta: LabArticleMeta = {
       name: "OpenAI Help Center — Using shopping research in ChatGPT",
       url: "https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt",
     },
+    {
+      name: "OpenAI — Introducing Businesses in ChatGPT",
+      url: "https://openai.com/index/introducing-businesses-chatgpt/",
+    },
+    {
+      name: "OpenAI Help Center — Setting up your business on ChatGPT",
+      url: "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt",
+    },
+    {
+      name: "OpenAI — Businesses in ChatGPT",
+      url: "https://openai.com/business/businesses-in-chatgpt/",
+    },
   ],
   faq: [],
 };
@@ -92,7 +107,7 @@ export const deLaMentionareLaTranzactieAgenticVisibilityMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const deLaMentionareLaTranzactieAgenticVisibilityHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-02T09:09:00+03:00">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-02T09:09:00+03:00">2 octombrie 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -108,11 +123,16 @@ export const deLaMentionareLaTranzactieAgenticVisibilityHtml = `
               <li><a href="#plati">Plăți</a></li>
             </ol>
           </li>
-          <li><a href="#4-ce-inseamna-agentic-commerce-in-practica">4. Ce înseamnă agentic commerce în practică?</a></li>
+          <li><a href="#4-ce-inseamna-agentic-commerce-in-practica">4. Ce înseamnă agentic commerce în practică?</a>
+            <ol>
+              <li><a href="#business-hub-si-business-agents-in-chatgpt">Business Hub și Business Agents în ChatGPT</a></li>
+            </ol>
+          </li>
           <li><a href="#5-trebuie-toate-business-urile-sa-devina-tranzactionabile-pentru-agenti">5. Trebuie toate business-urile să devină tranzacționabile pentru agenți?</a></li>
           <li><a href="#6-cum-masuram-agentic-visibility-etapa-cu-etapa">6. Cum măsurăm Agentic Visibility etapă cu etapă?</a>
             <ol>
               <li><a href="#un-posibil-traseu-de-masurare-avl">Un posibil traseu de măsurare AVL</a></li>
+              <li><a href="#ce-trebuie-inregistrat-intr-o-observatie">Ce trebuie înregistrat într-o observație</a></li>
             </ol>
           </li>
           <li><a href="#7-ce-ar-trebui-sa-faca-un-business-acum">7. Ce ar trebui să facă un business acum?</a></li>
@@ -123,6 +143,7 @@ export const deLaMentionareLaTranzactieAgenticVisibilityHtml = `
           <li><a href="#surse-si-metodologie">Surse și metodologie</a></li>
           <li><a href="#nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</a></li>
           <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
         </ol>
       </nav>
 
@@ -229,6 +250,12 @@ Order confirmation</code></pre>
       <p>și</p>
       <pre><code>User → Business Agent</code></pre>
       <p>Într-un ecosistem mai matur, pot apărea și interacțiuni agent-to-agent. Dar acestea trebuie demonstrate concret pentru fiecare implementare; nu trebuie presupus că toate produsele enumerate aici comunică direct între ele.</p>
+      <h3 id="business-hub-si-business-agents-in-chatgpt">Business Hub și Business Agents în ChatGPT</h3>
+      <p>La 10 noiembrie 2026, OpenAI a anunțat <strong>Businesses in ChatGPT</strong>, în versiune beta.<sup><a href="#fn-11">11</a></sup> Prin <strong>Business Hub</strong>, firmele eligibile pot revendica un profil, își pot administra informațiile și pot furniza feeduri de produse. <strong>Business Agents</strong> adaugă o etapă separată: utilizatorul poate deschide profilul unei firme întâlnite într-un răspuns și poate alege să discute cu agentul acesteia. Potrivit OpenAI, conversația este etichetată și separată de răspunsul independent al ChatGPT.<sup><a href="#fn-11">11</a></sup></p>
+      <p>Este un caz concret al arhitecturii <strong>User → Business Agent</strong> de mai sus, de data aceasta în interiorul unui asistent generalist, nu doar în canalele de mesagerie ale firmei.</p>
+      <p>Pentru analiza Agentic Visibility, separarea contează. A fi menționat, a avea un profil și a primi o conversație prin agent sunt rezultate diferite, iar niciunul nu dovedește singur că utilizatorul a cumpărat. Potrivit OpenAI, revendicarea profilului nu garantează o poziție mai bună sau vânzări; evaluarea independentă a ofertelor rămâne distinctă de reprezentarea firmei.<sup><a href="#fn-13">13</a></sup></p>
+      <p>Business Hub nu înlocuiește integrarea comercială. Documentația OpenAI pentru dezvoltatori spune în continuare, la 12 noiembrie 2026, că onboarding-ul feedurilor de produse prin Agentic Commerce este disponibil partenerilor aprobați.<sup><a href="#fn-3">3</a></sup> Un profil sau un feed administrat prin Business Hub trebuie deci separat de integrarea tehnică pentru un flux comercial complet.</p>
+      <blockquote><strong>Disponibilitate pentru cititorii din România (verificată la 11–12 noiembrie 2026).</strong> Business Agents sunt disponibile inițial firmelor eligibile de comerț electronic și servicii online din SUA. Revendicarea profilului are reguli diferite: depinde de țară, categorie și verificare, iar magazinele locale și restaurantele pot revendica deocamdată doar listări existente din SUA. Pentru administrare și insights e necesară verificarea cerută, inclusiv prin Persona. Nu e nevoie de contract Enterprise sau de cont Ads.<sup><a href="#fn-12">12</a></sup> Pentru o firmă din România, formularea corectă este „verifică eligibilitatea concretă a firmei”: documentația publică nu confirmă activarea pe un anumit cont românesc.</blockquote>
       <h2 id="5-trebuie-toate-business-urile-sa-devina-tranzactionabile-pentru-agenti">5. Trebuie toate business-urile să devină tranzacționabile pentru agenți?</h2>
       <p><strong>Nu. Agentic Visibility nu trebuie transformată într-un maturity ladder în care „mai multă automatizare” înseamnă automat „mai bine”.</strong></p>
       <p>Un publisher poate avea nevoie să fie:</p>
@@ -279,11 +306,12 @@ Book meeting</code></pre>
           <tr><td>Retrieval</td><td>Informația este recuperată într-un test datat?</td><td>răspuns, citare, request log</td><td>Că va fi recuperată constant</td></tr>
           <tr><td>Understanding</td><td>Entitatea, produsul și atributele sunt interpretate corect?</td><td>comparație cu sursa primară</td><td>Că va fi recomandată</td></tr>
           <tr><td>Recommendability</td><td>Entitatea apare într-un context relevant de recomandare?</td><td>query panel + răspuns arhivat</td><td>Că există o preferință stabilă</td></tr>
+          <tr><td>Conversation</td><td>Utilizatorul deschide profilul firmei și începe o conversație cu agentul ei?</td><td>conversație etichetată, captură datată, indicator al platformei</td><td>Că utilizatorul cumpără</td></tr>
           <tr><td>Interaction</td><td>Agentul poate folosi un tool sau mecanism autorizat?</td><td>tool call / API log / confirmation</td><td>Că poate tranzacționa</td></tr>
           <tr><td>Transaction</td><td>Operațiunea poate fi finalizată în condițiile testului?</td><td>receipt, booking ID, order ID</td><td>Că toate tranzacțiile vor reuși</td></tr>
         </tbody>
       </table>
-      <p>Presence, Accessibility, Understanding și Recommendability corespund nivelurilor cu același nume din modelul propus în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a>. Retrieval detaliază nivelul Accessibility, iar Interaction și Transaction împart nivelul Actionability în două trepte care se măsoară separat.</p>
+      <p>Presence, Accessibility, Understanding și Recommendability corespund nivelurilor cu același nume din modelul propus în <a href="/lab/articole/de-la-web-visibility-la-machine-accessibility">primul articol</a>. Retrieval detaliază nivelul Accessibility, iar Interaction și Transaction împart nivelul Actionability în două trepte care se măsoară separat. Conversation, adăugată după lansarea Business Agents în noiembrie 2026, stă între recomandare și acțiune: utilizatorul vorbește cu reprezentantul digital al firmei, dar încă nu s-a executat nimic.</p>
       <p>Această separare este importantă deoarece piața poate comprima ușor tot traseul într-o singură afirmație: „suntem optimizați pentru AI”.</p>
       <p>Dar două business-uri pot avea profiluri complet diferite:</p>
       <pre><code>Business A
@@ -306,6 +334,24 @@ High platform-native transaction capability</code></pre>
       <p>Interpretarea nu trebuie să devină:</p>
       <blockquote>„ACP garantează recomandarea produsului.”</blockquote>
       <p>Aceasta ar depăși dovezile.</p>
+      <h3 id="ce-trebuie-inregistrat-intr-o-observatie">Ce trebuie înregistrat într-o observație</h3>
+      <p>Pe măsură ce aceeași firmă poate apărea într-un răspuns, într-un profil administrat sau într-o conversație cu agentul ei, o observație trebuie să spună exact ce s-a văzut și în ce condiții. Câmpurile de mai jos sunt o propunere metodologică AI Visibility Lab, nu rezultate experimentale:</p>
+      <table>
+        <thead>
+          <tr><th>Câmp de urmărit</th><th>De ce este necesar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Produsul și suprafața folosită</td><td>Chat standard, agent personal, workspace sau profil business pot avea acces diferit</td></tr>
+          <tr><td>Modelul afișat, planul și data</td><td>Permite delimitarea schimbării de model de schimbarea produsului</td></tr>
+          <tr><td>Țara, limba și starea contului</td><td>Separă disponibilitatea declarată de cea observată</td></tr>
+          <tr><td>Traseul informației</td><td>Web public, sursă licențiată, conector privat, profil business sau feed</td></tr>
+          <tr><td>Permisiuni și autentificare</td><td>Precizează ce putea accesa efectiv agentul</td></tr>
+          <tr><td>Eveniment observat</td><td>Mențiune, citare, recomandare, profil deschis, conversație, acțiune sau tranzacție</td></tr>
+          <tr><td>Definiția indicatorului și fereastra</td><td>Evită echivalarea unor metrici cu același nume</td></tr>
+          <tr><td>Tipul dovezii</td><td>Documentație oficială, observație directă sau măsurare repetată</td></tr>
+        </tbody>
+      </table>
+      <p>Un nou baseline poate testa efectul modificărilor. Anunțul unei funcții nu constituie, singur, dovadă că vizibilitatea unei firme a crescut. Indicatorii nativi ai platformei, precum cei din Business Hub, se raportează separat de măsurătorile AVL, după cum explică <a href="/lab/articole/de-unde-isi-iau-informatiile-ai-surse-citari-romania">articolul despre sursele sistemelor AI</a>.</p>
       <h2 id="7-ce-ar-trebui-sa-faca-un-business-acum">7. Ce ar trebui să facă un business acum?</h2>
       <p><strong>Să cartografieze drumul dintre informație și acțiune înainte să implementeze infrastructură nouă.</strong></p>
       <p>Un audit practic poate începe cu șapte întrebări:</p>
@@ -384,20 +430,23 @@ Can an authorized AI agent complete the relevant action?</code></pre>
       <ol class="avl-footnotes">
         <li id="fn-1">OpenAI Developers, <strong>Agentic Commerce Protocol</strong>, documentație oficială, consultată la 1 octombrie 2026 (descrierea ACP confirmată prin indexul de căutare; pagina își încarcă dinamic o parte din conținut). OpenAI descrie ACP drept stratul de conexiune dintre comercianți și utilizatorii ChatGPT, pentru ingestia datelor structurate de catalog și afișarea produselor relevante. <a href="https://developers.openai.com/commerce" target="_blank" rel="noopener noreferrer">developers.openai.com/commerce</a></li>
         <li id="fn-2">OpenAI, <strong>Powering Product Discovery in ChatGPT</strong>, 24 martie 2026 (pagina blochează accesul automat; conținutul a fost confirmat la 1 octombrie 2026 prin indexul de căutare și relatări de presă). Articolul anunță extinderea ACP pentru product discovery și experiențe de shopping mai bogate în ChatGPT. <a href="https://openai.com/index/powering-product-discovery-in-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/powering-product-discovery-in-chatgpt/</a></li>
-        <li id="fn-3">OpenAI Developers, <strong>Get Started — Agentic Commerce</strong>, documentație oficială, consultată la 1 octombrie 2026. Pagina descrie onboarding-ul prin product feeds și precizează că accesul pentru onboarding este disponibil partenerilor aprobați la data consultării. <a href="https://developers.openai.com/commerce/guides/get-started" target="_blank" rel="noopener noreferrer">developers.openai.com/commerce/guides/get-started</a></li>
-        <li id="fn-4">Google for Developers, <strong>Universal Commerce Protocol (UCP)</strong>, documentație oficială, consultată la 1 octombrie 2026. Pagina descrie UCP ca standard deschis pentru agentic commerce și enumeră funcții precum cart, checkout, order management și booking pe anumite suprafețe Google AI; accesul pentru Shopping și Lodging era pe bază de waitlist la data consultării. <a href="https://developers.google.com/universal-commerce-protocol" target="_blank" rel="noopener noreferrer">developers.google.com/universal-commerce-protocol</a></li>
+        <li id="fn-3">OpenAI Developers, <strong>Get Started — Agentic Commerce</strong>, documentație oficială, consultată la 1 octombrie 2026. Pagina descrie onboarding-ul prin product feeds și precizează că accesul pentru onboarding este disponibil partenerilor aprobați la data consultării. Formularea despre partenerii aprobați a fost reconfirmată la 12 noiembrie 2026. <a href="https://developers.openai.com/commerce/guides/get-started" target="_blank" rel="noopener noreferrer">developers.openai.com/commerce/guides/get-started</a></li>
+        <li id="fn-4">Google for Developers, <strong>Universal Commerce Protocol (UCP)</strong>, documentație oficială, consultată la 1 octombrie 2026. Pagina descrie UCP ca standard deschis pentru agentic commerce și enumeră funcții precum cart, checkout, order management și booking pe anumite suprafețe Google AI; accesul pentru Shopping și Lodging era pe bază de waitlist la data consultării. Listele de așteptare pentru Shopping și Lodging au fost reconfirmate la 12 noiembrie 2026. <a href="https://developers.google.com/universal-commerce-protocol" target="_blank" rel="noopener noreferrer">developers.google.com/universal-commerce-protocol</a></li>
         <li id="fn-5">Meta, <strong>Be There for Every Customer With Meta Business Agent</strong>, 3 iunie 2026. Meta descrie funcții precum recomandări de produse, programări, calificarea lead-urilor și vânzări și afirmă că Business Agent Platform se poate conecta la sisteme externe. <a href="https://about.fb.com/news/2026/06/meta-business-agent/" target="_blank" rel="noopener noreferrer">about.fb.com/news/2026/06/meta-business-agent/</a></li>
         <li id="fn-6">OpenAI Developers, <strong>Overview — Agentic Commerce Product Feeds</strong>, documentație oficială, consultată la 1 octombrie 2026. Pagina descrie livrarea de snapshot-uri complete de catalog, tratate ca sursă de adevăr, cu o cadență recomandată de cel puțin o dată pe zi. <a href="https://developers.openai.com/commerce/specs/file-upload/overview" target="_blank" rel="noopener noreferrer">developers.openai.com/commerce/specs/file-upload/overview</a></li>
         <li id="fn-7">Cloudflare, <strong>Cloudflare Gives AI Agents an Identity and a Wallet</strong>, 4 august 2026. Comunicatul descrie Cloudflare Wallets și cloudflare.pay pentru identitatea și plățile agenților; afirmațiile despre beneficii sunt tratate în articol drept poziția furnizorului, nu drept validare independentă. <a href="https://www.cloudflare.com/en-ca/press/press-releases/2026/cloudflare-gives-ai-agents-an-identity-and-a-wallet/" target="_blank" rel="noopener noreferrer">cloudflare.com/en-ca/press/press-releases/2026/cloudflare-gives-ai-agents-an-identity-and-a-wallet/</a></li>
         <li id="fn-8">Stripe, <strong>Introducing the Machine Payments Protocol</strong>, 18 martie 2026. Stripe și Tempo prezintă MPP ca standard deschis pentru plăți internet-native destinate agenților și serviciilor. <a href="https://stripe.com/blog/machine-payments-protocol" target="_blank" rel="noopener noreferrer">stripe.com/blog/machine-payments-protocol</a></li>
         <li id="fn-9">Cloudflare Developers, <strong>Agentic Payments</strong>, documentație oficială, actualizată 5 august 2026 și consultată la 1 octombrie 2026. Pagina documentează fluxuri de plată bazate pe HTTP 402 și suport pentru x402 și MPP în Agents SDK. <a href="https://developers.cloudflare.com/agents/tools/payments/" target="_blank" rel="noopener noreferrer">developers.cloudflare.com/agents/tools/payments/</a></li>
         <li id="fn-10">OpenAI Help Center, <strong>Using shopping research in ChatGPT</strong>, documentație oficială, consultată prin indexul de căutare la 1 octombrie 2026 (pagina blochează accesul automat). Pagina precizează că shopping research poate utiliza merchant product data furnizată prin ACP, informații publice despre produse și alte surse retail relevante. <a href="https://help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt" target="_blank" rel="noopener noreferrer">help.openai.com/en/articles/12911370-using-shopping-research-in-chatgpt</a></li>
+        <li id="fn-11">OpenAI, <em>Introducing Businesses in ChatGPT</em>, 10 noiembrie 2026. Anunță Businesses in ChatGPT în beta: Business Hub (profil revendicat, informații administrate, feeduri de produse) și Business Agents (conversație etichetată cu agentul firmei, separată de răspunsul independent al ChatGPT). Consultată la 11 noiembrie 2026; la 12 noiembrie pagina a blocat accesul automat, iar elementele principale au fost reconfirmate prin relatări de presă. <a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/introducing-businesses-chatgpt/</a></li>
+        <li id="fn-12">OpenAI Help Center, <em>Setting up your business on ChatGPT</em>, documentație curentă, consultată la 11 noiembrie 2026 (accesul automat a fost blocat la reverificarea din 12 noiembrie). Descrie eligibilitatea pe țară, categorie și verificare, disponibilitatea inițială a Business Agents pentru firme eligibile de comerț electronic și servicii online din SUA, verificarea prin Persona și definițiile indicatorilor din Insights. <a href="https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt" target="_blank" rel="noopener noreferrer">help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt</a></li>
+        <li id="fn-13">OpenAI, <em>Businesses in ChatGPT</em>, pagină de prezentare și FAQ, consultată la 11 noiembrie 2026. Precizează că revendicarea profilului nu garantează o poziție mai bună sau vânzări. <a href="https://openai.com/business/businesses-in-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/business/businesses-in-chatgpt/</a></li>
       </ol>
       <hr />
       <h2 id="nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</h2>
       <p>Acest articol separă <strong>descoperirea</strong>, <strong>recuperarea</strong>, <strong>reprezentarea</strong>, <strong>recomandarea</strong>, <strong>interacțiunea</strong> și <strong>tranzacția</strong>. Niciuna dintre etape nu este tratată ca dovadă automată pentru următoarea.</p>
       <p>Termenul <strong>Agentic Visibility</strong> este utilizat ca un cadru exploratoriu AI Visibility Lab. Articolul nu afirmă că termenul este un standard oficial, o disciplină matură sau o metrică recunoscută de industrie. Definiția propusă aici este operațională și trebuie validată prin măsurători și studii de caz.</p>
-      <p>Existența unui product feed, API, ACP integration, UCP integration, MCP server, business agent sau protocol de plată nu este prezentată ca garanție de:</p>
+      <p>Existența unui product feed, API, ACP integration, UCP integration, MCP server, business agent, profil revendicat într-o platformă AI sau protocol de plată nu este prezentată ca garanție de:</p>
       <ul>
         <li>indexare;</li>
         <li>ranking;</li>
@@ -410,7 +459,17 @@ Can an authorized AI agent complete the relevant action?</code></pre>
       </ul>
       <p>Afirmațiile furnizorilor despre propriile produse sunt atribuite explicit și nu sunt tratate ca validări independente. Unde o funcție este limitată la parteneri aprobați, waitlist, anumite suprafețe sau configurații, această limitare trebuie păstrată.</p>
       <h2 id="nota-de-volatilitate">Notă de volatilitate</h2>
-      <p>Protocoalele de agentic commerce (ACP, UCP, MPP, x402), condițiile de acces pentru comercianți (parteneri aprobați, waitlist) și disponibilitatea funcțiilor pe suprafețele OpenAI, Google, Meta și Cloudflare se schimbă rapid și pot fi diferite la data lecturii. Afirmațiile despre produse și protocoale au fost verificate la 1 octombrie 2026.</p>
+      <p>Protocoalele de agentic commerce (ACP, UCP, MPP, x402), condițiile de acces pentru comercianți (parteneri aprobați, waitlist) și disponibilitatea funcțiilor pe suprafețele OpenAI, Google, Meta și Cloudflare se schimbă rapid și pot fi diferite la data lecturii. Afirmațiile despre produse și protocoale au fost verificate la 1 octombrie 2026. Subsecțiunea despre Business Hub și Business Agents, etapa Conversation, câmpurile de observație și notele 3, 4 și 11–13 au fost verificate la 11–12 noiembrie 2026; restul afirmațiilor nu a fost reverificat în această rundă.</p>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
+      <table>
+        <thead>
+          <tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0</td><td>2 octombrie 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>12 noiembrie 2026</td><td>Subsecțiune nouă în secțiunea 4, „Business Hub și Business Agents în ChatGPT”, cu Businesses in ChatGPT (beta, 10 noiembrie 2026) și caseta de disponibilitate pentru cititorii din România. Etapa Conversation adăugată în tabelul de măsurare din secțiunea 6. Subsecțiune nouă, „Ce trebuie înregistrat într-o observație”, cu opt câmpuri propuse. Notele 11–13 adăugate; notele 3 (ACP, parteneri aprobați) și 4 (UCP, waitlist) reconfirmate. Descrierea articolului menționează Businesses in ChatGPT.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 1 octombrie 2026.</em></p>
 `;

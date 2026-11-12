@@ -15,7 +15,7 @@ export const deUndeIsiIauInformatiileAiMeta: LabArticleMeta = {
   category: "Search & Retrieval",
   articleType: "Analiză",
   datePublished: "2026-11-07T09:12:00+02:00",
-  dateModified: "2026-11-07",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-11-07",
   image: {
     url: "https://delamatescu.ro/images/lab/de-unde-isi-iau-informatiile-ai-surse-citari-romania/00-traseul-informatiei.webp",
@@ -105,6 +105,14 @@ export const deUndeIsiIauInformatiileAiMeta: LabArticleMeta = {
       name: "Websem — Cine vinde cărți când clientul întreabă un AI?",
       url: "https://websem.ro/resurse/aeo/studiu-piata-carte-romania",
     },
+    {
+      name: "OpenAI — Introducing Businesses in ChatGPT",
+      url: "https://openai.com/index/introducing-businesses-chatgpt/",
+    },
+    {
+      name: "OpenAI Help Center — Setting up your business on ChatGPT",
+      url: "https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt",
+    },
   ],
   faq: [
     {
@@ -141,7 +149,7 @@ export const deUndeIsiIauInformatiileAiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const deUndeIsiIauInformatiileAiHtml = `
 <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-<p>Publicat: <time datetime="2026-11-07T09:12:00+02:00">7 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-11-07">7 noiembrie 2026</time></p>
+<p>Publicat: <time datetime="2026-11-07T09:12:00+02:00">7 noiembrie 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-11-07">7 noiembrie 2026</time></p>
 
 <nav class="article-toc" aria-labelledby="cuprins">
   <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -178,7 +186,11 @@ export const deUndeIsiIauInformatiileAiHtml = `
       </ol>
     </li>
     <li><a href="#8-ce-ne-spun-toate-acestea-despre-piata-romaneasca">8. Ce ne spun toate acestea despre piața românească?</a></li>
-    <li><a href="#9-cum-ar-trebui-testata-vizibilitatea-unei-entitati">9. Cum ar trebui testată vizibilitatea unei entități?</a></li>
+    <li><a href="#9-cum-ar-trebui-testata-vizibilitatea-unei-entitati">9. Cum ar trebui testată vizibilitatea unei entități?</a>
+      <ol>
+        <li><a href="#indicatorii-din-business-hub-alta-populatie-alte-reguli-de-numarare">Indicatorii din Business Hub: altă populație, alte reguli de numărare</a></li>
+      </ol>
+    </li>
     <li><a href="#10-ce-poate-face-o-companie-fara-sa-controleze-ai-ul">10. Ce poate face o companie fără să controleze AI-ul?</a></li>
     <li><a href="#11-limita-fundamentala-a-studiilor-masuram-sisteme-care-se-schimba-in-timp-ce-le-studiem">11. Limita fundamentală a studiilor: măsurăm sisteme care se schimbă în timp ce le studiem</a></li>
     <li><a href="#concluzie-sa-fim-pregatiti-sa-fim-gasiti-nu-sa-pretindem-ca-vom-fi-alesi">Concluzie: să fim pregătiți să fim găsiți, nu să pretindem că vom fi aleși</a></li>
@@ -200,6 +212,7 @@ export const deUndeIsiIauInformatiileAiHtml = `
         <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
       </ol>
     </li>
+    <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
   </ol>
 </nav>
 
@@ -434,6 +447,9 @@ export const deUndeIsiIauInformatiileAiHtml = `
 </ol>
 <p>Indicatorii utili nu se reduc la „câte linkuri am obținut?”. Pot fi calculați, între altele, ponderea răspunsurilor în care entitatea este menționată, frecvența recomandărilor, ponderea citărilor directe, diversitatea surselor, suprapunerea între platforme și variația rezultatelor între rulări.</p>
 <p>În raportare trebuie păstrată distincția dintre <strong>observație</strong>, <strong>măsurare</strong> și <strong>interpretare</strong>. Dacă un brand apare în trei răspunsuri din zece, aceasta este o măsurare. Dacă presupunem că apariția este cauzată de un articol nou, aceea este o ipoteză care cere dovezi suplimentare.</p>
+<h3 id="indicatorii-din-business-hub-alta-populatie-alte-reguli-de-numarare">Indicatorii din Business Hub: altă populație, alte reguli de numărare</h3>
+<p>Din 10 noiembrie 2026, firmele eligibile care își revendică profilul în Business Hub, spațiul lansat de OpenAI pentru afaceri în ChatGPT, primesc și indicatori nativi ai platformei.<sup><a href="#fn-18">18</a></sup> Ei trebuie citiți după propriile definiții. Pentru o firmă online, „mentions” numără referințele la website, nu simpla apariție a numelui. Pentru o afacere locală, definiția urmărește afișarea rezultatului locației. Documentația descrie o fereastră de 28 de zile, iar valorile lipsă pot reflecta praguri de raportare sau date încă indisponibile, nu neapărat activitate zero.<sup><a href="#fn-19">19</a></sup></p>
+<p>Un astfel de indicator nu se combină direct cu ponderea mențiunilor dintr-un set controlat de întrebări, ca în protocolul de mai sus. Cele două observații provin din populații, contexte și reguli de numărare diferite: platforma raportează ce a înregistrat în propriul trafic, după definițiile ei, iar un experiment AVL numără ce apare într-un univers fix de întrebări, în condiții documentate. O raportare utilă le prezintă separat și spune la ce întrebare răspunde fiecare. Diferența dintre profil, agentul firmei și răspunsul independent al ChatGPT e explicată în <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility#business-hub-si-business-agents-in-chatgpt">articolul despre Agentic Visibility</a>.</p>
 <h2 id="10-ce-poate-face-o-companie-fara-sa-controleze-ai-ul">10. Ce poate face o companie fără să controleze AI-ul?</h2>
 <p>Documentația publică nu oferă o formulă pentru obținerea garantată a unei citări. Ea oferă, totuși, indicii despre condițiile care merită verificate.</p>
 <p><strong>Mai întâi, identitatea.</strong> O companie trebuie să poată fi identificată fără ambiguitate: cine este, unde activează, ce oferă, cui se adresează și prin ce canale poate fi contactată. Numele inconsistent, lipsa datelor elementare și contradicțiile între website și profiluri fac verificarea dificilă atât pentru oameni, cât și pentru sisteme automate.</p>
@@ -508,6 +524,8 @@ export const deUndeIsiIauInformatiileAiHtml = `
   <li id="fn-15"><strong>GEOflux</strong>, <a href="https://www.geoflux.ai/ro/state-of-ai" target="_blank" rel="noopener noreferrer">State of AI Search — România</a> — monitorizare comercială, fereastră mobilă, consultare 7 noiembrie 2026.</li>
   <li id="fn-16"><strong>GEOflux</strong>, <a href="https://www.geoflux.ai/ro/state-of-ai/romania/banking" target="_blank" rel="noopener noreferrer">Bănci în România: Stadiul căutării AI</a> — monitorizare sectorială a mențiunilor și citărilor.</li>
   <li id="fn-17"><strong>Websem</strong>, <a href="https://websem.ro/resurse/aeo/studiu-piata-carte-romania" target="_blank" rel="noopener noreferrer">Cine vinde cărți când clientul întreabă un AI?</a>, experiment iulie 2026.</li>
+  <li id="fn-18"><strong>OpenAI</strong>, <a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">Introducing Businesses in ChatGPT</a>, 10 noiembrie 2026 — lansarea Business Hub și Business Agents, în versiune beta; consultată la 11 noiembrie 2026.</li>
+  <li id="fn-19"><strong>OpenAI Help Center</strong>, <a href="https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt" target="_blank" rel="noopener noreferrer">Setting up your business on ChatGPT</a> — eligibilitate, verificare și definițiile indicatorilor din Insights; documentație curentă, consultată la 11 noiembrie 2026.</li>
 </ol>
 <h3 id="lecturi-conexe-din-ai-visibility-lab">Lecturi conexe din AI Visibility Lab</h3>
 <ul>
@@ -517,7 +535,17 @@ export const deUndeIsiIauInformatiileAiHtml = `
   <li><a href="/lab/market-discovery">Market Discovery — AI Visibility Lab</a></li>
 </ul>
 <h3 id="nota-de-volatilitate">Notă de volatilitate</h3>
-<p>Documentația furnizorilor, comportamentul produselor AI și rapoartele pe ferestre mobile (GEOflux, MJRC) se pot schimba după data verificării. Valorile GEOflux din Graficul 6 sunt cele afișate la 7 noiembrie 2026. Toate sursele au fost verificate la 7 noiembrie 2026.</p>
+<p>Documentația furnizorilor, comportamentul produselor AI și rapoartele pe ferestre mobile (GEOflux, MJRC) se pot schimba după data verificării. Valorile GEOflux din Graficul 6 sunt cele afișate la 7 noiembrie 2026. Toate sursele au fost verificate la 7 noiembrie 2026. Subsecțiunea despre indicatorii Business Hub și sursele 18–19 au fost adăugate la 12 noiembrie 2026, pe baza documentației OpenAI consultate la 11 noiembrie 2026; restul articolului nu a fost reverificat în această rundă.</p>
+<h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
+<table>
+  <thead>
+    <tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1.0</td><td>7 noiembrie 2026</td><td>Publicare inițială.</td></tr>
+    <tr><td>1.1</td><td>12 noiembrie 2026</td><td>Subsecțiune nouă în secțiunea 9, „Indicatorii din Business Hub: altă populație, alte reguli de numărare”, despre indicatorii nativi lansați de OpenAI la 10 noiembrie 2026 (definiția „mentions”, fereastra de 28 de zile, valorile lipsă) și despre separarea lor de măsurătorile AVL. Sursele 18–19 adăugate.</td></tr>
+  </tbody>
+</table>
 
 <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 7 noiembrie 2026.</em></p>
 `;

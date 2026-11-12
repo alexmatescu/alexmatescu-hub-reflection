@@ -14,7 +14,7 @@ export const siteulNuDispareIsiSchimbaClientulMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-10-02T09:08:00+03:00",
-  dateModified: "2026-10-28",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-10-01",
   about: [
     { name: "Machine Accessibility" },
@@ -84,6 +84,14 @@ export const siteulNuDispareIsiSchimbaClientulMeta: LabArticleMeta = {
       name: "OpenAI — Keeping your data safe when an AI agent clicks a link",
       url: "https://openai.com/index/ai-agent-link-safety/",
     },
+    {
+      name: "OpenAI — Site tools (WebMCP)",
+      url: "https://learn.chatgpt.com/docs/webmcp",
+    },
+    {
+      name: "OpenAI — Introducing Businesses in ChatGPT",
+      url: "https://openai.com/index/introducing-businesses-chatgpt/",
+    },
   ],
   faq: [],
 };
@@ -91,7 +99,7 @@ export const siteulNuDispareIsiSchimbaClientulMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const siteulNuDispareIsiSchimbaClientulHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-02T09:08:00+03:00">2 octombrie 2026</time> · Actualizat: <time datetime="2026-10-28">28 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-02T09:08:00+03:00">2 octombrie 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-01">1 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -218,6 +226,7 @@ click
 fill form</code></pre>
       <p>Acest traseu poate funcționa, dar este sensibil la modificări de layout, formulare, autentificare și mecanisme anti-abuz.</p>
       <p>Prin <strong>WebMCP</strong>, un site poate expune instrumente direct agentului în contextul paginii deschise. OpenAI spune că site tools permit ChatGPT să descopere și să folosească aceste instrumente atunci când site-ul le oferă și utilizatorul are acces la funcție.<sup><a href="#fn-3">3</a></sup></p>
+      <p>Documentația OpenAI consultată la 12 noiembrie 2026 precizează condițiile. Site tools rulează deocamdată doar în browserul integrat al aplicației desktop ChatGPT, unde ChatGPT Work și Codex le pot descoperi și folosi. Funcția cere un model compatibil și o pagină care oferă instrumente; accesul poate fi acordat de cont sau de politica de browser a spațiului de lucru gestionat. Setările browserului, permisiunile site-ului și confirmările pentru acțiuni cu consecințe, precum trimiterea de mesaje, cumpărăturile sau ștergerea datelor, rămân valabile, iar instrucțiunile site-ului nu îi dau agentului permisiunea de a face acțiuni sensibile.<sup><a href="#fn-11">11</a></sup> Suportul nu poate fi generalizat la orice browser sau la orice conversație AI. Este o precizare a suportului documentat, nu anunțul unei lansări noi.</p>
       <p>La un nivel mai general, <strong>Model Context Protocol (MCP)</strong> oferă un protocol deschis prin care clienții AI pot interacționa cu resurse și instrumente externe. Specificația publicată la 28 iulie 2026 a mutat nucleul protocolului către un model stateless și a continuat dezvoltarea componentelor de autorizare și extensibilitate.<sup><a href="#fn-4">4</a></sup></p>
       <p>Există și mecanisme web mai tradiționale. API-urile pot oferi acces structurat la produse, disponibilitate, documentație sau funcții. Cloudflare include în propriul său cadru de <em>Agent Readiness</em> elemente precum API Catalog, MCP, WebMCP, OAuth discovery și alte mecanisme de descoperire a capabilităților.<sup><a href="#fn-9">9</a></sup></p>
       <p>Aici este însă esențială o delimitare E-E-A-T:</p>
@@ -339,6 +348,7 @@ Can it be interpreted correctly?
 Does the user need an action?
     ↓
 If yes: can the authorized agent execute it safely?</code></pre>
+      <p>Lansarea Business Hub de către OpenAI, la 10 noiembrie 2026, ridică o întrebare practică: dacă firma își poate administra profilul direct în platformă, mai contează site-ul?<sup><a href="#fn-12">12</a></sup> Un profil administrat într-o platformă AI nu elimină nevoia unui website coerent. Oferta, condițiile și informațiile despre firmă trebuie să rămână consecvente în punctele în care clientul le poate verifica. Pregătirea pentru agenți începe cu aceste informații și cu traseul real al utilizatorului; integrarea tehnică se justifică atunci când rezolvă o acțiune identificată și poate fi testată. Relația dintre profil, agentul firmei și răspunsul independent al ChatGPT e analizată în <a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility#business-hub-si-business-agents-in-chatgpt">articolul următor al seriei</a>.</p>
       <p><strong>Înainte să construim site-uri pentru agenți AI, trebuie să demonstrăm ce pot face agenții cu site-urile pe care le avem deja.</strong></p>
       <p>Pentru AI Visibility Lab, acesta este pasul următor: să transformăm ideea de <em>agent readiness</em> dintr-un concept general într-un set de observații și măsurători reproductibile, fără să confundăm accesibilitatea tehnică cu citarea, recomandarea sau performanța comercială.</p>
       <p>În articolul următor vom urmări ce se întâmplă după ce un sistem AI găsește și înțelege un business: <strong><a href="/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility">„De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business.”</a></strong></p>
@@ -364,6 +374,8 @@ If yes: can the authorized agent execute it safely?</code></pre>
         <li id="fn-8">Google Search Central, <strong>General Structured Data Guidelines</strong>, documentație oficială, consultată la 1 octombrie 2026. Google precizează că structured data trebuie să fie reprezentativă pentru conținutul vizibil și că implementarea corectă nu garantează apariția unui rich result. <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies" target="_blank" rel="noopener noreferrer">developers.google.com/search/docs/appearance/structured-data/sd-policies</a></li>
         <li id="fn-9">Cloudflare, <strong>Introducing the Agent Readiness score. Check to see if your site is agent-ready</strong>, 17 aprilie 2026, actualizat la 15 iulie 2026. Instrumentul este un cadru Cloudflare; articolul de față nu îl tratează ca standard universal. <a href="https://blog.cloudflare.com/agent-readiness/" target="_blank" rel="noopener noreferrer">blog.cloudflare.com/agent-readiness/</a></li>
         <li id="fn-10">OpenAI, <strong>Keeping your data safe when an AI agent clicks a link</strong>, 28 ianuarie 2026 (pagina blochează accesul automat; conținutul a fost confirmat la 1 octombrie 2026 prin indexul de căutare). Pagina descrie riscuri asociate agenților care accesează conținut web, inclusiv exfiltrarea datelor și necesitatea măsurilor de siguranță. <a href="https://openai.com/index/ai-agent-link-safety/" target="_blank" rel="noopener noreferrer">openai.com/index/ai-agent-link-safety/</a></li>
+        <li id="fn-11">OpenAI, <em>Site tools</em> (implementarea WebMCP în ChatGPT), documentație curentă, consultată la 12 noiembrie 2026. <a href="https://learn.chatgpt.com/docs/webmcp" target="_blank" rel="noopener noreferrer">learn.chatgpt.com/docs/webmcp</a></li>
+        <li id="fn-12">OpenAI, <em>Introducing Businesses in ChatGPT</em>, 10 noiembrie 2026, consultat la 11 noiembrie 2026 (la 12 noiembrie pagina a blocat accesul automat; elementele principale au fost reconfirmate prin relatări de presă). <a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">openai.com/index/introducing-businesses-chatgpt/</a></li>
       </ol>
       <hr />
       <h2 id="nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</h2>
@@ -371,7 +383,7 @@ If yes: can the authorized agent execute it safely?</code></pre>
       <p>Termenii <strong>Information Readiness</strong>, <strong>Interaction Readiness</strong> și <strong>Transaction Readiness</strong> sunt utilizați aici ca un cadru exploratoriu AI Visibility Lab pentru separarea tipurilor de acces. Nu sunt prezentați ca standarde oficiale, niveluri de maturitate recunoscute sau cerințe obligatorii pentru toate site-urile.</p>
       <p>Expresia <strong>agent-ready</strong> este deja folosită public de Cloudflare și de alte proiecte din ecosistemul agentic; AI Visibility Lab nu revendică originea termenului. Cadrul propriu introdus în acest articol constă în delimitarea operațională a celor trei tipuri de readiness și în integrarea lor în lanțul metodologic <code>Raw Evidence → Indexed Evidence → Observation → Measurement → Interpretation</code>.</p>
       <h2 id="nota-de-volatilitate">Notă de volatilitate</h2>
-      <p>WebMCP este un standard propus, MCP își schimbă specificația periodic, iar disponibilitatea site tools în ChatGPT, categoriile de boți din Cloudflare și criteriile Agent Readiness pot fi diferite la data lecturii. Afirmațiile despre produse și specificații au fost verificate la 1 octombrie 2026.</p>
+      <p>WebMCP este un standard propus, MCP își schimbă specificația periodic, iar disponibilitatea site tools în ChatGPT, categoriile de boți din Cloudflare și criteriile Agent Readiness pot fi diferite la data lecturii. Afirmațiile despre produse și specificații au fost verificate la 1 octombrie 2026. Precizarea despre condițiile site tools/WebMCP, paragraful despre profilurile administrate în platformă și notele 11–12 au fost adăugate la 12 noiembrie 2026; restul articolului nu a fost reverificat în această rundă.</p>
 
       <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
       <table>
@@ -379,6 +391,7 @@ If yes: can the authorized agent execute it safely?</code></pre>
         <tbody>
           <tr><td>1.0</td><td>2 octombrie 2026</td><td>Publicare inițială.</td></tr>
           <tr><td>1.1</td><td>28 octombrie 2026</td><td>Exemplu măsurat după paragraful despre OAI-SearchBot și robots.txt: rezultatul rulării T0 AVL-203 pe delamatescu.ro, cu trimitere la studiul de caz CS-002. Restul textului nu a fost modificat.</td></tr>
+          <tr><td>1.2</td><td>12 noiembrie 2026</td><td>Secțiunea 5: condițiile documentate pentru site tools/WebMCP (browserul integrat al aplicației desktop ChatGPT, model compatibil, politici de cont, permisiuni și confirmări care rămân valabile). Concluzie: paragraf despre relația dintre website, profilul administrat în platformă (Business Hub, OpenAI, 10 noiembrie 2026) și agentul firmei. Notele 11–12 adăugate.</td></tr>
         </tbody>
       </table>
 

@@ -14,7 +14,7 @@ export const socialMediaStratInformationalPentruAiMeta: LabArticleMeta = {
   category: "AI Ecosystem",
   articleType: "Analiză",
   datePublished: "2026-10-02T09:10:00+03:00",
-  dateModified: "2026-10-02",
+  dateModified: "2026-11-12",
   lastReviewed: "2026-10-02",
   about: [
     { name: "Machine Accessibility" },
@@ -98,6 +98,14 @@ export const socialMediaStratInformationalPentruAiMeta: LabArticleMeta = {
       name: "MediaPost — Reddit Ending Data-Scraping, Will Keep Existing Agreements",
       url: "https://www.mediapost.com/publications/article/418430/reddit-ending-data-scraping-will-keep-existing-ag.html",
     },
+    {
+      name: "Reddit — Mod Monthly: your October 2026 newsletter is here",
+      url: "https://www.reddit.com/r/modnews/comments/1x6rjnd/mod_monthly_your_october_2026_newsletter_is_here/",
+    },
+    {
+      name: "TechRepublic — Reddit RSS and Public API Shutdown: Key Deadlines",
+      url: "https://www.techrepublic.com/article/news-reddit-rss-public-api-shutdown/",
+    },
   ],
   faq: [],
 };
@@ -105,7 +113,7 @@ export const socialMediaStratInformationalPentruAiMeta: LabArticleMeta = {
 /** Conținutul propriu-zis al articolului — fără metadate tehnice. */
 export const socialMediaStratInformationalPentruAiHtml = `
       <p><a href="/despre" rel="author">Alex Matescu</a> · Fondator și coordonator <a href="/lab">AI Visibility Lab</a></p>
-      <p>Publicat: <time datetime="2026-10-02T09:10:00+03:00">2 octombrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-02">2 octombrie 2026</time></p>
+      <p>Publicat: <time datetime="2026-10-02T09:10:00+03:00">2 octombrie 2026</time> · Actualizat: <time datetime="2026-11-12">12 noiembrie 2026</time> · Ultima verificare factuală: <time datetime="2026-10-02">2 octombrie 2026</time></p>
 
       <nav class="article-toc" aria-labelledby="cuprins">
         <p id="cuprins" class="article-toc-title">Cuprins</p>
@@ -145,6 +153,7 @@ export const socialMediaStratInformationalPentruAiHtml = `
           <li><a href="#surse-si-metodologie">Surse și metodologie</a></li>
           <li><a href="#nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</a></li>
           <li><a href="#nota-de-volatilitate">Notă de volatilitate</a></li>
+          <li><a href="#istoricul-versiunilor">Istoricul versiunilor</a></li>
         </ol>
       </nav>
 
@@ -215,6 +224,21 @@ Citation / attribution</code></pre>
       <p>În mai 2024, OpenAI și Reddit au anunțat un parteneriat prin care OpenAI primește acces la Reddit Data API, descris de companii ca furnizând conținut Reddit structurat și în timp real. Scopul declarat este ca produsele OpenAI să poată înțelege și afișa mai bine conținut Reddit, în special pentru subiecte recente.<sup><a href="#fn-5">5</a></sup></p>
       <p>Reddit are o relație similară cu Google. În februarie 2024, Google a anunțat extinderea parteneriatului cu Reddit: acces la Reddit Data API, descris ca furnizând conținut structurat și în timp real, folosit inclusiv pentru afișarea conținutului Reddit în produsele Google și pentru antrenarea modelelor.<sup><a href="#fn-6">6</a></sup></p>
       <p>Acordul nu este însă static. În iulie 2026, presa a raportat dificultăți în negocierile de reînnoire, Reddit discutând inclusiv oprirea accesului Google la conținutul său pentru utilizări AI.<sup><a href="#fn-12">12</a></sup> La 1 octombrie 2026, Reddit a anunțat că retrage feed-urile RSS (13 noiembrie 2026) și elimină treptat accesul public la vechiul Data API (închidere completă în martie 2027), invocând scraping-ul la scară largă; potrivit relatărilor, acordurile existente de conținut cu Google și OpenAI nu sunt afectate de aceste schimbări.<sup><a href="#fn-13">13</a></sup> La ultima verificare AI Visibility Lab (2 octombrie 2026), reînnoirea acordului cu Google nu era confirmată public; statutul lui trebuie tratat ca fluid, nu ca fapt stabilit.</p>
+      <p>Calendarul anunțat de Reddit pentru API-ul public și pentru RSS arăta astfel la 12 noiembrie 2026:</p>
+      <table>
+        <thead>
+          <tr><th>Reper anunțat</th><th>Stadiul la 12 noiembrie 2026</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>31 octombrie 2026</td><td>Termenul pentru oprirea noilor solicitări de acces la API-ul public a trecut.</td></tr>
+          <tr><td>13 noiembrie 2026</td><td>Retragerea feedurilor RSS era încă programată pentru această dată.</td></tr>
+          <tr><td>12 ianuarie 2027</td><td>Este anunțat începutul eliminării accesului pentru aplicațiile și utilizatorii API neînregistrați.</td></tr>
+          <tr><td>martie 2027</td><td>Termenul anunțat pentru închiderea accesului public rămas la API.</td></tr>
+        </tbody>
+      </table>
+      <p>Calendarul provine din comunicările Reddit din r/modnews și a fost reconfirmat la 12 noiembrie 2026 prin relatări de presă.<sup><a href="#fn-14">14</a></sup><sup><a href="#fn-15">15</a></sup> Un calendar anunțat nu dovedește executarea fiecărei schimbări și nu stabilește automat situația acordurilor comerciale de acces.</p>
+      <p>Pentru sursele sociale trebuie urmărite separat existența conținutului, ruta de acces și drepturile sistemului care îl recuperează. Schimbarea unui API public poate afecta o rută fără să demonstreze dispariția tuturor rutelor licențiate sau native. Actualizarea unui audit trebuie să arate ce acces s-a schimbat și ce a fost verificat efectiv.</p>
+      <p>La fel de important e contextul în care lucrează un agent. Conținutul social pe care un agent personal îl citește printr-un cont conectat, de exemplu Grok Bot conectat la X, ține de contextul autorizat al acelui utilizator.<sup><a href="#fn-4">4</a></sup> Nu este același lucru cu conținutul public pe care îl poate recupera orice sistem, iar o observație făcută într-un astfel de context nu se generalizează la vizibilitatea publică a unei surse.</p>
       <p>O interpretare posibilă, nu o concluzie confirmată de Reddit: în cazul Reddit, accesul public și automatizat la date se îngustează, în timp ce accesul licențiat, negociat bilateral, rămâne în vigoare — exact distincția dintre crawling și acces prin API pe care o descrie secțiunea de mai jos.</p>
       <p>Aceste exemple arată o diferență fundamentală față de simplul crawling:</p>
       <pre><code>Public webpage
@@ -482,6 +506,8 @@ Operational data</code></pre>
         <li id="fn-11">LinkedIn Help, <strong>LinkedIn and generative AI (GAI) FAQs</strong>, consultat la 1 octombrie 2026. LinkedIn enumeră member content precum postări, articole, poll responses, contribuții și comentarii ca tipuri de conținut care pot intra în anumite procese de antrenare unde legea și setările utilizatorului permit. <a href="https://www.linkedin.com/help/linkedin/answer/a5538339" target="_blank" rel="noopener noreferrer">linkedin.com/help/linkedin/answer/a5538339</a></li>
         <li id="fn-12">CNBC, <strong>Reddit stock sinks on report it may not renew Google AI content deal</strong>, 22 iulie 2026. Articolul relatează o știre Wall Street Journal potrivit căreia Reddit a discutat oprirea accesului Google la conținutul său pentru utilizări AI, în contextul reînnoirii acordului din 2024; nu confirmă încetarea acordului. <a href="https://www.cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal.html" target="_blank" rel="noopener noreferrer">cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal.html</a></li>
         <li id="fn-13">MediaPost, <strong>Reddit Ending Data-Scraping, Will Keep Existing Agreements</strong>, 1 octombrie 2026. Relatează anunțurile Reddit din r/modnews: retragerea feed-urilor RSS la 13 noiembrie 2026, eliminarea treptată a accesului public la vechiul Data API până în martie 2027 și faptul că acordurile existente cu Google și OpenAI nu sunt afectate. Publicație secundară; anunțul primar Reddit nu a putut fi accesat direct. <a href="https://www.mediapost.com/publications/article/418430/reddit-ending-data-scraping-will-keep-existing-ag.html" target="_blank" rel="noopener noreferrer">mediapost.com/publications/article/418430/reddit-ending-data-scraping-will-keep-existing-ag.html</a></li>
+        <li id="fn-14">Reddit, <em>Mod Monthly: your October 2026 newsletter is here</em>, r/modnews, octombrie 2026. Anunț primar, citat după documentarea editorială din 11 noiembrie 2026; la 12 noiembrie pagina nu a putut fi accesată automat. <a href="https://www.reddit.com/r/modnews/comments/1x6rjnd/mod_monthly_your_october_2026_newsletter_is_here/" target="_blank" rel="noopener noreferrer">www.reddit.com/r/modnews/comments/1x6rjnd/mod_monthly_your_october_2026_newsletter_is_here/</a></li>
+        <li id="fn-15">TechRepublic, <em>Reddit RSS and Public API Shutdown: Key Deadlines</em>, consultat la 12 noiembrie 2026. Publicație secundară; confirmă termenele din 31 octombrie 2026, 13 noiembrie 2026, 12 ianuarie 2027 și martie 2027. <a href="https://www.techrepublic.com/article/news-reddit-rss-public-api-shutdown/" target="_blank" rel="noopener noreferrer">www.techrepublic.com/article/news-reddit-rss-public-api-shutdown/</a></li>
       </ol>
       <hr />
       <h2 id="nota-metodologica-ai-visibility-lab">Notă metodologică AI Visibility Lab</h2>
@@ -509,7 +535,17 @@ Operational data</code></pre>
         <li>o postare cu engagement ridicat nu este automat mai autoritativă factual decât o sursă primară.</li>
       </ul>
       <h2 id="nota-de-volatilitate">Notă de volatilitate</h2>
-      <p>Politicile platformelor sociale privind antrenarea modelelor, funcțiile Meta AI și Facebook AI Mode, accesul Grok la X, acordurile Reddit cu Google și OpenAI și accesul public la API-ul Reddit se schimbă rapid și pot diferi în funcție de regiune. Afirmațiile despre produse, politici și acorduri au fost verificate la 2 octombrie 2026.</p>
+      <p>Politicile platformelor sociale privind antrenarea modelelor, funcțiile Meta AI și Facebook AI Mode, accesul Grok la X, acordurile Reddit cu Google și OpenAI și accesul public la API-ul Reddit se schimbă rapid și pot diferi în funcție de regiune. Afirmațiile despre produse, politici și acorduri au fost verificate la 2 octombrie 2026. Calendarul Reddit, paragraful despre contextul agenților și notele 14–15 au fost adăugate la 12 noiembrie 2026; restul articolului nu a fost reverificat în această rundă.</p>
+      <h2 id="istoricul-versiunilor">Istoricul versiunilor</h2>
+      <table>
+        <thead>
+          <tr><th>Versiune</th><th>Dată</th><th>Modificări</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0</td><td>2 octombrie 2026</td><td>Publicare inițială.</td></tr>
+          <tr><td>1.1</td><td>12 noiembrie 2026</td><td>Secțiunea 3, „Reddit, OpenAI și Google”: stadiul calendarului Reddit la 12 noiembrie 2026 (31 octombrie 2026, 13 noiembrie 2026, 12 ianuarie 2027, martie 2027), cu precizarea că un calendar anunțat nu dovedește executarea schimbărilor; paragraf despre urmărirea separată a conținutului, rutei de acces și drepturilor; paragraf despre conținutul citit de un agent printr-un cont conectat, distinct de conținutul public recuperabil. Notele 14–15 adăugate.</td></tr>
+        </tbody>
+      </table>
 
       <p><em>Articol publicat de AI Visibility Lab, proiect independent de cercetare aplicată și documentare în AI Visibility, GEO și AEO, fondat și coordonat de Alex Matescu. Ultima verificare factuală și a surselor: 2 octombrie 2026.</em></p>
 `;

@@ -260,7 +260,7 @@ export const labNav: LabPage[] = [
         to: "/lab/articole/de-la-mentionare-la-tranzactie-ce-inseamna-agentic-visibility",
         label:
           "De la menționare la tranzacție: ce înseamnă Agentic Visibility pentru un business",
-        lead: "Ce înseamnă Agentic Visibility și cum extinde problema GEO/AEO dincolo de citare și menționare, către descoperire, recomandare, interacțiune și tranzacție. Analizăm OpenAI Agentic Commerce Protocol, Google Universal Commerce Protocol, Meta Business Agent, Cloudflare Agentic Commerce și protocoalele de plăți pentru agenți.",
+        lead: "Ce înseamnă Agentic Visibility și cum extinde problema GEO/AEO dincolo de citare și menționare, către descoperire, recomandare, interacțiune și tranzacție. Analizăm OpenAI Agentic Commerce Protocol, Businesses in ChatGPT (Business Hub și Business Agents), Google Universal Commerce Protocol, Meta Business Agent, Cloudflare Agentic Commerce și protocoalele de plăți pentru agenți.",
       },
       {
         to: "/lab/articole/social-media-devine-strat-informational-pentru-ai",
