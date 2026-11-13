@@ -1,10 +1,40 @@
 {
-  "generat": "2026-11-12",
+  "generat": "2026-11-13",
   "pragReverificareZile": 180,
-  "totalIntrari": 186,
+  "totalIntrari": 188,
   "totalAnomalii": 2,
   "anomaliiGlobale": [],
   "intrari": [
+    {
+      "id": "LAB-29",
+      "titlu": "Tu îți înțelegi scrisul. Cine îți înțelege afacerea?",
+      "suprafata": "lab/articole",
+      "ruta": "/lab/articole/scrisul-de-mana-si-ai-visibility",
+      "slug": "scrisul-de-mana-si-ai-visibility",
+      "categorie": "Entities & Citations",
+      "tip": "Analiză",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-11-13T06:39:00+02:00",
+      "dataModificare": "2026-11-13",
+      "ultimaVerificare": "2026-11-13",
+      "fisierMd": "src/content/lab/articles/29.scrisul-de-mana-si-ai-visibility.md",
+      "fisierTs": "src/data/lab-content/29. scrisul-de-mana-si-ai-visibility.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": true,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-11-13",
+      "imagine": "https://delamatescu.ro/images/lab/scrisul-de-mana-si-ai-visibility.webp",
+      "jsonLd": "@graph",
+      "nrCitari": 5,
+      "zileDeLaVerificare": 0,
+      "anomalii": []
+    },
     {
       "id": "LAB-28",
       "titlu": "De departe, totul pare perfect. De aproape, începe realitatea.",
@@ -32,7 +62,7 @@
       "imagine": "https://delamatescu.ro/images/lab/de-departe-totul-pare-perfect-de-aproape-incepe-realitatea.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 3,
+      "zileDeLaVerificare": 4,
       "anomalii": []
     },
     {
@@ -62,7 +92,7 @@
       "imagine": "https://delamatescu.ro/images/lab/de-unde-isi-iau-informatiile-ai-surse-citari-romania/00-traseul-informatiei.webp",
       "jsonLd": "@graph",
       "nrCitari": 19,
-      "zileDeLaVerificare": 5,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -92,7 +122,7 @@
       "imagine": "https://delamatescu.ro/images/lab/cum-aleg-furnizorul-de-servicii.webp",
       "jsonLd": "@graph",
       "nrCitari": 3,
-      "zileDeLaVerificare": 9,
+      "zileDeLaVerificare": 10,
       "anomalii": []
     },
     {
@@ -122,7 +152,7 @@
       "imagine": "https://delamatescu.ro/images/lab/reclame-chatgpt-google-social-media.webp",
       "jsonLd": "@graph",
       "nrCitari": 27,
-      "zileDeLaVerificare": 14,
+      "zileDeLaVerificare": 15,
       "anomalii": []
     },
     {
@@ -152,7 +182,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 15,
+      "zileDeLaVerificare": 16,
       "anomalii": []
     },
     {
@@ -182,7 +212,7 @@
       "imagine": "https://delamatescu.ro/images/lab/costurile-ai-variatii-finantari-plata-la-cine.webp",
       "jsonLd": "@graph",
       "nrCitari": 16,
-      "zileDeLaVerificare": 15,
+      "zileDeLaVerificare": 16,
       "anomalii": []
     },
     {
@@ -212,7 +242,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -242,7 +272,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 21,
+      "zileDeLaVerificare": 22,
       "anomalii": []
     },
     {
@@ -272,7 +302,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 22,
+      "zileDeLaVerificare": 23,
       "anomalii": []
     },
     {
@@ -302,7 +332,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 11,
-      "zileDeLaVerificare": 42,
+      "zileDeLaVerificare": 43,
       "anomalii": []
     },
     {
@@ -332,7 +362,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 42,
+      "zileDeLaVerificare": 43,
       "anomalii": []
     },
     {
@@ -362,7 +392,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 42,
+      "zileDeLaVerificare": 43,
       "anomalii": []
     },
     {
@@ -392,7 +422,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 15,
-      "zileDeLaVerificare": 41,
+      "zileDeLaVerificare": 42,
       "anomalii": []
     },
     {
@@ -422,7 +452,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 20,
-      "zileDeLaVerificare": 43,
+      "zileDeLaVerificare": 44,
       "anomalii": []
     },
     {
@@ -452,7 +482,7 @@
       "imagine": "https://delamatescu.ro/images/blog/ai-oglinda-amplificator.webp",
       "jsonLd": "@graph",
       "nrCitari": 4,
-      "zileDeLaVerificare": 43,
+      "zileDeLaVerificare": 44,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/ai-oglinda-amplificator.webp`"
       ]
@@ -484,7 +514,7 @@
       "imagine": "https://delamatescu.ro/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp",
       "jsonLd": "@graph",
       "nrCitari": 10,
-      "zileDeLaVerificare": 77,
+      "zileDeLaVerificare": 78,
       "anomalii": [
         "imagine în afara `/images/lab/`: `/images/blog/Subscription_highlights_Ir7y0f1.width-2000.format-webp.webp`"
       ]
@@ -516,7 +546,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 6,
-      "zileDeLaVerificare": 85,
+      "zileDeLaVerificare": 86,
       "anomalii": []
     },
     {
@@ -546,7 +576,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 85,
+      "zileDeLaVerificare": 86,
       "anomalii": []
     },
     {
@@ -576,7 +606,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 25,
-      "zileDeLaVerificare": 27,
+      "zileDeLaVerificare": 28,
       "anomalii": []
     },
     {
@@ -606,7 +636,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 12,
-      "zileDeLaVerificare": 85,
+      "zileDeLaVerificare": 86,
       "anomalii": []
     },
     {
@@ -636,7 +666,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 85,
+      "zileDeLaVerificare": 86,
       "anomalii": []
     },
     {
@@ -666,7 +696,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 8,
-      "zileDeLaVerificare": 87,
+      "zileDeLaVerificare": 88,
       "anomalii": []
     },
     {
@@ -696,7 +726,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 18,
-      "zileDeLaVerificare": 86,
+      "zileDeLaVerificare": 87,
       "anomalii": []
     },
     {
@@ -846,7 +876,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 13,
-      "zileDeLaVerificare": 41,
+      "zileDeLaVerificare": 42,
       "anomalii": []
     },
     {
@@ -876,7 +906,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 5,
-      "zileDeLaVerificare": 15,
+      "zileDeLaVerificare": 16,
       "anomalii": []
     },
     {
@@ -906,7 +936,7 @@
       "imagine": null,
       "jsonLd": "@graph",
       "nrCitari": 7,
-      "zileDeLaVerificare": 20,
+      "zileDeLaVerificare": 21,
       "anomalii": []
     },
     {
@@ -935,7 +965,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 8,
+      "zileDeLaVerificare": 9,
       "anomalii": []
     },
     {
@@ -964,7 +994,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 17,
+      "zileDeLaVerificare": 18,
       "anomalii": []
     },
     {
@@ -993,7 +1023,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 42,
+      "zileDeLaVerificare": 43,
       "anomalii": []
     },
     {
@@ -1022,7 +1052,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 3,
+      "zileDeLaVerificare": 4,
       "anomalii": []
     },
     {
@@ -1051,7 +1081,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 27,
+      "zileDeLaVerificare": 28,
       "anomalii": []
     },
     {
@@ -1080,7 +1110,7 @@
       },
       "sitemapLastmod": null,
       "imagine": null,
-      "zileDeLaVerificare": 3,
+      "zileDeLaVerificare": 4,
       "anomalii": []
     },
     {
@@ -1407,6 +1437,34 @@
       "anomalii": []
     },
     {
+      "id": "toata-lumea-stie-toata-lumea-poate",
+      "titlu": "Toată lumea știe. Toată lumea poate. Toată lumea se pricepe.",
+      "suprafata": "blog",
+      "ruta": "/blog/toata-lumea-stie-toata-lumea-poate",
+      "slug": "toata-lumea-stie-toata-lumea-poate",
+      "categorie": "Reflecții",
+      "tip": "Eseu",
+      "status": "publicat",
+      "statusNormativ": null,
+      "versiune": null,
+      "dataCreare": null,
+      "dataPublicare": "2026-11-13",
+      "dataModificare": "2026-11-13",
+      "ultimaVerificare": "2026-11-12",
+      "fisierMd": "src/content/blog/toata-lumea-stie-toata-lumea-poate.md",
+      "fisierTs": "src/data/blog-content/toata-lumea-stie-toata-lumea-poate.ts",
+      "wiring": {
+        "registru": true,
+        "pagina": true,
+        "nav": null,
+        "sitemap": true
+      },
+      "sitemapLastmod": "2026-11-13",
+      "imagine": "/images/blog/toata-lumea-stie-toata-lumea-poate.webp",
+      "zileDeLaVerificare": 1,
+      "anomalii": []
+    },
+    {
       "id": "am-crezut-ca-lucrurile-au-un-singur-sens",
       "titlu": "Am crezut că lucrurile au un singur sens",
       "suprafata": "blog",
@@ -1431,7 +1489,7 @@
       },
       "sitemapLastmod": "2026-11-07",
       "imagine": "/images/blog/am-crezut-ca-lucrurile-au-un-singur-sens.webp",
-      "zileDeLaVerificare": 5,
+      "zileDeLaVerificare": 6,
       "anomalii": []
     },
     {
@@ -1459,7 +1517,7 @@
       },
       "sitemapLastmod": "2026-10-26",
       "imagine": "/images/blog/ai-schimba-lumea-eu-ce-fac-intre-timp.webp",
-      "zileDeLaVerificare": 17,
+      "zileDeLaVerificare": 18,
       "anomalii": []
     },
     {
@@ -1487,7 +1545,7 @@
       },
       "sitemapLastmod": "2026-10-26",
       "imagine": "/images/blog/imbatraneste-si-sufletul-odata-cu-trupul.webp",
-      "zileDeLaVerificare": 17,
+      "zileDeLaVerificare": 18,
       "anomalii": []
     },
     {

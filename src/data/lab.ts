@@ -320,6 +320,11 @@ export const labNav: LabPage[] = [
         label: "De departe, totul pare perfect. De aproape, începe realitatea.",
         lead: "De ce nu este suficient să ai servicii excelente pentru a fi recomandat de AI? Un eseu despre percepție, informație, vizibilitate digitală și rolul AEO și GEO în descoperirea afacerilor.",
       },
+      {
+        to: "/lab/articole/scrisul-de-mana-si-ai-visibility",
+        label: "Tu îți înțelegi scrisul. Cine îți înțelege afacerea?",
+        lead: "Ce ne poate învăța scrisul de mână despre familiaritate, context și AI Visibility: diferența dintre ce învață un model la antrenare și ce găsește când răspunde, și de ce frecvența publicării nu ține loc de informație clară despre afacere.",
+      },
     ],
   },
   {
