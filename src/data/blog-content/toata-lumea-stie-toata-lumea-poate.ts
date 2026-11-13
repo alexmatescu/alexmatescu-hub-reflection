@@ -132,7 +132,12 @@ export const toataLumeaStieToataLumeaPoatePost = {
     <li><a href="#5-ce-inseamna-comoditizarea-informatiei">5. Ce înseamnă comoditizarea informației?</a></li>
     <li><a href="#6-cum-schimba-inteligenta-artificiala-valoarea-muncii-intelectuale">6. Cum schimbă inteligența artificială valoarea muncii intelectuale?</a></li>
     <li><a href="#7-de-ce-accesul-la-educatie-nu-inseamna-automat-expertiza">7. De ce accesul la educație nu înseamnă automat expertiză?</a></li>
-    <li><a href="#8-cand-psihologia-devine-limbaj-de-consum">8. Când psihologia devine limbaj de consum</a></li>
+    <li><a href="#8-cand-psihologia-devine-limbaj-de-consum">8. Când psihologia devine limbaj de consum</a>
+      <ol>
+        <li><a href="#felul-in-care-vorbim-despre-noi-insine">Felul în care vorbim despre noi înșine</a></li>
+        <li><a href="#extinderea-conceptelor">Extinderea conceptelor</a></li>
+      </ol>
+    </li>
     <li><a href="#9-psihologia-cancanul-si-divertismentul-care-imita-educatia">9. Psihologia, cancanul și divertismentul care imită educația</a></li>
     <li><a href="#10-de-ce-afacerile-par-mai-simple-atunci-cand-le-privesti-din-exterior">10. De ce afacerile par mai simple atunci când le privești din exterior?</a></li>
     <li><a href="#11-care-este-diferenta-dintre-a-presta-un-serviciu-si-a-construi-un-business-autonom">11. Care este diferența dintre a presta un serviciu și a construi un business autonom?</a>
@@ -222,7 +227,7 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <h3 id="acum-3-000-de-ani-pozitia-sociala-determina-posibilitatile">Acum 3.000 de ani: poziția socială determina posibilitățile</h3>
 
-<p>Mergem înainte cu 2.000 de ani.</p>
+<p>Mergem înainte cu 3.000 de ani.</p>
 
 <p>Există regate impresionante, orașe dezvoltate, negustori, specialiști, administrații și oameni care dețin averi considerabile.</p>
 
@@ -408,21 +413,17 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <h3 id="ce-piete-europene-au-devenit-mai-asemanatoare">Ce piețe europene au devenit mai asemănătoare?</h3>
 
-<p>Fenomenul poate fi observat în mai multe domenii.</p>
+<p>Fenomenul poate fi observat în mai multe domenii:</p>
 
-<p><strong>Supermarketurile</strong> folosesc formate comerciale, sortimente, mărci proprii și strategii logistice similare. Dar prețurile finale continuă să depindă de concurența locală, taxe, salarii, furnizori și costuri operaționale.</p>
-
-<p><strong>Brandurile de fashion</strong> distribuie colecții și produse asemănătoare în numeroase țări. Identitatea vizuală și experiența din magazin pot fi aproape identice, chiar dacă puterea de cumpărare a clienților este diferită.</p>
-
-<p><strong>Electronicele și electrocasnicele</strong> fac parte din lanțuri internaționale de producție și distribuție. Modelele sunt adesea aceleași, iar prețurile sunt influențate de condiții comerciale globale și regionale.</p>
-
-<p><strong>Automobilele</strong> folosesc platforme, componente și tehnologii standardizate internațional, chiar dacă taxele, asigurările și costurile de utilizare diferă.</p>
-
-<p><strong>Serviciile digitale</strong> pot fi furnizate aproape identic în numeroase țări, fără infrastructură fizică locală comparabilă cu cea necesară unui serviciu tradițional.</p>
-
-<p><strong>Turismul și hotelurile</strong> folosesc platforme de rezervare, standarde comerciale și modele de servicii internaționale. În același timp, prețurile rămân influențate puternic de destinație, sezon și cerere.</p>
-
-<p><strong>Piața imobiliară</strong> prezintă standarde de confort tot mai asemănătoare în orașele mari, dar chiriile și prețurile proprietăților sunt determinate în mare parte local, de venituri, cerere, ofertă, finanțare și disponibilitatea terenurilor.</p>
+<ul>
+  <li><strong>Supermarketurile</strong> folosesc formate comerciale, sortimente, mărci proprii și strategii logistice similare. Dar prețurile finale continuă să depindă de concurența locală, taxe, salarii, furnizori și costuri operaționale.</li>
+  <li><strong>Brandurile de fashion</strong> distribuie colecții și produse asemănătoare în numeroase țări. Identitatea vizuală și experiența din magazin pot fi aproape identice, chiar dacă puterea de cumpărare a clienților este diferită.</li>
+  <li><strong>Electronicele și electrocasnicele</strong> fac parte din lanțuri internaționale de producție și distribuție. Modelele sunt adesea aceleași, iar prețurile sunt influențate de condiții comerciale globale și regionale.</li>
+  <li><strong>Automobilele</strong> folosesc platforme, componente și tehnologii standardizate internațional, chiar dacă taxele, asigurările și costurile de utilizare diferă.</li>
+  <li><strong>Serviciile digitale</strong> pot fi furnizate aproape identic în numeroase țări, fără infrastructură fizică locală comparabilă cu cea necesară unui serviciu tradițional.</li>
+  <li><strong>Turismul și hotelurile</strong> folosesc platforme de rezervare, standarde comerciale și modele de servicii internaționale. În același timp, prețurile rămân influențate puternic de destinație, sezon și cerere.</li>
+  <li><strong>Piața imobiliară</strong> prezintă standarde de confort tot mai asemănătoare în orașele mari, dar chiriile și prețurile proprietăților sunt determinate în mare parte local, de venituri, cerere, ofertă, finanțare și disponibilitatea terenurilor.</li>
+</ul>
 
 <p>Aceste exemple arată că standardizarea produselor și experiențelor comerciale nu presupune automat egalizarea prețurilor.</p>
 
@@ -682,81 +683,74 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <h2 id="8-cand-psihologia-devine-limbaj-de-consum">8. Când psihologia devine limbaj de consum</h2>
 
+
 <p>Fenomenul nu se limitează la profesii sau domenii tehnice.</p>
 
-<p>Îl putem observa și în felul în care vorbim despre noi înșine.</p>
+<h3 id="felul-in-care-vorbim-despre-noi-insine">Felul în care vorbim despre noi înșine</h3>
 
-<p>Despre emoții.</p>
+<p>Îl putem observa și în felul în care vorbim despre noi înșine:</p>
 
-<p>Despre relații.</p>
+<ul>
+  <li>despre emoții;</li>
+  <li>despre relații;</li>
+  <li>despre dificultățile personale;</li>
+  <li>despre suferință.</li>
+</ul>
 
-<p>Despre dificultățile personale.</p>
+<p>În ultimele decenii, concepte din psihologie și sănătatea mintală au intrat tot mai mult în limbajul cotidian. Vorbim despre:</p>
 
-<p>Despre suferință.</p>
+<ul>
+  <li>traume;</li>
+  <li>anxietate;</li>
+  <li>depresie;</li>
+  <li>burnout;</li>
+  <li>mecanisme de apărare;</li>
+  <li>atașament;</li>
+  <li>narcisism;</li>
+  <li>relații toxice;</li>
+  <li>copilul interior.</li>
+</ul>
 
-<p>În ultimele decenii, concepte din psihologie și sănătatea mintală au intrat tot mai mult în limbajul cotidian.</p>
+<p>Această popularizare are o parte profund pozitivă:</p>
 
-<p>Vorbim despre traume, anxietate, depresie, burnout, mecanisme de apărare, atașament, narcisism, relații toxice și copilul interior.</p>
+<ul>
+  <li>Oamenii au început să vorbească mai deschis despre experiențe care înainte erau ascunse din rușine, teamă sau lipsă de înțelegere.</li>
+  <li>Mai multe persoane pot recunoaște semnele unei probleme și pot solicita ajutor.</li>
+  <li>Pot descoperi că experiențele lor au explicații și că există forme de sprijin.</li>
+</ul>
 
-<p>Această popularizare are o parte profund pozitivă.</p>
+<h3 id="extinderea-conceptelor">Extinderea conceptelor</h3>
 
-<p>Oamenii au început să vorbească mai deschis despre experiențe care înainte erau ascunse din rușine, teamă sau lipsă de înțelegere.</p>
+<p>Dar, în paralel, apare uneori un alt fenomen: extinderea unor concepte până când aproape orice experiență neplăcută pare să necesite o etichetă psihologică.</p>
 
-<p>Mai multe persoane pot recunoaște semnele unei probleme, pot solicita ajutor și pot descoperi că experiențele lor au explicații și că există forme de sprijin.</p>
+<ul>
+  <li>Ai avut o săptămână dificilă la serviciu? <em>Ești în burnout.</em></li>
+  <li>Te simți trist după o despărțire? <em>Ai depresie.</em></li>
+  <li>Ai avut o experiență neplăcută? <em>Ai o traumă.</em></li>
+  <li>Te-ai certat cu cineva? <em>Persoana respectivă este toxică.</em></li>
+  <li>Cineva se comportă egoist? <em>Este narcisist.</em></li>
+  <li>Reacționezi emoțional într-o situație? <em>Probabil trebuie să lucrezi cu propriul copil interior.</em></li>
+</ul>
 
-<p>Dar, în paralel, apare uneori un alt fenomen.</p>
+<p>Aceste exemple nu neagă existența condițiilor reale sau gravitatea lor:</p>
 
-<p>Extinderea unor concepte până când aproape orice experiență neplăcută pare să necesite o etichetă psihologică.</p>
-
-<p>Ai avut o săptămână dificilă la serviciu?</p>
-
-<p>Ești în burnout.</p>
-
-<p>Te simți trist după o despărțire?</p>
-
-<p>Ai depresie.</p>
-
-<p>Ai avut o experiență neplăcută?</p>
-
-<p>Ai o traumă.</p>
-
-<p>Te-ai certat cu cineva?</p>
-
-<p>Persoana respectivă este toxică.</p>
-
-<p>Cineva se comportă egoist?</p>
-
-<p>Este narcisist.</p>
-
-<p>Reacționezi emoțional într-o situație?</p>
-
-<p>Probabil trebuie să lucrezi cu propriul copil interior.</p>
-
-<p>Aceste exemple nu neagă existența condițiilor reale sau gravitatea lor.</p>
-
-<p>Depresia nu este doar tristețe.</p>
-
-<p>Burnoutul, așa cum este descris de <a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" target="_blank" rel="noopener noreferrer">Organizația Mondială a Sănătății</a>, este un fenomen ocupațional asociat stresului cronic de la locul de muncă, nu un sinonim pentru orice formă de oboseală.</p>
-
-<p>Trauma psihologică nu poate fi redusă la orice amintire neplăcută.</p>
+<ul>
+  <li>Depresia nu este doar tristețe.</li>
+  <li>Burnoutul, așa cum este descris de <a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" target="_blank" rel="noopener noreferrer">Organizația Mondială a Sănătății</a>, este un fenomen ocupațional asociat stresului cronic de la locul de muncă, nu un sinonim pentru orice formă de oboseală.</li>
+  <li>Trauma psihologică nu poate fi redusă la orice amintire neplăcută.</li>
+</ul>
 
 <p>Problema nu este că folosim concepte psihologice.</p>
 
 <p>Problema apare atunci când le folosim atât de larg încât încetăm să mai distingem între experiențele obișnuite ale vieții și situațiile care necesită înțelegere sau intervenție specializată.</p>
 
-<p>În unele cazuri, explicația ajunge să devină identitate.</p>
+<p>În unele cazuri, explicația ajunge să devină identitate:</p>
 
-<p>Nu mai spunem doar că trecem printr-o perioadă dificilă.</p>
-
-<p>Spunem că suntem persoane traumatizate.</p>
-
-<p>Nu mai spunem că avem dificultăți într-o relație.</p>
-
-<p>Spunem că suntem victimele unei persoane narcisiste.</p>
-
-<p>Nu mai descriem o reacție sau un comportament.</p>
-
-<p>Îl transformăm într-o caracteristică definitorie a propriei persoane sau a altcuiva.</p>
+<ul>
+  <li>Nu mai spunem doar că trecem printr-o perioadă dificilă. Spunem că suntem persoane traumatizate.</li>
+  <li>Nu mai spunem că avem dificultăți într-o relație. Spunem că suntem victimele unei persoane narcisiste.</li>
+  <li>Nu mai descriem o reacție sau un comportament. Îl transformăm într-o caracteristică definitorie a propriei persoane sau a altcuiva.</li>
+</ul>
 
 <p>Uneori, aceste formulări pot ajuta la înțelegerea unor experiențe reale. Alteori, pot limita perspectiva din care privim situația.</p>
 
@@ -902,21 +896,17 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <p>Dar există o diferență importantă între a desfășura o activitate economică și a construi un sistem care poate produce valoare fără implicarea ta permanentă.</p>
 
-<p>Să luăm exemplul unui fotograf.</p>
+<p>Să luăm exemplul unui fotograf:</p>
 
-<p>Își găsește singur clienții.</p>
-
-<p>Negociază contractele.</p>
-
-<p>Realizează fotografiile.</p>
-
-<p>Le editează.</p>
-
-<p>Livrează materialele.</p>
-
-<p>Emite facturile.</p>
-
-<p>Gestionează reclamațiile și relația cu fiecare client.</p>
+<ul>
+  <li>Își găsește singur clienții.</li>
+  <li>Negociază contractele.</li>
+  <li>Realizează fotografiile.</li>
+  <li>Le editează.</li>
+  <li>Livrează materialele.</li>
+  <li>Emite facturile.</li>
+  <li>Gestionează reclamațiile și relația cu fiecare client.</li>
+</ul>
 
 <p>Are o activitate economică reală. Poate avea venituri foarte bune și poate fi un profesionist excelent.</p>
 
@@ -950,13 +940,12 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <p>Dacă mâine dispari din activitatea operațională pentru 30 de zile, ce continuă să funcționeze?</p>
 
-<p>Câți clienți sunt în continuare serviți?</p>
-
-<p>Câte produse sau servicii pot fi livrate?</p>
-
-<p>Ce procese funcționează?</p>
-
-<p>Cine poate lua deciziile cotidiene?</p>
+<ul>
+  <li>Câți clienți sunt în continuare serviți?</li>
+  <li>Câte produse sau servicii pot fi livrate?</li>
+  <li>Ce procese funcționează?</li>
+  <li>Cine poate lua deciziile cotidiene?</li>
+</ul>
 
 <p>Testul nu stabilește dacă ai sau nu o afacere.</p>
 
@@ -1217,17 +1206,16 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <p>Iar expertiza nu trebuie confundată cu infailibilitatea.</p>
 
-<p>Cunoașterea autentică include și capacitatea de a recunoaște ceea ce nu știm.</p>
+<p>Cunoașterea autentică include și capacitatea:</p>
 
-<p>De a formula întrebări.</p>
-
-<p>De a verifica informațiile.</p>
-
-<p>De a accepta posibilitatea că propriile concluzii sunt incomplete.</p>
-
-<p>De a înțelege că o soluție bună într-o situație poate fi nepotrivită în alta.</p>
-
-<p>Și, mai ales, de a distinge între capacitatea de a reproduce un răspuns și capacitatea de a explica de ce acel răspuns este potrivit.</p>
+<ul>
+  <li>de a recunoaște ceea ce nu știm;</li>
+  <li>de a formula întrebări;</li>
+  <li>de a verifica informațiile;</li>
+  <li>de a accepta posibilitatea că propriile concluzii sunt incomplete;</li>
+  <li>de a înțelege că o soluție bună într-o situație poate fi nepotrivită în alta;</li>
+  <li>și, mai ales, de a distinge între capacitatea de a reproduce un răspuns și capacitatea de a explica de ce acel răspuns este potrivit.</li>
+</ul>
 
 <h2 id="16-ce-devine-valoros-cand-aproape-totul-devine-accesibil">16. Ce devine valoros când aproape totul devine accesibil?</h2>
 
@@ -1287,19 +1275,17 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <p>Când toată lumea poate avea o opinie despre politică, devine cu atât mai importantă capacitatea de a argumenta, de a verifica și de a accepta complexitatea.</p>
 
-<p>Poate că o parte tot mai importantă a valorii se mută dinspre simplul acces către utilizarea competentă a lucrurilor accesibile.</p>
+<p>Poate că o parte tot mai importantă a valorii se mută:</p>
 
-<p>Dinspre informație către înțelegere.</p>
-
-<p>Dinspre explicație către aplicare.</p>
-
-<p>Dinspre aparență către rezultate.</p>
-
-<p>Dinspre certitudine către discernământ.</p>
-
-<p>Dinspre promisiune către capacitatea de a livra.</p>
-
-<p>Și dinspre titlu către responsabilitatea pe care o poți susține.</p>
+<ul>
+  <li>dinspre simplul acces către utilizarea competentă a lucrurilor accesibile;</li>
+  <li>dinspre informație către înțelegere;</li>
+  <li>dinspre explicație către aplicare;</li>
+  <li>dinspre aparență către rezultate;</li>
+  <li>dinspre certitudine către discernământ;</li>
+  <li>dinspre promisiune către capacitatea de a livra;</li>
+  <li>și dinspre titlu către responsabilitatea pe care o poți susține.</li>
+</ul>
 
 <h2 id="17-pericolul-nu-este-ca-toata-lumea-poate-pericolul-este-ca-toata-lumea-crede-ca-stie">17. Pericolul nu este că toată lumea poate. Pericolul este că toată lumea crede că știe.</h2>
 
@@ -1321,21 +1307,18 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <p>Toate acestea reprezintă, în forme diferite, extinderea posibilităților umane.</p>
 
-<p>Problema apare atunci când confundăm accesul cu realizarea.</p>
+<p>Problema apare atunci când confundăm:</p>
 
-<p>Când confundăm informația cu înțelegerea.</p>
-
-<p>Când confundăm familiaritatea cu expertiza.</p>
-
-<p>Când confundăm suferința cu o etichetă utilizată fără discernământ.</p>
-
-<p>Când confundăm activitatea independentă cu o organizație autonomă.</p>
-
-<p>Când confundăm critica unei decizii cu demonstrarea faptului că am fi luat una mai bună.</p>
-
-<p>Când confundăm capacitatea de a genera un rezultat cu capacitatea de a-l valida.</p>
-
-<p>Și când confundăm încrederea cu competența.</p>
+<ul>
+  <li>accesul cu realizarea;</li>
+  <li>informația cu înțelegerea;</li>
+  <li>familiaritatea cu expertiza;</li>
+  <li>suferința cu o etichetă utilizată fără discernământ;</li>
+  <li>activitatea independentă cu o organizație autonomă;</li>
+  <li>critica unei decizii cu demonstrarea faptului că am fi luat una mai bună;</li>
+  <li>capacitatea de a genera un rezultat cu capacitatea de a-l valida;</li>
+  <li>și încrederea cu competența.</li>
+</ul>
 
 <p>Poate că acesta este unul dintre efectele neașteptate ale democratizării accesului.</p>
 
@@ -1433,23 +1416,18 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <p>Vor apărea tehnologii noi, servicii mai ieftine, instrumente mai puternice și posibilități pe care astăzi încă nu ni le putem imagina.</p>
 
-<p>Dar, în paralel, va deveni tot mai important să învățăm ce facem cu toate acestea.</p>
+<p>Dar, în paralel, va deveni tot mai important să învățăm ce facem cu toate acestea:</p>
 
-<p>Să știm când să folosim un instrument și când să nu îl folosim.</p>
-
-<p>Să putem distinge o explicație de o demonstrație.</p>
-
-<p>Să recunoaștem diferența dintre un rezultat plauzibil și unul verificat.</p>
-
-<p>Să înțelegem limitele propriei competențe.</p>
-
-<p>Să nu confundăm o titulatură cu experiența care ar trebui să o susțină.</p>
-
-<p>Să nu transformăm fiecare dificultate într-un diagnostic și fiecare conflict într-o analiză psihologică improvizată.</p>
-
-<p>Să nu presupunem că putem conduce o companie sau o țară mai bine doar pentru că vedem din exterior câteva dintre problemele ei.</p>
-
-<p>Și să nu uităm că dreptul de a avea o opinie vine împreună cu posibilitatea, nu cu garanția, de a avea dreptate.</p>
+<ul>
+  <li>să știm când să folosim un instrument și când să nu îl folosim;</li>
+  <li>să putem distinge o explicație de o demonstrație;</li>
+  <li>să recunoaștem diferența dintre un rezultat plauzibil și unul verificat;</li>
+  <li>să înțelegem limitele propriei competențe;</li>
+  <li>să nu confundăm o titulatură cu experiența care ar trebui să o susțină;</li>
+  <li>să nu transformăm fiecare dificultate într-un diagnostic și fiecare conflict într-o analiză psihologică improvizată;</li>
+  <li>să nu presupunem că putem conduce o companie sau o țară mai bine doar pentru că vedem din exterior câteva dintre problemele ei;</li>
+  <li>și să nu uităm că dreptul de a avea o opinie vine împreună cu posibilitatea, nu cu garanția, de a avea dreptate.</li>
+</ul>
 
 <p>Într-o lume în care aproape oricine poate produce un discurs convingător, verificarea afirmațiilor devine esențială.</p>
 

@@ -262,21 +262,15 @@ A făcut însă mai vizibile aceste diferențe, aducând produse și standarde d
 
 ### Ce piețe europene au devenit mai asemănătoare?
 
-Fenomenul poate fi observat în mai multe domenii.
+Fenomenul poate fi observat în mai multe domenii:
 
-**Supermarketurile** folosesc formate comerciale, sortimente, mărci proprii și strategii logistice similare. Dar prețurile finale continuă să depindă de concurența locală, taxe, salarii, furnizori și costuri operaționale.
-
-**Brandurile de fashion** distribuie colecții și produse asemănătoare în numeroase țări. Identitatea vizuală și experiența din magazin pot fi aproape identice, chiar dacă puterea de cumpărare a clienților este diferită.
-
-**Electronicele și electrocasnicele** fac parte din lanțuri internaționale de producție și distribuție. Modelele sunt adesea aceleași, iar prețurile sunt influențate de condiții comerciale globale și regionale.
-
-**Automobilele** folosesc platforme, componente și tehnologii standardizate internațional, chiar dacă taxele, asigurările și costurile de utilizare diferă.
-
-**Serviciile digitale** pot fi furnizate aproape identic în numeroase țări, fără infrastructură fizică locală comparabilă cu cea necesară unui serviciu tradițional.
-
-**Turismul și hotelurile** folosesc platforme de rezervare, standarde comerciale și modele de servicii internaționale. În același timp, prețurile rămân influențate puternic de destinație, sezon și cerere.
-
-**Piața imobiliară** prezintă standarde de confort tot mai asemănătoare în orașele mari, dar chiriile și prețurile proprietăților sunt determinate în mare parte local, de venituri, cerere, ofertă, finanțare și disponibilitatea terenurilor.
+- **Supermarketurile** folosesc formate comerciale, sortimente, mărci proprii și strategii logistice similare. Dar prețurile finale continuă să depindă de concurența locală, taxe, salarii, furnizori și costuri operaționale.
+- **Brandurile de fashion** distribuie colecții și produse asemănătoare în numeroase țări. Identitatea vizuală și experiența din magazin pot fi aproape identice, chiar dacă puterea de cumpărare a clienților este diferită.
+- **Electronicele și electrocasnicele** fac parte din lanțuri internaționale de producție și distribuție. Modelele sunt adesea aceleași, iar prețurile sunt influențate de condiții comerciale globale și regionale.
+- **Automobilele** folosesc platforme, componente și tehnologii standardizate internațional, chiar dacă taxele, asigurările și costurile de utilizare diferă.
+- **Serviciile digitale** pot fi furnizate aproape identic în numeroase țări, fără infrastructură fizică locală comparabilă cu cea necesară unui serviciu tradițional.
+- **Turismul și hotelurile** folosesc platforme de rezervare, standarde comerciale și modele de servicii internaționale. În același timp, prețurile rămân influențate puternic de destinație, sezon și cerere.
+- **Piața imobiliară** prezintă standarde de confort tot mai asemănătoare în orașele mari, dar chiriile și prețurile proprietăților sunt determinate în mare parte local, de venituri, cerere, ofertă, finanțare și disponibilitatea terenurilor.
 
 Aceste exemple arată că standardizarea produselor și experiențelor comerciale nu presupune automat egalizarea prețurilor.
 
@@ -538,79 +532,59 @@ Dar am făcut la fel de accesibilă și posibilitatea de a imita autoritatea pe 
 
 Fenomenul nu se limitează la profesii sau domenii tehnice.
 
-Îl putem observa și în felul în care vorbim despre noi înșine.
+### Felul în care vorbim despre noi înșine
 
-Despre emoții.
+Îl putem observa și în felul în care vorbim despre noi înșine:
 
-Despre relații.
+- despre emoții;
+- despre relații;
+- despre dificultățile personale;
+- despre suferință.
 
-Despre dificultățile personale.
+În ultimele decenii, concepte din psihologie și sănătatea mintală au intrat tot mai mult în limbajul cotidian. Vorbim despre:
 
-Despre suferință.
+- traume;
+- anxietate;
+- depresie;
+- burnout;
+- mecanisme de apărare;
+- atașament;
+- narcisism;
+- relații toxice;
+- copilul interior.
 
-În ultimele decenii, concepte din psihologie și sănătatea mintală au intrat tot mai mult în limbajul cotidian.
+Această popularizare are o parte profund pozitivă:
 
-Vorbim despre traume, anxietate, depresie, burnout, mecanisme de apărare, atașament, narcisism, relații toxice și copilul interior.
+- Oamenii au început să vorbească mai deschis despre experiențe care înainte erau ascunse din rușine, teamă sau lipsă de înțelegere.
+- Mai multe persoane pot recunoaște semnele unei probleme și pot solicita ajutor.
+- Pot descoperi că experiențele lor au explicații și că există forme de sprijin.
 
-Această popularizare are o parte profund pozitivă.
+### Extinderea conceptelor
 
-Oamenii au început să vorbească mai deschis despre experiențe care înainte erau ascunse din rușine, teamă sau lipsă de înțelegere.
+Dar, în paralel, apare uneori un alt fenomen: extinderea unor concepte până când aproape orice experiență neplăcută pare să necesite o etichetă psihologică.
 
-Mai multe persoane pot recunoaște semnele unei probleme, pot solicita ajutor și pot descoperi că experiențele lor au explicații și că există forme de sprijin.
+- Ai avut o săptămână dificilă la serviciu? *Ești în burnout.*
+- Te simți trist după o despărțire? *Ai depresie.*
+- Ai avut o experiență neplăcută? *Ai o traumă.*
+- Te-ai certat cu cineva? *Persoana respectivă este toxică.*
+- Cineva se comportă egoist? *Este narcisist.*
+- Reacționezi emoțional într-o situație? *Probabil trebuie să lucrezi cu propriul copil interior.*
 
-Dar, în paralel, apare uneori un alt fenomen.
+Aceste exemple nu neagă existența condițiilor reale sau gravitatea lor:
 
-Extinderea unor concepte până când aproape orice experiență neplăcută pare să necesite o etichetă psihologică.
-
-Ai avut o săptămână dificilă la serviciu?
-
-Ești în burnout.
-
-Te simți trist după o despărțire?
-
-Ai depresie.
-
-Ai avut o experiență neplăcută?
-
-Ai o traumă.
-
-Te-ai certat cu cineva?
-
-Persoana respectivă este toxică.
-
-Cineva se comportă egoist?
-
-Este narcisist.
-
-Reacționezi emoțional într-o situație?
-
-Probabil trebuie să lucrezi cu propriul copil interior.
-
-Aceste exemple nu neagă existența condițiilor reale sau gravitatea lor.
-
-Depresia nu este doar tristețe.
-
-Burnoutul, așa cum este descris de [Organizația Mondială a Sănătății](https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases), este un fenomen ocupațional asociat stresului cronic de la locul de muncă, nu un sinonim pentru orice formă de oboseală.
-
-Trauma psihologică nu poate fi redusă la orice amintire neplăcută.
+- Depresia nu este doar tristețe.
+- Burnoutul, așa cum este descris de [Organizația Mondială a Sănătății](https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases), este un fenomen ocupațional asociat stresului cronic de la locul de muncă, nu un sinonim pentru orice formă de oboseală.
+- Trauma psihologică nu poate fi redusă la orice amintire neplăcută.
 
 Problema nu este că folosim concepte psihologice.
 
 Problema apare atunci când le folosim atât de larg încât încetăm să mai distingem între experiențele obișnuite ale vieții și situațiile care necesită înțelegere sau intervenție specializată.
 
-În unele cazuri, explicația ajunge să devină identitate.
+În unele cazuri, explicația ajunge să devină identitate:
 
-Nu mai spunem doar că trecem printr-o perioadă dificilă.
-
-Spunem că suntem persoane traumatizate.
-
-Nu mai spunem că avem dificultăți într-o relație.
-
-Spunem că suntem victimele unei persoane narcisiste.
-
-Nu mai descriem o reacție sau un comportament.
-
-Îl transformăm într-o caracteristică definitorie a propriei persoane sau a altcuiva.
+- Nu mai spunem doar că trecem printr-o perioadă dificilă. Spunem că suntem persoane traumatizate.
+- Nu mai spunem că avem dificultăți într-o relație. Spunem că suntem victimele unei persoane narcisiste.
+- Nu mai descriem o reacție sau un comportament. Îl transformăm într-o caracteristică definitorie a propriei persoane sau a altcuiva.
 
 Uneori, aceste formulări pot ajuta la înțelegerea unor experiențe reale. Alteori, pot limita perspectiva din care privim situația.
 
@@ -756,21 +730,15 @@ Orice afacere începe de undeva, iar o companie nouă nu trebuie să aibă sute 
 
 Dar există o diferență importantă între a desfășura o activitate economică și a construi un sistem care poate produce valoare fără implicarea ta permanentă.
 
-Să luăm exemplul unui fotograf.
+Să luăm exemplul unui fotograf:
 
-Își găsește singur clienții.
-
-Negociază contractele.
-
-Realizează fotografiile.
-
-Le editează.
-
-Livrează materialele.
-
-Emite facturile.
-
-Gestionează reclamațiile și relația cu fiecare client.
+- Își găsește singur clienții.
+- Negociază contractele.
+- Realizează fotografiile.
+- Le editează.
+- Livrează materialele.
+- Emite facturile.
+- Gestionează reclamațiile și relația cu fiecare client.
 
 Are o activitate economică reală. Poate avea venituri foarte bune și poate fi un profesionist excelent.
 
@@ -804,13 +772,10 @@ Există o diferență între a construi un loc de muncă pentru tine și a const
 
 Dacă mâine dispari din activitatea operațională pentru 30 de zile, ce continuă să funcționeze?
 
-Câți clienți sunt în continuare serviți?
-
-Câte produse sau servicii pot fi livrate?
-
-Ce procese funcționează?
-
-Cine poate lua deciziile cotidiene?
+- Câți clienți sunt în continuare serviți?
+- Câte produse sau servicii pot fi livrate?
+- Ce procese funcționează?
+- Cine poate lua deciziile cotidiene?
 
 Testul nu stabilește dacă ai sau nu o afacere.
 
@@ -1064,17 +1029,14 @@ Dar participarea nu trebuie confundată cu expertiza.
 
 Iar expertiza nu trebuie confundată cu infailibilitatea.
 
-Cunoașterea autentică include și capacitatea de a recunoaște ceea ce nu știm.
+Cunoașterea autentică include și capacitatea:
 
-De a formula întrebări.
-
-De a verifica informațiile.
-
-De a accepta posibilitatea că propriile concluzii sunt incomplete.
-
-De a înțelege că o soluție bună într-o situație poate fi nepotrivită în alta.
-
-Și, mai ales, de a distinge între capacitatea de a reproduce un răspuns și capacitatea de a explica de ce acel răspuns este potrivit.
+- de a recunoaște ceea ce nu știm;
+- de a formula întrebări;
+- de a verifica informațiile;
+- de a accepta posibilitatea că propriile concluzii sunt incomplete;
+- de a înțelege că o soluție bună într-o situație poate fi nepotrivită în alta;
+- și, mai ales, de a distinge între capacitatea de a reproduce un răspuns și capacitatea de a explica de ce acel răspuns este potrivit.
 
 ## 16. Ce devine valoros când aproape totul devine accesibil?
 
@@ -1134,19 +1096,15 @@ Când toată lumea poate adopta titulatura de fondator, diferența devine vizibi
 
 Când toată lumea poate avea o opinie despre politică, devine cu atât mai importantă capacitatea de a argumenta, de a verifica și de a accepta complexitatea.
 
-Poate că o parte tot mai importantă a valorii se mută dinspre simplul acces către utilizarea competentă a lucrurilor accesibile.
+Poate că o parte tot mai importantă a valorii se mută:
 
-Dinspre informație către înțelegere.
-
-Dinspre explicație către aplicare.
-
-Dinspre aparență către rezultate.
-
-Dinspre certitudine către discernământ.
-
-Dinspre promisiune către capacitatea de a livra.
-
-Și dinspre titlu către responsabilitatea pe care o poți susține.
+- dinspre simplul acces către utilizarea competentă a lucrurilor accesibile;
+- dinspre informație către înțelegere;
+- dinspre explicație către aplicare;
+- dinspre aparență către rezultate;
+- dinspre certitudine către discernământ;
+- dinspre promisiune către capacitatea de a livra;
+- și dinspre titlu către responsabilitatea pe care o poți susține.
 
 ## 17. Pericolul nu este că toată lumea poate. Pericolul este că toată lumea crede că știe.
 
@@ -1168,21 +1126,16 @@ Dimpotrivă.
 
 Toate acestea reprezintă, în forme diferite, extinderea posibilităților umane.
 
-Problema apare atunci când confundăm accesul cu realizarea.
+Problema apare atunci când confundăm:
 
-Când confundăm informația cu înțelegerea.
-
-Când confundăm familiaritatea cu expertiza.
-
-Când confundăm suferința cu o etichetă utilizată fără discernământ.
-
-Când confundăm activitatea independentă cu o organizație autonomă.
-
-Când confundăm critica unei decizii cu demonstrarea faptului că am fi luat una mai bună.
-
-Când confundăm capacitatea de a genera un rezultat cu capacitatea de a-l valida.
-
-Și când confundăm încrederea cu competența.
+- accesul cu realizarea;
+- informația cu înțelegerea;
+- familiaritatea cu expertiza;
+- suferința cu o etichetă utilizată fără discernământ;
+- activitatea independentă cu o organizație autonomă;
+- critica unei decizii cu demonstrarea faptului că am fi luat una mai bună;
+- capacitatea de a genera un rezultat cu capacitatea de a-l valida;
+- și încrederea cu competența.
 
 Poate că acesta este unul dintre efectele neașteptate ale democratizării accesului.
 
@@ -1280,23 +1233,16 @@ Acest proces va continua, desigur.
 
 Vor apărea tehnologii noi, servicii mai ieftine, instrumente mai puternice și posibilități pe care astăzi încă nu ni le putem imagina.
 
-Dar, în paralel, va deveni tot mai important să învățăm ce facem cu toate acestea.
+Dar, în paralel, va deveni tot mai important să învățăm ce facem cu toate acestea:
 
-Să știm când să folosim un instrument și când să nu îl folosim.
-
-Să putem distinge o explicație de o demonstrație.
-
-Să recunoaștem diferența dintre un rezultat plauzibil și unul verificat.
-
-Să înțelegem limitele propriei competențe.
-
-Să nu confundăm o titulatură cu experiența care ar trebui să o susțină.
-
-Să nu transformăm fiecare dificultate într-un diagnostic și fiecare conflict într-o analiză psihologică improvizată.
-
-Să nu presupunem că putem conduce o companie sau o țară mai bine doar pentru că vedem din exterior câteva dintre problemele ei.
-
-Și să nu uităm că dreptul de a avea o opinie vine împreună cu posibilitatea, nu cu garanția, de a avea dreptate.
+- să știm când să folosim un instrument și când să nu îl folosim;
+- să putem distinge o explicație de o demonstrație;
+- să recunoaștem diferența dintre un rezultat plauzibil și unul verificat;
+- să înțelegem limitele propriei competențe;
+- să nu confundăm o titulatură cu experiența care ar trebui să o susțină;
+- să nu transformăm fiecare dificultate într-un diagnostic și fiecare conflict într-o analiză psihologică improvizată;
+- să nu presupunem că putem conduce o companie sau o țară mai bine doar pentru că vedem din exterior câteva dintre problemele ei;
+- și să nu uităm că dreptul de a avea o opinie vine împreună cu posibilitatea, nu cu garanția, de a avea dreptate.
 
 Într-o lume în care aproape oricine poate produce un discurs convingător, verificarea afirmațiilor devine esențială.
 
