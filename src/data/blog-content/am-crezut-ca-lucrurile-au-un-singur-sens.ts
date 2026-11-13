@@ -1,4 +1,4 @@
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const amCrezutCaLucrurileAuUnSingurSensPost = {
   // --- Identitate & conținut ---
@@ -85,7 +85,6 @@ export const amCrezutCaLucrurileAuUnSingurSensPost = {
     "Copil fiind, credeam că recunoașterea vine doar la sfârșit, ca răsplată. Refuzurile de acasă, Botticelli, Dickens și Edison m-au învățat altceva.",
 
   // --- Prezentare & autor ---
-  readingTime: "12 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -200,4 +199,4 @@ export const amCrezutCaLucrurileAuUnSingurSensPost = {
 </ol>
 <p>Despre autor: Alex Matescu este autor și inginer de sisteme. Dezvoltă AI Visibility Lab și Ichnometria și explorează relația dintre informație, vizibilitate și recunoaștere prin scris, experimente și proiecte aplicate.</p>
 `,
-} satisfies Post;
+} satisfies NewPost;

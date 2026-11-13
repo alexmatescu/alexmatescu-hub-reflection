@@ -1,4 +1,5 @@
 import data from "./blogger-posts.json";
+import { readingTimeFromHtml } from "@/lib/reading-time";
 import { oLumePreaMarePentruUnSingurOmPost } from "@/data/blog-content/o-lume-prea-mare-pentru-un-singur-om";
 import { capcanaPerfectiuniiPost } from "@/data/blog-content/capcana-perfectiunii";
 import { cumConstruimInRomaniaPost } from "@/data/blog-content/cum-construim-in-romania-ceea-ce-admiram-in-strainatate";
@@ -90,6 +91,11 @@ export type Post = {
   twitterDescription?: string;
 
   // --- Prezentare & autor ---
+  /**
+   * Ex. "13 min". La articolele noi (`@/data/blog-content/`) NU se scrie
+   * manual — e calculat automat din `html` de `readingTimeFromHtml`
+   * (@/lib/reading-time.ts). În arhiva Blogger rămân valorile istorice.
+   */
   readingTime: string;
   author?: {
     name: string;
@@ -106,6 +112,17 @@ export type Post = {
   content?: string[];
 };
 
+/**
+ * Forma unui articol nou din `@/data/blog-content/`: tot `Post`, fără
+ * `readingTime` — acesta se calculează automat mai jos, din `html`.
+ */
+export type NewPost = Omit<Post, "readingTime">;
+
+const withReadingTime = (p: NewPost): Post => ({
+  ...p,
+  readingTime: readingTimeFromHtml(p.html ?? (p.content ?? []).join(" ")),
+});
+
 const legacyPosts: Post[] = data.posts as Post[];
 
 /**
@@ -120,18 +137,21 @@ const legacyPosts: Post[] = data.posts as Post[];
  *    `@/data/blog-content/<slug>.ts` și completează-l (`satisfies Post`).
  * 2. Importă obiectul aici și adaugă-l în array-ul de mai jos.
  * Ordinea cronologică se rezolvă automat mai jos (sortare după `date`) —
- * nu contează unde îl pui în listă.
+ * nu contează unde îl pui în listă. Timpul de citire se calculează automat
+ * (`withReadingTime`) — nu-l scrie în fișierul articolului.
  */
-const newPosts: Post[] = [
-  oLumePreaMarePentruUnSingurOmPost,
-  capcanaPerfectiuniiPost,
-  cumConstruimInRomaniaPost,
-  douaBlocuriDePiatraPost,
-  aiSchimbaLumeaEuCeFacIntreTimpPost,
-  imbatranesteSiSufletulOdataCuTrupulPost,
-  amCrezutCaLucrurileAuUnSingurSensPost,
-  toataLumeaStieToataLumeaPoatePost,
-];
+const newPosts: Post[] = (
+  [
+    oLumePreaMarePentruUnSingurOmPost,
+    capcanaPerfectiuniiPost,
+    cumConstruimInRomaniaPost,
+    douaBlocuriDePiatraPost,
+    aiSchimbaLumeaEuCeFacIntreTimpPost,
+    imbatranesteSiSufletulOdataCuTrupulPost,
+    amCrezutCaLucrurileAuUnSingurSensPost,
+    toataLumeaStieToataLumeaPoatePost,
+  ] satisfies NewPost[]
+).map(withReadingTime);
 
 export const posts: Post[] = [...newPosts, ...legacyPosts].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),

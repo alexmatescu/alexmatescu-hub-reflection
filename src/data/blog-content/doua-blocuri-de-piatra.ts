@@ -4,7 +4,7 @@
  * Construit după `blog-post-template.ts`; înregistrat în `newPosts` (@/data/posts.ts).
  */
 
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const douaBlocuriDePiatraPost = {
   // --- Identitate & conținut ---
@@ -51,7 +51,6 @@ export const douaBlocuriDePiatraPost = {
   },
 
   // --- Prezentare & autor ---
-  readingTime: "12 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -381,4 +380,4 @@ export const douaBlocuriDePiatraPost = {
 <p>Diferența nu a fost piatra.</p>
 <p>Diferența a fost felul în care oamenii au lucrat asupra ei.</p>
 `,
-} satisfies Post;
+} satisfies NewPost;

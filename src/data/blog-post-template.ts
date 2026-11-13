@@ -2,7 +2,7 @@
  * TEMPLATE — articol nou de blog personal.
  *
  * Acest fișier NU e importat nicăieri în aplicație — e doar un ȘABLON de lucru,
- * type-checked împotriva `Post` (@/data/posts.ts) ca să prinzi devreme câmpuri
+ * type-checked împotriva `NewPost` (= `Post` fără `readingTime`) (@/data/posts.ts) ca să prinzi devreme câmpuri
  * lipsă/greșite. Structura și ordinea câmpurilor oglindesc `LabArticleMeta`
  * (@/data/lab-seo.ts) — vezi comentariile din `Post` pentru echivalența exactă.
  *
@@ -13,7 +13,7 @@
  *    unde fiecare articol are propriul fișier în `@/data/lab-content/`).
  * 2. În fișierul nou, redenumește exportul (`newPostTemplate` →
  *    `<numeInCamelCase>Post`, ex. `slugArticolNouPost`) și completează
- *    valorile. Păstrează `satisfies Post` — verifică la compilare că nu lipsesc
+ *    valorile. Păstrează `satisfies NewPost` — verifică la compilare că nu lipsesc
  *    câmpuri obligatorii.
  * 3. Importă exportul nou în array-ul `newPosts` din @/data/posts.ts (vezi
  *    comentariul de acolo) — asta îl face să apară pe /blog. Ordinea
@@ -28,11 +28,12 @@
  *    JSON-LD (schema-only, nu se randează separat).
  *
  * Câmpuri OBLIGATORII (fără `?` în `Post`): slug, title, subtitle, excerpt,
- * date, category, readingTime.
+ * date, category. `readingTime` NU se scrie — se calculează automat din
+ * `html` (@/lib/reading-time.ts, 200 cuvinte/minut, fără secțiunea de surse).
  * Tot restul e opțional — completează-l acolo unde are sens pentru articol.
  */
 
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const newPostTemplate = {
   // --- Identitate & conținut ---
@@ -84,7 +85,6 @@ export const newPostTemplate = {
   // twitterDescription: "Override opțional pentru Twitter Card.",
 
   // --- Prezentare & autor ---
-  readingTime: "6 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -94,4 +94,4 @@ export const newPostTemplate = {
     <h2>Un subtitlu</h2>
     <p>Conținutul continuă aici...</p>
   `,
-} satisfies Post;
+} satisfies NewPost;

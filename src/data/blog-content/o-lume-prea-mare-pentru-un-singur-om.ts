@@ -1,4 +1,4 @@
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const oLumePreaMarePentruUnSingurOmPost = {
   // --- Identitate & conținut ---
@@ -139,7 +139,6 @@ export const oLumePreaMarePentruUnSingurOmPost = {
     "Într-o lume în care informația nu mai este rară, problema devine filtrarea ei și alegerea autorităților în care avem motive să avem încredere.",
 
   // --- Prezentare & autor ---
-  readingTime: "29 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -645,4 +644,4 @@ export const oLumePreaMarePentruUnSingurOmPost = {
 <h3 id="united-nations-world-urbanization-prospects-2025"><a href="https://www.un.org/development/desa/pd/world-urbanization-prospects-2025">United Nations — World Urbanization Prospects 2025</a></h3>
 <p>Date privind concentrarea populației în orașe și evoluția megacităților.</p>
   `,
-} satisfies Post;
+} satisfies NewPost;

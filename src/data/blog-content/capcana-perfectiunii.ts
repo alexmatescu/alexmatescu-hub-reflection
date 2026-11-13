@@ -4,7 +4,7 @@
  * Construit după `blog-post-template.ts`; înregistrat în `newPosts` (@/data/posts.ts).
  */
 
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const capcanaPerfectiuniiPost = {
   // --- Identitate & conținut ---
@@ -52,7 +52,6 @@ export const capcanaPerfectiuniiPost = {
   },
 
   // --- Prezentare & autor ---
-  readingTime: "14 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -132,4 +131,4 @@ export const capcanaPerfectiuniiPost = {
 <p>Am intrat la Uffizi purtând în mine un copil care învățase să caute greșeala. Am ieșit gândindu-mă la poveste, la emoție, la viziune și la întreaga lume care face posibilă întâlnirea cu o operă.</p>
 <p>Iar acum, când mă întorc la ceea ce am eu de scris, întrebarea despre ce mai trebuie corectat rămâne. Doar că lângă ea a apărut una pe care vreau să o iau la fel de în serios: cine ar putea primi ceea ce încerc să spun și ce am de făcut ca să ajungă la el?</p>
 `,
-} satisfies Post;
+} satisfies NewPost;

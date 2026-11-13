@@ -1,4 +1,4 @@
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const toataLumeaStieToataLumeaPoatePost = {
   // --- Identitate & conținut ---
@@ -101,7 +101,6 @@ export const toataLumeaStieToataLumeaPoatePost = {
     "Un om obișnuit de azi are lucruri pe care niciun rege de acum cinci secole nu le putea cumpăra. Am democratizat accesul. Competența a rămas de câștigat.",
 
   // --- Prezentare & autor ---
-  readingTime: "44 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -1588,4 +1587,4 @@ export const toataLumeaStieToataLumeaPoatePost = {
 
 <p><strong>Nu ceea ce putem pretinde că suntem, ci ceea ce putem demonstra că știm, construim și înțelegem.</strong></p>
 `,
-} satisfies Post;
+} satisfies NewPost;

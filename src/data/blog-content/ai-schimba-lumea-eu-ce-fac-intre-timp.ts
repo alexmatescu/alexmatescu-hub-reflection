@@ -1,4 +1,4 @@
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const aiSchimbaLumeaEuCeFacIntreTimpPost = {
   // --- Identitate & conținut ---
@@ -100,7 +100,6 @@ export const aiSchimbaLumeaEuCeFacIntreTimpPost = {
     "AI ne ajută să producem mai mult. Vom folosi acest câștig și pentru a ne recupera timpul? Despre scris, proiecte și alegerea de a participa.",
 
   // --- Prezentare & autor ---
-  readingTime: "19 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -222,4 +221,4 @@ export const aiSchimbaLumeaEuCeFacIntreTimpPost = {
 </ol>
 <p>Textul este un eseu personal. Scenariul muncii pe proiecte, cu pauze între ele, exprimă viziunea autorului, nu o predicție demonstrată. Discuția despre juniori, portofolii și experiența dobândită prin proiecte independente este o ipoteză despre evoluția muncii, nu o recomandare universală. Legătura dintre munca distribuită, întoarcerea oamenilor în țările de origine și reducerea conflictelor sociale este prezentată ca posibilitate, nu ca soluție demonstrată pentru violență, integrare sau degradare morală. Finalul păstrează ideea responsabilității personale fără a echivala o alegere cu un control total asupra propriei vieți.</p>
 `,
-} satisfies Post;
+} satisfies NewPost;

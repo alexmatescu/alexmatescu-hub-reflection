@@ -411,7 +411,7 @@ Dacă repository-ul s-a schimbat față de această documentație, codul actual 
 **REGULĂ CRITICĂ DE ARHITECTURĂ — STOCAREA ARTICOLULUI NOU.**
 Verificat în repository (2026-08-30): articolele noi NU se adaugă ca intrare nouă în array-ul `posts` din `src/data/blogger-posts.json`. Acel fișier este arhiva înghețată a articolelor deja publicate (nu se exportă, nu se migrează, nu se editează pentru a insera un articol nou). Mecanismul real pentru articole noi este:
 
-1. un fișier independent `src/data/blog-content/<slug>.ts`, care exportă obiectul articolului (`satisfies Post`), după modelul din `blog-post-template.ts`;
+1. un fișier independent `src/data/blog-content/<slug>.ts`, care exportă obiectul articolului (`satisfies NewPost`, fără `readingTime`), după modelul din `blog-post-template.ts`;
 2. importat explicit și adăugat în array-ul `newPosts` din `src/data/posts.ts`;
 3. `posts` (exportul consumat de restul site-ului) este calculat automat din `newPosts` + articolele din `blogger-posts.json`, sortate descrescător după `date` — poziția din `newPosts` nu contează pentru ordinea afișată.
 
@@ -1033,13 +1033,24 @@ Pentru fiecare override păstrat (`seoTitle`, `ogTitle`, `ogDescription`, `twitt
 
 # 12.24 `readingTime`
 
-Dacă este obligatoriu în `Post`, calculează-l automat.
+Timpul de citire al articolelor noi se calculează automat în cod. NU îl scrie manual în fișierul articolului.
 
-Folosește convenția deja existentă în cod dacă există.
+Mecanismul (din 2026-11-13):
 
-Nu estima arbitrar.
+- `src/lib/reading-time.ts` → `readingTimeFromHtml(html)`: cuvintele textului vizibil din `html`, fără tag-uri, `<script>`/`<style>` și fără secțiunea de surse (un `<h2>` care începe cu „Surse", „Bibliografie" sau „Referințe", până la următorul `<h2>`); 200 de cuvinte pe minut, rotunjit în sus, minimum 1; format `„13 min"`.
+- `src/data/posts.ts` aplică `withReadingTime` pe tot array-ul `newPosts`; fișierele din `src/data/blog-content/` sunt tipate `satisfies NewPost` (= `Post` fără `readingTime`).
+- Valoarea apare pe `/blog`, pe Home și în byline-ul articolului („13 min citire").
 
-Nu modifica valorile articolelor istorice.
+Ce faci la fiecare articol nou:
+
+1. Nu adăuga `readingTime` în obiectul articolului — `satisfies NewPost` nu are câmpul, iar valoarea ar fi suprascrisă oricum.
+2. Ignoră `readingTime`/`readingTimeMinutes` primite în frontmatter-ul `.md`; raportează în §53 că au fost înlocuite de calculul automat.
+3. Dacă secțiunea de surse are alt titlu decât „Surse…", „Bibliografie…" sau „Referințe…", folosește unul dintre aceste titluri sau raportează că va intra în calcul.
+4. Raportează valoarea calculată în raportul final (§53).
+
+Nu modifica `readingTime` din arhiva Blogger (`blogger-posts.json`) — valorile istorice rămân neatinse.
+
+Dacă mecanismul lipsește la execuție, nu estima arbitrar: calculează după aceeași convenție (200 cuvinte/minut, fără surse) și raportează lipsa.
 
 ---
 
@@ -2058,7 +2069,7 @@ NU:
 [ ] `ogDescription` evaluată
 [ ] `twitterTitle` evaluat
 [ ] `twitterDescription` evaluată
-[ ] `readingTime`
+[ ] `readingTime` NU e scris manual — calculat automat (§12.24); valoarea raportată
 [ ] `author` corect
 [ ] `featured` evaluat
 [ ] NU există `tags` nou.

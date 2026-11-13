@@ -1,4 +1,4 @@
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const imbatranesteSiSufletulOdataCuTrupulPost = {
   // --- Identitate & conținut ---
@@ -83,7 +83,6 @@ export const imbatranesteSiSufletulOdataCuTrupulPost = {
     "Ce pierdem cu adevărat odată cu vârsta: puterea de a face lucruri sau curajul de a ne mai imagina un viitor?",
 
   // --- Prezentare & autor ---
-  readingTime: "24 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -289,4 +288,4 @@ export const imbatranesteSiSufletulOdataCuTrupulPost = {
 </ol>
 <p>Notă: Acesta este un eseu de reflecție personală, nu un studiu comparativ între populațiile vârstnice. Experiențele familiale sunt redate din perspectiva autorului, fără presupuneri despre diagnostice sau cauze certe.</p>
 `,
-} satisfies Post;
+} satisfies NewPost;

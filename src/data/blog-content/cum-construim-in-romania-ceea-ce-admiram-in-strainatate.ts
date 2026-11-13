@@ -4,7 +4,7 @@
  * Construit după `blog-post-template.ts`; înregistrat în `newPosts` (@/data/posts.ts).
  */
 
-import type { Post } from "@/data/posts";
+import type { NewPost } from "@/data/posts";
 
 export const cumConstruimInRomaniaPost = {
   // --- Identitate & conținut ---
@@ -87,7 +87,6 @@ export const cumConstruimInRomaniaPost = {
     "Am vrut să plec din România. În 2020, eu și familia mea ne-am dat o șansă să construim aici. De atunci, întrebarea mea despre țară s-a schimbat.",
 
   // --- Prezentare & autor ---
-  readingTime: "13 min",
   author: { name: "Alex Matescu", slug: "alex-matescu", url: "/despre" },
   featured: false,
 
@@ -174,4 +173,4 @@ export const cumConstruimInRomaniaPost = {
   <li id="sursa-5"><a href="https://www.afir.ro/finantare/leader/">AFIR — LEADER / DR-36</a> și <a href="https://www.afir.ro/domenii-de-interventie/detalii-si-anexe-dr-36/">documentele intervenției DR-36</a>. Dezvoltare locală, fără a afirma că este un program național explicit de repopulare.</li>
 </ol>
 `,
-} satisfies Post;
+} satisfies NewPost;
