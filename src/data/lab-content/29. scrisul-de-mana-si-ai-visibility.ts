@@ -154,7 +154,15 @@ export const scrisulDeManaSiAiVisibilityHtml = `
 
       <h2 id="frecventa-publicarii-sau-informatia-care-raspunde-unei-nevoi">Frecvența publicării sau informația care răspunde unei nevoi?</h2>
 
-      <p>Să luăm două ateliere ipotetice de mobilă din Sibiu. Primul publică frecvent fotografii cu texte despre calitate, pasiune și profesionalism. Al doilea publică mai rar, dar explică ce realizează, în ce localități lucrează, cum se fac măsurătorile, ce include montajul și care sunt limitele unui termen estimat.</p>
+      <p>Să luăm două ateliere ipotetice de mobilă din Sibiu. Primul publică frecvent fotografii cu texte despre calitate, pasiune și profesionalism. Al doilea publică mai rar, dar explică:</p>
+
+      <ul>
+        <li>ce realizează;</li>
+        <li>în ce localități lucrează;</li>
+        <li>cum se fac măsurătorile;</li>
+        <li>ce include montajul;</li>
+        <li>care sunt limitele unui termen estimat.</li>
+      </ul>
 
       <p>Pentru întrebarea „Caut un atelier care face bucătării la comandă în Sibiu și se ocupă de măsurători și montaj”, al doilea pune la dispoziție mai multe informații direct folositoare.</p>
 
@@ -164,7 +172,15 @@ export const scrisulDeManaSiAiVisibilityHtml = `
 
       <p>Există și mijloace tehnice pentru a explicita identitatea. Google documentează, de exemplu, folosirea datelor structurate despre organizații pentru înțelegerea detaliilor administrative și diferențierea unei organizații de altele. Aceasta este o funcție de identificare, nu o promisiune de recomandare.<sup><a href="#fn-4">4</a></sup></p>
 
-      <p>Mai există o condiție: informația trebuie să poată fi găsită și utilizată. Pentru AI Overviews și AI Mode, Google precizează că rămân relevante practicile SEO fundamentale, inclusiv accesibilitatea pentru explorare, conținutul important în formă textuală și informațiile actualizate din Business Profile și Merchant Center. Pentru apariția ca link de sprijin, pagina trebuie să fie indexată și eligibilă pentru afișare cu un fragment în Search. Nici îndeplinirea cerințelor nu garantează afișarea.<sup><a href="#fn-5">5</a></sup></p>
+      <p>Mai există o condiție: informația trebuie să poată fi găsită și utilizată. Pentru AI Overviews și AI Mode, Google precizează că rămân relevante practicile SEO fundamentale, inclusiv:</p>
+
+      <ul>
+        <li>accesibilitatea pentru explorare;</li>
+        <li>conținutul important în formă textuală;</li>
+        <li>informațiile actualizate din Business Profile și Merchant Center.</li>
+      </ul>
+
+      <p>Pentru apariția ca link de sprijin, pagina trebuie să fie indexată și eligibilă pentru afișare cu un fragment în Search. Nici îndeplinirea cerințelor nu garantează afișarea.<sup><a href="#fn-5">5</a></sup></p>
 
       <p>Prin urmare, formularea „cu cât public, cu atât AI-ul mă cunoaște” comprimă prea multe lucruri diferite.</p>
 
@@ -197,13 +213,27 @@ export const scrisulDeManaSiAiVisibilityHtml = `
 
       <p>În comunicarea unei afaceri, merită să reducem nevoia de a ghici.</p>
 
-      <p>Asta înseamnă să explicăm serviciile în termeni concreți, să facem vizibile condițiile importante și să arătăm ce susține afirmațiile despre experiență. O fotografie de proiect capătă mai mult sens când precizăm ce problemă a existat, ce am realizat efectiv și care a fost contribuția noastră.</p>
+      <p>Asta înseamnă să explicăm serviciile în termeni concreți, să facem vizibile condițiile importante și să arătăm ce susține afirmațiile despre experiență.</p>
+
+      <p>O fotografie de proiect capătă mai mult sens când precizăm:</p>
+
+      <ul>
+        <li>ce problemă a existat;</li>
+        <li>ce am realizat efectiv;</li>
+        <li>care a fost contribuția noastră.</li>
+      </ul>
 
       <p>Înseamnă și să revizităm informația. Un serviciu retras, o adresă schimbată sau un articol care descrie o ofertă veche pot rămâne perfect lizibile și totuși să ofere o imagine greșită despre prezent.</p>
 
       <p>Când mă întorc la un text vechi și nu mai înțeleg ce am vrut să spun, descopăr distanța dintre ce exista în mintea mea și ce am reușit să las pe pagină.</p>
 
-      <p>Un antreprenor poate face același exercițiu cu propria prezență online: să o citească fără explicațiile pe care le oferă de obicei într-o conversație. Ce poate afla cineva doar din ceea ce este public? Ce rămâne presupus? Ce informație ar trebui să inventeze pentru a lega lucrurile între ele?</p>
+      <p>Un antreprenor poate face același exercițiu cu propria prezență online: să o citească fără explicațiile pe care le oferă de obicei într-o conversație:</p>
+
+      <ul>
+        <li>Ce poate afla cineva doar din ceea ce este public?</li>
+        <li>Ce rămâne presupus?</li>
+        <li>Ce informație ar trebui să inventeze pentru a lega lucrurile între ele?</li>
+      </ul>
 
       <h2 id="asa-sunt-eu-nu-fixeaza-reprezentarea-digitala">„Așa sunt eu” nu fixează reprezentarea digitală</h2>
 
@@ -215,7 +245,13 @@ export const scrisulDeManaSiAiVisibilityHtml = `
 
       <p>Scrisul de mână ne poate părea greu de schimbat. Îl repetăm de ani întregi, adesea fără să ne mai gândim la fiecare mișcare. Totuși, nici scrisul și nici obiceiurile noastre nu fixează definitiv cine putem deveni.</p>
 
-      <p>În spațiul digital, unele intervenții sunt mai directe. Poți rescrie o prezentare care nu te mai reprezintă. Poți explica un serviciu pe care până acum doar îl numeai. Poți reorganiza un portofoliu, documenta o competență nouă și face vizibilă legătura dintre proiectele tale.</p>
+      <p>În spațiul digital, unele intervenții sunt mai directe:</p>
+
+      <ul>
+        <li>Poți rescrie o prezentare care nu te mai reprezintă.</li>
+        <li>Poți explica un serviciu pe care până acum doar îl numeai.</li>
+        <li>Poți reorganiza un portofoliu, documenta o competență nouă și face vizibilă legătura dintre proiectele tale.</li>
+      </ul>
 
       <p>Prin „<a href="/lab/articole/ce-este-entitate-ai-studiu-de-caz">entitate digitală</a>” mă refer aici la reprezentarea ta sau a afacerii tale, construită din pagini, profiluri, proiecte, mențiuni și relațiile dintre ele. Este ceea ce poate afla cineva despre tine din urmele pe care le găsește.</p>
 
