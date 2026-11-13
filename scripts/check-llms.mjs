@@ -35,25 +35,36 @@ const LAB_SURFACES = new Set([
 ]);
 
 const args = process.argv.slice(2);
-const required = args.flatMap((a, i) => (a === "--require" ? [args[i + 1]] : []));
+const required = args.flatMap((a, i) =>
+  a === "--require" ? [args[i + 1]] : [],
+);
 const norm = (u) => (u.length > ORIGIN.length + 1 ? u.replace(/\/$/, "") : u);
 
 const llms = fs.readFileSync(LLMS, "utf8");
 const locs = new Set(
-  [...fs.readFileSync(SITEMAP, "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => norm(m[1])),
+  [...fs.readFileSync(SITEMAP, "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+    (m) => norm(m[1]),
+  ),
 );
-const links = [...llms.matchAll(/\]\((https:\/\/delamatescu\.ro[^)\s]*)\)/g)].map((m) => norm(m[1]));
+const links = [
+  ...llms.matchAll(/\]\((https:\/\/delamatescu\.ro[^)\s]*)\)/g),
+].map((m) => norm(m[1]));
 const listTargets = new Set(
   llms
     .split("\n")
     .filter((l) => l.startsWith("- ["))
-    .map((l) => l.match(/^- \[[^\]]+\]\((https:\/\/delamatescu\.ro[^)\s]*)\)/)?.[1])
+    .map(
+      (l) =>
+        l.match(/^- \[[^\]]+\]\((https:\/\/delamatescu\.ro[^)\s]*)\)/)?.[1],
+    )
     .filter(Boolean)
     .map(norm),
 );
 
 let failed = false;
-const notInSitemap = [...new Set(links)].filter((u) => !locs.has(u) && !/\/(robots\.txt|sitemap\.xml)$/.test(u));
+const notInSitemap = [...new Set(links)].filter(
+  (u) => !locs.has(u) && !/\/(robots\.txt|sitemap\.xml)$/.test(u),
+);
 if (notInSitemap.length) {
   failed = true;
   console.log("Linkuri din llms.txt care nu sunt în sitemap:");
@@ -70,13 +81,23 @@ for (const u of required) {
 if (fs.existsSync(REGISTRY)) {
   const reg = JSON.parse(fs.readFileSync(REGISTRY, "utf8"));
   const missing = reg.intrari.filter(
-    (e) => LAB_SURFACES.has(e.suprafata) && e.status === "publicat" && e.ruta && !listTargets.has(norm(ORIGIN + e.ruta)),
+    (e) =>
+      LAB_SURFACES.has(e.suprafata) &&
+      e.status === "publicat" &&
+      e.ruta &&
+      !listTargets.has(norm(ORIGIN + e.ruta)),
   );
   if (missing.length) {
-    console.log("Materiale publicate ale laboratorului care nu au linie în llms.txt (de verificat):");
+    console.log(
+      "Materiale publicate ale laboratorului care nu au linie în llms.txt (de verificat):",
+    );
     for (const e of missing) console.log(`  - ${e.id} ${e.ruta}`);
   }
 }
 
-console.log(failed ? "llms.txt: PROBLEME" : `llms.txt: ok (${listTargets.size} linii de listă)`);
+console.log(
+  failed
+    ? "llms.txt: PROBLEME"
+    : `llms.txt: ok (${listTargets.size} linii de listă)`,
+);
 process.exit(failed ? 1 : 0);
